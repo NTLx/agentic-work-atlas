@@ -21,9 +21,9 @@ related_entities:
   - "[[GraphDB]]"
   - "[[SPARQL]]"
 source_raw:
-  - "[[20260420-ontology-enterprise-ai-agent.md]]"
-  - "[[20260420-build-first-business-ontology.md]]"
-  - "[[20260420-ontology-meets-agent-case-study.md]]"
+  - "[[20260420-ontology-enterprise-ai-agent]]"
+  - "[[20260420-build-first-business-ontology]]"
+  - "[[20260420-ontology-meets-agent-case-study]]"
 ---
 
 # 企业级本体应用（Enterprise Ontology Application）
@@ -64,8 +64,8 @@ source_raw:
 
 | 积木 | 含义 | 类比 |
 |------|------|------|
-| Class（类） | 业务对象类型 | 数据库表 / OOP Class |
-| Individual（实例） | 具体业务事实 | 数据库行 / OOP Object |
+| [[Class]]（类） | 业务对象类型 | 数据库表 / OOP Class |
+| [[Individual]]（实例） | 具体业务事实 | 数据库行 / OOP Object |
 | Object Property（关系） | 概念之间的链接 | 外键 / OOP 引用 |
 | Data Property（属性） | 业务特征 | 数据库列 / 成员变量 |
 | Axiom（约束） | 业务规则 | CHECK 约束 / 不变式 |

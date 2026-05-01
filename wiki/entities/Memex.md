@@ -11,6 +11,8 @@ tags:
   - history
   - information-science
   - hypertext
+validated_source: "https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/"
+validated_at: "2026-05-01"
 related_entities:
   - "[[Andrej-Karpathy]]"
   - "[[Knowledge-Work]]"
