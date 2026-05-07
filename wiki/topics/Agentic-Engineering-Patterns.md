@@ -13,6 +13,7 @@ related_entities:
   - "[[Coding-Agents]]"
   - "[[Code-Execution]]"
   - "[[Compound-Engineering]]"
+  - "[[Dominator-Analysis]]"
   - "[[Raj-Nandan-Sharma]]"
   - "[[Simon-Willison]]"
   - "[[Technical-Debt-Avoidance]]"
@@ -26,6 +27,7 @@ source_raw:
   - "[[20260410-better-code]]"
   - "[[20260410-anti-patterns]]"
   - "[[20260413-why-ai-first-strategy-wrong]]"
+  - "[[Validating agentic behavior when "correct" isn't deterministic]]"
 ---
 
 # Agentic Engineering Patterns
@@ -80,6 +82,7 @@ source_raw:
 - Red/green TDD
 - First run the tests
 - Agentic manual testing
+- **[[Dominator-Analysis|Dominator Analysis]] 验证 Agent 行为**: 将编译器理论中的支配者分析应用于 Agent 执行图，自动区分 essential states 与 optional noise。仅需 2-10 次成功 trace 即可构建 ground truth。实验 F1=100% vs Agent 自评 69.8%。来源: [[Validating agentic behavior when “correct” isn’t deterministic.md|GitHub Blog: Validating Agentic Behavior]]
 
 ---
 

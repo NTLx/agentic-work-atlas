@@ -1,7 +1,7 @@
 ---
 type: index
 title: Clips 知识库索引
-updated: 2026-04-21
+updated: 2026-05-07
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 97 个 |
+| Entity 页面 | 98 个 |
 | Topic 页面 | 14 个 |
 | Comparison 页面 | 4 个 |
-| Raw 文章 | 34 个 |
+| Raw 文章 | 35 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -113,6 +113,7 @@ tags:
 | [[wiki/entities/SPARQL\|SPARQL]] | RDF/本体查询语言 | Enterprise-Ontology-Application |
 
 | [[wiki/entities/Adversarial-Distillation\|Adversarial Distillation]] | 工程师为避免被 Skills 系统替代而采取的对抗策略 | 工程师抗拒被"蒸馏" |
+| [[wiki/entities/Dominator-Analysis\|Dominator Analysis]] | 编译器控制流图理论：节点 A 支配 B = 所有路径必经 A，用于 Agent 验证中提取 essential states | GitHub Blog: Validating agentic behavior |
 
 #### 作者 Entities
 
@@ -177,7 +178,7 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（28 个）*
+*原始剪藏文章（35 个）*
 
 所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。
 
@@ -211,5 +212,5 @@ status             # 查看知识库状态
 
 ---
 
-*索引版本: v2.3*
-*最后更新: 2026-04-21*
+*索引版本: v2.4*
+*最后更新: 2026-05-07*
