@@ -12,7 +12,6 @@ related_entities:
   - '[[Claude-Code-CLI]]'
   - '[[Headless-Mode]]'
   - '[[Wes-Botman]]'
-  - '[[同学都叫我-饶老师]]'
 source_raw: []
 ---
 
@@ -196,6 +195,5 @@ claude -p "Fix the login bug" \
 ## 参见
 
 - [[Wes-Botman]] - Claude Code 实践文章作者
-- [[同学都叫我-饶老师]] - Prompt 工程与 Claude Code 实践文章作者
 
 ## 来源

@@ -21,7 +21,7 @@ related_entities:
   - '[[Harness-Engineering]]'
   - '[[AI-First]]'
 source_raw:
-  - '[[20260410-what-is-agentic-engineering]]'
+  - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'
   - '[[20260410-hoard-things-you-know]]'
   - '[[20260410-better-code]]'

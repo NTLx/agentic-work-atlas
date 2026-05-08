@@ -21,7 +21,7 @@ related_entities:
   - '[[Adversarial-Distillation]]'
 source_raw:
   - '[[Using Git with coding agents - Agentic Engineering Patterns]]'
-  - '[[20260410-what-is-agentic-engineering]]'
+  - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - "20260127-claude-coding-notes"
@@ -140,5 +140,5 @@ Drew Breunig 提出扩展的三阶段 Agentic Coding 模型：
 ## 来源
 
 - [[Using Git with coding agents - Agentic Engineering Patterns]]
-- [[20260410-what-is-agentic-engineering]]
+- [[What is agentic engineering? - Agentic Engineering Patterns]]
 - Simon Willison, [Agentic Engineering Patterns Guide](https://simonwillison.net/guides/agentic-engineering-patterns/)

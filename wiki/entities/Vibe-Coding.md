@@ -19,7 +19,7 @@ related_entities:
   - '[[AI-Capability-Gap]]'
   - '[[AI-Psychosis]]'
 source_raw:
-  - '[[20260410-what-is-agentic-engineering]]'
+  - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260413-llm-wiki]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'

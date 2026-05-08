@@ -16,7 +16,7 @@ related_entities:
   - '[[Coding-Agents]]'
   - '[[Claude-Code-CLI]]'
 source_raw:
-  - '[[20260410-what-is-agentic-engineering]]'
+  - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'
   - '[[20260410-hoard-things-you-know]]'
   - '[[20260410-better-code]]'
@@ -66,7 +66,7 @@ Simon Willison 提出 "Agentic Engineering" 概念，定义为使用 coding agen
 
 ## 在本知识库中的文章
 
-- [[20260410-what-is-agentic-engineering|What is agentic engineering?]]
+- [[What is agentic engineering? - Agentic Engineering Patterns|What is agentic engineering?]]
 - [[20260410-code-is-cheap|Writing code is cheap now]]
 - [[20260410-hoard-things-you-know|Hoard things you know how to do]]
 - [[20260410-better-code|AI should help us produce better code]]

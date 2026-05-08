@@ -14,7 +14,7 @@ related_entities:
   - '[[Agentic-Engineering]]'
   - '[[Coding-Agents]]'
 source_raw:
-  - '[[20260410-what-is-agentic-engineering]]'
+  - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
 ---
 
 # Code Execution（代码执行）

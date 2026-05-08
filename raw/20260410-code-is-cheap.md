@@ -71,7 +71,7 @@ changes_url: "https://simonwillison.net/guides/agentic-engineering-patterns/code
 ---
 
 > [!info] 导航
-> 上一章：[[20260410-what-is-agentic-engineering|What is agentic engineering]]
+> 上一章：[[What is agentic engineering? - Agentic Engineering Patterns|What is agentic engineering]]
 > 下一章：[[20260410-hoard-things-you-know|Hoard things you know how to do]]
 
 ---

@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 101 个 |
+| Entity 页面 | 100 个 |
 | Topic 页面 | 15 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 36 个 |
+| Raw 文章 | 34 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -135,7 +135,6 @@ tags:
 | [[wiki/entities/Ben-Thompson\|Ben Thompson]] | Stratechery 创始人，科技分析师 | Tech Analysis |
 | [[wiki/entities/MIT-Technology-Review-Insights\|MIT Technology Review Insights]] | MIT Technology Review 研究部门 | Research |
 | [[wiki/entities/Barry-Zhang\|Barry Zhang]] | Anthropic 技术团队成员，Building Effective Agents 合著者 | AI-Agent, Anthropic |
-| [[wiki/entities/同学都叫我-饶老师\|同学都叫我 饶老师]] | 中文技术博主，提示词与个人成长方法论 | Prompt Engineering |
 | [[wiki/entities/朱少民\|朱少民]] | 软件工程领域作者，关注 AI Agent 与企业组织变革 | Software-Engineering, AI-Agent |
 | [[wiki/entities/Steve-Hanov\|Steve Hanov]] | 加拿大 Waterloo 独立开发者，6 个 $10K+ MRR 产品，月成本 $20 | Indie Developer, Bootstrap |
 | [[wiki/entities/达珍\|达珍]] | 得到App《得到头条》栏目作者 | Media |

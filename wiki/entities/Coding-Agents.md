@@ -18,7 +18,7 @@ related_entities:
   - '[[Harness-Engineering]]'
   - '[[Decision-Quality]]'
 source_raw:
-  - '[[20260410-what-is-agentic-engineering]]'
+  - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[building-effective-agents]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
 ---
@@ -92,6 +92,6 @@ Coding Agent 擅长**边界清晰、可验证、有据可查**的任务。
 
 ## 来源
 
-- [[20260410-what-is-agentic-engineering]]
+- [[What is agentic engineering? - Agentic Engineering Patterns]]
 - [[building-effective-agents]]
 - [[20260413-why-ai-first-strategy-wrong]] — CREAO CTO Peter Pang: "99% 的生产代码由 AI 编写"
