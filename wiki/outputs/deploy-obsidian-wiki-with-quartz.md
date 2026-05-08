@@ -786,7 +786,7 @@ typography: {
 ### 6.5 延伸阅读与参考资源
 
 - [Quartz 官方文档](https://quartz.jzhao.xyz/)
-- [Andrej Karpathy LLM Wiki](https://github.com/karpathy/llm.c)（思想来源）
+- [Andrej Karpathy LLM Wiki](https://gist.githubusercontent.com/karpathy/442a6bf555914893e9891c11519de94f/raw/ac46de1ad27f92b28ac95459c782c07f6b8c964a/llm-wiki.md)（思想来源）
 - [Memex 概念](https://en.wikipedia.org/wiki/Memex)（知识管理先驱思想）
 - [Obsidian 官方网站](https://obsidian.md/)
 
