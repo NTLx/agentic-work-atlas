@@ -5,7 +5,7 @@ aliases:
   - Runway Math
 definition: "生存时间 = 资金 ÷ 月支出，控制分母比控制分子更可确定"
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-05-08
 tags:
   - entrepreneurship
   - bootstrap
@@ -15,7 +15,7 @@ related_entities:
   - '[[Anti-Enterprise-Mindset]]'
   - '[[Steve-Hanov]]'
 source_raw:
-  - '[[每月20成本，60000+营收：加拿大程序员的“最穷”技术栈]]'
+  - '[[How I run multiple $10K MRR companies on a $20month tech stack]]'
 ---
 
 # Runway-Math（跑道数学）

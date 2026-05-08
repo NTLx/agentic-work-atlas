@@ -5,7 +5,7 @@ aliases:
   - B2B Nurture C Model
 definition: "用 B2B 大额订单养 C 端产品的抗周期商业模式组合"
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-05-08
 tags:
   - business-model
   - entrepreneurship
@@ -16,7 +16,7 @@ related_entities:
   - '[[Time-Moat]]'
 
 source_raw:
-  - '[[每月20成本，60000+营收：加拿大程序员的“最穷”技术栈]]'
+  - '[[How I run multiple $10K MRR companies on a $20month tech stack]]'
 ---
 
 # B2B-Nurture-C-Model（B2B 养 C 端模式）

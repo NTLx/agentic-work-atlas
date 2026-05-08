@@ -5,7 +5,7 @@ aliases:
   - Constraint Driven Engineering
 definition: "先设定约束（预算、人力、时间），再从约束出发选择技术方案"
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-05-08
 tags:
   - software-engineering
   - decision-making
@@ -15,7 +15,7 @@ related_entities:
   - '[[Anti-Enterprise-Mindset]]'
   - '[[Taste]]'
 source_raw:
-  - '[[每月20成本，60000+营收：加拿大程序员的“最穷”技术栈]]'
+  - '[[How I run multiple $10K MRR companies on a $20month tech stack]]'
 ---
 
 # Constraint-Driven-Engineering（约束驱动工程）

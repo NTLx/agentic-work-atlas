@@ -5,7 +5,7 @@ aliases:
   - Time Moat
 definition: "通过多年持续运营积累的 SEO 权重、反链、用户信任等无法速成的竞争壁垒"
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-05-08
 tags:
   - entrepreneurship
   - seo
@@ -14,7 +14,7 @@ related_entities:
   - '[[Steve-Hanov]]'
   - '[[Taste]]'
 source_raw:
-  - '[[每月20成本，60000+营收：加拿大程序员的“最穷”技术栈]]'
+  - '[[How I run multiple $10K MRR companies on a $20month tech stack]]'
 ---
 
 # Time-Moat（时间护城河）

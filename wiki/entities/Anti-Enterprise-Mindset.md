@@ -5,7 +5,7 @@ aliases:
   - Anti Enterprise Mindset
 definition: "拒绝为企业级需求预先优化，只在有真实用户后才升级基础设施"
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-05-08
 tags:
   - software-engineering
   - entrepreneurship
@@ -15,7 +15,7 @@ related_entities:
   - '[[Runway-Math]]'
   - '[[Constraint-Driven-Engineering]]'
 source_raw:
-  - '[[每月20成本，60000+营收：加拿大程序员的“最穷”技术栈]]'
+  - '[[How I run multiple $10K MRR companies on a $20month tech stack]]'
 ---
 
 # Anti-Enterprise-Mindset（反企业思维）

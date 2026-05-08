@@ -3,7 +3,7 @@ type: topic
 title: Lean-Indie-Engineering
 description: "独立开发者用极低技术成本运营盈利产品的工程哲学与实践，核心是控制分母、反企业思维、约束驱动决策"
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-05-08
 tags:
   - indie-developer
   - bootstrap
@@ -18,7 +18,7 @@ related_entities:
   - '[[Time-Moat]]'
   - '[[Constraint-Driven-Engineering]]'
 source_raw:
-  - '[[每月20成本，60000+营收：加拿大程序员的“最穷”技术栈]]'
+  - '[[How I run multiple $10K MRR companies on a $20month tech stack]]'
 ---
 
 # Lean-Indie-Engineering（精益独立开发）
@@ -69,11 +69,12 @@ Steve 的约束 = "一个人、`$20/月`、6 个产品" → Go + SQLite + 单机
 |------|------|------|
 | 服务器 | Linode/DigitalOcean 1GB | `$5/月` |
 | 数据库 | SQLite + WAL | `$0` |
-| 语言 | Go (静态二进制) | `$0` |
+| 语言 | Go (静态二进制, `scp` 部署) | `$0` |
 | 认证 | 自写 30 行 OAuth2 | `$0` |
 | 部署 | systemd service | `$0` |
+| AI 批量推理 | RTX 3090 (24GB) + VLLM | 一次性 `$900` |
+| AI API 网关 | OpenRouter 统一接口 + 故障回退 | 按量 |
 | AI 开发 | GitHub Copilot per-request | `$13/月` |
-| 本地 AI | RTX 3090 + VLLM | 一次性 `$900` |
 
 ### SQLite + WAL 的 40 倍优势
 
@@ -82,6 +83,44 @@ Steve 的约束 = "一个人、`$20/月`、6 个产品" → Go + SQLite + 单机
 - SQLite (内存): 0.07 秒 — **差距 40 倍**
 
 因为 app 和数据库在同一进程，查询走 C 函数调用（纳秒级），不是 TCP 往返（毫秒级）。
+
+### 本地 AI 三层升级路径
+
+Steve 的 AI 策略不是"不用 API"，而是**把不同任务路由到不同成本层**：
+
+```
+Ollama (快速实验)
+    ↓ 一个命令试几十个模型，调 prompt
+VLLM + PagedAttention (生产并发)
+    ↓ 16 个异步请求 GPU 自动批处理，同时完成
+Transformer Lab (微调)
+    ↓ 需要定制模型时
+```
+
+| 任务类型 | 用本地 GPU | 用云端 API |
+|---------|-----------|-----------|
+| 批量研究/分类/摘要（数千次） | ✅ 零边际成本 | ❌ `$100+`/次 |
+| 用户交互（低延迟对话） | ❌ 模型不够强 | ✅ OpenRouter |
+| Prompt 迭代实验 | ✅ 无压力试错 | ❌ 每次改 prompt 都要重新付费 |
+
+**核心工具**: laconic — Go 写的 agentic researcher，将 LLM 上下文像 OS 虚拟内存一样管理，"swap out" 不相关对话，让 8K 上下文窗口也能做深度研究。
+
+### Copilot per-request 定价漏洞
+
+GitHub Copilot 按**请求**计费而非按 **token**——一次请求即使让 agent 跑 30 分钟、修改数百文件，仍然 `$0.04`。策略：
+
+1. 写极其详细的 prompt + 严格成功标准（本身就是最佳实践）
+2. 告诉 agent "一直继续直到所有错误都修复"
+3. 按回车，去冲杯咖啡，Satya Nadella 补贴你的算力成本
+
+月账单 `$60`（全天用 Opus 4.6）vs Cursor 竞品用户 `$100+`。这个套利窗口迟早被修补——但在那之前，它是已知最便宜的 agentic coding 方案。
+
+### OpenRouter：API 网关 + 故障回退
+
+不直接对接 Anthropic/Google/OpenAI 的 API。用 OpenRouter 做统一接口：
+- 一次集成 → 所有前沿模型可用
+- Anthropic API 挂了 → 自动回退到 OpenAI 等价模型
+- 用户永远看不到错误页面，不需要写复杂的重试逻辑
 
 ---
 
