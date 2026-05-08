@@ -19,7 +19,7 @@ tags:
 |-----|------|
 | Entity 页面 | 101 个 |
 | Topic 页面 | 15 个 |
-| Comparison 页面 | 4 个 |
+| Comparison 页面 | 6 个 |
 | Raw 文章 | 36 个 |
 | Output 作品 | 1 个 |
 
@@ -170,6 +170,8 @@ tags:
 | [[wiki/comparisons/Cook-vs-Chef\|Cook vs Chef]] | 创作方式、理解深度、AI 时代影响 | Taste, Conscious-Creators |
 | [[wiki/comparisons/Knowledge-Work-vs-Wisdom-Work\|Knowledge Work vs Wisdom Work]] | 核心能力、价值来源、AI 影响 | Wisdom-Work, Emotional-Clarity, Discernment, Connection |
 | [[wiki/comparisons/RAG-vs-LLM-Wiki\|RAG vs LLM Wiki]] | 知识处理、累积性、维护成本 | Context-Engineering, Multi-Layer-Memory, Andrej-Karpathy, Knowledge-Compilation, Memex |
+| [[wiki/comparisons/Taste-vs-Judgment\|Taste vs Judgment]] | 决策方式、不确定性处理、AI 时代价值 | Taste, Judgment, Refusal, Specificity |
+| [[wiki/comparisons/Vibe-Coding-vs-Software-2.0\|Vibe Coding vs Software 2.0]] | 编程范式、质量层级、开发者角色 | Vibe-Coding, Software-2.0, Andrej-Karpathy, Coding-Agents |
 
 ### Outputs (outputs/)
 *输出作品*
