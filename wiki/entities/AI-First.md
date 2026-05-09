@@ -17,6 +17,8 @@ related_entities:
   - '[[Agent-First-Enterprise]]'
   - '[[Decision-Quality]]'
   - '[[Taste]]'
+  - '[[AI-Ready-Organization]]'
+  - '[[Organizational-Self-Awareness]]'
 source_raw:
   - '[[20260413-why-ai-first-strategy-wrong]]'
 ---

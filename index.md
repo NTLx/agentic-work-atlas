@@ -118,6 +118,8 @@ tags:
 | [[wiki/entities/AI-First\|AI-First]] | 围绕"AI 是主要构建者"重新设计流程、架构和组织的范式 | Why Your "AI-First" Strategy Is Probably Wrong |
 | [[wiki/entities/AI-Capability-Gap\|AI Capability Gap]] | AI 在不同用户群体和应用场景中的不均衡进步，形成两条平行认知现实 | Karpathy X 帖 |
 | [[wiki/entities/AI-Psychosis\|AI Psychosis]] | 专业技术用户对 agentic 模型编程能力的极度震撼，与日常使用者的认知鸿沟 | Karpathy X 帖 |
+| [[wiki/entities/AI-Ready-Organization\|AI-Ready Organization]] | 能清晰描述自身目标、流程、策略，从而让 AI 有效执行的组织状态 | Daniel Miessler |
+| [[wiki/entities/Organizational-Self-Awareness\|Organizational Self-Awareness]] | 企业对自身目标、策略、工作流的清晰理解能力——AI 就绪的前提条件 | Daniel Miessler |
 | [[wiki/entities/Ontology\|Ontology]] | 对现实业务世界的数字化建模，承载企业业务的语义结构与规则 | Enterprise-Ontology-Application |
 | [[wiki/entities/TBox\|TBox]] | 本体的概念与规则部分，类比数据库 Schema | Enterprise-Ontology-Application |
 | [[wiki/entities/ABox\|ABox]] | 本体的事实数据部分，类比数据库表数据 | Enterprise-Ontology-Application |

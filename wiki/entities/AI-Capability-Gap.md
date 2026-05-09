@@ -15,6 +15,8 @@ related_entities:
   - '[[Vibe-Coding]]'
   - '[[Software-2.0]]'
   - '[[Andrej-Karpathy]]'
+  - '[[AI-Ready-Organization]]'
+  - '[[Organizational-Self-Awareness]]'
 source_raw:
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
 ---

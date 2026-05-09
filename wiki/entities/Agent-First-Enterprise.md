@@ -14,6 +14,8 @@ related_entities:
   - '[[Human-Governor-Agent-Operator]]'
   - '[[Machine-Readable-Processes]]'
   - '[[Agentic-Engineering]]'
+  - '[[AI-Ready-Organization]]'
+  - '[[Organizational-Self-Awareness]]'
 source_raw:
   - '[[Enabling agent-first process redesign]]'
 ---
