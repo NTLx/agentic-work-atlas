@@ -5,7 +5,7 @@ aliases:
   - Vibe Coding
 definition: "Andrej Karpathy 2025 年提出的概念——提升所有人的编程能力底线（raising the floor），让任何人都能通过自然语言和 agent 交互来生成软件；未经审查、原型质量是其特征而非缺陷"
 created: 2026-04-10
-updated: 2026-05-08
+updated: 2026-05-09
 tags:
   - AI-Agent
   - coding-agents
@@ -27,6 +27,7 @@ source_raw:
   - '[[20260413-why-ai-first-strategy-wrong]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - "20260127-claude-coding-notes"
+  - "[[用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践]]"
 ---
 
 # Vibe Coding（氛围编程）
@@ -93,6 +94,14 @@ Andrej Karpathy 在 LLM Wiki 文章中进一步阐述：
 - **Questioning** — 提出正确的问题
 
 ---
+
+## Vibe Coding 的工程治理代价
+
+美团实践揭示了 Vibe Coding 在团队场景下的系统性风险：当 90%+ 代码由 AI 生成，不同背景成员各自用 AI Coding，系统会**加速腐化**而非收敛复杂度。
+
+核心矛盾：Vibe Coding 提升了个体编码效率，但如果没有统一规范约束，AI 会把代码风格差异进一步放大——"千人千面"的代码在 31 万行体量下变成灾难。
+
+解法：通过 [[人机对齐]] 方法论，先拉齐团队工程标准，再将标准落地为 AI Rule/Skill，从"氛围驱动"转向"约束驱动"。
 
 ## 关联概念
 

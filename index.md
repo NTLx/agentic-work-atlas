@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 124 个 |
+| Entity 页面 | 126 个 |
 | Topic 页面 | 15 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 38 个 |
+| Raw 文章 | 39 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -135,6 +135,9 @@ tags:
 | [[wiki/entities/Dominator-Analysis\|Dominator Analysis]] | 编译器控制流图理论：节点 A 支配 B = 所有路径必经 A，用于 Agent 验证中提取 essential states | GitHub Blog: Validating agentic behavior |
 | [[wiki/entities/Elon-Musk\|Elon Musk]] | 特斯拉/SpaceX CEO，以第一性原理思考和五步工作法著称 | 成年人最大的内耗：拼命优化错误的东西 |
 | [[wiki/entities/Question-Requirements\|Question Requirements]] | Musk 五步法第一步：在优化之前先质疑存在必要性 | 成年人最大的内耗：拼命优化错误的东西 |
+
+| [[wiki/entities/人机对齐|人机对齐]] | 先人人对齐、再人机对齐的 Agent 评测→工程管理方法论 | 美团 AI Coding 实践 |
+| [[wiki/entities/渐进式重构|渐进式重构]] | 技术债拆解为业务需求顺带动作的第三条重构路 | 美团 AI Coding 实践 |
 
 #### 作者 Entities
 
