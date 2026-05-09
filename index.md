@@ -49,6 +49,7 @@ tags:
 | [[wiki/entities/History-Rewriting\|History Rewriting]] | 将 Git 历史视为可编辑叙事的理念 | Using Git with coding agents |
 | [[wiki/entities/Agentic-Engineering\|Agentic Engineering]] | 利用 AI Agent 转变开发方式的工程范式 | Using Git with coding agents |
 | [[wiki/entities/Agent-PR-Review\|Agent PR Review]] | 审查 Agent 生成的 PR 的系统性策略：5 个关键检查点 | Agent pull requests are everywhere |
+| [[wiki/entities/Agentic-Workflow-Token-Efficiency\|Agentic Workflow Token Efficiency]] | 系统性优化 Agentic Workflows token 成本的方法论 | Improving token efficiency |
 | [[wiki/entities/Claude-Code-CLI\|Claude Code CLI]] | Claude 命令行工具 | Claude Code 文章 |
 | [[wiki/entities/Headless-Mode\|Headless Mode]] | 无头运行模式 | Claude Code 文章 |
 | [[wiki/entities/Continual-Learning\|Continual Learning（持续学习）]] | 不遗忘已有知识地整合新知识——AGI 缺失的关键拼图 | Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough |
