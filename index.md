@@ -1,7 +1,7 @@
 ---
 type: index
 title: Clips 知识库索引
-updated: 2026-05-09
+updated: 2026-05-10
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 129 个 |
+| Entity 页面 | 137 个 |
 | Topic 页面 | 15 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 40 个 |
+| Raw 文章 | 44 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -142,6 +142,13 @@ tags:
 | [[wiki/entities/Software-Economic-Complexity\|Software Economic Complexity]] | 将 ECI 应用于 GitHub 数据衡量国家软件能力并预测 GDP | GitHub Innovation Graph 研究 |
 | [[wiki/entities/Digital-Dark-Matter\|Digital Dark Matter]] | 软件生产在传统经济统计中不可见的现象 | GitHub Innovation Graph 研究 |
 
+| [[wiki/entities/Corrective-RAG\|Corrective RAG]] | 通过文档相关性评分和查询重构消除 RAG 幻觉 | OncoAgent 论文 |
+| [[wiki/entities/Reflexion\|Reflexion]] | 通过语言反馈实现 Agent 自我纠正的循环模式 | OncoAgent 论文 |
+| [[wiki/entities/Dual-Tier-LLM-Architecture\|Dual-Tier LLM Architecture]] | 按查询复杂度路由到不同规模模型的分层架构 | OncoAgent 论文 |
+| [[wiki/entities/Zero-PHI-Policy\|Zero-PHI Policy]] | 处理管道最前端脱敏所有受保护健康信息的隐私策略 | OncoAgent 论文 |
+| [[wiki/entities/Sequence-Packing\|Sequence Packing]] | 将多条短序列拼接成固定长度序列以提升训练吞吐量 | OncoAgent 论文 |
+| [[wiki/entities/Hardware-Sovereignty\|Hardware Sovereignty]] | AI 系统完全在本地硬件运行，不依赖云 API | OncoAgent 论文 |
+
 | [[wiki/entities/人机对齐|人机对齐]] | 先人人对齐、再人机对齐的 Agent 评测→工程管理方法论 | 美团 AI Coding 实践 |
 | [[wiki/entities/渐进式重构|渐进式重构]] | 技术债拆解为业务需求顺带动作的第三条重构路 | 美团 AI Coding 实践 |
 
@@ -215,7 +222,7 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（39 个）*
+*原始剪藏文章（44 个）*
 
 所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。
 

@@ -143,6 +143,9 @@ Drew Breunig 提出扩展的三阶段 Agentic Coding 模型：
 - [[Vibe-Coding]] - 对比概念
 - [[Compound-Engineering]] - 持续改进模式
 - [[Git-Fluent-Agents]] - Git 实践
+- [[Corrective-RAG]] — Agentic 工程中提升 RAG 质量的核心模式
+- [[Reflexion]] — Agentic 工程中提升输出可靠性的反馈循环
+- [[Hardware-Sovereignty]] — 企业级 Agentic 部署的基础设施前提
 
 ## 来源
 

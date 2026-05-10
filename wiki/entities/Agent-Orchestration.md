@@ -125,5 +125,8 @@ Elvis 的 Agent Swarm 系统：
 - [[Three-State-Protocol]] — 协议级通信确保编排可靠性
 - [[Context-Engineering]] — 编排层持有业务上下文，编码层持有代码上下文
 - [[Agent-First-Enterprise]] — Agent 编排是 Agent-First 运营的核心实践
+- [[Corrective-RAG]] — CRAG 作为编排中的检索质量控制节点
+- [[Reflexion]] — Reflexion 循环是编排中的关键反馈模式
+- [[Dual-Tier-LLM-Architecture]] — 分层路由是编排中的请求分发策略
 
 ## 来源
