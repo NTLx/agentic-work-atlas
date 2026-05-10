@@ -17,7 +17,7 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 137 个 |
+| Entity 页面 | 139 个 |
 | Topic 页面 | 15 个 |
 | Comparison 页面 | 6 个 |
 | Raw 文章 | 44 个 |
@@ -86,6 +86,8 @@ tags:
 | [[wiki/entities/Class\|Class]] | TBox 核心元素：概念类型 | Ontology 系列 |
 | [[wiki/entities/Allocation-Economy\|Allocation Economy]] | 从知识经济转型：价值从知道什么到如何分配资源 | The Knowledge Economy Is Over |
 | [[wiki/entities/Moats-in-AI-Era\|Moats in AI Era（AI 时代护城河）]] | AI 削弱切换成本和流程效力，但网络效应和规模经济不受影响 | Boris Cherny: Why Coding Is Solved |
+| [[wiki/entities/Organizational-Shape-Moat\|Organizational Shape Moat（组织形态护城河）]] | AI 时代真正的竞争壁垒不是产品或技术，而是公司组织形态本身 | The next biggest moat in AI |
+| [[wiki/entities/Chosen-vs-Seen\|Chosen vs Seen（被选中 vs 被看见）]] | 被选中是情感的，被看见是结构性的——权限、权力、经济参与 | The next biggest moat in AI |
 | [[wiki/entities/Model-Introspection\|Model Introspection（模型自省）]] | 最被低估的 AI 技能——让模型分析自己为什么会犯错 | Cat Wu: How Anthropic's product team moves faster |
 | [[wiki/entities/Model-Manager\|Model Manager]] | 分配经济中的核心角色：分配 AI 工作、评估质量、迭代改进 | Management as AI superpower |
 | [[wiki/entities/Code-Execution\|Code Execution]] | AI Agent 直接运行代码的能力，Agentic Engineering 的决定性能力 | What is agentic engineering |
