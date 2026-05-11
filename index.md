@@ -1,7 +1,7 @@
 ---
 type: index
 title: Clips 知识库索引
-updated: 2026-05-10
+updated: 2026-05-11
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 139 个 |
+| Entity 页面 | 140 个 |
 | Topic 页面 | 15 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 44 个 |
+| Raw 文章 | 45 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -36,6 +36,7 @@ tags:
 | [[wiki/entities/Judgment\|Judgment（判断力）]] | 识别什么过于通用、什么隐藏真正权衡的能力 | Good Taste the Only Real Moat Left |
 | [[wiki/entities/Specificity\|Specificity（特异性）]] | 产生深入特定上下文内容的竞争优势 | Good Taste the Only Real Moat Left |
 | [[wiki/entities/Agent-Loops\|Agent Loops（Agent 循环调度）]] | Cron 驱动的定时自主运行 Agent 编排范式 | Boris Cherny: Why Coding Is Solved |
+| [[wiki/entities/Agent-Harness\|Agent Harness]] | 包装 LLM 的完整软件基础设施：12 组件 + 7 架构决策 | The Anatomy of an Agent Harness |
 | [[wiki/entities/Agent-First-Enterprise\|Agent-First Enterprise]] | AI 系统运营流程，人类设定目标的组织模式 | Enabling agent-first process redesign |
 | [[wiki/entities/Human-Governor-Agent-Operator\|Human-Governor-Agent-Operator]] | 人类治理、Agent 运营的分工模式 | Enabling agent-first process redesign |
 | [[wiki/entities/Machine-Readable-Processes\|Machine-Readable Processes]] | Agent 运营的技术基础设施 | Enabling agent-first process redesign |
@@ -224,7 +225,7 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（44 个）*
+*原始剪藏文章（45 个）*
 
 所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。
 

@@ -19,6 +19,7 @@ related_entities:
   - '[[Technical-Debt-Avoidance]]'
   - '[[Vibe-Coding]]'
   - '[[Harness-Engineering]]'
+  - '[[Agent-Harness]]'
   - '[[AI-First]]'
 source_raw:
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
@@ -27,7 +28,8 @@ source_raw:
   - '[[20260410-better-code]]'
   - '[[20260410-anti-patterns]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
-  - '[[Validating agentic behavior when “correct” isn’t deterministic]]'
+  - ‘[[Validating agentic behavior when “correct” isn’t deterministic]]’
+  - ‘[[The Anatomy of an Agent Harness]]’
 ---
 
 # Agentic Engineering Patterns
@@ -153,6 +155,7 @@ source_raw:
 | **Agentic Engineering** | Agent 如何有效运行工具循环？ | Code Execution + TDD + Git Fluent | Simon Willison |
 | **AI-First** | 如何围绕 AI 重建组织？ | 流程重设计 + 全职能 AI 原生 | CREAO / Peter Pang |
 | **Harness Engineering** | 如何让 Agent 成为主要构建者？ | Monorepo + 自愈循环 + 6 阶段 CI/CD | OpenAI (2026.02) + CREAO |
+| **Agent Harness** | Harness 的技术架构是什么？ | 12 组件 + 7 架构决策 + 脚手架隐喻 | Akshay Pachaar (综合分析) |
 
 > [!quote] CREAO CTO Peter Pang
 > "You build the system. The prompts are disposable."
@@ -163,6 +166,7 @@ source_raw:
 - [[Simon-Willison]] - Agentic Engineering 指南作者
 - [[Technical-Debt-Avoidance]] - Agentic Engineering 核心模式：用助手预防技术债务
 - [[Harness-Engineering]] - 让 Agent 成为主要构建者的完整系统框架
+- [[Agent-Harness]] - Harness 的 12 组件 + 7 架构决策技术框架
 - [[AI-First]] - 组织级 AI 优先范式
 
 ---

@@ -11,6 +11,7 @@ tags:
 related_entities:
   - '[[ACI-Agent-Computer-Interface]]'
   - '[[Agent-Workflow-Patterns]]'
+  - '[[Agent-Harness]]'
   - '[[Barry-Zhang]]'
   - '[[Coding-Agents]]'
   - '[[Erik-Schluntz]]'

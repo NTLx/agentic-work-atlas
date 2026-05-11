@@ -15,6 +15,7 @@ related_entities:
   - '[[Coding-Agents]]'
   - '[[Vibe-Coding]]'
   - '[[Harness-Engineering]]'
+  - '[[Agent-Harness]]'
   - '[[Compound-Engineering]]'
   - '[[Git-Fluent-Agents]]'
   - '[[Security-Hardening-Phase]]'
@@ -34,6 +35,7 @@ source_raw:
   - "20260127-claude-coding-notes"
   - "20260414-cybersecurity-proof-of-work"
   - '[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]'
+  - '[[The Anatomy of an Agent Harness]]'
 ---
 
 # Agentic Engineering
