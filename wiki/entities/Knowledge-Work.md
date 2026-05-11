@@ -5,7 +5,7 @@ aliases:
   - Knowledge Work
 definition: "以知识和专业技能为核心价值的工作形态，正在被 AI 时代取代"
 created: 2026-04-13
-updated: 2026-05-09
+updated: 2026-05-11
 tags:
   - economy
   - work
@@ -16,7 +16,8 @@ related_entities:
   - '[[Emotional-Clarity]]'
   - '[[Discernment]]'
 source_raw:
-  - '[[Knowledge Work Is Dying—Here’s What Comes Next]]'
+  - ‘[[Knowledge Work Is Dying—Here’s What Comes Next]]’
+  - ‘[[The layoffs will continue till we learn to use AI]]’
 ---
 
 # Knowledge Work（知识工作）

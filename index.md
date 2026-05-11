@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 140 个 |
+| Entity 页面 | 143 个 |
 | Topic 页面 | 15 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 45 个 |
+| Raw 文章 | 46 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -144,6 +144,8 @@ tags:
 | [[wiki/entities/Question-Requirements\|Question Requirements]] | Musk 五步法第一步：在优化之前先质疑存在必要性 | 成年人最大的内耗：拼命优化错误的东西 |
 | [[wiki/entities/Software-Economic-Complexity\|Software Economic Complexity]] | 将 ECI 应用于 GitHub 数据衡量国家软件能力并预测 GDP | GitHub Innovation Graph 研究 |
 | [[wiki/entities/Digital-Dark-Matter\|Digital Dark Matter]] | 软件生产在传统经济统计中不可见的现象 | GitHub Innovation Graph 研究 |
+| [[wiki/entities/Input-Output-Outcome\|Input-Output-Outcome]] | 区分代码（输入）、功能（输出）、用户付费（结果）的商业分析框架 | The layoffs will continue |
+| [[wiki/entities/Alignment-Tax\|Alignment Tax]] | 大型组织中跨团队协调的隐性成本——代码变便宜时暴露的瓶颈 | The layoffs will continue |
 
 | [[wiki/entities/Corrective-RAG\|Corrective RAG]] | 通过文档相关性评分和查询重构消除 RAG 幻觉 | OncoAgent 论文 |
 | [[wiki/entities/Reflexion\|Reflexion]] | 通过语言反馈实现 Agent 自我纠正的循环模式 | OncoAgent 论文 |
@@ -180,6 +182,7 @@ tags:
 | [[wiki/entities/Steve-Hanov\|Steve Hanov]] | 加拿大 Waterloo 独立开发者，6 个 $10K+ MRR 产品，月成本 $20 | Indie Developer, Bootstrap |
 | [[wiki/entities/达珍\|达珍]] | 得到App《得到头条》栏目作者 | Media |
 | [[wiki/entities/Kevin-Xu\|Kevin Xu]] | GitHub CELA Staff Software Engineer，Innovation Graph 系列博客主理人 | Open-Source, Economics |
+| [[wiki/entities/Arnav-Gupta\|Arnav Gupta]] | Facebook Infra 工程师，前 Zomato/Coding Blocks 联合创始人 | Software-Engineering, AI-Labor |
 
 ### Topics (topics/)
 *整合多篇文章的主题*
@@ -225,7 +228,7 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（45 个）*
+*原始剪藏文章（46 个）*
 
 所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。
 
@@ -260,4 +263,4 @@ status             # 查看知识库状态
 ---
 
 *索引版本: v2.4*
-*最后更新: 2026-05-09*
+*最后更新: 2026-05-11*
