@@ -1,7 +1,7 @@
 ---
 type: index
 title: Clips 知识库索引
-updated: 2026-05-11
+updated: 2026-05-13
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 146 个 |
+| Entity 页面 | 153 个 |
 | Topic 页面 | 15 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 49 个 |
+| Raw 文章 | 50 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -139,6 +139,12 @@ tags:
 | [[wiki/entities/Owlready2\|Owlready2]] | Python 本体操作库 | Enterprise-Ontology-Application |
 | [[wiki/entities/GraphDB\|GraphDB]] | RDF 三元组数据库 | Enterprise-Ontology-Application |
 | [[wiki/entities/SPARQL\|SPARQL]] | RDF/本体查询语言 | Enterprise-Ontology-Application |
+| [[wiki/entities/Conceptual-Model\|Conceptual Model（概念模型）]] | 代码作为人类和工具理解领域的结构化表达 | What Is Code? |
+| [[wiki/entities/Vocabulary-Building\|Vocabulary Building（词汇构建）]] | 将领域语言映射到技术实现中塑造新词汇的过程 | What Is Code? |
+| [[wiki/entities/Cognitive-Debt\|Cognitive Debt（认知债务）]] | AI 加速词汇产生但理解滞后导致的债务 | What Is Code? |
+| [[wiki/entities/Bounded-Context\|Bounded Context（限界上下文）]] | 模型和词汇表有效的逻辑边界 | What Is Code? |
+| [[wiki/entities/Ubiquitous-Language\|Ubiquitous Language（通用语言）]] | 开发者与专家共建的共享语言 | What Is Code? |
+| [[wiki/entities/Programming-Languages-as-Thinking-Tools\|Thinking Tools（思考工具）]] | 编程语言不仅是表达工具，也是思考工具 | What Is Code? |
 
 | [[wiki/entities/MachinaCheck\|MachinaCheck]] | 基于多 Agent 流水线的 CNC 可制造性分析系统，选择性 LLM 使用 + 本地推理 | MachinaCheck: Multi-Agent CNC Manufacturability |
 
@@ -187,6 +193,7 @@ tags:
 | [[wiki/entities/达珍\|达珍]] | 得到App《得到头条》栏目作者 | Media |
 | [[wiki/entities/Kevin-Xu\|Kevin Xu]] | GitHub CELA Staff Software Engineer，Innovation Graph 系列博客主理人 | Open-Source, Economics |
 | [[wiki/entities/Arnav-Gupta\|Arnav Gupta]] | Facebook Infra 工程师，前 Zomato/Coding Blocks 联合创始人 | Software-Engineering, AI-Labor |
+| [[wiki/entities/Unmesh-Joshi\|Unmesh Joshi]] | Thoughtworks 杰出工程师，《分布式系统模式》作者 | Software-Architecture, Distributed-Systems |
 
 ### Topics (topics/)
 *整合多篇文章的主题*

@@ -5,7 +5,7 @@ aliases:
   - Harness Engineering
 definition: "工程团队的首要工作不再是编写代码，而是构建让 AI Agent 能有效工作的系统——设计 SOP、测试基础设施、集成系统、分诊系统，使 Agent 可检查、可验证、可修改"
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-13
 tags:
   - AI-Agent
   - Software-Engineering
@@ -18,15 +18,17 @@ related_entities:
   - '[[Machine-Readable-Processes]]'
   - '[[Decision-Quality]]'
   - '[[Taste]]'
+  - '[[Conceptual-Model]]'
 source_raw:
   - '[[20260413-why-ai-first-strategy-wrong]]'
   - '[[The Anatomy of an Agent Harness]]'
+  - '[[What Is Code?]]'
 ---
 
 # Harness Engineering（驾驭工程）
 
 > [!definition] 定义
-> **Harness Engineering** 是 OpenAI 于 2026 年 2 月提出的概念：工程团队的首要工作不再是编写代码，而是让 Agent 能够有效工作。当出现问题时，解决方案从不是"再努力一把"，而是：缺少什么能力？如何让 Agent 能够理解并执行？
+> **Harness Engineering** 是 OpenAI 于 2026 年 2 月提出的概念：工程团队的首要工作不再是编写代码，而是构建让 AI Agent 能有效工作的系统。[[Unmesh-Joshi]] 补充指出：**一个具有清晰 [[Conceptual-Model|概念模型]] 和词汇表的代码库本身就是最重要的驾驭系统（Harness）和上下文。**
 
 ## 核心原则
 

@@ -5,7 +5,7 @@ aliases:
   - Software 2.0
 definition: "Andrej Karpathy 提出的概念，指明软件开发范式的转变：从程序员编写代码（Software 1.0）转向程序员编写目标、神经网络通过数据编程（Software 2.0）。"
 created: 2026-04-13
-updated: 2026-05-08
+updated: 2026-05-13
 tags:
   - AI-Agent
   - neural-networks
@@ -19,19 +19,24 @@ related_entities:
   - '[[AI-Capability-Gap]]'
   - '[[AI-Psychosis]]'
   - '[[Software-3.0]]'
+  - '[[Conceptual-Model]]'
 source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
   - '[[20260413-llm-wiki]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
+  - '[[What Is Code?]]'
 ---
 
 # Software 2.0
 
-> **核心洞察**：程序员不再写代码，而是写目标
+> **核心洞察**：程序员不再写代码，而是写目标；代码从指令演进为概念模型。
 
 ## 定义
 
-**Software 2.0** 是 Andrej Karpathy 提出的软件开发范式转变概念：
+**Software 2.0** 是 Andrej Karpathy 提出的软件开发范式转变概念：指明从程序员编写代码（Software 1.0）转向程序员编写目标、神经网络通过数据编程（Software 2.0）的转变。
+
+在 LLM 时代，[[Unmesh-Joshi]] 进一步指出，即使在 Software 2.0 范式下，代码作为 [[Conceptual-Model]] 的价值依然存在且在放大。
+
 
 | 范式 | 程序员的工作 | 程序的来源 |
 |-----|-------------|-----------|

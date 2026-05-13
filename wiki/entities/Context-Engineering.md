@@ -5,7 +5,7 @@ aliases:
   - Context Engineering
 definition: "Context Engineering 是设计 Agent 每次推理时看到的完整信息结构，包括 SOUL.md、AGENTS.md、Skills 按需加载、上下文生命周期管理等。"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-13
 tags:
   - AI-Agent
   - OpenClaw
@@ -14,14 +14,16 @@ related_entities:
   - '[[Agent-Orchestration]]'
   - '[[Multi-Layer-Memory]]'
   - '[[Claude-Code-CLI]]'
+  - '[[Conceptual-Model]]'
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
+  - '[[What Is Code?]]'
 ---
 
 # Context Engineering
 
 > [!definition] 定义
-> Context Engineering（上下文工程）是设计 Agent 每次推理时看到的完整信息结构——系统级的信息架构设计。它决定了 Agent 能记住什么、能遵守什么规则、能做出什么决策。
+> Context Engineering（上下文工程）是设计 Agent 每次推理时看到的完整信息结构——系统级的信息架构设计。[[Unmesh-Joshi]] 指出，一个具有稳定词汇和清晰 [[Conceptual-Model|概念模型]] 的代码库本身就是最重要的上下文工程（Context Engineering）。
 
 ## 核心问题：Agent 系统的热力学第二定律
 
