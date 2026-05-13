@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 159 个 |
-| Topic 页面 | 16 个 |
+| Entity 页面 | 164 个 |
+| Topic 页面 | 17 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 52 个 |
+| Raw 文章 | 54 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -152,6 +152,12 @@ tags:
 
 | [[wiki/entities/MachinaCheck\|MachinaCheck]] | 基于多 Agent 流水线的 CNC 可制造性分析系统，选择性 LLM 使用 + 本地推理 | MachinaCheck: Multi-Agent CNC Manufacturability |
 
+| [[wiki/entities/GBrain\|GBrain]] | Garry Tan 的 Agent 知识管理系统——混合检索 + 图谱实体关系，Thin Harness, Fat Skills | 深度解析 LLM Wiki / Obsidian-Wiki / GBrain |
+| [[wiki/entities/Obsidian-Wiki\|Obsidian-Wiki]] | 基于 Skill 的多 Agent 框架，工程化实现 LLM Wiki——Agent 无关、Skill 驱动 | 深度解析 LLM Wiki / Obsidian-Wiki / GBrain |
+| [[wiki/entities/Progressive-Disclosure\|Progressive-Disclosure（渐进式披露）]] | 根据上下文动态加载知识的策略——LLM Wiki 和 GBrain 的核心检索机制 | 深度解析 LLM Wiki / Obsidian-Wiki / GBrain |
+| [[wiki/entities/Thin-Harness-Fat-Skills\|Thin-Harness-Fat-Skills]] | GBrain 架构哲学——Harness 做薄、Skills 做厚 | 深度解析 LLM Wiki / Obsidian-Wiki / GBrain |
+| [[wiki/entities/Latent-Space-vs-Deterministic\|Latent-Space-vs-Deterministic]] | GBrain 核心洞察——LLM 决定做什么（潜在空间），代码保证如何做（确定性） | 深度解析 LLM Wiki / Obsidian-Wiki / GBrain |
+
 | [[wiki/entities/Adversarial-Distillation\|Adversarial Distillation]] | 工程师为避免被 Skills 系统替代而采取的对抗策略 | 工程师抗拒被"蒸馏" |
 | [[wiki/entities/Dominator-Analysis\|Dominator Analysis]] | 编译器控制流图理论：节点 A 支配 B = 所有路径必经 A，用于 Agent 验证中提取 essential states | GitHub Blog: Validating agentic behavior |
 | [[wiki/entities/Elon-Musk\|Elon Musk]] | 特斯拉/SpaceX CEO，以第一性原理思考和五步工作法著称 | 成年人最大的内耗：拼命优化错误的东西 |
@@ -222,6 +228,7 @@ tags:
 | [[wiki/topics/Enterprise-Ontology-Application\|企业级本体应用]] | 用本体为 AI Agent 提供统一的业务语义层 | Ontology, TBox, ABox, OWL, Ontology-Agent |
 | [[wiki/topics/Musk-First-Principles-Thinking\|马斯克的第一性原理思考]] | Musk 五步工作法：质疑需求 → 删减 → 优化 → 加速 → 自动化 | Elon-Musk, Question-Requirements, YAGNI, Refusal |
 | [[wiki/topics/AI-Apprenticeship-and-Lehrwerkstatt\|AI 学徒制与教学工坊]] | 通过公开交互、渗透学习重建组织内的学徒制 | Lehrwerkstatt, Osmosis-Learning, Tobi-Lütke |
+| [[wiki/topics/Agent-Knowledge-Management\|Agent 知识管理与自进化]] | LLM Wiki、Obsidian-Wiki、GBrain 三种知识自组织与自进化的技术路径与工程实践 | LLM-Wiki, GBrain, Obsidian-Wiki, Progressive-Disclosure, Thin-Harness-Fat-Skills |
 
 ### Comparisons (comparisons/)
 *对比分析页面*
@@ -248,7 +255,9 @@ tags:
 
 *原始剪藏文章（49 个）*
 
-所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。
+*所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
+
+最新编译：[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的"自组织"与"自进化"]]
 
 ---
 
@@ -280,5 +289,5 @@ status             # 查看知识库状态
 
 ---
 
-*索引版本: v2.4*
-*最后更新: 2026-05-11*
+*索引版本: v2.5*
+*最后更新: 2026-05-13*

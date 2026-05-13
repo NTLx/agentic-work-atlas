@@ -4,9 +4,9 @@ title: LLM Wiki
 aliases:
   - LLM Wiki
   - LLM 知识库
-definition: "用 LLM 将文档集合编译为结构化 Wiki 的知识管理范式——对固定数据进行多次重编译和重排列，每次产生新的洞察投影，人始终是最终理解者"
+definition: "用 LLM 将文档集合编译为结构化 Wiki 的知识管理范式——三层架构（Raw → Wiki → Schema），LLM 持久维护知识体，人类负责策展与提问"
 created: 2026-05-08
-updated: 2026-05-08
+updated: 2026-05-13
 tags:
   - knowledge-management
   - AI
@@ -17,9 +17,13 @@ related_entities:
   - "[[Memex]]"
   - "[[Software-3.0]]"
   - "[[Andrej-Karpathy]]"
+  - "[[Obsidian-Wiki]]"
+  - "[[GBrain]]"
+  - "[[Progressive-Disclosure]]"
 source_raw:
   - "[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]"
   - "[[20260413-llm-wiki]]"
+  - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的"自组织"与"自进化"]]"
 ---
 
 # LLM Wiki
@@ -41,6 +45,15 @@ source_raw:
 - LLM 输出的重组结构需要人工验证和筛选——LLM 可能产生虚假关联
 - 信息的"投影"质量依赖 prompt 设计和编译策略
 - 不适用于需要实时更新的动态知识（更适合相对稳定的文档集合）
+- 纯 Markdown 文件存储在数据量大时（数百到低千页面）检索困难——规模天花板明显
+- 所有摄取、Lint 操作需手动触发或外部脚本，无内建自动化调度
+
+## 工程化演进
+
+LLM Wiki 的理念催生了两个重要的工程化实现：
+
+- **[[Obsidian-Wiki]]**：基于 Skill 的多 Agent 框架，Agent 无关（9+ 种）、Skill 驱动、Obsidian 原生。核心增强包括 Delta 追踪（SHA-256 哈希）、来源可信度边界、溯源标记系统（extracted/inferred/ambiguous）、Agent History Ingest Skills
+- **[[GBrain]]**：Y Combinator CEO Garry Tan 构建，引入混合检索（向量粗筛 + 文件精读）解决规模天花板，通过基于规则的图谱实体关系管理实现结构化知识图谱。设计哲学为 [[Thin-Harness-Fat-Skills]] 和 [[Latent-Space-vs-Deterministic]]
 
 ## 关联概念
 
@@ -49,3 +62,6 @@ source_raw:
 - [[Memex]] — Vannevar Bush 1945 年提出的信息关联愿景，LLM Wiki 是其 AI 增强版
 - [[Software-3.0]] — LLM Wiki 是 Software 3.0 在知识管理中的应用
 - [[RAG-vs-LLM-Wiki]] — 两种范式的对比
+- [[Obsidian-Wiki]] — LLM Wiki 的工程化实现（Agent 历史摄入 + Skill 系统）
+- [[GBrain]] — LLM Wiki 的工程化实现（混合检索 + 图谱关系）
+- [[Progressive-Disclosure]] — LLM Wiki 的核心知识组织机制
