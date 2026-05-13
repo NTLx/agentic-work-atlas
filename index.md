@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 153 个 |
-| Topic 页面 | 15 个 |
+| Entity 页面 | 159 个 |
+| Topic 页面 | 16 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 50 个 |
+| Raw 文章 | 52 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -145,6 +145,10 @@ tags:
 | [[wiki/entities/Bounded-Context\|Bounded Context（限界上下文）]] | 模型和词汇表有效的逻辑边界 | What Is Code? |
 | [[wiki/entities/Ubiquitous-Language\|Ubiquitous Language（通用语言）]] | 开发者与专家共建的共享语言 | What Is Code? |
 | [[wiki/entities/Programming-Languages-as-Thinking-Tools\|Thinking Tools（思考工具）]] | 编程语言不仅是表达工具，也是思考工具 | What Is Code? |
+| [[wiki/entities/Model-Context-Protocol-MCP\|MCP（Model Context Protocol）]] | 统一的模型与工具连接协议标准 | Building an MCP Ecosystem at Pinterest |
+| [[wiki/entities/MCP-Registry\|MCP Registry（MCP 注册表）]] | MCP 生态中的发现、鉴权与治理中心 | Building an MCP Ecosystem at Pinterest |
+| [[wiki/entities/Lehrwerkstatt\|Lehrwerkstatt（教学工坊）]] | 通过公开 AI 交互实现全员渗透式学习的组织模式 | Learning on the Shop floor |
+| [[wiki/entities/Osmosis-Learning\|Osmosis Learning（渗透式学习）]] | 通过观察他人实践自然习得知识的机制 | Learning on the Shop floor |
 
 | [[wiki/entities/MachinaCheck\|MachinaCheck]] | 基于多 Agent 流水线的 CNC 可制造性分析系统，选择性 LLM 使用 + 本地推理 | MachinaCheck: Multi-Agent CNC Manufacturability |
 
@@ -194,6 +198,8 @@ tags:
 | [[wiki/entities/Kevin-Xu\|Kevin Xu]] | GitHub CELA Staff Software Engineer，Innovation Graph 系列博客主理人 | Open-Source, Economics |
 | [[wiki/entities/Arnav-Gupta\|Arnav Gupta]] | Facebook Infra 工程师，前 Zomato/Coding Blocks 联合创始人 | Software-Engineering, AI-Labor |
 | [[wiki/entities/Unmesh-Joshi\|Unmesh Joshi]] | Thoughtworks 杰出工程师，《分布式系统模式》作者 | Software-Architecture, Distributed-Systems |
+| [[wiki/entities/Tobi-Lütke\|Tobi Lütke]] | Shopify 创始人兼 CEO，倡导“教学工坊”模式 | Entrepreneurship, Engineering-Culture |
+| [[wiki/entities/Pinterest-Engineering\|Pinterest Engineering]] | Pinterest 工程团队，MCP 实践先驱 | AI-Agent, Infrastructure |
 
 ### Topics (topics/)
 *整合多篇文章的主题*
@@ -215,6 +221,7 @@ tags:
 | [[wiki/topics/Lean-Indie-Engineering\|精益独立开发]] | 独立开发者用极低技术成本运营盈利产品的工程哲学 | Steve-Hanov, Lean-Stack, Runway-Math |
 | [[wiki/topics/Enterprise-Ontology-Application\|企业级本体应用]] | 用本体为 AI Agent 提供统一的业务语义层 | Ontology, TBox, ABox, OWL, Ontology-Agent |
 | [[wiki/topics/Musk-First-Principles-Thinking\|马斯克的第一性原理思考]] | Musk 五步工作法：质疑需求 → 删减 → 优化 → 加速 → 自动化 | Elon-Musk, Question-Requirements, YAGNI, Refusal |
+| [[wiki/topics/AI-Apprenticeship-and-Lehrwerkstatt\|AI 学徒制与教学工坊]] | 通过公开交互、渗透学习重建组织内的学徒制 | Lehrwerkstatt, Osmosis-Learning, Tobi-Lütke |
 
 ### Comparisons (comparisons/)
 *对比分析页面*

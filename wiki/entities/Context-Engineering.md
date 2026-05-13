@@ -15,15 +15,22 @@ related_entities:
   - '[[Multi-Layer-Memory]]'
   - '[[Claude-Code-CLI]]'
   - '[[Conceptual-Model]]'
+  - '[[Model-Context-Protocol-MCP]]'
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[What Is Code?]]'
+  - '[[Building an MCP Ecosystem at Pinterest]]'
 ---
 
 # Context Engineering
 
 > [!definition] 定义
 > Context Engineering（上下文工程）是设计 Agent 每次推理时看到的完整信息结构——系统级的信息架构设计。[[Unmesh-Joshi]] 指出，一个具有稳定词汇和清晰 [[Conceptual-Model|概念模型]] 的代码库本身就是最重要的上下文工程（Context Engineering）。
+
+## 核心实践案例
+
+### Pinterest：按需注入工具（Domain-specific MCP）
+[[Pinterest-Engineering]] 通过拆分多个领域特定的 **[[Model-Context-Protocol-MCP|MCP]]** 服务器，实现了上下文的“按需加载”。Agent 在处理 Presto 数据时只加载 Presto 相关的工具，而不是将所有（如 Spark, Airflow）工具全部堆在上下文窗口中。这有效地减少了噪声，提高了 Agent 决策的准确性。
 
 ## 核心问题：Agent 系统的热力学第二定律
 

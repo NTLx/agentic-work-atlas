@@ -17,15 +17,22 @@ related_entities:
   - '[[Discernment]]'
   - '[[Cognitive-Debt]]'
   - '[[Vocabulary-Building]]'
+  - '[[Lehrwerkstatt]]'
 source_raw:
   - ‘[[Knowledge Work Is Dying—Here’s What Comes Next]]’
   - ‘[[The layoffs will continue till we learn to use AI]]’
   - '[[What Is Code?]]'
+  - '[[Learning on the Shop floor]]'
 ---
 
 # Knowledge Work（知识工作）
 
-> **核心转变**：知识工作正在消亡，核心价值从“信息生产”转向“概念建模”与“智慧判断”。
+> **核心转变**：知识工作正在消亡，核心价值从“信息生产”转向“概念建模”、“透明协作”与“智慧判断”。
+
+## 关键进化方向
+
+### 从私密黑盒到公开透明
+传统的知识工作往往发生在 DMs、邮件或私密会议中，形成了“最慢秘密”的传播阻碍。[[Tobi-Lütke]] 通过强制 Agent 交互公开化（[[Lehrwerkstatt]]），将知识工作转化为了全员可观察、可学习的学徒制场域，加速了组织内部的“智慧扩散”。
 
 ## 定义
 

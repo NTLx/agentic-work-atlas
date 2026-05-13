@@ -19,16 +19,23 @@ related_entities:
   - '[[Decision-Quality]]'
   - '[[Taste]]'
   - '[[Conceptual-Model]]'
+  - '[[MCP-Registry]]'
 source_raw:
   - '[[20260413-why-ai-first-strategy-wrong]]'
   - '[[The Anatomy of an Agent Harness]]'
   - '[[What Is Code?]]'
+  - '[[Building an MCP Ecosystem at Pinterest]]'
 ---
 
 # Harness Engineering（驾驭工程）
 
 > [!definition] 定义
 > **Harness Engineering** 是 OpenAI 于 2026 年 2 月提出的概念：工程团队的首要工作不再是编写代码，而是构建让 AI Agent 能有效工作的系统。[[Unmesh-Joshi]] 补充指出：**一个具有清晰 [[Conceptual-Model|概念模型]] 和词汇表的代码库本身就是最重要的驾驭系统（Harness）和上下文。**
+
+## 核心实践案例
+
+### Pinterest：治理型驾驭（MCP Registry）
+[[Pinterest-Engineering]] 通过构建 **[[MCP-Registry|MCP 注册表]]**，为 Agent 建立了一套准入和鉴权机制。这是一种典型的治理型驾驭：它规定了哪些工具是“受信任的”，并根据用户权限动态调整 Agent 的能力范围，从而在保证生产力的同时控制了 AI 的“爆炸半径（Blast Radius）”。
 
 ## 核心原则
 

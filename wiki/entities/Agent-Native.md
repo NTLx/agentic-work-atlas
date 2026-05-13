@@ -6,7 +6,7 @@ aliases:
   - Agent 原生
 definition: "为 AI agent 而非人类设计的基础设施、文档、流程和交互界面——将系统分解为传感器（sensors）和执行器（actuators），让 agent 可以直接理解和操作"
 created: 2026-05-08
-updated: 2026-05-08
+updated: 2026-05-13
 tags:
   - AI
   - agent
@@ -17,14 +17,26 @@ related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Agent-First-Enterprise]]"
   - "[[Andrej-Karpathy]]"
+  - "[[Model-Context-Protocol-MCP]]"
+  - "[[Lehrwerkstatt]]"
 source_raw:
   - "[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]"
+  - "[[Building an MCP Ecosystem at Pinterest]]"
+  - "[[Learning on the Shop floor]]"
 ---
 
 # Agent-Native（Agent 原生）
 
 > [!definition] 定义
 > **Agent-Native** 是 Andrej Karpathy 在 Sequoia AI Ascent 2026 上提出的概念：当前一切基础设施——文档、API、部署平台、DNS 配置——都是为人类阅读和操作设计的。Agent-Native 要求将这些系统重构为 agent 可直接消费和操作的形态，分解为传感器（sensors，感知世界）和执行器（actuators，作用于世界）。
+
+## 关键实践案例
+
+### Pinterest：标准化的执行器（MCP）
+[[Pinterest-Engineering]] 通过部署 **[[Model-Context-Protocol-MCP|MCP]]** 生态系统，将内部复杂的 Presto、Spark 等数据系统封装为 Agent 可直接调用的“执行器（Actuators）”。这种标准化的连接协议使得 Agent 无需理解复杂的 API，只需通过统一协议即可操作生产系统。
+
+### Shopify：原生透明的场域（Lehrwerkstatt）
+Shopify 的 River Agent 强制在公开频道工作（[[Lehrwerkstatt]]），这是一种组织层面的 Agent-Native：它不仅让 Agent 融入工作流，还利用 Agent 的交互过程来重新塑造人类的协作与学习模式。
 
 ## 关键数据点
 
