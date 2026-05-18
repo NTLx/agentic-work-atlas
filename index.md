@@ -157,15 +157,12 @@ tags:
 | [[wiki/entities/Osmosis-Learning\|Osmosis Learning（渗透式学习）]] | 通过观察他人实践自然习得知识的机制 | Learning on the Shop floor |
 | [[wiki/entities/Public-only-Constraint\|Public-only Constraint（公开频道约束）]] | 要求 Agent 只在公开协作空间工作，用透明交互换取组织学习 | Learning on the Shop floor |
 | [[wiki/entities/River-Agent\|River Agent]] | Shopify 内部公开运行的 AI Agent，承载渗透式学习实践 | Learning on the Shop floor |
-
 | [[wiki/entities/MachinaCheck\|MachinaCheck]] | 基于多 Agent 流水线的 CNC 可制造性分析系统，选择性 LLM 使用 + 本地推理 | MachinaCheck: Multi-Agent CNC Manufacturability |
-
 | [[wiki/entities/GBrain\|GBrain]] | Garry Tan 的 Agent 知识管理系统——混合检索 + 图谱实体关系，Thin Harness, Fat Skills | 深度解析 LLM Wiki / Obsidian-Wiki / GBrain |
 | [[wiki/entities/Obsidian-Wiki\|Obsidian-Wiki]] | 基于 Skill 的多 Agent 框架，工程化实现 LLM Wiki——Agent 无关、Skill 驱动 | 深度解析 LLM Wiki / Obsidian-Wiki / GBrain |
 | [[wiki/entities/Progressive-Disclosure\|Progressive-Disclosure（渐进式披露）]] | 根据上下文动态加载知识的策略——LLM Wiki 和 GBrain 的核心检索机制 | 深度解析 LLM Wiki / Obsidian-Wiki / GBrain |
 | [[wiki/entities/Thin-Harness-Fat-Skills\|Thin-Harness-Fat-Skills]] | GBrain 架构哲学——Harness 做薄、Skills 做厚 | 深度解析 LLM Wiki / Obsidian-Wiki / GBrain |
 | [[wiki/entities/Latent-Space-vs-Deterministic\|Latent-Space-vs-Deterministic]] | GBrain 核心洞察——LLM 决定做什么（潜在空间），代码保证如何做（确定性） | 深度解析 LLM Wiki / Obsidian-Wiki / GBrain |
-
 | [[wiki/entities/Adversarial-Distillation\|Adversarial Distillation]] | 工程师为避免被 Skills 系统替代而采取的对抗策略 | 工程师抗拒被"蒸馏" |
 | [[wiki/entities/Dominator-Analysis\|Dominator Analysis]] | 编译器控制流图理论：节点 A 支配 B = 所有路径必经 A，用于 Agent 验证中提取 essential states | GitHub Blog: Validating agentic behavior |
 | [[wiki/entities/Elon-Musk\|Elon Musk]] | 特斯拉/SpaceX CEO，以第一性原理思考和五步工作法著称 | 成年人最大的内耗：拼命优化错误的东西 |
@@ -174,14 +171,12 @@ tags:
 | [[wiki/entities/Digital-Dark-Matter\|Digital Dark Matter]] | 软件生产在传统经济统计中不可见的现象 | GitHub Innovation Graph 研究 |
 | [[wiki/entities/Input-Output-Outcome\|Input-Output-Outcome]] | 区分代码（输入）、功能（输出）、用户付费（结果）的商业分析框架 | The layoffs will continue |
 | [[wiki/entities/Alignment-Tax\|Alignment Tax]] | 大型组织中跨团队协调的隐性成本——代码变便宜时暴露的瓶颈 | The layoffs will continue |
-
 | [[wiki/entities/Corrective-RAG\|Corrective RAG]] | 通过文档相关性评分和查询重构消除 RAG 幻觉 | OncoAgent 论文 |
 | [[wiki/entities/Reflexion\|Reflexion]] | 通过语言反馈实现 Agent 自我纠正的循环模式 | OncoAgent 论文 |
 | [[wiki/entities/Dual-Tier-LLM-Architecture\|Dual-Tier LLM Architecture]] | 按查询复杂度路由到不同规模模型的分层架构 | OncoAgent 论文 |
 | [[wiki/entities/Zero-PHI-Policy\|Zero-PHI Policy]] | 处理管道最前端脱敏所有受保护健康信息的隐私策略 | OncoAgent 论文 |
 | [[wiki/entities/Sequence-Packing\|Sequence Packing]] | 将多条短序列拼接成固定长度序列以提升训练吞吐量 | OncoAgent 论文 |
 | [[wiki/entities/Hardware-Sovereignty\|Hardware Sovereignty]] | AI 系统完全在本地硬件运行，不依赖云 API | OncoAgent 论文 |
-
 | [[wiki/entities/人机对齐|人机对齐]] | 先人人对齐、再人机对齐的 Agent 评测→工程管理方法论 | 美团 AI Coding 实践 |
 | [[wiki/entities/渐进式重构|渐进式重构]] | 技术债拆解为业务需求顺带动作的第三条重构路 | 美团 AI Coding 实践 |
 
