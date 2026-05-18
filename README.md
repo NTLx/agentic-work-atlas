@@ -707,6 +707,7 @@ docs(schema): 用 Git Commit 规范替代 log.md 记录操作历史
 | `rebuild` | 重新编译全部 Raw 文件（批量回溯） |
 | `compile-ljg <文件名>` | 使用 ljg 增强路径深度编译 |
 | `lint` | 执行 `python3 tools/wiki-lint.py --fix-index --write-report` |
+| `audit-entities` | 执行 `python3 tools/entity-audit.py --write-report`，审计 Entity 价值与清理队列 |
 | `fix-lint` | 按 lint 报告逐项修复，输出修复前后对比 |
 | `lint-plain <entity>` | 用 ljg-plain 校验 Entity definition 可读性 |
 | `cast <页面>` | 用 ljg-card 将 Entity/Topic 转为 PNG 传播卡片 |
@@ -849,13 +850,50 @@ PYEOF
 
 ## 概念筛选标准（决定是否建立 Entity）
 
+Entity 不是术语抽取结果，而是可复用的知识节点。默认立场是**不建**：只有当独立页面能降低未来理解成本、承载多源综合或作为 topic/comparison 的枢纽时，才建立 Entity。
+
+### Entity 准入信号
+
+新建 Entity 前至少满足以下 2 项；只满足 1 项时，优先写入 source summary 或 topic 小节。
+
+| 信号 | 判定标准 |
+|------|---------|
+| 多源复用 | 已在 2 篇以上 raw 中出现，或确定会在后续主题中持续复用 |
+| Topic 承载 | 某个 topic/comparison 需要它作为结构节点 |
+| 概念稳定 | 是明确命名的方法论、框架、范式、协议或长期概念 |
+| 冲突整合 | 不同来源对它有不同定义、前提或边界，需要独立页记录 |
+| 高查询价值 | 未来很可能被直接问“什么是 X”或用于跨文章比较 |
+| Actor 验证 | 作者/组织/项目确有持续来源价值，且可记录 `validated_source` |
+
 | 类型 | 处理方式 | 示例 |
 |------|---------|------|
-| 工具/产品名 | 不建 Entity | OpenClaw, Obsidian, RAG |
-| 框架/方法论（单篇出现） | 不建 Entity | HUMAN-3.0, Runtime-RAG |
+| 工具/产品名 | 默认不建，除非多次复用或是架构关键节点 | OpenClaw, Obsidian |
+| 单篇内部细节 | 不建 Entity，放入来源摘要或 topic 小节 | 某次实验参数、单篇指标 |
+| 框架/方法论（单篇出现） | 默认不建，除非具有强迁移价值 | HUMAN-3.0, Runtime-RAG |
 | 人名（仅提及） | 不建 Entity | Dan-Koe |
 | 通用泛概念（单篇出现） | 不建 Entity | AI-Adoption, AI-Transformation |
-| 多篇文章重复出现 | ✅ 评估后建 Entity | Taste, Agentic-Engineering |
+| 多篇文章重复出现 | 评估后建 Entity | Taste, Agentic-Engineering |
+
+### Entity 留存规则
+
+- **核心 Entity**：多源、topic/comparison 承载、或 graph 入链高；保留并持续维护。
+- **支撑 Entity**：单源但被多个 Entity 引用；保留，但应补入 topic 或 comparison。
+- **候选 Entity**：单源、无 topic/comparison 承载；进入 review 队列。
+- **降级候选**：单源且无 graph 入链；优先合并到更大的 Entity/topic/source summary，除非用户明确需要独立页。
+- **删除前置条件**：删除前必须确认内容已迁移到 raw/source summary/topic，且所有 wikilink 已修复。
+
+### Entity 审计命令
+
+```bash
+python3 tools/entity-audit.py --write-report
+```
+
+报告输出到 `docs/entity-audit-YYYY-MM-DD.md`（`docs/` 已被 Quartz 忽略），分为：
+- `keep`：结构价值明确
+- `keep-actor`：已验证人物/组织类节点
+- `strengthen`：值得保留但需要补来源或链接
+- `review`：单源且缺 topic/comparison 承载
+- `merge-or-demote`：单源且无 graph 入链，优先合并或降级
 
 ### 重复来源：保留一手来源
 
@@ -880,6 +918,7 @@ PYEOF
 | `index.md` | 知识库索引 |
 | `wiki/lint-report.md` | 最新 lint 报告 |
 | `tools/wiki-lint.py` | 通用 Wiki 维护门禁，不属于任何 Agent 插件 |
+| `tools/entity-audit.py` | Entity 价值审计脚本，输出 review/merge 队列 |
 
 ---
 

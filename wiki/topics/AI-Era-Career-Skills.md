@@ -2,13 +2,14 @@
 type: topic
 title: AI-Era Career Skills
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-05-18
 tags:
   - AI-Agent
   - productivity
   - career
 related_entities:
   - '[[Judgment]]'
+  - '[[Model-Introspection]]'
   - '[[Taste]]'
 source_raw: []
 ---
@@ -81,6 +82,12 @@ source_raw: []
 
 **类比**: 智能手机人人都有，但装了什么 App 决定了你用它刷短视频还是重构工作流。Skills 就是 AI 时代的 App Store。
 
+### Model Introspection：把错误变成技能
+
+AI 时代的高阶技能不只是会写 prompt，还包括让模型解释自己的错误路径。[[Model-Introspection|模型自省]] 能把一次失败转化为可复用的调试规则：为什么模型会误判、它默认补了什么前提、下次应该给什么约束。
+
+这类能力属于判断力训练，而不是工具熟练度训练。
+
 ### 安全意识
 
 只用可信来源：
@@ -94,4 +101,5 @@ source_raw: []
 
 - [[Judgment]] - Skill 放大判断力，不替代思考
 - [[Taste]] - 优质 Skill 需品味设计工作流程
+- [[Model-Introspection]] - 从模型错误中提炼可复用调试经验
 - [[Wisdom-Work]] - 知识工作正在向智慧工作转变
