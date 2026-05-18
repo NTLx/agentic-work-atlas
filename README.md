@@ -1,16 +1,57 @@
-# Clips LLM Wiki Schema
+# Clips / Agentic Work Atlas Schema
 
-本文档定义 Clips 知识库的架构、工作流和规范，指导 AI Agent 运营和维护这个 LLM Wiki。
+本文档定义 Clips（本地工作代号）/ Agentic Work Atlas（正式名称）知识库的架构、工作流和规范，指导 AI Agent 运营和维护这个主题 Wiki。
 
 ---
 
 ## 知识库定位
 
-Clips 是一个**大杂烩文章剪藏 Wiki**，收集各类有价值的网络文章，通过 LLM Wiki 模式实现：
+Clips 不再被视为一个泛泛的大杂烩文章剪藏库，而是一个围绕 **AI / Agent 如何重写工作系统** 的主题知识库。
+
+本库的关注点不是“AI 很热”，而是把 AI / Agent 视为新的**生产与认知基础设施**，持续研究它如何改写以下四个层面：
+
+- **软件工程**：Agentic Engineering、coding agents、verification、harness、tool use
+- **组织系统**：流程重构、岗位演化、AI-ready organization、deployment / forward deployment
+- **知识系统**：LLM Wiki、知识编译、context engineering、本体、可复用语义层
+- **人的核心价值**：判断力、品味、概念建模、责任承担与智慧工作
+
+本库仍通过 LLM Wiki 模式实现：
 
 - **知识编译**：将原始文章提炼为结构化知识
 - **概念提取**：从文章中提取核心概念，建立 entity 页面
 - **持续累积**：每次编译都沉淀到 wiki 层，避免重复处理
+
+### 正式名称与仓库命名
+
+- **中文正式名称**：智能体时代工作图谱
+- **英文正式名称**：Agentic Work Atlas
+- **GitHub 仓库名建议**：`agentic-work-atlas`
+- **过渡约定**：`Clips` 仅作为本地目录名、历史代号和兼容性称呼保留；对外命名、新仓库和新说明文档优先使用正式名称
+
+### 主题宪法
+
+以下原则高于“看到一篇好文章就收”的冲动，是后续剪藏、编译、重编译、归档和删除的统一依据：
+
+- **主问题优先**：优先回答“AI / Agent 如何重写工作系统”，不优先追逐新闻热度
+- **结构性优先**：优先收录能沉淀为 entity / topic / comparison 的结构性材料，而不是一次性观点或情绪表达
+- **机制优先于态度**：优先要方法、机制、案例、约束、失败模式，不优先要泛泛态度表述
+- **工作语境约束**：判断力、品味、领导力、教育、经济等主题，只有在能够直接解释 AI 时代工作变迁时才进入主线
+
+### 收录范围
+
+- **Agentic engineering**：AI coding、agent harness、tool use、verification、review、token efficiency、workflow patterns
+- **组织与部署**：AI-ready organization、流程重构、岗位变迁、FDE、deployment、agent-native operating model
+- **知识与语义层**：LLM Wiki、知识编译、本体、knowledge graph、context engineering、memory / retrieval 设计
+- **人的剩余价值**：与 AI 时代工作直接相关的 judgment、taste、discernment、ownership、wisdom work
+- **高密度一手材料**：工程复盘、实践手册、研究论文、访谈实录、原始博客，而非二手转述
+
+### 排除范围
+
+- **纯新闻**：产品发布、融资消息、岗位热度、行业八卦，除非提出新的结构性模式
+- **泛管理 / 泛励志**：与 Agentic work 没有直接机制连接的创业、管理或自我提升内容
+- **弱机制宏观评论**：只有大结论、没有案例、没有约束、没有可复用概念的宏大叙事
+- **主线外材料**：与软件工程、组织流程、知识系统或判断力主线弱连接的社会观察、哲学抒情、宏观经济评论
+- **低信息密度来源**：低密度长转写、二手转载、重复翻译；若已有更好的一手来源，默认不保留
 
 ---
 
@@ -180,6 +221,33 @@ python3 .sisyphus/ljg-wiki-wrapper.py --all
 - **原则**：`raw/` 是 source of truth，尽量只保存原文、剪藏元数据和必要修正，不承载持续演化的分析。
 - **历史兼容**：已有 raw 文件中的 `## 编译摘要` 保留，不强制迁移；新编译优先把分析沉淀到 `wiki/entities/`、`wiki/topics/`、`wiki/comparisons/` 或必要时的 source summary 页面。
 - **文件名安全**：raw 文件名必须能作为 Obsidian/Quartz wikilink 目标。避免裸 `$`、竖线 `|`、外层引号、未配对引号；金额用 `USD20` 这类链接安全写法，正文标题可保留原始写法。
+
+### Raw 价值评判与去留原则
+
+评估 raw 是否值得保留、编译或重编译时，默认先问 3 个问题：
+
+1. 它是否直接帮助解释 **AI / Agent 如何重写工作系统**？
+2. 它是否能沉淀为未来可复用的 entity、topic 或 comparison，而不只是一次性观点？
+3. 在同类材料中，它是否是一手来源、信息密度更高，或提供了更强的案例 / 数据 / 方法？
+
+默认判定规则：
+
+- **3 个问题命中 2 个以上**：保留，进入编译候选
+- **只命中 1 个**：保留但降优先级，必要时归档而不编译
+- **0 个命中**：视为偏离主线，优先剔除或移出 active `raw/`
+
+典型保留信号：
+
+- 一手工程实践、组织复盘、部署案例、研究论文、方法论文章
+- 能稳定产出 2 个以上可复用概念，或明显补强既有 topic
+- 对已有主线材料形成冲突、补充或更高分辨率的解释
+
+典型剔除 / 归档信号：
+
+- 只有态度，没有机制；只有结论，没有证据
+- 和现有 raw 高度重复，但来源更差、密度更低
+- 虽然写得不错，但与主线只存在抽象层面的弱联系
+- 长转写材料中有效信息极少，且已被更好的原文或摘要覆盖
 
 ---
 
@@ -724,9 +792,9 @@ docs(schema): 用 Git Commit 规范替代 log.md 记录操作历史
 
 | 命令 | 说明 |
 |-----|------|
-| `compile` | 编译 raw 中所有未处理的文件 |
+| `compile` | 编译 raw 中所有**通过主题筛选**的未处理文件 |
 | `compile <文件名>` | 编译指定文件（优先使用 ljg 增强路径） |
-| `rebuild` | 重新编译全部 Raw 文件（批量回溯） |
+| `rebuild` | 重新编译全部**主线内** Raw 文件（批量回溯） |
 | `compile-ljg <文件名>` | 使用 ljg 增强路径深度编译 |
 | `lint` | 执行 `python3 tools/wiki-lint.py --fix-index --write-report` |
 | `audit-entities` | 执行 `python3 tools/entity-audit.py --write-report`，审计 Entity 价值与清理队列 |
@@ -946,6 +1014,7 @@ python3 tools/entity-audit.py --write-report
 
 ### Compile 操作注意事项
 
+- **先判题后编译** — 新 raw 在进入编译流程前，必须先按“主题宪法”和“Raw 价值评判与去留原则”判断是否属于主线；不属于则归档或剔除，而不是机械编译
 - **不要默认追加 raw** — 历史 raw 中已有 `## 编译摘要` 保留；新编译优先更新 Wiki 层，避免污染原文 source of truth
 - **git add 必须从根目录执行** — 子目录执行 `git add -A` 会意外添加外部符号链接（.codebuddy/ 等），应 `cd /Users/lx/Obsidian/Clips && git add <target-dir>/`
 - **X/Twitter 剪藏 author 格式**：若 Author Entity 已存在，用 `[[Author-Name]]` wikilink 格式；若不存在，先用纯文本
@@ -953,4 +1022,4 @@ python3 tools/entity-audit.py --write-report
 
 ---
 
-*本文件由 AI Agent 维护，用于指导 AI Agent 在 Clips LLM Wiki 中的工作。*
+*本文件由 AI Agent 维护，用于指导 AI Agent 在 Clips / Agentic Work Atlas 中的工作。*
