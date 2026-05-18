@@ -15,7 +15,7 @@ related_entities:
   - '[[ABox]]'
   - '[[Ontology]]'
 source_raw:
-  - "20260420-build-first-business-ontology"
+  - "[[20260420-build-first-business-ontology]]"
 ---
 
 # Individual (Ontology)

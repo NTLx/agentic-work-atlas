@@ -16,7 +16,7 @@ related_entities:
   - "[[Jagged-Intelligence]]"
   - "[[AI-Psychosis]]"
 source_raw:
-  - "[[How Anthropic's product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code)]]"
+  - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
 ---
 
 # Model Introspection（模型自省）

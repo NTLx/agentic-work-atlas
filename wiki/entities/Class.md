@@ -16,7 +16,7 @@ related_entities:
   - '[[Individual]]'
   - '[[Ontology]]'
 source_raw:
-  - "20260420-build-first-business-ontology"
+  - "[[20260420-build-first-business-ontology]]"
 ---
 
 # Class (Ontology)

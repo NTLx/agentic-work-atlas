@@ -19,8 +19,8 @@ related_entities:
   - '[[Vocabulary-Building]]'
   - '[[Lehrwerkstatt]]'
 source_raw:
-  - ‘[[Knowledge Work Is Dying—Here’s What Comes Next]]’
-  - ‘[[The layoffs will continue till we learn to use AI]]’
+  - "[[Knowledge Work Is Dying—Here’s What Comes Next]]"
+  - "[[The layoffs will continue till we learn to use AI]]"
   - '[[What Is Code?]]'
   - '[[Learning on the Shop floor]]'
 ---

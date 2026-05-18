@@ -17,7 +17,7 @@ related_entities:
   - '[[AI-Lacks-Laziness]]'
   - '[[YAGNI]]'
 source_raw:
-  - "20260414-martin-fowler-fragments"
+  - "[[20260414-martin-fowler-fragments]]"
 ---
 
 # Laziness Virtue

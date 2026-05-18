@@ -16,7 +16,7 @@ related_entities:
   - '[[Mythos]]'
   - '[[Cybersecurity-Proof-of-Work]]'
 source_raw:
-  - "20260414-cybersecurity-proof-of-work"
+  - "[[20260414-cybersecurity-proof-of-work]]"
 ---
 
 # AISI (AI Security Institute)

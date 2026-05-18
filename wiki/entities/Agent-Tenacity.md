@@ -17,7 +17,7 @@ related_entities:
   - '[[Claude-Code-CLI]]'
   - '[[Agentic-Engineering]]'
 source_raw:
-  - "20260127-claude-coding-notes"
+  - "[[20260127-claude-coding-notes]]"
 ---
 
 # Agent Tenacity

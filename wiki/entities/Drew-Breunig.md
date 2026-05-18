@@ -13,7 +13,7 @@ tags:
   - cybersecurity
   - tech-blogger
 source_raw:
-  - "20260414-cybersecurity-proof-of-work"
+  - "[[20260414-cybersecurity-proof-of-work]]"
 ---
 
 # Drew Breunig

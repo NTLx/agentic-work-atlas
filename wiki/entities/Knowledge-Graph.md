@@ -15,7 +15,7 @@ related_entities:
   - '[[ABox]]'
   - '[[TBox]]'
 source_raw:
-  - "20260420-build-first-business-ontology"
+  - "[[20260420-build-first-business-ontology]]"
 ---
 
 # Knowledge Graph

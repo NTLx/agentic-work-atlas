@@ -18,7 +18,7 @@ related_entities:
   - "[[Latent-Space-vs-Deterministic]]"
   - "[[Harness-Engineering]]"
 source_raw:
-  - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的"自组织"与"自进化"]]"
+  - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
 ---
 
 # GBrain

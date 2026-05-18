@@ -9,7 +9,7 @@ tags:
   - comparison
   - analysis
 source_raw:
-  - '[[待补充]]'
+  - "[[Good Taste the Only Real Moat Left]]"
 ---
 
 # Taste vs Judgment

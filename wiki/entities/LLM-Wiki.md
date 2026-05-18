@@ -23,7 +23,7 @@ related_entities:
 source_raw:
   - "[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]"
   - "[[20260413-llm-wiki]]"
-  - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的"自组织"与"自进化"]]"
+  - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
 ---
 
 # LLM Wiki

@@ -16,7 +16,7 @@ related_entities:
   - "[[Knowledge-Work]]"
   - "[[Software-2.0]]"
 source_raw:
-  - "[[How researchers are using GitHub Innovation Graph data to reveal the "digital complexity" of nations]]"
+  - "[[How researchers are using GitHub Innovation Graph data to reveal the “digital complexity” of nations]]"
 ---
 
 > [!definition] 定义

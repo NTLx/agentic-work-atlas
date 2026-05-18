@@ -16,7 +16,7 @@ related_entities:
   - '[[Time-Moat]]'
 
 source_raw:
-  - '[[How I run multiple `$10K` MRR companies on a `$20`month tech stack]]'
+  - '[[How I run multiple USD10K MRR companies on a USD20month tech stack]]'
 ---
 
 # B2B-Nurture-C-Model（B2B 养 C 端模式）

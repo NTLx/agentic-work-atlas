@@ -18,7 +18,7 @@ related_entities:
   - '[[Time-Moat]]'
   - '[[Constraint-Driven-Engineering]]'
 source_raw:
-  - '[[How I run multiple `$10K` MRR companies on a `$20`month tech stack]]'
+  - '[[How I run multiple USD10K MRR companies on a USD20month tech stack]]'
 ---
 
 # Lean-Indie-Engineering（精益独立开发）

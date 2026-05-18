@@ -17,7 +17,7 @@ related_entities:
   - '[[Martin-Fowler]]'
   - '[[Agentic-Engineering]]'
 source_raw:
-  - "20260414-martin-fowler-fragments"
+  - "[[20260414-martin-fowler-fragments]]"
 ---
 
 # YAGNI

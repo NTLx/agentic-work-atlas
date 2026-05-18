@@ -17,7 +17,7 @@ related_entities:
   - "[[PM-in-AI-Era]]"
   - "[[Claude-Code-CLI]]"
 source_raw:
-  - "[[How Anthropic's product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code)]]"
+  - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
 ---
 
 # AI-Native Shipping（AI 原生发布）

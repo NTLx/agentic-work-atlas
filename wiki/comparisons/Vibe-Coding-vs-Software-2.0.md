@@ -9,7 +9,8 @@ tags:
   - comparison
   - analysis
 source_raw:
-  - '[[待补充]]'
+  - "[[20260413-llm-wiki]]"
+  - "[[What is agentic engineering? - Agentic Engineering Patterns]]"
 ---
 
 # Vibe-Coding vs Software-2.0

@@ -16,7 +16,7 @@ related_entities:
   - '[[Martin-Fowler]]'
   - '[[AI-Lacks-Laziness]]'
 source_raw:
-  - "20260414-martin-fowler-fragments"
+  - "[[20260414-martin-fowler-fragments]]"
 ---
 
 # AI Restraint

@@ -1,7 +1,7 @@
 ---
 type: index
 title: Clips 知识库索引
-updated: 2026-05-13
+updated: 2026-05-18
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 164 个 |
+| Entity 页面 | 172 个 |
 | Topic 页面 | 17 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 54 个 |
+| Raw 文章 | 57 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -55,6 +55,7 @@ tags:
 | [[wiki/entities/Claude-Code-CLI\|Claude Code CLI]] | Claude 命令行工具 | Claude Code 文章 |
 | [[wiki/entities/Headless-Mode\|Headless Mode]] | 无头运行模式 | Claude Code 文章 |
 | [[wiki/entities/Continual-Learning\|Continual Learning（持续学习）]] | 不遗忘已有知识地整合新知识——AGI 缺失的关键拼图 | Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough |
+| [[wiki/entities/World-Model\|World Model（世界模型）]] | AI 系统对环境状态、因果关系和未来变化的内部表示 | Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough |
 | [[wiki/entities/Context-Engineering\|Context Engineering]] | 上下文工程 | Claude Code 文章 |
 | [[wiki/entities/Multi-Layer-Memory\|Multi-Layer Memory]] | 多层记忆系统 | Claude Code 文章 |
 | [[wiki/entities/Agent-Swarm\|Agent Swarm]] | Agent 群体协作 | Claude Code 文章 |
@@ -119,13 +120,13 @@ tags:
 | [[wiki/entities/Memex\|Memex]] | Vannevar Bush 1945 年个人知识存储概念，LLM Wiki 思想先驱 | LLM Wiki |
 | [[wiki/entities/Knowledge-Compilation\|Knowledge Compilation]] | Raw → Wiki 的知识转化操作，LLM Wiki 核心流程 | LLM Wiki |
 | [[wiki/entities/LLM-Wiki\|LLM-Wiki（LLM 知识库）]] | 用 LLM 将文档编译为结构化 Wiki，多次重排列产生洞察 | Andrej Karpathy: From Vibe Coding to Agentic Engineering |
-| [[wiki/entities/Lean-Stack\|Lean-Stack]] | 极低成本（$20/月）独立运营盈利产品的技术栈 | 每月$20成本，$60000+营收 |
-| [[wiki/entities/Runway-Math\|Runway-Math]] | 生存时间 = 资金 ÷ 月支出，控制分母比控制分子更可确定 | 每月$20成本，$60000+营收 |
-| [[wiki/entities/Anti-Enterprise-Mindset\|Anti-Enterprise-Mindset]] | 拒绝为企业级需求预先优化，只在实际需要后才升级 | 每月$20成本，$60000+营收 |
-| [[wiki/entities/B2B-Nurture-C-Model\|B2B-Nurture-C-Model]] | 用 B2B 大额订单养 C 端产品的抗周期商业模式组合 | 每月$20成本，$60000+营收 |
+| [[wiki/entities/Lean-Stack\|Lean-Stack]] | 极低成本（`$20/月`）独立运营盈利产品的技术栈 | 每月`$20`成本，`$60000+`营收 |
+| [[wiki/entities/Runway-Math\|Runway-Math]] | 生存时间 = 资金 ÷ 月支出，控制分母比控制分子更可确定 | 每月`$20`成本，`$60000+`营收 |
+| [[wiki/entities/Anti-Enterprise-Mindset\|Anti-Enterprise-Mindset]] | 拒绝为企业级需求预先优化，只在实际需要后才升级 | 每月`$20`成本，`$60000+`营收 |
+| [[wiki/entities/B2B-Nurture-C-Model\|B2B-Nurture-C-Model]] | 用 B2B 大额订单养 C 端产品的抗周期商业模式组合 | 每月`$20`成本，`$60000+`营收 |
 | [[wiki/entities/Tool-Use-Architecture\|Tool-Use Architecture（工具使用架构）]] | 通用 orchestrator + 专用工具系统的 AGI 架构——反对一个巨大万能脑 | Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough |
-| [[wiki/entities/Time-Moat\|Time-Moat]] | 通过多年持续运营积累的 SEO、品牌、信任等无法速成的壁垒 | 每月$20成本，$60000+营收 |
-| [[wiki/entities/Constraint-Driven-Engineering\|Constraint-Driven-Engineering]] | 先设定约束（预算、人力、时间），再从约束出发选择技术 | 每月$20成本，$60000+营收 |
+| [[wiki/entities/Time-Moat\|Time-Moat]] | 通过多年持续运营积累的 SEO、品牌、信任等无法速成的壁垒 | 每月`$20`成本，`$60000+`营收 |
+| [[wiki/entities/Constraint-Driven-Engineering\|Constraint-Driven-Engineering]] | 先设定约束（预算、人力、时间），再从约束出发选择技术 | 每月`$20`成本，`$60000+`营收 |
 | [[wiki/entities/Harness-Engineering\|Harness Engineering]] | 让 AI Agent 成为主要构建者的完整系统框架 | Why Your "AI-First" Strategy Is Probably Wrong |
 | [[wiki/entities/AI-First\|AI-First]] | 围绕"AI 是主要构建者"重新设计流程、架构和组织的范式 | Why Your "AI-First" Strategy Is Probably Wrong |
 | [[wiki/entities/AI-Capability-Gap\|AI Capability Gap]] | AI 在不同用户群体和应用场景中的不均衡进步，形成两条平行认知现实 | Karpathy X 帖 |
@@ -154,6 +155,8 @@ tags:
 | [[wiki/entities/MCP-Registry\|MCP Registry（MCP 注册表）]] | MCP 生态中的发现、鉴权与治理中心 | Building an MCP Ecosystem at Pinterest |
 | [[wiki/entities/Lehrwerkstatt\|Lehrwerkstatt（教学工坊）]] | 通过公开 AI 交互实现全员渗透式学习的组织模式 | Learning on the Shop floor |
 | [[wiki/entities/Osmosis-Learning\|Osmosis Learning（渗透式学习）]] | 通过观察他人实践自然习得知识的机制 | Learning on the Shop floor |
+| [[wiki/entities/Public-only-Constraint\|Public-only Constraint（公开频道约束）]] | 要求 Agent 只在公开协作空间工作，用透明交互换取组织学习 | Learning on the Shop floor |
+| [[wiki/entities/River-Agent\|River Agent]] | Shopify 内部公开运行的 AI Agent，承载渗透式学习实践 | Learning on the Shop floor |
 
 | [[wiki/entities/MachinaCheck\|MachinaCheck]] | 基于多 Agent 流水线的 CNC 可制造性分析系统，选择性 LLM 使用 + 本地推理 | MachinaCheck: Multi-Agent CNC Manufacturability |
 
@@ -204,7 +207,7 @@ tags:
 | [[wiki/entities/Cat-Wu\|Cat Wu]] | Anthropic Claude Code & Cowork 产品负责人，普林斯顿 CS，Scale AI 早期工程师 | AI, Product-Management, Claude-Code |
 | [[wiki/entities/Boris-Cherny\|Boris Cherny]] | Claude Code 之父，Anthropic 核心开发者，"编程已被解决"的提出者 | AI-Agent, Claude-Code, Anthropic |
 | [[wiki/entities/朱少民\|朱少民]] | 软件工程领域作者，关注 AI Agent 与企业组织变革 | Software-Engineering, AI-Agent |
-| [[wiki/entities/Steve-Hanov\|Steve Hanov]] | 加拿大 Waterloo 独立开发者，6 个 $10K+ MRR 产品，月成本 $20 | Indie Developer, Bootstrap |
+| [[wiki/entities/Steve-Hanov\|Steve Hanov]] | 加拿大 Waterloo 独立开发者，6 个 `$10K+` MRR 产品，月成本 `$20` | Indie Developer, Bootstrap |
 | [[wiki/entities/达珍\|达珍]] | 得到App《得到头条》栏目作者 | Media |
 | [[wiki/entities/Kevin-Xu\|Kevin Xu]] | GitHub CELA Staff Software Engineer，Innovation Graph 系列博客主理人 | Open-Source, Economics |
 | [[wiki/entities/Arnav-Gupta\|Arnav Gupta]] | Facebook Infra 工程师，前 Zomato/Coding Blocks 联合创始人 | Software-Engineering, AI-Labor |
@@ -262,7 +265,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的"自组织"与"自进化"]]
+最新编译：[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]
 
 ---
 

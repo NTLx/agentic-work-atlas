@@ -17,7 +17,7 @@ related_entities:
   - "[[Progressive-Disclosure]]"
   - "[[Andrej-Karpathy]]"
 source_raw:
-  - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的"自组织"与"自进化"]]"
+  - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
 ---
 
 # Obsidian-Wiki

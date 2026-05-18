@@ -18,7 +18,7 @@ related_entities:
   - '[[Drew-Breunig]]'
   - '[[AISI]]'
 source_raw:
-  - "20260414-cybersecurity-proof-of-work"
+  - "[[20260414-cybersecurity-proof-of-work]]"
   - "[[AI and the Future of Cybersecurity Why Openness Matters]]"
 ---
 

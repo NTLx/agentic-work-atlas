@@ -10,6 +10,7 @@ validated_at: "2026-05-08"
 created: 2026-05-08
 updated: 2026-05-08
 tags:
+  - person
   - AI-Agent
   - claude-code
   - anthropic

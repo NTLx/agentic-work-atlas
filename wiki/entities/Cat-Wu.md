@@ -10,11 +10,12 @@ validated_at: "2026-05-08"
 created: 2026-05-08
 updated: 2026-05-08
 tags:
+  - person
   - AI
   - product-management
   - claude-code
 source_raw:
-  - "[[How Anthropic's product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code)]]"
+  - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
 ---
 
 # Cat Wu

@@ -15,7 +15,7 @@ related_entities:
   - '[[Anti-Enterprise-Mindset]]'
   - '[[Steve-Hanov]]'
 source_raw:
-  - '[[How I run multiple `$10K` MRR companies on a `$20`month tech stack]]'
+  - '[[How I run multiple USD10K MRR companies on a USD20month tech stack]]'
 ---
 
 # Runway-Math（跑道数学）

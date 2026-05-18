@@ -26,7 +26,7 @@ source_raw:
   - '[[20260413-llm-wiki]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
-  - "20260127-claude-coding-notes"
+  - "[[20260127-claude-coding-notes]]"
   - "[[用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践]]"
 ---
 

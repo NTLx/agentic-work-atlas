@@ -53,6 +53,7 @@ const config: QuartzConfig = {
       ".ruff_cache",
       ".playwright-mcp",
       "skills",
+      "tools",
 
       // Schema 和日志文件（index.md 是首页，不应排除）
       "README.md",

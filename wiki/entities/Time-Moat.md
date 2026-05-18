@@ -14,7 +14,7 @@ related_entities:
   - '[[Steve-Hanov]]'
   - '[[Taste]]'
 source_raw:
-  - '[[How I run multiple `$10K` MRR companies on a `$20`month tech stack]]'
+  - '[[How I run multiple USD10K MRR companies on a USD20month tech stack]]'
 ---
 
 # Time-Moat（时间护城河）

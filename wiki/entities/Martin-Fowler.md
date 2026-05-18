@@ -17,7 +17,7 @@ related_entities:
   - '[[Unmesh-Joshi]]'
   - '[[Conceptual-Model]]'
 source_raw:
-  - "20260414-martin-fowler-fragments"
+  - "[[20260414-martin-fowler-fragments]]"
   - "[[What Is Code?]]"
 ---
 

@@ -17,7 +17,7 @@ related_entities:
   - "[[Cross-Disciplinary-Generalist]]"
   - "[[Taste]]"
 source_raw:
-  - "[[How Anthropic's product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code)]]"
+  - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
 ---
 
 # PM in AI Era（AI 时代的产品经理）

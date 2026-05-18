@@ -15,7 +15,7 @@ related_entities:
   - "[[Demis-Hassabis]]"
   - "[[Scientific-Discovery-AI]]"
   - "[[Agent-Orchestration]]"
-  - "[[MCP]]"
+  - "[[Model-Context-Protocol-MCP|MCP]]"
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
 ---
@@ -30,7 +30,7 @@ source_raw:
 - **信息效率原则**：Hassabis 明确指出一个巨型全能脑会导致"regression"——信息密度并非无限，专业能力和通用能力在单个模型中存在 tradeoff
 - **工具使用 vs 大统一模型**：好的通用模型"可能甚至可以训练这些专用工具"，但工具本身保持独立
 - **物理世界的延伸**：不仅是软件工具——"什么样的工厂要建"、"什么类型的金融系统"——物理基础设施也适用这一逻辑
-- **与 MCP 的关系**：Hassabis 的 Tool-Use Architecture 与 Anthropic MCP 协议在理念上高度一致——都是"通用 orchestrator + 标准化 tool connections"模式
+- **与 MCP 的关系**：Hassabis 的 Tool-Use Architecture 与 [[Model-Context-Protocol-MCP|Anthropic MCP]] 协议在理念上高度一致——都是"通用 orchestrator + 标准化 tool connections"模式
 
 ## 前提与局限性
 

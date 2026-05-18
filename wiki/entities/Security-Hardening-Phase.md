@@ -17,7 +17,7 @@ related_entities:
   - '[[Agentic-Engineering]]'
   - '[[Drew-Breunig]]'
 source_raw:
-  - "20260414-cybersecurity-proof-of-work"
+  - "[[20260414-cybersecurity-proof-of-work]]"
 ---
 
 # Security Hardening Phase

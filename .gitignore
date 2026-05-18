@@ -19,6 +19,8 @@ Desktop.ini
 *.temp
 *.swp
 *.swo
+__pycache__/
+*.pyc
 
 # 编辑器备份文件
 *.bak

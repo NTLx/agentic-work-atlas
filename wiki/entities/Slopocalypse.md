@@ -17,7 +17,7 @@ related_entities:
   - '[[AI-Psychosis]]'
   - '[[Vibe-Coding]]'
 source_raw:
-  - "20260127-claude-coding-notes"
+  - "[[20260127-claude-coding-notes]]"
 ---
 
 # Slopocalypse

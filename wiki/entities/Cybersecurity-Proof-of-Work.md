@@ -18,7 +18,7 @@ related_entities:
   - '[[Security-Hardening-Phase]]'
   - '[[Agentic-Engineering]]'
 source_raw:
-  - "20260414-cybersecurity-proof-of-work"
+  - "[[20260414-cybersecurity-proof-of-work]]"
 ---
 
 # Cybersecurity Proof of Work
