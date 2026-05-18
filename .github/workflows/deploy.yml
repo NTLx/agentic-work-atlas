@@ -1,4 +1,4 @@
-name: Deploy Clips Wiki to GitHub Pages
+name: Deploy Agentic Work Atlas to GitHub Pages
 
 on:
   push:
@@ -18,11 +18,11 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout Clips content
+      - name: Checkout Agentic Work Atlas content
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          path: clips
+          path: atlas
 
       - name: Checkout Quartz
         uses: actions/checkout@v4
@@ -41,12 +41,12 @@ jobs:
 
       - name: Setup Quartz Configuration
         run: |
-          cp clips/quartz.config.ts quartz/
-          cp clips/quartz.layout.ts quartz/
+          cp atlas/quartz.config.ts quartz/
+          cp atlas/quartz.layout.ts quartz/
 
       - name: Build Quartz (方案 C：直接使用仓库根目录)
         working-directory: quartz
-        run: npx quartz build -d ../clips
+        run: npx quartz build -d ../atlas
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

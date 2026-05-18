@@ -2,7 +2,7 @@ import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
 /**
- * Quartz Layout Configuration for Clips Wiki
+ * Quartz Layout Configuration for Agentic Work Atlas
  *
  * 布局设计：
  * - 左侧：文件导航 (Explorer) + 搜索
@@ -16,7 +16,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/NTLx/Clips",
+      GitHub: "https://github.com/NTLx/agentic-work-atlas",
     },
   }),
 }

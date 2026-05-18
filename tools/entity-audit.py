@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-审计 Clips LLM Wiki 的 Entity 价值。
+审计 Agentic Work Atlas 的 Entity 价值。
 
 本脚本刻意与 wiki-lint.py 分离。wiki-lint.py 处理渲染和 schema 的硬错误；
 Entity 审计输出需要人工判断的复核/合并队列。
@@ -318,7 +318,7 @@ def print_summary(rows: list[Entity]) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="审计 Clips LLM Wiki 的 Entity 价值")
+    parser = argparse.ArgumentParser(description="审计 Agentic Work Atlas 的 Entity 价值")
     parser.add_argument("--write-report", action="store_true", help="写入 docs/entity-audit-YYYY-MM-DD.md")
     args = parser.parse_args()
 

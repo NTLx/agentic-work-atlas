@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Clips Wiki 校验与同步门禁。
+Agentic Work Atlas 校验与同步门禁。
 
 本脚本保证 LLM Wiki 作为普通 Obsidian/Quartz Markdown 可正常工作：
 - 校验 YAML frontmatter 与 ISO 日期字段
@@ -453,7 +453,7 @@ def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path
     lines = [
         "---",
         "type: lint-report",
-        'title: "Clips Wiki Lint 报告"',
+        'title: "Agentic Work Atlas Lint 报告"',
         f'date: "{today}"',
         f"score: {score}",
         f'status: "{status}"',
@@ -462,7 +462,7 @@ def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path
         "  - wiki-maintenance",
         "---",
         "",
-        f"# Clips Wiki Lint 报告 - {today}",
+        f"# Agentic Work Atlas Lint 报告 - {today}",
         "",
         f"> [!summary] 状态",
         f"> 门禁: **{status}**",
@@ -522,7 +522,7 @@ def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path
 
 def print_summary(issues: list[Issue], stats: dict[str, int], pending: list[Path]) -> None:
     blocking = [i for i in issues if i.blocking]
-    print("Clips Wiki Lint")
+    print("Agentic Work Atlas Lint")
     print("=" * 60)
     print(f"Raw: {stats['raw']}（已编译 {stats['raw_compiled']}，待编译 {stats['raw_pending']}）")
     print(f"Entity: {stats['entities']} | Topic: {stats['topics']} | Comparison: {stats['comparisons']} | Output: {stats['outputs']}")
@@ -547,7 +547,7 @@ def print_summary(issues: list[Issue], stats: dict[str, int], pending: list[Path
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="检查并同步 Clips LLM Wiki")
+    parser = argparse.ArgumentParser(description="检查并同步 Agentic Work Atlas")
     parser.add_argument("--fix-index", action="store_true", help="更新 index.md 计数和 updated 日期")
     parser.add_argument("--write-report", action="store_true", help="写入 wiki/lint-report.md")
     args = parser.parse_args()

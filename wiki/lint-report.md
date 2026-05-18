@@ -1,6 +1,6 @@
 ---
 type: lint-report
-title: "Clips Wiki Lint 报告"
+title: "Agentic Work Atlas Lint 报告"
 date: "2026-05-18"
 score: 100
 status: "PASS"
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Clips Wiki Lint 报告 - 2026-05-18
+# Agentic Work Atlas Lint 报告 - 2026-05-18
 
 > [!summary] 状态
 > 门禁: **PASS**

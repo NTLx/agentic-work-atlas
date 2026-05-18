@@ -2,7 +2,7 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
 /**
- * Quartz 4 Configuration for Clips Wiki
+ * Quartz 4 Configuration for Agentic Work Atlas
  *
  * 方案 C：直接使用仓库根目录作为 content
  * - 通过 ignorePatterns 排除所有无关文件
@@ -11,13 +11,13 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Clips Wiki",
+    pageTitle: "Agentic Work Atlas",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
     analytics: null,
     locale: "zh-CN",
-    baseUrl: "ntlx.github.io/Clips",
+    baseUrl: "ntlx.github.io/agentic-work-atlas",
     ignorePatterns: [
       // Obsidian 配置和回收站
       ".obsidian",

@@ -1,15 +1,15 @@
 ---
 type: index
-title: Clips 知识库索引
+title: 智能体时代工作图谱索引
 updated: 2026-05-18
 tags:
   - index
   - MOC
 ---
 
-# Clips 知识库索引
+# 智能体时代工作图谱索引
 
-> 大杂烩文章剪藏 Wiki - 收集各类有价值的网络文章，通过 LLM Wiki 模式持续编译知识。
+> 围绕 AI / Agent 如何重写工作系统的主题知识库，通过 LLM Wiki 模式持续编译知识。
 
 ---
 
