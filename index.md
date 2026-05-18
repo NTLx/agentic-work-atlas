@@ -18,9 +18,9 @@ tags:
 | 指标 | 数值 |
 |-----|------|
 | Entity 页面 | 180 个 |
-| Topic 页面 | 17 个 |
+| Topic 页面 | 21 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 59 个 |
+| Raw 文章 | 57 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -221,7 +221,7 @@ tags:
 | [[wiki/entities/Bias-to-Action-LLM\|Bias to Action LLM]] | LLM 迫切想生成内容的倾向，需反博弈指令约束 | AI-Agent, LLM Behavior |
 | [[wiki/entities/Accessibility-Complexity-Evaluation\|Accessibility Complexity Evaluation]] | 用启发式脚本评估代码复杂度决定 Agent 是否应自动修改 | Accessibility, Code Quality |
 | [[wiki/entities/Accessibility-High-Risk-Patterns\|Accessibility High Risk Patterns]] | 拖放/Toast/富文本编辑器等禁止 Agent 自动修改的模式 | Accessibility, Anti-Patterns |
-| [[wiki/entities/The-OpenAI-Deployment-Company\|The OpenAI Deployment Company]] | OpenAI 独立部署实体，$40 亿投资，$140 亿估值 | Enterprise, AI-Industry |
+| [[wiki/entities/The-OpenAI-Deployment-Company\|The OpenAI Deployment Company]] | OpenAI 独立部署实体，\$40 亿投资，\$140 亿估值 | Enterprise, AI-Industry |
 
 ### Topics (topics/)
 *整合多篇文章的主题*
@@ -245,6 +245,10 @@ tags:
 | [[wiki/topics/Musk-First-Principles-Thinking\|马斯克的第一性原理思考]] | Musk 五步工作法：质疑需求 → 删减 → 优化 → 加速 → 自动化 | Elon-Musk, Question-Requirements, YAGNI, Refusal |
 | [[wiki/topics/AI-Apprenticeship-and-Lehrwerkstatt\|AI 学徒制与教学工坊]] | 通过公开交互、渗透学习重建组织内的学徒制 | Lehrwerkstatt, Osmosis-Learning, Tobi-Lütke |
 | [[wiki/topics/Agent-Knowledge-Management\|Agent 知识管理与自进化]] | LLM Wiki、Obsidian-Wiki、GBrain 三种知识自组织与自进化的技术路径与工程实践 | LLM-Wiki, GBrain, Obsidian-Wiki, Progressive-Disclosure, Thin-Harness-Fat-Skills |
+| [[wiki/topics/Verifiable-Agent-Engineering\|可验证 Agent 工程]] | 把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统 | Verifiability, Dominator-Analysis, Agent-PR-Review, Corrective-RAG |
+| [[wiki/topics/Organization-as-Agent-Harness\|组织作为 Agent Harness]] | 企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进 | AI-Ready-Organization, Organizational-Shape-Moat, Alignment-Tax |
+| [[wiki/topics/Code-as-Conceptual-Infrastructure\|代码作为概念基础设施]] | AI 让指令生成变便宜后，软件核心资产上移为词汇、边界、模型和语义约束 | Conceptual-Model, Cognitive-Debt, Ontology, LLM-Wiki |
+| [[wiki/topics/AI-Labor-Bottleneck-Shift\|AI 劳动瓶颈迁移]] | 当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量 | Input-Output-Outcome, Alignment-Tax, Allocation-Economy, FDE |
 
 ### Comparisons (comparisons/)
 *对比分析页面*

@@ -4,7 +4,7 @@ title: The-OpenAI-Deployment-Company
 aliases:
   - The OpenAI Deployment Company
   - OpenAI 部署公司
-definition: "OpenAI 于 2026 年 5 月成立的独立部署实体，由私募股权基金投资 \$40 亿，估值 \$140 亿，负责将 AI 系统部署到企业真实业务场景"
+definition: 'OpenAI 于 2026 年 5 月成立的独立部署实体，由私募股权基金投资 \$40 亿，估值 \$140 亿，负责将 AI 系统部署到企业真实业务场景'
 created: 2026-05-18
 updated: 2026-05-18
 tags:
@@ -13,7 +13,7 @@ tags:
   - enterprise
 related_entities:
   - "[[Forward-Deployed-Engineer]]"
-  - "[[Enterprise-AI-Adoption]]"
+  - "[[AI-Ready-Organization]]"
 source_raw:
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
 ---
@@ -47,4 +47,4 @@ source_raw:
 ## 关联概念
 
 - [[Forward-Deployed-Engineer]] — FDE 是部署公司的核心岗位
-- [[Enterprise-AI-Adoption]] — 部署公司服务的核心场景
+- [[AI-Ready-Organization]] — 部署公司服务的核心场景

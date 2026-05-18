@@ -14,7 +14,7 @@ tags:
   - enterprise
 related_entities:
   - "[[The-OpenAI-Deployment-Company]]"
-  - "[[Enterprise-AI-Adoption]]"
+  - "[[AI-Ready-Organization]]"
   - "[[AI-Era-Career-Skills]]"
 source_raw:
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
@@ -50,5 +50,5 @@ source_raw:
 ## 关联概念
 
 - [[The-OpenAI-Deployment-Company]] — OpenAI 的独立部署实体，FDE 的核心载体
-- [[Enterprise-AI-Adoption]] — 企业 AI 采纳流程，FDE 服务的核心场景
+- [[AI-Ready-Organization]] — 企业 AI 采纳流程，FDE 服务的核心场景
 - [[AI-Era-Career-Skills]] — AI 时代的职业技能变迁，FDE 是新兴岗位方向
