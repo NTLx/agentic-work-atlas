@@ -5,7 +5,7 @@ aliases:
   - Paul Graham
 definition: "Y Combinator 创始人，知名创业文章作家， Lisp 程序员"
 created: 2026-04-10
-updated: 2026-04-14
+updated: 2026-05-19
 tags:
   - person
   - entrepreneurship
@@ -19,7 +19,6 @@ related_entities:
   - '[[Specificity]]'
 source_raw:
   - '[[Taste for Makers]]'
-  - '[[The Brand Age]]'
 validated_source: "https://www.paulgraham.com/"
 validated_at: "2026-04-14"
 ---

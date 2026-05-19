@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-05-18
+updated: 2026-05-19
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 180 个 |
+| Entity 页面 | 179 个 |
 | Topic 页面 | 21 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 57 个 |
+| Raw 文章 | 55 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -196,7 +196,6 @@ tags:
 | [[wiki/entities/Wes-Botman\|Wes Botman]] | Eli5.io 作者，AI 编程代理专家 | Claude-Code, DevOps |
 | [[wiki/entities/Elvis-Sun\|Elvis Sun]] | 前 Google 工程师，AI 创业者 | AI-Agent, Entrepreneurship |
 | [[wiki/entities/Aaron-Levie\|Aaron Levie]] | Box CEO，企业软件与 AI Agent 思想家 | Enterprise Software |
-| [[wiki/entities/Ben-Thompson\|Ben Thompson]] | Stratechery 创始人，科技分析师 | Tech Analysis |
 | [[wiki/entities/MIT-Technology-Review-Insights\|MIT Technology Review Insights]] | MIT Technology Review 研究部门 | Research |
 | [[wiki/entities/Barry-Zhang\|Barry Zhang]] | Anthropic 技术团队成员，Building Effective Agents 合著者 | AI-Agent, Anthropic |
 | [[wiki/entities/Cat-Wu\|Cat Wu]] | Anthropic Claude Code & Cowork 产品负责人，普林斯顿 CS，Scale AI 早期工程师 | AI, Product-Management, Claude-Code |

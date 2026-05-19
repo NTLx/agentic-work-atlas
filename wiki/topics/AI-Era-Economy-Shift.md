@@ -3,7 +3,7 @@ type: topic
 title: AI Era Economy Shift
 description: "AI 时代经济范式转型：从知识经济到分配经济，效率提升带来需求爆发"
 created: 2026-04-10
-updated: 2026-05-18
+updated: 2026-05-19
 tags:
   - AI-Agent
   - economy
@@ -12,7 +12,6 @@ related_entities:
   - '[[Aaron-Levie]]'
   - '[[Allocation-Economy]]'
   - '[[Always-On-Economy]]'
-  - '[[Ben-Thompson]]'
   - '[[Ethan-Mollick]]'
   - '[[Jevons-Paradox-for-Knowledge-Work]]'
   - '[[Konstantine-Buhler]]'
@@ -149,7 +148,6 @@ AI 接管任务，但需要人整合工作流产生真正价值。
 ## 参见
 
 - [[Aaron-Levie]] - Box CEO，Agent Economy 观点
-- [[Ben-Thompson]] - 科技分析师，经济范式讨论
 - [[Ethan-Mollick]] - Wharton 教授，Delegation Equation 提出者
 - [[Konstantine-Buhler]] - Sequoia 合伙人，Agent Economy 投资视角
 

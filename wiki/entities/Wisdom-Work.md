@@ -5,7 +5,7 @@ aliases:
   - Wisdom Work
 definition: "AI 时代取代知识工作的新型工作范式，核心是情感清晰度、判断力和深层连接"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-19
 tags:
   - Knowledge-Work
   - AI-era
@@ -107,4 +107,3 @@ AI 模型的特点：
 ## 来源
 
 - Raw Source: [[Knowledge Work Is Dying—Here’s What Comes Next]]
-- Raw Source: [[AI and the Human Condition]]
