@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-05-18
+updated: 2026-05-20
 tags:
   - AI
   - economy
@@ -15,8 +15,6 @@ related_entities:
   - "[[Model-Manager]]"
   - "[[Jevons-Paradox-for-Knowledge-Work]]"
   - "[[Always-On-Economy]]"
-  - "[[Digital-Dark-Matter]]"
-  - "[[Software-Economic-Complexity]]"
   - "[[Knowledge-Work]]"
   - "[[Wisdom-Work]]"
   - "[[PM-in-AI-Era]]"
@@ -27,7 +25,6 @@ source_raw:
   - "[[(14) Jevons Paradox for Knowledge Work]]"
   - "[[Management as AI superpower]]"
   - "[[The Always-On Economy AI and the Next 5-7 Years]]"
-  - "[[How researchers are using GitHub Innovation Graph data to reveal the “digital complexity” of nations]]"
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
 ---
 
@@ -59,7 +56,6 @@ Outcome 更不一定改善
 | 知识工作 | 知道什么、会不会做 | 分配给谁做、如何评估 | [[Allocation-Economy]], [[Model-Manager]] |
 | 软件开发 | 写代码慢 | 对齐慢、集成慢、结果不清 | [[Alignment-Tax]], [[Input-Output-Outcome]] |
 | 企业运营 | 人力有限 | 流程是否可连续运行 | [[Always-On-Economy]] |
-| 宏观经济 | 软件生产不可见 | 如何度量数字能力 | [[Digital-Dark-Matter]], [[Software-Economic-Complexity]] |
 
 这些迁移共同说明：AI 降低的是局部动作成本，不会自动降低系统级协调成本。
 
@@ -86,14 +82,6 @@ Outcome 更不一定改善
 
 FDE 是把生成能力翻译为结果能力的人。这说明 AI 时代的稀缺点正在从“会写”转向“能部署到现实里”。
 
-## 看不见的生产会改变经济度量
-
-[[Digital-Dark-Matter|数字暗物质]]和[[Software-Economic-Complexity|软件经济复杂度]]把问题放到宏观层面：大量软件生产不经过传统统计渠道。AI 会进一步放大这种不可见性，因为更多价值会以内部自动化、Agent 流程、知识编译和小工具形式出现。
-
-如果经济系统仍只度量显性产出，就会低估真正的能力积累。
-
-这对个人和组织都有启示：不要只看产出数量，要看哪些能力正在变成可复用基础设施。
-
 ## 与现有 Topic 的关系
 
 - [[AI-Era-Economy-Shift]]讲从知识经济到分配经济。
@@ -105,4 +93,3 @@ FDE 是把生成能力翻译为结果能力的人。这说明 AI 时代的稀缺
 AI 时代最危险的误判，是把生成速度当作价值速度。
 
 真正的价值速度取决于四件事：分配是否准确，对齐是否清楚，集成是否落地，结果是否可见。
-

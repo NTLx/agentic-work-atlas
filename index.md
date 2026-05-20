@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-05-19
+updated: 2026-05-20
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 176 个 |
+| Entity 页面 | 173 个 |
 | Topic 页面 | 20 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 54 个 |
+| Raw 文章 | 53 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -165,8 +165,6 @@ tags:
 | [[wiki/entities/Latent-Space-vs-Deterministic\|Latent-Space-vs-Deterministic]] | GBrain 核心洞察——LLM 决定做什么（潜在空间），代码保证如何做（确定性） | 深度解析 LLM Wiki / Obsidian-Wiki / GBrain |
 | [[wiki/entities/Adversarial-Distillation\|Adversarial Distillation]] | 工程师为避免被 Skills 系统替代而采取的对抗策略 | 工程师抗拒被"蒸馏" |
 | [[wiki/entities/Dominator-Analysis\|Dominator Analysis]] | 编译器控制流图理论：节点 A 支配 B = 所有路径必经 A，用于 Agent 验证中提取 essential states | GitHub Blog: Validating agentic behavior |
-| [[wiki/entities/Software-Economic-Complexity\|Software Economic Complexity]] | 将 ECI 应用于 GitHub 数据衡量国家软件能力并预测 GDP | GitHub Innovation Graph 研究 |
-| [[wiki/entities/Digital-Dark-Matter\|Digital Dark Matter]] | 软件生产在传统经济统计中不可见的现象 | GitHub Innovation Graph 研究 |
 | [[wiki/entities/Input-Output-Outcome\|Input-Output-Outcome]] | 区分代码（输入）、功能（输出）、用户付费（结果）的商业分析框架 | The layoffs will continue |
 | [[wiki/entities/Alignment-Tax\|Alignment Tax]] | 大型组织中跨团队协调的隐性成本——代码变便宜时暴露的瓶颈 | The layoffs will continue |
 | [[wiki/entities/Corrective-RAG\|Corrective RAG]] | 通过文档相关性评分和查询重构消除 RAG 幻觉 | OncoAgent 论文 |
@@ -200,7 +198,6 @@ tags:
 | [[wiki/entities/Boris-Cherny\|Boris Cherny]] | Claude Code 之父，Anthropic 核心开发者，"编程已被解决"的提出者 | AI-Agent, Claude-Code, Anthropic |
 | [[wiki/entities/朱少民\|朱少民]] | 软件工程领域作者，关注 AI Agent 与企业组织变革 | Software-Engineering, AI-Agent |
 | [[wiki/entities/Steve-Hanov\|Steve Hanov]] | 加拿大 Waterloo 独立开发者，6 个 `$10K+` MRR 产品，月成本 `$20` | Indie Developer, Bootstrap |
-| [[wiki/entities/Kevin-Xu\|Kevin Xu]] | GitHub CELA Staff Software Engineer，Innovation Graph 系列博客主理人 | Open-Source, Economics |
 | [[wiki/entities/Arnav-Gupta\|Arnav Gupta]] | Facebook Infra 工程师，前 Zomato/Coding Blocks 联合创始人 | Software-Engineering, AI-Labor |
 | [[wiki/entities/Unmesh-Joshi\|Unmesh Joshi]] | Thoughtworks 杰出工程师，《分布式系统模式》作者 | Software-Architecture, Distributed-Systems |
 | [[wiki/entities/Tobi-Lütke\|Tobi Lütke]] | Shopify 创始人兼 CEO，倡导“教学工坊”模式 | Entrepreneurship, Engineering-Culture |

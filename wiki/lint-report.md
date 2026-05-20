@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-05-19"
+date: "2026-05-20"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-05-19
+# Agentic Work Atlas Lint 报告 - 2026-05-20
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -20,10 +20,10 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 54 |
-| Raw 已编译 | 52 |
+| Raw 来源 | 53 |
+| Raw 已编译 | 51 |
 | Raw 待编译 | 2 |
-| Entity | 176 |
+| Entity | 173 |
 | Topic | 20 |
 | Comparison | 6 |
 | Output | 1 |
