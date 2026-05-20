@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 53 |
+| Raw 来源 | 57 |
 | Raw 已编译 | 51 |
-| Raw 待编译 | 2 |
+| Raw 待编译 | 6 |
 | Entity | 173 |
 | Topic | 20 |
 | Comparison | 6 |
@@ -30,8 +30,12 @@ tags:
 
 ## 待编译 Raw
 
+- `raw/A Day in the Life of a Palantir Forward Deployed Software Engineer.md`
 - `raw/Building a general-purpose accessibility agent—and what we learned in the process.md`
-- `raw/Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？.md`
+- `raw/Forward Deployed Engineer (FDE) - NYC.md`
+- `raw/Forward deployed engineering at OpenAI.md`
+- `raw/Maintainability sensors for coding agents.md`
+- `raw/OpenAI launches the OpenAI Deployment Company to help businesses build around intelligence.md`
 
 ## 检查项
 

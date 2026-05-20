@@ -25,7 +25,9 @@ source_raw:
   - "[[(14) Jevons Paradox for Knowledge Work]]"
   - "[[Management as AI superpower]]"
   - "[[The Always-On Economy AI and the Next 5-7 Years]]"
-  - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
+  - "[[Forward deployed engineering at OpenAI]]"
+  - "[[Forward Deployed Engineer (FDE) - NYC]]"
+  - "[[A Day in the Life of a Palantir Forward Deployed Software Engineer]]"
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
@@ -81,6 +83,8 @@ Outcome 更不一定改善
 - 模型输出必须嵌入既有系统、权限、数据和人际协作。
 
 FDE 是把生成能力翻译为结果能力的人。这说明 AI 时代的稀缺点正在从“会写”转向“能部署到现实里”。
+
+OpenAI 的官方职位页甚至把成功标准直接写成 `production adoption`、`workflow impact` 和 `eval-driven feedback`，这进一步说明瓶颈已经从“模型能不能生成”转向“系统能不能被组织真正采纳并持续改进”。
 
 ## 与现有 Topic 的关系
 

@@ -20,7 +20,7 @@ tags:
 | Entity 页面 | 173 个 |
 | Topic 页面 | 20 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 53 个 |
+| Raw 文章 | 57 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -203,13 +203,13 @@ tags:
 | [[wiki/entities/Tobi-Lütke\|Tobi Lütke]] | Shopify 创始人兼 CEO，倡导“教学工坊”模式 | Entrepreneurship, Engineering-Culture |
 | [[wiki/entities/Pinterest-Engineering\|Pinterest Engineering]] | Pinterest 工程团队，MCP 实践先驱 | AI-Agent, Infrastructure |
 | [[wiki/entities/Accessibility-Agent\|Accessibility Agent]] | GitHub 通用无障碍 Agent，评审 3535 个 PR，解决率 68% | Accessibility, AI-Agent |
-| [[wiki/entities/Forward-Deployed-Engineer\|Forward Deployed Engineer（FDE）]] | 驻扎客户现场用 AI 技术解决真实业务问题的工程师 | Career, Enterprise |
+| [[wiki/entities/Forward-Deployed-Engineer\|Forward Deployed Engineer（FDE）]] | 嵌入客户真实环境，把 AI 能力接成生产系统的部署工程师 | Career, Enterprise |
 | [[wiki/entities/WCAG\|WCAG]] | Web 内容无障碍指南，55 个成功标准中仅 64% 可自动检测 | Accessibility, Standard |
 | [[wiki/entities/Social-Model-of-Disability\|Social Model of Disability]] | 障碍是环境设计创造的，而非人本身 | Accessibility, Philosophy |
 | [[wiki/entities/Bias-to-Action-LLM\|Bias to Action LLM]] | LLM 迫切想生成内容的倾向，需反博弈指令约束 | AI-Agent, LLM Behavior |
 | [[wiki/entities/Accessibility-Complexity-Evaluation\|Accessibility Complexity Evaluation]] | 用启发式脚本评估代码复杂度决定 Agent 是否应自动修改 | Accessibility, Code Quality |
 | [[wiki/entities/Accessibility-High-Risk-Patterns\|Accessibility High Risk Patterns]] | 拖放/Toast/富文本编辑器等禁止 Agent 自动修改的模式 | Accessibility, Anti-Patterns |
-| [[wiki/entities/The-OpenAI-Deployment-Company\|The OpenAI Deployment Company]] | OpenAI 独立部署实体，\$40 亿投资，\$140 亿估值 | Enterprise, AI-Industry |
+| [[wiki/entities/The-OpenAI-Deployment-Company\|The OpenAI Deployment Company]] | OpenAI 独立部署实体/业务单元，以 FDE 为核心推进企业 AI 落地 | Enterprise, AI-Industry |
 
 ### Topics (topics/)
 *整合多篇文章的主题*
@@ -264,7 +264,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Building a general-purpose accessibility agent—and what we learned in the process]]、[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]
+最新编译：[[Building a general-purpose accessibility agent—and what we learned in the process]]
 
 ---
 

@@ -5,9 +5,9 @@ aliases:
   - Forward Deployed Engineer
   - FDE
   - 前线部署工程师
-definition: "驻扎在客户公司现场，用自家 AI 技术帮客户解决真实业务问题的工程师——25% 写代码、50% 集成调试、25% 沟通，是介于软件工程师、架构师和咨询顾问之间的实操角色"
+definition: "嵌入客户真实环境，把前沿 AI 能力与数据、工具和业务流程连接成可运行生产系统的工程师；职责覆盖机会发现、技术界定、系统设计、部署上线与反馈回流"
 created: 2026-05-18
-updated: 2026-05-18
+updated: 2026-05-20
 tags:
   - career
   - AI-industry
@@ -17,35 +17,29 @@ related_entities:
   - "[[AI-Ready-Organization]]"
   - "[[AI-Era-Career-Skills]]"
 source_raw:
-  - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
+  - "[[Forward deployed engineering at OpenAI]]"
+  - "[[Forward Deployed Engineer (FDE) - NYC]]"
+  - "[[OpenAI launches the OpenAI Deployment Company to help businesses build around intelligence]]"
+  - "[[A Day in the Life of a Palantir Forward Deployed Software Engineer]]"
 ---
 
 # Forward-Deployed-Engineer
 
 > [!definition] 定义
-> **Forward Deployed Engineer（FDE，前线部署工程师）** 是驻扎在客户公司现场，用自家 AI 技术帮客户解决真实业务问题的工程师。岗位介于软件工程师、方案架构师和咨询顾问之间，但更实操。职责比例大约为：25% 写代码、50% 集成和调试、25% 开会和沟通。与咨询顾问的关键区别：顾问给你 PPT 告诉你"怎么做"，FDE 直接给你代码帮你做到。
-
-## 行业布局（2026 年 5 月）
-
-| 公司 | 动作 |
-|------|------|
-| **Google Cloud** | 在 Go-To-Market 团队下成立全新 AI 部门，疯狂招募 FDE。面试从数周 4-6 轮压缩到两天 2 轮 |
-| **OpenAI** | 成立"OpenAI 部署公司"（The OpenAI Deployment Company），独立实体，私募投资 \$40 亿，估值 \$140 亿。首笔收购 Tomoro（150 名 FDE） |
-| **Anthropic** | 创建独立 FDE 咨询公司，投资方包括 Anthropic、黑石、Hellman & Friedman、高盛。使命：与中型企业合作，将 Claude 引入核心业务运营 |
+> **Forward Deployed Engineer（FDE，前线部署工程师）** 是嵌入客户真实环境，把前沿 AI 能力与数据、工具、权限和业务流程连接成可运行生产系统的工程师。按 OpenAI 的官方表述，它位于 `customer delivery` 与 `core platform development` 的交叉点；按 Palantir 的官方表述，它更像“为一个客户启用很多能力”的工程师，而不是“为很多客户做一个通用能力”的工程师。
 
 ## 关键数据点
 
-- OpenAI 部署公司估值 **\$140 亿**，私募投资 **\$40 亿**
-- Tomoro 收购：英国总部，2023 年成立，在英国、亚洲和澳大利亚拥有 **150 名 FDE**
-- Google FDE 面试从数周 4-6 轮压缩到 **两天 2 轮**
-- FDE 职责比例：25% 代码 + 50% 集成调试 + 25% 沟通
+- OpenAI 官方职位页把 FDE 的职责写成完整闭环：`discovery`、`technical scoping`、`system design`、`build`、`production rollout`。
+- OpenAI 把成功标准写成三类结果：`production adoption`、`measurable workflow impact`、`eval-driven feedback`。
+- OpenAI 官方职位页要求 FDE 直接与 customer engineering、domain teams，以及 Product、Research、Partnerships、GRC、Security、GTM 等团队协作；该 NYC 岗位写明 `travel up to 50%`。
+- Palantir 官方博客把 FDSE 定义为直接嵌入客户侧、配置既有平台解决最难问题，并强调现场配置经验会回流成新的产品能力。
 
 ## 前提与局限性
 
-- **时机窗口**：FDE 热潮依赖当前 AI 模型能力与企业落地能力之间的鸿沟。如果模型足够好用、企业自己能轻松集成，FDE 需求可能下降
-- **人力密集型**：FDE 本质是人力咨询服务，难以规模化。OpenAI 和 Anthropic 都选择成立独立公司（而非直接招聘），暗示这是一种将人力成本外部化的策略
-- **依赖企业购买力**：FDE 的价值取决于企业愿意为 AI 集成付费的意愿。中型企业是 Anthropic 的目标，但中型企业的 AI 预算和决策周期存在不确定性
-- **非技术壁垒**：FDE 的核心竞争力不在技术深度，而在客户现场的跨角色协调能力。这意味着进入门槛相对较低，未来可能面临竞争加剧
+- **高模糊度环境**：一手来源都强调 FDE 运行在 high-ambiguity、需求不断变化、约束很多的客户环境中。
+- **不等于纯咨询**：这个角色既要写和改系统，也要完成 adoption、跨团队协同和反馈回流，不能简化成“顾问”或“售前工程师”。
+- **价值依赖平台能力**：OpenAI 强调 frontier models 与企业约束的连接，Palantir 强调既有平台的可组合性；两者都说明 FDE 的杠杆建立在底层能力已经存在。
 
 ## 关联概念
 

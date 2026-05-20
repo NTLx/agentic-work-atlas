@@ -4,9 +4,9 @@ title: The-OpenAI-Deployment-Company
 aliases:
   - The OpenAI Deployment Company
   - OpenAI 部署公司
-definition: 'OpenAI 于 2026 年 5 月成立的独立部署实体，由私募股权基金投资 \$40 亿，估值 \$140 亿，负责将 AI 系统部署到企业真实业务场景'
+definition: "OpenAI 于 2026 年 5 月启动的独立部署实体/业务单元，以 FDE 为核心帮助企业把前沿 AI 接入真实流程；官方公告披露其初始资金超过 USD 4 billion，并由 OpenAI 多数持有和控制"
 created: 2026-05-18
-updated: 2026-05-18
+updated: 2026-05-20
 tags:
   - company
   - AI-industry
@@ -15,34 +15,36 @@ related_entities:
   - "[[Forward-Deployed-Engineer]]"
   - "[[AI-Ready-Organization]]"
 source_raw:
-  - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
+  - "[[OpenAI launches the OpenAI Deployment Company to help businesses build around intelligence]]"
+  - "[[Forward deployed engineering at OpenAI]]"
 ---
 
 # The-OpenAI-Deployment-Company
 
 > [!definition] 定义
-> **The OpenAI Deployment Company** 是 OpenAI 于 2026 年 5 月成立的独立部署实体。由私募股权基金（TPG、Advent 等）投资 \$40 亿，估值 \$140 亿。核心使命：与业务领导者、运营人员和一线团队合作，精准定位 AI 能产生最大价值的领域，围绕 AI 重新设计组织基础设施和关键工作流程，将收益转化为持久稳定的系统。
+> **The OpenAI Deployment Company** 是 OpenAI 于 2026 年 5 月启动的独立部署实体/业务单元。它的职责不是继续做更强的模型，而是用 FDE 帮企业把前沿 AI 接入真实业务流程，并把落地经验沉淀成可复用的产品模式。
 
 ## 战略定位
 
-这是 OpenAI 的**业务拆分策略**：
-- **母公司 OpenAI**：专注研发更强大的 AI 模型
-- **部署公司**：独立实体，负责客户对接、FDE 派驻、系统集成等"脏活"
+这是 OpenAI 对“部署能力”单独建制的做法：
+- **研究与产品侧**：继续推进 frontier AI 能力。
+- **部署侧**：围绕 FDE、客户流程、治理约束和系统集成，解决企业从试验走向生产的问题。
 
-这种拆分让 OpenAI 能保持产品研发的纯粹性，同时将人力密集型的客户交付工作外部化。
+OpenAI 官方业务页把这条路线总结为 `build, prove, generalize`：先在真实客户场景里解决问题，再把重复出现的模式沉淀为产品能力。
 
 ## 关键数据点
 
-- 成立：2026 年 5 月
-- 投资：**\$40 亿**（私募股权：TPG、Advent）
-- 估值：**\$140 亿**
-- 首笔收购：Tomoro（英国，2023 年成立，150 名 FDE，业务覆盖英国、亚洲、澳大利亚）
+- 启动时间：2026 年 5 月 11 日。
+- OpenAI 官方公告披露：该实体由 OpenAI `majority-owned and controlled`。
+- 初始资金：超过 `USD 4 billion`。
+- 与启动同步，OpenAI 同意收购 Tomoro，把约 `150` 名 experienced FDEs 和 Deployment Specialists 带入 DeployCo。
+- 官方公告还披露：这是 OpenAI 与 `19` 家投资机构、咨询公司和系统集成商共同构成的合作网络。
 
 ## 前提与局限性
 
-- **估值依赖 FDE 规模化能力**：\$140 亿估值建立在 FDE 能有效规模化的假设上，但 FDE 本质是人力密集型工作
-- **独立实体意味着风险隔离**：如果客户交付出现问题，法律和声誉风险由部署公司承担，而非 OpenAI 本体
-- **投资方结构**：OpenAI 本身不是直接投资方，而是"合作伙伴"角色，这意味着部署公司的利益与 OpenAI 不完全对齐
+- **官方信息边界**：一手材料披露了 ownership、investment、partner network 和 acquisition，但没有披露估值或详细 unit economics。
+- **规模化依赖模式沉淀**：如果部署经验不能持续沉淀成 repeatable patterns，它就会停留在人力密集型交付层。
+- **既独立又紧耦合**：官方同时强调 standalone business unit 与 extension of OpenAI，这意味着它天然处在定制交付与产品复用之间的张力里。
 
 ## 关联概念
 
