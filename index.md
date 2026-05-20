@@ -264,7 +264,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Building a general-purpose accessibility agent—and what we learned in the process]]
+最新编译：[[Maintainability sensors for coding agents]]
 
 ---
 

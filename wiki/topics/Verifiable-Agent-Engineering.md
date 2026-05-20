@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-05-18
+updated: 2026-05-20
 tags:
   - AI-Agent
   - verification
@@ -29,6 +29,7 @@ source_raw:
   - "[[Building a general-purpose accessibility agent—and what we learned in the process]]"
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
   - "[[OncoAgent A Dual-Tier Multi-Agent Framework for Privacy-Preserving Oncology Clinical Decision Support]]"
+  - "[[Maintainability sensors for coding agents]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
@@ -97,6 +98,14 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 
 真正的 Agent harness 是这四层的组合，而不是一个更长的 prompt。
 
+## 传感器层：把内部质量也纳入可验证边界
+
+Birgitta Böckeler 对这个 Topic 的补充在于：Agent 的可验证性不应只盯着“功能有没有做对”，还要盯着“代码库是否仍然值得继续让 Agent 修改”。一旦小改动开始牵连越来越多文件，或者改一个地方更容易把旧功能带坏，系统虽然还在产出代码，但它的可维护性边界已经在塌。
+
+这篇文章把传感器明确铺成三层：会话内即时反馈、CI 复验、周期性漂移审查。type checker、ESLint、Semgrep、dependency-cruiser、测试覆盖、增量 mutation testing 和 GitLeaks 负责在开发过程中不断收缩错误空间；安全审查、数据处理审查、依赖新鲜度和模块耦合审查则负责发现慢变量上的退化。这样被验证的不只是输出结果，还包括结构、依赖和安全约束。
+
+更关键的是，传感器不是纯报警器。作者把 lint message 改写成带工程判断的自我纠正提示，让 agent 学会什么时候该补类型、什么时候只压制 warning、什么时候阈值调整只能作为例外。这说明生产级 verification loop 不只是“有检查”，还要把检查包装成 agent 可消费的修正语言；否则反馈很快会退化成噪声，甚至把系统推向过度重构。
+
 ## 与现有 Topic 的关系
 
 - [[Agentic-Engineering-Patterns]]回答“如何用 Agent 做软件工程”。
@@ -108,4 +117,3 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 Agent 工程的下一步不是更像人，而是更像实验室：输入可控，状态可观测，失败可复现，边界可拒绝。
 
 当系统能验证一个 Agent，它才真正拥有这个 Agent。
-
