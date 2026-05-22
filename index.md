@@ -18,7 +18,7 @@ tags:
 | 指标 | 数值 |
 |-----|------|
 | Entity 页面 | 176 个 |
-| Topic 页面 | 20 个 |
+| Topic 页面 | 21 个 |
 | Comparison 页面 | 6 个 |
 | Raw 文章 | 58 个 |
 | Output 作品 | 1 个 |
@@ -239,6 +239,7 @@ tags:
 | [[wiki/topics/Organization-as-Agent-Harness\|组织作为 Agent Harness]] | 企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进 | AI-Ready-Organization, Organizational-Shape-Moat, Alignment-Tax |
 | [[wiki/topics/Code-as-Conceptual-Infrastructure\|代码作为概念基础设施]] | AI 让指令生成变便宜后，软件核心资产上移为词汇、边界、模型和语义约束 | Conceptual-Model, Cognitive-Debt, Essential-Complexity, Friction-as-Design-Signal |
 | [[wiki/topics/AI-Labor-Bottleneck-Shift\|AI 劳动瓶颈迁移]] | 当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量 | Input-Output-Outcome, Alignment-Tax, Allocation-Economy, FDE |
+| [[wiki/topics/AI-Native-Product-Operating-System\|AI 原生产品操作系统]] | 把模型能力溢出转化为产品假设、发布探针、反馈闭环和市场验证纪律 | AI-Native-Shipping, Research-Preview, PM-in-AI-Era, Product-Overhang |
 
 ### Comparisons (comparisons/)
 *对比分析页面*
