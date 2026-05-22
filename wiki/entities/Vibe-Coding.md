@@ -5,7 +5,7 @@ aliases:
   - Vibe Coding
 definition: "Andrej Karpathy 2025 年提出的概念——提升所有人的编程能力底线（raising the floor），让任何人都能通过自然语言和 agent 交互来生成软件；未经审查、原型质量是其特征而非缺陷"
 created: 2026-04-10
-updated: 2026-05-09
+updated: 2026-05-22
 tags:
   - AI-Agent
   - coding-agents
@@ -20,6 +20,9 @@ related_entities:
   - '[[AI-Psychosis]]'
   - '[[Software-3.0]]'
   - '[[Jagged-Intelligence]]'
+  - "[[Essential-Complexity]]"
+  - "[[Friction-as-Design-Signal]]"
+  - "[[Ownership]]"
 source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
@@ -28,6 +31,7 @@ source_raw:
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - "[[20260127-claude-coding-notes]]"
   - "[[用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践]]"
+  - "[[Why I Don’t Vibe Code]]"
 ---
 
 # Vibe Coding（氛围编程）
@@ -132,6 +136,15 @@ Vibe Coding 与 Software 2.0 的关系：
 3. 不清理死代码
 4. 实现冗余、脆弱的 1000 行方案，经提示后可压缩为 100 行
 
+## 反向案例：为什么不 Vibe Code
+
+Jacob Harris 的 [[Why I Don’t Vibe Code]] 给 Vibe Coding 提供了一个有价值的反例。它不是从“AI 是否有用”切入，而是从软件工作的不可外包部分切入：
+
+- [[Essential-Complexity]] 仍然存在：AI 可以降低写代码的偶然复杂性，但不能替代抽象设计、边界选择和长期维护判断。
+- [[Friction-as-Design-Signal]] 不能被一概消除：阅读陌生代码、写 ADR、暂停实现，都是让真实约束浮现的过程。
+- [[Ownership]] 不能转交给模型：模型可以生成代码，但不能为公共服务故障、数据误读或系统伤害承担后果。
+- 软件是协作实践：把产品、设计、测试、合规和 review 都视为“摩擦”，会让系统更快但未必更好。
+
 ## 关键数据点
 
 - Andrej Karpathy 于 2025 年 2 月提出该术语
@@ -146,6 +159,7 @@ Vibe Coding 与 Software 2.0 的关系：
 - 局限性：不适用于生产环境、团队协作、长期维护系统、安全敏感应用
 - 质量标准：未经审查、原型质量，与生产就绪代码有本质区别
 - 术语滥用风险：不应将"任何 LLM 生成代码"都定义为 Vibe Coding
+- 反向边界：当任务需要本质复杂性判断、团队协作和责任承担时，Vibe Coding 的收益会被隐藏成本抵消
 
 ---
 

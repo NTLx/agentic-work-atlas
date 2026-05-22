@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-05-20
+updated: 2026-05-22
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 173 个 |
+| Entity 页面 | 176 个 |
 | Topic 页面 | 20 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 57 个 |
+| Raw 文章 | 58 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -102,6 +102,8 @@ tags:
 | [[wiki/entities/Code-Execution\|Code Execution]] | AI Agent 直接运行代码的能力，Agentic Engineering 的决定性能力 | What is agentic engineering |
 | [[wiki/entities/Verifiability\|Verifiability（可验证性）]] | 决定 LLM 自动化的核心维度——可验证就能 RL 训练，不可验证就停滞 | Andrej Karpathy: From Vibe Coding to Agentic Engineering |
 | [[wiki/entities/Vibe-Coding\|Vibe Coding]] | 未经审查、原型质量的 LLM 生成代码（Karpathy 2025） | What is agentic engineering |
+| [[wiki/entities/Essential-Complexity\|Essential Complexity（本质复杂性）]] | 软件中无法靠工具自动消除的领域、抽象和长期维护复杂性 | Why I Don’t Vibe Code |
+| [[wiki/entities/Friction-as-Design-Signal\|Friction as Design Signal（摩擦作为设计信号）]] | 把开发阻力视为架构、学习和边界选择的反馈 | Why I Don’t Vibe Code |
 | [[wiki/entities/Compound-Engineering\|Compound Engineering]] | 持续改进 Agent 指令，每个项目后记录有效做法 | AI should help produce better code |
 | [[wiki/entities/Jagged-Intelligence\|Jagged-Intelligence（锯齿状智能）]] | LLM 能力分布高度不均匀——代码超人，常识脆弱 | Andrej Karpathy: From Vibe Coding to Agentic Engineering |
 | [[wiki/entities/Jevons-Paradox-for-Knowledge-Work\|Jevons Paradox for Knowledge Work]] | AI 效率提升导致知识工作需求大幅增长 | Jevons Paradox for Knowledge Work |
@@ -210,6 +212,7 @@ tags:
 | [[wiki/entities/Accessibility-Complexity-Evaluation\|Accessibility Complexity Evaluation]] | 用启发式脚本评估代码复杂度决定 Agent 是否应自动修改 | Accessibility, Code Quality |
 | [[wiki/entities/Accessibility-High-Risk-Patterns\|Accessibility High Risk Patterns]] | 拖放/Toast/富文本编辑器等禁止 Agent 自动修改的模式 | Accessibility, Anti-Patterns |
 | [[wiki/entities/The-OpenAI-Deployment-Company\|The OpenAI Deployment Company]] | OpenAI 独立部署实体/业务单元，以 FDE 为核心推进企业 AI 落地 | Enterprise, AI-Industry |
+| [[wiki/entities/Jacob-Harris\|Jacob Harris]] | 软件开发者、jacobharr.is 作者，写作关注软件、数据和公共系统中的工程判断 | Software Engineering, Data Journalism |
 
 ### Topics (topics/)
 *整合多篇文章的主题*
@@ -234,7 +237,7 @@ tags:
 | [[wiki/topics/Agent-Knowledge-Management\|Agent 知识管理与自进化]] | LLM Wiki、Obsidian-Wiki、GBrain 三种知识自组织与自进化的技术路径与工程实践 | LLM-Wiki, GBrain, Obsidian-Wiki, Progressive-Disclosure, Thin-Harness-Fat-Skills |
 | [[wiki/topics/Verifiable-Agent-Engineering\|可验证 Agent 工程]] | 把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统 | Verifiability, Dominator-Analysis, Agent-PR-Review, Corrective-RAG |
 | [[wiki/topics/Organization-as-Agent-Harness\|组织作为 Agent Harness]] | 企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进 | AI-Ready-Organization, Organizational-Shape-Moat, Alignment-Tax |
-| [[wiki/topics/Code-as-Conceptual-Infrastructure\|代码作为概念基础设施]] | AI 让指令生成变便宜后，软件核心资产上移为词汇、边界、模型和语义约束 | Conceptual-Model, Cognitive-Debt, Ontology, LLM-Wiki |
+| [[wiki/topics/Code-as-Conceptual-Infrastructure\|代码作为概念基础设施]] | AI 让指令生成变便宜后，软件核心资产上移为词汇、边界、模型和语义约束 | Conceptual-Model, Cognitive-Debt, Essential-Complexity, Friction-as-Design-Signal |
 | [[wiki/topics/AI-Labor-Bottleneck-Shift\|AI 劳动瓶颈迁移]] | 当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量 | Input-Output-Outcome, Alignment-Tax, Allocation-Economy, FDE |
 
 ### Comparisons (comparisons/)
@@ -260,11 +263,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（57 个）*
+*原始剪藏文章（58 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Building a general-purpose accessibility agent—and what we learned in the process]]
+最新编译：[[Why I Don’t Vibe Code]]
 
 ---
 
@@ -297,4 +300,4 @@ status             # 查看知识库状态
 ---
 
 *索引版本: v2.6*
-*最后更新: 2026-05-18*
+*最后更新: 2026-05-22*

@@ -7,7 +7,7 @@ aliases:
   - 代理式工程
 definition: "Andrej Karpathy 2026 年定义的工程学科——在保持专业软件质量（安全、可靠）的前提下，用 agents 实现远超 10x 的速度提升；区别于 Vibe Coding 的「提升底线」，Agentic Engineering 是「保持上限」的严肃实践"
 created: 2026-04-09
-updated: 2026-05-11
+updated: 2026-05-22
 tags:
   - AI-Agent
   - Software-Engineering
@@ -28,6 +28,8 @@ related_entities:
   - '[[Agent-PR-Review]]'
   - '[[Agentic-Workflow-Token-Efficiency]]'
   - '[[渐进式重构]]'
+  - "[[Essential-Complexity]]"
+  - "[[Friction-as-Design-Signal]]"
 source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
   - '[[Using Git with coding agents - Agentic Engineering Patterns]]'
@@ -39,6 +41,7 @@ source_raw:
   - '[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]'
   - '[[The Anatomy of an Agent Harness]]'
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
+  - "[[Why I Don’t Vibe Code]]"
 ---
 
 # Agentic Engineering
@@ -95,6 +98,12 @@ Agent 软件：
 | **重构** | 后台异步重构 | PR 评估 |
 | **历史管理** | History Rewriting | 编辑决策 |
 
+## 反向边界：不要把摩擦全打掉
+
+[[Why I Don’t Vibe Code]] 对 Agentic Engineering 的补充是：生产级 Agent 工程不应只问“能不能更快生成代码”，还要问“哪些摩擦必须保留为设计反馈”。
+
+有经验工程师在 close reading、写 ADR、走开暂停和重新审视架构时，并不是在浪费时间，而是在处理 [[Essential-Complexity|本质复杂性]]。好的 Agentic Engineering 应让 Agent 执行可验证工作，同时保留人类对抽象、责任和协作边界的判断。
+
 
 ### Leverage：声明式指令 (Karpathy, 2026)
 
@@ -140,6 +149,7 @@ Drew Breunig 提出扩展的三阶段 Agentic Coding 模型：
 - 人类角色从"写代码"转为"验证和迭代"，需要对结果负责
 - LLM 不从过去错误中学习，需要人类显式更新指令和工具 harness
 - Vibe Coding 和 Agentic Engineering 应保持区分：前者是未审查原型，后者是生产级代码
+- Agentic Engineering 不能只追求消除摩擦；部分摩擦是设计信号，必须通过 review、ADR、测试和人工判断保留下来
 
 ## 关联概念
 
@@ -151,6 +161,8 @@ Drew Breunig 提出扩展的三阶段 Agentic Coding 模型：
 - [[Corrective-RAG]] — Agentic 工程中提升 RAG 质量的核心模式
 - [[Reflexion]] — Agentic 工程中提升输出可靠性的反馈循环
 - [[Hardware-Sovereignty]] — 企业级 Agentic 部署的基础设施前提
+- [[Essential-Complexity]] — Agentic Engineering 需要显式面对的复杂性
+- [[Friction-as-Design-Signal]] — 判断哪些摩擦该保留为设计反馈
 
 ## 来源
 

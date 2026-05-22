@@ -3,7 +3,7 @@ type: topic
 title: Code as Conceptual Infrastructure
 description: "代码作为概念基础设施：AI 让指令生成变便宜后，软件的核心资产上移为词汇、边界、模型和语义约束"
 created: 2026-05-18
-updated: 2026-05-18
+updated: 2026-05-22
 tags:
   - software-engineering
   - knowledge-management
@@ -21,6 +21,9 @@ related_entities:
   - "[[Knowledge-Compilation]]"
   - "[[LLM-Wiki]]"
   - "[[Context-Engineering]]"
+  - "[[Essential-Complexity]]"
+  - "[[Friction-as-Design-Signal]]"
+  - "[[Ownership]]"
 source_raw:
   - "[[What Is Code?]]"
   - "[[20260420-ontology-enterprise-ai-agent]]"
@@ -28,6 +31,7 @@ source_raw:
   - "[[20260420-ontology-meets-agent-case-study]]"
   - "[[20260413-llm-wiki]]"
   - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
+  - "[[Why I Don’t Vibe Code]]"
 ---
 
 # Code as Conceptual Infrastructure（代码作为概念基础设施）
@@ -80,6 +84,12 @@ AI 生成词汇
 
 所以“不要过度抽象”在 AI 时代不只是工程审美，而是认知风险控制。
 
+## 摩擦暴露概念问题
+
+[[Friction-as-Design-Signal|摩擦作为设计信号]]补上了另一个角度：如果代码是概念基础设施，那么写代码时遇到的阻力并不总是低效。它可能说明词汇不清、边界错误、抽象层级不对，或者团队还没有真正理解这个领域。
+
+[[Why I Don’t Vibe Code]] 的价值在于把这种摩擦从“要被 AI 消灭的成本”重新解释为工程反馈。LLM 可以帮忙生成实现，但它不会自动知道某个实现为什么“感觉不对”。这种感觉通常来自 [[Essential-Complexity|本质复杂性]]：现实比模型脏，抽象会遮蔽信息，系统需要人在后果中承担责任。
+
 ## 本体是企业级概念基础设施
 
 [[Ontology|本体]]把这个问题推到企业尺度：如果一个组织想让 Agent 理解订单、库存、客户、权限、风险，它不能只靠 prompt 解释。它需要稳定的语义层。
@@ -111,4 +121,3 @@ AI 生成词汇
 AI 时代的软件竞争，不是看谁生成更多代码，而是看谁拥有更干净的概念系统。
 
 代码越便宜，概念越贵。
-
