@@ -89,5 +89,3 @@ The basic building block of agentic systems is an LLM enhanced with augmentation
 - [[ACI-Agent-Computer-Interface]] - Agent 计算机接口
 - [[Code-Execution]] - AI 代码执行能力
 - [[Context-Engineering]] - Agent 上下文工程
-
-current

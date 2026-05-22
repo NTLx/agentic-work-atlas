@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-04-16
+updated: 2026-05-22
 tags:
   - AI-Agent
   - coding-agents
@@ -21,6 +21,7 @@ related_entities:
   - '[[Harness-Engineering]]'
   - '[[Agent-Harness]]'
   - '[[AI-First]]'
+  - '[[Agentic-Workflow-Token-Efficiency]]'
 source_raw:
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'
@@ -30,6 +31,7 @@ source_raw:
   - '[[20260413-why-ai-first-strategy-wrong]]'
   - "[[Validating agentic behavior when “correct” isn’t deterministic]]"
   - "[[The Anatomy of an Agent Harness]]"
+  - "[[Improving token efficiency in GitHub Agentic Workflows]]"
 ---
 
 # Agentic Engineering Patterns
@@ -85,6 +87,12 @@ source_raw:
 - First run the tests
 - Agentic manual testing
 - **[[Dominator-Analysis|Dominator Analysis]] 验证 Agent 行为**: 将编译器理论中的支配者分析应用于 Agent 执行图，自动区分 essential states 与 optional noise。仅需 2-10 次成功 trace 即可构建 ground truth。实验 F1=100% vs Agent 自评 69.8%。来源: [[Validating agentic behavior when “correct” isn’t deterministic|GitHub Blog: Validating Agentic Behavior]]
+
+### Cost and Observability
+
+- **[[Agentic-Workflow-Token-Efficiency|Token Efficiency]]**: 生产级 Agentic Workflow 不能只问“能否完成任务”，还要问每次自动触发是否在消耗不可见成本。GitHub 的实践显示，API 代理记录、每日 token 审计、MCP 工具裁剪和 CLI 替代，能把 Agent 工作流从黑盒花费变成可优化系统。
+- **确定性前置**: 许多 agent turns 只是数据读取，不需要推理。把 PR diff、文件列表、issue 元数据等提前用 CLI 写入工作区，可以把确定性读取移出 LLM 循环。
+- **质量混淆**: token 下降不必然代表效率提升，也可能是工作做少了；需要同时看模型层级、工作负载、turn 数、工具完成率和结果质量。
 
 ---
 
@@ -168,6 +176,7 @@ source_raw:
 - [[Harness-Engineering]] - 让 Agent 成为主要构建者的完整系统框架
 - [[Agent-Harness]] - Harness 的 12 组件 + 7 架构决策技术框架
 - [[AI-First]] - 组织级 AI 优先范式
+- [[Agentic-Workflow-Token-Efficiency]] - Agentic Workflow 的成本可观测与优化方法
 
 ---
 

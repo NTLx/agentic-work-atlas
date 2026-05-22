@@ -126,5 +126,3 @@ It will be on our society as a whole to make sure that, with the incredible new 
 - [[Allocation-Economy]] - 分配经济的到来
 - [[Model-Manager]] - 分配经济中的核心角色
 - [[Judgment]] - 知道要什么比知道怎么做更重要
-
-current

@@ -101,6 +101,4 @@ I don’t know exactly what work looks like when everyone is a manager with an a
 - [[Agentic-Engineering]] - AI Agent 工程范式
 - [[Compound-Engineering]] - 复合型工程能力
 
-current
-
 ![](https://substackcdn.com/image/fetch/\$s_!ml-7!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6cbe84ef-5e39-49bb-a6e8-4d427d42b54e_2496x1696.jpeg)

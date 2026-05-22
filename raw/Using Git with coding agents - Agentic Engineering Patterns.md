@@ -182,5 +182,3 @@ Last modified: 23rd March 2026
 - [[Coding-Agents]] - AI 编程助手
 - [[Git-Fluent-Agents]] - AI Agent 的 Git 流利度
 - [[History-Rewriting]] - Git 历史重写的工程模式
-
-current

@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-05-20
+updated: 2026-05-22
 tags:
   - AI-Agent
   - verification
@@ -22,6 +22,7 @@ related_entities:
   - "[[Reflexion]]"
   - "[[MachinaCheck]]"
   - "[[Hardware-Sovereignty]]"
+  - "[[Agentic-Workflow-Token-Efficiency]]"
 source_raw:
   - "[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]"
   - "[[Validating agentic behavior when “correct” isn’t deterministic]]"
@@ -30,6 +31,7 @@ source_raw:
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
   - "[[OncoAgent A Dual-Tier Multi-Agent Framework for Privacy-Preserving Oncology Clinical Decision Support]]"
   - "[[Maintainability sensors for coding agents]]"
+  - "[[Improving token efficiency in GitHub Agentic Workflows]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
@@ -106,10 +108,19 @@ Birgitta Böckeler 对这个 Topic 的补充在于：Agent 的可验证性不应
 
 更关键的是，传感器不是纯报警器。作者把 lint message 改写成带工程判断的自我纠正提示，让 agent 学会什么时候该补类型、什么时候只压制 warning、什么时候阈值调整只能作为例外。这说明生产级 verification loop 不只是“有检查”，还要把检查包装成 agent 可消费的修正语言；否则反馈很快会退化成噪声，甚至把系统推向过度重构。
 
+## 成本可观测性也是验证边界
+
+[[Agentic-Workflow-Token-Efficiency]] 把“能运行”之外的另一类生产风险拉进验证边界：自动触发的 Agent 工作流可能在 CI 中静默累积 token 成本。GitHub 的做法不是靠主观节省，而是把每次 API 调用记录成 `token-usage.jsonl`，再由审计 Agent 和优化 Agent 反过来优化工作流本身。
+
+这里的第一性原理和可验证 Agent 工程一致：不要让 LLM 承担不需要推理的工作。PR diff、文件内容、评论列表等确定性读取，应该前置为 CLI 或缓存步骤；MCP 工具 schema 也不应无差别塞进每个请求。这样减少的不只是成本，也减少了 Agent 误用工具、陷入回退循环和扩大上下文噪声的机会。
+
+但 token 指标不能单独作为成功标准。模型切换、工作负载变大、输出质量下降，都可能让数字产生假象。因此成本验证必须和 turn 数、工具完成率、任务结果、质量传感器一起看；否则“优化”可能只是让 Agent 少做了该做的工作。
+
 ## 与现有 Topic 的关系
 
 - [[Agentic-Engineering-Patterns]]回答“如何用 Agent 做软件工程”。
 - [[Building-Effective-Agents]]回答“Agent 工作流有哪些架构模式”。
+- [[Agentic-Workflow-Token-Efficiency]]回答“生产级 Agent 工作流怎样控制可观测成本”。
 - 本 Topic 回答“这些模式怎样跨过 demo 与生产之间的断层”。
 
 ## 结论

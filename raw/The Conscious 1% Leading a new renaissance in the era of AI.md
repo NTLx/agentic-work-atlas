@@ -145,5 +145,3 @@ Founder and CEO
 - [[Decision-Quality]]
 - [[Resonance]]
 - [[Taste]]
-
-current

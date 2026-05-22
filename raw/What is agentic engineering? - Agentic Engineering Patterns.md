@@ -111,5 +111,3 @@ Last modified: 16th March 2026
 - [[Agentic-Engineering]]
 - [[Coding-Agents]]
 - [[Vibe-Coding]]
-
-current

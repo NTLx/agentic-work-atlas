@@ -210,5 +210,3 @@ Inner work isn’t just a personal growth tool anymore. It’s a strategic imper
 - [[Knowledge-Work]] - 知识工作的本质与终结
 - [[Wisdom-Work]] - 知识工作之后的下一阶段
 - [[AI-Era-Economy-Shift]] - AI 驱动的经济转型
-
-current

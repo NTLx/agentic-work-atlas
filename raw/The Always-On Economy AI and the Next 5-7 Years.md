@@ -83,5 +83,3 @@ The key to success will not lie in completely automating human tasks, but in tho
 - [[ACI-Agent-Computer-Interface]] - 人机协作的接口模式
 - [[Allocation-Economy]] - 分配经济中的 AI 角色
 - [[AI-Era-Economy-Shift]] - AI 驱动的经济转型
-
-current

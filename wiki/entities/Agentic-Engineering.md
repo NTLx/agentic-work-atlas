@@ -42,6 +42,7 @@ source_raw:
   - '[[The Anatomy of an Agent Harness]]'
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
   - "[[Why I Don’t Vibe Code]]"
+  - "[[Improving token efficiency in GitHub Agentic Workflows]]"
 ---
 
 # Agentic Engineering
@@ -99,6 +100,12 @@ Agent 软件：
 | **代码理解** | Linear walkthroughs、解释代码 | 提出问题 |
 | **重构** | 后台异步重构 | PR 评估 |
 | **历史管理** | History Rewriting | 编辑决策 |
+
+### 成本与可观测性
+
+生产级 Agentic Engineering 还需要把 token 成本、工具调用和回退循环纳入工程观测。[[Improving token efficiency in GitHub Agentic Workflows]] 的 GitHub 实践说明，自动触发的 Agent 工作流如果没有 API 级日志和审计，很容易在 CI 中静默累积成本。
+
+核心原则是：能确定性完成的读取和过滤，不要交给 LLM 推理循环。MCP 工具裁剪、CLI 替代、预下载上下文和 token usage artifact，本质上都是把 Agent 行为变成可观察、可比较、可优化的工程对象。
 
 ## 反向边界：不要把摩擦全打掉
 
