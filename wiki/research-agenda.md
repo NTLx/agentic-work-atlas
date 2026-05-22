@@ -91,6 +91,7 @@ related_entities:
 ## 下一批剪藏方向
 
 - Karpathy 关于 LLM Wiki、Software 3.0、Agentic Engineering 的一手材料。
+- AI Agent 开发、Agent Harness、验证、工具使用和上下文工程的一手工程实践。
 - GBrain 或类似系统的工程实现细节，特别是混合检索、完整文件精读和图谱加权。
 - Obsidian-Wiki / Skills 类系统如何把工作流封装成 Agent 可执行能力。
 - 知识编译质量评估方法：冲突检测、证据回链、概念去重、过时判断。
@@ -102,6 +103,7 @@ related_entities:
 | 目标 | 当前缺口 | 下一步 source | 触发行动 |
 |------|----------|---------------|----------|
 | 验证“标准化 SaaS agent 会不会削弱 FDE” | 缺反例 | 找无 FDE、无咨询、无长期驻场，却完成核心工作流改造的企业案例 | clip 后编译到 [[Forward-Deployed-AI-Enablement]] |
+| 补强 Agent Harness 作为软件工程主线 | 缺一手工程复盘 | 找 agent runtime、tool use、ACI、eval、replay、approval gate、权限边界、可观测性和失败恢复的实践文章 | clip 后编译到 [[Agentic-Engineering-Patterns]] 或 [[Verifiable-Agent-Engineering]] |
 | 建立 output 回填的外部参照 | 缺一手实践 | 找团队如何用文章、报告、decision memo 反向更新知识库的案例 | clip 后更新 [[Knowledge-Compilation]] 或新建 comparison |
 | 判断纯 Markdown LLM Wiki 的规模边界 | 缺工程数据 | 找 GBrain、Obsidian-Wiki 或类似系统的检索、图谱、文件精读实现细节 | clip 后更新 [[Agent-Knowledge-Management]] |
 | 定义知识层面的 audit 指标 | 缺质量标准 | 找关于知识库质量、证据回链、冲突检测、概念去重的实践材料 | compile 后补充 Lint 工作流 |
