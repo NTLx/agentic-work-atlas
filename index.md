@@ -21,7 +21,7 @@ tags:
 | Topic 页面 | 22 个 |
 | Comparison 页面 | 6 个 |
 | Raw 文章 | 60 个 |
-| Output 作品 | 1 个 |
+| Output 作品 | 2 个 |
 
 ---
 
@@ -263,12 +263,20 @@ tags:
 | Output | 描述 | 类型 |
 |--------|------|------|
 | [[wiki/outputs/deploy-obsidian-wiki-with-quartz\|将 Obsidian 知识库部署为 LLM Wiki 网站]] | Quartz + GitHub Actions 自动部署教程 | Tutorial |
+| [[wiki/outputs/why-llm-wiki-is-knowledge-compilation\|为什么 LLM Wiki 不是 RAG，而是知识编译系统]] | 基于 Wiki 验证 LLM Wiki 与 RAG 的范式差异 | Essay |
+
+### Research Agenda
+*未验证问题与下一轮剪藏方向*
+
+| 页面 | 用途 |
+|------|------|
+| [[wiki/research-agenda\|LLM Wiki 研究议程]] | 记录 `explore(topic)` 产生的问题、反例和待剪藏方向 |
 
 ---
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（58 个）*
+*原始剪藏文章（60 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
