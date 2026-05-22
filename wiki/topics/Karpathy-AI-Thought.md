@@ -2,7 +2,7 @@
 type: topic
 title: Karpathy AI 思想体系
 created: 2026-04-13
-updated: 2026-05-22
+updated: 2026-05-23
 tags:
   - AI-Agent
   - thought-leader
@@ -26,6 +26,7 @@ related_entities:
   - '[[AI-Capability-Gap]]'
   - '[[RAG-vs-LLM-Wiki]]'
 source_raw:
+  - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - '[[20260413-llm-wiki]]'
   - '[[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]]'
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
@@ -229,9 +230,9 @@ Karpathy 明确指出 LLM Wiki 与 Memex 的关系：
 | 维度 | 2.0 Runtime RAG | 3.0 Compile-time Wiki |
 |-----|-----------------|---------------------|
 | **知识处理** | 每次写作时现搜现读 | 预先编译为结构化 Wiki |
-| **答案稳定性** | 同一问题可能不同答案 | 固定不变的知识资产 |
+| **答案稳定性** | 同一问题可能不同答案 | 相对稳定、可审查的知识资产 |
 | **知识累积** | 无 | 持久沉淀 |
-| **维护成本** | 每次重复检索成本 | 一次编译，后续免费 |
+| **维护成本** | 每次重复检索成本 | 首次编译成本高，后续复用成本低 |
 | **典型工具** | NotebookLM、ChatGPT 文件上传 | Obsidian + LLM Agent |
 
 ### 2.0 的天花板

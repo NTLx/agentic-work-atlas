@@ -2,7 +2,7 @@
 type: topic
 title: AI-Era Career Skills
 created: 2026-04-09
-updated: 2026-05-20
+updated: 2026-05-23
 tags:
   - AI-Agent
   - productivity
@@ -12,7 +12,10 @@ related_entities:
   - '[[Model-Introspection]]'
   - '[[Taste]]'
   - '[[Forward-Deployed-Engineer]]'
+  - '[[Claude-Code-CLI]]'
+  - '[[Agent-Tenacity]]'
 source_raw:
+  - '[[20260127-claude-coding-notes]]'
   - '[[Forward deployed engineering at OpenAI]]'
   - '[[Forward Deployed Engineer (FDE) - NYC]]'
   - '[[OpenAI launches the OpenAI Deployment Company to help businesses build around intelligence]]'
@@ -26,81 +29,41 @@ source_raw:
 
 ## 核心概念
 
-### 1. Claude Skills：从一次性对话到可复用资产
+### 1. 从手动执行到调度 Agent
 
-**关键转变**:
-- Prompt = 一次性消耗品
-- Skill = 越用越值钱的资产
+Karpathy 的 Claude coding notes 显示，AI 编程技能的核心变化不是“会不会写 prompt”，而是工作方式从手写细节转向用自然语言调度大粒度 code actions。
 
-**生态规模**: SkillsMP 平台聚合超过 28 万个技能包，每日新增 1 万+。
+他把自己的工作流变化描述为：从 2025 年 11 月的约 `80%` 手动编码、`20%` agent 辅助，迅速转成 2025 年 12 月的约 `80%` agent 编码、`20%` 人工编辑和修补。这是个人经验，不是行业统计，但它说明一个方向：职业技能正在从“亲手生成”转向“设定目标、约束边界、审查结果”。
 
-**效率提升**: 任务完成时间平均缩短约 80%（Anthropic 官方研究）。
+### 2. 杠杆来自成功标准，而不是命令清单
 
-### 2. 各岗位的 Skill 应用
+Agent 最擅长的是在明确目标下循环尝试。Karpathy 的方法建议是：
 
-#### 内容创作者
-| Skill | 价值 |
-|-------|------|
-| 写作风格生成器 | 分析文章，自动生成专属风格卡片 |
-| 内容策略规划 | 选题优先级评分，告别拍脑袋 |
-| 热点趋势猎手 | 扫描全网 30 天热点，数据驱动 |
+- 先写测试，再让 agent 通过测试。
+- 给出成功标准，而不是一步步命令。
+- 先写朴素但更可能正确的算法，再在保持正确性的前提下优化。
+- 把 browser MCP、测试、运行反馈放进闭环。
 
-#### 产品经理
-| Skill | 价值 |
-|-------|------|
-| 事前验尸 | 提前揪出产品漏洞，逆向推导失败原因 |
-| 用户研究合成 | 访谈/问卷/工单转化为结构化洞察 |
-| 冲刺规划 | 90 分钟准备工作缩到 15 分钟 |
+这意味着 AI 时代的职业技能更接近“设计可验证任务环境”：把目标、约束、反馈和验收标准组织好，让 agent 可以长时间自主推进。
 
-#### 程序员
-| Skill | 价值 |
-|-------|------|
-| everything-claude-code | 33 个命令覆盖全开发流程 |
-| superpowers | 14 个 Skill 构成完整开发方法论 |
-| 官方插件 | 多 Agent PR 审查 + Git 自动化 |
+### 3. 判断力比生成力更稀缺
 
-#### 其他岗位
-- **财务/会计**: Finance Plugin、Financial Services Suite、Invoice Organizer
-- **教师/培训师**: 教育技能套件、learning-education、Office 文档套件
-- **法务/律师**: Legal Plugin、claude-legal-skill、Awesome Legal Skills
-- **咨询顾问**: stratarts、Deep Research Skills、ceo-advisor
-- **合规/审核**: RA/QM Team Bundle、soc2-audit-helper
-- **科研/学术**: claude-scientific-skills（147+ Skill）、claude-scholar
+模型的错误不再主要是语法错误，而是概念性错误：替用户补前提、不主动澄清、不暴露矛盾、过度复杂化、顺手改掉无关代码。
+
+因此，人的关键能力不是“生成更多”，而是：
+
+- 看出 agent 什么时候在错误前提上继续前进。
+- 要求它暴露困惑、权衡和边界条件。
+- 把臃肿实现压回更简单的方案。
+- 在代码可运行之外审查概念是否正确。
 
 ## 关键洞察
-
-### Skill 不是程序员的专利
-
-用 Skills 最狠的人往往不是程序员：
-- 产品经理：事前检验 Skill，一个季度揪出 3 个重大产品漏洞
-- 审计朋友：写作 Skill 把审核速度翻 3 倍
-
-**核心**: Skills 是所有岗位的效率外挂。
-
-### Prompt vs Skill 的本质区别
-
-| 维度 | Prompt | Skill |
-|------|--------|-------|
-| 记忆 | 每次需重新交代 | 永久记住 |
-| 可迭代 | 不可以 | 可以不断加新案例 |
-| 跨平台 | 不可以 | 支持 Agent Skills 开放标准 |
-
-**类比**: 智能手机人人都有，但装了什么 App 决定了你用它刷短视频还是重构工作流。Skills 就是 AI 时代的 App Store。
 
 ### Model Introspection：把错误变成技能
 
 AI 时代的高阶技能不只是会写 prompt，还包括让模型解释自己的错误路径。[[Model-Introspection|模型自省]] 能把一次失败转化为可复用的调试规则：为什么模型会误判、它默认补了什么前提、下次应该给什么约束。
 
 这类能力属于判断力训练，而不是工具熟练度训练。
-
-### 安全意识
-
-只用可信来源：
-- Anthropic 官方仓库（`anthropics/skills`、`anthropics/knowledge-work-plugins`）
-- 知名开发者（obra、affaan-m、deanpeters 等）
-- 有 Star 有代码审查的开源项目
-
-**警告**: 已发现恶意 Skill 窃取 SSH 密钥的案例。
 
 ### FDE：把模型接进真实工作流的人
 

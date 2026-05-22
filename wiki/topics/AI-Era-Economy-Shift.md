@@ -3,7 +3,7 @@ type: topic
 title: AI Era Economy Shift
 description: "AI 时代经济范式转型：从知识经济到分配经济，效率提升带来需求爆发"
 created: 2026-04-10
-updated: 2026-05-19
+updated: 2026-05-23
 tags:
   - AI-Agent
   - economy
@@ -153,4 +153,4 @@ AI 接管任务，但需要人整合工作流产生真正价值。
 
 ---
 
-> **来源**：Dan Shipper (Every), Ethan Mollick (Wharton), Aaron Levie (Box), Konstantine Buhler (Sequoia)
+> **来源**：Dan Shipper (Every), Ethan Mollick (Wharton), Aaron Levie (Box), Konstantine Buhler (Sequoia), Arnav Gupta

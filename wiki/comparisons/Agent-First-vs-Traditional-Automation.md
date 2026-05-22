@@ -2,7 +2,7 @@
 type: comparison
 title: Agent-First vs Traditional Automation
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-23
 tags:
   - comparison
   - AI-Agent
@@ -11,6 +11,8 @@ related_entities:
   - '[[Agent-First-Enterprise]]'
   - '[[Human-Governor-Agent-Operator]]'
   - '[[Machine-Readable-Processes]]'
+source_raw:
+  - '[[Enabling agent-first process redesign]]'
 ---
 
 # Agent-First vs Traditional Automation
@@ -24,7 +26,7 @@ related_entities:
 |-----|----------|-------------|
 | **运营模式** | 人类执行流程，AI 辅助 | AI Agent 运营流程，人类治理 |
 | **决策层级** | 人类参与所有决策层级 | 人类仅处理战略与例外 |
-| **绩效提升** | 增量改进（效率提升 10-30%） | 非线性飞跃（效率提升 5-10x） |
+| **绩效提升** | 增量改进 | 非线性飞跃（需按具体流程验证） |
 | **流程设计** | Agent 附加到遗留工作流 | 围绕 Agent 重新设计流程 |
 | **技术要求** | 无特殊要求，现有流程可沿用 | 必须实现 Machine-Readable Processes |
 | **适应性** | 静态规则，只能处理预定义场景 | 动态学习、实时适应、自主优化 |

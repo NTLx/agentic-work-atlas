@@ -2,7 +2,7 @@
 type: topic
 title: OpenClaw Agent System
 created: 2026-04-09
-updated: 2026-04-14
+updated: 2026-05-23
 tags:
   - OpenClaw
   - AI-Agent
@@ -16,6 +16,7 @@ related_entities:
   - '[[Three-State-Protocol]]'
 source_raw:
   - '[[OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup]]'
+  - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
 ---
 
 # OpenClaw Agent System
@@ -208,6 +209,4 @@ Elvis 的实战数据：
 ## 来源
 
 - [[OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup]]
-
-## 关联 Entity
-- [[Drew-Breunig]]
+- [[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]

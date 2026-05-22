@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-05-18
+updated: 2026-05-23
 tags:
   - organization
   - AI-Agent
@@ -23,7 +23,12 @@ related_entities:
   - "[[Public-only-Constraint]]"
   - "[[Ownership]]"
   - "[[Decision-Quality]]"
+  - "[[Model-Context-Protocol-MCP]]"
+  - "[[MCP-Registry]]"
+  - "[[Adversarial-Distillation]]"
 source_raw:
+  - "[[Building an MCP Ecosystem at Pinterest]]"
+  - '[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]'
   - "[[20260502-most-companies-arent-ready-for-ai]]"
   - "[[The next biggest moat in AI]]"
   - "[[Enabling agent-first process redesign]]"
@@ -56,6 +61,12 @@ source_raw:
 
 这四层不是管理学装饰。它们就是 Agent 的上下文窗口之外的真实上下文。
 
+## 工具接入也需要治理层
+
+Pinterest 的 MCP 生态说明，组织 Harness 不能只靠 prompt 管理工具。内部 MCP registry 作为单一事实来源，负责哪些 server 被批准、谁能访问、哪些工具能进入生产 surface；敏感工具还要按业务组做权限门控。
+
+这把“工具调用”从个人效率动作变成组织治理动作。Agent 能不能访问 Presto、Spark、Airflow 或内部知识库，不应由某个对话临时决定，而应由 registry、身份、审计和 human-in-the-loop 共同约束。
+
 ## 对齐税会被 AI 放大
 
 [[Alignment-Tax|对齐税]]说明，当代码和原型变便宜后，大组织的瓶颈会从“做不出来”转向“做出来但互相冲突”。
@@ -72,6 +83,14 @@ source_raw:
 ```
 
 这解释了一个反直觉现象：AI 工具越强，组织越不能依赖模糊协调。过去靠会议拖慢的问题，现在会被 Agent 以更高速度制造出来。
+
+## Skills 沉淀需要激励结构
+
+组织学习层还有一个常被忽视的问题：谁有动力把自己的经验沉淀成 Skills？
+
+朱少民关于 Skills 蒸馏的文章指出，企业希望工程师把隐性知识交给 Agent，但工程师会担心“训练自己的替代品”。如果激励结构错误，就会出现消极抵抗、质量投毒和上下文污染。解决办法不只是更好的工具，而是制度设计：署名、分润、晋升、保护期、转岗优先权等，让创建 Skills 对个人也是理性选择。
+
+因此，组织作为 Agent Harness，不只是技术系统，还是激励系统。
 
 ## 组织形态为什么是护城河
 
@@ -107,4 +126,3 @@ source_raw:
 AI 不会自动让组织变聪明。它只会让组织的真实结构更快显形。
 
 真正 AI-ready 的企业，不是最会用工具的企业，而是最能把自己写成可运行系统的企业。
-

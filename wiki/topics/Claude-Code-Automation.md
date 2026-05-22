@@ -2,7 +2,7 @@
 type: topic
 title: Claude Code Automation
 created: 2026-04-09
-updated: 2026-04-14
+updated: 2026-05-23
 tags:
   - Claude-Code
   - Automation
@@ -10,190 +10,127 @@ tags:
 related_entities:
   - '[[Agent-Orchestration]]'
   - '[[Claude-Code-CLI]]'
-  - '[[Headless-Mode]]'
-  - '[[Wes-Botman]]'
-source_raw: []
+  - '[[OpenClaw-Agent-System]]'
+  - '[[Agent-Swarm]]'
+source_raw:
+  - '[[OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup]]'
+  - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
 ---
 
 # Claude Code Automation
 
 > [!summary] 概要
-> Claude Code 自动化是将 Claude Code CLI 工具转化为可编程、可编排的编码引擎的核心技术。通过 PTY 模式、Headless 模式、Skill 文件等组合，实现 OpenClaw 对 Claude Code 的自主调用，让"项目经理"指挥"工程师"完成开发闭环。
+> Claude Code 自动化不是单纯把 `claude -p` 包成脚本，而是把 Claude Code 放进更大的编排系统：由 OpenClaw/Zoe 分配任务、注入业务上下文、创建隔离工作区、监控 PR 与 CI，并在结果达到验收标准后再通知人类合并。
 
 ## 核心架构
 
-Claude Code 自动化依赖三个关键技术支柱：
+从 Elvis Sun 的 OpenClaw 实践看，Claude Code 自动化依赖四个支柱：
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │              Claude Code 自动化调用架构                       │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │  PTY Mode   │ +  │ Headless    │ +  │ Skill File  │     │
-│  │  终端交互   │    │ Mode        │    │ 流程定义    │     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
-│         ↓                  ↓                  ↓            │
-│  ┌─────────────────────────────────────────────────────┐  │
-│  │           OpenClaw 编排层                            │  │
-│  │    任务拆解 → 进度监控 → 错误处理 → 结果汇总         │  │
-│  └─────────────────────────────────────────────────────┘  │
-│                          ↓                                 │
-│  ┌─────────────────────────────────────────────────────┐  │
-│  │           自动化开发闭环                             │  │
-│  │    需求 → PRD → 开发 → 测试 → 报告 → 用户验收       │  │
-│  └─────────────────────────────────────────────────────┘  │
+│  业务上下文层：Obsidian / 客户记录 / 历史决策                │
+│        ↓                                                    │
+│  编排层：Zoe 写 prompt、选 agent、监控进展、重试修正         │
+│        ↓                                                    │
+│  执行层：worktree + tmux session + Claude Code / Codex       │
+│        ↓                                                    │
+│  验收层：CI、AI review、截图、人工合并                       │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## 三大核心概念
+## 三个关键判断
 
-### 终端交互技术
+### 1. 自动化重点不是调用，而是上下文分工
 
-PTY（伪终端）是 OpenClaw 调用 Claude Code 的**必须技术**：
+原文的核心判断是：OpenClaw 和 Claude Code 不应该装进同一个上下文窗口。
 
-```bash
-bash pty:true workdir:~/projects/xxx background:true \
-  command:"claude --session-id xxx --permission-mode acceptEdits '任务'"
-```
+| 层级 | 放什么上下文 | 负责什么 |
+|------|--------------|----------|
+| OpenClaw / Zoe | 客户历史、会议记录、业务决策、失败经验 | 任务选择、prompt 编写、路由、重试 |
+| Claude Code | 代码库、任务说明、测试反馈 | 具体编码、修复、提交 PR |
 
-解决的问题：
-- CLI 挂起（无终端输入）
-- 输出乱码（terminal escape sequences）
-- 进程失控（无后台管理）
+这种分工避免把业务记忆和代码细节塞进同一窗口。编排层保持高层策略，Claude Code 保持代码焦点。
 
-### [[Headless-Mode]] - 非交互自动化
+### 2. tmux 比一次性 headless 更适合长任务
 
-Headless Mode 通过 `-p` 参数实现单次执行：
+Elvis 早期用过 `claude -p` 和 `codex exec`，后来转向 tmux。理由不是 headless 不能用，而是长任务需要中途重定向：
 
 ```bash
-claude -p "实现用户认证功能" \
-  --allowedTools "Read,Write,Edit,Bash" \
-  --max-turns 10 \
-  --output-format json
+tmux send-keys -t codex-templates "Stop. Focus on the API layer first, not the UI." Enter
 ```
 
-关键参数：
-- `--allowedTools`：限制工具权限（安全）
-- `--max-turns`：防止无限循环
-- `--session-id`：多轮对话上下文保持
-- `--output-format json`：结构化输出
+关键不是“驱动 TUI”，而是给每个 agent 一个可恢复、可观察、可干预的运行槽位。
 
-### Skill 文件 - 流程定义
+### 3. 完成定义必须外置
 
-Skill 文件定义完整的开发流程：
+自动化的目标不是“生成代码”，而是让 PR 达到可合并状态。原文中的 Definition of Done 包括：
 
-```markdown
----
-description: "全栈项目开发技能"
----
+- PR 已创建。
+- 分支已同步主干，无冲突。
+- CI 通过：lint、类型检查、单元测试、E2E。
+- Codex、Claude Code、Gemini 等 reviewer 给出结果。
+- UI 改动附截图。
 
-# Fullstack Development Skill
+这说明 Claude Code 自动化必须配套确定性的外部检查。没有 CI、review 和截图，自动化只会把未验证代码更快地推到人面前。
 
-## Phase 1：需求理解 → PRD
-## Phase 2：项目初始化
-## Phase 3：逐功能开发
-## Phase 4：自动化测试
-## Phase 5：交付报告
-```
+## OpenClaw 闭环
 
-## 项目经理模式
-
-OpenClaw 作为项目经理，Claude Code 作为工程师：
-
-| 角色 | 职责 |
-|-----|------|
-| **项目经理（OpenClaw）** | 接需求 → 写 PRD → 拆任务 → 盯进度 → 处理报错 → 测试验收 |
-| **工程师（Claude Code）** | 接任务 → 写代码 → 跑测试 → 返回结果 |
-| **用户** | 确认方案 → 看最终效果 |
-
-> "我当老板。全程我只参与两个节点：确认方案、看最终效果。"
-
-## 自动化开发闭环
+英文 setup 文章给出的闭环是：
 
 ```
-用户发需求（飞书）
-    ↓
-OpenClaw 写 PRD + 技术方案 → 用户确认
-    ↓
-OpenClaw 拆功能 → 逐个委派 Claude Code（PTY + background）
-    ↓
-Claude Code 开发 → 需要敏感信息才问用户
-    ↓
-开发完成 → Playwright 自动测试 → 截图发报告
-    ↓
-用户验收 → 部署上线
+客户请求或系统错误
+  ↓
+Zoe 结合 Obsidian 业务上下文做 scoping
+  ↓
+创建 worktree + tmux session
+  ↓
+Claude Code / Codex 执行编码任务
+  ↓
+PR + CI + 多模型 review + 截图
+  ↓
+Telegram 通知人类做最后合并判断
+  ↓
+合并后清理 worktree 和任务注册表
 ```
 
-## 解决的三大痛点
+中文半个月实践补充了另一层：不要让分析 Agent 直接编码。分析 Agent 负责判断、调研和任务拆解，编码通过 ACP 委派给 Claude Code、Codex、Gemini 等专业工具。
 
-直接用 Claude Code 的问题：
+## 可复用模式
 
-| 问题 | 解决方案 |
-|-----|---------|
-| **进程管理空白** | `--session-id` + `--resume` 支持恢复 |
-| **交互阻塞卡死** | `background:true` 后台运行 |
-| **结果送不回来** | `--output-format json` 结构化输出 |
+| 模式 | 价值 | 风险 |
+|------|------|------|
+| Worktree 隔离 | 多 agent 并发时避免互相污染 | 需要自动清理 |
+| tmux session | 长任务可观察、可恢复、可中途干预 | 需要状态登记 |
+| JSON registry | 让监控脚本低成本检查任务状态 | schema 变动会影响自动化 |
+| CI + reviewer | 把“完成”从 agent 自述改成外部验收 | reviewer 仍可能误报 |
+| 截图要求 | UI 改动可快速人工判断 | 只覆盖视觉层，不覆盖业务正确性 |
 
-## 实战案例
+## 适用边界
 
-### TikTok 爆款分析系统
+Claude Code 自动化适合：
 
-用户需求（飞书发送）：
-```
-我要开发的产品是：tiktok视频拆解网站。
-功能是，用户上传一个视频后，能逆向出它的提示词、拆成多个视频片段做更细致的分析。
-主要目的是帮助用户分析爆款视频，并且提炼出来一套玩法后，自己能复刻、模拟生成这类爆款。
-```
+- 小到中等范围、验收标准清晰的任务。
+- 可通过 CI、测试、截图或 reviewer 外部验证的改动。
+- 已经有业务上下文和历史决策可供编排层调用的项目。
 
-OpenClaw 自主流程：
-- 写 PRD + 技术方案 → 发给用户确认
-- PTY 模式启动 Claude Code → 初始化项目
-- 逐功能拆解 → 一个一个委派开发
-- 每功能完成自动检查输出 → 报错自动修
-- 需要 API Key 才问用户
-- 开发完 Playwright 测试 → 截图发飞书
+不适合：
 
-## 最佳实践总结
+- 没有明确完成标准的探索性产品判断。
+- 需要大规模架构方向取舍、但缺少人类审查的改动。
+- 直接把客户数据、生产权限和代码执行权限混在同一个 coding agent 里。
 
-### 黄金法则
+## 结论
 
-1. **用 `-p` 非交互模式**，不要尝试驱动 TUI
-2. **始终指定 `--max-turns`**，防止无限循环
-3. **始终指定 `--allowedTools`**，最小权限原则
-4. **用 PTY 启动**，否则 CLI 可能挂起
-5. **用 `--output-format json`** 获取结构化输出
-6. **用 `--session-id`** 保持多轮对话上下文
+Claude Code 自动化的核心不是某个 CLI 参数，而是把 coding agent 嵌入一个可观察、可恢复、可验证的系统。
 
-### 任务模板
-
-```bash
-# 代码审查
-claude -p "Review src/ for bugs" \
-  --allowedTools "Read,Grep,Glob" \
-  --permission-mode plan \
-  --max-turns 5
-
-# 实现功能
-claude -p "Implement user auth with JWT" \
-  --allowedTools "Read,Write,Edit,Bash" \
-  --max-turns 15
-
-# 修复 Bug
-claude -p "Fix the login bug" \
-  --allowedTools "Read,Write,Edit,Bash" \
-  --max-turns 10
-```
+单独的 Claude Code 是执行器。OpenClaw/Zoe 式编排层让它成为流水线中的工程师。
 
 ## 相关 Entity
 
 - [[Claude-Code-CLI]] - Claude Code CLI 工具定义
-- [[Headless-Mode]] - Headless 模式详解
 - [[Agent-Orchestration]] - 编排层架构
-
-## 参见
-
-- [[Wes-Botman]] - Claude Code 实践文章作者
-
-## 来源
+- [[OpenClaw-Agent-System]] - OpenClaw 系统主题

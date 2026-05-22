@@ -3,7 +3,7 @@ type: topic
 title: Lean-Indie-Engineering
 description: "独立开发者用极低技术成本运营盈利产品的工程哲学与实践，核心是控制分母、反企业思维、约束驱动决策"
 created: 2026-04-15
-updated: 2026-05-08
+updated: 2026-05-23
 tags:
   - indie-developer
   - bootstrap
@@ -166,7 +166,10 @@ GitHub Copilot 按**请求**计费而非按 **token**——一次请求即使让
 > "The tech industry wants you to believe that building a real business requires complex orchestration. It doesn't."
 > — Steve Hanov
 
-## 关联 Entity
-- [[Cybersecurity-Proof-of-Work]]
-- [[Security-Hardening-Phase]]
-- [[YAGNI]]
+## 关联概念
+
+- [[Lean-Stack]]
+- [[Runway-Math]]
+- [[Anti-Enterprise-Mindset]]
+- [[Constraint-Driven-Engineering]]
+- [[Time-Moat]]

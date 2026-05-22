@@ -2,7 +2,7 @@
 type: topic
 title: Wisdom-Work-Evolution
 created: 2026-04-09
-updated: 2026-04-14
+updated: 2026-05-23
 tags:
   - Knowledge-Work
   - AI-era
@@ -106,7 +106,7 @@ AI 模型特点：
 以前：知道更多 = 赚得更多
 现在：智慧（情感清晰度、判断力、连接）= 不可替代
 
-**Satya Nadella 案例**: 将情商作为 Microsoft 组织核心能力 → 8 年市值从 300 亿增至 3 万亿。
+**Satya Nadella 案例**: 将情商作为 Microsoft 组织核心能力 → 8 年市值从 `USD 300 billion` 增至 `USD 3 trillion`。
 
 ### 杰出人物的投资方向
 

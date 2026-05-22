@@ -2,7 +2,7 @@
 type: topic
 title: "Agent 知识管理与自进化"
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-05-23
 tags:
   - knowledge-management
   - AI
@@ -20,6 +20,7 @@ related_entities:
   - "[[Memex]]"
 source_raw:
   - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
+  - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
 ---
 
 # Agent 知识管理与自进化
@@ -37,7 +38,7 @@ source_raw:
 
 1. **Raw Sources（原始资料层）**：只读存档区，LLM 读取但永不修改
 2. **Wiki 层**：按主题/人物/概念组织的结构化知识页面，LLM 全权维护
-3. **Schema（索引层）**：定义系统运行规则和约定的元指令文件
+3. **Schema（规则层）**：定义系统运行规则和约定的元指令文件
 
 核心操作闭环：**Ingest（摄入）→ Query（查询）→ Lint（维护）**
 
@@ -46,7 +47,7 @@ source_raw:
 ### LLM Wiki（Karpathy）
 - 纯 Markdown 文件 + Schema 指导
 - 极简哲学，零依赖
-- 适合个人/小规模场景（数百～低千页面）
+- 适合个人/小团队、规模可控的知识场景
 - 参见 [[LLM-Wiki]]
 
 ### Obsidian-Wiki
@@ -78,6 +79,12 @@ source_raw:
 - 向量检索/关键词索引解决"找得快"
 - 大模型渐进式披露解决"答得准"和"记得牢"
 - 离线自我迭代保持知识新鲜度
+
+## 长期记忆仍是 Agent 的硬缺口
+
+Demis Hassabis 的 AGI 访谈从另一个方向支持了这个 Topic：当前模型仍缺持续学习、长期推理和一致性。把所有内容塞进百万 token context window 不是长期记忆，只是更大的工作记忆；它会把不重要、错误或过时的信息也一起塞进去，检索和判断成本仍然存在。
+
+因此，Agent 知识管理不能只追求更长上下文。更稳的方向是把 raw source、编译后的 wiki、检索索引、专用工具和人类策展分层组织起来。Hassabis 提到的 [[Tool-Use-Architecture|Tool-Use Architecture]] 也指向同一结构：通用模型不应把所有专业知识塞进一个巨大脑袋，而应成为专用系统和知识工具的协调者。
 
 ## 人类角色的转变
 

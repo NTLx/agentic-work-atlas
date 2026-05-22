@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-05-20
+updated: 2026-05-23
 tags:
   - AI
   - economy
@@ -58,6 +58,7 @@ Outcome 更不一定改善
 | 知识工作 | 知道什么、会不会做 | 分配给谁做、如何评估 | [[Allocation-Economy]], [[Model-Manager]] |
 | 软件开发 | 写代码慢 | 对齐慢、集成慢、结果不清 | [[Alignment-Tax]], [[Input-Output-Outcome]] |
 | 企业运营 | 人力有限 | 流程是否可连续运行 | [[Always-On-Economy]] |
+| 企业 AI 部署 | 模型能力/API | 真实流程采纳、数据权限和现场集成 | [[Forward-Deployed-Engineer]], [[Integration-Wall]] |
 
 这些迁移共同说明：AI 降低的是局部动作成本，不会自动降低系统级协调成本。
 

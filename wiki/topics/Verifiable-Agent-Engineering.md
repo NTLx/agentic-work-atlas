@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-05-22
+updated: 2026-05-23
 tags:
   - AI-Agent
   - verification
@@ -23,7 +23,15 @@ related_entities:
   - "[[MachinaCheck]]"
   - "[[Hardware-Sovereignty]]"
   - "[[Agentic-Workflow-Token-Efficiency]]"
+  - "[[Agent-Generated-PRs]]"
+  - "[[人机对齐]]"
+  - "[[渐进式重构]]"
+  - "[[Security-Hardening-Phase]]"
 source_raw:
+  - "[[The PR you would have opened yourself]]"
+  - "[[用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践]]"
+  - "[[20260414-cybersecurity-proof-of-work]]"
+  - "[[AI and the Future of Cybersecurity Why Openness Matters]]"
   - "[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]"
   - "[[Validating agentic behavior when “correct” isn’t deterministic]]"
   - "[[Agent pull requests are everywhere. Here's how to review them.]]"
@@ -99,6 +107,26 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 | 行为验证 | 系统是否在该停止时停止 | 高风险模式转人工、安全拒绝 |
 
 真正的 Agent harness 是这四层的组合，而不是一个更长的 prompt。
+
+## 人机对齐先于规则自动化
+
+美团 31 万行代码重构案例把 Agent 评测方法迁移到 AI Coding 管理：先让团队对工程标准形成共识，再把共识固化为 AI 可执行的 Rule/Skill。顺序不能反过来；如果人类之间没有对齐，AI Rule 只是把分歧写得更快。
+
+这个案例补充了可验证工程的组织前提：验证规则不是凭空产生的，它来自团队对“什么算好、什么必须拒绝、什么可以例外”的共同判断。
+
+## Agent PR 需要更多证据，而不是更少
+
+[[The PR you would have opened yourself]] 说明，Agent 辅助开源贡献不应该把 review 成本转嫁给维护者。好的 Agent PR 要显式披露 agent-assisted，并提供比普通 PR 更多信号：生成示例、数值比较、逐层对比、dtype 验证，以及独立的 non-agentic test harness。
+
+这里的原则很清楚：Agent 可以降低贡献者的生成成本，但不能降低维护者的证据要求。
+
+## 安全硬化是独立验证阶段
+
+[[Cybersecurity-Proof-of-Work|Cybersecurity Proof of Work]] 把 security review 从偶发审计改写为预算驱动的持续硬化阶段。开发和代码审查主要受人类输入限制；安全硬化则更接近 token 预算竞争：防御者需要投入足够多的自动化搜索和验证，才能赶上攻击者的探索成本。
+
+这使 Agentic Coding 呈现三阶段：开发、代码审查、安全硬化。安全不是最后补一份 checklist，而是可验证工程的一条独立流水线。
+
+Hugging Face 的 [[Cybersecurity-Openness|Cybersecurity Openness]] 进一步补充：在高风险安全场景中，半自主 Agent 比完全自主 Agent 更适合作为防御系统。关键不是“人类在环”这个口号，而是人类能否看见环内发生了什么。开放脚手架、开放规则引擎、可审计日志和 trace，都会让验证边界更清楚。
 
 ## 传感器层：把内部质量也纳入可验证边界
 

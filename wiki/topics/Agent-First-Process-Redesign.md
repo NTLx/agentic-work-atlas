@@ -2,7 +2,7 @@
 type: topic
 title: Agent-First Process Redesign
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-05-23
 tags:
   - AI-Agent
   - Enterprise-Transformation
@@ -71,6 +71,3 @@ Agent 运营的技术基础设施：
 
 - Raw Source: [[Enabling agent-first process redesign]]
 - Original URL: https://www.technologyreview.com/2026/04/07/1134966/enabling-agent-first-process-redesign/
-
-## 关联 Entity
-- [[Adversarial-Distillation]]

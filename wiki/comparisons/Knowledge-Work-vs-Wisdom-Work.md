@@ -2,7 +2,7 @@
 type: comparison
 title: Knowledge Work vs Wisdom Work
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-23
 tags:
   - comparison
   - Career-Evolution
@@ -12,6 +12,8 @@ related_entities:
   - '[[Emotional-Clarity]]'
   - '[[Discernment]]'
   - '[[Connection]]'
+source_raw:
+  - '[[Knowledge Work Is Dying—Here’s What Comes Next]]'
 ---
 
 # Knowledge Work vs Wisdom Work
@@ -66,7 +68,7 @@ related_entities:
 | **[[Connection]]** | Vulnerability、Impartiality、Empathy、Wonder | AI 无法进行神经系统的共调节 |
 
 **企业验证**:
-- Microsoft CEO Satya Nadella 将情商作为组织核心能力 → 8 年市值从 300 亿美元增至 3 万亿美元
+- Microsoft CEO Satya Nadella 将情商作为组织核心能力 → 8 年市值从 `USD 300 billion` 增至 `USD 3 trillion`
 - Google "Search Inside Yourself" 项目 → measurable changes in lower stress, higher engagement, faster innovation
 - Sam Altman: "情感清晰度是后 AGI 世界最关键的技能之一"
 

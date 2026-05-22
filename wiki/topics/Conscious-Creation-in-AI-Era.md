@@ -2,7 +2,7 @@
 type: topic
 title: Conscious Creation in AI Era
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-05-23
 tags:
   - AI-Agent
   - Human-Potential
@@ -82,6 +82,3 @@ source_raw:
 
 - Raw Source: [[The Conscious 1% Leading a new renaissance in the era of AI]]
 - Original URL: https://www.eli5.io/blog/the-conscious-1-leading-a-new-renaissance-in-the-era-of-ai
-
-## 关联 Entity
-- [[Mythos]]

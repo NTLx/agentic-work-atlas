@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-05-22
+updated: 2026-05-23
 tags:
   - AI-Agent
   - coding-agents
@@ -32,6 +32,7 @@ source_raw:
   - "[[Validating agentic behavior when “correct” isn’t deterministic]]"
   - "[[The Anatomy of an Agent Harness]]"
   - "[[Improving token efficiency in GitHub Agentic Workflows]]"
+  - "[[20260414-martin-fowler-fragments]]"
 ---
 
 # Agentic Engineering Patterns
@@ -133,6 +134,12 @@ source_raw:
 
 小改进复合，编码助手意味着**可以兼得新功能 + 高质量**。
 
+### AI 也需要懒惰和克制
+
+[[20260414-martin-fowler-fragments]] 补充了一个反向原则：AI 不应把所有摩擦都解释为“需要生成更多代码”。Fowler 通过 [[YAGNI]] 经验提醒，很多好设计来自少做、晚做或不做；LLM 默认没有人类时间成本带来的“懒惰美德”，容易把系统做大而不是做好。
+
+同一组 fragments 也强调 [[AI-Restraint|克制]]：在错误代价不对称的场景里，正确行为可能是延迟行动、要求更多证据或转人工。Agentic Engineering 因此不只是让 agent 更能做事，也要设计 agent 何时不做。
+
 ---
 
 ## 与 Vibe Coding 的区别
@@ -183,9 +190,3 @@ source_raw:
 > **来源**：Simon Willison, [Agentic Engineering Patterns Guide](https://simonwillison.net/guides/agentic-engineering-patterns/)
 >
 > **案例来源**：Peter Pang (CREAO CTO), [Why Your "AI-First" Strategy Is Probably Wrong](https://x.com/intuitiveml/status/2043545596699750791), 2026-04-13
-
-## 关联 Entity
-- [[AI-Restraint]]
-- [[Agent-Tenacity]]
-- [[Martin-Fowler]]
-- [[朱少民]]

@@ -2,7 +2,7 @@
 type: topic
 title: AI 时代的品味与判断力
 created: 2026-04-09
-updated: 2026-05-22
+updated: 2026-05-23
 tags:
   - AI-era
   - competitive-advantage
@@ -176,8 +176,3 @@ AI 可以在几分钟内生成：
 
 - Raw Source: [[Good Taste the Only Real Moat Left]]
 - 原始链接: https://rajnandan.com/posts/taste-in-the-age-of-ai-and-llms/
-
-## 关联 Entity
-- [[AI-Lacks-Laziness]]
-- [[Laziness-Virtue]]
-- [[Slopocalypse]]
