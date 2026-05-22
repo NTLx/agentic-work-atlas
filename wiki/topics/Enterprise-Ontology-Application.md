@@ -3,7 +3,7 @@ type: topic
 title: Enterprise-Ontology-Application
 definition: "企业级本体应用系列：用本体为 AI Agent 提供统一的业务语义层，解决企业 AI 的幻觉、语义不一致、不可解释等问题。"
 created: 2026-04-20
-updated: 2026-04-20
+updated: 2026-05-23
 tags:
   - Ontology
   - Enterprise-AI
@@ -20,6 +20,8 @@ related_entities:
   - '[[Owlready2]]'
   - '[[GraphDB]]'
   - '[[SPARQL]]'
+  - "[[Code-as-Conceptual-Infrastructure]]"
+  - "[[Integration-Wall]]"
 source_raw:
   - '[[20260420-ontology-enterprise-ai-agent]]'
   - '[[20260420-build-first-business-ontology]]'
@@ -44,6 +46,8 @@ source_raw:
 现有工程手段（Skills/RAG、Workflow）只能局部"止痛"：
 - Skills 是"提示"，不是语义与约束
 - Workflow 仍依赖 LLM 判断或陷入"规则爆炸"
+
+这也是企业 AI 落地会撞上 [[Integration-Wall|集成之墙]] 的原因之一：不是 API 接不上，而是业务语义、权限边界和规则来源没有统一表达。Agent 可以读文档，但如果每个系统里的“客户”“订单”“风险”“可发货”含义不同，它只能临时猜。
 
 ## 解决方案
 
@@ -109,6 +113,18 @@ source_raw:
 1. **本体不是数据库**：承载语义与规则，不是海量数据
 2. **推理机 ≠ LLM**：规则驱动的确定性推理
 3. **声明式规则**：改模型文件即可，Agent 代码不动
+4. **本体是企业级概念基础设施**：它把 [[Code-as-Conceptual-Infrastructure|代码作为概念基础设施]] 的原则扩展到组织尺度，让业务词汇、规则和实例被人、系统、Agent 共同读取。
+
+## 与 Agent 的分工
+
+| 层 | 适合谁处理 | 原因 |
+|----|------------|------|
+| 稳定业务概念 | 本体 / TBox | 需要一致性和可解释性 |
+| 事实实例 | 数据库 / ABox / 知识图谱 | 需要可更新和可查询 |
+| 模糊解释与行动建议 | LLM Agent | 需要语言理解和上下文推断 |
+| 强规则判断 | 推理机 / 规则引擎 | 需要确定性和可追溯 |
+
+这个分工能防止两种错误：把所有业务语义都塞进 prompt，或把所有复杂判断都写成不可维护的 if/else。
 
 ---
 

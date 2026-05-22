@@ -33,6 +33,8 @@ source_raw:
   - "[[The Anatomy of an Agent Harness]]"
   - "[[Improving token efficiency in GitHub Agentic Workflows]]"
   - "[[20260414-martin-fowler-fragments]]"
+  - "[[Agent pull requests are everywhere. Here's how to review them.]]"
+  - "[[The PR you would have opened yourself]]"
 ---
 
 # Agentic Engineering Patterns
@@ -154,6 +156,19 @@ source_raw:
 > [!warning] 保持区分
 > 不要把 Vibe Coding 扩展为"任何 LLM 生成代码"。
 > 保持原意：**未经审查、原型质量的 LLM 生成代码**。
+
+## Agent PR 的证据负担
+
+Agentic Engineering 不能把生成成本下降变成 review 成本转嫁。[[Agent-PR-Review|Agent PR Review]] 和 [[Agent-Generated-PRs|Agent-Generated PRs]] 共同指向一个规则：AI 可以帮你更快产出 PR，但不能让维护者替你完成理解、验证和责任承担。
+
+好的 Agent PR 至少要留下四类证据：
+
+- 它为什么解决正确问题，而不是只解决表面 issue。
+- 它如何被验证，包括测试、运行截图、数值对比或可复现实验。
+- 它是否显式披露 agent-assisted，避免维护者误判上下文。
+- 它是否足够小，能被人类在合理时间内审查。
+
+这把 Agentic Engineering 与 Vibe Coding 再次区分开：前者降低生成摩擦，但提高证据标准；后者把“看起来能跑”当成完成。
 
 ---
 

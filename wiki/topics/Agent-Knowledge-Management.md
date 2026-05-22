@@ -18,7 +18,10 @@ related_entities:
   - "[[Harness-Engineering]]"
   - "[[Knowledge-Compilation]]"
   - "[[Memex]]"
+  - "[[Corrective-RAG]]"
 source_raw:
+  - "[[20260413-llm-wiki]]"
+  - "[[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]]"
   - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
 ---
@@ -34,6 +37,19 @@ source_raw:
 
 参见 [[RAG-vs-LLM-Wiki]]
 
+## Compile-time 知识层
+
+本库的重编译经验说明，LLM Wiki 的关键不是“每篇文章都有摘要”，而是每篇 raw 是否进入了稳定知识层：
+
+| 层 | 承载内容 | 失败形态 |
+|----|----------|----------|
+| Entity | 稳定概念、定义、边界、来源 | 概念太碎、只有名词没有判断 |
+| Topic | 多篇文章的生成结构 | 只罗列来源，没有解释机制 |
+| Comparison | 相邻概念的差异 | 把对比写成并列表 |
+| Output | 对外表达和压力测试 | 新判断没有回填检查 |
+
+因此，Agent 知识管理的质量不取决于 raw 数量，而取决于编译后的页面能否让未来问题不再重读原文。
+
 ## LLM Wiki 的三层架构
 
 1. **Raw Sources（原始资料层）**：只读存档区，LLM 读取但永不修改
@@ -41,6 +57,8 @@ source_raw:
 3. **Schema（规则层）**：定义系统运行规则和约定的元指令文件
 
 核心操作闭环：**Ingest（摄入）→ Query（查询）→ Lint（维护）**
+
+本库进一步把这个闭环拆成四个动作：`compile(source)`、`audit(scope)`、`produce(query)`、`explore(topic)`。这条拆分很重要，因为它防止三种混淆：把 output 当稳定事实、把 research agenda 当证据、把 raw 摘要当 wiki 编译。
 
 ## 三种工程化实现
 
@@ -80,6 +98,16 @@ source_raw:
 - 大模型渐进式披露解决"答得准"和"记得牢"
 - 离线自我迭代保持知识新鲜度
 
+## 质量门：编译不是一次性总结
+
+LLM Wiki 的主要风险是把错误理解固化成知识层。为降低这个风险，编译必须至少有三类门禁：
+
+- **可追溯**：稳定判断能回到 raw source，关键分歧标记来源。
+- **可区分**：entity 与 topic 不是换名复制，而是真的划清概念边界。
+- **可审查**：Markdown、wikilink、frontmatter 和裸 `$` 等渲染问题必须被 lint 拦住。
+
+这也是为什么本库要求 Obsidian Markdown 写入守卫和 `tools/wiki-lint.py`。知识系统的可信度不只来自模型理解，也来自文件系统层面的可验证约束。
+
 ## 长期记忆仍是 Agent 的硬缺口
 
 Demis Hassabis 的 AGI 访谈从另一个方向支持了这个 Topic：当前模型仍缺持续学习、长期推理和一致性。把所有内容塞进百万 token context window 不是长期记忆，只是更大的工作记忆；它会把不重要、错误或过时的信息也一起塞进去，检索和判断成本仍然存在。
@@ -97,6 +125,8 @@ Demis Hassabis 的 AGI 访谈从另一个方向支持了这个 Topic：当前模
 > [!quote] Karpathy
 > Obsidian is the IDE; the LLM is the programmer; the wiki is the codebase.
 
+更精确地说，人类不是退出理解，而是退出低价值搬运。人仍然负责三件事：判断哪些 source 值得收录，决定哪些概念需要稳定化，以及通过 output 反向检验 wiki 是否真的有用。
+
 ## 思想渊源
 
 - [[Memex]] — Vannevar Bush 1945 年的个人知识存储愿景，LLM Wiki 的思想先驱
@@ -104,4 +134,8 @@ Demis Hassabis 的 AGI 访谈从另一个方向支持了这个 Topic：当前模
 
 ---
 
-*本主题页面整合自飞樰《深度解析 LLM Wiki / Obsidian-Wiki / GBrain》一文，由 LLM Wiki 编译流程生成。*
+## 结论
+
+Agent 知识管理的第一性原理是：让知识从一次性上下文，变成可版本化、可链接、可审查、可复用的中间层。
+
+RAG 解决“这次怎么答”。LLM Wiki 解决“以后如何不用从头理解”。

@@ -16,9 +16,12 @@ related_entities:
   - '[[Refusal]]'
   - '[[Specificity]]'
   - '[[Taste]]'
+  - "[[Essential-Complexity]]"
+  - "[[Friction-as-Design-Signal]]"
 source_raw:
   - '[[Good Taste the Only Real Moat Left]]'
   - '[[Taste for Makers]]'
+  - '[[Why I Don’t Vibe Code]]'
 ---
 
 # AI 时代的品味与判断力
@@ -70,6 +73,12 @@ AI 可以在几分钟内生成：
 - 而不是真正有投入的建设者
 
 **关键**：品味的真正价值在于与上下文、约束和建设意愿结合。
+
+### 6. 工程语境中的判断力
+
+[[Why I Don’t Vibe Code]] 把品味问题拉回软件工程现场：AI 可以降低写代码的偶然复杂性，但不能替人承担 [[Essential-Complexity|本质复杂性]]、系统边界和后果责任。
+
+这里的品味不是“代码看起来优雅”，而是能识别 [[Friction-as-Design-Signal|摩擦]] 什么时候代表坏工具、什么时候代表概念模型本身有问题。一个有判断力的工程师不会把所有阻力都外包给 Agent 穿过去；有些阻力正是在提醒你抽象错了、词汇错了、责任边界错了。
 
 ---
 
@@ -127,6 +136,14 @@ AI 可以在几分钟内生成：
 - 一个战略权衡
 - 一个你愿意站在后面的观点
 
+### AI 协作中的拒绝清单
+
+- 拒绝第一个“看起来能用”的草稿。
+- 拒绝没有真实约束的精致输出。
+- 拒绝不能解释权衡的方案。
+- 拒绝让模型替你承担后果的错觉。
+- 拒绝把速度当成价值本身。
+
 ---
 
 ## 关键概念关系
@@ -169,10 +186,12 @@ AI 可以在几分钟内生成：
 - [[Dan-Shipper]] - Every 出版社，品味与判断力相关文章出版者
 - [[Paul-Graham]] - "Taste for Makers" 作者，品味讨论的思想基础
 - [[Refusal]] - 拒绝是判断力的行动体现
+- [[Code-as-Conceptual-Infrastructure]] - 软件工程中的概念、边界与责任
 
 ---
 
-## 来源
+## 结论
 
-- Raw Source: [[Good Taste the Only Real Moat Left]]
-- 原始链接: https://rajnandan.com/posts/taste-in-the-age-of-ai-and-llms/
+AI 把生成变便宜以后，品味不再是装饰性能力，而是系统控制能力。
+
+真正稀缺的不是“能不能生成一个像样的版本”，而是能不能说清楚为什么这个版本不该被接受。
