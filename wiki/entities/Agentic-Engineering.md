@@ -5,7 +5,7 @@ aliases:
   - Agentic Engineering
   - Agentic Coding
   - 代理式工程
-definition: "Andrej Karpathy 2026 年定义的工程学科——在保持专业软件质量（安全、可靠）的前提下，用 agents 实现远超 10x 的速度提升；区别于 Vibe Coding 的「提升底线」，Agentic Engineering 是「保持上限」的严肃实践"
+definition: "用 coding agents 辅助开发软件的工程实践；Simon Willison 系统化了 code execution、测试和反模式等实践，Karpathy 则将其与 Vibe Coding 区分为保持专业质量上限的严肃工程纪律"
 created: 2026-04-09
 updated: 2026-05-22
 tags:
@@ -52,6 +52,8 @@ source_raw:
 ## 核心定义
 
 > **Agents run tools in a loop to achieve a goal**
+
+这里采用 Simon Willison 的操作性定义：Agentic Engineering 是使用 coding agents 辅助开发软件的实践。Karpathy 在 2026 年 Sequoia 演讲中补充了更强的边界：Vibe Coding 提升所有人的软件能力底线，而 Agentic Engineering 要在不牺牲安全、可靠和专业质量的前提下获得更高杠杆。
 
 Agent 软件：
 1. 调用 LLM，传入用户提示和工具定义
@@ -141,6 +143,7 @@ Drew Breunig 提出扩展的三阶段 Agentic Coding 模型：
 - Agent 定义：**Agents run tools in a loop to achieve a goal**
 - Code Execution 是决定性能力：没有直接运行代码的能力，LLM 输出价值有限
 - Vibe Coding 一词由 Andrej Karpathy 在 2025 年 2 月提出（Claude Code 发布前三周）
+- Karpathy 的贡献是把 Vibe Coding 与 Agentic Engineering 区分为"提升底线"与"保持质量上限"两类实践
 - 四项核心原则：代码成本趋近于零、囤积可运行代码示例、AI 应帮助产出更好的代码、不提交未审查的代码
 
 ## 前提与局限性

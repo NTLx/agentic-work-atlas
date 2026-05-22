@@ -129,9 +129,10 @@ Software 1.0（接口层）
 
 | 概念 | 关系 |
 |-----|------|
-| **[[Vibe-Coding]]** | Software 2.0 的实践方式之一，但更极端 |
-| **[[Agentic-Engineering]]** | 在 Software 2.0 时代的人类角色转变 |
-| **[[Coding-Agents]]** | Software 2.0 的自动化工具 |
+| **[[Software-3.0]]** | Software 2.0 之后的范式：LLM 成为可提示的计算机 |
+| **[[Vibe-Coding]]** | Software 3.0 的普及化实践，继承神经网络生成程序的方向 |
+| **[[Agentic-Engineering]]** | Software 3.0 时代的生产级工程纪律 |
+| **[[Coding-Agents]]** | Software 3.0 中直接生成和执行代码的工具形态 |
 
 ## 历史意义
 
@@ -164,9 +165,10 @@ Software 2.0 标志着：
 ## 关联概念
 
 - [[Andrej-Karpathy]] - Software 2.0 的提出者
-- [[Vibe-Coding]] - Software 2.0 的实践方式之一，但更极端
-- [[Agentic-Engineering]] - 在 Software 2.0 时代的人类角色转变
-- [[Coding-Agents]] - Software 2.0 的自动化工具
+- [[Software-3.0]] - Software 2.0 之后的 LLM 编程范式
+- [[Vibe-Coding]] - Software 3.0 的普及化实践，继承神经网络生成程序的方向
+- [[Agentic-Engineering]] - Software 3.0 时代的生产级工程纪律
+- [[Coding-Agents]] - Software 3.0 中直接生成和执行代码的工具形态
 
 ## 外部链接
 

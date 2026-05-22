@@ -2,7 +2,7 @@
 type: topic
 title: Karpathy AI 思想体系
 created: 2026-04-13
-updated: 2026-05-08
+updated: 2026-05-22
 tags:
   - AI-Agent
   - thought-leader
@@ -39,15 +39,35 @@ source_raw:
 
 ## 思想演进路径
 
+### 概念线
+
 ```
 Software 2.0 (2017)
-    ↓ 编程范式转变
+    ↓ 神经网络作为程序
+Software 3.0 (2026)
+    ↓ LLM 作为可提示的计算机
 Vibe Coding (2025)
-    ↓ 编程实践方式
+    ↓ 普及化、原型化实践
+Agentic Engineering (2026)
+    ↓ 生产级工程纪律
 LLM Wiki (2026)
-    ↓ 知识管理范式
+    ↓ Software 3.0 在知识管理中的应用
+```
+
+### 职业实践线
+
+```
+Stanford / CS231n (2011-2015)
+    ↓
+OpenAI founding team (2015-2017)
+    ↓
+Tesla Autopilot AI (2017-2022)
+    ↓
+OpenAI return (2023-2024)
+    ↓
 Eureka Labs (2024)
-    ↓ AI 教育实践
+    ↓
+Anthropic pre-training team (2026-)
 ```
 
 ---
@@ -57,8 +77,14 @@ Eureka Labs (2024)
 | 概念 | 提出时间 | 核心定义 | 与其他概念的关系 |
 |-----|---------|---------|-----------------|
 | **[[Software-2.0]]** | 2017 | 程序员写目标，神经网络编程 | 基础范式，定义 AI 编程时代 |
-| **[[Vibe-Coding]]** | 2025 | 忘记代码存在，氛围驱动编程 | Software 2.0 的极端实践 |
-| **LLM Wiki** | 2026 | LLM 维护的持久知识库 | Software 2.0 的知识管理应用 |
+| **[[Vibe-Coding]]** | 2025 | 忘记代码存在，氛围驱动编程 | Software 3.0 的低门槛、原型化实践 |
+| **[[Software-3.0]]** | 2026 | 上下文窗口是内存，提示词是程序语言，LLM 是解释器 | 将 LLM 从工具提升为新型计算机 |
+| **[[Agentic-Engineering]]** | 2026 | 在不牺牲专业质量的前提下协调 coding agents | Vibe Coding 的生产级约束形态 |
+| **[[Verifiability]]** | 2026 | 输出能否被自动验证决定 LLM 自动化速度 | 解释模型能力为何不均匀 |
+| **[[Jagged-Intelligence]]** | 2026 | LLM 在不同任务上的能力呈锯齿状分布 | Verifiability 与训练投入共同造成 |
+| **[[Ghost-Intelligence]]** | 2026 | LLM 是统计和 RL 塑造的幽灵，不是动物智能 | 校准对 LLM 动机、意识和可靠性的预期 |
+| **[[Agent-Native]]** | 2026 | 为 agent 而非人类重写文档、基础设施和流程 | Software 3.0 的基础设施要求 |
+| **[[LLM-Wiki]]** | 2026 | LLM 维护的持久知识库 | Software 3.0 的知识管理应用 |
 | **[[Memex]]** | 1945 (引用) | 个人知识存储 + 关联路径 | LLM Wiki 的思想先驱 |
 | **[[AI-Capability-Gap]]** | 2026 | 不同用户群体因 AI 能力体验差异形成平行认知现实 | 编程 vs 日常使用 |
 | **[[AI-Psychosis]]** | 2026 | 专业技术用户对 agentic AI 编程能力的极度震撼 | AI-Capability-Gap 的高端端 |
@@ -85,7 +111,7 @@ Eureka Labs (2024)
 
 Software 2.0 定义了：
 - 深度学习时代的编程范式
-- Tesla Autopilot、ChatGPT 等系统的基础理念
+- Tesla Autopilot 等神经网络系统的基础理念；ChatGPT 则更接近 Software 3.0 的可提示计算机
 - 程序员角色的转变方向
 
 ---
@@ -173,7 +199,13 @@ Karpathy 明确指出 LLM Wiki 与 Memex 的关系：
 ### 相关 Entities
 
 - [[Software-2.0]] — 编程范式定义
+- [[Software-3.0]] — LLM 作为新计算机
 - [[Vibe-Coding]] — 实践方式描述
+- [[Agentic-Engineering]] — 生产级 agent 编程纪律
+- [[Verifiability]] — 解释能力跃迁的训练维度
+- [[Jagged-Intelligence]] — LLM 能力分布形态
+- [[Ghost-Intelligence]] — LLM 本体隐喻
+- [[Agent-Native]] — agent 时代的基础设施范式
 - [[Knowledge-Compilation]] — 编译操作定义
 - [[Memex]] — 思想先驱
 
@@ -237,13 +269,22 @@ Karpathy 明确指出 LLM Wiki 与 Memex 的关系：
 ```mermaid
 graph TD
     Software20[Software 2.0] --> VibeCoding[Vibe Coding]
-    Software20 --> LLMWiki[LLM Wiki]
+    Software20 --> Software30[Software 3.0]
+    Software30 --> VibeCoding
+    Software30 --> LLMWiki[LLM Wiki]
+    Software30 --> AgentNative[Agent-Native]
     VibeCoding --> |实践方式| AgenticEng[Agentic Engineering]
+    Verifiability[Verifiability] --> Jagged[Jagged Intelligence]
+    Ghost[Ghost Intelligence] --> Jagged
     LLMWiki --> |知识管理| KnowledgeCompilation[Knowledge Compilation]
     Memex[Memex 1945] --> |思想先驱| LLMWiki
     Karpathy[Andrej Karpathy] --> Software20
+    Karpathy --> Software30
     Karpathy --> VibeCoding
     Karpathy --> LLMWiki
+    Karpathy --> AgenticEng
+    Karpathy --> Verifiability
+    Karpathy --> Ghost
 ```
 
 ---
@@ -258,6 +299,3 @@ graph TD
 ---
 
 *本 Topic 页面由 LLM Wiki 编译流程生成，整合 Andrej Karpathy 的核心 AI 思想。*
-
-## 关联 Entity
-- [[AISI]]

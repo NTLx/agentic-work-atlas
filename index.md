@@ -48,7 +48,7 @@ tags:
 | [[wiki/entities/Ghost-Intelligence\|Ghost-Intelligence（幽灵智能）]] | LLM 是统计模拟回路，非动物智能——无内在动机和意识 | Andrej Karpathy: From Vibe Coding to Agentic Engineering |
 | [[wiki/entities/Git-Fluent-Agents\|Git-Fluent Agents]] | 深度理解 Git 的 AI 编码 Agent | Using Git with coding agents |
 | [[wiki/entities/History-Rewriting\|History Rewriting]] | 将 Git 历史视为可编辑叙事的理念 | Using Git with coding agents |
-| [[wiki/entities/Agentic-Engineering\|Agentic Engineering]] | 利用 AI Agent 转变开发方式的工程范式 | Using Git with coding agents |
+| [[wiki/entities/Agentic-Engineering\|Agentic Engineering]] | 用 coding agents 辅助开发软件，并保持生产级质量上限的工程实践 | Using Git with coding agents |
 | [[wiki/entities/Agent-PR-Review\|Agent PR Review]] | 审查 Agent 生成的 PR 的系统性策略：5 个关键检查点 | Agent pull requests are everywhere |
 | [[wiki/entities/Agent-Generated-PRs\|Agent-Generated PRs]] | AI Agent 自动提交的 PR——缺乏设计哲学上下文的核心问题 | The PR you would have opened yourself |
 | [[wiki/entities/Agentic-Workflow-Token-Efficiency\|Agentic Workflow Token Efficiency]] | 系统性优化 Agentic Workflows token 成本的方法论 | Improving token efficiency |
@@ -101,7 +101,7 @@ tags:
 | [[wiki/entities/Model-Manager\|Model Manager]] | 分配经济中的核心角色：分配 AI 工作、评估质量、迭代改进 | Management as AI superpower |
 | [[wiki/entities/Code-Execution\|Code Execution]] | AI Agent 直接运行代码的能力，Agentic Engineering 的决定性能力 | What is agentic engineering |
 | [[wiki/entities/Verifiability\|Verifiability（可验证性）]] | 决定 LLM 自动化的核心维度——可验证就能 RL 训练，不可验证就停滞 | Andrej Karpathy: From Vibe Coding to Agentic Engineering |
-| [[wiki/entities/Vibe-Coding\|Vibe Coding]] | 未经审查、原型质量的 LLM 生成代码（Karpathy 2025） | What is agentic engineering |
+| [[wiki/entities/Vibe-Coding\|Vibe Coding]] | Software 3.0 的普及化实践：忘记代码存在，以提示词和运行反馈生成原型软件 | What is agentic engineering |
 | [[wiki/entities/Essential-Complexity\|Essential Complexity（本质复杂性）]] | 软件中无法靠工具自动消除的领域、抽象和长期维护复杂性 | Why I Don’t Vibe Code |
 | [[wiki/entities/Friction-as-Design-Signal\|Friction as Design Signal（摩擦作为设计信号）]] | 把开发阻力视为架构、学习和边界选择的反馈 | Why I Don’t Vibe Code |
 | [[wiki/entities/Compound-Engineering\|Compound Engineering]] | 持续改进 Agent 指令，每个项目后记录有效做法 | AI should help produce better code |
@@ -115,7 +115,7 @@ tags:
 | [[wiki/entities/Refusal\|Refusal]] | 判断力的核心动作：拒绝通用的选项 | Good Taste the Only Real Moat Left |
 | [[wiki/entities/Knowledge-Work\|Knowledge Work]] | 以知识和专业技能为核心价值的工作形态，正在被 AI 取代 | Knowledge Work Is Dying |
 | [[wiki/entities/Technical-Debt-Avoidance\|Technical Debt Avoidance]] | 通过持续改进避免技术债务累积的策略 | Compound Engineering |
-| [[wiki/entities/Andrej-Karpathy\|Andrej Karpathy]] | AI 领域传奇人物，提出 Software 2.0（2017）、Vibe Coding（2025）、LLM Wiki（2026）三大概念 | LLM Wiki |
+| [[wiki/entities/Andrej-Karpathy\|Andrej Karpathy]] | OpenAI 创始团队成员、Tesla AI 前总监、Eureka Labs 创始人，2026 年加入 Anthropic pre-training team | LLM Wiki |
 | [[wiki/entities/Software-3.0\|Software 3.0]] | 上下文窗口是内存，提示词是程序语言，LLM 是解释器 | Andrej Karpathy: From Vibe Coding to Agentic Engineering |
 | [[wiki/entities/Software-Democratization\|Software Democratization（软件民主化）]] | 编程从专业技能变为通用素养——印刷术式的民主化进程 | Boris Cherny: Why Coding Is Solved |
 | [[wiki/entities/Software-2.0\|Software 2.0]] | 编程范式转变：程序员写目标，神经网络编程 | LLM Wiki |
