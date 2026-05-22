@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 176 个 |
-| Topic 页面 | 21 个 |
+| Entity 页面 | 179 个 |
+| Topic 页面 | 22 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 58 个 |
+| Raw 文章 | 60 个 |
 | Output 作品 | 1 个 |
 
 ---
@@ -175,6 +175,9 @@ tags:
 | [[wiki/entities/Zero-PHI-Policy\|Zero-PHI Policy]] | 处理管道最前端脱敏所有受保护健康信息的隐私策略 | OncoAgent 论文 |
 | [[wiki/entities/Sequence-Packing\|Sequence Packing]] | 将多条短序列拼接成固定长度序列以提升训练吞吐量 | OncoAgent 论文 |
 | [[wiki/entities/Hardware-Sovereignty\|Hardware Sovereignty]] | AI 系统完全在本地硬件运行，不依赖云 API | OncoAgent 论文 |
+| [[wiki/entities/Deployment-Product-Flywheel\|Deployment-Product Flywheel（部署-产品飞轮）]] | 客户现场方案回流为平台能力，让后续部署成本下降、产品杠杆上升 | FDE 系列 |
+| [[wiki/entities/Golden-Case\|Golden Case（黄金用例）]] | AI 组织赋能中已被真实工作流验证、可系统化推广的高价值用例 | FDE 系列 |
+| [[wiki/entities/Integration-Wall\|Integration Wall（集成之墙）]] | AI 从 demo 到生产落地时遇到的系统、权限、合规、流程和组织采纳约束 | FDE 系列 |
 | [[wiki/entities/人机对齐|人机对齐]] | 先人人对齐、再人机对齐的 Agent 评测→工程管理方法论 | 美团 AI Coding 实践 |
 | [[wiki/entities/渐进式重构|渐进式重构]] | 技术债拆解为业务需求顺带动作的第三条重构路 | 美团 AI Coding 实践 |
 
@@ -240,6 +243,7 @@ tags:
 | [[wiki/topics/Code-as-Conceptual-Infrastructure\|代码作为概念基础设施]] | AI 让指令生成变便宜后，软件核心资产上移为词汇、边界、模型和语义约束 | Conceptual-Model, Cognitive-Debt, Essential-Complexity, Friction-as-Design-Signal |
 | [[wiki/topics/AI-Labor-Bottleneck-Shift\|AI 劳动瓶颈迁移]] | 当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量 | Input-Output-Outcome, Alignment-Tax, Allocation-Economy, FDE |
 | [[wiki/topics/AI-Native-Product-Operating-System\|AI 原生产品操作系统]] | 把模型能力溢出转化为产品假设、发布探针、反馈闭环和市场验证纪律 | AI-Native-Shipping, Research-Preview, PM-in-AI-Era, Product-Overhang |
+| [[wiki/topics/Forward-Deployed-AI-Enablement\|FDE 式 AI 赋能]] | 嵌入真实组织现场，发现黄金用例、穿越集成之墙，并沉淀可复用能力 | Forward-Deployed-Engineer, Deployment-Product-Flywheel, Golden-Case |
 
 ### Comparisons (comparisons/)
 *对比分析页面*
@@ -268,7 +272,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Why I Don’t Vibe Code]]
+最新编译：[[Forward-Deployed-AI-Enablement]]
 
 ---
 
