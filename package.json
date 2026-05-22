@@ -5,8 +5,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "echo 'Use GitHub Actions to build'",
-    "serve": "npx quartz build --serve -d content"
+    "build": "bash tools/quartz-local.sh build",
+    "serve": "bash tools/quartz-local.sh serve"
   },
   "engines": {
     "node": ">=22"

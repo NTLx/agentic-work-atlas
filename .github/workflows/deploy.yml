@@ -35,6 +35,10 @@ jobs:
         with:
           node-version: 22
 
+      - name: Run Wiki Lint
+        working-directory: atlas
+        run: python3 tools/wiki-lint.py
+
       - name: Install Quartz Dependencies
         working-directory: quartz
         run: npm ci

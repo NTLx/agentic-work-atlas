@@ -31,6 +31,7 @@ const config: QuartzConfig = {
       // 开发配置文件
       "package.json",
       "package-lock.json",
+      "skills-lock.json",
       "tsconfig.json",
       "quartz.config.ts",
       "quartz.layout.ts",
