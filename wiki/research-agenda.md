@@ -97,6 +97,16 @@ related_entities:
 - 输出驱动的 Wiki 演化案例：文章、报告或决策 memo 如何反向更新知识库。
 - 标准化 AI 产品绕过 FDE 式高接触部署的反例案例。
 
+## Source 需求队列
+
+| 目标 | 当前缺口 | 下一步 source | 触发行动 |
+|------|----------|---------------|----------|
+| 验证“标准化 SaaS agent 会不会削弱 FDE” | 缺反例 | 找无 FDE、无咨询、无长期驻场，却完成核心工作流改造的企业案例 | clip 后编译到 [[Forward-Deployed-AI-Enablement]] |
+| 建立 output 回填的外部参照 | 缺一手实践 | 找团队如何用文章、报告、decision memo 反向更新知识库的案例 | clip 后更新 [[Knowledge-Compilation]] 或新建 comparison |
+| 判断纯 Markdown LLM Wiki 的规模边界 | 缺工程数据 | 找 GBrain、Obsidian-Wiki 或类似系统的检索、图谱、文件精读实现细节 | clip 后更新 [[Agent-Knowledge-Management]] |
+| 定义知识层面的 audit 指标 | 缺质量标准 | 找关于知识库质量、证据回链、冲突检测、概念去重的实践材料 | compile 后补充 Lint 工作流 |
+| 识别不应升级的 output 判断 | 缺负面样例 | 从后续 output 中收集清楚但缺 source、只出现一次或只是修辞的判断 | 留在本页，暂不建新页面 |
+
 ## 暂不做
 
 - 不新增 `explore/`、`audit/`、`claims/` 等目录。
