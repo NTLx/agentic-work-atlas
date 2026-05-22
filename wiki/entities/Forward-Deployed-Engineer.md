@@ -7,7 +7,7 @@ aliases:
   - 前线部署工程师
 definition: "嵌入客户真实环境，把前沿 AI 能力与数据、工具和业务流程连接成可运行生产系统，并将现场发现回流为平台能力或组织能力的工程师"
 created: 2026-05-18
-updated: 2026-05-22
+updated: 2026-05-23
 tags:
   - career
   - AI-industry
@@ -20,6 +20,9 @@ related_entities:
   - "[[Deployment-Product-Flywheel]]"
   - "[[Golden-Case]]"
   - "[[Integration-Wall]]"
+  - "[[Evaluation-Set]]"
+  - "[[Tacit-Knowledge-Lock-In]]"
+  - "[[Layered-AI-Sourcing]]"
 source_raw:
   - "[[Forward deployed engineering at OpenAI]]"
   - "[[Forward Deployed Engineer (FDE) - NYC]]"
@@ -27,6 +30,7 @@ source_raw:
   - "[[A Day in the Life of a Palantir Forward Deployed Software Engineer]]"
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
   - "[[当我们谈论 FDE 时，我们在谈论什么？]]"
+  - "[[The Return of the Deployment Company]]"
 ---
 
 # Forward-Deployed-Engineer
@@ -42,6 +46,7 @@ source_raw:
 - Palantir 官方博客把 FDSE 定义为直接嵌入客户侧、配置既有平台解决最难问题，并强调现场配置经验会回流成新的产品能力。
 - yan5xu 将真正的 FDE 收束为四个必要条件：有平台、嵌入客户环境、做产品发现、产物回流平台。
 - 宝玉文章把行业信号总结为“从卖模型到卖落地”：OpenAI、Anthropic、Google 都在围绕 FDE 补企业部署能力。
+- Caffein Chen 文章从买方视角补充：2026 年 OpenAI、Anthropic、Google 同期押注 FDE，反映 AI 商业化正在从自助 SaaS 转向现场部署、隐性知识提取和评测集构建。
 
 ## 前提与局限性
 
@@ -50,6 +55,7 @@ source_raw:
 - **价值依赖平台能力**：OpenAI 强调 frontier models 与企业约束的连接，Palantir 强调既有平台的可组合性；两者都说明 FDE 的杠杆建立在底层能力已经存在。
 - **不能制造长期依赖**：如果第 10 个客户仍和第 1 个客户一样费力，或同一组织每次赋能都依赖外部 FDE，说明产生的是项目依赖而非能力沉淀。
 - **组织归属影响反馈环**：FDE 属于产品团队、独立服务公司还是 GTM 团队，会影响现场洞察能否真正回流为产品能力。
+- **买方知识主权风险**：FDE 会接触客户未写成文档的业务规则。若评测集、提示配置和流程知识不可导出，FDE 会从赋能者变成供应商锁定机制。
 
 ## 关联概念
 
@@ -60,3 +66,6 @@ source_raw:
 - [[Deployment-Product-Flywheel]] — FDE 区别于咨询的核心复利机制
 - [[Golden-Case]] — FDE 在现场需要发现和放大的高价值用例
 - [[Integration-Wall]] — FDE 需要穿越的企业生产环境约束
+- [[Evaluation-Set]] — FDE 把现场隐性知识显式化后的关键资产
+- [[Tacit-Knowledge-Lock-In]] — FDE 可能带来的新型供应商锁定
+- [[Layered-AI-Sourcing]] — 企业降低单一 FDE 依赖的采购与部署策略

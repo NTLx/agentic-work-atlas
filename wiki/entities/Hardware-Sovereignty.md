@@ -5,7 +5,7 @@ aliases:
   - 硬件主权
 definition: "AI 系统在本地硬件上完成全部训练、推理和数据处理，不依赖任何云 API 或外部服务，确保数据完全不出域，满足隐私法规要求。"
 created: 2026-05-10
-updated: 2026-05-11
+updated: 2026-05-23
 tags:
   - AI-Infrastructure
   - Privacy
@@ -13,9 +13,12 @@ tags:
 related_entities:
   - "[[Zero-PHI-Policy]]"
   - "[[Agent-First-Enterprise]]"
+  - "[[Layered-AI-Sourcing]]"
+  - "[[Evaluation-Set]]"
 source_raw:
   - "[[OncoAgent A Dual-Tier Multi-Agent Framework for Privacy-Preserving Oncology Clinical Decision Support]]"
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
+  - "[[The Return of the Deployment Company]]"
 ---
 
 > [!definition] 定义
@@ -29,6 +32,7 @@ source_raw:
 - **向量存储**: ChromaDB 本地持久化索引，零云端
 - **合规**: 满足 HIPAA（US）、GDPR（EU）及同等国家标准
 - **ROI**: 56 倍合成数据生成加速 + 6 倍训练时间压缩，单卡即可完成
+- **企业部署判断**: Caffein Chen 文章认为，到 2026 年，开源模型、本地 GPU、vLLM/TGI/Ollama、RAG 框架和开源 UI 已让多数企业任务的本地部署从 R&D 项目接近 IT 采购项目。
 
 ## 前提与局限性
 
@@ -36,8 +40,11 @@ source_raw:
 - **前提**: 需要开源模型和框架支持（如 Qwen、Unsloth、ChromaDB）
 - **局限性**: 高端硬件获取门槛高，多数中小机构难以部署
 - **局限性**: 缺乏云服务的弹性扩展能力，高峰期可能需要排队
+- **局限性**: 本地部署仍需要 AI operations 人才、模型维护能力和较长 ROI 周期；它更适合高频、高敏感、长期运行的核心工作流，不适合所有场景。
 
 ## 关联概念
 
 - [[Zero-PHI-Policy]] — 硬件主权为 Zero-PHI 策略提供基础设施保障
 - [[Agent-First-Enterprise]] — 硬件主权是企业 Agent 化转型的基础设施前提
+- [[Layered-AI-Sourcing]] — 决定哪些 AI 能力应本地化，哪些可外部采购
+- [[Evaluation-Set]] — 本地部署时必须保留在企业内部的关键评测资产

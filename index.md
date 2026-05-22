@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-05-22
+updated: 2026-05-23
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 179 个 |
+| Entity 页面 | 182 个 |
 | Topic 页面 | 22 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 60 个 |
+| Raw 文章 | 61 个 |
 | Output 作品 | 4 个 |
 
 ---
@@ -215,6 +215,9 @@ tags:
 | [[wiki/entities/Accessibility-Complexity-Evaluation\|Accessibility Complexity Evaluation]] | 用启发式脚本评估代码复杂度决定 Agent 是否应自动修改 | Accessibility, Code Quality |
 | [[wiki/entities/Accessibility-High-Risk-Patterns\|Accessibility High Risk Patterns]] | 拖放/Toast/富文本编辑器等禁止 Agent 自动修改的模式 | Accessibility, Anti-Patterns |
 | [[wiki/entities/The-OpenAI-Deployment-Company\|The OpenAI Deployment Company]] | OpenAI 独立部署实体/业务单元，以 FDE 为核心推进企业 AI 落地 | Enterprise, AI-Industry |
+| [[wiki/entities/Evaluation-Set\|Evaluation Set（评测集）]] | 把真实业务判断、边界案例和验收规则显式化为可复用测试样本的关键资产 | The Return of the Deployment Company |
+| [[wiki/entities/Tacit-Knowledge-Lock-In\|Tacit Knowledge Lock-In（隐性知识锁定）]] | 供应商掌握客户隐性业务规则、评测集和流程调优经验形成的新型锁定 | The Return of the Deployment Company |
+| [[wiki/entities/Layered-AI-Sourcing\|Layered AI Sourcing（分层 AI 来源策略）]] | 按敏感度、频率、成本曲线和前沿能力需求分配 on-prem、cloud API、FDE 与内部团队 | The Return of the Deployment Company |
 | [[wiki/entities/Jacob-Harris\|Jacob Harris]] | 软件开发者、jacobharr.is 作者，写作关注软件、数据和公共系统中的工程判断 | Software Engineering, Data Journalism |
 
 ### Topics (topics/)
