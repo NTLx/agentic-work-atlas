@@ -18,7 +18,7 @@ tags:
 | 指标 | 数值 |
 |-----|------|
 | Entity 页面 | 190 个 |
-| Topic 页面 | 24 个 |
+| Topic 页面 | 25 个 |
 | Comparison 页面 | 6 个 |
 | Raw 文章 | 67 个 |
 | Output 作品 | 5 个 |
@@ -252,6 +252,7 @@ tags:
 | [[wiki/topics/Agent-Knowledge-Management\|Agent 知识管理与自进化]] | LLM Wiki、Obsidian-Wiki、GBrain 三种知识自组织与自进化的技术路径与工程实践 | LLM-Wiki, GBrain, Obsidian-Wiki, Progressive-Disclosure, Thin-Harness-Fat-Skills |
 | [[wiki/topics/Verifiable-Agent-Engineering\|可验证 Agent 工程]] | 把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统 | Verifiability, Dominator-Analysis, Agent-PR-Review, Corrective-RAG |
 | [[wiki/topics/Organization-as-Agent-Harness\|组织作为 Agent Harness]] | 企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进 | AI-Ready-Organization, Organizational-Shape-Moat, Alignment-Tax |
+| [[wiki/topics/AI-Mediated-Organization\|AI 中介组织]] | 系统梳理人与人、人与 AI、AI 与 AI 如何重塑协作、权力、责任和组织形态 | Human-Governor-Agent-Operator, Cybernetic-Teammate, Multi-Agent-System-Pathology |
 | [[wiki/topics/Enterprise-AI-Factory\|企业 AI 工厂]] | 把 AI 从实验项目变成可重复生产、可集成、可治理、可度量的企业能力 | AI-Factory, Business-Embedded-AI-Organization, Cybernetic-Teammate |
 | [[wiki/topics/Code-as-Conceptual-Infrastructure\|代码作为概念基础设施]] | AI 让指令生成变便宜后，软件核心资产上移为词汇、边界、模型和语义约束 | Conceptual-Model, Cognitive-Debt, Essential-Complexity, Friction-as-Design-Signal |
 | [[wiki/topics/AI-Labor-Bottleneck-Shift\|AI 劳动瓶颈迁移]] | 当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量 | Input-Output-Outcome, Alignment-Tax, Allocation-Economy, FDE |
