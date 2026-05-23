@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-05-23
+updated: 2026-05-24
 tags:
   - index
   - MOC
@@ -19,7 +19,7 @@ tags:
 |-----|------|
 | Entity 页面 | 190 个 |
 | Topic 页面 | 25 个 |
-| Comparison 页面 | 6 个 |
+| Comparison 页面 | 8 个 |
 | Raw 文章 | 67 个 |
 | Output 作品 | 5 个 |
 
@@ -264,7 +264,9 @@ tags:
 
 | Comparison | 对比维度 | 相关 Entity |
 |------------|---------|------------|
+| [[wiki/comparisons/Agentic-Engineering-vs-Vibe-Coding\|Agentic Engineering vs Vibe Coding]] | 质量层级、验证方式、人类责任、适用场景 | Agentic-Engineering, Vibe-Coding, Verifiability, Agent-Harness |
 | [[wiki/comparisons/Agent-First-vs-Traditional-Automation\|Agent-First vs Traditional Automation]] | 运营模式、绩效提升、流程设计 | Agent-First-Enterprise, Human-Governor-Agent-Operator |
+| [[wiki/comparisons/AI-Factory-vs-Forward-Deployed-AI-Enablement\|AI Factory vs FDE 式 AI 赋能]] | 平台化生产、现场部署、复利机制、组织治理 | AI-Factory, Forward-Deployed-Engineer, Deployment-Product-Flywheel, Integration-Wall |
 | [[wiki/comparisons/Cook-vs-Chef\|Cook vs Chef]] | 创作方式、理解深度、AI 时代影响 | Taste, Conscious-Creators |
 | [[wiki/comparisons/Knowledge-Work-vs-Wisdom-Work\|Knowledge Work vs Wisdom Work]] | 核心能力、价值来源、AI 影响 | Wisdom-Work, Emotional-Clarity, Discernment, Connection |
 | [[wiki/comparisons/RAG-vs-LLM-Wiki\|RAG vs LLM Wiki]] | 知识处理、累积性、维护成本 | Context-Engineering, Multi-Layer-Memory, Andrej-Karpathy, Knowledge-Compilation, Memex |
@@ -329,4 +331,4 @@ status             # 查看知识库状态
 ---
 
 *索引版本: v2.6*
-*最后更新: 2026-05-22*
+*最后更新: 2026-05-24*
