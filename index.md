@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 182 个 |
-| Topic 页面 | 22 个 |
+| Entity 页面 | 186 个 |
+| Topic 页面 | 23 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 61 个 |
+| Raw 文章 | 66 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -134,6 +134,10 @@ tags:
 | [[wiki/entities/AI-Capability-Gap\|AI Capability Gap]] | AI 在不同用户群体和应用场景中的不均衡进步，形成两条平行认知现实 | Karpathy X 帖 |
 | [[wiki/entities/AI-Psychosis\|AI Psychosis]] | 专业技术用户对 agentic 模型编程能力的极度震撼，与日常使用者的认知鸿沟 | Karpathy X 帖 |
 | [[wiki/entities/AI-Ready-Organization\|AI-Ready Organization]] | 能清晰描述自身目标、流程、策略，从而让 AI 有效执行的组织状态 | Daniel Miessler |
+| [[wiki/entities/AI-Factory\|AI Factory（企业 AI 工厂）]] | 规模化构建、测试、部署、监控 AI 算法的平台化能力层 | P&G AI Factory 系列 |
+| [[wiki/entities/Business-Embedded-AI-Organization\|Business-Embedded AI Organization]] | 兼顾本地业务相关性与全球平台规模的企业 AI 组织结构 | P&G AI Factory 系列 |
+| [[wiki/entities/Cybernetic-Teammate\|Cybernetic Teammate（控制论队友）]] | AI 像队友一样补足专业知识、提升方案质量并打破职能孤岛 | Cybernetic Teammate |
+| [[wiki/entities/Latent-Knowledge-Demand\|Latent Knowledge Demand（隐性知识需求）]] | 知识访问摩擦被移除后突然显现的大量真实需求 | P&G AI Factory 系列 |
 | [[wiki/entities/Organizational-Self-Awareness\|Organizational Self-Awareness]] | 企业对自身目标、策略、工作流的清晰理解能力——AI 就绪的前提条件 | Daniel Miessler |
 | [[wiki/entities/Ontology\|Ontology]] | 对现实业务世界的数字化建模，承载企业业务的语义结构与规则 | Enterprise-Ontology-Application |
 | [[wiki/entities/TBox\|TBox]] | 本体的概念与规则部分，类比数据库 Schema | Enterprise-Ontology-Application |
@@ -243,6 +247,7 @@ tags:
 | [[wiki/topics/Agent-Knowledge-Management\|Agent 知识管理与自进化]] | LLM Wiki、Obsidian-Wiki、GBrain 三种知识自组织与自进化的技术路径与工程实践 | LLM-Wiki, GBrain, Obsidian-Wiki, Progressive-Disclosure, Thin-Harness-Fat-Skills |
 | [[wiki/topics/Verifiable-Agent-Engineering\|可验证 Agent 工程]] | 把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统 | Verifiability, Dominator-Analysis, Agent-PR-Review, Corrective-RAG |
 | [[wiki/topics/Organization-as-Agent-Harness\|组织作为 Agent Harness]] | 企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进 | AI-Ready-Organization, Organizational-Shape-Moat, Alignment-Tax |
+| [[wiki/topics/Enterprise-AI-Factory\|企业 AI 工厂]] | 把 AI 从实验项目变成可重复生产、可集成、可治理、可度量的企业能力 | AI-Factory, Business-Embedded-AI-Organization, Cybernetic-Teammate |
 | [[wiki/topics/Code-as-Conceptual-Infrastructure\|代码作为概念基础设施]] | AI 让指令生成变便宜后，软件核心资产上移为词汇、边界、模型和语义约束 | Conceptual-Model, Cognitive-Debt, Essential-Complexity, Friction-as-Design-Signal |
 | [[wiki/topics/AI-Labor-Bottleneck-Shift\|AI 劳动瓶颈迁移]] | 当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量 | Input-Output-Outcome, Alignment-Tax, Allocation-Economy, FDE |
 | [[wiki/topics/AI-Native-Product-Operating-System\|AI 原生产品操作系统]] | 把模型能力溢出转化为产品假设、发布探针、反馈闭环和市场验证纪律 | AI-Native-Shipping, Research-Preview, PM-in-AI-Era, Product-Overhang |
@@ -281,11 +286,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（60 个）*
+*原始剪藏文章（66 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Forward-Deployed-AI-Enablement]]
+最新编译：[[Enterprise-AI-Factory]]
 
 ---
 
