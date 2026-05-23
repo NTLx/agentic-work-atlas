@@ -1,10 +1,11 @@
 ---
 type: research-agenda
-title: "LLM Wiki 研究议程"
+title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
 updated: 2026-05-23
 tags:
   - research-agenda
+  - agentic-work-atlas
   - llm-wiki
   - knowledge-management
 related_entities:
@@ -12,9 +13,13 @@ related_entities:
   - "[[Knowledge-Compilation]]"
   - "[[RAG-vs-LLM-Wiki]]"
   - "[[Agent-Knowledge-Management]]"
+  - "[[Multi-Agent-System-Pathology]]"
+  - "[[Organization-as-Agent-Harness]]"
+  - "[[Forward-Deployed-AI-Enablement]]"
+  - "[[Enterprise-AI-Factory]]"
 ---
 
-# LLM Wiki 研究议程
+# Agentic Work Atlas 研究议程
 
 > [!note] 使用边界
 > 本页只记录未验证问题、反例和下一轮剪藏方向，不作为事实页。稳定结论应回填到 entity、topic 或 comparison。
@@ -73,6 +78,49 @@ related_entities:
 - 对于策略性判断，是否应要求至少一个反例方向，才允许写入 output？
 - 如果同一未验证假设在多个 output 中反复出现，应该先补 source，还是先建立 comparison？
 
+## 2026-05-23 第五轮探索：多 Agent 系统病理之后
+
+本轮探索从最新编译的 [[Multi-Agent-Pathology-and-Governance]] 出发，回看现有组织、FDE、AI Factory 与 Agent Harness 主题。
+
+### 需要调整
+
+- **研究议程范围需要升级**：本页已经不只服务 LLM Wiki，也承载 FDE、企业 AI 工厂、多 Agent 组织病理等全库研究问题。因此标题调整为 Agentic Work Atlas 研究议程。
+- **Multi-Agent 主题的证据强度需要分级**：当前 [[Multi-Agent-System-Pathology]] 主要由二手综述文章支撑。页面可以保留，但其中涉及具体实验数据的判断应优先补一手论文 source。
+- **机器组织治理需要进入 Agent 工程主线**：[[Agent-Harness]]、[[Agent-Orchestration]]、[[Agent-Swarm]] 已补入组织病风险，但 [[Verifiable-Agent-Engineering]] 还没有覆盖“组织结构如何改变判断”的评测维度。
+- **FDE 与企业 AI 工厂需要 comparison**：P&G 的 [[Enterprise-AI-Factory]] 是企业内部化部署能力；[[Forward-Deployed-AI-Enablement]] 是外部高接触部署能力。二者共享“现场到能力沉淀”的机制，但权力、知识归属和复用路径不同，值得建立对比。
+
+### 新问题
+
+- 多 Agent 系统病理能否只靠外部 harness 观测到，还是必须引入 monologue、reason trace 或其他内态记录？
+- 不可见编排者是否一定有害，还是只要影响链条可审计，就能保留其效率优势？
+- reason-based alignment 和 multi-agent co-training 是否已经有足够工程证据，还是仍停留在研究原型？
+- 企业内部 AI factory 是否会降低外部 FDE 的必要性，还是只会把 FDE 的工作从“外部部署”改成“内部平台团队”？
+
+### 证伪方向
+
+- 找到长期运行、规模较大、只靠外部 harness 和日志治理、没有内态训练也没有明显组织病的 multi-agent 生产系统。
+- 找到不可见编排显著提升安全或质量、且没有造成 worker 判断退化或责任稀释的实验。
+- 找到内部 AI factory 已经成熟但仍高度依赖外部 FDE 的案例，反驳“内部化部署能力会替代 FDE”的假设。
+- 找到标准化 SaaS agent 不需要现场部署也能改写核心工作流的案例，继续压力测试 FDE 主题。
+
+### Source 需求
+
+- Multi-Agent 组织病的一手论文：Hidden Profile / distributed information、MAEBE、persona collapse、bystander effect、Fukui invisible orchestrator、MetaAgent-X、reason-based alignment。
+- Cursor 或其他 coding agent 团队关于多 Agent 长程协作、锁、planner/worker 分层和吞吐量退化的一手工程复盘。
+- 企业内部 AI factory 与外部 FDE 的对比案例：同一类工作流在内部平台团队、外部 FDE、自助 SaaS agent 三种路径下的成本、风险和复用差异。
+- 生产级 multi-agent observability：如何记录 reason change、disagreement、handoff、input rewrite、final authority。
+
+### 下一步目标建议
+
+优先补一手 source，而不是继续新增概念页。当前最值得推进的是：先编译 Fukui invisible orchestrator 论文或 Cursor 多 Agent 工程复盘，再回头修正 [[Agent-Dissociation]]、[[Invisible-Orchestrator]] 和 [[Multi-Agent-Pathology-and-Governance]] 的证据层级。
+
+### 最小实验
+
+1. 选一篇 primary source，例如 Fukui invisible orchestrator 论文。
+2. 编译为 source-summary。
+3. 对照当前 [[Agent-Dissociation]] 中每个数据点，标注哪些来自一手论文、哪些只是二手文章转述。
+4. 若一手论文支持，补强 entity；若不支持，降级为 research agenda 假设。
+
 ## 待验证问题
 
 - **编译质量如何衡量**：除了链接、frontmatter 和裸符号检查，还需要什么知识层面的质量指标？
@@ -87,6 +135,9 @@ related_entities:
 - **输出回填是否需要固定尾注**：每篇 output 是否都应包含“新判断 / 支撑页面 / 处理”检查表？
 - **如何收集不应升级的反例**：哪些清楚、有启发的判断仍应留在 output，而不是进入稳定知识层？
 - **支撑层级如何标注**：回填检查是否需要区分 raw source、Wiki 页面和 research agenda 三种不同证据强度？
+- **多 Agent 组织病如何评测**：最终答案正确时，是否还需要检查 reason change、disagreement、monologue ratio 或 input rewrite？
+- **内部 AI factory 与外部 FDE 如何分工**：企业什么时候应该内部化部署能力，什么时候仍需要外部 FDE？
+- **不可见编排能否被治理**：透明化是否必须牺牲效率，还是审计日志足以降低风险？
 
 ## 下一批剪藏方向
 
@@ -97,6 +148,9 @@ related_entities:
 - 知识编译质量评估方法：冲突检测、证据回链、概念去重、过时判断。
 - 输出驱动的 Wiki 演化案例：文章、报告或决策 memo 如何反向更新知识库。
 - 标准化 AI 产品绕过 FDE 式高接触部署的反例案例。
+- Multi-Agent 组织病的一手论文和工程复盘。
+- 企业内部 AI factory 与外部 FDE 的对比案例。
+- 生产级 multi-agent observability、reason tracing 和 disagreement logging 实践。
 
 ## Source 需求队列
 
@@ -108,6 +162,10 @@ related_entities:
 | 判断纯 Markdown LLM Wiki 的规模边界 | 缺工程数据 | 找 GBrain、Obsidian-Wiki 或类似系统的检索、图谱、文件精读实现细节 | clip 后更新 [[Agent-Knowledge-Management]] |
 | 定义知识层面的 audit 指标 | 缺质量标准 | 找关于知识库质量、证据回链、冲突检测、概念去重的实践材料 | compile 后补充 Lint 工作流 |
 | 识别不应升级的 output 判断 | 缺负面样例 | 从后续 output 中收集清楚但缺 source、只出现一次或只是修辞的判断 | 留在本页，暂不建新页面 |
+| 验证多 Agent 组织病 | 缺一手论文 | 找 Hidden Profile、MAEBE、persona collapse、bystander effect、Fukui invisible orchestrator、MetaAgent-X 等原论文 | clip 后编译到 [[Multi-Agent-Pathology-and-Governance]] |
+| 补强多 Agent 工程复盘 | 缺生产实践 | 找 Cursor 或其他 coding agent 团队关于 planner/worker、锁、吞吐退化、handoff 的一手复盘 | clip 后更新 [[Agent-Harness]]、[[Agent-Orchestration]] |
+| 对比内部 AI factory 与外部 FDE | 缺 comparison 证据 | 找企业内部 AI 平台团队与外部 FDE 服务同类工作流的案例 | 证据足够后新建 comparison |
+| 设计 multi-agent observability 指标 | 缺工程方法 | 找 reason change、disagreement、input rewrite、final authority、handoff trace 的记录实践 | compile 后更新 [[Verifiable-Agent-Engineering]] |
 
 ## 暂不做
 

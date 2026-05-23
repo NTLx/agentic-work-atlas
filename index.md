@@ -285,7 +285,7 @@ tags:
 
 | 页面 | 用途 |
 |------|------|
-| [[wiki/research-agenda\|LLM Wiki 研究议程]] | 记录 `explore(topic)` 产生的问题、反例和待剪藏方向 |
+| [[wiki/research-agenda\|Agentic Work Atlas 研究议程]] | 记录 `explore(topic)` 产生的问题、反例和待剪藏方向 |
 
 ---
 

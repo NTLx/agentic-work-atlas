@@ -23,7 +23,7 @@ source_raw:
   - "[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]"
 ---
 
-# Multi-Agent System Pathology（多 Agent 系统病理）
+# Multi-Agent Pathology and Governance（多 Agent 系统病理与治理）
 
 > [!summary] 核心洞察
 > Multi-agent 的问题不只是不够会并行。第一层是 harness 管动作、权限和信息流；第二层是群体如何影响判断；第三层是组织结构如何改变 Agent 的公开表达、私下处理和责任感。Agent swarm 越成功，越需要把评测对象从“最后答案是否正确”扩展到“组织结构是否健康”。
