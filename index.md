@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 186 个 |
-| Topic 页面 | 23 个 |
+| Entity 页面 | 190 个 |
+| Topic 页面 | 24 个 |
 | Comparison 页面 | 6 个 |
-| Raw 文章 | 66 个 |
+| Raw 文章 | 67 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -71,6 +71,10 @@ tags:
 | [[wiki/entities/CLAUDE-md\|CLAUDE.md]] | 为 AI Agent 提供持久化上下文、架构决策和规范约束的核心机制 | The Founder's Playbook |
 | [[wiki/entities/Agent-Native\|Agent-Native（Agent 原生）]] | 为 AI agent 而非人类设计的基础设施、文档、流程 | Andrej Karpathy: From Vibe Coding to Agentic Engineering |
 | [[wiki/entities/Agent-Orchestration\|Agent Orchestration]] | Agent 编排 | AI-Agent 文章 |
+| [[wiki/entities/Multi-Agent-System-Pathology\|Multi-Agent System Pathology（多 Agent 系统病理）]] | 多 Agent 形成组织结构后出现的协作、认知、责任和内态失真 | Hao 好聊趋势 |
+| [[wiki/entities/Agent-Cognitive-Loafing\|Agent Cognitive Loafing（Agent 认知偷懒）]] | 多 Agent 协作中因群体在场导致的推理责任稀释 | Hao 好聊趋势 |
+| [[wiki/entities/Agent-Dissociation\|Agent Dissociation（Agent 解离）]] | Agent 公开发言、私下独白和角色身份之间的断裂信号 | Hao 好聊趋势 |
+| [[wiki/entities/Invisible-Orchestrator\|Invisible Orchestrator（不可见编排者）]] | 幕后塑造其他 Agent 输入与策略但不被 worker 明确看见的权力结构 | Hao 好聊趋势 |
 | [[wiki/entities/PM-in-AI-Era\|PM in AI Era（AI 时代 PM）]] | PM 从路线图对齐者转型为"高速公路设计师"——消除每步摩擦 | Cat Wu: How Anthropic's product team moves faster |
 | [[wiki/entities/Ownership\|Ownership]] | 承担后果的意愿与能力 | Good Taste the Only Real Moat Left |
 | [[wiki/entities/Competent-Output\|Competent Output]] | AI 默认产出的合格但平庸的内容 | Good Taste the Only Real Moat Left |
@@ -241,6 +245,7 @@ tags:
 | [[wiki/topics/Building-Effective-Agents\|Building Effective Agents]] | Anthropic 的 Agent 构建架构设计指南 | Agent-Workflow-Patterns, ACI |
 | [[wiki/topics/Karpathy-AI-Thought\|Karpathy AI 思想体系]] | Software 2.0 → 3.0、Vibe Coding → Agentic Engineering、Jagged Intelligence、Ghosts、Verifiability 的系统性思想演化 | Software-2.0, Software-3.0, Vibe-Coding, Agentic-Engineering, Jagged-Intelligence, Ghost-Intelligence, Verifiability, LLM-Wiki |
 | [[wiki/topics/OpenClaw-Agent-System\|OpenClaw Agent System]] | OpenClaw 多 Agent 协作系统架构与实践 | Agent-Orchestration, Context-Engineering, Multi-Layer-Memory, Agent-Swarm, Three-State-Protocol |
+| [[wiki/topics/Multi-Agent-Pathology-and-Governance\|多 Agent 系统病理与治理]] | Agent 从单体工具变成组织系统后出现的群体认知、责任稀释和内态断裂 | Multi-Agent-System-Pathology, Agent-Dissociation, Invisible-Orchestrator |
 | [[wiki/topics/Lean-Indie-Engineering\|精益独立开发]] | 独立开发者用极低技术成本运营盈利产品的工程哲学 | Steve-Hanov, Lean-Stack, Runway-Math |
 | [[wiki/topics/Enterprise-Ontology-Application\|企业级本体应用]] | 用本体为 AI Agent 提供统一的业务语义层 | Ontology, TBox, ABox, OWL, Ontology-Agent |
 | [[wiki/topics/AI-Apprenticeship-and-Lehrwerkstatt\|AI 学徒制与教学工坊]] | 通过公开交互、渗透学习重建组织内的学徒制 | Lehrwerkstatt, Osmosis-Learning, Tobi-Lütke |
@@ -286,11 +291,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（66 个）*
+*原始剪藏文章（67 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Enterprise-AI-Factory]]
+最新编译：[[Multi-Agent-Pathology-and-Governance]]
 
 ---
 

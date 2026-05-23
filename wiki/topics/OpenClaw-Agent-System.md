@@ -14,9 +14,11 @@ related_entities:
   - '[[Elvis-Sun]]'
   - '[[Multi-Layer-Memory]]'
   - '[[Three-State-Protocol]]'
+  - "[[Multi-Agent-System-Pathology]]"
 source_raw:
   - '[[OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup]]'
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
+  - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
 ---
 
 # OpenClaw Agent System
@@ -126,6 +128,14 @@ source_raw:
 
 + V1 线程协议 + DRI 原则 + shared-context/ 状态驱动
 
+### 问题四：Agent Swarm 也是组织系统
+
+参见 [[Multi-Agent-System-Pathology]]
+
+Hao 好聊趋势的文章给 OpenClaw 这类 Agent Swarm 实践补上了风险边界：三态协议、shared-context 和 DRI 原则能减少消息风暴，但不自动解决从众、责任稀释和不可见编排带来的组织病。
+
+因此 Agent Swarm 的下一层工程问题不是“再加几个 Agent”，而是让协作结构可审计：谁改写了谁的输入，谁压制了哪个分歧，谁拥有最终写入权，为什么某个 Agent 改变了判断。
+
 ## 一天是怎么过的
 
 52 个 cron 任务覆盖 A 股 + 美股双时区：
@@ -201,6 +211,7 @@ Elvis 的实战数据：
 - [[Multi-Layer-Memory]] - 五层记忆系统详解
 - [[Agent-Swarm]] - Agent Swarm 详解
 - [[Three-State-Protocol]] - 三态协议详解
+- [[Multi-Agent-System-Pathology]] - 多 Agent 组织病理与治理风险
 
 ## 参见
 

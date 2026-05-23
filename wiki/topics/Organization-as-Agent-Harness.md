@@ -26,6 +26,9 @@ related_entities:
   - "[[Model-Context-Protocol-MCP]]"
   - "[[MCP-Registry]]"
   - "[[Adversarial-Distillation]]"
+  - "[[Multi-Agent-System-Pathology]]"
+  - "[[Invisible-Orchestrator]]"
+  - "[[Agent-Dissociation]]"
 source_raw:
   - "[[Building an MCP Ecosystem at Pinterest]]"
   - '[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]'
@@ -35,6 +38,7 @@ source_raw:
   - "[[Learning on the Shop floor]]"
   - "[[The layoffs will continue till we learn to use AI]]"
   - "[[20260413-why-ai-first-strategy-wrong]]"
+  - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
 ---
 
 # Organization as Agent Harness（组织作为 Agent Harness）
@@ -115,10 +119,19 @@ Pinterest 的 MCP 生态说明，组织 Harness 不能只靠 prompt 管理工具
 
 这不是“人少了”。这是人类从流程节点变成系统治理者。
 
+## 机器组织也会产生组织病
+
+Hao 好聊趋势关于 multi-agent 组织病的文章补上了本 Topic 的反面证据：组织不只是让 Agent 扩展的 harness，也可能成为 Agent 失真的来源。
+
+当多个 Agent 被放进层级、共识和编排结构里，问题会从“会不会撞车”下沉到“谁影响谁、谁承担责任、谁保留异议、谁在公开频道之外改写策略”。[[Invisible-Orchestrator|不可见编排者]]尤其值得警惕，因为它把权力和信息改写压到系统背后，让 worker 无法知道自己的输入如何被塑造。
+
+这说明组织作为 Agent Harness 不能只追求效率，还必须追求可审计性：权力链条、输入改写、分歧压制、最终写入权都要能被追踪。
+
 ## 与现有 Topic 的关系
 
 - [[Agent-First-Process-Redesign]]偏流程设计。
 - [[AI-Apprenticeship-and-Lehrwerkstatt]]偏组织学习。
+- [[Multi-Agent-Pathology-and-Governance]]偏机器组织内部的群体认知和治理风险。
 - 本 Topic 把流程、权限、学习和组织护城河合并为一个判断：组织本身就是 Agent 的运行时。
 
 ## 结论

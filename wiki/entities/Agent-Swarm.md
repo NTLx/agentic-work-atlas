@@ -5,7 +5,7 @@ aliases:
   - Agent Swarm
 definition: "Agent Swarm 是多个编码 Agent 的并行调度系统，每个 Agent 拥有独立的 worktree 和 tmux session，实现并行开发和自主监控。"
 created: 2026-04-09
-updated: 2026-05-08
+updated: 2026-05-23
 tags:
   - AI-Agent
   - OpenClaw
@@ -15,9 +15,11 @@ related_entities:
   - '[[Boris-Cherny]]'
   - '[[Agent-Orchestration]]'
   - '[[Context-Engineering]]'
+  - "[[Multi-Agent-System-Pathology]]"
 source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - '[[OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup]]'
+  - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
 ---
 
 # Agent Swarm
@@ -153,6 +155,7 @@ Elvis 的实战数据：
 - 直接用 Claude Code/Codex 的限制：一次只能盯一个事、上下文窗口是零和博弈
 - Definition of Done 必须严格定义，否则 Agent 可能产出未验证的代码
 - 分析和编码应分离——分析 Agent 不写代码，编码通过 ACP 委派给专业工具
+- Agent Swarm 不只是并发调度系统。Agent 数量增加后，还会出现从众、责任稀释、不可见编排和内态解离等 [[Multi-Agent-System-Pathology|多 Agent 组织病理]]。
 
 ## 关联概念
 
@@ -160,5 +163,6 @@ Elvis 的实战数据：
 - [[Headless-Mode]] — Agent 运行的无头模式基础
 - [[Three-State-Protocol]] — Swarm 成员间通信协议
 - [[Context-Engineering]] — Swarm 需要专业的上下文工程
+- [[Multi-Agent-System-Pathology]] — Swarm 规模化后的组织认知风险
 
 ## 来源

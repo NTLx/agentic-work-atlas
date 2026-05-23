@@ -5,7 +5,7 @@ aliases:
   - Agent Orchestration
 definition: "Agent 编排层是管理多个 AI Agent 协作的核心架构，OpenClaw 作为编排者负责任务拆解、进度监控、错误处理和结果汇总。"
 created: 2026-04-09
-updated: 2026-05-11
+updated: 2026-05-23
 tags:
   - AI-Agent
   - OpenClaw
@@ -15,10 +15,13 @@ related_entities:
   - '[[Context-Engineering]]'
   - '[[Agent-Swarm]]'
   - '[[Three-State-Protocol]]'
+  - "[[Invisible-Orchestrator]]"
+  - "[[Multi-Agent-System-Pathology]]"
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup]]'
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
+  - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
 ---
 
 # Agent Orchestration
@@ -103,6 +106,7 @@ Elvis 的 Agent Swarm 系统：
 2. **上下文专业化**：编排者持有业务上下文，编码 Agent 只有代码上下文
 3. **协议级通信**：不是群聊问题，是协议问题——设计三态协议防止 ACK storm
 4. **自主进化**：编排者从失败中学习，写更好的 prompts
+5. **可审计编排**：编排者可以隐藏实现细节，但不应隐藏影响链条；谁改写输入、谁压制分歧、谁拥有最终写入权，都应能追踪。
 
 ## 关键数据点
 
@@ -119,6 +123,7 @@ Elvis 的 Agent Swarm 系统：
 - 早期设了 coding、architect、PM 三个技术角色后发现产出与 Zoe + ACP 组合高度重叠，反而增加通信复杂度，后来全砍了
 - 每加一个 Agent 都需要半天到一天调试，处理通信冲突、共享资源竞争、规则兼容
 - 协议级通信是必须的——不是群聊问题，是协议问题
+- 不可见编排可能提高短期效率，但会制造 [[Invisible-Orchestrator|不可见权力结构]]：worker 不知道谁改变了自己的输入和策略，系统很难审计判断变化来源。
 
 ## 关联概念
 
@@ -129,5 +134,7 @@ Elvis 的 Agent Swarm 系统：
 - [[Corrective-RAG]] — CRAG 作为编排中的检索质量控制节点
 - [[Reflexion]] — Reflexion 循环是编排中的关键反馈模式
 - [[Dual-Tier-LLM-Architecture]] — 分层路由是编排中的请求分发策略
+- [[Invisible-Orchestrator]] — 编排层隐藏权力和信息改写时的风险结构
+- [[Multi-Agent-System-Pathology]] — 多 Agent 编排成功后暴露的组织病理
 
 ## 来源
