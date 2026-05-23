@@ -19,7 +19,7 @@ tags:
 |-----|------|
 | Entity 页面 | 190 个 |
 | Topic 页面 | 25 个 |
-| Comparison 页面 | 8 个 |
+| Comparison 页面 | 14 个 |
 | Raw 文章 | 67 个 |
 | Output 作品 | 5 个 |
 
@@ -264,11 +264,17 @@ tags:
 
 | Comparison | 对比维度 | 相关 Entity |
 |------------|---------|------------|
+| [[wiki/comparisons/Agent-Harness-vs-Agent-Workflow-Patterns\|Agent Harness vs Agent Workflow Patterns]] | 运行时基础设施、编排模式、生产约束 | Agent-Harness, Agent-Workflow-Patterns, Verifiability |
 | [[wiki/comparisons/Agentic-Engineering-vs-Vibe-Coding\|Agentic Engineering vs Vibe Coding]] | 质量层级、验证方式、人类责任、适用场景 | Agentic-Engineering, Vibe-Coding, Verifiability, Agent-Harness |
 | [[wiki/comparisons/Agent-First-vs-Traditional-Automation\|Agent-First vs Traditional Automation]] | 运营模式、绩效提升、流程设计 | Agent-First-Enterprise, Human-Governor-Agent-Operator |
+| [[wiki/comparisons/AI-Ready-Organization-vs-Agent-First-Enterprise\|AI-Ready Organization vs Agent-First Enterprise]] | 组织准备度、流程重构、人类治理、Agent 执行 | AI-Ready-Organization, Agent-First-Enterprise, Machine-Readable-Processes |
 | [[wiki/comparisons/AI-Factory-vs-Forward-Deployed-AI-Enablement\|AI Factory vs FDE 式 AI 赋能]] | 平台化生产、现场部署、复利机制、组织治理 | AI-Factory, Forward-Deployed-Engineer, Deployment-Product-Flywheel, Integration-Wall |
+| [[wiki/comparisons/Cognitive-Debt-vs-Technical-Debt\|Cognitive Debt vs Technical Debt]] | 理解债务、实现债务、AI 生成代码风险 | Cognitive-Debt, Technical-Debt-Avoidance, Conceptual-Model |
+| [[wiki/comparisons/Context-Engineering-vs-Knowledge-Compilation\|Context Engineering vs Knowledge Compilation]] | 运行时上下文、摄取时编译、长期复用 | Context-Engineering, Knowledge-Compilation, LLM-Wiki |
 | [[wiki/comparisons/Cook-vs-Chef\|Cook vs Chef]] | 创作方式、理解深度、AI 时代影响 | Taste, Conscious-Creators |
+| [[wiki/comparisons/Deployment-Product-Flywheel-vs-Tacit-Knowledge-Lock-In\|Deployment-Product Flywheel vs Tacit Knowledge Lock-In]] | 供应商复利、客户锁定、评测集归属 | Deployment-Product-Flywheel, Tacit-Knowledge-Lock-In, Evaluation-Set |
 | [[wiki/comparisons/Knowledge-Work-vs-Wisdom-Work\|Knowledge Work vs Wisdom Work]] | 核心能力、价值来源、AI 影响 | Wisdom-Work, Emotional-Clarity, Discernment, Connection |
+| [[wiki/comparisons/Ontology-vs-Knowledge-Graph\|Ontology vs Knowledge Graph]] | 语义层、事实层、TBox/ABox、企业 Agent | Ontology, Knowledge-Graph, TBox, ABox |
 | [[wiki/comparisons/RAG-vs-LLM-Wiki\|RAG vs LLM Wiki]] | 知识处理、累积性、维护成本 | Context-Engineering, Multi-Layer-Memory, Andrej-Karpathy, Knowledge-Compilation, Memex |
 | [[wiki/comparisons/Taste-vs-Judgment\|Taste vs Judgment]] | 决策方式、不确定性处理、AI 时代价值 | Taste, Judgment, Refusal, Specificity |
 | [[wiki/comparisons/Vibe-Coding-vs-Software-2.0\|Vibe Coding vs Software 2.0]] | 编程范式、质量层级、开发者角色 | Vibe-Coding, Software-2.0, Andrej-Karpathy, Coding-Agents |
