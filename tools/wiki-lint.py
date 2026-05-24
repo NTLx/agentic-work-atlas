@@ -4,7 +4,7 @@ Agentic Work Atlas 校验与同步门禁。
 
 本脚本保证 LLM Wiki 作为普通 Obsidian/Quartz Markdown 可正常工作：
 - 校验 YAML frontmatter 与 ISO 日期字段
-- 检测会触发 Obsidian MathJax 的裸露美元符号
+- 检测会触发 Obsidian MathJax 的裸露美元符号（raw 原文正文除外）
 - 用真实文件校验 wikilink 与 source_raw 目标
 - 检查 index.md 统计漂移
 - 检查 entity/comparison 必填元数据
@@ -246,6 +246,8 @@ def check_frontmatter_and_dates(paths: Iterable[Path]) -> list[Issue]:
 def check_hidden_chars(paths: Iterable[Path]) -> list[Issue]:
     issues: list[Issue] = []
     for path in paths:
+        if path.is_relative_to(RAW):
+            continue
         text = path.read_text(encoding="utf-8", errors="replace")
         for char in ZERO_WIDTH:
             pos = text.find(char)
@@ -257,6 +259,8 @@ def check_hidden_chars(paths: Iterable[Path]) -> list[Issue]:
 def check_dollars(paths: Iterable[Path]) -> list[Issue]:
     issues: list[Issue] = []
     for path in paths:
+        if path.is_relative_to(RAW):
+            continue
         text = path.read_text(encoding="utf-8", errors="replace")
         in_fence = False
         for i, line in enumerate(text.splitlines(), 1):
