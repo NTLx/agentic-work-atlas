@@ -4,7 +4,7 @@ title: "Building an AI Factory at Procter & Gamble"
 source_raw:
   - "[[Building an AI Factory at Procter & Gamble - Case - Faculty & Research - Harvard Business School]]"
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-24
 tags:
   - source-summary
   - enterprise-AI
@@ -29,8 +29,9 @@ tags:
 
 ### 3. 对标
 
-- **案例化信号**：当企业 AI 部署被写成商学院 case，说明问题已经从“模型能力”进入“组织、平台和治理如何配合”的管理议题。
-- **证据用法**：本页应作为 [[AI-Factory]] 的辅助证据；运营细节优先引用 MIT SMR 文章和 CDO Magazine 访谈。
+- **跨域关联1：商学院 case 作为成熟度信号**：一个 AI factory 被 HBS case 化，类似早期 Toyota Production System 被管理学吸收；这说明讨论对象不再只是技术方案，而是组织如何复制、治理和教学一套生产系统。
+- **跨域关联2：证据分层**：本页适合证明“P&G AI factory 是可研究对象”，不适合证明“factory 如何运行”。它在证据链中的角色类似论文 metadata：证明对象存在，细节必须回到 MIT SMR、访谈或完整 case。
+- **跨域关联3：AI 部署从项目到制度**：case 形态提醒本库区分 demo、项目、平台和制度。只有进入制度层，AI 才可能形成 [[AI-Factory|AI factory]] 的组织复利。
 
 ### 关联概念
 

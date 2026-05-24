@@ -4,7 +4,7 @@ title: "How Procter & Gamble Uses AI to Unlock New Insights From Data"
 source_raw:
   - "[[How Procter & Gamble Uses AI to Unlock New Insights From Data  Thomas H. Davenport and Randy Bean]]"
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-24
 tags:
   - source-summary
   - enterprise-AI
@@ -32,9 +32,10 @@ tags:
 
 ### 3. 对标
 
-- **FDE 内部化**：P&G 的 AI factory 是企业把 FDE 式部署能力内部化：业务团队、AI engineering 和平台团队共同穿越集成问题。
-- **组织作为 Harness**：factory 把数据、模型、安全和运维标准变成 Agent 可运行环境，补强 [[Organization-as-Agent-Harness]]。
-- **黄金用例扩散**：Pampers、巴西供应链、香水研发和 Project Genie 展示了从局部用例到可复用能力的路径。
+- **跨域关联1：FDE 内部化**：P&G 的 AI factory 是企业把 FDE 式现场部署能力内部化：业务团队发现问题，AI engineering 生产化，平台团队沉淀标准，三者共同穿越 [[Integration-Wall|集成之墙]]。
+- **跨域关联2：组织作为 Harness**：factory 把数据、模型、安全、注册、监控和运维标准变成 Agent 可运行环境，补强 [[Organization-as-Agent-Harness]]：组织本身就是模型能力的外部执行系统。
+- **跨域关联3：黄金用例扩散**：Pampers、巴西供应链、香水研发和 Project Genie 不是孤立案例，而是“局部成功能否回流为平台能力”的测试集。
+- **迁移判断**：其他企业不一定需要复制 P&G 的规模，但必须复制其问题筛选、生产化和复用机制；否则 AI 项目会停留在 demo 层。
 
 ### 关联概念
 

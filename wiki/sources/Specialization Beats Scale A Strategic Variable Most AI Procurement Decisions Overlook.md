@@ -32,9 +32,10 @@ tags:
 
 ### 3. 对标
 
-- **企业采购**：这篇文章补强 [[Layered-AI-Sourcing]]，把模型规模、部署位置和任务分布一起纳入采购分层。
-- **Agentic Engineering**：和 [[Verifiability]] 类似，OCR 任务因为可验证，才能通过评测暴露小模型专门化收益。
-- **部署复利**：如果企业把真实任务数据、评测集和失败模式持续回流，[[Specialization-Compounds]] 可以成为内部版 [[Deployment-Product-Flywheel]]。
+- **跨域关联1：企业采购**：这篇文章补强 [[Layered-AI-Sourcing]]，把模型规模、部署位置和任务分布一起纳入采购分层；模型采购从“买最强”变成“按任务组合能力来源”。
+- **跨域关联2：Agentic Engineering 的可验证性**：和 [[Verifiability]] 类似，OCR 任务因为可验证，才能通过评测暴露小模型专门化收益。不可验证任务不能直接套用同一采购逻辑。
+- **跨域关联3：部署复利**：如果企业把真实任务数据、评测集和失败模式持续回流，[[Specialization-Compounds]] 可以成为内部版 [[Deployment-Product-Flywheel]]。
+- **迁移判断**：这篇文章的可复用价值不是“小模型必胜”，而是“训练历史与任务分布必须成为采购变量”。
 
 ### 关联概念
 

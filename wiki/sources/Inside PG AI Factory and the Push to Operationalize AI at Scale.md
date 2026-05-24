@@ -4,7 +4,7 @@ title: "Inside P&G's AI Factory and the Push to Operationalize AI at Scale"
 source_raw:
   - "[[Inside PG AI Factory and the Push to Operationalize AI at Scale]]"
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-24
 tags:
   - source-summary
   - youtube-transcript
@@ -33,9 +33,10 @@ tags:
 
 ### 3. 对标
 
-- **AI-ready organization**：P&G 的做法把“组织清楚自己要什么”制度化为出资、嵌入和 domain ownership。
-- **FDE 内部版本**：P&G 不是等外部 FDE 进入，而是在内部建立业务嵌入、工程生产化和平台回流机制。
-- **组织作为 Harness**：AI factory、AI engineering 和业务嵌入共同构成企业内部 Agent 运行环境。
+- **跨域关联1：AI-ready organization**：P&G 的做法把“组织清楚自己要什么”制度化为出资、嵌入和 domain ownership；这比口号式 AI strategy 更接近可执行的组织接口。
+- **跨域关联2：FDE 内部版本**：P&G 不是等外部 FDE 进入，而是在内部建立业务嵌入、工程生产化和平台回流机制。它说明 FDE 能力也可以成为企业内部 operating model。
+- **跨域关联3：组织作为 Harness**：AI factory、AI engineering 和业务嵌入共同构成企业内部 Agent 运行环境；模型只是其中一个组件，真正的 harness 是组织。
+- **迁移判断**：业务出资和 co-location 不是管理细节，而是防止 AI 平台脱离真实工作流的约束机制。
 
 ### 关联概念
 

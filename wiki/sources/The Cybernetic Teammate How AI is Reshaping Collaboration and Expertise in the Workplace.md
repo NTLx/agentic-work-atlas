@@ -4,7 +4,7 @@ title: "The Cybernetic Teammate: How AI is Reshaping Collaboration and Expertise
 source_raw:
   - "[[The Cybernetic Teammate How AI is Reshaping Collaboration and Expertise in the Workplace]]"
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-24
 tags:
   - source-summary
   - AI-collaboration
@@ -32,9 +32,10 @@ tags:
 
 ### 3. 对标
 
-- **专业知识民主化**：AI 让低经验员工借助模型获得类似专家协作的一部分效果，但这同时要求更强判断力来分辨建议质量。
-- **团队结构重构**：AI 不简单减少团队人数，而是改变团队内知识整合的最小单位。
-- **企业 AI 工厂**：如果 cybernetic teammate 要规模化，必须有安全访问、知识源、工具连接和责任边界。
+- **跨域关联1：专业知识民主化**：AI 让低经验员工获得一部分专家协作效果，类似 spreadsheet 让非程序员获得计算能力；但能力民主化会把瓶颈从“能否生成方案”转移到“能否判断方案”。
+- **跨域关联2：团队结构重构**：AI 不只是减少团队人数，而是改变知识整合的最小单位。个人加 AI 可能承担过去小团队的一部分探索职能，正式团队则更像负责冲突解决、责任签署和组织学习。
+- **跨域关联3：企业 AI 工厂**：cybernetic teammate 若要规模化，必须连接知识源、权限、安全边界和复盘机制；否则它只是个人效率工具，无法成为 [[Enterprise-AI-Factory|企业 AI 工厂]] 的组织能力。
+- **迁移判断**：这篇文章适合支撑“AI 改变协作结构”，但不应被用来证明“AI 可以替代所有团队”。它证明的是部分协作收益可被压缩进个人工作流。
 
 ### 关联概念
 
