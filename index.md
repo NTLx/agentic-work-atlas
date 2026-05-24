@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 190 个 |
-| Topic 页面 | 25 个 |
+| Entity 页面 | 195 个 |
+| Topic 页面 | 26 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 67 个 |
+| Raw 文章 | 68 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -225,8 +225,13 @@ tags:
 | [[wiki/entities/The-OpenAI-Deployment-Company\|The OpenAI Deployment Company]] | OpenAI 独立部署实体/业务单元，以 FDE 为核心推进企业 AI 落地 | Enterprise, AI-Industry |
 | [[wiki/entities/Evaluation-Set\|Evaluation Set（评测集）]] | 把真实业务判断、边界案例和验收规则显式化为可复用测试样本的关键资产 | The Return of the Deployment Company |
 | [[wiki/entities/Tacit-Knowledge-Lock-In\|Tacit Knowledge Lock-In（隐性知识锁定）]] | 供应商掌握客户隐性业务规则、评测集和流程调优经验形成的新型锁定 | The Return of the Deployment Company |
-| [[wiki/entities/Layered-AI-Sourcing\|Layered AI Sourcing（分层 AI 来源策略）]] | 按敏感度、频率、成本曲线和前沿能力需求分配 on-prem、cloud API、FDE 与内部团队 | The Return of the Deployment Company |
+| [[wiki/entities/Layered-AI-Sourcing\|Layered AI Sourcing（分层 AI 来源策略）]] | 按敏感度、频率、成本曲线、任务分布和前沿能力需求分配 on-prem、专门化小模型、cloud API、FDE 与内部团队 | The Return of the Deployment Company |
+| [[wiki/entities/Distributional-Alignment\|Distributional Alignment（分布对齐）]] | 模型训练历史与部署任务分布之间的贴近程度，是企业任务中可能超过参数规模的模型选择变量 | Specialization Beats Scale |
+| [[wiki/entities/Specialized-Small-Models\|Specialized Small Models（专门化小模型）]] | 面向窄任务或具体业务域训练的小参数模型，可在可验证高频任务中改写质量、成本和稳定性排序 | Specialization Beats Scale |
+| [[wiki/entities/Specialization-Compounds\|Specialization Compounds（专门化会复利）]] | 从通用模型到领域专家再到任务专家的层级过程，起点越接近目标任务，后续训练越有效 | Specialization Beats Scale |
 | [[wiki/entities/Jacob-Harris\|Jacob Harris]] | 软件开发者、jacobharr.is 作者，写作关注软件、数据和公共系统中的工程判断 | Software Engineering, Data Journalism |
+| [[wiki/entities/Erick-Lachmann\|Erick Lachmann]] | Dharma-AI 作者，参与撰写专门化小模型与企业 AI 采购变量文章 | AI, Enterprise AI |
+| [[wiki/entities/Pimenta-de-Freitas-Cardoso\|Pimenta de Freitas Cardoso]] | DharmaOCR 相关论文作者之一，研究被用于讨论专门化小模型与分布对齐 | AI, Research |
 
 ### Topics (topics/)
 *整合多篇文章的主题*
@@ -258,6 +263,7 @@ tags:
 | [[wiki/topics/AI-Labor-Bottleneck-Shift\|AI 劳动瓶颈迁移]] | 当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量 | Input-Output-Outcome, Alignment-Tax, Allocation-Economy, FDE |
 | [[wiki/topics/AI-Native-Product-Operating-System\|AI 原生产品操作系统]] | 把模型能力溢出转化为产品假设、发布探针、反馈闭环和市场验证纪律 | AI-Native-Shipping, Research-Preview, PM-in-AI-Era, Product-Overhang |
 | [[wiki/topics/Forward-Deployed-AI-Enablement\|FDE 式 AI 赋能]] | 嵌入真实组织现场，发现黄金用例、穿越集成之墙，并沉淀可复用能力 | Forward-Deployed-Engineer, Deployment-Product-Flywheel, Golden-Case |
+| [[wiki/topics/Enterprise-AI-Model-Sourcing\|企业 AI 模型采购]] | 按任务分布、评测证据、成本曲线、部署约束和组织能力分层选择模型来源 | Layered-AI-Sourcing, Specialized-Small-Models, Distributional-Alignment |
 
 ### Comparisons (comparisons/)
 *对比分析页面*
@@ -300,11 +306,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（67 个）*
+*原始剪藏文章（68 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Multi-Agent-Pathology-and-Governance]]
+最新编译：[[Enterprise-AI-Model-Sourcing]]
 
 ---
 

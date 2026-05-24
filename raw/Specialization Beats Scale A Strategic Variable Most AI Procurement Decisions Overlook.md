@@ -1,11 +1,12 @@
 ---
+type: raw
 title: "Specialization Beats Scale: A Strategic Variable Most AI Procurement Decisions Overlook"
 source: "https://huggingface.co/blog/Dharma-AI/specialization-beats-scale"
 author:
-  - "[[Erick Lachmann]]"
-  - "[[Pimenta de Freitas Cardoso]]"
-published: 2026-05-22
-created: 2026-05-24
+  - "[[Erick-Lachmann]]"
+  - "[[Pimenta-de-Freitas-Cardoso]]"
+published: "2026-05-22"
+created: "2026-05-24"
 description: "A Blog post by Dharma-AI on Hugging Face"
 tags:
   - "clippings"
