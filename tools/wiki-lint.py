@@ -8,13 +8,13 @@ Agentic Work Atlas 校验与同步门禁。
 - 用真实文件校验 wikilink 与 source_raw 目标
 - 检查 index.md 统计漂移
 - 检查 entity/comparison 必填元数据
-- 报告仍需编译的 raw 文件
+- 报告仍缺少摘要覆盖的 raw 文件（历史 raw 编译摘要或同名 source summary 二者满足其一）
 
 用法:
-  python3 tools/wiki-lint.py
-  python3 tools/wiki-lint.py --fix-index
-  python3 tools/wiki-lint.py --write-report
-  python3 tools/wiki-lint.py --fix-index --write-report
+  uv run --with pyyaml python tools/wiki-lint.py
+  uv run --with pyyaml python tools/wiki-lint.py --fix-index
+  uv run --with pyyaml python tools/wiki-lint.py --write-report
+  uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
 """
 
 from __future__ import annotations
@@ -510,7 +510,7 @@ def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path
             "## 运行命令",
             "",
             "```bash",
-            "python3 tools/wiki-lint.py --fix-index --write-report",
+            "uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report",
             "```",
             "",
             "*本报告由 `tools/wiki-lint.py` 生成。*",
