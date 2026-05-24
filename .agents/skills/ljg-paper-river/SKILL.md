@@ -19,8 +19,8 @@ version: "1.0.0"
 
 ### Markdown 语法
 
-- 加粗用 `**bold**`（双星号）
-- 标题层级从 `#` 开始，不跳级
+- 加粗用 `*bold*`（单星号），禁止 `**bold**`
+- 标题层级从 `*` 开始，不跳级
 
 ### ASCII Art
 
@@ -34,21 +34,19 @@ version: "1.0.0"
 
 - 时间戳：`date +%Y%m%dT%H%M%S`
 - 可读时间：`date "+%Y-%m-%d %a %H:%M"`
-- 文件名：`{时间戳}--paper-river-{简短标题}__paper_river.md`
+- 文件名：`{时间戳}--paper-river-{简短标题}__paper_river.org`
 - 输出目录：`~/Documents/notes/`
 
-### YAML 文件头
+### Org 文件头
 
 ```
----
-title: paper-river-{简短标题}
-date: {YYYY-MM-DD}
-tags: [paper, river]
-identifier: {YYYYMMDDTHHMMSS}
-source: {URL 或来源描述}
-authors: {目标论文作者}
-venue: {发表场所/年份}
----
+#+title:      paper-river-{简短标题}
+#+date:       [{YYYY-MM-DD Day HH:MM}]
+#+filetags:   :paper:river:
+#+identifier: {YYYYMMDDTHHMMSS}
+#+source:     {URL 或来源描述}
+#+authors:    {目标论文作者}
+#+venue:      {发表场所/年份}
 ```
 
 ## 红线

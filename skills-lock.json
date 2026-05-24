@@ -11,10 +11,24 @@
       "sourceType": "github",
       "computedHash": "27582028cbdd9c81232fba1aafbfa609e4dc1167bff4f2e89ca48a3ecd07049b"
     },
+    "defuddle": {
+      "source": "kepano/obsidian-skills",
+      "sourceType": "github",
+      "skillPath": "skills/defuddle/SKILL.md",
+      "computedHash": "0ed68bc3e818ba0e6b8d192357ea3daaf552a3893f8854e7fd43c06831f91323"
+    },
     "json-canvas": {
       "source": "kepano/obsidian-skills",
       "sourceType": "github",
+      "skillPath": "skills/json-canvas/SKILL.md",
       "computedHash": "56cbac74a93e4fba97f4d44bccfdeaae89e545b223f47df392c7705e01e6c543"
+    },
+    "ljg-book": {
+      "source": "lijigang/ljg-skills",
+      "ref": "md",
+      "sourceType": "github",
+      "skillPath": "skills/ljg-book/SKILL.md",
+      "computedHash": "e6ac8ecb5e2049dc0e9eb7eadc6b891ec606c072cc68bc22a730c5911c5b88ab"
     },
     "ljg-card": {
       "source": "lijigang/ljg-skills",
@@ -38,7 +52,8 @@
       "source": "lijigang/ljg-skills",
       "ref": "md",
       "sourceType": "github",
-      "computedHash": "cc9be266a4e8d65cee7f017e99047e498b7664c0fdd8a7befb788fcfb2d1c466"
+      "skillPath": "skills/ljg-paper/SKILL.md",
+      "computedHash": "3961cd2b9dde59d581891a6d7a6722c108c5b4b3499801406658d5901179c749"
     },
     "ljg-paper-flow": {
       "source": "lijigang/ljg-skills",
@@ -50,19 +65,29 @@
       "source": "lijigang/ljg-skills",
       "ref": "md",
       "sourceType": "github",
-      "computedHash": "449d3f9e459c20ffec6a39033b99372956ae2181e13bcc7c42a9862b240ff34e"
+      "skillPath": "skills/ljg-paper-river/SKILL.md",
+      "computedHash": "43972ebc046eb328655bdee0200939cbca2ffc04c794054a1ba98fd557a33233"
     },
     "ljg-plain": {
       "source": "lijigang/ljg-skills",
       "ref": "md",
       "sourceType": "github",
-      "computedHash": "54e7d5c9c7533a8038dd26a85efbaa701cbc06aaabc0f51c865a4a37cd6d37ac"
+      "skillPath": "skills/ljg-plain/SKILL.md",
+      "computedHash": "8528d381157772b6cce92ebca89678db7e536df822c7049ad8025e5ee91d4779"
+    },
+    "ljg-qa": {
+      "source": "lijigang/ljg-skills",
+      "ref": "md",
+      "sourceType": "github",
+      "skillPath": "skills/ljg-qa/SKILL.md",
+      "computedHash": "eb03332597eb55bf188f4d51fa53763b7ce6a5b04af6036d47439e94b7f1c21e"
     },
     "ljg-rank": {
       "source": "lijigang/ljg-skills",
       "ref": "md",
       "sourceType": "github",
-      "computedHash": "22c73dfdea403355c5c4991a0e01d9a405d5d0cd1abf34603c145836311c9721"
+      "skillPath": "skills/ljg-rank/SKILL.md",
+      "computedHash": "244146b269861848d9cafe6a6d2e5d7c95502bf27ae1f2c6f3ff8823d8e7ade1"
     },
     "ljg-read": {
       "source": "lijigang/ljg-skills",
@@ -74,19 +99,22 @@
       "source": "lijigang/ljg-skills",
       "ref": "md",
       "sourceType": "github",
-      "computedHash": "61081a3927164d548ad9f38e5a002f7901759a279421f72cc00c6a9e4fbe10cc"
+      "skillPath": "skills/ljg-relationship/SKILL.md",
+      "computedHash": "9734ec7fb866d415d51d0098e19c7b2704074ebb884a88f734370103fe61b348"
     },
     "ljg-roundtable": {
       "source": "lijigang/ljg-skills",
       "ref": "md",
       "sourceType": "github",
-      "computedHash": "8e9dc8f7d1c1a2dce8d44b6eb7bee0af8f4e55cb41fdbc53772495f265d6dfee"
+      "skillPath": "skills/ljg-roundtable/SKILL.md",
+      "computedHash": "28b0561746f657c7fe3b33edc9182d41edaf21d68bad70227f248eaf3966f153"
     },
     "ljg-think": {
       "source": "lijigang/ljg-skills",
       "ref": "md",
       "sourceType": "github",
-      "computedHash": "6cef4e98d09ef20c72e526735560fc84ae2a4507a946b221b3fd3c6297b09a9e"
+      "skillPath": "skills/ljg-think/SKILL.md",
+      "computedHash": "b968f206221f5482481247a05177d598693f6c06135edbe10f677359d4aa4bb8"
     },
     "ljg-word": {
       "source": "lijigang/ljg-skills",
@@ -104,11 +132,13 @@
       "source": "lijigang/ljg-skills",
       "ref": "md",
       "sourceType": "github",
-      "computedHash": "5e087e53b678b17a5b6c64658e7454399cadf22c707cd7a75f52b16070528d2c"
+      "skillPath": "skills/ljg-writes/SKILL.md",
+      "computedHash": "a9d6d0c222b40a10e09a161ce1a786cc80a13fc36575756024b3279a8660f848"
     },
     "obsidian-bases": {
       "source": "kepano/obsidian-skills",
       "sourceType": "github",
+      "skillPath": "skills/obsidian-bases/SKILL.md",
       "computedHash": "ed0a53502693e56c67575a9958daca9a3a1ac7ba483367f400b4cad9488bfb3c"
     },
     "obsidian-cli": {
@@ -119,6 +149,7 @@
     "obsidian-markdown": {
       "source": "kepano/obsidian-skills",
       "sourceType": "github",
+      "skillPath": "skills/obsidian-markdown/SKILL.md",
       "computedHash": "cacc9058a35ad3fd4985b4c31121bff8202f1337c39808c1326ded6a19a7915f"
     }
   }

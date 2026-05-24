@@ -24,7 +24,7 @@ Assistant: [Launches roundtable discussion on free will]
 为了执行本项技能，请严格按照以下步骤操作：
 
 1. **读取参考资料**
-   读取 `references/original-prompt.md` 了解原始框架设计意图。
+   读取 `references/original-prompt.org` 了解原始框架设计意图。
 
 2. **解析议题**
    从用户输入中提取核心议题。如果用户只说"圆桌讨论"未给议题，询问议题。
@@ -91,30 +91,28 @@ Assistant: [Launches roundtable discussion on free will]
    - 生成**完整知识网络** ASCII 图：标出所有关键概念、立场、争议点及其关系
    - 列出**未解决的开放问题**（讨论中暴露但未穷尽的方向）
 
-7. **写入 markdown 文件（完整保存，一字不差）**
+7. **写入 org 文件（完整保存，一字不差）**
    将讨论**全部原文**写入 markdown 文件，不压缩、不删减、不改写任何发言内容：
    1. 运行 `date +%Y%m%dT%H%M%S` 获取时间戳
-   2. 写入 `~/Documents/notes/{timestamp}--圆桌-{议题关键词}__roundtable.md`
-   3. markdown 文件结构：
-      ```markdown
-      ---
-      title: 圆桌：{议题}
-      date: {日期}
-      tags: [roundtable]
-      ---
-      # 议题与参会者
+   2. 写入 `~/Documents/notes/{timestamp}--圆桌-{议题关键词}__roundtable.org`
+   3. org 文件结构：
+      ```org
+      #+title: 圆桌：{议题}
+      #+date: [{日期}]
+      #+filetags: :roundtable:
+      * 议题与参会者
       [完整的参会者介绍，包括姓名、MBTI、立场、选择理由]
-      # 开场：定义
+      * 开场：定义
       [主持人开场词 + 每位参会者的完整定义性发言，原文照录]
-      # 各轮讨论记录
-      ## 第 N 轮：{引导问题}
-      ### 发言记录
+      * 各轮讨论记录
+      ** 第 N 轮：{引导问题}
+      *** 发言记录
       [本轮所有发言的完整原文，包括行动标签、全部论述、简言之]
-      ### 主持人综述
+      *** 主持人综述
       [核心争议点 + ASCII 框架图 + 下一层引导问题，原文照录]
-      # 知识网络（全局）
+      * 知识网络（全局）
       [完整的全局总结 + ASCII 知识网络图]
-      # 开放问题
+      * 开放问题
       [所有未解决的开放问题]
       ```
       **关键要求：每一段发言、每一个 ASCII 图、每一句主持人综述，都必须完整保留原文，禁止摘要或压缩。**

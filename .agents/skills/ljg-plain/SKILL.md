@@ -15,8 +15,8 @@ version: "5.0.0"
 
 ### Markdown 语法
 
-- 加粗用 `**bold**`（双星号）
-- 标题层级从 `#` 开始，不跳级
+- 加粗用 `*bold*`（单星号），禁止 `**bold**`
+- 标题层级从 `*` 开始，不跳级
 
 ### ASCII Art
 
@@ -29,16 +29,14 @@ version: "5.0.0"
 - 文件名：`{时间戳}--plain-{简短标题}__plain.md`
 - 输出目录：`~/Documents/notes/`
 
-### YAML 文件头
+### Org 文件头
 
 ```
----
-title: plain-{简短标题}
-date: {YYYY-MM-DD}
-tags: [plain, atom]
-identifier: {YYYYMMDDTHHMMSS}
-source: {URL 或来源描述}
----
+#+title:      plain-{简短标题}
+#+date:       [{YYYY-MM-DD Day HH:MM}]
+#+filetags:   :plain:atom:
+#+identifier: {YYYYMMDDTHHMMSS}
+#+source:     {URL 或来源描述}
 ```
 
 文件写入后报告路径。
@@ -65,7 +63,7 @@ source: {URL 或来源描述}
 - *画面* — 闭眼能看到的场景。硬造的画面比没有更糟
 - *故事* — 一个具体的人遇到一个具体的问题。读者跟着走
 - *反问入链* — 遇到隐含前提，用问题打开，然后回答它
-- *骨架图* — 概念涉及空间关系时，嵌入 ASCII 图（代码块）
+- *骨架图* — 概念涉及空间关系时，嵌入 ASCII 图（`#+begin_example` 块）
 
 ## 执行
 
@@ -95,7 +93,7 @@ URL → WebFetch | 文本 → 直接用 | 文件路径 → Read | 概念 → 直
 
 扫完列修改清单（哪句触发什么，改前→改后）。清单不写入文件。
 
-### 4. 生成 Markdown 文件
+### 4. 生成 Org 文件
 
 按 Denote 规范获取时间戳，写出文件头 + 正文，存入 `~/Documents/notes/`。
 
