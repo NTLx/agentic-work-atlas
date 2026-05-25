@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "aihot": {
+      "source": "KKKKhazix/khazix-skills",
+      "sourceType": "github",
+      "skillPath": "aihot/SKILL.md",
+      "computedHash": "4bed39cabf0ff002db8afcf878dd9fd6e826cfd977802b0ff4150ab4ab6f03f1"
+    },
     "baoyu-url-to-markdown": {
       "source": "JimLiu/baoyu-skills",
       "sourceType": "github",
