@@ -86,6 +86,7 @@ tags:
 - 本轮清零 `comparison-depth` 队列：扩写 Taste-vs-Judgment（1471→6782B，补入何时分裂、AI 组织含义、失败模式）、Vibe-Coding-vs-Software-2.0（1883→7693B，补入演进脉络、工程治理维度、失败模式）与 Cook-vs-Chef（2248→8096B，补入伪装失败模式、组织分布含义），并为三者补入更多 source_raw 证据。
 - 本轮继续处理 `entity-depth` 与 `definition-style` 交叉簇：扩写 Product-Market-Fit（1482→4929B，补入 Push→Pull 相变机制、Boris Cherny pre-PMF 证据、供给侧 PMF 触发）、Problem-Solution-Fit（1412→3875B，补入 AI 确认偏差陷阱、验证纪律、跨源连接）、Product-Overhang（1390→5044B，补入能力发现机制、与传统策略对比表、模型自省连接）、Software-3.0（1491→4509B，补入三范式对比表、CLAUDE.md 工程含义、确定性分工）、Specialization-Compounds（1592→4998B，补入企业飞轮三条件、采购决策连接、评测集产权）、Tacit-Knowledge-Lock-In（1407→6043B，补入三层锁定机制、买方治理动作表、飞轮张力）。同步修复 Product-Market-Fit、Problem-Solution-Fit、Software-3.0 的 definition 风格。
 - 本轮继续处理 `entity-depth` 第二批交叉簇：扩写 Model-Introspection（1366→4613B，补入产品研究方法、与人类 debugging 对比表、评测集闭环）、Thin-Harness-Fat-Skills（1477→4629B，补入两种架构对比表、Latent Space vs Deterministic 连接）、Verifiability（1254→4489B，补入 RLVR 经济学链条、企业决策框架表）、Time-Moat（1453→3767B，重写为标准结构、补入生成机制三条件、AI 时代影响表）、Specialized-Small-Models（1530→4615B，补入企业决策四条件、部署架构两个战略位置）、Tool-Use-Architecture（1519→4818B，补入信息密度张力、MCP 共振三层含义）。顺带修复 Model-Introspection 和 Time-Moat 的 definition 来源痕迹（非审计跟踪项）。
+- 本轮继续处理 `entity-depth` 第三批（AI 产品策略与能力边界簇）：扩写 PM-in-AI-Era（1441→4355B，补入高速公路设计四组件、角色边界消失含义）、Research-Preview（1272→3955B，补入从承诺到探针的转变机制表、可复制性边界）、Refusal（1456→3408B，重写为标准结构、补入三层拒绝模型、可训练诊断能力）、Public-only-Constraint（1005→3618B，补入组织学习三维度表、组织 Harness 连接）、Vocabulary-Building（1339→3709B，重写为标准结构、补入 AI 时代三层含义表、认知负债连接）、WCAG（1313→4314B，补入 36% 缺口本质分析、高风险模式识别、可验证性交叉）。顺带修复 Research-Preview 和 PM-in-AI-Era 的 definition 来源痕迹。
 
 ## 总览
 
@@ -98,17 +99,17 @@ tags:
 | `output` | 6 |
 | `research-agenda` | 1 |
 | `lint-report` | 1 |
-| 剩余问题总数 | 77 |
+| 剩余问题总数 | 70 |
 | 高优先级问题 | 0 |
-| 中优先级问题 | 38 |
-| 低优先级问题 | 39 |
+| 中优先级问题 | 32 |
+| 低优先级问题 | 38 |
 
 ## 剩余问题分类
 
 | 类别 | 数量 | 解释 |
 |------|------|------|
-| `definition-style` | 30 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
-| `entity-depth` | 14 | 非人物 Entity 偏短，需要补关键数据、前提边界和关联。 |
+| `definition-style` | 29 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
+| `entity-depth` | 8 | 非人物 Entity 偏短，需要补关键数据、前提边界和关联。 |
 | `definition` | 0 | definition 过长或过短，影响 Obsidian 未链接提及和快速理解。 |
 | `topic-depth` | 7 | Topic 偏短，需要从多篇 source 重新综合。 |
 | `person-depth` | 11 | 人物 Entity 偏短，建议补来源关系和只保留可验证履历。 |
@@ -151,15 +152,9 @@ tags:
 | 中 | `entity-depth` | `wiki/entities/MIT-Technology-Review-Insights.md` | - | 非人物 Entity 正文偏短 929 bytes |
 | 中 | `entity-depth` | `wiki/entities/Organizational-Self-Awareness.md` | - | 非人物 Entity 正文偏短 1137 bytes |
 | 中 | `entity-depth` | `wiki/entities/Osmosis-Learning.md` | - | 非人物 Entity 正文偏短 1160 bytes |
-| 中 | `entity-depth` | `wiki/entities/PM-in-AI-Era.md` | - | 非人物 Entity 正文偏短 1441 bytes |
 | 中 | `entity-depth` | `wiki/entities/Programming-Languages-as-Thinking-Tools.md` | - | 非人物 Entity 正文偏短 1418 bytes |
-| 中 | `entity-depth` | `wiki/entities/Public-only-Constraint.md` | - | 非人物 Entity 正文偏短 1005 bytes |
-| 中 | `entity-depth` | `wiki/entities/Refusal.md` | - | 非人物 Entity 正文偏短 1456 bytes |
-| 中 | `entity-depth` | `wiki/entities/Research-Preview.md` | - | 非人物 Entity 正文偏短 1272 bytes |
 | 中 | `entity-depth` | `wiki/entities/River-Agent.md` | - | 非人物 Entity 正文偏短 1030 bytes |
 | 中 | `entity-depth` | `wiki/entities/Runway-Math.md` | - | 非人物 Entity 正文偏短 1483 bytes |
-| 中 | `entity-depth` | `wiki/entities/Vocabulary-Building.md` | - | 非人物 Entity 正文偏短 1339 bytes |
-| 中 | `entity-depth` | `wiki/entities/WCAG.md` | - | 非人物 Entity 正文偏短 1313 bytes |
 | 中 | `entity-depth` | `wiki/entities/渐进式重构.md` | - | 非人物 Entity 正文偏短 1567 bytes |
 | 中 | `person-depth` | `wiki/entities/Arnav-Gupta.md` | - | 人物 Entity 偏短 714 bytes |
 | 中 | `person-depth` | `wiki/entities/Drew-Breunig.md` | - | 人物 Entity 偏短 755 bytes |
@@ -212,7 +207,6 @@ tags:
 | 低 | `definition-style` | `wiki/entities/Tobi-Lütke.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Unmesh-Joshi.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Vibe-Coding.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
-| 低 | `definition-style` | `wiki/entities/Vocabulary-Building.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `entity-structure` | `wiki/entities/Always-On-Economy.md` | - | 标准章节顺序不一致 |
 | 低 | `entity-structure` | `wiki/entities/Compound-Engineering.md` | - | 标准章节顺序不一致 |
 | 低 | `entity-structure` | `wiki/entities/Jevons-Paradox-for-Knowledge-Work.md` | - | 标准章节顺序不一致 |
@@ -381,7 +375,7 @@ tags:
 | `wiki/entities/Osmosis-Learning.md` | `entity` | 1160 | 2 | definition-style; entity-depth |
 | `wiki/entities/Owlready2.md` | `entity` | 1934 | 0 | OK |
 | `wiki/entities/Ownership.md` | `entity` | 1683 | 1 | definition-style |
-| `wiki/entities/PM-in-AI-Era.md` | `entity` | 1441 | 1 | entity-depth |
+| `wiki/entities/PM-in-AI-Era.md` | `entity` | 4355 | 0 | OK |
 | `wiki/entities/Paul-Graham.md` | `entity` | 1089 | 1 | person-depth |
 | `wiki/entities/Pimenta-de-Freitas-Cardoso.md` | `entity` | 699 | 1 | person-depth |
 | `wiki/entities/Pinterest-Engineering.md` | `entity` | 2686 | 0 | OK |
@@ -391,12 +385,12 @@ tags:
 | `wiki/entities/Programming-Languages-as-Thinking-Tools.md` | `entity` | 1418 | 2 | definition-style; entity-depth |
 | `wiki/entities/Progressive-Disclosure.md` | `entity` | 2274 | 0 | OK |
 | `wiki/entities/Protégé.md` | `entity` | 1694 | 0 | OK |
-| `wiki/entities/Public-only-Constraint.md` | `entity` | 1005 | 1 | entity-depth |
+| `wiki/entities/Public-only-Constraint.md` | `entity` | 3618 | 0 | OK |
 | `wiki/entities/RDF.md` | `entity` | 1820 | 0 | OK |
 | `wiki/entities/Raj-Nandan-Sharma.md` | `entity` | 1355 | 0 | OK |
 | `wiki/entities/Reflexion.md` | `entity` | 2026 | 0 | OK |
-| `wiki/entities/Refusal.md` | `entity` | 1456 | 1 | entity-depth |
-| `wiki/entities/Research-Preview.md` | `entity` | 1272 | 1 | entity-depth |
+| `wiki/entities/Refusal.md` | `entity` | 3408 | 0 | OK |
+| `wiki/entities/Research-Preview.md` | `entity` | 3955 | 0 | OK |
 | `wiki/entities/Resonance.md` | `entity` | 3026 | 0 | OK |
 | `wiki/entities/River-Agent.md` | `entity` | 1030 | 1 | entity-depth |
 | `wiki/entities/Runway-Math.md` | `entity` | 1483 | 1 | entity-depth |
@@ -428,8 +422,8 @@ tags:
 | `wiki/entities/Unmesh-Joshi.md` | `entity` | 1522 | 1 | definition-style |
 | `wiki/entities/Verifiability.md` | `entity` | 4489 | 0 | OK |
 | `wiki/entities/Vibe-Coding.md` | `entity` | 4339 | 3 | definition-style; entity-structure; readability |
-| `wiki/entities/Vocabulary-Building.md` | `entity` | 1339 | 2 | definition-style; entity-depth |
-| `wiki/entities/WCAG.md` | `entity` | 1313 | 1 | entity-depth |
+| `wiki/entities/Vocabulary-Building.md` | `entity` | 3709 | 0 | OK |
+| `wiki/entities/WCAG.md` | `entity` | 4314 | 0 | OK |
 | `wiki/entities/Wes-Botman.md` | `entity` | 1091 | 1 | person-depth |
 | `wiki/entities/Wisdom-Work.md` | `entity` | 2253 | 0 | OK |
 | `wiki/entities/World-Model.md` | `entity` | 1910 | 0 | OK |
