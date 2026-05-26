@@ -13,6 +13,7 @@ related_entities:
   - '[[Agentic-Engineering]]'
 source_raw:
   - '[[Using Git with coding agents - Agentic Engineering Patterns]]'
+  - "[[Agent pull requests are everywhere. Here's how to review them.]]"
 ---
 
 # Git with Coding Agents
@@ -158,4 +159,8 @@ Use git bisect to find when this bug was introduced:...
 - Red/Green TDD
 - Subagents
 - Linear Walkthroughs
+
+## 证据补充
+
+[[Agent pull requests are everywhere. Here's how to review them.]] 从 Agent PR 审查角度补充了本主题：当 Agent 能自主发起 PR 时，Git 工作流的重心从"如何执行操作"转向"如何审查和治理"。文章指出 Agent-generated code 的核心风险不是"代码看起来糟"，而是"代码看起来太容易被批准"——这与 [[History-Rewriting]] 的核心主张形成张力：历史可以是可编辑的叙事，但审查纪律必须更严格。GitHub Copilot code review 已处理超过 6000 万次 review，且一年内增长 10 倍，说明 Agent 正在重塑 Git 工作流的每一个环节。
 

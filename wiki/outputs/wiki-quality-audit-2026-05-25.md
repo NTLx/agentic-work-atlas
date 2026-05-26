@@ -88,6 +88,7 @@ tags:
 - 本轮继续处理 `entity-depth` 第二批交叉簇：扩写 Model-Introspection（1366→4613B，补入产品研究方法、与人类 debugging 对比表、评测集闭环）、Thin-Harness-Fat-Skills（1477→4629B，补入两种架构对比表、Latent Space vs Deterministic 连接）、Verifiability（1254→4489B，补入 RLVR 经济学链条、企业决策框架表）、Time-Moat（1453→3767B，重写为标准结构、补入生成机制三条件、AI 时代影响表）、Specialized-Small-Models（1530→4615B，补入企业决策四条件、部署架构两个战略位置）、Tool-Use-Architecture（1519→4818B，补入信息密度张力、MCP 共振三层含义）。顺带修复 Model-Introspection 和 Time-Moat 的 definition 来源痕迹（非审计跟踪项）。
 - 本轮继续处理 `entity-depth` 第三批（AI 产品策略与能力边界簇）：扩写 PM-in-AI-Era（1441→4355B，补入高速公路设计四组件、角色边界消失含义）、Research-Preview（1272→3955B，补入从承诺到探针的转变机制表、可复制性边界）、Refusal（1456→3408B，重写为标准结构、补入三层拒绝模型、可训练诊断能力）、Public-only-Constraint（1005→3618B，补入组织学习三维度表、组织 Harness 连接）、Vocabulary-Building（1339→3709B，重写为标准结构、补入 AI 时代三层含义表、认知负债连接）、WCAG（1313→4314B，补入 36% 缺口本质分析、高风险模式识别、可验证性交叉）。顺带修复 Research-Preview 和 PM-in-AI-Era 的 definition 来源痕迹。
 - 本轮清零 `entity-depth` 队列最后一批（组织学习与创业方法论簇）：扩写 Lehrwerkstatt（1457→3627B，重写为标准结构、补入 Shopify 数据、三个生成机制表）、MIT-Technology-Review-Insights（929→2681B，补 actor 结构、本库引用连接）、Organizational-Self-Awareness（1137→3991B，补入混乱信号诊断表、概念建模连接）、Osmosis-Learning（1160→3598B，重写为标准结构、补入传统 vs AI 时代对比表）、Programming-Languages-as-Thinking-Tools（1418→4027B，重写为标准结构、补入 AI 时代三个反直觉事实）、River-Agent（1030→3181B，补入组织学习机制表、Agent 成熟度双重决定因素）、Runway-Math（1483→3708B，重写为标准结构、补入 AI 时代连接）、渐进式重构（1567→4362B，重写为标准结构、补入 AI 时代成本结构变化表）。同步修复 Lehrwerkstatt、Osmosis-Learning、Programming-Languages-as-Thinking-Tools 的 definition 句号痕迹（审计跟踪项）。`entity-depth` 队列清零。
+- 本轮清零 `comparison-evidence` 和 `topic-evidence` 队列：为 Agent-First-vs-Traditional-Automation 补入 Forward deployed engineering at OpenAI、Knowledge-Work-vs-Wisdom-Work 补入 Good Taste the Only Real Moat Left、Conscious-Creation-in-AI-Era 补入 Good Taste the Only Real Moat Left、Git-with-Coding-Agents 补入 Agent pull requests are everywhere、Lean-Indie-Engineering 补入 The Founders Playbook、Wisdom-Work-Evolution 补入 Management as AI superpower。每个文件新增"证据补充"段落说明第二来源如何交叉验证核心判断。`comparison-evidence` 和 `topic-evidence` 队列清零。
 
 ## 总览
 
@@ -100,9 +101,9 @@ tags:
 | `output` | 6 |
 | `research-agenda` | 1 |
 | `lint-report` | 1 |
-| 剩余问题总数 | 59 |
+| 剩余问题总数 | 53 |
 | 高优先级问题 | 0 |
-| 中优先级问题 | 24 |
+| 中优先级问题 | 18 |
 | 低优先级问题 | 35 |
 
 ## 剩余问题分类
@@ -117,9 +118,9 @@ tags:
 | `language` | 0 | Wiki 默认中文，但 definition 仍基本为英文。 |
 | `readability` | 5 | 超长行影响阅读与 diff。 |
 | `entity-structure` | 4 | Entity 标准章节顺序不一致。 |
-| `topic-evidence` | 4 | Topic 的 source_raw 少于 2 个，主题层证据不够稳。 |
+| `topic-evidence` | 0 | Topic 的 source_raw 少于 2 个，主题层证据不够稳。 |
 | `comparison-depth` | 0 | Comparison 正文偏短，区分维度不够展开。 |
-| `comparison-evidence` | 2 | Comparison 的 source_raw 过少，概念区分可能证据单薄。 |
+| `comparison-evidence` | 0 | Comparison 的 source_raw 过少，概念区分可能证据单薄。 |
 
 ## Entity 价值审计队列
 
@@ -138,17 +139,14 @@ tags:
 
 ## 最高收益修复顺序
 
-1. 先处理 `topic-evidence` 与 `comparison-evidence`：主题/对比页至少应由多个 source 支撑。`entity-depth` 已清零。
-2. 再处理 `topic-depth`：补充区分维度、反例和跨来源证据。`comparison-depth` 已清零。
-3. 再处理 `person-depth`：人物 Entity 补来源关系和只保留可验证履历。
-4. 最后统一 definition 风格：中文、短定义、少来源痕迹、无句号。
+1. 先处理 `topic-depth`：补充区分维度、反例和跨来源证据。`entity-depth`、`comparison-depth`、`topic-evidence`、`comparison-evidence` 已清零。
+2. 再处理 `person-depth`：人物 Entity 补来源关系和只保留可验证履历。
+3. 最后统一 definition 风格：中文、短定义、少来源痕迹、无句号。
 
 ## 剩余问题明细
 
 | 等级 | 类别 | 文件 | 行 | 问题 |
 |------|------|------|----|------|
-| 中 | `comparison-evidence` | `wiki/comparisons/Agent-First-vs-Traditional-Automation.md` | - | Comparison source_raw 少于 2 个 |
-| 中 | `comparison-evidence` | `wiki/comparisons/Knowledge-Work-vs-Wisdom-Work.md` | - | Comparison source_raw 少于 2 个 |
 | 中 | `person-depth` | `wiki/entities/Arnav-Gupta.md` | - | 人物 Entity 偏短 714 bytes |
 | 中 | `person-depth` | `wiki/entities/Drew-Breunig.md` | - | 人物 Entity 偏短 755 bytes |
 | 中 | `person-depth` | `wiki/entities/Elvis-Sun.md` | - | 人物 Entity 偏短 1065 bytes |
@@ -167,10 +165,6 @@ tags:
 | 中 | `topic-depth` | `wiki/topics/Enterprise-AI-Factory.md` | - | Topic 正文偏短 2730 bytes |
 | 中 | `topic-depth` | `wiki/topics/Git-with-Coding-Agents.md` | - | Topic 正文偏短 2640 bytes |
 | 中 | `topic-depth` | `wiki/topics/Wisdom-Work-Evolution.md` | - | Topic 正文偏短 2638 bytes |
-| 中 | `topic-evidence` | `wiki/topics/Conscious-Creation-in-AI-Era.md` | - | Topic source_raw 少于 2 个：1 |
-| 中 | `topic-evidence` | `wiki/topics/Git-with-Coding-Agents.md` | - | Topic source_raw 少于 2 个：1 |
-| 中 | `topic-evidence` | `wiki/topics/Lean-Indie-Engineering.md` | - | Topic source_raw 少于 2 个：1 |
-| 中 | `topic-evidence` | `wiki/topics/Wisdom-Work-Evolution.md` | - | Topic source_raw 少于 2 个：1 |
 | 低 | `definition-style` | `wiki/entities/Agent-Generated-PRs.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Agent-Generated-PRs.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
 | 低 | `definition-style` | `wiki/entities/Agent-Orchestration.md` | - | definition 以句号结尾，风格不统一 |
@@ -215,14 +209,14 @@ tags:
 |------|------|------|--------|---------------|
 | `wiki/comparisons/AI-Factory-vs-Forward-Deployed-AI-Enablement.md` | `comparison` | 4114 | 0 | OK |
 | `wiki/comparisons/AI-Ready-Organization-vs-Agent-First-Enterprise.md` | `comparison` | 2944 | 0 | OK |
-| `wiki/comparisons/Agent-First-vs-Traditional-Automation.md` | `comparison` | 3117 | 1 | comparison-evidence |
+| `wiki/comparisons/Agent-First-vs-Traditional-Automation.md` | `comparison` | 3117 | 0 | OK |
 | `wiki/comparisons/Agent-Harness-vs-Agent-Workflow-Patterns.md` | `comparison` | 3050 | 0 | OK |
 | `wiki/comparisons/Agentic-Engineering-vs-Vibe-Coding.md` | `comparison` | 3722 | 0 | OK |
 | `wiki/comparisons/Cognitive-Debt-vs-Technical-Debt.md` | `comparison` | 2773 | 0 | OK |
 | `wiki/comparisons/Context-Engineering-vs-Knowledge-Compilation.md` | `comparison` | 2940 | 0 | OK |
 | `wiki/comparisons/Cook-vs-Chef.md` | `comparison` | 8096 | 0 | OK |
 | `wiki/comparisons/Deployment-Product-Flywheel-vs-Tacit-Knowledge-Lock-In.md` | `comparison` | 2802 | 0 | OK |
-| `wiki/comparisons/Knowledge-Work-vs-Wisdom-Work.md` | `comparison` | 2850 | 1 | comparison-evidence |
+| `wiki/comparisons/Knowledge-Work-vs-Wisdom-Work.md` | `comparison` | 2850 | 0 | OK |
 | `wiki/comparisons/Ontology-vs-Knowledge-Graph.md` | `comparison` | 2864 | 0 | OK |
 | `wiki/comparisons/RAG-vs-LLM-Wiki.md` | `comparison` | 7872 | 1 | readability |
 | `wiki/comparisons/Taste-vs-Judgment.md` | `comparison` | 6782 | 0 | OK |
@@ -510,19 +504,19 @@ tags:
 | `wiki/topics/Building-Effective-Agents.md` | `topic` | 3721 | 0 | OK |
 | `wiki/topics/Claude-Code-Automation.md` | `topic` | 3788 | 0 | OK |
 | `wiki/topics/Code-as-Conceptual-Infrastructure.md` | `topic` | 3345 | 0 | OK |
-| `wiki/topics/Conscious-Creation-in-AI-Era.md` | `topic` | 1855 | 2 | topic-depth; topic-evidence |
+| `wiki/topics/Conscious-Creation-in-AI-Era.md` | `topic` | 1855 | 1 | topic-depth |
 | `wiki/topics/Enterprise-AI-Factory.md` | `topic` | 2730 | 1 | topic-depth |
 | `wiki/topics/Enterprise-AI-Model-Sourcing.md` | `topic` | 3093 | 0 | OK |
 | `wiki/topics/Enterprise-Ontology-Application.md` | `topic` | 3925 | 0 | OK |
 | `wiki/topics/Forward-Deployed-AI-Enablement.md` | `topic` | 3938 | 0 | OK |
-| `wiki/topics/Git-with-Coding-Agents.md` | `topic` | 2640 | 2 | topic-depth; topic-evidence |
+| `wiki/topics/Git-with-Coding-Agents.md` | `topic` | 2640 | 1 | topic-depth |
 | `wiki/topics/Karpathy-AI-Thought.md` | `topic` | 7793 | 0 | OK |
-| `wiki/topics/Lean-Indie-Engineering.md` | `topic` | 4112 | 1 | topic-evidence |
+| `wiki/topics/Lean-Indie-Engineering.md` | `topic` | 4112 | 0 | OK |
 | `wiki/topics/Multi-Agent-Pathology-and-Governance.md` | `topic` | 3375 | 0 | OK |
 | `wiki/topics/OpenClaw-Agent-System.md` | `topic` | 6398 | 0 | OK |
 | `wiki/topics/Organization-as-Agent-Harness.md` | `topic` | 4655 | 0 | OK |
 | `wiki/topics/Verifiable-Agent-Engineering.md` | `topic` | 6781 | 0 | OK |
-| `wiki/topics/Wisdom-Work-Evolution.md` | `topic` | 2638 | 2 | topic-depth; topic-evidence |
+| `wiki/topics/Wisdom-Work-Evolution.md` | `topic` | 2638 | 1 | topic-depth |
 
 ## 本文使用的 Wiki 页面
 

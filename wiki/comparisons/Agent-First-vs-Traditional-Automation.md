@@ -12,7 +12,8 @@ related_entities:
   - '[[Human-Governor-Agent-Operator]]'
   - '[[Machine-Readable-Processes]]'
 source_raw:
-  - '[[Enabling agent-first process redesign]]'
+  - "[[Enabling agent-first process redesign]]"
+  - "[[Forward deployed engineering at OpenAI]]"
 ---
 
 # Agent-First vs Traditional Automation
@@ -138,3 +139,7 @@ Agent-First 的技术门槛较高，需要：
 - [[Agent-First-Enterprise]] - Agent-First 企业模式的完整定义
 - [[Human-Governor-Agent-Operator]] - 人类治理者与 Agent 运营者的角色分工
 - [[Machine-Readable-Processes]] - Agent 运营的技术基础设施
+
+## 证据补充
+
+[[Forward deployed engineering at OpenAI]] 从实践层面印证了本对比的核心判断：OpenAI 的 FDE 方法论明确区分了"把 AI 附加到现有流程"（传统自动化）和"在企业复杂性内部构建 bespoke AI systems"（Agent-First）。FDE 面对的 security models、permissions、governance、compliance requirements 等约束，正是传统自动化试图绕开而 Agent-First 必须正面解决的问题。OpenAI 的 `build, prove, generalize` 循环也验证了 Agent-First 的核心主张：部署不是交付，而是产品能力发现机制。

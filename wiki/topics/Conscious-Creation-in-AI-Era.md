@@ -15,6 +15,7 @@ related_entities:
   - '[[Resonance]]'
 source_raw:
   - '[[The Conscious 1% Leading a new renaissance in the era of AI]]'
+  - '[[Good Taste the Only Real Moat Left]]'
 ---
 
 # Conscious Creation in AI Era
@@ -82,3 +83,8 @@ source_raw:
 
 - Raw Source: [[The Conscious 1% Leading a new renaissance in the era of AI]]
 - Original URL: https://www.eli5.io/blog/the-conscious-1-leading-a-new-renaissance-in-the-era-of-ai
+- Supplementary: [[Good Taste the Only Real Moat Left]]
+
+## 证据补充
+
+[[Good Taste the Only Real Moat Left]] 为本主题的三大新稀缺指标提供了实证支撑：品味（Taste）被定义为"注意到别人忽略的细节、拒绝平庸选项、把'感觉不对'翻译成可执行修改理由"的能力——这正是 Conscious Creation 中"有意识创作"的操作化表达。文章还指出"人类只负责挑选 AI 输出仍然太弱"，真正的护城河来自品味、情境、约束、承担后果和创作意图的结合，与本主题的 Inner-World-Mastery 和 Decision-Quality 形成交叉验证。

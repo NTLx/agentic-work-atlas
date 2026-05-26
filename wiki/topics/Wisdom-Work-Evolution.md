@@ -18,6 +18,7 @@ related_entities:
   - '[[Wisdom-Work]]'
 source_raw:
   - '[[Knowledge Work Is Dying—Here’s What Comes Next]]'
+  - '[[Management as AI superpower]]'
 ---
 
 # Wisdom-Work-Evolution
@@ -151,3 +152,8 @@ OpenAI、Google DeepMind、Anthropic、Apple 的高层正在投资：
 ## 来源
 
 - [[Knowledge Work Is Dying—Here’s What Comes Next]]
+- [[Management as AI superpower]]
+
+## 证据补充
+
+[[Management as AI superpower]] 从管理学角度印证了 Wisdom Work Evolution 的核心判断：当 AI 让"做事的人才"变得更便宜，真正稀缺的是"知道要做什么、如何委托、如何验收"的人。Ethan Mollick 的 agentic work equation（人类基准时间 × AI 过程时间 × 成功概率）本质上是 Judgment 的操作化——判断力不是抽象的智慧，而是在不确定条件下做出正确委托决策的能力。这与 Wisdom Work 的三大技能（情感清晰度、判断力、深层连接）形成互补：前者提供"为什么"，后者提供"怎么做"。

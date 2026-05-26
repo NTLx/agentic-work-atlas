@@ -19,6 +19,7 @@ related_entities:
   - '[[Constraint-Driven-Engineering]]'
 source_raw:
   - '[[How I run multiple USD10K MRR companies on a USD20month tech stack]]'
+  - '[[The-Founders-Playbook-05062026_v3]]'
 ---
 
 # Lean-Indie-Engineering（精益独立开发）
@@ -173,3 +174,7 @@ GitHub Copilot 按**请求**计费而非按 **token**——一次请求即使让
 - [[Anti-Enterprise-Mindset]]
 - [[Constraint-Driven-Engineering]]
 - [[Time-Moat]]
+
+## 证据补充
+
+[[The-Founders-Playbook-05062026_v3]] 从 AI-native 创业角度补充了本主题：AI 将高昂的研发人力成本（CapEx）转化为按需使用的 Token 成本（OpEx），使"一人团队"的约束更容易满足。但该文章同时警告了 Lean-Indie-Engineering 在 AI 时代的新风险——"无摩擦范围蔓延（Zero-friction scope creep）"和"伪 PMF（False PMF）"。这说明约束驱动工程（Constraint-Driven-Engineering）在 AI 时代不仅没有过时，反而更重要：构建成本越低，越需要严格的范围约束来防止功能堆砌。

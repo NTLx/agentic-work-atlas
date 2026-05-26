@@ -14,6 +14,7 @@ related_entities:
   - '[[Connection]]'
 source_raw:
   - '[[Knowledge Work Is Dying—Here’s What Comes Next]]'
+  - '[[Good Taste the Only Real Moat Left]]'
 ---
 
 # Knowledge Work vs Wisdom Work
@@ -132,3 +133,8 @@ source_raw:
 ## 来源
 
 - [[Knowledge Work Is Dying—Here’s What Comes Next]] - Joe Hudson 原文
+- [[Good Taste the Only Real Moat Left]] - 从品味和判断力角度印证智慧工作护城河
+
+## 证据补充
+
+[[Good Taste the Only Real Moat Left]] 从另一个角度印证了 Knowledge Work vs Wisdom Work 的核心判断：当 AI 把"合格输出"变成廉价默认值，人的稀缺价值从"生产第一稿"转向"判断第一稿为什么不够好"。这与 Wisdom Work 的三大技能（情感清晰度、判断力、深层连接）形成交叉验证——品味不是审美姿态，而是可操作的诊断能力，本质上就是 Wisdom Work 在创作领域的具体表现。
