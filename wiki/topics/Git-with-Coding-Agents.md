@@ -153,6 +153,41 @@ Use git bisect to find when this bug was introduced:...
 
 ---
 
+## 与 Agentic-Engineering-Patterns 的区分
+
+[[Agentic-Engineering-Patterns]] 和 Git with Coding Agents 都讨论 AI 辅助开发，但切入层次不同：
+
+| 维度 | Agentic-Engineering-Patterns | Git with Coding Agents |
+|------|------------------------------|----------------------|
+| 焦点 | AI 辅助开发的整体工程范式 | Git 版本控制的具体实践 |
+| 层次 | 原则、工具、工作流、验证 | Git 操作、历史管理、PR 审查 |
+| 核心问题 | 如何让 AI 写出更好的代码 | 如何让 Git 工作流适配 AI |
+| 典型输出 | Red/Green TDD、Subagents、Linear Walkthroughs | Git 提示语、历史重写、代码恢复 |
+
+两者的关系是：Agentic-Engineering-Patterns 提供了"AI 辅助开发应该怎么做"的整体框架，Git with Coding Agents 提供了"版本控制这个具体环节怎么适配"的实践指南。前者是方法论，后者是工具箱。
+
+## 反例与边界
+
+**反例 1：历史重写可能破坏协作**。[[History-Rewriting]] 主张"历史是可编辑的叙事"，但在多人协作项目中，重写历史会改变 commit hash，导致其他协作者的本地分支与远程不同步。如果团队没有明确的"何时可以重写历史"规则（比如"只有未推送的提交可以重写"），Agent 的历史重写能力会变成协作灾难。
+
+**反例 2：Agent PR 审查的信任危机**。[[Agent pull requests are everywhere. Here's how to review them.]] 指出 Agent-generated code 的核心风险不是"代码看起来糟"，而是"代码看起来太容易被批准"。这暴露了一个深层问题：当 Agent 能写出"看起来专业"的代码和提交信息时，人类审查者的判断力可能退化——我们习惯了"Agent 写的应该没问题"，而不是真正审查代码质量。
+
+**反例 3：Git 不是所有项目的最佳版本控制**。对于非代码项目（设计文件、文档、数据集），Git 的二进制 diff 能力有限。Agent 可能在这些场景下更适合用其他版本控制系统（如 DVC 用于数据、Figma 用于设计），而不是强行把所有东西塞进 Git。
+
+**反例 4：过度依赖 Agent 可能削弱 Git 理解**。如果开发者完全依赖 Agent 处理 Git 操作，他们可能对 Git 的底层机制（DAG 结构、reflog、merge vs rebase 的语义差异）失去理解。当 Agent 出错或遇到边界情况时，开发者可能无法诊断问题。这与 [[Programming-Languages-as-Thinking-Tools|编程语言即思考工具]] 的逻辑一致：工具便利性可能削弱深层理解。
+
+## 跨来源综合：Git 工作流的三个转变
+
+综合 [[Using Git with coding agents - Agentic Engineering Patterns]] 和 [[Agent pull requests are everywhere. Here's how to review them.]] 两个来源，可以构建 Git 工作流在 AI 时代的三个转变：
+
+| 转变 | 传统模式 | AI 时代模式 | 来源 |
+|------|---------|-----------|------|
+| 操作层 | 开发者记忆 Git 命令 | Agent 处理复杂命令 | Using Git with coding agents |
+| 历史层 | 历史是永久记录 | 历史是可编辑叙事 | Using Git with coding agents |
+| 审查层 | 人类逐行审查代码 | 人类聚焦关键路径和系统上下文 | Agent pull requests |
+
+这三个转变的共同逻辑是：AI 让"执行"变便宜，让"判断"变昂贵。开发者不再需要记住 `git rebase -i` 的语法（执行），但需要判断"这个提交是否值得保留、这个 PR 是否隐藏了技术债"（判断）。这与 [[AI-Labor-Bottleneck-Shift|AI 劳动瓶颈迁移]] 的主题一致：瓶颈从"怎么做"迁移到"做什么、为什么做"。
+
 ## 扩展阅读
 
 - [Agentic Engineering Patterns 完整指南](https://simonwillison.net/guides/agentic-engineering-patterns/)

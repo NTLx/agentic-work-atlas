@@ -142,6 +142,8 @@ OpenAI、Google DeepMind、Anthropic、Apple 的高层正在投资：
 
 - [[Judgment]] - 判断力在 AI 时代成为核心价值
 - [[AI-Era-Taste-and-Judgment]] - 品味和判断力的相关性
+- [[Conscious-Creation-in-AI-Era]] - 存在层的互补主题
+- [[AI-Labor-Bottleneck-Shift]] - 机制分析的互补主题
 
 ## 参见
 
@@ -157,3 +159,53 @@ OpenAI、Google DeepMind、Anthropic、Apple 的高层正在投资：
 ## 证据补充
 
 [[Management as AI superpower]] 从管理学角度印证了 Wisdom Work Evolution 的核心判断：当 AI 让"做事的人才"变得更便宜，真正稀缺的是"知道要做什么、如何委托、如何验收"的人。Ethan Mollick 的 agentic work equation（人类基准时间 × AI 过程时间 × 成功概率）本质上是 Judgment 的操作化——判断力不是抽象的智慧，而是在不确定条件下做出正确委托决策的能力。这与 Wisdom Work 的三大技能（情感清晰度、判断力、深层连接）形成互补：前者提供"为什么"，后者提供"怎么做"。
+
+## 与 Conscious-Creation-in-AI-Era 的区分
+
+[[Conscious-Creation-in-AI-Era]] 和 Wisdom-Work-Evolution 都讨论 AI 时代人类价值的迁移方向，但切入角度不同：
+
+| 维度 | Wisdom-Work-Evolution | Conscious-Creation-in-AI-Era |
+|------|----------------------|---------------------------|
+| 起点 | 知识工作正在终结（经济学视角） | 生产力作为指标失去意义（哲学视角） |
+| 核心技能 | 情感清晰度、判断力、深层连接 | 决策质量、品味、共鸣 |
+| 对立面 | AI 无法替代的人类能力 | 被 AI 娱乐淹没的 The Consumed |
+| 实践路径 | VIEW 框架、Ouch 练习、自我关系 | Inner-World-Mastery、Stillness、Shadow Work |
+
+两者的交叉点在于：Wisdom Work 提供了"为什么人类价值在迁移"的诊断，Conscious Creation 提供了"如何在迁移后活得有意义"的方向。前者是诊断，后者是处方。
+
+## 与 AI-Labor-Bottleneck-Shift 的关系
+
+[[AI-Labor-Bottleneck-Shift]] 和 Wisdom-Work-Evolution 都讨论 AI 如何改变工作性质，但切入层次不同：
+
+| 维度 | AI-Labor-Bottleneck-Shift | Wisdom-Work-Evolution |
+|------|--------------------------|----------------------|
+| 焦点 | 劳动瓶颈的具体迁移路径 | 人类能力的整体转型方向 |
+| 层次 | 从生产瓶颈到对齐/集成/度量瓶颈 | 从知识工作到智慧工作 |
+| 核心问题 | 什么变得更难？ | 什么变得更值钱？ |
+| 典型输出 | 岗位变迁、组织设计、流程重构 | 情感清晰度、判断力、深层连接 |
+
+两者的关系是：AI-Labor-Bottleneck-Shift 解释了"为什么管理、委托、验收能力升值"（因为瓶颈从生产迁移到对齐），Wisdom-Work-Evolution 解释了"这些能力为什么本质上是智慧而非知识"（因为它们依赖情感清晰度、判断力和深层连接，而非专业知识的积累）。前者是机制分析，后者是本质洞察。
+
+## 反例与边界
+
+**反例 1：知识工作的终结不是线性的**。本主题的核心命题是"知识工作正在终结"，但这不是线性的。某些知识工作（如医疗诊断、法律咨询、学术研究）可能因为监管、信任和责任要求，长期需要人类专家。知识工作的终结更准确地说是"知识作为稀缺资源的经济模型"的终结，而不是"知识本身不再有价值"。
+
+**反例 2：情感清晰度不是万能的**。情感清晰度是后 AGI 世界的关键技能之一，但它不能替代领域专业知识。一个情感清晰但缺乏医学知识的人，仍然不能做手术。智慧工作和知识工作不是替代关系，而是互补关系：智慧决定"做什么、为什么做"，知识决定"怎么做"。
+
+**反例 3：VIEW 框架的组织落地困难**。VIEW 框架（Vulnerability、Impartiality、Empathy、Wonder）在个人层面很有启发性，但在组织层面落地困难。大多数组织仍在用 KPI 和效率指标驱动员工，这与"脆弱性、中立性、同理心、好奇"的理念根本冲突。Satya Nadella 在 Microsoft 推动情商培训是一个例外，但大多数组织缺乏这种文化转型的意愿和能力。
+
+**反例 4：智慧工作的测量问题**。知识工作可以用"知道什么、能做什么"来测量（考试、认证、产出数量），但智慧工作如何测量？情感清晰度、判断力、深层连接都是内在状态，难以量化。如果组织无法测量智慧工作，它就无法激励和奖励智慧工作——这会变成"大家都知道这很重要，但没人知道怎么做"的尴尬局面。
+
+## 跨来源综合：AI 时代人类价值的三层模型
+
+综合 [[Knowledge Work Is Dying—Here’s What Comes Next]]、[[Management as AI superpower]] 和 [[Conscious-Creation-in-AI-Era]] 三个来源，可以构建 AI 时代人类价值的三层模型：
+
+| 层次 | 核心问题 | 关键能力 | 来源 |
+|------|---------|---------|------|
+| 诊断层 | 知识工作为什么在终结？ | 理解 AI 商品化知识的机制 | Knowledge Work Is Dying |
+| 操作层 | 如何委托和验收 AI 工作？ | 判断力、委托能力、验收标准 | Management as AI superpower |
+| 存在层 | 生产力失去意义后如何活？ | 内在掌控、决策质量、共鸣 | Conscious Creation |
+
+这三层不是递进关系，而是互补关系：诊断层解释"为什么"，操作层提供"怎么做"，存在层回答"为了什么"。缺少任何一层，AI 时代的人类价值讨论都会不完整。
+
+Wisdom-Work-Evolution 的核心贡献是把这三层连接起来：它既诊断了知识工作的终结（诊断层），又提供了情感清晰度、判断力、深层连接三大技能（操作层），还指向了"智慧而非知识"的价值方向（存在层）。这使得它成为 AI 时代人类价值讨论的核心枢纽。
