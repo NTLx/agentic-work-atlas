@@ -92,6 +92,7 @@ tags:
 - 本轮处理 `topic-depth` 队列第一批（4 个最短 Topic）：扩写 Conscious-Creation-in-AI-Era（1855→6630B，补入与 Wisdom-Work-Evolution 的区分表、反例与边界、AI 时代人类价值三层模型）、Agent-First-Process-Redesign（2235→7574B，补入与 Organization-as-Agent-Harness 的区分表、反例与边界、Agent-First 四层成熟度模型）、AI-Apprenticeship-and-Lehrwerkstatt（2396→9339B，补入与传统培训的根本区别表、反例与边界、与 Agent-Knowledge-Management 的区分表、AI 学徒制三个生成器）、AI-Labor-Bottleneck-Shift（2602→8444B，补入与 AI-Era-Economy-Shift 的区分表、反例与边界、瓶颈迁移历史模式表）。
 - 本轮清零 `topic-depth` 队列最后一批（3 个 Topic）：扩写 Enterprise-AI-Factory（2730→9178B，补入与 Organization-as-Agent-Harness 的区分表、反例与边界、企业 AI 成熟三阶段模型）、Git-with-Coding-Agents（2640→8059B，补入与 Agentic-Engineering-Patterns 的区分表、反例与边界、Git 工作流三个转变）、Wisdom-Work-Evolution（2638→10504B，补入与 Conscious-Creation-in-AI-Era 的区分表、与 AI-Labor-Bottleneck-Shift 的关系、反例与边界、AI 时代人类价值三层模型）。`topic-depth` 队列清零。
 - 本轮处理 `person-depth` 队列第一批（6 个高引用人物 Entity）：扩写 Tobi-Lütke（1097→3353B，补入可验证履历表、Shopify River 数据、与本库主题连接表）、Paul-Graham（1089→3880B，补入品味框架七特征表、Cook vs Chef 区分、场域理论、跨主题连接）、Ethan-Mollick（1174→3554B，补入委托经济学公式、委托文档七组件表、从知识经济到分配经济连接）、Drew-Breunig（755→2959B，补入安全 PoW 框架、三阶段循环表、Mythos 数据）、Elvis-Sun（1065→3076B，补入 Agent Swarm 架构层次表、两层上下文分工、一人团队生产力数据）、朱少民（790→3643B，补入委托-代理困境三种对抗策略表、制度破局五招表、与 Shopify River 的对比）。同步修复 Tobi-Lütke 和 Drew-Breunig 的 definition 句号痕迹（审计跟踪项）。
+- 本轮清零 `person-depth` 队列最后一批（5 个低引用人物 Entity）：扩写 Arnav-Gupta（714→2653B，补入可验证履历表、AI 裁员潮结构性分析、瓶颈迁移视角）、Erick-Lachmann（612→3825B，补入可验证履历表、专门化胜过规模实验证据、采购范式转变表）、Jacob-Harris（803→4614B，补入可验证履历表、Vibe Coding 本质复杂性分析、摩擦作为设计信号、代码作为概念基础设施）、Pimenta-de-Freitas-Cardoso（699→2616B，补入可验证履历表、与 Lachmann 共同研究、OCR 实验设计）、Wes-Botman（1091→4979B，补入可验证履历表、有意识的 1% 价值论框架、被消费的人 vs 有意识的创造者对比表、品味作为存在方式）。同步修复 Jacob-Harris 和 Wes-Botman 的 definition 句号痕迹（审计跟踪项）。`person-depth` 队列清零。
 
 ## 总览
 
@@ -104,20 +105,20 @@ tags:
 | `output` | 6 |
 | `research-agenda` | 1 |
 | `lint-report` | 1 |
-| 剩余问题总数 | 38 |
+| 剩余问题总数 | 32 |
 | 高优先级问题 | 0 |
-| 中优先级问题 | 5 |
-| 低优先级问题 | 33 |
+| 中优先级问题 | 0 |
+| 低优先级问题 | 32 |
 
 ## 剩余问题分类
 
 | 类别 | 数量 | 解释 |
 |------|------|------|
-| `definition-style` | 24 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
+| `definition-style` | 23 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
 | `entity-depth` | 0 | 非人物 Entity 偏短，需要补关键数据、前提边界和关联。 |
 | `definition` | 0 | definition 过长或过短，影响 Obsidian 未链接提及和快速理解。 |
 | `topic-depth` | 0 | Topic 偏短，需要从多篇 source 重新综合。 |
-| `person-depth` | 5 | 人物 Entity 偏短，建议补来源关系和只保留可验证履历。 |
+| `person-depth` | 0 | 人物 Entity 偏短，建议补来源关系和只保留可验证履历。 |
 | `language` | 0 | Wiki 默认中文，但 definition 仍基本为英文。 |
 | `readability` | 5 | 超长行影响阅读与 diff。 |
 | `entity-structure` | 4 | Entity 标准章节顺序不一致。 |
@@ -150,11 +151,6 @@ tags:
 
 | 等级 | 类别 | 文件 | 行 | 问题 |
 |------|------|------|----|------|
-| 中 | `person-depth` | `wiki/entities/Arnav-Gupta.md` | - | 人物 Entity 偏短 714 bytes |
-| 中 | `person-depth` | `wiki/entities/Erick-Lachmann.md` | - | 人物 Entity 偏短 612 bytes |
-| 中 | `person-depth` | `wiki/entities/Jacob-Harris.md` | - | 人物 Entity 偏短 803 bytes |
-| 中 | `person-depth` | `wiki/entities/Pimenta-de-Freitas-Cardoso.md` | - | 人物 Entity 偏短 699 bytes |
-| 中 | `person-depth` | `wiki/entities/Wes-Botman.md` | - | 人物 Entity 偏短 1091 bytes |
 | 低 | `definition-style` | `wiki/entities/Agent-Generated-PRs.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Agent-Generated-PRs.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
 | 低 | `definition-style` | `wiki/entities/Agent-Orchestration.md` | - | definition 以句号结尾，风格不统一 |
@@ -165,7 +161,6 @@ tags:
 | 低 | `definition-style` | `wiki/entities/Dominator-Analysis.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Hardware-Sovereignty.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Headless-Mode.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Jacob-Harris.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Knowledge-Compilation.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/MachinaCheck.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Martin-Fowler.md` | - | definition 以句号结尾，风格不统一 |
@@ -245,7 +240,7 @@ tags:
 | `wiki/entities/Always-On-Economy.md` | `entity` | 1892 | 1 | entity-structure |
 | `wiki/entities/Andrej-Karpathy.md` | `entity` | 4121 | 0 | OK |
 | `wiki/entities/Anti-Enterprise-Mindset.md` | `entity` | 1645 | 0 | OK |
-| `wiki/entities/Arnav-Gupta.md` | `entity` | 714 | 1 | person-depth |
+| `wiki/entities/Arnav-Gupta.md` | `entity` | 2653 | 0 | OK |
 | `wiki/entities/B2B-Nurture-C-Model.md` | `entity` | 1673 | 0 | OK |
 | `wiki/entities/Barry-Zhang.md` | `entity` | 1278 | 0 | OK |
 | `wiki/entities/Bias-to-Action-LLM.md` | `entity` | 6193 | 0 | OK |
@@ -286,7 +281,7 @@ tags:
 | `wiki/entities/Einstein-Test.md` | `entity` | 1915 | 0 | OK |
 | `wiki/entities/Elvis-Sun.md` | `entity` | 3076 | 0 | OK |
 | `wiki/entities/Emotional-Clarity.md` | `entity` | 2087 | 0 | OK |
-| `wiki/entities/Erick-Lachmann.md` | `entity` | 612 | 1 | person-depth |
+| `wiki/entities/Erick-Lachmann.md` | `entity` | 3825 | 0 | OK |
 | `wiki/entities/Erik-Schluntz.md` | `entity` | 1390 | 0 | OK |
 | `wiki/entities/Essential-Complexity.md` | `entity` | 2255 | 0 | OK |
 | `wiki/entities/Ethan-Mollick.md` | `entity` | 3554 | 0 | OK |
@@ -309,7 +304,7 @@ tags:
 | `wiki/entities/Input-Output-Outcome.md` | `entity` | 8199 | 0 | OK |
 | `wiki/entities/Integration-Wall.md` | `entity` | 1768 | 0 | OK |
 | `wiki/entities/Invisible-Orchestrator.md` | `entity` | 7592 | 0 | OK |
-| `wiki/entities/Jacob-Harris.md` | `entity` | 803 | 2 | definition-style; person-depth |
+| `wiki/entities/Jacob-Harris.md` | `entity` | 4614 | 0 | OK |
 | `wiki/entities/Jagged-Intelligence.md` | `entity` | 1739 | 0 | OK |
 | `wiki/entities/Jevons-Paradox-for-Knowledge-Work.md` | `entity` | 1820 | 1 | entity-structure |
 | `wiki/entities/Joe-Hudson.md` | `entity` | 1357 | 0 | OK |
@@ -349,7 +344,7 @@ tags:
 | `wiki/entities/Ownership.md` | `entity` | 1683 | 1 | definition-style |
 | `wiki/entities/PM-in-AI-Era.md` | `entity` | 4355 | 0 | OK |
 | `wiki/entities/Paul-Graham.md` | `entity` | 3880 | 0 | OK |
-| `wiki/entities/Pimenta-de-Freitas-Cardoso.md` | `entity` | 699 | 1 | person-depth |
+| `wiki/entities/Pimenta-de-Freitas-Cardoso.md` | `entity` | 2616 | 0 | OK |
 | `wiki/entities/Pinterest-Engineering.md` | `entity` | 2686 | 0 | OK |
 | `wiki/entities/Problem-Solution-Fit.md` | `entity` | 3875 | 0 | OK |
 | `wiki/entities/Product-Market-Fit.md` | `entity` | 4929 | 0 | OK |
@@ -396,7 +391,7 @@ tags:
 | `wiki/entities/Vibe-Coding.md` | `entity` | 4339 | 3 | definition-style; entity-structure; readability |
 | `wiki/entities/Vocabulary-Building.md` | `entity` | 3709 | 0 | OK |
 | `wiki/entities/WCAG.md` | `entity` | 4314 | 0 | OK |
-| `wiki/entities/Wes-Botman.md` | `entity` | 1091 | 1 | person-depth |
+| `wiki/entities/Wes-Botman.md` | `entity` | 4979 | 0 | OK |
 | `wiki/entities/Wisdom-Work.md` | `entity` | 2253 | 0 | OK |
 | `wiki/entities/World-Model.md` | `entity` | 1910 | 0 | OK |
 | `wiki/entities/YAGNI.md` | `entity` | 2373 | 0 | OK |
