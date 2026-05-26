@@ -91,6 +91,7 @@ tags:
 - 本轮清零 `comparison-evidence` 和 `topic-evidence` 队列：为 Agent-First-vs-Traditional-Automation 补入 Forward deployed engineering at OpenAI、Knowledge-Work-vs-Wisdom-Work 补入 Good Taste the Only Real Moat Left、Conscious-Creation-in-AI-Era 补入 Good Taste the Only Real Moat Left、Git-with-Coding-Agents 补入 Agent pull requests are everywhere、Lean-Indie-Engineering 补入 The Founders Playbook、Wisdom-Work-Evolution 补入 Management as AI superpower。每个文件新增"证据补充"段落说明第二来源如何交叉验证核心判断。`comparison-evidence` 和 `topic-evidence` 队列清零。
 - 本轮处理 `topic-depth` 队列第一批（4 个最短 Topic）：扩写 Conscious-Creation-in-AI-Era（1855→6630B，补入与 Wisdom-Work-Evolution 的区分表、反例与边界、AI 时代人类价值三层模型）、Agent-First-Process-Redesign（2235→7574B，补入与 Organization-as-Agent-Harness 的区分表、反例与边界、Agent-First 四层成熟度模型）、AI-Apprenticeship-and-Lehrwerkstatt（2396→9339B，补入与传统培训的根本区别表、反例与边界、与 Agent-Knowledge-Management 的区分表、AI 学徒制三个生成器）、AI-Labor-Bottleneck-Shift（2602→8444B，补入与 AI-Era-Economy-Shift 的区分表、反例与边界、瓶颈迁移历史模式表）。
 - 本轮清零 `topic-depth` 队列最后一批（3 个 Topic）：扩写 Enterprise-AI-Factory（2730→9178B，补入与 Organization-as-Agent-Harness 的区分表、反例与边界、企业 AI 成熟三阶段模型）、Git-with-Coding-Agents（2640→8059B，补入与 Agentic-Engineering-Patterns 的区分表、反例与边界、Git 工作流三个转变）、Wisdom-Work-Evolution（2638→10504B，补入与 Conscious-Creation-in-AI-Era 的区分表、与 AI-Labor-Bottleneck-Shift 的关系、反例与边界、AI 时代人类价值三层模型）。`topic-depth` 队列清零。
+- 本轮处理 `person-depth` 队列第一批（6 个高引用人物 Entity）：扩写 Tobi-Lütke（1097→3353B，补入可验证履历表、Shopify River 数据、与本库主题连接表）、Paul-Graham（1089→3880B，补入品味框架七特征表、Cook vs Chef 区分、场域理论、跨主题连接）、Ethan-Mollick（1174→3554B，补入委托经济学公式、委托文档七组件表、从知识经济到分配经济连接）、Drew-Breunig（755→2959B，补入安全 PoW 框架、三阶段循环表、Mythos 数据）、Elvis-Sun（1065→3076B，补入 Agent Swarm 架构层次表、两层上下文分工、一人团队生产力数据）、朱少民（790→3643B，补入委托-代理困境三种对抗策略表、制度破局五招表、与 Shopify River 的对比）。同步修复 Tobi-Lütke 和 Drew-Breunig 的 definition 句号痕迹（审计跟踪项）。
 
 ## 总览
 
@@ -103,20 +104,20 @@ tags:
 | `output` | 6 |
 | `research-agenda` | 1 |
 | `lint-report` | 1 |
-| 剩余问题总数 | 46 |
+| 剩余问题总数 | 38 |
 | 高优先级问题 | 0 |
-| 中优先级问题 | 11 |
-| 低优先级问题 | 35 |
+| 中优先级问题 | 5 |
+| 低优先级问题 | 33 |
 
 ## 剩余问题分类
 
 | 类别 | 数量 | 解释 |
 |------|------|------|
-| `definition-style` | 26 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
+| `definition-style` | 24 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
 | `entity-depth` | 0 | 非人物 Entity 偏短，需要补关键数据、前提边界和关联。 |
 | `definition` | 0 | definition 过长或过短，影响 Obsidian 未链接提及和快速理解。 |
 | `topic-depth` | 0 | Topic 偏短，需要从多篇 source 重新综合。 |
-| `person-depth` | 11 | 人物 Entity 偏短，建议补来源关系和只保留可验证履历。 |
+| `person-depth` | 5 | 人物 Entity 偏短，建议补来源关系和只保留可验证履历。 |
 | `language` | 0 | Wiki 默认中文，但 definition 仍基本为英文。 |
 | `readability` | 5 | 超长行影响阅读与 diff。 |
 | `entity-structure` | 4 | Entity 标准章节顺序不一致。 |
@@ -150,16 +151,10 @@ tags:
 | 等级 | 类别 | 文件 | 行 | 问题 |
 |------|------|------|----|------|
 | 中 | `person-depth` | `wiki/entities/Arnav-Gupta.md` | - | 人物 Entity 偏短 714 bytes |
-| 中 | `person-depth` | `wiki/entities/Drew-Breunig.md` | - | 人物 Entity 偏短 755 bytes |
-| 中 | `person-depth` | `wiki/entities/Elvis-Sun.md` | - | 人物 Entity 偏短 1065 bytes |
 | 中 | `person-depth` | `wiki/entities/Erick-Lachmann.md` | - | 人物 Entity 偏短 612 bytes |
-| 中 | `person-depth` | `wiki/entities/Ethan-Mollick.md` | - | 人物 Entity 偏短 1174 bytes |
 | 中 | `person-depth` | `wiki/entities/Jacob-Harris.md` | - | 人物 Entity 偏短 803 bytes |
-| 中 | `person-depth` | `wiki/entities/Paul-Graham.md` | - | 人物 Entity 偏短 1089 bytes |
 | 中 | `person-depth` | `wiki/entities/Pimenta-de-Freitas-Cardoso.md` | - | 人物 Entity 偏短 699 bytes |
-| 中 | `person-depth` | `wiki/entities/Tobi-Lütke.md` | - | 人物 Entity 偏短 1097 bytes |
 | 中 | `person-depth` | `wiki/entities/Wes-Botman.md` | - | 人物 Entity 偏短 1091 bytes |
-| 中 | `person-depth` | `wiki/entities/朱少民.md` | - | 人物 Entity 偏短 790 bytes |
 | 低 | `definition-style` | `wiki/entities/Agent-Generated-PRs.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Agent-Generated-PRs.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
 | 低 | `definition-style` | `wiki/entities/Agent-Orchestration.md` | - | definition 以句号结尾，风格不统一 |
@@ -168,7 +163,6 @@ tags:
 | 低 | `definition-style` | `wiki/entities/Cybersecurity-Openness.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Cybersecurity-Openness.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
 | 低 | `definition-style` | `wiki/entities/Dominator-Analysis.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Drew-Breunig.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Hardware-Sovereignty.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Headless-Mode.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Jacob-Harris.md` | - | definition 以句号结尾，风格不统一 |
@@ -183,7 +177,6 @@ tags:
 | 低 | `definition-style` | `wiki/entities/Software-2.0.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/The-OpenAI-Deployment-Company.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
 | 低 | `definition-style` | `wiki/entities/Three-State-Protocol.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Tobi-Lütke.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Unmesh-Joshi.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Vibe-Coding.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
 | 低 | `entity-structure` | `wiki/entities/Always-On-Economy.md` | - | 标准章节顺序不一致 |
@@ -288,15 +281,15 @@ tags:
 | `wiki/entities/Discernment.md` | `entity` | 1743 | 0 | OK |
 | `wiki/entities/Distributional-Alignment.md` | `entity` | 1696 | 0 | OK |
 | `wiki/entities/Dominator-Analysis.md` | `entity` | 2095 | 1 | definition-style |
-| `wiki/entities/Drew-Breunig.md` | `entity` | 755 | 2 | definition-style; person-depth |
+| `wiki/entities/Drew-Breunig.md` | `entity` | 2959 | 0 | OK |
 | `wiki/entities/Dual-Tier-LLM-Architecture.md` | `entity` | 2325 | 0 | OK |
 | `wiki/entities/Einstein-Test.md` | `entity` | 1915 | 0 | OK |
-| `wiki/entities/Elvis-Sun.md` | `entity` | 1065 | 1 | person-depth |
+| `wiki/entities/Elvis-Sun.md` | `entity` | 3076 | 0 | OK |
 | `wiki/entities/Emotional-Clarity.md` | `entity` | 2087 | 0 | OK |
 | `wiki/entities/Erick-Lachmann.md` | `entity` | 612 | 1 | person-depth |
 | `wiki/entities/Erik-Schluntz.md` | `entity` | 1390 | 0 | OK |
 | `wiki/entities/Essential-Complexity.md` | `entity` | 2255 | 0 | OK |
-| `wiki/entities/Ethan-Mollick.md` | `entity` | 1174 | 1 | person-depth |
+| `wiki/entities/Ethan-Mollick.md` | `entity` | 3554 | 0 | OK |
 | `wiki/entities/Evaluation-Set.md` | `entity` | 1665 | 0 | OK |
 | `wiki/entities/Forward-Deployed-Engineer.md` | `entity` | 2941 | 0 | OK |
 | `wiki/entities/Friction-as-Design-Signal.md` | `entity` | 7203 | 0 | OK |
@@ -355,7 +348,7 @@ tags:
 | `wiki/entities/Owlready2.md` | `entity` | 1934 | 0 | OK |
 | `wiki/entities/Ownership.md` | `entity` | 1683 | 1 | definition-style |
 | `wiki/entities/PM-in-AI-Era.md` | `entity` | 4355 | 0 | OK |
-| `wiki/entities/Paul-Graham.md` | `entity` | 1089 | 1 | person-depth |
+| `wiki/entities/Paul-Graham.md` | `entity` | 3880 | 0 | OK |
 | `wiki/entities/Pimenta-de-Freitas-Cardoso.md` | `entity` | 699 | 1 | person-depth |
 | `wiki/entities/Pinterest-Engineering.md` | `entity` | 2686 | 0 | OK |
 | `wiki/entities/Problem-Solution-Fit.md` | `entity` | 3875 | 0 | OK |
@@ -395,7 +388,7 @@ tags:
 | `wiki/entities/Thin-Harness-Fat-Skills.md` | `entity` | 4629 | 0 | OK |
 | `wiki/entities/Three-State-Protocol.md` | `entity` | 3552 | 1 | definition-style |
 | `wiki/entities/Time-Moat.md` | `entity` | 3767 | 0 | OK |
-| `wiki/entities/Tobi-Lütke.md` | `entity` | 1097 | 2 | definition-style; person-depth |
+| `wiki/entities/Tobi-Lütke.md` | `entity` | 3353 | 0 | OK |
 | `wiki/entities/Tool-Use-Architecture.md` | `entity` | 4818 | 0 | OK |
 | `wiki/entities/Ubiquitous-Language.md` | `entity` | 1897 | 0 | OK |
 | `wiki/entities/Unmesh-Joshi.md` | `entity` | 1522 | 1 | definition-style |
@@ -409,7 +402,7 @@ tags:
 | `wiki/entities/YAGNI.md` | `entity` | 2373 | 0 | OK |
 | `wiki/entities/Zero-PHI-Policy.md` | `entity` | 2051 | 0 | OK |
 | `wiki/entities/人机对齐.md` | `entity` | 1952 | 0 | OK |
-| `wiki/entities/朱少民.md` | `entity` | 790 | 1 | person-depth |
+| `wiki/entities/朱少民.md` | `entity` | 3643 | 0 | OK |
 | `wiki/entities/渐进式重构.md` | `entity` | 4362 | 0 | OK |
 | `wiki/lint-report.md` | `lint-report` | 771 | 0 | OK |
 | `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` | `output` | 20435 | 0 | OK |
