@@ -8,7 +8,7 @@ aliases:
   - 领域小模型
 definition: "面向窄任务或具体业务域训练的小参数模型；在任务分布清楚、评测可验证、推理量高的场景中，可能同时取得更高质量、更低成本和更好稳定性"
 created: 2026-05-24
-updated: 2026-05-24
+updated: 2026-05-26
 tags:
   - enterprise-AI
   - model-selection
@@ -19,8 +19,11 @@ related_entities:
   - "[[Layered-AI-Sourcing]]"
   - "[[Hardware-Sovereignty]]"
   - "[[Evaluation-Set]]"
+  - "[[Verifiability]]"
+  - "[[Enterprise-AI-Model-Sourcing]]"
 source_raw:
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
+  - "[[Improving token efficiency in GitHub Agentic Workflows]]"
 ---
 
 # Specialized Small Models（专门化小模型）
@@ -40,7 +43,25 @@ source_raw:
 - 专门化小模型不是廉价替代品，而是需要训练管线、评测集、数据治理和推理运维的工程资产。
 - 对开放任务、长尾推理、跨域知识和高不确定场景，frontier model 仍可能更合适。
 - 成本优势必须按总拥有成本计算：训练、人力、评测、部署、监控、失败处理和硬件折旧都应计入。
-- 采购方需要防止“专门化”被当作营销标签；真正的证据应来自本企业工作流上的对照评测。
+- 采购方需要防止”专门化”被当作营销标签；真正的证据应来自本企业工作流上的对照评测。
+
+## 企业决策框架：何时考虑专门化小模型
+
+专门化小模型不是”大模型太贵时的替代”，而是一种需要主动建设的工程资产。企业应该在以下条件同时满足时考虑：
+
+1. **任务高频且边界清晰**：工作负载可定义为窄任务（如特定语言 OCR、合规文档分类、代码审查特定模式）。
+2. **[[Verifiability|可验证性]] 高**：有客观标准判断输出质量，能通过 [[Evaluation-Set|评测集]] 暴露专门化收益。
+3. **数据可获得**：有足够的领域数据用于微调和持续训练。
+4. **成本敏感**：推理量大到 API 成本成为运营瓶颈。
+
+当这些条件不满足时——特别是任务边界模糊或不可验证时——专门化小模型的风险大于收益：你无法判断它是否比通用模型好，也无法持续改进它。
+
+## 与部署架构的连接
+
+专门化小模型在部署架构中有两个战略位置：
+
+- **本地部署**：小模型更容易在本地运行，增强 [[Hardware-Sovereignty|硬件主权]]，降低数据外传风险。这与 [[Layered-AI-Sourcing|分层 sourcing]] 策略一致——高频敏感任务用本地小模型，开放任务用云端大模型。
+- **边缘计算**：Hassabis 在讨论蒸馏时指出”90-95% 能力和 1/10 价格 + 更快的速度”——更快的迭代速度”换回的比那丢失的 10% 更多”。小模型在边缘设备（手机、机器人、工厂设备）上的部署是大模型无法替代的。
 
 ## 关联概念
 
@@ -49,3 +70,5 @@ source_raw:
 - [[Layered-AI-Sourcing]] — 专门化小模型应成为企业分层采购的一层，而不是替代所有 frontier API。
 - [[Hardware-Sovereignty]] — 小模型更容易进入本地部署和数据主权架构。
 - [[Evaluation-Set]] — 决定小模型是否足以接管生产任务的证据基础。
+- [[Verifiability]] — 只有可验证任务才能暴露专门化模型的收益。
+- [[Enterprise-AI-Model-Sourcing]] — 专门化小模型改变了企业模型采购的核心问题。
