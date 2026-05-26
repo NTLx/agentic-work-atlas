@@ -4,17 +4,21 @@ title: Problem-Solution Fit
 aliases:
   - Problem-Solution Fit
   - 问题-方案契合
-definition: "在构建任何代码之前的“定性防御门槛”：通过深刻的用户对话与事实论证，证明创始人要解决的问题不仅真实且高频，而且所提出的方案能在逻辑上闭环解决该问题。"
+definition: “在写代码之前证明问题真实、高频且痛点足够强，并且方案在逻辑上能闭环解决该问题”
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-05-26
 tags:
   - Startup-Methodology
   - Validation
 related_entities:
   - "[[Product-Market-Fit]]"
   - "[[AI-Native-Startup]]"
+  - "[[AI-Native-Shipping]]"
+  - "[[Taste]]"
+  - "[[Competent-Output]]"
 source_raw:
   - "[[The-Founders-Playbook-05062026_v3]]"
+  - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
 ---
 
 # Problem-Solution Fit
@@ -48,8 +52,13 @@ AI 加速了验证过程，但也极易诱发致命的**确认偏差（Confirmat
 - 前提是访谈对象代表真实目标用户，而不是容易被说服的熟人样本。
 - 它验证问题与方案逻辑，不保证渠道、定价和留存一定成立。
 - 在 AI 时代，原型速度越快，越需要先定义清晰的证伪标准。
+- PSF 的最大陷阱是"AI 辅助确认偏差"：创始人用 AI 做市场调研时，如果只要求 AI 寻找支持证据，AI 会编造出完美的理由证明这是绝佳赛道。PSF 的标准流程必须包含逆向压力测试——让 AI 扮演魔鬼代言人，主动寻找证伪理由。
+- PSF 验证的是问题真实性和方案逻辑闭环，不验证执行能力和组织韧性。即使问题和方案都对，缺乏 [[Taste|品味]] 和 [[Competent-Output|合格输出]] 标准的团队仍可能把正确的方向做成平庸的产品。
 
 ## 关联概念
 
-- [[Product-Market-Fit]] - 验证产品价值的下一阶段
-- [[AI-Native-Startup]] - 必须更加注重验证的新型组织
+- [[Product-Market-Fit]] — 验证产品价值的下一阶段；PSF 是 PMF 的前提。
+- [[AI-Native-Startup]] — 必须更加注重验证的新型组织；构建成本越低，PSF 的纪律越重要。
+- [[AI-Native-Shipping]] — 快速发布能力让"先做出来看看"变得诱人，但跳过 PSF 的发布只会加速确认偏差。
+- [[Taste]] — PSF 验证问题是否存在，品味决定方案是否优雅、是否值得做。
+- [[Competent-Output]] — PSF 通过不等于产品合格；"做对了方向"和"做出了合格输出"是两个独立门槛。

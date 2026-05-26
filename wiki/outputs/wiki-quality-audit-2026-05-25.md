@@ -84,6 +84,7 @@ tags:
 - 5 个 topic 表格移除表格内未转义的 wikilink 管道，避免列数错乱。
 - 复跑 `tools/wiki-lint.py` 后，硬性 lint 阻断问题为 0。
 - 本轮清零 `comparison-depth` 队列：扩写 Taste-vs-Judgment（1471→6782B，补入何时分裂、AI 组织含义、失败模式）、Vibe-Coding-vs-Software-2.0（1883→7693B，补入演进脉络、工程治理维度、失败模式）与 Cook-vs-Chef（2248→8096B，补入伪装失败模式、组织分布含义），并为三者补入更多 source_raw 证据。
+- 本轮继续处理 `entity-depth` 与 `definition-style` 交叉簇：扩写 Product-Market-Fit（1482→4929B，补入 Push→Pull 相变机制、Boris Cherny pre-PMF 证据、供给侧 PMF 触发）、Problem-Solution-Fit（1412→3875B，补入 AI 确认偏差陷阱、验证纪律、跨源连接）、Product-Overhang（1390→5044B，补入能力发现机制、与传统策略对比表、模型自省连接）、Software-3.0（1491→4509B，补入三范式对比表、CLAUDE.md 工程含义、确定性分工）、Specialization-Compounds（1592→4998B，补入企业飞轮三条件、采购决策连接、评测集产权）、Tacit-Knowledge-Lock-In（1407→6043B，补入三层锁定机制、买方治理动作表、飞轮张力）。同步修复 Product-Market-Fit、Problem-Solution-Fit、Software-3.0 的 definition 风格。
 
 ## 总览
 
@@ -96,17 +97,17 @@ tags:
 | `output` | 6 |
 | `research-agenda` | 1 |
 | `lint-report` | 1 |
-| 剩余问题总数 | 91 |
+| 剩余问题总数 | 83 |
 | 高优先级问题 | 0 |
-| 中优先级问题 | 50 |
-| 低优先级问题 | 41 |
+| 中优先级问题 | 44 |
+| 低优先级问题 | 39 |
 
 ## 剩余问题分类
 
 | 类别 | 数量 | 解释 |
 |------|------|------|
-| `definition-style` | 32 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
-| `entity-depth` | 26 | 非人物 Entity 偏短，需要补关键数据、前提边界和关联。 |
+| `definition-style` | 30 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
+| `entity-depth` | 20 | 非人物 Entity 偏短，需要补关键数据、前提边界和关联。 |
 | `definition` | 0 | definition 过长或过短，影响 Obsidian 未链接提及和快速理解。 |
 | `topic-depth` | 7 | Topic 偏短，需要从多篇 source 重新综合。 |
 | `person-depth` | 11 | 人物 Entity 偏短，建议补来源关系和只保留可验证履历。 |
@@ -151,19 +152,13 @@ tags:
 | 中 | `entity-depth` | `wiki/entities/Organizational-Self-Awareness.md` | - | 非人物 Entity 正文偏短 1137 bytes |
 | 中 | `entity-depth` | `wiki/entities/Osmosis-Learning.md` | - | 非人物 Entity 正文偏短 1160 bytes |
 | 中 | `entity-depth` | `wiki/entities/PM-in-AI-Era.md` | - | 非人物 Entity 正文偏短 1441 bytes |
-| 中 | `entity-depth` | `wiki/entities/Problem-Solution-Fit.md` | - | 非人物 Entity 正文偏短 1412 bytes |
-| 中 | `entity-depth` | `wiki/entities/Product-Market-Fit.md` | - | 非人物 Entity 正文偏短 1482 bytes |
-| 中 | `entity-depth` | `wiki/entities/Product-Overhang.md` | - | 非人物 Entity 正文偏短 1390 bytes |
 | 中 | `entity-depth` | `wiki/entities/Programming-Languages-as-Thinking-Tools.md` | - | 非人物 Entity 正文偏短 1418 bytes |
 | 中 | `entity-depth` | `wiki/entities/Public-only-Constraint.md` | - | 非人物 Entity 正文偏短 1005 bytes |
 | 中 | `entity-depth` | `wiki/entities/Refusal.md` | - | 非人物 Entity 正文偏短 1456 bytes |
 | 中 | `entity-depth` | `wiki/entities/Research-Preview.md` | - | 非人物 Entity 正文偏短 1272 bytes |
 | 中 | `entity-depth` | `wiki/entities/River-Agent.md` | - | 非人物 Entity 正文偏短 1030 bytes |
 | 中 | `entity-depth` | `wiki/entities/Runway-Math.md` | - | 非人物 Entity 正文偏短 1483 bytes |
-| 中 | `entity-depth` | `wiki/entities/Software-3.0.md` | - | 非人物 Entity 正文偏短 1491 bytes |
-| 中 | `entity-depth` | `wiki/entities/Specialization-Compounds.md` | - | 非人物 Entity 正文偏短 1592 bytes |
 | 中 | `entity-depth` | `wiki/entities/Specialized-Small-Models.md` | - | 非人物 Entity 正文偏短 1530 bytes |
-| 中 | `entity-depth` | `wiki/entities/Tacit-Knowledge-Lock-In.md` | - | 非人物 Entity 正文偏短 1407 bytes |
 | 中 | `entity-depth` | `wiki/entities/Thin-Harness-Fat-Skills.md` | - | 非人物 Entity 正文偏短 1477 bytes |
 | 中 | `entity-depth` | `wiki/entities/Time-Moat.md` | - | 非人物 Entity 正文偏短 1453 bytes |
 | 中 | `entity-depth` | `wiki/entities/Tool-Use-Architecture.md` | - | 非人物 Entity 正文偏短 1519 bytes |
@@ -214,8 +209,6 @@ tags:
 | 低 | `definition-style` | `wiki/entities/Multi-Layer-Memory.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Osmosis-Learning.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Ownership.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Problem-Solution-Fit.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Product-Market-Fit.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Programming-Languages-as-Thinking-Tools.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Simon-Willison.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Software-2.0.md` | - | definition 以句号结尾，风格不统一 |
@@ -397,9 +390,9 @@ tags:
 | `wiki/entities/Paul-Graham.md` | `entity` | 1089 | 1 | person-depth |
 | `wiki/entities/Pimenta-de-Freitas-Cardoso.md` | `entity` | 699 | 1 | person-depth |
 | `wiki/entities/Pinterest-Engineering.md` | `entity` | 2686 | 0 | OK |
-| `wiki/entities/Problem-Solution-Fit.md` | `entity` | 1412 | 2 | definition-style; entity-depth |
-| `wiki/entities/Product-Market-Fit.md` | `entity` | 1482 | 2 | definition-style; entity-depth |
-| `wiki/entities/Product-Overhang.md` | `entity` | 1390 | 1 | entity-depth |
+| `wiki/entities/Problem-Solution-Fit.md` | `entity` | 3875 | 0 | OK |
+| `wiki/entities/Product-Market-Fit.md` | `entity` | 4929 | 0 | OK |
+| `wiki/entities/Product-Overhang.md` | `entity` | 5044 | 0 | OK |
 | `wiki/entities/Programming-Languages-as-Thinking-Tools.md` | `entity` | 1418 | 2 | definition-style; entity-depth |
 | `wiki/entities/Progressive-Disclosure.md` | `entity` | 2274 | 0 | OK |
 | `wiki/entities/Protégé.md` | `entity` | 1694 | 0 | OK |
@@ -420,14 +413,14 @@ tags:
 | `wiki/entities/Slopocalypse.md` | `entity` | 1946 | 0 | OK |
 | `wiki/entities/Social-Model-of-Disability.md` | `entity` | 2159 | 0 | OK |
 | `wiki/entities/Software-2.0.md` | `entity` | 3648 | 1 | definition-style |
-| `wiki/entities/Software-3.0.md` | `entity` | 1491 | 1 | entity-depth |
+| `wiki/entities/Software-3.0.md` | `entity` | 4509 | 0 | OK |
 | `wiki/entities/Software-Democratization.md` | `entity` | 2025 | 0 | OK |
-| `wiki/entities/Specialization-Compounds.md` | `entity` | 1592 | 1 | entity-depth |
+| `wiki/entities/Specialization-Compounds.md` | `entity` | 4998 | 0 | OK |
 | `wiki/entities/Specialized-Small-Models.md` | `entity` | 1530 | 1 | entity-depth |
 | `wiki/entities/Specificity.md` | `entity` | 1787 | 0 | OK |
 | `wiki/entities/Steve-Hanov.md` | `entity` | 1927 | 0 | OK |
 | `wiki/entities/TBox.md` | `entity` | 1810 | 0 | OK |
-| `wiki/entities/Tacit-Knowledge-Lock-In.md` | `entity` | 1407 | 1 | entity-depth |
+| `wiki/entities/Tacit-Knowledge-Lock-In.md` | `entity` | 6043 | 0 | OK |
 | `wiki/entities/Taste.md` | `entity` | 2528 | 0 | OK |
 | `wiki/entities/Technical-Debt-Avoidance.md` | `entity` | 2446 | 0 | OK |
 | `wiki/entities/The-OpenAI-Deployment-Company.md` | `entity` | 2023 | 1 | definition-style |
