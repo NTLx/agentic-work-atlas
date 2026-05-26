@@ -87,6 +87,7 @@ tags:
 - 本轮继续处理 `entity-depth` 与 `definition-style` 交叉簇：扩写 Product-Market-Fit（1482→4929B，补入 Push→Pull 相变机制、Boris Cherny pre-PMF 证据、供给侧 PMF 触发）、Problem-Solution-Fit（1412→3875B，补入 AI 确认偏差陷阱、验证纪律、跨源连接）、Product-Overhang（1390→5044B，补入能力发现机制、与传统策略对比表、模型自省连接）、Software-3.0（1491→4509B，补入三范式对比表、CLAUDE.md 工程含义、确定性分工）、Specialization-Compounds（1592→4998B，补入企业飞轮三条件、采购决策连接、评测集产权）、Tacit-Knowledge-Lock-In（1407→6043B，补入三层锁定机制、买方治理动作表、飞轮张力）。同步修复 Product-Market-Fit、Problem-Solution-Fit、Software-3.0 的 definition 风格。
 - 本轮继续处理 `entity-depth` 第二批交叉簇：扩写 Model-Introspection（1366→4613B，补入产品研究方法、与人类 debugging 对比表、评测集闭环）、Thin-Harness-Fat-Skills（1477→4629B，补入两种架构对比表、Latent Space vs Deterministic 连接）、Verifiability（1254→4489B，补入 RLVR 经济学链条、企业决策框架表）、Time-Moat（1453→3767B，重写为标准结构、补入生成机制三条件、AI 时代影响表）、Specialized-Small-Models（1530→4615B，补入企业决策四条件、部署架构两个战略位置）、Tool-Use-Architecture（1519→4818B，补入信息密度张力、MCP 共振三层含义）。顺带修复 Model-Introspection 和 Time-Moat 的 definition 来源痕迹（非审计跟踪项）。
 - 本轮继续处理 `entity-depth` 第三批（AI 产品策略与能力边界簇）：扩写 PM-in-AI-Era（1441→4355B，补入高速公路设计四组件、角色边界消失含义）、Research-Preview（1272→3955B，补入从承诺到探针的转变机制表、可复制性边界）、Refusal（1456→3408B，重写为标准结构、补入三层拒绝模型、可训练诊断能力）、Public-only-Constraint（1005→3618B，补入组织学习三维度表、组织 Harness 连接）、Vocabulary-Building（1339→3709B，重写为标准结构、补入 AI 时代三层含义表、认知负债连接）、WCAG（1313→4314B，补入 36% 缺口本质分析、高风险模式识别、可验证性交叉）。顺带修复 Research-Preview 和 PM-in-AI-Era 的 definition 来源痕迹。
+- 本轮清零 `entity-depth` 队列最后一批（组织学习与创业方法论簇）：扩写 Lehrwerkstatt（1457→3627B，重写为标准结构、补入 Shopify 数据、三个生成机制表）、MIT-Technology-Review-Insights（929→2681B，补 actor 结构、本库引用连接）、Organizational-Self-Awareness（1137→3991B，补入混乱信号诊断表、概念建模连接）、Osmosis-Learning（1160→3598B，重写为标准结构、补入传统 vs AI 时代对比表）、Programming-Languages-as-Thinking-Tools（1418→4027B，重写为标准结构、补入 AI 时代三个反直觉事实）、River-Agent（1030→3181B，补入组织学习机制表、Agent 成熟度双重决定因素）、Runway-Math（1483→3708B，重写为标准结构、补入 AI 时代连接）、渐进式重构（1567→4362B，重写为标准结构、补入 AI 时代成本结构变化表）。同步修复 Lehrwerkstatt、Osmosis-Learning、Programming-Languages-as-Thinking-Tools 的 definition 句号痕迹（审计跟踪项）。`entity-depth` 队列清零。
 
 ## 总览
 
@@ -99,17 +100,17 @@ tags:
 | `output` | 6 |
 | `research-agenda` | 1 |
 | `lint-report` | 1 |
-| 剩余问题总数 | 70 |
+| 剩余问题总数 | 59 |
 | 高优先级问题 | 0 |
-| 中优先级问题 | 32 |
-| 低优先级问题 | 38 |
+| 中优先级问题 | 24 |
+| 低优先级问题 | 35 |
 
 ## 剩余问题分类
 
 | 类别 | 数量 | 解释 |
 |------|------|------|
-| `definition-style` | 29 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
-| `entity-depth` | 8 | 非人物 Entity 偏短，需要补关键数据、前提边界和关联。 |
+| `definition-style` | 26 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
+| `entity-depth` | 0 | 非人物 Entity 偏短，需要补关键数据、前提边界和关联。 |
 | `definition` | 0 | definition 过长或过短，影响 Obsidian 未链接提及和快速理解。 |
 | `topic-depth` | 7 | Topic 偏短，需要从多篇 source 重新综合。 |
 | `person-depth` | 11 | 人物 Entity 偏短，建议补来源关系和只保留可验证履历。 |
@@ -137,9 +138,9 @@ tags:
 
 ## 最高收益修复顺序
 
-1. 先处理 `entity-depth` 与 Entity 价值队列：把单源低入链概念合并或补入 topic。
-2. 再处理 `topic-evidence` 与 `comparison-evidence`：主题/对比页至少应由多个 source 支撑。
-3. 再处理 `topic-depth`：补充区分维度、反例和跨来源证据。`comparison-depth` 已清零。
+1. 先处理 `topic-evidence` 与 `comparison-evidence`：主题/对比页至少应由多个 source 支撑。`entity-depth` 已清零。
+2. 再处理 `topic-depth`：补充区分维度、反例和跨来源证据。`comparison-depth` 已清零。
+3. 再处理 `person-depth`：人物 Entity 补来源关系和只保留可验证履历。
 4. 最后统一 definition 风格：中文、短定义、少来源痕迹、无句号。
 
 ## 剩余问题明细
@@ -148,14 +149,6 @@ tags:
 |------|------|------|----|------|
 | 中 | `comparison-evidence` | `wiki/comparisons/Agent-First-vs-Traditional-Automation.md` | - | Comparison source_raw 少于 2 个 |
 | 中 | `comparison-evidence` | `wiki/comparisons/Knowledge-Work-vs-Wisdom-Work.md` | - | Comparison source_raw 少于 2 个 |
-| 中 | `entity-depth` | `wiki/entities/Lehrwerkstatt.md` | - | 非人物 Entity 正文偏短 1457 bytes |
-| 中 | `entity-depth` | `wiki/entities/MIT-Technology-Review-Insights.md` | - | 非人物 Entity 正文偏短 929 bytes |
-| 中 | `entity-depth` | `wiki/entities/Organizational-Self-Awareness.md` | - | 非人物 Entity 正文偏短 1137 bytes |
-| 中 | `entity-depth` | `wiki/entities/Osmosis-Learning.md` | - | 非人物 Entity 正文偏短 1160 bytes |
-| 中 | `entity-depth` | `wiki/entities/Programming-Languages-as-Thinking-Tools.md` | - | 非人物 Entity 正文偏短 1418 bytes |
-| 中 | `entity-depth` | `wiki/entities/River-Agent.md` | - | 非人物 Entity 正文偏短 1030 bytes |
-| 中 | `entity-depth` | `wiki/entities/Runway-Math.md` | - | 非人物 Entity 正文偏短 1483 bytes |
-| 中 | `entity-depth` | `wiki/entities/渐进式重构.md` | - | 非人物 Entity 正文偏短 1567 bytes |
 | 中 | `person-depth` | `wiki/entities/Arnav-Gupta.md` | - | 人物 Entity 偏短 714 bytes |
 | 中 | `person-depth` | `wiki/entities/Drew-Breunig.md` | - | 人物 Entity 偏短 755 bytes |
 | 中 | `person-depth` | `wiki/entities/Elvis-Sun.md` | - | 人物 Entity 偏短 1065 bytes |
@@ -191,15 +184,12 @@ tags:
 | 低 | `definition-style` | `wiki/entities/Headless-Mode.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Jacob-Harris.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Knowledge-Compilation.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Lehrwerkstatt.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/MachinaCheck.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Martin-Fowler.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Memex.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Memex.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
 | 低 | `definition-style` | `wiki/entities/Multi-Layer-Memory.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Osmosis-Learning.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Ownership.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Programming-Languages-as-Thinking-Tools.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Simon-Willison.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/Software-2.0.md` | - | definition 以句号结尾，风格不统一 |
 | 低 | `definition-style` | `wiki/entities/The-OpenAI-Deployment-Company.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
@@ -352,9 +342,9 @@ tags:
 | `wiki/entities/Layered-AI-Sourcing.md` | `entity` | 2126 | 0 | OK |
 | `wiki/entities/Laziness-Virtue.md` | `entity` | 1851 | 0 | OK |
 | `wiki/entities/Lean-Stack.md` | `entity` | 2111 | 0 | OK |
-| `wiki/entities/Lehrwerkstatt.md` | `entity` | 1457 | 2 | definition-style; entity-depth |
+| `wiki/entities/Lehrwerkstatt.md` | `entity` | 3627 | 0 | OK |
 | `wiki/entities/MCP-Registry.md` | `entity` | 2377 | 0 | OK |
-| `wiki/entities/MIT-Technology-Review-Insights.md` | `entity` | 929 | 1 | entity-depth |
+| `wiki/entities/MIT-Technology-Review-Insights.md` | `entity` | 2681 | 0 | OK |
 | `wiki/entities/MachinaCheck.md` | `entity` | 2464 | 1 | definition-style |
 | `wiki/entities/Machine-Readable-Processes.md` | `entity` | 2848 | 0 | OK |
 | `wiki/entities/Martin-Fowler.md` | `entity` | 1532 | 1 | definition-style |
@@ -370,9 +360,9 @@ tags:
 | `wiki/entities/Obsidian-Wiki.md` | `entity` | 1682 | 0 | OK |
 | `wiki/entities/Ontology-Agent.md` | `entity` | 2377 | 0 | OK |
 | `wiki/entities/Ontology.md` | `entity` | 2272 | 0 | OK |
-| `wiki/entities/Organizational-Self-Awareness.md` | `entity` | 1137 | 1 | entity-depth |
+| `wiki/entities/Organizational-Self-Awareness.md` | `entity` | 3991 | 0 | OK |
 | `wiki/entities/Organizational-Shape-Moat.md` | `entity` | 2421 | 0 | OK |
-| `wiki/entities/Osmosis-Learning.md` | `entity` | 1160 | 2 | definition-style; entity-depth |
+| `wiki/entities/Osmosis-Learning.md` | `entity` | 3598 | 0 | OK |
 | `wiki/entities/Owlready2.md` | `entity` | 1934 | 0 | OK |
 | `wiki/entities/Ownership.md` | `entity` | 1683 | 1 | definition-style |
 | `wiki/entities/PM-in-AI-Era.md` | `entity` | 4355 | 0 | OK |
@@ -382,7 +372,7 @@ tags:
 | `wiki/entities/Problem-Solution-Fit.md` | `entity` | 3875 | 0 | OK |
 | `wiki/entities/Product-Market-Fit.md` | `entity` | 4929 | 0 | OK |
 | `wiki/entities/Product-Overhang.md` | `entity` | 5044 | 0 | OK |
-| `wiki/entities/Programming-Languages-as-Thinking-Tools.md` | `entity` | 1418 | 2 | definition-style; entity-depth |
+| `wiki/entities/Programming-Languages-as-Thinking-Tools.md` | `entity` | 4027 | 0 | OK |
 | `wiki/entities/Progressive-Disclosure.md` | `entity` | 2274 | 0 | OK |
 | `wiki/entities/Protégé.md` | `entity` | 1694 | 0 | OK |
 | `wiki/entities/Public-only-Constraint.md` | `entity` | 3618 | 0 | OK |
@@ -392,8 +382,8 @@ tags:
 | `wiki/entities/Refusal.md` | `entity` | 3408 | 0 | OK |
 | `wiki/entities/Research-Preview.md` | `entity` | 3955 | 0 | OK |
 | `wiki/entities/Resonance.md` | `entity` | 3026 | 0 | OK |
-| `wiki/entities/River-Agent.md` | `entity` | 1030 | 1 | entity-depth |
-| `wiki/entities/Runway-Math.md` | `entity` | 1483 | 1 | entity-depth |
+| `wiki/entities/River-Agent.md` | `entity` | 3181 | 0 | OK |
+| `wiki/entities/Runway-Math.md` | `entity` | 3708 | 0 | OK |
 | `wiki/entities/SPARQL.md` | `entity` | 1692 | 0 | OK |
 | `wiki/entities/Scientific-Discovery-AI.md` | `entity` | 2079 | 0 | OK |
 | `wiki/entities/Security-Hardening-Phase.md` | `entity` | 1953 | 0 | OK |
@@ -431,7 +421,7 @@ tags:
 | `wiki/entities/Zero-PHI-Policy.md` | `entity` | 2051 | 0 | OK |
 | `wiki/entities/人机对齐.md` | `entity` | 1952 | 0 | OK |
 | `wiki/entities/朱少民.md` | `entity` | 790 | 1 | person-depth |
-| `wiki/entities/渐进式重构.md` | `entity` | 1567 | 1 | entity-depth |
+| `wiki/entities/渐进式重构.md` | `entity` | 4362 | 0 | OK |
 | `wiki/lint-report.md` | `lint-report` | 771 | 0 | OK |
 | `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` | `output` | 20435 | 0 | OK |
 | `wiki/outputs/fde-ai-enablement-bottleneck.md` | `output` | 1541 | 0 | OK |
