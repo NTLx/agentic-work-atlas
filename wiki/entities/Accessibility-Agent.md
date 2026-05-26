@@ -4,9 +4,9 @@ title: Accessibility-Agent
 aliases:
   - Accessibility Agent
   - 无障碍 Agent
-definition: "GitHub 正在试验的通用无障碍 Agent，通过两步子 Agent 架构（被动评审者 + 主动实现者）自动评审和修复前端代码中的可访问性问题，已评审 3535 个 PR，解决率 68%"
+definition: "用顺序子 Agent、复杂度门控和人工升级路径辅助前端无障碍修复的专业 Agent"
 created: 2026-05-18
-updated: 2026-05-18
+updated: 2026-05-25
 tags:
   - AI-Agent
   - accessibility

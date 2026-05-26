@@ -4,7 +4,7 @@ title: "Claude Coding Notes (2026-01)"
 source_raw:
   - "[[20260127-claude-coding-notes]]"
 created: 2026-05-24
-updated: 2026-05-24
+updated: 2026-05-25
 tags:
   - source-summary
   - ai-coding
@@ -26,6 +26,8 @@ tags:
 
 - **核心结论3**: Agent 的核心优势是"韧性"（Tenacity）——永不疲劳、永不气馁，能持续尝试直到成功；杠杆来自"声明式"而非"命令式"的指令方式
   - 关键证据: "It's a 'feel the AGI' moment to watch it struggle with something for a long time just to come out victorious 30 minutes later"
+- **核心结论4**: 这次相变带来的不只是 speedup，而是 work expansion：开发者会去做原本不值得做、不会做或不敢碰的代码工作。
+  - 关键证据: Karpathy 明确说速度提升很难衡量，主要效果是自己会做更多原本不会做的事；这说明 AI Coding 的组织影响不只是节省时间，也会扩大需求、实验和代码变更总量。
 
 ### 2. 质疑
 
@@ -38,9 +40,11 @@ tags:
 - **跨域关联1**: Agent Tenacity 类似科学实验中的"反复试错"（Trial-and-error），区别是 Agent 不受情绪影响——跨域到心理学，揭示"韧性"可能是人类工作瓶颈而非智力
 - **跨域关联2**: Slopocalypse 预警类似工业革命初期对"劣质产品泛滥"的担忧——历史模式：新技术降低门槛 → 初期质量下降 → 标准/规范建立 → 质量回升
 
-### 概念更新建议
+### 关联概念
 
-- **新增 Entity**: [[Slopocalypse]]（AI 生成内容泛滥预警）
-- **新增 Entity**: [[Agent-Tenacity]]（代理韧性：永不疲劳的特性）
-- **更新 [[Vibe-Coding]]**: 补充"过度复杂化代码"的观察
-- **更新 [[Agentic-Engineering]]**: 补充"声明式指令获得杠杆"的方法论
+- [[Slopocalypse]]
+- [[Agent-Tenacity]]
+- [[Vibe-Coding]]
+- [[Agentic-Engineering]]
+- [[Claude-Code-CLI]]
+- [[Agentic-Engineering-Patterns]]

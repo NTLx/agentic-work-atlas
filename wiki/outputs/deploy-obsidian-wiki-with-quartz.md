@@ -2,6 +2,7 @@
 type: output
 title: 将 Obsidian 知识库部署为 LLM Wiki 网站
 created: 2026-04-13
+updated: 2026-05-25
 tags:
   - tutorial
   - quartz
@@ -827,8 +828,23 @@ typography: {
 
 ---
 
+## 本文使用的 Wiki 页面
+
+- [[LLM-Wiki]]
+- [[Knowledge-Compilation]]
+- [[Memex]]
+- [[Obsidian-Wiki]]
+
+## 回填检查
+
+| 新判断 | 支撑依据 | 处理 |
+|--------|----------|------|
+| LLM Wiki 需要 raw source 与 Wiki 层分离 | Wiki: [[LLM-Wiki]]、[[Knowledge-Compilation]] | 保留 |
+| Obsidian vault 可以通过 Quartz 与 GitHub Pages 发布为网页 Wiki | 外部工具文档与本文操作经验 | 保留在 output，不升级 |
+| 本地 Wiki 的分享困难可以通过静态站点缓解 | 本文操作经验 | 不处理 |
+
 *本教程由 Clips 知识库出品，基于 Andrej Karpathy LLM Wiki 理念设计。*
 
 *教程地址：本文件位于 `wiki/outputs/` 目录*
 
-*最后更新：2026-04-13*
+*最后更新：2026-05-25*

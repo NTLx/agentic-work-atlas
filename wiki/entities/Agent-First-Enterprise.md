@@ -3,9 +3,9 @@ type: entity
 title: Agent-First Enterprise
 aliases:
   - Agent First Enterprise
-definition: "An organizational model where AI systems operate processes while humans set goals, define policy constraints, and handle exceptions."
+definition: "让 AI Agent 运营流程、人类负责目标约束和例外判断的组织模式"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-26
 tags:
   - AI-Agent
   - Enterprise-Architecture

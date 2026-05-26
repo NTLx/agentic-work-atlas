@@ -2,7 +2,7 @@
 type: topic
 title: Karpathy AI 思想体系
 created: 2026-04-13
-updated: 2026-05-23
+updated: 2026-05-25
 tags:
   - AI-Agent
   - thought-leader
@@ -25,7 +25,10 @@ related_entities:
   - '[[AI-Psychosis]]'
   - '[[AI-Capability-Gap]]'
   - '[[RAG-vs-LLM-Wiki]]'
+  - '[[Slopocalypse]]'
+  - '[[Agent-Tenacity]]'
 source_raw:
+  - '[[20260127-claude-coding-notes]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - '[[20260413-llm-wiki]]'
   - '[[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]]'
@@ -89,6 +92,7 @@ Anthropic pre-training team (2026-)
 | **[[Memex]]** | 1945 (引用) | 个人知识存储 + 关联路径 | LLM Wiki 的思想先驱 |
 | **[[AI-Capability-Gap]]** | 2026 | 不同用户群体因 AI 能力体验差异形成平行认知现实 | 编程 vs 日常使用 |
 | **[[AI-Psychosis]]** | 2026 | 专业技术用户对 agentic AI 编程能力的极度震撼 | AI-Capability-Gap 的高端端 |
+| **[[Slopocalypse]]** | 2026 | AI 生成内容和代码泛滥，筛选与信任成为瓶颈 | Vibe Coding 与 Agentic Engineering 的质量分界 |
 
 ---
 
@@ -195,6 +199,17 @@ Karpathy 明确指出 LLM Wiki 与 Memex 的关系：
 
 ---
 
+## Claude Coding Notes：生成能力之后的质量约束
+
+[[20260127-claude-coding-notes]] 把 Karpathy 的思想从范式命名推进到日常工程经验：coding agents 已经让工作流发生相变，但它们的错误也从语法层转移到概念层。
+
+这篇 note 中的两个概念尤其重要：
+
+- [[Agent-Tenacity]]：Agent 不疲劳、不气馁，可以长时间循环尝试直到达成目标。这解释了为什么 LLM coding 给人"能力跃迁"的体感。
+- [[Slopocalypse]]：当这种持续生成能力扩散到 GitHub、Substack、arXiv 和社交媒体，质量瓶颈就从生成转移到筛选、审查和信任排序。
+
+二者构成一组张力：tenacity 让 agent 能做更多事，slopocalypse 提醒我们更多产出并不自动等于更好产出。因此 Karpathy 思想体系内部并不是单纯鼓励更高自动化，而是在逼近 [[Agentic-Engineering]]：让 agent 负责生成和试错，让人类和系统负责验证、筛选、抽象和责任承担。
+
 ## 在本知识库中的体现
 
 ### 相关 Entities
@@ -209,6 +224,8 @@ Karpathy 明确指出 LLM Wiki 与 Memex 的关系：
 - [[Agent-Native]] — agent 时代的基础设施范式
 - [[Knowledge-Compilation]] — 编译操作定义
 - [[Memex]] — 思想先驱
+- [[Slopocalypse]] — 生成能力扩张后的质量与信任问题
+- [[Agent-Tenacity]] — Agent 持续试错带来的工作扩张能力
 
 ### 相关 Comparisons
 
@@ -216,6 +233,7 @@ Karpathy 明确指出 LLM Wiki 与 Memex 的关系：
 
 ### Raw Sources
 
+- [[20260127-claude-coding-notes]] — Claude coding 相变、agent 韧性与 Slopocalypse 预警
 - [[20260413-llm-wiki]] — LLM Wiki 设计文档（原始出处）
 - [[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]] — 饼干哥哥的实战升级方案
 

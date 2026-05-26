@@ -2,6 +2,7 @@
 type: output
 title: "从 Output 到 Wiki：新判断如何回填"
 created: 2026-05-23
+updated: 2026-05-25
 tags:
   - output
   - llm-wiki
@@ -28,7 +29,7 @@ tags:
 | 判断 | 当前支撑 | 处理 |
 |------|----------|------|
 | RAG 的问题不是检索，而是没有积累 | [[RAG-vs-LLM-Wiki]]、[[Agent-Knowledge-Management]] 已明确区分实时检索与持久编译 | 可保留在现有 comparison/topic，无需新页面 |
-| Output 是 Wiki 的压力测试 | 目前主要来自本轮实践和 [[research-agenda|研究议程]]，缺少外部 source 支撑 | 继续留在 research agenda，不升级 |
+| Output 是 Wiki 的压力测试 | 目前主要来自本轮实践和 [[research-agenda]]（研究议程），缺少外部 source 支撑 | 继续留在 research agenda，不升级 |
 | 好的查询答案可以回填为新的 Wiki 页面 | [[Knowledge-Compilation]] 已有 `Query → Answer → File back to Wiki → Compounding` 机制 | 可作为回填规则的基础，暂不新增 Entity |
 
 这次检查说明：不是所有清楚判断都值得升级。第一条已经有承载页；第二条还只是实践假设；第三条已有机制基础，但还缺操作标准。
@@ -65,6 +66,22 @@ tags:
 
 | 新判断 | 支撑页面 | 处理 |
 |--------|----------|------|
-| xxx | xxx | 保留 / 升级 / 补 source |
+| Output 是 Wiki 的压力测试 | [[research-agenda]] | 放入 research agenda |
 
 如果这个动作连续多次有用，再考虑把它写入 schema 或工具。
+
+## 本文使用的 Wiki 页面
+
+- [[LLM-Wiki]]
+- [[RAG-vs-LLM-Wiki]]
+- [[Agent-Knowledge-Management]]
+- [[Knowledge-Compilation]]
+- [[research-agenda]]
+
+## 回填检查
+
+| 新判断 | 支撑依据 | 处理 |
+|--------|----------|------|
+| Output 中的新判断需要先做证据回链检查 | Wiki: [[Knowledge-Compilation]]；Schema 回填规则 | 保留 |
+| Output 是 Wiki 的压力测试 | Agenda: [[research-agenda]] | 放入 research agenda |
+| 晋升至少需要可追溯、可复用、可区分中的两项 | Schema 回填规则 | 保留 |

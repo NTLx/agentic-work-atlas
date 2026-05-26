@@ -17,7 +17,7 @@ related_entities:
   - '[[Agent-First-Enterprise]]'
   - '[[Allocation-Economy]]'
 source_raw:
-  - '[[building-effective-agents]]'
+  - '[[building-effective-agents-complete]]'
 validated_source: "https://every.to/every-team/about"
 validated_at: "2026-04-14"
 ---
@@ -41,7 +41,7 @@ validated_at: "2026-04-14"
 
 ## 知识库关联
 
-- [[building-effective-agents|Building Effective Agents]] — Anthropic 官方指南深度解读
+- [[building-effective-agents-complete|Building Effective Agents]] — Anthropic 官方指南深度解读
 - [[Agent-First-Enterprise]] — Dan Shipper 提出的组织设计框架
 - [[Allocation-Economy]] — Dan Shipper 提出的"配置经济"概念
 
@@ -53,4 +53,4 @@ validated_at: "2026-04-14"
 
 ## 来源
 
-- [[building-effective-agents]]
+- [[building-effective-agents-complete]]

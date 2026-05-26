@@ -3,11 +3,11 @@ type: entity
 title: Andrej Karpathy
 aliases:
   - Andrej Karpathy
-definition: "AI 研究者、计算机科学家，OpenAI 创始团队成员，Tesla AI 前总监，Stanford CS231n 课程创建者，提出 Software 2.0（2017）、Vibe Coding（2025）、LLM Wiki（2026）等概念；2024 年创立 Eureka Labs，2026 年加入 Anthropic pre-training team。"
+definition: "提出 Software 2.0、Vibe Coding 和 LLM Wiki 等概念的 AI 研究者与教育者"
 validated_source: "https://karpathy.ai/"
 validated_at: "2026-05-22"
 created: 2026-04-13
-updated: 2026-05-22
+updated: 2026-05-26
 tags:
   - person
   - ai-pioneer

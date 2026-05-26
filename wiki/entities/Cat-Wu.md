@@ -4,11 +4,11 @@ title: Cat Wu
 aliases:
   - Cat Wu
   - Catherine Wu
-definition: "Anthropic Claude Code 和 Cowork 产品负责人。普林斯顿 CS 专业，Scale AI 早期工程师，Index Ventures 风投经历。2024 年加入 Anthropic，与 Boris Cherny 搭档将 Claude Code 推向 300 亿美元级增长引擎"
+definition: "负责 Claude Code 产品、强调 AI 原生发布和 PM 角色转型的 Anthropic 产品负责人"
 validated_source: "https://www.linkedin.com/in/cat-wu"
 validated_at: "2026-05-08"
 created: 2026-05-08
-updated: 2026-05-08
+updated: 2026-05-26
 tags:
   - person
   - AI
@@ -21,7 +21,9 @@ source_raw:
 # Cat Wu
 
 > [!definition] 定义
-> **Cat Wu**（Catherine Wu）是 Anthropic Claude Code 和 Cowork 的产品负责人。普林斯顿大学计算机科学专业，曾任 Scale AI 产品工程师、Dagster 工程经理、Index Ventures 风投投资人。2024 年 8 月加入 Anthropic，与 Boris Cherny 搭档。2025 年 7 月曾被 Cursor 挖角，两周后随 Boris 一同回归，全面接管 Claude Code 产品线。她面试过数百位试图进入 AI 领域的 PM，看到 firsthand 哪些人在成功、哪些人已落后。
+> **Cat Wu**（Catherine Wu）是 Anthropic Claude Code 和 Cowork 的产品负责人。
+> 她毕业于普林斯顿大学计算机科学专业，曾任 Scale AI 产品工程师、Dagster 工程经理、Index Ventures 风投投资人。
+> 2024 年 8 月加入 Anthropic 后，她与 Boris Cherny 搭档推进 Claude Code 产品线，并持续观察 AI 时代 PM 能力结构的变化。
 
 ## 职业履历
 

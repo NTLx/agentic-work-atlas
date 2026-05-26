@@ -14,7 +14,7 @@ related_entities:
   - '[[Coding-Agents]]'
   - '[[ACI-Agent-Computer-Interface]]'
 source_raw:
-  - '[[building-effective-agents]]'
+  - '[[building-effective-agents-complete]]'
 ---
 
 # Agent Workflow Patterns（Agent 工作流模式）

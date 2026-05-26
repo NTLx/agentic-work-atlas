@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-05-24
+updated: 2026-05-26
 tags:
   - index
   - MOC
@@ -21,7 +21,7 @@ tags:
 | Topic 页面 | 26 个 |
 | Comparison 页面 | 14 个 |
 | Raw 文章 | 68 个 |
-| Output 作品 | 5 个 |
+| Output 作品 | 6 个 |
 
 ---
 
@@ -248,7 +248,7 @@ tags:
 | [[wiki/topics/Agentic-Engineering-Patterns\|Agentic Engineering Patterns]] | Simon Willison 的 AI 编程代理工程范式指南 → 涵盖 Harness Engineering 演进 | Agentic-Engineering, Code-Execution, Vibe-Coding, Harness-Engineering |
 | [[wiki/topics/AI-Era-Economy-Shift\|AI 时代经济转型]] | 从知识经济到分配经济的范式转变 | Allocation-Economy, Model-Manager, Jevons-Paradox |
 | [[wiki/topics/Building-Effective-Agents\|Building Effective Agents]] | Anthropic 的 Agent 构建架构设计指南 | Agent-Workflow-Patterns, ACI |
-| [[wiki/topics/Karpathy-AI-Thought\|Karpathy AI 思想体系]] | Software 2.0 → 3.0、Vibe Coding → Agentic Engineering、Jagged Intelligence、Ghosts、Verifiability 的系统性思想演化 | Software-2.0, Software-3.0, Vibe-Coding, Agentic-Engineering, Jagged-Intelligence, Ghost-Intelligence, Verifiability, LLM-Wiki |
+| [[wiki/topics/Karpathy-AI-Thought\|Karpathy AI 思想体系]] | Karpathy 关于 AI 编程范式、能力鸿沟和知识管理的思想演化 | Software-2.0, Software-3.0, Agentic-Engineering, Verifiability, LLM-Wiki |
 | [[wiki/topics/OpenClaw-Agent-System\|OpenClaw Agent System]] | OpenClaw 多 Agent 协作系统架构与实践 | Agent-Orchestration, Context-Engineering, Multi-Layer-Memory, Agent-Swarm, Three-State-Protocol |
 | [[wiki/topics/Multi-Agent-Pathology-and-Governance\|多 Agent 系统病理与治理]] | Agent 从单体工具变成组织系统后出现的群体认知、责任稀释和内态断裂 | Multi-Agent-System-Pathology, Agent-Dissociation, Invisible-Orchestrator |
 | [[wiki/topics/Lean-Indie-Engineering\|精益独立开发]] | 独立开发者用极低技术成本运营盈利产品的工程哲学 | Steve-Hanov, Lean-Stack, Runway-Math |
@@ -294,6 +294,7 @@ tags:
 | [[wiki/outputs/fde-ai-enablement-bottleneck\|FDE 式 AI 赋能的真正瓶颈]] | 测试 output 回填门控在非 LLM Wiki 主题上的效果 | Essay |
 | [[wiki/outputs/output-to-wiki-feedback-loop\|从 Output 到 Wiki：新判断如何回填]] | 测试 output 新判断的证据回链与晋升规则 | Essay |
 | [[wiki/outputs/why-llm-wiki-is-knowledge-compilation\|为什么 LLM Wiki 不是 RAG，而是知识编译系统]] | 基于 Wiki 验证 LLM Wiki 与 RAG 的范式差异 | Essay |
+| [[wiki/outputs/wiki-quality-audit-2026-05-25\|Wiki 全量质量审计报告 2026-05-25]] | 全量审计 Wiki 层结构、证据、深度、语言与格式问题 | Audit |
 
 ### Research Agenda
 *未验证问题与下一轮剪藏方向*

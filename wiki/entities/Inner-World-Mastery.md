@@ -3,9 +3,9 @@ type: entity
 title: Inner World Mastery
 aliases:
   - Inner World Mastery
-definition: "The ability to control one's inner dialogue, maintain presence, and create space for originality in an age of infinite distraction."
+definition: "在无限干扰时代管理内在对话、保持当下感并保护原创空间的能力"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-26
 tags:
   - AI-Agent
   - Human-Potential

@@ -5,9 +5,9 @@ aliases:
   - Cybersecurity Proof of Work
   - 安全 Proof of Work
   - Security as Proof of Work
-definition: "Drew Breunig (2026) 提出的概念：网络安全变成 token 成本博弈，防御者需要花费比攻击者更多的 tokens 发现漏洞，而非依靠技术巧思。"
+definition: "把网络安全理解为攻防双方投入 token 预算搜索漏洞的成本博弈"
 created: 2026-04-21
-updated: 2026-04-21
+updated: 2026-05-25
 tags:
   - cybersecurity
   - ai-security
@@ -17,6 +17,8 @@ related_entities:
   - '[[Mythos]]'
   - '[[Security-Hardening-Phase]]'
   - '[[Agentic-Engineering]]'
+  - '[[AISI]]'
+  - '[[Verifiable-Agent-Engineering]]'
 source_raw:
   - "[[20260414-cybersecurity-proof-of-work]]"
 ---
@@ -32,6 +34,8 @@ source_raw:
 - **成本基准**: AISI 测试中 100M tokens = `$12,500` per Mythos attempt
 - **测试结果**: Mythos 完成 32 步企业网络攻击（人类需 20 小时），10 次尝试中成功 3 次
 - **边际收益**: 100M tokens 预算仍未显示 diminishing returns
+- **工程推论**: 防御者不能只问“有没有安全审计”，还要问“投入了多少自动化搜索预算”
+- **组织推论**: 安全硬化会从不定期专家服务变成可预算、可重复、可比较的 Agent 工作流
 
 ## 前提与局限性
 
@@ -50,6 +54,8 @@ source_raw:
 - [[Mythos]] — Anthropic 安全专用模型
 - [[Security-Hardening-Phase]] — Agentic Coding 第三阶段
 - [[Agentic-Engineering]] — 受影响的编程范式
+- [[AISI]] — 提供 Mythos 攻击任务评测的机构
+- [[Verifiable-Agent-Engineering]] — 把安全搜索变成可预算、可审计的验证边界
 
 ## 跨域对标
 

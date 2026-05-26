@@ -19,7 +19,7 @@ related_entities:
   - "[[Verifiability]]"
   - "[[Bias-to-Action-LLM]]"
 source_raw:
-  - '[[building-effective-agents]]'
+  - '[[building-effective-agents-complete]]'
   - '[[The Anatomy of an Agent Harness]]'
   - '[[Validating agentic behavior when “correct” isn’t deterministic]]'
 ---

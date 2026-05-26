@@ -3,7 +3,7 @@ type: topic
 title: Multi-Agent Pathology and Governance
 description: "多 Agent 系统病理：当 Agent 从单体工具变成组织系统后，问题会从并发和协议下沉到群体认知、责任稀释和内态断裂"
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-26
 tags:
   - AI-Agent
   - multi-agent
@@ -16,6 +16,8 @@ related_entities:
   - "[[Agent-Cognitive-Loafing]]"
   - "[[Agent-Dissociation]]"
   - "[[Invisible-Orchestrator]]"
+  - "[[Verifiability]]"
+  - "[[AI-Restraint]]"
   - "[[Organization-as-Agent-Harness]]"
 source_raw:
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
@@ -67,6 +69,33 @@ source_raw:
 文章最有价值的提醒是：强模型可能在外部输出上仍然正确，但内部指标已经变坏。换句话说，外部成功可能只是能力余裕遮住了组织病理。
 
 这对生产系统很关键。真实系统会有更多 Agent、更长状态、更复杂工具链、更高权限和更久运行时间。如果只看最终答案，可能要等到安全边际耗尽后才发现结构已经坏了。
+
+## 治理矩阵
+
+Multi-agent 治理的重点不是让 Agent 多说话，而是让组织结构保留责任、分歧和证据。
+
+| 风险 | 常见表现 | 治理动作 |
+|------|----------|----------|
+| 信息没有拼起来 | 每个 Agent 只重复共享信息 | 独立事实清单、差异报告、unknowns 列表 |
+| 从众收敛 | 少数正确意见被多数意见冲掉 | 先独立判断，再公开辩论，记录改判理由 |
+| [[Agent-Cognitive-Loafing|认知偷懒]] | Agent 默认别人会兜底 | 指定 accountable owner，要求个人结论和证据 |
+| [[Agent-Dissociation|内态解离]] | 公开输出和私下推理断裂 | 保留审议轨迹，比较理由一致性 |
+| 隐形编排 | worker 不知道谁改写了输入 | 记录影响链和最终写入权 |
+| 过度行动 | 组织压力推动继续执行 | 引入 [[AI-Restraint]]、权限门禁和转人工条件 |
+
+这张矩阵的共同原则是：把"大家都参与了"转化为"谁知道什么、谁承担什么、谁改变了判断、证据在哪里"。
+
+## 对 Harness 的要求
+
+传统 harness 更关注工具、文件、权限和执行日志。多 Agent 系统还需要把组织过程也纳入 harness：
+
+- **通信结构**：区分事实报告、判断结论、反对意见和最终决策。
+- **责任结构**：每个子任务要有 owner，不允许用"群体共识"替代责任。
+- **影响结构**：记录 planner、orchestrator、worker 和 reviewer 之间的信息改写。
+- **验证结构**：结论要能回到测试、trace、replay、人工 review 或外部事实。
+- **停手机制**：当证据不足、内部信号冲突或权限过高时，系统应能延迟行动。
+
+这意味着多 Agent 的成熟度不能只用吞吐量衡量。真正成熟的系统要能在更高并发下保持可解释、可审计和可回滚。
 
 ## 与现有 Topic 的关系
 

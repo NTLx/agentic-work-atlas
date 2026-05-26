@@ -21,6 +21,7 @@ related_entities:
   - "[[Knowledge-Compilation]]"
   - "[[LLM-Wiki]]"
   - "[[Context-Engineering]]"
+  - "[[CLAUDE-md]]"
   - "[[Essential-Complexity]]"
   - "[[Friction-as-Design-Signal]]"
   - "[[Ownership]]"
@@ -32,6 +33,7 @@ source_raw:
   - "[[20260413-llm-wiki]]"
   - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
   - "[[Why I Don’t Vibe Code]]"
+  - "[[The-Founders-Playbook-05062026_v3]]"
 ---
 
 # Code as Conceptual Infrastructure（代码作为概念基础设施）
@@ -57,12 +59,18 @@ source_raw:
 | 软件元素 | 过去常见理解 | AI 时代的新含义 |
 |----------|--------------|----------------|
 | 类名/函数名 | 代码组织 | Prompt 锚点和语义路标 |
-| [[Bounded-Context|限界上下文]] | 架构分区 | 防止 LLM 混淆词义的真相边界 |
-| [[Ubiquitous-Language|通用语言]] | 团队沟通方式 | 人机共享的业务协议 |
+| [[Bounded-Context]]（限界上下文） | 架构分区 | 防止 LLM 混淆词义的真相边界 |
+| [[Ubiquitous-Language]]（通用语言） | 团队沟通方式 | 人机共享的业务协议 |
 | 测试 | 防回归工具 | 概念不变量的可执行说明 |
 | 文档/Wiki | 辅助材料 | Agent 的外部记忆和编译产物 |
 
 词汇越精确，Agent 越不需要猜。词汇越混乱，模型越会用流畅输出掩盖错误理解。
+
+## CLAUDE.md 是项目级概念合约
+
+[[CLAUDE-md|CLAUDE.md]] 是这个主题在代码库里的最小可执行形态。它不是普通 README，而是给 coding agent 读取的项目级概念合约：哪些架构原则有效，哪些依赖不要引入，哪些业务规则不可破坏，哪些测试和审查才算完成。
+
+《The Founder's Playbook》的关键提醒是：AI-native MVP 的风险不只是“写错代码”，而是每个会话都重新解释代码库，导致局部变更逐渐偏离原始设计。把架构决策、范围边界和业务不变量写进 CLAUDE.md，本质上是在给 Agent 提供可复用的概念基础设施。
 
 ## 认知债务是新的技术债务
 

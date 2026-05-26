@@ -2,6 +2,7 @@
 type: output
 title: "为什么 LLM Wiki 不是 RAG，而是知识编译系统"
 created: 2026-05-22
+updated: 2026-05-25
 tags:
   - output
   - llm-wiki
@@ -80,3 +81,19 @@ LLM Wiki 的代价也很明确：
 
 RAG 是把资料临时带进上下文；LLM Wiki 是把资料编译成一个会复利的知识中间层。
 
+## 本文使用的 Wiki 页面
+
+- [[LLM-Wiki]]
+- [[RAG-vs-LLM-Wiki]]
+- [[Knowledge-Compilation]]
+- [[Agent-Knowledge-Management]]
+- [[GBrain]]
+
+## 回填检查
+
+| 新判断 | 支撑依据 | 处理 |
+|--------|----------|------|
+| LLM Wiki 与 RAG 的核心差异是是否形成持久中间层 | Wiki: [[RAG-vs-LLM-Wiki]]、[[Knowledge-Compilation]] | 保留 |
+| Output 是 Wiki 的压力测试 | Wiki: [[Agent-Knowledge-Management]]；实践判断仍需更多 source | 放入 research agenda |
+| LLM Wiki 不应机械编译所有 raw source | Wiki: [[Knowledge-Compilation]]；Schema 收录规则 | 保留 |
+| 大规模 Wiki 可能需要 GBrain 这类混合检索架构 | Wiki: [[GBrain]] | 保留 |

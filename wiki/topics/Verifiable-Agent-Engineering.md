@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-05-23
+updated: 2026-05-25
 tags:
   - AI-Agent
   - verification
@@ -15,11 +15,15 @@ related_entities:
   - "[[Agent-Harness]]"
   - "[[Agent-PR-Review]]"
   - "[[Accessibility-Agent]]"
+  - "[[Social-Model-of-Disability]]"
   - "[[Bias-to-Action-LLM]]"
   - "[[Accessibility-Complexity-Evaluation]]"
   - "[[Accessibility-High-Risk-Patterns]]"
   - "[[Corrective-RAG]]"
   - "[[Reflexion]]"
+  - "[[Zero-PHI-Policy]]"
+  - "[[Dual-Tier-LLM-Architecture]]"
+  - "[[Sequence-Packing]]"
   - "[[MachinaCheck]]"
   - "[[Hardware-Sovereignty]]"
   - "[[Agentic-Workflow-Token-Efficiency]]"
@@ -27,6 +31,9 @@ related_entities:
   - "[[人机对齐]]"
   - "[[渐进式重构]]"
   - "[[Security-Hardening-Phase]]"
+  - "[[Cybersecurity-Proof-of-Work]]"
+  - "[[AISI]]"
+  - "[[Mythos]]"
 source_raw:
   - "[[The PR you would have opened yourself]]"
   - "[[用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践]]"
@@ -53,9 +60,10 @@ source_raw:
 
 - [[Verifiability|可验证性]]解释了为什么代码、数学、测试驱动任务进步最快。
 - [[Dominator-Analysis|支配者分析]]说明非确定性行为也能被提取出必经骨架。
-- [[Accessibility-Agent|无障碍 Agent]]显示真实生产系统需要知道何时不动手。
+- [[Accessibility-Agent|无障碍 Agent]]和[[Social-Model-of-Disability]]显示，真实生产系统需要知道何时不动手，因为错误自动化可能继续制造访问壁垒。
 - [[MachinaCheck]]说明领域 Agent 不应把确定性工作交给 LLM。
 - [[Corrective-RAG]]和[[Reflexion]]把“生成”变成可拒绝、可重试、可审计的管线。
+- [[Zero-PHI-Policy]]、[[Dual-Tier-LLM-Architecture]]和[[Sequence-Packing]]则说明，高风险 Agent 的可验证性还包括数据边界、模型路由和训练管线。
 
 这些不是零散技巧，而是同一件事：给非确定性智能修一条确定性轨道。
 
@@ -66,6 +74,8 @@ source_raw:
 | 可验证边界 | 哪些输出能自动判断对错 | [[Verifiability]], [[Agent-PR-Review]], [[WCAG]] |
 | 确定性骨架 | 哪些步骤必须由代码、规则、图结构保证 | [[Dominator-Analysis]], [[MachinaCheck]], [[Corrective-RAG]] |
 | 拒绝机制 | 什么时候停止生成、转人工、返回安全拒绝 | [[Bias-to-Action-LLM]], [[Accessibility-High-Risk-Patterns]], [[Reflexion]] |
+| 数据边界 | 什么信息绝不能进入模型上下文 | [[Zero-PHI-Policy]], [[Hardware-Sovereignty]] |
+| 资源路由 | 哪些任务应交给哪一层模型和人工门控 | [[Dual-Tier-LLM-Architecture]], [[Sequence-Packing]] |
 
 缺第一根，Agent 只是在表演努力。缺第二根，系统会把所有复杂性都倒给 LLM。缺第三根，Agent 的“行动偏差”会把边界条件变成事故。
 
@@ -93,7 +103,7 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 
 [[MachinaCheck]] 的价值不在“用了多个 Agent”，而在它只在需要制造推理和报告组织的环节使用 LLM。STEP 文件解析和工具匹配由确定性代码完成，因为这些环节不需要想象力，只需要正确性。
 
-[[Accessibility-Agent|无障碍 Agent]] 的价值也不在“自动改所有问题”，而在识别复杂度、高风险交互和人工介入点。一个能拒绝的 Agent，比一个永远动手的 Agent 更接近生产可用。
+[[Accessibility-Agent|无障碍 Agent]] 的价值也不在“自动改所有问题”，而在识别复杂度、高风险交互和人工介入点。它背后的 [[Social-Model-of-Disability]] 进一步提醒：无障碍问题不是用户的问题，而是环境和界面设计制造的访问壁垒。因此一个能拒绝的 Agent，比一个永远动手的 Agent 更接近生产可用。
 
 ## 可验证性不是测试覆盖率
 
@@ -107,6 +117,18 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 | 行为验证 | 系统是否在该停止时停止 | 高风险模式转人工、安全拒绝 |
 
 真正的 Agent harness 是这四层的组合，而不是一个更长的 prompt。
+
+## 高风险 Agent 的验证链
+
+OncoAgent 把可验证 Agent 工程从代码与无障碍场景推进到临床决策支持。它的关键不是“一个医疗大模型”，而是一条连续验证链：
+
+- [[Zero-PHI-Policy]]先把 PHI 从模型上下文外移，降低隐私泄露空间。
+- [[Corrective-RAG]]把检索材料变成可评分、可重试、可拒绝的证据层。
+- [[Dual-Tier-LLM-Architecture]]按复杂度把问题路由到不同模型和人工门控。
+- [[Reflexion]]用 schema、安全扫描和 entailment 检查约束生成结果。
+- [[Sequence-Packing]]让本地微调和双层专门模型更可承受，但训练效率必须接受评测集约束。
+
+这条链说明，高风险 Agent 的验证不是单点测试，而是从数据进入系统前就开始，一直到生成后、人工接管和安全拒绝为止。
 
 ## 人机对齐先于规则自动化
 
@@ -123,6 +145,8 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 ## 安全硬化是独立验证阶段
 
 [[Cybersecurity-Proof-of-Work|Cybersecurity Proof of Work]] 把 security review 从偶发审计改写为预算驱动的持续硬化阶段。开发和代码审查主要受人类输入限制；安全硬化则更接近 token 预算竞争：防御者需要投入足够多的自动化搜索和验证，才能赶上攻击者的探索成本。
+
+[[AISI]] 对 [[Mythos]] 的测试让这个判断有了更具体的工程形态：同一攻击任务、同一 token 预算、同一成功标准下比较模型行为。它说明安全验证不能只看模型厂商声明，而要看模型在受控环境中能否持续推进攻击链、是否出现边际收益递减、每次尝试的成本是否可接受。
 
 这使 Agentic Coding 呈现三阶段：开发、代码审查、安全硬化。安全不是最后补一份 checklist，而是可验证工程的一条独立流水线。
 

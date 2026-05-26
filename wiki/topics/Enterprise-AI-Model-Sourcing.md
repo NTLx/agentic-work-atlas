@@ -3,7 +3,7 @@ type: topic
 title: Enterprise AI Model Sourcing
 description: "企业 AI 模型采购不应默认等于买最大 frontier API，而应按任务分布、评测证据、成本曲线、部署约束和组织能力分层选择"
 created: 2026-05-24
-updated: 2026-05-24
+updated: 2026-05-25
 tags:
   - enterprise-AI
   - AI-deployment
@@ -15,6 +15,7 @@ related_entities:
   - "[[Specialization-Compounds]]"
   - "[[Evaluation-Set]]"
   - "[[Hardware-Sovereignty]]"
+  - "[[Sequence-Packing]]"
 source_raw:
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
   - "[[The Return of the Deployment Company]]"
@@ -74,6 +75,28 @@ source_raw:
 - 内部团队逐步接管评测集、数据管线和模型运维。
 
 采购能力的成熟标志，不是替某一个模型站队，而是能把不同模型放到正确工作流里。
+
+## 内部微调能力也是采购变量
+
+企业是否能选择专门化小模型，不只取决于模型开不开源，也取决于自己能否低成本地做微调、回归测试和部署。[[Sequence-Packing]] 这类训练管线优化看似底层，但会改变采购算术：如果一个企业可以在本地硬件上快速微调小模型，它就不必把所有高频、敏感、可验证任务都交给外部 API。
+
+因此模型 sourcing 需要同时问两类问题：
+
+- 外部能力：frontier API、FDE、系统集成商能带来什么短期能力。
+- 内部能力：评测集、训练数据、微调管线、本地推理和运维团队能否沉淀为长期能力。
+
+没有内部微调与评测能力，专门化只是供应商给出的卖点。有了这些能力，专门化才会变成企业自己的模型组合策略。
+
+## 最小采购判断矩阵
+
+| 工作流特征 | 默认倾向 | 反例检查 |
+|------------|----------|----------|
+| 高频、可验证、数据敏感 | 内部专门化小模型或 on-prem | 是否缺少训练数据和运维能力 |
+| 低频、开放、需要前沿推理 | frontier API | 是否会沉淀为高频核心流程 |
+| 流程复杂、组织阻力大 | FDE / 部署伙伴 | 是否能把 evaluation set 和运行知识带回内部 |
+| 探索期、不确定需求 | 云 API 快速试验 | 是否过早把供应商绑定成长期架构 |
+
+这个矩阵的作用不是给出固定答案，而是防止采购讨论停留在模型品牌排序。每个工作流都要同时看任务分布、证据强度、调用频率、数据边界和内部承接能力。
 
 ## 边界
 

@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-05-23
+updated: 2026-05-25
 tags:
   - AI-Agent
   - coding-agents
@@ -22,6 +22,10 @@ related_entities:
   - '[[Agent-Harness]]'
   - '[[AI-First]]'
   - '[[Agentic-Workflow-Token-Efficiency]]'
+  - '[[Laziness-Virtue]]'
+  - '[[AI-Lacks-Laziness]]'
+  - '[[AI-Restraint]]'
+  - '[[YAGNI]]'
 source_raw:
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'
@@ -89,11 +93,14 @@ source_raw:
 - Red/green TDD
 - First run the tests
 - Agentic manual testing
-- **[[Dominator-Analysis|Dominator Analysis]] 验证 Agent 行为**: 将编译器理论中的支配者分析应用于 Agent 执行图，自动区分 essential states 与 optional noise。仅需 2-10 次成功 trace 即可构建 ground truth。实验 F1=100% vs Agent 自评 69.8%。来源: [[Validating agentic behavior when “correct” isn’t deterministic|GitHub Blog: Validating Agentic Behavior]]
+- **[[Dominator-Analysis|Dominator Analysis]] 验证 Agent 行为**: 将编译器理论中的支配者分析应用于 Agent 执行图，自动区分 essential states 与 optional noise。
+- **少量 trace 建模**: 仅需 2-10 次成功 trace 即可构建 ground truth。实验 F1=100% vs Agent 自评 69.8%。
+- **来源**: [[Validating agentic behavior when “correct” isn’t deterministic|GitHub Blog: Validating Agentic Behavior]]
 
 ### Cost and Observability
 
-- **[[Agentic-Workflow-Token-Efficiency|Token Efficiency]]**: 生产级 Agentic Workflow 不能只问“能否完成任务”，还要问每次自动触发是否在消耗不可见成本。GitHub 的实践显示，API 代理记录、每日 token 审计、MCP 工具裁剪和 CLI 替代，能把 Agent 工作流从黑盒花费变成可优化系统。
+- **[[Agentic-Workflow-Token-Efficiency|Token Efficiency]]**: 生产级 Agentic Workflow 不能只问“能否完成任务”，还要问每次自动触发是否在消耗不可见成本。
+- **可优化系统**: GitHub 的实践显示，API 代理记录、每日 token 审计、MCP 工具裁剪和 CLI 替代，能把 Agent 工作流从黑盒花费变成可优化系统。
 - **确定性前置**: 许多 agent turns 只是数据读取，不需要推理。把 PR diff、文件列表、issue 元数据等提前用 CLI 写入工作区，可以把确定性读取移出 LLM 循环。
 - **质量混淆**: token 下降不必然代表效率提升，也可能是工作做少了；需要同时看模型层级、工作负载、turn 数、工具完成率和结果质量。
 
@@ -138,7 +145,9 @@ source_raw:
 
 ### AI 也需要懒惰和克制
 
-[[20260414-martin-fowler-fragments]] 补充了一个反向原则：AI 不应把所有摩擦都解释为“需要生成更多代码”。Fowler 通过 [[YAGNI]] 经验提醒，很多好设计来自少做、晚做或不做；LLM 默认没有人类时间成本带来的“懒惰美德”，容易把系统做大而不是做好。
+[[20260414-martin-fowler-fragments]] 补充了一个反向原则：AI 不应把所有摩擦都解释为“需要生成更多代码”。Fowler 通过 [[YAGNI]] 经验提醒，很多好设计来自少做、晚做或不做。
+
+[[Laziness-Virtue]] 在这里不是程序员笑话，而是质量控制机制：人类时间有限，所以会主动寻找更少代码、更低认知负担和更清楚抽象。[[AI-Lacks-Laziness]] 指出，LLM 默认没有这种未来维护痛感，容易把系统做大而不是做好。
 
 同一组 fragments 也强调 [[AI-Restraint|克制]]：在错误代价不对称的场景里，正确行为可能是延迟行动、要求更多证据或转人工。Agentic Engineering 因此不只是让 agent 更能做事，也要设计 agent 何时不做。
 
@@ -199,6 +208,8 @@ Agentic Engineering 不能把生成成本下降变成 review 成本转嫁。[[Ag
 - [[Agent-Harness]] - Harness 的 12 组件 + 7 架构决策技术框架
 - [[AI-First]] - 组织级 AI 优先范式
 - [[Agentic-Workflow-Token-Efficiency]] - Agentic Workflow 的成本可观测与优化方法
+- [[Laziness-Virtue]] - 用有限时间倒逼简化的工程美德
+- [[AI-Lacks-Laziness]] - AI 默认缺少简化压力带来的质量风险
 
 ---
 

@@ -3,9 +3,9 @@ type: entity
 title: Resonance
 aliases:
   - Resonance
-definition: "The alignment between what you create and who you are - when work speaks from your core identity and creates lasting impact on others."
+definition: "作品与创作者核心身份对齐，并因此对他人产生持久回响的状态"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-26
 tags:
   - AI-Agent
   - Human-Potential

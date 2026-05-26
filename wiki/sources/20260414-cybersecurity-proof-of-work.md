@@ -43,7 +43,7 @@ tags:
 - **新增 Entity**: [[Security-Hardening-Phase]]（agentic coding 第三阶段）
 - **更新 [[Agentic-Engineering]]**: 补充三阶段模型（开发/审查/硬化）
 
-## 关联概念
+### 关联概念
 
 - [[Drew-Breunig]]
 - [[Cybersecurity-Proof-of-Work]]

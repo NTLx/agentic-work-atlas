@@ -3,9 +3,9 @@ type: entity
 title: Decision Quality
 aliases:
   - Decision Quality
-definition: "The ability to make decisions from clarity and conviction rather than overthinking, driven by intuition built from pattern recognition and self-awareness."
+definition: "在信息过剩中基于清晰、信念和经验模式识别做决定的能力"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-26
 tags:
   - AI-Agent
   - Human-Potential

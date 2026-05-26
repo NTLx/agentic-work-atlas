@@ -4,9 +4,9 @@ title: AI-Native Startup
 aliases:
   - AI-Native Startup
   - AI原生初创公司
-definition: "一种将“研发人力成本（CapEx）”结构性转化为“算力 Token 成本（OpEx）”的新型组织形态，不仅使用 AI 工具，更将 AI 作为核心基础设施，创始人因此从“个体贡献者（Builder）”全面升维为“系统编排者（Orchestrator）”。"
+definition: "把 AI Agent 作为组织基础设施、用小团队编排完成产品验证和交付的初创公司形态"
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-05-26
 tags:
   - Startup
   - AI-Agent

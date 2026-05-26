@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-05-23
+updated: 2026-05-25
 tags:
   - organization
   - AI-Agent
@@ -25,6 +25,7 @@ related_entities:
   - "[[Decision-Quality]]"
   - "[[Model-Context-Protocol-MCP]]"
   - "[[MCP-Registry]]"
+  - "[[Pinterest-Engineering]]"
   - "[[Adversarial-Distillation]]"
   - "[[Multi-Agent-System-Pathology]]"
   - "[[Invisible-Orchestrator]]"
@@ -64,7 +65,7 @@ source_raw:
 | 层级 | 组织问题 | Agent 需要的形式 |
 |------|----------|------------------|
 | 目标层 | 我们到底要什么 | 稳定目标、指标、边界条件 |
-| 流程层 | 工作如何流动 | [[Machine-Readable-Processes|机器可读流程]] |
+| 流程层 | 工作如何流动 | [[Machine-Readable-Processes]]（机器可读流程） |
 | 权限层 | 谁能决定什么 | 清晰 owner、升级路径、拒绝条件 |
 | 学习层 | 经验如何沉淀 | 公开交互、复盘、可复用指令和知识 |
 
@@ -72,9 +73,13 @@ source_raw:
 
 ## 工具接入也需要治理层
 
-Pinterest 的 MCP 生态说明，组织 Harness 不能只靠 prompt 管理工具。内部 MCP registry 作为单一事实来源，负责哪些 server 被批准、谁能访问、哪些工具能进入生产 surface；敏感工具还要按业务组做权限门控。
+[[Pinterest-Engineering]] 的 MCP 生态说明，组织 Harness 不能只靠 prompt 管理工具。内部 [[MCP-Registry]] 作为单一事实来源，负责哪些 server 被批准、谁能访问、哪些工具能进入生产 surface；敏感工具还要按业务组做权限门控。
 
 这把“工具调用”从个人效率动作变成组织治理动作。Agent 能不能访问 Presto、Spark、Airflow 或内部知识库，不应由某个对话临时决定，而应由 registry、身份、审计和 human-in-the-loop 共同约束。
+
+Pinterest 的关键选择是把 MCP servers 放到内部云托管环境，并拆成多个领域特定 server。前者让路由、安全、部署和审计可集中管理；后者让权限边界和上下文预算可控。换句话说，组织 harness 不是给 Agent 更多工具，而是给工具更清楚的 owner、权限、状态和使用边界。
+
+这一案例还补上了价值观测层：Pinterest 用调用量、工具数、月活用户和 estimated time saved 追踪 MCP 生态，但这些指标仍只是方向性信号。真正的组织 harness 还必须追踪误用、失败调用、review 成本、权限例外和工具维护成本。
 
 ## 对齐税会被 AI 放大
 

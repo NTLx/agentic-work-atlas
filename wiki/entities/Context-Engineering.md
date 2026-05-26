@@ -3,9 +3,9 @@ type: entity
 title: Context Engineering
 aliases:
   - Context Engineering
-definition: "Context Engineering 是设计 Agent 每次推理时看到的完整信息结构，包括 SOUL.md、AGENTS.md、Skills 按需加载、上下文生命周期管理等。"
+definition: "设计 Agent 每次推理时看到的信息结构，包括项目上下文、技能按需加载、记忆层级和上下文生命周期管理"
 created: 2026-04-09
-updated: 2026-05-13
+updated: 2026-05-25
 tags:
   - AI-Agent
   - OpenClaw
@@ -16,10 +16,12 @@ related_entities:
   - '[[Claude-Code-CLI]]'
   - '[[Conceptual-Model]]'
   - '[[Model-Context-Protocol-MCP]]'
+  - '[[CLAUDE-md]]'
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[What Is Code?]]'
   - '[[Building an MCP Ecosystem at Pinterest]]'
+  - '[[The-Founders-Playbook-05062026_v3]]'
 ---
 
 # Context Engineering
@@ -52,6 +54,8 @@ Agent 就像一个没有操作系统的进程：
 ```
 
 所有层级是**叠加**的，不会覆盖。
+
+[[CLAUDE-md]] 位于这个层级结构中的项目级和目录级位置：它把架构决策、范围边界和稳定规则放到 Agent 每次工作都能读取的位置，避免同一个代码库在不同会话里被反复重新解释。
 
 ## Agent 信息架构设计
 

@@ -3,9 +3,9 @@ type: entity
 title: Git-Fluent Agents
 aliases:
   - Git Fluent Agents
-definition: "AI coding agents with deep understanding of Git terminology and operations, capable of executing both basic and advanced Git commands autonomously."
+definition: "理解 Git 概念、历史和协作语义，并能自主执行版本控制操作的编码 Agent"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-26
 tags:
   - AI-Agent
   - Software-Engineering
@@ -22,7 +22,7 @@ source_raw:
 > [!definition] 定义
 > Git-Fluent Agents 是深度理解 Git 术语和操作的 AI 编码 Agent，能够自主执行基础和高级 Git 命令，包括版本控制、分支管理、历史重写和冲突解决。
 
-## 栅心要点
+## 核心要点
 
 ### Agent 能做什么
 

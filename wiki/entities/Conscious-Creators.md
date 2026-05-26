@@ -3,9 +3,9 @@ type: entity
 title: Conscious Creators
 aliases:
   - Conscious Creators
-definition: "Individuals who reject distraction, work on their inner selves, choose creation over consumption, and become the new 1% in the era of AI abundance."
+definition: "在 AI 丰裕时代拒绝被动消费、以清醒内在状态持续创造的人"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-26
 tags:
   - AI-Agent
   - Human-Potential

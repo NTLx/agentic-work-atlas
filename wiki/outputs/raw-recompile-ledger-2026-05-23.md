@@ -80,7 +80,7 @@ tags:
 | [[What Is Code?]] | 代码是概念模型和共享词汇，不只是机器指令 | [[Code-as-Conceptual-Infrastructure]], [[AI-Apprenticeship-and-Lehrwerkstatt]] | 本轮补强学徒制页 |
 | [[What is agentic engineering? - Agentic Engineering Patterns]] | Agentic Engineering 的基础定义：工具循环、代码执行和 Vibe Coding 边界 | [[Agentic-Engineering-Patterns]], [[Vibe-Coding-vs-Software-2.0]] | 已承载 |
 | [[Why I Don’t Vibe Code]] | 摩擦、本质复杂性和 ownership 是不能外包给 LLM 的工程判断 | [[Code-as-Conceptual-Infrastructure]], [[AI-Era-Taste-and-Judgment]] | 本轮补强品味页 |
-| [[building-effective-agents]] | Anthropic 的 workflow/agent 区分和 ACI 设计原则 | [[Building-Effective-Agents]] | 本轮重写加厚 |
+| [[building-effective-agents-complete]] | Anthropic 的 workflow/agent 区分和 ACI 设计原则 | [[Building-Effective-Agents]] | 本轮重写加厚 |
 | [[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]] | 从 runtime RAG 到 compile-time Wiki 的内容系统转型 | [[Agent-Knowledge-Management]], [[RAG-vs-LLM-Wiki]] | 本轮补强知识管理页 |
 | [[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]] | Skills 蒸馏的激励困境和对抗性蒸馏风险 | [[Organization-as-Agent-Harness]], [[AI-Apprenticeship-and-Lehrwerkstatt]], [[AI-Era-Career-Skills]] | 本轮补强学徒制与职业技能页 |
 | [[当我们谈论 FDE 时，我们在谈论什么？]] | 真正 FDE 的四要素：平台、现场、产品发现、回流 | [[Forward-Deployed-AI-Enablement]], [[Forward-Deployed-Engineer]] | 已承载；raw 不追加旧式摘要 |

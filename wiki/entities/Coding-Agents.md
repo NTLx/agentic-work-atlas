@@ -21,7 +21,7 @@ related_entities:
 source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
-  - '[[building-effective-agents]]'
+  - '[[building-effective-agents-complete]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
 ---
 
@@ -95,5 +95,5 @@ Coding Agent 擅长**边界清晰、可验证、有据可查**的任务。
 ## 来源
 
 - [[What is agentic engineering? - Agentic Engineering Patterns]]
-- [[building-effective-agents]]
+- [[building-effective-agents-complete]]
 - [[20260413-why-ai-first-strategy-wrong]] — CREAO CTO Peter Pang: "99% 的生产代码由 AI 编写"

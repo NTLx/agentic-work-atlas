@@ -16,7 +16,7 @@ related_entities:
   - '[[Erik-Schluntz]]'
   - '[[Simon-Willison]]'
 source_raw:
-  - '[[building-effective-agents]]'
+  - '[[building-effective-agents-complete]]'
 validated_source: "https://www.linkedin.com/in/barryzhang0/"
 validated_at: "2026-04-15"
 ---
@@ -50,7 +50,7 @@ Barry Zhang 是 Anthropic 的研究工程师（Research Engineer），专注于 
 
 ## 知识库关联文章
 
-- [[building-effective-agents|Building Effective Agents]] - Anthropic 官方指南合著者
+- [[building-effective-agents-complete|Building Effective Agents]] - Anthropic 官方指南合著者
 
 ## 外部链接
 

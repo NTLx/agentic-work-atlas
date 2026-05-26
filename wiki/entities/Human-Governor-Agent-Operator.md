@@ -3,9 +3,9 @@ type: entity
 title: Human-Governor-Agent-Operator
 aliases:
   - Human Governor Agent Operator
-definition: "An operating model where humans serve as governors setting goals and constraints, while AI agents act as operators executing workflows autonomously."
+definition: "人类设定目标和约束、Agent 负责执行与优化流程的人机分工模式"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-26
 tags:
   - AI-Agent
   - Enterprise-Architecture
