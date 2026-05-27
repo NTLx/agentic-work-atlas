@@ -3,7 +3,7 @@ type: entity
 title: Simon Willison
 aliases:
   - Simon Willison
-definition: "AI/LLM 领域知名博主、技术专家，Django Web 框架联合创始人，专注于 AI 辅助编程、大语言模型应用和开源软件开发。"
+definition: "AI/LLM 领域知名博主和技术专家，Django Web 框架联合创始人，专注于 AI 辅助编程、大语言模型应用和开源软件"
 created: 2026-04-10
 updated: 2026-04-10
 tags:

@@ -3,7 +3,7 @@ type: entity
 title: Vibe Coding
 aliases:
   - Vibe Coding
-definition: "Andrej Karpathy 2025 年提出的概念——提升所有人的编程能力底线（raising the floor），让任何人都能通过自然语言和 agent 交互来生成软件；未经审查、原型质量是其特征而非缺陷"
+definition: "Andrej Karpathy 提出的编程概念，提升所有人的编程能力底线，让任何人通过自然语言和 agent 交互生成软件，原型质量是其特征"
 created: 2026-04-10
 updated: 2026-05-22
 tags:

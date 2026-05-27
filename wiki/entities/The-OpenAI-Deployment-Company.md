@@ -4,7 +4,7 @@ title: The-OpenAI-Deployment-Company
 aliases:
   - The OpenAI Deployment Company
   - OpenAI 部署公司
-definition: "OpenAI 于 2026 年 5 月启动的独立部署实体/业务单元，以 FDE 为核心帮助企业把前沿 AI 接入真实流程；官方公告披露其初始资金超过 USD 4 billion，并由 OpenAI 多数持有和控制"
+definition: "OpenAI 启动的独立部署实体，以 FDE 为核心帮助企业把前沿 AI 接入真实流程，初始资金超过 40 亿美元"
 created: 2026-05-18
 updated: 2026-05-23
 tags:

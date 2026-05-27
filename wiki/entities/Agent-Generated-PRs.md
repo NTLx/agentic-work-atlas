@@ -5,7 +5,7 @@ aliases:
   - Agent-Generated PRs
   - Agent PR
   - AI 生成 PR
-definition: "HuggingFace (2026) 概述：AI Agent 可以自动提交 PR 到开源项目，但通常缺乏代码库设计哲学的隐式上下文，导致代码质量不符合维护者标准。"
+definition: "AI Agent 自动提交的 Pull Request，通常缺乏代码库设计哲学的隐式上下文，导致代码质量不符合维护者标准"
 created: 2026-05-11
 updated: 2026-05-11
 tags:

@@ -3,7 +3,7 @@ type: entity
 title: Hardware Sovereignty
 aliases:
   - 硬件主权
-definition: "AI 系统在本地硬件上完成全部训练、推理和数据处理，不依赖任何云 API 或外部服务，确保数据完全不出域，满足隐私法规要求。"
+definition: "AI 系统在本地硬件上完成全部训练、推理和数据处理，不依赖云 API 或外部服务，确保数据不出域"
 created: 2026-05-10
 updated: 2026-05-23
 tags:

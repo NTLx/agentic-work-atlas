@@ -93,6 +93,7 @@ tags:
 - 本轮清零 `topic-depth` 队列最后一批（3 个 Topic）：扩写 Enterprise-AI-Factory（2730→9178B，补入与 Organization-as-Agent-Harness 的区分表、反例与边界、企业 AI 成熟三阶段模型）、Git-with-Coding-Agents（2640→8059B，补入与 Agentic-Engineering-Patterns 的区分表、反例与边界、Git 工作流三个转变）、Wisdom-Work-Evolution（2638→10504B，补入与 Conscious-Creation-in-AI-Era 的区分表、与 AI-Labor-Bottleneck-Shift 的关系、反例与边界、AI 时代人类价值三层模型）。`topic-depth` 队列清零。
 - 本轮处理 `person-depth` 队列第一批（6 个高引用人物 Entity）：扩写 Tobi-Lütke（1097→3353B，补入可验证履历表、Shopify River 数据、与本库主题连接表）、Paul-Graham（1089→3880B，补入品味框架七特征表、Cook vs Chef 区分、场域理论、跨主题连接）、Ethan-Mollick（1174→3554B，补入委托经济学公式、委托文档七组件表、从知识经济到分配经济连接）、Drew-Breunig（755→2959B，补入安全 PoW 框架、三阶段循环表、Mythos 数据）、Elvis-Sun（1065→3076B，补入 Agent Swarm 架构层次表、两层上下文分工、一人团队生产力数据）、朱少民（790→3643B，补入委托-代理困境三种对抗策略表、制度破局五招表、与 Shopify River 的对比）。同步修复 Tobi-Lütke 和 Drew-Breunig 的 definition 句号痕迹（审计跟踪项）。
 - 本轮清零 `person-depth` 队列最后一批（5 个低引用人物 Entity）：扩写 Arnav-Gupta（714→2653B，补入可验证履历表、AI 裁员潮结构性分析、瓶颈迁移视角）、Erick-Lachmann（612→3825B，补入可验证履历表、专门化胜过规模实验证据、采购范式转变表）、Jacob-Harris（803→4614B，补入可验证履历表、Vibe Coding 本质复杂性分析、摩擦作为设计信号、代码作为概念基础设施）、Pimenta-de-Freitas-Cardoso（699→2616B，补入可验证履历表、与 Lachmann 共同研究、OCR 实验设计）、Wes-Botman（1091→4979B，补入可验证履历表、有意识的 1% 价值论框架、被消费的人 vs 有意识的创造者对比表、品味作为存在方式）。同步修复 Jacob-Harris 和 Wes-Botman 的 definition 句号痕迹（审计跟踪项）。`person-depth` 队列清零。
+- 修复 definition-style 队列（20 个文件 23 处问题）：移除 Agent-Generated-PRs、Agent-Orchestration、Agent-Swarm、Claude-Code-CLI、Cybersecurity-Openness、Dominator-Analysis、Hardware-Sovereignty、Headless-Mode、Knowledge-Compilation、MachinaCheck、Martin-Fowler、Memex、Multi-Layer-Memory、Ownership、Simon-Willison、Software-2.0、The-OpenAI-Deployment-Company、Three-State-Protocol、Unmesh-Joshi、Vibe-Coding 等 20 个 Entity 定义字段中的句号结尾和年份/来源痕迹。`definition-style` 队列清零。
 
 ## 总览
 
@@ -105,16 +106,16 @@ tags:
 | `output` | 6 |
 | `research-agenda` | 1 |
 | `lint-report` | 1 |
-| 剩余问题总数 | 32 |
+| 剩余问题总数 | 9 |
 | 高优先级问题 | 0 |
 | 中优先级问题 | 0 |
-| 低优先级问题 | 32 |
+| 低优先级问题 | 9 |
 
 ## 剩余问题分类
 
 | 类别 | 数量 | 解释 |
 |------|------|------|
-| `definition-style` | 23 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
+| `definition-style` | 0 | definition 风格不统一，常见为句号结尾或把年份/来源写进定义。 |
 | `entity-depth` | 0 | 非人物 Entity 偏短，需要补关键数据、前提边界和关联。 |
 | `definition` | 0 | definition 过长或过短，影响 Obsidian 未链接提及和快速理解。 |
 | `topic-depth` | 0 | Topic 偏短，需要从多篇 source 重新综合。 |
@@ -151,29 +152,6 @@ tags:
 
 | 等级 | 类别 | 文件 | 行 | 问题 |
 |------|------|------|----|------|
-| 低 | `definition-style` | `wiki/entities/Agent-Generated-PRs.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Agent-Generated-PRs.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
-| 低 | `definition-style` | `wiki/entities/Agent-Orchestration.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Agent-Swarm.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Claude-Code-CLI.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Cybersecurity-Openness.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Cybersecurity-Openness.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
-| 低 | `definition-style` | `wiki/entities/Dominator-Analysis.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Hardware-Sovereignty.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Headless-Mode.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Knowledge-Compilation.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/MachinaCheck.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Martin-Fowler.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Memex.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Memex.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
-| 低 | `definition-style` | `wiki/entities/Multi-Layer-Memory.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Ownership.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Simon-Willison.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Software-2.0.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/The-OpenAI-Deployment-Company.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
-| 低 | `definition-style` | `wiki/entities/Three-State-Protocol.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Unmesh-Joshi.md` | - | definition 以句号结尾，风格不统一 |
-| 低 | `definition-style` | `wiki/entities/Vibe-Coding.md` | - | definition 含年份/来源痕迹，可能把来源事实写进概念定义 |
 | 低 | `entity-structure` | `wiki/entities/Always-On-Economy.md` | - | 标准章节顺序不一致 |
 | 低 | `entity-structure` | `wiki/entities/Compound-Engineering.md` | - | 标准章节顺序不一致 |
 | 低 | `entity-structure` | `wiki/entities/Jevons-Paradox-for-Knowledge-Work.md` | - | 标准章节顺序不一致 |
@@ -224,13 +202,13 @@ tags:
 | `wiki/entities/Agent-Cognitive-Loafing.md` | `entity` | 1951 | 0 | OK |
 | `wiki/entities/Agent-Dissociation.md` | `entity` | 2079 | 0 | OK |
 | `wiki/entities/Agent-First-Enterprise.md` | `entity` | 2840 | 0 | OK |
-| `wiki/entities/Agent-Generated-PRs.md` | `entity` | 2204 | 2 | definition-style |
+| `wiki/entities/Agent-Generated-PRs.md` | `entity` | 2204 | 0 | OK |
 | `wiki/entities/Agent-Harness.md` | `entity` | 6851 | 0 | OK |
 | `wiki/entities/Agent-Loops.md` | `entity` | 2158 | 0 | OK |
 | `wiki/entities/Agent-Native.md` | `entity` | 2032 | 0 | OK |
-| `wiki/entities/Agent-Orchestration.md` | `entity` | 3887 | 1 | definition-style |
+| `wiki/entities/Agent-Orchestration.md` | `entity` | 3887 | 0 | OK |
 | `wiki/entities/Agent-PR-Review.md` | `entity` | 3312 | 0 | OK |
-| `wiki/entities/Agent-Swarm.md` | `entity` | 4329 | 1 | definition-style |
+| `wiki/entities/Agent-Swarm.md` | `entity` | 4329 | 0 | OK |
 | `wiki/entities/Agent-Tenacity.md` | `entity` | 6826 | 0 | OK |
 | `wiki/entities/Agent-Workflow-Patterns.md` | `entity` | 2738 | 0 | OK |
 | `wiki/entities/Agentic-Engineering.md` | `entity` | 5660 | 0 | OK |
@@ -251,7 +229,7 @@ tags:
 | `wiki/entities/Cat-Wu.md` | `entity` | 1908 | 0 | OK |
 | `wiki/entities/Chosen-vs-Seen.md` | `entity` | 2372 | 0 | OK |
 | `wiki/entities/Class.md` | `entity` | 1686 | 0 | OK |
-| `wiki/entities/Claude-Code-CLI.md` | `entity` | 2510 | 1 | definition-style |
+| `wiki/entities/Claude-Code-CLI.md` | `entity` | 2510 | 0 | OK |
 | `wiki/entities/Claude-Cowork.md` | `entity` | 6888 | 0 | OK |
 | `wiki/entities/Code-Execution.md` | `entity` | 1815 | 0 | OK |
 | `wiki/entities/Coding-Agents.md` | `entity` | 2660 | 0 | OK |
@@ -267,7 +245,7 @@ tags:
 | `wiki/entities/Corrective-RAG.md` | `entity` | 2159 | 0 | OK |
 | `wiki/entities/Cross-Disciplinary-Generalist.md` | `entity` | 1914 | 0 | OK |
 | `wiki/entities/Cybernetic-Teammate.md` | `entity` | 1882 | 0 | OK |
-| `wiki/entities/Cybersecurity-Openness.md` | `entity` | 1827 | 2 | definition-style |
+| `wiki/entities/Cybersecurity-Openness.md` | `entity` | 1827 | 0 | OK |
 | `wiki/entities/Cybersecurity-Proof-of-Work.md` | `entity` | 1822 | 0 | OK |
 | `wiki/entities/Dan-Shipper.md` | `entity` | 1399 | 0 | OK |
 | `wiki/entities/Decision-Quality.md` | `entity` | 2688 | 0 | OK |
@@ -275,7 +253,7 @@ tags:
 | `wiki/entities/Deployment-Product-Flywheel.md` | `entity` | 1722 | 0 | OK |
 | `wiki/entities/Discernment.md` | `entity` | 1743 | 0 | OK |
 | `wiki/entities/Distributional-Alignment.md` | `entity` | 1696 | 0 | OK |
-| `wiki/entities/Dominator-Analysis.md` | `entity` | 2095 | 1 | definition-style |
+| `wiki/entities/Dominator-Analysis.md` | `entity` | 2095 | 0 | OK |
 | `wiki/entities/Drew-Breunig.md` | `entity` | 2959 | 0 | OK |
 | `wiki/entities/Dual-Tier-LLM-Architecture.md` | `entity` | 2325 | 0 | OK |
 | `wiki/entities/Einstein-Test.md` | `entity` | 1915 | 0 | OK |
@@ -293,9 +271,9 @@ tags:
 | `wiki/entities/Git-Fluent-Agents.md` | `entity` | 3186 | 0 | OK |
 | `wiki/entities/Golden-Case.md` | `entity` | 8149 | 0 | OK |
 | `wiki/entities/GraphDB.md` | `entity` | 1916 | 0 | OK |
-| `wiki/entities/Hardware-Sovereignty.md` | `entity` | 1647 | 1 | definition-style |
+| `wiki/entities/Hardware-Sovereignty.md` | `entity` | 1647 | 0 | OK |
 | `wiki/entities/Harness-Engineering.md` | `entity` | 3594 | 0 | OK |
-| `wiki/entities/Headless-Mode.md` | `entity` | 3234 | 1 | definition-style |
+| `wiki/entities/Headless-Mode.md` | `entity` | 3234 | 0 | OK |
 | `wiki/entities/HermiT.md` | `entity` | 1696 | 0 | OK |
 | `wiki/entities/History-Rewriting.md` | `entity` | 6322 | 0 | OK |
 | `wiki/entities/Human-Governor-Agent-Operator.md` | `entity` | 2726 | 0 | OK |
@@ -309,7 +287,7 @@ tags:
 | `wiki/entities/Jevons-Paradox-for-Knowledge-Work.md` | `entity` | 1820 | 1 | entity-structure |
 | `wiki/entities/Joe-Hudson.md` | `entity` | 1357 | 0 | OK |
 | `wiki/entities/Judgment.md` | `entity` | 2284 | 0 | OK |
-| `wiki/entities/Knowledge-Compilation.md` | `entity` | 4957 | 1 | definition-style |
+| `wiki/entities/Knowledge-Compilation.md` | `entity` | 4957 | 0 | OK |
 | `wiki/entities/Knowledge-Graph.md` | `entity` | 1689 | 0 | OK |
 | `wiki/entities/Knowledge-Work.md` | `entity` | 2846 | 0 | OK |
 | `wiki/entities/Konstantine-Buhler.md` | `entity` | 1235 | 0 | OK |
@@ -322,16 +300,16 @@ tags:
 | `wiki/entities/Lehrwerkstatt.md` | `entity` | 3627 | 0 | OK |
 | `wiki/entities/MCP-Registry.md` | `entity` | 2377 | 0 | OK |
 | `wiki/entities/MIT-Technology-Review-Insights.md` | `entity` | 2681 | 0 | OK |
-| `wiki/entities/MachinaCheck.md` | `entity` | 2464 | 1 | definition-style |
+| `wiki/entities/MachinaCheck.md` | `entity` | 2464 | 0 | OK |
 | `wiki/entities/Machine-Readable-Processes.md` | `entity` | 2848 | 0 | OK |
-| `wiki/entities/Martin-Fowler.md` | `entity` | 1532 | 1 | definition-style |
-| `wiki/entities/Memex.md` | `entity` | 3998 | 3 | definition-style; readability |
+| `wiki/entities/Martin-Fowler.md` | `entity` | 1532 | 0 | OK |
+| `wiki/entities/Memex.md` | `entity` | 3998 | 1 | readability |
 | `wiki/entities/Moats-in-AI-Era.md` | `entity` | 1638 | 0 | OK |
 | `wiki/entities/Model-Context-Protocol-MCP.md` | `entity` | 2683 | 0 | OK |
 | `wiki/entities/Model-Introspection.md` | `entity` | 4613 | 0 | OK |
 | `wiki/entities/Model-Manager.md` | `entity` | 2276 | 0 | OK |
 | `wiki/entities/Multi-Agent-System-Pathology.md` | `entity` | 1857 | 0 | OK |
-| `wiki/entities/Multi-Layer-Memory.md` | `entity` | 3531 | 1 | definition-style |
+| `wiki/entities/Multi-Layer-Memory.md` | `entity` | 3531 | 0 | OK |
 | `wiki/entities/Mythos.md` | `entity` | 1820 | 0 | OK |
 | `wiki/entities/OWL.md` | `entity` | 1845 | 0 | OK |
 | `wiki/entities/Obsidian-Wiki.md` | `entity` | 1682 | 0 | OK |
@@ -341,7 +319,7 @@ tags:
 | `wiki/entities/Organizational-Shape-Moat.md` | `entity` | 2421 | 0 | OK |
 | `wiki/entities/Osmosis-Learning.md` | `entity` | 3598 | 0 | OK |
 | `wiki/entities/Owlready2.md` | `entity` | 1934 | 0 | OK |
-| `wiki/entities/Ownership.md` | `entity` | 1683 | 1 | definition-style |
+| `wiki/entities/Ownership.md` | `entity` | 1683 | 0 | OK |
 | `wiki/entities/PM-in-AI-Era.md` | `entity` | 4355 | 0 | OK |
 | `wiki/entities/Paul-Graham.md` | `entity` | 3880 | 0 | OK |
 | `wiki/entities/Pimenta-de-Freitas-Cardoso.md` | `entity` | 2616 | 0 | OK |
@@ -365,10 +343,10 @@ tags:
 | `wiki/entities/Scientific-Discovery-AI.md` | `entity` | 2079 | 0 | OK |
 | `wiki/entities/Security-Hardening-Phase.md` | `entity` | 1953 | 0 | OK |
 | `wiki/entities/Sequence-Packing.md` | `entity` | 2171 | 0 | OK |
-| `wiki/entities/Simon-Willison.md` | `entity` | 2120 | 1 | definition-style |
+| `wiki/entities/Simon-Willison.md` | `entity` | 2120 | 0 | OK |
 | `wiki/entities/Slopocalypse.md` | `entity` | 1946 | 0 | OK |
 | `wiki/entities/Social-Model-of-Disability.md` | `entity` | 2159 | 0 | OK |
-| `wiki/entities/Software-2.0.md` | `entity` | 3648 | 1 | definition-style |
+| `wiki/entities/Software-2.0.md` | `entity` | 3648 | 0 | OK |
 | `wiki/entities/Software-3.0.md` | `entity` | 4509 | 0 | OK |
 | `wiki/entities/Software-Democratization.md` | `entity` | 2025 | 0 | OK |
 | `wiki/entities/Specialization-Compounds.md` | `entity` | 4998 | 0 | OK |
@@ -379,16 +357,16 @@ tags:
 | `wiki/entities/Tacit-Knowledge-Lock-In.md` | `entity` | 6043 | 0 | OK |
 | `wiki/entities/Taste.md` | `entity` | 2528 | 0 | OK |
 | `wiki/entities/Technical-Debt-Avoidance.md` | `entity` | 2446 | 0 | OK |
-| `wiki/entities/The-OpenAI-Deployment-Company.md` | `entity` | 2023 | 1 | definition-style |
+| `wiki/entities/The-OpenAI-Deployment-Company.md` | `entity` | 2023 | 0 | OK |
 | `wiki/entities/Thin-Harness-Fat-Skills.md` | `entity` | 4629 | 0 | OK |
-| `wiki/entities/Three-State-Protocol.md` | `entity` | 3552 | 1 | definition-style |
+| `wiki/entities/Three-State-Protocol.md` | `entity` | 3552 | 0 | OK |
 | `wiki/entities/Time-Moat.md` | `entity` | 3767 | 0 | OK |
 | `wiki/entities/Tobi-Lütke.md` | `entity` | 3353 | 0 | OK |
 | `wiki/entities/Tool-Use-Architecture.md` | `entity` | 4818 | 0 | OK |
 | `wiki/entities/Ubiquitous-Language.md` | `entity` | 1897 | 0 | OK |
-| `wiki/entities/Unmesh-Joshi.md` | `entity` | 1522 | 1 | definition-style |
+| `wiki/entities/Unmesh-Joshi.md` | `entity` | 1522 | 0 | OK |
 | `wiki/entities/Verifiability.md` | `entity` | 4489 | 0 | OK |
-| `wiki/entities/Vibe-Coding.md` | `entity` | 4339 | 3 | definition-style; entity-structure; readability |
+| `wiki/entities/Vibe-Coding.md` | `entity` | 4339 | 2 | entity-structure; readability |
 | `wiki/entities/Vocabulary-Building.md` | `entity` | 3709 | 0 | OK |
 | `wiki/entities/WCAG.md` | `entity` | 4314 | 0 | OK |
 | `wiki/entities/Wes-Botman.md` | `entity` | 4979 | 0 | OK |

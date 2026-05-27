@@ -3,7 +3,7 @@ type: entity
 title: Unmesh Joshi
 aliases:
   - Unmesh Joshi
-definition: "Thoughtworks 杰出工程师（Distinguished Engineer），《分布式系统模式》（Patterns of Distributed Systems）作者，软件架构与分布式系统专家。"
+definition: "Thoughtworks 杰出工程师，《分布式系统模式》作者，软件架构与分布式系统专家"
 validated_source: "https://martinfowler.com/articles/what-is-code.html"
 validated_at: "2026-05-13"
 created: 2026-05-13

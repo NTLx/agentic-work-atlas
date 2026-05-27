@@ -3,7 +3,7 @@ type: entity
 title: Martin Fowler
 aliases:
   - Martin Fowler
-definition: "软件架构大师、ThoughtWorks 首席科学家，敏捷软件开发先驱，Refactoring、Continuous Integration 等概念的推广者，博客 martinfowler.com 作者。"
+definition: "软件架构大师、ThoughtWorks 首席科学家，敏捷软件开发先驱，Refactoring 和 Continuous Integration 等概念的推广者"
 validated_source: "https://martinfowler.com/"
 validated_at: "2026-04-21"
 created: 2026-04-21

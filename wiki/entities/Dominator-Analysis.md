@@ -3,7 +3,7 @@ type: entity
 title: Dominator Analysis
 aliases:
   - Dominator Analysis（支配者分析）
-definition: "在控制流图/执行图中，节点 A 支配节点 B = 所有从起点到 B 的路径必经 A。用于从非确定性 Agent 执行中自动提取 essential states。"
+definition: "控制流图/执行图中节点间的支配关系分析，用于从非确定性 Agent 执行中自动提取 essential states"
 created: 2026-05-07
 updated: 2026-05-07
 tags:
