@@ -19,6 +19,7 @@ related_entities:
   - '[[AISI]]'
   - '[[Mythos]]'
   - '[[Verifiable-Agent-Engineering]]'
+  - '[[Agent-Containment]]'
 source_raw:
   - "[[20260414-cybersecurity-proof-of-work]]"
 ---

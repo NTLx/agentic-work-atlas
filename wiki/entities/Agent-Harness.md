@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent"
 created: 2026-05-11
-updated: 2026-05-25
+updated: 2026-05-27
 tags:
   - AI-Agent
   - architecture
@@ -23,10 +23,12 @@ related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Multi-Agent-System-Pathology]]"
   - "[[Agent-Dissociation]]"
+  - "[[Agent-Containment]]"
 source_raw:
   - "[[The Anatomy of an Agent Harness]]"
   - "[[Maintainability sensors for coding agents]]"
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
+  - "[[Harness, Scaffold, and the AI Agent Terms Worth Getting Right]]"
 ---
 
 # Agent Harness
@@ -39,6 +41,21 @@ source_raw:
 Agent 是**涌现行为**——用户交互的目标导向、工具使用、自我纠正实体。Harness 是**产生该行为的机器**。当有人说"我构建了一个 Agent"，实际意思是他们构建了一个 harness 并指向一个模型。
 
 LangChain 的 Vivek Trivedy 公式：**"If you're not the model, you're the harness."**
+
+## Scaffold vs Harness：细粒度区分
+
+HuggingFace（2026）对术语做了更细的拆分，以解决 ICLR 2026 后社区对 harness/scaffold 含义不收敛的困惑：
+
+| 组件 | 定义 | 类比 |
+|------|------|------|
+| **Scaffold**（脚手架） | 行为定义层：系统提示、工具描述、输出解析、上下文管理——模型"看到"和"依据"的一切 | 剧本：演员按此表演 |
+| **Harness**（harness，细粒度） | 执行层：调用模型、处理工具调用、决定何时停止——让 Agent "跑起来"的循环 | 导演：控制何时开拍、何时喊停 |
+
+**两种用法并存**:
+- **广义**: Harness = 模型之外的一切（Claude Code 官方文档："Claude Code serves as the agentic harness around Claude"）
+- **细粒度**: Scaffold（行为定义）+ Harness（执行循环）分离，在训练管线中尤为重要——训练时 scaffold 定义 agent 如何行为，harness 管理 rollout 和梯度更新
+
+**实践意义**: 当只关注推理侧时，广义用法足够。当需要独立推理行为（scaffold）和执行（harness）时——例如训练管线中 scaffold 不变但 harness 管理并行 rollout——区分才有价值。
 
 ## Von Neumann 类比
 

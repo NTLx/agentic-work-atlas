@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 195 个 |
+| Entity 页面 | 197 个 |
 | Topic 页面 | 26 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 68 个 |
+| Raw 文章 | 74 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -88,6 +88,7 @@ tags:
 | [[wiki/entities/Mythos\|Mythos]] | Anthropic 安全专用模型 | Cybersecurity Proof of Work |
 | [[wiki/entities/Scientific-Discovery-AI\|Scientific Discovery AI（科学发现 AI）]] | AI 科学发现模式：组合搜索 + 目标函数 + 数据 → 突破 | Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough |
 | [[wiki/entities/Security-Hardening-Phase\|Security Hardening Phase]] | Agentic Coding 第三阶段 | Cybersecurity Proof of Work |
+| [[wiki/entities/Agent-Containment\|Agent Containment（Agent 隔离）]] | 通过环境层隔离限制 Agent blast radius，确定性边界兜底概率性防御 | How we contain Claude across products |
 | [[wiki/entities/AISI\|AISI]] | 英国 AI 安全研究所 | Cybersecurity Proof of Work |
 | [[wiki/entities/Martin-Fowler\|Martin Fowler]] | 软件架构大师、敏捷先驱 | Martin Fowler Fragments |
 | [[wiki/entities/Laziness-Virtue\|Laziness Virtue]] | 程序员三美德：懒惰驱动抽象和简化 | Martin Fowler Fragments |
@@ -158,6 +159,7 @@ tags:
 | [[wiki/entities/Conceptual-Model\|Conceptual Model（概念模型）]] | 代码作为人类和工具理解领域的结构化表达 | What Is Code? |
 | [[wiki/entities/Vocabulary-Building\|Vocabulary Building（词汇构建）]] | 将领域语言映射到技术实现中塑造新词汇的过程 | What Is Code? |
 | [[wiki/entities/Cognitive-Debt\|Cognitive Debt（认知债务）]] | AI 加速词汇产生但理解滞后导致的债务 | What Is Code? |
+| [[wiki/entities/Cognitive-Surrender\|Cognitive Surrender（认知投降）]] | 人在使用 AI 时停止独立思考，默认接受 AI 输出（即使错误）的行为模式 | Choosing to Stay Human |
 | [[wiki/entities/Bounded-Context\|Bounded Context（限界上下文）]] | 模型和词汇表有效的逻辑边界 | What Is Code? |
 | [[wiki/entities/Ubiquitous-Language\|Ubiquitous Language（通用语言）]] | 开发者与专家共建的共享语言 | What Is Code? |
 | [[wiki/entities/Programming-Languages-as-Thinking-Tools\|Thinking Tools（思考工具）]] | 编程语言不仅是表达工具，也是思考工具 | What Is Code? |
@@ -306,11 +308,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（68 个）*
+*原始剪藏文章（74 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Enterprise-AI-Model-Sourcing]]
+最新编译：[[Agent-Containment]]
 
 ---
 

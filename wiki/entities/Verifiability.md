@@ -20,6 +20,7 @@ related_entities:
   - "[[Specialization-Compounds]]"
   - "[[Evaluation-Set]]"
   - "[[Taste]]"
+  - "[[Agent-Containment]]"
 source_raw:
   - "[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]"
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"

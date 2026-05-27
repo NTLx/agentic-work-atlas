@@ -18,9 +18,11 @@ related_entities:
   - "[[Model-Manager]]"
   - "[[Allocation-Economy]]"
   - "[[PM-in-AI-Era]]"
+  - "[[Cognitive-Surrender]]"
 source_raw:
   - "[[Management as AI superpower]]"
   - "[[The Knowledge Economy Is Over. Welcome to the Allocation Economy.]]"
+  - "[[Choosing to Stay Human]]"
 validated_source: "https://mgmt.wharton.upenn.edu/profile/emollick/"
 validated_at: "2026-04-15"
 ---
