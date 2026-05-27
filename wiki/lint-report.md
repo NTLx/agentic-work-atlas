@@ -26,7 +26,7 @@ tags:
 | Entity | 195 |
 | Topic | 26 |
 | Comparison | 14 |
-| Output | 6 |
+| Output | 5 |
 
 ## 检查项
 

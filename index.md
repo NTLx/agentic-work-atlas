@@ -21,7 +21,7 @@ tags:
 | Topic 页面 | 26 个 |
 | Comparison 页面 | 14 个 |
 | Raw 文章 | 68 个 |
-| Output 作品 | 6 个 |
+| Output 作品 | 5 个 |
 
 ---
 
@@ -294,7 +294,6 @@ tags:
 | [[wiki/outputs/fde-ai-enablement-bottleneck\|FDE 式 AI 赋能的真正瓶颈]] | 测试 output 回填门控在非 LLM Wiki 主题上的效果 | Essay |
 | [[wiki/outputs/output-to-wiki-feedback-loop\|从 Output 到 Wiki：新判断如何回填]] | 测试 output 新判断的证据回链与晋升规则 | Essay |
 | [[wiki/outputs/why-llm-wiki-is-knowledge-compilation\|为什么 LLM Wiki 不是 RAG，而是知识编译系统]] | 基于 Wiki 验证 LLM Wiki 与 RAG 的范式差异 | Essay |
-| [[wiki/outputs/wiki-quality-audit-2026-05-25\|Wiki 全量质量审计报告 2026-05-25]] | 全量审计 Wiki 层结构、证据、深度、语言与格式问题 | Audit |
 
 ### Research Agenda
 *未验证问题与下一轮剪藏方向*
