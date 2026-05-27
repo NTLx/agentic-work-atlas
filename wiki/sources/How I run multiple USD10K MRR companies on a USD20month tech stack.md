@@ -25,7 +25,8 @@ tags:
 - **核心结论2: 技术选型由约束驱动，而非潮流** — 1GB RAM 约束 → Go 而非 Python（静态二进制 几MB vs gunicorn 500MB 基线）；单机约束 → SQLite+WAL 而非 Postgres RDS（查询走 C 函数调用纳秒级 vs TCP 往返毫秒级）；一人团队 → systemd service 而非 K8s
   - 关键证据: SQLite+WAL `SELECT 1` benchmark 0.07s vs PostgreSQL TCP 2.77s（40 倍差距）；Go 交叉编译为静态二进制，scp 上传即运行，无依赖地狱
 
-- **核心结论3: AI 成本有三层降本策略** — (1) 本地 GPU 处理批量任务：RTX 3090 (`$900` 一次性) + VLLM PagedAttention 并发推理，(2) OpenRouter 统一 API 网关 + 故障自动回退（Anthropic → OpenAI → 本地 VLLM），(3) GitHub Copilot per-request 定价漏洞：按请求而非 token 计费，一次请求可让 agent 运行 30 分钟修改数百文件，成本 `$0.04`
+- **核心结论3: AI 成本有三层降本策略** — (1) 本地 GPU 处理批量任务：RTX 3090 (`$900` 一次性) + VLLM PagedAttention 并发推理，(2) OpenRouter 统一 API 网关 + 故障自动回退（Anthropic → OpenAI → 本地 VLLM），(3) GitHub Copilot per-request 定价漏洞：按请求而非 token 计费，一次请求可让 agent 运行 30 分钟修改数百文件，成本
+  `$0.04`
   - 关键证据: "Somehow, Microsoft is able to charge per request, not per token." Copilot 订阅 `$13/月`，作者用 Opus 4.6 全天开发月账单 `$60`，Cursor 等竞品用户月支出 `$100+`
 
 - **核心结论4: 一人运营 6 个 `$10K+` MRR 产品的商业模式组合拳** — B2B 高客单价（zwibbler `$5,999`/单 × 20 单/年）养 C 端产品矩阵；六种定价模式覆盖三种盈利逻辑（大额低频、小额高频、一次性前置）

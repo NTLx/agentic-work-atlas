@@ -106,10 +106,10 @@ tags:
 | `output` | 6 |
 | `research-agenda` | 1 |
 | `lint-report` | 1 |
-| 剩余问题总数 | 9 |
+| 剩余问题总数 | 0 |
 | 高优先级问题 | 0 |
 | 中优先级问题 | 0 |
-| 低优先级问题 | 9 |
+| 低优先级问题 | 0 |
 
 ## 剩余问题分类
 
@@ -121,8 +121,8 @@ tags:
 | `topic-depth` | 0 | Topic 偏短，需要从多篇 source 重新综合。 |
 | `person-depth` | 0 | 人物 Entity 偏短，建议补来源关系和只保留可验证履历。 |
 | `language` | 0 | Wiki 默认中文，但 definition 仍基本为英文。 |
-| `readability` | 5 | 超长行影响阅读与 diff。 |
-| `entity-structure` | 4 | Entity 标准章节顺序不一致。 |
+| `readability` | 0 | 超长行影响阅读与 diff。 |
+| `entity-structure` | 0 | Entity 标准章节顺序不一致。 |
 | `topic-evidence` | 0 | Topic 的 source_raw 少于 2 个，主题层证据不够稳。 |
 | `comparison-depth` | 0 | Comparison 正文偏短，区分维度不够展开。 |
 | `comparison-evidence` | 0 | Comparison 的 source_raw 过少，概念区分可能证据单薄。 |
@@ -152,15 +152,6 @@ tags:
 
 | 等级 | 类别 | 文件 | 行 | 问题 |
 |------|------|------|----|------|
-| 低 | `entity-structure` | `wiki/entities/Always-On-Economy.md` | - | 标准章节顺序不一致 |
-| 低 | `entity-structure` | `wiki/entities/Compound-Engineering.md` | - | 标准章节顺序不一致 |
-| 低 | `entity-structure` | `wiki/entities/Jevons-Paradox-for-Knowledge-Work.md` | - | 标准章节顺序不一致 |
-| 低 | `entity-structure` | `wiki/entities/Vibe-Coding.md` | - | 标准章节顺序不一致 |
-| 低 | `readability` | `wiki/comparisons/RAG-vs-LLM-Wiki.md` | 252 | 超长行 284 字符 |
-| 低 | `readability` | `wiki/entities/Demis-Hassabis.md` | 25 | 超长行 281 字符 |
-| 低 | `readability` | `wiki/entities/Memex.md` | 86 | 超长行 398 字符 |
-| 低 | `readability` | `wiki/entities/Vibe-Coding.md` | 125 | 超长行 289 字符 |
-| 低 | `readability` | `wiki/sources/How I run multiple USD10K MRR companies on a USD20month tech stack.md` | 28 | 超长行 248 字符 |
 
 ## 逐篇核查索引
 
@@ -179,7 +170,7 @@ tags:
 | `wiki/comparisons/Deployment-Product-Flywheel-vs-Tacit-Knowledge-Lock-In.md` | `comparison` | 2802 | 0 | OK |
 | `wiki/comparisons/Knowledge-Work-vs-Wisdom-Work.md` | `comparison` | 2850 | 0 | OK |
 | `wiki/comparisons/Ontology-vs-Knowledge-Graph.md` | `comparison` | 2864 | 0 | OK |
-| `wiki/comparisons/RAG-vs-LLM-Wiki.md` | `comparison` | 7872 | 1 | readability |
+| `wiki/comparisons/RAG-vs-LLM-Wiki.md` | `comparison` | 7872 | 0 | OK |
 | `wiki/comparisons/Taste-vs-Judgment.md` | `comparison` | 6782 | 0 | OK |
 | `wiki/comparisons/Vibe-Coding-vs-Software-2.0.md` | `comparison` | 7693 | 0 | OK |
 | `wiki/entities/ABox.md` | `entity` | 1798 | 0 | OK |
@@ -215,7 +206,7 @@ tags:
 | `wiki/entities/Agentic-Workflow-Token-Efficiency.md` | `entity` | 3218 | 0 | OK |
 | `wiki/entities/Alignment-Tax.md` | `entity` | 7296 | 0 | OK |
 | `wiki/entities/Allocation-Economy.md` | `entity` | 6913 | 0 | OK |
-| `wiki/entities/Always-On-Economy.md` | `entity` | 1892 | 1 | entity-structure |
+| `wiki/entities/Always-On-Economy.md` | `entity` | 1892 | 0 | OK |
 | `wiki/entities/Andrej-Karpathy.md` | `entity` | 4121 | 0 | OK |
 | `wiki/entities/Anti-Enterprise-Mindset.md` | `entity` | 1645 | 0 | OK |
 | `wiki/entities/Arnav-Gupta.md` | `entity` | 2653 | 0 | OK |
@@ -235,7 +226,7 @@ tags:
 | `wiki/entities/Coding-Agents.md` | `entity` | 2660 | 0 | OK |
 | `wiki/entities/Cognitive-Debt.md` | `entity` | 2070 | 0 | OK |
 | `wiki/entities/Competent-Output.md` | `entity` | 6142 | 0 | OK |
-| `wiki/entities/Compound-Engineering.md` | `entity` | 1753 | 1 | entity-structure |
+| `wiki/entities/Compound-Engineering.md` | `entity` | 1753 | 0 | OK |
 | `wiki/entities/Conceptual-Model.md` | `entity` | 2207 | 0 | OK |
 | `wiki/entities/Connection.md` | `entity` | 1938 | 0 | OK |
 | `wiki/entities/Conscious-Creators.md` | `entity` | 3043 | 0 | OK |
@@ -249,7 +240,7 @@ tags:
 | `wiki/entities/Cybersecurity-Proof-of-Work.md` | `entity` | 1822 | 0 | OK |
 | `wiki/entities/Dan-Shipper.md` | `entity` | 1399 | 0 | OK |
 | `wiki/entities/Decision-Quality.md` | `entity` | 2688 | 0 | OK |
-| `wiki/entities/Demis-Hassabis.md` | `entity` | 1577 | 1 | readability |
+| `wiki/entities/Demis-Hassabis.md` | `entity` | 1577 | 0 | OK |
 | `wiki/entities/Deployment-Product-Flywheel.md` | `entity` | 1722 | 0 | OK |
 | `wiki/entities/Discernment.md` | `entity` | 1743 | 0 | OK |
 | `wiki/entities/Distributional-Alignment.md` | `entity` | 1696 | 0 | OK |
@@ -284,7 +275,7 @@ tags:
 | `wiki/entities/Invisible-Orchestrator.md` | `entity` | 7592 | 0 | OK |
 | `wiki/entities/Jacob-Harris.md` | `entity` | 4614 | 0 | OK |
 | `wiki/entities/Jagged-Intelligence.md` | `entity` | 1739 | 0 | OK |
-| `wiki/entities/Jevons-Paradox-for-Knowledge-Work.md` | `entity` | 1820 | 1 | entity-structure |
+| `wiki/entities/Jevons-Paradox-for-Knowledge-Work.md` | `entity` | 1820 | 0 | OK |
 | `wiki/entities/Joe-Hudson.md` | `entity` | 1357 | 0 | OK |
 | `wiki/entities/Judgment.md` | `entity` | 2284 | 0 | OK |
 | `wiki/entities/Knowledge-Compilation.md` | `entity` | 4957 | 0 | OK |
@@ -303,7 +294,7 @@ tags:
 | `wiki/entities/MachinaCheck.md` | `entity` | 2464 | 0 | OK |
 | `wiki/entities/Machine-Readable-Processes.md` | `entity` | 2848 | 0 | OK |
 | `wiki/entities/Martin-Fowler.md` | `entity` | 1532 | 0 | OK |
-| `wiki/entities/Memex.md` | `entity` | 3998 | 1 | readability |
+| `wiki/entities/Memex.md` | `entity` | 3998 | 0 | OK |
 | `wiki/entities/Moats-in-AI-Era.md` | `entity` | 1638 | 0 | OK |
 | `wiki/entities/Model-Context-Protocol-MCP.md` | `entity` | 2683 | 0 | OK |
 | `wiki/entities/Model-Introspection.md` | `entity` | 4613 | 0 | OK |
@@ -366,7 +357,7 @@ tags:
 | `wiki/entities/Ubiquitous-Language.md` | `entity` | 1897 | 0 | OK |
 | `wiki/entities/Unmesh-Joshi.md` | `entity` | 1522 | 0 | OK |
 | `wiki/entities/Verifiability.md` | `entity` | 4489 | 0 | OK |
-| `wiki/entities/Vibe-Coding.md` | `entity` | 4339 | 2 | entity-structure; readability |
+| `wiki/entities/Vibe-Coding.md` | `entity` | 4339 | 0 | OK |
 | `wiki/entities/Vocabulary-Building.md` | `entity` | 3709 | 0 | OK |
 | `wiki/entities/WCAG.md` | `entity` | 4314 | 0 | OK |
 | `wiki/entities/Wes-Botman.md` | `entity` | 4979 | 0 | OK |
@@ -415,7 +406,7 @@ tags:
 | `wiki/sources/From Strategy to Shelf How P&G Is Deploying AI.md` | `source-summary` | 2123 | 0 | OK |
 | `wiki/sources/Good Taste the Only Real Moat Left.md` | `source-summary` | 2009 | 0 | OK |
 | `wiki/sources/How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code).md` | `source-summary` | 3312 | 0 | OK |
-| `wiki/sources/How I run multiple USD10K MRR companies on a USD20month tech stack.md` | `source-summary` | 2860 | 1 | readability |
+| `wiki/sources/How I run multiple USD10K MRR companies on a USD20month tech stack.md` | `source-summary` | 2860 | 0 | OK |
 | `wiki/sources/How Procter & Gamble Uses AI to Unlock New Insights From Data  Thomas H. Davenport and Randy Bean.md` | `source-summary` | 2671 | 0 | OK |
 | `wiki/sources/Improving token efficiency in GitHub Agentic Workflows.md` | `source-summary` | 3557 | 0 | OK |
 | `wiki/sources/Inside PG AI Factory and the Push to Operationalize AI at Scale.md` | `source-summary` | 2545 | 0 | OK |

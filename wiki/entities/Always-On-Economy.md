@@ -77,12 +77,6 @@ source_raw:
 AI 持续运营 + 人类监督 = 新经济形态
 ```
 
-## 关联概念
-
-- [[Allocation-Economy]] - 经济转型方向
-- [[Jevons-Paradox-for-Knowledge-Work]] - 需求增长悖论
-- [[Human-Governor-Agent-Operator]] - 治理-运营分离模式
-
 ## 关键数据点
 
 - Viz.ai：40% 美国医院已实现 24/7 中风检测
@@ -103,3 +97,10 @@ AI 持续运营 + 人类监督 = 新经济形态
 ---
 
 > **来源**：Konstantine Buhler (Sequoia Capital), "The Always-On Economy", 2025-04-21
+
+## 关联概念
+
+- [[Allocation-Economy]] - 经济转型方向
+- [[Jevons-Paradox-for-Knowledge-Work]] - 需求增长悖论
+- [[Human-Governor-Agent-Operator]] - 治理-运营分离模式
+

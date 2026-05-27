@@ -249,9 +249,11 @@ RAG 仅覆盖短期+工作记忆，LLM Wiki 构建了完整的长期记忆层。
 ## Karpathy 的原创论述
 
 > [!quote] Andrej Karpathy, LLM Wiki (2026)
-> "Most people's experience with LLMs and documents looks like RAG: you upload a collection of files, the LLM retrieves relevant chunks at query time, and generates an answer. This works, but the LLM is rediscovering knowledge from scratch on every question. There's no accumulation."
+> "Most people's experience with LLMs and documents looks like RAG: you upload a collection of files, the LLM retrieves relevant chunks at query time, and generates an answer. This works, but the LLM is rediscovering knowledge from scratch
+> on every question. There's no accumulation."
 >
-> "The idea here is different. Instead of just retrieving from raw documents at query time, the LLM **incrementally builds and maintains a persistent wiki** — a structured, interlinked collection of markdown files that sits between you and the raw sources."
+> "The idea here is different. Instead of just retrieving from raw documents at query time, the LLM **incrementally builds and maintains a persistent wiki**—
+> a structured, interlinked collection of markdown files that sits between you and the raw sources."
 
 ### 核心差异提炼
 

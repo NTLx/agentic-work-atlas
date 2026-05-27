@@ -83,7 +83,8 @@ Bush 无法解决的核心问题：
 
 Andrej Karpathy 在 LLM Wiki 文章中明确关联 Memex：
 
-> "The idea is related in spirit to Vannevar Bush's Memex (1945) — a personal, curated knowledge store with associative trails between documents. Bush's vision was closer to this than to what the web became: private, actively curated, with the connections between documents as valuable as the documents themselves. The part he couldn't solve was who does the maintenance. **The LLM handles that.**"
+> "The idea is related in spirit to Vannevar Bush's Memex (1945) — a personal, curated knowledge store with associative trails between documents. Bush's vision was closer to this than to what the web became: private, actively curated, with
+> the connections between documents as valuable as the documents themselves. The part he couldn't solve was who does the maintenance. **The LLM handles that.**"
 
 ### Memex → LLM Wiki 的进化
 

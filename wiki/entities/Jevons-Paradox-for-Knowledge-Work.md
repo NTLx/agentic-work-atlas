@@ -75,12 +75,6 @@ ROI = Return / Investment
 
 技术让营销更高效，但更多企业参与，反而创造了更多就业。
 
-## 关联概念
-
-- [[Allocation-Economy]] - 经济转型方向
-- [[Always-On-Economy]] - 效率提升的另一个维度
-- [[Knowledge-Work]] - 正在演变的领域
-
 ## 关键数据点
 
 - 大型机时代：数百台单位 → 小型机时代：数万台 → PC 时代：数百万台（每个时代 100 倍增长）
@@ -101,3 +95,10 @@ ROI = Return / Investment
 ---
 
 > **来源**：Aaron Levie (Box CEO), LinkedIn, 2025-12-29
+
+## 关联概念
+
+- [[Allocation-Economy]] - 经济转型方向
+- [[Always-On-Economy]] - 效率提升的另一个维度
+- [[Knowledge-Work]] - 正在演变的领域
+

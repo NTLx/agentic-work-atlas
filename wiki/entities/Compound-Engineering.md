@@ -79,12 +79,6 @@ source_raw:
 3. **成功模式**：标准化为可复用模板
 4. **工具文档**：持续优化 Agent-Computer Interface
 
-## 关联概念
-
-- [[Agentic-Engineering]] - 基础工程范式
-- [[ACI-Agent-Computer-Interface]] - 工具接口设计
-- [[Technical-Debt-Avoidance]] - 复合工程帮助避免技术债务
-
 ## 关键数据点
 
 - 由 Dan Shipper 和 Kieran Klaassen (Every) 提出
@@ -103,3 +97,10 @@ source_raw:
 ---
 
 > **来源**：Simon Willison, "AI should help us produce better code" (Agentic Engineering Patterns, 2026)
+
+## 关联概念
+
+- [[Agentic-Engineering]] - 基础工程范式
+- [[ACI-Agent-Computer-Interface]] - 工具接口设计
+- [[Technical-Debt-Avoidance]] - 复合工程帮助避免技术债务
+

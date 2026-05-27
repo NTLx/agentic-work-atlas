@@ -22,7 +22,8 @@ source_raw:
 # Demis Hassabis
 
 > [!definition] 定义
-> **Demis Hassabis**（戴密斯·哈萨比斯）是 Google DeepMind 的 CEO 兼联合创始人。国际象棋神童出身，17 岁设计热门游戏 Theme Park，剑桥计算机科学毕业后获得 UCL 认知神经科学 PhD（研究海马体记忆与想象力）。2010 年联合创立 DeepMind，使命"解决智能"（solve intelligence）。主导了 AlphaGo（击败围棋世界冠军）、AlphaFold（破解 50 年蛋白质折叠难题，获 2024 年诺贝尔化学奖）。领导 Gemini 系列模型开发。AGI 时间线预测：约 2030 年。
+> **Demis Hassabis**（戴密斯·哈萨比斯）是 Google DeepMind 的 CEO 兼联合创始人。国际象棋神童出身，17 岁设计热门游戏 Theme Park，剑桥计算机科学毕业后获得 UCL 认知神经科学 PhD（研究海马体记忆与想象力）。2010 年联合创立 DeepMind，使命"解决智能"（solve intelligence）。主导了 AlphaGo（击败围棋世界冠军）、AlphaFold（破解 50 年蛋白质折叠难题，获 2024
+> 年诺贝尔化学奖）。领导 Gemini 系列模型开发。AGI 时间线预测：约 2030 年。
 
 ## 职业履历
 
