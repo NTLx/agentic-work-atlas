@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-05-27
+updated: 2026-05-28
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 197 个 |
+| Entity 页面 | 199 个 |
 | Topic 页面 | 26 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 72 个 |
+| Raw 文章 | 75 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -89,6 +89,8 @@ tags:
 | [[wiki/entities/Scientific-Discovery-AI\|Scientific Discovery AI（科学发现 AI）]] | AI 科学发现模式：组合搜索 + 目标函数 + 数据 → 突破 | Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough |
 | [[wiki/entities/Security-Hardening-Phase\|Security Hardening Phase]] | Agentic Coding 第三阶段 | Cybersecurity Proof of Work |
 | [[wiki/entities/Agent-Containment\|Agent Containment（Agent 隔离）]] | 通过环境层隔离限制 Agent blast radius，确定性边界兜底概率性防御 | How we contain Claude across products |
+| [[wiki/entities/Least-Agency\|Least Agency（最小代理权）]] | OWASP 新概念：将 Least Privilege 扩展到约束 Agent 工具能做什么、做多少次、在哪里做 | Zero Trust for AI Agents |
+| [[wiki/entities/ITBench\|ITBench]] | 企业 IT Agent 基准测试——SRE 任务中所有前沿模型低于 50% | ITBench-AA |
 | [[wiki/entities/AISI\|AISI]] | 英国 AI 安全研究所 | Cybersecurity Proof of Work |
 | [[wiki/entities/Martin-Fowler\|Martin Fowler]] | 软件架构大师、敏捷先驱 | Martin Fowler Fragments |
 | [[wiki/entities/Laziness-Virtue\|Laziness Virtue]] | 程序员三美德：懒惰驱动抽象和简化 | Martin Fowler Fragments |
@@ -308,11 +310,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（71 个）*
+*原始剪藏文章（75 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Agent-Containment]]
+最新编译：[[ITBench]]、[[Least-Agency]]
 
 ---
 

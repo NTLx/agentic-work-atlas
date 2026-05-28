@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-05-25
+updated: 2026-05-28
 tags:
   - AI-Agent
   - coding-agents
@@ -26,6 +26,7 @@ related_entities:
   - '[[AI-Lacks-Laziness]]'
   - '[[AI-Restraint]]'
   - '[[YAGNI]]'
+  - '[[ITBench]]'
 source_raw:
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'
@@ -39,6 +40,9 @@ source_raw:
   - "[[20260414-martin-fowler-fragments]]"
   - "[[Agent pull requests are everywhere. Here's how to review them.]]"
   - "[[The PR you would have opened yourself]]"
+  - "[[ITBench-AA Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM]]"
+  - "[[Coding agents in the social sciences]]"
+  - "[[Using LLMs to secure source code]]"
 ---
 
 # Agentic Engineering Patterns

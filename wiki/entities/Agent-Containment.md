@@ -8,7 +8,7 @@ aliases:
   - Blast Radius Control
 definition: "通过环境层隔离限制 Agent 可操作范围，使概率性防御（模型层）失效时仍有确定性边界兜底的安全架构"
 created: 2026-05-27
-updated: 2026-05-27
+updated: 2026-05-28
 tags:
   - agent-security
   - architecture
@@ -19,8 +19,11 @@ related_entities:
   - "[[Verifiability]]"
   - "[[Security-Hardening-Phase]]"
   - "[[Harness-Engineering]]"
+  - "[[Least-Agency]]"
 source_raw:
   - "[[How we contain Claude across products]]"
+  - "[[20260518-zero-trust-for-ai-agents]]"
+  - "[[Using LLMs to secure source code]]"
 ---
 
 # Agent Containment（Agent 隔离与遏制）
@@ -111,3 +114,4 @@ Agent 安全风险分三类，防御对应三个组件：
 - [[Verifiability]] — 事后可验证与事前不可达构成双层防御
 - [[Security-Hardening-Phase]] — Containment 是 Agentic Coding 第三阶段的核心实践
 - [[Harness-Engineering]] — 隔离策略是 Harness 工程的关键架构决策
+- [[Least-Agency]] — OWASP 新概念，Containment 在权限层的实现原则

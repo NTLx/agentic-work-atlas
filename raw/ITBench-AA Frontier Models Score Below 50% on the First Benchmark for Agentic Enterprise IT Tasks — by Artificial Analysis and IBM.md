@@ -2,9 +2,9 @@
 title: "ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM"
 source: "https://huggingface.co/blog/ibm-research/itbench-aa"
 author:
-  - "[[Ayhan Sebin]]"
-  - "[[Saurabh Jha]]"
-  - "[[Rohan Arora]]"
+  - "Ayhan Sebin"
+  - "Saurabh Jha"
+  - "Rohan Arora"
 published: 2026-05-28
 created: 2026-05-28
 description: "A Blog post by IBM Research on Hugging Face"

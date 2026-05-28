@@ -2,7 +2,8 @@
 title: "Using LLMs to secure source code"
 source: "https://claude.com/blog/using-llms-to-secure-source-code"
 author:
-published: 2001-05-27
+  - "Anthropic"
+published: "2026-05-27"
 created: 2026-05-28
 description: "We share best practices for how you can work with Claude Opus to build a threat model, discover vulnerabilities in your codebase, then verify, triage, and patch them."
 tags:

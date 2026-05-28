@@ -2,7 +2,7 @@
 title: "Zero Trust for AI Agents"
 source: "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/6a1611a04085d7cd3dadc924_Claude-eBook-Zero-Trust-for-AI-Agents-05182026.pdf"
 author:
-  - "[[Anthropic]]"
+  - "Anthropic"
 published: "2026-05-18"
 created: "2026-05-28"
 description: "A security framework for deploying autonomous AI agents in the enterprise"

@@ -2,7 +2,10 @@
 title: "Coding agents in the social sciences"
 source: "https://www.anthropic.com/research/coding-agents-social-sciences"
 author:
-published:
+  - "Thomas Lyttelton"
+  - "Maxim Massenkoff"
+  - "Nathan Wilmers"
+published: "2026-05-27"
 created: 2026-05-28
 description: "Results from a survey of 1,260 social scientists about AI and coding agent use."
 tags:

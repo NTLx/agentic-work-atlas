@@ -7,7 +7,7 @@ aliases:
   - 代理式工程
 definition: "用 coding agents 辅助开发软件的工程实践；Simon Willison 系统化了 code execution、测试和反模式等实践，Karpathy 则将其与 Vibe Coding 区分为保持专业质量上限的严肃工程纪律"
 created: 2026-04-09
-updated: 2026-05-22
+updated: 2026-05-28
 tags:
   - AI-Agent
   - Software-Engineering
@@ -27,22 +27,26 @@ related_entities:
   - '[[Jagged-Intelligence]]'
   - '[[Agent-PR-Review]]'
   - '[[Agentic-Workflow-Token-Efficiency]]'
+  - '[[ITBench]]'
   - '[[渐进式重构]]'
   - "[[Essential-Complexity]]"
   - "[[Friction-as-Design-Signal]]"
 source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
-  - '[[Using Git with coding agents - Agentic Engineering Patterns]]'
-  - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
-  - '[[20260413-why-ai-first-strategy-wrong]]'
-  - '[[20260409-ai-capability-gap-ai-psychosis]]'
+  - ‘[[Using Git with coding agents - Agentic Engineering Patterns]]’
+  - ‘[[What is agentic engineering? - Agentic Engineering Patterns]]’
+  - ‘[[20260413-why-ai-first-strategy-wrong]]’
+  - ‘[[20260409-ai-capability-gap-ai-psychosis]]’
   - "[[20260127-claude-coding-notes]]"
   - "[[20260414-cybersecurity-proof-of-work]]"
-  - '[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]'
-  - '[[The Anatomy of an Agent Harness]]'
+  - ‘[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]’
+  - ‘[[The Anatomy of an Agent Harness]]’
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
   - "[[Why I Don’t Vibe Code]]"
   - "[[Improving token efficiency in GitHub Agentic Workflows]]"
+  - "[[ITBench-AA Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM]]"
+  - "[[Coding agents in the social sciences]]"
+  - "[[Using LLMs to secure source code]]"
 ---
 
 # Agentic Engineering
@@ -152,6 +156,8 @@ Drew Breunig 提出扩展的三阶段 Agentic Coding 模型：
 - Vibe Coding 一词由 Andrej Karpathy 在 2025 年 2 月提出（Claude Code 发布前三周）
 - Karpathy 的贡献是把 Vibe Coding 与 Agentic Engineering 区分为"提升底线"与"保持质量上限"两类实践
 - 四项核心原则：代码成本趋近于零、囤积可运行代码示例、AI 应帮助产出更好的代码、不提交未审查的代码
+- ITBench-AA SRE 基准（2026）：所有前沿模型低于 50%，最佳 Claude Opus 4.7 仅 47%——企业 IT Agent 任务远未解决
+- Coding Agents 在社会科学中采纳率仅 20%（n=1,260），尽管 81% 已尝试 AI——采纳仍处早期
 
 ## 前提与局限性
 
