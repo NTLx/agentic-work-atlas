@@ -280,6 +280,13 @@ def check_wikilinks(paths: Iterable[Path]) -> list[Issue]:
 
     for path in paths:
         text = path.read_text(encoding="utf-8", errors="replace")
+        # Strip YAML frontmatter — source_raw check already validates those targets
+        if text.startswith("---"):
+            end = text.find("---", 3)
+            if end != -1:
+                # Replace frontmatter with blank lines to preserve line numbers
+                fm_lines = text[: end + 3].count("\n") + 1
+                text = "\n" * fm_lines + text[end + 3 :]
         stripped = strip_code_preserve_lines(text)
         for match in re.finditer(r"!?\[\[([^\]]+)\]\]", stripped):
             raw = match.group(1)

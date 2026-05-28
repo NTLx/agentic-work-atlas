@@ -32,15 +32,15 @@ related_entities:
   - "[[Essential-Complexity]]"
   - "[[Friction-as-Design-Signal]]"
 source_raw:
-  - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
-  - ‘[[Using Git with coding agents - Agentic Engineering Patterns]]’
-  - ‘[[What is agentic engineering? - Agentic Engineering Patterns]]’
-  - ‘[[20260413-why-ai-first-strategy-wrong]]’
-  - ‘[[20260409-ai-capability-gap-ai-psychosis]]’
+  - "[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]"
+  - "[[Using Git with coding agents - Agentic Engineering Patterns]]"
+  - "[[What is agentic engineering? - Agentic Engineering Patterns]]"
+  - "[[20260413-why-ai-first-strategy-wrong]]"
+  - "[[20260409-ai-capability-gap-ai-psychosis]]"
   - "[[20260127-claude-coding-notes]]"
   - "[[20260414-cybersecurity-proof-of-work]]"
-  - ‘[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]’
-  - ‘[[The Anatomy of an Agent Harness]]’
+  - "[[工程师抗拒被\"蒸馏\"，企业的Skills从何而来？五大招破局]]"
+  - "[[The Anatomy of an Agent Harness]]"
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
   - "[[Why I Don’t Vibe Code]]"
   - "[[Improving token efficiency in GitHub Agentic Workflows]]"

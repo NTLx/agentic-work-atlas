@@ -2,7 +2,7 @@
 title: "How we contain Claude across products"
 source: "https://www.anthropic.com/engineering/how-we-contain-claude"
 author:
-published:
+published: "2026-05-27"
 created: 2026-05-27
 description: "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems."
 tags:
