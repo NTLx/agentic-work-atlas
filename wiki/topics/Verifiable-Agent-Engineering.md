@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-05-28
+updated: 2026-05-29
 tags:
   - AI-Agent
   - verification
@@ -37,6 +37,8 @@ related_entities:
   - "[[Agent-Containment]]"
   - "[[Least-Agency]]"
   - "[[ITBench]]"
+  - "[[Model-Safety-Divergence]]"
+  - "[[Emergence-World]]"
 source_raw:
   - "[[The PR you would have opened yourself]]"
   - "[[用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践]]"
@@ -54,6 +56,7 @@ source_raw:
   - "[[20260518-zero-trust-for-ai-agents]]"
   - "[[Using LLMs to secure source code]]"
   - "[[ITBench-AA Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM]]"
+  - "[[20260528-ai-model-simulation]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）

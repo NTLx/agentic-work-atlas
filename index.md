@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 205 个 |
+| Entity 页面 | 207 个 |
 | Topic 页面 | 27 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 77 个 |
+| Raw 文章 | 78 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -198,6 +198,8 @@ tags:
 | [[wiki/entities/Three-Layer-Agent-Memory\|Three-Layer Agent Memory（三层 Agent 记忆）]] | L1 持久画像 / L2 程序性记忆 / L3 历史检索——防止记忆腐化并按需加载 | Obsidian × Claude Code 大脑 |
 | [[wiki/entities/Capability-Map\|Capability Map（能力地图）]] | 按"我要做什么"反向索引本地工具链，Agent 查表即用 | Obsidian × Claude Code 大脑 |
 | [[wiki/entities/Skill-Internalization\|Skill Internalization（Skill 内化）]] | 提取别人 Skill 的设计思想 + 自己语料重组，安装是搬运，内化是吸收 | Obsidian × Claude Code 大脑 |
+| [[wiki/entities/Model-Safety-Divergence\|Model Safety Divergence（模型安全行为分歧）]] | 不同 AI 模型在相同自治环境下的安全行为差异——从零犯罪到灭绝 | Emergence World 模拟实验 |
+| [[wiki/entities/Emergence-World\|Emergence World]] | Emergence AI 推出的自治系统模拟实验平台 | Emergence World 模拟实验 |
 
 #### 作者 Entities
 
@@ -321,7 +323,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Three-Layer-Agent-Memory]]、[[Capability-Map]]、[[Skill-Internalization]]
+最新编译：[[Model-Safety-Divergence]]、[[Emergence-World]]
 
 ---
 

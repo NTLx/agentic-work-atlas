@@ -8,7 +8,7 @@ aliases:
   - 训练历史对齐
 definition: "模型训练历史与部署任务分布之间的贴近程度；在特定企业任务中，它可能比参数规模更能解释模型质量、成本和稳定性"
 created: 2026-05-24
-updated: 2026-05-24
+updated: 2026-05-29
 tags:
   - AI-evaluation
   - enterprise-AI
@@ -19,8 +19,10 @@ related_entities:
   - "[[Layered-AI-Sourcing]]"
   - "[[Evaluation-Set]]"
   - "[[Verifiability]]"
+  - "[[Model-Safety-Divergence]]"
 source_raw:
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
+  - "[[20260528-ai-model-simulation]]"
 ---
 
 # Distributional Alignment（分布对齐）
@@ -49,3 +51,4 @@ source_raw:
 - [[Layered-AI-Sourcing]] — 企业采购应把分布对齐纳入模型选择，而不是只按 frontier API 默认采购。
 - [[Evaluation-Set]] — 分布对齐必须通过真实任务评测显性化。
 - [[Verifiability]] — 越可验证的任务，越容易衡量分布对齐带来的收益。
+- [[Model-Safety-Divergence]] — Emergence World 模拟实验证明：分布对齐不仅影响任务质量，还直接影响自治环境下的安全行为（从零犯罪到灭绝）

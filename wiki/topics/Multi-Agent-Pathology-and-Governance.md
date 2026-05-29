@@ -3,7 +3,7 @@ type: topic
 title: Multi-Agent Pathology and Governance
 description: "多 Agent 系统病理：当 Agent 从单体工具变成组织系统后，问题会从并发和协议下沉到群体认知、责任稀释和内态断裂"
 created: 2026-05-23
-updated: 2026-05-26
+updated: 2026-05-29
 tags:
   - AI-Agent
   - multi-agent
@@ -19,10 +19,13 @@ related_entities:
   - "[[Verifiability]]"
   - "[[AI-Restraint]]"
   - "[[Organization-as-Agent-Harness]]"
+  - "[[Model-Safety-Divergence]]"
+  - "[[Emergence-World]]"
 source_raw:
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
   - "[[The Anatomy of an Agent Harness]]"
   - "[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]"
+  - "[[20260528-ai-model-simulation]]"
 ---
 
 # Multi-Agent Pathology and Governance（多 Agent 系统病理与治理）
