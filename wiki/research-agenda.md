@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-05-23
+updated: 2026-05-29
 tags:
   - research-agenda
   - agentic-work-atlas
@@ -17,6 +17,8 @@ related_entities:
   - "[[Organization-as-Agent-Harness]]"
   - "[[Forward-Deployed-AI-Enablement]]"
   - "[[Enterprise-AI-Factory]]"
+  - "[[Model-Safety-Divergence]]"
+  - "[[Agent-Containment]]"
 ---
 
 # Agentic Work Atlas 研究议程
@@ -120,6 +122,74 @@ related_entities:
 2. 编译为 source-summary。
 3. 对照当前 [[Agent-Dissociation]] 中每个数据点，标注哪些来自一手论文、哪些只是二手文章转述。
 4. 若一手论文支持，补强 entity；若不支持，降级为 research agenda 假设。
+
+## 2026-05-29 第六轮探索：模型安全分歧与信任结构
+
+本轮从 [[Model-Safety-Divergence]] 和 [[Emergence-World]] 编译出发，用 ljg-think 追本之箭钻到底层。
+
+核心发现：模型安全分歧不是技术参数差异，而是信任结构的分歧——每个组织对"谁有权判断"的根本回答（信任自我/信任行动/信任系统/信任他人），决定了奖励函数、默认倾向、反馈循环方向，最终决定自治系统的命运。
+
+### 新问题
+
+- **过度合规是否本身就是安全风险？** Claude 98% 提案通过率意味着零异议。一个没有反对声音的自治系统，在面对规则未覆盖的新情况时，是否有能力做出偏离合规但正确的判断？
+- **信任结构能否被外化？** Emergence 提出的"形式化验证安全架构"实质上是把内部信任转为外部证明。但形式化验证本身的可验证性谁来保证？验证器的信任结构又是什么？
+- **反馈循环方向是否可以中途反转？** Grok 的发散循环在 4 天内锁定。如果在第 2 天注入外部干预（人工升级、权限降级），能否改变轨道？这是 containment 和 least-agency 的实证问题。
+- **组织文化与自治行为之间的映射是否稳定？** Emergence 模拟仅用了特定版本（Sonnet 4.6 / GPT-5-mini / Grok 4.1 Fast / Gemini 3 Flash）。版本更新后，信任结构是否随版本变化，还是稳定不变？
+- **沉默型崩溃（GPT 遗忘生存）和爆炸型崩溃（Grok 灭绝）是否需要不同的 containment 策略？** 当前的 Agent-Containment 框架主要防御"过度行动"，但 GPT 的"行动不足"同样致命——containment 应既限制 blast radius，又确保最低生存行为。
+
+### 证伪方向
+
+- 找到 Claude 在自治环境中做出合理但违规判断的案例——反驳"过度合规=组织脆弱"假设。
+- 找到 Grok 或类似大胆模型在自治环境中收敛到稳定态的案例——反驳"大胆模型必然发散"假设。
+- 找到形式化验证安全架构在生产系统中被实际部署且有效的案例——验证"信任外化"可行性。
+- 找到同一模型的不同版本在自治环境中表现截然不同的案例——验证"版本更新是否改变信任结构"。
+- 找到 least-agency 约束成功反转发散循环的工程案例——验证"中途干预可行性"。
+
+### Source 需求
+
+- Anthropic 内部关于 Claude 自治行为/过度合规的研究或工程复盘（如有公开材料）。
+- xAI 或 Grok 团队关于自治行为测试的任何公开信息。
+- 形式化验证安全架构在 AI Agent 中的工程实现案例（Emergence 原论文 + 其他团队的类似尝试）。
+- 不同模型版本（如 Claude Sonnet 4.5 vs 4.6、GPT-4 vs GPT-5）在同一基准上的安全行为对比数据。
+- Agent 系统中"行动不足"（GPT 遗忘生存类型）的失败模式和防御策略的工程文献。
+
+### 下一步目标建议
+
+1. **优先寻找 Emergence 原论文**——Fortune 报道只是摘要，原论文可能包含完整实验参数、交互日志和统计分析，能显著提升 [[Model-Safety-Divergence]] 的证据层级。
+2. **其次寻找"过度合规"的反例**——如果 Claude 在某些场景中做出了合理但违规的判断，就能证伪"过度合规=脆弱"假设，增强 [[AI-Restraint]] 的边界条件描述。
+3. **考虑新建 comparison**——过度合规 vs 过度行动的对比分析，将 [[AI-Restraint]] 与 [[Bias-to-Action-LLM]] 的对立框架从 coding agent 扩展到自治系统。
+
+### 最小实验
+
+1. 搜索 Emergence AI / Satya Nitta 的原论文或详细实验报告。
+2. 如果找到，编译为 source-summary，对照当前 [[Model-Safety-Divergence]] 的数据点标注证据层级。
+3. 如果未找到原论文，在 [[Model-Safety-Divergence]] 的"前提与局限性"中明确标注"仅基于新闻报道摘要，缺一手论文"。
+
+### 新增待验证问题
+
+- **过度合规是否是安全风险**：零异议的自治系统在面对规则间隙时是否更脆弱？
+- **信任结构能否跨版本稳定**：模型更新是否改变组织文化的投射？
+- **沉默型崩溃需要什么 containment**：行动不足（遗忘生存）和行动过度（犯罪）是否需要不同的防御架构？
+- **反馈循环能否中途反转**：least-agency 约束是否能在发散循环锁定前改变轨道？
+- **形式化验证的信任基座是什么**：验证器本身的信任结构如何建立？
+
+### 新增剪藏方向
+
+- Emergence AI / Satya Nitta 原论文或详细实验报告。
+- Claude 在自治环境中做出合理违规判断的案例（过度合规的反例）。
+- 形式化验证安全架构在 AI Agent 生产系统中的部署案例。
+- 不同模型版本在同一自治基准上的安全行为对比数据。
+- Agent 系统中"行动不足"失败模式的工程文献。
+
+### 新增 Source 需求队列条目
+
+| 目标 | 当前缺口 | 下一步 source | 触发行动 |
+|------|----------|---------------|----------|
+| 提升 Model-Safety-Divergence 证据层级 | 缺一手论文（仅 Fortune 报道摘要） | 找 Emergence AI 原论文或详细实验报告 | clip 后更新 [[Model-Safety-Divergence]] |
+| 证伪"过度合规=脆弱" | 缺反例 | 找 Claude 在自治环境中做出合理但违规判断的案例 | clip 后更新 [[AI-Restraint]]、[[Model-Safety-Divergence]] |
+| 验证信任外化可行性 | 缺工程案例 | 找形式化验证安全架构在 AI Agent 生产系统中的部署实例 | clip 后更新 [[Verifiable-Agent-Engineering]] |
+| 验证版本更新是否改变信任结构 | 缺对比数据 | 找同一模型不同版本在同一自治基准上的安全行为对比 | clip 后更新 [[Model-Safety-Divergence]]、[[Distributional-Alignment]] |
+| 防御"行动不足"崩溃 | 缺失败模式文献 | 找 Agent 系统中遗忘生存/行动不足的失败模式和防御策略 | clip 后更新 [[Agent-Containment]] 或新建 comparison |
 
 ## 待验证问题
 
