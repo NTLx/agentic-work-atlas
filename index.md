@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-05-28
+updated: 2026-05-29
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 199 个 |
-| Topic 页面 | 26 个 |
+| Entity 页面 | 202 个 |
+| Topic 页面 | 27 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 75 个 |
+| Raw 文章 | 76 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -192,6 +192,9 @@ tags:
 | [[wiki/entities/Integration-Wall\|Integration Wall（集成之墙）]] | AI 从 demo 到生产落地时遇到的系统、权限、合规、流程和组织采纳约束 | FDE 系列 |
 | [[wiki/entities/人机对齐|人机对齐]] | 先人人对齐、再人机对齐的 Agent 评测→工程管理方法论 | 美团 AI Coding 实践 |
 | [[wiki/entities/渐进式重构|渐进式重构]] | 技术债拆解为业务需求顺带动作的第三条重构路 | 美团 AI Coding 实践 |
+| [[wiki/entities/Agent-Infra\|Agent Infra（Agent 基础设施层）]] | 将硅基执行者接进软件世界的运行时层：Coding Agent + Context/Memory/MCP/Sandbox/AgentOps | Agentic AI 2026 生态报告 |
+| [[wiki/entities/Token-Supply-Chain\|Token Supply Chain（Token 供应链）]] | 将 token 像电力一样编排的生产基础设施层：推理调度、KV cache、成本路由、可观测性 | Agentic AI 2026 生态报告 |
+| [[wiki/entities/Carbon-Silicon-Division\|Carbon-Silicon Division（碳基-硅基分工）]] | 碳基定义任务、硅基承担执行——开发者从执行层移动到定义层的分工范式 | Agentic AI 2026 生态报告 |
 
 #### 作者 Entities
 
@@ -268,6 +271,7 @@ tags:
 | [[wiki/topics/AI-Native-Product-Operating-System\|AI 原生产品操作系统]] | 把模型能力溢出转化为产品假设、发布探针、反馈闭环和市场验证纪律 | AI-Native-Shipping, Research-Preview, PM-in-AI-Era, Product-Overhang |
 | [[wiki/topics/Forward-Deployed-AI-Enablement\|FDE 式 AI 赋能]] | 嵌入真实组织现场，发现黄金用例、穿越集成之墙，并沉淀可复用能力 | Forward-Deployed-Engineer, Deployment-Product-Flywheel, Golden-Case |
 | [[wiki/topics/Enterprise-AI-Model-Sourcing\|企业 AI 模型采购]] | 按任务分布、评测证据、成本曲线、部署约束和组织能力分层选择模型来源 | Layered-AI-Sourcing, Specialized-Small-Models, Distributional-Alignment |
+| [[wiki/topics/Agentic-AI-Ecosystem\|Agentic AI 生态结构]] | 从 LLM 工具链到三层执行栈（Agent Infra / Model Infra / Model）的生态演化 | Agent-Infra, Token-Supply-Chain, Carbon-Silicon-Division |
 
 ### Comparisons (comparisons/)
 *对比分析页面*
@@ -310,11 +314,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（75 个）*
+*原始剪藏文章（76 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[ITBench]]、[[Least-Agency]]
+最新编译：[[Agent-Infra]]、[[Token-Supply-Chain]]、[[Carbon-Silicon-Division]]
 
 ---
 
@@ -347,4 +351,4 @@ status             # 查看知识库状态
 ---
 
 *索引版本: v2.6*
-*最后更新: 2026-05-24*
+*最后更新: 2026-05-29*

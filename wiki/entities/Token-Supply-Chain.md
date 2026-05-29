@@ -1,0 +1,69 @@
+---
+type: entity
+title: "Token 供应链"
+aliases:
+  - Token Supply Chain
+  - token 供应链管理
+definition: "将 token 像电力、物流和数据库一样编排的生产基础设施层，覆盖推理调度、KV cache 管理、成本路由、可观测性和治理，使 token 从聊天消耗品变成可控生产资料"
+created: 2026-05-29
+updated: 2026-05-29
+tags:
+  - agentic-ai
+  - model-infrastructure
+  - token-economics
+related_entities:
+  - "[[Agent-Infra]]"
+  - "[[Agentic-Workflow-Token-Efficiency]]"
+  - "[[Specialized-Small-Models]]"
+  - "[[Dual-Tier-LLM-Architecture]]"
+source_raw:
+  - "[[20260528-agentic-ai-2026-landscape]]"
+---
+
+> [!definition] 定义
+> 将 token 像电力、物流和数据库一样编排的生产基础设施层，覆盖推理调度、KV cache 管理、成本路由、可观测性和治理，使 token 从聊天消耗品变成可控生产资料。
+
+Token 供应链是 [[Agent-Infra]] 和 Model 层之间的中间基础设施层。当 Agent 从"回答一句话"扩展到"连续读代码、查资料、调用工具、等待反馈再继续执行"，token 就从聊天消耗变成了生产资料，需要被稳定、便宜、可观测、可治理地供应。
+
+## 核心分工
+
+推理层出现四种分工：
+
+| 分工 | 代表项目 | 职责 |
+|------|---------|------|
+| 高吞吐引擎 | vLLM、SGLang | 把模型更快、更稳、更便宜地跑起来 |
+| 边缘/本地推理 | llama.cpp | 把模型带到个人电脑、私有环境和端侧设备 |
+| 数据中心级调度 | Dynamo、Ray Serve | 多模型、多租户、多 GPU、多地域运行 |
+| 网关和代理 | LiteLLM、OpenRouter | 模型路由、降级、统一接口、成本追踪和审计 |
+
+## 关键数据点
+
+- SGLang issue #21846 路线图命名为 "Distributed KVCache System For Agentic Workload"，明确写入 agentic workloads 导致 KV cache storage 与 transfer volumes 快速增长
+- Dynamo issue #5506 的 H1'26 roadmap 聚焦请求调度、KV cache 复用、worker 扩缩容和多节点高可用
+- LiteLLM 仓库中 cost/budget/spend 相关 issue/PR 合计 154 条（cost based routing 23、lowest cost 18、budget routing 37、spend tracking 76）
+- RouteLLM（ICLR 2025）实现接近强模型质量时超过 2 倍成本节省
+- IPR（EMNLP Industry 2025）在 Claude 系列间做 prompt routing，成本降低 43.9%
+
+## 关键洞察
+
+**Agent 改变了 token 的消费结构。** 传统推理是一个请求、一次生成；Agent 推理是连续多轮、工具调用、长上下文、等待反馈再继续。这对 KV cache、PD 分离、健康检查和路由提出了全新要求。
+
+**工业场景真正痛的是稳定性。** SGLang issue #20252 记录了一个典型 cascading failure：qwen3-32b-fp8 在 90 prefill + 30 decode 的 H20 集群上，部分节点重启后 decode 重试、健康检查失败、router 移除 worker、流量压到剩余节点，最终 503。模型能跑起来只是第一步，一台节点的波动可能沿路由和健康检查放大成全局故障。
+
+## 类比云计算演化
+
+Model Infra 正在走云计算早期的路径：从"能不能把服务跑起来"到调度、弹性、观测、成本、SLA、供应链和开发者体验的系统工程竞争。
+
+## 前提与局限性
+
+- Token 供应链优化主要适用于大规模部署场景；个人开发者或小团队可能直接从 API 获取 token 更经济
+- 成本路由（RouteLLM、IPR）依赖问题难度判断的准确性；误判会导致质量下降
+- 文章数据来自蚂蚁 OpenDigger 体系，可能存在分类偏差
+
+## 关联概念
+
+- [[Agentic-Workflow-Token-Efficiency]] — token 效率优化的方法论层面
+- [[Specialized-Small-Models]] — 专门化小模型是 token 供应链的下游消费者
+- [[Dual-Tier-LLM-Architecture]] — 按复杂度路由的分层架构是 token 供应链的一种实现
+- [[Agent-Infra]] — token 供应链服务的上层
+- [[Layered-AI-Sourcing]] — 企业级模型采购是 token 供应链的组织侧映射

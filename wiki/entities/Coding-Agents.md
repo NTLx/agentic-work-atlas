@@ -5,7 +5,7 @@ aliases:
   - Coding Agents
 definition: "能够自主完成编程任务的 AI Agent——理解需求、编写代码、运行测试、修复 bug、提交 PR，形成完整开发循环"
 created: 2026-04-10
-updated: 2026-05-08
+updated: 2026-05-29
 tags:
   - AI-Agent
   - coding-tools
@@ -23,6 +23,7 @@ source_raw:
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[building-effective-agents-complete]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
+  - '[[20260528-agentic-ai-2026-landscape]]'
 ---
 
 # Coding Agents（编码智能体）
@@ -74,6 +75,9 @@ Coding Agent 擅长**边界清晰、可验证、有据可查**的任务。
 - Coding Agent Loop = Understand → Plan → Implement → Verify → Iterate
 - 范式隐喻：程序员从作者变为编辑——"I don't write code, I edit it"
 - CREAO 案例：99% 生产代码由 AI 编写，14 天内每天 3-8 次部署（Peter Pang, 2026）
+- Agentic AI landscape 中 Coding Agent 相关项目 78 个，累计 Star 386 万，2026 年 4 月参与者 14,019（蚂蚁 OpenDigger, 2026）
+- Top 100 Agentic AI 项目中 92 个至少使用一种 coding agent 配置，平均每个项目使用 2.8 种；Claude Code 覆盖率最高（81%），OpenAI Codex 69%（蚂蚁 OpenDigger, 2026）
+- 三条路线并行：CLI-first（Claude Code、Codex）、IDE-first（Cursor）、cowork/cloud worker（Devin、OpenHands）（蚂蚁 OpenDigger, 2026）
 
 ## 前提与局限性
 
@@ -91,6 +95,8 @@ Coding Agent 擅长**边界清晰、可验证、有据可查**的任务。
 - [[Vibe-Coding]] — Coding Agent 产出的原型级代码 vs 生产级代码
 - [[Harness-Engineering]] — Coding Agent 作为主要构建者时，需要完整的系统框架来保证稳定、可靠、安全
 - [[Decision-Quality]] — Coding Agent 时代程序员的核心价值从代码产出转向决策质量
+- [[Carbon-Silicon-Division]] — Coding Agent 推动的碳基-硅基分工模式
+- [[Agent-Infra]] — Coding Agent 作为 Agent Infra 的第一波规模化入口
 
 ## 来源
 
