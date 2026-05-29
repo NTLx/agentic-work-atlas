@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 202 个 |
+| Entity 页面 | 205 个 |
 | Topic 页面 | 27 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 76 个 |
+| Raw 文章 | 77 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -195,6 +195,9 @@ tags:
 | [[wiki/entities/Agent-Infra\|Agent Infra（Agent 基础设施层）]] | 将硅基执行者接进软件世界的运行时层：Coding Agent + Context/Memory/MCP/Sandbox/AgentOps | Agentic AI 2026 生态报告 |
 | [[wiki/entities/Token-Supply-Chain\|Token Supply Chain（Token 供应链）]] | 将 token 像电力一样编排的生产基础设施层：推理调度、KV cache、成本路由、可观测性 | Agentic AI 2026 生态报告 |
 | [[wiki/entities/Carbon-Silicon-Division\|Carbon-Silicon Division（碳基-硅基分工）]] | 碳基定义任务、硅基承担执行——开发者从执行层移动到定义层的分工范式 | Agentic AI 2026 生态报告 |
+| [[wiki/entities/Three-Layer-Agent-Memory\|Three-Layer Agent Memory（三层 Agent 记忆）]] | L1 持久画像 / L2 程序性记忆 / L3 历史检索——防止记忆腐化并按需加载 | Obsidian × Claude Code 大脑 |
+| [[wiki/entities/Capability-Map\|Capability Map（能力地图）]] | 按"我要做什么"反向索引本地工具链，Agent 查表即用 | Obsidian × Claude Code 大脑 |
+| [[wiki/entities/Skill-Internalization\|Skill Internalization（Skill 内化）]] | 提取别人 Skill 的设计思想 + 自己语料重组，安装是搬运，内化是吸收 | Obsidian × Claude Code 大脑 |
 
 #### 作者 Entities
 
@@ -314,11 +317,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（76 个）*
+*原始剪藏文章（77 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Agent-Infra]]、[[Token-Supply-Chain]]、[[Carbon-Silicon-Division]]
+最新编译：[[Three-Layer-Agent-Memory]]、[[Capability-Map]]、[[Skill-Internalization]]
 
 ---
 

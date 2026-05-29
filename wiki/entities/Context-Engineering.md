@@ -5,7 +5,7 @@ aliases:
   - Context Engineering
 definition: "设计 Agent 每次推理时看到的信息结构，包括项目上下文、技能按需加载、记忆层级和上下文生命周期管理"
 created: 2026-04-09
-updated: 2026-05-25
+updated: 2026-05-29
 tags:
   - AI-Agent
   - OpenClaw
@@ -17,11 +17,14 @@ related_entities:
   - '[[Conceptual-Model]]'
   - '[[Model-Context-Protocol-MCP]]'
   - '[[CLAUDE-md]]'
+  - '[[Three-Layer-Agent-Memory]]'
+  - '[[Capability-Map]]'
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[What Is Code?]]'
   - '[[Building an MCP Ecosystem at Pinterest]]'
   - '[[The-Founders-Playbook-05062026_v3]]'
+  - '[[20260526-obsidian-claude-code-brain]]'
 ---
 
 # Context Engineering

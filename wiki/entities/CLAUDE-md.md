@@ -22,6 +22,8 @@ related_entities:
   - "[[Multi-Layer-Memory]]"
   - "[[Compound-Engineering]]"
   - "[[Technical-Debt-Avoidance]]"
+  - "[[Three-Layer-Agent-Memory]]"
+  - "[[Capability-Map]]"
 source_raw:
   - "[[The-Founders-Playbook-05062026_v3]]"
   - "[[20260127-claude-coding-notes]]"

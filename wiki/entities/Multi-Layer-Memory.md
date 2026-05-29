@@ -5,7 +5,7 @@ aliases:
   - Multi Layer Memory
 definition: "五层记忆系统借鉴人类认知模型，从短期到长期分层管理 Agent 记忆，实现跨会话知识沉淀和自主进化"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-05-29
 tags:
   - AI-Agent
   - OpenClaw
@@ -13,8 +13,10 @@ tags:
 related_entities:
   - '[[Context-Engineering]]'
   - '[[Agent-Orchestration]]'
+  - '[[Three-Layer-Agent-Memory]]'
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
+  - '[[20260526-obsidian-claude-code-brain]]'
 ---
 
 # Multi-Layer Memory
