@@ -3,7 +3,6 @@ type: source-summary
 title: "CEO AI Psychosis + AI 分化 + 反 AI 反弹"
 source_raw:
   - "[[20260529-ceo-ai-psychosis-equity-podcast]]"
-  - "[[20260529-ceo-ai-psychosis-equity-podcast-transcript]]"
 created: 2026-05-30
 updated: 2026-05-30
 tags:

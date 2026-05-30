@@ -26,7 +26,6 @@ source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - '[[20260529-ceo-ai-psychosis-equity-podcast]]'
-  - '[[20260529-ceo-ai-psychosis-equity-podcast-transcript]]'
 ---
 
 # AI Psychosis
