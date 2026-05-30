@@ -26,6 +26,7 @@ source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - '[[20260529-ceo-ai-psychosis-equity-podcast]]'
+  - '[[20260529-ceo-ai-psychosis-equity-podcast-transcript]]'
 ---
 
 # AI Psychosis
@@ -96,6 +97,26 @@ CEO 看到 AI 的 happy path（生成原型、起草合同），但不需要：
 "Use AI a ton, to figure out the real implications of agents in the enterprise, and come out the other side with an appreciation for both the upside and the real work that goes into them."
 
 但需注意：更多接触 AI 不等于自动校准判断。深度用户同样可能陷入 Karpathy 版本的 AI Psychosis——把 coding agent 的高峰体验外推到所有领域。
+
+### 自上而下 vs 自下而上（播客新增维度）
+
+历史上的技术变革（BYOD、Slack、GitHub）多是 worker 自发引入后管理层接受（自下而上）。AI 采纳似乎反过来了——executives 和 VCs 推动"小团队 = 大公司"的梦想，worker 被动适应。
+
+> "a lot of the idea of these AI productivity gains seems to be embraced by the executives or... by the VCs who are funding you, who love this dream of... a tiny team and be as effective as a company with a much larger team" — Anthony Ha, Equity Podcast (30:17-31:29)
+
+这意味着 AI Psychosis 不仅是认知偏差，还可能是**权力结构**问题：决策权与执行经验分离的人推动变革，执行者承受后果。
+
+### AI 成本与裁员的隐性关系
+
+播客 (33:16-33:49) 揭示了一个常被忽略的维度：裁员不完全是因为"AI 能替代"，部分是为了**offset AI 的高昂成本**。这让 AI Washing 的判断更复杂——公司可能同时在做两件矛盾的事：一边声称 AI 提升了效率，一边用裁员来填补 AI 的账单。
+
+### Worker Burnout 风险
+
+更少的人 + AI 工具 = 更高的个人产出，但也意味着更少的同事来分担认知负荷和情感支持。
+
+> "there are trade-offs that don't get discussed... it maybe burns them out a lot quicker, especially because they have fewer people around them to commiserate with and collaborate with" — Anthony Ha, Equity Podcast (34:13-34:55)
+
+这是 AI Psychosis 的组织层后果：CEO 看到效率提升，worker 体验到 burnout 加速，两边的现实再次分裂。
 
 ## 前提与局限性
 

@@ -47,3 +47,6 @@ docs/
 .qoder/
 .qwen/
 .trae/
+
+# cc-connect 系统目录
+.cc-connect/
