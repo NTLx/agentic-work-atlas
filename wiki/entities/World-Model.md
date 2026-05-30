@@ -6,7 +6,7 @@ aliases:
   - 世界模型
 definition: "AI 系统对环境状态、因果结构和行动后果的内部表示，使 Agent 能在长期任务中预测、规划并随经验修正策略"
 created: 2026-05-18
-updated: 2026-05-25
+updated: 2026-05-30
 tags:
   - AI
   - AGI
@@ -17,8 +17,11 @@ related_entities:
   - "[[Scientific-Discovery-AI]]"
   - "[[Agent-Knowledge-Management]]"
   - "[[Jagged-Intelligence]]"
+  - "[[Unified-Model-Strategy]]"
+  - "[[Model-Distillation]]"
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
+  - "[[20260529-gemini-co-leads-origins]]"
 ---
 
 # World Model（世界模型）
@@ -36,6 +39,7 @@ source_raw:
 
 - Hassabis 认为当前 AGI 路线仍缺持续学习、长期推理和记忆；这些能力都依赖系统能形成可更新的世界模型。
 - 更长上下文不等于世界模型。上下文是材料集合，世界模型是对材料背后因果结构的压缩。
+- **Gemini Omni 联合训练**（Koray Kavukcuoglu, 2026-05）：Gemini Omni 被定位为"真正的世界模型"——不是文本到视频的单向生成（如 Veo），而是联合训练理解物理、视觉、文本等多模态。过去复杂视频场景的前向一致性需要手动设计，现在"just by training at scale and mixing all the data, we're seeing these capabilities emerge"。
 - 对 coding agent 来说，世界模型包括代码库结构、测试反馈、用户目标、部署环境和长期约束。
 - 对科学发现 Agent 来说，世界模型包括实验结果、假设空间、目标函数、模拟器状态和工具可靠性。
 - 世界模型必须与 [[Tool-Use-Architecture|工具使用架构]]结合：模型通过工具获得观测、执行实验、校验预测，而不是只在文本里想象。
@@ -68,4 +72,5 @@ source_raw:
 - [[Tool-Use-Architecture]] - 工具调用为世界模型提供外部观测和校验
 - [[Scientific-Discovery-AI]] - 科学发现场景需要连接实验、理论和状态转移
 - [[Agent-Knowledge-Management]] - 外部知识层可作为世界模型的材料来源
-- [[Jagged-Intelligence]] - 缺少稳定世界模型会让能力表现不一致
+- [[Unified-Model-Strategy]] - 统一模型战略为联合多模态训练提供组织基础
+- [[Model-Distillation]] - 蒸馏能否传递世界模型（vs 只传递统计模式）是开放问题

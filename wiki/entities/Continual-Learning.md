@@ -7,7 +7,7 @@ aliases:
   - 连续学习
 definition: "让 AI 系统在新情境中吸收经验、更新知识和保持旧能力，而不是每次会话都从静态权重和临时上下文重新开始的能力"
 created: 2026-05-08
-updated: 2026-05-25
+updated: 2026-05-30
 tags:
   - AI
   - AGI
@@ -19,8 +19,11 @@ related_entities:
   - "[[Multi-Layer-Memory]]"
   - "[[Agent-Knowledge-Management]]"
   - "[[Scientific-Discovery-AI]]"
+  - "[[Model-Distillation]]"
+  - "[[Unified-Model-Strategy]]"
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
+  - "[[20260529-gemini-co-leads-origins]]"
 ---
 
 # Continual Learning（持续学习）
@@ -40,6 +43,8 @@ source_raw:
 - 他用海马体和睡眠回放解释生物智能如何整合经验：大脑在睡眠，尤其是 REM 阶段回放重要情景，把新经验融入已有知识结构。
 - DeepMind 的早期 DQN 从神经科学借鉴了 experience replay，通过反复回放成功轨迹来学习 Atari 策略。
 - 单纯扩大上下文窗口不足以解决问题。实时视频会迅速消耗百万 token；更大的问题是检索相关经验的成本，而不是能不能存下所有内容。
+- **架构有机性缺失**（Koray Kavukcuoglu, 2026-05）：当前模型架构（如 MoE 专家混合）结构过于统一——"lots of experts, they're all very similar structure"。Koray 认为需要"更有机的（organic）"、更灵活的架构来实现真正的持续学习，但"we are not doing that yet"。
+- **Self-learning 预测**（Koray, 2026-05）：预测 IO 2027 前后，模型将在实验层面参与改进自身的部分——"rely on the models to improve different parts of Gemini"。Jeff 补充这将是在人类指导下的自我改进（"under the guidance of researchers"）。
 - 缺乏持续学习会限制 Agent 的 `fire and forget` 能力：Agent 可以完成任务片段，但很难长期适应一个具体组织、项目或科学问题空间。
 
 ## 与工程补丁的边界
@@ -72,3 +77,5 @@ source_raw:
 - [[Agent-Knowledge-Management]] - 用 Wiki、skills 和检索组织长期知识
 - [[Jagged-Intelligence]] - 缺乏稳定学习会让模型能力表现更加锯齿化
 - [[Scientific-Discovery-AI]] - 科学发现需要把多轮实验结果累计为可行动的知识
+- [[Model-Distillation]] - 蒸馏传递训练时快照，不替代运行时持续学习
+- [[Unified-Model-Strategy]] - 统一模型为持续学习提供一致的能力基础

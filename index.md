@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 210 个 |
+| Entity 页面 | 213 个 |
 | Topic 页面 | 27 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 80 个 |
+| Raw 文章 | 81 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -203,6 +203,9 @@ tags:
 | [[wiki/entities/Emergence-World\|Emergence World]] | Emergence AI 推出的自治系统模拟实验平台 | Emergence World 模拟实验 |
 | [[wiki/entities/Developer-Acceleration\|Developer Acceleration（开发者加速）]] | AI coding agents 驱动下代码产出速度、PR 规模、Agent 会话深度和代码存活率的全面加速 | Cursor Developer Habits Report |
 | [[wiki/entities/AI-Developer-Power-User-Gap\|AI Developer Power User Gap（AI 开发者 Power User 差距）]] | AI 编码工具使用中的极端幂律分布——P99 产出为 P50 的 46 倍，Gini 0.72-0.77 | Cursor Developer Habits Report |
+| [[wiki/entities/Model-Distillation\|Model Distillation（模型蒸馏）]] | 把大模型能力压缩到小模型的技术——Gemini Flash 每代超越前代 Pro 的核心引擎 | Gemini co-leads 圆桌对话 |
+| [[wiki/entities/Unified-Model-Strategy\|Unified Model Strategy（统一模型战略）]] | 把分散的 AI 研究和算力合并到一个统一模型项目的组织与技术决策 | Gemini co-leads 圆桌对话 |
+| [[wiki/entities/Tool-Latency-Bottleneck\|Tool Latency Bottleneck（工具延迟瓶颈）]] | Agent 速度提升后，为人类设计的工具延迟成为系统新瓶颈 | Gemini co-leads 圆桌对话 |
 
 #### 作者 Entities
 
@@ -322,11 +325,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（80 个）*
+*原始剪藏文章（81 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[AI-Psychosis]]（CEO 维度扩展）、[[AI-Washing]]
+最新编译：[[20260529-gemini-co-leads-origins|Gemini co-leads 圆桌对话]]（Model-Distillation、Unified-Model-Strategy、Tool-Latency-Bottleneck）
 
 ---
 
