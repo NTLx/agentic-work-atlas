@@ -6,7 +6,7 @@ aliases:
   - Token Efficiency
 definition: "通过 API 代理记录、自动化审计、MCP 工具裁剪、CLI 替代等手段，系统性优化 Agentic Workflows 的 token 成本"
 created: 2026-05-09
-updated: 2026-05-09
+updated: 2026-05-30
 tags:
   - Agentic-Engineering
   - cost-optimization
@@ -17,6 +17,7 @@ related_entities:
   - "[[Agent-PR-Review]]"
 source_raw:
   - "[[Improving token efficiency in GitHub Agentic Workflows]]"
+  - "[[20260530-cursor-developer-habits-report]]"
 ---
 
 # Agentic-Workflow-Token-Efficiency（Agentic Workflow Token 效率）
@@ -77,6 +78,20 @@ source_raw:
 - 消除工具调用开销（工具 JSON Schema、参数块、响应）
 - 利用 Agent 在 bash 脚本方面的训练
 
+## 模型经济学：成本异质性
+
+Cursor 2026 春季报告对 7 个模型族的基准测试揭示了 token 效率的宏观背景：
+
+| 维度 | 变异倍数 | 含义 |
+|------|----------|------|
+| 每次 Agent 请求成本 | ~**9x** | 同一工作流在不同模型上的成本差异巨大 |
+| 每行被接受代码成本 | ~**7x** | 高成本模型部分弥补差距（每次请求产出更多被接受代码） |
+
+> [!important] 成本-质量前沿
+> CursorBench 3.1 评分 vs 平均任务成本的散点图显示：模型在成本-质量前沿上的位置差异显著。选择模型不只是选价格，而是选前沿上的最优位置。
+
+**对 Token 效率优化的启示**: 模型选择本身就是最大的 token 效率杠杆——9x 的成本差异远超任何优化策略能达到的效果。但高成本模型的更高接受率部分缩小了差距，说明"最便宜的模型"不一定是"最高效的选择"。
+
 ## 关键数据点
 
 | 指标 | 数据 |
@@ -90,6 +105,8 @@ source_raw:
 | Auto-Triage 运行频率 | 6.8 次/天 (最高 15 次) |
 | MCP 工具 Schema 大小 | 40 工具 = 10-15 KB |
 | 移除未使用工具节省 | 8-12 KB 上下文 |
+| 模型间请求成本差异 | ~9x（7 个模型族, Cursor 2026 春季） |
+| 模型间每行接受代码成本差异 | ~7x（Cursor 2026 春季） |
 
 ## 效率测量
 

@@ -5,7 +5,7 @@ aliases:
   - Coding Agents
 definition: "能够自主完成编程任务的 AI Agent——理解需求、编写代码、运行测试、修复 bug、提交 PR，形成完整开发循环"
 created: 2026-04-10
-updated: 2026-05-29
+updated: 2026-05-30
 tags:
   - AI-Agent
   - coding-tools
@@ -24,6 +24,7 @@ source_raw:
   - '[[building-effective-agents-complete]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
   - '[[20260528-agentic-ai-2026-landscape]]'
+  - '[[20260530-cursor-developer-habits-report]]'
 ---
 
 # Coding Agents（编码智能体）
@@ -78,6 +79,9 @@ Coding Agent 擅长**边界清晰、可验证、有据可查**的任务。
 - Agentic AI landscape 中 Coding Agent 相关项目 78 个，累计 Star 386 万，2026 年 4 月参与者 14,019（蚂蚁 OpenDigger, 2026）
 - Top 100 Agentic AI 项目中 92 个至少使用一种 coding agent 配置，平均每个项目使用 2.8 种；Claude Code 覆盖率最高（81%），OpenAI Codex 69%（蚂蚁 OpenDigger, 2026）
 - 三条路线并行：CLI-first（Claude Code、Codex）、IDE-first（Cursor）、cowork/cloud worker（Devin、OpenHands）（蚂蚁 OpenDigger, 2026）
+- Agent 会话平均工具调用次数近两月上升约 30%，Agent 正在承担更复杂工作（Cursor, 2026 春季）
+- Mega PR（≥1000 行变更）日益常见，2026 年 1 月出现明显跳跃（Cursor, 2026 春季）
+- AI 生成代码 60 分钟存活率：年初 76% → 当前 81%（Cursor, 2026 春季）
 
 ## 前提与局限性
 

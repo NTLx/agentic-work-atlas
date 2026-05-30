@@ -7,7 +7,7 @@ aliases:
   - AI 生成 PR
 definition: "AI Agent 自动提交的 Pull Request，通常缺乏代码库设计哲学的隐式上下文，导致代码质量不符合维护者标准"
 created: 2026-05-11
-updated: 2026-05-11
+updated: 2026-05-30
 tags:
   - Agentic-Engineering
   - open-source
@@ -18,6 +18,7 @@ related_entities:
   - "[[Compound-Engineering]]"
 source_raw:
   - "[[The PR you would have opened yourself]]"
+  - "[[20260530-cursor-developer-habits-report]]"
 ---
 
 # Agent-Generated-PRs（Agent 生成的 PR）
@@ -25,9 +26,22 @@ source_raw:
 > [!definition] 定义
 > **Agent-Generated-PRs** 是指 AI 编码 Agent 自动为开源项目提交的 Pull Request。2026 年成为显著现象：任何人都可以用 Agent 自动修复 issue 并提交 PR。核心问题不在于代码能否运行，而在于代码是否符合项目的隐式设计契约。
 
+## AI 代码存活率趋势
+
+Cursor 2026 春季报告提供了 AI 生成代码的"短期质量"数据：
+
+- **60 分钟存活率**: 被接受的 AI 代码行在 60 分钟后仍存在的比例，从年初 ~76% 升至 ~81%
+- **趋势**: 2026 年内持续上升
+- **解读**: 可能因为模型质量提升，也可能因为开发者审查标准变松。60 分钟窗口太短，不能替代长期代码质量评估
+
+> [!warning] 存活率 ≠ 质量
+> 60 分钟存活率衡量的是"代码没被立即撤回或覆盖"，但不反映 bug 率、可维护性或长期技术债务。需要 60 天、60 周存活率数据才能判断真实质量。
+
 ## 关键数据点
 
 - **PR 量暴增**: transformers 等项目的 PR volume 上升 10 倍，但维护者数量不变
+- **AI 代码 60 分钟存活率**: 年初 ~76% → 当前 ~81%（Cursor, 2026 春季）
+- **Mega PR（≥1000 行）**: 日益常见，2026 年 1 月跳跃（Cursor, 2026 春季）
 - **App Store 类比**: App Store 审核员同样因 AI 生成应用提交量暴增而不堪重负
 - **核心瓶颈**: 不是打字速度，而是理解代码库以在不破坏隐式和显式契约的前提下修改代码
 

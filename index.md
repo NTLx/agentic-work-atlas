@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-05-29
+updated: 2026-05-30
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 207 个 |
+| Entity 页面 | 209 个 |
 | Topic 页面 | 27 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 78 个 |
+| Raw 文章 | 79 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -200,6 +200,8 @@ tags:
 | [[wiki/entities/Skill-Internalization\|Skill Internalization（Skill 内化）]] | 提取别人 Skill 的设计思想 + 自己语料重组，安装是搬运，内化是吸收 | Obsidian × Claude Code 大脑 |
 | [[wiki/entities/Model-Safety-Divergence\|Model Safety Divergence（模型安全行为分歧）]] | 不同 AI 模型在相同自治环境下的安全行为差异——从零犯罪到灭绝 | Emergence World 模拟实验 |
 | [[wiki/entities/Emergence-World\|Emergence World]] | Emergence AI 推出的自治系统模拟实验平台 | Emergence World 模拟实验 |
+| [[wiki/entities/Developer-Acceleration\|Developer Acceleration（开发者加速）]] | AI coding agents 驱动下代码产出速度、PR 规模、Agent 会话深度和代码存活率的全面加速 | Cursor Developer Habits Report |
+| [[wiki/entities/AI-Developer-Power-User-Gap\|AI Developer Power User Gap（AI 开发者 Power User 差距）]] | AI 编码工具使用中的极端幂律分布——P99 产出为 P50 的 46 倍，Gini 0.72-0.77 | Cursor Developer Habits Report |
 
 #### 作者 Entities
 
@@ -319,11 +321,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（77 个）*
+*原始剪藏文章（78 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Model-Safety-Divergence]]、[[Emergence-World]]
+最新编译：[[Developer-Acceleration]]、[[AI-Developer-Power-User-Gap]]
 
 ---
 
