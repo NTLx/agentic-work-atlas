@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 209 个 |
+| Entity 页面 | 210 个 |
 | Topic 页面 | 27 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 79 个 |
+| Raw 文章 | 80 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -139,7 +139,8 @@ tags:
 | [[wiki/entities/Harness-Engineering\|Harness Engineering]] | 让 AI Agent 成为主要构建者的完整系统框架 | Why Your "AI-First" Strategy Is Probably Wrong |
 | [[wiki/entities/AI-First\|AI-First]] | 围绕"AI 是主要构建者"重新设计流程、架构和组织的范式 | Why Your "AI-First" Strategy Is Probably Wrong |
 | [[wiki/entities/AI-Capability-Gap\|AI Capability Gap]] | AI 在不同用户群体和应用场景中的不均衡进步，形成两条平行认知现实 | Karpathy X 帖 |
-| [[wiki/entities/AI-Psychosis\|AI Psychosis]] | 专业技术用户对 agentic 模型编程能力的极度震撼，与日常使用者的认知鸿沟 | Karpathy X 帖 |
+| [[wiki/entities/AI-Psychosis\|AI Psychosis]] | 因与 AI 实际工作的"最后一英里"脱节而产生的认知错位——深度用户过度外推，CEO 过度自信 | Karpathy X 帖 + Levie 推文 |
+| [[wiki/entities/AI-Washing\|AI Washing]] | 将裁员归因于 AI 生产力提升，但实际驱动力是预算压力 | TechCrunch + Fortune |
 | [[wiki/entities/AI-Ready-Organization\|AI-Ready Organization]] | 能清晰描述自身目标、流程、策略，从而让 AI 有效执行的组织状态 | Daniel Miessler |
 | [[wiki/entities/AI-Factory\|AI Factory（企业 AI 工厂）]] | 规模化构建、测试、部署、监控 AI 算法的平台化能力层 | P&G AI Factory 系列 |
 | [[wiki/entities/Business-Embedded-AI-Organization\|Business-Embedded AI Organization]] | 兼顾本地业务相关性与全球平台规模的企业 AI 组织结构 | P&G AI Factory 系列 |
@@ -321,11 +322,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（78 个）*
+*原始剪藏文章（80 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[Developer-Acceleration]]、[[AI-Developer-Power-User-Gap]]
+最新编译：[[AI-Psychosis]]（CEO 维度扩展）、[[AI-Washing]]
 
 ---
 

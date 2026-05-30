@@ -5,28 +5,33 @@ aliases:
   - AI Psychosis
   - AI 震撼错位
   - AI 能力震撼
-definition: "深度使用前沿 agentic coding 模型的人因亲历能力跃迁而对 AI 进步速度产生强烈紧迫感的认知状态"
+  - CEO AI Psychosis
+definition: "因与 AI 实际工作的'最后一英里'脱节而产生的认知错位——深度用户过度外推高峰体验，CEO 过度相信 AI 能替代人类工作"
 created: 2026-04-16
-updated: 2026-05-26
+updated: 2026-05-30
 tags:
   - AI-agent
   - perception-gap
+  - organization
 related_entities:
   - '[[Andrej-Karpathy]]'
+  - '[[Aaron-Levie]]'
   - '[[Agentic-Engineering]]'
   - '[[Claude-Code-CLI]]'
   - '[[AI-Capability-Gap]]'
   - '[[Ghost-Intelligence]]'
   - '[[Jagged-Intelligence]]'
+  - '[[AI-Washing]]'
 source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
+  - '[[20260529-ceo-ai-psychosis-equity-podcast]]'
 ---
 
 # AI Psychosis
 
 > [!definition] 定义
-> 深度使用前沿 agentic coding 模型的人因亲历能力跃迁而对 AI 进步速度产生强烈紧迫感的认知状态
+> 因与 AI 实际工作的"最后一英里"脱节而产生的认知错位。原始含义（Karpathy, 2025）：深度使用前沿 agentic coding 模型的人因亲历能力跃迁而对 AI 进步速度产生强烈紧迫感。扩展含义（Levie, 2026）：CEO 因远离实际工作流程，只看到 AI 的 happy path，却据此做出大规模裁员等组织决策。
 
 ## 为什么重要
 
@@ -53,6 +58,44 @@ AI Psychosis 的风险有两面。
 另一面是过度外推。深度用户容易把 coding agent 的高峰体验外推到所有领域，忽略 [[Ghost-Intelligence]] 和 [[Jagged-Intelligence]] 的限制：模型在训练回路、可验证任务和高投入领域极强，但不代表它拥有均匀、稳定、类人的通用判断。
 
 更稳妥的用法是把 AI Psychosis 当作能力评估提示器：当两个人对 AI 的判断差异极大时，不急着争论谁对，而是先比较他们实际使用的模型、任务、工具链和验证条件。
+
+## CEO AI Psychosis（Levie, 2026）
+
+2026 年 5 月，Box CEO [[Aaron-Levie]] 在 X 上提出了 AI Psychosis 的组织层扩展：CEO 群体因结构性地远离"最后一英里"工作，成为 AI 认知错位的高发人群。
+
+### 机制
+
+CEO 看到 AI 的 happy path（生成原型、起草合同），但不需要：
+- 审查代码、发现 bug、识别幻觉库调用
+- 在公司特有的合同条款上训练 AI 模型
+- 花数天时间逐行审查合同中的隐藏条款
+
+这种信息不对称导致 CEO 做出"agents 已经能做这些工作"的跳跃推断，进而推动大规模裁员。
+
+### 关键数据
+
+- 2026 年前 5 个月科技行业裁员 115,430 人，接近 2025 全年的 124,636 人（[[20260529-ceo-ai-psychosis-equity-podcast]]）
+- ClickUp 裁掉 22% 员工（约 3,000 人），用 3,000 AI agents 替代，CEO Zeb Evans 称之为"100x org"
+- Gartner 调查（350 位全球高管）：80% 试点 AI 的企业报告了裁员，但**不论技术是否真正产生回报都裁了**
+- CMR 元分析（2025.10）：**无稳健证据**表明 AI 采纳与总体生产力提升有关
+- NBER（2026.3）：发现"生产力悖论"——感知收益大于实际测量收益
+- MIT（2026）：预测到 2029 年 AI 才能在大多数文本任务上达到 80%-95% 基线质量
+
+### 与 Karpathy 版本的关系
+
+| 维度 | Karpathy (2025) | Levie (2026) |
+|------|----------------|--------------|
+| 主体 | 深度 agentic coding 用户 | CEO / 高管 |
+| 方向 | 紧迫感（可能过度外推） | 过度自信（低估剩余工作） |
+| 来源 | 亲历高峰体验 | 远离实际工作 |
+| 行为 | 渲染焦虑、加速主义 | 大规模裁员、组织重组 |
+| 共同点 | 都基于与 AI 实际能力的脱节，都容易从有限体验做全局推断 |
+
+### Levie 的建议
+
+"Use AI a ton, to figure out the real implications of agents in the enterprise, and come out the other side with an appreciation for both the upside and the real work that goes into them."
+
+但需注意：更多接触 AI 不等于自动校准判断。深度用户同样可能陷入 Karpathy 版本的 AI Psychosis——把 coding agent 的高峰体验外推到所有领域。
 
 ## 前提与局限性
 
