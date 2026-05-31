@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-05-30
+updated: 2026-05-31
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 213 个 |
+| Entity 页面 | 218 个 |
 | Topic 页面 | 27 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 81 个 |
+| Raw 文章 | 83 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -250,6 +250,11 @@ tags:
 | [[wiki/entities/Jacob-Harris\|Jacob Harris]] | 软件开发者、jacobharr.is 作者，写作关注软件、数据和公共系统中的工程判断 | Software Engineering, Data Journalism |
 | [[wiki/entities/Erick-Lachmann\|Erick Lachmann]] | Dharma-AI 作者，参与撰写专门化小模型与企业 AI 采购变量文章 | AI, Enterprise AI |
 | [[wiki/entities/Pimenta-de-Freitas-Cardoso\|Pimenta de Freitas Cardoso]] | DharmaOCR 相关论文作者之一，研究被用于讨论专门化小模型与分布对齐 | AI, Research |
+| [[wiki/entities/Token-Maxing\|Token Maxing（Token 最大化）]] | 企业无差别消耗 AI token 的现象，导致推理成本失控 | Corporate America AI Rationing |
+| [[wiki/entities/Enterprise-AI-Rationing\|Enterprise AI Rationing（企业 AI 配给制）]] | 企业因 AI 推理成本飙升，从鼓励全面实验转向限制使用权限的管理实践 | Corporate America AI Rationing |
+| [[wiki/entities/Campfire-Hiring\|Campfire Hiring（篝火式招聘）]] | 用付费短期真实工作替代传统技术面试的招聘模式 | The Last Technical Interview |
+| [[wiki/entities/Signal-Problem-in-Hiring\|Signal Problem in Hiring（招聘信号问题）]] | 传统面试只能收集几小时信号却要做数年决策的根本缺陷 | The Last Technical Interview |
+| [[wiki/entities/Steve-Yegge\|Steve Yegge]] | 软件工程师、技术博主，35 年面试经验，提出 Campfire Hiring 概念 | The Last Technical Interview |
 
 ### Topics (topics/)
 *整合多篇文章的主题*
@@ -325,11 +330,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（81 个）*
+*原始剪藏文章（83 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[20260529-gemini-co-leads-origins|Gemini co-leads 圆桌对话]]（Model-Distillation、Unified-Model-Strategy、Tool-Latency-Bottleneck）
+最新编译：[[20260529-last-technical-interview|The Last Technical Interview]]（Campfire-Hiring、Signal-Problem-in-Hiring）/ [[20260528-corporate-america-ai-rationing|Corporate America AI Rationing]]（Token-Maxing、Enterprise-AI-Rationing）
 
 ---
 
