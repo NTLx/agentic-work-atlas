@@ -6,7 +6,7 @@ aliases:
   - token 供应链管理
 definition: "将 token 像电力、物流和数据库一样编排的生产基础设施层，覆盖推理调度、KV cache 管理、成本路由、可观测性和治理，使 token 从聊天消耗品变成可控生产资料"
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-05-31
 tags:
   - agentic-ai
   - model-infrastructure
@@ -16,8 +16,11 @@ related_entities:
   - "[[Agentic-Workflow-Token-Efficiency]]"
   - "[[Specialized-Small-Models]]"
   - "[[Dual-Tier-LLM-Architecture]]"
+  - "[[Token-Maxing]]"
+  - "[[Enterprise-AI-Rationing]]"
 source_raw:
   - "[[20260528-agentic-ai-2026-landscape]]"
+  - "[[20260528-corporate-america-ai-rationing]]"
 ---
 
 > [!definition] 定义

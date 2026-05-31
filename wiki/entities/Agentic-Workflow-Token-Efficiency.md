@@ -6,7 +6,7 @@ aliases:
   - Token Efficiency
 definition: "通过 API 代理记录、自动化审计、MCP 工具裁剪、CLI 替代等手段，系统性优化 Agentic Workflows 的 token 成本"
 created: 2026-05-09
-updated: 2026-05-30
+updated: 2026-05-31
 tags:
   - Agentic-Engineering
   - cost-optimization
@@ -15,9 +15,12 @@ related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Agent-Workflow-Patterns]]"
   - "[[Agent-PR-Review]]"
+  - "[[Token-Maxing]]"
+  - "[[Enterprise-AI-Rationing]]"
 source_raw:
   - "[[Improving token efficiency in GitHub Agentic Workflows]]"
   - "[[20260530-cursor-developer-habits-report]]"
+  - "[[20260528-corporate-america-ai-rationing]]"
 ---
 
 # Agentic-Workflow-Token-Efficiency（Agentic Workflow Token 效率）
