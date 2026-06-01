@@ -21,7 +21,7 @@ tags:
 | Topic 页面 | 28 个 |
 | Comparison 页面 | 14 个 |
 | Raw 文章 | 84 个 |
-| Output 作品 | 5 个 |
+| Output 作品 | 6 个 |
 
 ---
 
@@ -319,6 +319,7 @@ tags:
 | Output | 描述 | 类型 |
 |--------|------|------|
 | [[wiki/outputs/deploy-obsidian-wiki-with-quartz\|将 Obsidian 知识库部署为 LLM Wiki 网站]] | Quartz + GitHub Actions 自动部署教程 | Tutorial |
+| [[wiki/outputs/ai-enablement-human-governance\|AI 赋能不是把人移出流程，而是把人移到治理层]] | 基于组织 Harness、Agent-First 流程和 FDE 赋能的输出综合 | Essay |
 | [[wiki/outputs/fde-ai-enablement-bottleneck\|FDE 式 AI 赋能的真正瓶颈]] | 测试 output 回填门控在非 LLM Wiki 主题上的效果 | Essay |
 | [[wiki/outputs/output-to-wiki-feedback-loop\|从 Output 到 Wiki：新判断如何回填]] | 测试 output 新判断的证据回链与晋升规则 | Essay |
 | [[wiki/outputs/why-llm-wiki-is-knowledge-compilation\|为什么 LLM Wiki 不是 RAG，而是知识编译系统]] | 基于 Wiki 验证 LLM Wiki 与 RAG 的范式差异 | Essay |
