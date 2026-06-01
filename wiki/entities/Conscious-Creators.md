@@ -5,7 +5,7 @@ aliases:
   - Conscious Creators
 definition: "在 AI 丰裕时代拒绝被动消费、以清醒内在状态持续创造的人"
 created: 2026-04-09
-updated: 2026-05-26
+updated: 2026-06-01
 tags:
   - AI-Agent
   - Human-Potential
@@ -15,8 +15,10 @@ related_entities:
   - '[[Decision-Quality]]'
   - '[[Taste]]'
   - '[[Resonance]]'
+  - "[[AI-Amish]]"
 source_raw:
   - '[[The Conscious 1% Leading a new renaissance in the era of AI]]'
+  - "[[I Am Retiring from Tech to Live Offline]]"
 ---
 
 # Conscious Creators
@@ -69,6 +71,13 @@ source_raw:
 - [[Decision-Quality]] - Conscious Creator 的三大核心指标之一
 - [[Taste]] - Conscious Creator 的三大核心指标之一
 - [[Resonance]] - Conscious Creator 的三大核心指标之一
+- [[AI-Amish]] - 更制度化、更离线的拒绝干扰路径
+
+## 离线版本
+
+[[I Am Retiring from Tech to Live Offline]] 提供了 Conscious Creators 的一个更激进变体：不是在 AI 工具包围中维持专注，而是选择离开 AI 和互联网生活方式本身。
+
+[[AI-Amish]] 与 Conscious Creators 的共同点是拒绝被技术默认值消耗；差别在于前者更强调共同体、通信制度和生活基础设施，后者更强调个体内在掌控、品味和创作状态。
 
 ## 来源
 

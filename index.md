@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 221 个 |
+| Entity 页面 | 224 个 |
 | Topic 页面 | 28 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 84 个 |
+| Raw 文章 | 86 个 |
 | Output 作品 | 6 个 |
 
 ---
@@ -258,6 +258,9 @@ tags:
 | [[wiki/entities/Campfire-Hiring\|Campfire Hiring（篝火式招聘）]] | 用付费短期真实工作替代传统技术面试的招聘模式 | The Last Technical Interview |
 | [[wiki/entities/Signal-Problem-in-Hiring\|Signal Problem in Hiring（招聘信号问题）]] | 传统面试只能收集几小时信号却要做数年决策的根本缺陷 | The Last Technical Interview |
 | [[wiki/entities/Steve-Yegge\|Steve Yegge]] | 软件工程师、技术博主，35 年面试经验，提出 Campfire Hiring 概念 | The Last Technical Interview |
+| [[wiki/entities/Zero-Friction-Scope-Creep\|Zero-Friction Scope Creep（零摩擦范围蔓延）]] | AI 低摩擦生成导致功能、项目和注意力无边界扩张 | the solution might be cancelling my AI subscription |
+| [[wiki/entities/AI-Amish\|AI Amish]] | 对 AI 和互联网进行选择性拒绝，以保存离线生活形式和共同体关系 | I Am Retiring from Tech to Live Offline |
+| [[wiki/entities/Chad-Whitacre\|Chad Whitacre]] | Open Source 可持续性实践者，2026 年宣布离开 tech 和 Open Source 转向离线生活 | I Am Retiring from Tech to Live Offline |
 
 ### Topics (topics/)
 *整合多篇文章的主题*
@@ -339,7 +342,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[20260530-ceo-knee-deep-building-ai|CEO 回归亲手构建]]（Founder-Mode、Guillermo-Rauch、CEO-Hands-On-AI）/ [[20260529-last-technical-interview|The Last Technical Interview]]（Campfire-Hiring、Signal-Problem-in-Hiring）/ [[20260528-corporate-america-ai-rationing|Corporate America AI Rationing]]（Token-Maxing、Enterprise-AI-Rationing）
+最新编译：[[20260531-thoughts-hmmz|the solution might be cancelling my AI subscription]]（Zero-Friction-Scope-Creep、AI-Restraint）/ [[I Am Retiring from Tech to Live Offline]]（AI-Amish、Chad-Whitacre）/ [[20260530-ceo-knee-deep-building-ai|CEO 回归亲手构建]]（Founder-Mode、Guillermo-Rauch、CEO-Hands-On-AI）
 
 ---
 

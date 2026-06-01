@@ -3,7 +3,7 @@ type: topic
 title: Lean-Indie-Engineering
 description: "独立开发者用极低技术成本运营盈利产品的工程哲学与实践，核心是控制分母、反企业思维、约束驱动决策"
 created: 2026-04-15
-updated: 2026-05-23
+updated: 2026-06-01
 tags:
   - indie-developer
   - bootstrap
@@ -17,9 +17,11 @@ related_entities:
   - '[[B2B-Nurture-C-Model]]'
   - '[[Time-Moat]]'
   - '[[Constraint-Driven-Engineering]]'
+  - "[[Zero-Friction-Scope-Creep]]"
 source_raw:
   - '[[How I run multiple USD10K MRR companies on a USD20month tech stack]]'
   - '[[The-Founders-Playbook-05062026_v3]]'
+  - "[[20260531-thoughts-hmmz]]"
 ---
 
 # Lean-Indie-Engineering（精益独立开发）
@@ -178,3 +180,5 @@ GitHub Copilot 按**请求**计费而非按 **token**——一次请求即使让
 ## 证据补充
 
 [[The-Founders-Playbook-05062026_v3]] 从 AI-native 创业角度补充了本主题：AI 将高昂的研发人力成本（CapEx）转化为按需使用的 Token 成本（OpEx），使"一人团队"的约束更容易满足。但该文章同时警告了 Lean-Indie-Engineering 在 AI 时代的新风险——"无摩擦范围蔓延（Zero-friction scope creep）"和"伪 PMF（False PMF）"。这说明约束驱动工程（Constraint-Driven-Engineering）在 AI 时代不仅没有过时，反而更重要：构建成本越低，越需要严格的范围约束来防止功能堆砌。
+
+[[20260531-thoughts-hmmz]] 给出个人开发者层面的反例：AI 让作者短时间内做出大量项目，但除一个 SaaS 外，大多没有真实用途或维护意愿。它把 [[Zero-Friction-Scope-Creep|零摩擦范围蔓延]] 从创业产品扩展到个人注意力管理：独立开发的约束不是只要“更便宜”，还要能阻止自己制造不想承担的资产。
