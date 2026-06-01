@@ -17,6 +17,10 @@ fi
 cp "$root/quartz.config.ts" "$quartz_dir/"
 cp "$root/quartz.layout.ts" "$quartz_dir/"
 
+if [[ -d "$root/quartz-overrides/styles" ]]; then
+  cp "$root/quartz-overrides/styles/"*.scss "$quartz_dir/quartz/styles/"
+fi
+
 if [[ ! -d "$quartz_dir/node_modules" ]]; then
   npm --prefix "$quartz_dir" ci
 fi

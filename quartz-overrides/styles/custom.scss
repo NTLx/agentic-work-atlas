@@ -1,0 +1,16 @@
+@use "./base.scss";
+@use "./lxgw-font-face";
+@use "./fira-code-font-face";
+
+article {
+  font-family: var(--bodyFont);
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--codeFont);
+  font-variant-ligatures: contextual;
+  font-feature-settings: "calt" 1;
+}

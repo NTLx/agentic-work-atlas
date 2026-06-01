@@ -55,6 +55,7 @@ const config: QuartzConfig = {
       ".playwright-mcp",
       "skills",
       "tools",
+      "quartz-overrides",
 
       // Schema 和日志文件（index.md 是首页，不应排除）
       "README.md",
@@ -68,12 +69,12 @@ const config: QuartzConfig = {
     ],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "googleFonts",
+      fontOrigin: "local",
       cdnCaching: true,
       typography: {
-        header: "Noto Sans SC",
-        body: "Noto Sans SC",
-        code: "JetBrains Mono",
+        header: "LXGW WenKai Screen",
+        body: "LXGW WenKai Screen",
+        code: "Fira Code",
       },
       colors: {
         lightMode: {
@@ -147,7 +148,6 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      Plugin.CustomOgImages(),
     ],
   },
 }
