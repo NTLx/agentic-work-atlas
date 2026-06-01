@@ -61,10 +61,10 @@ tags:
 - [[AI-Psychosis]] — Levie 的 CEO 版本是 Karpathy 原概念的组织层扩展
 - [[AI-Capability-Gap]] — 不同角色看到不同 AI 现实
 - [[Aaron-Levie]] — 概念提出者
-- [[Jevons-Paradox]] — Levie 此前论述 AI 对知识工作的影响
+- [[Jevons-Paradox|Jevons Paradox]] — Levie 此前论述 AI 对知识工作的影响
 - [[AI-Washing]] — 用 AI 叙事包装裁员决策
-- [[Anti-AI-Backlash]]（待建） — DuckDuckGo +30%、"human-authored" 差异化、替代搜索引擎拒绝 AI
-- [[Top-Down-vs-Bottom-Up-AI-Adoption]]（待建） — AI 采纳方向与历史技术变革相反的问题
+- 反 AI 反弹 — DuckDuckGo +30%、"human-authored" 差异化、替代搜索引擎拒绝 AI
+- 自上而下 vs 自下而上 AI 采纳 — AI 采纳方向与历史技术变革相反的问题
 
 ### 播客独有亮点（未进入文章）
 

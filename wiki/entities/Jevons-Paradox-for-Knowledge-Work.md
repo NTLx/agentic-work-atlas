@@ -11,6 +11,7 @@ tags:
   - economy
   - knowledge-work
 related_entities:
+  - '[[Jevons-Paradox]]'
   - '[[Allocation-Economy]]'
   - '[[Always-On-Economy]]'
 source_raw:
@@ -27,9 +28,9 @@ source_raw:
 
 > 当技术使某种资源使用更高效时，该资源的需求会**增加**而非减少。
 
-### 原始杰文斯悖论
+### 通用定律
 
-19 世纪经济学家 William Stanley Jevons 发现：煤炭使用效率提升导致各行业煤炭需求**大幅增长**。
+[[Jevons-Paradox|Jevons Paradox]]（杰文斯悖论）由 19 世纪经济学家 William Stanley Jevons 提出：煤炭使用效率提升导致各行业煤炭需求**大幅增长**。
 
 ### 应用于知识工作
 
@@ -98,6 +99,7 @@ ROI = Return / Investment
 
 ## 关联概念
 
+- [[Jevons-Paradox]] - 通用经济学定律
 - [[Allocation-Economy]] - 经济转型方向
 - [[Always-On-Economy]] - 效率提升的另一个维度
 - [[Knowledge-Work]] - 正在演变的领域

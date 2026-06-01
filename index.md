@@ -17,7 +17,7 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 220 个 |
+| Entity 页面 | 221 个 |
 | Topic 页面 | 28 个 |
 | Comparison 页面 | 14 个 |
 | Raw 文章 | 84 个 |
@@ -113,6 +113,7 @@ tags:
 | [[wiki/entities/Friction-as-Design-Signal\|Friction as Design Signal（摩擦作为设计信号）]] | 把开发阻力视为架构、学习和边界选择的反馈 | Why I Don’t Vibe Code |
 | [[wiki/entities/Compound-Engineering\|Compound Engineering]] | 持续改进 Agent 指令，每个项目后记录有效做法 | AI should help produce better code |
 | [[wiki/entities/Jagged-Intelligence\|Jagged-Intelligence（锯齿状智能）]] | LLM 能力分布高度不均匀——代码超人，常识脆弱 | Andrej Karpathy: From Vibe Coding to Agentic Engineering |
+| [[wiki/entities/Jevons-Paradox\|Jevons Paradox（杰文斯悖论）]] | 资源使用效率提升反而导致总消耗量增加 | Jevons Paradox for Knowledge Work |
 | [[wiki/entities/Jevons-Paradox-for-Knowledge-Work\|Jevons Paradox for Knowledge Work]] | AI 效率提升导致知识工作需求大幅增长 | Jevons Paradox for Knowledge Work |
 | [[wiki/entities/Always-On-Economy\|Always-On Economy]] | AI 驱动的 24/7 运营模式，消除传统商业时间限制 | The Always-On Economy |
 | [[wiki/entities/AI-Native-Shipping\|AI-Native Shipping（AI 原生发布）]] | 6 个月到 1 天的极速迭代模式——Research Preview + Evergreen Launch Room | Cat Wu: How Anthropic's product team moves faster |
