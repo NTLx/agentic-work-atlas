@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-05-29
+updated: 2026-06-01
 tags:
   - research-agenda
   - agentic-work-atlas
@@ -19,6 +19,9 @@ related_entities:
   - "[[Enterprise-AI-Factory]]"
   - "[[Model-Safety-Divergence]]"
   - "[[Agent-Containment]]"
+  - "[[Human-Governor-Agent-Operator]]"
+  - "[[AI-Ready-Organization]]"
+  - "[[Alignment-Tax]]"
 ---
 
 # Agentic Work Atlas 研究议程
@@ -191,6 +194,62 @@ related_entities:
 | 验证版本更新是否改变信任结构 | 缺对比数据 | 找同一模型不同版本在同一自治基准上的安全行为对比 | clip 后更新 [[Model-Safety-Divergence]]、[[Distributional-Alignment]] |
 | 防御"行动不足"崩溃 | 缺失败模式文献 | 找 Agent 系统中遗忘生存/行动不足的失败模式和防御策略 | clip 后更新 [[Agent-Containment]] 或新建 comparison |
 
+## 2026-06-01 第七轮探索：Operator 到 Governor 的迁移是否可作为 AI 赋能成熟度指标
+
+本轮从 output [[ai-enablement-human-governance]] 的回填检查出发，用 ljg-think 方式下钻一个未验证判断：组织中 `operator -> governor` 的迁移，是否可以作为 AI 赋能成熟度的观察指标。
+
+### 下钻结论
+
+表层看，`operator -> governor` 是岗位变化：人少做执行，多做监督。
+
+再往下，它其实是控制权变化：人不再只控制每一步动作，而是控制目标、权限、停止条件、验收标准和责任归属。
+
+再往下，它是组织可描述性问题。只有当组织能把目标、流程、权限和反馈写成机器可读结构，Agent 才能稳定执行，人类才有资格上移到 governor 层。否则所谓 governor 只是换了名字的人工兜底。
+
+再往下，它触到一个更硬的底层：责任不能被自动化。执行可以外包，判断可以辅助，责任仍必须有明确的人或组织承接。Governor 的本质不是“监督 AI”，而是为自动化系统保留可追责的意志中心。
+
+因此，这个指标有价值，但不能直接升级为稳定知识。它目前更适合作为探索性诊断框架。
+
+### 新问题
+
+- **Governor 能力如何测量**：一个组织是否真的把人移到治理层，应该看岗位 title，还是看目标、权限、验收、升级路径是否已经显式化？
+- **Operator 经验是否是 Governor 的前提**：没有亲自执行过流程的人，能否有效设定边界、识别异常和验收结果？
+- **哪些流程不能迁移**：高风险、强伦理、低容错或高度探索性流程，是否应该让人长期保留 operator 身份？
+- **Governor 会不会变成橡皮图章**：如果 Agent 生成太多候选、组织又没有反对机制，人类审批会不会退化为形式确认？
+- **责任如何穿过供应商边界**：FDE 或 SaaS Agent 参与核心流程时，客户、供应商、模型提供方之间的 governor 责任如何划分？
+
+### 证伪方向
+
+- 找到一个核心工作流被 Agent 稳定改写、但人类仍主要停留在 operator 位置的成功案例，反驳“迁移到 governor 是成熟必要条件”。
+- 找到一个组织把人类大量上移到 governor 层，却因为缺少 operator 经验而失败的案例，说明迁移过早会造成治理空心化。
+- 找到高监管场景中，长期保留人类 operator 反而比 governor-only 模式更安全、更高效的案例。
+- 找到标准化 SaaS Agent 通过强产品约束替代本地 governor 能力的案例，压力测试 [[Forward-Deployed-AI-Enablement]] 和 [[Organization-as-Agent-Harness]]。
+- 找到 Agent 审批流中人类持续点击通过、缺少实质判断的案例，验证“Governor 橡皮图章化”风险。
+
+### Source 需求
+
+- Agent-first 流程重构的一手案例：包含角色变化、权限边界、升级路径和结果指标，而不只是工具部署。
+- FDE 项目交接材料或复盘：特别是部署结束后客户是否获得评测集、验收标准、运行手册和治理权。
+- AI governance / human oversight 工程实践：如何设计 approval gate、stop condition、audit log、incident escalation。
+- SRE、航空、医疗、金融等高可靠系统中的 human-in-the-loop / human-on-the-loop 案例，用来对比 operator 与 governor 的边界。
+- SaaS Agent 改写核心工作流且不依赖高接触 FDE 的案例，用来寻找 FDE 主题反例。
+
+### 下一步目标建议
+
+下一轮不应新建 `Governor-Maturity` entity。证据还不够。
+
+更合适的动作是补一手 source：优先找一个企业 Agent-first 流程重构或 FDE 项目的深度复盘，要求材料能回答“谁有权停止 Agent、谁验收结果、失败后谁负责、经验如何沉淀”。
+
+若连续两个以上 source 都支持这套结构，再考虑把 `operator -> governor` 升级为 [[Human-Governor-Agent-Operator]] 的补充维度，或新建 comparison：Operator vs Governor。
+
+### 最小实验
+
+1. 从现有 Wiki 中选一个部署案例，例如 [[Forward-Deployed-AI-Enablement]] 或 [[Enterprise-AI-Factory]]。
+2. 画出四列：执行动作、治理动作、责任 owner、可复用资产。
+3. 标注哪些动作已经从人类 operator 迁移到 Agent，哪些动作仍由人类 governor 承担。
+4. 若资料无法填满四列，记录为 source 缺口，而不是补写推断。
+5. 用同一表格测试第二个案例；若模式复现，再考虑升级为稳定 Wiki 结构。
+
 ## 待验证问题
 
 - **编译质量如何衡量**：除了链接、frontmatter 和裸符号检查，还需要什么知识层面的质量指标？
@@ -208,6 +267,9 @@ related_entities:
 - **多 Agent 组织病如何评测**：最终答案正确时，是否还需要检查 reason change、disagreement、monologue ratio 或 input rewrite？
 - **内部 AI factory 与外部 FDE 如何分工**：企业什么时候应该内部化部署能力，什么时候仍需要外部 FDE？
 - **不可见编排能否被治理**：透明化是否必须牺牲效率，还是审计日志足以降低风险？
+- **Operator 到 Governor 的迁移是否可测量**：AI 赋能成熟度能否通过执行动作、治理动作、责任 owner 和可复用资产四列来诊断？
+- **Governor 是否需要 Operator 经验**：脱离一线执行经验的人类治理者，是否会更容易误判 Agent 输出和流程异常？
+- **Governor 橡皮图章化风险**：审批流是否会因为 Agent 输出量过大而退化为形式性通过？
 
 ## 下一批剪藏方向
 
@@ -221,6 +283,8 @@ related_entities:
 - Multi-Agent 组织病的一手论文和工程复盘。
 - 企业内部 AI factory 与外部 FDE 的对比案例。
 - 生产级 multi-agent observability、reason tracing 和 disagreement logging 实践。
+- Agent-first 流程重构中的人类角色迁移案例：从 operator 到 governor 的组织设计、权限边界和验收标准。
+- 高可靠系统中的 human-in-the-loop / human-on-the-loop 案例，用来校准 AI Agent 治理边界。
 
 ## Source 需求队列
 
@@ -236,6 +300,7 @@ related_entities:
 | 补强多 Agent 工程复盘 | 缺生产实践 | 找 Cursor 或其他 coding agent 团队关于 planner/worker、锁、吞吐退化、handoff 的一手复盘 | clip 后更新 [[Agent-Harness]]、[[Agent-Orchestration]] |
 | 对比内部 AI factory 与外部 FDE | 缺 comparison 证据 | 找企业内部 AI 平台团队与外部 FDE 服务同类工作流的案例 | 证据足够后新建 comparison |
 | 设计 multi-agent observability 指标 | 缺工程方法 | 找 reason change、disagreement、input rewrite、final authority、handoff trace 的记录实践 | compile 后更新 [[Verifiable-Agent-Engineering]] |
+| 验证 Operator 到 Governor 迁移 | 缺一手组织案例 | 找 Agent-first / FDE 项目中角色、权限、验收和责任变化的深度复盘 | clip 后更新 [[Human-Governor-Agent-Operator]] 或新建 comparison |
 
 ## 暂不做
 
