@@ -5,7 +5,7 @@ aliases:
   - Vibe Coding
 definition: "Andrej Karpathy 提出的编程概念，提升所有人的编程能力底线，让任何人通过自然语言和 agent 交互生成软件，原型质量是其特征"
 created: 2026-04-10
-updated: 2026-05-22
+updated: 2026-06-01
 tags:
   - AI-Agent
   - coding-agents
@@ -23,6 +23,8 @@ related_entities:
   - "[[Essential-Complexity]]"
   - "[[Friction-as-Design-Signal]]"
   - "[[Ownership]]"
+  - "[[Founder-Mode]]"
+  - "[[Guillermo-Rauch]]"
 source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
@@ -32,6 +34,7 @@ source_raw:
   - "[[20260127-claude-coding-notes]]"
   - "[[用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践]]"
   - "[[Why I Don’t Vibe Code]]"
+  - "[[20260530-ceo-knee-deep-building-ai]]"
 ---
 
 # Vibe Coding（氛围编程）
@@ -154,3 +157,13 @@ Vibe Coding 与 Software 2.0 / 3.0 的关系：
 - [[Harness-Engineering]] - 超越 Agentic Engineering：不仅审查代码，而是构建让 Agent 有效工作的完整系统
 - [[Code-Execution]] - Vibe Coding 不强调验证，Agentic Engineering 和 Harness Engineering 强调
 - [[Andrej-Karpathy]] - 概念提出者
+
+## CEO Vibe Coding 争议（2026）
+
+2026 年 5 月，Paul Graham 和 Guillermo Rauch 主张 CEO 必须亲手使用 AI 构建软件（[[Founder-Mode]] 的 AI 时代延伸），但 Paul Ford 在 "Dear Vibe-Coding CEO: Please Stop" 中警告 CEO vibe coding 的组织风险：
+
+- **高管的周末 demo 是终极 executive memo**："The boss built a thing and he wants you to take a look" 在全球走廊里回响，工程师、设计师、产品经理被迫跟进 CEO 用 Claude 周末 hack 出来的东西
+- **AI 赋能对 CEO 是梦想，对员工是噩梦**：现代 CEO 想展示自己仍有技能，但 vibe-coded demo 的质量不达生产标准
+- **品质仍然来自深度思考**："AI can produce outputs all day long, but it can't guarantee quality. Quality software is borne out of creative problem-solving and lots of little, tiny moves, not one-shot magic prompts."
+
+**核心张力**：CEO 亲手 vibe coding 可以提高对 AI 能力边界的理解（Graham 的 "knee-deep" 主张），但产出质量可能不达生产标准（Ford 的 "cut it out" 警告）。解法是组织层面的质量门控——CEO 的 demo 不自动进入产品 backlog，而是作为探索性实验。

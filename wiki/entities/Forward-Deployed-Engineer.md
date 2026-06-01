@@ -7,7 +7,7 @@ aliases:
   - 前线部署工程师
 definition: "嵌入客户真实环境，把前沿 AI 能力与数据、工具和业务流程连接成可运行生产系统，并将现场发现回流为平台能力或组织能力的工程师"
 created: 2026-05-18
-updated: 2026-05-23
+updated: 2026-06-01
 tags:
   - career
   - AI-industry
@@ -23,6 +23,8 @@ related_entities:
   - "[[Evaluation-Set]]"
   - "[[Tacit-Knowledge-Lock-In]]"
   - "[[Layered-AI-Sourcing]]"
+  - "[[Guillermo-Rauch]]"
+  - "[[Founder-Mode]]"
 source_raw:
   - "[[Forward deployed engineering at OpenAI]]"
   - "[[Forward Deployed Engineer (FDE) - NYC]]"
@@ -31,6 +33,7 @@ source_raw:
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
   - "[[当我们谈论 FDE 时，我们在谈论什么？]]"
   - "[[The Return of the Deployment Company]]"
+  - "[[20260530-ceo-knee-deep-building-ai]]"
 ---
 
 # Forward-Deployed-Engineer
@@ -56,6 +59,16 @@ source_raw:
 - **不能制造长期依赖**：如果第 10 个客户仍和第 1 个客户一样费力，或同一组织每次赋能都依赖外部 FDE，说明产生的是项目依赖而非能力沉淀。
 - **组织归属影响反馈环**：FDE 属于产品团队、独立服务公司还是 GTM 团队，会影响现场洞察能否真正回流为产品能力。
 - **买方知识主权风险**：FDE 会接触客户未写成文档的业务规则。若评测集、提示配置和流程知识不可导出，FDE 会从赋能者变成供应商锁定机制。
+
+## FDE 与 CEO 的关系（2026）
+
+Carlos E. Perez 在回应 [[Paul-Graham]] 的"CEO 必须亲手用 AI"帖子时提出：
+
+> "Every CEO needs a Forward Deployed AI Engineer (FDE) sitting with them in their office. If they don't, then they are NGMI."
+
+这一表述将 FDE 从"企业部署工程师"扩展为"CEO 的 AI 能力补充"——不是替代 CEO 亲自使用 AI（[[Founder-Mode]]），而是帮助非技术背景的高管理解和有效使用 AI 工具。
+
+与 [[Guillermo-Rauch]] 的"CEO 回归编码"形成互补：CEO 亲手 vibe coding 提高对 AI 能力边界的理解，FDE 帮助 CEO 把这种理解转化为生产级决策。
 
 ## 关联概念
 

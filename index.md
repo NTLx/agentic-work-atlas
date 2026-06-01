@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-05-31
+updated: 2026-06-01
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 218 个 |
-| Topic 页面 | 27 个 |
+| Entity 页面 | 220 个 |
+| Topic 页面 | 28 个 |
 | Comparison 页面 | 14 个 |
-| Raw 文章 | 83 个 |
+| Raw 文章 | 84 个 |
 | Output 作品 | 5 个 |
 
 ---
@@ -206,6 +206,7 @@ tags:
 | [[wiki/entities/Model-Distillation\|Model Distillation（模型蒸馏）]] | 把大模型能力压缩到小模型的技术——Gemini Flash 每代超越前代 Pro 的核心引擎 | Gemini co-leads 圆桌对话 |
 | [[wiki/entities/Unified-Model-Strategy\|Unified Model Strategy（统一模型战略）]] | 把分散的 AI 研究和算力合并到一个统一模型项目的组织与技术决策 | Gemini co-leads 圆桌对话 |
 | [[wiki/entities/Tool-Latency-Bottleneck\|Tool Latency Bottleneck（工具延迟瓶颈）]] | Agent 速度提升后，为人类设计的工具延迟成为系统新瓶颈 | Gemini co-leads 圆桌对话 |
+| [[wiki/entities/Founder-Mode\|Founder Mode（创始人模式）]] | CEO 应保持技术参与度的管理哲学，AI 时代扩展为"必须亲手用 AI" | Paul Graham 2024 + CEO Hands-On AI |
 
 #### 作者 Entities
 
@@ -216,6 +217,7 @@ tags:
 | [[wiki/entities/Dan-Shipper\|Dan Shipper]] | Every newsletter 创始人兼 CEO，AI 商业观察者 | AI-Agent, Newsletter |
 | [[wiki/entities/Ethan-Mollick\|Ethan Mollick]] | 沃顿商学院教授，AI 教育与创新研究者 | AI, Education |
 | [[wiki/entities/Paul-Graham\|Paul Graham]] | Y Cominator 创始人，创业思想家 | Entrepreneurship |
+| [[wiki/entities/Guillermo-Rauch\|Guillermo Rauch]] | Vercel CEO，Next.js 创造者，coding agents 时代的关键基础设施推动者 | Infrastructure, Vercel |
 | [[wiki/entities/Erik-Schluntz\|Erik Schluntz]] | Anthropic 技术团队成员，AI 代理与机器人专家 | AI-Agent, Anthropic |
 | [[wiki/entities/Joe-Hudson\|Joe Hudson]] | 高管教练，OpenAI 等科技公司领导力顾问 | Career-Skills, Coaching |
 | [[wiki/entities/Konstantine-Buhler\|Konstantine Buhler]] | Sequoia Capital 合伙人，AI 投资专家 | Venture Capital |
@@ -288,6 +290,7 @@ tags:
 | [[wiki/topics/Forward-Deployed-AI-Enablement\|FDE 式 AI 赋能]] | 嵌入真实组织现场，发现黄金用例、穿越集成之墙，并沉淀可复用能力 | Forward-Deployed-Engineer, Deployment-Product-Flywheel, Golden-Case |
 | [[wiki/topics/Enterprise-AI-Model-Sourcing\|企业 AI 模型采购]] | 按任务分布、评测证据、成本曲线、部署约束和组织能力分层选择模型来源 | Layered-AI-Sourcing, Specialized-Small-Models, Distributional-Alignment |
 | [[wiki/topics/Agentic-AI-Ecosystem\|Agentic AI 生态结构]] | 从 LLM 工具链到三层执行栈（Agent Infra / Model Infra / Model）的生态演化 | Agent-Infra, Token-Supply-Chain, Carbon-Silicon-Division |
+| [[wiki/topics/CEO-Hands-On-AI\|CEO 亲手用 AI]] | CEO 必须亲手使用 AI 构建软件的主张、争议与组织影响 | Paul-Graham, Guillermo-Rauch, Founder-Mode, Vibe-Coding |
 
 ### Comparisons (comparisons/)
 *对比分析页面*
@@ -330,11 +333,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（83 个）*
+*原始剪藏文章（84 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[20260529-last-technical-interview|The Last Technical Interview]]（Campfire-Hiring、Signal-Problem-in-Hiring）/ [[20260528-corporate-america-ai-rationing|Corporate America AI Rationing]]（Token-Maxing、Enterprise-AI-Rationing）
+最新编译：[[20260530-ceo-knee-deep-building-ai|CEO 回归亲手构建]]（Founder-Mode、Guillermo-Rauch、CEO-Hands-On-AI）/ [[20260529-last-technical-interview|The Last Technical Interview]]（Campfire-Hiring、Signal-Problem-in-Hiring）/ [[20260528-corporate-america-ai-rationing|Corporate America AI Rationing]]（Token-Maxing、Enterprise-AI-Rationing）
 
 ---
 
@@ -367,4 +370,4 @@ status             # 查看知识库状态
 ---
 
 *索引版本: v2.6*
-*最后更新: 2026-05-29*
+*最后更新: 2026-06-01*

@@ -5,7 +5,7 @@ aliases:
   - Coding Agents
 definition: "能够自主完成编程任务的 AI Agent——理解需求、编写代码、运行测试、修复 bug、提交 PR，形成完整开发循环"
 created: 2026-04-10
-updated: 2026-05-30
+updated: 2026-06-01
 tags:
   - AI-Agent
   - coding-tools
@@ -18,6 +18,8 @@ related_entities:
   - '[[Vibe-Coding]]'
   - '[[Harness-Engineering]]'
   - '[[Decision-Quality]]'
+  - '[[Guillermo-Rauch]]'
+  - '[[Founder-Mode]]'
 source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
@@ -25,6 +27,7 @@ source_raw:
   - '[[20260413-why-ai-first-strategy-wrong]]'
   - '[[20260528-agentic-ai-2026-landscape]]'
   - '[[20260530-cursor-developer-habits-report]]'
+  - '[[20260530-ceo-knee-deep-building-ai]]'
 ---
 
 # Coding Agents（编码智能体）
@@ -101,6 +104,22 @@ Coding Agent 擅长**边界清晰、可验证、有据可查**的任务。
 - [[Decision-Quality]] — Coding Agent 时代程序员的核心价值从代码产出转向决策质量
 - [[Carbon-Silicon-Division]] — Coding Agent 推动的碳基-硅基分工模式
 - [[Agent-Infra]] — Coding Agent 作为 Agent Infra 的第一波规模化入口
+- [[Founder-Mode]] — Coding Agents 使 CEO 回归编码成为可能
+
+## PLG-fication of Enterprise（2026）
+
+Guillermo Rauch（Vercel CEO）在 2026 年 5 月提出 coding agents 正在引发企业级 Product-Led Growth（PLG）革命：
+
+> "Coding agents are the ultimate PLG-fication of the enterprise. Bad, legacy software can't hide anymore. The stack that works is self-evident to the entire organization, from intern to CEO."
+
+**核心机制**：当从实习生到 CEO 都能亲手使用 coding agents 验证技术栈时，差的遗留软件再也藏不住了。C-suite 不再需要等到后期才理解基础设施，而是可以直接动手体验。
+
+**Vercel 数据佐证**（Forbes, 2026-03）：
+- Claude 用户占 Vercel 用户的 ~1%，但贡献 ~15% 部署量（15 倍超代表）
+- AI agent 部署占比从 5%（2025-06）增至 21%（2026-02）
+- 其中 ~70% 来自 Claude Code
+
+**CEO 回归编码**：Rauch 报告上市公司 CEO 主动 DM 他，讲述"重新爱上发布软件"的故事——coding agents 让高管重新获得亲手构建的体验。
 
 ## 来源
 
