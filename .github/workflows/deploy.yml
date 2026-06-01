@@ -47,6 +47,9 @@ jobs:
         run: |
           cp atlas/quartz.config.ts quartz/
           cp atlas/quartz.layout.ts quartz/
+          if [ -d atlas/quartz-overrides/styles ]; then
+            cp atlas/quartz-overrides/styles/*.scss quartz/quartz/styles/
+          fi
 
       - name: Build Quartz (方案 C：直接使用仓库根目录)
         working-directory: quartz
