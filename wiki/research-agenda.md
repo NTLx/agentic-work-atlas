@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-06-01
+updated: 2026-06-02
 tags:
   - research-agenda
   - agentic-work-atlas
@@ -17,6 +17,10 @@ related_entities:
   - "[[Forward-Deployed-AI-Enablement]]"
   - "[[Enterprise-AI-Factory]]"
   - "[[Human-Governor-Agent-Operator]]"
+  - "[[The-GenAI-Divide]]"
+  - "[[Enterprise-AI-Learning-Gap]]"
+  - "[[AI-Deployment-Valley-of-Death]]"
+  - "[[Successful-AI-Deployment-vs-GenAI-Divide]]"
   - "[[Multi-Agent-Pathology-and-Governance]]"
   - "[[Model-Safety-Divergence]]"
   - "[[Agent-Containment]]"
@@ -34,6 +38,7 @@ related_entities:
 | Output 回填机制 | `produce(query)` 会自然生成新判断，需要防止 output 污染稳定知识层 | 回填检查已经有实践样本，但外部参照不足 | 找团队如何用文章、报告或 decision memo 反向更新知识库的案例 |
 | Operator 到 Governor 迁移 | AI 赋能可能不是减少人，而是把人从执行节点移到治理层 | 作为探索性诊断框架保留，证据不足 | 用两个部署案例测试“执行动作 / 治理动作 / 责任 owner / 可复用资产”四列表 |
 | 内部 AI Factory 与外部 FDE 分工 | 企业部署能力可能内部化，也可能继续依赖高接触部署 | 已有 [[AI-Factory-vs-Forward-Deployed-AI-Enablement]]，但缺同类工作流对比案例 | 找企业内部平台团队、外部 FDE、自助 SaaS Agent 的对比案例 |
+| 标准产品 / FDE / AI Factory 的边界 | 新剪藏同时支持标准产品成功案例、成功部署样本和 GenAI 失败漏斗，需要解释三者何时成立 | 已有 [[Successful-AI-Deployment-vs-GenAI-Divide]]，但缺同一工作流的路径对照 | 做三路径案例矩阵：标准 SaaS/API、外部 FDE、内部 AI Factory |
 | 多 Agent 组织病治理 | Multi-agent 不只是技术编排，也会产生责任稀释、内态失真和不可见权力 | 当前证据主要来自二手综述和少量概念页 | 优先补一手论文和生产级 observability 工程复盘 |
 | 模型安全行为分歧 | 自治系统中的过度合规、过度行动、行动不足可能需要不同 containment | 当前 [[Model-Safety-Divergence]] 证据层级不足 | 找 Emergence AI 原论文或详细实验报告 |
 
@@ -45,6 +50,8 @@ related_entities:
 | Research agenda 只能支撑“待研究问题存在” | Schema 边界规则、本页使用边界 | 后续 output 可能误把本页当事实来源 | 所有回填检查必须区分 Raw / Wiki / Agenda / 无 |
 | FDE 的核心价值是现场到能力沉淀 | [[Forward-Deployed-AI-Enablement]]、[[Deployment-Product-Flywheel]]、[[Integration-Wall]] | 标准化 SaaS Agent 可能绕过高接触部署 | 主动寻找无需 FDE 也能改写核心工作流的反例 |
 | 内部 AI Factory 不必然替代外部 FDE | [[Enterprise-AI-Factory]]、[[AI-Factory-vs-Forward-Deployed-AI-Enablement]] | 缺少同一工作流的成本、风险和复用路径对比 | 找企业内部团队与外部部署团队的对照材料 |
+| 标准 AI 产品能改写核心工作流，但需要组织已具备可读流程和集成基础 | [[Successful-AI-Deployment-vs-GenAI-Divide]]、[[AI-Ready-Organization]]、Klarna / Mercado Libre / Lightspeed raw | 可能把“工具 adoption”误判为“工作流改造”；也可能低估供应商侧隐藏实施工作 | 对标准产品案例补 source-summary，检查是否有 API 化系统、业务 owner、指标闭环和人类升级路径 |
+| Enterprise AI Learning Gap 可能是产品问题，也可能是组织问题 | [[Enterprise-AI-Learning-Gap]]、[[The-GenAI-Divide]]、[[AI-Ready-Organization]] | 如果学习鸿沟主要由产品内存/集成能力解决，FDE 和组织重构的重要性会下降 | 找学习型 AI SaaS 在低咨询条件下跨过 production 的案例 |
 | Multi-agent 系统会产生组织病 | [[Multi-Agent-Pathology-and-Governance]]、[[Invisible-Orchestrator]]、[[Agent-Dissociation]] | 证据可能过度依赖二手叙述 | 补 Hidden Profile、MAEBE、invisible orchestrator 等一手论文 |
 | 模型安全分歧反映底层信任结构 | [[Model-Safety-Divergence]]、[[Agent-Containment]] | 新闻摘要不足以支撑强解释 | 找原论文、实验日志或同基准复现实验 |
 | Operator 到 Governor 迁移可作为 AI 赋能成熟度观察指标 | [[Human-Governor-Agent-Operator]]、[[AI-Ready-Organization]]、[[Organization-as-Agent-Harness]] | 可能把治理上移误判为成熟，忽略 operator 经验和高风险流程边界 | 仅作为探索性诊断，不建新 entity |
@@ -52,6 +59,10 @@ related_entities:
 ## 待证伪判断
 
 - **标准化 SaaS Agent 会削弱 FDE 必要性**：寻找无长期驻场、无咨询、无高接触部署，却改写企业核心工作流的案例。
+- **标准产品成功案例可能只是低集成边缘流程**：寻找标准 SaaS/API 改写强权限、强合规、强遗留系统核心流程的案例；如果找不到，标准产品反例的适用范围要收窄。
+- **外部合作成功率高可能是选择偏差**：寻找项目难度、预算、流程清晰度相近的内部自建 vs 外部合作对照案例。
+- **学习鸿沟可以完全靠产品记忆解决**：寻找无需组织流程显式化、仅靠产品内存和上下文学习就稳定进入生产的案例。
+- **例外升级式监督是通用最佳实践**：寻找高风险流程中 80/20 自动化导致事故、责任漂移或审计失败的案例。
 - **内部 AI Factory 会替代外部 FDE**：寻找内部 AI 平台成熟但仍高度依赖外部 FDE 的案例。
 - **多 Agent 组织病必须通过内态记录才能治理**：寻找只靠外部 harness、日志和审计就能长期稳定运行的生产系统。
 - **不可见编排一定有害**：寻找不可见编排提升质量或安全，且影响链条可审计、责任不稀释的案例。
@@ -68,7 +79,11 @@ related_entities:
 | P0 | 提升 [[Model-Safety-Divergence]] 证据层级 | 缺一手论文或详细实验报告 | Emergence AI / Satya Nitta 原论文、实验日志或详细报告 | clip 后更新 [[Model-Safety-Divergence]] 的前提与局限性 |
 | P0 | 验证 Operator 到 Governor 迁移 | 缺一手组织案例 | Agent-first / FDE 项目中角色、权限、验收和责任变化的深度复盘 | clip 后更新 [[Human-Governor-Agent-Operator]] 或新建 comparison |
 | P0 | 补强多 Agent 组织病 | 缺一手论文 | Hidden Profile、MAEBE、persona collapse、bystander effect、Fukui invisible orchestrator、MetaAgent-X 原论文 | clip 后更新 [[Multi-Agent-Pathology-and-Governance]] |
+| P0 | 编译标准产品成功案例 | Klarna / Mercado Libre / Octopus / Lightspeed 已剪藏但未 source-summary 化 | 官方案例、客户故事、后续复盘、是否有内部系统/API 集成细节 | compile 后更新 [[Successful-AI-Deployment-vs-GenAI-Divide]] 和 [[Forward-Deployed-AI-Enablement]] |
+| P0 | 建立三路径对照 | 缺同一工作流在标准产品、外部 FDE、内部 AI Factory 下的成本和结果对比 | 客服、研发、back-office 三类工作流的成对案例 | 证据足够后新建或扩展 comparison |
 | P1 | 对比内部 AI Factory 与外部 FDE | 缺同类工作流对比 | 企业内部 AI 平台团队与外部 FDE 服务同类流程的案例 | 证据足够后更新 [[AI-Factory-vs-Forward-Deployed-AI-Enablement]] |
+| P1 | 验证外部合作成功率的选择偏差 | MIT/NANDA 称外部合作成功率更高，但缺项目难度控制 | 内部自建和外部合作在相同流程/行业/预算下的失败复盘 | 更新 [[The-GenAI-Divide]] 的前提与局限性 |
+| P1 | 学习型 AI SaaS 是否绕过 FDE | 缺“产品内存 + workflow integration”直接跨过 production 的案例 | Intercom Fin、Glean、ServiceNow、Salesforce Agentforce 等官方客户深度案例 | 压力测试 [[Enterprise-AI-Learning-Gap]] |
 | P1 | 设计 multi-agent observability 指标 | 缺工程实践 | reason change、disagreement、input rewrite、final authority、handoff trace 的记录实践 | compile 后更新 [[Verifiable-Agent-Engineering]] |
 | P1 | 验证标准化 SaaS Agent 反例 | 缺无 FDE 高接触部署的成功案例 | SaaS Agent 自助改写核心工作流的企业案例 | clip 后压力测试 [[Forward-Deployed-AI-Enablement]] |
 | P1 | 建立 output 回填外部参照 | 缺一手实践 | 团队如何用文章、报告、decision memo 反向更新知识库的案例 | 更新 [[Knowledge-Compilation]] 或新建 comparison |
@@ -90,6 +105,24 @@ related_entities:
 - 只填 source 明确支持的内容。
 - 无法填写的格子记录为 source 缺口。
 - 如果两个案例都能填出相似结构，再考虑升级为 comparison 或补充 [[Human-Governor-Agent-Operator]]。
+
+### 标准产品 / FDE / AI Factory 三路径矩阵
+
+选同一类工作流，优先从客服、研发和 back-office 各找一个案例，填入三条路径。
+
+| 工作流 | 标准 SaaS/API 路径 | 外部 FDE 路径 | 内部 AI Factory 路径 | 关键差异 |
+|--------|--------------------|---------------|----------------------|----------|
+| 客服 | Klarna / Lightspeed 待编译 | 待找 | 待找 | adoption、集成深度、升级路径、P&L 指标 |
+| 研发 | Mercado Libre / Copilot 待编译 | 待找 | 待找 | license 下发 vs 流程重构 vs 平台化 |
+| back-office | 待找 | 待找 | P&G / AI Factory 相关 | BPO 替代、数据接入、审计和复用资产 |
+
+判断标准：
+- 是否有明确业务指标，而不是只看使用率。
+- 是否有核心系统/API 集成，而不是只做前端助手。
+- 是否有组织学习资产：评测集、流程规范、升级规则、模板或平台模块。
+- 是否有明确人类角色迁移：operator、reviewer、governor、owner。
+
+最小动作：先把 Klarna、Mercado Libre、Lightspeed 三篇标准产品案例补成 source-summary，再用这个矩阵压力测试“标准产品绕过 FDE”的假设。
 
 ### Model Safety 证据升级
 
@@ -137,6 +170,9 @@ related_entities:
 - 知识编译质量评估方法：冲突检测、证据回链、概念去重、过时判断。
 - 输出驱动的 Wiki 演化案例：文章、报告或决策 memo 如何反向更新知识库。
 - 标准化 AI 产品绕过 FDE 式高接触部署的反例案例。
+- 标准 SaaS/API、外部 FDE、内部 AI Factory 处理同类工作流的对比案例。
+- 学习型 AI SaaS 的深度客户案例，尤其是产品记忆、流程集成、例外升级和 P&L 指标。
+- 企业 AI 外部合作成功率是否受选择偏差影响的失败复盘。
 - Multi-Agent 组织病的一手论文和工程复盘。
 - 企业内部 AI Factory 与外部 FDE 的对比案例。
 - 生产级 multi-agent observability、reason tracing 和 disagreement logging 实践。
