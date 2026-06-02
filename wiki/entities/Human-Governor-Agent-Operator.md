@@ -5,7 +5,7 @@ aliases:
   - Human Governor Agent Operator
 definition: "人类设定目标和约束、Agent 负责执行与优化流程的人机分工模式"
 created: 2026-04-09
-updated: 2026-05-26
+updated: 2026-06-01
 tags:
   - AI-Agent
   - Enterprise-Architecture
@@ -13,8 +13,10 @@ tags:
 related_entities:
   - '[[Agent-First-Enterprise]]'
   - '[[Machine-Readable-Processes]]'
+  - "[[Escalation-Based-Human-Oversight]]"
 source_raw:
   - '[[Enabling agent-first process redesign]]'
+  - "[[20260601-stanford-enterprise-ai-playbook]]"
 ---
 
 # Human-Governor-Agent-Operator
@@ -44,6 +46,12 @@ source_raw:
 - 需要从"flashy pilots"转向结构性变革
 - 需要重新定义人类员工的技能需求
 
+## 监督模式补充
+
+Stanford 的成功部署案例为这个模式补上了操作层细节：人类不应被固定在每一步审批里，而应被放在升级、例外和治理节点上。
+
+[[Escalation-Based-Human-Oversight|例外升级式监督]]可以看作 Human-Governor-Agent-Operator 的实践形态：Agent 处理常规路径，人类 Governor 处理异常、边界条件、责任判断和持续清障。
+
 ## 关键数据点
 
 - AI 技术预算预计未来两年增长超过 70%
@@ -62,6 +70,7 @@ source_raw:
 
 - [[Agent-First-Enterprise]] - 该模式是 Agent-First 的核心实现方式
 - [[Machine-Readable-Processes]] - Agent 运营的技术前提
+- [[Escalation-Based-Human-Oversight]] - 将人类治理具体化为例外升级路径
 
 ## 来源
 

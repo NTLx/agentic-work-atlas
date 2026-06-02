@@ -6,7 +6,11 @@
   "type": "module",
   "scripts": {
     "build": "bash tools/quartz-local.sh build",
-    "serve": "bash tools/quartz-local.sh serve"
+    "serve": "bash tools/quartz-local.sh serve",
+    "wiki:lint": "uv run python tools/wiki-lint.py",
+    "wiki:lint:fix-index": "uv run python tools/wiki-lint.py --fix-index",
+    "wiki:lint:report": "uv run python tools/wiki-lint.py --write-report",
+    "entity:audit": "uv run python tools/entity-audit.py"
   },
   "engines": {
     "node": ">=22"

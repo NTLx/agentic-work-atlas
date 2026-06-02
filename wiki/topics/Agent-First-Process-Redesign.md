@@ -2,7 +2,7 @@
 type: topic
 title: Agent-First Process Redesign
 created: 2026-04-09
-updated: 2026-05-23
+updated: 2026-06-01
 tags:
   - AI-Agent
   - Enterprise-Transformation
@@ -15,10 +15,13 @@ related_entities:
   - "[[Integration-Wall]]"
   - "[[Alignment-Tax]]"
   - "[[Forward-Deployed-AI-Enablement]]"
+  - "[[Escalation-Based-Human-Oversight]]"
+  - "[[AI-Deployment-Valley-of-Death]]"
 source_raw:
   - '[[Enabling agent-first process redesign]]'
   - '[[20260502-most-companies-arent-ready-for-ai]]'
   - '[[The layoffs will continue till we learn to use AI]]'
+  - "[[20260601-stanford-enterprise-ai-playbook]]"
 ---
 
 # Agent-First Process Redesign（Agent-First 流程重构）
@@ -41,6 +44,14 @@ source_raw:
 | 治理层 | 异常靠资深员工临场判断 | [[Human-Governor-Agent-Operator]]（人类治理、Agent 执行）、升级路径 |
 
 重构的核心不是“减少人”，而是重新分配人类工作：人类定义目标、约束、例外和价值判断；Agent 处理可重复执行、可观察、可回滚的路径。
+
+## 例外升级式监督
+
+Stanford 51 个成功部署案例补充了一个重要细节：人类监督不是越多越安全，也不是越少越高效。更有效的模式是 [[Escalation-Based-Human-Oversight|例外升级式监督]]。
+
+在这种模式里，Agent 处理常规路径，人类处理例外、边界、高风险判断和清障。报告称，AI 自主处理 80% 以上任务、人类审查例外的模式，对应最高中位生产率收益，约 71%。
+
+这把 Agent-First 的治理原则具体化了：流程重构要同时设计“自动完成路径”和“升级给人的路径”。没有升级路径，自动化会放大错误；没有常规自动路径，人类仍被困在流程节点上。
 
 ## 经济驱动：不要做漂亮试点
 

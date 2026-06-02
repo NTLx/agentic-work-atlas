@@ -17,9 +17,9 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 224 个 |
+| Entity 页面 | 229 个 |
 | Topic 页面 | 28 个 |
-| Comparison 页面 | 14 个 |
+| Comparison 页面 | 15 个 |
 | Raw 文章 | 92 个 |
 | Output 作品 | 4 个 |
 
@@ -255,6 +255,11 @@ tags:
 | [[wiki/entities/Pimenta-de-Freitas-Cardoso\|Pimenta de Freitas Cardoso]] | DharmaOCR 相关论文作者之一，研究被用于讨论专门化小模型与分布对齐 | AI, Research |
 | [[wiki/entities/Token-Maxing\|Token Maxing（Token 最大化）]] | 企业无差别消耗 AI token 的现象，导致推理成本失控 | Corporate America AI Rationing |
 | [[wiki/entities/Enterprise-AI-Rationing\|Enterprise AI Rationing（企业 AI 配给制）]] | 企业因 AI 推理成本飙升，从鼓励全面实验转向限制使用权限的管理实践 | Corporate America AI Rationing |
+| [[wiki/entities/The-GenAI-Divide\|The GenAI Divide（生成式 AI 鸿沟）]] | 企业 GenAI 高采用但低业务转化的断裂 | The GenAI Divide |
+| [[wiki/entities/Enterprise-AI-Learning-Gap\|Enterprise AI Learning Gap（企业 AI 学习鸿沟）]] | 企业 AI 系统不能保留反馈、适应上下文并随流程改进的缺口 | The GenAI Divide |
+| [[wiki/entities/AI-Deployment-Valley-of-Death\|AI Deployment Valley of Death（AI 部署死亡谷）]] | AI 项目从试点或部署到可衡量 ROI 之间的断层 | Stanford / MIT NANDA |
+| [[wiki/entities/AI-Deployment-Invisible-Costs\|AI Deployment Invisible Costs（AI 部署隐性成本）]] | AI 成功部署中常被 ROI 低估的组织、流程和失败试验成本 | Enterprise AI Playbook |
+| [[wiki/entities/Escalation-Based-Human-Oversight\|Escalation-Based Human Oversight（例外升级式监督）]] | AI 处理常规路径，人类审查例外和边界的人机监督模式 | Enterprise AI Playbook |
 | [[wiki/entities/Campfire-Hiring\|Campfire Hiring（篝火式招聘）]] | 用付费短期真实工作替代传统技术面试的招聘模式 | The Last Technical Interview |
 | [[wiki/entities/Signal-Problem-in-Hiring\|Signal Problem in Hiring（招聘信号问题）]] | 传统面试只能收集几小时信号却要做数年决策的根本缺陷 | The Last Technical Interview |
 | [[wiki/entities/Steve-Yegge\|Steve Yegge]] | 软件工程师、技术博主，35 年面试经验，提出 Campfire Hiring 概念 | The Last Technical Interview |
@@ -313,6 +318,7 @@ tags:
 | [[wiki/comparisons/Knowledge-Work-vs-Wisdom-Work\|Knowledge Work vs Wisdom Work]] | 核心能力、价值来源、AI 影响 | Wisdom-Work, Emotional-Clarity, Discernment, Connection |
 | [[wiki/comparisons/Ontology-vs-Knowledge-Graph\|Ontology vs Knowledge Graph]] | 语义层、事实层、TBox/ABox、企业 Agent | Ontology, Knowledge-Graph, TBox, ABox |
 | [[wiki/comparisons/RAG-vs-LLM-Wiki\|RAG vs LLM Wiki]] | 知识处理、累积性、维护成本 | Context-Engineering, Multi-Layer-Memory, Andrej-Karpathy, Knowledge-Compilation, Memex |
+| [[wiki/comparisons/Successful-AI-Deployment-vs-GenAI-Divide\|Successful AI Deployment vs GenAI Divide]] | 成功部署样本、失败漏斗、学习鸿沟、部署死亡谷 | AI-Deployment-Valley-of-Death, The-GenAI-Divide, Enterprise-AI-Learning-Gap |
 | [[wiki/comparisons/Taste-vs-Judgment\|Taste vs Judgment]] | 决策方式、不确定性处理、AI 时代价值 | Taste, Judgment, Refusal, Specificity |
 | [[wiki/comparisons/Vibe-Coding-vs-Software-2.0\|Vibe Coding vs Software 2.0]] | 编程范式、质量层级、开发者角色 | Vibe-Coding, Software-2.0, Andrej-Karpathy, Coding-Agents |
 
@@ -337,11 +343,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（84 个）*
+*原始剪藏文章（92 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[20260531-thoughts-hmmz|the solution might be cancelling my AI subscription]]（Zero-Friction-Scope-Creep、AI-Restraint）/ [[I Am Retiring from Tech to Live Offline]]（AI-Amish、Chad-Whitacre）/ [[20260530-ceo-knee-deep-building-ai|CEO 回归亲手构建]]（Founder-Mode、Guillermo-Rauch、CEO-Hands-On-AI）
+最新编译：[[20260601-stanford-enterprise-ai-playbook|The Enterprise AI Playbook]]（AI-Deployment-Valley-of-Death、AI-Deployment-Invisible-Costs、Escalation-Based-Human-Oversight）/ [[20260601-mit-nanda-genai-divide|The GenAI Divide]]（The-GenAI-Divide、Enterprise-AI-Learning-Gap）/ [[Successful-AI-Deployment-vs-GenAI-Divide]]（成功部署样本 vs 失败漏斗）
 
 ---
 

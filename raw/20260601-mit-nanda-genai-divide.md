@@ -7,7 +7,7 @@ author:
   - "[[Chris Pease]]"
   - "[[Ramesh Raskar]]"
   - "[[Pradyumna Chari]]"
-published: "2025-07"
+published: 2025-07-01
 created: 2026-06-01
 description: "MIT Project NANDA / MLQ 报告：基于 300+ 公开 AI initiative、52 个组织访谈和 153 位 senior leader 调研，提出企业 GenAI 高采用、低业务转化的 GenAI Divide。"
 tags:

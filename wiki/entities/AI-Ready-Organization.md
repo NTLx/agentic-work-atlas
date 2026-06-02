@@ -6,7 +6,7 @@ aliases:
   - AI 就绪组织
 definition: "能清晰描述自身目标、流程、策略，从而让 AI 有效执行的组织状态——AI 的瓶颈不在技术，而在企业自身的混乱"
 created: 2026-05-09
-updated: 2026-05-26
+updated: 2026-06-01
 tags:
   - AI-adoption
   - organizational-design
@@ -19,8 +19,12 @@ related_entities:
   - "[[Machine-Readable-Processes]]"
   - "[[Alignment-Tax]]"
   - "[[Integration-Wall]]"
+  - "[[Enterprise-AI-Learning-Gap]]"
+  - "[[AI-Deployment-Invisible-Costs]]"
 source_raw:
   - "[[20260502-most-companies-arent-ready-for-ai]]"
+  - "[[20260601-stanford-enterprise-ai-playbook]]"
+  - "[[20260601-mit-nanda-genai-divide]]"
 ---
 
 # AI-Ready Organization（AI 就绪组织）
@@ -101,6 +105,14 @@ AI-ready 是 [[Agent-First-Enterprise]] 的入口状态，不是终点。
 - 在评估成效时，不只看产出数量，也看是否缩短决策链和执行链。
 
 AI-ready 的目标不是制造更多文档，而是让组织的真实工作系统足够清楚，能被人、工具和 Agent 共同执行。
+
+## 新证据：成功部署与失败漏斗
+
+Stanford 的 51 个成功部署案例支持了 AI-ready 的核心判断：同样技术和 use case 在不同组织中会产生巨大结果差异，差异主要来自组织准备度、流程、领导力和变革能力。报告称 77% 的最难挑战是变革管理、数据质量、流程重设计等隐性成本。
+
+MIT/NANDA 的 GenAI Divide 报告从失败侧补充了另一半证据：企业可以有很高的工具 adoption，却没有可衡量 P&L impact。原因之一是系统缺少记忆、上下文适应和流程学习能力。组织如果不能把目标、流程、反馈和例外显式化，AI 系统就没有稳定的学习对象。
+
+因此 AI-ready 不只是“组织会不会用 AI”，而是“组织是否能被 AI 系统读取、学习和改进”。
 
 ## 关键数据点
 

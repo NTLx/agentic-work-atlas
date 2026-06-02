@@ -21,6 +21,12 @@ Desktop.ini
 *.swo
 __pycache__/
 *.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Python / uv 本地环境
+.venv/
 
 # Node / Quartz 构建产物
 node_modules/
