@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-05-29
+updated: 2026-06-02
 tags:
   - AI-Agent
   - verification
@@ -39,6 +39,10 @@ related_entities:
   - "[[ITBench]]"
   - "[[Model-Safety-Divergence]]"
   - "[[Emergence-World]]"
+  - "[[Agent-Logic]]"
+  - "[[Local-Bounded-Reasoning]]"
+  - "[[Policy-as-Code-for-Agent-Governance]]"
+  - "[[Graph-Guided-Agent-Investigation]]"
 source_raw:
   - "[[The PR you would have opened yourself]]"
   - "[[用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践]]"
@@ -57,6 +61,7 @@ source_raw:
   - "[[Using LLMs to secure source code]]"
   - "[[ITBench-AA Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM]]"
   - "[[20260528-ai-model-simulation]]"
+  - "[[20260602-ibm-agent-logic-scalable-ai-adoption]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
@@ -178,11 +183,27 @@ Birgitta Böckeler 对这个 Topic 的补充在于：Agent 的可验证性不应
 
 但 token 指标不能单独作为成功标准。模型切换、工作负载变大、输出质量下降，都可能让数字产生假象。因此成本验证必须和 turn 数、工具完成率、任务结果、质量传感器一起看；否则“优化”可能只是让 Agent 少做了该做的工作。
 
+## Agent Logic：企业流程的确定性骨架
+
+IBM Research 的 [[Agent-Logic|agent logic]] 把可验证 Agent 工程推进到企业流程层。它的核心不是再给 LLM 更长上下文，而是把企业工作流中稳定、可验证、低熵的部分放进 harness：程序分析、知识图谱、图遍历、policy-as-code、DAG 证据链和自适应规划。
+
+这补强了本 Topic 的一个关键判断：可验证性不只是输出后的测试，也包括推理前的搜索空间约束。
+
+| Agent logic 形态 | 可验证对象 | 风险降低方式 |
+|------------------|------------|--------------|
+| [[Local-Bounded-Reasoning|局部有界推理]] | 模型看到的候选空间 | 减少无关上下文和错误关联 |
+| [[Graph-Guided-Agent-Investigation|图引导调查]] | 调查路径和证据链 | 让根因分析可回放 |
+| [[Policy-as-Code-for-Agent-Governance|治理策略即代码]] | 权限、披露、升级和合规规则 | 把治理从 prompt 移到运行时 |
+| 程序分析 | 代码结构、调用关系、测试边界 | 把确定性工作交给工具 |
+
+它也给“薄 harness”原则划出边界：当任务进入企业 IT、医疗合规、遗留系统和工业维护这类强结构环境时，薄到只剩 prompt 和工具调用，反而会把本该确定的约束重新概率化。
+
 ## 与现有 Topic 的关系
 
 - [[Agentic-Engineering-Patterns]]回答“如何用 Agent 做软件工程”。
 - [[Building-Effective-Agents]]回答“Agent 工作流有哪些架构模式”。
 - [[Agentic-Workflow-Token-Efficiency]]回答“生产级 Agent 工作流怎样控制可观测成本”。
+- [[Agent-Logic]]回答“企业工作流中的确定性结构怎样进入 Agent harness”。
 - 本 Topic 回答“这些模式怎样跨过 demo 与生产之间的断层”。
 
 ## 结论

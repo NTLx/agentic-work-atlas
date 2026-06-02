@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent"
 created: 2026-05-11
-updated: 2026-05-29
+updated: 2026-06-02
 tags:
   - AI-Agent
   - architecture
@@ -24,6 +24,10 @@ related_entities:
   - "[[Multi-Agent-System-Pathology]]"
   - "[[Agent-Dissociation]]"
   - "[[Agent-Containment]]"
+  - "[[Agent-Logic]]"
+  - "[[Local-Bounded-Reasoning]]"
+  - "[[Policy-as-Code-for-Agent-Governance]]"
+  - "[[Graph-Guided-Agent-Investigation]]"
 source_raw:
   - "[[The Anatomy of an Agent Harness]]"
   - "[[Maintainability sensors for coding agents]]"
@@ -31,6 +35,7 @@ source_raw:
   - "[[Harness, Scaffold, and the AI Agent Terms Worth Getting Right]]"
   - "[[20260528-agentic-ai-2026-landscape]]"
   - "[[20260530-cursor-developer-habits-report]]"
+  - "[[20260602-ibm-agent-logic-scalable-ai-adoption]]"
 ---
 
 # Agent Harness
@@ -191,6 +196,16 @@ ReAct 每步交织推理和行动（灵活但每步成本高）。Plan-and-Execu
 
 多少逻辑放在 harness 中 vs 模型中。Anthropic 押注薄 harness + 模型改进。图框架押注显式控制。Anthropic 定期从 Claude Code 的 harness 中删除规划步骤，因为新模型版本内化了该能力。
 
+IBM Research 的 [[Agent-Logic|agent logic]] 给这个问题增加了企业侧边界：在强结构工作流中，harness 不应只做模型调用和工具循环，还应承载知识图谱、程序分析、策略执行、图遍历和验证逻辑。判断标准不是“harness 越厚越好”，而是稳定、可验证、低熵的企业约束应留在模型外，开放、语义、跨上下文的部分才交给 LLM。
+
+这使企业级 harness 呈现第三种形态：
+
+| Harness 形态 | 逻辑位置 | 适合场景 |
+|--------------|----------|----------|
+| 薄 harness | 大部分能力交给模型 | 通用 coding、低风险探索 |
+| 显式控制 harness | 流程由图或状态机管理 | 可定义步骤的自动化工作流 |
+| Agent logic harness | 图谱、程序分析、策略和验证在模型外运行 | 企业 IT、合规、遗留系统、工业维护 |
+
 ## 脚手架隐喻
 
 建筑脚手架是临时基础设施，使工人能够到达无法触及的楼层。它不做建筑工作，但没有它工人到不了高层。**关键洞察：建筑完成时脚手架被拆除。** 随着模型改进，harness 复杂度应降低。
@@ -250,3 +265,4 @@ Cursor 2026 春季报告揭示了 harness 演化的下一个阶段：**从开发
 - [[Agentic-Workflow-Token-Efficiency|Agentic Workflow Token Efficiency]] — 上下文管理策略的 token 优化
 - [[Multi-Agent-System-Pathology]] — 多 Agent harness 成功后暴露的群体认知和组织治理风险
 - [[Agent-Infra]] — Agent Harness 概念在生态层面的扩展，从单个 harness 到整个 Agent 基础设施层
+- [[Agent-Logic]] — 企业级 harness 中运行在模型外的工作流专用逻辑层

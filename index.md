@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-06-01
+updated: 2026-06-02
 tags:
   - index
   - MOC
@@ -17,7 +17,7 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 229 个 |
+| Entity 页面 | 233 个 |
 | Topic 页面 | 28 个 |
 | Comparison 页面 | 15 个 |
 | Raw 文章 | 94 个 |
@@ -37,6 +37,10 @@ tags:
 | [[wiki/entities/Specificity\|Specificity（特异性）]] | 产生深入特定上下文内容的竞争优势 | Good Taste the Only Real Moat Left |
 | [[wiki/entities/Agent-Loops\|Agent Loops（Agent 循环调度）]] | Cron 驱动的定时自主运行 Agent 编排范式 | Boris Cherny: Why Coding Is Solved |
 | [[wiki/entities/Agent-Harness\|Agent Harness]] | 包装 LLM 的完整软件基础设施：12 组件 + 7 架构决策 | The Anatomy of an Agent Harness |
+| [[wiki/entities/Agent-Logic\|Agent Logic]] | 运行在 Agent harness 内、模型之外的工作流专用逻辑层 | IBM Research: Agent Logic |
+| [[wiki/entities/Local-Bounded-Reasoning\|Local-Bounded Reasoning]] | 用工作流结构、图谱、程序分析和策略约束缩小 LLM 推理空间 | IBM Research: Agent Logic |
+| [[wiki/entities/Policy-as-Code-for-Agent-Governance\|Policy-as-Code for Agent Governance]] | 把 Agent 权限、披露、合规和人工升级路径写成运行时策略 | IBM Research: Agent Logic |
+| [[wiki/entities/Graph-Guided-Agent-Investigation\|Graph-Guided Agent Investigation]] | 用知识图谱、依赖图或 DAG 引导 Agent 调查复杂系统故障 | IBM Research: Agent Logic |
 | [[wiki/entities/Agent-First-Enterprise\|Agent-First Enterprise]] | AI 系统运营流程，人类设定目标的组织模式 | Enabling agent-first process redesign |
 | [[wiki/entities/Human-Governor-Agent-Operator\|Human-Governor-Agent-Operator]] | 人类治理、Agent 运营的分工模式 | Enabling agent-first process redesign |
 | [[wiki/entities/Machine-Readable-Processes\|Machine-Readable Processes]] | Agent 运营的技术基础设施 | Enabling agent-first process redesign |
