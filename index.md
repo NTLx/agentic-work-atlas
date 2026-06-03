@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-06-02
+updated: 2026-06-03
 tags:
   - index
   - MOC
@@ -20,7 +20,7 @@ tags:
 | Entity 页面 | 233 个 |
 | Topic 页面 | 28 个 |
 | Comparison 页面 | 15 个 |
-| Raw 文章 | 94 个 |
+| Raw 文章 | 95 个 |
 | Output 作品 | 4 个 |
 
 ---
