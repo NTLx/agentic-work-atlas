@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把巨大组合搜索空间、明确目标函数、数据或模拟器和工具调用结合起来，用 AI 寻找科学突破方案的系统形态"
 created: 2026-05-08
-updated: 2026-05-25
+updated: 2026-06-04
 tags:
   - AI
   - science
@@ -17,8 +17,10 @@ related_entities:
   - "[[Continual-Learning]]"
   - "[[World-Model]]"
   - "[[Tool-Use-Architecture]]"
+  - "[[Open-Source-Operational-AI-Framework]]"
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
+  - "[[The next chapter in flood resilience Open sourcing Google’s hydrology framework]]"
 ---
 
 # Scientific Discovery AI（科学发现 AI）
@@ -39,6 +41,7 @@ Hassabis 从 AlphaGo 和 AlphaFold 总结出一个模式：当问题可以被描
 - 药物发现可被表述为搜索问题：如果物理规律允许某种化合物存在，难点就是如何高效找到它。
 - 虚拟细胞路线需要更强的观测和模拟能力，可能依赖无损活细胞纳米级成像，也可能依赖更好的学习型模拟器。
 - 通用模型不应把所有专业科学知识塞进一个巨大脑袋；更可行的是通过 [[Tool-Use-Architecture|工具使用架构]] 调用 AlphaFold 这类专用系统。
+- Google Research 的新水文模型相对旧版本，在有测站流域延长六天可靠预测窗口，在无测站流域延长一天；更重要的是，团队把模型架构、训练管线、文档和教程开放给运营机构。
 
 ## 两种层级
 
@@ -48,6 +51,23 @@ Hassabis 从 AlphaGo 和 AlphaFold 总结出一个模式：当问题可以被描
 | 框架型发现 | 提出新的问题、理论或解释结构 | [[Einstein-Test|Einstein Test]] 所关心的新理论生成 |
 
 当前方法在第一层更有把握。第二层需要更强的类比推理、世界模型、持续学习和对“什么问题重要”的判断。
+
+## 从科学突破到运营基础设施
+
+科学 AI 的价值不只取决于模型能否达到更高 benchmark，还取决于发现能否进入研究和运营机构的标准工作流。
+
+Google 水文框架提供了一个完整转换链：
+
+```text
+研究模型
+  -> 可复现架构与训练管线
+  -> 本地数据和知识进入模型
+  -> 伙伴机构验证
+  -> 适配既有运营平台
+  -> 本地机构持续运行和改进
+```
+
+[[Open-Source-Operational-AI-Framework|开源运营型 AI 框架]]因此是 Scientific Discovery AI 的下游基础设施。它把科学能力从发布方的研究成果，变成其他机构可拥有、可修改、可集成的工作能力。
 
 ## 与 Agent 架构的关系
 
@@ -66,6 +86,7 @@ Hassabis 从 AlphaGo 和 AlphaFold 总结出一个模式：当问题可以被描
 - 数据和模拟器可能是瓶颈，尤其是生命科学中无法直接观测的动态过程。
 - 搜索型突破不等于真正原创；系统可能会解已有问题，却不会提出新问题。
 - 科学发现结果必须经过实验或形式化验证，不能只靠语言说服。
+- 开放模型和训练管线不会自动产生运营采用；本地数据质量、集成能力、责任链和长期维护仍可能成为瓶颈。
 
 ## 关联概念
 
@@ -74,3 +95,4 @@ Hassabis 从 AlphaGo 和 AlphaFold 总结出一个模式：当问题可以被描
 - [[World-Model]] - 科学探索需要可更新的环境和理论表示
 - [[Tool-Use-Architecture]] - 通用模型应协调专用科学工具
 - [[Demis-Hassabis]] - AlphaGo / AlphaFold 路线背后的关键人物
+- [[Open-Source-Operational-AI-Framework]] - 把科学模型转成可被本地机构运营和改进的基础设施

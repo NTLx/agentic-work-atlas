@@ -17,9 +17,9 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 233 个 |
+| Entity 页面 | 236 个 |
 | Topic 页面 | 28 个 |
-| Comparison 页面 | 15 个 |
+| Comparison 页面 | 16 个 |
 | Raw 文章 | 99 个 |
 | Output 作品 | 4 个 |
 
@@ -212,6 +212,9 @@ tags:
 | [[wiki/entities/Unified-Model-Strategy\|Unified Model Strategy（统一模型战略）]] | 把分散的 AI 研究和算力合并到一个统一模型项目的组织与技术决策 | Gemini co-leads 圆桌对话 |
 | [[wiki/entities/Tool-Latency-Bottleneck\|Tool Latency Bottleneck（工具延迟瓶颈）]] | Agent 速度提升后，为人类设计的工具延迟成为系统新瓶颈 | Gemini co-leads 圆桌对话 |
 | [[wiki/entities/Founder-Mode\|Founder Mode（创始人模式）]] | CEO 应保持技术参与度的管理哲学，AI 时代扩展为"必须亲手用 AI" | Paul Graham 2024 + CEO Hands-On AI |
+| [[wiki/entities/Plan-as-Agent-Checkpoint\|Plan as Agent Checkpoint（计划即 Agent 检查点）]] | 把目标、上下文、方案和验收标准外化为可跨会话恢复的持久执行检查点 | Matt Van Horn Agentic Engineering |
+| [[wiki/entities/Human-Signal\|Human Signal（人类信号）]] | 多 Agent 高吞吐系统中，人类提供方向、品味、风险判断和重定向反馈 | Matt Van Horn Agentic Engineering |
+| [[wiki/entities/Open-Source-Operational-AI-Framework\|Open-Source Operational AI Framework（开源运营型 AI 框架）]] | 开放模型、训练管线、文档和集成接口，让本地机构保留运营与改进能力 | Google Research Hydrology |
 
 #### 作者 Entities
 
@@ -325,6 +328,7 @@ tags:
 | [[wiki/comparisons/Successful-AI-Deployment-vs-GenAI-Divide\|Successful AI Deployment vs GenAI Divide]] | 成功部署样本、失败漏斗、学习鸿沟、部署死亡谷 | AI-Deployment-Valley-of-Death, The-GenAI-Divide, Enterprise-AI-Learning-Gap |
 | [[wiki/comparisons/Taste-vs-Judgment\|Taste vs Judgment]] | 决策方式、不确定性处理、AI 时代价值 | Taste, Judgment, Refusal, Specificity |
 | [[wiki/comparisons/Vibe-Coding-vs-Software-2.0\|Vibe Coding vs Software 2.0]] | 编程范式、质量层级、开发者角色 | Vibe-Coding, Software-2.0, Andrej-Karpathy, Coding-Agents |
+| [[wiki/comparisons/FDE-vs-Open-Source-Operational-AI\|FDE vs Open-Source Operational AI]] | 现场专家、开放框架、能力归属、集成方式、本地运营 | Forward-Deployed-Engineer, Open-Source-Operational-AI-Framework, Integration-Wall |
 
 ### Outputs (outputs/)
 *输出作品*

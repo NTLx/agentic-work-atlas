@@ -4,7 +4,7 @@ title: "Agentic Engineering vs Vibe Coding"
 entity_a: "[[Agentic-Engineering]]"
 entity_b: "[[Vibe-Coding]]"
 created: 2026-05-24
-updated: 2026-05-24
+updated: 2026-06-04
 tags:
   - comparison
   - AI-Agent
@@ -22,6 +22,7 @@ source_raw:
   - "[[What is agentic engineering? - Agentic Engineering Patterns]]"
   - "[[Why I Don’t Vibe Code]]"
   - "[[Improving token efficiency in GitHub Agentic Workflows]]"
+  - "[[Every Agentic Engineering Hack I Know (June 2026)]]"
 ---
 
 # Agentic Engineering vs Vibe Coding
@@ -49,6 +50,8 @@ Agentic Engineering 是一种**交付模式**。它把 coding agent 视为能运
 
 > [!warning] 术语边界
 > 不应把所有 LLM 生成代码都叫 Vibe Coding。Vibe Coding 指向未经审查、原型质量的生成代码；Agentic Engineering 指向被测试、审查和治理后的软件工程实践。
+
+Matt Van Horn 的案例进一步说明，自称 Agentic Engineering 也不自动满足这个定义。他的计划文件、Skill、并行研究和开源贡献展示了成熟工作系统；但“几乎不读计划”和跳过权限确认也会削弱审查与治理。分类标准应看验证、权限、责任和维护证据，而不是看使用了多少 Agent 或采用什么标签。
 
 ## 分工关系
 
@@ -86,6 +89,7 @@ Agentic Engineering 重新定义人类责任：
 - 人类不一定亲手跑每个命令，但必须定义什么证据足以证明完成。
 - 人类不一定亲手修每个 bug，但必须决定哪些摩擦是设计信号，不能被自动化抹掉。
 - 人类不一定拒绝 AI 生成，但必须拒绝未经审查的合并。
+- 人类可以把大部分执行交给 Agent，但仍需审查目标、风险、权限边界和验收证据。
 
 这也是 [[Ownership|Ownership]] 与 [[Agent-PR-Review|Agent PR Review]] 进入工程流程的原因：AI 降低生产摩擦，但不会替代责任承担。
 

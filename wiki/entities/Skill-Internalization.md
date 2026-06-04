@@ -7,7 +7,7 @@ aliases:
   - 技能内化
 definition: "不直接安装别人的 Skill，而是让 Agent 读懂其设计思想，结合自己的语料和判断重新长出一份属于自己版本的知识吸收方式——安装是搬运，内化是吸收"
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-06-04
 tags:
   - skill-engineering
   - knowledge-management
@@ -19,6 +19,7 @@ related_entities:
   - "[[Agent-Harness]]"
 source_raw:
   - "[[20260526-obsidian-claude-code-brain]]"
+  - "[[Every Agentic Engineering Hack I Know (June 2026)]]"
 ---
 
 > [!definition] 定义
@@ -67,11 +68,14 @@ source_raw:
 
 反过来，自己写出的 Skill 也能被别人内化。Skill 可以跨 Agent、跨人传递，成为可共享的资产。
 
+Matt Van Horn 提供了一个更激进的触发规则：任何重复两次以上的工作都考虑做成 Skill，并让 Agent 读取一个已经有效的 Skill，复用其结构来搭建新 Skill。这个做法同时包含两层复利：重复工作被程序化，优秀 Skill 的设计结构被内化为新的能力。
+
 ## 关键数据点
 
 - 作者 Vault 中挂着几十个 Skill，相当一部分从外部学来再内化
 - Skill 文件结构：SKILL.md（入口，≤200 行）+ references/（详细规则）+ scripts/（脚本）
 - 只在触发时加载 SKILL.md，其他时候上千行规则与 Agent 无关
+- Matt Van Horn 将“重复两次以上”作为 Skill 化启发式，并通过读取既有优秀 Skill 的结构来搭建新能力
 
 ## 前提与局限性
 

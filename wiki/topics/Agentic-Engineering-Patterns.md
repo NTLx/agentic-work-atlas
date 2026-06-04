@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-05-28
+updated: 2026-06-04
 tags:
   - AI-Agent
   - coding-agents
@@ -27,6 +27,9 @@ related_entities:
   - '[[AI-Restraint]]'
   - '[[YAGNI]]'
   - '[[ITBench]]'
+  - "[[Plan-as-Agent-Checkpoint]]"
+  - "[[Human-Signal]]"
+  - "[[Skill-Internalization]]"
 source_raw:
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'
@@ -43,6 +46,7 @@ source_raw:
   - "[[ITBench-AA Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM]]"
   - "[[Coding agents in the social sciences]]"
   - "[[Using LLMs to secure source code]]"
+  - "[[Every Agentic Engineering Hack I Know (June 2026)]]"
 ---
 
 # Agentic Engineering Patterns
@@ -147,6 +151,22 @@ source_raw:
 
 小改进复合，编码助手意味着**可以兼得新功能 + 高质量**。
 
+### 个人级 Agentic Engineering 操作系统
+
+Matt Van Horn 的工作流把多个模式组装成个人级生产系统：
+
+| 层 | 机制 | 作用 |
+|----|------|------|
+| 输入 | 语音、截图、issue、完整会议转写、最新研究 | 降低表达摩擦，保留原始上下文 |
+| 规划 | [[Plan-as-Agent-Checkpoint|计划即 Agent 检查点]] | 外化目标、代码库模式、文件范围和验收标准 |
+| 执行 | 四到六个并行会话，按任务分配不同模型 | 扩大执行吞吐 |
+| 判断 | [[Human-Signal|Human Signal]] | 人类提供方向、品味、优先级和重定向 |
+| 复利 | 笔记知识库、历史计划、Skill、CLI | 让一次工作降低下一次成本 |
+
+这套系统的核心不是“无 IDE”或某个终端，而是任务状态、知识和重复做法都被外化为 Agent 可调用资产。
+
+它也暴露了 Agentic Engineering 的风险边界。作者主张几乎不读计划并跳过权限确认，这能提高个人吞吐，但不能直接迁移到团队、生产环境或高风险系统。并行 Agent 越多，越需要权限隔离、验证证据、终止条件和人类责任。
+
 ### AI 也需要懒惰和克制
 
 [[20260414-martin-fowler-fragments]] 补充了一个反向原则：AI 不应把所有摩擦都解释为“需要生成更多代码”。Fowler 通过 [[YAGNI]] 经验提醒，很多好设计来自少做、晚做或不做。
@@ -214,6 +234,9 @@ Agentic Engineering 不能把生成成本下降变成 review 成本转嫁。[[Ag
 - [[Agentic-Workflow-Token-Efficiency]] - Agentic Workflow 的成本可观测与优化方法
 - [[Laziness-Virtue]] - 用有限时间倒逼简化的工程美德
 - [[AI-Lacks-Laziness]] - AI 默认缺少简化压力带来的质量风险
+- [[Plan-as-Agent-Checkpoint]] - 让长任务跨会话恢复并围绕验收标准执行
+- [[Human-Signal]] - 人类在并行 Agent 系统中提供方向、判断和终止信号
+- [[Skill-Internalization]] - 将重复做法和优秀外部结构编译为可复用 Skill
 
 ---
 
