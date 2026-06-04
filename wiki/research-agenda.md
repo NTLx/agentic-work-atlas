@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-06-02
+updated: 2026-06-05
 tags:
   - research-agenda
   - agentic-work-atlas
@@ -21,6 +21,8 @@ related_entities:
   - "[[Enterprise-AI-Learning-Gap]]"
   - "[[AI-Deployment-Valley-of-Death]]"
   - "[[Successful-AI-Deployment-vs-GenAI-Divide]]"
+  - "[[Standard-AI-Product-Adoption]]"
+  - "[[Agentic-Analytics]]"
   - "[[Multi-Agent-Pathology-and-Governance]]"
   - "[[Model-Safety-Divergence]]"
   - "[[Agent-Containment]]"
@@ -50,7 +52,7 @@ related_entities:
 | Research agenda 只能支撑“待研究问题存在” | Schema 边界规则、本页使用边界 | 后续 output 可能误把本页当事实来源 | 所有回填检查必须区分 Raw / Wiki / Agenda / 无 |
 | FDE 的核心价值是现场到能力沉淀 | [[Forward-Deployed-AI-Enablement]]、[[Deployment-Product-Flywheel]]、[[Integration-Wall]] | 标准化 SaaS Agent 可能绕过高接触部署 | 主动寻找无需 FDE 也能改写核心工作流的反例 |
 | 内部 AI Factory 不必然替代外部 FDE | [[Enterprise-AI-Factory]]、[[AI-Factory-vs-Forward-Deployed-AI-Enablement]] | 缺少同一工作流的成本、风险和复用路径对比 | 找企业内部团队与外部部署团队的对照材料 |
-| 标准 AI 产品能改写核心工作流，但需要组织已具备可读流程和集成基础 | [[Successful-AI-Deployment-vs-GenAI-Divide]]、[[AI-Ready-Organization]]、Klarna / Mercado Libre / Lightspeed raw | 可能把“工具 adoption”误判为“工作流改造”；也可能低估供应商侧隐藏实施工作 | 对标准产品案例补 source-summary，检查是否有 API 化系统、业务 owner、指标闭环和人类升级路径 |
+| 标准 AI 产品能改写核心工作流，但需要组织已具备可读流程和集成基础 | [[Standard-AI-Product-Adoption]]、[[Successful-AI-Deployment-vs-GenAI-Divide]]、Klarna / Mercado Libre / Lightspeed / Octopus source-summary | 可能把“工具 adoption”误判为“工作流改造”；也可能低估供应商侧隐藏实施工作 | 下一步找同一工作流下标准产品、FDE、内部 AI Factory 的成本与风险对照 |
 | Enterprise AI Learning Gap 可能是产品问题，也可能是组织问题 | [[Enterprise-AI-Learning-Gap]]、[[The-GenAI-Divide]]、[[AI-Ready-Organization]] | 如果学习鸿沟主要由产品内存/集成能力解决，FDE 和组织重构的重要性会下降 | 找学习型 AI SaaS 在低咨询条件下跨过 production 的案例 |
 | Multi-agent 系统会产生组织病 | [[Multi-Agent-Pathology-and-Governance]]、[[Invisible-Orchestrator]]、[[Agent-Dissociation]] | 证据可能过度依赖二手叙述 | 补 Hidden Profile、MAEBE、invisible orchestrator 等一手论文 |
 | 模型安全分歧反映底层信任结构 | [[Model-Safety-Divergence]]、[[Agent-Containment]] | 新闻摘要不足以支撑强解释 | 找原论文、实验日志或同基准复现实验 |
@@ -79,7 +81,7 @@ related_entities:
 | P0 | 提升 [[Model-Safety-Divergence]] 证据层级 | 缺一手论文或详细实验报告 | Emergence AI / Satya Nitta 原论文、实验日志或详细报告 | clip 后更新 [[Model-Safety-Divergence]] 的前提与局限性 |
 | P0 | 验证 Operator 到 Governor 迁移 | 缺一手组织案例 | Agent-first / FDE 项目中角色、权限、验收和责任变化的深度复盘 | clip 后更新 [[Human-Governor-Agent-Operator]] 或新建 comparison |
 | P0 | 补强多 Agent 组织病 | 缺一手论文 | Hidden Profile、MAEBE、persona collapse、bystander effect、Fukui invisible orchestrator、MetaAgent-X 原论文 | clip 后更新 [[Multi-Agent-Pathology-and-Governance]] |
-| P0 | 编译标准产品成功案例 | Klarna / Mercado Libre / Octopus / Lightspeed 已剪藏但未 source-summary 化 | 官方案例、客户故事、后续复盘、是否有内部系统/API 集成细节 | compile 后更新 [[Successful-AI-Deployment-vs-GenAI-Divide]] 和 [[Forward-Deployed-AI-Enablement]] |
+| P0 | 标准产品成功案例后续复盘 | Klarna / Mercado Libre / Octopus / Lightspeed 已完成 source-summary，但缺独立后续复盘和失败边界 | 官方案例后续、客户侧复盘、成本/质量/岗位变化数据 | clip 后更新 [[Standard-AI-Product-Adoption]] 和 [[Successful-AI-Deployment-vs-GenAI-Divide]] |
 | P0 | 建立三路径对照 | 缺同一工作流在标准产品、外部 FDE、内部 AI Factory 下的成本和结果对比 | 客服、研发、back-office 三类工作流的成对案例 | 证据足够后新建或扩展 comparison |
 | P1 | 对比内部 AI Factory 与外部 FDE | 缺同类工作流对比 | 企业内部 AI 平台团队与外部 FDE 服务同类流程的案例 | 证据足够后更新 [[AI-Factory-vs-Forward-Deployed-AI-Enablement]] |
 | P1 | 验证外部合作成功率的选择偏差 | MIT/NANDA 称外部合作成功率更高，但缺项目难度控制 | 内部自建和外部合作在相同流程/行业/预算下的失败复盘 | 更新 [[The-GenAI-Divide]] 的前提与局限性 |
@@ -112,8 +114,8 @@ related_entities:
 
 | 工作流 | 标准 SaaS/API 路径 | 外部 FDE 路径 | 内部 AI Factory 路径 | 关键差异 |
 |--------|--------------------|---------------|----------------------|----------|
-| 客服 | Klarna / Lightspeed 待编译 | 待找 | 待找 | adoption、集成深度、升级路径、P&L 指标 |
-| 研发 | Mercado Libre / Copilot 待编译 | 待找 | 待找 | license 下发 vs 流程重构 vs 平台化 |
+| 客服 | Klarna / Lightspeed / Octopus 已编译 | 待找 | 待找 | adoption、集成深度、升级路径、P&L 指标 |
+| 研发 | Mercado Libre / Copilot 已编译 | 待找 | 待找 | license 下发 vs 流程重构 vs 平台化 |
 | back-office | 待找 | 待找 | P&G / AI Factory 相关 | BPO 替代、数据接入、审计和复用资产 |
 
 判断标准：
@@ -122,7 +124,7 @@ related_entities:
 - 是否有组织学习资产：评测集、流程规范、升级规则、模板或平台模块。
 - 是否有明确人类角色迁移：operator、reviewer、governor、owner。
 
-最小动作：先把 Klarna、Mercado Libre、Lightspeed 三篇标准产品案例补成 source-summary，再用这个矩阵压力测试“标准产品绕过 FDE”的假设。
+最小动作：标准产品案例已补成 source-summary，并已更新 [[Standard-AI-Product-Adoption]] 与 [[Successful-AI-Deployment-vs-GenAI-Divide]]。下一步应补同类工作流的 FDE / 内部 AI Factory 对照，而不是继续堆同类标准产品客户故事。
 
 ### Model Safety 证据升级
 

@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-06-04
+updated: 2026-06-05
 tags:
   - AI-Agent
   - coding-agents
@@ -30,6 +30,8 @@ related_entities:
   - "[[Plan-as-Agent-Checkpoint]]"
   - "[[Human-Signal]]"
   - "[[Skill-Internalization]]"
+  - "[[AI-Native-Engineering-Org]]"
+  - "[[Intelligence-Premium]]"
 source_raw:
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'
@@ -47,6 +49,9 @@ source_raw:
   - "[[Coding agents in the social sciences]]"
   - "[[Using LLMs to secure source code]]"
   - "[[Every Agentic Engineering Hack I Know (June 2026)]]"
+  - "[[20260601-mercado-libre-github-copilot]]"
+  - "[[Running an AI-native engineering org]]"
+  - "[[Open and closed models are on different exponentials]]"
 ---
 
 # Agentic Engineering Patterns
@@ -166,6 +171,24 @@ Matt Van Horn 的工作流把多个模式组装成个人级生产系统：
 这套系统的核心不是“无 IDE”或某个终端，而是任务状态、知识和重复做法都被外化为 Agent 可调用资产。
 
 它也暴露了 Agentic Engineering 的风险边界。作者主张几乎不读计划并跳过权限确认，这能提高个人吞吐，但不能直接迁移到团队、生产环境或高风险系统。并行 Agent 越多，越需要权限隔离、验证证据、终止条件和人类责任。
+
+### 从个人技巧到 AI 原生工程组织
+
+[[Running an AI-native engineering org]] 把 Agentic Engineering 从个人工作流推进到组织层。Claude Code 团队的经验不是“所有人写更多代码”，而是代码生成便宜后，瓶颈迁移到 verification、code review、security 和 product taste。
+
+这补充了一个组织级模式：
+
+- 计划从六个月路线图转向 JIT planning、PR 讨论、原型和内部用户反馈。
+- PM、工程、设计、内容边界变薄，但法律、安全、trust boundary 和产品判断仍需专家审查。
+- 指标可以看 PR cycle time、onboarding ramp 和 AI-assisted commits，但最终仍要看质量、可靠性和产品问题是否被解决。
+
+因此 [[AI-Native-Engineering-Org]] 是 Agentic Engineering 的组织化版本：AI 进入默认工作环境后，团队必须重写验证、计划、review 和责任机制。
+
+### Coding agents 与智能溢价
+
+[[Open and closed models are on different exponentials]] 从经济侧解释了为什么 coding agents 会成为闭源前沿模型的强市场。软件工程任务复杂、杠杆高、相对可验证，边际智能差异会直接改变返工量和完成概率。
+
+这意味着 Agentic Engineering 的模型选择不能只看单次 API 成本。高价值 coding agent 工作流中，企业实际购买的是模型能力、工具链、harness、上下文和服务基础设施的组合。如果边际智能能显著降低失败率，[[Intelligence-Premium|智能溢价]] 就成立；如果任务稳定可验证且达到质量阈值，开源或专门化模型可能更优。
 
 ### AI 也需要懒惰和克制
 

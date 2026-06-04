@@ -3,7 +3,7 @@ type: topic
 title: Enterprise AI Model Sourcing
 description: "企业 AI 模型采购不应默认等于买最大 frontier API，而应按任务分布、评测证据、成本曲线、部署约束和组织能力分层选择"
 created: 2026-05-24
-updated: 2026-05-25
+updated: 2026-06-05
 tags:
   - enterprise-AI
   - AI-deployment
@@ -16,9 +16,12 @@ related_entities:
   - "[[Evaluation-Set]]"
   - "[[Hardware-Sovereignty]]"
   - "[[Sequence-Packing]]"
+  - "[[Intelligence-Premium]]"
+  - "[[Closed-Frontier-Models-vs-Open-Model-Economy]]"
 source_raw:
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
   - "[[The Return of the Deployment Company]]"
+  - "[[Open and closed models are on different exponentials]]"
 ---
 
 # Enterprise AI Model Sourcing（企业 AI 模型采购）
@@ -76,6 +79,15 @@ source_raw:
 
 采购能力的成熟标志，不是替某一个模型站队，而是能把不同模型放到正确工作流里。
 
+## 开闭源模型不是同一条曲线
+
+[[Open and closed models are on different exponentials]] 给采购框架补了一个经济维度：闭源前沿模型与开放模型经济不是同一条性能曲线上的先后关系，而是两种复利机制。
+
+- 闭源前沿模型通过模型、harness、工具、serving infra 和产品分发的垂直集成，在复杂知识工作中捕获 [[Intelligence-Premium|智能溢价]]。
+- 开放模型经济通过低成本、可控性、本地部署、专门化和多供应商竞争，在达到质量阈值后的任务中扩散。
+
+因此企业采购应把任务分成两类：仍然需要边际智能的任务，以及已经达到足够好阈值、应优化成本和控制权的任务。
+
 ## 内部微调能力也是采购变量
 
 企业是否能选择专门化小模型，不只取决于模型开不开源，也取决于自己能否低成本地做微调、回归测试和部署。[[Sequence-Packing]] 这类训练管线优化看似底层，但会改变采购算术：如果一个企业可以在本地硬件上快速微调小模型，它就不必把所有高频、敏感、可验证任务都交给外部 API。
@@ -95,6 +107,8 @@ source_raw:
 | 低频、开放、需要前沿推理 | frontier API | 是否会沉淀为高频核心流程 |
 | 流程复杂、组织阻力大 | FDE / 部署伙伴 | 是否能把 evaluation set 和运行知识带回内部 |
 | 探索期、不确定需求 | 云 API 快速试验 | 是否过早把供应商绑定成长期架构 |
+| 高杠杆、边际智能改变结果 | 闭源前沿模型 + 集成 harness | 是否只是短期兴奋，缺真实评测证据 |
+| 达到质量阈值、成本敏感 | 开源/专门化/本地模型 | 是否低估运维和质量责任内化 |
 
 这个矩阵的作用不是给出固定答案，而是防止采购讨论停留在模型品牌排序。每个工作流都要同时看任务分布、证据强度、调用频率、数据边界和内部承接能力。
 

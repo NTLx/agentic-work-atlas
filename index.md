@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-06-04
+updated: 2026-06-05
 tags:
   - index
   - MOC
@@ -17,9 +17,9 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 236 个 |
+| Entity 页面 | 241 个 |
 | Topic 页面 | 28 个 |
-| Comparison 页面 | 16 个 |
+| Comparison 页面 | 17 个 |
 | Raw 文章 | 99 个 |
 | Output 作品 | 4 个 |
 
@@ -215,6 +215,11 @@ tags:
 | [[wiki/entities/Plan-as-Agent-Checkpoint\|Plan as Agent Checkpoint（计划即 Agent 检查点）]] | 把目标、上下文、方案和验收标准外化为可跨会话恢复的持久执行检查点 | Matt Van Horn Agentic Engineering |
 | [[wiki/entities/Human-Signal\|Human Signal（人类信号）]] | 多 Agent 高吞吐系统中，人类提供方向、品味、风险判断和重定向反馈 | Matt Van Horn Agentic Engineering |
 | [[wiki/entities/Open-Source-Operational-AI-Framework\|Open-Source Operational AI Framework（开源运营型 AI 框架）]] | 开放模型、训练管线、文档和集成接口，让本地机构保留运营与改进能力 | Google Research Hydrology |
+| [[wiki/entities/Standard-AI-Product-Adoption\|Standard AI Product Adoption（标准 AI 产品采用）]] | 企业通过成熟 AI SaaS、API 或平台功能直接改写高频工作流的路径 | Klarna / Lightspeed / Mercado Libre / Octopus |
+| [[wiki/entities/Agentic-Analytics\|Agentic Analytics（代理式数据分析）]] | 用 Agent 承担自助数据分析入口，可靠性来自 semantic layer、skills、evals 和 correction harvesting | Anthropic Self-service Data Analytics |
+| [[wiki/entities/AI-Native-Engineering-Org\|AI-Native Engineering Org（AI 原生工程组织）]] | 默认使用 coding agents 后，围绕验证、review、安全、产品判断和 JIT planning 重写的工程组织 | Running an AI-native engineering org |
+| [[wiki/entities/Intelligence-Premium\|Intelligence Premium（智能溢价）]] | 高杠杆知识工作中，用户愿意为更强模型的边际智能支付显著溢价的经济现象 | Open and closed models are on different exponentials |
+| [[wiki/entities/Shortification-of-Learning\|Shortification of Learning（学习短视频化）]] | 把学习压缩成顺滑短内容消费而削弱主动处理和认知负荷的趋势 | Andrej Karpathy: on shortification of learning |
 
 #### 作者 Entities
 
@@ -329,6 +334,7 @@ tags:
 | [[wiki/comparisons/Taste-vs-Judgment\|Taste vs Judgment]] | 决策方式、不确定性处理、AI 时代价值 | Taste, Judgment, Refusal, Specificity |
 | [[wiki/comparisons/Vibe-Coding-vs-Software-2.0\|Vibe Coding vs Software 2.0]] | 编程范式、质量层级、开发者角色 | Vibe-Coding, Software-2.0, Andrej-Karpathy, Coding-Agents |
 | [[wiki/comparisons/FDE-vs-Open-Source-Operational-AI\|FDE vs Open-Source Operational AI]] | 现场专家、开放框架、能力归属、集成方式、本地运营 | Forward-Deployed-Engineer, Open-Source-Operational-AI-Framework, Integration-Wall |
+| [[wiki/comparisons/Closed-Frontier-Models-vs-Open-Model-Economy\|Closed Frontier Models vs Open Model Economy]] | 智能溢价、开放扩散、企业采购、运营主权 | Intelligence-Premium, Enterprise-AI-Model-Sourcing, Open-Source-Operational-AI-Framework |
 
 ### Outputs (outputs/)
 *输出作品*
@@ -351,11 +357,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（97 个）*
+*原始剪藏文章（99 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：[[20260601-stanford-enterprise-ai-playbook|The Enterprise AI Playbook]]（AI-Deployment-Valley-of-Death、AI-Deployment-Invisible-Costs、Escalation-Based-Human-Oversight）/ [[20260601-mit-nanda-genai-divide|The GenAI Divide]]（The-GenAI-Divide、Enterprise-AI-Learning-Gap）/ [[Successful-AI-Deployment-vs-GenAI-Divide]]（成功部署样本 vs 失败漏斗）
+最新编译：8 篇未编译剪藏已完成 source-summary 化：Klarna、Lightspeed、Mercado Libre、Octopus、Karpathy shortification、Anthropic self-service analytics、Open vs closed models、Running an AI-native engineering org。新增 [[Standard-AI-Product-Adoption]]、[[Agentic-Analytics]]、[[AI-Native-Engineering-Org]]、[[Intelligence-Premium]]、[[Shortification-of-Learning]] 与 [[Closed-Frontier-Models-vs-Open-Model-Economy]]。
 
 ---
 

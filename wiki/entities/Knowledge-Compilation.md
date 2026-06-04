@@ -5,7 +5,7 @@ aliases:
   - Knowledge Compilation
 definition: "LLM Wiki 的核心操作，将原始知识源通过 LLM 转化为结构化 Wiki，实现知识的持久累积和高效复用"
 created: 2026-04-13
-updated: 2026-04-15
+updated: 2026-06-05
 tags:
   - knowledge-management
   - llm-wiki
@@ -15,9 +15,11 @@ related_entities:
   - '[[Context-Engineering]]'
   - '[[Multi-Layer-Memory]]'
   - '[[Andrej-Karpathy]]'
+  - "[[Shortification-of-Learning]]"
 source_raw:
   - '[[20260413-llm-wiki]]'
   - '[[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]]'
+  - "[[20260602-karpathy-shortification-of-learning]]"
 ---
 
 # Knowledge Compilation
@@ -29,6 +31,8 @@ source_raw:
 **Knowledge Compilation**（知识编译）是 LLM Wiki 的核心操作：
 
 > 原始知识源经过 LLM 处理，转化为结构化 Wiki 层，实现一次编译、持续复用。
+
+Karpathy 关于 [[Shortification-of-Learning|学习短视频化]] 的提醒让这个定义更尖锐：保存资料不等于学习资料。Raw source 只是材料在场，编译才是主动加工。没有浓缩、质疑、对标和概念回填，知识库会退化成“看起来收藏了很多，实际每次还要从头理解”的资料堆。
 
 ## 与程序编译的类比
 

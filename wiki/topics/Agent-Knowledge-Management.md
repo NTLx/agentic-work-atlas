@@ -2,7 +2,7 @@
 type: topic
 title: "Agent 知识管理与自进化"
 created: 2026-05-13
-updated: 2026-05-25
+updated: 2026-06-05
 tags:
   - knowledge-management
   - AI
@@ -23,11 +23,15 @@ related_entities:
   - "[[World-Model]]"
   - "[[Scientific-Discovery-AI]]"
   - "[[Einstein-Test]]"
+  - "[[Shortification-of-Learning]]"
+  - "[[Agentic-Analytics]]"
 source_raw:
   - "[[20260413-llm-wiki]]"
   - "[[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]]"
   - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
+  - "[[20260602-karpathy-shortification-of-learning]]"
+  - "[[20260603-anthropic-self-service-data-analytics]]"
 ---
 
 # Agent 知识管理与自进化
@@ -53,6 +57,14 @@ source_raw:
 | Output | 对外表达和压力测试 | 新判断没有回填检查 |
 
 因此，Agent 知识管理的质量不取决于 raw 数量，而取决于编译后的页面能否让未来问题不再重读原文。
+
+Karpathy 关于 [[Shortification-of-Learning|学习短视频化]] 的判断给这个规则补了认知层理由：顺滑地“看过”不等于学会。剪藏 raw 只是把材料放进仓库，编译才是主动处理。没有 source-summary、entity、topic、comparison 和冲突标记，知识库会变成长文本版短视频流：内容很多，理解很少。
+
+## Raw access 不是知识管理
+
+Anthropic 自助数据分析实践提供了一个反向证据：让 agent 访问数千个历史 SQL 文件，只让准确率提升不到 1 个百分点；80% 错误答案的答案其实已经在 corpus 中，但 agent 没有正确使用。真正提升来自 domain skills、semantic layer、canonical datasets、evals 和 correction harvesting。
+
+这说明 Agent 知识管理的关键不是“能不能搜到”，而是“是否把材料编译成可执行、可验证、会随系统变更更新的知识资产”。[[Agentic-Analytics]] 是 LLM Wiki 思路在企业数据分析中的工程化版本。
 
 ## LLM Wiki 的三层架构
 

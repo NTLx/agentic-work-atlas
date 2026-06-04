@@ -2,7 +2,7 @@
 type: topic
 title: Karpathy AI 思想体系
 created: 2026-04-13
-updated: 2026-05-25
+updated: 2026-06-05
 tags:
   - AI-Agent
   - thought-leader
@@ -27,12 +27,14 @@ related_entities:
   - '[[RAG-vs-LLM-Wiki]]'
   - '[[Slopocalypse]]'
   - '[[Agent-Tenacity]]'
+  - "[[Shortification-of-Learning]]"
 source_raw:
   - '[[20260127-claude-coding-notes]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - '[[20260413-llm-wiki]]'
   - '[[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]]'
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
+  - "[[20260602-karpathy-shortification-of-learning]]"
 ---
 
 # Karpathy AI 思想体系
@@ -90,6 +92,7 @@ Anthropic pre-training team (2026-)
 | **[[Agent-Native]]** | 2026 | 为 agent 而非人类重写文档、基础设施和流程 | Software 3.0 的基础设施要求 |
 | **[[LLM-Wiki]]** | 2026 | LLM 维护的持久知识库 | Software 3.0 的知识管理应用 |
 | **[[Memex]]** | 1945 (引用) | 个人知识存储 + 关联路径 | LLM Wiki 的思想先驱 |
+| **[[Shortification-of-Learning]]** | 2024 | 学习被压缩成顺滑短内容消费，削弱主动处理 | 解释为什么 raw 剪藏必须进入主动编译 |
 | **[[AI-Capability-Gap]]** | 2026 | 不同用户群体因 AI 能力体验差异形成平行认知现实 | 编程 vs 日常使用 |
 | **[[AI-Psychosis]]** | 2026 | 专业技术用户对 agentic AI 编程能力的极度震撼 | AI-Capability-Gap 的高端端 |
 | **[[Slopocalypse]]** | 2026 | AI 生成内容和代码泛滥，筛选与信任成为瓶颈 | Vibe Coding 与 Agentic Engineering 的质量分界 |
@@ -158,6 +161,12 @@ Software 2.0 定义了：
 | 知识处理 | 实时检索 | 预先编译 |
 | 知识累积 | 无 | 持久沉淀 |
 | 维护者 | 人类（易厌倦） | LLM（不知疲倦） |
+
+### Shortification：为什么剪藏不是学习
+
+Karpathy 2024 年关于学习短视频化的判断给 LLM Wiki 补了学习观：真正学习需要处理、笔记、复述、重读和认知负荷，顺滑观看容易制造“我懂了”的错觉。
+
+迁移到知识库就是：raw 入库不等于理解，source-summary、质疑、对标、entity 和 topic 才是学习动作。LLM Wiki 的价值不在于保存更多资料，而在于把资料编译成之后能复用的结构。
 
 ### 三层架构
 

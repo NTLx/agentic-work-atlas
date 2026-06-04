@@ -7,7 +7,7 @@ aliases:
   - 代理式工程
 definition: "用 coding agents 辅助开发软件的工程实践；Simon Willison 系统化了 code execution、测试和反模式等实践，Karpathy 则将其与 Vibe Coding 区分为保持专业质量上限的严肃工程纪律"
 created: 2026-04-09
-updated: 2026-05-28
+updated: 2026-06-05
 tags:
   - AI-Agent
   - Software-Engineering
@@ -31,6 +31,8 @@ related_entities:
   - '[[渐进式重构]]'
   - "[[Essential-Complexity]]"
   - "[[Friction-as-Design-Signal]]"
+  - "[[AI-Native-Engineering-Org]]"
+  - "[[Intelligence-Premium]]"
 source_raw:
   - "[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]"
   - "[[Using Git with coding agents - Agentic Engineering Patterns]]"
@@ -47,6 +49,9 @@ source_raw:
   - "[[ITBench-AA Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM]]"
   - "[[Coding agents in the social sciences]]"
   - "[[Using LLMs to secure source code]]"
+  - "[[20260601-mercado-libre-github-copilot]]"
+  - "[[Running an AI-native engineering org]]"
+  - "[[Open and closed models are on different exponentials]]"
 ---
 
 # Agentic Engineering
@@ -117,6 +122,25 @@ Agent 软件：
 
 有经验工程师在 close reading、写 ADR、走开暂停和重新审视架构时，并不是在浪费时间，而是在处理 [[Essential-Complexity|本质复杂性]]。好的 Agentic Engineering 应让 Agent 执行可验证工作，同时保留人类对抽象、责任和协作边界的判断。
 
+## 组织级 Agentic Engineering
+
+[[Running an AI-native engineering org]] 说明 Agentic Engineering 一旦成为团队默认工作方式，核心问题会从“怎么让 agent 写代码”转为“怎么让组织吸收更高吞吐”。
+
+Claude Code 团队的经验可以概括为四个迁移：
+
+- 写代码、测试和重构不再是主要瓶颈，verification、review、security 和 product taste 变成瓶颈。
+- 长周期路线图让位给 JIT planning、原型、PR 讨论和内部用户反馈。
+- PM、工程、设计、内容的执行边界变薄，但法律、安全、trust boundary 和产品判断仍需专家负责。
+- PR cycle time 和 AI-assisted commits 只是中间指标，最终仍要看质量、可靠性和产品问题是否被解决。
+
+这使 [[AI-Native-Engineering-Org]] 成为 Agentic Engineering 的组织化形态：个人 agent loop 要升级为团队验证、计划、权限和责任系统。
+
+## 模型经济边界
+
+[[Open and closed models are on different exponentials]] 给 Agentic Engineering 补了经济约束。Coding agents 是 [[Intelligence-Premium|智能溢价]] 的强样本，因为复杂软件任务的边际智能会直接影响完成概率、返工量和人类注意力消耗。
+
+因此，Agentic Engineering 的模型选择不能只看单次调用价格。高杠杆任务可能值得购买更强闭源模型和集成 harness；高频、稳定、可验证任务则可能更适合开源或专门化模型。
+
 
 ### Leverage：声明式指令 (Karpathy, 2026)
 
@@ -179,6 +203,8 @@ Drew Breunig 提出扩展的三阶段 Agentic Coding 模型：
 - [[Hardware-Sovereignty]] — 企业级 Agentic 部署的基础设施前提
 - [[Essential-Complexity]] — Agentic Engineering 需要显式面对的复杂性
 - [[Friction-as-Design-Signal]] — 判断哪些摩擦该保留为设计反馈
+- [[AI-Native-Engineering-Org]] — Agentic Engineering 的组织化形态
+- [[Intelligence-Premium]] — coding agents 中边际智能的经济溢价
 
 ## 来源
 

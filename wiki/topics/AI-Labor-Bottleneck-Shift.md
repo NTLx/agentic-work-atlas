@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-05-23
+updated: 2026-06-05
 tags:
   - AI
   - economy
@@ -19,6 +19,8 @@ related_entities:
   - "[[Wisdom-Work]]"
   - "[[PM-in-AI-Era]]"
   - "[[Forward-Deployed-Engineer]]"
+  - "[[AI-Native-Engineering-Org]]"
+  - "[[Agentic-Analytics]]"
 source_raw:
   - "[[The layoffs will continue till we learn to use AI]]"
   - "[[The Knowledge Economy Is Over. Welcome to the Allocation Economy.]]"
@@ -28,6 +30,8 @@ source_raw:
   - "[[Forward deployed engineering at OpenAI]]"
   - "[[Forward Deployed Engineer (FDE) - NYC]]"
   - "[[A Day in the Life of a Palantir Forward Deployed Software Engineer]]"
+  - "[[Running an AI-native engineering org]]"
+  - "[[20260603-anthropic-self-service-data-analytics]]"
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
@@ -59,8 +63,16 @@ Outcome 更不一定改善
 | 软件开发 | 写代码慢 | 对齐慢、集成慢、结果不清 | [[Alignment-Tax]], [[Input-Output-Outcome]] |
 | 企业运营 | 人力有限 | 流程是否可连续运行 | [[Always-On-Economy]] |
 | 企业 AI 部署 | 模型能力/API | 真实流程采纳、数据权限和现场集成 | [[Forward-Deployed-Engineer]], [[Integration-Wall]] |
+| 数据分析 | 写 SQL 慢 | 指标口径、语义层、评测和沉默失败 | [[Agentic-Analytics]], [[Context-Engineering]] |
+| AI 原生工程组织 | 代码生成慢 | verification、review、security、product taste | [[AI-Native-Engineering-Org]], [[Agentic-Engineering]] |
 
 这些迁移共同说明：AI 降低的是局部动作成本，不会自动降低系统级协调成本。
+
+## 工程组织中的最新样本
+
+[[Running an AI-native engineering org]] 给出了软件组织内部的直接样本：当 Claude Code 团队默认使用 coding agents 后，写代码、测试和重构不再是主要瓶颈，verification、code review、security 和 product taste 成为更稀缺能力。
+
+[[20260603-anthropic-self-service-data-analytics]] 给出了数据团队样本：SQL 生成不是瓶颈，真正瓶颈是 canonical datasets、semantic layer、domain skills、evals 和 correction harvesting。两者都说明同一规律：AI 降低局部生成成本后，价值迁移到判断、语义、验证和组织学习。
 
 ## Jevons 悖论的劳动版本
 

@@ -7,7 +7,7 @@ aliases:
   - 企业 AI 学习鸿沟
 definition: "企业 AI 系统不能保留反馈、适应上下文并随流程改进，导致试点难以进入生产和业务结果"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-05
 tags:
   - enterprise-ai
   - ai-deployment
@@ -17,8 +17,10 @@ related_entities:
   - "[[Machine-Readable-Processes]]"
   - "[[AI-Ready-Organization]]"
   - "[[Deployment-Product-Flywheel]]"
+  - "[[Agentic-Analytics]]"
 source_raw:
   - "[[20260601-mit-nanda-genai-divide]]"
+  - "[[20260603-anthropic-self-service-data-analytics]]"
 ---
 
 # Enterprise AI Learning Gap（企业 AI 学习鸿沟）
@@ -32,11 +34,27 @@ source_raw:
 
 MIT/NANDA 报告认为，跨过 GenAI Divide 的买方会要求 process-specific customization、流程集成和业务结果评估。换句话说，企业 AI 的关键不是更会聊天，而是能否进入组织学习回路。
 
+## Anthropic Analytics：学习鸿沟的工程化解法
+
+[[20260603-anthropic-self-service-data-analytics]] 提供了一个正面样本：企业 AI 系统要跨过 learning gap，不能只给模型更多原始资料，而要把反馈和业务语义接进工程流程。
+
+Anthropic 的做法包括：
+
+- 用 canonical datasets 和 semantic layer 固化指标口径。
+- 把 query corpus 蒸馏成 domain skills，而不是原样丢给 agent。
+- 用 dashboard-based evals、长尾 evals 和 harvested corrections 形成回归测试。
+- 将 skill markdown 与 transformation 代码 colocate。
+- 用 code review hook 要求 reporting model 变更同步更新 skill。
+- 把 eval telemetry 记录到 skill version、git SHA、model ID、pass/fail、token 和 wall clock 维度。
+
+这说明 learning gap 的解法更像软件工程：把组织纠错变成版本化知识资产和 CI，而不是期待模型自动“记住”组织。
+
 ## 关键数据点
 
 - MIT/NANDA 报告认为核心障碍不是基础设施、监管或人才，而是 learning gap。
 - 报告称多数 GenAI 系统不能保留反馈、适应上下文或随时间改进。
 - 报告提出，成功买方要求深度流程定制、上下文保留和业务结果评估，而不是只按软件功能清单采购。
+- Anthropic analytics：没有 skills 时准确率不超过 21%，有 skills 后整体超过 95%；skills 不维护时一个月可从约 95% 掉到约 65%。
 
 ## 诊断信号
 
@@ -64,3 +82,4 @@ MIT/NANDA 报告认为，跨过 GenAI Divide 的买方会要求 process-specific
 - [[Machine-Readable-Processes]] — 让系统可学习的流程表达。
 - [[AI-Ready-Organization]] — 组织可读性是系统学习前提。
 - [[Deployment-Product-Flywheel]] — 从部署经验回流为可复用学习资产。
+- [[Agentic-Analytics]] — 通过 semantic layer、skills、evals 和 correction harvesting 跨过学习鸿沟。

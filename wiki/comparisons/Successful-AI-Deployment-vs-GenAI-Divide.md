@@ -4,7 +4,7 @@ title: "Successful AI Deployment vs GenAI Divide"
 entity_a: "[[AI-Deployment-Valley-of-Death]]"
 entity_b: "[[The-GenAI-Divide]]"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-05
 tags:
   - comparison
   - enterprise-ai
@@ -16,9 +16,14 @@ related_entities:
   - "[[AI-Deployment-Invisible-Costs]]"
   - "[[Escalation-Based-Human-Oversight]]"
   - "[[AI-Ready-Organization]]"
+  - "[[Standard-AI-Product-Adoption]]"
 source_raw:
   - "[[20260601-stanford-enterprise-ai-playbook]]"
   - "[[20260601-mit-nanda-genai-divide]]"
+  - "[[20260601-klarna-ai-assistant-customer-service]]"
+  - "[[20260601-lightspeed-fin-ai-agent]]"
+  - "[[20260601-mercado-libre-github-copilot]]"
+  - "[[20260601-octopus-energy-ai-customer-service]]"
 ---
 
 # Successful AI Deployment vs GenAI Divide
@@ -57,6 +62,17 @@ source_raw:
 
 但 MIT/NANDA 和 Stanford 的组合说明，更多企业会卡在另一侧：工具已经试用，pilot 已经启动，却没有形成生产系统、学习回路和 P&L impact。此时需要的不是更热闹的 adoption，而是 FDE 式现场工作、内部 AI Factory、或两者组合，把隐性组织工作显式化。
 
+### 标准产品成功案例补充
+
+| 案例 | 工作流 | 成功信号 | 边界 |
+|------|--------|----------|------|
+| Klarna | 客服聊天 | 首月 230 万次对话，约三分之二客服聊天，重复咨询下降 25%，解决时间从 11 分钟降到不到 2 分钟 | PR 口径，缺长期质量和复杂纠纷数据 |
+| Lightspeed / Fin | 全球商户支持 | 每月 43,000+ 个问题由 Fin 解决，72% resolution rate，连接 Zendesk、Salesforce、ERP 和内部 API | 供应商案例，仍依赖内部 Digital Engagement team |
+| Mercado Libre / Copilot | 软件研发 | 9,000+ 开发者使用 Copilot，客户故事称写代码时间约下降 50% | 写代码时间不等于整体工程吞吐或质量 |
+| Octopus Energy | 客服邮件 | 上线约 7 周后 44% 客户邮件至少部分由 AI 处理 | “部分处理”不等于独立解决，且保留人工检查 |
+
+这些案例共同说明 [[Standard-AI-Product-Adoption]] 是真实路径，但不是 GenAI Divide 的反证。它们之所以成立，通常是因为目标工作流已经具备机器可读流程、清晰指标、系统接口和人类升级路径。没有这些条件，标准产品会退回 adoption 层。
+
 ## 判断框架
 
 评估一个企业 AI 项目是否会跨过 GenAI Divide，可以问五个问题:
@@ -77,3 +93,4 @@ source_raw:
 - [[AI-Deployment-Invisible-Costs]] — 低估的组织与流程成本。
 - [[Escalation-Based-Human-Oversight]] — 成功部署中更细的人机监督模式。
 - [[AI-Ready-Organization]] — 跨过鸿沟的组织前提。
+- [[Standard-AI-Product-Adoption]] — 标准 AI 产品绕过高接触部署的适用边界。

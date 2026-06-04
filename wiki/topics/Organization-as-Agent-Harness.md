@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-05-25
+updated: 2026-06-05
 tags:
   - organization
   - AI-Agent
@@ -32,6 +32,8 @@ related_entities:
   - "[[Agent-Dissociation]]"
   - "[[Cybernetic-Teammate]]"
   - "[[Business-Embedded-AI-Organization]]"
+  - "[[AI-Native-Engineering-Org]]"
+  - "[[Agentic-Analytics]]"
 source_raw:
   - "[[Building an MCP Ecosystem at Pinterest]]"
   - '[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]'
@@ -43,6 +45,8 @@ source_raw:
   - "[[20260413-why-ai-first-strategy-wrong]]"
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
   - "[[The Cybernetic Teammate How AI is Reshaping Collaboration and Expertise in the Workplace]]"
+  - "[[Running an AI-native engineering org]]"
+  - "[[20260603-anthropic-self-service-data-analytics]]"
 ---
 
 # Organization as Agent Harness（组织作为 Agent Harness）
@@ -70,6 +74,14 @@ source_raw:
 | 学习层 | 经验如何沉淀 | 公开交互、复盘、可复用指令和知识 |
 
 这四层不是管理学装饰。它们就是 Agent 的上下文窗口之外的真实上下文。
+
+## 工程组织与数据组织的 harness 样本
+
+[[AI-Native-Engineering-Org]] 展示了工程团队如何把组织改造成 agent harness：dogfooding、JIT planning、PR 讨论、内部用户反馈、专家 review 和安全边界共同决定 agent 生成能否进入生产。
+
+[[Agentic-Analytics]] 展示了数据组织的同一逻辑：canonical datasets、semantic layer、domain skills、evals、provenance footer 和 correction harvesting 是 analytics agent 的真实运行时。缺少这些层，Claude 能访问 warehouse 也会制造“精确错觉”。
+
+这两个样本说明，组织 harness 不是抽象隐喻，而是具体文件、PR、评测、权限、owner 和反馈回路。
 
 ## 工具接入也需要治理层
 

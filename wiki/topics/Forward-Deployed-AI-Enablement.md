@@ -3,7 +3,7 @@ type: topic
 title: Forward Deployed AI Enablement
 description: "FDE 式 AI 赋能：通过嵌入真实组织现场，发现黄金用例、穿越集成之墙，并把一次性部署沉淀为可复用的平台能力和组织能力"
 created: 2026-05-22
-updated: 2026-06-04
+updated: 2026-06-05
 tags:
   - AI-deployment
   - FDE
@@ -24,6 +24,7 @@ related_entities:
   - "[[Enterprise-AI-Learning-Gap]]"
   - "[[AI-Deployment-Invisible-Costs]]"
   - "[[Open-Source-Operational-AI-Framework]]"
+  - "[[Standard-AI-Product-Adoption]]"
 source_raw:
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
   - "[[当我们谈论 FDE 时，我们在谈论什么？]]"
@@ -33,6 +34,10 @@ source_raw:
   - "[[20260601-stanford-enterprise-ai-playbook]]"
   - "[[20260601-mit-nanda-genai-divide]]"
   - "[[The next chapter in flood resilience Open sourcing Google’s hydrology framework]]"
+  - "[[20260601-klarna-ai-assistant-customer-service]]"
+  - "[[20260601-lightspeed-fin-ai-agent]]"
+  - "[[20260601-mercado-libre-github-copilot]]"
+  - "[[20260601-octopus-energy-ai-customer-service]]"
 ---
 
 # Forward Deployed AI Enablement（FDE 式 AI 赋能）
@@ -125,6 +130,14 @@ Stanford 的成功样本说明，AI 项目从部署到 ROI 之间存在 [[AI-Dep
 MIT/NANDA 的失败漏斗说明，企业 AI adoption 很高，但许多正式系统卡在 pilot 和 production 之间。核心不是大家不用 AI，而是企业系统缺少记忆、上下文适应和流程学习能力，也就是 [[Enterprise-AI-Learning-Gap|企业 AI 学习鸿沟]]。
 
 因此 FDE 式赋能的更精确定义是：进入现场穿越集成之墙，并把现场反馈、例外、评测和流程规则转成可复用学习资产。
+
+## 标准产品路径：FDE 的反例边界
+
+Klarna、Lightspeed、Mercado Libre 和 Octopus Energy 说明，FDE 不是所有 AI 落地的唯一解。若工作流已经高频、平台化、指标清楚，并且存在知识库、API、权限和升级路径，[[Standard-AI-Product-Adoption|标准 AI 产品采用]] 可以直接改写客服或研发流程。
+
+但这些案例不是“license 下发即可成功”的证据。Lightspeed 的 Fin 案例仍需要 Digital Engagement team 和跨 Zendesk、Salesforce、ERP、内部 API 的集成；Mercado Libre 的 Copilot 成效建立在 GitHub Enterprise 这类标准工程平台上；Octopus 与 Klarna 都保留人工监督或转人工路径。
+
+所以更准确的边界是：FDE 解决流程隐性、系统复杂、组织不清的问题；标准产品解决流程已经可读、接口已经存在、供应商能力覆盖度足够高的问题。两者不是信仰选择，而是工作流成熟度选择。
 
 ## 部署-产品飞轮：从服务到能力
 
