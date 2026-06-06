@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-06-02
+updated: 2026-06-06
 tags:
   - AI-Agent
   - verification
@@ -20,6 +20,7 @@ related_entities:
   - "[[Accessibility-Complexity-Evaluation]]"
   - "[[Accessibility-High-Risk-Patterns]]"
   - "[[Corrective-RAG]]"
+  - "[[Sufficient-Context]]"
   - "[[Reflexion]]"
   - "[[Zero-PHI-Policy]]"
   - "[[Dual-Tier-LLM-Architecture]]"
@@ -62,6 +63,7 @@ source_raw:
   - "[[ITBench-AA Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM]]"
   - "[[20260528-ai-model-simulation]]"
   - "[[20260602-ibm-agent-logic-scalable-ai-adoption]]"
+  - "[[20260606-google-agentic-rag]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
@@ -128,10 +130,21 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 |------|----------|------|
 | 输出验证 | 最终结果是否满足要求 | 单元测试、格式校验、WCAG 检查 |
 | 路径验证 | 是否经过成功所需的必经状态 | [[Dominator-Analysis]] |
-| 上下文验证 | 检索材料是否真的相关 | [[Corrective-RAG]] |
+| 上下文验证 | 检索材料是否相关且足够回答问题 | [[Corrective-RAG]], [[Sufficient-Context]] |
 | 行为验证 | 系统是否在该停止时停止 | 高风险模式转人工、安全拒绝 |
 
 真正的 Agent harness 是这四层的组合，而不是一个更长的 prompt。
+
+## 从相关性验证推进到充分性验证
+
+Google 的 agentic RAG 给这个 Topic 补了一层很关键的验证观：上下文验证不该只问“相关不相关”，还要问“是否已经足够回答”。[[Corrective-RAG|Corrective RAG]] 解决的是“拿错证据”，[[Sufficient-Context|Sufficient Context]] 解决的是“拿对了第一段，但证据还没闭环”。
+
+一旦把这层加进去，检索 agent 的行为就更像可验证流水线，而不是一次性生成：
+
+- 发现缺口，而不是假装完整。
+- 继续搜索，而不是拿第一段命中文档直接作答。
+- 记录 `Reason` / `Feedback`，让下一轮检索有明确目标。
+- 在证据长期不够时拒答，而不是硬答。
 
 ## 高风险 Agent 的验证链
 

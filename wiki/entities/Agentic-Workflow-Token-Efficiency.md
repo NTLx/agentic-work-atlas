@@ -6,7 +6,7 @@ aliases:
   - Token Efficiency
 definition: "通过 API 代理记录、自动化审计、MCP 工具裁剪、CLI 替代等手段，系统性优化 Agentic Workflows 的 token 成本"
 created: 2026-05-09
-updated: 2026-05-31
+updated: 2026-06-06
 tags:
   - Agentic-Engineering
   - cost-optimization
@@ -17,10 +17,12 @@ related_entities:
   - "[[Agent-PR-Review]]"
   - "[[Token-Maxing]]"
   - "[[Enterprise-AI-Rationing]]"
+  - "[[Specialized-Small-Models]]"
 source_raw:
   - "[[Improving token efficiency in GitHub Agentic Workflows]]"
   - "[[20260530-cursor-developer-habits-report]]"
   - "[[20260528-corporate-america-ai-rationing]]"
+  - "[[20260606-the-minimill-of-ai]]"
 ---
 
 # Agentic-Workflow-Token-Efficiency（Agentic Workflow Token 效率）
@@ -166,6 +168,17 @@ ET = m × (1.0 × I + 0.1 × C + 4.0 × O)
 - 错误的 bash 模式配置导致 Agent 陷入 64 轮回退循环
 - Agent 手动读取源代码重建编译器输出
 - 一个配置修复消除循环
+
+## 新增证据：任务分流比统一队列更重要
+
+Tomasz Tunguz 的本地/云双通道案例补了一条常被忽视的效率规律：token 效率不只来自更便宜模型，也来自更好的排队纪律。先把简单任务留在本地后，78% 的工作不再堵在大模型队列前面，系统吞吐提升约 25%，平均任务时长从 47 秒降到 19 秒，queue age 从 73 秒降到 4。
+
+这说明生产级优化至少有两层：
+
+1. 降低单次调用的 token 成本。
+2. 减少高价值任务被大任务阻塞的等待成本。
+
+第二层经常比第一层更接近真实用户体感。
 
 ## 前提与局限性
 

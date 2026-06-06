@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-06-05
+updated: 2026-06-06
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 241 个 |
+| Entity 页面 | 242 个 |
 | Topic 页面 | 28 个 |
 | Comparison 页面 | 17 个 |
-| Raw 文章 | 99 个 |
+| Raw 文章 | 107 个 |
 | Output 作品 | 4 个 |
 
 ---
@@ -188,6 +188,7 @@ tags:
 | [[wiki/entities/Input-Output-Outcome\|Input-Output-Outcome]] | 区分代码（输入）、功能（输出）、用户付费（结果）的商业分析框架 | The layoffs will continue |
 | [[wiki/entities/Alignment-Tax\|Alignment Tax]] | 大型组织中跨团队协调的隐性成本——代码变便宜时暴露的瓶颈 | The layoffs will continue |
 | [[wiki/entities/Corrective-RAG\|Corrective RAG]] | 通过文档相关性评分和查询重构消除 RAG 幻觉 | OncoAgent 论文 |
+| [[wiki/entities/Sufficient-Context\|Sufficient Context]] | 在回答前判断证据是否已足够完整 | Google Agentic RAG |
 | [[wiki/entities/Reflexion\|Reflexion]] | 通过语言反馈实现 Agent 自我纠正的循环模式 | OncoAgent 论文 |
 | [[wiki/entities/Dual-Tier-LLM-Architecture\|Dual-Tier LLM Architecture]] | 按查询复杂度路由到不同规模模型的分层架构 | OncoAgent 论文 |
 | [[wiki/entities/Zero-PHI-Policy\|Zero-PHI Policy]] | 处理管道最前端脱敏所有受保护健康信息的隐私策略 | OncoAgent 论文 |

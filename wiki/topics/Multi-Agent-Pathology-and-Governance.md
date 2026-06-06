@@ -3,7 +3,7 @@ type: topic
 title: Multi-Agent Pathology and Governance
 description: "多 Agent 系统病理：当 Agent 从单体工具变成组织系统后，问题会从并发和协议下沉到群体认知、责任稀释和内态断裂"
 created: 2026-05-23
-updated: 2026-05-29
+updated: 2026-06-06
 tags:
   - AI-Agent
   - multi-agent
@@ -26,6 +26,7 @@ source_raw:
   - "[[The Anatomy of an Agent Harness]]"
   - "[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]"
   - "[[20260528-ai-model-simulation]]"
+  - "[[20260606-thousand-token-wood]]"
 ---
 
 # Multi-Agent Pathology and Governance（多 Agent 系统病理与治理）
@@ -60,6 +61,19 @@ source_raw:
 - **责任被稀释**：Agent 默认别人会补位，导致 [[Agent-Cognitive-Loafing|认知偷懒]]。
 
 所以未来的结构化通信不能只问“你的答案是什么”，还要问“你知道什么、你不知道什么、你和别人哪里不同、你为什么改变判断、你是否受到多数意见影响”。
+
+## 环境激励往往比模型大小更决定群体行为
+
+Thousand Token Wood 给这个 Topic 补了一条很硬的工程经验：群体行为常常先由环境中的稀缺性、衰减和反馈结构决定，再由模型能力放大。作者最初让 5 个 agents 在资源充足环境里交易，结果市场几乎沉寂；只有加入 diet variety、spoilage 和 winter fuel crisis 后，交易、囤积和财富分化才出现。
+
+这说明多 agent 治理不能只盯通信协议，还要盯激励拓扑：
+
+- 谁缺什么。
+- 什么会腐烂或贬值。
+- 哪种资源会随着时间变得更贵。
+- 哪些后果能被 agent 立即看见。
+
+同一项目也提醒了另一个常见误判：100% valid JSON 只是结构稳定，不等于判断正确。系统治理的重点不只是让 agent 说得规范，还要让它有值得推理的环境约束。
 
 ## 不可见权力结构是高风险区
 

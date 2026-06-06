@@ -8,7 +8,7 @@ aliases:
   - 领域小模型
 definition: "面向窄任务或具体业务域训练的小参数模型；在任务分布清楚、评测可验证、推理量高的场景中，可能同时取得更高质量、更低成本和更好稳定性"
 created: 2026-05-24
-updated: 2026-05-26
+updated: 2026-06-06
 tags:
   - enterprise-AI
   - model-selection
@@ -21,9 +21,13 @@ related_entities:
   - "[[Evaluation-Set]]"
   - "[[Verifiability]]"
   - "[[Enterprise-AI-Model-Sourcing]]"
+  - "[[Lean-Stack]]"
+  - "[[Token-Supply-Chain]]"
 source_raw:
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
   - "[[Improving token efficiency in GitHub Agentic Workflows]]"
+  - "[[20260606-the-minimill-of-ai]]"
+  - "[[20260606-thousand-token-wood]]"
 ---
 
 # Specialized Small Models（专门化小模型）
@@ -37,6 +41,8 @@ source_raw:
 - 该模型同时报告最低 text degeneration rate：0.20%。文章认为这说明专门化不仅影响平均质量，也影响生产稳定性。
 - 文章明确不主张 frontier model 已经过时，而是主张企业不应把“最大模型”视为无需测试的默认答案。
 - 小模型最适合的战略位置，是高频、边界清楚、任务可验证、数据可获得、成本敏感的企业工作流。
+- Tomasz Tunguz 的本地/云双通道实践显示，任务先由小模型分流后，78% 的 AI 工作可留在本地处理，平均任务时长从 47 秒降到 19 秒，queue age 从 73 秒降到 4 秒。
+- Thousand Token Wood 进一步说明，小模型在多 agent 系统里的优势常常不是更强 reasoning，而是可并发、低成本和结构稳定；Qwen2.5-3B 在 75 次调用中实现了 100% valid JSON。
 
 ## 前提与局限性
 
@@ -62,6 +68,15 @@ source_raw:
 
 - **本地部署**：小模型更容易在本地运行，增强 [[Hardware-Sovereignty|硬件主权]]，降低数据外传风险。这与 [[Layered-AI-Sourcing|分层 sourcing]] 策略一致——高频敏感任务用本地小模型，开放任务用云端大模型。
 - **边缘计算**：Hassabis 在讨论蒸馏时指出”90-95% 能力和 1/10 价格 + 更快的速度”——更快的迭代速度”换回的比那丢失的 10% 更多”。小模型在边缘设备（手机、机器人、工厂设备）上的部署是大模型无法替代的。
+
+## 新证据：小模型的系统位置
+
+近期两条证据把“小模型值不值得用”的问题，从能力比较推进到系统位置比较：
+
+- **local-first / cloud-escalation**：先让本地小模型判断任务是否简单，再把复杂任务升级到云端。这里小模型的价值不是“完全替代大模型”，而是接管高频、短任务和分流入口。
+- **高并发多 agent 环境**：在 Thousand Token Wood 这类每 turn 都要让多个角色同时思考的系统里，frontier model 的速度和成本反而不合适。小模型让多轮实验变得可承受，再用 prompt、repair layer 和环境设计补足推理弱点。
+
+这说明专门化小模型更像生产系统中的“底盘层”，而不只是采购时的廉价选项。
 
 ## 关联概念
 

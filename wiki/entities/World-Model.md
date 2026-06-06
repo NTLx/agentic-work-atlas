@@ -6,7 +6,7 @@ aliases:
   - 世界模型
 definition: "AI 系统对环境状态、因果结构和行动后果的内部表示，使 Agent 能在长期任务中预测、规划并随经验修正策略"
 created: 2026-05-18
-updated: 2026-05-30
+updated: 2026-06-06
 tags:
   - AI
   - AGI
@@ -22,6 +22,7 @@ related_entities:
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[20260529-gemini-co-leads-origins]]"
+  - "[[20260606-fei-fei-world-model-taxonomy]]"
 ---
 
 # World Model（世界模型）
@@ -40,9 +41,24 @@ source_raw:
 - Hassabis 认为当前 AGI 路线仍缺持续学习、长期推理和记忆；这些能力都依赖系统能形成可更新的世界模型。
 - 更长上下文不等于世界模型。上下文是材料集合，世界模型是对材料背后因果结构的压缩。
 - **Gemini Omni 联合训练**（Koray Kavukcuoglu, 2026-05）：Gemini Omni 被定位为"真正的世界模型"——不是文本到视频的单向生成（如 Veo），而是联合训练理解物理、视觉、文本等多模态。过去复杂视频场景的前向一致性需要手动设计，现在"just by training at scale and mixing all the data, we're seeing these capabilities emerge"。
+- **功能分类补充**（Fei-Fei Li, 2026-06）：world model 至少可拆成三种输出职责：renderer 输出 observation、simulator 输出 state、planner 输出 action；其中 simulator 是连接 render 和 plan 的结构中枢。
 - 对 coding agent 来说，世界模型包括代码库结构、测试反馈、用户目标、部署环境和长期约束。
 - 对科学发现 Agent 来说，世界模型包括实验结果、假设空间、目标函数、模拟器状态和工具可靠性。
 - 世界模型必须与 [[Tool-Use-Architecture|工具使用架构]]结合：模型通过工具获得观测、执行实验、校验预测，而不是只在文本里想象。
+
+## 功能分类：renderer / simulator / planner
+
+Fei-Fei Li 的分类让“世界模型”从一个过载热词变成可分析结构：
+
+| 类型 | 主要输出 | 成功标准 |
+|------|----------|----------|
+| renderer | observation | 视觉保真、像不像人眼看到的世界 |
+| simulator | state | 几何、物理、动力学是否结构正确 |
+| planner | action | 给定观察与目标后，下一步行动是否合理 |
+
+这组分类的价值在于，它把“会生成视频”“会模拟物理”“会规划动作”切回同一个 perception-action loop 中。不同系统可能共享底层知识，但对外暴露的契约并不相同。
+
+其中最重要的判断是：**simulator 是三者的桥**。如果语言是对世界的抽象、像素是对世界的投影，那么几何、物理和动力学更接近世界的结构骨架。render 和 plan 最终都要依赖这层骨架。
 
 ## 与相邻概念的边界
 
@@ -64,6 +80,7 @@ source_raw:
 
 - 开放世界任务中的世界模型只能是局部、可修正的近似，不能被当作完整真相。
 - 世界模型质量取决于反馈质量；静态文本通常不足以学习可靠因果关系。
+- unified world model 虽然是合理终点，但 3D/物理数据稀缺、sim-to-real gap 和生成几何错误仍是硬瓶颈。
 - 强世界模型也可能带来风险：系统越会预测和规划，越需要权限、目标和安全边界。
 
 ## 关联概念
