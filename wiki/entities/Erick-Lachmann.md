@@ -61,8 +61,7 @@ Lachmann 的研究改变了企业 AI 采购的核心问题：
 
 如果企业把真实任务数据、评测集和失败模式持续回流，[[Specialization-Compounds|专门化]] 可以成为内部版 [[Deployment-Product-Flywheel|部署产品飞轮]]。反之，若评测集留在供应商手中，企业只是在为别人的专门化飞轮供料。
 
-## 与本库主题的连接
-
+## 关联概念
 | 本库主题 | Lachmann 的贡献 |
 |---------|----------------|
 | [[Specialized-Small-Models]] | 提供专门化小模型胜过大型 API 的实验证据 |

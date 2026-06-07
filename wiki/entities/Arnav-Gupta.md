@@ -54,8 +54,7 @@ Gupta 在 [[The layoffs will continue till we learn to use AI]] 中提出，2023
 
 Gupta 的观察与 [[AI-Labor-Bottleneck-Shift]] 主题形成呼应：AI 时代的稀缺点正在从"会写代码"转向"能部署到现实里"。他在 Facebook Infra 的工作经验让他看到，大型科技公司已经在重组基础设施团队，从"维护现有系统"转向"设计 AI 原生系统"。
 
-## 与本库主题的连接
-
+## 关联概念
 | 本库主题 | Gupta 的贡献 |
 |---------|-------------|
 | [[AI-Labor-Bottleneck-Shift]] | 提供一线工程师视角的裁员潮结构性分析 |

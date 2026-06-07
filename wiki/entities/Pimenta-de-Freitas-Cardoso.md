@@ -45,8 +45,7 @@ Cardoso 与 [[Erick-Lachmann|Lachmann]] 共同提出专门化小模型在企业 
 - **关键发现**：专门化模型 composite score 0.911 vs Claude Opus 4.6 的 0.833，且推理成本约低 52 倍
 - **核心机制**：训练历史与部署任务之间的 [[Distributional-Alignment|分布对齐]] 是决定性变量，而非参数规模
 
-## 与本库主题的连接
-
+## 关联概念
 | 本库主题 | Cardoso 的贡献 |
 |---------|---------------|
 | [[Specialized-Small-Models]] | 提供专门化小模型胜过大型 API 的实验证据 |

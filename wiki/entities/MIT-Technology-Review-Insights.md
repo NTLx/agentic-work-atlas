@@ -33,8 +33,7 @@ source_raw:
 - **核心主题**：AI Agent 企业应用、agent-first 流程重设计、AI 就绪组织、数字化转型。
 - **本库引用**：被 2 篇 raw source 引用，分别讨论 agent-first 流程重设计和 AI 就绪组织。
 
-## 与本库主题的连接
-
+## 关联概念
 MIT Technology Review Insights 的报告被本库用来支撑两个核心主题：
 
 1. **[[Agent-First-Process-Redesign]]**：其关于 agent-first 流程重设计的讨论（与 [[Dan-Shipper]]、[[Ethan-Mollick]] 等参与者）为"如何围绕 Agent 而非人类工作流重新设计业务流程"提供了产业视角。

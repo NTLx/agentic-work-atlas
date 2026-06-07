@@ -61,8 +61,7 @@ Breunig 预测 Agentic Coding 将进入三阶段循环：
 
 Breunig 引用了 AISI 对 Anthropic Mythos 模型的测试结果：Mythos 完成了 32 步企业网络攻击模拟（人类需 20 小时），在 100M tokens 预算（约 `$12,500`）下仍未显示边际收益递减。这说明前沿 AI 模型在安全攻防领域的能力正在快速提升，安全团队需要相应地调整防御策略。
 
-## 与本库主题的连接
-
+## 关联概念
 | 本库主题 | Breunig 的贡献 |
 |---------|---------------|
 | [[Cybersecurity-Proof-of-Work]] | 提出安全 PoW 框架 |

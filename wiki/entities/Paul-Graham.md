@@ -92,8 +92,7 @@ Graham 用 Florence、Bauhaus、Manhattan Project、New Yorker、Skunk Works、X
 - 2026-05-25/26 批评 AI 写的创始人邮件，引发广泛讨论
 - BetterUp Labs 研究佐证：40% 员工定期收到低质量 AI 生成内容，53% 感到恼火
 
-## 与本库主题的连接
-
+## 关联概念
 | 本库主题 | Graham 的贡献 |
 |---------|-------------|
 | [[AI-Era-Taste-and-Judgment]] | 《Taste for Makers》提供了品味的底层定义 |

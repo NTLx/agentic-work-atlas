@@ -59,8 +59,7 @@ Sun 的核心洞察是 context window 是 zero-sum：把代码和客户历史放
 
 Sun 展示了 AI 时代"一人可以构建并与 50 人团队竞争"的可能性。他的系统实现了 94 commits/天、7 PRs/30 分钟的生产力，但更重要的是完整的 PR 生命周期自动化：每个 agent 独立 worktree 和 tmux session；Definition of Done 包括 PR 创建、main 同步、CI、三模型审查、UI 截图；人类只在 Telegram 提示后做 5-10 分钟最终 review。
 
-## 与本库主题的连接
-
+## 关联概念
 | 本库主题 | Sun 的贡献 |
 |---------|-----------|
 | [[OpenClaw-Agent-System]] | 提供 Agent Swarm 的完整架构实践 |

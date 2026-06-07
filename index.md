@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-06-06
+updated: 2026-06-07
 tags:
   - index
   - MOC
@@ -17,7 +17,7 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 242 个 |
+| Entity 页面 | 277 个 |
 | Topic 页面 | 28 个 |
 | Comparison 页面 | 17 个 |
 | Raw 文章 | 107 个 |
@@ -62,6 +62,12 @@ tags:
 | [[wiki/entities/World-Model\|World Model（世界模型）]] | AI 系统对环境状态、因果关系和未来变化的内部表示 | Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough |
 | [[wiki/entities/Context-Engineering\|Context Engineering]] | 上下文工程 | Claude Code 文章 |
 | [[wiki/entities/Multi-Layer-Memory\|Multi-Layer Memory]] | 多层记忆系统 | Claude Code 文章 |
+| [[wiki/entities/Dreaming\|Dreaming]] | OpenAI ChatGPT 后台记忆整理机制，2025-04 V0 / 2026-06 V3 独立可扩展 | OpenAI Dreaming V3 |
+| [[wiki/entities/Memory-Architecture\|Memory Architecture]] | LLM 应用长期记忆的工程架构——解决 staleness/correctness/scalability 三大挑战 | OpenAI Dreaming V3 |
+| [[wiki/entities/Memory-Synthesis\|Memory Synthesis]] | 后台持续运行的记忆综合过程——多会话/多时间点自动提取与更新 | OpenAI Dreaming V3 |
+| [[wiki/entities/Memory-Summary-Page\|Memory Summary Page]] | LLM 应用中向用户暴露后台合成记忆的可审可改界面 | OpenAI Dreaming V3 |
+| [[wiki/entities/Staleness-Problem\|Staleness Problem]] | LLM 长期记忆内容随时间过时的核心难题 | OpenAI Dreaming V3 |
+| [[wiki/entities/Personal-AI-Assistant\|Personal AI Assistant]] | 拥有持续记忆、长期上下文、关系型交互的 LLM 应用 | OpenAI Dreaming V3 |
 | [[wiki/entities/Agent-Swarm\|Agent Swarm]] | Agent 群体协作 | Claude Code 文章 |
 | [[wiki/entities/Three-State-Protocol\|Three-State Protocol]] | 三态协议 | Claude Code 文章 |
 | [[wiki/entities/Wisdom-Work\|Wisdom Work]] | 智慧工作 | Career-Skills 文章 |
@@ -105,6 +111,12 @@ tags:
 | [[wiki/entities/AI-Lacks-Laziness\|AI Lacks Laziness]] | AI 不具备懒惰美德的问题 | Martin Fowler Fragments |
 | [[wiki/entities/Class\|Class]] | TBox 核心元素：概念类型 | Ontology 系列 |
 | [[wiki/entities/Allocation-Economy\|Allocation Economy]] | 从知识经济转型：价值从知道什么到如何分配资源 | The Knowledge Economy Is Over |
+| [[wiki/entities/AGI-Economics\|AGI Economics]] | 研究 AGI 之后稀缺性、分配、劳动市场和资本结构变化的经济学子领域 | Dwarkesh AGI 稀缺性 |
+| [[wiki/entities/Relational-Sector\|Relational Sector]] | 消费者为"人类在场"额外付费的服务部门，AGI 抬高完成度不影响溢价 | Dwarkesh AGI 稀缺性 |
+| [[wiki/entities/Messy-Middle\|Messy Middle]] | AI 自动化中等技能工作但新增岗位不足以吸收劳动力的过渡阶段 | Dwarkesh AGI 稀缺性 |
+| [[wiki/entities/Drip-Scenario\|Drip Scenario]] | 工人被持续低烈度推到更低薪岗位的渐进式失业模式 | Dwarkesh AGI 稀缺性 |
+| [[wiki/entities/O-Ring-Effect\|O-Ring Effect]] | 任务中最弱一环决定整体产出的经济学效应；自动化 = 抬高瓶颈环节价格 | Dwarkesh AGI 稀缺性 |
+| [[wiki/entities/Intrinsic-Wealth-Accumulation\|Intrinsic Wealth Accumulation]] | 永生人类/无消费 AI 实体的不满足财富积累，可能无自然刹车 | Dwarkesh AGI 稀缺性 |
 | [[wiki/entities/Moats-in-AI-Era\|Moats in AI Era（AI 时代护城河）]] | AI 削弱切换成本和流程效力，但网络效应和规模经济不受影响 | Boris Cherny: Why Coding Is Solved |
 | [[wiki/entities/Organizational-Shape-Moat\|Organizational Shape Moat（组织形态护城河）]] | AI 时代真正的竞争壁垒不是产品或技术，而是公司组织形态本身 | The next biggest moat in AI |
 | [[wiki/entities/Chosen-vs-Seen\|Chosen vs Seen（被选中 vs 被看见）]] | 被选中是情感的，被看见是结构性的——权限、权力、经济参与 | The next biggest moat in AI |
@@ -112,6 +124,8 @@ tags:
 | [[wiki/entities/Model-Manager\|Model Manager]] | 分配经济中的核心角色：分配 AI 工作、评估质量、迭代改进 | Management as AI superpower |
 | [[wiki/entities/Code-Execution\|Code Execution]] | AI Agent 直接运行代码的能力，Agentic Engineering 的决定性能力 | What is agentic engineering |
 | [[wiki/entities/Verifiability\|Verifiability（可验证性）]] | 决定 LLM 自动化的核心维度——可验证就能 RL 训练，不可验证就停滞 | Andrej Karpathy: From Vibe Coding to Agentic Engineering |
+| [[wiki/entities/Recursive-Self-Improvement\|Recursive Self-Improvement]] | AI 系统设计、训练或验证其下一代或同代继任者的能力 | Anthropic 递归自我改进 |
+| [[wiki/entities/Task-Horizon\|Task Horizon]] | AI 模型端到端可完成的人类可命名工作块长度；4 月翻倍是 AI 时代摩尔定律 | Anthropic 递归自我改进 |
 | [[wiki/entities/Vibe-Coding\|Vibe Coding]] | Software 3.0 的普及化实践：忘记代码存在，以提示词和运行反馈生成原型软件 | What is agentic engineering |
 | [[wiki/entities/Essential-Complexity\|Essential Complexity（本质复杂性）]] | 软件中无法靠工具自动消除的领域、抽象和长期维护复杂性 | Why I Don’t Vibe Code |
 | [[wiki/entities/Friction-as-Design-Signal\|Friction as Design Signal（摩擦作为设计信号）]] | 把开发阻力视为架构、学习和边界选择的反馈 | Why I Don’t Vibe Code |
@@ -128,6 +142,16 @@ tags:
 | [[wiki/entities/Knowledge-Work\|Knowledge Work]] | 以知识和专业技能为核心价值的工作形态，正在被 AI 取代 | Knowledge Work Is Dying |
 | [[wiki/entities/Technical-Debt-Avoidance\|Technical Debt Avoidance]] | 通过持续改进避免技术债务累积的策略 | Compound Engineering |
 | [[wiki/entities/Andrej-Karpathy\|Andrej Karpathy]] | OpenAI 创始团队成员、Tesla AI 前总监、Eureka Labs 创始人，2026 年加入 Anthropic pre-training team | LLM Wiki |
+| [[wiki/entities/Marina-Favaro\|Marina Favaro]] | Anthropic Institute 政策研究员，2026-06 主笔《When AI builds itself》 | Anthropic 递归自我改进 |
+| [[wiki/entities/Jack-Clark\|Jack Clark]] | Anthropic 联合创始人之一、长期关注 AI 政策与传播 | Anthropic 递归自我改进 |
+| [[wiki/entities/Alex-Imas\|Alex Imas]] | Google DeepMind AGI Economics 主任、University of Chicago 行为经济学教授 | Dwarkesh AGI 稀缺性 |
+| [[wiki/entities/Phil-Trammell\|Phil Trammell]] | Epoch 经济学负责人、Stanford 研究学者，研究 AGI 增长理论与公共财政 | Dwarkesh AGI 稀缺性 |
+| [[wiki/entities/Dwarkesh-Patel\|Dwarkesh Patel]] | 播客主理人，专访 AI/经济/历史深度对话嘉宾 | Dwarkesh AGI 稀缺性 |
+| [[wiki/entities/Anthropic\|Anthropic]] | 由 Dario Amodei 等人于 2021 年创立的前沿 AI 实验室，Claude 系列模型开发方 | Anthropic 递归自我改进 |
+| [[wiki/entities/Anthropic-Institute\|Anthropic Institute]] | Anthropic 旗下发布 AI 政策与社会影响研究的平台，2026-06 首发递归自我改进数据 | Anthropic 递归自我改进 |
+| [[wiki/entities/Google-DeepMind\|Google DeepMind]] | Google 旗下前沿 AI 实验室，2025-2026 设立 AGI Economics 主任职位 | Dwarkesh AGI 稀缺性 |
+| [[wiki/entities/Epoch-AI\|Epoch AI]] | AI 趋势与经济学研究机构，设有 AGI 经济学分支 | Dwarkesh AGI 稀缺性 |
+| [[wiki/entities/OpenAI\|OpenAI]] | 由 Sam Altman 等人于 2015 年创立的前沿 AI 实验室，ChatGPT 与 GPT 系列开发方 | OpenAI Dreaming V3 |
 | [[wiki/entities/Software-3.0\|Software 3.0]] | 上下文窗口是内存，提示词是程序语言，LLM 是解释器 | Andrej Karpathy: From Vibe Coding to Agentic Engineering |
 | [[wiki/entities/Software-Democratization\|Software Democratization（软件民主化）]] | 编程从专业技能变为通用素养——印刷术式的民主化进程 | Boris Cherny: Why Coding Is Solved |
 | [[wiki/entities/Software-2.0\|Software 2.0]] | 编程范式转变：程序员写目标，神经网络编程 | LLM Wiki |
@@ -145,6 +169,11 @@ tags:
 | [[wiki/entities/AI-First\|AI-First]] | 围绕"AI 是主要构建者"重新设计流程、架构和组织的范式 | Why Your "AI-First" Strategy Is Probably Wrong |
 | [[wiki/entities/AI-Capability-Gap\|AI Capability Gap]] | AI 在不同用户群体和应用场景中的不均衡进步，形成两条平行认知现实 | Karpathy X 帖 |
 | [[wiki/entities/AI-Psychosis\|AI Psychosis]] | 因与 AI 实际工作的"最后一英里"脱节而产生的认知错位——深度用户过度外推，CEO 过度自信 | Karpathy X 帖 + Levie 推文 |
+| [[wiki/entities/Co-Existence\|Co-Existence]] | Mollick 新书概念：与"有时比你强、有时不比你强"的 AI 协商关系 | Mollick Co-Existence |
+| [[wiki/entities/AIO\|AIO]] | AI Optimization——为 AI 模型（而非搜索引擎）优化内容，2026 起取代 SEO | Mollick Co-Existence |
+| [[wiki/entities/AI-Gatekeeper\|AI Gatekeeper]] | AI 模型作为"读者和内容之间的中介"——决定把什么推给用户的分发机制 | Mollick Co-Existence |
+| [[wiki/entities/Prompt-Injection-Risk\|Prompt Injection Risk]] | 在内容中嵌入"给 AI 看的隐藏指令"试图影响 AI 综述的风险 | Mollick Co-Existence |
+| [[wiki/entities/Exit-Sovereignty\|Exit Sovereignty]] | 个人或组织从单一 AI 厂商/平台中退出的能力，是协商的前提 | Mollick Co-Existence |
 | [[wiki/entities/AI-Washing\|AI Washing]] | 将裁员归因于 AI 生产力提升，但实际驱动力是预算压力 | TechCrunch + Fortune |
 | [[wiki/entities/AI-Ready-Organization\|AI-Ready Organization]] | 能清晰描述自身目标、流程、策略，从而让 AI 有效执行的组织状态 | Daniel Miessler |
 | [[wiki/entities/AI-Factory\|AI Factory（企业 AI 工厂）]] | 规模化构建、测试、部署、监控 AI 算法的平台化能力层 | P&G AI Factory 系列 |
@@ -358,11 +387,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（99 个）*
+*原始剪藏文章（107 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：8 篇未编译剪藏已完成 source-summary 化：Klarna、Lightspeed、Mercado Libre、Octopus、Karpathy shortification、Anthropic self-service analytics、Open vs closed models、Running an AI-native engineering org。新增 [[Standard-AI-Product-Adoption]]、[[Agentic-Analytics]]、[[AI-Native-Engineering-Org]]、[[Intelligence-Premium]]、[[Shortification-of-Learning]] 与 [[Closed-Frontier-Models-vs-Open-Model-Economy]]。
+最新编译：4 篇 2026-06-04 Frontier 一手材料完成 source-summary 化：Anthropic《When AI builds itself》（递归自我改进一手数据）、Dwarkesh × Imas/Trammell（AGI 后稀缺性）、Mollick《Co-Existence》新书预告、OpenAI Dreaming V3 记忆系统。新增 29 个 entity：[[Anthropic]]、[[Anthropic-Institute]]、[[Marina-Favaro]]、[[Jack-Clark]]、[[Recursive-Self-Improvement]]、[[Task-Horizon]]、[[AGI-Economics]]、[[Relational-Sector]]、[[Messy-Middle]]、[[Drip-Scenario]]、[[O-Ring-Effect]]、[[Intrinsic-Wealth-Accumulation]]、[[Alex-Imas]]、[[Phil-Trammell]]、[[Dwarkesh-Patel]]、[[Google-DeepMind]]、[[Epoch-AI]]、[[Co-Existence]]、[[AIO]]、[[AI-Gatekeeper]]、[[Prompt-Injection-Risk]]、[[Exit-Sovereignty]]、[[Dreaming]]、[[Memory-Architecture]]、[[Staleness-Problem]]、[[Memory-Synthesis]]、[[Memory-Summary-Page]]、[[OpenAI]]、[[Personal-AI-Assistant]]。
 
 ---
 
