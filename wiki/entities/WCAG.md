@@ -20,7 +20,6 @@ related_entities:
   - "[[Social-Model-of-Disability]]"
 source_raw:
   - "[[Building a general-purpose accessibility agent—and what we learned in the process]]"
-  - "[[The Conscious 1% Leading a new renaissance in the era of AI]]"
 ---
 
 # WCAG

@@ -61,7 +61,6 @@ tags:
 - [[Chad-Whitacre]] - 作者，Open Source Endowment / Open Source Pledge 相关人物
 - [[AI-Amish]] - 对 AI 和互联网作选择性拒绝，以保存离线生活方式
 - [[AI-Restraint]] - 从系统克制扩展到人的生活方式克制
-- [[Conscious-Creators]] - 有意识拒绝干扰，但本文给出更激进的离线版本
 - [[Cognitive-Surrender]] - 作者拒绝的是让自己变成讨厌样子的技术环境
 - [[Wisdom-Work]] - 文章把“工作价值”从在线生产力转向生活方式和精神一致性
 
@@ -77,6 +76,5 @@ tags:
 ## 本文使用的 Wiki 页面
 
 - [[AI-Restraint]]
-- [[Conscious-Creators]]
 - [[Cognitive-Surrender]]
 - [[Wisdom-Work]]

@@ -18,7 +18,6 @@ tags:
 related_entities:
   - "[[Chad-Whitacre]]"
   - "[[AI-Restraint]]"
-  - "[[Conscious-Creators]]"
   - "[[Cognitive-Surrender]]"
   - "[[Wisdom-Work]]"
 source_raw:
@@ -77,6 +76,6 @@ Agentic Work Atlas 关注 AI 如何重写工作系统。AI Amish 提醒我们：
 
 - [[Chad-Whitacre]] — 提出 AI Amish 自我定位的作者。
 - [[AI-Restraint]] — AI Amish 是人的生活方式版克制。
-- [[Conscious-Creators]] — 两者都强调拒绝干扰，但 AI Amish 更制度化、更离线。
+- [[AI-Restraint]] — 两者都强调设边界，但 AI Amish 把边界从系统设计推进到生活制度。
 - [[Cognitive-Surrender]] — AI Amish 拒绝的是让人停止主动生活和判断的技术环境。
 - [[Wisdom-Work]] — 它把工作价值从在线生产力转向生活方式、信念和关系。

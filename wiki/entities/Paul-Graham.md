@@ -18,13 +18,11 @@ related_entities:
   - "[[Judgment]]"
   - "[[Specificity]]"
   - "[[Refusal]]"
-  - "[[Conscious-Creators]]"
   - "[[Founder-Mode]]"
   - "[[Guillermo-Rauch]]"
 source_raw:
   - "[[Taste for Makers]]"
   - "[[Good Taste the Only Real Moat Left]]"
-  - "[[The Conscious 1% Leading a new renaissance in the era of AI]]"
   - "[[20260530-ceo-knee-deep-building-ai]]"
 validated_source: "https://www.paulgraham.com/"
 validated_at: "2026-04-14"
@@ -71,7 +69,7 @@ Graham 在 [[Taste for Makers|《Taste for Makers》]] 中反对"品味只是主
 
 ### Cook vs Chef
 
-Graham 区分了 Cook（模仿者）和 Chef（理解者）：Chef 理解什么打动人、为什么打动，Cook 只是复制配方。这一区分被 [[Conscious-Creation-in-AI-Era]] 引用，作为 AI 时代"有意识创作"vs"被动消费"的类比。
+Graham 区分了 Cook（模仿者）和 Chef（理解者）：Chef 理解什么打动人、为什么打动，Cook 只是复制配方。这个区分在本库主要用于解释为什么 AI 会快速商品化“照着做”的工作，却难以替代方向感、品味和拒绝能力。
 
 ### 场域与人才密度
 
@@ -96,7 +94,7 @@ Graham 用 Florence、Bauhaus、Manhattan Project、New Yorker、Skunk Works、X
 | 本库主题 | Graham 的贡献 |
 |---------|-------------|
 | [[AI-Era-Taste-and-Judgment]] | 《Taste for Makers》提供了品味的底层定义 |
-| [[Conscious-Creation-in-AI-Era]] | Cook vs Chef 区分作为有意识创作的类比 |
+| [[AI-Era-Taste-and-Judgment]] | Cook vs Chef 区分用于解释 AI 时代的品味与判断力 |
 | [[Refusal]] | 品味框架支撑了"拒绝平庸输出"的判断力 |
 | [[AI-Apprenticeship-and-Lehrwerkstatt]] | 场域理论支撑了教学工坊的人才密度要求 |
 | [[Founder-Mode]] | CEO 应保持技术参与度的管理哲学 |

@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 279 个 |
-| Topic 页面 | 28 个 |
+| Entity 页面 | 271 个 |
+| Topic 页面 | 27 个 |
 | Comparison 页面 | 17 个 |
-| Raw 文章 | 109 个 |
+| Raw 文章 | 108 个 |
 | Output 作品 | 4 个 |
 
 ---
@@ -45,11 +45,8 @@ tags:
 | [[wiki/entities/Agent-First-Enterprise\|Agent-First Enterprise]] | AI 系统运营流程，人类设定目标的组织模式 | Enabling agent-first process redesign |
 | [[wiki/entities/Human-Governor-Agent-Operator\|Human-Governor-Agent-Operator]] | 人类治理、Agent 运营的分工模式 | Enabling agent-first process redesign |
 | [[wiki/entities/Machine-Readable-Processes\|Machine-Readable Processes]] | Agent 运营的技术基础设施 | Enabling agent-first process redesign |
-| [[wiki/entities/Conscious-Creators\|Conscious Creators]] | 拒绝干扰、专注内在世界的新 1% | The Conscious 1% |
-| [[wiki/entities/Inner-World-Mastery\|Inner World Mastery]] | 掌控内心对话、为原创创造空间的能力 | The Conscious 1% |
-| [[wiki/entities/Decision-Quality\|Decision Quality]] | 基于清晰和信念而非过度分析的决策能力 | The Conscious 1% |
+| [[wiki/entities/Decision-Quality\|Decision Quality]] | 在任务目标、验证成本和失败代价之间做高质量取舍的能力 | Management as AI superpower |
 | [[wiki/entities/Research-Preview\|Research Preview（研究预览）]] | 以"早期版本不保证支持"降低发布门槛的核心策略 | Cat Wu: How Anthropic's product team moves faster |
-| [[wiki/entities/Resonance\|Resonance]] | 创作与自我身份的共鸣 | The Conscious 1% |
 | [[wiki/entities/Ghost-Intelligence\|Ghost-Intelligence（幽灵智能）]] | LLM 是统计模拟回路，非动物智能——无内在动机和意识 | Andrej Karpathy: From Vibe Coding to Agentic Engineering |
 | [[wiki/entities/Git-Fluent-Agents\|Git-Fluent Agents]] | 深度理解 Git 的 AI 编码 Agent | Using Git with coding agents |
 | [[wiki/entities/History-Rewriting\|History Rewriting]] | 将 Git 历史视为可编辑叙事的理念 | Using Git with coding agents |
@@ -264,10 +261,8 @@ tags:
 | [[wiki/entities/Paul-Graham\|Paul Graham]] | Y Cominator 创始人，创业思想家 | Entrepreneurship |
 | [[wiki/entities/Guillermo-Rauch\|Guillermo Rauch]] | Vercel CEO，Next.js 创造者，coding agents 时代的关键基础设施推动者 | Infrastructure, Vercel |
 | [[wiki/entities/Erik-Schluntz\|Erik Schluntz]] | Anthropic 技术团队成员，AI 代理与机器人专家 | AI-Agent, Anthropic |
-| [[wiki/entities/Joe-Hudson\|Joe Hudson]] | 高管教练，OpenAI 等科技公司领导力顾问 | Career-Skills, Coaching |
 | [[wiki/entities/Konstantine-Buhler\|Konstantine Buhler]] | Sequoia Capital 合伙人，AI 投资专家 | Venture Capital |
 | [[wiki/entities/Raj-Nandan-Sharma\|Raj Nandan Sharma]] | 软件工程师，fintech/AI 开发者工具作者 | AI-Agent, Developer |
-| [[wiki/entities/Wes-Botman\|Wes Botman]] | Eli5.io 作者，AI 编程代理专家 | Claude-Code, DevOps |
 | [[wiki/entities/Elvis-Sun\|Elvis Sun]] | 前 Google 工程师，AI 创业者 | AI-Agent, Entrepreneurship |
 | [[wiki/entities/Aaron-Levie\|Aaron Levie]] | Box CEO，企业软件与 AI Agent 思想家 | Enterprise Software |
 | [[wiki/entities/MIT-Technology-Review-Insights\|MIT Technology Review Insights]] | MIT Technology Review 研究部门 | Research |
@@ -276,7 +271,6 @@ tags:
 | [[wiki/entities/Boris-Cherny\|Boris Cherny]] | Claude Code 之父，Anthropic 核心开发者，"编程已被解决"的提出者 | AI-Agent, Claude-Code, Anthropic |
 | [[wiki/entities/朱少民\|朱少民]] | 软件工程领域作者，关注 AI Agent 与企业组织变革 | Software-Engineering, AI-Agent |
 | [[wiki/entities/Steve-Hanov\|Steve Hanov]] | 加拿大 Waterloo 独立开发者，6 个 `$10K+` MRR 产品，月成本 `$20` | Indie Developer, Bootstrap |
-| [[wiki/entities/Arnav-Gupta\|Arnav Gupta]] | Facebook Infra 工程师，前 Zomato/Coding Blocks 联合创始人 | Software-Engineering, AI-Labor |
 | [[wiki/entities/Unmesh-Joshi\|Unmesh Joshi]] | Thoughtworks 杰出工程师，《分布式系统模式》作者 | Software-Architecture, Distributed-Systems |
 | [[wiki/entities/Tobi-Lütke\|Tobi Lütke]] | Shopify 创始人兼 CEO，倡导“教学工坊”模式 | Entrepreneurship, Engineering-Culture |
 | [[wiki/entities/Pinterest-Engineering\|Pinterest Engineering]] | Pinterest 工程团队，MCP 实践先驱 | AI-Agent, Infrastructure |
@@ -294,9 +288,7 @@ tags:
 | [[wiki/entities/Distributional-Alignment\|Distributional Alignment（分布对齐）]] | 模型训练历史与部署任务分布之间的贴近程度，是企业任务中可能超过参数规模的模型选择变量 | Specialization Beats Scale |
 | [[wiki/entities/Specialized-Small-Models\|Specialized Small Models（专门化小模型）]] | 面向窄任务或具体业务域训练的小参数模型，可在可验证高频任务中改写质量、成本和稳定性排序 | Specialization Beats Scale |
 | [[wiki/entities/Specialization-Compounds\|Specialization Compounds（专门化会复利）]] | 从通用模型到领域专家再到任务专家的层级过程，起点越接近目标任务，后续训练越有效 | Specialization Beats Scale |
-| [[wiki/entities/Jacob-Harris\|Jacob Harris]] | 软件开发者、jacobharr.is 作者，写作关注软件、数据和公共系统中的工程判断 | Software Engineering, Data Journalism |
 | [[wiki/entities/Erick-Lachmann\|Erick Lachmann]] | Dharma-AI 作者，参与撰写专门化小模型与企业 AI 采购变量文章 | AI, Enterprise AI |
-| [[wiki/entities/Pimenta-de-Freitas-Cardoso\|Pimenta de Freitas Cardoso]] | DharmaOCR 相关论文作者之一，研究被用于讨论专门化小模型与分布对齐 | AI, Research |
 | [[wiki/entities/Token-Maxing\|Token Maxing（Token 最大化）]] | 企业无差别消耗 AI token 的现象，导致推理成本失控 | Corporate America AI Rationing |
 | [[wiki/entities/Enterprise-AI-Rationing\|Enterprise AI Rationing（企业 AI 配给制）]] | 企业因 AI 推理成本飙升，从鼓励全面实验转向限制使用权限的管理实践 | Corporate America AI Rationing |
 | [[wiki/entities/The-GenAI-Divide\|The GenAI Divide（生成式 AI 鸿沟）]] | 企业 GenAI 高采用但低业务转化的断裂 | The GenAI Divide |
@@ -318,7 +310,6 @@ tags:
 |-------|------|------------|
 | [[wiki/topics/AI-Era-Taste-and-Judgment\|AI 时代的品味与判断力]] | AI 让合格产出廉价，品味变得更有价值 | Taste, Judgment, Specificity |
 | [[wiki/topics/Agent-First-Process-Redesign\|Agent-First 流程重构]] | 企业如何围绕 Agent 重新设计运营模式 | Agent-First-Enterprise, Human-Governor-Agent-Operator, Machine-Readable-Processes |
-| [[wiki/topics/Conscious-Creation-in-AI-Era\|AI 时代的有意识创造]] | 成为新 1% 的路径：内在掌控与三大指标 | Conscious-Creators, Inner-World-Mastery, Decision-Quality, Taste, Resonance |
 | [[wiki/topics/Git-with-Coding-Agents\|Git 与编码 Agent]] | Agent 如何改变版本控制工作方式 | Git-Fluent-Agents, History-Rewriting, Agentic-Engineering |
 | [[wiki/topics/Claude-Code-Automation\|Claude Code 自动化]] | Claude Code 的自动化能力与实践，包含 Boris Cherny 的 Product Overhang、Loops、Routines | Claude-Code-CLI, Headless-Mode, Agent-Loops, Product-Overhang |
 | [[wiki/topics/AI-Era-Career-Skills\|AI 时代的职业技能]] | AI 时代各岗位的核心技能框架 | Wisdom-Work, Emotional-Clarity, Discernment, Forward-Deployed-Engineer |
@@ -357,7 +348,7 @@ tags:
 | [[wiki/comparisons/AI-Factory-vs-Forward-Deployed-AI-Enablement\|AI Factory vs FDE 式 AI 赋能]] | 平台化生产、现场部署、复利机制、组织治理 | AI-Factory, Forward-Deployed-Engineer, Deployment-Product-Flywheel, Integration-Wall |
 | [[wiki/comparisons/Cognitive-Debt-vs-Technical-Debt\|Cognitive Debt vs Technical Debt]] | 理解债务、实现债务、AI 生成代码风险 | Cognitive-Debt, Technical-Debt-Avoidance, Conceptual-Model |
 | [[wiki/comparisons/Context-Engineering-vs-Knowledge-Compilation\|Context Engineering vs Knowledge Compilation]] | 运行时上下文、摄取时编译、长期复用 | Context-Engineering, Knowledge-Compilation, LLM-Wiki |
-| [[wiki/comparisons/Cook-vs-Chef\|Cook vs Chef]] | 创作方式、理解深度、AI 时代影响 | Taste, Conscious-Creators |
+| [[wiki/comparisons/Cook-vs-Chef\|Cook vs Chef]] | 创作方式、理解深度、AI 时代影响 | Taste, Judgment |
 | [[wiki/comparisons/Deployment-Product-Flywheel-vs-Tacit-Knowledge-Lock-In\|Deployment-Product Flywheel vs Tacit Knowledge Lock-In]] | 供应商复利、客户锁定、评测集归属 | Deployment-Product-Flywheel, Tacit-Knowledge-Lock-In, Evaluation-Set |
 | [[wiki/comparisons/Knowledge-Work-vs-Wisdom-Work\|Knowledge Work vs Wisdom Work]] | 核心能力、价值来源、AI 影响 | Wisdom-Work, Emotional-Clarity, Discernment, Connection |
 | [[wiki/comparisons/Ontology-vs-Knowledge-Graph\|Ontology vs Knowledge Graph]] | 语义层、事实层、TBox/ABox、企业 Agent | Ontology, Knowledge-Graph, TBox, ABox |

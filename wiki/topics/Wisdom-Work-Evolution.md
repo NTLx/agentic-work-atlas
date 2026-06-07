@@ -12,7 +12,6 @@ related_entities:
   - '[[Dan-Shipper]]'
   - '[[Discernment]]'
   - '[[Emotional-Clarity]]'
-  - '[[Joe-Hudson]]'
   - '[[Judgment]]'
   - '[[Knowledge-Work]]'
   - '[[Wisdom-Work]]'
@@ -142,13 +141,11 @@ OpenAI、Google DeepMind、Anthropic、Apple 的高层正在投资：
 
 - [[Judgment]] - 判断力在 AI 时代成为核心价值
 - [[AI-Era-Taste-and-Judgment]] - 品味和判断力的相关性
-- [[Conscious-Creation-in-AI-Era]] - 存在层的互补主题
 - [[AI-Labor-Bottleneck-Shift]] - 机制分析的互补主题
 
 ## 参见
 
 - [[Dan-Shipper]] - Every 出版社，智慧工作相关文章出版者
-- [[Joe-Hudson]] - "Knowledge Work Is Dying" 作者，本主题核心来源
 - [[Knowledge-Work]] - 知识工作概念，本主题讨论的"正在终结"的对象
 
 ## 来源
@@ -160,18 +157,18 @@ OpenAI、Google DeepMind、Anthropic、Apple 的高层正在投资：
 
 [[Management as AI superpower]] 从管理学角度印证了 Wisdom Work Evolution 的核心判断：当 AI 让"做事的人才"变得更便宜，真正稀缺的是"知道要做什么、如何委托、如何验收"的人。Ethan Mollick 的 agentic work equation（人类基准时间 × AI 过程时间 × 成功概率）本质上是 Judgment 的操作化——判断力不是抽象的智慧，而是在不确定条件下做出正确委托决策的能力。这与 Wisdom Work 的三大技能（情感清晰度、判断力、深层连接）形成互补：前者提供"为什么"，后者提供"怎么做"。
 
-## 与 Conscious-Creation-in-AI-Era 的区分
+## 与 AI-Era-Taste-and-Judgment 的互补
 
-[[Conscious-Creation-in-AI-Era]] 和 Wisdom-Work-Evolution 都讨论 AI 时代人类价值的迁移方向，但切入角度不同：
+[[AI-Era-Taste-and-Judgment]] 与 Wisdom-Work-Evolution 讨论的是同一迁移的两个层面：
 
-| 维度 | Wisdom-Work-Evolution | Conscious-Creation-in-AI-Era |
+| 维度 | Wisdom-Work-Evolution | AI-Era-Taste-and-Judgment |
 |------|----------------------|---------------------------|
-| 起点 | 知识工作正在终结（经济学视角） | 生产力作为指标失去意义（哲学视角） |
-| 核心技能 | 情感清晰度、判断力、深层连接 | 决策质量、品味、共鸣 |
-| 对立面 | AI 无法替代的人类能力 | 被 AI 娱乐淹没的 The Consumed |
-| 实践路径 | VIEW 框架、Ouch 练习、自我关系 | Inner-World-Mastery、Stillness、Shadow Work |
+| 关注点 | 人类为什么从知识工作转向智慧工作 | 人类如何在 AI 产出泛滥中做出更好判断 |
+| 核心能力 | 情感清晰度、判断力、深层连接 | 品味、拒绝、特异性、承担后果 |
+| 主要场景 | 角色演化、组织协作、关系工作 | 产出审查、产品方向、Agent 验收 |
+| 功能 | 解释价值迁移 | 提供操作性审查框架 |
 
-两者的交叉点在于：Wisdom Work 提供了"为什么人类价值在迁移"的诊断，Conscious Creation 提供了"如何在迁移后活得有意义"的方向。前者是诊断，后者是处方。
+前者偏“人的能力结构”，后者偏“AI 协作中的质量控制”。两者组合起来，才构成 AI 时代真正可执行的人类价值模型。
 
 ## 与 AI-Labor-Bottleneck-Shift 的关系
 
@@ -198,14 +195,12 @@ OpenAI、Google DeepMind、Anthropic、Apple 的高层正在投资：
 
 ## 跨来源综合：AI 时代人类价值的三层模型
 
-综合 [[Knowledge Work Is Dying—Here’s What Comes Next]]、[[Management as AI superpower]] 和 [[Conscious-Creation-in-AI-Era]] 三个来源，可以构建 AI 时代人类价值的三层模型：
+综合 [[Knowledge Work Is Dying—Here’s What Comes Next]]、[[Management as AI superpower]] 和 [[AI-Era-Taste-and-Judgment]] 三个来源，可以构建一个更贴近工作系统的三层模型：
 
 | 层次 | 核心问题 | 关键能力 | 来源 |
 |------|---------|---------|------|
-| 诊断层 | 知识工作为什么在终结？ | 理解 AI 商品化知识的机制 | Knowledge Work Is Dying |
-| 操作层 | 如何委托和验收 AI 工作？ | 判断力、委托能力、验收标准 | Management as AI superpower |
-| 存在层 | 生产力失去意义后如何活？ | 内在掌控、决策质量、共鸣 | Conscious Creation |
+| 诊断层 | 知识工作为什么在终结？ | 理解知识商品化与关系/判断升值的机制 | Knowledge Work Is Dying |
+| 操作层 | 如何委托、验收并治理 AI 工作？ | 判断力、委托能力、验收标准 | Management as AI superpower |
+| 质量层 | 如何拒绝“看起来能用”的低质产出？ | 品味、拒绝、特异性、承担后果 | AI-Era-Taste-and-Judgment |
 
-这三层不是递进关系，而是互补关系：诊断层解释"为什么"，操作层提供"怎么做"，存在层回答"为了什么"。缺少任何一层，AI 时代的人类价值讨论都会不完整。
-
-Wisdom-Work-Evolution 的核心贡献是把这三层连接起来：它既诊断了知识工作的终结（诊断层），又提供了情感清晰度、判断力、深层连接三大技能（操作层），还指向了"智慧而非知识"的价值方向（存在层）。这使得它成为 AI 时代人类价值讨论的核心枢纽。
+这三层不是递进关系，而是互补关系：诊断层解释“为什么”，操作层回答“怎么分工”，质量层解决“怎么不被合格噪音淹没”。Wisdom-Work-Evolution 的意义，就在于把它们重新接回人类能力结构，而不是把价值迁移误读为单纯的工具熟练度提升。
