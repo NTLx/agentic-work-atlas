@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-06-05
+updated: 2026-06-07
 tags:
   - AI-Agent
   - coding-agents
@@ -32,6 +32,7 @@ related_entities:
   - "[[Skill-Internalization]]"
   - "[[AI-Native-Engineering-Org]]"
   - "[[Intelligence-Premium]]"
+  - "[[Agent-Optimized-CLI]]"
 source_raw:
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'
@@ -52,6 +53,7 @@ source_raw:
   - "[[20260601-mercado-libre-github-copilot]]"
   - "[[Running an AI-native engineering org]]"
   - "[[Open and closed models are on different exponentials]]"
+  - "[[Designing the hf CLI as an agent-optimized way to work with the Hub]]"
 ---
 
 # Agentic Engineering Patterns
@@ -115,6 +117,8 @@ source_raw:
 - **[[Agentic-Workflow-Token-Efficiency|Token Efficiency]]**: 生产级 Agentic Workflow 不能只问“能否完成任务”，还要问每次自动触发是否在消耗不可见成本。
 - **可优化系统**: GitHub 的实践显示，API 代理记录、每日 token 审计、MCP 工具裁剪和 CLI 替代，能把 Agent 工作流从黑盒花费变成可优化系统。
 - **确定性前置**: 许多 agent turns 只是数据读取，不需要推理。把 PR diff、文件列表、issue 元数据等提前用 CLI 写入工作区，可以把确定性读取移出 LLM 循环。
+- **[[Agent-Optimized-CLI|工具表面压缩]]**: Hugging Face 的 `hf` CLI 说明，Agent-native 工具界面本身就是工程模式。把输出格式、错误语义、下一步提示和常见工作流封装进 CLI，可以减少 Agent 为“怎么用工具”付出的推理。
+- **Skill 作为命令地图**: auto-generated skill 不一定直接减少总 token，但能减少 Agent probing `--help` 的次数，把更多 token 花在执行任务而不是发现命令。
 - **质量混淆**: token 下降不必然代表效率提升，也可能是工作做少了；需要同时看模型层级、工作负载、turn 数、工具完成率和结果质量。
 
 ---
@@ -255,6 +259,7 @@ Agentic Engineering 不能把生成成本下降变成 review 成本转嫁。[[Ag
 - [[Agent-Harness]] - Harness 的 12 组件 + 7 架构决策技术框架
 - [[AI-First]] - 组织级 AI 优先范式
 - [[Agentic-Workflow-Token-Efficiency]] - Agentic Workflow 的成本可观测与优化方法
+- [[Agent-Optimized-CLI]] - 把 CLI 设计成 Agent 原语而非人类终端皮肤
 - [[Laziness-Virtue]] - 用有限时间倒逼简化的工程美德
 - [[AI-Lacks-Laziness]] - AI 默认缺少简化压力带来的质量风险
 - [[Plan-as-Agent-Checkpoint]] - 让长任务跨会话恢复并围绕验收标准执行

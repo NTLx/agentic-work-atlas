@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 277 个 |
+| Entity 页面 | 279 个 |
 | Topic 页面 | 28 个 |
 | Comparison 页面 | 17 个 |
-| Raw 文章 | 107 个 |
+| Raw 文章 | 109 个 |
 | Output 作品 | 4 个 |
 
 ---
@@ -40,6 +40,7 @@ tags:
 | [[wiki/entities/Agent-Logic\|Agent Logic]] | 运行在 Agent harness 内、模型之外的工作流专用逻辑层 | IBM Research: Agent Logic |
 | [[wiki/entities/Local-Bounded-Reasoning\|Local-Bounded Reasoning]] | 用工作流结构、图谱、程序分析和策略约束缩小 LLM 推理空间 | IBM Research: Agent Logic |
 | [[wiki/entities/Policy-as-Code-for-Agent-Governance\|Policy-as-Code for Agent Governance]] | 把 Agent 权限、披露、合规和人工升级路径写成运行时策略 | IBM Research: Agent Logic |
+| [[wiki/entities/Custom-Policy-Guardrails\|Custom Policy Guardrails]] | 在推理时注入组织自定义安全策略，并输出可审计 verdict 的安全控制模式 | Nemotron 3.5 Content Safety |
 | [[wiki/entities/Graph-Guided-Agent-Investigation\|Graph-Guided Agent Investigation]] | 用知识图谱、依赖图或 DAG 引导 Agent 调查复杂系统故障 | IBM Research: Agent Logic |
 | [[wiki/entities/Agent-First-Enterprise\|Agent-First Enterprise]] | AI 系统运营流程，人类设定目标的组织模式 | Enabling agent-first process redesign |
 | [[wiki/entities/Human-Governor-Agent-Operator\|Human-Governor-Agent-Operator]] | 人类治理、Agent 运营的分工模式 | Enabling agent-first process redesign |
@@ -56,6 +57,7 @@ tags:
 | [[wiki/entities/Agent-PR-Review\|Agent PR Review]] | 审查 Agent 生成的 PR 的系统性策略：5 个关键检查点 | Agent pull requests are everywhere |
 | [[wiki/entities/Agent-Generated-PRs\|Agent-Generated PRs]] | AI Agent 自动提交的 PR——缺乏设计哲学上下文的核心问题 | The PR you would have opened yourself |
 | [[wiki/entities/Agentic-Workflow-Token-Efficiency\|Agentic Workflow Token Efficiency]] | 系统性优化 Agentic Workflows token 成本的方法论 | Improving token efficiency |
+| [[wiki/entities/Agent-Optimized-CLI\|Agent-Optimized CLI]] | 为 coding agents 直接设计的 CLI，把多步 API 工作流压成高层命令原语 | Designing the hf CLI |
 | [[wiki/entities/Claude-Code-CLI\|Claude Code CLI]] | Claude 命令行工具 | Claude Code 文章 |
 | [[wiki/entities/Headless-Mode\|Headless Mode]] | 无头运行模式 | Claude Code 文章 |
 | [[wiki/entities/Continual-Learning\|Continual Learning（持续学习）]] | 不遗忘已有知识地整合新知识——AGI 缺失的关键拼图 | Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough |
@@ -387,11 +389,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（107 个）*
+*原始剪藏文章（109 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：4 篇 2026-06-04 Frontier 一手材料完成 source-summary 化：Anthropic《When AI builds itself》（递归自我改进一手数据）、Dwarkesh × Imas/Trammell（AGI 后稀缺性）、Mollick《Co-Existence》新书预告、OpenAI Dreaming V3 记忆系统。新增 29 个 entity：[[Anthropic]]、[[Anthropic-Institute]]、[[Marina-Favaro]]、[[Jack-Clark]]、[[Recursive-Self-Improvement]]、[[Task-Horizon]]、[[AGI-Economics]]、[[Relational-Sector]]、[[Messy-Middle]]、[[Drip-Scenario]]、[[O-Ring-Effect]]、[[Intrinsic-Wealth-Accumulation]]、[[Alex-Imas]]、[[Phil-Trammell]]、[[Dwarkesh-Patel]]、[[Google-DeepMind]]、[[Epoch-AI]]、[[Co-Existence]]、[[AIO]]、[[AI-Gatekeeper]]、[[Prompt-Injection-Risk]]、[[Exit-Sovereignty]]、[[Dreaming]]、[[Memory-Architecture]]、[[Staleness-Problem]]、[[Memory-Synthesis]]、[[Memory-Summary-Page]]、[[OpenAI]]、[[Personal-AI-Assistant]]。
+最新编译：2 篇 Hugging Face 一手材料完成 source-summary 化：NVIDIA《Nemotron 3.5 Content Safety》与 Hugging Face《Designing the hf CLI as an agent-optimized way to work with the Hub》。新增 2 个 entity：[[Custom-Policy-Guardrails]]、[[Agent-Optimized-CLI]]；并补强 [[Verifiable-Agent-Engineering]]、[[Agentic-Engineering-Patterns]] 与 [[Agentic-Workflow-Token-Efficiency]]。
 
 ---
 

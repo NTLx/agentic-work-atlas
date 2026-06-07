@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-06-06
+updated: 2026-06-07
 tags:
   - AI-Agent
   - verification
@@ -44,6 +44,7 @@ related_entities:
   - "[[Local-Bounded-Reasoning]]"
   - "[[Policy-as-Code-for-Agent-Governance]]"
   - "[[Graph-Guided-Agent-Investigation]]"
+  - "[[Custom-Policy-Guardrails]]"
 source_raw:
   - "[[The PR you would have opened yourself]]"
   - "[[用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践]]"
@@ -64,6 +65,7 @@ source_raw:
   - "[[20260528-ai-model-simulation]]"
   - "[[20260602-ibm-agent-logic-scalable-ai-adoption]]"
   - "[[20260606-google-agentic-rag]]"
+  - "[[Nemotron 3.5 Content Safety: Customizable Multimodal Safety for Global Enterprise AI]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
@@ -179,6 +181,15 @@ OncoAgent 把可验证 Agent 工程从代码与无障碍场景推进到临床决
 这使 Agentic Coding 呈现三阶段：开发、代码审查、安全硬化。安全不是最后补一份 checklist，而是可验证工程的一条独立流水线。
 
 Hugging Face 的 [[Cybersecurity-Openness|Cybersecurity Openness]] 进一步补充：在高风险安全场景中，半自主 Agent 比完全自主 Agent 更适合作为防御系统。关键不是“人类在环”这个口号，而是人类能否看见环内发生了什么。开放脚手架、开放规则引擎、可审计日志和 trace，都会让验证边界更清楚。
+
+Nemotron 3.5 的 [[Custom-Policy-Guardrails|自定义策略护栏]] 则补上了另一层：有些安全判定无法只靠静态规则完成，因为它依赖多模态语境和组织自定义政策。这里需要模型在推理时读入 policy、联合判断 prompt / image / response，并输出可审计 verdict。
+
+但这不意味着“把政策写进 prompt 就够了”。更准确的结构是双层：
+
+- 模型层 guardrail 负责解释语义边界和灰度场景。
+- 系统层 [[Policy-as-Code-for-Agent-Governance|治理策略即代码]] 负责执行不可妥协的权限、升级和合规规则。
+
+这说明可验证 Agent 工程的安全控制并非只有一种形式，而是从模型内的可读 trace，一直延伸到模型外的确定性拒绝。
 
 ## 传感器层：把内部质量也纳入可验证边界
 
