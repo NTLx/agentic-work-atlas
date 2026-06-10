@@ -17,7 +17,7 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 271 个 |
+| Entity 页面 | 280 个 |
 | Topic 页面 | 27 个 |
 | Comparison 页面 | 17 个 |
 | Raw 文章 | 110 个 |
@@ -375,6 +375,50 @@ tags:
 | 页面 | 用途 |
 |------|------|
 | [[wiki/research-agenda\|Agentic Work Atlas 研究议程]] | 记录 `explore(topic)` 产生的问题、反例和待剪藏方向 |
+
+---
+
+## 📄 Raw (raw/)
+
+*原始剪藏文章（110 个）*
+
+*所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
+
+最新编译：2 篇关于智能体基础设施的核心材料：Addy Osmani《Agent Harness Engineering》与 Anthropic《Paving the way for agents in biology》。新增 9 个 entity，包括 [[Context-Rot]]、[[Ralph-Loops]]、[[Deterministic-Retrieval]] 与 [[gget-virus]]；强化了 [[Agent-Harness]]、[[Harness-Engineering]] 与 [[Scientific-Discovery-AI]]。
+
+---
+
+## 🚀 快速操作
+
+### 编译文章
+```
+compile              # 编译 raw 中所有未处理的文件
+compile <文件名>     # 编译指定文章
+rebuild              # 重新编译全部 Raw 文件（批量回溯）
+```
+
+### 查询知识
+```
+什么是 <概念>?
+关于 <主题> 有什么讨论?
+```
+
+### 审计检查
+```
+lint               # 执行完整 lint 检查（含摘要覆盖检查）
+status             # 查看知识库状态
+```
+
+### 知识编译（三步法）
+1. **浓缩** - 提取核心结论（≤3条）+ 关键证据
+2. **质疑** - 审视前提假设、数据可靠性、边界条件
+3. **对标** - 跨领域找类似现象，建立知识迁移
+
+---
+
+*索引版本: v2.6*
+*最后更新: 2026-06-03*
+h-agenda\|Agentic Work Atlas 研究议程]] | 记录 `explore(topic)` 产生的问题、反例和待剪藏方向 |
 
 ---
 

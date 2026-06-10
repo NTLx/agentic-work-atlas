@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把巨大组合搜索空间、明确目标函数、数据或模拟器和工具调用结合起来，用 AI 寻找科学突破方案的系统形态"
 created: 2026-05-08
-updated: 2026-06-04
+updated: 2026-06-10
 tags:
   - AI
   - science
@@ -18,9 +18,14 @@ related_entities:
   - "[[World-Model]]"
   - "[[Tool-Use-Architecture]]"
   - "[[Open-Source-Operational-AI-Framework]]"
+  - "[[Deterministic-Retrieval]]"
+  - "[[Biological-Data-Infrastructure]]"
+  - "[[Laura-Luebbert]]"
+  - "[[VirBench]]"
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[The next chapter in flood resilience Open sourcing Google’s hydrology framework]]"
+  - "[[20260608-paving-the-way-for-agents-in-biology]]"
 ---
 
 # Scientific Discovery AI（科学发现 AI）
@@ -39,6 +44,7 @@ Hassabis 从 AlphaGo 和 AlphaFold 总结出一个模式：当问题可以被描
 - AlphaFold 被全球数百万研究者使用，说明科学发现 AI 的价值不只是论文指标，而是能成为科研基础设施。
 - Hassabis 提出的通用条件是：组合搜索空间足够大、目标函数清晰、有足够数据或模拟器生成分布内数据。
 - 药物发现可被表述为搜索问题：如果物理规律允许某种化合物存在，难点就是如何高效找到它。
+- **确定性检索层（[[Deterministic-Retrieval]]）** 的缺失是科学智能体的核心瓶颈。Anthropic 研究显示，在引入 [[gget-virus]] 后，Agent 在病毒序列检索上的准确率从 16.9% 提升至 99.7%（2026）。
 - 虚拟细胞路线需要更强的观测和模拟能力，可能依赖无损活细胞纳米级成像，也可能依赖更好的学习型模拟器。
 - 通用模型不应把所有专业科学知识塞进一个巨大脑袋；更可行的是通过 [[Tool-Use-Architecture|工具使用架构]] 调用 AlphaFold 这类专用系统。
 - Google Research 的新水文模型相对旧版本，在有测站流域延长六天可靠预测窗口，在无测站流域延长一天；更重要的是，团队把模型架构、训练管线、文档和教程开放给运营机构。
@@ -77,6 +83,7 @@ Google 水文框架提供了一个完整转换链：
 - 专用模型负责蛋白质、材料、药物、数学或模拟器中的特定能力。
 - [[World-Model]] 负责把实验结果和理论假设连接起来。
 - [[Continual-Learning]] 负责让多轮实验经验不被遗忘，也不被错误经验污染。
+- **确定性感知层**: 对于生物学等敏感领域，基础设施必须从“步行者（人类浏览器）”模式向“汽车（Agent）”模式转型，提供 Agent-native 的数据访问路径（[[Biological-Data-Infrastructure]]）。
 
 这与企业 Agent 的结构类似：通用 orchestrator 不替代所有专家系统，而是协调专用工具、检索、验证和人类判断。
 
@@ -87,6 +94,7 @@ Google 水文框架提供了一个完整转换链：
 - 搜索型突破不等于真正原创；系统可能会解已有问题，却不会提出新问题。
 - 科学发现结果必须经过实验或形式化验证，不能只靠语言说服。
 - 开放模型和训练管线不会自动产生运营采用；本地数据质量、集成能力、责任链和长期维护仍可能成为瓶颈。
+- **VirBench 基准测试** 揭示了当前模型在原生检索任务中的高随机性和不稳定性。
 
 ## 关联概念
 
@@ -96,3 +104,7 @@ Google 水文框架提供了一个完整转换链：
 - [[Tool-Use-Architecture]] - 通用模型应协调专用科学工具
 - [[Demis-Hassabis]] - AlphaGo / AlphaFold 路线背后的关键人物
 - [[Open-Source-Operational-AI-Framework]] - 把科学模型转成可被本地机构运营和改进的基础设施
+- [[Deterministic-Retrieval]] - 确保科学数据获取 100% 准确的技术
+- [[Biological-Data-Infrastructure]] - 为 Agent 设计的科研数据底座
+- [[Laura-Luebbert]] - 科学智能体基础设施的研究者
+- [[VirBench]] - 衡量科学检索准确性的基准
