@@ -20,13 +20,20 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 110 |
+| Raw 来源 | 114 |
 | Raw 已编译 | 110 |
-| Raw 待编译 | 0 |
+| Raw 待编译 | 4 |
 | Entity | 280 |
 | Topic | 27 |
 | Comparison | 17 |
 | Output | 4 |
+
+## 待编译 Raw
+
+- `raw/20260603-lessons-from-building-claude-code-how-we-use-skills.md`
+- `raw/20260605-how-anthropic-uses-claude-gtm-engineering.md`
+- `raw/20260608-connector-observability-directory.md`
+- `raw/20260609-whats-new-in-claude-managed-agents.md`
 
 ## 检查项
 
