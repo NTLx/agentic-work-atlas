@@ -1,75 +1,60 @@
 ---
 type: entity
-title: Constraint-Driven-Engineering
+title: Constraint-Driven Engineering
 aliases:
-  - Constraint Driven Engineering
-definition: "先设定约束（预算、人力、时间），再从约束出发选择技术方案"
-created: 2026-04-15
-updated: 2026-05-08
+  - 约束驱动工程
+  - 约束闭环控制
+definition: "一种 Agentic Engineering 范式，主张通过分阶段注入机器可校验的硬约束和分层验收机制，将 Agent 的交付过程从“随机生成”转变为“确定性收敛”的控制系统。"
+created: 2026-06-10
+updated: 2026-06-10
 tags:
-  - software-engineering
-  - decision-making
-  - architecture
+  - Agentic-Engineering
+  - methodology
 related_entities:
-  - '[[Lean-Stack]]'
-  - '[[Anti-Enterprise-Mindset]]'
-  - '[[Taste]]'
+  - "[[Agentic-Engineering]]"
+  - "[[Verifiable-Agent-Engineering]]"
+  - "[[Automated-Criteria]]"
+  - "[[Long-Horizon-Execution]]"
+  - "[[Pixel-Facts]]"
 source_raw:
-  - '[[How I run multiple USD10K MRR companies on a USD20month tech stack]]'
+  - "[[20260610-qwen-constraint-driven-engineering-experiment]]"
 ---
 
-# Constraint-Driven-Engineering（约束驱动工程）
+# Constraint-Driven Engineering（约束驱动工程）
 
-## 定义
+> [!definition] 定义
+> **Constraint-Driven Engineering** 是由通义实验室（2026）提出的工程方法论。它认为 Agent 的输出质量不应依赖于模型的某种“神启”式一次性生成，而应通过一套严密的约束闭环系统，在漫长的决策链条中不断过滤无效路径，最终使系统状态收敛到预定义的达标线。
 
-**Constraint-Driven-Engineering** 是一种技术决策方法论：**先设定约束，再从约束出发选技术**。核心主张：没有放之四海皆准的"最佳技术栈"，约束决定选择，而不是技术决定约束。
+## 核心支柱
 
-## 决策框架
+### 1. 分阶段注入约束 (Progressive Constraint Injection)
+约束不是一次性丢进 System Prompt 的，而是随任务阶段逐层加码：
+- **规划阶段**: 约束目标边界（页面清单、功能范围）。
+- **架构阶段**: 约束技术栈与数据建模事实。
+- **编码阶段**: 注入具体的实现规则与自查项。
 
-```
-1. 设定约束 (预算、团队、时间、规模预期)
-2. 从约束出发推导最优技术组合
-3. 执行最小可行方案
-4. 约束变化时才重新评估
-```
+### 2. 像素事实 (Pixel Facts)
+解决模糊需求与精准执行之间的矛盾。将 UI 需求从有损的文字描述（“两列网格”）转化为无损的像素坐标约束（Bounds）。坐标是机器能逐条核对的事实，是消除 Agent “脑补”错误的关键。
 
-## 案例对比
+### 3. 带错纠正与收敛 (Error-Prone Correction)
+Harness 不仅是一个调度器，更是一个偏差收集器。失败时的报错原文被完整保留并注入下一轮上下文，确保重试不是从头再来，而是基于残局的持续逼近。
 
-| 约束集 | 技术选型 | 理由 |
-|-------|---------|------|
-| 一个人、`$20/月`、6 个产品 | Go + SQLite + 单机 VPS | 唯一最优解 |
-| 单机、多人协作 Web app | Clojure + 全栈 | 开发效率高 |
-| JVM 生态、React Native、最小客户端 | JVM 后端 + 薄客户端 | 约束决定的选择 |
-
-## 核心引述
-
-> "There are not universally applicable 'best tech stacks.' Constraints determine the choice, not the technology determining the constraints."
-> — @andersmurphy, HN 评论区
-
-## 与 Anti-Enterprise-Mindset 的关系
-
-Anti-Enterprise-Mindset 是 Constraint-Driven-Engineering 在成本维度上的具体应用：
-- 约束 = "一个人、`$20/月`"
-- 选择 = 不用 K8s、Auth0、Multi-AZ RDS
-
-但 Constraint-Driven-Engineering 更通用：约束可以是团队规模、技术债务、合规要求等任何维度。
+## 关键洞察
+- **“质量是收敛出来的”**: 在长程任务中，错误会随时间指数级放大，必须在每个环节设置“当场截断”的硬信号。
+- **约束减法原则**: 约束要做减法，只保留能被机器字面匹配、明确验证的规则。模糊的提醒（如“风格要一致”）反而会诱导模型通过“哄骗校验”来产生伪交付。
 
 ## 关键数据点
-
-- Steve Hanov 约束集: {一个人, `$20/月,` 6 个产品} → Go + SQLite + 单机 VPS（唯一最优解）
-- @andersmurphy 两套完全不同的技术选型：{单机, Clojure, Web app} vs {JVM, React Native, 最小客户端}
-- HN 952 分帖子引发 500+ 条评论，"约束决定选择" 被社区广泛认同
-
+- 通义实验室实验显示：凭一份 15 万字文档，Agent 在 4 小时内全自动交付双端（移动+Web）应用。
+- 采用该范式后，长程交付的成功率显著高于仅提供编辑器的 Agent 环境。
 
 ## 前提与局限性
-
-- **前提**: 约束必须真实且明确，不是人为捏造的限制
-- **局限**: 并非所有技术问题都有唯一最优解；相同约束下可能有多个可行方案
-- **注意**: "约束驱动" 不等于 "不升级" — 当约束变化时（用户增长、收入增加），应重新评估技术选择
-
+- **前提**: 模型必须具备极高的指令遵循稳定性和长上下文处理能力（如 Qwen3.7-Max）。
+- **局限**: 构建整套约束闭环需要极高的人期前置投入（SOP 编写、坐标抓取程序开发）。
+- **局限**: 适用于结构化程度高的工程任务，对于艺术创作等弱约束领域效用不明。
 
 ## 关联概念
-
-- [[Lean-Stack]] — 约束驱动选择的技术输出
-- [[Anti-Enterprise-Mindset]] — 成本约束下的心态
-- [[Taste]] — 选择什么作为约束需要品味
+- [[Agentic-Engineering]] - 该范式的母体
+- [[Verifiable-Agent-Engineering]] - 强调可验证性，约束工程是其具体实现路径之一
+- [[Automated-Criteria]] - 约束工程的“眼睛”，没有自动化判据则闭环不成立
+- [[Task-Horizon\|Long-Horizon Execution]] - 约束工程解决的核心问题场景
+- [[Pixel-Facts]] - 约束工程在 UI 还原领域的特定技术

@@ -54,10 +54,17 @@ source_raw:
   - "[[Open and closed models are on different exponentials]]"
 ---
 
-# Agentic Engineering
+## 核心范式演进
 
-> [!definition] 定义
-> **Agentic Engineering** 是使用 Coding Agents 辅助开发软件的实践。
+从“生成式（Generative）”转向“收敛式（Convergent）”：
+
+| 阶段 | 核心理念 | 关键技术 |
+|------|---------|----------|
+| **AI 辅助编程** | 模型作为 Copilot，人类负责闭环 | 自动补全、代码生成 |
+| **代理式编程** | 模型作为 Agent，自主使用工具 | ReAct 循环、文件读写 |
+| **约束驱动工程** | 质量是收敛出来的，Harness 负责闭环 | [[Constraint-Driven-Engineering]]、[[Automated-Criteria]]、分层验收 |
+
+通义实验室（2026）的实验证明，在隔离环境中，仅凭调研文档通过**分阶段注入约束**和**三层判定体系**，Agent 能够独立完成长达 4 小时的双端应用交付。其核心洞察是：质量不是一次性生成的，而是通过约束闭环不断过滤偏差而收敛出来的。
 
 ## 核心定义
 
