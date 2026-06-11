@@ -5,7 +5,7 @@ aliases:
   - Context Engineering
 definition: "设计 Agent 每次推理时看到的信息结构，包括项目上下文、技能按需加载、记忆层级和上下文生命周期管理"
 created: 2026-04-09
-updated: 2026-06-05
+updated: 2026-06-11
 tags:
   - AI-Agent
   - OpenClaw
@@ -21,6 +21,7 @@ related_entities:
   - '[[Capability-Map]]'
   - "[[Agentic-Analytics]]"
   - "[[Enterprise-AI-Learning-Gap]]"
+  - "[[Agent-Legibility]]"
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[What Is Code?]]'
@@ -29,6 +30,7 @@ source_raw:
   - '[[20260526-obsidian-claude-code-brain]]'
   - '[[20260530-cursor-developer-habits-report]]'
   - "[[20260603-anthropic-self-service-data-analytics]]"
+  - "[[20260611-openai-harness-engineering]]"
 ---
 
 # Context Engineering

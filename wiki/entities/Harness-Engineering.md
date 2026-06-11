@@ -5,7 +5,7 @@ aliases:
   - Harness Engineering
 definition: "工程团队的首要工作不再是编写代码，而是构建让 AI Agent 能有效工作的系统——设计 SOP、测试基础设施、集成系统、分诊系统，使 Agent 可检查、可验证、可修改。Addy Osmani (2026) 强调：**Agent = Model + Harness**，失效通常不是模型问题，而是配置（Harness）问题。"
 created: 2026-04-16
-updated: 2026-06-10
+updated: 2026-06-11
 tags:
   - AI-Agent
   - Software-Engineering
@@ -22,8 +22,10 @@ related_entities:
   - '[[MCP-Registry]]'
   - '[[Deterministic-Retrieval]]'
   - '[[HaaS-Harness-as-a-Service]]'
+  - '[[Agent-Legibility]]'
 source_raw:
   - '[[20260413-why-ai-first-strategy-wrong]]'
+  - '[[20260611-openai-harness-engineering]]'
   - '[[The Anatomy of an Agent Harness]]'
   - '[[What Is Code?]]'
   - '[[Building an MCP Ecosystem at Pinterest]]'

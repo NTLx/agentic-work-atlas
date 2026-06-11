@@ -6,7 +6,7 @@ aliases:
   - 约束闭环控制
 definition: "一种 Agentic Engineering 范式，主张通过分阶段注入机器可校验的硬约束和分层验收机制，将 Agent 的交付过程从“随机生成”转变为“确定性收敛”的控制系统。"
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-11
 tags:
   - Agentic-Engineering
   - methodology
@@ -18,6 +18,7 @@ related_entities:
   - "[[Pixel-Facts]]"
 source_raw:
   - "[[20260610-qwen-constraint-driven-engineering-experiment]]"
+  - "[[20260611-openai-harness-engineering]]"
 ---
 
 # Constraint-Driven Engineering（约束驱动工程）

@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-06-07
+updated: 2026-06-11
 tags:
   - AI-Agent
   - coding-agents
@@ -19,6 +19,7 @@ related_entities:
   - '[[Vibe-Coding]]'
   - '[[Harness-Engineering]]'
   - '[[Agent-Harness]]'
+  - '[[Agent-Legibility]]'
   - '[[AI-First]]'
   - '[[Agentic-Workflow-Token-Efficiency]]'
   - '[[Laziness-Virtue]]'
@@ -28,6 +29,7 @@ related_entities:
   - '[[ITBench]]'
   - "[[Plan-as-Agent-Checkpoint]]"
   - "[[Human-Signal]]"
+  - "[[20260611-openai-harness-engineering]]"
   - "[[Skill-Internalization]]"
   - "[[AI-Native-Engineering-Org]]"
   - "[[Intelligence-Premium]]"

@@ -6,7 +6,7 @@ aliases:
   - Skillify
 definition: "根据任务语境分层加载知识的策略，让 Agent 先读高价值摘要，再按需展开证据和细节"
 created: 2026-05-13
-updated: 2026-05-26
+updated: 2026-06-11
 tags:
   - knowledge-management
   - AI
@@ -20,7 +20,8 @@ related_entities:
   - "[[Knowledge-Compilation]]"
   - "[[Code-as-Conceptual-Infrastructure]]"
 source_raw:
-  - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
+  - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的"自组织"与"自进化"]]"
+  - "[[20260611-openai-harness-engineering]]"
 ---
 
 # Progressive-Disclosure（渐进式披露）
