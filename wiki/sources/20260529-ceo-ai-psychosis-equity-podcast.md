@@ -60,7 +60,7 @@ tags:
 
 - [[AI-Psychosis]] — Levie 的 CEO 版本是 Karpathy 原概念的组织层扩展
 - [[AI-Capability-Gap]] — 不同角色看到不同 AI 现实
-- [[Aaron-Levie]] — 概念提出者
+- Aaron-Levie — 概念提出者
 - [[Jevons-Paradox|Jevons Paradox]] — Levie 此前论述 AI 对知识工作的影响
 - [[AI-Washing]] — 用 AI 叙事包装裁员决策
 - 反 AI 反弹 — DuckDuckGo +30%、"human-authored" 差异化、替代搜索引擎拒绝 AI

@@ -15,8 +15,6 @@ tags:
   - AI-relations
 related_entities:
   - "[[Co-Existence]]"
-  - "[[AI-Gatekeeper]]"
-  - "[[AIO]]"
   - "[[Prompt-Injection-Risk]]"
   - "[[Open-Source-Operational-AI-Framework]]"
   - "[[Agent-Harness]]"
@@ -78,10 +76,10 @@ Co-Existence 范式假设人类与 AI 关系是"协商"。但：
 | 本库主题 | Exit Sovereignty 的连接 |
 |---------|------------------|
 | [[Co-Existence]] | 协商的前提条件 |
-| [[AI-Gatekeeper]] | 退出 = 绕过 gatekeeper |
+| AI-Gatekeeper | 退出 = 绕过 gatekeeper |
 | [[Open-Source-Operational-AI-Framework]] | 退出的基础设施 |
 | [[Agent-Harness]] | 退出的工程实现 |
-| [[AIO]] | 退出的反面是被 AIO 锁定 |
+| AIO | 退出的反面是被 AIO 锁定 |
 
 - [[Ethan-Mollick]] — 概念讨论
 

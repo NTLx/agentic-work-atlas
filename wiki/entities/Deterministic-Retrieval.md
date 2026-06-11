@@ -14,7 +14,6 @@ tags:
 related_entities:
   - "[[Agent-Harness]]"
   - "[[Context-Engineering]]"
-  - "[[gget-virus]]"
   - "[[Scientific-Discovery-AI]]"
 source_raw:
   - "[[20260608-paving-the-way-for-agents-in-biology]]"
@@ -35,5 +34,5 @@ source_raw:
 ## 关联概念
 - [[Agent-Harness]]
 - [[Context-Engineering]]
-- [[gget-virus]]
+- gget-virus
 - [[Scientific-Discovery-AI]]

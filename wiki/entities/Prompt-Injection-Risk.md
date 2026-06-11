@@ -14,8 +14,6 @@ tags:
   - content-strategy
   - security
 related_entities:
-  - "[[AIO]]"
-  - "[[AI-Gatekeeper]]"
   - "[[Co-Existence]]"
   - "[[Ethan-Mollick]]"
   - "[[Exit-Sovereignty]]"
@@ -59,8 +57,8 @@ source_raw:
 ## 关联概念
 | 本库主题 | Prompt Injection Risk 的连接 |
 |---------|-------------------------|
-| [[AIO]] | "对 AI 营销"的阴暗面 |
-| [[AI-Gatekeeper]] | gatekeeper 防御的对象 |
+| AIO | "对 AI 营销"的阴暗面 |
+| AI-Gatekeeper | gatekeeper 防御的对象 |
 | [[Co-Existence]] | Co-Existence 的失败模式 |
 | [[Exit-Sovereignty]] | 退出权的"软件基础设施"层面 |
 | [[Ethan-Mollick]] | 案例来源 |

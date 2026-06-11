@@ -15,7 +15,6 @@ tags:
   - organization
 related_entities:
   - '[[Andrej-Karpathy]]'
-  - '[[Aaron-Levie]]'
   - '[[Agentic-Engineering]]'
   - '[[Claude-Code-CLI]]'
   - '[[AI-Capability-Gap]]'
@@ -61,7 +60,7 @@ AI Psychosis 的风险有两面。
 
 ## CEO AI Psychosis（Levie, 2026）
 
-2026 年 5 月，Box CEO [[Aaron-Levie]] 在 X 上提出了 AI Psychosis 的组织层扩展：CEO 群体因结构性地远离"最后一英里"工作，成为 AI 认知错位的高发人群。
+2026 年 5 月，Box CEO Aaron-Levie 在 X 上提出了 AI Psychosis 的组织层扩展：CEO 群体因结构性地远离"最后一英里"工作，成为 AI 认知错位的高发人群。
 
 ### 机制
 

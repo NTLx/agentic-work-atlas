@@ -15,10 +15,7 @@ related_entities:
   - "[[Agent-Harness]]"
   - "[[Agent-PR-Review]]"
   - "[[Accessibility-Agent]]"
-  - "[[Social-Model-of-Disability]]"
   - "[[Bias-to-Action-LLM]]"
-  - "[[Accessibility-Complexity-Evaluation]]"
-  - "[[Accessibility-High-Risk-Patterns]]"
   - "[[Corrective-RAG]]"
   - "[[Sufficient-Context]]"
   - "[[Reflexion]]"
@@ -79,7 +76,7 @@ source_raw:
 
 - [[Verifiability|可验证性]]解释了为什么代码、数学、测试驱动任务进步最快。
 - [[Dominator-Analysis|支配者分析]]说明非确定性行为也能被提取出必经骨架。
-- [[Accessibility-Agent|无障碍 Agent]]和[[Social-Model-of-Disability]]显示，真实生产系统需要知道何时不动手，因为错误自动化可能继续制造访问壁垒。
+- [[Accessibility-Agent|无障碍 Agent]]和Social-Model-of-Disability显示，真实生产系统需要知道何时不动手，因为错误自动化可能继续制造访问壁垒。
 - [[MachinaCheck]]说明领域 Agent 不应把确定性工作交给 LLM。
 - [[Corrective-RAG]]和[[Reflexion]]把“生成”变成可拒绝、可重试、可审计的管线。
 - [[Zero-PHI-Policy]]、[[Dual-Tier-LLM-Architecture]]和[[Sequence-Packing]]则说明，高风险 Agent 的可验证性还包括数据边界、模型路由和训练管线。
@@ -90,9 +87,9 @@ source_raw:
 
 | 生成器 | 它解决什么 | 典型实体 |
 |--------|------------|----------|
-| 可验证边界 | 哪些输出能自动判断对错 | [[Verifiability]], [[Agent-PR-Review]], [[WCAG]] |
+| 可验证边界 | 哪些输出能自动判断对错 | [[Verifiability]], [[Agent-PR-Review]], WCAG |
 | 确定性骨架 | 哪些步骤必须由代码、规则、图结构保证 | [[Dominator-Analysis]], [[MachinaCheck]], [[Corrective-RAG]] |
-| 拒绝机制 | 什么时候停止生成、转人工、返回安全拒绝 | [[Bias-to-Action-LLM]], [[Accessibility-High-Risk-Patterns]], [[Reflexion]] |
+| 拒绝机制 | 什么时候停止生成、转人工、返回安全拒绝 | [[Bias-to-Action-LLM]], Accessibility-High-Risk-Patterns, [[Reflexion]] |
 | 数据边界 | 什么信息绝不能进入模型上下文 | [[Zero-PHI-Policy]], [[Hardware-Sovereignty]] |
 | 资源路由 | 哪些任务应交给哪一层模型和人工门控 | [[Dual-Tier-LLM-Architecture]], [[Sequence-Packing]] |
 
@@ -122,7 +119,7 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 
 [[MachinaCheck]] 的价值不在“用了多个 Agent”，而在它只在需要制造推理和报告组织的环节使用 LLM。STEP 文件解析和工具匹配由确定性代码完成，因为这些环节不需要想象力，只需要正确性。
 
-[[Accessibility-Agent|无障碍 Agent]] 的价值也不在“自动改所有问题”，而在识别复杂度、高风险交互和人工介入点。它背后的 [[Social-Model-of-Disability]] 进一步提醒：无障碍问题不是用户的问题，而是环境和界面设计制造的访问壁垒。因此一个能拒绝的 Agent，比一个永远动手的 Agent 更接近生产可用。
+[[Accessibility-Agent|无障碍 Agent]] 的价值也不在“自动改所有问题”，而在识别复杂度、高风险交互和人工介入点。它背后的 Social-Model-of-Disability 进一步提醒：无障碍问题不是用户的问题，而是环境和界面设计制造的访问壁垒。因此一个能拒绝的 Agent，比一个永远动手的 Agent 更接近生产可用。
 
 ## 可验证性不是测试覆盖率
 

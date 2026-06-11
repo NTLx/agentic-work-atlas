@@ -16,8 +16,6 @@ tags:
 related_entities:
   - "[[Ethan-Mollick]]"
   - "[[Co-Intelligence]]"
-  - "[[AI-Gatekeeper]]"
-  - "[[AIO]]"
   - "[[Prompt-Injection-Risk]]"
   - "[[Exit-Sovereignty]]"
   - "[[Taste]]"
@@ -62,8 +60,8 @@ source_raw:
 | 本库主题 | Co-Existence 的连接 |
 |---------|------------------|
 | [[Co-Intelligence]] | 是其后续范式 |
-| [[AI-Gatekeeper]] | Co-Existence 的核心新现象 |
-| [[AIO]] | 营销侧的 Co-Existence 表现 |
+| AI-Gatekeeper | Co-Existence 的核心新现象 |
+| AIO | 营销侧的 Co-Existence 表现 |
 | [[Prompt-Injection-Risk]] | Co-Existence 的阴暗面 |
 | [[Exit-Sovereignty]] | 协商的前提 |
 | [[Taste]] / [[Judgment]] | 人类剩余比较优势 |

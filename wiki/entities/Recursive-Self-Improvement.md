@@ -18,8 +18,6 @@ tags:
 related_entities:
   - "[[Anthropic]]"
   - "[[Anthropic-Institute]]"
-  - "[[Marina-Favaro]]"
-  - "[[Jack-Clark]]"
   - "[[Task-Horizon]]"
   - "[[Verifiability]]"
   - "[[AI-Capability-Gap]]"
@@ -92,5 +90,5 @@ Anthropic 2026-05 一手数据：
 ## 关联概念
 - [[Anthropic]] — 一手数据提供方
 - [[Anthropic-Institute]] — 政策发布平台
-- [[Marina-Favaro]] — 主笔
-- [[Jack-Clark]] — 联合署名 + 编辑支持
+- Marina-Favaro — 主笔
+- Jack-Clark — 联合署名 + 编辑支持

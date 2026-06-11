@@ -19,7 +19,6 @@ related_entities:
 source_raw:
   - "[[当我们谈论 FDE 时，我们在谈论什么？]]"
   - "[[The Return of the Deployment Company]]"
-  - "[[The next chapter in flood resilience Open sourcing Google’s hydrology framework]]"
 ---
 
 # FDE vs Open-Source Operational AI

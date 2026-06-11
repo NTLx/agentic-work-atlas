@@ -36,9 +36,9 @@ tags:
 ### 关联概念
 - [[Deterministic-Retrieval]]
 - [[Scientific-Discovery-AI]]
-- [[gget-virus]]
-- [[Biological-Data-Infrastructure]]
-- [[Laura-Luebbert]]
-- [[VirBench]]
+- gget-virus
+- Biological-Data-Infrastructure
+- Laura-Luebbert
+- VirBench
 - [[Context-Engineering]]
 - [[Integration-Wall]]

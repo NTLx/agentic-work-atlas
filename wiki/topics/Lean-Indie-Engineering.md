@@ -12,10 +12,6 @@ tags:
 related_entities:
   - '[[Steve-Hanov]]'
   - '[[Lean-Stack]]'
-  - '[[Runway-Math]]'
-  - '[[Anti-Enterprise-Mindset]]'
-  - '[[B2B-Nurture-C-Model]]'
-  - '[[Time-Moat]]'
   - '[[Constraint-Driven-Engineering]]'
   - "[[Zero-Friction-Scope-Creep]]"
 source_raw:
@@ -172,10 +168,10 @@ GitHub Copilot 按**请求**计费而非按 **token**——一次请求即使让
 ## 关联概念
 
 - [[Lean-Stack]]
-- [[Runway-Math]]
-- [[Anti-Enterprise-Mindset]]
+- Runway-Math
+- Anti-Enterprise-Mindset
 - [[Constraint-Driven-Engineering]]
-- [[Time-Moat]]
+- Time-Moat
 
 ## 证据补充
 

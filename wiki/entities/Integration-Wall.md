@@ -25,7 +25,6 @@ source_raw:
   - "[[当我们谈论 FDE 时，我们在谈论什么？]]"
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
   - "[[The Return of the Deployment Company]]"
-  - "[[The next chapter in flood resilience Open sourcing Google’s hydrology framework]]"
 ---
 
 # Integration Wall（集成之墙）

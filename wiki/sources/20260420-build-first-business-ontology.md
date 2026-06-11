@@ -44,14 +44,14 @@ tags:
 
 ### 关联概念
 - [[Ontology]]
-- [[TBox]]
-- [[ABox]]
-- [[RDF]]
-- [[OWL]]
-- [[Protégé]]
-- [[HermiT]]
-- [[Owlready2]]
-- [[GraphDB]]
-- [[SPARQL]]
+- TBox
+- ABox
+- RDF
+- OWL
+- Protégé
+- HermiT
+- Owlready2
+- GraphDB
+- SPARQL
 - [[Enterprise-Ontology-Application]]
 - [[Ontology-Agent]]

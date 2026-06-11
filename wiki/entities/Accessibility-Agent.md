@@ -12,12 +12,8 @@ tags:
   - accessibility
   - GitHub
 related_entities:
-  - "[[WCAG]]"
   - "[[Agentic-Engineering]]"
   - "[[Bias-to-Action-LLM]]"
-  - "[[Social-Model-of-Disability]]"
-  - "[[Accessibility-Complexity-Evaluation]]"
-  - "[[Accessibility-High-Risk-Patterns]]"
   - "[[Agent-PR-Review]]"
 source_raw:
   - "[[Building a general-purpose accessibility agent—and what we learned in the process]]"
@@ -73,12 +69,12 @@ Agent 强制执行**固定顺序的阶段**，每个阶段包含有序步骤：
 
 ## 关联概念
 
-- [[WCAG]] — Web Content Accessibility Guidelines，Agent 评审的核心标准
+- WCAG — Web Content Accessibility Guidelines，Agent 评审的核心标准
 - 子 Agent 顺序架构 — 评审者+实现者的两 Agent 顺序架构
 - [[Agentic-Engineering]] — 更广泛的 Agent 工程实践
 - [[Bias-to-Action-LLM]] — LLM 的"迫切生成内容"倾向，需反博弈指令约束
-- [[Social-Model-of-Disability]] — 无障碍 Agent 的哲学基础
-- [[Accessibility-Complexity-Evaluation]] — 代码复杂度评估决定 Agent 行为模式
-- [[Accessibility-High-Risk-Patterns]] — 被排除在 Agent 自动化之外的高风险交互模式
+- Social-Model-of-Disability — 无障碍 Agent 的哲学基础
+- Accessibility-Complexity-Evaluation — 代码复杂度评估决定 Agent 行为模式
+- Accessibility-High-Risk-Patterns — 被排除在 Agent 自动化之外的高风险交互模式
 - 模板 Schema 模式 — 子 Agent 间使用模板 Schema 传递信息
 - [[Agent-PR-Review]] — Agent 自动评审 PR 的实践

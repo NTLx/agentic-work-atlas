@@ -34,7 +34,7 @@ source_raw:
 # Context Engineering
 
 > [!definition] 定义
-> Context Engineering（上下文工程）是设计 Agent 每次推理时看到的完整信息结构——系统级的信息架构设计。[[Unmesh-Joshi]] 指出，一个具有稳定词汇和清晰 [[Conceptual-Model|概念模型]] 的代码库本身就是最重要的上下文工程（Context Engineering）。
+> Context Engineering（上下文工程）是设计 Agent 每次推理时看到的完整信息结构——系统级的信息架构设计。Unmesh-Joshi 指出，一个具有稳定词汇和清晰 [[Conceptual-Model|概念模型]] 的代码库本身就是最重要的上下文工程（Context Engineering）。
 
 ## 核心实践案例
 

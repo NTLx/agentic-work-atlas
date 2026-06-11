@@ -17,7 +17,6 @@ related_entities:
   - "[[Agentic-Engineering]]"
 source_raw:
   - "[[Open and closed models are on different exponentials]]"
-  - "[[The next chapter in flood resilience Open sourcing Google’s hydrology framework]]"
 ---
 
 # Closed Frontier Models vs Open Model Economy

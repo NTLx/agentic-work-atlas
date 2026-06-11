@@ -12,7 +12,6 @@ tags:
   - domain-driven-design
   - software-development-process
 related_entities:
-  - "[[Unmesh-Joshi]]"
   - "[[Conceptual-Model]]"
   - "[[Ubiquitous-Language]]"
   - "[[Programming-Languages-as-Thinking-Tools]]"

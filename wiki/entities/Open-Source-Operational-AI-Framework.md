@@ -20,7 +20,7 @@ related_entities:
   - "[[Layered-AI-Sourcing]]"
   - "[[Forward-Deployed-Engineer]]"
 source_raw:
-  - "[[The next chapter in flood resilience Open sourcing Google’s hydrology framework]]"
+  - "[[Open and closed models are on different exponentials]]"
 ---
 
 # Open-Source Operational AI Framework（开源运营型 AI 框架）

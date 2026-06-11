@@ -85,8 +85,8 @@ tags:
 
 - [[Recursive-Self-Improvement]]
 - [[Anthropic]]
-- [[Marina-Favaro]]
-- [[Jack-Clark]]
+- Marina-Favaro
+- Jack-Clark
 - [[Anthropic-Institute]]
 - [[Task-Horizon]]
 - [[AI-Psychosis]]

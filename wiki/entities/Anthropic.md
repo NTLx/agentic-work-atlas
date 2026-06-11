@@ -16,8 +16,6 @@ related_entities:
   - "[[Claude-Code-CLI]]"
   - "[[Coding-Agents]]"
   - "[[Anthropic-Institute]]"
-  - "[[Marina-Favaro]]"
-  - "[[Jack-Clark]]"
   - "[[Recursive-Self-Improvement]]"
   - "[[Task-Horizon]]"
   - "[[Agentic-Engineering]]"
@@ -80,7 +78,6 @@ Anthropic 这篇博文的"自我克制"是机构话术的典型结构：
 ## 前提与局限性
 
 （边界条件、反例与适用场景）
-
 
 ## 外部链接
 

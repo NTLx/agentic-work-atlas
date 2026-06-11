@@ -16,8 +16,6 @@ related_entities:
   - "[[Cognitive-Debt]]"
   - "[[Programming-Languages-as-Thinking-Tools]]"
   - "[[Ontology]]"
-  - "[[TBox]]"
-  - "[[ABox]]"
   - "[[Knowledge-Compilation]]"
   - "[[LLM-Wiki]]"
   - "[[Context-Engineering]]"
@@ -102,7 +100,7 @@ AI 生成词汇
 
 [[Ontology|本体]]把这个问题推到企业尺度：如果一个组织想让 Agent 理解订单、库存、客户、权限、风险，它不能只靠 prompt 解释。它需要稳定的语义层。
 
-[[TBox]]定义概念和规则，[[ABox]]承载事实实例。这个区分很关键：Agent 可以在事实层工作，但它必须被概念层约束。否则每个 Agent 都会临时发明一套业务世界。
+TBox定义概念和规则，ABox承载事实实例。这个区分很关键：Agent 可以在事实层工作，但它必须被概念层约束。否则每个 Agent 都会临时发明一套业务世界。
 
 这与代码中的限界上下文是同构问题：小系统需要清晰词汇，大企业需要清晰本体。
 

@@ -44,8 +44,8 @@ tags:
 
 ### 关联概念
 - [[Ontology]]
-- [[TBox]]
-- [[ABox]]
+- TBox
+- ABox
 - [[Knowledge-Graph]]
 - [[Ontology-Agent]]
 - [[Enterprise-Ontology-Application]]

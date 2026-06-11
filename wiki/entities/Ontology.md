@@ -12,11 +12,6 @@ tags:
   - Enterprise-AI
   - Knowledge-Engineering
 related_entities:
-  - '[[TBox]]'
-  - '[[ABox]]'
-  - '[[RDF]]'
-  - '[[OWL]]'
-  - '[[Protégé]]'
   - '[[Ontology-Agent]]'
   - '[[Knowledge-Graph]]'
   - '[[Enterprise-Ontology-Application]]'
@@ -34,7 +29,7 @@ source_raw:
 ## 关键数据点
 
 - **核心定位**：本体不是另一个数据库，而是业务世界的语义地图。它回答"什么是什么、对象之间如何关联、什么条件成立"。
-- **组成方式**：[[TBox]] 定义稳定概念、关系和约束，[[ABox]] 注入具体业务事实，推理机在两者结合处生成新的分类或结论。
+- **组成方式**：TBox 定义稳定概念、关系和约束，ABox 注入具体业务事实，推理机在两者结合处生成新的分类或结论。
 - **企业价值**：当 ERP、OMS、MES 等系统对同一词使用不同口径时，本体提供共享语义层，降低 Agent 把同词误判为同义的风险。
 - **Agent 价值**：[[Ontology-Agent]] 不让 LLM 直接猜业务规则，而是把关键规则判定交给本体工具和推理机，再由 LLM 解释结果、组织行动。
 - **与知识图谱的区别**：[[Knowledge-Graph]] 更偏事实集合，本体更偏概念、关系、约束和可推理结构。两者常配合使用，但不能互相替代。
@@ -70,11 +65,11 @@ source_raw:
 
 ## 关联概念
 
-- [[TBox]]：本体的概念与规则部分
-- [[ABox]]：本体的事实数据部分
-- [[RDF]]：基础数据标准（三元组）
-- [[OWL]]：高级本体表示语言
-- [[Protégé]]：本体建模工具
+- TBox：本体的概念与规则部分
+- ABox：本体的事实数据部分
+- RDF：基础数据标准（三元组）
+- OWL：高级本体表示语言
+- Protégé：本体建模工具
 - [[Ontology-Agent]]：基于本体的 AI Agent
 - [[Knowledge-Graph]]：事实数据的集合（与本体互补）
 - [[Enterprise-Ontology-Application]]：企业级本体进入 AI Agent 的主题页

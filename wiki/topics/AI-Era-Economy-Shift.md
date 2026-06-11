@@ -9,7 +9,6 @@ tags:
   - economy
   - knowledge-work
 related_entities:
-  - '[[Aaron-Levie]]'
   - '[[Allocation-Economy]]'
   - '[[Always-On-Economy]]'
   - '[[Ethan-Mollick]]'
@@ -155,7 +154,7 @@ AI 接管任务，但需要人整合工作流产生真正价值。
 
 ## 参见
 
-- [[Aaron-Levie]] - Box CEO，Agent Economy 观点
+- Aaron-Levie - Box CEO，Agent Economy 观点
 - [[Ethan-Mollick]] - Wharton 教授，Delegation Equation 提出者
 - [[Konstantine-Buhler]] - Sequoia 合伙人，Agent Economy 投资视角
 

@@ -11,7 +11,6 @@ related_entities:
   - '[[Agent-Orchestration]]'
   - '[[Agent-Swarm]]'
   - '[[Context-Engineering]]'
-  - '[[Elvis-Sun]]'
   - '[[Multi-Layer-Memory]]'
   - '[[Three-State-Protocol]]'
   - "[[Multi-Agent-System-Pathology]]"
@@ -215,7 +214,7 @@ Elvis 的实战数据：
 
 ## 参见
 
-- [[Elvis-Sun]] - OpenClaw 系统作者，实战数据来源
+- Elvis-Sun - OpenClaw 系统作者，实战数据来源
 
 ## 来源
 

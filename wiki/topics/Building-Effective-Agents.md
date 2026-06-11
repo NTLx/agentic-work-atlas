@@ -12,9 +12,7 @@ related_entities:
   - '[[ACI-Agent-Computer-Interface]]'
   - '[[Agent-Workflow-Patterns]]'
   - '[[Agent-Harness]]'
-  - '[[Barry-Zhang]]'
   - '[[Coding-Agents]]'
-  - '[[Erik-Schluntz]]'
   - '[[MIT-Technology-Review-Insights]]'
   - "[[Verifiability]]"
   - "[[Bias-to-Action-LLM]]"
@@ -214,8 +212,8 @@ Evaluator-Optimizer 是最接近生产价值的模式，因为它把模型输出
 
 ## 参见
 
-- [[Barry-Zhang]] - Building Effective Agents 合著者
-- [[Erik-Schluntz]] - Building Effective Agents 合著者
+- Barry-Zhang - Building Effective Agents 合著者
+- Erik-Schluntz - Building Effective Agents 合著者
 - [[MIT-Technology-Review-Insights]] - Agent 报告研究部门
 
 ---

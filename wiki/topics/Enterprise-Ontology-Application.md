@@ -10,19 +10,8 @@ tags:
   - AI-Agent
 related_entities:
   - '[[Ontology]]'
-  - '[[TBox]]'
-  - '[[ABox]]'
   - '[[Knowledge-Graph]]'
-  - '[[Class]]'
-  - '[[Individual]]'
-  - '[[RDF]]'
-  - '[[OWL]]'
-  - '[[Protégé]]'
-  - '[[HermiT]]'
   - '[[Ontology-Agent]]'
-  - '[[Owlready2]]'
-  - '[[GraphDB]]'
-  - '[[SPARQL]]'
   - "[[Code-as-Conceptual-Infrastructure]]"
   - "[[Integration-Wall]]"
 source_raw:
@@ -71,8 +60,8 @@ source_raw:
 
 | 积木 | 含义 | 类比 |
 |------|------|------|
-| [[Class]]（类） | 业务对象类型 | 数据库表 / OOP Class |
-| [[Individual]]（实例） | 具体业务事实 | 数据库行 / OOP Object |
+| Class（类） | 业务对象类型 | 数据库表 / OOP Class |
+| Individual（实例） | 具体业务事实 | 数据库行 / OOP Object |
 | Object Property（关系） | 概念之间的链接 | 外键 / OOP 引用 |
 | Data Property（属性） | 业务特征 | 数据库列 / 成员变量 |
 | Axiom（约束） | 业务规则 | CHECK 约束 / 不变式 |
@@ -81,15 +70,15 @@ source_raw:
 ## 技术栈
 
 ### 语言与标准
-- [[RDF]]：基础数据标准（三元组），适合表达 ABox
-- [[OWL]]：高级本体语言，适合建模 TBox
+- RDF：基础数据标准（三元组），适合表达 ABox
+- OWL：高级本体语言，适合建模 TBox
 
 ### 工具链
-- [[Protégé]]：本体建模工具（开发期）
-- [[HermiT]]：OWL 推理引擎
-- [[Owlready2]]：Python 本体操作库
-- [[GraphDB]]：生产环境三元组库
-- [[SPARQL]]：本体查询语言
+- Protégé：本体建模工具（开发期）
+- HermiT：OWL 推理引擎
+- Owlready2：Python 本体操作库
+- GraphDB：生产环境三元组库
+- SPARQL：本体查询语言
 
 ## 应用案例
 
@@ -136,8 +125,8 @@ source_raw:
 | 层 | 作用 | 典型实现 |
 |----|------|----------|
 | 事实来源 | 保留真实业务数据和事务更新 | ERP、OMS、MES、CRM、数据库 |
-| 语义模型 | 定义业务概念、关系、约束 | [[Ontology]]、[[TBox]]、[[OWL]] |
-| 推理运行 | 注入当前事实并得到分类结论 | [[ABox]]、[[HermiT]]、[[GraphDB]] |
+| 语义模型 | 定义业务概念、关系、约束 | [[Ontology]]、TBox、OWL |
+| 推理运行 | 注入当前事实并得到分类结论 | ABox、HermiT、GraphDB |
 | Agent 接口 | 选择工具、解释结果、发起下一步 | ontology tools、数据库工具、工作流 |
 
 这个架构的关键不是技术栈齐全，而是职责边界清楚。数据库负责事实，TBox 负责规则，ABox 负责运行时事实快照，推理机负责确定性判断，LLM 负责语言交互和工具编排。

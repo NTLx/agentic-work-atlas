@@ -40,14 +40,14 @@ tags:
 - **与 [[Verifiable-Agent-Engineering]] 对标**: 这是高质量案例。Agent 的成功不靠一次 prompt，而靠可审计模板、结构化输出、复杂度门控、人工升级和周期性人工复核。
 - **与 [[Agent-Harness]] 对标**: Parent orchestrator、reviewer sub-agent、implementer sub-agent、schema、escalation gate、re-audit loop 共同构成完整 harness。
 - **与 [[Bias-to-Action-LLM]] 对标**: "模型想生成代码"在 accessibility 场景会制造真实风险，因此需要设计不生成代码的路径，而不是默认越主动越好。
-- **与 [[Social-Model-of-Disability]] 对标**: 文章采用社会模型，把问题定义为环境造成 access barriers，而不是把无障碍看作少数用户的附加需求。
+- **与 Social-Model-of-Disability 对标**: 文章采用社会模型，把问题定义为环境造成 access barriers，而不是把无障碍看作少数用户的附加需求。
 
 ### 关联概念
 - [[Accessibility-Agent]]
 - [[Verifiable-Agent-Engineering]]
 - [[Agent-Harness]]
 - [[Bias-to-Action-LLM]]
-- [[Accessibility-Complexity-Evaluation]]
-- [[Accessibility-High-Risk-Patterns]]
-- [[WCAG]]
-- [[Social-Model-of-Disability]]
+- Accessibility-Complexity-Evaluation
+- Accessibility-High-Risk-Patterns
+- WCAG
+- Social-Model-of-Disability

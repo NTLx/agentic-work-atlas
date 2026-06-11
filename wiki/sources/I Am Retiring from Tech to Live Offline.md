@@ -58,7 +58,7 @@ tags:
 
 ### 关联概念
 
-- [[Chad-Whitacre]] - 作者，Open Source Endowment / Open Source Pledge 相关人物
+- Chad-Whitacre - 作者，Open Source Endowment / Open Source Pledge 相关人物
 - [[AI-Amish]] - 对 AI 和互联网作选择性拒绝，以保存离线生活方式
 - [[AI-Restraint]] - 从系统克制扩展到人的生活方式克制
 - [[Cognitive-Surrender]] - 作者拒绝的是让自己变成讨厌样子的技术环境

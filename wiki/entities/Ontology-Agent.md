@@ -14,13 +14,6 @@ tags:
   - Ontology
 related_entities:
   - '[[Ontology]]'
-  - '[[TBox]]'
-  - '[[ABox]]'
-  - '[[OWL]]'
-  - '[[HermiT]]'
-  - '[[Owlready2]]'
-  - '[[GraphDB]]'
-  - '[[SPARQL]]'
   - '[[Enterprise-Ontology-Application]]'
 source_raw:
   - '[[20260420-ontology-meets-agent-case-study]]'
@@ -34,9 +27,9 @@ source_raw:
 
 ## 关键数据点
 
-- **核心分工**：LLM 负责理解请求、选择工具、解释结果；[[Ontology]]、[[TBox]] 和推理机负责高风险业务规则判断。
-- **运行闭环**：从数据库或业务系统取事实，映射成 [[ABox]]，调用 [[OWL]] 推理工具，读取分类结果，再由 Agent 组织回答或下一步动作。
-- **典型工具栈**：业务数据库、ontology query tool、ontology reasoning tool、[[Owlready2]] + [[HermiT]] 的开发期实现，或 [[GraphDB]] + [[SPARQL]] 的生产级语义服务。
+- **核心分工**：LLM 负责理解请求、选择工具、解释结果；[[Ontology]]、TBox 和推理机负责高风险业务规则判断。
+- **运行闭环**：从数据库或业务系统取事实，映射成 ABox，调用 OWL 推理工具，读取分类结果，再由 Agent 组织回答或下一步动作。
+- **典型工具栈**：业务数据库、ontology query tool、ontology reasoning tool、Owlready2 + HermiT 的开发期实现，或 GraphDB + SPARQL 的生产级语义服务。
 - **工具选择原则**：日常明细查询走数据库；规则判定走本体推理；概念解释走本体定义；跨对象关系查询走知识图谱或 SPARQL。
 - **关键收益**：把"能否发货"、"能否加急"、"是否特殊处理"这类判断从 LLM 内部迁移到可审计、可测试、可解释的外部语义层。
 
@@ -72,11 +65,11 @@ source_raw:
 ## 关联概念
 
 - [[Ontology]]：Ontology-Agent 的核心语义层
-- [[TBox]]：规则定义来源
-- [[ABox]]：运行时注入的事实数据
-- [[OWL]]：本体语言
-- [[HermiT]]：推理引擎
-- [[Owlready2]]：Python 本体操作库
-- [[GraphDB]]：生产环境语义存储与查询后端
-- [[SPARQL]]：知识图谱和推理结果查询语言
+- TBox：规则定义来源
+- ABox：运行时注入的事实数据
+- OWL：本体语言
+- HermiT：推理引擎
+- Owlready2：Python 本体操作库
+- GraphDB：生产环境语义存储与查询后端
+- SPARQL：知识图谱和推理结果查询语言
 - [[Enterprise-Ontology-Application]]：本体进入企业 Agent 的主题页

@@ -14,7 +14,6 @@ related_entities:
   - '[[Code-Execution]]'
   - '[[Compound-Engineering]]'
   - '[[Dominator-Analysis]]'
-  - '[[Raj-Nandan-Sharma]]'
   - '[[Simon-Willison]]'
   - '[[Technical-Debt-Avoidance]]'
   - '[[Vibe-Coding]]'
@@ -252,7 +251,7 @@ Agentic Engineering 不能把生成成本下降变成 review 成本转嫁。[[Ag
 
 ## 参见
 
-- [[Raj-Nandan-Sharma]] - AI Agent 实践文章作者
+- Raj-Nandan-Sharma - AI Agent 实践文章作者
 - [[Simon-Willison]] - Agentic Engineering 指南作者
 - [[Technical-Debt-Avoidance]] - Agentic Engineering 核心模式：用助手预防技术债务
 - [[Harness-Engineering]] - 让 Agent 成为主要构建者的完整系统框架

@@ -19,12 +19,8 @@ related_entities:
   - "[[Tool-Use-Architecture]]"
   - "[[Open-Source-Operational-AI-Framework]]"
   - "[[Deterministic-Retrieval]]"
-  - "[[Biological-Data-Infrastructure]]"
-  - "[[Laura-Luebbert]]"
-  - "[[VirBench]]"
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
-  - "[[The next chapter in flood resilience Open sourcing Google’s hydrology framework]]"
   - "[[20260608-paving-the-way-for-agents-in-biology]]"
 ---
 
@@ -44,7 +40,7 @@ Hassabis 从 AlphaGo 和 AlphaFold 总结出一个模式：当问题可以被描
 - AlphaFold 被全球数百万研究者使用，说明科学发现 AI 的价值不只是论文指标，而是能成为科研基础设施。
 - Hassabis 提出的通用条件是：组合搜索空间足够大、目标函数清晰、有足够数据或模拟器生成分布内数据。
 - 药物发现可被表述为搜索问题：如果物理规律允许某种化合物存在，难点就是如何高效找到它。
-- **确定性检索层（[[Deterministic-Retrieval]]）** 的缺失是科学智能体的核心瓶颈。Anthropic 研究显示，在引入 [[gget-virus]] 后，Agent 在病毒序列检索上的准确率从 16.9% 提升至 99.7%（2026）。
+- **确定性检索层（[[Deterministic-Retrieval]]）** 的缺失是科学智能体的核心瓶颈。Anthropic 研究显示，在引入 gget-virus 后，Agent 在病毒序列检索上的准确率从 16.9% 提升至 99.7%（2026）。
 - 虚拟细胞路线需要更强的观测和模拟能力，可能依赖无损活细胞纳米级成像，也可能依赖更好的学习型模拟器。
 - 通用模型不应把所有专业科学知识塞进一个巨大脑袋；更可行的是通过 [[Tool-Use-Architecture|工具使用架构]] 调用 AlphaFold 这类专用系统。
 - Google Research 的新水文模型相对旧版本，在有测站流域延长六天可靠预测窗口，在无测站流域延长一天；更重要的是，团队把模型架构、训练管线、文档和教程开放给运营机构。
@@ -105,6 +101,6 @@ Google 水文框架提供了一个完整转换链：
 - [[Demis-Hassabis]] - AlphaGo / AlphaFold 路线背后的关键人物
 - [[Open-Source-Operational-AI-Framework]] - 把科学模型转成可被本地机构运营和改进的基础设施
 - [[Deterministic-Retrieval]] - 确保科学数据获取 100% 准确的技术
-- [[Biological-Data-Infrastructure]] - 为 Agent 设计的科研数据底座
-- [[Laura-Luebbert]] - 科学智能体基础设施的研究者
-- [[VirBench]] - 衡量科学检索准确性的基准
+- Biological-Data-Infrastructure - 为 Agent 设计的科研数据底座
+- Laura-Luebbert - 科学智能体基础设施的研究者
+- VirBench - 衡量科学检索准确性的基准

@@ -33,7 +33,6 @@ source_raw:
   - "[[The Return of the Deployment Company]]"
   - "[[20260601-stanford-enterprise-ai-playbook]]"
   - "[[20260601-mit-nanda-genai-divide]]"
-  - "[[The next chapter in flood resilience Open sourcing Google’s hydrology framework]]"
   - "[[20260601-klarna-ai-assistant-customer-service]]"
   - "[[20260601-lightspeed-fin-ai-agent]]"
   - "[[20260601-mercado-libre-github-copilot]]"

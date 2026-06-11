@@ -48,10 +48,10 @@ tags:
 ### 关联概念
 
 - [[Lean-Stack]]
-- [[Runway-Math]]
-- [[Anti-Enterprise-Mindset]]
+- Runway-Math
+- Anti-Enterprise-Mindset
 - [[Constraint-Driven-Engineering]]
-- [[B2B-Nurture-C-Model]]
-- [[Time-Moat]]
+- B2B-Nurture-C-Model
+- Time-Moat
 - [[Steve-Hanov]]
 - [[Vibe-Coding]]

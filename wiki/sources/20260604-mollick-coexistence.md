@@ -89,8 +89,8 @@ tags:
 
 - [[Co-Existence]]
 - [[Co-Intelligence]]
-- [[AIO]]
-- [[AI-Gatekeeper]]
+- AIO
+- AI-Gatekeeper
 - [[Prompt-Injection-Risk]]
 - [[Exit-Sovereignty]]
 - [[Ethan-Mollick]]

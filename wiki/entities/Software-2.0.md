@@ -35,8 +35,7 @@ source_raw:
 
 **Software 2.0** 是 Andrej Karpathy 提出的软件开发范式转变概念：指明从程序员编写代码（Software 1.0）转向程序员编写目标、神经网络通过数据编程（Software 2.0）的转变。
 
-在 LLM 时代，[[Unmesh-Joshi]] 进一步指出，即使在 Software 2.0 范式下，代码作为 [[Conceptual-Model]] 的价值依然存在且在放大。
-
+在 LLM 时代，Unmesh-Joshi 进一步指出，即使在 Software 2.0 范式下，代码作为 [[Conceptual-Model]] 的价值依然存在且在放大。
 
 | 范式 | 程序员的工作 | 程序的来源 |
 |-----|-------------|-----------|

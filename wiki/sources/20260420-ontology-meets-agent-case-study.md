@@ -45,9 +45,9 @@ tags:
 ### 关联概念
 - [[Ontology]]
 - [[Ontology-Agent]]
-- [[TBox]]
-- [[ABox]]
-- [[OWL]]
-- [[HermiT]]
-- [[Owlready2]]
+- TBox
+- ABox
+- OWL
+- HermiT
+- Owlready2
 - [[Enterprise-Ontology-Application]]

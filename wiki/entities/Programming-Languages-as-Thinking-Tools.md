@@ -12,7 +12,6 @@ tags:
   - cognitive-science
   - software-design
 related_entities:
-  - "[[Unmesh-Joshi]]"
   - "[[Vocabulary-Building]]"
   - "[[Conceptual-Model]]"
   - "[[Cognitive-Debt]]"
@@ -46,7 +45,7 @@ source_raw:
 
 ## AI 时代的反思
 
-在 LLM 时代，有人认为”英语是新的编程语言”。但 [[Unmesh-Joshi|Unmesh Joshi]] 提醒我们三个反直觉的事实：
+在 LLM 时代，有人认为”英语是新的编程语言”。但 Unmesh Joshi 提醒我们三个反直觉的事实：
 
 1. **主动参与的不可替代性**：只有通过编写和重塑代码，才能触发深层的设计思考。让 AI 生成代码然后被动评审，无法替代主动编码带来的认知深度。
 

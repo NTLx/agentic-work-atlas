@@ -14,7 +14,6 @@ tags:
   - agile
   - thoughtworks
 related_entities:
-  - '[[Unmesh-Joshi]]'
   - '[[Conceptual-Model]]'
 source_raw:
   - "[[20260414-martin-fowler-fragments]]"
@@ -28,7 +27,7 @@ source_raw:
 
 ## 简介
 
-Martin Fowler 是软件架构领域最具影响力的专家之一。2026 年，他为 [[Unmesh-Joshi]] 的重要文章《What Is Code?》提供了深度反馈。
+Martin Fowler 是软件架构领域最具影响力的专家之一。2026 年，他为 Unmesh-Joshi 的重要文章《What Is Code?》提供了深度反馈。
 - ThoughtWorks 首席科学家
 - 敏捷软件开发先驱
 - Refactoring、Continuous Integration 等概念的推广者

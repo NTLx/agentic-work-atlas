@@ -14,8 +14,6 @@ tags:
   - anthropic
 related_entities:
   - "[[Anthropic]]"
-  - "[[Marina-Favaro]]"
-  - "[[Jack-Clark]]"
   - "[[Recursive-Self-Improvement]]"
   - "[[Verifiability]]"
 source_raw:
@@ -40,8 +38,8 @@ validated_at: "2026-06-06"
 
 ## 关联作者
 
-- [[Marina-Favaro]] — 《When AI builds itself》主笔
-- [[Jack-Clark]] — 联合署名 + 编辑支持
+- Marina-Favaro — 《When AI builds itself》主笔
+- Jack-Clark — 联合署名 + 编辑支持
 
 ## 关键数据点
 
@@ -50,7 +48,6 @@ validated_at: "2026-06-06"
 ## 前提与局限性
 
 （边界条件、反例与适用场景）
-
 
 ## 外部链接
 
