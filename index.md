@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-06-12
+updated: 2026-06-13
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 259 个 |
+| Entity 页面 | 261 个 |
 | Topic 页面 | 28 个 |
 | Comparison 页面 | 18 个 |
-| Raw 文章 | 120 个 |
+| Raw 文章 | 123 个 |
 | Output 作品 | 4 个 |
 
 ---
@@ -63,6 +63,8 @@ tags:
 |--------|------|------|
 | [[wiki/entities/LLM-Wiki\|LLM Wiki]] | 为 AI 消费设计的、具有强语义关联和证据溯源的知识库 | CC+Obsidian Wiki |
 | [[wiki/entities/Ontology\|Ontology（本体）]] | 对现实业务世界的数字化建模，承载语义结构与规则 | Ontology 系列 |
+| [[wiki/entities/UModel\|UModel（统一可观测模型）]] | 阿里云基于本体论的 IT 世界统一建模框架，以实体为中心、以图为核心 | Ontology 泛谈系列 |
+| [[wiki/entities/NLAH\|NLAH（自然语言智能体驾驭层）]] | 将 Agent 驾驭策略从代码中外置为可执行的自然语言文档 | NLAH 论文解读 |
 | [[wiki/entities/Knowledge-Compilation\|Knowledge Compilation（知识编译）]] | 将非结构化来源提炼为结构化、可查询知识节点的动作 | Agentic Work Atlas Schema |
 
 #### AI 政策与监管
@@ -83,11 +85,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（120 个）*
+*原始剪藏文章（123 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：Claude Code 一周年回顾视频字幕 + Thousand Token Wood v3。新增 6 个 entity：[[Agent-Verification]]、[[Auto-Mode]]、[[Context-Minimalism]]、[[Role-Merging]]、[[Emergence]]、[[Agent-Heterogeneity]]、[[Settlement-Mechanism]]。
+最新编译：NLAH 论文解读 + Ontology 泛谈系列（2 篇）。新增 2 个 entity：[[NLAH]]、[[UModel]]。更新 Agent-Harness、Ontology entity 和 Enterprise-Ontology-Application topic。
 
 ---
 

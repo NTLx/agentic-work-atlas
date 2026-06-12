@@ -3,7 +3,7 @@ type: topic
 title: Enterprise-Ontology-Application
 definition: "企业级本体应用系列：用本体为 AI Agent 提供统一的业务语义层，解决企业 AI 的幻觉、语义不一致、不可解释等问题。"
 created: 2026-04-20
-updated: 2026-05-25
+updated: 2026-06-13
 tags:
   - Ontology
   - Enterprise-AI
@@ -14,10 +14,14 @@ related_entities:
   - '[[Ontology-Agent]]'
   - "[[Code-as-Conceptual-Infrastructure]]"
   - "[[Integration-Wall]]"
+  - '[[UModel]]'
+  - '[[Agent-Harness]]'
 source_raw:
   - '[[20260420-ontology-enterprise-ai-agent]]'
   - '[[20260420-build-first-business-ontology]]'
   - '[[20260420-ontology-meets-agent-case-study]]'
+  - '[[20260613-ontology-for-agent-optimization]]'
+  - '[[20260613-ontology-tokenmaxxing]]'
 ---
 
 # 企业级本体应用（Enterprise Ontology Application）
@@ -145,9 +149,50 @@ source_raw:
 
 本体的真正价值不是多一个知识库，而是让 Agent 进入企业流程时有一套共享、可审计、可演化的业务语义契约。
 
+## Ontology 与 Token 效率（Tokenmaxxing 困局）
+
+Agentic 编程的 Token 消耗问题正在成为企业 AI 落地的核心挑战。Uber 向约 5000 名工程师推广 Claude Code 四个月后，使用量烧光了全年 AI 编程预算。三方数据源（arXiv:2604.22750、Vantage.sh、Reddit 1 亿 token 追踪）的共识是：Agent 的 Token 消耗 85-99% 来自 Input Token，本质是"读太多而非写太多"。
+
+### Input Token 五大消耗源
+
+| 类别 | 消耗等级 | 说明 |
+|------|---------|------|
+| C1 文件盲读 | 高 | Agent 无差别读取大量文件定位信息 |
+| C2 依赖探索 | 高 | 追踪实体间关系（A 调 B、B 部署在 C） |
+| C3 上下文重建 | 中 | 跨会话/跨轮次重建工作上下文 |
+| C4 生成迭代 | 低 | 代码生成和修改循环 |
+| C5 工具试错 | 低 | 工具参数猜测和错误重试 |
+
+C2（依赖探索）是最具结构性、最适合架构手段干预的消耗源。
+
+### 依赖探索的三代范式
+
+| 范式 | 做法 | 优势 | 瓶颈 |
+|------|------|------|------|
+| Stuffing | 把所有相关文本塞进上下文 | 简单直接 | 容量受限 |
+| RAG | 检索相关文本片段 | 打开容量 | 语义碎片化，不知道实体间直接依赖 |
+| Ontology | 在知识图谱上查询实体关系 | 关系成为一等公民 | 需要前期建模投入 |
+
+### 运维领域的 Ontology 实证
+
+阿里云 [[UModel]] 和 STAROps 是国内 AIOps 方向把 Ontology 落地较完整的实践：
+
+- **UModel**：以实体为中心的统一建模框架，推动可观测体系从"面向数据"转向"面向对象"。告警时直接定位实体、沿关系链聚合关联数据
+- **STAROps**：基于 UModel + 大模型的 AIOps Agent，实现实体感知 → 自动编排多源查询 → 深度调查 → 因果链确认 → 处置建议的完整故障诊断流程
+- **代码知识图谱**：Codebase-Memory（arXiv:2603.27277）在 31 个代码仓库上验证，有图谱时 token 消耗压缩 10 倍、工具调用减少 2.1 倍
+
+### 模型变强后 Ontology 是否仍必要？
+
+取决于领域。代码场景的 Ontology 价值可能被模型内化，但运维等企业级领域因三个结构性原因，Ontology 价值不会被模型吃掉：
+1. 企业实体和关系永远不在通用模型预训练语料中
+2. 运维的本质是关系推理（告警在 A，根因在 B，中间三层依赖）
+3. 严肃场景对准确率容忍度极低——"83% 准确率"不可接受
+
 ---
 
-*本 Topic 整合自「企业级本体应用」系列三篇文章。*
+*本 Topic 整合自「企业级本体应用」系列五篇文章。*
 
 ## 关联 Entity
 - [[Knowledge-Graph]]
+- [[UModel]]
+- [[Agent-Harness]]

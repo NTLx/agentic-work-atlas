@@ -7,7 +7,7 @@ aliases:
   - 本体论
 definition: "把业务概念、关系和规则形式化为机器可读语义层，用来约束 Agent 对企业事实的解释与推理"
 created: 2026-04-20
-updated: 2026-05-25
+updated: 2026-06-13
 tags:
   - Enterprise-AI
   - Knowledge-Engineering
@@ -15,10 +15,13 @@ related_entities:
   - '[[Ontology-Agent]]'
   - '[[Knowledge-Graph]]'
   - '[[Enterprise-Ontology-Application]]'
+  - '[[UModel]]'
 source_raw:
   - '[[20260420-ontology-enterprise-ai-agent]]'
   - '[[20260420-build-first-business-ontology]]'
   - '[[20260420-ontology-meets-agent-case-study]]'
+  - '[[20260613-ontology-for-agent-optimization]]'
+  - '[[20260613-ontology-tokenmaxxing]]'
 ---
 
 # Ontology（本体）
@@ -34,6 +37,9 @@ source_raw:
 - **Agent 价值**：[[Ontology-Agent]] 不让 LLM 直接猜业务规则，而是把关键规则判定交给本体工具和推理机，再由 LLM 解释结果、组织行动。
 - **与知识图谱的区别**：[[Knowledge-Graph]] 更偏事实集合，本体更偏概念、关系、约束和可推理结构。两者常配合使用，但不能互相替代。
 - **与代码的关系**：本体把业务概念从 prompt、流程和 if/else 中抽出来，成为可版本化、可测试、可解释的概念基础设施。
+- **Token 效率价值**：Agentic 编程的 Token 消耗 85-99% 来自 Input Token，其中依赖探索（追踪实体间关系）是最具结构性的消耗源。Ontology 把"在文本里推断关系"变成"在图谱上查询关系"，Codebase-Memory（arXiv:2603.27277）验证有图谱时 token 消耗压缩 10 倍。
+- **运维领域实证**：阿里云 [[UModel]] 在运维场景中实现从"面向数据"到"面向对象"的转变，告警时直接定位实体并沿关系链聚合关联数据，避免多轮元数据查询和字段映射推断的 Token 开销。
+- **长期价值判断**：代码场景的本体价值可能被模型内化（代码是预训练主战场），但运维等企业级领域因私有数据、关系推理本质和高准确率要求，本体价值不会被模型吃掉。Palantir 市值 3000 亿+美金是对"企业 Ontology"能力的资本市场定价。
 
 ## 何时值得使用
 
@@ -73,3 +79,4 @@ source_raw:
 - [[Ontology-Agent]]：基于本体的 AI Agent
 - [[Knowledge-Graph]]：事实数据的集合（与本体互补）
 - [[Enterprise-Ontology-Application]]：企业级本体进入 AI Agent 的主题页
+- [[UModel]]：阿里云基于本体论的 IT 世界统一建模框架
