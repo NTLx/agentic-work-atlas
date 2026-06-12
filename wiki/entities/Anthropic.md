@@ -4,14 +4,15 @@ title: Anthropic
 aliases:
   - Anthropic
   - Anthropic Inc
-definition: "由 Dario Amodei 等人于 2021 年创立的前沿 AI 实验室，Claude 系列模型开发方，2026 年以一手数据公开 AI 递归自我改进进程"
+definition: "由 Dario Amodei 等人于 2021 年创立的前沿 AI 实验室，Claude 系列模型开发方，2026 年以一手数据公开 AI 递归自我改进进程，并发布 Advanced AI Framework 政策提案"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-12
 tags:
   - organization
   - AI-frontier-lab
   - claude
   - agentic-engineering
+  - AI-policy
 related_entities:
   - "[[Claude-Code-CLI]]"
   - "[[Coding-Agents]]"
@@ -19,8 +20,13 @@ related_entities:
   - "[[Recursive-Self-Improvement]]"
   - "[[Task-Horizon]]"
   - "[[Agentic-Engineering]]"
+  - "[[Frontier-Developer-Obligations]]"
+  - "[[Societal-Resilience]]"
+  - "[[AI-Policy-Framework]]"
 source_raw:
   - "[[20260604-anthropic-recursive-self-improvement]]"
+  - "[[20260610-ai-exponential-policy]]"
+  - "[[20260610-anthropic-ai-exploits-security-patches]]"
 validated_source: "https://www.anthropic.com/about"
 validated_at: "2026-06-06"
 ---
@@ -64,6 +70,18 @@ Anthropic 这篇博文的"自我克制"是机构话术的典型结构：
 
 这种"在不确定中也要做出选择"的姿态，是 AI 安全派 + 算力扩张派的稳定公约数。
 
+## 2026-06 Advanced AI Framework 政策提案
+
+Anthropic 在 2026-06-10 发布了 [[AI-Policy-Framework|Advanced AI Framework]]，包含：
+
+- **开发者义务**: [[Frontier-Developer-Obligations]] — 测试、透明度、独立评估、安全、执法
+- **社会韧性**: [[Societal-Resilience]] — 生物和网络威胁的预防、检测、准备
+- **触发门槛**: 模型 >10²⁵ FLOP + 公司 >`$500M` AI 收入
+- **四类风险**: 生物武器、网络攻击、AI 失控、自动化研发
+- **执行权**: 政府有权阻断部署，民事处罚与全球年收入挂钩
+
+配套发布 Dario Amodei 个人长文《Policy on the AI Exponential》，论述 AI 指数级进步与政策响应速度的矛盾。
+
 ## 关联概念
 | 本库主题 | Anthropic 的贡献 |
 |---------|---------------|
@@ -74,6 +92,10 @@ Anthropic 这篇博文的"自我克制"是机构话术的典型结构：
 | [[Verifiability]] | 提出 "verifiable pause" 协调机制 |
 | [[AI-Psychosis]] | 一手数据可校准 AI 能力的过度乐观/悲观 |
 | [[Allocation-Economy]] | 工程师 8x 写码但团队规模不变 → R&D 成本结构重写 |
+| [[AI-Policy-Framework]] | Advanced AI Framework 政策提案 |
+| [[Frontier-Developer-Obligations]] | 前沿开发者义务体系 |
+| [[Societal-Resilience]] | 社会韧性框架 |
+| [[N-Hour]] | Mythos 实证驱动的网络安全新范式 |
 
 ## 前提与局限性
 

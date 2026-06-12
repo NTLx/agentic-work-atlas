@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-06-11
+updated: 2026-06-12
 tags:
   - index
   - MOC
@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 247 个 |
-| Topic 页面 | 27 个 |
+| Entity 页面 | 252 个 |
+| Topic 页面 | 28 个 |
 | Comparison 页面 | 18 个 |
-| Raw 文章 | 115 个 |
+| Raw 文章 | 118 个 |
 | Output 作品 | 4 个 |
 
 ---
@@ -40,10 +40,11 @@ tags:
 | [[wiki/entities/HaaS-Harness-as-a-Service\|HaaS (Harness-as-a-Service)]] | 从提供底层模型 API 转向提供预配置 Agent 运行时的服务范式 | Agent Harness Engineering |
 | [[wiki/entities/Context-Rot\|Context Rot（上下文腐烂）]] | 随着窗口填充，模型推理和任务完成能力非线性下降的现象 | Agent Harness Engineering |
 | [[wiki/entities/Ralph-Loops\|Ralph Loops]] | 拦截退出信号并重注入提示，实现 Agent 长程任务的循环技术 | Agent Harness Engineering |
-| [[wiki/entities/AGENTS-md\|AGENTS.md]] | 作为 Agent “棘轮”规则手册的根目录规范文件 | Agent Harness Engineering |
+| [[wiki/entities/AGENTS-md\|AGENTS.md]] | 作为 Agent "棘轮"规则手册的根目录规范文件 | Agent Harness Engineering |
 | [[wiki/entities/Code-Execution\|Code Execution]] | Agent 直接在沙箱运行代码并获取反馈的能力 | Simon Willison |
 | [[wiki/entities/Vibe-Coding\|Vibe Coding（氛围编程）]] | 依靠直觉和多轮提示快速产出原型但缺乏严谨验证的开发模式 | Andrej Karpathy |
 | [[wiki/entities/Model-Context-Protocol-MCP\|MCP（Model Context Protocol）]] | 统一的模型与工具连接协议标准 | Pinterest Engineering |
+| [[wiki/entities/N-Hour\|N-Hour]] | 补丁发布后数小时内即被 AI 构建利用代码的新网络安全现实 | Anthropic Exploit Study |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
@@ -60,6 +61,13 @@ tags:
 | [[wiki/entities/Ontology\|Ontology（本体）]] | 对现实业务世界的数字化建模，承载语义结构与规则 | Ontology 系列 |
 | [[wiki/entities/Knowledge-Compilation\|Knowledge Compilation（知识编译）]] | 将非结构化来源提炼为结构化、可查询知识节点的动作 | Agentic Work Atlas Schema |
 
+#### AI 政策与监管
+| Entity | 定义 | 来源 |
+|--------|------|------|
+| [[wiki/entities/Frontier-Developer-Obligations\|Frontier Developer Obligations（前沿开发者义务）]] | Anthropic 提出的前沿 AI 开发者必须承担的监管义务体系 | Anthropic AI Framework |
+| [[wiki/entities/Societal-Resilience\|Societal Resilience（社会韧性）]] | 社会层面抵御和恢复 AI 可能加速或启用的威胁的能力 | Anthropic AI Framework |
+| [[wiki/entities/Collingridge-Dilemma\|Collingridge Dilemma（科林格里奇困境）]] | 技术影响在早期难以预见，等到清晰时已难以管理 | Dario Amodei |
+
 ---
 
 ## 📄 Raw (raw/)
@@ -68,7 +76,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：3 篇关于智能体基础设施与工程范式的核心材料：Addy Osmani《Agent Harness Engineering》、Anthropic《Paving the way for agents in biology》以及通义实验室《质量是「收敛」出来的》（Qwen3.7-Max 实验）。新增 12 个 entity，包括 [[Context-Rot]]、[[Deterministic-Retrieval]]、[[Constraint-Driven-Engineering]] 与 [[Automated-Criteria]]。
+最新编译：Dario Amodei + Anthropic《Policy on the AI Exponential》政策框架（三源合一），以及 Anthropic AI 漏洞利用研究。新增 4 个 entity：[[N-Hour]]、[[Collingridge-Dilemma]]、[[Frontier-Developer-Obligations]]、[[Societal-Resilience]]，1 个 topic：[[AI-Policy-Framework]]。更新 [[Mythos]]（漏洞利用开发数据）、[[Anthropic]]（政策框架）。
 
 ---
 

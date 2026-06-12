@@ -5,9 +5,9 @@ aliases:
   - Mythos
   - Claude Mythos
   - Anthropic Mythos
-definition: "Anthropic 面向网络安全任务的受限访问模型，用于高强度漏洞发现与安全评测"
+definition: "Anthropic 面向网络安全任务的受限访问模型，用于高强度漏洞发现、利用开发与安全评测"
 created: 2026-04-21
-updated: 2026-05-25
+updated: 2026-06-12
 tags:
   - ai-model
   - cybersecurity
@@ -19,9 +19,13 @@ related_entities:
   - '[[AISI]]'
   - '[[Security-Hardening-Phase]]'
   - '[[Verifiable-Agent-Engineering]]'
+  - '[[N-Hour]]'
+  - '[[AI-Policy-Framework]]'
 source_raw:
   - "[[20260414-cybersecurity-proof-of-work]]"
   - "[[AI and the Future of Cybersecurity Why Openness Matters]]"
+  - "[[20260610-anthropic-ai-exploits-security-patches]]"
+  - "[[20260610-ai-exponential-policy]]"
 ---
 
 # Mythos
@@ -38,6 +42,17 @@ source_raw:
 - **成功率**: 10 次尝试中成功 3 次（唯一完成任务的模型）
 - **能力特征**: 不是一次短回答，而是能在长程任务中持续探索、利用工具、推进攻击链
 - **风险含义**: 如果防御者能购买类似能力，攻击者也可能用 token 预算购买漏洞发现能力
+
+### 2026-06 漏洞利用开发能力（新增）
+
+- **Firefox SpiderMonkey**: 18 个漏洞中 14 个崩溃成功，8 个完整利用（12 小时内）
+- **第一个利用**: 补丁发布后 1 小时内完成，比 Firefox 148 发布早 18 天
+- **可靠性**: 50 次运行中 7/18 漏洞每次都能复现
+- **Windows 内核**: 21 个漏洞中 18 个发现（6 小时内），8 个完整提权链（12 小时内）
+- **Windows 成本**: 总成本 `$15,700`，平均 `$2,000`/利用
+- **评级失效**: Microsoft 评为"不太可能被利用"的 14 个漏洞中破解 13 个
+- **模型对比**: Opus 4.8 发现 15/21 Windows 漏洞但无法构建完整提权链
+- **公开可用模型**: 关闭安全过滤后也能构建利用，但成功率较低
 
 ## 系统级理解
 
