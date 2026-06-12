@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-12"
-score: 98
+score: 96
 status: "FAIL"
 tags:
   - lint-report
@@ -13,17 +13,17 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **98/100**
-> 阻断问题: **2**
+> 分数: **96/100**
+> 阻断问题: **4**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 118 |
-| Raw 已编译 | 114 |
+| Raw 来源 | 120 |
+| Raw 已编译 | 116 |
 | Raw 待编译 | 4 |
-| Entity | 252 |
+| Entity | 259 |
 | Topic | 28 |
 | Comparison | 18 |
 | Output | 4 |
@@ -43,7 +43,7 @@ tags:
 | `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
-| `wikilink` | 1 |
+| `wikilink` | 3 |
 | `source_raw` | 0 |
 | `entity` | 0 |
 | `comparison` | 0 |
@@ -69,6 +69,8 @@ expected <block end>, but found '<scalar>'
 expected <block end>, but found '<scalar>'
   in "<unicode string>", line 22, column 55:
      ... bsidian-Wiki  GBrain：Agent时代知识的"自组织"与"自进化"]]`
+- `wiki/sources/20260608-thousand-token-wood-v3.md:62` - `链接目标不存在: [[Multi-Agent-System]]`
+- `wiki/sources/20260608-thousand-token-wood-v3.md:63` - `链接目标不存在: [[Market-Design]]`
 
 ## 运行命令
 

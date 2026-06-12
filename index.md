@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 252 个 |
+| Entity 页面 | 259 个 |
 | Topic 页面 | 28 个 |
 | Comparison 页面 | 18 个 |
-| Raw 文章 | 118 个 |
+| Raw 文章 | 120 个 |
 | Output 作品 | 4 个 |
 
 ---
@@ -41,6 +41,9 @@ tags:
 | [[wiki/entities/Context-Rot\|Context Rot（上下文腐烂）]] | 随着窗口填充，模型推理和任务完成能力非线性下降的现象 | Agent Harness Engineering |
 | [[wiki/entities/Ralph-Loops\|Ralph Loops]] | 拦截退出信号并重注入提示，实现 Agent 长程任务的循环技术 | Agent Harness Engineering |
 | [[wiki/entities/AGENTS-md\|AGENTS.md]] | 作为 Agent "棘轮"规则手册的根目录规范文件 | Agent Harness Engineering |
+| [[wiki/entities/Agent-Verification\|Agent Verification（Agent 自主验证）]] | Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境 | Claude Code 一周年 |
+| [[wiki/entities/Auto-Mode\|Auto Mode（自动模式）]] | Claude Code 的自动执行模式——agent 自主决定运行工具，无需逐条等待用户确认 | Claude Code 一周年 |
+| [[wiki/entities/Context-Minimalism\|Context Minimalism（上下文极简主义）]] | 给 agent 最小可能的 system prompt 和工具集，让模型自己决定如何拉取上下文 | Claude Code 一周年 |
 | [[wiki/entities/Code-Execution\|Code Execution]] | Agent 直接在沙箱运行代码并获取反馈的能力 | Simon Willison |
 | [[wiki/entities/Vibe-Coding\|Vibe Coding（氛围编程）]] | 依靠直觉和多轮提示快速产出原型但缺乏严谨验证的开发模式 | Andrej Karpathy |
 | [[wiki/entities/Model-Context-Protocol-MCP\|MCP（Model Context Protocol）]] | 统一的模型与工具连接协议标准 | Pinterest Engineering |
@@ -53,6 +56,7 @@ tags:
 | [[wiki/entities/AI-Factory\|AI Factory（AI 工厂）]] | 将 AI 能力规模化、标准化交付的组织化生产线 | P&G Case Study |
 | [[wiki/entities/Forward-Deployed-Engineer\|Forward Deployed Engineer（前线开发工程师）]] | 深入客户现场识别约束并交付定制化 AI 解决方案的角色 | Palantir / OpenAI |
 | [[wiki/entities/Knowledge-Work\|Knowledge Work（知识工作）]] | 正在被 AI 重新定义效率边界和价值内核的工作类型 | Jevons Paradox for Knowledge Work |
+| [[wiki/entities/Role-Merging\|Role Merging（角色融合）]] | AI 让 PM/设计师/财务等非工程角色也能写代码，同时让工程师端到端交付产品 | Claude Code 一周年 |
 
 #### 知识与语义
 | Entity | 定义 | 来源 |
@@ -68,15 +72,22 @@ tags:
 | [[wiki/entities/Societal-Resilience\|Societal Resilience（社会韧性）]] | 社会层面抵御和恢复 AI 可能加速或启用的威胁的能力 | Anthropic AI Framework |
 | [[wiki/entities/Collingridge-Dilemma\|Collingridge Dilemma（科林格里奇困境）]] | 技术影响在早期难以预见，等到清晰时已难以管理 | Dario Amodei |
 
+#### 多 Agent 系统与涌现
+| Entity | 定义 | 来源 |
+|--------|------|------|
+| [[wiki/entities/Emergence\|Emergence（涌现）]] | 复杂系统中从简单规则和交互中自发产生的宏观行为 | Thousand Token Wood v3 |
+| [[wiki/entities/Agent-Heterogeneity\|Agent Heterogeneity（Agent 异质性）]] | 多 agent 系统中使用不同架构/厂商的模型驱动不同 agent | Thousand Token Wood v3 |
+| [[wiki/entities/Settlement-Mechanism\|Settlement Mechanism（结算机制）]] | 多 agent 经济系统中，在 agent 自由交易之后、结果固化之前的一个确定性覆盖点 | Thousand Token Wood v3 |
+
 ---
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（114 个）*
+*原始剪藏文章（120 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：Dario Amodei + Anthropic《Policy on the AI Exponential》政策框架（三源合一），以及 Anthropic AI 漏洞利用研究。新增 4 个 entity：[[N-Hour]]、[[Collingridge-Dilemma]]、[[Frontier-Developer-Obligations]]、[[Societal-Resilience]]，1 个 topic：[[AI-Policy-Framework]]。更新 [[Mythos]]（漏洞利用开发数据）、[[Anthropic]]（政策框架）。
+最新编译：Claude Code 一周年回顾视频字幕 + Thousand Token Wood v3。新增 6 个 entity：[[Agent-Verification]]、[[Auto-Mode]]、[[Context-Minimalism]]、[[Role-Merging]]、[[Emergence]]、[[Agent-Heterogeneity]]、[[Settlement-Mechanism]]。
 
 ---
 
