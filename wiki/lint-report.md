@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 293 |
+| `tag` | 282 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,9 +50,6 @@ tags:
 
 ### tag
 
-- `wiki/entities/Andrej-Karpathy.md` - `tags 超过 5 个: 7`
-- `wiki/sources/20260529-ceo-ai-psychosis-equity-podcast.md` - `tags 超过 5 个: 8`
-- `wiki/sources/20260529-gemini-co-leads-origins.md` - `tags 超过 5 个: 8`
 - `wiki/sources/20260530-ceo-knee-deep-building-ai.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260604-anthropic-recursive-self-improvement.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `tags 超过 5 个: 6`
@@ -78,14 +75,12 @@ tags:
 - `wiki/entities/Reflexion.md` - `一次性 tag 仅出现 1 次: 'Agent-Pattern'`
 - `wiki/entities/朱少民.md` - `一次性 tag 仅出现 1 次: 'Author'`
 - `wiki/entities/AI-Native-Startup.md` - `一次性 tag 仅出现 1 次: 'Business-Model'`
-- `wiki/sources/20260529-ceo-ai-psychosis-equity-podcast.md` - `一次性 tag 仅出现 1 次: 'CEO'`
 - `wiki/comparisons/Knowledge-Work-vs-Wisdom-Work.md` - `一次性 tag 仅出现 1 次: 'Career-Evolution'`
 - `wiki/sources/building-effective-agents-complete.md` - `一次性 tag 仅出现 1 次: 'Claude'`
 - `wiki/entities/Three-State-Protocol.md` - `一次性 tag 仅出现 1 次: 'Communication-Protocol'`
 - `wiki/sources/20260610-ai-exponential-policy.md` - `一次性 tag 仅出现 1 次: 'Dario-Amodei'`
 - `wiki/entities/CLAUDE-md.md` - `一次性 tag 仅出现 1 次: 'Documentation'`
 - `wiki/entities/Adversarial-Distillation.md` - `一次性 tag 仅出现 1 次: 'Game-Theory'`
-- `wiki/sources/20260529-gemini-co-leads-origins.md` - `一次性 tag 仅出现 1 次: 'Gemini'`
 - `wiki/entities/Accessibility-Agent.md` - `一次性 tag 仅出现 1 次: 'GitHub'`
 - `wiki/entities/Product-Market-Fit.md` - `一次性 tag 仅出现 1 次: 'Growth'`
 - `wiki/entities/Zero-PHI-Policy.md` - `一次性 tag 仅出现 1 次: 'Healthcare-AI'`
@@ -135,7 +130,6 @@ tags:
 - `wiki/entities/Agent-Infra.md` - `一次性 tag 仅出现 1 次: 'agent-runtime'`
 - `wiki/entities/Capability-Map.md` - `一次性 tag 仅出现 1 次: 'agent-tooling'`
 - `wiki/entities/Dominator-Analysis.md` - `一次性 tag 仅出现 1 次: 'agent-validation'`
-- `wiki/sources/20260529-gemini-co-leads-origins.md` - `一次性 tag 仅出现 1 次: 'agentic'`
 - `wiki/entities/Security-Hardening-Phase.md` - `一次性 tag 仅出现 1 次: 'agentic-coding'`
 - `wiki/sources/20260409-ai-capability-gap-ai-psychosis.md` - `一次性 tag 仅出现 1 次: 'agentic-models'`
 - `wiki/sources/20260606-google-agentic-rag.md` - `一次性 tag 仅出现 1 次: 'agentic-rag'`
@@ -158,11 +152,9 @@ tags:
 - `wiki/entities/Mythos.md` - `一次性 tag 仅出现 1 次: 'ai-model'`
 - `wiki/sources/The-Founders-Playbook-05062026_v3.md` - `一次性 tag 仅出现 1 次: 'ai-native'`
 - `wiki/sources/Running an AI-native engineering org.md` - `一次性 tag 仅出现 1 次: 'ai-native-organization'`
-- `wiki/entities/Andrej-Karpathy.md` - `一次性 tag 仅出现 1 次: 'ai-pioneer'`
 - `wiki/sources/20260409-ai-capability-gap-ai-psychosis.md` - `一次性 tag 仅出现 1 次: 'ai-psychosis'`
 - `wiki/sources/Management as AI superpower.md` - `一次性 tag 仅出现 1 次: 'ai-work'`
 - `wiki/sources/The Knowledge Economy Is Over. Welcome to the Allocation Economy..md` - `一次性 tag 仅出现 1 次: 'allocation-economy'`
-- `wiki/sources/20260529-ceo-ai-psychosis-equity-podcast.md` - `一次性 tag 仅出现 1 次: 'anti-AI-backlash'`
 - `wiki/sources/20260608-reflecting-on-year-of-claude-code.md` - `一次性 tag 仅出现 1 次: 'auto-mode'`
 - `wiki/entities/Alex-Imas.md` - `一次性 tag 仅出现 1 次: 'behavioral-economics'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
@@ -208,7 +200,6 @@ tags:
 - `wiki/sources/20260604-openai-dreaming-memory.md` - `一次性 tag 仅出现 1 次: 'dreaming'`
 - `wiki/entities/AGI-Economics.md` - `一次性 tag 仅出现 1 次: 'economics'`
 - `wiki/topics/Agentic-AI-Ecosystem.md` - `一次性 tag 仅出现 1 次: 'ecosystem'`
-- `wiki/entities/Andrej-Karpathy.md` - `一次性 tag 仅出现 1 次: 'educator'`
 - `wiki/entities/Phil-Trammell.md` - `一次性 tag 仅出现 1 次: 'epoch'`
 - `wiki/entities/Paul-Graham.md` - `一次性 tag 仅出现 1 次: 'essays'`
 - `wiki/sources/20260604-mollick-coexistence.md` - `一次性 tag 仅出现 1 次: 'ethan-mollick'`
@@ -323,14 +314,12 @@ tags:
 - `wiki/entities/Martin-Fowler.md` - `一次性 tag 仅出现 1 次: 'thoughtworks'`
 - `wiki/entities/ACI-Agent-Computer-Interface.md` - `一次性 tag 仅出现 1 次: 'tool-design'`
 - `wiki/sources/Designing the hf CLI as an agent-optimized way to work with the Hub.md` - `一次性 tag 仅出现 1 次: 'tooling'`
-- `wiki/sources/20260529-ceo-ai-psychosis-equity-podcast.md` - `一次性 tag 仅出现 1 次: 'top-down-vs-bottom-up'`
 - `wiki/entities/Verifiability.md` - `一次性 tag 仅出现 1 次: 'training'`
 - `wiki/entities/Messy-Middle.md` - `一次性 tag 仅出现 1 次: 'transition'`
 - `wiki/entities/Memory-Summary-Page.md` - `一次性 tag 仅出现 1 次: 'trust'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'tutorial'`
 - `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `一次性 tag 仅出现 1 次: 'udi'`
 - `wiki/sources/20260613-ontology-for-agent-optimization.md` - `一次性 tag 仅出现 1 次: 'umodel'`
-- `wiki/sources/20260529-gemini-co-leads-origins.md` - `一次性 tag 仅出现 1 次: 'unified-model'`
 - `wiki/sources/20260609-whats-new-in-claude-managed-agents.md` - `一次性 tag 仅出现 1 次: 'vault'`
 - `wiki/entities/Konstantine-Buhler.md` - `一次性 tag 仅出现 1 次: 'venture-capital'`
 - `wiki/entities/Guillermo-Rauch.md` - `一次性 tag 仅出现 1 次: 'vercel'`

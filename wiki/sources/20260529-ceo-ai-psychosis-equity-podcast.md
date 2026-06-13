@@ -8,12 +8,9 @@ updated: 2026-05-30
 tags:
   - source-summary
   - AI-psychosis
-  - CEO
   - layoffs
   - AI-agent
   - organization
-  - anti-AI-backlash
-  - top-down-vs-bottom-up
 ---
 
 # CEO AI Psychosis + AI 分化 + 反 AI 反弹

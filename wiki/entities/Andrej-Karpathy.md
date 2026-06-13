@@ -10,12 +10,10 @@ created: 2026-04-13
 updated: 2026-05-26
 tags:
   - person
-  - ai-pioneer
   - openai
   - tesla
   - anthropic
   - deep-learning
-  - educator
 related_entities:
   - '[[Knowledge-Compilation]]'
   - '[[Vibe-Coding]]'
