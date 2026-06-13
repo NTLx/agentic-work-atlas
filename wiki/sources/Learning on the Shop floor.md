@@ -8,7 +8,7 @@ updated: 2026-05-25
 tags:
   - source-summary
   - organizational-learning
-  - agent-native
+  - AI-Agent
   - shopify
 ---
 

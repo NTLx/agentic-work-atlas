@@ -10,7 +10,7 @@ updated: 2026-05-29
 tags:
   - agentic-ai
   - infrastructure
-  - agent-runtime
+  - agent-infra
 related_entities:
   - "[[Agent-Harness]]"
   - "[[Token-Supply-Chain]]"

@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 193 |
+| `tag` | 190 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -51,9 +51,6 @@ tags:
 ### tag
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
-- `wiki/sources/Learning on the Shop floor.md` - `一次性 tag 仅出现 1 次: 'agent-native'`
-- `wiki/entities/Agent-Infra.md` - `一次性 tag 仅出现 1 次: 'agent-runtime'`
-- `wiki/entities/Capability-Map.md` - `一次性 tag 仅出现 1 次: 'agent-tooling'`
 - `wiki/entities/Dominator-Analysis.md` - `一次性 tag 仅出现 1 次: 'agent-validation'`
 - `wiki/entities/Security-Hardening-Phase.md` - `一次性 tag 仅出现 1 次: 'agentic-coding'`
 - `wiki/sources/20260409-ai-capability-gap-ai-psychosis.md` - `一次性 tag 仅出现 1 次: 'agentic-models'`
