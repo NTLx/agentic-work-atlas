@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 187 |
+| `tag` | 185 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -51,9 +51,7 @@ tags:
 ### tag
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
-- `wiki/sources/20260606-google-agentic-rag.md` - `一次性 tag 仅出现 1 次: 'agentic-rag'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
-- `wiki/sources/Improving token efficiency in GitHub Agentic Workflows.md` - `一次性 tag 仅出现 1 次: 'agentic-workflows'`
 - `wiki/sources/Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough.md` - `一次性 tag 仅出现 1 次: 'agents'`
 - `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `一次性 tag 仅出现 1 次: 'agi-economics'`
 - `wiki/sources/20260502-most-companies-arent-ready-for-ai.md` - `一次性 tag 仅出现 1 次: 'ai'`

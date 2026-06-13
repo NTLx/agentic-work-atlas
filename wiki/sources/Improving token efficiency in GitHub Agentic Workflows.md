@@ -8,7 +8,7 @@ updated: 2026-05-25
 tags:
   - source-summary
   - AI-Agent
-  - agentic-workflows
+  - workflow
   - token-efficiency
 ---
 
