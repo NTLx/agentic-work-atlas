@@ -7,7 +7,7 @@ aliases:
   - 认知让步
 definition: "人在使用 AI 时停止独立思考，默认接受 AI 输出（即使错误）的行为模式——Wharton 研究团队命名"
 created: 2026-05-27
-updated: 2026-06-01
+updated: 2026-06-13
 tags:
   - cognitive-work
   - human-AI-interaction
@@ -25,6 +25,7 @@ source_raw:
   - "[[Choosing to Stay Human]]"
   - "[[20260531-thoughts-hmmz]]"
   - "[[I Am Retiring from Tech to Live Offline]]"
+  - "[[20260613-anthropic-public-record]]"
 ---
 
 # Cognitive Surrender（认知投降）
@@ -45,6 +46,7 @@ source_raw:
 - **局限性**: 研究样本主要是学生和精英顾问，对更广泛职业人群的泛化能力待验证
 - **边界条件**: 不是所有认知委托都是投降——电话号码、算术、排版等已被合理外包的认知任务不属于 Cognitive Surrender。区别在于：被放弃的认知活动本身是否有持续价值
 - **与 [[Cognitive-Debt]] 的区别**: Cognitive Debt 是词汇和理解跟不上生成速度的**知识债**；Cognitive Surrender 是主动放弃思考的**行为模式**
+- **公众风险感知**: [[20260613-anthropic-public-record|Anthropic Public Record]] 显示 cognitive dependency 已是美国公众第二常见 AI 担忧，但该调查衡量的是风险感知，不是实际认知能力退化证据。
 
 ## 从认知投降到生活方式投降
 

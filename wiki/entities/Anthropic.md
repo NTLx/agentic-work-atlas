@@ -6,7 +6,7 @@ aliases:
   - Anthropic Inc
 definition: "由 Dario Amodei 等人于 2021 年创立的前沿 AI 实验室，Claude 系列模型开发方，2026 年以一手数据公开 AI 递归自我改进进程，并发布 Advanced AI Framework 政策提案"
 created: 2026-06-06
-updated: 2026-06-12
+updated: 2026-06-13
 tags:
   - organization
   - AI-frontier-lab
@@ -27,6 +27,7 @@ source_raw:
   - "[[20260604-anthropic-recursive-self-improvement]]"
   - "[[20260610-ai-exponential-policy]]"
   - "[[20260610-anthropic-ai-exploits-security-patches]]"
+  - "[[20260613-anthropic-public-record]]"
 validated_source: "https://www.anthropic.com/about"
 validated_at: "2026-06-06"
 ---
@@ -81,6 +82,10 @@ Anthropic 在 2026-06-10 发布了 [[AI-Policy-Framework|Advanced AI Framework]]
 - **执行权**: 政府有权阻断部署，民事处罚与全球年收入挂钩
 
 配套发布 Dario Amodei 个人长文《Policy on the AI Exponential》，论述 AI 指数级进步与政策响应速度的矛盾。
+
+## 2026-06 Anthropic Public Record：公众态度基线
+
+Anthropic 在第一轮 [[20260613-anthropic-public-record|Anthropic Public Record]] 中把研究对象从 Claude 用户扩展到美国公众。该调查显示，公众最担心的是工作流失、认知依赖和错误信息，而不是只围绕模型失控；同时只有 15% 受访者信任 AI 公司自行决定 AI 如何开发和使用。这让 Anthropic 的政策叙事从“前沿模型风险”扩展到“公众授权、问责和社会许可”。
 
 ## 关联概念
 | 本库主题 | Anthropic 的贡献 |

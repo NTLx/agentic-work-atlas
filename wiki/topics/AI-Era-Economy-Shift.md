@@ -3,7 +3,7 @@ type: topic
 title: AI Era Economy Shift
 description: "AI 时代经济范式转型：从知识经济到分配经济，效率提升带来需求爆发"
 created: 2026-04-10
-updated: 2026-05-25
+updated: 2026-06-13
 tags:
   - AI-Agent
   - economy
@@ -25,6 +25,7 @@ source_raw:
   - '[[The Always-On Economy AI and the Next 5-7 Years]]'
   - '[[The layoffs will continue till we learn to use AI]]'
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
+  - "[[20260613-anthropic-public-record]]"
 ---
 
 # AI Era Economy Shift（AI 时代经济转型）
@@ -129,6 +130,8 @@ Ethan Mollick 的委托决策公式：
 > **今天的岗位 = 明天的任务**
 
 AI 接管任务，但需要人整合工作流产生真正价值。
+
+[[20260613-anthropic-public-record|Anthropic Public Record]] 给这个乐观叙事补上公众侧约束：64% 美国受访者担心 AI 导致工作流失，且这是各州、党派和教育背景中最稳定的第一担忧。因此，Jevons 式需求扩张不能直接推出个体层面的就业安全；中间还隔着岗位迁移、再培训、收入分配和社会信任。
 
 ---
 

@@ -5,7 +5,7 @@ aliases:
   - Human Governor Agent Operator
 definition: "人类设定目标和约束、Agent 负责执行与优化流程的人机分工模式"
 created: 2026-04-09
-updated: 2026-06-04
+updated: 2026-06-13
 tags:
   - AI-Agent
   - Enterprise-Architecture
@@ -19,6 +19,7 @@ source_raw:
   - '[[Enabling agent-first process redesign]]'
   - "[[20260601-stanford-enterprise-ai-playbook]]"
   - "[[Every Agentic Engineering Hack I Know (June 2026)]]"
+  - "[[20260613-anthropic-public-record]]"
 ---
 
 # Human-Governor-Agent-Operator
@@ -73,6 +74,7 @@ Matt Van Horn 的多会话工作流把该模式缩小到个人工作台：四到
 - Agent Operator 需要机器可读的流程定义和明确的政策约束边界才能安全运营
 - 该模式假设企业有足够的流程可被 Agent 运营——不适用于高度创意或探索性工作
 - 如果企业不理解经济驱动因素，会难以优先创建最有价值的 agents
+- 外部社会许可不能只靠企业内部治理角色来获得。Anthropic Public Record 显示公众对 AI 公司存在明显信任赤字，因此企业级 Governor-Operator 模式还需要法律责任、隐私、儿童安全和伤害问责等外部治理接口。
 
 ## 关联概念
 
