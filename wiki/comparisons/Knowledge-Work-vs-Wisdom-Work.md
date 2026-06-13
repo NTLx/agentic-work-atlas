@@ -5,8 +5,7 @@ created: 2026-04-09
 updated: 2026-05-23
 tags:
   - comparison
-  - Career-Evolution
-  - AI-Era
+  - AI-era
 related_entities:
   - '[[Wisdom-Work]]'
   - '[[Emotional-Clarity]]'

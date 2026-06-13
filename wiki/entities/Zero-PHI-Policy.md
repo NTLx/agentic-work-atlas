@@ -9,8 +9,7 @@ created: 2026-05-10
 updated: 2026-05-25
 tags:
   - Privacy
-  - AI-Safety
-  - Healthcare-AI
+  - ai-safety
 related_entities:
   - "[[Agent-Orchestration]]"
   - "[[Agentic-Engineering]]"

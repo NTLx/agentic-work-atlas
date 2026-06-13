@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 265 |
+| `tag` | 260 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,9 +50,6 @@ tags:
 
 ### tag
 
-- `wiki/comparisons/Knowledge-Work-vs-Wisdom-Work.md` - `一次性 tag 仅出现 1 次: 'AI-Era'`
-- `wiki/entities/Hardware-Sovereignty.md` - `一次性 tag 仅出现 1 次: 'AI-Infrastructure'`
-- `wiki/entities/Zero-PHI-Policy.md` - `一次性 tag 仅出现 1 次: 'AI-Safety'`
 - `wiki/entities/Claude-Cowork.md` - `一次性 tag 仅出现 1 次: 'AI-Tool'`
 - `wiki/entities/Specialized-Small-Models.md` - `一次性 tag 仅出现 1 次: 'AI-economics'`
 - `wiki/outputs/ai-enablement-human-governance.md` - `一次性 tag 仅出现 1 次: 'AI-enablement'`
@@ -67,13 +64,11 @@ tags:
 - `wiki/entities/Reflexion.md` - `一次性 tag 仅出现 1 次: 'Agent-Pattern'`
 - `wiki/entities/朱少民.md` - `一次性 tag 仅出现 1 次: 'Author'`
 - `wiki/entities/AI-Native-Startup.md` - `一次性 tag 仅出现 1 次: 'Business-Model'`
-- `wiki/comparisons/Knowledge-Work-vs-Wisdom-Work.md` - `一次性 tag 仅出现 1 次: 'Career-Evolution'`
 - `wiki/entities/Three-State-Protocol.md` - `一次性 tag 仅出现 1 次: 'Communication-Protocol'`
 - `wiki/entities/CLAUDE-md.md` - `一次性 tag 仅出现 1 次: 'Documentation'`
 - `wiki/entities/Adversarial-Distillation.md` - `一次性 tag 仅出现 1 次: 'Game-Theory'`
 - `wiki/entities/Accessibility-Agent.md` - `一次性 tag 仅出现 1 次: 'GitHub'`
 - `wiki/entities/Product-Market-Fit.md` - `一次性 tag 仅出现 1 次: 'Growth'`
-- `wiki/entities/Zero-PHI-Policy.md` - `一次性 tag 仅出现 1 次: 'Healthcare-AI'`
 - `wiki/entities/Ontology.md` - `一次性 tag 仅出现 1 次: 'Knowledge-Engineering'`
 - `wiki/comparisons/RAG-vs-LLM-Wiki.md` - `一次性 tag 仅出现 1 次: 'Knowledge-Management'`
 - `wiki/entities/Sequence-Packing.md` - `一次性 tag 仅出现 1 次: 'LLM-Training'`
