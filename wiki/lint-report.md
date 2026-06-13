@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 277 |
+| `tag` | 270 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,9 +50,6 @@ tags:
 
 ### tag
 
-- `wiki/sources/20260604-mollick-coexistence.md` - `tags 超过 5 个: 7`
-- `wiki/sources/20260604-openai-dreaming-memory.md` - `tags 超过 5 个: 6`
-- `wiki/sources/20260608-reflecting-on-year-of-claude-code.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260610-ai-exponential-policy.md` - `tags 超过 5 个: 6`
 - `wiki/sources/building-effective-agents-complete.md` - `tags 超过 5 个: 7`
 - `wiki/comparisons/Knowledge-Work-vs-Wisdom-Work.md` - `一次性 tag 仅出现 1 次: 'AI-Era'`
@@ -131,7 +128,6 @@ tags:
 - `wiki/sources/20260409-ai-capability-gap-ai-psychosis.md` - `一次性 tag 仅出现 1 次: 'agentic-models'`
 - `wiki/sources/20260606-google-agentic-rag.md` - `一次性 tag 仅出现 1 次: 'agentic-rag'`
 - `wiki/sources/building-effective-agents-complete.md` - `一次性 tag 仅出现 1 次: 'agentic-systems'`
-- `wiki/sources/20260604-mollick-coexistence.md` - `一次性 tag 仅出现 1 次: 'agentic-work'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/sources/Improving token efficiency in GitHub Agentic Workflows.md` - `一次性 tag 仅出现 1 次: 'agentic-workflows'`
 - `wiki/sources/Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough.md` - `一次性 tag 仅出现 1 次: 'agents'`
@@ -152,7 +148,6 @@ tags:
 - `wiki/sources/20260409-ai-capability-gap-ai-psychosis.md` - `一次性 tag 仅出现 1 次: 'ai-psychosis'`
 - `wiki/sources/Management as AI superpower.md` - `一次性 tag 仅出现 1 次: 'ai-work'`
 - `wiki/sources/The Knowledge Economy Is Over. Welcome to the Allocation Economy..md` - `一次性 tag 仅出现 1 次: 'allocation-economy'`
-- `wiki/sources/20260608-reflecting-on-year-of-claude-code.md` - `一次性 tag 仅出现 1 次: 'auto-mode'`
 - `wiki/entities/Alex-Imas.md` - `一次性 tag 仅出现 1 次: 'behavioral-economics'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
@@ -194,12 +189,10 @@ tags:
 - `wiki/sources/20260529-gemini-co-leads-origins.md` - `一次性 tag 仅出现 1 次: 'distillation'`
 - `wiki/entities/Simon-Willison.md` - `一次性 tag 仅出现 1 次: 'django'`
 - `wiki/entities/AGENTS-md.md` - `一次性 tag 仅出现 1 次: 'documentation'`
-- `wiki/sources/20260604-openai-dreaming-memory.md` - `一次性 tag 仅出现 1 次: 'dreaming'`
 - `wiki/entities/AGI-Economics.md` - `一次性 tag 仅出现 1 次: 'economics'`
 - `wiki/topics/Agentic-AI-Ecosystem.md` - `一次性 tag 仅出现 1 次: 'ecosystem'`
 - `wiki/entities/Phil-Trammell.md` - `一次性 tag 仅出现 1 次: 'epoch'`
 - `wiki/entities/Paul-Graham.md` - `一次性 tag 仅出现 1 次: 'essays'`
-- `wiki/sources/20260604-mollick-coexistence.md` - `一次性 tag 仅出现 1 次: 'ethan-mollick'`
 - `wiki/entities/Cybernetic-Teammate.md` - `一次性 tag 仅出现 1 次: 'expertise'`
 - `wiki/entities/Input-Output-Outcome.md` - `一次性 tag 仅出现 1 次: 'framework'`
 - `wiki/sources/20260531-thoughts-hmmz.md` - `一次性 tag 仅出现 1 次: 'friction'`

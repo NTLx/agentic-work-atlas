@@ -9,7 +9,6 @@ tags:
   - source-summary
   - memory-systems
   - context-engineering
-  - dreaming
   - openai
   - personal-ai-assistant
 ---

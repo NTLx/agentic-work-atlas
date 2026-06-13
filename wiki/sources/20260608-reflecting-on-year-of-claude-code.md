@@ -10,7 +10,6 @@ tags:
   - claude-code
   - agentic-engineering
   - verification
-  - auto-mode
   - context-engineering
 ---
 

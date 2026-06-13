@@ -9,10 +9,8 @@ tags:
   - source-summary
   - co-intelligence
   - co-existence
-  - agentic-work
   - seo-aio
   - prompt-injection
-  - ethan-mollick
 ---
 
 # Mollick《Co-Existence》：Co-Intelligence 时代结束，与有时比你强的 AI 协商
