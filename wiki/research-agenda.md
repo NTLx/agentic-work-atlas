@@ -46,6 +46,8 @@ related_entities:
 
 ## 概念去重候选
 
+本节是 audit 队列，不是事实页。下列判断只说明“当前不应升级或合并”，不能作为 output 中事实判断的证据。
+
 | 候选概念 | 当前承载位置 | 本轮判断 | 下一步 |
 |----------|--------------|----------|--------|
 | 公众信任赤字 | [[AI-Policy-Framework]]、[[Human-Governor-Agent-Operator]]、[[20260613-anthropic-public-record]] | 暂不建独立 entity。当前只有 Anthropic Public Record 一个主要来源，更适合作为 AI 治理和企业外部社会许可的章节材料。 | 等待第二个一手公众调查、监管文件或企业采用案例，再判断是否升级为 topic/entity。 |

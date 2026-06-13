@@ -12,7 +12,7 @@ tags:
   - labor
   - anthropic
 evidence_level: medium
-claim_type: extracted
+claim_type: mixed
 ---
 
 # Results from the first Anthropic Public Record

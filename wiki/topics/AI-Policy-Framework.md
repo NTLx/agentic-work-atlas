@@ -14,6 +14,8 @@ tags:
   - regulation
   - frontier-AI
   - geopolitics
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Dario-Amodei]]"
   - "[[Anthropic]]"
@@ -61,7 +63,7 @@ source_raw:
 
 ### 6. 公众问责与社会许可
 - **公众态度基线**: Anthropic Public Record 显示，71% 美国受访者支持政府参与 AI 监管，只有 15% 信任 AI 公司自行决定 AI 的开发和使用。
-- **政策含义**: 前沿 AI 治理不能只靠开发者自愿承诺；法律责任、隐私、儿童安全和伤害问责是公众给 AI 部署社会许可的关键条件。
+- **综合判断**: 前沿 AI 治理不能只靠开发者自愿承诺；法律责任、隐私、儿童安全和伤害问责是公众给 AI 部署社会许可的关键条件。
 
 ## 六类政策领域的关联
 
