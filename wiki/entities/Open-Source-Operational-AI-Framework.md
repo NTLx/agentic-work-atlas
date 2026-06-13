@@ -11,7 +11,6 @@ updated: 2026-06-04
 tags:
   - AI-deployment
   - open-source
-  - AI-for-science
 related_entities:
   - "[[Integration-Wall]]"
   - "[[Scientific-Discovery-AI]]"

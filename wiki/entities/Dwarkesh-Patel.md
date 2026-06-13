@@ -9,8 +9,6 @@ created: 2026-06-06
 updated: 2026-06-06
 tags:
   - person
-  - podcaster
-  - AI-journalism
 related_entities:
   - "[[Alex-Imas]]"
   - "[[Phil-Trammell]]"

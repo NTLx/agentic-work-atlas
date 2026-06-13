@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 255 |
+| `tag` | 251 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,9 +50,6 @@ tags:
 
 ### tag
 
-- `wiki/entities/Open-Source-Operational-AI-Framework.md` - `一次性 tag 仅出现 1 次: 'AI-for-science'`
-- `wiki/entities/Dwarkesh-Patel.md` - `一次性 tag 仅出现 1 次: 'AI-journalism'`
-- `wiki/entities/Dario-Amodei.md` - `一次性 tag 仅出现 1 次: 'AI-leader'`
 - `wiki/entities/Task-Horizon.md` - `一次性 tag 仅出现 1 次: 'AI-metric'`
 - `wiki/entities/Staleness-Problem.md` - `一次性 tag 仅出现 1 次: 'AI-problem'`
 - `wiki/sources/20260529-ceo-ai-psychosis-equity-podcast.md` - `一次性 tag 仅出现 1 次: 'AI-psychosis'`
@@ -241,7 +238,6 @@ tags:
 - `wiki/entities/Laziness-Virtue.md` - `一次性 tag 仅出现 1 次: 'philosophy'`
 - `wiki/entities/Ghost-Intelligence.md` - `一次性 tag 仅出现 1 次: 'philosophy-of-intelligence'`
 - `wiki/entities/Plan-as-Agent-Checkpoint.md` - `一次性 tag 仅出现 1 次: 'planning'`
-- `wiki/entities/Dwarkesh-Patel.md` - `一次性 tag 仅出现 1 次: 'podcaster'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'policy'`
 - `wiki/entities/Drip-Scenario.md` - `一次性 tag 仅出现 1 次: 'political-economy'`
 - `wiki/entities/Relational-Sector.md` - `一次性 tag 仅出现 1 次: 'post-scarcity'`
