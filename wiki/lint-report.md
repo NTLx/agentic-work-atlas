@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 251 |
+| `tag` | 247 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,9 +50,6 @@ tags:
 
 ### tag
 
-- `wiki/entities/Task-Horizon.md` - `一次性 tag 仅出现 1 次: 'AI-metric'`
-- `wiki/entities/Staleness-Problem.md` - `一次性 tag 仅出现 1 次: 'AI-problem'`
-- `wiki/sources/20260529-ceo-ai-psychosis-equity-podcast.md` - `一次性 tag 仅出现 1 次: 'AI-psychosis'`
 - `wiki/entities/Specialization-Compounds.md` - `一次性 tag 仅出现 1 次: 'AI-training'`
 - `wiki/entities/Ralph-Loops.md` - `一次性 tag 仅出现 1 次: 'Agent-Loops'`
 - `wiki/entities/Reflexion.md` - `一次性 tag 仅出现 1 次: 'Agent-Pattern'`
@@ -127,7 +124,6 @@ tags:
 - `wiki/entities/Mythos.md` - `一次性 tag 仅出现 1 次: 'ai-model'`
 - `wiki/sources/The-Founders-Playbook-05062026_v3.md` - `一次性 tag 仅出现 1 次: 'ai-native'`
 - `wiki/sources/Running an AI-native engineering org.md` - `一次性 tag 仅出现 1 次: 'ai-native-organization'`
-- `wiki/sources/20260409-ai-capability-gap-ai-psychosis.md` - `一次性 tag 仅出现 1 次: 'ai-psychosis'`
 - `wiki/sources/Management as AI superpower.md` - `一次性 tag 仅出现 1 次: 'ai-work'`
 - `wiki/sources/The Knowledge Economy Is Over. Welcome to the Allocation Economy..md` - `一次性 tag 仅出现 1 次: 'allocation-economy'`
 - `wiki/entities/Alex-Imas.md` - `一次性 tag 仅出现 1 次: 'behavioral-economics'`

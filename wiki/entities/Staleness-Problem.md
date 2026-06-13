@@ -10,7 +10,6 @@ created: 2026-06-06
 updated: 2026-06-06
 tags:
   - memory-system
-  - AI-problem
   - context-engineering
 related_entities:
   - "[[Dreaming]]"
@@ -76,4 +75,3 @@ staleness = 用户当前事实 - 记忆里的事实
 ## 关键数据点
 
 （关键事实、统计、时间线从原 raw 源沉淀，见 source_raw 字段）
-

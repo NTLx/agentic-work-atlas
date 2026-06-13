@@ -7,7 +7,7 @@ created: 2026-05-30
 updated: 2026-05-30
 tags:
   - source-summary
-  - AI-psychosis
+  - ai-psychosis
   - layoffs
   - AI-agent
   - organization
