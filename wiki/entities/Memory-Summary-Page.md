@@ -10,7 +10,6 @@ created: 2026-06-06
 updated: 2026-06-06
 tags:
   - memory-system
-  - UX
   - trust
   - openai
 related_entities:
@@ -75,4 +74,3 @@ memory summary page = 可观察性 + 可修改性 + 可撤回性的物理实现
 ## 关键数据点
 
 （关键事实、统计、时间线从原 raw 源沉淀，见 source_raw 字段）
-
