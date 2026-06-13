@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-13"
-score: 97
+score: 98
 status: "FAIL"
 tags:
   - lint-report
@@ -13,17 +13,17 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **97/100**
-> 阻断问题: **3**
+> 分数: **98/100**
+> 阻断问题: **2**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 123 |
-| Raw 已编译 | 119 |
+| Raw 来源 | 125 |
+| Raw 已编译 | 121 |
 | Raw 待编译 | 4 |
-| Entity | 261 |
+| Entity | 262 |
 | Topic | 28 |
 | Comparison | 18 |
 | Output | 4 |
@@ -43,7 +43,7 @@ tags:
 | `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
-| `wikilink` | 2 |
+| `wikilink` | 1 |
 | `source_raw` | 0 |
 | `entity` | 0 |
 | `comparison` | 0 |
@@ -69,7 +69,6 @@ expected <block end>, but found '<scalar>'
 expected <block end>, but found '<scalar>'
   in "<unicode string>", line 22, column 55:
      ... bsidian-Wiki  GBrain：Agent时代知识的"自组织"与"自进化"]]`
-- `wiki/sources/20260613-ontology-tokenmaxxing.md:48` - `链接目标不存在: [[Tokenmaxxing]]`
 
 ## 运行命令
 
