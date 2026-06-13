@@ -45,6 +45,8 @@ source_raw:
   - "[[20260419-agent-harness-engineering]]"
   - "[[20260608-paving-the-way-for-agents-in-biology]]"
   - "[[20260613-NLAH-natural-language-agent-harnesses]]"
+  - "[[20260613-coding-agent-organizational-engineering]]"
+  - "[[20260613-qoder-human-bottleneck]]"
 ---
 
 # Agent Harness
@@ -276,3 +278,4 @@ Cursor 2026 春季报告揭示了 harness 演化的下一个阶段：**从开发
 - [[AGENTS-md]] — Harness 的核心配置与约束文件规范
 - [[Deterministic-Retrieval]] — 在特定领域 Harness 中至关重要的确定性感知层
 - [[NLAH]] — 将驾驭策略从代码中外置为自然语言文档的新范式
+- [[Sleep-Token]] — Harness 基础设施使能的离线 Token 产出模式

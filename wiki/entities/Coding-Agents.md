@@ -5,7 +5,7 @@ aliases:
   - Coding Agents
 definition: "能够自主完成编程任务的 AI Agent——理解需求、编写代码、运行测试、修复 bug、提交 PR，形成完整开发循环"
 created: 2026-04-10
-updated: 2026-06-01
+updated: 2026-06-13
 tags:
   - AI-Agent
   - coding-tools
@@ -28,6 +28,8 @@ source_raw:
   - '[[20260528-agentic-ai-2026-landscape]]'
   - '[[20260530-cursor-developer-habits-report]]'
   - '[[20260530-ceo-knee-deep-building-ai]]'
+  - '[[20260613-coding-agent-organizational-engineering]]'
+  - '[[20260613-qoder-human-bottleneck]]'
 ---
 
 # Coding Agents（编码智能体）
@@ -103,8 +105,24 @@ Coding Agent 擅长**边界清晰、可验证、有据可查**的任务。
 - [[Harness-Engineering]] — Coding Agent 作为主要构建者时，需要完整的系统框架来保证稳定、可靠、安全
 - [[Decision-Quality]] — Coding Agent 时代程序员的核心价值从代码产出转向决策质量
 - [[Carbon-Silicon-Division]] — Coding Agent 推动的碳基-硅基分工模式
+- [[Sleep-Token]] — Coding Agent 工作方式的终极演进：离线产出候选结果
 - [[Agent-Infra]] — Coding Agent 作为 Agent Infra 的第一波规模化入口
 - [[Founder-Mode]] — Coding Agents 使 CEO 回归编码成为可能
+
+## 组织级 Coding Agent 的架构趋同（2025-2026）
+
+2025 年底到 2026 年初，Stripe（Minions）、Ramp（Inspect）、Coinbase（Cloudbot）三家公司独立开发的内部 Coding Agent 收敛到几乎相同的架构。LangChain 的 Open SWE（2026.3）将这一共同模式提炼为开源框架。
+
+**架构共识要素**：
+- Per-session 隔离沙箱（"Isolate first, then give full permissions"）
+- 确定性 thread ID 路由（GitHub Issue → SHA-256 → UUID → session）
+- Middleware 拦截链（消息队列注入、预算管控、PR 兜底）
+- Repo 级指令文件（AGENTS.md / CLAUDE.md / copilot-instructions.md）
+- Draft PR 作为输出契约（Agent 不直接改生产代码）
+
+**个人 vs 组织级 Coding Agent 的本质区别**：个人工具优化的是"我打字更快"，组织级优化的是"团队任何成员触发、Agent 远端运行、无人盯着、产出 draft PR 供 review"。类比私家车 vs 出租车运营车辆。
+
+**工作进化路径**（泮圣伟, 2026）：Cursor（更快打字）→ CLI Agent（自主执行）→ 并发 Agent（调度时间吞噬收益）→ 三层委派（人压缩到决策位）→ [[Sleep-Token|睡后 Token]]（离线产出候选结果）。瓶颈从模型能力转移到人的注意力带宽——"并发没有消灭工作，只是把等待时间换成了调度时间"。
 
 ## PLG-fication of Enterprise（2026）
 

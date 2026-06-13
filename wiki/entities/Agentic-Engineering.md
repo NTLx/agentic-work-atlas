@@ -7,7 +7,7 @@ aliases:
   - 代理式工程
 definition: "用 coding agents 辅助开发软件的工程实践；Simon Willison 系统化了 code execution、测试和反模式等实践，Karpathy 则将其与 Vibe Coding 区分为保持专业质量上限的严肃工程纪律"
 created: 2026-04-09
-updated: 2026-06-05
+updated: 2026-06-13
 tags:
   - AI-Agent
   - Software-Engineering
@@ -52,6 +52,8 @@ source_raw:
   - "[[20260601-mercado-libre-github-copilot]]"
   - "[[Running an AI-native engineering org]]"
   - "[[Open and closed models are on different exponentials]]"
+  - "[[20260613-qoder-human-bottleneck]]"
+  - "[[20260613-coding-agent-organizational-engineering]]"
 ---
 
 ## 核心范式演进
@@ -189,6 +191,8 @@ Drew Breunig 提出扩展的三阶段 Agentic Coding 模型：
 - 四项核心原则：代码成本趋近于零、囤积可运行代码示例、AI 应帮助产出更好的代码、不提交未审查的代码
 - ITBench-AA SRE 基准（2026）：所有前沿模型低于 50%，最佳 Claude Opus 4.7 仅 47%——企业 IT Agent 任务远未解决
 - Coding Agents 在社会科学中采纳率仅 20%（n=1,260），尽管 81% 已尝试 AI——采纳仍处早期
+- **人的注意力带宽是硬上限**：并发 4 个 Agent 产出高了但疲劳感比单线程还严重——"并发没有消灭工作，只是把等待时间换成了调度时间"（泮圣伟, 2026）
+- **Agent 开发 70% 的成本在 Harness**：Token 编排、安全沙箱、可观测性、状态持久化、错误恢复——个人 Harness 无法规模化，SOTA 模型加速进化导致 Harness 加速过期（泮圣伟, 2026）
 
 ## 前提与局限性
 
@@ -210,6 +214,7 @@ Drew Breunig 提出扩展的三阶段 Agentic Coding 模型：
 - [[Hardware-Sovereignty]] — 企业级 Agentic 部署的基础设施前提
 - [[Essential-Complexity]] — Agentic Engineering 需要显式面对的复杂性
 - [[Friction-as-Design-Signal]] — 判断哪些摩擦该保留为设计反馈
+- [[Sleep-Token]] — 当 Token 价值高于成本时，让 Token 离线持续产出候选结果的工作模式
 - [[AI-Native-Engineering-Org]] — Agentic Engineering 的组织化形态
 - [[Intelligence-Premium]] — coding agents 中边际智能的经济溢价
 
