@@ -10,7 +10,7 @@ updated: 2026-05-26
 tags:
   - AI-Agent
   - organization
-  - Shopify
+  - shopify
 related_entities:
   - "[[Public-only-Constraint]]"
   - "[[Lehrwerkstatt]]"

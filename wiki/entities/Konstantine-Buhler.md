@@ -10,8 +10,7 @@ tags:
   - person
   - AI-Agent
   - venture-capital
-  - Sequoia
-  - agent-economy
+  - economy
 related_entities:
   - '[[Dan-Shipper]]'
   - '[[Ethan-Mollick]]'

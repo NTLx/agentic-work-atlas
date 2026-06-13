@@ -9,7 +9,7 @@ updated: 2026-06-11
 tags:
   - AI-Agent
   - OpenClaw
-  - System-Design
+  - architecture
 related_entities:
   - '[[Agent-Orchestration]]'
   - '[[Multi-Layer-Memory]]'

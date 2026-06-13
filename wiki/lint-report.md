@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 211 |
+| `tag` | 207 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -51,9 +51,6 @@ tags:
 ### tag
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
-- `wiki/entities/Konstantine-Buhler.md` - `一次性 tag 仅出现 1 次: 'Sequoia'`
-- `wiki/entities/River-Agent.md` - `一次性 tag 仅出现 1 次: 'Shopify'`
-- `wiki/entities/Context-Engineering.md` - `一次性 tag 仅出现 1 次: 'System-Design'`
 - `wiki/sources/20260414-martin-fowler-fragments.md` - `一次性 tag 仅出现 1 次: 'TDD'`
 - `wiki/comparisons/Cook-vs-Chef.md` - `一次性 tag 仅出现 1 次: 'Taste'`
 - `wiki/entities/Machine-Readable-Processes.md` - `一次性 tag 仅出现 1 次: 'Technical-Architecture'`
@@ -64,7 +61,6 @@ tags:
 - `wiki/entities/Paul-Graham.md` - `一次性 tag 仅出现 1 次: 'Y-Combinator'`
 - `wiki/entities/Conceptual-Model.md` - `一次性 tag 仅出现 1 次: 'abstraction'`
 - `wiki/sources/Coding agents in the social sciences.md` - `一次性 tag 仅出现 1 次: 'adoption'`
-- `wiki/entities/Konstantine-Buhler.md` - `一次性 tag 仅出现 1 次: 'agent-economy'`
 - `wiki/comparisons/Agent-Harness-vs-Agent-Workflow-Patterns.md` - `一次性 tag 仅出现 1 次: 'agent-engineering'`
 - `wiki/sources/20260528-agentic-ai-2026-landscape.md` - `一次性 tag 仅出现 1 次: 'agent-infrastructure'`
 - `wiki/sources/Learning on the Shop floor.md` - `一次性 tag 仅出现 1 次: 'agent-native'`
