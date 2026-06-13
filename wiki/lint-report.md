@@ -20,13 +20,17 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 125 |
+| Raw 来源 | 126 |
 | Raw 已编译 | 125 |
-| Raw 待编译 | 0 |
+| Raw 待编译 | 1 |
 | Entity | 262 |
 | Topic | 28 |
 | Comparison | 18 |
 | Output | 4 |
+
+## 待编译 Raw
+
+- `raw/20260613-anthropic-public-record.md`
 
 ## 检查项
 
