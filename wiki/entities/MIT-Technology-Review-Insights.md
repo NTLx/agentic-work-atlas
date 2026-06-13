@@ -11,7 +11,6 @@ tags:
   - organization
   - research
   - enterprise
-  - MIT
 related_entities:
   - "[[Dan-Shipper]]"
   - "[[Ethan-Mollick]]"

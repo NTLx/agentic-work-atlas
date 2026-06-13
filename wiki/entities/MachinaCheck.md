@@ -8,8 +8,8 @@ created: 2026-05-11
 updated: 2026-05-11
 tags:
   - Multi-Agent
-  - Manufacturing
-  - Privacy-by-Design
+  - manufacturing
+  - Privacy
   - AMD
 related_entities:
   - "[[Hardware-Sovereignty]]"

@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 228 |
+| `tag` | 224 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,16 +50,13 @@ tags:
 
 ### tag
 
-- `wiki/entities/MIT-Technology-Review-Insights.md` - `一次性 tag 仅出现 1 次: 'MIT'`
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
-- `wiki/entities/MachinaCheck.md` - `一次性 tag 仅出现 1 次: 'Manufacturing'`
 - `wiki/entities/Multi-Layer-Memory.md` - `一次性 tag 仅出现 1 次: 'Memory-System'`
 - `wiki/entities/Dual-Tier-LLM-Architecture.md` - `一次性 tag 仅出现 1 次: 'Model-Routing'`
 - `wiki/sources/20260613-NLAH-natural-language-agent-harnesses.md` - `一次性 tag 仅出现 1 次: 'NLAH'`
 - `wiki/sources/20260420-build-first-business-ontology.md` - `一次性 tag 仅出现 1 次: 'OWL'`
 - `wiki/entities/Human-Governor-Agent-Operator.md` - `一次性 tag 仅出现 1 次: 'Operating-Model'`
 - `wiki/entities/AI-First.md` - `一次性 tag 仅出现 1 次: 'Organizational-Design'`
-- `wiki/entities/MachinaCheck.md` - `一次性 tag 仅出现 1 次: 'Privacy-by-Design'`
 - `wiki/entities/Competent-Output.md` - `一次性 tag 仅出现 1 次: 'Quality'`
 - `wiki/sources/20260420-build-first-business-ontology.md` - `一次性 tag 仅出现 1 次: 'RDF'`
 - `wiki/entities/Verifiability.md` - `一次性 tag 仅出现 1 次: 'RL'`
@@ -195,7 +192,6 @@ tags:
 - `wiki/entities/Demand-Collapse.md` - `一次性 tag 仅出现 1 次: 'macro'`
 - `wiki/sources/Maintainability sensors for coding agents.md` - `一次性 tag 仅出现 1 次: 'maintainability'`
 - `wiki/sources/20260609-whats-new-in-claude-managed-agents.md` - `一次性 tag 仅出现 1 次: 'managed-agents'`
-- `wiki/sources/MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X.md` - `一次性 tag 仅出现 1 次: 'manufacturing'`
 - `wiki/entities/Prompt-Injection-Risk.md` - `一次性 tag 仅出现 1 次: 'marketing'`
 - `wiki/sources/20260604-openai-dreaming-memory.md` - `一次性 tag 仅出现 1 次: 'memory-systems'`
 - `wiki/sources/The next biggest moat in AI.md` - `一次性 tag 仅出现 1 次: 'moat'`
