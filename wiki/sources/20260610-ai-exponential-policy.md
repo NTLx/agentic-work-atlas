@@ -11,7 +11,6 @@ tags:
   - regulation
   - frontier-AI
   - Anthropic
-  - Dario-Amodei
 ---
 
 # Policy on the AI Exponential

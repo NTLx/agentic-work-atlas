@@ -9,10 +9,8 @@ tags:
   - source-summary
   - AI-Agent
   - LLM
-  - agentic-systems
   - workflows
   - tool-use
-  - Claude
 ---
 
 # Building effective agents

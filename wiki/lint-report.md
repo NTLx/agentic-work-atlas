@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 270 |
+| `tag` | 265 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,8 +50,6 @@ tags:
 
 ### tag
 
-- `wiki/sources/20260610-ai-exponential-policy.md` - `tags 超过 5 个: 6`
-- `wiki/sources/building-effective-agents-complete.md` - `tags 超过 5 个: 7`
 - `wiki/comparisons/Knowledge-Work-vs-Wisdom-Work.md` - `一次性 tag 仅出现 1 次: 'AI-Era'`
 - `wiki/entities/Hardware-Sovereignty.md` - `一次性 tag 仅出现 1 次: 'AI-Infrastructure'`
 - `wiki/entities/Zero-PHI-Policy.md` - `一次性 tag 仅出现 1 次: 'AI-Safety'`
@@ -70,9 +68,7 @@ tags:
 - `wiki/entities/朱少民.md` - `一次性 tag 仅出现 1 次: 'Author'`
 - `wiki/entities/AI-Native-Startup.md` - `一次性 tag 仅出现 1 次: 'Business-Model'`
 - `wiki/comparisons/Knowledge-Work-vs-Wisdom-Work.md` - `一次性 tag 仅出现 1 次: 'Career-Evolution'`
-- `wiki/sources/building-effective-agents-complete.md` - `一次性 tag 仅出现 1 次: 'Claude'`
 - `wiki/entities/Three-State-Protocol.md` - `一次性 tag 仅出现 1 次: 'Communication-Protocol'`
-- `wiki/sources/20260610-ai-exponential-policy.md` - `一次性 tag 仅出现 1 次: 'Dario-Amodei'`
 - `wiki/entities/CLAUDE-md.md` - `一次性 tag 仅出现 1 次: 'Documentation'`
 - `wiki/entities/Adversarial-Distillation.md` - `一次性 tag 仅出现 1 次: 'Game-Theory'`
 - `wiki/entities/Accessibility-Agent.md` - `一次性 tag 仅出现 1 次: 'GitHub'`
@@ -127,7 +123,6 @@ tags:
 - `wiki/entities/Security-Hardening-Phase.md` - `一次性 tag 仅出现 1 次: 'agentic-coding'`
 - `wiki/sources/20260409-ai-capability-gap-ai-psychosis.md` - `一次性 tag 仅出现 1 次: 'agentic-models'`
 - `wiki/sources/20260606-google-agentic-rag.md` - `一次性 tag 仅出现 1 次: 'agentic-rag'`
-- `wiki/sources/building-effective-agents-complete.md` - `一次性 tag 仅出现 1 次: 'agentic-systems'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/sources/Improving token efficiency in GitHub Agentic Workflows.md` - `一次性 tag 仅出现 1 次: 'agentic-workflows'`
 - `wiki/sources/Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough.md` - `一次性 tag 仅出现 1 次: 'agents'`
