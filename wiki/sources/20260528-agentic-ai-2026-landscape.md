@@ -10,7 +10,7 @@ tags:
   - agentic-ai
   - open-source
   - developer-ecosystem
-  - agent-infrastructure
+  - agent-infra
 ---
 
 # Agentic AI 2026：当黑客松式的狂欢冷却下来

@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 196 |
+| `tag` | 193 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -51,9 +51,6 @@ tags:
 ### tag
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
-- `wiki/sources/Coding agents in the social sciences.md` - `一次性 tag 仅出现 1 次: 'adoption'`
-- `wiki/comparisons/Agent-Harness-vs-Agent-Workflow-Patterns.md` - `一次性 tag 仅出现 1 次: 'agent-engineering'`
-- `wiki/sources/20260528-agentic-ai-2026-landscape.md` - `一次性 tag 仅出现 1 次: 'agent-infrastructure'`
 - `wiki/sources/Learning on the Shop floor.md` - `一次性 tag 仅出现 1 次: 'agent-native'`
 - `wiki/entities/Agent-Infra.md` - `一次性 tag 仅出现 1 次: 'agent-runtime'`
 - `wiki/entities/Capability-Map.md` - `一次性 tag 仅出现 1 次: 'agent-tooling'`

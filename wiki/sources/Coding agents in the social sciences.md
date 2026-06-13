@@ -9,7 +9,7 @@ tags:
   - source-summary
   - coding-agents
   - knowledge-work
-  - adoption
+  - ai-adoption
 ---
 
 # Coding Agents in the Social Sciences
