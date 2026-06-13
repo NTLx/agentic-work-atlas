@@ -10,8 +10,6 @@ tags:
   - person
   - entrepreneurship
   - startup
-  - Y-Combinator
-  - essays
 related_entities:
   - "[[Dan-Shipper]]"
   - "[[Taste]]"

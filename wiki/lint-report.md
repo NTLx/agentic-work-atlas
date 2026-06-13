@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 201 |
+| `tag` | 196 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -51,9 +51,6 @@ tags:
 ### tag
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
-- `wiki/entities/Automated-Criteria.md` - `一次性 tag 仅出现 1 次: 'Verification'`
-- `wiki/entities/Paul-Graham.md` - `一次性 tag 仅出现 1 次: 'Y-Combinator'`
-- `wiki/entities/Conceptual-Model.md` - `一次性 tag 仅出现 1 次: 'abstraction'`
 - `wiki/sources/Coding agents in the social sciences.md` - `一次性 tag 仅出现 1 次: 'adoption'`
 - `wiki/comparisons/Agent-Harness-vs-Agent-Workflow-Patterns.md` - `一次性 tag 仅出现 1 次: 'agent-engineering'`
 - `wiki/sources/20260528-agentic-ai-2026-landscape.md` - `一次性 tag 仅出现 1 次: 'agent-infrastructure'`
@@ -105,7 +102,6 @@ tags:
 - `wiki/entities/Emergence.md` - `一次性 tag 仅出现 1 次: 'complexity'`
 - `wiki/entities/Policy-as-Code-for-Agent-Governance.md` - `一次性 tag 仅出现 1 次: 'compliance'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'concept'`
-- `wiki/sources/What Is Code?.md` - `一次性 tag 仅出现 1 次: 'conceptual-model'`
 - `wiki/entities/AGENTS-md.md` - `一次性 tag 仅出现 1 次: 'configuration'`
 - `wiki/sources/20260608-connector-observability-directory.md` - `一次性 tag 仅出现 1 次: 'connectors'`
 - `wiki/entities/Constraint-Infrastructure.md` - `一次性 tag 仅出现 1 次: 'constraint'`
@@ -126,7 +122,6 @@ tags:
 - `wiki/entities/AGI-Economics.md` - `一次性 tag 仅出现 1 次: 'economics'`
 - `wiki/topics/Agentic-AI-Ecosystem.md` - `一次性 tag 仅出现 1 次: 'ecosystem'`
 - `wiki/entities/Phil-Trammell.md` - `一次性 tag 仅出现 1 次: 'epoch'`
-- `wiki/entities/Paul-Graham.md` - `一次性 tag 仅出现 1 次: 'essays'`
 - `wiki/entities/Cybernetic-Teammate.md` - `一次性 tag 仅出现 1 次: 'expertise'`
 - `wiki/entities/Input-Output-Outcome.md` - `一次性 tag 仅出现 1 次: 'framework'`
 - `wiki/sources/20260531-thoughts-hmmz.md` - `一次性 tag 仅出现 1 次: 'friction'`

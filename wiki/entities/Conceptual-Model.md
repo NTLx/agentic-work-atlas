@@ -10,7 +10,7 @@ updated: 2026-05-26
 tags:
   - programming-theory
   - software-design
-  - abstraction
+  - conceptual-model
 related_entities:
   - "[[Code-as-Conceptual-Infrastructure]]"
   - "[[Vocabulary-Building]]"
