@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 185 |
+| `tag` | 182 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -52,9 +52,6 @@ tags:
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
-- `wiki/sources/Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough.md` - `一次性 tag 仅出现 1 次: 'agents'`
-- `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `一次性 tag 仅出现 1 次: 'agi-economics'`
-- `wiki/sources/20260502-most-companies-arent-ready-for-ai.md` - `一次性 tag 仅出现 1 次: 'ai'`
 - `wiki/sources/20260410-code-is-cheap.md` - `一次性 tag 仅出现 1 次: 'ai-assisted-programming'`
 - `wiki/sources/20260531-thoughts-hmmz.md` - `一次性 tag 仅出现 1 次: 'ai-attention'`
 - `wiki/entities/AI-Restraint.md` - `一次性 tag 仅出现 1 次: 'ai-design'`

@@ -8,7 +8,7 @@ updated: 2026-05-24
 tags:
   - source-summary
   - agi
-  - agents
+  - AI-Agent
 ---
 
 # Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough

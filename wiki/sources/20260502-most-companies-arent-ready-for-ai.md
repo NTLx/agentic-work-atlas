@@ -7,7 +7,7 @@ created: 2026-05-24
 updated: 2026-05-25
 tags:
   - source-summary
-  - ai
+  - ai-adoption
   - business
   - enterprise
 ---
