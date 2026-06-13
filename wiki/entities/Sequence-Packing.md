@@ -7,8 +7,7 @@ definition: "把多条短训练样本拼接进固定长度上下文以减少 pad
 created: 2026-05-10
 updated: 2026-05-25
 tags:
-  - LLM-Training
-  - Performance-Optimization
+  - training
   - AMD
 related_entities:
   - "[[Dual-Tier-LLM-Architecture]]"

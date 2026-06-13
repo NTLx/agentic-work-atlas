@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 233 |
+| `tag` | 228 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,9 +50,6 @@ tags:
 
 ### tag
 
-- `wiki/entities/Sequence-Packing.md` - `一次性 tag 仅出现 1 次: 'LLM-Training'`
-- `wiki/entities/Bias-to-Action-LLM.md` - `一次性 tag 仅出现 1 次: 'LLM-behavior'`
-- `wiki/sources/Building an MCP Ecosystem at Pinterest.md` - `一次性 tag 仅出现 1 次: 'MCP'`
 - `wiki/entities/MIT-Technology-Review-Insights.md` - `一次性 tag 仅出现 1 次: 'MIT'`
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
 - `wiki/entities/MachinaCheck.md` - `一次性 tag 仅出现 1 次: 'Manufacturing'`
@@ -62,7 +59,6 @@ tags:
 - `wiki/sources/20260420-build-first-business-ontology.md` - `一次性 tag 仅出现 1 次: 'OWL'`
 - `wiki/entities/Human-Governor-Agent-Operator.md` - `一次性 tag 仅出现 1 次: 'Operating-Model'`
 - `wiki/entities/AI-First.md` - `一次性 tag 仅出现 1 次: 'Organizational-Design'`
-- `wiki/entities/Sequence-Packing.md` - `一次性 tag 仅出现 1 次: 'Performance-Optimization'`
 - `wiki/entities/MachinaCheck.md` - `一次性 tag 仅出现 1 次: 'Privacy-by-Design'`
 - `wiki/entities/Competent-Output.md` - `一次性 tag 仅出现 1 次: 'Quality'`
 - `wiki/sources/20260420-build-first-business-ontology.md` - `一次性 tag 仅出现 1 次: 'RDF'`
@@ -266,7 +262,6 @@ tags:
 - `wiki/entities/Martin-Fowler.md` - `一次性 tag 仅出现 1 次: 'thoughtworks'`
 - `wiki/entities/ACI-Agent-Computer-Interface.md` - `一次性 tag 仅出现 1 次: 'tool-design'`
 - `wiki/sources/Designing the hf CLI as an agent-optimized way to work with the Hub.md` - `一次性 tag 仅出现 1 次: 'tooling'`
-- `wiki/entities/Verifiability.md` - `一次性 tag 仅出现 1 次: 'training'`
 - `wiki/entities/Messy-Middle.md` - `一次性 tag 仅出现 1 次: 'transition'`
 - `wiki/entities/Memory-Summary-Page.md` - `一次性 tag 仅出现 1 次: 'trust'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'tutorial'`

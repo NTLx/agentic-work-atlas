@@ -7,7 +7,7 @@ created: 2026-05-24
 updated: 2026-05-25
 tags:
   - source-summary
-  - MCP
+  - mcp
   - AI-Agent
   - engineering
 ---

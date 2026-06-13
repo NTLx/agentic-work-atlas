@@ -10,7 +10,7 @@ created: 2026-05-18
 updated: 2026-05-29
 tags:
   - AI-Agent
-  - LLM-behavior
+  - ai-safety
 related_entities:
   - "[[Accessibility-Agent]]"
   - "[[Agent-Harness]]"
