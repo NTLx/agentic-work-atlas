@@ -8,7 +8,6 @@ updated: 2026-06-13
 tags:
   - source-summary
   - agent-harness
-  - NLAH
   - research-paper
 ---
 

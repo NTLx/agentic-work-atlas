@@ -10,7 +10,7 @@ updated: 2026-05-25
 tags:
   - AI-Architecture
   - Multi-Agent
-  - Model-Routing
+  - model-selection
 related_entities:
   - "[[Agent-Orchestration]]"
   - "[[Agentic-Engineering]]"

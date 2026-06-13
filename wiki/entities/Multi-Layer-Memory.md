@@ -9,7 +9,7 @@ updated: 2026-05-29
 tags:
   - AI-Agent
   - OpenClaw
-  - Memory-System
+  - memory-system
 related_entities:
   - '[[Context-Engineering]]'
   - '[[Agent-Orchestration]]'
