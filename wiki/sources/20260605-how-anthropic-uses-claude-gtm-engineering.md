@@ -34,7 +34,6 @@ tags:
 - **跨域关联2**: GTM 架构师角色类似传统 IT 中的"业务分析师"，但技术能力边界更模糊
 
 ### 关联概念
-- [[GTM-Engineering]]
 - [[MCP-Registry]]
 - [[Claude-Code-CLI]]
 - [[Software-Democratization]]

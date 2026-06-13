@@ -35,6 +35,5 @@ tags:
 
 ### 关联概念
 - [[Progressive-Disclosure]]
-- [[Skills]]
-- [[Claude-Code]]
-- [[Agent-Harness-Engineering]]
+- [[Claude-Code-CLI]]
+- [[Agent-Harness]]
