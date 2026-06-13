@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 207 |
+| `tag` | 204 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -51,9 +51,6 @@ tags:
 ### tag
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
-- `wiki/sources/20260414-martin-fowler-fragments.md` - `一次性 tag 仅出现 1 次: 'TDD'`
-- `wiki/comparisons/Cook-vs-Chef.md` - `一次性 tag 仅出现 1 次: 'Taste'`
-- `wiki/entities/Machine-Readable-Processes.md` - `一次性 tag 仅出现 1 次: 'Technical-Architecture'`
 - `wiki/entities/Pixel-Facts.md` - `一次性 tag 仅出现 1 次: 'UI-automation'`
 - `wiki/entities/Memory-Summary-Page.md` - `一次性 tag 仅出现 1 次: 'UX'`
 - `wiki/entities/Problem-Solution-Fit.md` - `一次性 tag 仅出现 1 次: 'Validation'`

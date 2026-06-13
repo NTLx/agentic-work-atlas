@@ -6,7 +6,7 @@ updated: 2026-05-26
 tags:
   - comparison
   - Creativity
-  - Taste
+  - taste
 related_entities:
   - '[[Taste]]'
   - '[[Judgment]]'

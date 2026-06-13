@@ -9,7 +9,7 @@ updated: 2026-05-26
 tags:
   - AI-Agent
   - Process-Design
-  - Technical-Architecture
+  - architecture
 related_entities:
   - '[[Agent-First-Enterprise]]'
   - '[[Human-Governor-Agent-Operator]]'
