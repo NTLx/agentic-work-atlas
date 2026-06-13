@@ -7,10 +7,8 @@ created: 2026-05-24
 updated: 2026-05-25
 tags:
   - source-summary
-  - Ontology
-  - Enterprise-AI
-  - RDF
-  - OWL
+  - ontology
+  - enterprise-AI
 ---
 
 # 20260420-build-first-business-ontology

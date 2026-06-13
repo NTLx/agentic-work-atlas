@@ -9,7 +9,7 @@ updated: 2026-06-13
 tags:
   - AI-Agent
   - Enterprise-Architecture
-  - Operating-Model
+  - organization
 related_entities:
   - '[[Agent-First-Enterprise]]'
   - '[[Machine-Readable-Processes]]'

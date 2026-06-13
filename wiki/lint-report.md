@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 221 |
+| `tag` | 217 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -51,11 +51,7 @@ tags:
 ### tag
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
-- `wiki/sources/20260420-build-first-business-ontology.md` - `一次性 tag 仅出现 1 次: 'OWL'`
-- `wiki/entities/Human-Governor-Agent-Operator.md` - `一次性 tag 仅出现 1 次: 'Operating-Model'`
-- `wiki/entities/AI-First.md` - `一次性 tag 仅出现 1 次: 'Organizational-Design'`
 - `wiki/entities/Competent-Output.md` - `一次性 tag 仅出现 1 次: 'Quality'`
-- `wiki/sources/20260420-build-first-business-ontology.md` - `一次性 tag 仅出现 1 次: 'RDF'`
 - `wiki/entities/Verifiability.md` - `一次性 tag 仅出现 1 次: 'RL'`
 - `wiki/entities/Deterministic-Retrieval.md` - `一次性 tag 仅出现 1 次: 'Retrieval'`
 - `wiki/entities/Deterministic-Retrieval.md` - `一次性 tag 仅出现 1 次: 'Scientific-Discovery'`
