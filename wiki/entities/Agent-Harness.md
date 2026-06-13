@@ -46,7 +46,7 @@ source_raw:
   - "[[20260608-paving-the-way-for-agents-in-biology]]"
   - "[[20260613-NLAH-natural-language-agent-harnesses]]"
   - "[[20260613-coding-agent-organizational-engineering]]"
-   - "[[20260613-qoder-human-bottleneck]]"
+  - "[[20260613-qoder-human-bottleneck]]"
   - "[[20260613-aliyun-agent-infra-constraint-infrastructure]]"
 ---
 

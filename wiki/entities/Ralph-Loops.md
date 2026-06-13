@@ -7,8 +7,8 @@ definition: "一种实现长程任务（Long-horizon execution）的 Harness 技
 created: 2026-06-10
 updated: 2026-06-10
 tags:
-  - Agent-Loops
-  - long-horizon
+  - AI-Agent
+  - agentic-engineering
 related_entities:
   - "[[Agent-Harness]]"
   - "[[Agent-Loops]]"

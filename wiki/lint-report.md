@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-13"
-score: 99
-status: "FAIL"
+score: 100
+status: "PASS"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-06-13
 
 > [!summary] 状态
-> 门禁: **FAIL**
-> 分数: **99/100**
-> 阻断问题: **1**
+> 门禁: **PASS**
+> 分数: **100/100**
+> 阻断问题: **0**
 
 ## 统计
 
@@ -32,13 +32,13 @@ tags:
 
 | 检查项 | 问题数 |
 |--------|--------|
-| `frontmatter` | 1 |
+| `frontmatter` | 0 |
 | `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 251 |
+| `tag` | 247 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -48,15 +48,8 @@ tags:
 
 ## 问题明细
 
-### frontmatter
-
-- `wiki/entities/Agent-Harness.md:1` - `YAML 解析失败: while parsing a block collection /   in "<unicode string>", line 37, column 3: /       - "[[The Anatomy of an Agent Har ...  /       ^ / expected <block end>, but found '<block sequence start>' /   in "<unicode string>", line 48, column 4: /        - "[[20260613-qoder-human-bottle ...  /        ^`
-
 ### tag
 
-- `wiki/entities/Specialization-Compounds.md` - `一次性 tag 仅出现 1 次: 'AI-training'`
-- `wiki/entities/Ralph-Loops.md` - `一次性 tag 仅出现 1 次: 'Agent-Loops'`
-- `wiki/entities/Reflexion.md` - `一次性 tag 仅出现 1 次: 'Agent-Pattern'`
 - `wiki/entities/朱少民.md` - `一次性 tag 仅出现 1 次: 'Author'`
 - `wiki/entities/AI-Native-Startup.md` - `一次性 tag 仅出现 1 次: 'Business-Model'`
 - `wiki/entities/Three-State-Protocol.md` - `一次性 tag 仅出现 1 次: 'Communication-Protocol'`
@@ -217,7 +210,6 @@ tags:
 - `wiki/sources/What Is Code?.md` - `一次性 tag 仅出现 1 次: 'llm-coding'`
 - `wiki/sources/Using LLMs to secure source code.md` - `一次性 tag 仅出现 1 次: 'llm-workflow'`
 - `wiki/sources/20260606-the-minimill-of-ai.md` - `一次性 tag 仅出现 1 次: 'local-ai'`
-- `wiki/entities/Ralph-Loops.md` - `一次性 tag 仅出现 1 次: 'long-horizon'`
 - `wiki/entities/Demand-Collapse.md` - `一次性 tag 仅出现 1 次: 'macro'`
 - `wiki/sources/Maintainability sensors for coding agents.md` - `一次性 tag 仅出现 1 次: 'maintainability'`
 - `wiki/sources/20260609-whats-new-in-claude-managed-agents.md` - `一次性 tag 仅出现 1 次: 'managed-agents'`

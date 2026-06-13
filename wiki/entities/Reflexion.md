@@ -10,7 +10,6 @@ updated: 2026-05-25
 tags:
   - AI-Architecture
   - Multi-Agent
-  - Agent-Pattern
 related_entities:
   - "[[Agent-Orchestration]]"
   - "[[Agentic-Engineering]]"
