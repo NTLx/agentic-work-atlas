@@ -24,6 +24,24 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 ENTITY_DIR = ROOT / "wiki" / "entities"
+GENERIC_NAME_TOKENS = {
+    "agi",
+    "ai",
+    "agent",
+    "agents",
+    "agentic",
+    "code",
+    "coding",
+    "data",
+    "engineering",
+    "llm",
+    "model",
+    "models",
+    "system",
+    "systems",
+    "wiki",
+    "work",
+}
 
 BUCKET_LABELS = {
     "keep": "保留",
@@ -110,19 +128,28 @@ def normalize_name(value: str) -> str:
 
 
 def name_tokens(value: str) -> set[str]:
-    return {token for token in normalize_name(value).split() if token}
+    return {token for token in normalize_name(value).split() if token and token not in GENERIC_NAME_TOKENS}
+
+
+def normalized_names(names: set[str]) -> set[str]:
+    normalized: set[str] = set()
+    for name in names:
+        tokens = name_tokens(name)
+        if tokens:
+            normalized.add(" ".join(sorted(tokens)))
+    return normalized
 
 
 def duplicate_candidates(rows: list[Entity]) -> list[DuplicateCandidate]:
     candidates: list[DuplicateCandidate] = []
     for i, left in enumerate(rows):
         left_names = {left.title, left.stem, *left.aliases}
-        left_normalized = {normalize_name(name) for name in left_names if name}
+        left_normalized = normalized_names(left_names)
         left_tokens = name_tokens(left.title or left.stem)
 
         for right in rows[i + 1 :]:
             right_names = {right.title, right.stem, *right.aliases}
-            right_normalized = {normalize_name(name) for name in right_names if name}
+            right_normalized = normalized_names(right_names)
             right_tokens = name_tokens(right.title or right.stem)
 
             if left_normalized & right_normalized:
@@ -130,7 +157,7 @@ def duplicate_candidates(rows: list[Entity]) -> list[DuplicateCandidate]:
                 continue
 
             union = left_tokens | right_tokens
-            if not union:
+            if len(left_tokens & right_tokens) < 2 or not union:
                 continue
             score = len(left_tokens & right_tokens) / len(union)
             if score >= 0.75:
@@ -360,21 +387,34 @@ def report_path() -> Path:
     return ROOT / "docs" / f"entity-audit-{today}.md"
 
 
-def print_summary(rows: list[Entity]) -> None:
+def render_summary(rows: list[Entity]) -> str:
     buckets = defaultdict(list)
     for row in rows:
         buckets[row.bucket].append(row)
-    print("Entity 价值审计")
-    print("=" * 60)
-    print(f"Entity 总数: {len(rows)}")
+    duplicates = duplicate_candidates(rows)
+
+    lines = [
+        "Entity 价值审计",
+        "=" * 60,
+        f"Entity 总数: {len(rows)}",
+    ]
     for bucket in ("keep", "keep-actor", "strengthen", "review", "merge-or-demote"):
-        print(f"{BUCKET_LABELS[bucket]}: {len(buckets[bucket])}")
-    print("\n合并或降级候选:")
+        lines.append(f"{BUCKET_LABELS[bucket]}: {len(buckets[bucket])}")
+    lines.append(f"疑似重复: {len(duplicates)}")
+
+    lines.append("")
+    lines.append("合并或降级候选:")
     for row in sorted(buckets["merge-or-demote"], key=lambda r: (r.score, r.stem))[:20]:
-        print(f"- {row.stem} (分数={row.score}, 来源数={row.source_count}, 图谱入链={row.graph_in})")
-    print("\n复核候选:")
+        lines.append(f"- {row.stem} (分数={row.score}, 来源数={row.source_count}, 图谱入链={row.graph_in})")
+    lines.append("")
+    lines.append("复核候选:")
     for row in sorted(buckets["review"], key=lambda r: (r.score, r.stem))[:30]:
-        print(f"- {row.stem} (分数={row.score}, 来源数={row.source_count}, 图谱入链={row.graph_in}, Topic 入链={row.topic_in})")
+        lines.append(f"- {row.stem} (分数={row.score}, 来源数={row.source_count}, 图谱入链={row.graph_in}, Topic 入链={row.topic_in})")
+    return "\n".join(lines)
+
+
+def print_summary(rows: list[Entity]) -> None:
+    print(render_summary(rows))
 
 
 def main() -> int:

@@ -337,6 +337,33 @@ def check_tag_quality(paths: Iterable[Path]) -> list[Issue]:
     return issues
 
 
+def check_singleton_tags(paths: Iterable[Path]) -> list[Issue]:
+    tag_paths: dict[str, list[Path]] = {}
+    for path in paths:
+        data, err = load_frontmatter(path)
+        if err or not data:
+            continue
+        for tag in as_list(data.get("tags")):
+            tag_text = str(tag)
+            if tag_text.startswith("visibility/"):
+                continue
+            tag_paths.setdefault(tag_text, []).append(path)
+
+    issues: list[Issue] = []
+    for tag, owners in sorted(tag_paths.items()):
+        if len(owners) == 1:
+            issues.append(
+                Issue(
+                    "tag",
+                    owners[0],
+                    None,
+                    f"一次性 tag 仅出现 1 次: {tag!r}",
+                    blocking=False,
+                )
+            )
+    return issues
+
+
 def check_evidence_schema(paths: Iterable[Path]) -> list[Issue]:
     issues: list[Issue] = []
     for path in paths:
@@ -349,6 +376,25 @@ def check_evidence_schema(paths: Iterable[Path]) -> list[Issue]:
         claim_type = data.get("claim_type")
         if claim_type is not None and claim_type not in CLAIM_TYPES:
             issues.append(Issue("evidence", path, None, f"claim_type 必须为 extracted/synthesized/mixed: {claim_type!r}"))
+    return issues
+
+
+def check_low_evidence_pages(paths: Iterable[Path]) -> list[Issue]:
+    issues: list[Issue] = []
+    for path in paths:
+        data, err = load_frontmatter(path)
+        if err or not data:
+            continue
+        if data.get("evidence_level") == "low":
+            issues.append(
+                Issue(
+                    "low-evidence",
+                    path,
+                    None,
+                    f"低证据页面 {path.stem} 只能作为补 source 或探索线索",
+                    blocking=False,
+                )
+            )
     return issues
 
 
@@ -537,7 +583,9 @@ def collect_issues() -> tuple[list[Issue], dict[str, int], list[Path]]:
     issues.extend(check_wikilinks(wiki_link_files()))
     issues.extend(check_source_raw())
     issues.extend(check_tag_quality(wiki_link_files()))
+    issues.extend(check_singleton_tags(wiki_link_files()))
     issues.extend(check_evidence_schema(wiki_link_files()))
+    issues.extend(check_low_evidence_pages(wiki_link_files()))
     issues.extend(check_stale_core_pages(wiki_link_files()))
     issues.extend(check_entities())
     issues.extend(check_comparisons())
@@ -617,6 +665,7 @@ def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path
         "source_raw",
         "tag",
         "evidence",
+        "low-evidence",
         "stale-core",
         "entity",
         "comparison",

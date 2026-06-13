@@ -48,6 +48,32 @@ tags:
     assert not any("'AI-Agent'" in issue.message for issue in issues)
 
 
+def test_singleton_tags_are_non_blocking_hygiene_signals(tmp_path):
+    wiki_lint = load_wiki_lint()
+    first = write_note(
+        tmp_path / "wiki" / "entities" / "First.md",
+        """title: First
+tags:
+  - stable-tag
+  - one-off-tag
+""",
+    )
+    second = write_note(
+        tmp_path / "wiki" / "entities" / "Second.md",
+        """title: Second
+tags:
+  - stable-tag
+""",
+    )
+
+    issues = wiki_lint.check_singleton_tags([first, second])
+
+    assert len(issues) == 1
+    assert issues[0].category == "tag"
+    assert not issues[0].blocking
+    assert "one-off-tag" in issues[0].message
+
+
 def test_evidence_schema_blocks_invalid_values(tmp_path):
     wiki_lint = load_wiki_lint()
     path = write_note(
@@ -65,6 +91,24 @@ tags:
     assert len(issues) == 2
     assert all(issue.category == "evidence" for issue in issues)
     assert all(issue.blocking for issue in issues)
+
+
+def test_low_evidence_pages_are_non_blocking_review_signals(tmp_path):
+    wiki_lint = load_wiki_lint()
+    path = write_note(
+        tmp_path / "wiki" / "entities" / "Weak.md",
+        """title: Weak
+evidence_level: low
+claim_type: synthesized
+""",
+    )
+
+    issues = wiki_lint.check_low_evidence_pages([path])
+
+    assert len(issues) == 1
+    assert issues[0].category == "low-evidence"
+    assert not issues[0].blocking
+    assert "Weak" in issues[0].message
 
 
 def test_single_quoted_frontmatter_allows_inner_double_quotes(tmp_path):
