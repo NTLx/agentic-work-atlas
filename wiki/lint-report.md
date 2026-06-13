@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 282 |
+| `tag` | 277 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,9 +50,6 @@ tags:
 
 ### tag
 
-- `wiki/sources/20260530-ceo-knee-deep-building-ai.md` - `tags 超过 5 个: 6`
-- `wiki/sources/20260604-anthropic-recursive-self-improvement.md` - `tags 超过 5 个: 6`
-- `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260604-mollick-coexistence.md` - `tags 超过 5 个: 7`
 - `wiki/sources/20260604-openai-dreaming-memory.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260608-reflecting-on-year-of-claude-code.md` - `tags 超过 5 个: 6`
@@ -282,7 +279,6 @@ tags:
 - `wiki/entities/Emotional-Clarity.md` - `一次性 tag 仅出现 1 次: 'psychology'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'quartz'`
 - `wiki/sources/20260610-qwen-constraint-driven-engineering-experiment.md` - `一次性 tag 仅出现 1 次: 'qwen'`
-- `wiki/sources/20260604-anthropic-recursive-self-improvement.md` - `一次性 tag 仅出现 1 次: 'recursive-self-improvement'`
 - `wiki/entities/Recursive-Self-Improvement.md` - `一次性 tag 仅出现 1 次: 'recursive-systems'`
 - `wiki/entities/渐进式重构.md` - `一次性 tag 仅出现 1 次: 'refactoring'`
 - `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `一次性 tag 仅出现 1 次: 'relational-sector'`
@@ -318,7 +314,6 @@ tags:
 - `wiki/entities/Messy-Middle.md` - `一次性 tag 仅出现 1 次: 'transition'`
 - `wiki/entities/Memory-Summary-Page.md` - `一次性 tag 仅出现 1 次: 'trust'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'tutorial'`
-- `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `一次性 tag 仅出现 1 次: 'udi'`
 - `wiki/sources/20260613-ontology-for-agent-optimization.md` - `一次性 tag 仅出现 1 次: 'umodel'`
 - `wiki/sources/20260609-whats-new-in-claude-managed-agents.md` - `一次性 tag 仅出现 1 次: 'vault'`
 - `wiki/entities/Konstantine-Buhler.md` - `一次性 tag 仅出现 1 次: 'venture-capital'`

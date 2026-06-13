@@ -11,7 +11,6 @@ tags:
   - founder-mode
   - vibe-coding
   - coding-agents
-  - ai-deployment
 ---
 
 # CEO 回归亲手构建：Paul Graham 与 Guillermo Rauch 论高管与 AI 的关系

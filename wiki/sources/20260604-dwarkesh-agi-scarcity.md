@@ -11,7 +11,6 @@ tags:
   - labor-scarcity
   - wealth-redistribution
   - relational-sector
-  - udi
 ---
 
 # AGI 之后什么仍然稀缺？Imas 与 Trammell 在 Dwarkesh 上的对谈
