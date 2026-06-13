@@ -7,10 +7,9 @@ definition: "Claude 生态中面向研究、文档、表格和跨系统运营自
 created: 2026-05-13
 updated: 2026-05-26
 tags:
-  - AI-Tool
-  - Productivity
+  - productivity
   - Anthropic
-  - Ops-Automation
+  - automation
 related_entities:
   - "[[Claude-Code-CLI]]"
   - "[[AI-Native-Startup]]"

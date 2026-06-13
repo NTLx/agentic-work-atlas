@@ -12,7 +12,7 @@ updated: 2026-06-06
 tags:
   - enterprise-AI
   - model-selection
-  - AI-economics
+  - model-economics
 related_entities:
   - "[[Distributional-Alignment]]"
   - "[[Specialization-Compounds]]"

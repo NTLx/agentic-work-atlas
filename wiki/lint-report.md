@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 260 |
+| `tag` | 255 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,9 +50,6 @@ tags:
 
 ### tag
 
-- `wiki/entities/Claude-Cowork.md` - `一次性 tag 仅出现 1 次: 'AI-Tool'`
-- `wiki/entities/Specialized-Small-Models.md` - `一次性 tag 仅出现 1 次: 'AI-economics'`
-- `wiki/outputs/ai-enablement-human-governance.md` - `一次性 tag 仅出现 1 次: 'AI-enablement'`
 - `wiki/entities/Open-Source-Operational-AI-Framework.md` - `一次性 tag 仅出现 1 次: 'AI-for-science'`
 - `wiki/entities/Dwarkesh-Patel.md` - `一次性 tag 仅出现 1 次: 'AI-journalism'`
 - `wiki/entities/Dario-Amodei.md` - `一次性 tag 仅出现 1 次: 'AI-leader'`
@@ -83,12 +80,10 @@ tags:
 - `wiki/sources/20260613-NLAH-natural-language-agent-harnesses.md` - `一次性 tag 仅出现 1 次: 'NLAH'`
 - `wiki/sources/20260420-build-first-business-ontology.md` - `一次性 tag 仅出现 1 次: 'OWL'`
 - `wiki/entities/Human-Governor-Agent-Operator.md` - `一次性 tag 仅出现 1 次: 'Operating-Model'`
-- `wiki/entities/Claude-Cowork.md` - `一次性 tag 仅出现 1 次: 'Ops-Automation'`
 - `wiki/entities/Adversarial-Distillation.md` - `一次性 tag 仅出现 1 次: 'Organizational-Behavior'`
 - `wiki/entities/AI-First.md` - `一次性 tag 仅出现 1 次: 'Organizational-Design'`
 - `wiki/entities/Sequence-Packing.md` - `一次性 tag 仅出现 1 次: 'Performance-Optimization'`
 - `wiki/entities/MachinaCheck.md` - `一次性 tag 仅出现 1 次: 'Privacy-by-Design'`
-- `wiki/entities/Claude-Cowork.md` - `一次性 tag 仅出现 1 次: 'Productivity'`
 - `wiki/entities/Competent-Output.md` - `一次性 tag 仅出现 1 次: 'Quality'`
 - `wiki/sources/20260420-build-first-business-ontology.md` - `一次性 tag 仅出现 1 次: 'RDF'`
 - `wiki/entities/Verifiability.md` - `一次性 tag 仅出现 1 次: 'RL'`
