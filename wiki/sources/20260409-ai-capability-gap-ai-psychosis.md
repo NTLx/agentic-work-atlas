@@ -9,7 +9,7 @@ tags:
   - source-summary
   - ai-gap
   - ai-psychosis
-  - agentic-models
+  - agentic-ai
 ---
 
 # AI 能力鸿沟与 AI Psychosis

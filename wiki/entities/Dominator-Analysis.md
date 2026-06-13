@@ -7,7 +7,7 @@ definition: "控制流图/执行图中节点间的支配关系分析，用于从
 created: 2026-05-07
 updated: 2026-05-07
 tags:
-  - agent-validation
+  - verification
   - compiler-theory
   - graph-theory
 related_entities:

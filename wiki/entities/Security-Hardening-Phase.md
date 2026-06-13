@@ -9,7 +9,7 @@ definition: "在开发和代码审查之后，用预算驱动的 Agent 搜索持
 created: 2026-04-21
 updated: 2026-05-25
 tags:
-  - agentic-coding
+  - agentic-engineering
   - cybersecurity
   - software-engineering
 related_entities:
