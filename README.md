@@ -1136,21 +1136,30 @@ docs(schema): 用 Git Commit 规范替代 log.md 记录操作历史
 python3 -c "import sys; print(sys.argv[1].encode().decode('unicode_escape').encode('latin1').decode('utf8'))" 'raw/文件名'
 ```
 
-## 联网工具偏好（事实核查/时间验证/溯源）
+## 联网工具（事实核查/时间验证/溯源）
 
-在需要联网查询内容时，Agent 必须遵循以下工具偏好：
+Agent 根据任务性质自主选择最合适的联网工具，不强制绑定单一工具链。以下是各工具的适用场景和使用经验：
 
-| 需求 | 工具偏好 | 说明 |
+### 工具选择指南
+
+| 工具 | 适用场景 | 说明 |
 |------|---------|------|
-| **信息搜索** | `bailian_WebSearch` MCP 工具 | 总是优先使用此工具进行联网搜索查询 |
-| **网页解析** | `bailian_WebParser` MCP 工具 | 总是优先使用此工具提取网页内容 |
-| **浏览器操作** | `web-access` Skill | 需要登录态、交互操作、非公开内容时通过 CDP 操作 Chrome |
-| **搜索引擎** | `google.com/ncr` | 通过 `web-access` 操作浏览器时，始终使用 Google 无重定向版作为搜索引擎 |
+| **Jina** (`r.jina.ai/{url}`) | 文章、博客、文档、PDF 等正文类页面 | 第三方服务，将网页转为 Markdown，大幅节省 token。URL 前加前缀，不保留原网址 http 前缀。限 20 RPM |
+| **Tavily Extract** | 需要提取特定 URL 内容 | 返回 clean markdown，支持批量 URL |
+| **Tavily Search** | 实时信息搜索 | 返回 snippets + source URLs |
+| **Exa Web Search** | 语义丰富的搜索 | 返回 clean text content，适合需要高质量内容的场景 |
+| **WebFetch** | 简单网页抓取 | 内置工具，返回 markdown/text/html |
+| **curl** | 需要原始 HTML（meta、JSON-LD 等结构化字段） | 直接获取页面源码 |
 
-**执行顺序**:
-1. 简单事实核查 → `bailian_WebSearch`
-2. 验证具体网页内容 → `bailian_WebParser`
-3. 复杂场景（登录/动态渲染/交互） → `web-access` Skill → `google.com/ncr`
+**推荐策略**: 优先尝试轻量工具（Jina / Tavily），不满足需求时再升级到更重的工具。对微信公众号等反爬站点，Jina 和 Tavily 可能被拦截，需换用其他方式。
+
+### Jina 使用经验
+
+- **调用方式**: `curl -sL -H "Accept: text/markdown" "https://r.jina.ai/{url_without_http_prefix}"`
+- **适合**: 文章、博客、文档、技术帖等以正文为核心的页面
+- **不适合**: 数据面板、商品页、需要登录的页面、动态渲染重的 SPA
+- **限制**: 20 RPM；微信公众号等反爬站点会返回 CAPTCHA 要求
+- **注意**: 返回内容可能有信息损耗，关键数据需对照原文验证
 
 ### Edit 工具常见问题
 
@@ -1190,14 +1199,13 @@ Obsidian 浏览器插件剪藏 WeChat 文章会丢失正文段落。已入库 ra
 
 补抓步骤：
 
-**图片缺失**: Obsidian 插件只抓取第一张可见图片。完整图片列表需用 CDP `/eval` 提取：
-`Array.from(document.querySelectorAll("#js_content img")).map(img => img.getAttribute("data-src"))`
-微信图片使用 `data-src` 属性而非 `src`，需注意区分。
-1. 使用 `web-access` Skill → CDP 模式打开文章 URL
-2. `/eval` 提取 `#js_content` 的完整 `innerText` 和元数据
+1. 尝试用 Jina / Tavily Extract 抓取完整内容
+2. 若被反爬拦截，尝试 `curl` 直接获取页面源码
 3. 对比已有内容，确认缺失段落
 4. 若需要完整原文，创建新的 raw 剪藏文件；不要在旧 raw 中补写正文
 5. 清理新剪藏中的 `<!--rehype:style=...-->` HTML 注释标记
+
+**图片缺失**: 微信图片使用 `data-src` 属性而非 `src`，需注意区分。
 
 ### source_raw Wikilink 引号编码一致性
 
@@ -1346,7 +1354,6 @@ python3 tools/entity-audit.py --write-report
 - **raw 元数据修复要最小化** — 仅当 frontmatter、日期、文件名或链接安全阻断 lint/渲染时才改 raw；不得把作者补全、概念关系或编译判断当作 raw 修复
 - **git add 必须从根目录执行** — 子目录执行 `git add -A` 会意外添加外部符号链接（.codebuddy/ 等），应 `cd /Users/lx/Obsidian/Clips && git add <target-dir>/`
 - **X/Twitter 剪藏 author 格式**：若 Author Entity 已存在，用 `[[Author-Name]]` wikilink 格式；若不存在，先用纯文本
-- **web-access CDP Proxy**：通过 `localhost:3456` 操作，使用前先运行 `node "/Users/lx/.agents/skills/web-access/scripts/check-deps.mjs"` 检查
 
 ---
 
