@@ -18,6 +18,7 @@ related_entities:
   - "[[Context-Engineering]]"
 source_raw:
   - "[[20260528-agentic-ai-2026-landscape]]"
+  - "[[20260613-aliyun-agent-infra-constraint-infrastructure]]"
 ---
 
 > [!definition] 定义
@@ -78,3 +79,4 @@ Agent Infra 决定 AI 能替谁做事。它是 [[Agent-Harness]] 概念的生态
 - [[Context-Engineering]] — Agent Infra 中 Context/Memory 组件的理论基础
 - [[CLAUDE-md]] — Agent Infra 中"给 AI 写入职文档"的具体实现
 - [[Carbon-Silicon-Division]] — Agent Infra 支撑的分工模式
+- [[Constraint-Infrastructure]] — Agent Infra 中治理和安全能力域的约束基建具体实现

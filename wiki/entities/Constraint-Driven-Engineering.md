@@ -19,6 +19,7 @@ related_entities:
 source_raw:
   - "[[20260610-qwen-constraint-driven-engineering-experiment]]"
   - "[[20260611-openai-harness-engineering]]"
+  - "[[20260613-aliyun-agent-infra-constraint-infrastructure]]"
 ---
 
 # Constraint-Driven Engineering（约束驱动工程）
@@ -59,3 +60,4 @@ Harness 不仅是一个调度器，更是一个偏差收集器。失败时的报
 - [[Automated-Criteria]] - 约束工程的“眼睛”，没有自动化判据则闭环不成立
 - [[Task-Horizon\|Long-Horizon Execution]] - 约束工程解决的核心问题场景
 - [[Pixel-Facts]] - 约束工程在 UI 还原领域的特定技术
+- [[Constraint-Infrastructure]] - 约束驱动工程的平台层实现，将方法论转化为可编程的基础设施能力

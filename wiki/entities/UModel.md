@@ -18,6 +18,7 @@ related_entities:
 source_raw:
   - "[[20260613-ontology-for-agent-optimization]]"
   - "[[20260613-ontology-tokenmaxxing]]"
+  - "[[20260613-aliyun-agent-infra-constraint-infrastructure]]"
 ---
 
 # UModel（统一可观测模型）
@@ -69,3 +70,4 @@ source_raw:
 - [[Ontology]] — UModel 是本体论在运维领域的具体实现
 - [[Knowledge-Graph]] — UModel 以图为中心的建模与知识图谱技术密切相关
 - [[Agent-Harness]] — UModel 为 AIOps Agent 提供结构化上下文，是 Harness 的知识基础设施
+- [[Constraint-Infrastructure]] — 约束基建的效果观测层依赖 UModel 提供拓扑感知的根因定位能力

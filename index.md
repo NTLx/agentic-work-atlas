@@ -17,10 +17,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 262 个 |
+| Entity 页面 | 263 个 |
 | Topic 页面 | 28 个 |
 | Comparison 页面 | 18 个 |
-| Raw 文章 | 126 个 |
+| Raw 文章 | 127 个 |
 | Output 作品 | 4 个 |
 
 ---
@@ -34,6 +34,7 @@ tags:
 |--------|------|------|
 | [[wiki/entities/Agentic-Engineering\|Agentic Engineering（代理式工程）]] | 默认使用 Agent 辅助并持续改进的软件工程范式 | Agentic Engineering Patterns |
 | [[wiki/entities/Agent-Harness\|Agent Harness（智能体脚手架）]] | 包装模型并提供工具、上下文、护栏的运行时环境 | The Anatomy of an Agent Harness |
+| [[wiki/entities/Constraint-Infrastructure\|Constraint Infrastructure（约束基建）]] | 系统化保证 Agent 运行时行为边界的基础设施层 | 阿里云 Agent Infra 约束基建 |
 | [[wiki/entities/Constraint-Driven-Engineering\|Constraint-Driven Engineering（约束驱动工程）]] | 通过分阶段硬约束与分层验收实现 Agent 交付收敛的范式 | Qwen3.7-Max Experiment |
 | [[wiki/entities/Automated-Criteria\|Automated Criteria（自动化判据）]] | 从编排层到真机层客观判定 Agent 执行结果是否成功的体系 | Qwen3.7-Max Experiment |
 | [[wiki/entities/Pixel-Facts\|Pixel Facts（像素事实）]] | 将 UI 树 dump 坐标作为不可违反的几何约束注入 Agent 的技术 | Qwen3.7-Max Experiment |
@@ -90,7 +91,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：Coding Agent 下半场（组织级研发体系）+ Qoder 工程实践（睡后 Token）。新增 1 个 entity：[[Sleep-Token]]。更新 Agent-Harness、Coding-Agents、Agentic-Engineering entity。
+最新编译：阿里云 Agent Infra 约束基建。新增 1 个 entity：[[Constraint-Infrastructure]]。更新 Agent-Harness、Agent-Infra、UModel、Constraint-Driven-Engineering entity。
 
 ---
 
