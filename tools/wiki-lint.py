@@ -52,6 +52,9 @@ STANDARD_ENTITY_SECTIONS = (
 
 DATE_FIELDS = ("published", "created", "updated", "date", "validated_at")
 ZERO_WIDTH = ("\ufeff", "\u200b", "\u200c", "\u200d", "\u2060")
+TAG_PATTERN = re.compile(r"^[A-Za-z][A-Za-z0-9]*(?:[-/][A-Za-z0-9]+)*$")
+EVIDENCE_LEVELS = {"high", "medium", "low"}
+CLAIM_TYPES = {"extracted", "synthesized", "mixed"}
 
 
 @dataclass(frozen=True)
@@ -76,7 +79,7 @@ def markdown_files() -> list[Path]:
 def wiki_link_files() -> list[Path]:
     files = [INDEX]
     files.extend(sorted(WIKI.rglob("*.md")))
-    return [p for p in files if p.exists()]
+    return [p for p in files if p.exists() and p != LINT_REPORT]
 
 
 def wiki_targets() -> tuple[set[str], set[str]]:
@@ -219,7 +222,12 @@ def check_frontmatter_and_dates(paths: Iterable[Path]) -> list[Issue]:
                 stripped = line.strip()
                 if not stripped or stripped.startswith("#"):
                     continue
-                if stripped.count('"') > 2 and not re.search(r'\\"', stripped):
+                value = ""
+                if stripped.startswith("- "):
+                    value = stripped[2:].lstrip()
+                elif ":" in stripped:
+                    value = stripped.split(":", 1)[1].lstrip()
+                if value.startswith('"') and value.count('"') > 2 and not re.search(r'\\"', value):
                     issues.append(
                         Issue(
                             "frontmatter",
@@ -309,6 +317,102 @@ def as_list(value) -> list:
     if isinstance(value, list):
         return value
     return [value]
+
+
+def check_tag_quality(paths: Iterable[Path]) -> list[Issue]:
+    issues: list[Issue] = []
+    for path in paths:
+        data, err = load_frontmatter(path)
+        if err or not data:
+            continue
+        tags = as_list(data.get("tags"))
+        if len(tags) > 5:
+            issues.append(Issue("tag", path, None, f"tags 超过 5 个: {len(tags)}", blocking=False))
+        for tag in tags:
+            tag_text = str(tag)
+            if tag_text.startswith("visibility/"):
+                continue
+            if not TAG_PATTERN.match(tag_text):
+                issues.append(Issue("tag", path, None, f"非 kebab-case tag: {tag_text!r}", blocking=False))
+    return issues
+
+
+def check_evidence_schema(paths: Iterable[Path]) -> list[Issue]:
+    issues: list[Issue] = []
+    for path in paths:
+        data, err = load_frontmatter(path)
+        if err or not data:
+            continue
+        evidence_level = data.get("evidence_level")
+        if evidence_level is not None and evidence_level not in EVIDENCE_LEVELS:
+            issues.append(Issue("evidence", path, None, f"evidence_level 必须为 high/medium/low: {evidence_level!r}"))
+        claim_type = data.get("claim_type")
+        if claim_type is not None and claim_type not in CLAIM_TYPES:
+            issues.append(Issue("evidence", path, None, f"claim_type 必须为 extracted/synthesized/mixed: {claim_type!r}"))
+    return issues
+
+
+def inbound_wikilink_counts(paths: Iterable[Path]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for path in paths:
+        text = path.read_text(encoding="utf-8", errors="replace")
+        stripped = strip_code_preserve_lines(text)
+        seen_in_file: set[str] = set()
+        for match in re.finditer(r"!?\[\[([^\]]+)\]\]", stripped):
+            target = split_wikilink(match.group(1))
+            if target:
+                seen_in_file.add(target.split("/")[-1])
+        for target in seen_in_file:
+            counts[target] = counts.get(target, 0) + 1
+    return counts
+
+
+def parse_iso_date(value) -> date | None:
+    if isinstance(value, datetime):
+        return value.date()
+    if isinstance(value, date):
+        return value
+    if isinstance(value, str):
+        try:
+            return date.fromisoformat(value)
+        except ValueError:
+            return None
+    return None
+
+
+def check_stale_core_pages(
+    paths: Iterable[Path],
+    today: date | None = None,
+    stale_days: int = 90,
+    min_inbound: int = 5,
+) -> list[Issue]:
+    path_list = list(paths)
+    counts = inbound_wikilink_counts(path_list)
+    today = today or date.today()
+    issues: list[Issue] = []
+
+    for path in path_list:
+        if path.name in {"index.md", "lint-report.md", "research-agenda.md"}:
+            continue
+        data, err = load_frontmatter(path)
+        if err or not data:
+            continue
+        updated = parse_iso_date(data.get("updated"))
+        if not updated:
+            continue
+        age = (today - updated).days
+        inbound = counts.get(path.stem, 0)
+        if age >= stale_days and inbound >= min_inbound:
+            issues.append(
+                Issue(
+                    "stale-core",
+                    path,
+                    None,
+                    f"核心页 {path.stem} 已 {age} 天未更新，入链 {inbound} 条",
+                    blocking=False,
+                )
+            )
+    return issues
 
 
 def check_source_raw() -> list[Issue]:
@@ -432,6 +536,9 @@ def collect_issues() -> tuple[list[Issue], dict[str, int], list[Path]]:
     issues.extend(check_dollars(paths))
     issues.extend(check_wikilinks(wiki_link_files()))
     issues.extend(check_source_raw())
+    issues.extend(check_tag_quality(wiki_link_files()))
+    issues.extend(check_evidence_schema(wiki_link_files()))
+    issues.extend(check_stale_core_pages(wiki_link_files()))
     issues.extend(check_entities())
     issues.extend(check_comparisons())
     issues.extend(check_index_counts())
@@ -451,7 +558,7 @@ def group_issues(issues: Iterable[Issue]) -> dict[str, list[Issue]]:
 
 
 def md_escape_code(value: str) -> str:
-    return value.replace("`", "'")
+    return value.replace("`", "'").replace("\n", " / ")
 
 
 def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path]) -> str:
@@ -501,7 +608,20 @@ def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path
         lines.append("")
 
     lines.extend(["## 检查项", "", "| 检查项 | 问题数 |", "|--------|--------|"])
-    for category in ("frontmatter", "date", "hidden-char", "mathjax", "wikilink", "source_raw", "entity", "comparison", "index"):
+    for category in (
+        "frontmatter",
+        "date",
+        "hidden-char",
+        "mathjax",
+        "wikilink",
+        "source_raw",
+        "tag",
+        "evidence",
+        "stale-core",
+        "entity",
+        "comparison",
+        "index",
+    ):
         lines.append(f"| `{category}` | {len(grouped.get(category, []))} |")
     lines.append("")
 

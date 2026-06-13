@@ -47,6 +47,7 @@ class Entity:
     stem: str
     path: Path
     title: str
+    aliases: list[str]
     definition: str
     tags: list[str]
     source_count: int
@@ -59,6 +60,14 @@ class Entity:
     reasons: list[str]
     score: int
     bucket: str
+
+
+@dataclass(frozen=True)
+class DuplicateCandidate:
+    left: Entity
+    right: Entity
+    score: float
+    reason: str
 
 
 def read_frontmatter(path: Path) -> dict:
@@ -94,6 +103,39 @@ def wikilink_targets(text: str) -> list[str]:
             target = target.split("/")[-1]
         targets.append(target)
     return targets
+
+
+def normalize_name(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", value.lower()).strip()
+
+
+def name_tokens(value: str) -> set[str]:
+    return {token for token in normalize_name(value).split() if token}
+
+
+def duplicate_candidates(rows: list[Entity]) -> list[DuplicateCandidate]:
+    candidates: list[DuplicateCandidate] = []
+    for i, left in enumerate(rows):
+        left_names = {left.title, left.stem, *left.aliases}
+        left_normalized = {normalize_name(name) for name in left_names if name}
+        left_tokens = name_tokens(left.title or left.stem)
+
+        for right in rows[i + 1 :]:
+            right_names = {right.title, right.stem, *right.aliases}
+            right_normalized = {normalize_name(name) for name in right_names if name}
+            right_tokens = name_tokens(right.title or right.stem)
+
+            if left_normalized & right_normalized:
+                candidates.append(DuplicateCandidate(left, right, 1.0, "alias cross-match"))
+                continue
+
+            union = left_tokens | right_tokens
+            if not union:
+                continue
+            score = len(left_tokens & right_tokens) / len(union)
+            if score >= 0.75:
+                candidates.append(DuplicateCandidate(left, right, score, "title token overlap"))
+    return candidates
 
 
 def inbound_maps(entity_stems: set[str]) -> tuple[dict[str, set[str]], dict[str, set[str]], dict[str, set[str]], dict[str, set[str]]]:
@@ -204,6 +246,7 @@ def audit_entities() -> list[Entity]:
                 stem=path.stem,
                 path=path,
                 title=str(data.get("title") or path.stem),
+                aliases=[str(a) for a in as_list(data.get("aliases"))],
                 definition=str(data.get("definition") or ""),
                 tags=[str(t) for t in as_list(data.get("tags"))],
                 source_count=len(as_list(data.get("source_raw"))),
@@ -226,6 +269,7 @@ def render_report(rows: list[Entity]) -> str:
     buckets = defaultdict(list)
     for row in rows:
         buckets[row.bucket].append(row)
+    duplicates = duplicate_candidates(rows)
 
     lines = [
         "---",
@@ -275,6 +319,22 @@ def render_report(rows: list[Entity]) -> str:
     for row in sorted(buckets["merge-or-demote"], key=lambda r: (r.score, r.stem)):
         definition = row.definition.replace("|", "/")
         lines.append(f"| [[{row.stem}]] | {row.score} | {row.source_count} | {definition} |")
+
+    lines.extend(
+        [
+            "",
+            "## 疑似重复队列",
+            "",
+            "这些候选只用于人工复核；不得自动合并。优先用 aliases 收敛命名，再决定是否改链或合并。",
+            "",
+            "| Entity A | Entity B | 相似度 | 原因 |",
+            "|----------|----------|--------|------|",
+        ]
+    )
+    for candidate in duplicates[:50]:
+        lines.append(
+            f"| [[{candidate.left.stem}]] | [[{candidate.right.stem}]] | {candidate.score:.2f} | {candidate.reason} |"
+        )
 
     lines.extend(
         [

@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-13"
-score: 98
-status: "FAIL"
+score: 100
+status: "PASS"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-06-13
 
 > [!summary] 状态
-> 门禁: **FAIL**
-> 分数: **98/100**
-> 阻断问题: **2**
+> 门禁: **PASS**
+> 分数: **100/100**
+> 阻断问题: **0**
 
 ## 统计
 
@@ -32,36 +32,34 @@ tags:
 
 | 检查项 | 问题数 |
 |--------|--------|
-| `frontmatter` | 1 |
+| `frontmatter` | 0 |
 | `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
-| `wikilink` | 1 |
+| `wikilink` | 0 |
 | `source_raw` | 0 |
+| `tag` | 11 |
+| `evidence` | 0 |
+| `stale-core` | 0 |
 | `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
 
 ## 问题明细
 
-### frontmatter
+### tag
 
-- `wiki/entities/Progressive-Disclosure.md:1` - `YAML 解析失败: while parsing a block collection
-  in "<unicode string>", line 22, column 3:
-      - "[[深度解析LLM Wiki  Obsidian-Wiki ... 
-      ^
-expected <block end>, but found '<scalar>'
-  in "<unicode string>", line 22, column 55:
-     ... bsidian-Wiki  GBrain：Agent时代知识的"自组织"与"自进化"]]"
-                                         ^`
-
-### wikilink
-
-- `wiki/lint-report.md:52` - `链接目标不存在: [[深度解析LLM Wiki  Obsidian-Wiki ... 
-      ^
-expected <block end>, but found '<scalar>'
-  in "<unicode string>", line 22, column 55:
-     ... bsidian-Wiki  GBrain：Agent时代知识的"自组织"与"自进化"]]`
+- `wiki/entities/Andrej-Karpathy.md` - `tags 超过 5 个: 7`
+- `wiki/sources/20260529-ceo-ai-psychosis-equity-podcast.md` - `tags 超过 5 个: 8`
+- `wiki/sources/20260529-gemini-co-leads-origins.md` - `tags 超过 5 个: 8`
+- `wiki/sources/20260530-ceo-knee-deep-building-ai.md` - `tags 超过 5 个: 6`
+- `wiki/sources/20260604-anthropic-recursive-self-improvement.md` - `tags 超过 5 个: 6`
+- `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `tags 超过 5 个: 6`
+- `wiki/sources/20260604-mollick-coexistence.md` - `tags 超过 5 个: 7`
+- `wiki/sources/20260604-openai-dreaming-memory.md` - `tags 超过 5 个: 6`
+- `wiki/sources/20260608-reflecting-on-year-of-claude-code.md` - `tags 超过 5 个: 6`
+- `wiki/sources/20260610-ai-exponential-policy.md` - `tags 超过 5 个: 6`
+- `wiki/sources/building-effective-agents-complete.md` - `tags 超过 5 个: 7`
 
 ## 运行命令
 
