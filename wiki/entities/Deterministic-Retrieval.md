@@ -8,9 +8,9 @@ definition: "在 Agent 工作流中，通过引入专门设计的工具层（而
 created: 2026-06-10
 updated: 2026-06-10
 tags:
-  - Retrieval
+  - deterministic-retrieval
   - Context-Engineering
-  - Scientific-Discovery
+  - science
 related_entities:
   - "[[Agent-Harness]]"
   - "[[Context-Engineering]]"

@@ -9,7 +9,7 @@ updated: 2026-05-26
 tags:
   - AI-Agent
   - Creativity
-  - Quality
+  - content-quality
 related_entities:
   - '[[Taste]]'
   - '[[Specificity]]'

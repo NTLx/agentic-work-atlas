@@ -10,7 +10,6 @@ updated: 2026-05-26
 tags:
   - AI
   - LLM
-  - RL
   - training
 related_entities:
   - "[[Jagged-Intelligence]]"

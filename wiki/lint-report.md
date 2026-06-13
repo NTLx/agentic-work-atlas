@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 217 |
+| `tag` | 211 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -51,10 +51,6 @@ tags:
 ### tag
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
-- `wiki/entities/Competent-Output.md` - `一次性 tag 仅出现 1 次: 'Quality'`
-- `wiki/entities/Verifiability.md` - `一次性 tag 仅出现 1 次: 'RL'`
-- `wiki/entities/Deterministic-Retrieval.md` - `一次性 tag 仅出现 1 次: 'Retrieval'`
-- `wiki/entities/Deterministic-Retrieval.md` - `一次性 tag 仅出现 1 次: 'Scientific-Discovery'`
 - `wiki/entities/Konstantine-Buhler.md` - `一次性 tag 仅出现 1 次: 'Sequoia'`
 - `wiki/entities/River-Agent.md` - `一次性 tag 仅出现 1 次: 'Shopify'`
 - `wiki/entities/Context-Engineering.md` - `一次性 tag 仅出现 1 次: 'System-Design'`
@@ -125,7 +121,6 @@ tags:
 - `wiki/entities/Constraint-Infrastructure.md` - `一次性 tag 仅出现 1 次: 'constraint'`
 - `wiki/sources/20260610-qwen-constraint-driven-engineering-experiment.md` - `一次性 tag 仅出现 1 次: 'constraint-driven-engineering'`
 - `wiki/sources/20260613-aliyun-agent-infra-constraint-infrastructure.md` - `一次性 tag 仅出现 1 次: 'constraint-infrastructure'`
-- `wiki/entities/Slopocalypse.md` - `一次性 tag 仅出现 1 次: 'content-quality'`
 - `wiki/entities/Prompt-Injection-Risk.md` - `一次性 tag 仅出现 1 次: 'content-strategy'`
 - `wiki/sources/一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统.md` - `一次性 tag 仅出现 1 次: 'content-system'`
 - `wiki/entities/Code-Execution.md` - `一次性 tag 仅出现 1 次: 'core-capability'`
@@ -135,7 +130,6 @@ tags:
 - `wiki/entities/Model-Introspection.md` - `一次性 tag 仅出现 1 次: 'debugging'`
 - `wiki/sources/Taste for Makers.md` - `一次性 tag 仅出现 1 次: 'design'`
 - `wiki/entities/AI-Lacks-Laziness.md` - `一次性 tag 仅出现 1 次: 'design-philosophy'`
-- `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'deterministic-retrieval'`
 - `wiki/entities/Carbon-Silicon-Division.md` - `一次性 tag 仅出现 1 次: 'developer-role'`
 - `wiki/sources/20260529-gemini-co-leads-origins.md` - `一次性 tag 仅出现 1 次: 'distillation'`
 - `wiki/entities/Simon-Willison.md` - `一次性 tag 仅出现 1 次: 'django'`
