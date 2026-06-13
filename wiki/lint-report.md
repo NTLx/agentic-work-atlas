@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 247 |
+| `tag` | 242 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,9 +50,6 @@ tags:
 
 ### tag
 
-- `wiki/entities/朱少民.md` - `一次性 tag 仅出现 1 次: 'Author'`
-- `wiki/entities/AI-Native-Startup.md` - `一次性 tag 仅出现 1 次: 'Business-Model'`
-- `wiki/entities/Three-State-Protocol.md` - `一次性 tag 仅出现 1 次: 'Communication-Protocol'`
 - `wiki/entities/CLAUDE-md.md` - `一次性 tag 仅出现 1 次: 'Documentation'`
 - `wiki/entities/Adversarial-Distillation.md` - `一次性 tag 仅出现 1 次: 'Game-Theory'`
 - `wiki/entities/Accessibility-Agent.md` - `一次性 tag 仅出现 1 次: 'GitHub'`
@@ -82,7 +79,6 @@ tags:
 - `wiki/entities/Deterministic-Retrieval.md` - `一次性 tag 仅出现 1 次: 'Scientific-Discovery'`
 - `wiki/entities/Konstantine-Buhler.md` - `一次性 tag 仅出现 1 次: 'Sequoia'`
 - `wiki/entities/River-Agent.md` - `一次性 tag 仅出现 1 次: 'Shopify'`
-- `wiki/entities/AI-Native-Startup.md` - `一次性 tag 仅出现 1 次: 'Startup'`
 - `wiki/entities/Context-Engineering.md` - `一次性 tag 仅出现 1 次: 'System-Design'`
 - `wiki/sources/20260414-martin-fowler-fragments.md` - `一次性 tag 仅出现 1 次: 'TDD'`
 - `wiki/comparisons/Cook-vs-Chef.md` - `一次性 tag 仅出现 1 次: 'Taste'`
@@ -140,7 +136,6 @@ tags:
 - `wiki/entities/World-Model.md` - `一次性 tag 仅出现 1 次: 'cognitive-architecture'`
 - `wiki/entities/Cognitive-Debt.md` - `一次性 tag 仅出现 1 次: 'cognitive-load'`
 - `wiki/topics/AI-Mediated-Organization.md` - `一次性 tag 仅出现 1 次: 'collaboration'`
-- `wiki/entities/Ubiquitous-Language.md` - `一次性 tag 仅出现 1 次: 'communication'`
 - `wiki/entities/The-OpenAI-Deployment-Company.md` - `一次性 tag 仅出现 1 次: 'company'`
 - `wiki/entities/Dominator-Analysis.md` - `一次性 tag 仅出现 1 次: 'compiler-theory'`
 - `wiki/entities/Emergence.md` - `一次性 tag 仅出现 1 次: 'complexity'`

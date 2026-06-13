@@ -8,9 +8,8 @@ definition: "把 AI Agent 作为组织基础设施、用小团队编排完成产
 created: 2026-05-13
 updated: 2026-05-26
 tags:
-  - Startup
+  - startup
   - AI-Agent
-  - Business-Model
 related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Claude-Code-CLI]]"

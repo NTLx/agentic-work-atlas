@@ -9,7 +9,7 @@ updated: 2026-04-15
 tags:
   - AI-Agent
   - OpenClaw
-  - Communication-Protocol
+  - communication
 related_entities:
   - '[[Agent-Orchestration]]'
   - '[[Agent-Swarm]]'
