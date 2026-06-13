@@ -5,8 +5,8 @@ created: 2026-04-09
 updated: 2026-05-23
 tags:
   - comparison
-  - Knowledge-Management
-  - LLM-Wiki
+  - knowledge-management
+  - llm-wiki
 related_entities:
   - '[[Context-Engineering]]'
   - '[[Multi-Layer-Memory]]'

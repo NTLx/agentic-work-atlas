@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 237 |
+| `tag` | 233 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,11 +50,7 @@ tags:
 
 ### tag
 
-- `wiki/entities/Product-Market-Fit.md` - `一次性 tag 仅出现 1 次: 'Growth'`
-- `wiki/entities/Ontology.md` - `一次性 tag 仅出现 1 次: 'Knowledge-Engineering'`
-- `wiki/comparisons/RAG-vs-LLM-Wiki.md` - `一次性 tag 仅出现 1 次: 'Knowledge-Management'`
 - `wiki/entities/Sequence-Packing.md` - `一次性 tag 仅出现 1 次: 'LLM-Training'`
-- `wiki/comparisons/RAG-vs-LLM-Wiki.md` - `一次性 tag 仅出现 1 次: 'LLM-Wiki'`
 - `wiki/entities/Bias-to-Action-LLM.md` - `一次性 tag 仅出现 1 次: 'LLM-behavior'`
 - `wiki/sources/Building an MCP Ecosystem at Pinterest.md` - `一次性 tag 仅出现 1 次: 'MCP'`
 - `wiki/entities/MIT-Technology-Review-Insights.md` - `一次性 tag 仅出现 1 次: 'MIT'`
