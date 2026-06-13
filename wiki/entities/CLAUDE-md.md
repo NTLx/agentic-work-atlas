@@ -11,7 +11,7 @@ created: 2026-05-13
 updated: 2026-05-29
 tags:
   - AI-Agent
-  - Documentation
+  - documentation
   - Software-Engineering
 related_entities:
   - "[[Claude-Code-CLI]]"

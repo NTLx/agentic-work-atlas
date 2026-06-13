@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-06-13"
+date: "2026-06-14"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-06-13
+# Agentic Work Atlas Lint 报告 - 2026-06-14
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 242 |
+| `tag` | 237 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -50,9 +50,6 @@ tags:
 
 ### tag
 
-- `wiki/entities/CLAUDE-md.md` - `一次性 tag 仅出现 1 次: 'Documentation'`
-- `wiki/entities/Adversarial-Distillation.md` - `一次性 tag 仅出现 1 次: 'Game-Theory'`
-- `wiki/entities/Accessibility-Agent.md` - `一次性 tag 仅出现 1 次: 'GitHub'`
 - `wiki/entities/Product-Market-Fit.md` - `一次性 tag 仅出现 1 次: 'Growth'`
 - `wiki/entities/Ontology.md` - `一次性 tag 仅出现 1 次: 'Knowledge-Engineering'`
 - `wiki/comparisons/RAG-vs-LLM-Wiki.md` - `一次性 tag 仅出现 1 次: 'Knowledge-Management'`
@@ -68,7 +65,6 @@ tags:
 - `wiki/sources/20260613-NLAH-natural-language-agent-harnesses.md` - `一次性 tag 仅出现 1 次: 'NLAH'`
 - `wiki/sources/20260420-build-first-business-ontology.md` - `一次性 tag 仅出现 1 次: 'OWL'`
 - `wiki/entities/Human-Governor-Agent-Operator.md` - `一次性 tag 仅出现 1 次: 'Operating-Model'`
-- `wiki/entities/Adversarial-Distillation.md` - `一次性 tag 仅出现 1 次: 'Organizational-Behavior'`
 - `wiki/entities/AI-First.md` - `一次性 tag 仅出现 1 次: 'Organizational-Design'`
 - `wiki/entities/Sequence-Packing.md` - `一次性 tag 仅出现 1 次: 'Performance-Optimization'`
 - `wiki/entities/MachinaCheck.md` - `一次性 tag 仅出现 1 次: 'Privacy-by-Design'`
@@ -161,7 +157,6 @@ tags:
 - `wiki/entities/Carbon-Silicon-Division.md` - `一次性 tag 仅出现 1 次: 'developer-role'`
 - `wiki/sources/20260529-gemini-co-leads-origins.md` - `一次性 tag 仅出现 1 次: 'distillation'`
 - `wiki/entities/Simon-Willison.md` - `一次性 tag 仅出现 1 次: 'django'`
-- `wiki/entities/AGENTS-md.md` - `一次性 tag 仅出现 1 次: 'documentation'`
 - `wiki/entities/AGI-Economics.md` - `一次性 tag 仅出现 1 次: 'economics'`
 - `wiki/topics/Agentic-AI-Ecosystem.md` - `一次性 tag 仅出现 1 次: 'ecosystem'`
 - `wiki/entities/Phil-Trammell.md` - `一次性 tag 仅出现 1 次: 'epoch'`

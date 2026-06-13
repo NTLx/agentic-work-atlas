@@ -9,8 +9,7 @@ created: 2026-04-21
 updated: 2026-05-30
 tags:
   - AI-Agent
-  - Organizational-Behavior
-  - Game-Theory
+  - organization
 related_entities:
   - '[[Agentic-Engineering]]'
   - '[[Tacit-Knowledge-Lock-In]]'

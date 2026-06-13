@@ -10,7 +10,6 @@ updated: 2026-05-25
 tags:
   - AI-Agent
   - accessibility
-  - GitHub
 related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Bias-to-Action-LLM]]"
