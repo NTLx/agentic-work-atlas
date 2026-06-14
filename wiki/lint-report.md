@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 170 |
+| `tag` | 167 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -52,9 +52,6 @@ tags:
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
-- `wiki/sources/Management as AI superpower.md` - `一次性 tag 仅出现 1 次: 'ai-work'`
-- `wiki/sources/20260613-aliyun-agent-infra-constraint-infrastructure.md` - `一次性 tag 仅出现 1 次: 'alibaba-cloud'`
-- `wiki/sources/The Knowledge Economy Is Over. Welcome to the Allocation Economy..md` - `一次性 tag 仅出现 1 次: 'allocation-economy'`
 - `wiki/entities/Alex-Imas.md` - `一次性 tag 仅出现 1 次: 'behavioral-economics'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`

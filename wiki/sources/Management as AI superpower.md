@@ -9,7 +9,6 @@ tags:
   - source-summary
   - management
   - delegation
-  - ai-work
 ---
 
 # Management as AI superpower

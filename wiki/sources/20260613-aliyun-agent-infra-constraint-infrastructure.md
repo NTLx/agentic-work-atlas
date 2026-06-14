@@ -9,7 +9,6 @@ tags:
   - source-summary
   - agent-infra
   - constraint-infrastructure
-  - alibaba-cloud
   - harness
 evidence_level: medium
 claim_type: mixed
