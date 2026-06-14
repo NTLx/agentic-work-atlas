@@ -10,6 +10,8 @@ updated: 2026-05-13
 tags:
   - knowledge-management
   - AI
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Knowledge-Compilation]]"
   - "[[Knowledge-Graph]]"

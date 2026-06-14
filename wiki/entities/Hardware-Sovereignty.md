@@ -10,6 +10,8 @@ tags:
   - infrastructure
   - Privacy
   - Enterprise-AI
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Zero-PHI-Policy]]"
   - "[[Agent-First-Enterprise]]"

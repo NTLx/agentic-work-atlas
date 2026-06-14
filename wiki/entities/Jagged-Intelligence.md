@@ -11,6 +11,8 @@ tags:
   - AI
   - LLM
   - cognitive-science
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Verifiability]]"
   - "[[Ghost-Intelligence]]"
