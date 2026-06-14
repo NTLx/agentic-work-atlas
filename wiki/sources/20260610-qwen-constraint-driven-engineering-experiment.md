@@ -9,7 +9,6 @@ tags:
   - source-summary
   - agentic-engineering
   - qwen
-  - constraint-driven-engineering
 ---
 
 # 质量是「收敛」出来的：Qwen3.7-Max 仅凭调研文档全自动交付双端应用实验

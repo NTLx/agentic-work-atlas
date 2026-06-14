@@ -9,7 +9,6 @@ tags:
   - source-summary
   - llm-wiki
   - knowledge-compilation
-  - content-system
 ---
 
 # 一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统

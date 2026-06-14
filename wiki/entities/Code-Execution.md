@@ -9,7 +9,6 @@ updated: 2026-04-15
 tags:
   - AI-Agent
   - coding-agents
-  - core-capability
 related_entities:
   - '[[Agentic-Engineering]]'
   - '[[Coding-Agents]]'

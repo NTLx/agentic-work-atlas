@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 145 |
+| `tag` | 140 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -54,11 +54,6 @@ tags:
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
-- `wiki/sources/20260610-qwen-constraint-driven-engineering-experiment.md` - `一次性 tag 仅出现 1 次: 'constraint-driven-engineering'`
-- `wiki/sources/20260613-aliyun-agent-infra-constraint-infrastructure.md` - `一次性 tag 仅出现 1 次: 'constraint-infrastructure'`
-- `wiki/entities/Prompt-Injection-Risk.md` - `一次性 tag 仅出现 1 次: 'content-strategy'`
-- `wiki/sources/一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统.md` - `一次性 tag 仅出现 1 次: 'content-system'`
-- `wiki/entities/Code-Execution.md` - `一次性 tag 仅出现 1 次: 'core-capability'`
 - `wiki/entities/Coding-Agents.md` - `一次性 tag 仅出现 1 次: 'core-concept'`
 - `wiki/entities/Einstein-Test.md` - `一次性 tag 仅出现 1 次: 'creativity'`
 - `wiki/sources/20260530-cursor-developer-habits-report.md` - `一次性 tag 仅出现 1 次: 'data-report'`
