@@ -10,7 +10,6 @@ updated: 2026-06-13
 tags:
   - organization
   - AI-frontier-lab
-  - claude
   - agentic-engineering
   - AI-policy
 related_entities:

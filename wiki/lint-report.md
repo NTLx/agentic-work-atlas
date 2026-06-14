@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 165 |
+| `tag` | 162 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -54,9 +54,6 @@ tags:
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
-- `wiki/entities/Jevons-Paradox.md` - `一次性 tag 仅出现 1 次: 'classical-economics'`
-- `wiki/entities/Anthropic.md` - `一次性 tag 仅出现 1 次: 'claude'`
-- `wiki/entities/HaaS-Harness-as-a-Service.md` - `一次性 tag 仅出现 1 次: 'cloud-service'`
 - `wiki/sources/20260604-mollick-coexistence.md` - `一次性 tag 仅出现 1 次: 'co-existence'`
 - `wiki/sources/20260604-mollick-coexistence.md` - `一次性 tag 仅出现 1 次: 'co-intelligence'`
 - `wiki/sources/What Is Code?.md` - `一次性 tag 仅出现 1 次: 'code'`
