@@ -10,6 +10,8 @@ updated: 2026-05-26
 tags:
   - AI
   - claude-code
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Boris-Cherny]]"
   - "[[Claude-Code-CLI]]"

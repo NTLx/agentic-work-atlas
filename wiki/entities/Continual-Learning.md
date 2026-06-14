@@ -12,6 +12,8 @@ tags:
   - AI
   - AGI
   - machine-learning
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Demis-Hassabis]]"
   - "[[Jagged-Intelligence]]"

@@ -11,6 +11,8 @@ tags:
   - Agentic-Engineering
   - code-review
   - DevOps
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Agent-Workflow-Patterns]]"
