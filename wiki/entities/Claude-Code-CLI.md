@@ -10,6 +10,8 @@ tags:
   - AI-Agent
   - Claude-Code
   - Developer-Tools
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Product-Overhang]]'
   - '[[Agent-Loops]]'

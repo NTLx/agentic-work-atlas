@@ -10,6 +10,8 @@ tags:
   - AI-Agent
   - OpenClaw
   - Multi-Agent-System
+evidence_level: high
+claim_type: mixed
 related_entities:
   - '[[Claude-Code-CLI]]'
   - '[[Context-Engineering]]'

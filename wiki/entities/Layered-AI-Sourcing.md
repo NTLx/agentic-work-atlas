@@ -12,6 +12,8 @@ updated: 2026-05-23
 tags:
   - AI-deployment
   - enterprise
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Hardware-Sovereignty]]"
   - "[[Forward-Deployed-Engineer]]"
