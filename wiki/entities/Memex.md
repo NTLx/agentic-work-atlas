@@ -8,6 +8,8 @@ created: 2026-04-13
 updated: 2026-04-15
 tags:
   - knowledge-management
+evidence_level: high
+claim_type: mixed
 validated_source: "https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/"
 validated_at: "2026-05-01"
 related_entities:

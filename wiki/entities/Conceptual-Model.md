@@ -11,6 +11,8 @@ tags:
   - programming-theory
   - software-design
   - conceptual-model
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Code-as-Conceptual-Infrastructure]]"
   - "[[Vocabulary-Building]]"
