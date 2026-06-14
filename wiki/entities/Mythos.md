@@ -9,7 +9,6 @@ definition: "Anthropic 面向网络安全任务的受限访问模型，用于高
 created: 2026-04-21
 updated: 2026-06-12
 tags:
-  - ai-model
   - cybersecurity
   - anthropic
 related_entities:

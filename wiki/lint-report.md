@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 173 |
+| `tag` | 170 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -52,9 +52,6 @@ tags:
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
-- `wiki/entities/Mythos.md` - `一次性 tag 仅出现 1 次: 'ai-model'`
-- `wiki/sources/The-Founders-Playbook-05062026_v3.md` - `一次性 tag 仅出现 1 次: 'ai-native'`
-- `wiki/sources/Running an AI-native engineering org.md` - `一次性 tag 仅出现 1 次: 'ai-native-organization'`
 - `wiki/sources/Management as AI superpower.md` - `一次性 tag 仅出现 1 次: 'ai-work'`
 - `wiki/sources/20260613-aliyun-agent-infra-constraint-infrastructure.md` - `一次性 tag 仅出现 1 次: 'alibaba-cloud'`
 - `wiki/sources/The Knowledge Economy Is Over. Welcome to the Allocation Economy..md` - `一次性 tag 仅出现 1 次: 'allocation-economy'`

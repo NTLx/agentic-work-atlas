@@ -7,7 +7,6 @@ created: 2026-06-05
 updated: 2026-06-05
 tags:
   - source-summary
-  - ai-native-organization
   - agentic-engineering
   - engineering-management
 ---
