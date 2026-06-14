@@ -11,7 +11,6 @@ updated: 2026-05-25
 tags:
   - organization
   - ai-safety
-  - government
 related_entities:
   - '[[Mythos]]'
   - '[[Cybersecurity-Proof-of-Work]]'

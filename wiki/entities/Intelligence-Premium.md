@@ -10,7 +10,6 @@ created: 2026-06-05
 updated: 2026-06-05
 tags:
   - model-economics
-  - frontier-models
   - agentic-engineering
 related_entities:
   - "[[Enterprise-AI-Model-Sourcing]]"

@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 125 |
+| `tag` | 114 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -54,16 +54,6 @@ tags:
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
-- `wiki/sources/20260531-thoughts-hmmz.md` - `一次性 tag 仅出现 1 次: 'friction'`
-- `wiki/entities/Intelligence-Premium.md` - `一次性 tag 仅出现 1 次: 'frontier-models'`
-- `wiki/sources/20260601-mit-nanda-genai-divide.md` - `一次性 tag 仅出现 1 次: 'genai-divide'`
-- `wiki/topics/AI-Policy-Framework.md` - `一次性 tag 仅出现 1 次: 'geopolitics'`
-- `wiki/sources/Using Git with coding agents - Agentic Engineering Patterns.md` - `一次性 tag 仅出现 1 次: 'git'`
-- `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'github-pages'`
-- `wiki/entities/Google-DeepMind.md` - `一次性 tag 仅出现 1 次: 'google'`
-- `wiki/entities/Alex-Imas.md` - `一次性 tag 仅出现 1 次: 'google-deepmind'`
-- `wiki/entities/AISI.md` - `一次性 tag 仅出现 1 次: 'government'`
-- `wiki/entities/Dominator-Analysis.md` - `一次性 tag 仅出现 1 次: 'graph-theory'`
 - `wiki/sources/20260605-how-anthropic-uses-claude-gtm-engineering.md` - `一次性 tag 仅出现 1 次: 'gtm-engineering'`
 - `wiki/sources/The-Founders-Playbook-05062026_v3.md` - `一次性 tag 仅出现 1 次: 'guide'`
 - `wiki/sources/MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X.md` - `一次性 tag 仅出现 1 次: 'hardware-sovereignty'`
@@ -73,7 +63,6 @@ tags:
 - `wiki/entities/Human-Signal.md` - `一次性 tag 仅出现 1 次: 'human-AI-collaboration'`
 - `wiki/entities/Cognitive-Surrender.md` - `一次性 tag 仅出现 1 次: 'human-AI-interaction'`
 - `wiki/entities/Carbon-Silicon-Division.md` - `一次性 tag 仅出现 1 次: 'human-ai-collaboration'`
-- `wiki/sources/20260531-thoughts-hmmz.md` - `一次性 tag 仅出现 1 次: 'human-judgment'`
 - `wiki/sources/20260601-octopus-energy-ai-customer-service.md` - `一次性 tag 仅出现 1 次: 'human-oversight'`
 - `wiki/topics/AI-Era-Taste-and-Judgment.md` - `一次性 tag 仅出现 1 次: 'human-skills'`
 - `wiki/entities/Memex.md` - `一次性 tag 仅出现 1 次: 'hypertext'`

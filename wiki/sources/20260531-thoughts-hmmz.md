@@ -7,9 +7,7 @@ created: 2026-06-01
 updated: 2026-06-01
 tags:
   - source-summary
-  - friction
   - vibe-coding
-  - human-judgment
 ---
 
 # the solution might be cancelling my AI subscription

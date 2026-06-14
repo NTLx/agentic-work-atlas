@@ -8,7 +8,6 @@ updated: 2026-06-01
 tags:
   - source-summary
   - enterprise-ai
-  - genai-divide
   - ai-adoption
 ---
 

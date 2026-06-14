@@ -9,7 +9,6 @@ updated: 2026-06-06
 tags:
   - person
   - AGI-economics
-  - google-deepmind
 related_entities:
   - "[[Google-DeepMind]]"
   - "[[Phil-Trammell]]"

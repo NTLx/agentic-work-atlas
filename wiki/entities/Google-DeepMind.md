@@ -10,7 +10,6 @@ updated: 2026-06-06
 tags:
   - organization
   - AI-frontier-lab
-  - google
   - research
 related_entities:
   - "[[Alex-Imas]]"

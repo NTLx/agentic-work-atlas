@@ -7,7 +7,6 @@ tags:
   - tutorial
   - quartz
   - obsidian
-  - github-pages
   - llm-wiki
 ---
 
