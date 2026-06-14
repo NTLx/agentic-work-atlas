@@ -6,6 +6,8 @@ aliases:
 definition: "LLM Wiki 的核心操作，将原始知识源通过 LLM 转化为结构化 Wiki，实现知识的持久累积和高效复用"
 created: 2026-04-13
 updated: 2026-06-05
+evidence_level: high
+claim_type: mixed
 tags:
   - knowledge-management
   - llm-wiki

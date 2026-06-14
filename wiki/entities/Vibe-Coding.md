@@ -6,6 +6,8 @@ aliases:
 definition: "Andrej Karpathy 提出的编程概念，提升所有人的编程能力底线，让任何人通过自然语言和 agent 交互生成软件，原型质量是其特征"
 created: 2026-04-10
 updated: 2026-06-01
+evidence_level: high
+claim_type: mixed
 tags:
   - AI-Agent
   - coding-agents
