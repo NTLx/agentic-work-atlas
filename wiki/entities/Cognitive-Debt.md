@@ -10,7 +10,6 @@ updated: 2026-05-26
 tags:
   - software-engineering
   - technical-debt
-  - cognitive-load
 related_entities:
   - "[[Conceptual-Model]]"
   - "[[Vocabulary-Building]]"

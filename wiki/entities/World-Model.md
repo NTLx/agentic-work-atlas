@@ -10,7 +10,6 @@ updated: 2026-06-06
 tags:
   - AI
   - AGI
-  - cognitive-architecture
 related_entities:
   - "[[Continual-Learning]]"
   - "[[Tool-Use-Architecture]]"
