@@ -14,6 +14,8 @@ tags:
   - architecture
   - containment
   - infrastructure
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Agent-Harness]]"
   - "[[Verifiability]]"

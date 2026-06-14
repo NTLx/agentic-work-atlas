@@ -11,6 +11,8 @@ tags:
   - AI-Agent
   - best-practices
   - coding-agents
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Compound-Engineering]]'
   - '[[Agentic-Engineering]]'

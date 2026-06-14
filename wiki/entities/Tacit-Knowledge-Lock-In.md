@@ -12,6 +12,8 @@ tags:
   - AI-deployment
   - enterprise
   - vendor-lock-in
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Evaluation-Set]]"
   - "[[Forward-Deployed-Engineer]]"
@@ -85,4 +87,3 @@ source_raw:
 - [[Layered-AI-Sourcing]] — 分层 sourcing 用来降低单一供应商锁定。
 - [[Golden-Case]] — 黄金用例的识别和优化是锁定路径依赖的核心积累物。
 - [[Specialization-Compounds]] — 评测集产权决定专门化复利在企业内部还是供应商侧积累。
-
