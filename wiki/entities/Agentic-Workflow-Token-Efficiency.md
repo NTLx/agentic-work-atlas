@@ -11,6 +11,8 @@ tags:
   - Agentic-Engineering
   - cost-optimization
   - DevOps
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Agent-Workflow-Patterns]]"

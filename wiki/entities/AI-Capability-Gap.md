@@ -9,6 +9,8 @@ updated: 2026-05-26
 tags:
   - AI-adoption
   - perception-gap
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[AI-Psychosis]]'
   - '[[Agentic-Engineering]]'
