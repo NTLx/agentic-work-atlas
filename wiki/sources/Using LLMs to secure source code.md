@@ -9,7 +9,6 @@ tags:
   - source-summary
   - security
   - agentic-engineering
-  - llm-workflow
 ---
 
 # Using LLMs to Secure Source Code

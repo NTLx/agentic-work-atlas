@@ -10,7 +10,6 @@ created: 2026-05-13
 updated: 2026-05-26
 tags:
   - education
-  - learning-theory
   - culture
 related_entities:
   - "[[Tobi-Lütke]]"

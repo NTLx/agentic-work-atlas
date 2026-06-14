@@ -8,7 +8,6 @@ updated: 2026-06-06
 tags:
   - source-summary
   - economy
-  - labor-scarcity
   - wealth-redistribution
   - relational-sector
 ---

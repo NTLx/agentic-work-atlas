@@ -11,7 +11,6 @@ updated: 2026-05-30
 tags:
   - agentic-engineering
   - developer-productivity
-  - inequality
 related_entities:
   - "[[Coding-Agents]]"
   - "[[Agentic-Engineering]]"

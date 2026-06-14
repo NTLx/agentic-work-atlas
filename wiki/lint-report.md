@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 101 |
+| `tag` | 89 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -55,18 +55,6 @@ tags:
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
 - `index.md` - `一次性 tag 仅出现 1 次: 'index'`
-- `wiki/entities/AI-Developer-Power-User-Gap.md` - `一次性 tag 仅出现 1 次: 'inequality'`
-- `wiki/entities/Graph-Guided-Agent-Investigation.md` - `一次性 tag 仅出现 1 次: 'knowledge-graph'`
-- `wiki/entities/Knowledge-Graph.md` - `一次性 tag 仅出现 1 次: 'knowledge-representation'`
-- `wiki/entities/O-Ring-Effect.md` - `一次性 tag 仅出现 1 次: 'labor-economics'`
-- `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `一次性 tag 仅出现 1 次: 'labor-scarcity'`
-- `wiki/entities/Tool-Latency-Bottleneck.md` - `一次性 tag 仅出现 1 次: 'latency'`
-- `wiki/sources/How I run multiple USD10K MRR companies on a USD20month tech stack.md` - `一次性 tag 仅出现 1 次: 'lean-stack'`
-- `wiki/entities/Osmosis-Learning.md` - `一次性 tag 仅出现 1 次: 'learning-theory'`
-- `wiki/sources/What Is Code?.md` - `一次性 tag 仅出现 1 次: 'llm-coding'`
-- `wiki/sources/Using LLMs to secure source code.md` - `一次性 tag 仅出现 1 次: 'llm-workflow'`
-- `wiki/sources/20260606-the-minimill-of-ai.md` - `一次性 tag 仅出现 1 次: 'local-ai'`
-- `wiki/entities/Demand-Collapse.md` - `一次性 tag 仅出现 1 次: 'macro'`
 - `wiki/sources/Maintainability sensors for coding agents.md` - `一次性 tag 仅出现 1 次: 'maintainability'`
 - `wiki/sources/20260609-whats-new-in-claude-managed-agents.md` - `一次性 tag 仅出现 1 次: 'managed-agents'`
 - `wiki/entities/Prompt-Injection-Risk.md` - `一次性 tag 仅出现 1 次: 'marketing'`

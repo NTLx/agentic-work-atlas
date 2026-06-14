@@ -9,7 +9,6 @@ tags:
   - source-summary
   - indie-developer
   - bootstrap
-  - lean-stack
 ---
 
 # How I run multiple `$10K` MRR companies on a `$20`/month tech stack

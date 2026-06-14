@@ -12,7 +12,6 @@ tags:
   - AI-Agent
   - agentic-engineering
   - infrastructure
-  - latency
 related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Tool-Use-Architecture]]"
