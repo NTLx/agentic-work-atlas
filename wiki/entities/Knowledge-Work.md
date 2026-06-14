@@ -9,6 +9,8 @@ updated: 2026-05-13
 tags:
   - economy
   - knowledge-work
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Wisdom-Work]]'
   - '[[Allocation-Economy]]'

@@ -10,14 +10,16 @@ tags:
   - AI
   - agent
   - architecture
+evidence_level: medium
+claim_type: mixed
 related_entities:
-  - “[[GBrain]]”
-  - “[[Harness-Engineering]]”
-  - “[[Agent-Harness]]”
-  - “[[Progressive-Disclosure]]”
-  - “[[LLM-Wiki]]”
-  - “[[Agent-Workflow-Patterns]]”
-  - “[[Latent-Space-vs-Deterministic]]”
+  - "[[GBrain]]"
+  - "[[Harness-Engineering]]"
+  - "[[Agent-Harness]]"
+  - "[[Progressive-Disclosure]]"
+  - "[[LLM-Wiki]]"
+  - "[[Agent-Workflow-Patterns]]"
+  - "[[Latent-Space-vs-Deterministic]]"
 source_raw:
   - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
   - "[[The Anatomy of an Agent Harness]]"

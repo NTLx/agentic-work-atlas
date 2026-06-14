@@ -11,6 +11,8 @@ tags:
   - Software-Engineering
   - AI-Agent
   - human-skill
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Essential-Complexity]]"
   - "[[Ownership]]"
