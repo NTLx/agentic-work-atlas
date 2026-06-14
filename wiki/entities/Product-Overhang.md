@@ -9,7 +9,6 @@ created: 2026-05-08
 updated: 2026-05-26
 tags:
   - AI
-  - product-strategy
   - claude-code
 related_entities:
   - "[[Boris-Cherny]]"

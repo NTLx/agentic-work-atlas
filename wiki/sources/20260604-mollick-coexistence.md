@@ -7,8 +7,6 @@ created: 2026-06-06
 updated: 2026-06-06
 tags:
   - source-summary
-  - seo-aio
-  - prompt-injection
 ---
 
 # Mollick《Co-Existence》：Co-Intelligence 时代结束，与有时比你强的 AI 协商

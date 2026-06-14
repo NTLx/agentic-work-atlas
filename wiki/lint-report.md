@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 64 |
+| `tag` | 52 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -56,18 +56,7 @@ tags:
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
 - `index.md` - `一次性 tag 仅出现 1 次: 'index'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'policy'`
-- `wiki/entities/Escalation-Based-Human-Oversight.md` - `一次性 tag 仅出现 1 次: 'process-design'`
-- `wiki/sources/Enabling agent-first process redesign.md` - `一次性 tag 仅出现 1 次: 'process-redesign'`
-- `wiki/entities/Zero-Friction-Scope-Creep.md` - `一次性 tag 仅出现 1 次: 'product-discipline'`
-- `wiki/entities/Product-Overhang.md` - `一次性 tag 仅出现 1 次: 'product-strategy'`
-- `wiki/entities/Programming-Languages-as-Thinking-Tools.md` - `一次性 tag 仅出现 1 次: 'programming-languages'`
-- `wiki/sources/20260603-lessons-from-building-claude-code-how-we-use-skills.md` - `一次性 tag 仅出现 1 次: 'progressive-disclosure'`
-- `wiki/sources/20260604-mollick-coexistence.md` - `一次性 tag 仅出现 1 次: 'prompt-injection'`
-- `wiki/entities/Model-Introspection.md` - `一次性 tag 仅出现 1 次: 'prompting'`
-- `wiki/entities/Cybersecurity-Proof-of-Work.md` - `一次性 tag 仅出现 1 次: 'proof-of-work'`
-- `wiki/entities/Emotional-Clarity.md` - `一次性 tag 仅出现 1 次: 'psychology'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'quartz'`
-- `wiki/sources/20260610-qwen-constraint-driven-engineering-experiment.md` - `一次性 tag 仅出现 1 次: 'qwen'`
 - `wiki/entities/Recursive-Self-Improvement.md` - `一次性 tag 仅出现 1 次: 'recursive-systems'`
 - `wiki/entities/渐进式重构.md` - `一次性 tag 仅出现 1 次: 'refactoring'`
 - `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `一次性 tag 仅出现 1 次: 'relational-sector'`
@@ -81,7 +70,6 @@ tags:
 - `wiki/sources/20260606-the-minimill-of-ai.md` - `一次性 tag 仅出现 1 次: 'routing'`
 - `wiki/entities/Moats-in-AI-Era.md` - `一次性 tag 仅出现 1 次: 'saas'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'scientific-agents'`
-- `wiki/sources/20260604-mollick-coexistence.md` - `一次性 tag 仅出现 1 次: 'seo-aio'`
 - `wiki/sources/20260613-qoder-human-bottleneck.md` - `一次性 tag 仅出现 1 次: 'sleep-token'`
 - `wiki/entities/Software-Democratization.md` - `一次性 tag 仅出现 1 次: 'software'`
 - `wiki/entities/Vocabulary-Building.md` - `一次性 tag 仅出现 1 次: 'software-development-process'`

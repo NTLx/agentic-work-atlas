@@ -9,7 +9,6 @@ created: 2026-05-08
 updated: 2026-05-26
 tags:
   - AI
-  - prompting
 related_entities:
   - "[[Cat-Wu]]"
   - "[[Jagged-Intelligence]]"

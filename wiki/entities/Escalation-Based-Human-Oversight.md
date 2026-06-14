@@ -11,7 +11,6 @@ updated: 2026-06-01
 tags:
   - enterprise-ai
   - governance
-  - process-design
 related_entities:
   - "[[Human-Governor-Agent-Operator]]"
   - "[[Agent-First-Process-Redesign]]"

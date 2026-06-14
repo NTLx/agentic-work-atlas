@@ -10,7 +10,6 @@ created: 2026-06-01
 updated: 2026-06-01
 tags:
   - ai-agent
-  - product-discipline
   - attention
   - software-engineering
 related_entities:

@@ -8,7 +8,6 @@ updated: 2026-05-25
 tags:
   - source-summary
   - AI-Agent
-  - process-redesign
   - enterprise
 ---
 

@@ -9,7 +9,6 @@ tags:
   - source-summary
   - claude-code
   - skills
-  - progressive-disclosure
 ---
 
 # Lessons from building Claude Code: How we use skills
