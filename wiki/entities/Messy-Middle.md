@@ -11,7 +11,6 @@ updated: 2026-06-06
 tags:
   - AGI-economics
   - labor
-  - transition
 related_entities:
   - "[[Drip-Scenario]]"
   - "[[Relational-Sector]]"

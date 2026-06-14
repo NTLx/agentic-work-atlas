@@ -8,7 +8,6 @@ created: 2026-04-13
 updated: 2026-05-13
 tags:
   - economy
-  - work
   - knowledge-work
 related_entities:
   - '[[Wisdom-Work]]'

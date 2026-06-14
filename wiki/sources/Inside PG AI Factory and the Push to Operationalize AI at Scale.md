@@ -7,7 +7,6 @@ created: 2026-05-23
 updated: 2026-05-25
 tags:
   - source-summary
-  - youtube-transcript
   - enterprise-AI
   - AI-factory
 ---

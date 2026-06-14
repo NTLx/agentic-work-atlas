@@ -10,7 +10,6 @@ created: 2026-06-06
 updated: 2026-06-06
 tags:
   - AGI-economics
-  - wealth-distribution
   - capital-share
 related_entities:
   - "[[AGI-Economics]]"
@@ -80,4 +79,3 @@ source_raw:
 ## 关键数据点
 
 （关键事实、统计、时间线从原 raw 源沉淀，见 source_raw 字段）
-

@@ -9,7 +9,6 @@ updated: 2026-04-14
 tags:
   - person
   - AI-Agent
-  - venture-capital
   - economy
 related_entities:
   - '[[Dan-Shipper]]'

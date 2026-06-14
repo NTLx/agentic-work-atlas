@@ -9,7 +9,6 @@ tags:
   - source-summary
   - ontology
   - aiops
-  - umodel
 ---
 
 # 本体论又火了，他能优化我的 Agent 效果么？

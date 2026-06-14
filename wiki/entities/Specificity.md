@@ -9,7 +9,6 @@ updated: 2026-04-15
 tags:
   - AI-era
   - competitive-advantage
-  - writing
 related_entities:
   - '[[Taste]]'
   - '[[Judgment]]'
@@ -102,4 +101,3 @@ source_raw:
 
 - Raw Source: [[Good Taste the Only Real Moat Left]]
 - 原始链接: https://rajnandan.com/posts/taste-in-the-age-of-ai-and-llms/
-

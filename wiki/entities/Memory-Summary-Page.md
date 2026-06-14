@@ -10,7 +10,6 @@ created: 2026-06-06
 updated: 2026-06-06
 tags:
   - memory-system
-  - trust
   - openai
 related_entities:
   - "[[Dreaming]]"

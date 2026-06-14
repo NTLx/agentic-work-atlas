@@ -10,7 +10,6 @@ updated: 2026-05-13
 tags:
   - knowledge-management
   - AI
-  - wiki
 related_entities:
   - "[[Knowledge-Compilation]]"
   - "[[Knowledge-Graph]]"

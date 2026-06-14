@@ -13,7 +13,6 @@ tags:
   - person
   - entrepreneurship
   - infrastructure
-  - vercel
 related_entities:
   - "[[Vibe-Coding]]"
   - "[[Coding-Agents]]"

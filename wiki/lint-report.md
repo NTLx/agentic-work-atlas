@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 24 |
+| `tag` | 12 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -61,19 +61,7 @@ tags:
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'resilience'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'scientific-agents'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'technology-governance'`
-- `wiki/entities/Messy-Middle.md` - `一次性 tag 仅出现 1 次: 'transition'`
-- `wiki/entities/Memory-Summary-Page.md` - `一次性 tag 仅出现 1 次: 'trust'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'tutorial'`
-- `wiki/sources/20260613-ontology-for-agent-optimization.md` - `一次性 tag 仅出现 1 次: 'umodel'`
-- `wiki/entities/Konstantine-Buhler.md` - `一次性 tag 仅出现 1 次: 'venture-capital'`
-- `wiki/entities/Guillermo-Rauch.md` - `一次性 tag 仅出现 1 次: 'vercel'`
-- `wiki/sources/20260610-anthropic-ai-exploits-security-patches.md` - `一次性 tag 仅出现 1 次: 'vulnerability'`
-- `wiki/entities/Intrinsic-Wealth-Accumulation.md` - `一次性 tag 仅出现 1 次: 'wealth-distribution'`
-- `wiki/entities/LLM-Wiki.md` - `一次性 tag 仅出现 1 次: 'wiki'`
-- `wiki/entities/Knowledge-Work.md` - `一次性 tag 仅出现 1 次: 'work'`
-- `wiki/sources/building-effective-agents-complete.md` - `一次性 tag 仅出现 1 次: 'workflows'`
-- `wiki/entities/Specificity.md` - `一次性 tag 仅出现 1 次: 'writing'`
-- `wiki/sources/Inside PG AI Factory and the Push to Operationalize AI at Scale.md` - `一次性 tag 仅出现 1 次: 'youtube-transcript'`
 
 ## 运行命令
 
