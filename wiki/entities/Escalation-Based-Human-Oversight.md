@@ -10,7 +10,7 @@ created: 2026-06-01
 updated: 2026-06-01
 tags:
   - enterprise-ai
-  - ai-governance
+  - governance
   - process-design
 related_entities:
   - "[[Human-Governor-Agent-Operator]]"

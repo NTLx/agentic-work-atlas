@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 176 |
+| `tag` | 173 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -52,9 +52,6 @@ tags:
 
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
-- `wiki/entities/Escalation-Based-Human-Oversight.md` - `一次性 tag 仅出现 1 次: 'ai-governance'`
-- `wiki/sources/The layoffs will continue till we learn to use AI.md` - `一次性 tag 仅出现 1 次: 'ai-layoffs'`
-- `wiki/entities/AI-Lacks-Laziness.md` - `一次性 tag 仅出现 1 次: 'ai-limitation'`
 - `wiki/entities/Mythos.md` - `一次性 tag 仅出现 1 次: 'ai-model'`
 - `wiki/sources/The-Founders-Playbook-05062026_v3.md` - `一次性 tag 仅出现 1 次: 'ai-native'`
 - `wiki/sources/Running an AI-native engineering org.md` - `一次性 tag 仅出现 1 次: 'ai-native-organization'`

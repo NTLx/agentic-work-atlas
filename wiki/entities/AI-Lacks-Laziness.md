@@ -9,7 +9,6 @@ definition: "LLM 缺少人类时间有限带来的简化压力，容易把任务
 created: 2026-04-21
 updated: 2026-05-25
 tags:
-  - ai-limitation
   - software-engineering
   - design-philosophy
 related_entities:
