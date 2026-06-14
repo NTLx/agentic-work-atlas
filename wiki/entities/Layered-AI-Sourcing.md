@@ -12,7 +12,6 @@ updated: 2026-05-23
 tags:
   - AI-deployment
   - enterprise
-  - sourcing
 related_entities:
   - "[[Hardware-Sovereignty]]"
   - "[[Forward-Deployed-Engineer]]"

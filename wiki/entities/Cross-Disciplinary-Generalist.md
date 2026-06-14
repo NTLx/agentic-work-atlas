@@ -11,7 +11,6 @@ updated: 2026-05-25
 tags:
   - AI-era
   - career
-  - team-building
 related_entities:
   - "[[Boris-Cherny]]"
   - "[[Software-Democratization]]"

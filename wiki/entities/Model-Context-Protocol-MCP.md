@@ -9,7 +9,6 @@ created: 2026-05-13
 updated: 2026-05-25
 tags:
   - AI-Agent
-  - standard
   - tool-use
 related_entities:
   - "[[MCP-Registry]]"

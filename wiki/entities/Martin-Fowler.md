@@ -12,7 +12,6 @@ tags:
   - person
   - software-architecture
   - agile
-  - thoughtworks
 related_entities:
   - '[[Conceptual-Model]]'
 source_raw:

@@ -11,7 +11,6 @@ updated: 2026-05-26
 tags:
   - person
   - openai
-  - tesla
   - anthropic
   - deep-learning
 related_entities:

@@ -8,7 +8,6 @@ updated: 2026-05-27
 tags:
   - source-summary
   - AI-Agent
-  - terminology
   - architecture
 ---
 

@@ -8,7 +8,6 @@ updated: 2026-06-07
 tags:
   - source-summary
   - coding-agents
-  - tooling
   - token-efficiency
 ---
 

@@ -10,7 +10,6 @@ updated: 2026-05-26
 tags:
   - programming-theory
   - domain-driven-design
-  - software-development-process
 related_entities:
   - "[[Conceptual-Model]]"
   - "[[Ubiquitous-Language]]"

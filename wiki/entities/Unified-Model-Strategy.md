@@ -12,7 +12,6 @@ tags:
   - AI
   - organization
   - Google-DeepMind
-  - strategy
 related_entities:
   - "[[Model-Distillation]]"
   - "[[World-Model]]"

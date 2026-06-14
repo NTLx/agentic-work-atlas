@@ -7,7 +7,6 @@ created: 2026-05-24
 updated: 2026-05-24
 tags:
   - source-summary
-  - startups
 ---
 
 # The-Founders-Playbook-05062026_v3

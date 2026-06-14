@@ -10,7 +10,6 @@ updated: 2026-05-26
 tags:
   - AI
   - AGI
-  - system-architecture
 related_entities:
   - "[[Demis-Hassabis]]"
   - "[[Scientific-Discovery-AI]]"

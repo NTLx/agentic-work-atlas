@@ -11,7 +11,6 @@ updated: 2026-06-04
 tags:
   - AI-deployment
   - enterprise
-  - systems-integration
 related_entities:
   - "[[Forward-Deployed-Engineer]]"
   - "[[AI-Ready-Organization]]"

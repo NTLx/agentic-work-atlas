@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 38 |
+| `tag` | 24 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -60,21 +60,7 @@ tags:
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'research-agenda'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'resilience'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'scientific-agents'`
-- `wiki/entities/Vocabulary-Building.md` - `一次性 tag 仅出现 1 次: 'software-development-process'`
-- `wiki/entities/Layered-AI-Sourcing.md` - `一次性 tag 仅出现 1 次: 'sourcing'`
-- `wiki/entities/Model-Context-Protocol-MCP.md` - `一次性 tag 仅出现 1 次: 'standard'`
-- `wiki/sources/The-Founders-Playbook-05062026_v3.md` - `一次性 tag 仅出现 1 次: 'startups'`
-- `wiki/entities/Unified-Model-Strategy.md` - `一次性 tag 仅出现 1 次: 'strategy'`
-- `wiki/entities/Tool-Use-Architecture.md` - `一次性 tag 仅出现 1 次: 'system-architecture'`
-- `wiki/entities/Integration-Wall.md` - `一次性 tag 仅出现 1 次: 'systems-integration'`
-- `wiki/entities/Cross-Disciplinary-Generalist.md` - `一次性 tag 仅出现 1 次: 'team-building'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'technology-governance'`
-- `wiki/sources/Harness, Scaffold, and the AI Agent Terms Worth Getting Right.md` - `一次性 tag 仅出现 1 次: 'terminology'`
-- `wiki/entities/Andrej-Karpathy.md` - `一次性 tag 仅出现 1 次: 'tesla'`
-- `wiki/topics/Karpathy-AI-Thought.md` - `一次性 tag 仅出现 1 次: 'thought-leader'`
-- `wiki/entities/Martin-Fowler.md` - `一次性 tag 仅出现 1 次: 'thoughtworks'`
-- `wiki/entities/ACI-Agent-Computer-Interface.md` - `一次性 tag 仅出现 1 次: 'tool-design'`
-- `wiki/sources/Designing the hf CLI as an agent-optimized way to work with the Hub.md` - `一次性 tag 仅出现 1 次: 'tooling'`
 - `wiki/entities/Messy-Middle.md` - `一次性 tag 仅出现 1 次: 'transition'`
 - `wiki/entities/Memory-Summary-Page.md` - `一次性 tag 仅出现 1 次: 'trust'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'tutorial'`
