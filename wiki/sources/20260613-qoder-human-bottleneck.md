@@ -8,8 +8,6 @@ updated: 2026-06-13
 tags:
   - source-summary
   - coding-agent
-  - sleep-token
-  - workflow-evolution
 ---
 
 # Qoder 工程实践：当瓶颈从模型转移到人

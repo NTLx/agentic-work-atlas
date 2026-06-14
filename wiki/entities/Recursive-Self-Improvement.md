@@ -14,7 +14,6 @@ tags:
   - ai-capability
   - AI-policy
   - AI-safety
-  - recursive-systems
 related_entities:
   - "[[Anthropic]]"
   - "[[Anthropic-Institute]]"

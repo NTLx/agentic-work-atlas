@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 52 |
+| `tag` | 38 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -57,21 +57,9 @@ tags:
 - `index.md` - `一次性 tag 仅出现 1 次: 'index'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'policy'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'quartz'`
-- `wiki/entities/Recursive-Self-Improvement.md` - `一次性 tag 仅出现 1 次: 'recursive-systems'`
-- `wiki/entities/渐进式重构.md` - `一次性 tag 仅出现 1 次: 'refactoring'`
-- `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `一次性 tag 仅出现 1 次: 'relational-sector'`
-- `wiki/entities/Connection.md` - `一次性 tag 仅出现 1 次: 'relationships'`
-- `wiki/entities/Research-Preview.md` - `一次性 tag 仅出现 1 次: 'release-strategy'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'research-agenda'`
-- `wiki/sources/20260613-NLAH-natural-language-agent-harnesses.md` - `一次性 tag 仅出现 1 次: 'research-paper'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'resilience'`
-- `wiki/sources/The PR you would have opened yourself.md` - `一次性 tag 仅出现 1 次: 'review'`
-- `wiki/entities/AI-Deployment-Valley-of-Death.md` - `一次性 tag 仅出现 1 次: 'roi'`
-- `wiki/sources/20260606-the-minimill-of-ai.md` - `一次性 tag 仅出现 1 次: 'routing'`
-- `wiki/entities/Moats-in-AI-Era.md` - `一次性 tag 仅出现 1 次: 'saas'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'scientific-agents'`
-- `wiki/sources/20260613-qoder-human-bottleneck.md` - `一次性 tag 仅出现 1 次: 'sleep-token'`
-- `wiki/entities/Software-Democratization.md` - `一次性 tag 仅出现 1 次: 'software'`
 - `wiki/entities/Vocabulary-Building.md` - `一次性 tag 仅出现 1 次: 'software-development-process'`
 - `wiki/entities/Layered-AI-Sourcing.md` - `一次性 tag 仅出现 1 次: 'sourcing'`
 - `wiki/entities/Model-Context-Protocol-MCP.md` - `一次性 tag 仅出现 1 次: 'standard'`
@@ -95,10 +83,8 @@ tags:
 - `wiki/entities/Guillermo-Rauch.md` - `一次性 tag 仅出现 1 次: 'vercel'`
 - `wiki/sources/20260610-anthropic-ai-exploits-security-patches.md` - `一次性 tag 仅出现 1 次: 'vulnerability'`
 - `wiki/entities/Intrinsic-Wealth-Accumulation.md` - `一次性 tag 仅出现 1 次: 'wealth-distribution'`
-- `wiki/sources/20260604-dwarkesh-agi-scarcity.md` - `一次性 tag 仅出现 1 次: 'wealth-redistribution'`
 - `wiki/entities/LLM-Wiki.md` - `一次性 tag 仅出现 1 次: 'wiki'`
 - `wiki/entities/Knowledge-Work.md` - `一次性 tag 仅出现 1 次: 'work'`
-- `wiki/sources/20260613-qoder-human-bottleneck.md` - `一次性 tag 仅出现 1 次: 'workflow-evolution'`
 - `wiki/sources/building-effective-agents-complete.md` - `一次性 tag 仅出现 1 次: 'workflows'`
 - `wiki/entities/Specificity.md` - `一次性 tag 仅出现 1 次: 'writing'`
 - `wiki/sources/Inside PG AI Factory and the Push to Operationalize AI at Scale.md` - `一次性 tag 仅出现 1 次: 'youtube-transcript'`

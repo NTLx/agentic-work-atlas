@@ -10,7 +10,6 @@ updated: 2026-05-26
 tags:
   - product-management
   - AI
-  - release-strategy
 related_entities:
   - "[[Cat-Wu]]"
   - "[[AI-Native-Shipping]]"

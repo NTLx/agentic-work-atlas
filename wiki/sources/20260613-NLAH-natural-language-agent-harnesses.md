@@ -8,7 +8,6 @@ updated: 2026-06-13
 tags:
   - source-summary
   - agent-harness
-  - research-paper
 ---
 
 # Code designs Harness 还是 Model drives Harnesses？

@@ -10,7 +10,6 @@ created: 2026-05-08
 updated: 2026-05-25
 tags:
   - AI
-  - software
   - education
 related_entities:
   - "[[Boris-Cherny]]"

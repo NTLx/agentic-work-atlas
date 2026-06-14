@@ -9,7 +9,6 @@ tags:
   - source-summary
   - open-source
   - coding-agent
-  - review
 ---
 
 # The PR you would have opened yourself

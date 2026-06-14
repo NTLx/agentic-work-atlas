@@ -11,7 +11,6 @@ updated: 2026-06-01
 tags:
   - enterprise-ai
   - ai-deployment
-  - roi
 related_entities:
   - "[[AI-Deployment-Invisible-Costs]]"
   - "[[The-GenAI-Divide]]"

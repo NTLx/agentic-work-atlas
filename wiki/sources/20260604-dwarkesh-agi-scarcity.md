@@ -8,8 +8,6 @@ updated: 2026-06-06
 tags:
   - source-summary
   - economy
-  - wealth-redistribution
-  - relational-sector
 ---
 
 # AGI 之后什么仍然稀缺？Imas 与 Trammell 在 Dwarkesh 上的对谈

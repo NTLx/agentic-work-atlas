@@ -10,7 +10,6 @@ updated: 2026-05-10
 tags:
   - AI
   - business-strategy
-  - saas
 related_entities:
   - "[[Boris-Cherny]]"
   - "[[Software-Democratization]]"

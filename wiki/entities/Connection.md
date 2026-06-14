@@ -8,7 +8,6 @@ created: 2026-04-09
 updated: 2026-04-15
 tags:
   - Knowledge-Work
-  - relationships
   - leadership
 related_entities:
   - '[[Wisdom-Work]]'
