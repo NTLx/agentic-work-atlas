@@ -9,7 +9,6 @@ tags:
   - source-summary
   - AI-Agent
   - coding-agents
-  - ai-assisted-programming
   - agentic-engineering
 ---
 

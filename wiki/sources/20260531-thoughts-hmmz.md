@@ -7,7 +7,6 @@ created: 2026-06-01
 updated: 2026-06-01
 tags:
   - source-summary
-  - ai-attention
   - friction
   - vibe-coding
   - human-judgment

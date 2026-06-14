@@ -10,7 +10,6 @@ created: 2026-04-21
 updated: 2026-06-01
 tags:
   - ai-safety
-  - ai-design
   - decision-making
 related_entities:
   - '[[Martin-Fowler]]'
