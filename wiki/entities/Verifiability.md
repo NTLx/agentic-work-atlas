@@ -7,6 +7,8 @@ aliases:
 definition: "决定 LLM 自动化能力的关键维度——能客观验证输出质量的领域可通过 RLVR 训练持续提升，不能验证的领域模型进步受限"
 created: 2026-05-08
 updated: 2026-05-26
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI
   - LLM

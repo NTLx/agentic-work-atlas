@@ -8,6 +8,8 @@ aliases:
 definition: "用 coding agents 辅助开发软件的工程实践；Simon Willison 系统化了 code execution、测试和反模式等实践，Karpathy 则将其与 Vibe Coding 区分为保持专业质量上限的严肃工程纪律"
 created: 2026-04-09
 updated: 2026-06-13
+evidence_level: high
+claim_type: mixed
 tags:
   - AI-Agent
   - Software-Engineering

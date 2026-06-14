@@ -7,6 +7,8 @@ aliases:
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
 updated: 2026-06-13
+evidence_level: high
+claim_type: mixed
 tags:
   - AI-Agent
   - architecture
