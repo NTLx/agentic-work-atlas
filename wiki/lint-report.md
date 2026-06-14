@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 89 |
+| `tag` | 75 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -55,19 +55,6 @@ tags:
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
 - `index.md` - `一次性 tag 仅出现 1 次: 'index'`
-- `wiki/sources/Maintainability sensors for coding agents.md` - `一次性 tag 仅出现 1 次: 'maintainability'`
-- `wiki/sources/20260609-whats-new-in-claude-managed-agents.md` - `一次性 tag 仅出现 1 次: 'managed-agents'`
-- `wiki/entities/Prompt-Injection-Risk.md` - `一次性 tag 仅出现 1 次: 'marketing'`
-- `wiki/sources/20260604-openai-dreaming-memory.md` - `一次性 tag 仅出现 1 次: 'memory-systems'`
-- `wiki/sources/The next biggest moat in AI.md` - `一次性 tag 仅出现 1 次: 'moat'`
-- `wiki/entities/Model-Distillation.md` - `一次性 tag 仅出现 1 次: 'model-compression'`
-- `wiki/entities/Model-Safety-Divergence.md` - `一次性 tag 仅出现 1 次: 'model-evaluation'`
-- `wiki/entities/Token-Supply-Chain.md` - `一次性 tag 仅出现 1 次: 'model-infrastructure'`
-- `wiki/sources/The Knowledge Economy Is Over. Welcome to the Allocation Economy..md` - `一次性 tag 仅出现 1 次: 'model-management'`
-- `wiki/entities/Dan-Shipper.md` - `一次性 tag 仅出现 1 次: 'newsletter'`
-- `wiki/entities/Guillermo-Rauch.md` - `一次性 tag 仅出现 1 次: 'nextjs'`
-- `wiki/sources/Open and closed models are on different exponentials.md` - `一次性 tag 仅出现 1 次: 'open-models'`
-- `wiki/entities/Invisible-Orchestrator.md` - `一次性 tag 仅出现 1 次: 'orchestration'`
 - `wiki/sources/The layoffs will continue till we learn to use AI.md` - `一次性 tag 仅出现 1 次: 'organizational-alignment'`
 - `wiki/sources/20260613-coding-agent-organizational-engineering.md` - `一次性 tag 仅出现 1 次: 'organizational-engineering'`
 - `wiki/sources/The layoffs will continue till we learn to use AI.md` - `一次性 tag 仅出现 1 次: 'outcome-economics'`
@@ -127,7 +114,6 @@ tags:
 - `wiki/entities/Memory-Summary-Page.md` - `一次性 tag 仅出现 1 次: 'trust'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'tutorial'`
 - `wiki/sources/20260613-ontology-for-agent-optimization.md` - `一次性 tag 仅出现 1 次: 'umodel'`
-- `wiki/sources/20260609-whats-new-in-claude-managed-agents.md` - `一次性 tag 仅出现 1 次: 'vault'`
 - `wiki/entities/Konstantine-Buhler.md` - `一次性 tag 仅出现 1 次: 'venture-capital'`
 - `wiki/entities/Guillermo-Rauch.md` - `一次性 tag 仅出现 1 次: 'vercel'`
 - `wiki/sources/20260610-anthropic-ai-exploits-security-patches.md` - `一次性 tag 仅出现 1 次: 'vulnerability'`

@@ -11,7 +11,6 @@ updated: 2026-05-30
 tags:
   - AI
   - machine-learning
-  - model-compression
 related_entities:
   - "[[Adversarial-Distillation]]"
   - "[[Continual-Learning]]"

@@ -14,7 +14,6 @@ tags:
   - entrepreneurship
   - infrastructure
   - vercel
-  - nextjs
 related_entities:
   - "[[Vibe-Coding]]"
   - "[[Coding-Agents]]"

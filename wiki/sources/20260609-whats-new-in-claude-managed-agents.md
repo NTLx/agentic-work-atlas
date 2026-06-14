@@ -7,9 +7,7 @@ created: 2026-06-13
 updated: 2026-06-13
 tags:
   - source-summary
-  - managed-agents
   - deployment
-  - vault
 ---
 
 # New in Claude Managed Agents: run agents on a schedule and store environment variables in vaults

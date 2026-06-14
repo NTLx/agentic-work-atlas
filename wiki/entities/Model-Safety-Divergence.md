@@ -12,7 +12,6 @@ tags:
   - ai-safety
   - agentic-ai
   - agent-containment
-  - model-evaluation
 related_entities:
   - "[[Agent-Containment]]"
   - "[[Least-Agency]]"

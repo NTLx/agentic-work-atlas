@@ -7,7 +7,6 @@ created: 2026-06-06
 updated: 2026-06-06
 tags:
   - source-summary
-  - memory-systems
   - context-engineering
   - openai
   - personal-ai-assistant

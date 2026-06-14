@@ -8,7 +8,6 @@ created: 2026-04-10
 updated: 2026-04-16
 tags:
   - AI-Agent
-  - newsletter
   - entrepreneurship
   - person
 related_entities:

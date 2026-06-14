@@ -11,7 +11,6 @@ updated: 2026-05-26
 tags:
   - AI-Agent
   - multi-agent
-  - orchestration
 related_entities:
   - "[[Agent-Orchestration]]"
   - "[[Agent-Harness]]"

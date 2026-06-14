@@ -8,7 +8,6 @@ updated: 2026-06-05
 tags:
   - source-summary
   - model-economics
-  - open-models
   - coding-agents
 ---
 
