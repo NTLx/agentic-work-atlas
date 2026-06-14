@@ -11,6 +11,8 @@ updated: 2026-06-01
 tags:
   - ai-safety
   - decision-making
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Martin-Fowler]]'
   - '[[AI-Lacks-Laziness]]'
