@@ -9,7 +9,6 @@ tags:
   - source-summary
   - enterprise-ai
   - customer-service
-  - human-oversight
 ---
 
 # Artificial intelligence to hit workplace like a freight train, energy boss warns

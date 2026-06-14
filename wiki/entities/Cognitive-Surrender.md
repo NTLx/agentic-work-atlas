@@ -10,7 +10,6 @@ created: 2026-05-27
 updated: 2026-06-13
 tags:
   - cognitive-work
-  - human-AI-interaction
   - education
   - decision-making
 related_entities:

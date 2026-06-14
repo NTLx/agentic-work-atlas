@@ -9,7 +9,6 @@ tags:
   - source-summary
   - manufacturing
   - multi-agent
-  - hardware-sovereignty
 ---
 
 # MachinaCheck: Building a Multi-Agent CNC Manufacturability System on AMD MI300X

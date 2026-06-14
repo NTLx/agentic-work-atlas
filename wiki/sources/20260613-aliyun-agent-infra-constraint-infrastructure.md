@@ -8,7 +8,6 @@ updated: 2026-06-13
 tags:
   - source-summary
   - agent-infra
-  - harness
 evidence_level: medium
 claim_type: mixed
 ---

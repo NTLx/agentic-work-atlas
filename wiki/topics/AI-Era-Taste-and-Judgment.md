@@ -6,7 +6,6 @@ updated: 2026-05-23
 tags:
   - AI-era
   - competitive-advantage
-  - human-skills
 related_entities:
   - '[[Competent-Output]]'
   - '[[Dan-Shipper]]'

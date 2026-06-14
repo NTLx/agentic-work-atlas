@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 114 |
+| `tag` | 101 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -54,21 +54,8 @@ tags:
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
-- `wiki/sources/20260605-how-anthropic-uses-claude-gtm-engineering.md` - `一次性 tag 仅出现 1 次: 'gtm-engineering'`
-- `wiki/sources/The-Founders-Playbook-05062026_v3.md` - `一次性 tag 仅出现 1 次: 'guide'`
-- `wiki/sources/MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X.md` - `一次性 tag 仅出现 1 次: 'hardware-sovereignty'`
-- `wiki/sources/20260613-aliyun-agent-infra-constraint-infrastructure.md` - `一次性 tag 仅出现 1 次: 'harness'`
-- `wiki/sources/20260413-why-ai-first-strategy-wrong.md` - `一次性 tag 仅出现 1 次: 'harness-engineering'`
-- `wiki/entities/Memex.md` - `一次性 tag 仅出现 1 次: 'history'`
-- `wiki/entities/Human-Signal.md` - `一次性 tag 仅出现 1 次: 'human-AI-collaboration'`
-- `wiki/entities/Cognitive-Surrender.md` - `一次性 tag 仅出现 1 次: 'human-AI-interaction'`
-- `wiki/entities/Carbon-Silicon-Division.md` - `一次性 tag 仅出现 1 次: 'human-ai-collaboration'`
-- `wiki/sources/20260601-octopus-energy-ai-customer-service.md` - `一次性 tag 仅出现 1 次: 'human-oversight'`
-- `wiki/topics/AI-Era-Taste-and-Judgment.md` - `一次性 tag 仅出现 1 次: 'human-skills'`
-- `wiki/entities/Memex.md` - `一次性 tag 仅出现 1 次: 'hypertext'`
 - `index.md` - `一次性 tag 仅出现 1 次: 'index'`
 - `wiki/entities/AI-Developer-Power-User-Gap.md` - `一次性 tag 仅出现 1 次: 'inequality'`
-- `wiki/entities/Memex.md` - `一次性 tag 仅出现 1 次: 'information-science'`
 - `wiki/entities/Graph-Guided-Agent-Investigation.md` - `一次性 tag 仅出现 1 次: 'knowledge-graph'`
 - `wiki/entities/Knowledge-Graph.md` - `一次性 tag 仅出现 1 次: 'knowledge-representation'`
 - `wiki/entities/O-Ring-Effect.md` - `一次性 tag 仅出现 1 次: 'labor-economics'`
