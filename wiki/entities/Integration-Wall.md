@@ -8,6 +8,8 @@ aliases:
 definition: "AI 项目从 demo 到生产落地时遇到的遗留系统、权限、SSO、数据驻留、合规、流程改造和组织采纳约束"
 created: 2026-05-22
 updated: 2026-06-04
+evidence_level: high
+claim_type: mixed
 tags:
   - AI-deployment
   - enterprise
@@ -24,6 +26,7 @@ source_raw:
   - "[[当我们谈论 FDE 时，我们在谈论什么？]]"
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
   - "[[The Return of the Deployment Company]]"
+  - "[[Open and closed models are on different exponentials]]"
 ---
 
 # Integration Wall（集成之墙）

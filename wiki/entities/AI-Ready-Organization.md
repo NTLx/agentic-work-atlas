@@ -7,6 +7,8 @@ aliases:
 definition: "能清晰描述自身目标、流程、策略，从而让 AI 有效执行的组织状态——AI 的瓶颈不在技术，而在企业自身的混乱"
 created: 2026-05-09
 updated: 2026-06-01
+evidence_level: high
+claim_type: mixed
 tags:
   - AI-adoption
   - organizational-design
