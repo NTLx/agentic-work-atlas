@@ -4,6 +4,8 @@ title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
 updated: 2026-06-07
+evidence_level: high
+claim_type: mixed
 tags:
   - AI-Agent
   - verification

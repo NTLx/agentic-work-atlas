@@ -6,6 +6,8 @@ aliases:
 definition: "在不确定条件下做出独特判断的能力，表现为能注意到什么、拒绝什么，以及精确解释哪里感觉不对的能力"
 created: 2026-04-09
 updated: 2026-05-22
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-era
   - competitive-advantage

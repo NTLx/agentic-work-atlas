@@ -6,6 +6,8 @@ aliases:
 definition: "设计 Agent 每次推理时看到的信息结构，包括项目上下文、技能按需加载、记忆层级和上下文生命周期管理"
 created: 2026-04-09
 updated: 2026-06-11
+evidence_level: high
+claim_type: mixed
 tags:
   - AI-Agent
   - OpenClaw
