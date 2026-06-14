@@ -11,6 +11,8 @@ tags:
   - Decision-Making
   - organization
   - delegation
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Judgment]]'
   - '[[Taste]]'

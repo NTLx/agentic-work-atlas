@@ -10,6 +10,8 @@ tags:
   - AI-Agent
   - Human-Potential
   - Decision-Making
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Judgment]]'
   - '[[Taste]]'
