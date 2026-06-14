@@ -9,8 +9,6 @@ updated: 2026-06-06
 tags:
   - person
   - AGI-economics
-  - growth-theory
-  - epoch
 related_entities:
   - "[[Epoch-AI]]"
   - "[[Alex-Imas]]"

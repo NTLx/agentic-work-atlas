@@ -9,7 +9,6 @@ updated: 2026-04-10
 tags:
   - person
   - open-source
-  - django
 related_entities:
   - '[[Agentic-Engineering]]'
   - '[[Coding-Agents]]'

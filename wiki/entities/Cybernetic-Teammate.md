@@ -11,7 +11,6 @@ updated: 2026-05-23
 tags:
   - AI-collaboration
   - organization
-  - expertise
 related_entities:
   - "[[AI-Factory]]"
   - "[[Business-Embedded-AI-Organization]]"

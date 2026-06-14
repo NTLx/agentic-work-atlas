@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 133 |
+| `tag` | 125 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -54,13 +54,6 @@ tags:
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
-- `wiki/sources/20260529-gemini-co-leads-origins.md` - `一次性 tag 仅出现 1 次: 'distillation'`
-- `wiki/entities/Simon-Willison.md` - `一次性 tag 仅出现 1 次: 'django'`
-- `wiki/entities/AGI-Economics.md` - `一次性 tag 仅出现 1 次: 'economics'`
-- `wiki/topics/Agentic-AI-Ecosystem.md` - `一次性 tag 仅出现 1 次: 'ecosystem'`
-- `wiki/entities/Phil-Trammell.md` - `一次性 tag 仅出现 1 次: 'epoch'`
-- `wiki/entities/Cybernetic-Teammate.md` - `一次性 tag 仅出现 1 次: 'expertise'`
-- `wiki/entities/Input-Output-Outcome.md` - `一次性 tag 仅出现 1 次: 'framework'`
 - `wiki/sources/20260531-thoughts-hmmz.md` - `一次性 tag 仅出现 1 次: 'friction'`
 - `wiki/entities/Intelligence-Premium.md` - `一次性 tag 仅出现 1 次: 'frontier-models'`
 - `wiki/sources/20260601-mit-nanda-genai-divide.md` - `一次性 tag 仅出现 1 次: 'genai-divide'`
@@ -71,7 +64,6 @@ tags:
 - `wiki/entities/Alex-Imas.md` - `一次性 tag 仅出现 1 次: 'google-deepmind'`
 - `wiki/entities/AISI.md` - `一次性 tag 仅出现 1 次: 'government'`
 - `wiki/entities/Dominator-Analysis.md` - `一次性 tag 仅出现 1 次: 'graph-theory'`
-- `wiki/entities/Phil-Trammell.md` - `一次性 tag 仅出现 1 次: 'growth-theory'`
 - `wiki/sources/20260605-how-anthropic-uses-claude-gtm-engineering.md` - `一次性 tag 仅出现 1 次: 'gtm-engineering'`
 - `wiki/sources/The-Founders-Playbook-05062026_v3.md` - `一次性 tag 仅出现 1 次: 'guide'`
 - `wiki/sources/MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X.md` - `一次性 tag 仅出现 1 次: 'hardware-sovereignty'`

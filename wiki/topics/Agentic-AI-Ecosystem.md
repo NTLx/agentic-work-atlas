@@ -7,7 +7,6 @@ updated: 2026-05-29
 tags:
   - topic
   - agentic-ai
-  - ecosystem
   - developer-ecosystem
 related_entities:
   - "[[Agent-Infra]]"

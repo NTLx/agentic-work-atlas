@@ -9,7 +9,6 @@ updated: 2026-05-26
 tags:
   - business
   - ai-labor
-  - framework
 related_entities:
   - "[[Knowledge-Work]]"
   - "[[Allocation-Economy]]"

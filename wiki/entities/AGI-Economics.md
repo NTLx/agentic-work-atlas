@@ -10,7 +10,6 @@ created: 2026-06-06
 updated: 2026-06-06
 tags:
   - AGI
-  - economics
   - labor
   - capital-share
 related_entities:
@@ -84,4 +83,3 @@ source_raw:
 ## 前提与局限性
 
 （边界条件、反例与适用场景）
-

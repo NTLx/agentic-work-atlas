@@ -8,7 +8,6 @@ updated: 2026-05-30
 tags:
   - source-summary
   - Google-DeepMind
-  - distillation
   - world-model
   - organization
 ---
