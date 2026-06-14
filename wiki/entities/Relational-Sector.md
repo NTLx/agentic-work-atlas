@@ -11,7 +11,6 @@ updated: 2026-06-06
 tags:
   - AGI-economics
   - labor
-  - post-scarcity
   - AI-economy
 related_entities:
   - "[[Alex-Imas]]"
@@ -71,4 +70,3 @@ AGI 抬高 f(完成度) → 任务价值 ↑，关系价值 ↑ 不变
 ## 前提与局限性
 
 （边界条件、反例与适用场景）
-

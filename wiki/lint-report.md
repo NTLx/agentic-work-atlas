@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 75 |
+| `tag` | 64 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -55,18 +55,7 @@ tags:
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
 - `index.md` - `一次性 tag 仅出现 1 次: 'index'`
-- `wiki/sources/The layoffs will continue till we learn to use AI.md` - `一次性 tag 仅出现 1 次: 'organizational-alignment'`
-- `wiki/sources/20260613-coding-agent-organizational-engineering.md` - `一次性 tag 仅出现 1 次: 'organizational-engineering'`
-- `wiki/sources/The layoffs will continue till we learn to use AI.md` - `一次性 tag 仅出现 1 次: 'outcome-economics'`
-- `wiki/entities/N-Hour.md` - `一次性 tag 仅出现 1 次: 'paradigm-shift'`
-- `wiki/entities/Jevons-Paradox.md` - `一次性 tag 仅出现 1 次: 'paradox'`
-- `wiki/entities/Agent-Workflow-Patterns.md` - `一次性 tag 仅出现 1 次: 'patterns'`
-- `wiki/entities/Laziness-Virtue.md` - `一次性 tag 仅出现 1 次: 'philosophy'`
-- `wiki/entities/Ghost-Intelligence.md` - `一次性 tag 仅出现 1 次: 'philosophy-of-intelligence'`
-- `wiki/entities/Plan-as-Agent-Checkpoint.md` - `一次性 tag 仅出现 1 次: 'planning'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'policy'`
-- `wiki/entities/Drip-Scenario.md` - `一次性 tag 仅出现 1 次: 'political-economy'`
-- `wiki/entities/Relational-Sector.md` - `一次性 tag 仅出现 1 次: 'post-scarcity'`
 - `wiki/entities/Escalation-Based-Human-Oversight.md` - `一次性 tag 仅出现 1 次: 'process-design'`
 - `wiki/sources/Enabling agent-first process redesign.md` - `一次性 tag 仅出现 1 次: 'process-redesign'`
 - `wiki/entities/Zero-Friction-Scope-Creep.md` - `一次性 tag 仅出现 1 次: 'product-discipline'`

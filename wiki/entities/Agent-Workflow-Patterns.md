@@ -9,7 +9,6 @@ updated: 2026-04-15
 tags:
   - AI-Agent
   - architecture
-  - patterns
 related_entities:
   - '[[Coding-Agents]]'
   - '[[ACI-Agent-Computer-Interface]]'

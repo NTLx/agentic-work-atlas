@@ -9,7 +9,6 @@ tags:
   - source-summary
   - coding-agent
   - agent-harness
-  - organizational-engineering
 ---
 
 # Coding Agent 下半场：从个人提效到组织级研发体系

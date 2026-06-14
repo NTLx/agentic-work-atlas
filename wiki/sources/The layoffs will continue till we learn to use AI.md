@@ -8,8 +8,6 @@ updated: 2026-05-25
 tags:
   - source-summary
   - layoffs
-  - organizational-alignment
-  - outcome-economics
 ---
 
 # The layoffs will continue till we learn to use AI

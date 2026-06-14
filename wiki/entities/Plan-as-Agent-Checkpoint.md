@@ -11,7 +11,6 @@ created: 2026-06-04
 updated: 2026-06-04
 tags:
   - agentic-engineering
-  - planning
   - context-engineering
 related_entities:
   - "[[Agentic-Engineering]]"

@@ -10,7 +10,6 @@ updated: 2026-05-26
 tags:
   - AI
   - LLM
-  - philosophy-of-intelligence
 related_entities:
   - "[[Jagged-Intelligence]]"
   - "[[Verifiability]]"

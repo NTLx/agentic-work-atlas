@@ -10,7 +10,6 @@ created: 2026-06-01
 updated: 2026-06-01
 tags:
   - economy
-  - paradox
 related_entities:
   - "[[Jevons-Paradox-for-Knowledge-Work]]"
   - "[[Allocation-Economy]]"

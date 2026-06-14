@@ -11,7 +11,6 @@ updated: 2026-06-06
 tags:
   - AGI-economics
   - labor
-  - political-economy
 related_entities:
   - "[[Messy-Middle]]"
   - "[[Relational-Sector]]"
@@ -72,4 +71,3 @@ drip 累积痛苦 ≥ shock ∧ drip 政治可见度 < shock
 ## 关键数据点
 
 （关键事实、统计、时间线从原 raw 源沉淀，见 source_raw 字段）
-
