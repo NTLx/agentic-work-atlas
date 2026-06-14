@@ -6,7 +6,7 @@ updated: 2026-05-23
 tags:
   - Knowledge-Work
   - AI-era
-  - career-transformation
+  - career
 related_entities:
   - '[[Connection]]'
   - '[[Dan-Shipper]]'
