@@ -9,7 +9,6 @@ created: 2026-06-13
 updated: 2026-06-13
 tags:
   - agent-infra
-  - constraint
   - governance
   - infrastructure
 related_entities:

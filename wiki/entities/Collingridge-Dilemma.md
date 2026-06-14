@@ -11,7 +11,6 @@ updated: 2026-06-12
 tags:
   - policy
   - technology-governance
-  - concept
 related_entities:
   - "[[N-Hour]]"
   - "[[Frontier-Developer-Obligations]]"

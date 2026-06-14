@@ -12,7 +12,6 @@ updated: 2026-06-02
 tags:
   - AI-Agent
   - governance
-  - compliance
   - enterprise-ai
 related_entities:
   - "[[Agent-Logic]]"

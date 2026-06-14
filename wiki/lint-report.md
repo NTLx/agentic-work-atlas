@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 150 |
+| `tag` | 145 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -54,11 +54,6 @@ tags:
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
-- `wiki/entities/Policy-as-Code-for-Agent-Governance.md` - `一次性 tag 仅出现 1 次: 'compliance'`
-- `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'concept'`
-- `wiki/entities/AGENTS-md.md` - `一次性 tag 仅出现 1 次: 'configuration'`
-- `wiki/sources/20260608-connector-observability-directory.md` - `一次性 tag 仅出现 1 次: 'connectors'`
-- `wiki/entities/Constraint-Infrastructure.md` - `一次性 tag 仅出现 1 次: 'constraint'`
 - `wiki/sources/20260610-qwen-constraint-driven-engineering-experiment.md` - `一次性 tag 仅出现 1 次: 'constraint-driven-engineering'`
 - `wiki/sources/20260613-aliyun-agent-infra-constraint-infrastructure.md` - `一次性 tag 仅出现 1 次: 'constraint-infrastructure'`
 - `wiki/entities/Prompt-Injection-Risk.md` - `一次性 tag 仅出现 1 次: 'content-strategy'`

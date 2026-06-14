@@ -9,7 +9,6 @@ tags:
   - source-summary
   - mcp
   - observability
-  - connectors
 ---
 
 # Observability for developers building connectors
