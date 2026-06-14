@@ -8,7 +8,6 @@ created: 2026-05-07
 updated: 2026-05-07
 tags:
   - verification
-  - compiler-theory
   - graph-theory
 related_entities:
   - '[[Agentic-Engineering]]'

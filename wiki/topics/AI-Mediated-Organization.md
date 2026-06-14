@@ -7,7 +7,6 @@ updated: 2026-05-25
 tags:
   - organization
   - AI-Agent
-  - collaboration
 related_entities:
   - "[[Agent-First-Enterprise]]"
   - "[[Human-Governor-Agent-Operator]]"

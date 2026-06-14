@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 154 |
+| `tag` | 150 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -54,10 +54,6 @@ tags:
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
-- `wiki/topics/AI-Mediated-Organization.md` - `一次性 tag 仅出现 1 次: 'collaboration'`
-- `wiki/entities/The-OpenAI-Deployment-Company.md` - `一次性 tag 仅出现 1 次: 'company'`
-- `wiki/entities/Dominator-Analysis.md` - `一次性 tag 仅出现 1 次: 'compiler-theory'`
-- `wiki/entities/Emergence.md` - `一次性 tag 仅出现 1 次: 'complexity'`
 - `wiki/entities/Policy-as-Code-for-Agent-Governance.md` - `一次性 tag 仅出现 1 次: 'compliance'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'concept'`
 - `wiki/entities/AGENTS-md.md` - `一次性 tag 仅出现 1 次: 'configuration'`
