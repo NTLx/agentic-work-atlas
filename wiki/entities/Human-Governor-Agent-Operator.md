@@ -10,6 +10,8 @@ tags:
   - AI-Agent
   - Enterprise-Architecture
   - organization
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Agent-First-Enterprise]]'
   - '[[Machine-Readable-Processes]]'

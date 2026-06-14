@@ -10,6 +10,8 @@ tags:
   - AI-Agent
   - Process-Design
   - architecture
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Agent-First-Enterprise]]'
   - '[[Human-Governor-Agent-Operator]]'
