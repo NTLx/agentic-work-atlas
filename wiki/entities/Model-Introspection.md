@@ -10,7 +10,6 @@ updated: 2026-05-26
 tags:
   - AI
   - prompting
-  - debugging
 related_entities:
   - "[[Cat-Wu]]"
   - "[[Jagged-Intelligence]]"

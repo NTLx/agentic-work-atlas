@@ -10,7 +10,6 @@ tags:
   - agentic-engineering
   - developer-productivity
   - coding-agents
-  - data-report
 ---
 
 # The Cursor Developer Habits Report — Spring 2026

@@ -10,7 +10,6 @@ created: 2026-04-21
 updated: 2026-05-25
 tags:
   - software-engineering
-  - design-philosophy
 related_entities:
   - '[[Laziness-Virtue]]'
   - '[[AI-Restraint]]'

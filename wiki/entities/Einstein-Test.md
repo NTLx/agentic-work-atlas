@@ -9,7 +9,6 @@ created: 2026-05-08
 updated: 2026-05-25
 tags:
   - AI
-  - creativity
   - benchmark
 related_entities:
   - "[[Demis-Hassabis]]"

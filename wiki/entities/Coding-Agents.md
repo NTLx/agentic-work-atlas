@@ -9,7 +9,6 @@ updated: 2026-06-13
 tags:
   - AI-Agent
   - coding-agents
-  - core-concept
 related_entities:
   - '[[Boris-Cherny]]'
   - '[[Agentic-Engineering]]'

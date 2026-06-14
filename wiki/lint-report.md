@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 140 |
+| `tag` | 133 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -54,13 +54,6 @@ tags:
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
-- `wiki/entities/Coding-Agents.md` - `一次性 tag 仅出现 1 次: 'core-concept'`
-- `wiki/entities/Einstein-Test.md` - `一次性 tag 仅出现 1 次: 'creativity'`
-- `wiki/sources/20260530-cursor-developer-habits-report.md` - `一次性 tag 仅出现 1 次: 'data-report'`
-- `wiki/entities/Model-Introspection.md` - `一次性 tag 仅出现 1 次: 'debugging'`
-- `wiki/sources/Taste for Makers.md` - `一次性 tag 仅出现 1 次: 'design'`
-- `wiki/entities/AI-Lacks-Laziness.md` - `一次性 tag 仅出现 1 次: 'design-philosophy'`
-- `wiki/entities/Carbon-Silicon-Division.md` - `一次性 tag 仅出现 1 次: 'developer-role'`
 - `wiki/sources/20260529-gemini-co-leads-origins.md` - `一次性 tag 仅出现 1 次: 'distillation'`
 - `wiki/entities/Simon-Willison.md` - `一次性 tag 仅出现 1 次: 'django'`
 - `wiki/entities/AGI-Economics.md` - `一次性 tag 仅出现 1 次: 'economics'`
