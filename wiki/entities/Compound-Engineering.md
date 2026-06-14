@@ -10,6 +10,8 @@ tags:
   - AI-Agent
   - coding-agents
   - best-practices
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Agentic-Engineering]]'
   - '[[Coding-Agents]]'

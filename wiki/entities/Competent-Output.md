@@ -10,6 +10,8 @@ tags:
   - AI-Agent
   - Creativity
   - content-quality
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Taste]]'
   - '[[Specificity]]'

@@ -9,6 +9,8 @@ updated: 2026-06-06
 tags:
   - person
   - AGI-economics
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Epoch-AI]]"
   - "[[Alex-Imas]]"
