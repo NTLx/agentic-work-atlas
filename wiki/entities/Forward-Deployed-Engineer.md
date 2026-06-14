@@ -12,6 +12,8 @@ tags:
   - career
   - AI-industry
   - enterprise
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[The-OpenAI-Deployment-Company]]"
   - "[[AI-Ready-Organization]]"
