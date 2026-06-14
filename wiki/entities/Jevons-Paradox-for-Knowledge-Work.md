@@ -10,6 +10,8 @@ tags:
   - AI-Agent
   - economy
   - knowledge-work
+evidence_level: low
+claim_type: mixed
 related_entities:
   - '[[Jevons-Paradox]]'
   - '[[Allocation-Economy]]'
@@ -103,4 +105,3 @@ ROI = Return / Investment
 - [[Allocation-Economy]] - 经济转型方向
 - [[Always-On-Economy]] - 效率提升的另一个维度
 - [[Knowledge-Work]] - 正在演变的领域
-

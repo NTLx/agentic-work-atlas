@@ -13,6 +13,8 @@ tags:
   - openai
   - anthropic
   - deep-learning
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Knowledge-Compilation]]'
   - '[[Vibe-Coding]]'

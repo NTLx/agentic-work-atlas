@@ -10,6 +10,8 @@ tags:
   - Knowledge-Work
   - AI-era
   - career
+evidence_level: low
+claim_type: mixed
 related_entities:
   - '[[Judgment]]'
   - '[[Taste]]'

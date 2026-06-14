@@ -40,13 +40,18 @@ tags:
 | `source_raw` | 0 |
 | `tag` | 12 |
 | `evidence` | 0 |
-| `low-evidence` | 0 |
+| `low-evidence` | 2 |
 | `stale-core` | 0 |
 | `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
 
 ## 问题明细
+
+### low-evidence
+
+- `wiki/entities/Jevons-Paradox-for-Knowledge-Work.md` - `低证据页面 Jevons-Paradox-for-Knowledge-Work 只能作为补 source 或探索线索`
+- `wiki/entities/Wisdom-Work.md` - `低证据页面 Wisdom-Work 只能作为补 source 或探索线索`
 
 ### tag
 
