@@ -10,6 +10,8 @@ updated: 2026-05-25
 tags:
   - AI-Agent
   - tool-use
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[MCP-Registry]]"
   - "[[Pinterest-Engineering]]"

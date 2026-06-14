@@ -13,6 +13,8 @@ tags:
   - AI-agent
   - perception-gap
   - organization
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Andrej-Karpathy]]'
   - '[[Agentic-Engineering]]'
