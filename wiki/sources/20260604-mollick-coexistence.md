@@ -7,8 +7,6 @@ created: 2026-06-06
 updated: 2026-06-06
 tags:
   - source-summary
-  - co-intelligence
-  - co-existence
   - seo-aio
   - prompt-injection
 ---

@@ -8,7 +8,6 @@ updated: 2026-06-11
 tags:
   - source-summary
   - agentic-engineering
-  - codex
   - openai
 ---
 
