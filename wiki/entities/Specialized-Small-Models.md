@@ -13,6 +13,8 @@ tags:
   - enterprise-AI
   - model-selection
   - model-economics
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Distributional-Alignment]]"
   - "[[Specialization-Compounds]]"

@@ -9,6 +9,8 @@ updated: 2026-04-15
 tags:
   - AI-Agent
   - architecture
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Coding-Agents]]'
   - '[[ACI-Agent-Computer-Interface]]'
