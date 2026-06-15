@@ -12,6 +12,8 @@ tags:
   - AGI
   - labor
   - capital-share
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Relational-Sector]]"
   - "[[Messy-Middle]]"
@@ -82,4 +84,7 @@ source_raw:
 
 ## 前提与局限性
 
-（边界条件、反例与适用场景）
+- 当前页面主要来自单场高密度访谈，代表两位研究者对 AGI 后经济结构的判断；它适合作为问题框架和概念入口，不应被当作已验证预测。
+- AGI 时间线、能力形态、监管响应和资本制度都会显著改变这些结论的适用性。
+- UBI、资本配置税、关系型部门和发展中国家接入方式等判断都需要更多经济模型、历史案例和政策来源补强。
+- 页面中的资本占比、需求崩溃、O-ring 效应等讨论属于综合推理，不能单独支撑具体政策建议。

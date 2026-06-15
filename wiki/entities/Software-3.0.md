@@ -10,6 +10,8 @@ tags:
   - programming-paradigm
   - AI
   - LLM
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Software-2.0]]"
   - "[[Agentic-Engineering]]"
