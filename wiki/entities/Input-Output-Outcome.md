@@ -6,6 +6,8 @@ aliases:
 definition: "区分代码（输入）、功能（输出）、用户付费（结果）的商业分析框架——AI 大幅提升输入但未必提升结果"
 created: 2026-05-11
 updated: 2026-05-26
+evidence_level: medium
+claim_type: mixed
 tags:
   - business
   - ai-labor

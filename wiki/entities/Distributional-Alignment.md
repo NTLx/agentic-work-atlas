@@ -9,6 +9,8 @@ aliases:
 definition: "模型训练历史与部署任务分布之间的贴近程度；在特定企业任务中，它可能比参数规模更能解释模型质量、成本和稳定性"
 created: 2026-05-24
 updated: 2026-05-29
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-evaluation
   - enterprise-AI

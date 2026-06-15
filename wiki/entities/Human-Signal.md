@@ -8,6 +8,8 @@ aliases:
 definition: "在多 Agent 高吞吐工作系统中，人类持续提供方向、品味、优先级、风险判断和反应-重定向反馈，而把主要执行交给 Agent 的分工角色"
 created: 2026-06-04
 updated: 2026-06-04
+evidence_level: medium
+claim_type: mixed
 tags:
   - agentic-engineering
   - judgment
