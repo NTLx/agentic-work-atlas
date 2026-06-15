@@ -7,6 +7,8 @@ aliases:
 definition: "GBrain 的核心设计洞察——让 LLM 在'潜在空间'（Latent Space）中决定'做什么'（判断、分析、综合），让代码在'确定性'（Deterministic）中保证'在哪里'和'如何做'（构建链接、验证格式、执行计算）"
 created: 2026-05-13
 updated: 2026-05-26
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI
   - agent

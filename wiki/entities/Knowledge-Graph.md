@@ -7,6 +7,8 @@ aliases:
 definition: "以实体和关系组织事实数据的图结构，负责承载 ABox 层实例事实并与本体定义的语义框架配合"
 created: 2026-04-21
 updated: 2026-05-25
+evidence_level: medium
+claim_type: mixed
 tags:
   - ontology
 related_entities:

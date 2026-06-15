@@ -8,6 +8,8 @@ aliases:
 definition: "多 Agent 系统中在幕后改写、重分发或塑造其他 Agent 输入与策略，但不被工作 Agent 明确看见的权力结构"
 created: 2026-05-23
 updated: 2026-05-26
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - multi-agent
