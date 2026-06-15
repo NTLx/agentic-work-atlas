@@ -5,7 +5,9 @@ aliases:
   - Dominator Analysis（支配者分析）
 definition: "控制流图/执行图中节点间的支配关系分析，用于从非确定性 Agent 执行中自动提取 essential states"
 created: 2026-05-07
-updated: 2026-05-07
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - verification
 related_entities:

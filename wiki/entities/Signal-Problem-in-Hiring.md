@@ -7,7 +7,9 @@ aliases:
   - Interview Signal Problem
 definition: "传统技术面试只能收集几小时的信号，却要做出持续数年的招聘决策，导致假阳性和假阴性率居高不下"
 created: 2026-05-31
-updated: 2026-05-31
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - hiring
   - software-engineering

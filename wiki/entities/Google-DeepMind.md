@@ -6,7 +6,9 @@ aliases:
   - DeepMind
 definition: "Google 旗下前沿 AI 实验室，2025-2026 设立 AGI Economics 主任职位（Alex Imas 担任），研究 AGI 之后稀缺性与分配结构"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - organization
   - AI-frontier-lab
