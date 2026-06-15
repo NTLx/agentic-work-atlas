@@ -19,6 +19,8 @@ related_entities:
 source_raw:
   - "[[The-Founders-Playbook-05062026_v3]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
+evidence_level: medium
+claim_type: mixed
 ---
 
 # Product-Market Fit

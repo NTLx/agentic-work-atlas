@@ -20,6 +20,8 @@ related_entities:
 source_raw:
   - "[[20260502-most-companies-arent-ready-for-ai]]"
   - "[[What Is Code?]]"
+evidence_level: medium
+claim_type: mixed
 ---
 
 # Organizational-Self-Awareness（组织自我认知）

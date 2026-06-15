@@ -15,6 +15,8 @@ related_entities:
   - '[[Competent-Output]]'
 source_raw:
   - '[[Good Taste the Only Real Moat Left]]'
+evidence_level: medium
+claim_type: mixed
 ---
 
 # Specificity（特异性）
