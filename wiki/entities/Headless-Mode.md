@@ -5,7 +5,9 @@ aliases:
   - Headless Mode
 definition: "Claude Code 的非交互模式，通过 -p 参数实现单次执行并输出到 stdout，适合自动化和 CI/CD 场景"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - Claude-Code

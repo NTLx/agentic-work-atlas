@@ -6,7 +6,9 @@ aliases:
   - AI 社会模拟
 definition: "Emergence AI 推出的研究实验室，通过让 AI 模型运行模拟社会来压力测试自治系统的长期可行性"
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - ai-safety
   - agentic-ai

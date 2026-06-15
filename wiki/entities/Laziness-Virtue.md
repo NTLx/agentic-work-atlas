@@ -7,7 +7,9 @@ aliases:
   - Three Virtues of a Programmer
 definition: "程序员用有限时间倒逼抽象、删除和简化的工程美德，使系统以更低认知负担承载更多能力"
 created: 2026-04-21
-updated: 2026-05-25
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - software-engineering
   - programming
