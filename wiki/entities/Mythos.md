@@ -11,6 +11,8 @@ updated: 2026-06-12
 tags:
   - cybersecurity
   - anthropic
+evidence_level: high
+claim_type: mixed
 related_entities:
   - '[[Cybersecurity-Proof-of-Work]]'
   - '[[Cybersecurity-Openness]]'

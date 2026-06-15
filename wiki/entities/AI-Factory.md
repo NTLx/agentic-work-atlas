@@ -13,6 +13,8 @@ tags:
   - enterprise-AI
   - AI-deployment
   - platform
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Business-Embedded-AI-Organization]]"
   - "[[Organization-as-Agent-Harness]]"

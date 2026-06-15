@@ -5,7 +5,7 @@ aliases:
   - 教学工坊
   - Lehrwerkstatt
   - Teaching Workshop
-definition: “将整个工作场所变成教室的组织模式——通过公开化人与 Agent 的协作过程，实现全员渗透式学习”
+definition: "将整个工作场所变成教室的组织模式——通过公开化人与 Agent 的协作过程，实现全员渗透式学习"
 created: 2026-05-13
 updated: 2026-05-26
 tags:
@@ -13,6 +13,8 @@ tags:
   - organization
   - AI-Agent
   - culture
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Tobi-Lütke]]"
   - "[[River-Agent]]"
