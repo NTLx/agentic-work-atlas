@@ -11,6 +11,8 @@ updated: 2026-06-04
 tags:
   - AI-deployment
   - open-source
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Integration-Wall]]"
   - "[[Scientific-Discovery-AI]]"

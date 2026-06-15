@@ -10,6 +10,8 @@ updated: 2026-06-06
 tags:
   - AI
   - AGI
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Continual-Learning]]"
   - "[[Tool-Use-Architecture]]"
