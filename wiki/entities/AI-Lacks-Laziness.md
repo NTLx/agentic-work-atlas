@@ -7,7 +7,9 @@ aliases:
   - AI 不懒惰
 definition: "LLM 缺少人类时间有限带来的简化压力，容易把任务完成理解为继续生成，而不是删除、合并或拒绝不必要复杂度"
 created: 2026-04-21
-updated: 2026-05-25
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - software-engineering
 related_entities:

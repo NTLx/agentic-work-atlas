@@ -7,7 +7,9 @@ aliases:
   - AI Rationing
 definition: "企业因 AI 推理成本失控，从鼓励全面实验转向限制员工 AI 使用权限和额度的管理实践"
 created: 2026-05-31
-updated: 2026-05-31
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - ai-cost
   - enterprise-ai

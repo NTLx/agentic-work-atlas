@@ -7,7 +7,9 @@ aliases:
   - One Model Strategy
 definition: "把分散在不同团队的 AI 研究和算力合并到一个统一模型项目的组织与技术决策"
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI
   - organization
