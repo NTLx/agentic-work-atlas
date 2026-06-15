@@ -6,7 +6,9 @@ aliases:
   - 模型自省
 definition: "让模型分析自己为什么会犯某个错误，从其推理链路中提取人类独立分析难以获得的洞察"
 created: 2026-05-08
-updated: 2026-05-26
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI
 related_entities:

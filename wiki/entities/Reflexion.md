@@ -6,7 +6,9 @@ aliases:
   - Reflexion Agent
 definition: "用批评者反馈驱动 Agent 生成、验证、重试的自我纠错模式"
 created: 2026-05-10
-updated: 2026-05-25
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Architecture
   - Multi-Agent
