@@ -6,7 +6,9 @@ aliases:
   - Anthropic 研究院
 definition: "Anthropic 旗下发布 AI 政策与社会影响研究的发布平台，2026-06 首发《When AI builds itself》，把 frontier 实验室一手数据与监管建议同步公开"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - organization
   - AI-policy

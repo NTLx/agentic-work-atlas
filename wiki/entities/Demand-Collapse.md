@@ -7,7 +7,9 @@ aliases:
   - 需求坍缩
 definition: "AGI 后消费者总需求永久性下跌的极端经济场景——Imas/Trammell 认为几乎不可能发生，因为需要同时满足'需求硬上限'和'投资彻底归零'两个互不蕴含的硬条件"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AGI-economics
   - labor

@@ -6,7 +6,9 @@ aliases:
   - River
 definition: "Shopify 内部 AI Agent，遵循公开频道工作约束，让员工在真实协作过程中观察、学习和复用 Agent 实践"
 created: 2026-05-18
-updated: 2026-05-26
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - organization
