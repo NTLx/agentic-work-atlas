@@ -7,7 +7,9 @@ aliases:
   - Drip Displacement
 definition: "工人被持续低烈度推到更低薪岗位的渐进式失业模式；累积痛苦可能 ≥ 一次性大冲击，但政治可见度低，难以触发政策响应"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AGI-economics
   - labor

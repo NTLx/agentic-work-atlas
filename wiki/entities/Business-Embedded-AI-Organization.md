@@ -7,7 +7,9 @@ aliases:
   - "业务嵌入式 AI operating model"
 definition: "把 AI 数据科学、工程、平台和产品伙伴嵌入真实业务决策中的组织形态，用本地相关性和全球规模共同约束 AI 项目"
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-06-16
+evidence_level: high
+claim_type: mixed
 tags:
   - enterprise-AI
   - organization

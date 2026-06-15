@@ -6,7 +6,9 @@ aliases:
   - Adversarial Distillation
 definition: "工程师为避免被替代而采取的消极抵抗、质量投毒、上下文污染策略，应对企业 Skills 沉淀要求"
 created: 2026-04-21
-updated: 2026-05-30
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - organization
