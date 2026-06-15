@@ -6,7 +6,9 @@ aliases:
   - 角色边界模糊
 definition: "AI 让 PM/设计师/财务等非工程角色也能写代码，同时让工程师端到端交付产品；'谁写代码'不再重要，'谁有产品判断力'更重要"
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - agentic-engineering
   - organization

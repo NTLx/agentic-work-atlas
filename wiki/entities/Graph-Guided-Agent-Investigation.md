@@ -7,7 +7,9 @@ aliases:
   - 图引导 Agent 调查
 definition: "用知识图谱、依赖图或 DAG 引导 Agent 调查复杂系统故障、证据链和根因路径的工程模式"
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - observability

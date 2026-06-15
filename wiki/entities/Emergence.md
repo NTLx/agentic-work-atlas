@@ -7,7 +7,9 @@ aliases:
   - Emergent Behavior
 definition: "复杂系统中从简单规则和交互中自发产生的宏观行为；在多 agent 系统中，emergent 行为是 agent 独立决策的副产品，而非直接编程的结果"
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - multi-agent
   - emergence
