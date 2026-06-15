@@ -23,6 +23,8 @@ source_raw:
   - "[[20260601-lightspeed-fin-ai-agent]]"
   - "[[20260601-mercado-libre-github-copilot]]"
   - "[[20260601-octopus-energy-ai-customer-service]]"
+evidence_level: medium
+claim_type: mixed
 ---
 
 # Standard AI Product Adoption（标准 AI 产品采用）

@@ -22,6 +22,8 @@ related_entities:
 source_raw:
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
+evidence_level: medium
+claim_type: mixed
 ---
 
 # PM in AI Era（AI 时代的产品经理）

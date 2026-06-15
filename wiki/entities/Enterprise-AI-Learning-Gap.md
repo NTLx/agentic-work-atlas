@@ -21,6 +21,8 @@ related_entities:
 source_raw:
   - "[[20260601-mit-nanda-genai-divide]]"
   - "[[20260603-anthropic-self-service-data-analytics]]"
+evidence_level: high
+claim_type: mixed
 ---
 
 # Enterprise AI Learning Gap（企业 AI 学习鸿沟）
