@@ -7,7 +7,9 @@ aliases:
   - "AI 队友"
 definition: "AI 在组织协作中像队友一样补足专业知识、提升方案质量、降低协作摩擦，并在部分任务上让个人达到传统双人团队的表现水平"
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-06-16
+evidence_level: high
+claim_type: mixed
 tags:
   - AI-collaboration
   - organization

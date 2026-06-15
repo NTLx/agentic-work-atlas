@@ -7,7 +7,9 @@ aliases:
   - 自定义策略护栏
 definition: "在推理时注入组织自定义安全策略，让模型按该策略解释多模态输入并输出可审计 verdict 的安全控制模式"
 created: 2026-06-07
-updated: 2026-06-07
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - ai-safety
   - enterprise-ai

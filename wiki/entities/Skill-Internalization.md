@@ -7,7 +7,9 @@ aliases:
   - 技能内化
 definition: "不直接安装别人的 Skill，而是让 Agent 读懂其设计思想，结合自己的语料和判断重新长出一份属于自己版本的知识吸收方式——安装是搬运，内化是吸收"
 created: 2026-05-29
-updated: 2026-06-04
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - skill-engineering
   - knowledge-management
