@@ -2,7 +2,9 @@
 type: topic
 title: Git with Coding Agents
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - Software-Engineering

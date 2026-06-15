@@ -2,7 +2,9 @@
 type: topic
 title: Claude Code Automation
 created: 2026-04-09
-updated: 2026-05-25
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - Claude-Code
   - Automation
