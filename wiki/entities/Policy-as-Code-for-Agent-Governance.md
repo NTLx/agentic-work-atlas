@@ -9,6 +9,8 @@ aliases:
 definition: "把 Agent 权限、披露、合规规则和人工升级路径写成可执行策略，在运行时约束模型行动的治理方法"
 created: 2026-06-02
 updated: 2026-06-02
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - governance

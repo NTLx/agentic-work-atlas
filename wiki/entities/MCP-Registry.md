@@ -7,6 +7,8 @@ aliases:
 definition: "MCP 生态中的中心治理组件，负责批准 server、暴露工具目录、校验权限、记录安全姿态和支撑生产级工具发现"
 created: 2026-05-13
 updated: 2026-05-25
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - governance

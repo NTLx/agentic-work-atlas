@@ -7,6 +7,8 @@ aliases:
 definition: "将发布从重型承诺降维为轻量试探的产品策略——功能以\"早期实验版本\"上线，收集反馈，不保证长期支持"
 created: 2026-05-08
 updated: 2026-05-26
+evidence_level: medium
+claim_type: mixed
 tags:
   - product-management
   - AI
