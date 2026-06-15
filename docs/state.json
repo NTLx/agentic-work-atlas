@@ -7,14 +7,14 @@
     "scheduler": "cc-connect cron",
     "cron_expr": "*/30 * * * *",
     "status": "ready",
-    "last_run_at": "2026-06-16T07:20:00+08:00",
-    "last_run_summary": "第八十二批 entity 页面 provenance-audit 元数据补标：为 Sufficient-Context、Agent-Heterogeneity、ITBench 添加 evidence_level: medium 与 claim_type: mixed；lint 阻断问题 0，Raw 129、已编译 129、待编译 0，已提交并推送。",
-    "last_commit": "0a3e41a",
+    "last_run_at": "2026-06-16T07:35:00+08:00",
+    "last_run_summary": "第八十三批 entity 页面 provenance-audit 元数据补标：为 Jevons-Paradox、Deterministic-Retrieval、Automated-Criteria 添加 evidence_level: medium 与 claim_type: mixed；lint 阻断问题 0，Raw 129、已编译 129、待编译 0，已提交并推送。",
+    "last_commit": "8b0e198",
     "last_push": "pushed origin/main"
   },
   "next_instruction": "继续执行 Agentic Work Atlas（智能体时代工作图谱）的分批全库核查任务。目标是按照当前 README.md / AGENTS.md 中的 LLM Wiki schema，对本仓库进行一次完整但渐进的核查，确认近期对 LLM Wiki 机制的优化是否已经在 wiki 结构、证据边界、Obsidian 渲染、索引、source summary 覆盖、entity/topic/comparison 关系和 audit 流程中产生效果。先读取 README.md 与本文件，确认上一轮状态、run_log 和 next_actions；不要从头重做，不要一次性展开全库。每轮只选择一个边界清晰、可独立完成、预计 15 分钟左右可以完成的小任务簇推进；15 分钟是任务量控制目标，不是调度器硬超时。如果任务看起来会明显超过这个粒度，先缩小范围。优先处理 next_actions 中的第一项，完成后运行必要校验；涉及 Wiki/Schema 时至少运行 uv run python tools/wiki-lint.py，涉及 Quartz 发布时运行 npm run build。若发现任何不清楚、不确定、需要人工判断、可能误伤 raw 正文、可能合并重复概念、或会改变 schema 语义的问题，应及时停止并向用户沟通，不要擅自扩大处理。完成后提交并推送有效变更，然后回写本文件的 loop.last_run_at、loop.last_run_summary、loop.last_commit、loop.last_push、next_actions 和 run_log。",
   "next_actions": [
-    "Continue small provenance-audit on entity/comparison pages still missing evidence_level/claim_type. Final grep shows ~38 remaining pages. Prioritize high-reuse entities first. Current batch: wiki/entities/Jevons-Paradox.md, wiki/entities/Deterministic-Retrieval.md, wiki/entities/Automated-Criteria.md, wiki/entities/Plan-as-Agent-Checkpoint.md, wiki/entities/Convergence-vs-Generation.md. Select at most three pages. Skip person pages and Discernment/Relational-Sector.",
+    "Continue small provenance-audit on entity/comparison pages still missing evidence_level/claim_type. Final grep shows ~35 remaining pages. Prioritize high-reuse entities first. Current batch: wiki/entities/Plan-as-Agent-Checkpoint.md, wiki/entities/Convergence-vs-Generation.md, wiki/entities/Convergence-vs-Generation.md, wiki/entities/AI-Restraint.md, wiki/entities/Specialization-Compounds.md. Select at most three pages. Skip person pages and Discernment/Relational-Sector.",
     "Do not treat the current 3 low-evidence lint warnings as accidental blockers: wiki/entities/Wisdom-Work.md, wiki/entities/Jevons-Paradox-for-Knowledge-Work.md, and wiki/entities/Emotional-Clarity.md were intentionally marked low/mixed because their core claims are single-source, predictive, coach/framework extrapolations, or weakly attributed soft-skill claims. They should be used only as exploration or source-needs signals unless upgraded with stronger evidence.",
     "Do not edit remaining 12 tag issues without explicit user policy decision: index.md MOC/index, wiki/research-agenda.md agentic-work-atlas/research-agenda, wiki/entities/Societal-Resilience.md biodefense/resilience, wiki/sources/20260608-paving-the-way-for-agents-in-biology.md biology/scientific-agents, wiki/entities/Collingridge-Dilemma.md policy/technology-governance, and wiki/outputs/deploy-obsidian-wiki-with-quartz.md quartz/tutorial.",
     "If user wants to resolve remaining tag issues, ask for decisions: keep convention tags, normalize policy/domain tags, replace Collingridge-Dilemma with AI-policy/governance or allow empty tags, and whether to touch Quartz output tags with npm run build."
@@ -2417,6 +2417,23 @@
       "commit": "0a3e41a",
       "push": "pushed origin/main",
       "next": "下一轮继续 entity 页面 provenance-audit；从 Jevons-Paradox、Deterministic-Retrieval、Automated-Criteria、Plan-as-Agent-Checkpoint、Convergence-vs-Generation 中选不超过三页。跳过人物页和 Discernment/Relational-Sector。"
+    },
+    {
+      "at": "2026-06-16T07:35:00+08:00",
+      "task": "第八十三批 entity 页面 provenance-audit 元数据补标",
+      "completed": [
+        "读取 README.md/AGENTS.md schema、docs/state.json、obsidian-markdown skill、verification-before-completion skill 和当前工作树。",
+        "按 state 指定候选选择 Jevons-Paradox、Deterministic-Retrieval、Automated-Criteria 三页 entity 页面，本轮不处理后续候选。",
+        "抽读三页全文，确认 Jevons-Paradox 来自单源 CEO AI Psychosis podcast 含 1865 煤炭案例和计算平台类比，Deterministic-Retrieval 来自单源 biology agent 实践含 16.9%→99.7% 病毒检索准确率数据，Automated-Criteria 来自单源 Qwen 约束驱动实验含三层判定体系和收敛效果数据。",
+        "为 Jevons-Paradox 添加 evidence_level: medium 与 claim_type: mixed；单源经济学概念含历史案例。",
+        "为 Deterministic-Retrieval 添加 evidence_level: medium 与 claim_type: mixed；单源技术实践含具体准确率数据。",
+        "为 Automated-Criteria 添加 evidence_level: medium 与 claim_type: mixed；单源工程模式含三层判定体系。",
+        "运行裸美元符号扫描，确认三页无裸露美元符号；运行 uv run python tools/wiki-lint.py，确认阻断问题 0，Raw 129、已编译 129、待编译 0，tag 非阻断问题 12，low-evidence 非阻断问题 3。",
+        "提交并推送本轮有效 Wiki 变更。"
+      ],
+      "commit": "8b0e198",
+      "push": "pushed origin/main",
+      "next": "下一轮继续 entity 页面 provenance-audit；从 Plan-as-Agent-Checkpoint、Convergence-vs-Generation、AI-Restraint、Specialization-Compounds、Coding-Agents 中选不超过三页。跳过人物页和 Discernment/Relational-Sector。"
     }
   ]
 }
