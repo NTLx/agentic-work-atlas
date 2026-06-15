@@ -6,7 +6,9 @@ aliases:
   - AI 洗白
 definition: "企业将裁员或其他组织变革归因于 AI 生产力提升，但实际驱动力是预算压力或其他商业因素"
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - organization
   - AI-agent
