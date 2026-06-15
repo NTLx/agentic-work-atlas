@@ -7,7 +7,9 @@ aliases:
   - 对 AI 的隐藏指令
 definition: "在内容中嵌入'给 AI 看的隐藏指令'，试图影响 AI 综述/推荐的风险；更强的模型已能识别并拒绝这类指令，将其视为 untrusted external instruction"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-safety
   - security

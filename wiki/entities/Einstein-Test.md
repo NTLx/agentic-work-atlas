@@ -6,7 +6,9 @@ aliases:
   - 爱因斯坦测试
 definition: "用历史截断知识测试 AI 是否能提出后来才出现的突破性理论或深层问题的科学创造力基准"
 created: 2026-05-08
-updated: 2026-05-25
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI
   - benchmark
