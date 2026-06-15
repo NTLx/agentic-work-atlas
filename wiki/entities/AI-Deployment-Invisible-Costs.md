@@ -7,7 +7,9 @@ aliases:
   - 企业 AI 隐性成本
 definition: "AI 成功部署中常被 ROI 低估的变革管理、流程重设计、数据质量、失败试验和组织学习成本"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - enterprise-ai
   - ai-deployment

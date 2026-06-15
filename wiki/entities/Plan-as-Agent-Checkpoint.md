@@ -8,7 +8,9 @@ aliases:
   - plan.md
 definition: "用结构化计划文件把目标、上下文、方案、目标文件和验收标准外化为可跨会话恢复、可供 Agent 执行和人类审查的持久检查点"
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - agentic-engineering
   - context-engineering

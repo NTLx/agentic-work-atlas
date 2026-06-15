@@ -6,7 +6,9 @@ aliases:
   - token 最大化
 definition: "企业无差别消耗 AI token 的现象，导致推理成本失控，迫使公司从全面实验转向配给制"
 created: 2026-05-31
-updated: 2026-05-31
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - ai-cost
   - token-economics
