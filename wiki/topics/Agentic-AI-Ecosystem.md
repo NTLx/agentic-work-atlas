@@ -3,7 +3,9 @@ type: topic
 title: "Agentic AI 生态结构"
 description: "从 LLM 工具链到 Agentic AI 三层执行栈的生态演化——Agent Infra / Model Infra / Model 三层互相倒逼，token 从消耗品变成生产资料，开发者从执行层移动到定义层"
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - topic
   - agentic-ai

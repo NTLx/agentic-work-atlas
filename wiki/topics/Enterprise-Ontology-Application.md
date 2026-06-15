@@ -3,7 +3,9 @@ type: topic
 title: Enterprise-Ontology-Application
 definition: "企业级本体应用系列：用本体为 AI Agent 提供统一的业务语义层，解决企业 AI 的幻觉、语义不一致、不可解释等问题。"
 created: 2026-04-20
-updated: 2026-06-13
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - Ontology
   - Enterprise-AI

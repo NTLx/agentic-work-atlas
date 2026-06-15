@@ -3,7 +3,9 @@ type: topic
 title: Multi-Agent Pathology and Governance
 description: "多 Agent 系统病理：当 Agent 从单体工具变成组织系统后，问题会从并发和协议下沉到群体认知、责任稀释和内态断裂"
 created: 2026-05-23
-updated: 2026-06-06
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - multi-agent
