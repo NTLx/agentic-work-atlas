@@ -7,7 +7,9 @@ aliases:
   - Memory Dashboard
 definition: "LLM 应用中向用户暴露后台合成的记忆内容的可审可改界面；OpenAI Dreaming V3 的标志设计——把 AI 关于用户的状态从黑盒变白盒"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - memory-system
   - openai

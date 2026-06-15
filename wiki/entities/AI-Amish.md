@@ -9,7 +9,9 @@ aliases:
   - 互联网阿米什
 definition: "对 AI 和互联网进行选择性拒绝，以保存人的生活形式、共同体关系和注意力边界的反文化姿态"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - ai-refusal
   - human-agency

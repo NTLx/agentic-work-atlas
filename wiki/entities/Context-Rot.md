@@ -6,7 +6,9 @@ aliases:
   - context rot
 definition: "随着上下文窗口逐渐填充，LLM 的推理、指令遵循和任务完成能力逐渐下降的现象，特别是关键信号落在窗口中间位置时表现最差。"
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - LLM
   - context-engineering
