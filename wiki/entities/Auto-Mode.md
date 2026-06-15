@@ -6,7 +6,9 @@ aliases:
   - Claude Code Auto Mode
 definition: "Claude Code 的自动执行模式——agent 自主决定运行工具，无需逐条等待用户确认；通过路由到分类器模型做安全检查，比人类审批更可靠"
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - claude-code
   - agentic-engineering

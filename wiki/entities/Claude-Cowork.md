@@ -5,7 +5,9 @@ aliases:
   - Claude Cowork
 definition: "Claude 生态中面向研究、文档、表格和跨系统运营自动化的团队协作层，用于把重复运营负担转成可调度工作流"
 created: 2026-05-13
-updated: 2026-05-26
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - productivity
   - Anthropic

@@ -7,7 +7,9 @@ aliases:
   - 英国 AI 安全研究所
 definition: "评估前沿 AI 模型安全能力并发布风险测试结果的英国政府 AI 安全机构"
 created: 2026-04-21
-updated: 2026-05-25
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - organization
   - ai-safety
