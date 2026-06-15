@@ -12,6 +12,8 @@ tags:
   - AI-agent
   - claude-code
   - automation
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Boris-Cherny]]"
   - "[[Claude-Code-CLI]]"

@@ -11,6 +11,8 @@ tags:
   - AI-era
   - human-skill
   - decision-making
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Judgment]]"
   - "[[Taste]]"
