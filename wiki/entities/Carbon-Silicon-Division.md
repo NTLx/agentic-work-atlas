@@ -7,7 +7,9 @@ aliases:
   - 碳基定义者硅基执行者
 definition: "软件开发从'人亲自完成每个动作'到'碳基定义任务、硅基承担执行'的分工范式转变——开发者从执行层移动到定义层，负责定义目标、约束行动、验证结果和承担责任"
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - agentic-ai
 related_entities:

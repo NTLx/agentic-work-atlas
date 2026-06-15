@@ -7,7 +7,9 @@ aliases:
   - Task Bottleneck Inversion
 definition: "任务中最弱一环决定整体产出的经济学效应；应用到 AI 自动化：AI 替代最容易的一环反而提升其余人类环节的价值，自动化 = 抬高瓶颈环节价格 = 总价值上升"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-economy
   - productivity

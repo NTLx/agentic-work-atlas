@@ -7,7 +7,9 @@ aliases:
   - Knowledge Distillation
 definition: "把大模型（教师）的能力压缩到小模型（学生）的技术，使更小更快的模型继承大模型的推理能力"
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI
   - machine-learning
