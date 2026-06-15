@@ -7,7 +7,9 @@ aliases:
   - Sufficient Context Agent
 definition: "在生成答案前判断当前证据是否足以完整回答原问题，并在不足时明确缺口、继续检索或拒答的运行时验证机制"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - RAG
   - verification

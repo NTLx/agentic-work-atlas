@@ -6,7 +6,9 @@ aliases:
   - 异构 Agent
 definition: "多 agent 系统中使用不同架构/厂商的模型驱动不同 agent，每个 agent 有独立的决策倾向；异质性让 emergent 行为更不可预测，但也更接近真实世界"
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - multi-agent
   - emergence

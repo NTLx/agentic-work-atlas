@@ -6,7 +6,9 @@ aliases:
   - ITBench-AA SRE
 definition: "Artificial Analysis 与 IBM 联合开发的企业 IT Agent 基准测试，评估前沿模型在 SRE、FinOps 和 CISO 任务上的 agentic 表现。"
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - agent-evaluation
   - agentic-engineering
