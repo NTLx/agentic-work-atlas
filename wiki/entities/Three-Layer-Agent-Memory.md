@@ -7,7 +7,9 @@ aliases:
   - 三层记忆架构
 definition: "将 Agent 记忆拆分为 L1 持久画像（用户是谁）、L2 程序性记忆（标准做法）和 L3 历史检索（过去做了什么）三层，防止记忆腐化并按需加载以控制 token 成本"
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - agent-memory
   - context-engineering

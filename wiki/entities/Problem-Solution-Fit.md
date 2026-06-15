@@ -6,7 +6,9 @@ aliases:
   - 问题-方案契合
 definition: “在写代码之前证明问题真实、高频且痛点足够强，并且方案在逻辑上能闭环解决该问题”
 created: 2026-05-13
-updated: 2026-05-26
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - Startup-Methodology
 related_entities:

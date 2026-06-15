@@ -10,7 +10,9 @@ aliases:
   - 长程任务执行
 definition: "AI 模型能端到端完成的人类可命名工作块的连续时间长度；从 2024 的 4 分钟涨到 2026 的 12 小时，每 4 个月翻一倍，是 AI 时代最可信的能力度量"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - ai-capability
   - AI-frontier
