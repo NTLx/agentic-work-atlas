@@ -4,7 +4,9 @@ title: "Successful AI Deployment vs GenAI Divide"
 entity_a: "[[AI-Deployment-Valley-of-Death]]"
 entity_b: "[[The-GenAI-Divide]]"
 created: 2026-06-01
-updated: 2026-06-05
+updated: 2026-06-15
+evidence_level: high
+claim_type: mixed
 tags:
   - comparison
   - enterprise-ai

@@ -7,7 +7,9 @@ aliases:
   - 代理式数据分析
 definition: "用 LLM/Agent 承担自助数据分析入口，但可靠性来自 canonical datasets、semantic layer、domain skills、评测、provenance 和 correction harvesting 的系统"
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - data-analytics
   - enterprise-ai
