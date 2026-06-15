@@ -18,6 +18,8 @@ related_entities:
   - "[[Coding-Agents]]"
 source_raw:
   - "[[20260530-ceo-knee-deep-building-ai]]"
+evidence_level: medium
+claim_type: mixed
 ---
 
 # Founder Mode（创始人模式）

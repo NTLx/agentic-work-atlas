@@ -18,6 +18,8 @@ related_entities:
   - "[[Integration-Wall]]"
 source_raw:
   - "[[What Is Code?]]"
+evidence_level: medium
+claim_type: mixed
 ---
 
 # Bounded Context

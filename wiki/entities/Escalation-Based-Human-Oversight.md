@@ -18,6 +18,8 @@ related_entities:
   - "[[AI-Deployment-Valley-of-Death]]"
 source_raw:
   - "[[20260601-stanford-enterprise-ai-playbook]]"
+evidence_level: medium
+claim_type: mixed
 ---
 
 # Escalation-Based Human Oversight（例外升级式监督）
