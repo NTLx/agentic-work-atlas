@@ -6,7 +6,9 @@ aliases:
   - Settlement Seam
 definition: "多 agent 经济系统中，在 agent 自由交易之后、结果固化之前的一个确定性覆盖点；在此处 authored override 可以强制设定结果，而 agent 的 emergent 行为仍然自由发生在上游"
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - multi-agent
   - market-design

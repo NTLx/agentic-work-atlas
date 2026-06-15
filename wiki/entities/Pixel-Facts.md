@@ -5,7 +5,9 @@ aliases:
   - 像素事实
 definition: "在 UI 自动化还原任务中，通过从真机界面 dump 出的元素精确边界框（Bounds）作为不可违反的几何事实注入 Agent，以替代有损文字描述的上下文工程技术。"
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - context-engineering
   - automation
