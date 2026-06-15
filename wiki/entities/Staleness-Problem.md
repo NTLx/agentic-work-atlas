@@ -7,7 +7,9 @@ aliases:
   - Memory Staleness
 definition: "LLM 长期记忆内容随时间过时的核心难题——用户当下事实与记忆里的事实产生偏差，时间对偏好的改变不是函数式可预测的，只能被设计缓冲"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - memory-system
   - context-engineering

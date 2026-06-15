@@ -8,7 +8,9 @@ aliases:
   - 共存关系
 definition: "Mollick 2026-10 新书概念：与'有时比你强、有时不比你强'的 AI 协商关系——何时用 AI、何时不用、何时把钥匙交出去，是动态协商的元技能"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-relations
   - work-paradigm
