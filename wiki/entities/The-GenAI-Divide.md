@@ -7,7 +7,9 @@ aliases:
   - 生成式 AI 鸿沟
 definition: "企业 GenAI 高采用但低业务转化的断裂：个人工具普及很快，核心工作流和 P&L impact 却难以进入生产"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - enterprise-ai
   - ai-adoption

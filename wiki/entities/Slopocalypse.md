@@ -7,7 +7,9 @@ aliases:
   - Slop Apocalypse
 definition: "AI 生成成本骤降后，低质量代码、文章、论文和社交内容大规模涌入平台，使筛选、审查与信任机制成为新的瓶颈"
 created: 2026-04-21
-updated: 2026-05-25
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - content-quality
   - software-engineering
