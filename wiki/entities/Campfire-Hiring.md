@@ -7,7 +7,9 @@ aliases:
   - Campfire Model
 definition: "用付费短期真实工作替代传统技术面试的招聘模式，通过实际协作而非模拟评估来筛选工程师"
 created: 2026-05-31
-updated: 2026-05-31
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - hiring
   - software-engineering

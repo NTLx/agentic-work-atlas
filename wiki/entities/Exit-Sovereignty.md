@@ -8,7 +8,9 @@ aliases:
   - 切换主权
 definition: "个人或组织从单一 AI 厂商/平台中退出的能力——可移植数据、可热切换模型、开源替代是退出保障；缺失退出权 = 协商变接受条款"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-policy
   - vendor-lock-in

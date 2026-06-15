@@ -6,7 +6,9 @@ aliases:
   - MIT TR Insights
 definition: "MIT Technology Review 的企业技术研究与分析部门，聚焦 AI Agent、数字化转型和流程重设计的深度报告"
 created: 2026-04-10
-updated: 2026-05-26
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - organization
   - research
