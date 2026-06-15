@@ -6,7 +6,9 @@ aliases:
   - Zero-PHI
 definition: "在任何 LLM 调用前先用确定性管道移除受保护健康信息的隐私架构模式"
 created: 2026-05-10
-updated: 2026-05-25
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - Privacy
   - ai-safety

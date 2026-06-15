@@ -2,7 +2,9 @@
 type: comparison
 title: Agent-First vs Traditional Automation
 created: 2026-04-09
-updated: 2026-05-23
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - comparison
   - AI-Agent
