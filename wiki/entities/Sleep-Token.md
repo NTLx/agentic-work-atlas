@@ -6,7 +6,9 @@ aliases:
   - 睡后 Token
 definition: "让 Token 在人离线时持续产出候选结果的工作模式——把输入、边界、验证、回收提前设计好，第二天交给人做价值判断。核心指标是「有多少结果进入了判断流程」而非「烧了多少 Token」"
 created: 2026-06-13
-updated: 2026-06-13
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - agent-harness
   - workflow

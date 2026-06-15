@@ -6,7 +6,9 @@ aliases:
   - Epoch
 definition: "AI 研究机构，设有经济学分支研究 AGI 增长理论与公共财政；Phil Trammell 担任经济学负责人"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - organization
   - research

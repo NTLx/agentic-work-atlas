@@ -6,7 +6,9 @@ aliases:
   - AI原生初创公司
 definition: "把 AI Agent 作为组织基础设施、用小团队编排完成产品验证和交付的初创公司形态"
 created: 2026-05-13
-updated: 2026-05-26
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - startup
   - AI-Agent
