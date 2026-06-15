@@ -6,7 +6,9 @@ aliases:
   - least-agency
 definition: "OWASP 提出的概念，将 Least Privilege 从'限制访问什么'扩展到'限制 Agent 工具能做什么、做多少次、在哪里做'——约束 Agent 的行动能力而非仅约束访问权限。"
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - agent-security
   - zero-trust

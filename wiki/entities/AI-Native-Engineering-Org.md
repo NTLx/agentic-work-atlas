@@ -7,7 +7,9 @@ aliases:
   - AI 原生工程组织
 definition: "把 AI coding agent 作为默认工作基础设施后，围绕验证、review、安全、产品判断、JIT planning 和 dogfooding 重写的软件工程组织"
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - agentic-engineering
   - engineering-management

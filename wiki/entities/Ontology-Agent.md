@@ -7,7 +7,9 @@ aliases:
   - Ontology-Enhanced Agent
 definition: "把业务规则判定交给本体和推理工具的 Agent 架构，让 LLM 负责调度、解释和行动组织"
 created: 2026-04-20
-updated: 2026-05-25
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - Enterprise-AI
