@@ -5,7 +5,9 @@ aliases:
   - Code Execution
 definition: "AI Agent 直接运行代码的能力，是 Agentic Engineering 的决定性能力"
 created: 2026-04-10
-updated: 2026-04-15
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - coding-agents

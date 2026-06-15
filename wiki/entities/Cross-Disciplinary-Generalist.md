@@ -7,7 +7,9 @@ aliases:
   - 跨职能通才
 definition: "在 AI 降低执行门槛后，能把工程、产品、设计、数据、领域知识和判断力组合起来解决问题的人才形态"
 created: 2026-05-08
-updated: 2026-05-25
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-era
   - career

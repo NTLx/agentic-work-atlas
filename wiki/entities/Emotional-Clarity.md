@@ -5,7 +5,9 @@ aliases:
   - Emotional Clarity
 definition: "认识情绪、感受情绪、无阻碍前进的能力——在风暴中成为容纳它的天空"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-06-15
+evidence_level: low
+claim_type: mixed
 tags:
   - Knowledge-Work
   - leadership
