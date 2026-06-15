@@ -5,7 +5,9 @@ aliases:
   - Connection
 definition: "深层关系性存在——通过脆弱性、中立性、同理心、好奇（VIEW）建立真正的连接"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - Knowledge-Work
   - leadership

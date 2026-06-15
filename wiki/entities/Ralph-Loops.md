@@ -5,7 +5,9 @@ aliases:
   - Ralph 循环
 definition: "一种实现长程任务（Long-horizon execution）的 Harness 技术：通过 Hook 拦截 Agent 的退出尝试，将原始提示重新注入新鲜上下文窗口，强制 Agent 持续向目标推进。"
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - agentic-engineering
