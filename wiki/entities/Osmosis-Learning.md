@@ -7,7 +7,9 @@ aliases:
   - 渗透学习
 definition: “通过观察他人工作实践自然习得知识的非正式学习机制——在 AI 时代被公开频道和 Agent 交互重新激活”
 created: 2026-05-13
-updated: 2026-05-26
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - education
   - culture

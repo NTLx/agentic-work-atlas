@@ -8,7 +8,9 @@ aliases:
   - 记忆系统
 definition: "LLM 应用中长期记忆的工程架构——解决 staleness（过时）/ correctness（错误）/ scalability（亿级用户 × 多年）三大挑战的子系统设计"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - memory-system
   - context-engineering

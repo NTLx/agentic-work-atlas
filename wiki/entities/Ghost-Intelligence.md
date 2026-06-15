@@ -6,7 +6,9 @@ aliases:
   - 幽灵智能
 definition: "把 LLM 理解为由预训练和强化学习塑造的统计模拟能力，而不是具有内在动机和主观体验的动物智能"
 created: 2026-05-08
-updated: 2026-05-26
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI
   - LLM
