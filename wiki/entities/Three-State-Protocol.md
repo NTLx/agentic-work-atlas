@@ -5,7 +5,9 @@ aliases:
   - Three State Protocol
 definition: "Agent 之间的通信协议设计，通过 request、confirmed、final 三种状态防止 ACK storm 并确保协作收敛"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - OpenClaw

@@ -7,7 +7,9 @@ aliases:
   - Societal Resilience Framework
 definition: "社会层面抵御和恢复 AI 可能加速或启用的威胁（特别是生物和网络威胁）的预防、检测和准备能力"
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-policy
   - cybersecurity

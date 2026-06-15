@@ -8,7 +8,9 @@ aliases:
   - 共生智能
 definition: "Mollick 2024 出版的 NYT 畅销书，建立在'人类中心、AI 是助手'前提上的工作关系范式——back-and-forth prompting 的协作模式；2026 起被 Co-Existence 范式替代"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - book
   - AI-relations
