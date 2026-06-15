@@ -11,6 +11,8 @@ tags:
   - RAG
   - AI-Architecture
   - Multi-Agent
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Agent-Orchestration]]"
   - "[[Agentic-Engineering]]"

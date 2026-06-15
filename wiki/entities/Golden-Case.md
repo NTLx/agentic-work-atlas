@@ -12,6 +12,8 @@ tags:
   - AI-adoption
   - enterprise
   - workflow
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Forward-Deployed-Engineer]]"
   - "[[Deployment-Product-Flywheel]]"

@@ -12,6 +12,8 @@ tags:
   - cognitive-work
   - education
   - decision-making
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Ethan-Mollick]]"
   - "[[Knowledge-Work]]"
