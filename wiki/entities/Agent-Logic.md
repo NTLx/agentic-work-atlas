@@ -7,7 +7,9 @@ aliases:
   - Agent 逻辑
 definition: "运行在 Agent harness 内、模型之外的工作流专用逻辑层，用知识图谱、程序分析、算法、策略执行和验证结构缩小 LLM 的推理空间"
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - enterprise-ai

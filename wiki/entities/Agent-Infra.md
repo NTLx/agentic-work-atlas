@@ -6,7 +6,9 @@ aliases:
   - Agent Infrastructure
 definition: "将硅基执行者接进软件世界的运行时层，包含 Coding Agent 入口、Context/Memory/Tool Use/Sandbox/AgentOps 运行时组件，以及 Agent Builder/Orchestrator/Operator 编排层"
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - agentic-ai
   - infrastructure
