@@ -11,6 +11,8 @@ tags:
   - organization
   - AI-Agent
   - culture
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Lehrwerkstatt]]"
   - "[[Osmosis-Learning]]"

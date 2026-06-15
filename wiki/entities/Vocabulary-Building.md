@@ -10,6 +10,8 @@ updated: 2026-05-26
 tags:
   - programming-theory
   - domain-driven-design
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Conceptual-Model]]"
   - "[[Ubiquitous-Language]]"
