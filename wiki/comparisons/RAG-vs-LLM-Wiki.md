@@ -3,6 +3,8 @@ type: comparison
 title: RAG vs LLM Wiki
 created: 2026-04-09
 updated: 2026-05-23
+evidence_level: medium
+claim_type: mixed
 tags:
   - comparison
   - knowledge-management

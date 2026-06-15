@@ -3,6 +3,8 @@ type: topic
 title: Agent-First Process Redesign
 created: 2026-04-09
 updated: 2026-06-01
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - Enterprise-Transformation

@@ -3,6 +3,8 @@ type: topic
 title: AI-Era Career Skills
 created: 2026-04-09
 updated: 2026-05-25
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - productivity
