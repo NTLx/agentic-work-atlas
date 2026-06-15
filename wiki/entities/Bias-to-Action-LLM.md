@@ -7,7 +7,9 @@ aliases:
   - LLM 生成冲动
 definition: "LLM 在收到任务后倾向于继续生成、修改或行动，即使更安全的行为是拒绝、求证或转人工"
 created: 2026-05-18
-updated: 2026-05-29
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - ai-safety

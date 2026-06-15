@@ -7,7 +7,9 @@ aliases:
   - AGI 转型中间期
 definition: "AI 自动化中等技能工作但新增岗位不足以吸收劳动力的过渡阶段——比大冲击持续更久，比渐进式 drip 更可见"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AGI-economics
   - labor

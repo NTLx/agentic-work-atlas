@@ -3,7 +3,9 @@ type: topic
 title: Enterprise AI Model Sourcing
 description: "企业 AI 模型采购不应默认等于买最大 frontier API，而应按任务分布、评测证据、成本曲线、部署约束和组织能力分层选择"
 created: 2026-05-24
-updated: 2026-06-05
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - enterprise-AI
   - AI-deployment
