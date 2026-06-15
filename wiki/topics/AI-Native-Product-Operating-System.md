@@ -3,7 +3,9 @@ type: topic
 title: AI Native Product Operating System
 description: "AI 原生产品操作系统：当模型能力先于产品界面出现，产品组织必须重写从能力发现、发布试探、反馈闭环到市场验证的整套工作方式"
 created: 2026-05-22
-updated: 2026-05-22
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI
   - product-management

@@ -3,7 +3,9 @@ type: topic
 title: Forward Deployed AI Enablement
 description: "FDE 式 AI 赋能：通过嵌入真实组织现场，发现黄金用例、穿越集成之墙，并把一次性部署沉淀为可复用的平台能力和组织能力"
 created: 2026-05-22
-updated: 2026-06-05
+updated: 2026-06-16
+evidence_level: high
+claim_type: mixed
 tags:
   - AI-deployment
   - FDE
