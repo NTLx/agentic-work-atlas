@@ -4,7 +4,9 @@ title: "Closed Frontier Models vs Open Model Economy"
 entity_a: "[[Intelligence-Premium]]"
 entity_b: "[[Open-Source-Operational-AI-Framework]]"
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - comparison
   - model-economics
