@@ -22,6 +22,8 @@ related_entities:
 source_raw:
   - "[[The-Founders-Playbook-05062026_v3]]"
   - "[[20260531-thoughts-hmmz]]"
+evidence_level: medium
+claim_type: mixed
 ---
 
 # Zero-Friction Scope Creep（零摩擦范围蔓延）

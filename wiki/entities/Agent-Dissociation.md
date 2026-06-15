@@ -20,6 +20,8 @@ related_entities:
   - "[[Verifiability]]"
 source_raw:
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
+evidence_level: medium
+claim_type: mixed
 ---
 
 # Agent Dissociation（Agent 解离）

@@ -20,13 +20,18 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 127 |
+| Raw 来源 | 129 |
 | Raw 已编译 | 127 |
-| Raw 待编译 | 0 |
+| Raw 待编译 | 2 |
 | Entity | 263 |
 | Topic | 28 |
 | Comparison | 18 |
 | Output | 4 |
+
+## 待编译 Raw
+
+- `raw/20260615-normaltech-ai-hasnt-replaced-software-engineers.md`
+- `raw/20260615-satyanadella-frontier-ecosystem.md`
 
 ## 检查项
 

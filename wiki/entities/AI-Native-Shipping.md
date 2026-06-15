@@ -19,6 +19,8 @@ related_entities:
   - "[[Product-Overhang]]"
 source_raw:
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
+evidence_level: medium
+claim_type: mixed
 ---
 
 # AI-Native Shipping（AI 原生发布）
