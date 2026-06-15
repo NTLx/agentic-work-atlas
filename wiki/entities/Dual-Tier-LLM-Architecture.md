@@ -22,6 +22,8 @@ related_entities:
 source_raw:
   - "[[OncoAgent A Dual-Tier Multi-Agent Framework for Privacy-Preserving Oncology Clinical Decision Support]]"
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
+evidence_level: medium
+claim_type: mixed
 ---
 
 > [!definition] 定义

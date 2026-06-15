@@ -23,6 +23,8 @@ source_raw:
   - "[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]"
   - "[[Building an MCP Ecosystem at Pinterest]]"
   - "[[Learning on the Shop floor]]"
+evidence_level: high
+claim_type: mixed
 ---
 
 # Agent-Native（Agent 原生）

@@ -25,6 +25,8 @@ source_raw:
   - '[[20260413-llm-wiki]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - '[[What Is Code?]]'
+evidence_level: high
+claim_type: mixed
 ---
 
 # Software 2.0
