@@ -4,6 +4,8 @@ title: Code as Conceptual Infrastructure
 description: "代码作为概念基础设施：AI 让指令生成变便宜后，软件的核心资产上移为词汇、边界、模型和语义约束"
 created: 2026-05-18
 updated: 2026-05-22
+evidence_level: medium
+claim_type: mixed
 tags:
   - software-engineering
   - knowledge-management

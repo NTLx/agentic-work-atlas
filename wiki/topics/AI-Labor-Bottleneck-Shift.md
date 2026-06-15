@@ -4,6 +4,8 @@ title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
 updated: 2026-06-05
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI
   - economy

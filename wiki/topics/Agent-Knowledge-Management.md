@@ -3,6 +3,8 @@ type: topic
 title: "Agent 知识管理与自进化"
 created: 2026-05-13
 updated: 2026-06-05
+evidence_level: medium
+claim_type: mixed
 tags:
   - knowledge-management
   - AI
