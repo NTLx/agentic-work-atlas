@@ -6,7 +6,9 @@ aliases:
   - OpenAI 部署公司
 definition: "OpenAI 启动的独立部署实体，以 FDE 为核心帮助企业把前沿 AI 接入真实流程，初始资金超过 40 亿美元"
 created: 2026-05-18
-updated: 2026-05-23
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - organization
   - AI-industry

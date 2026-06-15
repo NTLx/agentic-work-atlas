@@ -5,7 +5,9 @@ aliases:
   - Git Fluent Agents
 definition: "理解 Git 概念、历史和协作语义，并能自主执行版本控制操作的编码 Agent"
 created: 2026-04-09
-updated: 2026-05-26
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - Software-Engineering
