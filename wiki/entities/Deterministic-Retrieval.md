@@ -6,7 +6,9 @@ aliases:
   - deterministic retrieval
 definition: "在 Agent 工作流中，通过引入专门设计的工具层（而非直接由 LLM 驱动界面），确保数据获取过程 100% 准确、可重复且符合领域规范的技术。"
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - deterministic-retrieval
   - Context-Engineering

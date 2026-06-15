@@ -7,7 +7,9 @@ aliases:
   - 杰文斯反论
 definition: "资源使用效率的提升反而导致该资源总消耗量增加——而非减少"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - economy
 related_entities:

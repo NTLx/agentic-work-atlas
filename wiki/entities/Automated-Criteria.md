@@ -5,7 +5,9 @@ aliases:
   - 自动化判据
 definition: "在 Agent 工作流中，用于客观判定 Agent 执行结果是否成功的机器可读标准，包括编排层状态、产物存在性验证以及预定义协议码（如 ANALYZE_RESULT: PASS）。"
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - verification
   - agentic-engineering
