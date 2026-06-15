@@ -11,6 +11,8 @@ tags:
   - Software-Engineering
   - AI-Agent
   - programming
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Vibe-Coding]]"
   - "[[Agentic-Engineering]]"

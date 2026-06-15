@@ -10,6 +10,8 @@ updated: 2026-06-11
 tags:
   - Agentic-Engineering
   - methodology
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Verifiable-Agent-Engineering]]"

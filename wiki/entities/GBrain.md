@@ -10,6 +10,8 @@ tags:
   - knowledge-management
   - AI
   - agent
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[LLM-Wiki]]"
   - "[[Obsidian-Wiki]]"
