@@ -7,7 +7,9 @@ aliases:
   - Tools Too Slow
 definition: "Agent 速度提升后，外部工具为人类设计的延迟成为整个系统的新瓶颈"
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - agentic-engineering

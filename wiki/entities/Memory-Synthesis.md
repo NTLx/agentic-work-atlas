@@ -8,7 +8,9 @@ aliases:
   - Background Memory Curation
 definition: "LLM 应用中后台持续运行的记忆综合过程——从多会话、多时间点的聊天历史中自动提取、合成、更新用户记忆状态；OpenAI Dreaming 是代表实现"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - memory-system
   - context-engineering

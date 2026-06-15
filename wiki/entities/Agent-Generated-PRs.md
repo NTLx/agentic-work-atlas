@@ -7,7 +7,9 @@ aliases:
   - AI 生成 PR
 definition: "AI Agent 自动提交的 Pull Request，通常缺乏代码库设计哲学的隐式上下文，导致代码质量不符合维护者标准"
 created: 2026-05-11
-updated: 2026-05-30
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - Agentic-Engineering
   - open-source
