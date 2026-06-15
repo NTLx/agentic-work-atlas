@@ -2,7 +2,9 @@
 type: topic
 title: OpenClaw Agent System
 created: 2026-04-09
-updated: 2026-05-23
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - OpenClaw
   - AI-Agent

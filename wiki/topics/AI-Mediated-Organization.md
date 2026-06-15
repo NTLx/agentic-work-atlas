@@ -3,7 +3,9 @@ type: topic
 title: AI-Mediated Organization
 description: "AI 中介组织：系统梳理人与人、人与 AI、AI 与 AI 三类关系如何重塑协作、权力、责任、学习和组织形态"
 created: 2026-05-23
-updated: 2026-05-25
+updated: 2026-06-16
+evidence_level: high
+claim_type: mixed
 tags:
   - organization
   - AI-Agent

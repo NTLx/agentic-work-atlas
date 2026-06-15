@@ -3,7 +3,9 @@ type: topic
 title: Building Effective Agents
 description: "Anthropic 的 Agent 构建指南：从简单模式到自主 Agent 的架构设计"
 created: 2026-04-10
-updated: 2026-05-23
+updated: 2026-06-16
+evidence_level: high
+claim_type: mixed
 tags:
   - AI-Agent
   - architecture
