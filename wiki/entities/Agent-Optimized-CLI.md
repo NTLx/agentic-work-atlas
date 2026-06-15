@@ -7,7 +7,9 @@ aliases:
   - 面向 Agent 的 CLI
 definition: "为 coding agents 直接设计的命令行界面：压缩输出、避免交互阻塞、提供下一步提示，并把多步 API 工作流封装成高层命令原语"
 created: 2026-06-07
-updated: 2026-06-07
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - Developer-Tools

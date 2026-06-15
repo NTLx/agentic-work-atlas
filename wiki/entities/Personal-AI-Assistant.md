@@ -8,7 +8,9 @@ aliases:
   - Persistent Assistant
 definition: "拥有持续记忆、长期上下文、关系型交互的 LLM 应用；区别于'用完即走'的工具——用户从'按需调用'变成'持续委托'"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-product
   - AI-relations

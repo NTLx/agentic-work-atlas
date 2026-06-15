@@ -6,7 +6,9 @@ aliases:
   - Harness 即服务
 definition: "从提供底层模型 API转向提供成熟、预配置的 Agent 运行时（Runtime）环境，包括循环编排、工具分发和上下文管理能力。"
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - infrastructure
 related_entities:
