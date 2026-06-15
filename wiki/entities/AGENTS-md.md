@@ -5,7 +5,9 @@ aliases:
   - AGENTS-md
 definition: "放置在代码库根目录的 Markdown 规范文件，作为 Agent 的“棘轮（Ratchet）”规则手册或知识地图，记录特定代码库的约束、习惯和过去错误的补丁"
 created: 2026-06-10
-updated: 2026-06-11
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - documentation
 related_entities:

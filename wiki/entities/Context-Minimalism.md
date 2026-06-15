@@ -6,7 +6,9 @@ aliases:
   - Context Minimalist
 definition: "给 agent 最小可能的 system prompt 和工具集，让模型自己决定如何拉取上下文；与 context engineering 的演进关系类似 prompt engineering → context engineering → context minimalism"
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - agentic-engineering
   - context-engineering
