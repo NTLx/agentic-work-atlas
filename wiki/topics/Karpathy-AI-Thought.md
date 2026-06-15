@@ -2,7 +2,9 @@
 type: topic
 title: Karpathy AI 思想体系
 created: 2026-04-13
-updated: 2026-06-05
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - neural-networks

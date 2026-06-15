@@ -3,7 +3,9 @@ type: topic
 title: Enterprise AI Factory
 description: "企业 AI 工厂：把 AI 从实验项目变成可重复生产、可集成、可治理、可度量的企业能力"
 created: 2026-05-23
-updated: 2026-06-05
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - enterprise-AI
   - AI-deployment

@@ -3,7 +3,9 @@ type: topic
 title: CEO 亲手用 AI
 description: "CEO 必须亲手使用 AI 构建软件的主张、争议与组织影响"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - management
   - ceo-ai-hands-on
