@@ -11,6 +11,8 @@ tags:
   - AI
   - science
   - deepmind
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Demis-Hassabis]]"
   - "[[Einstein-Test]]"

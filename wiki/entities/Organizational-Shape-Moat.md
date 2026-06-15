@@ -12,6 +12,8 @@ tags:
   - organizational-design
   - AI
   - talent
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Moats-in-AI-Era]]"
   - "[[AI-Ready-Organization]]"

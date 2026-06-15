@@ -11,6 +11,8 @@ updated: 2026-05-25
 tags:
   - cybersecurity
   - ai-security
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Drew-Breunig]]'
   - '[[Mythos]]'
