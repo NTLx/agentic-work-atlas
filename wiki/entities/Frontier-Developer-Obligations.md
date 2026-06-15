@@ -7,7 +7,9 @@ aliases:
   - Frontier AI Developer Obligations
 definition: "Anthropic 提出的前沿 AI 开发者必须承担的监管义务：测试、透明度、独立评估、安全和执法"
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-policy
   - regulation

@@ -5,7 +5,9 @@ aliases:
   - Obsidian Wiki
 definition: "基于 Skill 的多 Agent 框架，工程化实现 Karpathy 的 LLM Wiki 模式——Agent 无关、Skill 驱动、Obsidian 原生，支持 Agent 历史自动摄入和 Delta 追踪"
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - knowledge-management
   - AI

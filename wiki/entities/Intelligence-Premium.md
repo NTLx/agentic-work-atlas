@@ -7,7 +7,9 @@ aliases:
   - Frontier Intelligence Premium
 definition: "在高杠杆、复杂、可验证或高价值知识工作中，用户愿意为更强模型的边际智能支付显著溢价的经济现象"
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - model-economics
   - agentic-engineering
