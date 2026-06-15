@@ -3,7 +3,9 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-06-05
+updated: 2026-06-16
+evidence_level: high
+claim_type: mixed
 tags:
   - organization
   - AI-Agent

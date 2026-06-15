@@ -3,7 +3,9 @@ type: topic
 title: Lean-Indie-Engineering
 description: "独立开发者用极低技术成本运营盈利产品的工程哲学与实践，核心是控制分母、反企业思维、约束驱动决策"
 created: 2026-04-15
-updated: 2026-06-01
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - indie-developer
   - bootstrap

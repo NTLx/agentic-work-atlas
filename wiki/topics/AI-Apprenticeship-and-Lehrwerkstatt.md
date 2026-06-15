@@ -3,7 +3,9 @@ type: topic
 title: AI Apprenticeship and Lehrwerkstatt (AI 学徒制与教学工坊)
 description: "探索在 AI 时代如何通过公开透明的交互、渗透式学习和 Agent 协作来重建组织内的学徒制和知识传承。"
 created: 2026-05-13
-updated: 2026-05-23
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - education
   - culture
