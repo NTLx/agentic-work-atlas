@@ -6,7 +6,9 @@ aliases:
   - 开发者加速
 definition: "AI coding agents 驱动下开发者代码产出速度、PR 规模、Agent 会话深度和代码存活率的全面加速现象"
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - agentic-engineering
   - developer-productivity
