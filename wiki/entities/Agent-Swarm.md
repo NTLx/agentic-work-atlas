@@ -10,6 +10,8 @@ tags:
   - AI-Agent
   - OpenClaw
   - Multi-Agent-System
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - '[[Agent-Loops]]'
   - '[[Boris-Cherny]]'

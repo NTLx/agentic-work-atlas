@@ -11,6 +11,8 @@ tags:
   - organization
   - ai-labor
   - management
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Knowledge-Work]]"
   - "[[Organizational-Shape-Moat]]"

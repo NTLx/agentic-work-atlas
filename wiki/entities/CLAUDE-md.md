@@ -13,6 +13,8 @@ tags:
   - AI-Agent
   - documentation
   - Software-Engineering
+evidence_level: high
+claim_type: mixed
 related_entities:
   - "[[Claude-Code-CLI]]"
   - "[[Agentic-Engineering]]"
