@@ -3,7 +3,9 @@ type: topic
 title: AI Era Economy Shift
 description: "AI 时代经济范式转型：从知识经济到分配经济，效率提升带来需求爆发"
 created: 2026-04-10
-updated: 2026-06-13
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - economy

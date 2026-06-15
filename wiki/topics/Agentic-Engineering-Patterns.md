@@ -3,7 +3,9 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-06-11
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - coding-agents

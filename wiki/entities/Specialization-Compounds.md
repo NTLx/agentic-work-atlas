@@ -8,7 +8,9 @@ aliases:
   - 逐级专门化
 definition: "模型专门化不是一次性微调，而是从通用模型到领域专家再到任务专家的层级过程；越接近目标任务的起点，后续训练越有效"
 created: 2026-05-24
-updated: 2026-05-26
+updated: 2026-06-15
+evidence_level: medium
+claim_type: mixed
 tags:
   - enterprise-AI
   - model-selection
