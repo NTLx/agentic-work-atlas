@@ -10,6 +10,8 @@ updated: 2026-05-26
 tags:
   - AI
   - AGI
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Demis-Hassabis]]"
   - "[[Scientific-Discovery-AI]]"
