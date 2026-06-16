@@ -7,7 +7,9 @@ aliases:
   - 关系溢价
 definition: "消费者为'人类在场'额外付费的服务部门；其价值不来自任务完成度，而来自偏好，所以 AI 抬高完成度不影响溢价"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AGI-economics
   - labor

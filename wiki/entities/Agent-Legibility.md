@@ -7,7 +7,9 @@ aliases:
   - Agent 可理解性
 definition: "设计代码库、文档和工具链时以 agent 为首要消费者的原则——任何 agent 运行时无法在上下文中访问的知识，对 agent 来说等于不存在"
 created: 2026-06-11
-updated: 2026-06-11
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - Agentic-Engineering
   - Context-Engineering
