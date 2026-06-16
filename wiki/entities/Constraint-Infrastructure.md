@@ -6,7 +6,9 @@ aliases:
   - Agent Constraint Infrastructure
 definition: "系统化保证 Agent 运行时行为边界的基础设施层，将 Harness 方法论中的约束原则转化为可编程、可部署、可运维的工程实体，覆盖模型调用管控、运行时行为约束、规则动态管理和效果观测四个层次。"
 created: 2026-06-13
-updated: 2026-06-13
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - agent-infra
   - governance

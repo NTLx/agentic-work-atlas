@@ -7,7 +7,9 @@ aliases:
   - "隐藏知识需求"
 definition: "组织中长期存在但被检索摩擦、社交成本和流程门槛压住的知识需求；当 AI 降低访问摩擦后，需求会突然显现"
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - knowledge-system
   - enterprise-AI

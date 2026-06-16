@@ -6,7 +6,9 @@ aliases:
   - 历史重写
 definition: "将 Git 提交历史视为面向未来维护者的可编辑叙事，并用受控改写降低理解、回滚和迁移成本的工程实践"
 created: 2026-04-09
-updated: 2026-05-26
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - Software-Engineering
