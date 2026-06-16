@@ -6,7 +6,9 @@ aliases:
   - 无障碍 Agent
 definition: "用顺序子 Agent、复杂度门控和人工升级路径辅助前端无障碍修复的专业 Agent"
 created: 2026-05-18
-updated: 2026-05-25
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - accessibility

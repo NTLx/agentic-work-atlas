@@ -7,7 +7,9 @@ aliases:
   - Open Security
 definition: "开放生态系统在网络安全防御中的结构性优势——分布式检测/验证/协调/补丁比单一供应商集中式方案更具韧性"
 created: 2026-05-11
-updated: 2026-05-11
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - cybersecurity
   - open-source

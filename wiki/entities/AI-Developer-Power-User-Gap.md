@@ -7,7 +7,9 @@ aliases:
   - AI 开发者 Power User 差距
 definition: "AI 编码工具使用中 P99 开发者产出远超中位数的极端幂律分布现象——Gini 系数 0.72-0.77，P99 产出为 P50 的 46 倍"
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - agentic-engineering
   - developer-productivity
