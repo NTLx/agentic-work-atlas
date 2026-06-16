@@ -7,7 +7,9 @@ aliases:
   - 研究判断
 definition: "在不确定的研究方向中识别'哪个问题最值得追'的能力——AI 时代人类剩余比较优势之一；Anthropic Mythos 2026-04 在研究判断上 64% 胜率意味着此领域开始被部分反超"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - research
   - judgment

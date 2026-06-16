@@ -6,7 +6,9 @@ aliases:
   - Thinking Tools
 definition: “编程语言不仅是表达设计的媒介——其语法、类型系统和约束本身在塑造并帮助开发者发现设计”
 created: 2026-05-13
-updated: 2026-05-26
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - cognitive-science
   - software-design
