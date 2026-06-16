@@ -5,7 +5,9 @@ aliases:
   - MachinaCheck
 definition: "基于多 Agent 流水线的 CNC 可制造性分析系统，通过 STEP 文件解析和选择性 LLM 推理，30 秒内完成原本 30-60 分钟的人工评估"
 created: 2026-05-11
-updated: 2026-05-11
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - Multi-Agent
   - manufacturing

@@ -7,7 +7,9 @@ aliases:
   - Collingridge's Dilemma
 definition: "技术的社会影响在早期难以预见，等到影响清晰时已难以管理；而早期干预又因信息不足而容易出错"
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - policy
   - technology-governance

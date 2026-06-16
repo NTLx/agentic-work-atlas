@@ -7,7 +7,9 @@ aliases:
   - Software Engineering Benchmark
 definition: "软件工程任务的标准化评测基准——给 agent 一段 GitHub issue + 代码库，评估它能多快修好 bug；从 2024 的低个位数涨到 2026 接近饱和"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - benchmark
   - software-engineering
