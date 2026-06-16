@@ -7,7 +7,9 @@ aliases:
   - 教育短内容化
 definition: "把学习压缩成顺滑短内容消费而削弱主动处理、复述、笔记、推理和认知负荷的趋势"
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - learning
   - knowledge-management

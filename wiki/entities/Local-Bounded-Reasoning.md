@@ -7,7 +7,9 @@ aliases:
   - 局部有界推理
 definition: "通过工作流结构、图谱、程序分析和策略约束，把 LLM 的推理限制在局部相关状态空间内的 Agent 设计原则"
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - reasoning
