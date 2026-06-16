@@ -9,7 +9,9 @@ aliases:
   - 后台记忆整理
 definition: "OpenAI ChatGPT 2025-04 推出、2026-06 升级为 V3 的后台记忆整理机制——从聊天历史中自动合成用户记忆状态，对应人脑睡眠期的记忆巩固"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - memory-system
   - context-engineering

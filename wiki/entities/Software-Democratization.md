@@ -7,7 +7,9 @@ aliases:
   - 编程民主化
 definition: "AI coding agents 降低软件构建门槛，使领域专家能够直接把业务理解转化为可运行软件的趋势"
 created: 2026-05-08
-updated: 2026-05-25
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI
   - education

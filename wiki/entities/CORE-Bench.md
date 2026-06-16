@@ -7,7 +7,9 @@ aliases:
   - 复杂推理基准
 definition: "复杂推理任务的标准化评测基准——评估 AI 在多步推理、跨域知识整合、长时间视野任务上的能力；从 2024 的低个位数涨到 2026 接近饱和（约 15 月周期）"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - benchmark
   - reasoning
