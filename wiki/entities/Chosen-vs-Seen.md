@@ -7,7 +7,9 @@ aliases:
   - 情感承诺与结构承诺
 definition: "区分组织对人才的情感性认可和结构性授权：被选中让人感觉重要，被看见则把重要性落实为范围、权力、经济参与和决策权"
 created: 2026-05-10
-updated: 2026-05-25
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - talent
   - organizational-design

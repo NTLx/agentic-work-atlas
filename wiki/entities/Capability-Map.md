@@ -7,7 +7,9 @@ aliases:
   - reference_local_capabilities
 definition: "按'我要做什么'（场景）而非工具名组织本地工具链的反向索引表，让 Agent 查表即用而非摸索式探索，将工具调用从 5000+ token 降到 200 token"
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - tool-use
   - context-engineering

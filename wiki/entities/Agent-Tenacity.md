@@ -7,7 +7,9 @@ aliases:
   - AI Stamina
 definition: "Agent 在明确目标、反馈信号和预算边界内持续调用工具、试错和修正，直到成功或触发停止条件的能力"
 created: 2026-04-21
-updated: 2026-05-26
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - ai-agent
   - software-engineering
