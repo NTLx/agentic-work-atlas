@@ -5,7 +5,9 @@ aliases:
   - 序列打包
 definition: "把多条短训练样本拼接进固定长度上下文以减少 padding 浪费的 LLM 训练优化技术"
 created: 2026-05-10
-updated: 2026-05-25
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - training
   - AMD

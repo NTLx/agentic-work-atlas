@@ -7,7 +7,9 @@ aliases:
   - Unsatiated Capital Accumulation
 definition: "某些主体（永生人类/无消费 AI 实体）拥有对资本积累的'不满足偏好'——持续再投资、不消费，最终主导全球财富；历史上的'耗散冲击'（继承挥霍、家族治理失败）无法阻止"
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - AGI-economics
   - capital-share

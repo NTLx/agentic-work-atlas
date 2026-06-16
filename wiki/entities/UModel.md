@@ -6,7 +6,9 @@ aliases:
   - 统一可观测模型
 definition: "阿里云可观测团队基于本体论思想构建的 IT 世界统一建模框架，以实体为中心、以图为核心，推动可观测体系从面向数据转向面向对象"
 created: 2026-06-13
-updated: 2026-06-13
+updated: 2026-06-16
+evidence_level: medium
+claim_type: mixed
 tags:
   - ontology
   - observability
