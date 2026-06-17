@@ -27,6 +27,7 @@ source_raw:
   - '[[Management as AI superpower]]'
   - '[[The Always-On Economy AI and the Next 5-7 Years]]'
   - '[[The layoffs will continue till we learn to use AI]]'
+  - "[[20260615-ai-layoff-wave-powder-keg]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - "[[20260613-anthropic-public-record]]"
 ---

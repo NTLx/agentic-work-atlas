@@ -21,6 +21,7 @@ related_entities:
 source_raw:
   - "[[20260601-mit-nanda-genai-divide]]"
   - "[[20260603-anthropic-self-service-data-analytics]]"
+  - "[[20260615-satyanadella-frontier-ecosystem]]"
 evidence_level: high
 claim_type: mixed
 ---

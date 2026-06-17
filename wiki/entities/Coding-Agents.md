@@ -32,6 +32,7 @@ source_raw:
   - '[[20260613-coding-agent-organizational-engineering]]'
   - '[[20260613-qoder-human-bottleneck]]'
   - "[[20260617-anthropic-claude-code-expertise]]"
+  - "[[20260615-normaltech-ai-hasnt-replaced-software-engineers]]"
 ---
 
 # Coding Agents（编码智能体）

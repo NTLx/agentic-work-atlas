@@ -24,6 +24,8 @@ source_raw:
   - '[[OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - '[[The-Founders-Playbook-05062026_v3]]'
+  - "[[20260603-lessons-from-building-claude-code-how-we-use-skills]]"
+  - "[[20260609-whats-new-in-claude-managed-agents]]"
 ---
 
 # Claude Code CLI
