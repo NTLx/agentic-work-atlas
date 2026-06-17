@@ -87,11 +87,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（126 个）*
+*原始剪藏文章（137 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：阿里云 Agent Infra 约束基建。新增 1 个 entity：[[Constraint-Infrastructure]]。更新 Agent-Harness、Agent-Infra、UModel、Constraint-Driven-Engineering entity。
+最新编译：2026-06-17 批次——Anthropic Claude Code expertise、Tim Ferriss nonfiction、LangChain Loop Engineering/Agent Engineering/Legal Verifiers、Bayer PRINCE、ByteByteGo Open-Weight 共 8 篇 source summary。
 
 ---
 
