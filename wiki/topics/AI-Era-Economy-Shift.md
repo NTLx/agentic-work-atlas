@@ -20,6 +20,7 @@ related_entities:
   - '[[Input-Output-Outcome]]'
   - '[[Model-Manager]]'
   - "[[Moats-in-AI-Era]]"
+  - "[[Demand-Collapse]]"
 source_raw:
   - '[[The Knowledge Economy Is Over. Welcome to the Allocation Economy.]]'
   - '[[(14) Jevons Paradox for Knowledge Work]]'

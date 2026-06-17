@@ -25,6 +25,7 @@ related_entities:
   - "[[Google-DeepMind]]"
   - "[[Epoch-AI]]"
   - "[[Allocation-Economy]]"
+  - "[[Demand-Collapse]]"
   - "[[AI-Labor-Bottleneck-Shift]]"
 source_raw:
   - "[[20260604-dwarkesh-agi-scarcity]]"
