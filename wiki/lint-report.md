@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-06-16"
+date: "2026-06-17"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-06-16
+# Agentic Work Atlas Lint 报告 - 2026-06-17
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -21,16 +21,12 @@ tags:
 | 类别 | 数量 |
 |------|------|
 | Raw 来源 | 130 |
-| Raw 已编译 | 129 |
-| Raw 待编译 | 1 |
+| Raw 已编译 | 130 |
+| Raw 待编译 | 0 |
 | Entity | 263 |
 | Topic | 28 |
 | Comparison | 18 |
 | Output | 4 |
-
-## 待编译 Raw
-
-- `raw/20260615-ai-layoff-wave-powder-keg.md`
 
 ## 检查项
 
@@ -42,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 12 |
+| `tag` | 14 |
 | `evidence` | 0 |
 | `low-evidence` | 3 |
 | `stale-core` | 0 |
@@ -65,11 +61,13 @@ tags:
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
 - `index.md` - `一次性 tag 仅出现 1 次: 'index'`
+- `wiki/sources/20260615-ai-layoff-wave-powder-keg.md` - `一次性 tag 仅出现 1 次: 'inequality'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'policy'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'quartz'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'research-agenda'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'resilience'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'scientific-agents'`
+- `wiki/sources/20260615-ai-layoff-wave-powder-keg.md` - `一次性 tag 仅出现 1 次: 'social-license'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'technology-governance'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'tutorial'`
 
