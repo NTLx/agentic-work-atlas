@@ -21,6 +21,7 @@ related_entities:
   - '[[Verifiability]]'
 source_raw:
   - "[[20260127-claude-coding-notes]]"
+  - "[[20260617-tim-ferriss-ai-killed-nonfiction]]"
 ---
 
 # Slopocalypse

@@ -24,6 +24,7 @@ source_raw:
   - "[[The layoffs will continue till we learn to use AI]]"
   - '[[What Is Code?]]'
   - '[[Learning on the Shop floor]]'
+  - "[[20260617-tim-ferriss-ai-killed-nonfiction]]"
 ---
 
 # Knowledge Work（知识工作）
