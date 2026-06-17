@@ -31,6 +31,7 @@ source_raw:
   - '[[20260530-ceo-knee-deep-building-ai]]'
   - '[[20260613-coding-agent-organizational-engineering]]'
   - '[[20260613-qoder-human-bottleneck]]'
+  - "[[20260617-anthropic-claude-code-expertise]]"
 ---
 
 # Coding Agents（编码智能体）

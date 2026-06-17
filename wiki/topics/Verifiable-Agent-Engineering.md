@@ -55,6 +55,8 @@ source_raw:
   - "[[Building a general-purpose accessibility agent—and what we learned in the process]]"
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
   - "[[OncoAgent A Dual-Tier Multi-Agent Framework for Privacy-Preserving Oncology Clinical Decision Support]]"
+  - "[[20260617-langchain-legal-agent-verifiers]]"
+  - "[[20260617-langchain-art-of-loop-engineering]]"
   - "[[Maintainability sensors for coding agents]]"
   - "[[Improving token efficiency in GitHub Agentic Workflows]]"
   - "[[How we contain Claude across products]]"
