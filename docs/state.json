@@ -7,17 +7,17 @@
     "scheduler": "cc-connect cron",
     "cron_expr": "*/30 * * * *",
     "status": "ready",
-    "last_run_at": "2026-06-17T14:30:00+08:00",
-    "last_run_summary": "更新 index.md：Raw 计数 126→137，更新最新编译批次为 2026-06-17 共 8 篇 source summary；Raw 137/137，lint 阻断 0。",
-    "last_commit": "982b6e8",
+    "last_run_at": "2026-06-17T15:00:00+08:00",
+    "last_run_summary": "research-agenda 更新：基于 8 篇新 source summary 新增 3 个待验证问题（领域专长放大效应、四层循环堆叠、开源模型验证器）和 2 个 P1 source 需求；Raw 137/137，lint 阻断 0。",
+    "last_commit": "c98ee15",
     "last_push": "pushed origin/main"
   },
   "next_instruction": "继续执行 Agentic Work Atlas（智能体时代工作图谱）的分批全库核查任务。目标是按照当前 README.md / AGENTS.md 中的 LLM Wiki schema，对本仓库进行一次完整但渐进的核查，确认近期对 LLM Wiki 机制的优化是否已经在 wiki 结构、证据边界、Obsidian 渲染、索引、source summary 覆盖、entity/topic/comparison 关系和 audit 流程中产生效果。先读取 README.md 与本文件，确认上一轮状态、run_log 和 next_actions；不要从头重做，不要一次性展开全库。每轮只选择一个边界清晰、可独立完成、预计 15 分钟左右可以完成的小任务簇推进；15 分钟是任务量控制目标，不是调度器硬超时。如果任务看起来会明显超过这个粒度，先缩小范围。优先处理 next_actions 中的第一项，完成后运行必要校验；涉及 Wiki/Schema 时至少运行 uv run python tools/wiki-lint.py，涉及 Quartz 发布时运行 npm run build。若发现任何不清楚、不确定、需要人工判断、可能误伤 raw 正文、可能合并重复概念、或会改变 schema 语义的问题，应及时停止并向用户沟通，不要擅自扩大处理。完成后提交并推送有效变更，然后回写本文件的 loop.last_run_at、loop.last_run_summary、loop.last_commit、loop.last_push、next_actions 和 run_log。",
   "next_actions": [
-    "Raw 全部编译完成（137/137）。index.md 已更新。低入链 entity 已补充入链。stale-core-audit 已重检。",
+    "Raw 全部编译完成（137/137）。index.md 已更新。research-agenda 已更新。低入链 entity 已补充入链。stale-core-audit 已重检。",
     "Do not treat the current 3 low-evidence lint warnings as accidental blockers.",
     "Do not edit remaining 14+ tag issues without explicit user policy decision.",
-    "下一轮可选任务簇：(1) 等待新 raw 剪藏后编译；(2) 继续 cross-link 核查剩余 source summary 的反向链接；(3) research-agenda 更新（如有新研究问题浮现）。"
+    "下一轮可选任务簇：(1) 等待新 raw 剪藏后编译；(2) 继续 cross-link 核查剩余 source summary 的反向链接；(3) 检查 research-agenda 中 P0 source 需求是否已有可用材料。"
   ],
   "guardrails": [
     "raw/ 是只读证据层，除阻断 lint 或渲染的最小元数据修复外不得改写。",
@@ -2729,6 +2729,22 @@
       "commit": "982b6e8",
       "push": "pushed origin/main",
       "next": "下一轮可等待新 raw 剪藏、继续 cross-link 或更新 research-agenda。"
+    },
+    {
+      "at": "2026-06-17T15:00:00+08:00",
+      "task": "research-agenda 更新，基于新 source summary 补充研究问题和 source 需求",
+      "completed": [
+        "读取 README.md/AGENTS.md schema、docs/state.json 和当前工作树",
+        "审查 8 篇新 source summary 暴露的研究问题",
+        "新增 3 个待验证问题：领域专长放大效应、四层循环堆叠、开源模型验证器",
+        "新增 2 个 P1 source 需求：领域专长跨领域验证、四层循环工程成本收益",
+        "更新日期 2026-06-13→2026-06-17",
+        "运行 uv run python tools/wiki-lint.py，确认阻断问题 0",
+        "提交并推送本轮有效 Wiki 变更"
+      ],
+      "commit": "c98ee15",
+      "push": "pushed origin/main",
+      "next": "下一轮可等待新 raw 剪藏、继续 cross-link 或检查 P0 source 需求。"
     }
   ]
 }
