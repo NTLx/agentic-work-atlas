@@ -21,17 +21,12 @@ tags:
 | 类别 | 数量 |
 |------|------|
 | Raw 来源 | 137 |
-| Raw 已编译 | 135 |
-| Raw 待编译 | 2 |
+| Raw 已编译 | 137 |
+| Raw 待编译 | 0 |
 | Entity | 263 |
 | Topic | 28 |
 | Comparison | 18 |
 | Output | 4 |
-
-## 待编译 Raw
-
-- `raw/20260617-bayer-prince-agentic-rag.md`
-- `raw/20260617-bytebytego-open-weight-models.md`
 
 ## 检查项
 
@@ -43,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 23 |
+| `tag` | 26 |
 | `evidence` | 0 |
 | `low-evidence` | 3 |
 | `stale-core` | 0 |
@@ -61,8 +56,10 @@ tags:
 
 ### tag
 
+- `wiki/sources/20260617-bayer-prince-agentic-rag.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260617-langchain-legal-agent-verifiers.md` - `tags 超过 5 个: 6`
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
+- `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'MoE'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
@@ -74,7 +71,8 @@ tags:
 - `wiki/sources/20260617-anthropic-claude-code-expertise.md` - `一次性 tag 仅出现 1 次: 'labor-market'`
 - `wiki/sources/20260617-langchain-legal-agent-verifiers.md` - `一次性 tag 仅出现 1 次: 'legal-AI'`
 - `wiki/sources/20260617-langchain-art-of-loop-engineering.md` - `一次性 tag 仅出现 1 次: 'loop-engineering'`
-- `wiki/sources/20260617-langchain-legal-agent-verifiers.md` - `一次性 tag 仅出现 1 次: 'open-weight'`
+- `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'model-architecture'`
+- `wiki/sources/20260617-bayer-prince-agentic-rag.md` - `一次性 tag 仅出现 1 次: 'pharma'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'policy'`
 - `wiki/sources/20260617-langchain-agent-engineering-new-discipline.md` - `一次性 tag 仅出现 1 次: 'production-engineering'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'quartz'`
