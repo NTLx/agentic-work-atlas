@@ -31,6 +31,7 @@ source_raw:
   - '[[Building an MCP Ecosystem at Pinterest]]'
   - '[[The-Founders-Playbook-05062026_v3]]'
   - '[[20260526-obsidian-claude-code-brain]]'
+  - "[[20260617-github-copilot-token-efficiency]]"
   - '[[20260530-cursor-developer-habits-report]]'
   - "[[20260603-anthropic-self-service-data-analytics]]"
   - "[[20260611-openai-harness-engineering]]"

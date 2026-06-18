@@ -27,6 +27,7 @@ source_raw:
   - "[[20260528-corporate-america-ai-rationing]]"
   - "[[20260606-the-minimill-of-ai]]"
   - "[[Designing the hf CLI as an agent-optimized way to work with the Hub]]"
+  - "[[20260617-github-copilot-token-efficiency]]"
 ---
 
 # Agentic-Workflow-Token-Efficiency（Agentic Workflow Token 效率）

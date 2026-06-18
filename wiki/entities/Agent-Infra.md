@@ -21,6 +21,7 @@ related_entities:
 source_raw:
   - "[[20260528-agentic-ai-2026-landscape]]"
   - "[[20260613-aliyun-agent-infra-constraint-infrastructure]]"
+  - "[[20260617-huggingface-agentic-resource-discovery]]"
 ---
 
 > [!definition] 定义

@@ -20,6 +20,7 @@ related_entities:
   - "[[Context-Engineering]]"
 source_raw:
   - "[[Building an MCP Ecosystem at Pinterest]]"
+  - "[[20260617-huggingface-agentic-resource-discovery]]"
 ---
 
 # MCP Registry
