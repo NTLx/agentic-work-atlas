@@ -21,6 +21,7 @@ related_entities:
 source_raw:
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
+  - "[[20260617-huggingface-agentic-resource-discovery]]"
 ---
 
 # Model Introspection（模型自省）

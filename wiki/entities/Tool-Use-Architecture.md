@@ -23,6 +23,7 @@ related_entities:
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[Building an MCP Ecosystem at Pinterest]]"
+  - "[[20260617-huggingface-agentic-resource-discovery]]"
 ---
 
 # Tool-Use Architecture（工具使用架构）

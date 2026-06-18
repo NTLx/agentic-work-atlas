@@ -50,6 +50,7 @@ source_raw:
   - "[[20260617-langchain-art-of-loop-engineering]]"
   - "[[20260617-langchain-agent-engineering-new-discipline]]"
   - "[[20260617-bayer-prince-agentic-rag]]"
+  - "[[20260617-huggingface-agentic-resource-discovery]]"
   - "[[20260613-coding-agent-organizational-engineering]]"
   - "[[20260613-qoder-human-bottleneck]]"
   - "[[20260613-aliyun-agent-infra-constraint-infrastructure]]"
