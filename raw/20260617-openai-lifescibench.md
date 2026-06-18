@@ -11,79 +11,87 @@ tags:
   - life-science
   - evaluation
   - frontier-model
+  - GPT-Rosalind
 ---
 
 # Introducing LifeSciBench
 
-OpenAI released LifeSciBench, a 750-task benchmark grading AI models on real life-science research with expert-written rubric.
+An expert-written, expert-reviewed benchmark grounded in real-world life science research
 
-## Key facts
+Agentic AI systems are becoming increasingly capable of performing scientific tasks. However, their usefulness to life science researchers depends on how well they handle the complexity of real research. That work rarely looks like a single fact-recall question or a clean prediction problem. Researchers interpret incomplete evidence, reconcile conflicting results, design difficult experiments, troubleshoot assays, evaluate translational risk, and decide what to do next under uncertainty.
 
-- 750 expert-authored tasks spanning 7 workflows and 7 biological domains
-- Built by 173 PhD scientists with 19,020 rubric criteria
-- Grades reasoning and decisions, not just recall
-- Best model (GPT-Rosalind) passes 36.1%, leaving large headroom
+Current benchmarks do not fully capture these capabilities. Many life science evaluations focus on narrow domains or isolated skills, resulting in questions with structured question formats and clean reference answers. While valuable, they often fail to truly assess whether a model can contribute across the broader span of research-level work.
 
-## What is LifeSciBench
+We designed LifeSciBench to help close this gap. Every task is grounded in the judgment of practicing life scientists with Ph.D.-level training and direct experience advancing drug discovery programs in biotech and pharmaceutical settings.
 
-Most biology benchmarks ask narrow, fact-based questions with clean answers. Scientists weigh imperfect evidence and make decisions. LifeSciBench targets that gap directly.
+LifeSciBench includes 750 expert-authored tasks spanning seven workflows and seven biological domains.
 
-The seven workflows cover evidence handling and analysis, design and optimization, scientific reasoning, validation and operations, translation, and scientific communication.
+- 1,062 Task artifacts
+- 173 Scientist contributors
+- 19,020 Rubric criteria
+- 453 Expert reviewers
 
-The seven domains run from genomics and medicinal chemistry to clinical and translational science.
+## What LifeSciBench measures
 
-Tasks are written as a scientist would brief a colleague. They are free-response, not multiple-choice. Around 79% require multiple reasoning or decision-making steps, averaging four steps each.
+LifeSciBench measures whether AI systems can support realistic life science research tasks, not just answer biology questions. To define the benchmark taxonomy, we surveyed practicing life scientists about the workflows they use most often in applied research settings. Then, we grouped their responses into seven recurring categories: evidence handling, analysis, design and optimization, scientific reasoning, validation and operations, translation, and scientific communication.
 
-## How the Benchmark was Built
+Each task is structured like a request a scientist might give to a knowledgeable collaborator: scientific prompt, any relevant context or artifacts, and a free-response answer. Expert-written rubrics evaluate whether a model can produce the right answer for a specific problem, with the right level of detail, justification, caveats, and formatting a scientist would expect.
 
-A cohort of 173 expert scientists wrote the tasks. Each held a Ph.D. and had biotechnology or pharmaceutical experience. Accepted tasks averaged six automated review cycles and at least two expert reviews.
+## Dataset construction
 
-Many tasks ship with artifacts. The benchmark includes 1,062 attached artifacts in total. About 53% of tasks require at least one artifact. Types include sequences, figures, tables, PDFs, and chemical structures.
+LifeSciBench evaluates scientific reasoning alongside the less well-defined, practical skills necessary for real-world scientific use. Its tasks ask models to work through realistic research problems: interpreting evidence, making domain-grounded judgments, and communicating conclusions that would be useful to expert reviewers. Many tasks also require models to handle uncertainty and reason over supporting data files rather than relying on prompt text alone.
 
-A separate cohort validated quality. There were 453 reviewers, and 97% held doctorates. Overall agreement exceeded 96% on relevance, reasoning, grounding, and usefulness.
+The benchmark is designed to reflect the complexity of life science work. Overall, 79% of tasks require multiple reasoning or decision-making steps, with an average of four steps per task. LifeSciBench includes 1,062 attached artifacts spanning figures, PDFs, tables, sequence files, structure or chemical files, and web references. More than half of tasks (53%) require models to interpret or synthesize information from at least one artifact.
 
-## The Rubric System
+Tasks were created by 173 expert scientists across different life science disciplines. Each scientist had Ph.D.-level training and biotechnology or pharmaceutical industry experience. Tasks could undergo as many revision cycles as needed before acceptance, with no fixed cap on the number of rounds; accepted tasks averaged six self-directed automated review cycles and completed at least two rounds of expert reviews. Reviews were anchored in either a verifiable correct answer or strong expert consensus, with at least 90% agreement among reviewers in the relevant domain.
 
-Rubrics are the core mechanic. They contain 19,020 criteria across the benchmark. That is roughly 25 criteria per task.
+## Grading and rubric breakdown
 
-Each criterion rewards one concrete property. Examples include a specific fact, a reasoning step, or a numeric answer within tolerance. Grading runs against the rubric, not a single reference string.
+LifeSciBench tasks are graded with a detailed, task-specific rubric that breaks down the expected response into specific scientific claims, calculations, decisions, justifications, and so on. Across the benchmark, expert-developed rubrics include 19,020 criteria—an average of 25 per task—to assess both scientific correctness and usefulness for research decisions.
 
-Two metrics summarize performance. Normalized rubric score divides awarded points by total points. Task pass rate counts tasks scoring at or above 70%.
+This design reflects how scientific work is evaluated in practice: many life science tasks cannot be graded by checking the final answer alone. A response may reach the correct high-level conclusion but still be judged incomplete if, for example, it overlooks a key assay limitation or fails to proactively bring up a highly consequential biological nuance. Conversely, a partial response may contain high-quality reasoning even if it does not fully solve the task.
 
-## How the Models Performed
+The granular rubrics capture this nuance. LifeSciBench evaluates not only final-answer accuracy, but whether a model reaches its answer in a scientifically valid and operationally useful way.
 
-| Model | Normalized score | Task pass rate |
-|-------|-----------------|----------------|
-| GPT-Rosalind | 0.576 | 36.1% |
-| GPT-5.5 | 0.519 | 25.7% |
-| Gemini 3.1 Pro | 0.515 | 23.6% |
-| GPT-5.4 | 0.479 | 20.7% |
-| Grok 4.3 | 0.399 | 13.0% |
+## Validating LifeSciBench
 
-GPT-Rosalind, OpenAI's domain-specialized model, led overall. It had the highest per-task mean on 386 of 750 tasks. Gemini 3.1 Pro uniquely led on 214 tasks.
+We validated LifeSciBench through an independent expert review. Feedback came from 453 reviewers who were not involved in writing the tasks. Of those reviewers, 97% held a Ph.D. or equivalent doctorate, with an average of 12 years of field experience and 14 peer-reviewed publications; 88% reported receiving at least one award or fellowship.
 
-## Where Models Win, and Where They Fall Short
+Reviewers scored whether each task reflected the qualities needed for a strong benchmark question: alignment with real-world research work, appropriate testing of scientific reasoning and domain expertise, grounding in evidence or expert consensus, and overall usefulness for assessing model performance. Agreement exceeded 96% in every category.
 
-Models were strongest on structured judgment. GPT-Rosalind reached a 0.712 mean score on Translation. Scientific Communication scored 0.718.
+- Real-world relevance: Strong agree 90.4%, Overall agree 98.3%
+- Scientific reasoning / domain skill: Strong agree 86.4%, Overall agree 98.1%
+- Scientific grounding: Strong agree 77.1%, Overall agree 96.5%
+- Overall usefulness: Strong agree 79.1%, Overall agree 96.6%
 
-Two workflows stayed hard. Design, Optimization, and Prediction was among the toughest, with GPT-Rosalind passing 30.7%. Analysis was close behind at 30.3%.
+## Results
 
-Artifact use was a clear bottleneck. GPT-Rosalind dropped from 45.1% on text-only tasks to 28.1% on artifact tasks.
+We report two complementary metrics. Pass rate is the percentage of tasks on which a model meets the task-level success threshold of 70%. Score is the average rubric reward, giving partial credit for individual criteria even when the full task is not solved. Both matter because a response to a scientific task can be partially correct or useful without meeting every requirement for a complete answer.
 
-Exact outputs were hardest of all. Sequence and structure criterion success ranged from 46.9% to 18.0% across models.
+Model performance varies substantially by task type, workflow, and response format.
 
-Headroom remains large. No model passed 171 tasks (22.8%). And 261 tasks (34.8%) had a best-model pass rate below 20%.
+### Where AI systems show early strength
 
-## Strengths and Weaknesses
+LifeSciBench shows that frontier models are relatively strongest on tasks involving scientific synthesis, communication, and structured interpretation. Absolute pass rates are still modest, so these benchmark domains are far from saturated, but GPT-Rosalind shows meaningful progress over GPT-5.5, improving overall exact pass rate from 25.7% to 36.1%.
 
-Strengths:
-- Broad coverage across seven workflows and seven biological domains
-- Expert-authored rubrics with 19,020 atomic, gradeable criteria
-- Realistic artifacts: sequences, figures, tables, PDFs, and structures
-- Independent validation by 453 expert reviewers, 97% with doctorates
+The strongest directions of progression in model capabilities appear in Scientific Communication and Translation. For example, the Scientific Communication pass rate increases from 56.3% for GPT-5.5 to 71.1% for GPT-Rosalind; this category is small (n=9), so it should be interpreted cautiously, but it suggests frontier models are improving rapidly in their ability to organize evidence and produce convincing expert-facing explanations. Translation (the "bench-to-bedside" process of drug development) shows a similar pattern, rising from 36.8% for GPT-5.5 to 57.7% for GPT-Rosalind.
 
-Weaknesses:
-- Single-turn only; real research is iterative and multi-turn
-- Built by OpenAI, which also supplies most evaluated models
-- Public release may be limited by safety and licensing constraints
-- 750 tasks cannot cover every scientific specialty
+Rubric-level results point in the same direction. On tasks requiring expert-useful or actionable outputs, GPT-Rosalind scores 44.7%, compared with 29.1% for GPT-5.5. On tasks requiring uncertainty and caveat handling, it scores 44.8%, compared with 29.3%.
+
+### Where AI systems still fall short
+
+Performance remains much weaker on artifact-heavy, design-heavy, and operationally constrained scientific work. Design, Optimization, & Prediction remains one of the hardest workflows, with GPT-Rosalind pass rate at 30.7%; Analysis is similarly difficult at 30.3%.
+
+Artifact use is a particularly clear gap. GPT-Rosalind's pass rate drops from 45.1% on text-only tasks to 28.1% on tasks with artifacts or URLs. GPT-5.5 shows the same pattern, dropping from 29.9% to 21.9%.
+
+Tasks requiring exact sequence, structure, or construct-level outputs show lower pass rates: GPT-Rosalind reaches only 14.8% on numeric tasks and 24.0% on sequence or structure outputs. Construct-generation tasks are also brittle, with GPT-Rosalind at 27.3% and showing little improvement over GPT-5.5.
+
+Models also often get part of the way there without fully solving the task. In roughly 14% of tasks, models earned substantial rubric credit despite failing the exact-pass threshold. For GPT-Rosalind, 109 tasks had pass rates below 20% while still earning at least 50% rubric reward.
+
+## Limitations & what's next
+
+LifeSciBench is a step toward measuring how useful AI systems can be for life science research, but it is not a substitute for studying models in live research environments. The benchmark focuses on self-contained tasks that reflect recurring industry workflows, while leaving many scientific specialties and task types outside its current scope. Real research is iterative: scientists gather new evidence, revise hypotheses, design follow-up experiments, and adapt their plans as results emerge.
+
+Strong performance on LifeSciBench should therefore be interpreted as evidence of realistic task-level capability, not as a direct measure of downstream research impact.
+
+The next step is to connect benchmark performance to deployment studies in live research workflows. While LifeSciBench was developed with practicing scientists, measuring whether AI systems accelerate discovery or improve R&D outcomes will require studying model use and performance in real research settings, over longer horizons, and across multiple rounds of reasoning, feedback, and experimental follow-up.
