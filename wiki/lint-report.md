@@ -20,13 +20,18 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 140 |
-| Raw 已编译 | 140 |
-| Raw 待编译 | 0 |
+| Raw 来源 | 141 |
+| Raw 已编译 | 139 |
+| Raw 待编译 | 2 |
 | Entity | 263 |
 | Topic | 28 |
 | Comparison | 18 |
 | Output | 4 |
+
+## 待编译 Raw
+
+- `raw/20260617-google-amie-research-arc.md`
+- `raw/20260617-openai-lifescibench.md`
 
 ## 检查项
 
@@ -38,7 +43,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 39 |
+| `tag` | 38 |
 | `evidence` | 0 |
 | `low-evidence` | 3 |
 | `stale-core` | 0 |
@@ -83,7 +88,6 @@ tags:
 - `wiki/sources/20260617-langchain-legal-agent-verifiers.md` - `一次性 tag 仅出现 1 次: 'legal-AI'`
 - `wiki/sources/20260617-langchain-art-of-loop-engineering.md` - `一次性 tag 仅出现 1 次: 'loop-engineering'`
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'model-architecture'`
-- `wiki/sources/20260617-github-copilot-token-efficiency.md` - `一次性 tag 仅出现 1 次: 'model-routing'`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'open-specification'`
 - `wiki/sources/20260617-bayer-prince-agentic-rag.md` - `一次性 tag 仅出现 1 次: 'pharma'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'policy'`
