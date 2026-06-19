@@ -20,7 +20,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-CLIPS_ROOT = Path(os.path.expanduser("~/Obsidian/Clips")).expanduser()
+CLIPS_ROOT = Path(__file__).resolve().parent.parent
 LJG_NOTES_DIR = Path(os.path.expanduser("~/Documents/notes")).expanduser()
 TODAY = datetime.now().strftime("%Y-%m-%d")
 
@@ -62,6 +62,9 @@ def extract_title(content):
         t = m.group(1).strip()
         t = re.sub(r"(概念解剖|论文解析|追本|降秩)[：:]?\s*", "", t).strip()
         return t if t else "untitled"
+    m = re.search(r"^title:\s*[\"']?(.+?)[\"']?\s*$", content, re.MULTILINE)
+    if m:
+        return m.group(1).strip()
     return "untitled"
 
 
@@ -117,6 +120,7 @@ def fm_entity(title, source_raw, definition, related):
     tags = [
         "  - concept",
     ]
+    tags_str = '\n'.join(tags)
     return (
         f"---\n"
         f"type: entity\n"
@@ -125,7 +129,7 @@ def fm_entity(title, source_raw, definition, related):
         f"created: {TODAY}\n"
         f"updated: {TODAY}\n"
         f"tags:\n"
-        f"{'\n'.join(tags)}\n"
+        f"{tags_str}\n"
         f"related_entities:\n"
         f"{rel_yaml}\n"
         f"source_raw:\n"
@@ -240,11 +244,71 @@ def process_rank(path, source_raw):
 def process_writes(path, source_raw):
     content = path.read_text(encoding="utf-8")
     title = extract_title(content)
-    header = fm_output(title)
+    
+    if content.startswith("---"):
+        parts = content.split("---", 2)
+        if len(parts) >= 3:
+            fm_lines = parts[1].strip().split("\n")
+            new_lines = []
+            has_type = False
+            has_created = False
+            has_updated = False
+            has_tags = False
+            
+            for line in fm_lines:
+                if line.startswith("type:"):
+                    new_lines.append("type: output")
+                    has_type = True
+                elif line.startswith("created:"):
+                    new_lines.append(line)
+                    has_created = True
+                elif line.startswith("updated:"):
+                    new_lines.append(f"updated: {TODAY}")
+                    has_updated = True
+                elif line.startswith("tags:"):
+                    new_lines.append(line)
+                    has_tags = True
+                else:
+                    new_lines.append(line)
+            
+            if not has_type:
+                new_lines.insert(0, "type: output")
+            if not has_created:
+                orig_date = TODAY
+                for line in fm_lines:
+                    if line.startswith("date:"):
+                        orig_date = line.split(":", 1)[1].strip().strip('"').strip("'")
+                new_lines.append(f"created: {orig_date}")
+            if not has_updated:
+                new_lines.append(f"updated: {TODAY}")
+            if not has_tags:
+                new_lines.append("tags:")
+                new_lines.append("  - essay")
+            else:
+                if "essay" not in parts[1]:
+                    for idx, line in enumerate(new_lines):
+                        if line.startswith("tags:"):
+                            new_lines.insert(idx + 1, "  - essay")
+                            break
+            
+            merged_fm = "---\n" + "\n".join(new_lines) + "\n---"
+            body = parts[2]
+            if not re.search(r"^\s*# ", body):
+                body = f"\n\n# {title}\n" + body.lstrip()
+            
+            content = merged_fm + body
+            dest = CLIPS_ROOT / SKILL_DEST_MAP["writes"] / (kebab_case(title) + ".md")
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_text(content, encoding="utf-8")
+            return dest
 
+    header = fm_output(title)
+    body = content
+    if not re.search(r"^\s*# ", body):
+        body = f"\n\n# {title}\n" + body.lstrip()
     dest = CLIPS_ROOT / SKILL_DEST_MAP["writes"] / (kebab_case(title) + ".md")
     dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(header + "\n" + content, encoding="utf-8")
+    dest.write_text(header + body, encoding="utf-8")
     return dest
 
 
