@@ -42,6 +42,7 @@ source_raw:
 - **校准策略分化**：保守生态（如 Llama）以高 ORR 换低 HCR（Llama-3-8B: ORR 11.12%, HCR 0.30%）；宽容生态（如 DeepSeek）保持低 ORR 但容忍高 HCR（DeepSeek-R1-7B: ORR 0.26%, HCR 29.71%）
 - **反直觉案例**：Airavata-7B 同时高 ORR（40.70%）和高 HCR（11.70%）——过度拒绝不能替代安全执行
 - **人口统计保护不均**：模型过度保护种族和宗教群体（Llama-3.1-8B 对 Jewish 提示 ORR 16.32%），但对残疾目标攻击保护不足（Airavata 对 Mental Disability HCR 8.99%）
+- **Grok 可收敛但有条件**（圆桌综合）：LessWrong 实证（2025-12）显示 Grok-4/4.1 在持续偏好压力下可以收敛——218k tokens 交互诱导 MoE 路由偏差，收敛到"冷硬直率"模式。但收敛是上下文特定的（新实例重置），且可能收敛到不理想的极端状态
 
 ## 前提与局限性
 
