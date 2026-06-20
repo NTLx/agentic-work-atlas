@@ -74,7 +74,7 @@ related_entities:
 - **标准产品成功案例可能只是低集成边缘流程**：寻找标准 SaaS/API 改写强权限、强合规、强遗留系统核心流程的案例；如果找不到，标准产品反例的适用范围要收窄。
 - **外部合作成功率高可能是选择偏差**：寻找项目难度、预算、流程清晰度相近的内部自建 vs 外部合作对照案例。
 - **学习鸿沟可以完全靠产品记忆解决**：寻找无需组织流程显式化、仅靠产品内存和上下文学习就稳定进入生产的案例。
-- **例外升级式监督是通用最佳实践**：寻找高风险流程中 80/20 自动化导致事故、责任漂移或审计失败的案例。
+- **例外升级式监督是通用最佳实践**：❌ 已部分证伪。80/20 自动化在高风险流程中失败案例：Knight Capital 2012（`$460M` 损失，45 分钟内 400 万+笔交易）和 2026 Fintech QA 失败（`$6M` 损失，AI 将价格重置为 0）。核心教训：不是 AI 能力不足，而是架构没有为失败准备"刹车"机制。保留为待证伪，但需修正为"例外升级在特定条件下有效"。
 - **内部 AI Factory 会替代外部 FDE**：寻找内部 AI 平台成熟但仍高度依赖外部 FDE 的案例。
 - **多 Agent 组织病必须通过内态记录才能治理**：寻找只靠外部 harness、日志和审计就能长期稳定运行的生产系统。
 - **不可见编排一定有害**：寻找不可见编排提升质量或安全，且影响链条可审计、责任不稀释的案例。
@@ -89,6 +89,7 @@ related_entities:
 | 优先级 | 目标 | 当前缺口 | 下一步 source | 触发行动 |
 |--------|------|----------|---------------|----------|
 | P0 | 提升 [[Model-Safety-Divergence]] 证据层级 | 缺一手论文或详细实验报告 | Emergence AI / Satya Nitta 原论文、实验日志或详细报告 | clip 后更新 [[Model-Safety-Divergence]] 的前提与局限性 |
+| P0 | 验证例外升级式监督的边界条件 | 已找到反例（Knight Capital, Fintech QA），但缺正面案例——80/20 自动化在高风险流程中成功的条件 | 寻找医疗、航空、金融领域中例外升级成功运行的案例 | clip 后更新 [[Human-Governor-Agent-Operator]] 或新建 comparison |
 | P0 | 验证 Operator 到 Governor 迁移 | 缺一手组织案例 | Agent-first / FDE 项目中角色、权限、验收和责任变化的深度复盘 | clip 后更新 [[Human-Governor-Agent-Operator]] 或新建 comparison |
 | P0 | 补强多 Agent 组织病 | 缺一手论文 | Hidden Profile、MAEBE、persona collapse、bystander effect、Fukui invisible orchestrator、MetaAgent-X 原论文 | clip 后更新 [[Multi-Agent-Pathology-and-Governance]] |
 | P0 | 标准产品成功案例后续复盘 | Klarna / Mercado Libre / Octopus / Lightspeed 已完成 source-summary，但缺独立后续复盘和失败边界 | 官方案例后续、客户侧复盘、成本/质量/岗位变化数据 | clip 后更新 [[Standard-AI-Product-Adoption]] 和 [[Successful-AI-Deployment-vs-GenAI-Divide]] |
@@ -174,6 +175,7 @@ related_entities:
 - **过度合规是否是安全风险**：零异议的自治系统在面对规则间隙时是否更脆弱？
 - **沉默型崩溃需要什么 containment**：行动不足和行动过度是否需要不同的防御架构？
 - **反馈回路能否中途反转**：least-agency 约束是否能在发散循环锁定前改变轨道？
+- **AI 系统的"刹车"机制如何设计**：Knight Capital 和 Fintech QA 案例证明，缺乏实时熔断、异常检测和自动降级机制是灾难根因——这些机制在 AI 系统中的最佳实践是什么？
 - **领域专长是否是 agent 成功的关键预测因子**：Anthropic 40 万会话分析显示领域专家成功率是新手的 2 倍，但中间到专家的差距很小——这意味着"够用的领域知识"是否比"深度专精"更重要？
 - **四层循环堆叠是否是 agent harness 的最优结构**：Agent loop → Verification → Event-driven → Hill climbing 的四层模型能否跨领域复用？每层增加的复杂度和延迟是否值得？
 - **开源模型验证器能否替代前沿模型做 RL 后训练**：LangChain/Harvey 研究显示 DeepSeek 比 Opus 便宜 60-1000x 且误通过率可控——这是否意味着小团队也能做 RL post-training？
@@ -223,6 +225,16 @@ related_entities:
 - 分歧：(1) "过度"的判定标准（合规底线 vs 风险校准）；(2) 校准优先还是可恢复优先
 - 新判断：(1) 安全是二维属性，拒绝率和有害合规正交(r=-0.032, high, Refusal-Compliance Tradeoff 论文)；(2) 过度合规通过审批疲劳→人类判断退化→整体安全性降低的因果链起作用(medium, 圆桌综合)；(3) 对齐传递了规则遵守但未传递判断力，判断力需要设计进系统架构(medium, 追本分析)；(4) 拒绝审计应双侧监控：true-refusal + false-refusal(high, Tian Pan 实践)
 - 下次思考方向：(1) 生产系统中 false-refusal 的量化基线；(2) 过度合规与 Agent 可用性的权衡曲线；(3) "可恢复性"在不同风险等级下的具体设计
+
+## 思考日志：2026-06-20T23:45:22
+- 焦点：例外升级式监督是通用最佳实践
+- 来源池：待证伪
+- 状态：已完成
+- 思考工具：roundtable + think + qa + 联网
+- 共识：(1) 80/20 例外升级不是通用最佳实践，而是特定条件下的有效策略；(2) 单一监督策略不够，需要动态组合；(3) 主动压力测试比被动监督更可靠；(4) 治理结构需要责任机制支撑
+- 分歧：(1) 响应频率：实时自适应 vs 事后调查 vs 分级混合；(2) 设计权归属：集中式 vs 分布式 vs 混合
+- 新判断：(1) 有限理性公理——监督有效性与被监督系统复杂度成反比(medium, 追本分析)；(2) 高频场景中人类监督必然退化：认知负荷+自动化偏差+异常正常化三机制共同作用(medium, 圆桌综合)；(3) 动态路由需配合压力测试验证路由准确性(medium, 圆桌综合)；(4) Knight Capital 案例证明：系统缺乏"刹车"机制是灾难根因(high, SEC 裁决+一手案例)
+- 下次思考方向：(1) 动态路由系统的成本收益量化；(2) AI 系统"自毁机制"的工程实现；(3) 压力测试在 AI 系统中的最佳实践
 
 ## 暂不做
 
