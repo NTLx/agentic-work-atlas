@@ -34,6 +34,16 @@
 
 ## 工作流（六阶段）
 
+### 阶段 0：获取时间戳
+
+**关键**：你必须用系统命令获取当前时间戳，不要自己生成。
+
+```bash
+python3 -c "from datetime import datetime; print(datetime.now().isoformat(timespec='seconds'))"
+```
+
+将输出（如 `2026-06-20T23:22:03`）保存为变量 `TIMESTAMP`，后续所有需要时间戳的地方都用这个值。
+
 ### 阶段 1：焦点选择
 
 从以下候选池中按优先级挑选本次焦点（选一个即可）：
@@ -57,9 +67,9 @@
 - 如果优先级 2 也空了，转优先级 3
 - 如果全部空了，输出"本次无焦点，退出"并结束任务
 
-**本次焦点记录**：在开始思考前，先在 research-agenda.md 末尾追加一行：
+**本次焦点记录**：在开始思考前，先在 research-agenda.md 末尾追加一行（使用阶段 0 获取的 `TIMESTAMP`）：
 ```
-## 思考日志：YYYY-MM-DDTHH:MM:SS
+## 思考日志：[TIMESTAMP]
 - 焦点：[焦点标题]
 - 来源池：[待证伪/待验证/低证据]
 - 状态：思考中...
@@ -176,9 +186,9 @@
    ```
    如果有报错，修复后重新运行直到通过。
 
-2. **结构化 commit message**：
+2. **结构化 commit message**（使用阶段 0 获取的 `TIMESTAMP`）：
    ```
-   explore(重编译): YYYY-MM-DDTHH:MM:SS 深度思考 [焦点标题]
+   explore(重编译): [TIMESTAMP] 深度思考 [焦点标题]
 
    - 焦点来源：[待证伪/待验证/低证据]
    - 焦点标题：[具体标题]
@@ -210,7 +220,7 @@
 
 ```
 === 重编译摘要 ===
-时间戳：YYYY-MM-DDTHH:MM:SS
+时间戳：[TIMESTAMP]
 焦点：[焦点标题]
 焦点来源：[待证伪/待验证/低证据]
 思考工具：roundtable + [think] + [qa] + [联网]
