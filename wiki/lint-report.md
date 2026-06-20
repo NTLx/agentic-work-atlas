@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-20"
-score: 100
-status: "PASS"
+score: 98
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-06-20
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **98/100**
+> 阻断问题: **2**
 
 ## 统计
 
@@ -37,7 +37,7 @@ tags:
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
-| `source_raw` | 0 |
+| `source_raw` | 2 |
 | `tag` | 55 |
 | `evidence` | 0 |
 | `low-evidence` | 3 |
@@ -53,6 +53,11 @@ tags:
 - `wiki/entities/Emotional-Clarity.md` - `低证据页面 Emotional-Clarity 只能作为补 source 或探索线索`
 - `wiki/entities/Jevons-Paradox-for-Knowledge-Work.md` - `低证据页面 Jevons-Paradox-for-Knowledge-Work 只能作为补 source 或探索线索`
 - `wiki/entities/Wisdom-Work.md` - `低证据页面 Wisdom-Work 只能作为补 source 或探索线索`
+
+### source_raw
+
+- `wiki/entities/Invisible-Orchestrator.md` - `source_raw 目标不存在: [[Governance-Aware Agent Telemetry for Closed-Loop Enforcement in Multi-Agent AI Systems]]`
+- `wiki/topics/Multi-Agent-Pathology-and-Governance.md` - `source_raw 目标不存在: [[Governance-Aware Agent Telemetry for Closed-Loop Enforcement in Multi-Agent AI Systems]]`
 
 ### tag
 
