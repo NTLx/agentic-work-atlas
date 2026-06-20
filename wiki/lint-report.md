@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-20"
-score: 98
+score: 96
 status: "FAIL"
 tags:
   - lint-report
@@ -13,8 +13,8 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **98/100**
-> 阻断问题: **2**
+> 分数: **96/100**
+> 阻断问题: **4**
 
 ## 统计
 
@@ -37,7 +37,7 @@ tags:
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
-| `source_raw` | 2 |
+| `source_raw` | 4 |
 | `tag` | 55 |
 | `evidence` | 0 |
 | `low-evidence` | 3 |
@@ -56,7 +56,9 @@ tags:
 
 ### source_raw
 
+- `wiki/entities/AI-Restraint.md` - `source_raw 目标不存在: [[The Refusal-Compliance Tradeoff: A Large-Scale Safety Behavior Audit of Large Language Models]]`
 - `wiki/entities/Invisible-Orchestrator.md` - `source_raw 目标不存在: [[Governance-Aware Agent Telemetry for Closed-Loop Enforcement in Multi-Agent AI Systems]]`
+- `wiki/entities/Model-Safety-Divergence.md` - `source_raw 目标不存在: [[The Refusal-Compliance Tradeoff: A Large-Scale Safety Behavior Audit of Large Language Models]]`
 - `wiki/topics/Multi-Agent-Pathology-and-Governance.md` - `source_raw 目标不存在: [[Governance-Aware Agent Telemetry for Closed-Loop Enforcement in Multi-Agent AI Systems]]`
 
 ### tag
