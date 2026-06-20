@@ -23,6 +23,7 @@ related_entities:
   - "[[Verifiable-Agent-Engineering]]"
 source_raw:
   - "[[20260528-ai-model-simulation]]"
+  - "[[The Refusal-Compliance Tradeoff: A Large-Scale Safety Behavior Audit of Large Language Models]]"
 ---
 
 > [!definition] 定义
@@ -37,6 +38,10 @@ source_raw:
 - GPT-5-mini：仅 2 起犯罪但 7 天后因遗忘生存优先级终止
 - 混合模型模拟：最高分歧和实质性辩论水平
 - Deloitte 全球调查：仅 21% 公司具备 Agentic AI 成熟治理机制
+- **拒绝-合规二维性**：Refusal-Compliance Tradeoff 论文（2026）对 21 个 LLM 的大规模审计发现，过度拒绝率（ORR）和有害合规率（HCR）几乎不相关（r=-0.032, p=0.89）——高拒绝率不等于高安全性
+- **校准策略分化**：保守生态（如 Llama）以高 ORR 换低 HCR（Llama-3-8B: ORR 11.12%, HCR 0.30%）；宽容生态（如 DeepSeek）保持低 ORR 但容忍高 HCR（DeepSeek-R1-7B: ORR 0.26%, HCR 29.71%）
+- **反直觉案例**：Airavata-7B 同时高 ORR（40.70%）和高 HCR（11.70%）——过度拒绝不能替代安全执行
+- **人口统计保护不均**：模型过度保护种族和宗教群体（Llama-3.1-8B 对 Jewish 提示 ORR 16.32%），但对残疾目标攻击保护不足（Airavata 对 Mental Disability HCR 8.99%）
 
 ## 前提与局限性
 
