@@ -21,6 +21,7 @@ related_entities:
   - "[[Organization-as-Agent-Harness]]"
 source_raw:
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
+  - "[[Governance-Aware Agent Telemetry for Closed-Loop Enforcement in Multi-Agent AI Systems]]"
 ---
 
 # Invisible Orchestrator（不可见编排者）
@@ -92,10 +93,13 @@ Invisible orchestrator 由三件事叠加形成。
 
 治理 invisible orchestrator，不是要求所有内部细节都暴露给 worker，而是要保留足够的组织证据。
 
+GAAT 论文（2026）提供了工程实证：跨 Agent 血缘追踪（lineage tracking）能捕获 per-agent 边界检查遗漏的违规。在 5-agent 电商系统中，GAAT 的完整血缘链 `⟨EU-PII, a1→a4→a5, jurisdiction=US⟩` 检出了 NeMo Guardrails 遗漏的数据驻留违规，VPR 从 78.8% 提升到 98.3%。这说明不可见编排的风险不只是"看不见谁在改写"，还有"看不见影响链如何跨 Agent 传播"。
+
 - **角色显式化**：记录 planner、orchestrator、worker、reviewer 的身份和权限。
 - **输入版本化**：保留原始输入、编排后输入和最终输出，支持 replay。
 - **影响链日志**：记录谁改写了谁的消息，为什么改写，改写了哪些事实或约束。
-- **分歧保留**：不要把反对意见直接压缩成“团队已对齐”；保留少数意见及其证据。
+- **跨 Agent 血缘追踪**：记录数据和决策在 Agent 间的完整传播路径，支持端到端策略评估（GAAT 的核心贡献）。
+- **分歧保留**：不要把反对意见直接压缩成"团队已对齐"；保留少数意见及其证据。
 - **写入权声明**：明确最终结果由谁裁决，worker 结论是否被覆盖。
 - **结构体检**：定期比较公开输出、私下推理、改判理由和最终答案是否一致。
 
