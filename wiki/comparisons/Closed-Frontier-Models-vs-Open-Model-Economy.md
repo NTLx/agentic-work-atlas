@@ -4,7 +4,7 @@ title: "Closed Frontier Models vs Open Model Economy"
 entity_a: "[[Intelligence-Premium]]"
 entity_b: "[[Open-Source-Operational-AI-Framework]]"
 created: 2026-06-05
-updated: 2026-06-15
+updated: 2026-06-20
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -17,9 +17,11 @@ related_entities:
   - "[[Layered-AI-Sourcing]]"
   - "[[Open-Source-Operational-AI-Framework]]"
   - "[[Agentic-Engineering]]"
+  - "[[API-Distillation-Catch-Up]]"
 source_raw:
   - "[[Open and closed models are on different exponentials]]"
   - "[[20260617-bytebytego-open-weight-models]]"
+  - "[[20260619-the-data-black-hole-at-the-center-of-ai]]"
 ---
 
 # Closed Frontier Models vs Open Model Economy
@@ -38,13 +40,13 @@ source_raw:
 | 企业采购问题 | 是否值得为边际智能付溢价 | 是否达到质量阈值并降低长期约束 |
 | 失败模式 | 供应商锁定、价格上行、API 延迟开放、数据边界 | 集成碎片化、运维能力不足、质量责任内化 |
 
-## Lambert 的核心判断
+## Lambert 的核心判断与数据黑洞下的蒸馏追赶
 
 Nathan Lambert 认为，coding agents 让闭源模型第一次出现清楚的高溢价市场。复杂知识工作者会为更强模型付费，因为模型能力差异会改变任务完成率、返工量和人类注意力消耗。
 
-这不是说开放模型不重要。相反，开放模型会在更广泛经济中持续扩散：当任务达到“足够好”阈值后，企业会更看重成本、可控性、延迟、数据边界和本地改进能力。
+但这并不意味着开源/开放模型会被甩开。Dwarkesh Patel 指出，开源模型与前沿闭源模型的性能代差已被压缩至约 4 个月。这种极速的追赶得益于 [[API-Distillation-Catch-Up|API 蒸馏追赶效应]]：数据是推动 AI 进步的真实驱动力，而后进者能轻易通过公开 API 蒸馏前沿模型的高质量数据来拓宽自己的数据分布。
 
-因此，两者不是简单替代，而是分层进入不同工作流。
+这说明，当任务达到“足够好”阈值后，企业会更看重成本、可控性、延迟、数据边界和本地改进能力。两者不是简单替代，而是分层进入不同工作流。
 
 ## 与企业模型采购的关系
 

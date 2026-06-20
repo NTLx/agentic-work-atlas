@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-06-19"
+date: "2026-06-20"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-06-19
+# Agentic Work Atlas Lint 报告 - 2026-06-20
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -20,10 +20,10 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 143 |
-| Raw 已编译 | 143 |
+| Raw 来源 | 144 |
+| Raw 已编译 | 144 |
 | Raw 待编译 | 0 |
-| Entity | 267 |
+| Entity | 270 |
 | Topic | 29 |
 | Comparison | 18 |
 | Output | 5 |
@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 54 |
+| `tag` | 55 |
 | `evidence` | 0 |
 | `low-evidence` | 3 |
 | `stale-core` | 0 |
@@ -97,6 +97,7 @@ tags:
 - `wiki/sources/20260617-openai-lifescibench.md` - `一次性 tag 仅出现 1 次: 'life-science'`
 - `wiki/sources/20260617-langchain-art-of-loop-engineering.md` - `一次性 tag 仅出现 1 次: 'loop-engineering'`
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'model-architecture'`
+- `wiki/entities/API-Distillation-Catch-Up.md` - `一次性 tag 仅出现 1 次: 'model-sourcing'`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'open-specification'`
 - `wiki/sources/20260618-openai-rare-disease-diagnosis.md` - `一次性 tag 仅出现 1 次: 'openai-o3'`
 - `wiki/sources/20260617-bayer-prince-agentic-rag.md` - `一次性 tag 仅出现 1 次: 'pharma'`
