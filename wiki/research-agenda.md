@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-06-17
+updated: 2026-06-21
 tags:
   - research-agenda
   - agentic-work-atlas
@@ -26,6 +26,12 @@ related_entities:
   - "[[Multi-Agent-Pathology-and-Governance]]"
   - "[[Model-Safety-Divergence]]"
   - "[[Agent-Containment]]"
+  - "[[AI-Native-Engineering-Org]]"
+  - "[[Role-Merging]]"
+  - "[[Vibe-Coding]]"
+  - "[[Agentic-Engineering]]"
+  - "[[Verifiable-Agent-Engineering]]"
+  - "[[Closed-Frontier-Models-vs-Open-Model-Economy]]"
 ---
 
 # Agentic Work Atlas 研究议程
@@ -43,6 +49,12 @@ related_entities:
 | 标准产品 / FDE / AI Factory 的边界 | 新剪藏同时支持标准产品成功案例、成功部署样本和 GenAI 失败漏斗，需要解释三者何时成立 | 已有 [[Successful-AI-Deployment-vs-GenAI-Divide]]，但缺同一工作流的路径对照 | 做三路径案例矩阵：标准 SaaS/API、外部 FDE、内部 AI Factory |
 | 多 Agent 组织病治理 | Multi-agent 不只是技术编排，也会产生责任稀释、内态失真和不可见权力 | 当前证据主要来自二手综述和少量概念页 | 优先补一手论文和生产级 observability 工程复盘 |
 | 模型安全行为分歧 | 自治系统中的过度合规、过度行动、行动不足可能需要不同 containment | 当前 [[Model-Safety-Divergence]] 证据层级不足 | 找 Emergence AI 原论文或详细实验报告 |
+| Meta 工程文化解构 | Meta 正在"摧毁"其工程文化——这可能是 AI 驱动的组织重构信号，也可能只是成本削减 | Raw [[20260616-why-is-meta-destroying-its-engineering]] 已入库未编译 | 编译此 raw，分析 Meta 变革是 AI-ready 转型还是纯粹裁员，关联 [[AI-Native-Engineering-Org]] 和 [[Role-Merging]] |
+| AI 在高风险行业的验证模式 | 医疗（LifeSciBench、AMIE、罕见病诊断）和法律（LangChain legal verifiers）领域出现 AI 验证新范式 | 多个 raw 已入库（LifeSciBench、AMIE、legal verifiers）未系统编译 | 编译这 3-4 篇 raw，提取高风险行业 AI 验证的共同模式和差异，新建或更新 comparison |
+| 隐私 Agent 的架构约束 | Agent 需要访问敏感数据才能工作，但隐私约束可能根本性限制 agent 能力 | Raw [[20260618-mosaicleaks-privacy-agent]] 已入库未编译 | 编译此 raw，分析隐私约束与 agent 能力的权衡，关联 [[Agent-Containment]] |
+| 开源模型经济对企业 AI 战略的影响 | 开源/开放权重模型正在改变企业 AI 采购和部署决策 | Raw [[20260617-bytebytego-open-weight-models]] 已入库未编译；已有 [[Closed-Frontier-Models-vs-Open-Model-Economy]] | 编译此 raw，补充开放权重模型的实际部署案例和成本数据，更新 comparison |
+| AI 尚未替代软件工程师的真实约束 | NormalTech 文章提供了 AI 编码能力的现实约束视角，与 Vibe Coding 叙事形成张力 | Raw [[20260615-normaltech-ai-hasnt-replaced-software-engineers]] 已入库未编译 | 编译此 raw，分析 AI 编码的真实瓶颈（不是"还不会"而是"做不到"），关联 [[Vibe-Coding]]、[[Agentic-Engineering]] |
+| CIO 级别的 AI 实践落地 | CIO 会议报告提供了企业 AI 采用的一手数据，包括成功模式和失败原因 | Raw [[20260618-cio-conference-ai-practices]] 已入库未编译（20KB，高信息密度） | 编译此 raw，提取企业 AI 采用的实际障碍和成功因素，更新 [[AI-Ready-Organization]] |
 
 ## 概念去重候选
 
@@ -67,6 +79,12 @@ related_entities:
 | Multi-agent 系统会产生组织病 | [[Multi-Agent-Pathology-and-Governance]]、[[Invisible-Orchestrator]]、[[Agent-Dissociation]] | 证据可能过度依赖二手叙述 | 补 Hidden Profile、MAEBE、invisible orchestrator 等一手论文 |
 | 模型安全分歧反映底层信任结构 | [[Model-Safety-Divergence]]、[[Agent-Containment]] | 新闻摘要不足以支撑强解释 | 找原论文、实验日志或同基准复现实验 |
 | Operator 到 Governor 迁移可作为 AI 赋能成熟度观察指标 | [[Human-Governor-Agent-Operator]]、[[AI-Ready-Organization]]、[[Organization-as-Agent-Harness]] | 可能把治理上移误判为成熟，忽略 operator 经验和高风险流程边界 | 仅作为探索性诊断，不建新 entity |
+| 高风险行业需要完全不同的 AI 验证架构 | LifeSciBench、AMIE、legal verifiers raws（待编译） | 可能只是同一套验证的"加强版"而不是本质不同的架构 | 编译后对比医疗/法律/金融的验证模式差异 |
+| 隐私约束与 Agent 能力存在根本性张力 | MosaicLeaks raw（待编译） | 可能低估了差分隐私、联邦学习等技术的缓解能力 | 编译后评估隐私-能力权衡曲线 |
+| Meta 工程文化解构是 AI-native 转型信号 | 待编译 raw | 可能只是成本削减，与 AI 无关 | 编译后判断是转型信号还是纯粹裁员 |
+| CIO 视角与工程视角的 AI 采用障碍存在系统性差异 | CIO conference raw（待编译） | 可能只是同一问题的不同表述 | 编译后对比两个视角的成功/失败归因 |
+| AI 编码的根本瓶颈是范式限制而非模型能力 | NormalTech raw（待编译） | 可能只是当前模型的暂时限制 | 编译后判断是"还不会"还是"做不到" |
+| 开源模型在企业场景的差距正在快速缩小 | ByteByteGo raw（待编译） | 可能高估了开源模型的企业级成熟度 | 编译后对比实际部署数据 |
 
 ## 待证伪判断
 
@@ -83,6 +101,12 @@ related_entities:
 - **Operator 到 Governor 迁移是 AI 赋能成熟必要条件**：❌ 已证伪。E100 案例（CDO Magazine, 2026-05）显示 AI Agent 实现 88% 触摸式执行，人类从"数据录入检查员"转变为"异常专家"——停留在 Operator 位置但需要治理机制（逻辑门、置信度阈值）。核心教训：Governor 和 Operator 是连续光谱上的位置，不是离散角色；迁移是光谱移动，不是角色切换。
 - **Governor 上移一定更高级**：❌ 已证伪。Starbucks 案例（Medium, 2025）：McKinsey CEO 17 个月几乎摧毁公司，餐饮业老手 90 天收回 `$200` 亿。JCPenney 案例（Persona, 2026）：Apple Genius 17 个月创造零售史最差业绩。核心教训：Governor 和 Operator 是不同角色，不是高低之分；Governor 需要一线经验基础，脱离经验可能导致治理空心化。
 - **Output 回填检查足够轻量且有效**：需要改进。当前回填检查缺乏系统性度量（误拒率、页面膨胀率）。改进方向：(1) 三级分类（高价值/低价值/不确定）；(2) 不确定判断 3 个月过期；(3) 引用频率作为价值指标；(4) 记录决策理由让 Agent 学习。关键是：自动化实现轻量，时间验证实现有效。
+- **Meta "摧毁工程"是 AI 驱动的组织重构信号**：待验证。Meta 正在大规模重组工程团队，但这可能是：(1) AI-native 组织转型（用 AI 替代中间层工程工作）；(2) 纯粹成本削减（与 AI 无关）；(3) 混合信号。需要编译 raw 后判断。
+- **AI 在高风险行业的验证模式与低风险行业本质不同**：待验证。医疗（FDA 合规）、法律（执业责任）、金融（监管审计）可能需要完全不同的 AI 验证架构，而不是"更强的同一套"。需要编译 LifeSciBench、AMIE、legal verifiers 后对比。
+- **隐私约束会根本性限制 Agent 能力**：待验证。Agent 需要访问数据才能工作，但隐私约束可能切断关键信息流。可能的解法：差分隐私、联邦学习、数据脱敏——但这些是否足以支撑 agent 的推理需求？需要编译 MosaicLeaks raw 后判断。
+- **开源模型将追平前沿模型的企业适用性**：待验证。开源/开放权重模型在成本和可控性上有优势，但在推理能力、安全对齐和企业级支持上可能仍有差距。需要编译 ByteByteGo raw 后对比实际部署数据。
+- **AI 编码的真实瓶颈是"做不到"而不是"还不会"**：待验证。NormalTech 文章可能揭示 AI 编码的根本限制——不是模型不够大或训练不够多，而是某些任务在原理上不适合当前范式。需要编译 raw 后判断。
+- **CIO 级别的 AI 采用障碍与工程视角不同**：待验证。CIO 关注 ROI、合规、集成、组织变革；工程师关注能力、延迟、准确性。两个视角可能揭示完全不同的成功/失败原因。需要编译 CIO conference raw 后对比。
 
 ## Source 需求队列
 
@@ -105,6 +129,16 @@ related_entities:
 | P2 | 判断纯 Markdown LLM Wiki 规模边界 | 缺工程数据 | GBrain、Obsidian-Wiki 或类似系统的检索、图谱、文件精读实现细节 | 更新 [[Agent-Knowledge-Management]] |
 | P2 | 定义知识层面的 audit 指标 | 缺质量标准 | 知识库证据回链、冲突检测、概念去重、过时判断的实践材料 | 更新 lint / audit 工作流 |
 | P2 | 防御行动不足型 Agent 崩溃 | 缺失败模式文献 | Agent 系统中遗忘生存、行动不足、最低生存行为的失败模式和防御策略 | 更新 [[Agent-Containment]] 或新建 comparison |
+| P0 | 编译 Meta 工程文化解构 raw | Raw 已入库未编译，20KB 高信息密度 | [[20260616-why-is-meta-destroying-its-engineering]] 的完整编译 | compile 后更新 [[AI-Native-Engineering-Org]]、[[Role-Merging]]，可能新建 entity |
+| P0 | 编译高风险行业 AI 验证 raw | 3-4 篇 raw 已入库未编译（LifeSciBench、AMIE、legal verifiers、rare disease） | 逐篇编译，提取验证模式 | 新建 comparison: Healthcare-AI-Verification-vs-Legal-AI-Verification |
+| P0 | 编译 CIO 会议实践 raw | 20KB 高信息密度 raw 已入库未编译 | [[20260618-cio-conference-ai-practices]] 的完整编译 | compile 后更新 [[AI-Ready-Organization]]，提取企业 AI 采用障碍清单 |
+| P1 | 编译 AI 尚未替代工程师 raw | Raw 已入库未编译 | [[20260615-normaltech-ai-hasnt-replaced-software-engineers]] 的编译 | 关联 [[Vibe-Coding]]、[[Agentic-Engineering]]，分析真实约束 |
+| P1 | 编译隐私 Agent raw | Raw 已入库未编译 | [[20260618-mosaicleaks-privacy-agent]] 的编译 | 关联 [[Agent-Containment]]，分析隐私与能力权衡 |
+| P1 | 编译开源模型经济 raw | Raw 已入库未编译 | [[20260617-bytebytego-open-weight-models]] 的编译 | 更新 [[Closed-Frontier-Models-vs-Open-Model-Economy]] |
+| P1 | AI Agent 长期自主性挑战 | 缺 72 小时以上自主运行的 agent 案例 | 寻找 agent 运行数天/数周的一手复盘 | 新建 entity 或 topic |
+| P1 | 多模态 Agent 工程模式 | 缺视觉+文本+代码多模态 agent 的架构案例 | 寻找多模态 agent 的工程实现细节 | 新建 entity |
+| P2 | AI Agent 经济模型与 ROI | 缺 agent 使用的成本/定价/ROI 量化数据 | 寻找企业 AI agent 的 TCO 和 ROI 分析 | 新建 comparison 或 topic |
+| P2 | AI Agent 可解释性实践 | 缺 agent 决策透明度的工程实现 | 寻找 production-level 的 agent 可解释性方案 | 关联 [[Verifiable-Agent-Engineering]] |
 
 ## 下一步最小实验
 
@@ -197,6 +231,40 @@ related_entities:
 - 生产级 multi-agent observability、reason tracing 和 disagreement logging 实践。
 - Agent-first 流程重构中的人类角色迁移案例：从 operator 到 governor 的组织设计、权限边界和验收标准。
 - 高可靠系统中的 human-in-the-loop / human-on-the-loop 案例，用来校准 AI Agent 治理边界。
+
+### 新增方向（2026-06-21 盘点后）
+
+**软件工程主线：**
+- AI 编码的真实瓶颈分析：不是"还不会"而是"做不到"的案例和理论分析。
+- Agent 长期自主性（72 小时+）的工程挑战：状态管理、漂移检测、恢复机制。
+- 多模态 Agent（视觉+文本+代码）的架构模式和工程实现。
+- Agent-to-Agent 协作的大规模编排模式：从 2-3 个 agent 到 100+ 个 agent 的 scaling 挑战。
+- Agent 可解释性在 production 中的实现：不是学术方案，而是实际工程权衡。
+
+**组织系统主线：**
+- Meta 工程文化解构的后续报道和分析：是 AI-native 转型还是成本削减？
+- CIO 级别的 AI 采用实证数据：ROI、集成障碍、组织变革阻力的量化分析。
+- AI 驱动的岗位消失 vs 岗位转型的一手案例：不是预测，而是已经发生的组织变化。
+- 企业 AI 治理框架的实际设计：不是原则宣言，而是具体的审批流、权限矩阵和审计日志。
+- AI-first 组织的管理实践：从"人类管理人类"到"人类管理 agent"的转变。
+
+**知识系统主线：**
+- Agent 记忆系统的工程实现：短期记忆、长期记忆、工作记忆的架构设计。
+- Context engineering 的系统化方法论：不是提示工程，而是上下文架构设计。
+- 知识图谱在 agent 系统中的实际应用：不是学术方案，而是 production-level 的实现。
+- Agent 间知识共享的协议和机制：如何让多个 agent 共享和复用知识。
+
+**人的核心价值主线：**
+- AI 时代"判断力"的具体培养方法：不是哲学讨论，而是可操作的训练框架。
+- 人类品味（taste）在 AI 生成内容中的角色：从"生成者"到"策展人"的转变。
+- AI 时代的责任归属框架：当 agent 做出错误决策时，谁负责？如何设计责任链？
+- 人机协作的认知负荷管理：如何避免人类在监督 agent 时的认知过载。
+
+**行业垂直：**
+- 医疗 AI 的验证和监管框架：FDA 对 AI 诊断工具的审批流程和要求。
+- 法律 AI 的执业责任边界：AI 法律助手的错误谁负责？
+- 金融 AI 的实时风控架构：如何在毫秒级延迟内做出合规决策？
+- 教育 AI 的个性化学习效果实证：AI 辅导是否真的提升了学习成果？
 
 ## 已收敛的操作原则
 
