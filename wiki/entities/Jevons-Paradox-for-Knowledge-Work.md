@@ -5,12 +5,12 @@ aliases:
   - Jevons Paradox for Knowledge Work
 definition: "知识工作领域的杰文斯悖论：AI 效率提升导致知识工作需求大幅增长而非减少"
 created: 2026-04-10
-updated: 2026-04-15
+updated: 2026-06-22
 tags:
   - AI-Agent
   - economy
   - knowledge-work
-evidence_level: low
+evidence_level: medium
 claim_type: mixed
 related_entities:
   - '[[Jevons-Paradox]]'
@@ -98,6 +98,29 @@ ROI = Return / Investment
 ---
 
 > **来源**：Aaron Levie (Box CEO), LinkedIn, 2025-12-29
+
+## 圆桌讨论深度分析（2026-06-22）
+
+### 核心争议
+
+| 立场 | 代表 | 核心观点 |
+|------|------|---------|
+| **需求增长** | Levie, NormalTech, Ng | AI 效率提升 → 成本降低 → 更多企业参与 → 需求爆发 |
+| **技术性失业** | Acemoglu | AI 替代速度可能超过新工作创造速度 |
+| **工作性质变化** | Karpathy | AI 改变工作性质，不是替代工作 |
+
+### 关键洞察
+
+1. **需求增长取决于人类选择**：人类可以选择"做更多"或"工作更少"，需求增长不是自动发生的
+2. **新工作可能是"监督型"**：人类需要从"执行者"转变为"监督者"
+3. **技术性失业是真实风险**：AI 替代速度可能超过新工作创造速度
+4. **历史先例支持需求增长**：大型机→小型机→PC→云，每个时代 100x 增长
+
+### 待验证问题
+
+- AI 替代速度 vs 新工作创造速度的实证数据
+- "人类选择"对需求增长的影响
+- 新工作的性质：监督型 vs 执行型 vs 未知
 
 ## 关联概念
 
