@@ -8,7 +8,7 @@ aliases:
   - CEO AI Psychosis
 definition: "因与 AI 实际工作的'最后一英里'脱节而产生的认知错位——深度用户过度外推高峰体验，CEO 过度相信 AI 能替代人类工作"
 created: 2026-04-16
-updated: 2026-05-30
+updated: 2026-06-21
 tags:
   - AI-agent
   - perception-gap
@@ -27,6 +27,7 @@ source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - '[[20260529-ceo-ai-psychosis-equity-podcast]]'
+  - '[[20260616-why-is-meta-destroying-its-engineering]]'
 ---
 
 # AI Psychosis
@@ -49,6 +50,7 @@ AI Psychosis 不是临床心理学概念，而是 Karpathy 用来描述一种能
 - 免费助手用户、旧模型用户、付费专业用户和顶尖 AI researcher 看到的是不同产品形态。
 - OpenAI 与 NBER 相关研究中，编程在 ChatGPT 查询中占比不高，而非工作类查询占比较高，这会让大众体验低估 coding agent 的冲击。
 - [[Jagged-Intelligence]] 解释了为什么模型能在某些技术任务上很强，同时在普通常识上犯错。
+- **Meta 案例（2026-06）**：30-50% 核心团队工程师被强制调去做数据标注（ADO 组约 6500 人）；所有工程师键盘/鼠标点击被追踪用于 AI 训练（无 opt-out）；30 天使用 60.2 万亿 tokens（价值约 `$900M`）；Instagram 安全漏洞（零认证密码重置）由 AI 生成 + AI 审查代码导致；CISO 在事件次日辞职（[[20260616-why-is-meta-destroying-its-engineering]]）
 
 ## 风险与用法
 
