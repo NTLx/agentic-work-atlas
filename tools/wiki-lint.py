@@ -42,6 +42,7 @@ COUNT_LABELS = {
     "Comparison 页面": ("comparisons", WIKI / "comparisons"),
     "Raw 文章": ("raw", RAW),
     "Output 作品": ("outputs", WIKI / "outputs"),
+    "Research 日志": ("research", WIKI / "research" / "research-logs"),
 }
 
 STANDARD_ENTITY_SECTIONS = (
@@ -705,7 +706,7 @@ def print_summary(issues: list[Issue], stats: dict[str, int], pending: list[Path
     print("Agentic Work Atlas Lint")
     print("=" * 60)
     print(f"Raw: {stats['raw']}（已编译 {stats['raw_compiled']}，待编译 {stats['raw_pending']}）")
-    print(f"Entity: {stats['entities']} | Topic: {stats['topics']} | Comparison: {stats['comparisons']} | Output: {stats['outputs']}")
+    print(f"Entity: {stats['entities']} | Topic: {stats['topics']} | Comparison: {stats['comparisons']} | Output: {stats['outputs']} | Research: {stats['research']}")
     print(f"阻断问题: {len(blocking)}")
 
     grouped = group_issues(issues)
