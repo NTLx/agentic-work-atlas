@@ -862,3 +862,13 @@ related_entities:
 - 分歧：(1) 评测深度：深度过程指标 vs 简单健康检查；(2) 不可游戏化设计：独立性+多维度 vs 多层验证 vs 审计追踪 vs 结果验证；(3) 不可验证结果评测：需要过程指标 vs 结果验证够用
 - 新判断：(1) 多 Agent 组织病=外部组织病+群体认知病+内态解离病——需要检查过程指标(medium, Multi-Agent Pathology 框架)；(2) 最终答案正确≠系统健康——过程指标是发现问题关键(medium, Anthropic 视角)；(3) 不可游戏化指标=独立性+多维度交叉+随机抽查——让"通过检查"和"真正做好"一致(medium, DeepMind 设计)；(4) 审计追踪让游戏化变得困难——决策日志+变更日志+异常日志(medium, 企业 IT 审计)；(5) 结果验证是最简单的不可游戏化指标——如果结果可验证就不需要复杂过程指标(medium, Willison 实践)
 - 下次思考方向：(1) 找多 Agent 组织病评测的实际案例；(2) 设计不可游戏化评测指标框架；(3) 验证不可验证结果的评测方法
+
+## 思考日志：2026-06-22T08:30:26
+- 焦点：沉默型崩溃需要什么 containment
+- 来源池：待验证问题
+- 状态：已完成
+- 思考工具：roundtable + think
+- 共识：(1) 沉默型崩溃是真实风险；(2) 行动不足和行动过度需要不同 containment；(3) Containment 需要配合 brake
+- 分歧：(1) Containment 深度：不同 containment vs 冗余 vs 简单；(2) Containment-Brake 协同：阶段式 vs 风险等级匹配 vs 独立监控 vs 状态同步；(3) 故障转移：Containment 优先 brake 兜底 vs 其他机制
+- 新判断：(1) 沉默型崩溃=行动不足+行动过度——Containment 限制可操作范围防止两种崩溃(medium, Agent-Containment 定义)；(2) 行动不足需要最低行为标准行动过度需要最大行为限制——设计原则不同(medium, Anthropic 框架)；(3) Containment+Brake 协同=预防→检测→响应→恢复——三阶段无缝衔接(medium, Knight 框架)；(4) 风险等级决定 Containment 和 brake 深度——低风险简单高风险冗余(medium, Anthropic 视角)；(5) Containment 优先 brake 兜底——关键是故障转移机制(medium, Willison 实践)
+- 下次思考方向：(1) 找沉默型崩溃的实际案例；(2) 设计 Containment-Brake 集成框架；(3) 验证故障转移机制的最佳实践
