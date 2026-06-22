@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-06-13
+updated: 2026-06-22
 evidence_level: high
 claim_type: mixed
 tags:
@@ -36,6 +36,8 @@ related_entities:
   - "[[AGENTS-md]]"
   - "[[Deterministic-Retrieval]]"
   - "[[NLAH]]"
+  - "[[Agent-Ergonomics]]"
+  - "[[Kun-Chen]]"
 source_raw:
   - "[[The Anatomy of an Agent Harness]]"
   - "[[Maintainability sensors for coding agents]]"
@@ -54,6 +56,7 @@ source_raw:
   - "[[20260613-coding-agent-organizational-engineering]]"
   - "[[20260613-qoder-human-bottleneck]]"
   - "[[20260613-aliyun-agent-infra-constraint-infrastructure]]"
+  - "[[20260620-l8-principal-agentic-workflow]]"
 ---
 
 # Agent Harness

@@ -6,7 +6,7 @@ aliases:
   - Agentic Verification
 definition: "Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境、执行操作、观察结果并判断是否通过"
 created: 2026-06-12
-updated: 2026-06-16
+updated: 2026-06-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -17,8 +17,11 @@ related_entities:
   - "[[Claude-Code-CLI]]"
   - "[[Agent-Loops]]"
   - "[[Auto-Mode]]"
+  - "[[Validation-Pipeline]]"
+  - "[[Captain-Mindset]]"
 source_raw:
   - "[[20260608-reflecting-on-year-of-claude-code]]"
+  - "[[20260620-l8-principal-agentic-workflow]]"
 ---
 
 > [!definition] 定义
@@ -42,3 +45,5 @@ source_raw:
 - [[Claude-Code-CLI]] — Agent verification 的主要载体
 - [[Agent-Loops]] — Verification 是 loop 的核心环节
 - [[Auto-Mode]] — Auto mode 让 verification 循环可以无人值守运行
+- [[Validation-Pipeline]] — 系统化验证管线：对抗审查 + e2e 测试 + 证据生成 + PR babysitting
+- [[Captain-Mindset]] — 验证能力的组织意义：人类从审 diff 转向看证据

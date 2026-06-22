@@ -17,11 +17,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 274 个 |
+| Entity 页面 | 278 个 |
 | Topic 页面 | 30 个 |
 | Comparison 页面 | 18 个 |
-| Raw 文章 | 147 个 |
-| Source Summary | 148 个 |
+| Raw 文章 | 148 个 |
+| Source Summary | 150 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 5 个 |
 
@@ -51,6 +51,9 @@ tags:
 | [[wiki/entities/Vibe-Coding\|Vibe Coding（氛围编程）]] | 依靠直觉和多轮提示快速产出原型但缺乏严谨验证的开发模式 | Andrej Karpathy |
 | [[wiki/entities/Model-Context-Protocol-MCP\|MCP（Model Context Protocol）]] | 统一的模型与工具连接协议标准 | Pinterest Engineering |
 | [[wiki/entities/N-Hour\|N-Hour]] | 补丁发布后数小时内即被 AI 构建利用代码的新网络安全现实 | Anthropic Exploit Study |
+| [[wiki/entities/Agent-Ergonomics\|Agent Ergonomics（Agent 人体工学）]] | 以 Agent 为第一公民的工具设计哲学，AXI 十原则 | L8 Principal Agentic Workflow |
+| [[wiki/entities/Validation-Pipeline\|Validation Pipeline（验证管线）]] | 自动化端到端验证管线：对抗审查 + e2e + 证据生成 | L8 Principal Agentic Workflow |
+| [[wiki/entities/Captain-Mindset\|Captain Mindset（船长思维）]] | 人从 sailor 到 captain 的角色转型，规划+质量把关 | L8 Principal Agentic Workflow |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
@@ -61,6 +64,7 @@ tags:
 | [[wiki/entities/Knowledge-Work\|Knowledge Work（知识工作）]] | 正在被 AI 重新定义效率边界和价值内核的工作类型 | Jevons Paradox for Knowledge Work |
 | [[wiki/entities/Role-Merging\|Role Merging（角色融合）]] | AI 让 PM/设计师/财务等非工程角色也能写代码，同时让工程师端到端交付产品 | Claude Code 一周年 |
 | [[wiki/entities/AI-Capability-Management-Alignment\|AI Capability-Management Alignment（AI 能力-管理对齐）]] | 不同能力层级的 AI 需要不同管理方式，与管理人的能力-委派匹配模型同构 | 数字生命卡兹克 |
+| [[wiki/entities/Kun-Chen\|Kun Chen]] | 前 L8 Principal Engineer，AXI / No Mistakes / First Mate 工具链作者 | L8 Principal Agentic Workflow |
 
 #### 知识与语义
 | Entity | 定义 | 来源 |
@@ -90,11 +94,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（146 个）*
+*原始剪藏文章（148 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-06-22——数字生命卡兹克《AI用得好不好，跟你会不会管人，我觉得越来越是同一件事》，新增 AI-Capability-Management-Alignment entity + AI-Management-Mindset-Transfer topic。
+最新编译：2026-06-22——Kun Chen《L8 Principal's Agentic Engineering Workflow》，新增 Agent-Ergonomics、Validation-Pipeline、Captain-Mindset、Kun-Chen entities + source summary。
 
 ---
 

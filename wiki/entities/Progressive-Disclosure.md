@@ -6,7 +6,7 @@ aliases:
   - Skillify
 definition: "根据任务语境分层加载知识的策略，让 Agent 先读高价值摘要，再按需展开证据和细节"
 created: 2026-05-13
-updated: 2026-06-11
+updated: 2026-06-22
 tags:
   - knowledge-management
   - AI
@@ -22,8 +22,9 @@ related_entities:
   - "[[Knowledge-Compilation]]"
   - "[[Code-as-Conceptual-Infrastructure]]"
 source_raw:
-  - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
-  - "[[20260611-openai-harness-engineering]]"
+  - “[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的”自组织”与”自进化”]]”
+  - “[[20260611-openai-harness-engineering]]”
+  - “[[20260620-l8-principal-agentic-workflow]]”
 ---
 
 # Progressive-Disclosure（渐进式披露）
@@ -43,7 +44,7 @@ source_raw:
 
 - **与传统 Skill 的区别**：传统 Skill 固化为特定 `SKILL.md` 文件或指令集；Skillify 将 Skill 泛化为知识组织形态，任何 Markdown 文件、文档片段或笔记都可以被按需加载。
 - **GBrain 的三层检索流程**：先用低成本 chunk 判断相关性，再加载完整页面，最后按优先级呈现结论、结构和证据。
-- **Token 效率**：分层呈现避免把无关搜索结果全部塞进上下文，减少 token 消耗和注意力噪音。
+- **Token 效率**：分层呈现避免把无关搜索结果全部塞进上下文，减少 token 消耗和注意力噪音。Kun Chen (2026) 的 Skills 实践印证了这一点——将 project memory 中条件性使用的信息（如 e2e testing 指令）提取为 skill，Agent 仅在需要时加载，避免每次请求都消耗 tokens。
 - **认知路径**：先结论、后证据、再细节，能减少模型过早陷入局部材料。
 - **Wiki 结构要求**：页面必须有清晰 metadata、definition、summary、关联链接和 source_raw，否则 Agent 很难判断是否继续展开。
 

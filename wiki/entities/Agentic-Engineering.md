@@ -7,7 +7,7 @@ aliases:
   - 代理式工程
 definition: "用 coding agents 辅助开发软件的工程实践；Simon Willison 系统化了 code execution、测试和反模式等实践，Karpathy 则将其与 Vibe Coding 区分为保持专业质量上限的严肃工程纪律"
 created: 2026-04-09
-updated: 2026-06-13
+updated: 2026-06-22
 evidence_level: high
 claim_type: mixed
 tags:
@@ -35,6 +35,10 @@ related_entities:
   - "[[Friction-as-Design-Signal]]"
   - "[[AI-Native-Engineering-Org]]"
   - "[[Intelligence-Premium]]"
+  - "[[Captain-Mindset]]"
+  - "[[Agent-Ergonomics]]"
+  - "[[Validation-Pipeline]]"
+  - "[[Kun-Chen]]"
 source_raw:
   - "[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]"
   - "[[Using Git with coding agents - Agentic Engineering Patterns]]"
@@ -56,6 +60,7 @@ source_raw:
   - "[[Open and closed models are on different exponentials]]"
   - "[[20260613-qoder-human-bottleneck]]"
   - "[[20260613-coding-agent-organizational-engineering]]"
+  - "[[20260620-l8-principal-agentic-workflow]]"
 ---
 
 ## 核心范式演进
@@ -146,6 +151,17 @@ Claude Code 团队的经验可以概括为四个迁移：
 
 这使 [[AI-Native-Engineering-Org]] 成为 Agentic Engineering 的组织化形态：个人 agent loop 要升级为团队验证、计划、权限和责任系统。
 
+### 船长模型（Kun Chen, 2026）
+
+[[Kun-Chen]] 将 Agentic Engineering 的人机协作推向更极端的形态——[[Captain-Mindset]]。核心主张：人类角色应从"审 diff 的 reviewer"转为"规划需求 + 看证据做判断的船长"。
+
+实现路径依赖三层工具：
+- **规划层**：交互式 artifact（如 Lavish）替代 text wall 的需求讨论
+- **验证层**：[[Validation-Pipeline]] 自动化对抗审查 + e2e 验证 + 证据生成
+- **编排层**：meta-orchestrator（如 First Mate）管理多 Agent session 切换
+
+支撑这一模型的关键洞察是 [[Agent-Ergonomics]]——工具应以 Agent 为第一公民设计，AXI 标准工具比传统 MCP server 节省 3x token 成本。
+
 ## 模型经济边界
 
 [[Open and closed models are on different exponentials]] 给 Agentic Engineering 补了经济约束。Coding agents 是 [[Intelligence-Premium|智能溢价]] 的强样本，因为复杂软件任务的边际智能会直接影响完成概率、返工量和人类注意力消耗。
@@ -219,6 +235,10 @@ Drew Breunig 提出扩展的三阶段 Agentic Coding 模型：
 - [[Sleep-Token]] — 当 Token 价值高于成本时，让 Token 离线持续产出候选结果的工作模式
 - [[AI-Native-Engineering-Org]] — Agentic Engineering 的组织化形态
 - [[Intelligence-Premium]] — coding agents 中边际智能的经济溢价
+- [[Captain-Mindset]] — 人从 sailor 到 captain 的角色转型
+- [[Agent-Ergonomics]] — Agent-first 工具设计标准
+- [[Validation-Pipeline]] — 自动化验证管线
+- [[Kun-Chen]] — 船长模型与 AXI 工具链
 
 ## 来源
 

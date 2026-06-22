@@ -5,7 +5,7 @@ aliases:
   - Agent Orchestration
 definition: "管理多个 AI Agent 协作的核心架构，负责任务拆解、进度监控、错误处理和结果汇总"
 created: 2026-04-09
-updated: 2026-05-23
+updated: 2026-06-22
 tags:
   - AI-Agent
   - OpenClaw
@@ -19,11 +19,14 @@ related_entities:
   - '[[Three-State-Protocol]]'
   - "[[Invisible-Orchestrator]]"
   - "[[Multi-Agent-System-Pathology]]"
+  - "[[Captain-Mindset]]"
+  - "[[Kun-Chen]]"
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup]]'
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
+  - "[[20260620-l8-principal-agentic-workflow]]"
 ---
 
 # Agent Orchestration
@@ -138,5 +141,7 @@ Elvis 的 Agent Swarm 系统：
 - [[Dual-Tier-LLM-Architecture]] — 分层路由是编排中的请求分发策略
 - [[Invisible-Orchestrator]] — 编排层隐藏权力和信息改写时的风险结构
 - [[Multi-Agent-System-Pathology]] — 多 Agent 编排成功后暴露的组织病理
+- [[Captain-Mindset]] — First Mate 作为 meta-orchestrator 的船长编排模式
+- [[Kun-Chen]] — First Mate / Treehouse 并行 worktree 编排工具链
 
 ## 来源

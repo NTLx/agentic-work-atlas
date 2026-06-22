@@ -6,7 +6,7 @@ aliases:
   - 睡后 Token
 definition: "让 Token 在人离线时持续产出候选结果的工作模式——把输入、边界、验证、回收提前设计好，第二天交给人做价值判断。核心指标是「有多少结果进入了判断流程」而非「烧了多少 Token」"
 created: 2026-06-13
-updated: 2026-06-16
+updated: 2026-06-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -20,6 +20,7 @@ related_entities:
   - "[[Agent-Verification]]"
 source_raw:
   - "[[20260613-qoder-human-bottleneck]]"
+  - "[[20260620-l8-principal-agentic-workflow]]"
 ---
 
 # Sleep-Token（睡后 Token）
@@ -64,3 +65,5 @@ source_raw:
 - [[Agent-Verification]] — 验收漏斗是睡后 Token 安全运行的核心保障
 - [[Coding-Agents]] — 睡后 Token 是 Coding Agent 工作方式的终极演进阶段
 - [[Agentic-Engineering]] — 从"更快打字"到"离线产出"的工程范式转变
+- [[Captain-Mindset]] — 睡后 Token 是船长模式的极端延伸：人完全离线，Agent 持续产出
+- [[Kun-Chen]] — Good Night Have Fun (gnhf) 长时运行任务循环的实现者
