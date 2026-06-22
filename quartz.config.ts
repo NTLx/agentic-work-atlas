@@ -43,7 +43,6 @@ const config: QuartzConfig = {
 
       // AI 工具配置目录（skills 等不应发布）
       ".agents",
-      ".sisyphus",
       ".claude",
       ".codebuddy",
       ".iflow",
