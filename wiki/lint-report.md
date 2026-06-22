@@ -20,13 +20,17 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 146 |
+| Raw 来源 | 147 |
 | Raw 已编译 | 146 |
-| Raw 待编译 | 0 |
+| Raw 待编译 | 1 |
 | Entity | 274 |
 | Topic | 30 |
 | Comparison | 18 |
 | Output | 5 |
+
+## 待编译 Raw
+
+- `raw/20260608-become-ai-native-org.md`
 
 ## 检查项
 
