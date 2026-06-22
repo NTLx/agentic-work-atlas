@@ -811,6 +811,7 @@ uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
 - **Agent 结果必须用 grep 二次验证**（文件系统是真相，agent 可能基于过期缓存）
 - 失效链接检查中，代码块内的 `[[wikilink]]` 占位符（如教程示例）不算真实断裂
 - 评分报告必须列出具体扣分项及每项对应文件，不使用笼统描述
+- **blocking vs non-blocking**：`entity`/`mathjax`/`source_raw`/`wikilink`/`frontmatter`/`date`/`evidence` 为阻断级（exit code 1，CI 失败）；`tag`（数量超标、一次性 tag）、`low-evidence`、`stale-core` 为非阻断级（仅警告）。修复 CI 时只关注阻断级问题
 
 ---
 
@@ -1136,6 +1137,15 @@ docs(schema): 用 Git Commit 规范替代 log.md 记录操作历史
 python3 -c "import sys; print(sys.argv[1].encode().decode('unicode_escape').encode('latin1').decode('utf8'))" 'raw/文件名'
 ```
 
+### GitHub Actions CI 构建失败诊断
+
+```bash
+# 1. 本地复现 CI 错误（--fix-index 自动修复 index 计数，--write-report 写入报告）
+uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
+# 2. 只看阻断级问题（exit code 1 = 有阻断）；tag 问题是 non-blocking，不影响 CI
+# 3. 修复后重新运行确认 "阻断问题: 0"
+```
+
 ## 联网工具（事实核查/时间验证/溯源）
 
 Agent 根据任务性质自主选择最合适的联网工具，不强制绑定单一工具链。以下是各工具的适用场景和使用经验：
@@ -1268,6 +1278,19 @@ for i, line in enumerate(content.split('\n'), 1):
         print(f"Line {i}: {line[m.start()-10:m.end()+10]}")
 PYEOF
 ```
+
+### source_raw 引用不存在的 raw（论文未剪藏）
+
+编译 entity 时引用了学术论文标题作为 source_raw，但论文从未作为 raw 入库。
+lint 会报 `source_raw 目标不存在`。
+**修复**: 移除断裂的 wikilink；论文引用保留在正文中（如"Refusal-Compliance Tradeoff 论文（2026）发现…"），source_raw 只指向实际存在的 raw 文件。
+**预防**: 编译时如果引用了论文，应先剪藏论文到 raw/，再在 source_raw 中链接。
+
+### Entity 标准章节名称必须精确匹配
+
+lint 检查概念 Entity 必须包含 `## 关键数据点`、`## 前提与局限性`、`## 关联概念` 三个章节。
+**陷阱**: `## 关键证据`、`## 数据`、`## 相关概念` 等变体名称不被识别，lint 仍报缺失。
+**修复**: 章节标题必须一字不差地使用规范名称。
 
 ---
 
