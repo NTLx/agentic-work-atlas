@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-06-21
+updated: 2026-06-22
 tags:
   - research-agenda
   - agentic-work-atlas
@@ -32,6 +32,7 @@ related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Verifiable-Agent-Engineering]]"
   - "[[Closed-Frontier-Models-vs-Open-Model-Economy]]"
+  - "[[AI-Capability-Management-Alignment]]"
 ---
 
 # Agentic Work Atlas 研究议程
@@ -43,6 +44,7 @@ related_entities:
 
 | 焦点 | 为什么现在重要 | 当前状态 | 下一步动作 |
 |------|----------------|----------|------------|
+| AI 管理同构性假说 | 卡兹克提出"AI 管理=人的管理"同构，但 HBR/BCG 实验（1261 管理者）发现把 AI 当员工会降低监督质量 | 已有 [[AI-Capability-Management-Alignment]] entity + 圆桌辩证 + ljg-think 六层下钻 | 剪藏 HBR/BCG 研究和 ODSC 5 级自主框架论文，验证控制粒度光谱 vs 管理框架的边界 |
 | Output 回填机制 | `produce(query)` 会自然生成新判断，需要防止 output 污染稳定知识层 | 回填检查已经有实践样本，但外部参照不足 | 找团队如何用文章、报告或 decision memo 反向更新知识库的案例 |
 | Operator 到 Governor 迁移 | AI 赋能可能不是减少人，而是把人从执行节点移到治理层 | 作为探索性诊断框架保留，证据不足 | 用两个部署案例测试“执行动作 / 治理动作 / 责任 owner / 可复用资产”四列表 |
 | 内部 AI Factory 与外部 FDE 分工 | 企业部署能力可能内部化，也可能继续依赖高接触部署 | 已有 [[AI-Factory-vs-Forward-Deployed-AI-Enablement]]，但缺同类工作流对比案例 | 找企业内部平台团队、外部 FDE、自助 SaaS Agent 的对比案例 |
@@ -70,6 +72,9 @@ related_entities:
 
 | 假设 | 当前支撑 | 风险 | 处理 |
 |------|----------|------|------|
+| AI 管理同构性是有限隐喻而非普遍原理 | [[AI-Capability-Management-Alignment]]、ljg-think 六层下钻、ljg-roundtable | HBR/BCG 实验直接反证；控制拓扑单向 vs 双向根本不同 | 保留为活跃假说；剪藏 HBR 和 ODSC 论文后压力测试，可能降级为"控制粒度光谱有效但管理隐喻有限" |
+| "元思考不可替代"是暂时性命题而非永恒真理 | ljg-think 第六层（位置性论证）、Drucker 原始框架 | Zuboff 反驳：AI 能力上升后可能侵蚀元思考层；当前证据仅限哲学论证 | 保留为活跃假说；寻找 AI 辅助元决策（优先级排序、资源分配）的实证案例 |
+| 工作流设计框架可能比管理框架更适合 AI 交互 | Kropp HBR 研究结论 | 工作流设计可能无法覆盖控制粒度光谱的全部复杂性（如动态切换层级） | 寻找 Kropp 工作流框架的工程实现案例，对比控制粒度框架 |
 | Output 是 Wiki 的压力测试 | [[Knowledge-Compilation]]、多次 output 回填实践 | 主要来自本库实践，缺外部 source | 保留为工作流假设，不升级为事实 entity |
 | Research agenda 只能支撑“待研究问题存在” | Schema 边界规则、本页使用边界 | 后续 output 可能误把本页当事实来源 | 所有回填检查必须区分 Raw / Wiki / Agenda / 无 |
 | FDE 的核心价值是现场到能力沉淀 | [[Forward-Deployed-AI-Enablement]]、[[Deployment-Product-Flywheel]]、[[Integration-Wall]] | 标准化 SaaS Agent 可能绕过高接触部署 | 主动寻找无需 FDE 也能改写核心工作流的反例 |
@@ -123,12 +128,17 @@ related_entities:
 - **Governor 是否可以通过模拟获得足够的 Operator 经验**：待验证。Anthropic（2026-06）圆桌讨论显示：Governor 可以通过模拟训练、案例学习、角色扮演获得 Operator 经验。但军事视角认为模拟不能完全替代真实经验——高风险场景需要真实经验。需要更多案例验证模拟训练的有效性边界，以及"接触一线"机制的最佳实践。
 - **组织迁移测量框架（结构+流程+文化+能力）是否有效**：待验证。组织行为学家（2026-06）圆桌讨论显示：组织迁移需要平衡四个维度——结构、流程、文化、能力。但需要更多案例验证这一框架的有效性，以及如何在实践中平衡四个维度的发展。
 - **统一透明化标准是否可行**：待验证。Agent-Orchestration（2026-06）圆桌讨论显示：透明化需要一致性——所有 Agent 使用统一的透明化标准。但需要更多案例验证统一标准的可行性，以及由谁制定和执行（行业联盟、标准组织还是政府监管）。
+- **"AI 管理=人的管理"同构性假说**：待验证。卡兹克（2026-06）提出三层目标-工程范式映射（执行/Prompt、策略/Harness、愿景/Autonomous），但 HBR/BCG 研究（Kropp et al., 2026-05, 1261 管理者实验）发现把 AI 框架为"员工"会降低 18% 错误识别率、转移责任归属。控制论视角（Beer）指出管理人是双向控制、管理 AI 是单向控制——拓扑根本不同。ljg-think 下钻到第六层发现底层是"位置性"问题（选择需要有位置的存在）。核心教训：控制粒度光谱有效，但"管理"隐喻有边界——它遮蔽了责任归属和控制拓扑的差异。需要剪藏 HBR 全文和 ODSC 论文后压力测试。
+- **元思考层（"思考应该思考什么"）是否永久不可替代**：待验证。Drucker 论证元思考是人类专属，ljg-think 论证其根基是"选择的不可计算性"（选择需要位置，位置不可模拟）。但 Zuboff 反驳：当 AI 能力持续上升时，元思考不可替代性从真理变为暂时性假设。需要寻找 AI 辅助元决策（战略优先级排序、资源分配）的实证案例来验证。
+- **工作流设计框架是否比管理框架更适合 AI 交互**：待验证。Kropp（HBR, 2026-05）建议放弃管理框架，改用"AI 输出+人类判断如何耦合"的工作流设计框架。但工作流设计可能无法覆盖动态切换控制粒度的复杂性（同一 AI 在不同任务维度上可能需要不同层级）。需要 Kropp 工作流框架的工程实现案例，与控制粒度框架做对比。
 
 ## Source 需求队列
 
 | 优先级 | 目标 | 当前缺口 | 下一步 source | 触发行动 |
 |--------|------|----------|---------------|----------|
 | P0 | 提升 [[Model-Safety-Divergence]] 证据层级 | 缺一手论文或详细实验报告 | Emergence AI / Satya Nitta 原论文、实验日志或详细报告 | clip 后更新 [[Model-Safety-Divergence]] 的前提与局限性 |
+| P1 | 压力测试 [[AI-Capability-Management-Alignment]] | 当前仅单源个人叙事 + 圆桌辩证，缺一手实证 | Kropp et al. HBR/BCG 研究全文（1261 管理者实验）；ODSC 5 级自主框架论文（arxiv 2506.12469） | clip 后更新 entity，标注"管理隐喻"vs"控制粒度"的边界条件 |
+| P1 | 验证"元思考不可替代"假说 | 当前仅哲学论证（位置性），缺 AI 辅助元决策实证 | AI 辅助优先级排序、资源分配、战略规划的案例或研究 | clip 后更新 [[AI-Capability-Management-Alignment]] 或 [[Wisdom-Work]] 的前提与局限性 |
 | P0 | 验证例外升级式监督的边界条件 | 已找到反例（Knight Capital, Fintech QA），但缺正面案例——80/20 自动化在高风险流程中成功的条件 | 寻找医疗、航空、金融领域中例外升级成功运行的案例 | clip 后更新 [[Human-Governor-Agent-Operator]] 或新建 comparison |
 | P0 | 验证 Operator 到 Governor 迁移 | 缺一手组织案例 | Agent-first / FDE 项目中角色、权限、验收和责任变化的深度复盘 | clip 后更新 [[Human-Governor-Agent-Operator]] 或新建 comparison |
 | P0 | 补强多 Agent 组织病 | 缺一手论文 | Hidden Profile、MAEBE、persona collapse、bystander effect、Fukui invisible orchestrator、MetaAgent-X 原论文 | clip 后更新 [[Multi-Agent-Pathology-and-Governance]] |
@@ -282,6 +292,15 @@ related_entities:
 - 金融 AI 的实时风控架构：如何在毫秒级延迟内做出合规决策？
 - 教育 AI 的个性化学习效果实证：AI 辅导是否真的提升了学习成果？
 
+### 新增方向（2026-06-22 AI管理同构性探索后）
+
+**AI 交互范式主线：**
+- HBR/BCG Kropp et al. (2026-05) "Why You Shouldn't Treat AI Agents Like Employees" 全文——1261 管理者实验数据
+- ODSC 5 级自主框架论文（arxiv 2506.12469）——AI Agent 自主级别的形式化定义和校准方法
+- "Intelligent AI Delegation" 论文（arxiv 2602.11865）——智能委派的正式定义和信任建立机制
+- AI Agent 工作流设计框架的工程实现案例——Kropp 工作流设计 vs 控制粒度框架的对比
+- AI 辅助元决策（战略优先级排序、资源分配）的实证案例——验证"元思考不可替代"假说
+
 ## 已收敛的操作原则
 
 - 不新增 `explore/`、`audit/`、`claims/` 等目录。
@@ -310,12 +329,13 @@ related_entities:
 | 2026-06-22T09:00:31 | Governor 是否需要 Operator 经验 | (1) Governor 需要理解执行；(2) 风险等级影响 Governor 需要的经验类型；(3) Governor... | (1) Governor 是否需要 Operator 经验：需要 vs 不一定需要 vs 取决于风险；(2) 经验获取方... | (1) 找 Governor 需要 Operator 经验的实际案例；(2) 设计 Governor 接触一线框架；(3... |
 | 2026-06-22T09:15:22 | Operator 到 Governor 的迁移是否可测量 | (1) Operator 到 Governor 的迁移是可测量的；(2) 迁移是连续光谱，不是离散角色；(3) 组织层面... | (1) 测量层次：个人四列诊断 vs 连续光谱 vs 组织层面；(2) 组织迁移驱动力：四维度 vs 组织与个人对齐 v... | (1) 找 Operator 到 Governor 迁移的实际案例；(2) 设计组织迁移测量框架；(3) 验证领导力对迁... |
 | 2026-06-22T09:31:48 | 不可见编排能否被治理 | (1) 不可见编排需要治理；(2) 透明化是必要的；(3) 审计日志可以降低风险 | (1) 透明化深度：实时 vs 事后 vs 按需；(2) 透明化方式：可视化 vs 自动化 vs 决策理由记录；(3) ... | (1) 找不可见编排治理的实际案例；(2) 设计高效透明化机制框架；(3) 验证统一透明化标准的可行性 |
+| 2026-06-22T16:15:52 | AI 管理是否等同于人的管理 | (1) 控制粒度光谱有效（3层/5级都是近似）；(2) "管理"是危险隐喻——遮蔽责任归属和控制拓扑差异；(3) 元思考不可替代性可能是暂时性假设而非永恒真理 | (1) 框架选择：控制粒度+责任归属(Drucker+Beer) vs 工作流设计(Kropp)；(2) 元思考可侵蚀性：位置性论证 vs AI能力上升后侵蚀；(3) 权力结构：被多数人忽视 | (1) 剪藏 HBR/BCG 研究全文和 ODSC 5级自主框架论文；(2) 压力测试[[AI-Capability-Management-Alignment]]边界条件；(3) 寻找AI辅助元决策实证案例 |
 
 ## 思考日志索引
 
 > 完整思考日志按日归档，渐进式披露。
 
-- [[2026-06-22]] — 27 条（不可见编排、Governor 迁移、反馈回路、沉默型崩溃...）
+- [[2026-06-22]] — 29 条（不可见编排、Governor 迁移、反馈回路、沉默型崩溃、AI管理同构性、元思考不可替代性...）
 - [[2026-06-21]] — 32 条（过度合规、例外升级、不可见编排、大胆模型发散...）
 - [[2026-06-20]] — 3 条（多 Agent 内态记录、过度合规、例外升级监督）
 

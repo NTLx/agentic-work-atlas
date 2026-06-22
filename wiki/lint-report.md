@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 67 |
+| `tag` | 69 |
 | `evidence` | 0 |
 | `low-evidence` | 3 |
 | `stale-core` | 0 |
@@ -119,9 +119,11 @@ tags:
 - `wiki/research/research-agenda.md` - `一次性 tag 仅出现 1 次: 'research-agenda'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'resilience'`
 - `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'roi'`
+- `wiki/research/research-logs/20260622T162542--圆桌-AI管理是否等同于人的管理__roundtable.md` - `一次性 tag 仅出现 1 次: 'roundtable'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'scientific-agents'`
 - `wiki/sources/20260615-ai-layoff-wave-powder-keg.md` - `一次性 tag 仅出现 1 次: 'social-license'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'technology-governance'`
+- `wiki/research/research-logs/20260622T161552--追本-AI管理的本质__think.md` - `一次性 tag 仅出现 1 次: 'think'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'tutorial'`
 
 ## 运行命令

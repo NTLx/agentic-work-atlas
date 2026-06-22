@@ -23,7 +23,7 @@ tags:
 | Raw 文章 | 146 个 |
 | Source Summary | 148 个 |
 | Output 作品 | 5 个 |
-| Research 日志 | 3 个 |
+| Research 日志 | 5 个 |
 
 ---
 
