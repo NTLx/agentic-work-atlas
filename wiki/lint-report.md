@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 145 |
-| Raw 已编译 | 145 |
+| Raw 来源 | 146 |
+| Raw 已编译 | 146 |
 | Raw 待编译 | 0 |
-| Entity | 272 |
-| Topic | 29 |
+| Entity | 274 |
+| Topic | 30 |
 | Comparison | 18 |
 | Output | 5 |
 
@@ -38,15 +38,21 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 64 |
+| `tag` | 67 |
 | `evidence` | 0 |
-| `low-evidence` | 0 |
+| `low-evidence` | 3 |
 | `stale-core` | 0 |
 | `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
 
 ## 问题明细
+
+### low-evidence
+
+- `wiki/entities/AI-Capability-Management-Alignment.md` - `低证据页面 AI-Capability-Management-Alignment 只能作为补 source 或探索线索`
+- `wiki/sources/AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。.md` - `低证据页面 AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。 只能作为补 source 或探索线索`
+- `wiki/topics/AI-Management-Mindset-Transfer.md` - `低证据页面 AI-Management-Mindset-Transfer 只能作为补 source 或探索线索`
 
 ### tag
 
@@ -61,6 +67,8 @@ tags:
 - `wiki/sources/企业数字化转型与AI实践-数智化底座.md` - `tags 超过 5 个: 6`
 - `wiki/sources/企业数字化转型与AI实践-美的AIGC.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'A2A'`
+- `wiki/entities/Digital-Life-Kazke.md` - `一次性 tag 仅出现 1 次: 'AI-content-creator'`
+- `wiki/topics/AI-Management-Mindset-Transfer.md` - `一次性 tag 仅出现 1 次: 'AI-delegation'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'AMIE'`
 - `wiki/sources/20260617-openai-lifescibench.md` - `一次性 tag 仅出现 1 次: 'GPT-Rosalind'`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'MCP'`
@@ -79,6 +87,7 @@ tags:
 - `wiki/sources/20260617-tim-ferriss-ai-killed-nonfiction.md` - `一次性 tag 仅出现 1 次: 'content-creation'`
 - `wiki/sources/企业数字化转型与AI实践-数智化底座.md` - `一次性 tag 仅出现 1 次: 'data-infrastructure'`
 - `wiki/sources/20260618-mosaicleaks-privacy-agent.md` - `一次性 tag 仅出现 1 次: 'deep-research'`
+- `wiki/entities/AI-Capability-Management-Alignment.md` - `一次性 tag 仅出现 1 次: 'delegation-patterns'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'diagnostic-reasoning'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'disease-management'`
 - `wiki/sources/20260617-anthropic-claude-code-expertise.md` - `一次性 tag 仅出现 1 次: 'domain-expertise'`
