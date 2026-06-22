@@ -35,11 +35,11 @@ python3 -c "from datetime import datetime; print(datetime.now().isoformat(timesp
 
 从以下候选池中按优先级挑选本次焦点（选一个即可）：
 
-**优先级 1 — 待证伪队列**（research-agenda.md 的"待证伪判断"节）：
+**优先级 1 — 待证伪队列**（wiki/research/research-agenda.md 的"待证伪判断"节）：
 - 挑选最久未验证的判断（按 updated 字段或上次思考时间戳排序）
 - 优先挑 evidence_level: low 或 claim_type: synthesized 的
 
-**优先级 2 — 待验证问题**（research-agenda.md 的"待验证问题"节）：
+**优先级 2 — 待验证问题**（wiki/research/research-agenda.md 的"待验证问题"节）：
 - 挑选最久未回答的问题
 - 优先挑有 raw 可查证的
 
@@ -54,7 +54,9 @@ python3 -c "from datetime import datetime; print(datetime.now().isoformat(timesp
 - 如果优先级 2 也空了，转优先级 3
 - 如果全部空了，输出"本次无焦点，退出"并结束任务
 
-**本次焦点记录**：在开始思考前，先在 research-agenda.md 末尾追加一行（使用阶段 0 获取的 `TIMESTAMP`）：
+**短期记忆加载**：在挑选焦点前，先阅读 wiki/research/research-agenda.md 的"最近思考结论摘要"节，了解近几天的思考脉络，避免重复探索。
+
+**本次焦点记录**：在开始思考前，先在 wiki/research/research-logs/YYYY-MM-DD.md 追加一行（使用阶段 0 获取的 `TIMESTAMP`，YYYY-MM-DD 从 TIMESTAMP 提取；当日文件不存在则创建）：
 ```
 ## 思考日志：[TIMESTAMP]
 - 焦点：[焦点标题]
@@ -124,7 +126,7 @@ python3 -c "from datetime import datetime; print(datetime.now().isoformat(timesp
 根据本次思考产出，按以下规则沉淀：
 
 **规则 1 — 必沉淀（即使本次无新判断）**：
-- 在 research-agenda.md 的"思考日志"区块更新状态：
+- 在 wiki/research/research-logs/YYYY-MM-DD.md 的本次思考日志区块更新状态：
   ```
   - 状态：已完成
   - 共识：[列出]
@@ -134,7 +136,7 @@ python3 -c "from datetime import datetime; print(datetime.now().isoformat(timesp
   ```
 
 **规则 2 — 门槛沉淀（只有真正有新价值时才沉淀）**：
-- 如果 roundtable 出现真正分歧 → 在 research-agenda.md 的"待证伪判断"节新增一条
+- 如果 roundtable 出现真正分歧 → 在 wiki/research/research-agenda.md 的"待证伪判断"节新增一条
 - 如果 think 追到不可再分的底层结构 → 考虑新建 topic 页（需满足晋升门槛）
 - 如果 qa 抽出可复用的 Q-A → 注入到相关 entity 的正文
 
@@ -146,12 +148,17 @@ python3 -c "from datetime import datetime; print(datetime.now().isoformat(timesp
 
 **规则 4 — 分级写入**：
 - extracted 事实（有 raw 明确支撑）→ 可直接补 entity/topic，标注 source_raw
-- synthesized 判断（跨来源综合）→ 只进 research-agenda，标注"待升级"
-- 冲突或不确定内容 → 进 research-agenda 的"冲突标记"节
+- synthesized 判断（跨来源综合）→ 只进 wiki/research/research-agenda.md，标注"待升级"
+- 冲突或不确定内容 → 进 wiki/research/research-agenda.md 的"冲突标记"节
 
 **规则 5 — 每次改动上限**：
 - 最多修改 3-5 个页面（1 research-agenda + 最多 2-4 entity/topic）
-- 如果产出超过 5 个页面的改动，只保留最有价值的 5 个，其余记录到 research-agenda 待下次处理
+- 如果产出超过 5 个页面的改动，只保留最有价值的 5 个，其余记录到 wiki/research/research-agenda.md 待下次处理
+
+**规则 6 — 更新最近思考结论摘要**：
+- 在 wiki/research/research-agenda.md 的"最近思考结论摘要"表格追加本次摘要（1 行）
+- 如果表格超过 5 行，删除最旧的条目
+- 同时更新"思考日志索引"中对应日期的条数和主题关键词
 
 ## 预算与退出条件
 

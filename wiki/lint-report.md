@@ -68,7 +68,7 @@ tags:
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'MoE'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'RCT'`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'agent-discovery'`
-- `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
+- `wiki/research/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/sources/20260609-magnetar-ai-analysts.md` - `一次性 tag 仅出现 1 次: 'ai-analysts'`
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'ai-ecosystem'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
@@ -107,7 +107,7 @@ tags:
 - `wiki/sources/20260617-langchain-agent-engineering-new-discipline.md` - `一次性 tag 仅出现 1 次: 'production-engineering'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'quartz'`
 - `wiki/sources/20260618-openai-rare-disease-diagnosis.md` - `一次性 tag 仅出现 1 次: 'rare-disease'`
-- `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'research-agenda'`
+- `wiki/research/research-agenda.md` - `一次性 tag 仅出现 1 次: 'research-agenda'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'resilience'`
 - `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'roi'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'scientific-agents'`
