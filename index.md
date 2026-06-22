@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-06-22
+updated: 2026-06-23
 tags:
   - index
   - MOC
@@ -23,7 +23,7 @@ tags:
 | Raw 文章 | 148 个 |
 | Source Summary | 150 个 |
 | Output 作品 | 5 个 |
-| Research 日志 | 5 个 |
+| Research 日志 | 6 个 |
 
 ---
 

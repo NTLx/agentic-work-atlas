@@ -1,29 +1,29 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-06-22"
-score: 100
-status: "PASS"
+date: "2026-06-23"
+score: 97
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-06-22
+# Agentic Work Atlas Lint 报告 - 2026-06-23
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **97/100**
+> 阻断问题: **3**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 147 |
-| Raw 已编译 | 146 |
+| Raw 来源 | 148 |
+| Raw 已编译 | 147 |
 | Raw 待编译 | 1 |
-| Entity | 274 |
+| Entity | 278 |
 | Topic | 30 |
 | Comparison | 18 |
 | Output | 5 |
@@ -41,8 +41,8 @@ tags:
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
-| `source_raw` | 0 |
-| `tag` | 69 |
+| `source_raw` | 3 |
+| `tag` | 74 |
 | `evidence` | 0 |
 | `low-evidence` | 3 |
 | `stale-core` | 0 |
@@ -58,6 +58,12 @@ tags:
 - `wiki/sources/AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。.md` - `低证据页面 AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。 只能作为补 source 或探索线索`
 - `wiki/topics/AI-Management-Mindset-Transfer.md` - `低证据页面 AI-Management-Mindset-Transfer 只能作为补 source 或探索线索`
 
+### source_raw
+
+- `wiki/entities/Progressive-Disclosure.md` - `source_raw 必须使用 wikilink 短链接: '“[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的”自组织”与”自进化”]]”'`
+- `wiki/entities/Progressive-Disclosure.md` - `source_raw 必须使用 wikilink 短链接: '“[[20260611-openai-harness-engineering]]”'`
+- `wiki/entities/Progressive-Disclosure.md` - `source_raw 必须使用 wikilink 短链接: '“[[20260620-l8-principal-agentic-workflow]]”'`
+
 ### tag
 
 - `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `tags 超过 5 个: 6`
@@ -71,9 +77,11 @@ tags:
 - `wiki/sources/企业数字化转型与AI实践-数智化底座.md` - `tags 超过 5 个: 6`
 - `wiki/sources/企业数字化转型与AI实践-美的AIGC.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'A2A'`
+- `wiki/entities/Agent-Ergonomics.md` - `一次性 tag 仅出现 1 次: 'ACI'`
 - `wiki/entities/Digital-Life-Kazke.md` - `一次性 tag 仅出现 1 次: 'AI-content-creator'`
 - `wiki/topics/AI-Management-Mindset-Transfer.md` - `一次性 tag 仅出现 1 次: 'AI-delegation'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'AMIE'`
+- `wiki/entities/Validation-Pipeline.md` - `一次性 tag 仅出现 1 次: 'CI-CD'`
 - `wiki/sources/20260617-openai-lifescibench.md` - `一次性 tag 仅出现 1 次: 'GPT-Rosalind'`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'MCP'`
 - `index.md` - `一次性 tag 仅出现 1 次: 'MOC'`
@@ -104,6 +112,7 @@ tags:
 - `wiki/sources/20260618-openai-rare-disease-diagnosis.md` - `一次性 tag 仅出现 1 次: 'genomic-reanalysis'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'google-deepmind'`
 - `wiki/sources/20260609-magnetar-ai-analysts.md` - `一次性 tag 仅出现 1 次: 'hedge-fund'`
+- `wiki/entities/Captain-Mindset.md` - `一次性 tag 仅出现 1 次: 'human-role'`
 - `index.md` - `一次性 tag 仅出现 1 次: 'index'`
 - `wiki/sources/20260615-ai-layoff-wave-powder-keg.md` - `一次性 tag 仅出现 1 次: 'inequality'`
 - `wiki/sources/20260617-tim-ferriss-ai-killed-nonfiction.md` - `一次性 tag 仅出现 1 次: 'information-economy'`
@@ -128,6 +137,8 @@ tags:
 - `wiki/sources/20260615-ai-layoff-wave-powder-keg.md` - `一次性 tag 仅出现 1 次: 'social-license'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'technology-governance'`
 - `wiki/research/research-logs/20260622T161552--追本-AI管理的本质__think.md` - `一次性 tag 仅出现 1 次: 'think'`
+- `wiki/entities/Kun-Chen.md` - `一次性 tag 仅出现 1 次: 'tool-builder'`
+- `wiki/entities/Agent-Ergonomics.md` - `一次性 tag 仅出现 1 次: 'tool-design'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'tutorial'`
 
 ## 运行命令

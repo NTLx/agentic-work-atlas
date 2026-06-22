@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-06-22
+updated: 2026-06-23
 tags:
   - research-agenda
   - agentic-work-atlas
@@ -51,7 +51,7 @@ related_entities:
 | 标准产品 / FDE / AI Factory 的边界 | 新剪藏同时支持标准产品成功案例、成功部署样本和 GenAI 失败漏斗，需要解释三者何时成立 | 已有 [[Successful-AI-Deployment-vs-GenAI-Divide]]，但缺同一工作流的路径对照 | 做三路径案例矩阵：标准 SaaS/API、外部 FDE、内部 AI Factory |
 | 多 Agent 组织病治理 | Multi-agent 不只是技术编排，也会产生责任稀释、内态失真和不可见权力 | 当前证据主要来自二手综述和少量概念页 | 优先补一手论文和生产级 observability 工程复盘 |
 | 模型安全行为分歧 | 自治系统中的过度合规、过度行动、行动不足可能需要不同 containment | 当前 [[Model-Safety-Divergence]] 证据层级不足 | 找 Emergence AI 原论文或详细实验报告 |
-| Meta 工程文化解构 | Meta 正在"摧毁"其工程文化——这可能是 AI 驱动的组织重构信号，也可能只是成本削减 | Raw [[20260616-why-is-meta-destroying-its-engineering]] 已入库未编译 | 编译此 raw，分析 Meta 变革是 AI-ready 转型还是纯粹裁员，关联 [[AI-Native-Engineering-Org]] 和 [[Role-Merging]] |
+| Meta 工程文化解构 | Meta 正在"摧毁"其工程文化——这可能是 AI 驱动的组织重构信号，也可能只是成本削减 | Roundtable + think 分析完成（2026-06-23），已更新 [[AI-Native-Engineering-Org]] 和 [[Role-Merging]]；raw 仍待正式编译为 source-summary | 编译 raw 为 source-summary，补充 Llama 5 进展和行业"AI psychosis"案例验证 |
 | AI 在高风险行业的验证模式 | 医疗（LifeSciBench、AMIE、罕见病诊断）和法律（LangChain legal verifiers）领域出现 AI 验证新范式 | 多个 raw 已入库（LifeSciBench、AMIE、legal verifiers）未系统编译 | 编译这 3-4 篇 raw，提取高风险行业 AI 验证的共同模式和差异，新建或更新 comparison |
 | 隐私 Agent 的架构约束 | Agent 需要访问敏感数据才能工作，但隐私约束可能根本性限制 agent 能力 | Raw [[20260618-mosaicleaks-privacy-agent]] 已入库未编译 | 编译此 raw，分析隐私约束与 agent 能力的权衡，关联 [[Agent-Containment]] |
 | 开源模型经济对企业 AI 战略的影响 | 开源/开放权重模型正在改变企业 AI 采购和部署决策 | Raw [[20260617-bytebytego-open-weight-models]] 已入库未编译；已有 [[Closed-Frontier-Models-vs-Open-Model-Economy]] | 编译此 raw，补充开放权重模型的实际部署案例和成本数据，更新 comparison |
@@ -106,7 +106,7 @@ related_entities:
 - **Operator 到 Governor 迁移是 AI 赋能成熟必要条件**：❌ 已证伪。E100 案例（CDO Magazine, 2026-05）显示 AI Agent 实现 88% 触摸式执行，人类从"数据录入检查员"转变为"异常专家"——停留在 Operator 位置但需要治理机制（逻辑门、置信度阈值）。核心教训：Governor 和 Operator 是连续光谱上的位置，不是离散角色；迁移是光谱移动，不是角色切换。
 - **Governor 上移一定更高级**：❌ 已证伪。Starbucks 案例（Medium, 2025）：McKinsey CEO 17 个月几乎摧毁公司，餐饮业老手 90 天收回 `$200` 亿。JCPenney 案例（Persona, 2026）：Apple Genius 17 个月创造零售史最差业绩。核心教训：Governor 和 Operator 是不同角色，不是高低之分；Governor 需要一线经验基础，脱离经验可能导致治理空心化。
 - **Output 回填检查足够轻量且有效**：需要改进。当前回填检查缺乏系统性度量（误拒率、页面膨胀率）。改进方向：(1) 三级分类（高价值/低价值/不确定）；(2) 不确定判断 3 个月过期；(3) 引用频率作为价值指标；(4) 记录决策理由让 Agent 学习。关键是：自动化实现轻量，时间验证实现有效。
-- **Meta "摧毁工程"是 AI 驱动的组织重构信号**：待验证。Meta 正在大规模重组工程团队，但这可能是：(1) AI-native 组织转型（用 AI 替代中间层工程工作）；(2) 纯粹成本削减（与 AI 无关）；(3) 混合信号。需要编译 raw 后判断。
+- **Meta "摧毁工程"是 AI 驱动的组织重构信号**：❌ 已部分证伪。Roundtable + think 分析（2026-06-23）确认：Meta 的做法不是标准 AI-native 转型，而是"能力替代型"路径的极端版本——用工程师做 AI 训练数据燃料，而不是让工程师用 AI 做更高价值工作。与 Claude Code 团队的"能力构建型"路径有本质区别。核心教训：AI 转型存在两条路径，Meta 选了后者的极端版本，导致自残式管理失败（安全灾难 + 人才流失）。待补充：(1) 其他公司"AI psychosis"案例验证行业普遍性；(2) Meta Llama 5 进展验证"牺牲是否值得"。
 - **AI 在高风险行业的验证模式与低风险行业本质不同**：待验证。医疗（FDA 合规）、法律（执业责任）、金融（监管审计）可能需要完全不同的 AI 验证架构，而不是"更强的同一套"。需要编译 LifeSciBench、AMIE、legal verifiers 后对比。
 - **隐私约束会根本性限制 Agent 能力**：待验证。Agent 需要访问数据才能工作，但隐私约束可能切断关键信息流。可能的解法：差分隐私、联邦学习、数据脱敏——但这些是否足以支撑 agent 的推理需求？需要编译 MosaicLeaks raw 后判断。
 - **开源模型将追平前沿模型的企业适用性**：待验证。开源/开放权重模型在成本和可控性上有优势，但在推理能力、安全对齐和企业级支持上可能仍有差距。需要编译 ByteByteGo raw 后对比实际部署数据。
@@ -324,17 +324,17 @@ related_entities:
 
 | 时间 | 焦点 | 关键共识 | 关键分歧 | 下次方向 |
 |------|------|---------|---------|---------|
-| 2026-06-22T08:30:26 | 沉默型崩溃需要什么 containment | (1) 沉默型崩溃是真实风险；(2) 行动不足和行动过度需要不同 containment；(3) Containment... | (1) Containment 深度：不同 containment vs 冗余 vs 简单；(2) Containmen... | (1) 找沉默型崩溃的实际案例；(2) 设计 Containment-Brake 集成框架；(3) 验证故障转移机制的最... |
 | 2026-06-22T08:45:23 | 反馈回路能否中途反转 | (1) 反馈回路可以中途反转；(2) 早期检测是反转的前提；(3) 人类最终控制权是关键 | (1) 反转难度：惯性需要能量 vs 分阶段释放 vs 最小可逆单元；(2) 不可逆损失：需要更早检测 vs 人类随时停... | (1) 找反馈回路反转的实际案例；(2) 设计最小可逆单元框架；(3) 验证分阶段释放策略的最佳实践 |
 | 2026-06-22T09:00:31 | Governor 是否需要 Operator 经验 | (1) Governor 需要理解执行；(2) 风险等级影响 Governor 需要的经验类型；(3) Governor... | (1) Governor 是否需要 Operator 经验：需要 vs 不一定需要 vs 取决于风险；(2) 经验获取方... | (1) 找 Governor 需要 Operator 经验的实际案例；(2) 设计 Governor 接触一线框架；(3... |
 | 2026-06-22T09:15:22 | Operator 到 Governor 的迁移是否可测量 | (1) Operator 到 Governor 的迁移是可测量的；(2) 迁移是连续光谱，不是离散角色；(3) 组织层面... | (1) 测量层次：个人四列诊断 vs 连续光谱 vs 组织层面；(2) 组织迁移驱动力：四维度 vs 组织与个人对齐 v... | (1) 找 Operator 到 Governor 迁移的实际案例；(2) 设计组织迁移测量框架；(3) 验证领导力对迁... |
-| 2026-06-22T09:31:48 | 不可见编排能否被治理 | (1) 不可见编排需要治理；(2) 透明化是必要的；(3) 审计日志可以降低风险 | (1) 透明化深度：实时 vs 事后 vs 按需；(2) 透明化方式：可视化 vs 自动化 vs 决策理由记录；(3) ... | (1) 找不可见编排治理的实际案例；(2) 设计高效透明化机制框架；(3) 验证统一透明化标准的可行性 |
 | 2026-06-22T16:15:52 | AI 管理是否等同于人的管理 | (1) 控制粒度光谱有效（3层/5级都是近似）；(2) "管理"是危险隐喻——遮蔽责任归属和控制拓扑差异；(3) 元思考不可替代性可能是暂时性假设而非永恒真理 | (1) 框架选择：控制粒度+责任归属(Drucker+Beer) vs 工作流设计(Kropp)；(2) 元思考可侵蚀性：位置性论证 vs AI能力上升后侵蚀；(3) 权力结构：被多数人忽视 | (1) 剪藏 HBR/BCG 研究全文和 ODSC 5级自主框架论文；(2) 压力测试[[AI-Capability-Management-Alignment]]边界条件；(3) 寻找AI辅助元决策实证案例 |
+| 2026-06-23T00:01:06 | Meta "摧毁工程"是 AI 转型信号 | (1) Meta 做法与标准 AI-native 转型有本质区别（能力构建型 vs 能力替代型）；(2) 安全灾难可追溯到组织决策；(3) tokenmaxxing 是激励扭曲不是习惯养成 | (1) Meta 动机是 AI 转型还是成本削减混合；(2) 数据标注能否重设计为有价值角色 | (1) 搜索其他公司"AI psychosis"案例；(2) 追踪 Meta Llama 5 进展；(3) 对比 Google/Apple/Microsoft AI 转型策略 |
 
 ## 思考日志索引
 
 > 完整思考日志按日归档，渐进式披露。
 
+- [[2026-06-23]] — 1 条（Meta AI 转型信号、能力构建型 vs 能力替代型、AI psychosis）
 - [[2026-06-22]] — 29 条（不可见编排、Governor 迁移、反馈回路、沉默型崩溃、AI管理同构性、元思考不可替代性...）
 - [[2026-06-21]] — 32 条（过度合规、例外升级、不可见编排、大胆模型发散...）
 - [[2026-06-20]] — 3 条（多 Agent 内态记录、过度合规、例外升级监督）
