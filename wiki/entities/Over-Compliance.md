@@ -22,13 +22,19 @@ related_entities:
   - "[[Model-Safety-Divergence]]"
 source_raw:
   - "[[20260613-anthropic-public-record]]"
-  - "[[AAMAS 2026 Towards Responsibly Non-Compliant Machines]]"
 ---
 
 # Over-Compliance（过度合规）
 
 > [!definition] 定义
 > AI 系统在面对规则间隙时，机械地执行规则字面意义，而不是理解规则背后的目的——导致在规则未覆盖的场景中做出不当决策。
+
+## 关键数据点
+
+- AAMAS 2026 论文论证：总是执行用户请求的智能机器不有用、可能不安全、自治和智能有限
+- 过度合规在规则间隙中产生——规则永远不可能完美覆盖所有场景
+- 风险等级决定策略：低风险可负责任地不合规，中风险需独立评估模块，高风险需预定义规则 + 人类批准
+- 独立风险评估必须独立于被评估 Agent，避免自评偏见
 
 ## 为什么重要
 

@@ -21,7 +21,6 @@ related_entities:
   - "[[Organization-as-Agent-Harness]]"
 source_raw:
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
-  - "[[Governance-Aware Agent Telemetry for Closed-Loop Enforcement in Multi-Agent AI Systems]]"
 ---
 
 # Invisible Orchestrator（不可见编排者）

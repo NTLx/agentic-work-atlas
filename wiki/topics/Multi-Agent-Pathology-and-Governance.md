@@ -29,7 +29,6 @@ source_raw:
   - "[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]"
   - "[[20260528-ai-model-simulation]]"
   - "[[20260606-thousand-token-wood]]"
-  - "[[Governance-Aware Agent Telemetry for Closed-Loop Enforcement in Multi-Agent AI Systems]]"
 ---
 
 # Multi-Agent Pathology and Governance（多 Agent 系统病理与治理）

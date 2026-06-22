@@ -23,7 +23,6 @@ related_entities:
   - "[[Verifiable-Agent-Engineering]]"
 source_raw:
   - "[[20260528-ai-model-simulation]]"
-  - "[[The Refusal-Compliance Tradeoff: A Large-Scale Safety Behavior Audit of Large Language Models]]"
 ---
 
 > [!definition] 定义

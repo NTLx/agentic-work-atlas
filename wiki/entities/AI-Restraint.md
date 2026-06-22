@@ -26,7 +26,6 @@ source_raw:
   - "[[20260414-martin-fowler-fragments]]"
   - "[[20260531-thoughts-hmmz]]"
   - "[[I Am Retiring from Tech to Live Offline]]"
-  - "[[The Refusal-Compliance Tradeoff: A Large-Scale Safety Behavior Audit of Large Language Models]]"
 ---
 
 # AI Restraint

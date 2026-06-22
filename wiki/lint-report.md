@@ -1,29 +1,29 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-06-20"
-score: 96
-status: "FAIL"
+date: "2026-06-22"
+score: 100
+status: "PASS"
 tags:
   - lint-report
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-06-20
+# Agentic Work Atlas Lint 报告 - 2026-06-22
 
 > [!summary] 状态
-> 门禁: **FAIL**
-> 分数: **96/100**
-> 阻断问题: **4**
+> 门禁: **PASS**
+> 分数: **100/100**
+> 阻断问题: **0**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 144 |
-| Raw 已编译 | 144 |
+| Raw 来源 | 145 |
+| Raw 已编译 | 145 |
 | Raw 待编译 | 0 |
-| Entity | 270 |
+| Entity | 272 |
 | Topic | 29 |
 | Comparison | 18 |
 | Output | 5 |
@@ -37,10 +37,10 @@ tags:
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
-| `source_raw` | 4 |
-| `tag` | 55 |
+| `source_raw` | 0 |
+| `tag` | 64 |
 | `evidence` | 0 |
-| `low-evidence` | 3 |
+| `low-evidence` | 0 |
 | `stale-core` | 0 |
 | `entity` | 0 |
 | `comparison` | 0 |
@@ -48,21 +48,9 @@ tags:
 
 ## 问题明细
 
-### low-evidence
-
-- `wiki/entities/Emotional-Clarity.md` - `低证据页面 Emotional-Clarity 只能作为补 source 或探索线索`
-- `wiki/entities/Jevons-Paradox-for-Knowledge-Work.md` - `低证据页面 Jevons-Paradox-for-Knowledge-Work 只能作为补 source 或探索线索`
-- `wiki/entities/Wisdom-Work.md` - `低证据页面 Wisdom-Work 只能作为补 source 或探索线索`
-
-### source_raw
-
-- `wiki/entities/AI-Restraint.md` - `source_raw 目标不存在: [[The Refusal-Compliance Tradeoff: A Large-Scale Safety Behavior Audit of Large Language Models]]`
-- `wiki/entities/Invisible-Orchestrator.md` - `source_raw 目标不存在: [[Governance-Aware Agent Telemetry for Closed-Loop Enforcement in Multi-Agent AI Systems]]`
-- `wiki/entities/Model-Safety-Divergence.md` - `source_raw 目标不存在: [[The Refusal-Compliance Tradeoff: A Large-Scale Safety Behavior Audit of Large Language Models]]`
-- `wiki/topics/Multi-Agent-Pathology-and-Governance.md` - `source_raw 目标不存在: [[Governance-Aware Agent Telemetry for Closed-Loop Enforcement in Multi-Agent AI Systems]]`
-
 ### tag
 
+- `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260617-bayer-prince-agentic-rag.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `tags 超过 5 个: 8`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `tags 超过 5 个: 6`
@@ -81,28 +69,35 @@ tags:
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'RCT'`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'agent-discovery'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
+- `wiki/sources/20260609-magnetar-ai-analysts.md` - `一次性 tag 仅出现 1 次: 'ai-analysts'`
+- `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'ai-ecosystem'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
+- `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'cio'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'clinical-study'`
-- `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'conference'`
+- `wiki/entities/Over-Compliance.md` - `一次性 tag 仅出现 1 次: 'compliance'`
 - `wiki/sources/20260617-tim-ferriss-ai-killed-nonfiction.md` - `一次性 tag 仅出现 1 次: 'content-creation'`
 - `wiki/sources/企业数字化转型与AI实践-数智化底座.md` - `一次性 tag 仅出现 1 次: 'data-infrastructure'`
 - `wiki/sources/20260618-mosaicleaks-privacy-agent.md` - `一次性 tag 仅出现 1 次: 'deep-research'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'diagnostic-reasoning'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'disease-management'`
 - `wiki/sources/20260617-anthropic-claude-code-expertise.md` - `一次性 tag 仅出现 1 次: 'domain-expertise'`
+- `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `一次性 tag 仅出现 1 次: 'engineering-culture'`
 - `wiki/outputs/安全-安全-不安全.md` - `一次性 tag 仅出现 1 次: 'essay'`
+- `wiki/sources/20260609-magnetar-ai-analysts.md` - `一次性 tag 仅出现 1 次: 'financial-services'`
 - `wiki/sources/企业数字化转型与AI实践-数智化底座.md` - `一次性 tag 仅出现 1 次: 'first-principles'`
+- `wiki/entities/Decide-Execute-Deliver-Sandwich.md` - `一次性 tag 仅出现 1 次: 'framework'`
 - `wiki/sources/20260617-openai-lifescibench.md` - `一次性 tag 仅出现 1 次: 'frontier-model'`
 - `wiki/sources/20260618-openai-rare-disease-diagnosis.md` - `一次性 tag 仅出现 1 次: 'genomic-reanalysis'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'google-deepmind'`
+- `wiki/sources/20260609-magnetar-ai-analysts.md` - `一次性 tag 仅出现 1 次: 'hedge-fund'`
 - `index.md` - `一次性 tag 仅出现 1 次: 'index'`
 - `wiki/sources/20260615-ai-layoff-wave-powder-keg.md` - `一次性 tag 仅出现 1 次: 'inequality'`
 - `wiki/sources/20260617-tim-ferriss-ai-killed-nonfiction.md` - `一次性 tag 仅出现 1 次: 'information-economy'`
-- `wiki/sources/20260617-anthropic-claude-code-expertise.md` - `一次性 tag 仅出现 1 次: 'labor-market'`
 - `wiki/sources/20260617-langchain-legal-agent-verifiers.md` - `一次性 tag 仅出现 1 次: 'legal-AI'`
 - `wiki/sources/20260617-openai-lifescibench.md` - `一次性 tag 仅出现 1 次: 'life-science'`
 - `wiki/sources/20260617-langchain-art-of-loop-engineering.md` - `一次性 tag 仅出现 1 次: 'loop-engineering'`
+- `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `一次性 tag 仅出现 1 次: 'meta'`
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'model-architecture'`
 - `wiki/entities/API-Distillation-Catch-Up.md` - `一次性 tag 仅出现 1 次: 'model-sourcing'`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'open-specification'`
@@ -114,6 +109,7 @@ tags:
 - `wiki/sources/20260618-openai-rare-disease-diagnosis.md` - `一次性 tag 仅出现 1 次: 'rare-disease'`
 - `wiki/research-agenda.md` - `一次性 tag 仅出现 1 次: 'research-agenda'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'resilience'`
+- `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'roi'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'scientific-agents'`
 - `wiki/sources/20260615-ai-layoff-wave-powder-keg.md` - `一次性 tag 仅出现 1 次: 'social-license'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'technology-governance'`
