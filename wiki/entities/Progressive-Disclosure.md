@@ -21,6 +21,7 @@ related_entities:
   - "[[Context-Engineering]]"
   - "[[Knowledge-Compilation]]"
   - "[[Code-as-Conceptual-Infrastructure]]"
+  - "[[Skill-Chains]]"
 source_raw:
   - '[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]'
   - "[[20260611-openai-harness-engineering]]"

@@ -20,9 +20,13 @@ related_entities:
   - "[[Organization-as-Agent-Harness]]"
   - "[[PM-in-AI-Era]]"
   - "[[Human-Signal]]"
+  - "[[Company-Brain]]"
+  - "[[Skill-Chains]]"
+  - "[[Captain-Mindset]]"
 source_raw:
   - "[[Running an AI-native engineering org]]"
   - "[[20260616-why-is-meta-destroying-its-engineering]]"
+  - "[[20260608-become-ai-native-org]]"
 ---
 
 # AI-Native Engineering Org（AI 原生工程组织）

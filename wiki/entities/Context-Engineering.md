@@ -25,6 +25,7 @@ related_entities:
   - "[[Enterprise-AI-Learning-Gap]]"
   - "[[Agent-Legibility]]"
   - "[[Context-Minimalism]]"
+  - "[[Company-Brain]]"
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[What Is Code?]]'
@@ -33,6 +34,7 @@ source_raw:
   - '[[20260526-obsidian-claude-code-brain]]'
   - '[[20260530-cursor-developer-habits-report]]'
   - "[[20260603-anthropic-self-service-data-analytics]]"
+  - "[[20260608-become-ai-native-org]]"
   - "[[20260611-openai-harness-engineering]]"
 ---
 

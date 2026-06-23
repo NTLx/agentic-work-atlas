@@ -72,3 +72,4 @@ source_raw:
 - [[Agent-PR-Review]] — Agent 审查 PR 的具体实践
 - [[Captain-Mindset]] — 人类从审 diff 转向看证据的角色转型
 - [[Adversarial-Distillation]] — 对抗性审查的知识蒸馏原理
+- [[Skill-Chains]] — QA skill 约束幻觉是 Validation Pipeline 的轻量版本

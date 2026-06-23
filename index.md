@@ -17,11 +17,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 278 个 |
+| Entity 页面 | 280 个 |
 | Topic 页面 | 30 个 |
 | Comparison 页面 | 18 个 |
 | Raw 文章 | 148 个 |
-| Source Summary | 150 个 |
+| Source Summary | 151 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 6 个 |
 
@@ -47,6 +47,8 @@ tags:
 | [[wiki/entities/Agent-Verification\|Agent Verification（Agent 自主验证）]] | Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境 | Claude Code 一周年 |
 | [[wiki/entities/Auto-Mode\|Auto Mode（自动模式）]] | Claude Code 的自动执行模式——agent 自主决定运行工具，无需逐条等待用户确认 | Claude Code 一周年 |
 | [[wiki/entities/Context-Minimalism\|Context Minimalism（上下文极简主义）]] | 给 agent 最小可能的 system prompt 和工具集，让模型自己决定如何拉取上下文 | Claude Code 一周年 |
+| [[wiki/entities/Skill-Chains\|Skill Chains（技能链）]] | 多技能顺序执行的 macro skill 模式，通过 QA skill 约束幻觉 | Become AI Native Org |
+| [[wiki/entities/Company-Brain\|Company Brain（公司大脑）]] | 组织可读的 context 层，Capture → Curate → Store → Execute → Experience 循环 | Become AI Native Org |
 | [[wiki/entities/Code-Execution\|Code Execution]] | Agent 直接在沙箱运行代码并获取反馈的能力 | Simon Willison |
 | [[wiki/entities/Vibe-Coding\|Vibe Coding（氛围编程）]] | 依靠直觉和多轮提示快速产出原型但缺乏严谨验证的开发模式 | Andrej Karpathy |
 | [[wiki/entities/Model-Context-Protocol-MCP\|MCP（Model Context Protocol）]] | 统一的模型与工具连接协议标准 | Pinterest Engineering |
@@ -98,7 +100,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-06-22——Kun Chen《L8 Principal's Agentic Engineering Workflow》，新增 Agent-Ergonomics、Validation-Pipeline、Captain-Mindset、Kun-Chen entities + source summary。
+最新编译：2026-06-23——Greg Isenberg × Theo Taba《Become AI Native in less than 60 mins》，新增 Skill-Chains、Company-Brain entities + source summary。
 
 ---
 

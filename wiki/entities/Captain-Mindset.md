@@ -23,6 +23,7 @@ related_entities:
   - "[[Agent-Orchestration]]"
 source_raw:
   - "[[20260620-l8-principal-agentic-workflow]]"
+  - "[[20260608-become-ai-native-org]]"
 ---
 
 > [!definition] 定义
@@ -67,6 +68,14 @@ Kun Chen 将 Captain Mindset 类比为 Engineering Director：
 
 - Director 不写代码，但通过**招聘好的工程师**（选好的 Agent harness）+ **建立好的文化**（memory + skills）+ **创建好的流程**（validation pipeline）来保证软件质量
 - 船长不写代码，但通过**规划好的需求**（Lavish）+ **训练好的船员**（memory onboarding）+ **验证管线**（No Mistakes）+ **编排助手**（First Mate）来保证产出质量
+
+## 与 Engineering Manager 的类比
+
+Kun Chen 将 Captain Mindset 类比为 Engineering Director。Theo Taba (LCA, 2026) 从另一个角度抵达同一结论：引用 Andy Grove 的管理哲学——**"the success of a manager is judged based on the output of their team"**——在 AI 时代变为"你的成功由你管理的 agents 的产出决定"。
+
+> "Everyone is a manager now... making sure your agents are set up for success like a manager would with their team." — Theo Taba
+
+两个来源共同指向：AI 吃掉中间执行层后，人的价值从"做"转为"确保被做好"——设定目标、提供 context、建立质量标准、做最终判断。
 
 ## 关联概念
 
