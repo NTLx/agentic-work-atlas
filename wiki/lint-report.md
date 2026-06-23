@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-23"
-score: 97
-status: "FAIL"
+score: 100
+status: "PASS"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-06-23
 
 > [!summary] 状态
-> 门禁: **FAIL**
-> 分数: **97/100**
-> 阻断问题: **3**
+> 门禁: **PASS**
+> 分数: **100/100**
+> 阻断问题: **0**
 
 ## 统计
 
@@ -41,7 +41,7 @@ tags:
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
-| `source_raw` | 3 |
+| `source_raw` | 0 |
 | `tag` | 74 |
 | `evidence` | 0 |
 | `low-evidence` | 3 |
@@ -57,12 +57,6 @@ tags:
 - `wiki/entities/AI-Capability-Management-Alignment.md` - `低证据页面 AI-Capability-Management-Alignment 只能作为补 source 或探索线索`
 - `wiki/sources/AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。.md` - `低证据页面 AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。 只能作为补 source 或探索线索`
 - `wiki/topics/AI-Management-Mindset-Transfer.md` - `低证据页面 AI-Management-Mindset-Transfer 只能作为补 source 或探索线索`
-
-### source_raw
-
-- `wiki/entities/Progressive-Disclosure.md` - `source_raw 必须使用 wikilink 短链接: '“[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的”自组织”与”自进化”]]”'`
-- `wiki/entities/Progressive-Disclosure.md` - `source_raw 必须使用 wikilink 短链接: '“[[20260611-openai-harness-engineering]]”'`
-- `wiki/entities/Progressive-Disclosure.md` - `source_raw 必须使用 wikilink 短链接: '“[[20260620-l8-principal-agentic-workflow]]”'`
 
 ### tag
 
