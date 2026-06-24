@@ -56,6 +56,9 @@ const config: QuartzConfig = {
       "tools",
       "quartz-overrides",
 
+      // Schema 子文档（按需加载的规范，不由 Quartz 发布）
+      "schema",
+
       // Schema 和日志文件（index.md 是首页，不应排除）
       "README.md",
       "CLAUDE.md",
