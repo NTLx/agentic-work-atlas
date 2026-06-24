@@ -77,6 +77,23 @@ Kun Chen 将 Captain Mindset 类比为 Engineering Director。Theo Taba (LCA, 20
 
 两个来源共同指向：AI 吃掉中间执行层后，人的价值从"做"转为"确保被做好"——设定目标、提供 context、建立质量标准、做最终判断。
 
+## 意图理解的三层结构
+
+2026-06-24 深度思考（ljg-roundtable × ljg-think × ljg-qa）将 Captain Mindset 中隐含的"人做什么"进一步拆为三层：
+
+| 层 | 内容 | AI 能力 | 人的角色 |
+|----|------|---------|---------|
+| L1 执行层 | 语义解析、语境重建、行为调整 | 可替代 | 放手给 Agent |
+| L2 方向质疑层 | 执行方向、判断产出质量、"我们可能走错了" | 组织 context 可赋予执行方向；质疑方向不可替代 | 判断产出 + 守住质疑权 |
+| L3 产生立场层 | "我选择在乎这个"——ownership 的源头 | 存在论不可替代（计算循环 ≠ 身份循环） | 定义成功 + 承担后果 |
+
+这个模型为 Captain Mindset 提供了更精确的操作边界：
+- **L1 放手**：让 Agent 承担所有执行（Kun Chen 的中间层完全交给 Agent）
+- **L2 精准介入**：只在方向需要质疑时出现（No Mistakes 的 escalate 决策）
+- **L3 守住**：定义"什么是好"和承担后果——这是船长不可替代的核心
+
+核心洞察：Sam Altman 的功能等价论证在 L1 正确，Dario Amodei/Arendt 的存在论论证在 L2-L3 正确——分歧不是"谁对谁错"而是"瞄准不同层"。
+
 ## 关联概念
 
 - [[AI-Capability-Management-Alignment]] — AI 管理与人的管理同构，Captain Mindset 是这个同构的具体实践

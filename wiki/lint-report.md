@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-06-23"
+date: "2026-06-24"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-06-23
+# Agentic Work Atlas Lint 报告 - 2026-06-24
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -21,16 +21,12 @@ tags:
 | 类别 | 数量 |
 |------|------|
 | Raw 来源 | 148 |
-| Raw 已编译 | 147 |
-| Raw 待编译 | 1 |
-| Entity | 278 |
+| Raw 已编译 | 148 |
+| Raw 待编译 | 0 |
+| Entity | 280 |
 | Topic | 30 |
 | Comparison | 18 |
 | Output | 5 |
-
-## 待编译 Raw
-
-- `raw/20260608-become-ai-native-org.md`
 
 ## 检查项
 
@@ -42,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 74 |
+| `tag` | 75 |
 | `evidence` | 0 |
 | `low-evidence` | 3 |
 | `stale-core` | 0 |
@@ -128,6 +124,7 @@ tags:
 - `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'roi'`
 - `wiki/research/research-logs/20260622T162542--圆桌-AI管理是否等同于人的管理__roundtable.md` - `一次性 tag 仅出现 1 次: 'roundtable'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'scientific-agents'`
+- `wiki/sources/20260608-become-ai-native-org.md` - `一次性 tag 仅出现 1 次: 'skill-chains'`
 - `wiki/sources/20260615-ai-layoff-wave-powder-keg.md` - `一次性 tag 仅出现 1 次: 'social-license'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'technology-governance'`
 - `wiki/research/research-logs/20260622T161552--追本-AI管理的本质__think.md` - `一次性 tag 仅出现 1 次: 'think'`
