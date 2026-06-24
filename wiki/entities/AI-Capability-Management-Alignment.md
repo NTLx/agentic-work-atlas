@@ -12,7 +12,7 @@ tags:
   - AI-management
   - capability-tiers
   - delegation-patterns
-evidence_level: low
+evidence_level: medium
 claim_type: extracted
 related_entities:
   - "[[Harness-Engineering]]"
