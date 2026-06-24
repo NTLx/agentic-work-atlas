@@ -9,7 +9,7 @@ tags:
   - source-summary
   - AI-management
   - capability-tiers
-evidence_level: low
+evidence_level: medium
 claim_type: extracted
 ---
 
