@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-06-24"
+date: "2026-06-25"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-06-24
+# Agentic Work Atlas Lint 报告 - 2026-06-25
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -38,9 +38,9 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 75 |
+| `tag` | 78 |
 | `evidence` | 0 |
-| `low-evidence` | 3 |
+| `low-evidence` | 1 |
 | `stale-core` | 0 |
 | `entity` | 0 |
 | `comparison` | 0 |
@@ -50,8 +50,6 @@ tags:
 
 ### low-evidence
 
-- `wiki/entities/AI-Capability-Management-Alignment.md` - `低证据页面 AI-Capability-Management-Alignment 只能作为补 source 或探索线索`
-- `wiki/sources/AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。.md` - `低证据页面 AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。 只能作为补 source 或探索线索`
 - `wiki/topics/AI-Management-Mindset-Transfer.md` - `低证据页面 AI-Management-Mindset-Transfer 只能作为补 source 或探索线索`
 
 ### tag
@@ -95,6 +93,7 @@ tags:
 - `wiki/sources/20260617-anthropic-claude-code-expertise.md` - `一次性 tag 仅出现 1 次: 'domain-expertise'`
 - `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `一次性 tag 仅出现 1 次: 'engineering-culture'`
 - `wiki/outputs/安全-安全-不安全.md` - `一次性 tag 仅出现 1 次: 'essay'`
+- `wiki/research/research-logs/exploration-archive-20260625.md` - `一次性 tag 仅出现 1 次: 'exploration'`
 - `wiki/sources/20260609-magnetar-ai-analysts.md` - `一次性 tag 仅出现 1 次: 'financial-services'`
 - `wiki/sources/企业数字化转型与AI实践-数智化底座.md` - `一次性 tag 仅出现 1 次: 'first-principles'`
 - `wiki/entities/Decide-Execute-Deliver-Sandwich.md` - `一次性 tag 仅出现 1 次: 'framework'`
@@ -121,6 +120,8 @@ tags:
 - `wiki/sources/20260618-openai-rare-disease-diagnosis.md` - `一次性 tag 仅出现 1 次: 'rare-disease'`
 - `wiki/research/research-agenda.md` - `一次性 tag 仅出现 1 次: 'research-agenda'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'resilience'`
+- `wiki/research/research-logs/exploration-archive-20260625.md` - `一次性 tag 仅出现 1 次: 'resolved'`
+- `wiki/research/research-logs/resolved-judgments.md` - `一次性 tag 仅出现 1 次: 'resolved-judgments'`
 - `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'roi'`
 - `wiki/research/research-logs/20260622T162542--圆桌-AI管理是否等同于人的管理__roundtable.md` - `一次性 tag 仅出现 1 次: 'roundtable'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'scientific-agents'`
