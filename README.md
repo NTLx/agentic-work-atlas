@@ -140,6 +140,7 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 |------|--------|
 | lint / audit | `schema/lint-workflow.md` |
 | 创建/评估 entity | `schema/entity-spec.md` |
+| 碎片化度量 / 图谱健康度 | `schema/fragmentation-metrics.md` |
 
 ### 写入 wiki 文件
 

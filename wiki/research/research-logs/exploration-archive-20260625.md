@@ -46,7 +46,9 @@ tags:
 
 ### 领域孤岛率排名
 
-| Domain | Isolated | Total | Isolation Rate |
+> ⚠️ 基线已纠正（2026-06-25）：本表"孤岛率"的原始口径未在脚本中钉死，与 `entity-audit.py` 实测脱节，数字不可复现。下表保留历史值仅作溯源，**不得再作为研究优先级驱动**。当前连接度基线见 `schema/fragmentation-metrics.md` 的"基线快照"。
+
+| Domain | Isolated | Total | Isolation Rate（历史口径，不可复现） |
 |--------|---------:|------:|---------------:|
 | Industry Vertical | 1 | 1 | 100.0% |
 | AI Agent Systems | 37 | 46 | **80.4%** |
@@ -61,7 +63,9 @@ tags:
 
 ### 知识图谱连接度
 
-| Metric | Value |
+> ⚠️ 基线已纠正（2026-06-25）：下表为历史口径手算结果，与 `entity-audit.py` 实测脱节——全图零入链实测 1.1%（3/280），知识层零互引 6.8%（19/280），非 81.8%。差一个数量级是因为"零入链"口径未区分全图入链与知识层互引。**当前基线以 `schema/fragmentation-metrics.md` 基线快照为准**，本段保留仅作溯源。
+
+| Metric | Value（历史口径，不可复现） |
 |--------|-------|
 | 收到交叉引用的 entity | 51/280 (18.2%) |
 | 零入链的 entity | 229 (81.8%) |

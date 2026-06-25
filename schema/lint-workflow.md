@@ -23,6 +23,8 @@ type: schema-subdoc
 | **过时核心页** | 入链较多且超过 90 天未更新 | 默认非阻断提醒，进入重编译队列 |
 | **重复概念候选** | Entity 标题、aliases 或 token 高度重叠 | 进入 entity-audit 复核队列，不自动合并 |
 
+> **孤岛/连接度口径**：上表的"孤岛检测"和"孤儿 entity"是历史描述。`wiki-lint.py` 实际**未实现**孤岛/连接度检测逻辑，连接度由 `tools/entity-audit.py` 提供。讨论孤岛率、连接度、碎片化前，必须先声明用哪一档口径（全图入链 / 知识层互引 / 整合层承载），口径定义与基线快照见 `schema/fragmentation-metrics.md`。
+
 ---
 
 ## Lint 工具

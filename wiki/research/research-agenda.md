@@ -33,11 +33,11 @@ related_entities:
 | 位置性统一理论 | 2026-06-23 研究日志涌现"位置性是统一底层结构"洞察，但未形式化 | 仅存在于 research-logs，无 entity/topic | 用 ljg-think 做 5 层追本：位置性是隐喻/分析框架/可测量维度/统一理论？决定是否建 entity |
 | 人的核心价值层深钻 | 全库最薄弱层——14 entities (5%)、孤岛率 57%、high evidence 仅 2 | 有 [[Wisdom-Work]]、[[Taste]]、[[Judgment]] 但缺元认知/道德判断/工匠精神 | 选"元认知"用 ljg-think 5 层追本，判断是否值得建 entity |
 | Agent 失败模式分类学 | [[Over-Compliance]]、[[Agent-Cognitive-Loafing]]、[[Bias-to-Action-LLM]] 零散，缺系统分类 | 概念分散在各 entity，无 comparison | 从已有 entity 提取所有"失败模式"类概念，做四维分类矩阵（行动/认知/协调/组织） |
-| 知识图谱连接密度 | 仅 18.2% entity 收到交叉引用，81.8% 零入链，图谱极度碎片化 | Agentic-Engineering 是唯一超级 hub(138 引用) | 对 50 个最高优先级孤岛 entity 做交叉验证，目标连接度 18%→40% |
+| 知识图谱整合层稀薄 | 35% entity (98/280) 无 topic/comparison 承载；entity 互引覆盖已 93.2%（口径：整合层承载 / 知识层互引，2026-06-25 实测） | 多 hub 结构（Agentic-Engineering 119、Agent-Harness 78、Context-Engineering 50），非唯一 hub | 对 98 个未承载 entity 按 tag 聚类建 topic，目标整合层承载 65%→80% |
 | Output 产出流水线重启 | 最后 output 在 2026-06-01（24 天前），研究→产出转化率仅 7% | 研究层累计 67+ 条思考，仅 5 条转化为 output | 从 research-logs 提取 3-5 个成熟 synthesized 判断，选 1 个产出 |
 | AI 经济学线程 | 全库在"AI 成本/定价/ROI"维度几乎空白 | 无相关 entity/topic | 找企业 AI agent TCO 分析案例，编译为 source-summary，关联 [[Enterprise-AI-Factory]] |
 | 中国企业 AI 采用 | 中文 source 占比仅 ~13%，中国视角严重不足 | 有 3 个中国企业案例 source 但未系统编译 | 编译 CIO 大会 raw + 美的/三一案例，提取中国模式特殊性 |
-| 多 Agent 组织病治理 | 当前证据主要来自二手综述，AI Agent Systems 孤岛率 80.4% 最脆弱 | 已有 [[Multi-Agent-Pathology-and-Governance]] | 优先补一手论文（Hidden Profile、MAEBE、Fukui）和生产级 observability 复盘 |
+| 多 Agent 组织病治理 | 当前证据主要来自二手综述；多 Agent 域整合层未承载率待 entity-audit 域级复现（历史 80.4% 口径不可复现，见 [[exploration-archive-20260625]]） | 已有 [[Multi-Agent-Pathology-and-Governance]] | 优先补一手论文（Hidden Profile、MAEBE、Fukui）和生产级 observability 复盘 |
 | 高风险行业 AI 验证 | 医疗/法律/金融 AI 验证范式出现但未系统编译 | 多个 raw 已入库（LifeSciBench、AMIE、legal verifiers）未编译 | 编译这 3-4 篇 raw，提取高风险行业验证共同模式，新建 comparison |
 | 跨层整合框架 | 四层（软工/组织/知识/人）各自独立，缺连接框架 | 有 [[Wisdom-Work-Evolution]] 等零散 topic | 从已有 roundtable 结论提取 L1-L4 光谱模型，构建统一"AI 能力边界"框架 |
 
@@ -49,7 +49,7 @@ related_entities:
 |------|------|
 | 位置性是统一底层结构（可解释 AI 工作变迁各层面现象） | 用 ljg-think 压力测试：找位置性无法解释的反例 |
 | Agent 失败模式可四维分类（行动/认知/协调/组织），且四维有因果关系 | 从已有 entity 提取失败模式，验证分类覆盖率 |
-| 知识图谱连接度提升到 40% 可自动暴露隐藏缺口 | 对 50 个孤岛 entity 做交叉验证，测量缺口发现率 |
+| 整合层承载提升到 80% 可自动暴露隐藏缺口 | 对 98 个未承载 entity 聚类建 topic，测量缺口发现率 |
 | Output 转化率低是流程问题（缺 research→output 标准路径）而非研究质量问题 | 建立标准转化路径，测试转化率是否提升 |
 | AI 经济学盲区导致路径选择判断失真（缺成本结构数据） | 找 3 个企业 AI agent TCO 案例验证 |
 | AI 管理同构性是有限隐喻而非普遍原理 | 剪藏 HBR + ODSC 论文后压力测试 |
@@ -87,7 +87,7 @@ related_entities:
 | P1 | AI 经济学 | 企业 AI agent TCO / ROI 量化分析 | 新建 topic |
 | P1 | 中国企业 AI 采用 | 中国 CIO / 开源 AI 生态 / 制造业 AI 落地案例 | 新建 topic |
 | P1 | 高风险行业验证 | 医疗 FDA 审批 / 法律执业责任 / 金融实时风控案例 | 新建 comparison |
-| P2 | 知识图谱连接度 | 50 个孤岛 entity 的交叉验证 source | 提升连接度至 40% |
+| P2 | 整合层承载 | 98 个未承载 entity 的聚类与 topic 承载 source | 提升整合层承载至 80% |
 | P2 | LLM Wiki 规模边界 | GBrain / Obsidian-Wiki 工程实现 | 更新 [[Agent-Knowledge-Management]] |
 | P2 | 知识 audit 指标 | 证据回链/冲突检测/概念去重实践 | 更新 lint 工作流 |
 | P2 | Output 转化路径 | research→output 标准化案例 | 建立转化流程 |
@@ -96,7 +96,7 @@ related_entities:
 
 - **位置性追本**：用 ljg-think 对"位置性"做 5 层追本——是隐喻/分析框架/可测量维度/统一理论？判断是否值得建 entity
 - **Agent 失败模式矩阵**：从已有 entity 提取所有"失败模式"类概念，做四维分类（行动/认知/协调/组织），验证覆盖率
-- **孤岛交叉验证**：选 10 个高优先级孤岛 entity（优先 AI Agent Systems 域），找第二个 source 支撑，测量缺口发现率
+- **未承载 entity 聚类**：对 98 个无 topic/comparison 承载的 entity 按 tag 聚类，成簇的建 topic（如 AGI 经济学、记忆系统、人物档），目标整合层承载 65%→80%
 - **Output 候选筛选**：从 research-logs 提取 3-5 个成熟 synthesized 判断（位置性/反馈回路/元思考层），选 1 个产出
 - **Operator/Governor 诊断表**：选两个部署案例填"执行动作/治理动作/责任 owner/可复用资产"四列
 - **三路径矩阵**：选客服/研发/back-office 各一个工作流，对照标准产品 vs FDE vs AI Factory
@@ -107,9 +107,9 @@ related_entities:
 > 与"活跃假设"不重复的独立问题。
 
 **知识库方法论：**
-- 知识图谱连接度阈值：连接度提升到什么水平才能自动暴露隐藏缺口？
+- 整合层承载阈值：承载率提升到什么水平才能自动暴露隐藏缺口？
 - Output 转化标准：research-logs 中的 synthesized 判断什么条件下升级为 output？
-- 孤岛率红线：不同领域的孤岛率红线应该不同吗（如 Person 类 72.5% 孤岛是否可接受）？
+- 域级未承载率红线：不同 tag 域的未承载率红线应该不同吗（如 person 类可放宽）？待 entity-audit 域级复现
 - 编译质量衡量：除链接/frontmatter/裸符号检查外，还需要什么知识层面质量指标？
 - 探索如何避免污染事实层：未验证假设保留期限和归档触发条件？
 
@@ -154,7 +154,7 @@ related_entities:
 
 | 时间 | 焦点 | 关键共识 | 关键分歧 | 下次方向 |
 |------|------|---------|---------|---------|
-| 2026-06-25 | 全库盘点：位置性统一理论涌现 + 产出断层 + 图谱碎片化 | (1) 位置性可能是统一底层结构；(2) 研究层活跃但产出停滞（转化率 7%）；(3) 知识图谱连接度仅 18.2%；(4) AI Agent Systems 孤岛率 80.4% 最脆弱 | (1) 位置性是隐喻还是理论；(2) 产出断层是流程问题还是质量问题 | 形式化位置性理论；重启 output 产出；对孤岛 entity 做交叉验证 |
+| 2026-06-25 | 全库盘点：位置性统一理论涌现 + 产出断层 + 整合层稀薄 | (1) 位置性可能是统一底层结构；(2) 研究层活跃但产出停滞（转化率 7%）；(3) 碎片化真形态是整合层未承载 35%，非孤岛（entity 互引已 93.2%）；(4) 早期"81.8% 孤岛 / 80.4% 域级"为口径漂移，已纠正并钉死口径见 `schema/fragmentation-metrics.md` | (1) 位置性是隐喻还是理论；(2) 产出断层是流程问题还是质量问题 | 形式化位置性理论；重启 output 产出；对未承载 entity 聚类建 topic |
 | 2026-06-24T22:45:56 | "AI管理=人的管理"同构性分层：可借用/需修改/不适用 | (1) 同构性分层有效；(2) 控制粒度光谱有效；(3) "管理"隐喻有边界；(4) 目标对齐比激励相容更难 | (1) AI"授权"如何定义；(2) AI"问责"如何实现 | 找AI授权定义案例；研究AI问责实现机制 |
 | 2026-06-24T16:30:34 | 瓶颈=意图理解+本质复杂性+沟通价值+验证成本 | (1) 瓶颈不是单一的；(2) 验证成本是三根源交集；(3) "做不到"和"还不会"取决于任务类型；(4) 战略=双轨并行+任务分类 | (1) AI辅助验证可行性；(2) 不同编程范式瓶颈差异 | 找AI辅助验证案例；研究编程范式瓶颈分布 |
 | 2026-06-24T16:15:25 | 模拟=四层(L1技术完全+L2情绪部分+L3动机设计+L4道德无效) | (1) L1-L3可通过模拟训练；(2) L4道德判断不能通过模拟获得；(3) "足够好"取决于风险等级；(4) 最优模拟="安全的失败" | (1) L2情绪层保真度阈值；(2) L4道德层结构替代方案 | 找L2情绪层实证数据；研究L4结构替代案例 |

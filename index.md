@@ -25,6 +25,17 @@ tags:
 | Output 作品 | 5 个 |
 | Research 日志 | 10 个 |
 
+### 连接拓扑（2026-06-25 实测，口径见 `schema/fragmentation-metrics.md`）
+
+| 指标 | 口径 | 实测 | 健康判定 |
+|------|------|------|---------|
+| 全图零入链 entity | 全图入链 | 1.1% (3/280) | 健康 |
+| 知识层零互引 entity | 知识层互引 | 6.8% (19/280) | 健康 |
+| 整合层未承载 entity | 整合层承载 | 35.0% (98/280) | 碎片化（目标 ≤20%） |
+| 单点挂靠 entity | 知识层互引 | 16.8% (47/280) | 偏高（目标 <10%） |
+| Top 3 hub | 知识层互引 | Agentic-Engineering 119 / Agent-Harness 78 / Context-Engineering 50 | 幂律温和，不干预 |
+| Output 转化率 | 产出层 | 5 / 67+ 思考 ≈ 7% | 断层（目标 ≥20%） |
+
 ---
 
 ## 🏗️ 核心实体 (wiki/entities/)
