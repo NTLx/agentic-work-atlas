@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-26"
-score: 99
+score: 95
 status: "FAIL"
 tags:
   - lint-report
@@ -13,17 +13,17 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **99/100**
-> 阻断问题: **1**
+> 分数: **95/100**
+> 阻断问题: **5**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 149 |
-| Raw 已编译 | 149 |
+| Raw 来源 | 150 |
+| Raw 已编译 | 150 |
 | Raw 待编译 | 0 |
-| Entity | 281 |
+| Entity | 282 |
 | Topic | 30 |
 | Comparison | 18 |
 | Output | 5 |
@@ -33,24 +33,31 @@ tags:
 | 检查项 | 问题数 |
 |--------|--------|
 | `frontmatter` | 0 |
-| `date` | 0 |
+| `date` | 1 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 81 |
+| `tag` | 84 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 0 |
-| `entity` | 1 |
+| `entity` | 4 |
 | `comparison` | 0 |
 | `index` | 0 |
 
 ## 问题明细
 
+### date
+
+- `raw/20260626-llm-as-judge-healthcare.md` - `date 必须为 YYYY-MM-DD: '2026-05'`
+
 ### entity
 
 - `wiki/entities/Agent-Adoption-Curve.md` - `概念 Entity 缺少章节: ## 关键数据点`
+- `wiki/entities/LLM-as-a-Judge.md` - `概念 Entity 缺少章节: ## 关键数据点`
+- `wiki/entities/LLM-as-a-Judge.md` - `概念 Entity 缺少章节: ## 前提与局限性`
+- `wiki/entities/LLM-as-a-Judge.md` - `概念 Entity 缺少章节: ## 关联概念`
 
 ### low-evidence
 
@@ -86,6 +93,7 @@ tags:
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
 - `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'cio'`
+- `wiki/sources/20260626-llm-as-judge-healthcare.md` - `一次性 tag 仅出现 1 次: 'clinical-evaluation'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'clinical-study'`
 - `wiki/entities/Over-Compliance.md` - `一次性 tag 仅出现 1 次: 'compliance'`
 - `wiki/sources/20260617-tim-ferriss-ai-killed-nonfiction.md` - `一次性 tag 仅出现 1 次: 'content-creation'`
@@ -112,6 +120,8 @@ tags:
 - `wiki/sources/20260617-tim-ferriss-ai-killed-nonfiction.md` - `一次性 tag 仅出现 1 次: 'information-economy'`
 - `wiki/sources/20260617-langchain-legal-agent-verifiers.md` - `一次性 tag 仅出现 1 次: 'legal-AI'`
 - `wiki/sources/20260617-openai-lifescibench.md` - `一次性 tag 仅出现 1 次: 'life-science'`
+- `wiki/entities/LLM-as-a-Judge.md` - `一次性 tag 仅出现 1 次: 'llm'`
+- `wiki/sources/20260626-llm-as-judge-healthcare.md` - `一次性 tag 仅出现 1 次: 'llm-as-a-judge'`
 - `wiki/sources/20260617-langchain-art-of-loop-engineering.md` - `一次性 tag 仅出现 1 次: 'loop-engineering'`
 - `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `一次性 tag 仅出现 1 次: 'meta'`
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'model-architecture'`
