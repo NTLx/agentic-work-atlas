@@ -13,7 +13,7 @@ authors:
   - Siyuan Ma
   - Mei Liu
   - Steven Bethard
-date: 2026-05
+date: 2026-05-24
 source: arxiv
 url: https://arxiv.org/abs/2605.25273v1
 arxiv_id: 2605.25273v1

@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-26"
-score: 95
-status: "FAIL"
+score: 100
+status: "PASS"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-06-26
 
 > [!summary] 状态
-> 门禁: **FAIL**
-> 分数: **95/100**
-> 阻断问题: **5**
+> 门禁: **PASS**
+> 分数: **100/100**
+> 阻断问题: **0**
 
 ## 统计
 
@@ -33,7 +33,7 @@ tags:
 | 检查项 | 问题数 |
 |--------|--------|
 | `frontmatter` | 0 |
-| `date` | 1 |
+| `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
@@ -42,22 +42,11 @@ tags:
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 0 |
-| `entity` | 4 |
+| `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
 
 ## 问题明细
-
-### date
-
-- `raw/20260626-llm-as-judge-healthcare.md` - `date 必须为 YYYY-MM-DD: '2026-05'`
-
-### entity
-
-- `wiki/entities/Agent-Adoption-Curve.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/LLM-as-a-Judge.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/LLM-as-a-Judge.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/LLM-as-a-Judge.md` - `概念 Entity 缺少章节: ## 关联概念`
 
 ### low-evidence
 
