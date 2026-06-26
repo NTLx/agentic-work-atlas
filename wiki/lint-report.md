@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-26"
-score: 100
-status: "PASS"
+score: 99
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,18 +12,18 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-06-26
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **99/100**
+> 阻断问题: **1**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 148 |
-| Raw 已编译 | 148 |
+| Raw 来源 | 149 |
+| Raw 已编译 | 149 |
 | Raw 待编译 | 0 |
-| Entity | 280 |
+| Entity | 281 |
 | Topic | 30 |
 | Comparison | 18 |
 | Output | 5 |
@@ -38,15 +38,19 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 78 |
+| `tag` | 81 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 0 |
-| `entity` | 0 |
+| `entity` | 1 |
 | `comparison` | 0 |
 | `index` | 0 |
 
 ## 问题明细
+
+### entity
+
+- `wiki/entities/Agent-Adoption-Curve.md` - `概念 Entity 缺少章节: ## 关键数据点`
 
 ### low-evidence
 
@@ -91,6 +95,7 @@ tags:
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'diagnostic-reasoning'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'disease-management'`
 - `wiki/sources/20260617-anthropic-claude-code-expertise.md` - `一次性 tag 仅出现 1 次: 'domain-expertise'`
+- `wiki/sources/how-agents-are-transforming-work.md` - `一次性 tag 仅出现 1 次: 'economic-research'`
 - `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `一次性 tag 仅出现 1 次: 'engineering-culture'`
 - `wiki/outputs/安全-安全-不安全.md` - `一次性 tag 仅出现 1 次: 'essay'`
 - `wiki/research/research-logs/exploration-archive-20260625.md` - `一次性 tag 仅出现 1 次: 'exploration'`
@@ -113,6 +118,7 @@ tags:
 - `wiki/entities/API-Distillation-Catch-Up.md` - `一次性 tag 仅出现 1 次: 'model-sourcing'`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'open-specification'`
 - `wiki/sources/20260618-openai-rare-disease-diagnosis.md` - `一次性 tag 仅出现 1 次: 'openai-o3'`
+- `wiki/entities/Agent-Adoption-Curve.md` - `一次性 tag 仅出现 1 次: 'organizational-ai'`
 - `wiki/sources/20260617-bayer-prince-agentic-rag.md` - `一次性 tag 仅出现 1 次: 'pharma'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'policy'`
 - `wiki/sources/20260617-langchain-agent-engineering-new-discipline.md` - `一次性 tag 仅出现 1 次: 'production-engineering'`
@@ -127,6 +133,7 @@ tags:
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'scientific-agents'`
 - `wiki/sources/20260608-become-ai-native-org.md` - `一次性 tag 仅出现 1 次: 'skill-chains'`
 - `wiki/sources/20260615-ai-layoff-wave-powder-keg.md` - `一次性 tag 仅出现 1 次: 'social-license'`
+- `wiki/sources/how-agents-are-transforming-work.md` - `一次性 tag 仅出现 1 次: 'task-horizon'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'technology-governance'`
 - `wiki/research/research-logs/20260622T161552--追本-AI管理的本质__think.md` - `一次性 tag 仅出现 1 次: 'think'`
 - `wiki/entities/Kun-Chen.md` - `一次性 tag 仅出现 1 次: 'tool-builder'`

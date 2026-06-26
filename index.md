@@ -17,13 +17,13 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 280 个 |
+| Entity 页面 | 281 个 |
 | Topic 页面 | 30 个 |
 | Comparison 页面 | 18 个 |
-| Raw 文章 | 148 个 |
-| Source Summary | 151 个 |
+| Raw 文章 | 149 个 |
+| Source Summary | 152 个 |
 | Output 作品 | 5 个 |
-| Research 日志 | 10 个 |
+| Research 日志 | 11 个 |
 
 ### 连接拓扑（2026-06-25 实测，口径见 `schema/fragmentation-metrics.md`）
 
@@ -77,6 +77,7 @@ tags:
 | [[wiki/entities/Knowledge-Work\|Knowledge Work（知识工作）]] | 正在被 AI 重新定义效率边界和价值内核的工作类型 | Jevons Paradox for Knowledge Work |
 | [[wiki/entities/Role-Merging\|Role Merging（角色融合）]] | AI 让 PM/设计师/财务等非工程角色也能写代码，同时让工程师端到端交付产品 | Claude Code 一周年 |
 | [[wiki/entities/AI-Capability-Management-Alignment\|AI Capability-Management Alignment（AI 能力-管理对齐）]] | 不同能力层级的 AI 需要不同管理方式，与管理人的能力-委派匹配模型同构 | 数字生命卡兹克 |
+| [[wiki/entities/Agent-Adoption-Curve\|Agent Adoption Curve（智能体采纳曲线）]] | 智能体工具采纳的典型模式：开发者先采用，随后非开发者增速反超 | OpenAI Economic Research |
 | [[wiki/entities/Kun-Chen\|Kun Chen]] | 前 L8 Principal Engineer，AXI / No Mistakes / First Mate 工具链作者 | L8 Principal Agentic Workflow |
 
 #### 知识与语义
@@ -111,7 +112,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-06-23——Greg Isenberg × Theo Taba《Become AI Native in less than 60 mins》，新增 Skill-Chains、Company-Brain entities + source summary。
+最新编译：2026-06-26——OpenAI Economic Research《How agents are transforming work》，新增 Agent-Adoption-Curve entity，更新 Task-Horizon entity + source summary。
 
 ---
 
@@ -144,4 +145,4 @@ status             # 查看知识库状态
 ---
 
 *索引版本: v2.7*
-*最后更新: 2026-06-22*
+*最后更新: 2026-06-26*
