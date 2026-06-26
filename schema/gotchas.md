@@ -130,3 +130,20 @@ lint 会报 `source_raw 目标不存在`。
 lint 检查概念 Entity 必须包含 `## 关键数据点`、`## 前提与局限性`、`## 关联概念` 三个章节。
 **陷阱**: `## 关键证据`、`## 数据`、`## 相关概念` 等变体名称不被识别，lint 仍报缺失。
 **修复**: 章节标题必须一字不差地使用规范名称。
+
+### arxiv 论文剪藏：优先用 PDF
+
+arxiv `/html/` 版本从 LaTeX 自动转换，新论文或复杂排版常截断（缺 Discussion/Conclusion/References）。
+**始终优先用 PDF 版本剪藏**：
+
+```bash
+curl -sL "https://arxiv.org/pdf/<arxiv_id>" -o /tmp/paper.pdf
+uv run --with pymupdf python3 -c "
+import fitz
+doc = fitz.open('/tmp/paper.pdf')
+text = '\n\n---\n\n'.join(page.get_text() for page in doc)
+with open('/tmp/paper_full.md', 'w') as f: f.write(text)
+"
+```
+
+提取后验证 Discussion / Conclusion / References 齐全再写入 raw/。
