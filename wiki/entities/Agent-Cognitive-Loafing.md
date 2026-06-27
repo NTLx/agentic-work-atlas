@@ -18,6 +18,7 @@ related_entities:
   - "[[Agent-Dissociation]]"
   - "[[Verifiability]]"
   - "[[AI-Restraint]]"
+  - "[[Agent-Failure-Causal-Chain]]"
 source_raw:
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
 ---
@@ -41,6 +42,10 @@ source_raw:
 - 该问题不同于从众：从众是 Agent 被多数意见牵引，认知偷懒是 Agent 默认“群体会修正”，从而不再独立承担完整推理责任。
 - 文章指出，早期 multi-agent debate 的乐观假设是多模型互相批评可以抵消幻觉，但认知偷懒意味着“多一个 Agent”不必然等于“多一份责任”。
 - [[Multi-Agent-Pathology-and-Governance]] 将它放在群体认知病层：外部 harness 能管动作，但不能自动保证群体判断健康。
+
+## 在失败因果链中的位置
+
+Cognitive Loafing 是 [[Agent-Failure-Causal-Chain|Agent 失败因果链]] 的**认知层**节点——位于协调层（Invisible Orchestrator）之下、行动层（Bias-to-Action）之上。SLOTH 论文（ACL ARR 2026）通过 16,544 条执行轨迹的实证研究发现：(1) 71.1% 的成功轨迹和 83.6% 的失败轨迹包含至少一种懒惰行为；(2) 模型规模扩大后，懒惰从认知偷懒（cognitive shortcuts）向社交和执行层遗漏（social and execution-level omissions）转移——这验证了因果链中的"层间转移"机制：认知条件改变后，失败形式向社交（协调）和执行（行动）层迁移。
 
 ## 治理方式
 

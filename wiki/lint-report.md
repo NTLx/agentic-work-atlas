@@ -25,7 +25,7 @@ tags:
 | Raw 待编译 | 0 |
 | Entity | 282 |
 | Topic | 30 |
-| Comparison | 18 |
+| Comparison | 19 |
 | Output | 5 |
 
 ## 检查项
@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 84 |
+| `tag` | 86 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 0 |
@@ -81,6 +81,7 @@ tags:
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'ai-ecosystem'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
+- `wiki/comparisons/Agent-Failure-Causal-Chain.md` - `一次性 tag 仅出现 1 次: 'causal-chain'`
 - `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'cio'`
 - `wiki/sources/20260626-llm-as-judge-healthcare.md` - `一次性 tag 仅出现 1 次: 'clinical-evaluation'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'clinical-study'`
@@ -96,6 +97,7 @@ tags:
 - `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `一次性 tag 仅出现 1 次: 'engineering-culture'`
 - `wiki/outputs/安全-安全-不安全.md` - `一次性 tag 仅出现 1 次: 'essay'`
 - `wiki/research/research-logs/exploration-archive-20260625.md` - `一次性 tag 仅出现 1 次: 'exploration'`
+- `wiki/comparisons/Agent-Failure-Causal-Chain.md` - `一次性 tag 仅出现 1 次: 'failure-mode'`
 - `wiki/sources/20260609-magnetar-ai-analysts.md` - `一次性 tag 仅出现 1 次: 'financial-services'`
 - `wiki/sources/企业数字化转型与AI实践-数智化底座.md` - `一次性 tag 仅出现 1 次: 'first-principles'`
 - `wiki/entities/Decide-Execute-Deliver-Sandwich.md` - `一次性 tag 仅出现 1 次: 'framework'`

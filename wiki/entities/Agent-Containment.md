@@ -24,6 +24,7 @@ related_entities:
   - "[[Least-Agency]]"
   - "[[Model-Safety-Divergence]]"
   - "[[Emergence-World]]"
+  - "[[Agent-Failure-Causal-Chain]]"
 source_raw:
   - "[[How we contain Claude across products]]"
   - "[[20260518-zero-trust-for-ai-agents]]"
@@ -184,6 +185,12 @@ Agent 安全风险分三类，防御对应三个组件：
 - **Containment 优先，brake 兜底**——Containment 是主要防御，brake 是最后防线
 - **故障转移机制**——Containment 失效时，brake 必须能接住
 - **独立监控**——Containment 和 brake 需要独立的监控系统
+
+### 在失败因果链中的位置
+
+Containment 是 [[Agent-Failure-Causal-Chain|Agent 失败因果链]] 的**组织层**节点——它设定了所有下游层（协调/认知/行动）的 blast radius 上限和"正常"定义。MAST 论文（UC Berkeley 2025）通过 1,642 条 MAS 执行轨迹的系统分析发现：**系统设计问题（含 Containment 设定、角色边界、任务分解）是多 Agent 失败的最高发类别**。这意味着——正如 Perrow 的 Normal Accidents 理论预测——组织层的设计决策是所有下游失败的前提条件。Containment 失效不是四个失败之一，而是其他失败被放大的放大器。
+
+Containment 的深度同时决定了因果链中反馈回路的强度：当 blast radius 宽松且 Governor 橡皮图章化时，偏差正常化（Vaughan）使行动层的过度行动被反复标记为"正常"，进而固化认知层的偷懒预期，最终形成"组织宽→认知懒→行动过→组织更宽"的恶性循环。
 
 ## 监控者悖论（2026-06-23 更新）
 
