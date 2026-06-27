@@ -119,7 +119,7 @@ related_entities:
 - Agent 失败模式因果关系：行动型/认知型/协调型/组织型失败之间是否有因果链？
 - Governor 橡皮图章化风险：Agent 输出量过大时审批流是否退化为形式通过？→ ✅部分回答（2026-06-27 roundtable+think+联网）：四层根因模型+Kahneman承受力定理+CUA Oversight实证（高风险场景12.8%阻止率）。待实证：HITL治理vs审批安全记录对比
 - 沉默型崩溃 containment：行动不足和行动过度是否需要不同防御架构？
-- AI 系统"刹车"机制：实时熔断、异常检测和自动降级在 AI 系统中的最佳实践？
+- AI 系统"刹车"机制：实时熔断、异常检测和自动降级在 AI 系统中的最佳实践？→ ✅已回答（2026-06-27 roundtable Leveson/Deming/Kranz/Dekker/Gall）：刹车=Containment边界动态收缩+预定义降级状态机+三要素(正义文化+状态机+无感知收缩)。刹车不是独立组件——是Containment的动态维护
 - 开源模型验证器能否替代前沿模型做 RL 后训练：DeepSeek 比 Opus 便宜 60-1000x 是否让小团队也能做 RL post-training？
 
 **AI 经济学（新线程）：**
