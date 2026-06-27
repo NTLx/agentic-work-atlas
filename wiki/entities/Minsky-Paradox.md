@@ -13,7 +13,7 @@ tags:
   - ai-safety
   - entropy
   - governance
-evidence_level: synthesized
+evidence_level: medium
 claim_type: synthesized
 source_raw:
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
