@@ -23,7 +23,7 @@ tags:
 | Raw 来源 | 150 |
 | Raw 已编译 | 150 |
 | Raw 待编译 | 0 |
-| Entity | 282 |
+| Entity | 283 |
 | Topic | 30 |
 | Comparison | 19 |
 | Output | 5 |
@@ -38,7 +38,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 86 |
+| `tag` | 89 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 0 |
@@ -76,7 +76,6 @@ tags:
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'MoE'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'RCT'`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'agent-discovery'`
-- `wiki/research/research-agenda.md` - `一次性 tag 仅出现 1 次: 'agentic-work-atlas'`
 - `wiki/sources/20260609-magnetar-ai-analysts.md` - `一次性 tag 仅出现 1 次: 'ai-analysts'`
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'ai-ecosystem'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
@@ -95,6 +94,7 @@ tags:
 - `wiki/sources/20260617-anthropic-claude-code-expertise.md` - `一次性 tag 仅出现 1 次: 'domain-expertise'`
 - `wiki/sources/how-agents-are-transforming-work.md` - `一次性 tag 仅出现 1 次: 'economic-research'`
 - `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `一次性 tag 仅出现 1 次: 'engineering-culture'`
+- `wiki/entities/Positionality.md` - `一次性 tag 仅出现 1 次: 'epistemology'`
 - `wiki/outputs/安全-安全-不安全.md` - `一次性 tag 仅出现 1 次: 'essay'`
 - `wiki/research/research-logs/exploration-archive-20260625.md` - `一次性 tag 仅出现 1 次: 'exploration'`
 - `wiki/comparisons/Agent-Failure-Causal-Chain.md` - `一次性 tag 仅出现 1 次: 'failure-mode'`
@@ -121,7 +121,9 @@ tags:
 - `wiki/sources/20260618-openai-rare-disease-diagnosis.md` - `一次性 tag 仅出现 1 次: 'openai-o3'`
 - `wiki/entities/Agent-Adoption-Curve.md` - `一次性 tag 仅出现 1 次: 'organizational-ai'`
 - `wiki/sources/20260617-bayer-prince-agentic-rag.md` - `一次性 tag 仅出现 1 次: 'pharma'`
+- `wiki/entities/Positionality.md` - `一次性 tag 仅出现 1 次: 'philosophy'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'policy'`
+- `wiki/entities/Positionality.md` - `一次性 tag 仅出现 1 次: 'positionality'`
 - `wiki/sources/20260617-langchain-agent-engineering-new-discipline.md` - `一次性 tag 仅出现 1 次: 'production-engineering'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'quartz'`
 - `wiki/sources/20260618-openai-rare-disease-diagnosis.md` - `一次性 tag 仅出现 1 次: 'rare-disease'`
@@ -140,6 +142,7 @@ tags:
 - `wiki/entities/Kun-Chen.md` - `一次性 tag 仅出现 1 次: 'tool-builder'`
 - `wiki/entities/Agent-Ergonomics.md` - `一次性 tag 仅出现 1 次: 'tool-design'`
 - `wiki/outputs/deploy-obsidian-wiki-with-quartz.md` - `一次性 tag 仅出现 1 次: 'tutorial'`
+- `wiki/entities/Positionality.md` - `一次性 tag 仅出现 1 次: 'unified-theory'`
 
 ## 运行命令
 
