@@ -10,7 +10,6 @@ tags:
   - agent-harness
   - AI-factory
   - enterprise-ai
-  - skill-system
   - china-enterprise
 evidence_level: medium
 claim_type: mixed

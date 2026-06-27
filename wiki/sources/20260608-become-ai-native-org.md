@@ -9,7 +9,6 @@ tags:
   - source-summary
   - AI-native-org
   - organizational-design
-  - skill-chains
   - context-engineering
 evidence_level: medium
 claim_type: mixed

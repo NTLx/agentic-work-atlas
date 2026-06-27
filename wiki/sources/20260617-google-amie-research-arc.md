@@ -8,12 +8,6 @@ updated: 2026-06-18
 tags:
   - source-summary
   - medical-AI
-  - AMIE
-  - diagnostic-reasoning
-  - disease-management
-  - clinical-study
-  - RCT
-  - google-deepmind
 evidence_level: high
 claim_type: mixed
 ---

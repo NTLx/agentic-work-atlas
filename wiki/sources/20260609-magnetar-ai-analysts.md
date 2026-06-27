@@ -7,9 +7,6 @@ created: 2026-06-21
 updated: 2026-06-21
 tags:
   - source-summary
-  - hedge-fund
-  - ai-analysts
-  - financial-services
   - knowledge-work
 evidence_level: medium
 claim_type: mixed

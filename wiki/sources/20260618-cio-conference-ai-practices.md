@@ -8,10 +8,8 @@ updated: 2026-06-22
 tags:
   - source-summary
   - enterprise-ai
-  - cio
   - china-enterprise
   - ai-adoption
-  - roi
 evidence_level: medium
 claim_type: extracted
 ---

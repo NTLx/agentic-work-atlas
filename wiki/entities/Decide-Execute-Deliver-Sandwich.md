@@ -13,7 +13,6 @@ tags:
   - knowledge-work
   - productivity
   - labor-market
-  - framework
 evidence_level: medium
 claim_type: extracted
 related_entities:

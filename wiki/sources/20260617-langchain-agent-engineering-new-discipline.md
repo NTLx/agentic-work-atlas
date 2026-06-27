@@ -9,7 +9,6 @@ tags:
   - source-summary
   - agentic-engineering
   - agent-harness
-  - production-engineering
 evidence_level: medium
 claim_type: mixed
 ---

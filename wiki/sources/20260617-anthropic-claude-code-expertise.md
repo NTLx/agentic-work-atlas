@@ -9,7 +9,6 @@ tags:
   - source-summary
   - agentic-engineering
   - coding-agents
-  - domain-expertise
   - labor-market
 evidence_level: high
 claim_type: mixed

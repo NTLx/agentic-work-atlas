@@ -7,10 +7,6 @@ created: 2026-06-22
 updated: 2026-06-22
 tags:
   - source-summary
-  - open-weight
-  - MoE
-  - model-architecture
-  - ai-ecosystem
 evidence_level: medium
 claim_type: extracted
 ---

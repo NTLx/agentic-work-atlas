@@ -7,8 +7,6 @@ created: 2026-06-10
 updated: 2026-06-10
 tags:
   - source-summary
-  - scientific-agents
-  - biology
   - deterministic-retrieval
 ---
 

@@ -7,11 +7,8 @@ created: 2026-06-21
 updated: 2026-06-21
 tags:
   - source-summary
-  - meta
-  - engineering-culture
   - ai-psychosis
   - organizational-change
-  - layoffs
 evidence_level: high
 claim_type: mixed
 ---

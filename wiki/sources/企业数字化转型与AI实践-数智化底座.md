@@ -8,10 +8,8 @@ updated: 2026-06-18
 tags:
   - source-summary
   - enterprise-ai
-  - AI-deployment
-  - data-infrastructure
   - china-enterprise
-  - first-principles
+  - AI-deployment
 evidence_level: medium
 claim_type: mixed
 ---

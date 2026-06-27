@@ -8,8 +8,6 @@ updated: 2026-06-26
 tags:
   - source-summary
   - agent-adoption
-  - task-horizon
-  - economic-research
 evidence_level: medium
 claim_type: mixed
 ---

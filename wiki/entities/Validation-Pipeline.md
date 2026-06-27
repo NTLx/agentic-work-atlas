@@ -13,7 +13,6 @@ claim_type: mixed
 tags:
   - agentic-engineering
   - verification
-  - CI-CD
   - code-review
 related_entities:
   - "[[Agent-Verification]]"

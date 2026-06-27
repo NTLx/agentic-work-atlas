@@ -10,8 +10,6 @@ tags:
   - agentic-engineering
   - verification
   - evaluation
-  - legal-AI
-  - open-weight
 evidence_level: high
 claim_type: mixed
 ---

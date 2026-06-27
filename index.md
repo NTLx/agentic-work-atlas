@@ -1,10 +1,8 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-06-27
+updated: 2026-06-28
 tags:
-  - index
-  - MOC
 ---
 
 # 智能体时代工作图谱索引
@@ -20,10 +18,10 @@ tags:
 | Entity 页面 | 285 个 |
 | Topic 页面 | 30 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 151 个 |
+| Raw 文章 | 152 个 |
 | Source Summary | 153 个 |
 | Output 作品 | 5 个 |
-| Research 日志 | 12 个 |
+| Research 日志 | 13 个 |
 
 ### 连接拓扑（2026-06-25 实测，口径见 `schema/fragmentation-metrics.md`）
 

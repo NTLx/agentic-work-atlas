@@ -13,7 +13,6 @@ evidence_level: medium
 claim_type: synthesized
 tags:
   - agent-adoption
-  - organizational-ai
   - ai-deployment
 related_entities:
   - "[[Task-Horizon]]"

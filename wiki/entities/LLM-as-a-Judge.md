@@ -10,7 +10,6 @@ created: 2026-06-26
 updated: 2026-06-26
 tags:
   - ai-evaluation
-  - llm
   - methodology
   - healthcare
 related_entities:

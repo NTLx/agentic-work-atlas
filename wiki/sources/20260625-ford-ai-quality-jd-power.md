@@ -7,10 +7,6 @@ created: 2026-06-27
 updated: 2026-06-27
 tags:
   - source-summary
-  - ford
-  - ai-quality
-  - institutional-knowledge
-  - automotive
 evidence_level: medium
 claim_type: extracted
 ---

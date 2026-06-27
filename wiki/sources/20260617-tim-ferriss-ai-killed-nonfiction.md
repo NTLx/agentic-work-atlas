@@ -9,8 +9,6 @@ tags:
   - source-summary
   - AI-economy
   - knowledge-work
-  - content-creation
-  - information-economy
 evidence_level: medium
 claim_type: mixed
 ---

@@ -12,7 +12,6 @@ created: 2026-06-22
 updated: 2026-06-22
 tags:
   - person
-  - AI-content-creator
 source_raw:
   - "[[AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。]]"
 ---

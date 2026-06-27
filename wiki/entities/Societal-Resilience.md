@@ -13,8 +13,6 @@ claim_type: mixed
 tags:
   - AI-policy
   - cybersecurity
-  - biodefense
-  - resilience
 related_entities:
   - "[[Frontier-Developer-Obligations]]"
   - "[[AI-Policy-Framework]]"

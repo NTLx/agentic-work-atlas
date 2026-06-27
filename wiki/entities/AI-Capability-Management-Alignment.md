@@ -11,7 +11,6 @@ updated: 2026-06-22
 tags:
   - AI-management
   - capability-tiers
-  - delegation-patterns
 evidence_level: medium
 claim_type: extracted
 related_entities:

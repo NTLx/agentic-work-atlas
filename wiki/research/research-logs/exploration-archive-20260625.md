@@ -5,8 +5,6 @@ created: 2026-06-25
 updated: 2026-06-25
 tags:
   - research-archive
-  - exploration
-  - resolved
 ---
 
 # 探索发现与验证归档

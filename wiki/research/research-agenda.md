@@ -4,7 +4,6 @@ title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
 updated: 2026-06-27
 tags:
-  - research-agenda
   - agentic-work-atlas
   - llm-wiki
   - knowledge-management

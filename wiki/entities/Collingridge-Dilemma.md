@@ -11,8 +11,6 @@ updated: 2026-06-16
 evidence_level: medium
 claim_type: mixed
 tags:
-  - policy
-  - technology-governance
 related_entities:
   - "[[N-Hour]]"
   - "[[Frontier-Developer-Obligations]]"

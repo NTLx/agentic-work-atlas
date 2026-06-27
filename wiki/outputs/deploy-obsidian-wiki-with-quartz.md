@@ -4,8 +4,6 @@ title: 将 Obsidian 知识库部署为 LLM Wiki 网站
 created: 2026-04-13
 updated: 2026-05-25
 tags:
-  - tutorial
-  - quartz
   - obsidian
   - llm-wiki
 ---

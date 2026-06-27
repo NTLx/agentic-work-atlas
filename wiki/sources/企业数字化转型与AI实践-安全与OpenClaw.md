@@ -9,9 +9,7 @@ tags:
   - source-summary
   - ai-safety
   - agent-harness
-  - OpenClaw
   - china-enterprise
-  - skill-system
 evidence_level: medium
 claim_type: mixed
 ---

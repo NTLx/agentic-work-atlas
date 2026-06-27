@@ -12,8 +12,6 @@ evidence_level: medium
 claim_type: mixed
 tags:
   - agentic-engineering
-  - tool-design
-  - ACI
 related_entities:
   - "[[ACI-Agent-Computer-Interface]]"
   - "[[Agent-Harness]]"

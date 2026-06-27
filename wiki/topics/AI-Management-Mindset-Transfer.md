@@ -8,7 +8,6 @@ evidence_level: low
 claim_type: extracted
 tags:
   - management
-  - AI-delegation
   - human-value
 related_entities:
   - "[[AI-Capability-Management-Alignment]]"

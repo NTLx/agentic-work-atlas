@@ -9,7 +9,6 @@ tags:
   - source-summary
   - agentic-engineering
   - agent-harness
-  - loop-engineering
   - verification
 evidence_level: medium
 claim_type: mixed

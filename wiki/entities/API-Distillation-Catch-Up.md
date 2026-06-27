@@ -12,7 +12,6 @@ updated: 2026-06-20
 tags:
   - concept
   - AI-scaling
-  - model-sourcing
 evidence_level: high
 claim_type: mixed
 related_entities:

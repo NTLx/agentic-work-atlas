@@ -8,10 +8,6 @@ updated: 2026-06-17
 tags:
   - source-summary
   - agentic-engineering
-  - MCP
-  - A2A
-  - agent-discovery
-  - open-specification
 evidence_level: medium
 claim_type: mixed
 ---

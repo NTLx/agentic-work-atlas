@@ -9,7 +9,6 @@ tags:
   - source-summary
   - agent-safety
   - privacy
-  - deep-research
   - RL
 evidence_level: high
 claim_type: mixed

@@ -12,7 +12,6 @@ updated: 2026-06-22
 tags:
   - person
   - agentic-engineering
-  - tool-builder
 related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Agent-Ergonomics]]"

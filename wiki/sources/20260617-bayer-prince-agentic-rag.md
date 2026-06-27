@@ -11,7 +11,6 @@ tags:
   - RAG
   - multi-agent
   - context-engineering
-  - pharma
 evidence_level: high
 claim_type: mixed
 ---

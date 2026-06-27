@@ -12,8 +12,6 @@ tags:
   - AI-Agent
   - multi-agent
   - agent-security
-  - failure-mode
-  - causal-chain
 evidence_level: medium
 claim_type: synthesized
 related_entities:

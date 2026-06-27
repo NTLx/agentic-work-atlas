@@ -5,7 +5,6 @@ created: 2026-06-24
 updated: 2026-06-24
 tags:
   - research-archive
-  - resolved-judgments
 ---
 
 # 已收敛判断归档

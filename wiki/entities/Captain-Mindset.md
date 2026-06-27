@@ -12,7 +12,6 @@ evidence_level: medium
 claim_type: mixed
 tags:
   - agentic-engineering
-  - human-role
   - management
   - workflow
 related_entities:

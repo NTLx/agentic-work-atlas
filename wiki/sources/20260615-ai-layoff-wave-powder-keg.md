@@ -9,8 +9,6 @@ tags:
   - source-summary
   - layoffs
   - AI-economy
-  - inequality
-  - social-license
 evidence_level: medium
 claim_type: mixed
 ---
