@@ -22,6 +22,7 @@ source_raw:
   - '[[20260413-llm-wiki]]'
   - '[[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]]'
   - "[[20260602-karpathy-shortification-of-learning]]"
+  - '[[20260625-ford-ai-quality-jd-power]]'
 ---
 
 # Knowledge Compilation
@@ -271,3 +272,5 @@ Query → Answer → File back to Wiki → Compounding
 - [[RAG-vs-LLM-Wiki]] — 编译 vs 检索的对比
 - [[Context-Engineering]] — 编译时的上下文优化
 - [[Multi-Layer-Memory]] — 编译产物的记忆层级
+- [[20260625-ford-ai-quality-jd-power]] — 反面案例：Ford 未能将资深工程师的制度性知识"编译"进 AI 系统，导致质量缺陷
+- [[20260625-ford-ai-quality-jd-power]] — Ford 案例：资深工程师的制度性知识未完成"编译"进 AI 系统，导致系统产出缺陷；印证了编译流程中"人参与指导"的必要性

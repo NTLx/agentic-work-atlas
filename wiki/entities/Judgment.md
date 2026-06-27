@@ -24,6 +24,7 @@ source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
   - '[[Good Taste the Only Real Moat Left]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
+  - '[[20260625-ford-ai-quality-jd-power]]'
 ---
 
 # Judgment（判断力）
@@ -84,7 +85,13 @@ Judgment 不是终审判决，它是**暂时性结论的 art**——在迷雾中
 - [[Decision-Quality]] — Judgment 为 Decision Quality 提供在不确定性中做出选择的底层能力
 - [[Discernment]] — Judgment 和 Discernment 同属判别力谱系：Discernment 看透本质，Judgment 做出取舍
 
+### 制度性知识与 Judgment 的不可编码性
+
+Ford 案例（→ [[20260625-ford-ai-quality-jd-power]]）证实了 Judgment 的不可编码性：资深工程师积累了多代产品开发周期中形成的判断力——识别"问题在爬进系统之前"的能力——这部分知识未能在工程师离职前转移进 AI 系统。AI 需要制度性知识来训练，但制度性知识的核心正是 Judgment，形成递归困境。
+
 ## 来源
 
 - [[Good Taste the Only Real Moat Left]]
 - [[20260413-why-ai-first-strategy-wrong]] — CREAO CTO Peter Pang: "训练批判性思维。学会评估论点、找出漏洞、质疑假设。"
+- [[20260625-ford-ai-quality-jd-power]] — Ford 的制度性知识未能编码进 AI 系统，导致质量缺陷
+- [[20260625-ford-ai-quality-jd-power]] — Ford 案例：AI 系统无法替代工程师的判断力，制度性知识未转移导致质量缺陷；350+ 资深工程师被召回重建这一层专业能力

@@ -24,6 +24,7 @@ related_entities:
   - '[[Organizational-Self-Awareness]]'
 source_raw:
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
+  - '[[20260625-ford-ai-quality-jd-power]]'
 ---
 
 # AI Capability Gap（AI 能力鸿沟）
@@ -85,6 +86,10 @@ AI Capability Gap 至少由五个因素叠加产生。
 AI Capability Gap 会直接影响组织决策。没有见过前沿 agentic 工作流的人，可能低估重构工程流程和知识工作的必要性；深度用户则可能把 coding agent 的峰值体验过度外推到所有岗位。
 
 更稳妥的做法是建立共享评估场景：让不同层级的人在同一模型、同一任务、同一验收标准下观察结果。组织需要的不只是“AI 培训”，而是把能力判断放回可验证工作流。
+
+## 补充案例：Ford 的工业级能力鸿沟
+
+Ford 案例（→ [[20260625-ford-ai-quality-jd-power]]）揭示了 AI Capability Gap 在工业制造中的表现：同一家公司的 AI 系统，在不同工程师团队的使用下效果截然不同——资深工程师知道哪些 edge cases 需要关注，年轻工程师缺乏这种判断力。AI 的有效性不只取决于模型和工具，还取决于使用者的制度性知识储备。
 
 ## 前提与局限性
 

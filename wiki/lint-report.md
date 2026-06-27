@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-27"
-score: 99
+score: 94
 status: "FAIL"
 tags:
   - lint-report
@@ -13,17 +13,17 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **99/100**
-> 阻断问题: **1**
+> 分数: **94/100**
+> 阻断问题: **6**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 150 |
-| Raw 已编译 | 150 |
+| Raw 来源 | 151 |
+| Raw 已编译 | 151 |
 | Raw 待编译 | 0 |
-| Entity | 284 |
+| Entity | 285 |
 | Topic | 30 |
 | Comparison | 19 |
 | Output | 5 |
@@ -37,24 +37,32 @@ tags:
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
-| `source_raw` | 0 |
-| `tag` | 91 |
-| `evidence` | 1 |
+| `source_raw` | 1 |
+| `tag` | 99 |
+| `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 0 |
-| `entity` | 0 |
+| `entity` | 5 |
 | `comparison` | 0 |
 | `index` | 0 |
 
 ## 问题明细
 
-### evidence
+### entity
 
-- `wiki/entities/Minsky-Paradox.md` - `evidence_level 必须为 high/medium/low: 'synthesized'`
+- `wiki/entities/Institutional-Knowledge.md` - `Entity 缺少必填字段: definition`
+- `wiki/entities/Institutional-Knowledge.md` - `Entity 缺少必填字段: source_raw`
+- `wiki/entities/Institutional-Knowledge.md` - `概念 Entity 缺少章节: ## 关键数据点`
+- `wiki/entities/Institutional-Knowledge.md` - `概念 Entity 缺少章节: ## 前提与局限性`
+- `wiki/entities/Institutional-Knowledge.md` - `概念 Entity 缺少章节: ## 关联概念`
 
 ### low-evidence
 
 - `wiki/topics/AI-Management-Mindset-Transfer.md` - `低证据页面 AI-Management-Mindset-Transfer 只能作为补 source 或探索线索`
+
+### source_raw
+
+- `wiki/entities/Wisdom-Work.md` - `source_raw 目标不存在: [[Knowledge Work Is Dying—Here's What Comes Next]]`
 
 ### tag
 
@@ -80,8 +88,11 @@ tags:
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'MoE'`
 - `wiki/sources/20260617-google-amie-research-arc.md` - `一次性 tag 仅出现 1 次: 'RCT'`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'agent-discovery'`
+- `wiki/entities/Institutional-Knowledge.md` - `一次性 tag 仅出现 1 次: 'ai'`
 - `wiki/sources/20260609-magnetar-ai-analysts.md` - `一次性 tag 仅出现 1 次: 'ai-analysts'`
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'ai-ecosystem'`
+- `wiki/sources/20260625-ford-ai-quality-jd-power.md` - `一次性 tag 仅出现 1 次: 'ai-quality'`
+- `wiki/sources/20260625-ford-ai-quality-jd-power.md` - `一次性 tag 仅出现 1 次: 'automotive'`
 - `wiki/entities/Societal-Resilience.md` - `一次性 tag 仅出现 1 次: 'biodefense'`
 - `wiki/sources/20260608-paving-the-way-for-agents-in-biology.md` - `一次性 tag 仅出现 1 次: 'biology'`
 - `wiki/comparisons/Agent-Failure-Causal-Chain.md` - `一次性 tag 仅出现 1 次: 'causal-chain'`
@@ -98,6 +109,7 @@ tags:
 - `wiki/sources/20260617-anthropic-claude-code-expertise.md` - `一次性 tag 仅出现 1 次: 'domain-expertise'`
 - `wiki/sources/how-agents-are-transforming-work.md` - `一次性 tag 仅出现 1 次: 'economic-research'`
 - `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `一次性 tag 仅出现 1 次: 'engineering-culture'`
+- `wiki/entities/Institutional-Knowledge.md` - `一次性 tag 仅出现 1 次: 'entity'`
 - `wiki/entities/Minsky-Paradox.md` - `一次性 tag 仅出现 1 次: 'entropy'`
 - `wiki/entities/Positionality.md` - `一次性 tag 仅出现 1 次: 'epistemology'`
 - `wiki/outputs/安全-安全-不安全.md` - `一次性 tag 仅出现 1 次: 'essay'`
@@ -105,6 +117,7 @@ tags:
 - `wiki/comparisons/Agent-Failure-Causal-Chain.md` - `一次性 tag 仅出现 1 次: 'failure-mode'`
 - `wiki/sources/20260609-magnetar-ai-analysts.md` - `一次性 tag 仅出现 1 次: 'financial-services'`
 - `wiki/sources/企业数字化转型与AI实践-数智化底座.md` - `一次性 tag 仅出现 1 次: 'first-principles'`
+- `wiki/sources/20260625-ford-ai-quality-jd-power.md` - `一次性 tag 仅出现 1 次: 'ford'`
 - `wiki/entities/Decide-Execute-Deliver-Sandwich.md` - `一次性 tag 仅出现 1 次: 'framework'`
 - `wiki/sources/20260617-openai-lifescibench.md` - `一次性 tag 仅出现 1 次: 'frontier-model'`
 - `wiki/sources/20260618-openai-rare-disease-diagnosis.md` - `一次性 tag 仅出现 1 次: 'genomic-reanalysis'`
@@ -114,6 +127,8 @@ tags:
 - `index.md` - `一次性 tag 仅出现 1 次: 'index'`
 - `wiki/sources/20260615-ai-layoff-wave-powder-keg.md` - `一次性 tag 仅出现 1 次: 'inequality'`
 - `wiki/sources/20260617-tim-ferriss-ai-killed-nonfiction.md` - `一次性 tag 仅出现 1 次: 'information-economy'`
+- `wiki/sources/20260625-ford-ai-quality-jd-power.md` - `一次性 tag 仅出现 1 次: 'institutional-knowledge'`
+- `wiki/entities/Institutional-Knowledge.md` - `一次性 tag 仅出现 1 次: 'knowledge'`
 - `wiki/sources/20260617-langchain-legal-agent-verifiers.md` - `一次性 tag 仅出现 1 次: 'legal-AI'`
 - `wiki/sources/20260617-openai-lifescibench.md` - `一次性 tag 仅出现 1 次: 'life-science'`
 - `wiki/entities/LLM-as-a-Judge.md` - `一次性 tag 仅出现 1 次: 'llm'`
@@ -126,6 +141,7 @@ tags:
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'open-specification'`
 - `wiki/sources/20260618-openai-rare-disease-diagnosis.md` - `一次性 tag 仅出现 1 次: 'openai-o3'`
 - `wiki/entities/Agent-Adoption-Curve.md` - `一次性 tag 仅出现 1 次: 'organizational-ai'`
+- `wiki/entities/Institutional-Knowledge.md` - `一次性 tag 仅出现 1 次: 'organizational-memory'`
 - `wiki/sources/20260617-bayer-prince-agentic-rag.md` - `一次性 tag 仅出现 1 次: 'pharma'`
 - `wiki/entities/Positionality.md` - `一次性 tag 仅出现 1 次: 'philosophy'`
 - `wiki/entities/Collingridge-Dilemma.md` - `一次性 tag 仅出现 1 次: 'policy'`

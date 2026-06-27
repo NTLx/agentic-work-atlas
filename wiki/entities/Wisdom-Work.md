@@ -16,7 +16,8 @@ related_entities:
   - '[[Judgment]]'
   - '[[Taste]]'
 source_raw:
-  - '[[Knowledge Work Is Dying—Here’s What Comes Next]]'
+  - "[[Knowledge Work Is Dying—Here's What Comes Next]]"
+  - "[[20260625-ford-ai-quality-jd-power]]"
 ---
 
 # Wisdom Work
