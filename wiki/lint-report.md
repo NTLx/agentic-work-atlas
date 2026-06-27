@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-06-27"
-score: 100
-status: "PASS"
+score: 98
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-06-27
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **98/100**
+> 阻断问题: **2**
 
 ## 统计
 
@@ -23,7 +23,7 @@ tags:
 | Raw 来源 | 150 |
 | Raw 已编译 | 150 |
 | Raw 待编译 | 0 |
-| Entity | 283 |
+| Entity | 284 |
 | Topic | 30 |
 | Comparison | 19 |
 | Output | 5 |
@@ -35,11 +35,11 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 0 |
 | `hidden-char` | 0 |
-| `mathjax` | 0 |
+| `mathjax` | 1 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 89 |
-| `evidence` | 0 |
+| `tag` | 91 |
+| `evidence` | 1 |
 | `low-evidence` | 1 |
 | `stale-core` | 0 |
 | `entity` | 0 |
@@ -48,9 +48,17 @@ tags:
 
 ## 问题明细
 
+### evidence
+
+- `wiki/entities/Minsky-Paradox.md` - `evidence_level 必须为 high/medium/low: 'synthesized'`
+
 ### low-evidence
 
 - `wiki/topics/AI-Management-Mindset-Transfer.md` - `低证据页面 AI-Management-Mindset-Transfer 只能作为补 source 或探索线索`
+
+### mathjax
+
+- `wiki/entities/Minsky-Paradox.md:86` - `发现裸露 $，需用反引号包裹或反斜杠转义`
 
 ### tag
 
@@ -94,6 +102,7 @@ tags:
 - `wiki/sources/20260617-anthropic-claude-code-expertise.md` - `一次性 tag 仅出现 1 次: 'domain-expertise'`
 - `wiki/sources/how-agents-are-transforming-work.md` - `一次性 tag 仅出现 1 次: 'economic-research'`
 - `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `一次性 tag 仅出现 1 次: 'engineering-culture'`
+- `wiki/entities/Minsky-Paradox.md` - `一次性 tag 仅出现 1 次: 'entropy'`
 - `wiki/entities/Positionality.md` - `一次性 tag 仅出现 1 次: 'epistemology'`
 - `wiki/outputs/安全-安全-不安全.md` - `一次性 tag 仅出现 1 次: 'essay'`
 - `wiki/research/research-logs/exploration-archive-20260625.md` - `一次性 tag 仅出现 1 次: 'exploration'`
@@ -115,6 +124,7 @@ tags:
 - `wiki/sources/20260626-llm-as-judge-healthcare.md` - `一次性 tag 仅出现 1 次: 'llm-as-a-judge'`
 - `wiki/sources/20260617-langchain-art-of-loop-engineering.md` - `一次性 tag 仅出现 1 次: 'loop-engineering'`
 - `wiki/sources/20260616-why-is-meta-destroying-its-engineering.md` - `一次性 tag 仅出现 1 次: 'meta'`
+- `wiki/entities/Minsky-Paradox.md` - `一次性 tag 仅出现 1 次: 'minsky-paradox'`
 - `wiki/sources/20260617-bytebytego-open-weight-models.md` - `一次性 tag 仅出现 1 次: 'model-architecture'`
 - `wiki/entities/API-Distillation-Catch-Up.md` - `一次性 tag 仅出现 1 次: 'model-sourcing'`
 - `wiki/sources/20260617-huggingface-agentic-resource-discovery.md` - `一次性 tag 仅出现 1 次: 'open-specification'`
