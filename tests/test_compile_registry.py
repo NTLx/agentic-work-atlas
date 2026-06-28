@@ -214,3 +214,52 @@ def test_reconcile_adds_new_raw_and_reports_recompile_candidates(tmp_path):
     assert reconciled["items"]["fresh.md"]["status"] == "pending"
     assert anomalies == []
     assert candidates == [{"raw_file": "compiled.md", "reason": "body-changed"}]
+
+
+def test_cli_ensure_and_mark_compiled_round_trip(tmp_path, capsys):
+    compile_registry = load_compile_registry()
+    write_raw(tmp_path, "article.md", "type: raw\n", "body\n")
+
+    assert compile_registry.main(["--root", str(tmp_path), "ensure", "article.md"]) == 0
+    assert compile_registry.main(
+        [
+            "--root",
+            str(tmp_path),
+            "mark-compiled",
+            "article.md",
+            "--summary-path",
+            "wiki/sources/article.md",
+        ]
+    ) == 0
+
+    registry = compile_registry.load_registry(tmp_path)
+    captured = capsys.readouterr().out
+
+    assert registry["items"]["article.md"]["status"] == "compiled"
+    assert registry["items"]["article.md"]["summary_path"] == "wiki/sources/article.md"
+    assert "article.md" in captured
+
+
+def test_cli_mark_skipped_persists_reason_and_note(tmp_path):
+    compile_registry = load_compile_registry()
+    write_raw(tmp_path, "skip-me.md", "type: raw\n", "body\n")
+
+    assert compile_registry.main(["--root", str(tmp_path), "ensure", "skip-me.md"]) == 0
+    assert compile_registry.main(
+        [
+            "--root",
+            str(tmp_path),
+            "mark-skipped",
+            "skip-me.md",
+            "--reason-code",
+            "off-topic",
+            "--note",
+            "不服务于 AI / Agent 工作主线",
+        ]
+    ) == 0
+
+    registry = compile_registry.load_registry(tmp_path)
+
+    assert registry["items"]["skip-me.md"]["status"] == "skipped"
+    assert registry["items"]["skip-me.md"]["skip_reason_code"] == "off-topic"
+    assert registry["items"]["skip-me.md"]["skip_note"] == "不服务于 AI / Agent 工作主线"

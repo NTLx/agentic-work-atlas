@@ -110,6 +110,23 @@ def mark_skipped(registry: dict, raw_file: str, reason_code: str, note: str, bod
     return entry
 
 
+def ensure_entry(registry: dict, raw_file: str, body_sha256: str, now: str) -> dict:
+    entry = registry["items"].get(raw_file)
+    if entry is None:
+        entry = {
+            "raw_file": raw_file,
+            "status": "pending",
+            "body_sha256": body_sha256,
+            "updated_at": now,
+        }
+        registry["items"][raw_file] = entry
+    elif entry.get("status") == "pending":
+        entry["body_sha256"] = body_sha256
+        entry["updated_at"] = now
+    registry["updated_at"] = now
+    return entry
+
+
 def list_pending(registry: dict) -> list[str]:
     return sorted(
         raw_file
@@ -206,6 +223,10 @@ def render_status(registry: dict, recompile_candidates: list[dict], anomalies: l
     return "\n".join(lines)
 
 
+def raw_path_for(root: Path, raw_file: str) -> Path:
+    return root / "raw" / raw_file
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Manage raw compile registry")
     parser.add_argument("--root", type=Path, default=ROOT, help="Repository root")
@@ -213,6 +234,18 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.add_parser("bootstrap", help="Bootstrap registry from legacy raw/wiki signals")
     subparsers.add_parser("reconcile", help="Reconcile registry against filesystem")
     subparsers.add_parser("status", help="Show registry counts and recompile candidates")
+
+    ensure = subparsers.add_parser("ensure", help="Ensure a raw file exists in the registry as pending")
+    ensure.add_argument("raw_file")
+
+    mark_compiled_parser = subparsers.add_parser("mark-compiled", help="Persist a compiled raw entry")
+    mark_compiled_parser.add_argument("raw_file")
+    mark_compiled_parser.add_argument("--summary-path", required=True)
+
+    mark_skipped_parser = subparsers.add_parser("mark-skipped", help="Persist a skipped raw entry")
+    mark_skipped_parser.add_argument("raw_file")
+    mark_skipped_parser.add_argument("--reason-code", required=True)
+    mark_skipped_parser.add_argument("--note", required=True)
     return parser
 
 
@@ -227,6 +260,40 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     registry = load_registry(args.root)
+    if args.command == "ensure":
+        raw_path = raw_path_for(args.root, args.raw_file)
+        ensure_entry(registry, args.raw_file, body_sha256=compute_body_sha256(raw_path), now=now_iso())
+        save_registry(args.root, registry)
+        print(f"ensured {args.raw_file}")
+        return 0
+
+    if args.command == "mark-compiled":
+        raw_path = raw_path_for(args.root, args.raw_file)
+        mark_compiled(
+            registry,
+            raw_file=args.raw_file,
+            summary_path=args.summary_path,
+            body_sha256=compute_body_sha256(raw_path),
+            now=now_iso(),
+        )
+        save_registry(args.root, registry)
+        print(f"compiled {args.raw_file}")
+        return 0
+
+    if args.command == "mark-skipped":
+        raw_path = raw_path_for(args.root, args.raw_file)
+        mark_skipped(
+            registry,
+            raw_file=args.raw_file,
+            reason_code=args.reason_code,
+            note=args.note,
+            body_sha256=compute_body_sha256(raw_path),
+            now=now_iso(),
+        )
+        save_registry(args.root, registry)
+        print(f"skipped {args.raw_file}")
+        return 0
+
     registry, anomalies, candidates = reconcile_registry(args.root, registry=registry)
     if args.command == "reconcile":
         save_registry(args.root, registry)
