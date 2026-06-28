@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 from datetime import datetime
@@ -115,3 +116,126 @@ def list_pending(registry: dict) -> list[str]:
         for raw_file, entry in registry.get("items", {}).items()
         if entry.get("status", "pending") == "pending"
     )
+
+
+def detect_legacy_compiled(raw_path: Path, root: Path) -> bool:
+    text = raw_path.read_text(encoding="utf-8", errors="replace")
+    compiled_note = root / "wiki" / "sources" / raw_path.name
+    return "## 编译摘要" in text or compiled_note.exists()
+
+
+def bootstrap_registry(root: Path = ROOT, now: str | None = None) -> dict:
+    stamp = now or now_iso()
+    registry = empty_registry(stamp)
+    for raw_path in sorted((root / "raw").glob("*.md")):
+        body_sha256 = compute_body_sha256(raw_path)
+        if detect_legacy_compiled(raw_path, root):
+            mark_compiled(
+                registry,
+                raw_file=raw_path.name,
+                summary_path=expected_summary_path(raw_path.name),
+                body_sha256=body_sha256,
+                now=stamp,
+            )
+        else:
+            registry["items"][raw_path.name] = {
+                "raw_file": raw_path.name,
+                "status": "pending",
+                "body_sha256": body_sha256,
+                "updated_at": stamp,
+            }
+    registry["updated_at"] = stamp
+    return registry
+
+
+def reconcile_registry(
+    root: Path = ROOT, registry: dict | None = None, now: str | None = None
+) -> tuple[dict, list[dict], list[dict]]:
+    stamp = now or now_iso()
+    registry = registry or load_registry(root)
+    anomalies: list[dict] = []
+    candidates: list[dict] = []
+    raw_paths = {path.name: path for path in sorted((root / "raw").glob("*.md"))}
+
+    for raw_file, raw_path in raw_paths.items():
+        entry = registry["items"].get(raw_file)
+        current_digest = compute_body_sha256(raw_path)
+        if entry is None:
+            registry["items"][raw_file] = {
+                "raw_file": raw_file,
+                "status": "pending",
+                "body_sha256": current_digest,
+                "updated_at": stamp,
+            }
+            continue
+        if entry.get("status") == "compiled":
+            if entry.get("body_sha256") != current_digest:
+                candidates.append({"raw_file": raw_file, "reason": "body-changed"})
+            summary_path = root / entry.get("summary_path", "")
+            if not entry.get("summary_path") or not summary_path.exists():
+                candidates.append({"raw_file": raw_file, "reason": "missing-summary"})
+        else:
+            entry["body_sha256"] = current_digest
+            entry["updated_at"] = stamp
+
+    for raw_file in sorted(registry["items"]):
+        if raw_file not in raw_paths:
+            anomalies.append({"raw_file": raw_file, "reason": "missing-raw"})
+
+    registry["updated_at"] = stamp
+    return registry, anomalies, candidates
+
+
+def render_status(registry: dict, recompile_candidates: list[dict], anomalies: list[dict]) -> str:
+    counts = {"pending": 0, "compiled": 0, "skipped": 0}
+    for entry in registry.get("items", {}).values():
+        status = entry.get("status", "pending")
+        counts[status] = counts.get(status, 0) + 1
+
+    lines = [
+        "Raw Compile Registry",
+        "=" * 60,
+        f"pending={counts.get('pending', 0)} compiled={counts.get('compiled', 0)} skipped={counts.get('skipped', 0)}",
+    ]
+    if recompile_candidates:
+        lines.append("recompile-candidates:")
+        lines.extend(f"- {item['raw_file']} ({item['reason']})" for item in recompile_candidates)
+    if anomalies:
+        lines.append("anomalies:")
+        lines.extend(f"- {item['raw_file']} ({item['reason']})" for item in anomalies)
+    return "\n".join(lines)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Manage raw compile registry")
+    parser.add_argument("--root", type=Path, default=ROOT, help="Repository root")
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    subparsers.add_parser("bootstrap", help="Bootstrap registry from legacy raw/wiki signals")
+    subparsers.add_parser("reconcile", help="Reconcile registry against filesystem")
+    subparsers.add_parser("status", help="Show registry counts and recompile candidates")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+
+    if args.command == "bootstrap":
+        registry = bootstrap_registry(args.root)
+        save_registry(args.root, registry)
+        print(f"bootstrapped {len(registry['items'])} raw entries")
+        return 0
+
+    registry = load_registry(args.root)
+    registry, anomalies, candidates = reconcile_registry(args.root, registry=registry)
+    if args.command == "reconcile":
+        save_registry(args.root, registry)
+        print(render_status(registry, candidates, anomalies))
+        return 1 if anomalies else 0
+
+    print(render_status(registry, candidates, anomalies))
+    return 1 if anomalies else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

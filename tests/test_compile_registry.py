@@ -23,6 +23,16 @@ def write_raw(root: Path, name: str, frontmatter: str, body: str) -> Path:
     return path
 
 
+def write_summary(root: Path, raw_name: str) -> Path:
+    path = root / "wiki" / "sources" / raw_name
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        "---\ntype: source-summary\ntitle: Example\nsource_raw:\n  - \"[[example]]\"\n---\n\n## 编译摘要\n",
+        encoding="utf-8",
+    )
+    return path
+
+
 def test_body_digest_ignores_frontmatter_changes(tmp_path):
     compile_registry = load_compile_registry()
     raw_path = write_raw(tmp_path, "example.md", "type: raw\ncreated: 2026-06-28\n", "alpha\nbeta\n")
@@ -171,3 +181,36 @@ def test_load_registry_rejects_invalid_persisted_status(tmp_path):
         assert "invalid registry file" in str(exc)
     else:
         raise AssertionError("expected invalid persisted status to be rejected")
+
+
+def test_bootstrap_registry_reads_legacy_compiled_signals(tmp_path):
+    compile_registry = load_compile_registry()
+    write_raw(tmp_path, "compiled.md", "type: raw\n", "body\n")
+    write_summary(tmp_path, "compiled.md")
+    write_raw(tmp_path, "pending.md", "type: raw\n", "todo\n")
+
+    registry = compile_registry.bootstrap_registry(tmp_path, now="2026-06-28T11:00:00+08:00")
+
+    assert registry["items"]["compiled.md"]["status"] == "compiled"
+    assert registry["items"]["compiled.md"]["summary_path"] == "wiki/sources/compiled.md"
+    assert registry["items"]["pending.md"]["status"] == "pending"
+
+
+def test_reconcile_adds_new_raw_and_reports_recompile_candidates(tmp_path):
+    compile_registry = load_compile_registry()
+    compiled_raw = write_raw(tmp_path, "compiled.md", "type: raw\n", "original\n")
+    write_summary(tmp_path, "compiled.md")
+    registry = compile_registry.bootstrap_registry(tmp_path, now="2026-06-28T11:00:00+08:00")
+
+    write_raw(tmp_path, "fresh.md", "type: raw\n", "new article\n")
+    compiled_raw.write_text("---\ntype: raw\n---\n\nmutated\n", encoding="utf-8")
+
+    reconciled, anomalies, candidates = compile_registry.reconcile_registry(
+        tmp_path,
+        registry=registry,
+        now="2026-06-28T12:00:00+08:00",
+    )
+
+    assert reconciled["items"]["fresh.md"]["status"] == "pending"
+    assert anomalies == []
+    assert candidates == [{"raw_file": "compiled.md", "reason": "body-changed"}]
