@@ -34,7 +34,7 @@ related_entities:
 | 人的核心价值层深钻 | 全库最薄弱层——14 entities (5%)、孤岛率 57%、high evidence 仅 2 | 已有 [[Wisdom-Work]]、[[Taste]]、[[Judgment]]，元认知已追本 | 选"道德判断"或"工匠精神"用 ljg-think 追本；找 AI 具身化反例 |
 | 知识图谱整合层稀薄 | 35% entity 无 topic/comparison 承载（2026-06-25 实测） | 多 hub 结构（Agentic-Engineering 119、Agent-Harness 78），非唯一 hub | 对 98 个未承载 entity 按 tag 聚类建 topic |
 | Output 产出流水线重启 | 最后 output 在 2026-06-01（26 天前），研究→产出转化率仅 7% | 研究层累计 80+ 条思考，仅 5 条转化 | 从 research-logs 提取成熟判断，选 1 个产出 |
-| AI 经济学线程 | 全库在"AI 成本/定价/ROI"维度几乎空白 | 无相关 entity/topic | 找企业 AI agent TCO 分析案例，编译为 source-summary |
+| AI 经济学线程 | 61% 企业无法证明 AI ROI (IDC 2025)，73% pilot 无法规模化 | 新建 [[Tokenpocalypse]] entity；有 Klarna/Lightspeed/Mercado Libre source-summary | 编译 ValueAddVC 三框架（TEI/NPV/Productivity Multiplier）；找"适应速度"指标实证案例 |
 | 中国企业 AI 采用 | 中文 source 占比仅 ~13%，中国视角严重不足 | 有 3 个中国企业案例 source 但未系统编译 | 编译 CIO 大会 raw + 美的/三一案例，提取中国模式特殊性 |
 | 多 Agent 组织病治理 | 一手论文（Hidden Profile、MAEBE、Fukui）待入库 | 已有 [[Multi-Agent-Pathology-and-Governance]] | 优先补一手论文和生产级 observability 复盘 |
 | 高风险行业 AI 验证 | 医疗/法律/金融 AI 验证范式出现但未系统编译 | 多篇 raw 已入库（LifeSciBench、AMIE、legal verifiers）未编译 | 编译 raw 提取共同模式，新建 comparison |
@@ -129,6 +129,7 @@ related_entities:
 - Agent 部署的真实 TCO 结构：token 成本 / 集成成本 / 监督成本 / 失败成本各占多少？
 - FDE vs 标准产品 vs AI Factory 的成本结构差异是否决定路径选择？
 - AI 替代 vs AI 增强的 ROI 差异如何量化？
+- **"适应速度"指标是否可操作** (新)：决策周期÷模型更新周期的比率，在实际企业中如何测量？Klarna 是否符合"比率<1"模型？
 
 **AI 原生测试 (新)：**
 - 非确定性 Agent 系统的"正确性"如何定义？行为范围约束？统计正确？对抗鲁棒？
@@ -186,6 +187,7 @@ related_entities:
 
 | 时间 | 焦点 | 关键共识 | 关键分歧 | 下次方向 |
 |------|------|---------|---------|---------|
+| 2026-06-28 | Tokenpocalypse：企业 AI Token 支出危机 | (1) 传统 ROI 不适用——正态工具无法衡量非平稳肥尾系统；(2) 正确锚点从"位置"(ROI)转向"适应速度"(决策周期÷模型更新周期)；(3) 61% 企业无法证明 AI ROI (IDC 2025)；(4) 73% pilot 无法规模化 | 测量目的之争：内部决策(Taleb/Drucker/Bahcall) vs 外部合法性(Gorbis)；"永久过渡 vs 临时过渡"是假问题——共演化系统无终态 | 找"适应速度"指标实证案例；编译 ValueAddVC 三框架为 source-summary |
 | 2026-06-27 | Agenda 自清洁：假设生命周期管理 | (1) 假设在 agenda ≤14 天无进展→归档；(2) 输出是 agenda 最终消费者——无输出引用的假设降权；(3) 连续 2 个 explore 周期无动作→自动触发归档 | 期限刚性 vs 主题敏感性（高风险假设应更短还是更长？）判定：高风险应更短（7天）——错误保留成本更高 | 实施自清洁 cron 规则；为不同风险等级设定差异化归档期限 |
 | 2026-06-27 | 开源验证器的可民主化边界 | (1) DeepSeek 成本 60-1000x 低于 Opus 确实让 RL post-training 可民主化；(2) 但验证器质量度量（谁验证验证者？）仍是开放问题；(3) 低成本验证改变的是"实验门槛"而非"质量保证" | 验证民主化是否会导致质量军备竞赛而非质量提升？判定：短期军备竞赛→长期收敛到最低可行质量标准 | 找已验证的小团队 RL post-training 成功案例；验证器质量度量的形式化 |
 | 2026-06-27 | FDE 核心价值：从部署到工程化 | (1) FDE 核心交付物不是模型实例而是可复用能力资产；(2) 压力测试：标准产品也能沉淀能力资产（如 Glean 搜索质量随使用提升）；(3) FDE 的差异化价值在"跨工作流的组织学习" | FDE 独特价值是暂时的（产品会追上）还是结构性的（组织学习无法产品化）？判定：结构性——跨工作流组织学习需要人的判断整合 | 找 3 个标准产品沉淀组织能力的反例；区分 FDE 的"当前独特"与"结构独特" |
@@ -196,6 +198,7 @@ related_entities:
 
 > 完整思考日志按日归档，渐进式披露。
 
+- [[2026-06-28]] — Tokenpocalypse 圆桌+追本+QA（企业 AI Token 支出危机 · 测量范式重定义 · 适应速度指标 · 共演化无终态）+ Agent 记忆系统分类学 + Jagged Intelligence + Agent 长期自主性漂移
 - [[2026-06-27]] — Agenda 自清洁规则 + 开源验证器可民主化边界 + FDE 核心价值压力测试 + AI 管理同构性边界 + Minsky 悖论追本 + 高风险行业验证共通模式 + 沉默型崩溃 containment + 元认知不可替代性 + AI 刹车机制 + 位置性统一理论圆桌 + Governor 橡皮图章化圆桌 + Agent 失败因果链圆桌 + 品味局部客观性圆桌
 - [[2026-06-25]] — 全库盘点 + 位置性统一理论涌现 + 产出断层诊断 + 图谱碎片化分析 + Taste深层结构三重不可替代性 + AI架构盲区
 - [[2026-06-24]] — 38 条（AI管理同构性 + CIO转型 + 反馈反转 + 小团队利基 + 开源认证 + 隐私市场失灵 + AI监控AI + Meta解构 + 外部合作 + 战时状态 + 隐私分担 + 隐私约束 + CIO视角 + 小团队竞争 + 高风险验证 + 开源安全 + 组织迁移四维度 + 透明化标准 + 工作流vs管理 + 退出标准独立性 + 监控者悖论 + AI编码瓶颈 + 模拟四层 + 回填检查 + 元思考三层 + 迁移光谱 + 内态记录 + 例外升级 + AI Factory vs FDE + 标准产品边界 + 不可见编排 + 意图理解 + 学习鸿沟 + 过度合规 + Governor + 大胆模型 + 例外升级）
