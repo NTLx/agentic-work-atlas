@@ -216,6 +216,35 @@ def test_reconcile_adds_new_raw_and_reports_recompile_candidates(tmp_path):
     assert candidates == [{"raw_file": "compiled.md", "reason": "body-changed"}]
 
 
+def test_reconcile_ignores_non_sha_placeholder_digests(tmp_path):
+    compile_registry = load_compile_registry()
+    write_raw(tmp_path, "compiled.md", "type: raw\n", "body\n")
+    write_summary(tmp_path, "compiled.md")
+    registry = {
+        "version": 1,
+        "updated_at": "2026-06-28T11:00:00+08:00",
+        "items": {
+            "compiled.md": {
+                "raw_file": "compiled.md",
+                "status": "compiled",
+                "body_sha256": "abc",
+                "summary_path": "wiki/sources/compiled.md",
+                "compiled_at": "2026-06-28T11:00:00+08:00",
+                "updated_at": "2026-06-28T11:00:00+08:00",
+            }
+        },
+    }
+
+    _, anomalies, candidates = compile_registry.reconcile_registry(
+        tmp_path,
+        registry=registry,
+        now="2026-06-28T12:00:00+08:00",
+    )
+
+    assert anomalies == []
+    assert candidates == []
+
+
 def test_cli_ensure_and_mark_compiled_round_trip(tmp_path, capsys):
     compile_registry = load_compile_registry()
     write_raw(tmp_path, "article.md", "type: raw\n", "body\n")

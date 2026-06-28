@@ -42,6 +42,10 @@ def expected_summary_path(raw_file: str) -> str:
     return f"wiki/sources/{Path(raw_file).stem}.md"
 
 
+def is_sha256_digest(value: str) -> bool:
+    return len(value) == 64 and all(char in "0123456789abcdef" for char in value)
+
+
 def empty_registry(now: str | None = None) -> dict:
     stamp = now or now_iso()
     return {"version": 1, "updated_at": stamp, "items": {}}
@@ -186,7 +190,8 @@ def reconcile_registry(
             }
             continue
         if entry.get("status") == "compiled":
-            if entry.get("body_sha256") != current_digest:
+            stored_digest = entry.get("body_sha256", "")
+            if is_sha256_digest(stored_digest) and stored_digest != current_digest:
                 candidates.append({"raw_file": raw_file, "reason": "body-changed"})
             summary_path = root / entry.get("summary_path", "")
             if not entry.get("summary_path") or not summary_path.exists():
