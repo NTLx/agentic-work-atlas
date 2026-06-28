@@ -134,6 +134,8 @@ related_entities:
 - **omission bias 的 RLHF 传递** (新)：人类标注者的 omission bias 是否系统性地传递到 RLHF 训练的模型中？有无实证数据？
 - **Agent 测试的反博弈架构** (新)：production traffic sampling + adversarial red-team + 随机化essential states 的组合是否能有效对抗Goodhart定律？PactLabs 的分层防御架构是否经过实证验证？
 - **Composition coverage 的可操作性** (新)：多Agent系统中跨Agent essential state传递完整性如何测量？有无生产级工具支持？
+- **收敛任务中AI个人vs团队的对照实验** (新)：P&G只测了发散任务——在"选择最佳方案""做最终决策"等收敛任务中，AI个人是否仍优于团队？Mannheim 2025论文是否覆盖此场景？
+- **最小有效单元的行业验证** (新)：2-3人团队是否在所有行业/任务类型中成立？高风险决策（医疗/法律/金融）是否需要更大团队？
 
 **AI 经济学：**
 - Agent 部署的真实 TCO 结构：token 成本 / 集成成本 / 监督成本 / 失败成本各占多少？
@@ -197,6 +199,7 @@ related_entities:
 
 | 时间 | 焦点 | 关键共识 | 关键分歧 | 下次方向 |
 |------|------|---------|---------|---------|
+| 2026-06-28 | 认知分工的实证边界 | (1) AI把知识整合压缩到个人——发散任务有效(P&G: AI个人+0.37SD > 无AI团队+0.24SD)；(2) 收敛任务仍需团队——利益权衡+异议保留不可压缩；(3) 团队最小有效单元=决策者+挑战者+责任人(2-3人)；(4) 元分析：58%人类-AI团队未优于单独表现 | 团队终态规模(Graeber 2-3人 vs Christensen阶段演变)；AI收敛角色(Drucker vs Graeber)；表演性协作消失速度 | 找收敛任务对照实验；编译Mannheim团队-AI决策论文 |
 | 2026-06-28 | AI 原生测试：非确定性正确性框架 | (1) Agent正确性=essential outcomes可靠达成(非匹配预期输出)；(2) Dominator analysis验证结构正确性但未验证语义正确性；(3) 覆盖率四层体系：state⊂outcome⊂adversarial⊂composition；(4) Goodhart定律在AI测试中适用——需要反博弈设计 | 形式证明(Dijkstra) vs 连续度量(Whittaker)；可替换性(Liskov) vs 语义正确性；反博弈=密码学不可伪造性(Bishop) | 编译PactLabs Goodhart防御架构；找production traffic sampling实证；追踪Composition coverage |
 | 2026-06-28 | 沉默型崩溃 containment：不作为防御 | (1) "不作为"比"过度行为"更危险——无痕迹、风险积累；(2) 现有containment是禁止性架构,不作为需要义务性架构——计算不对称；(3) 解法是可见性替代强制性——结构化决策日志；(4) 决策日志主要价值是事前威慑(执法记录仪效应) | 显式声明可行性(Schneier vs Picard)；审计递归问题(Kahneman)；omission bias从标注到模型的传递 | 编译decision-trace-reconstructor；找决策日志减少不作为的实验证据 |
 | 2026-06-28 | Agent 编排：专精 vs 规模 | (1) 专精模型在特定任务可击败通用模型(DharmaOCR 3B beat Opus 4.6, 52x cheaper)；(2) 编排层=广度(元认知), worker=深度(领域知识)→分层架构自然最优；(3) 生产最优="中等通用编排+专精worker"；(4) 编排层分配决策是价值对齐→需要组织偏好函数 | 编排层用最强通用(LeCun) vs 中等通用+成本控制(Schmidt) vs 需要组织偏好函数(Russell)；AdaptOrch(arxiv 2602.16873)直接回应路由问题 | 编译AdaptOrch论文；找组织偏好函数生产案例；追踪MoE vs Multi-Agent同构性 |
@@ -213,7 +216,7 @@ related_entities:
 
 > 完整思考日志按日归档，渐进式披露。
 
-- [[2026-06-28]] — AI原生测试正确性框架 圆桌+QA（essential outcomes · Dominator analysis结构vs语义 · 覆盖率四层体系 · Goodhart定律反博弈 · arxiv 2603.28063联网）+ 沉默型崩溃containment + Agent 编排专精vs规模 + 人的核心价值可维持性 + 多 Agent 对齐倒 U 型悖论 + Tokenpocalypse + Agent 记忆系统分类学 + Jagged Intelligence + Agent 长期自主性漂移
+- [[2026-06-28]] — 认知分工实证边界 圆桌+QA（P&G实验AI个人+0.37SD · 发散/收敛区分 · 团队最小有效单元2-3人 · 58%人类-AI团队未优于单独联网）+ AI原生测试正确性框架 + 沉默型崩溃containment + Agent 编排专精vs规模 + 人的核心价值可维持性 + 多 Agent 对齐倒 U 型悖论 + Tokenpocalypse + Agent 记忆系统分类学 + Jagged Intelligence + Agent 长期自主性漂移
 - [[2026-06-27]] — Agenda 自清洁规则 + 开源验证器可民主化边界 + FDE 核心价值压力测试 + AI 管理同构性边界 + Minsky 悖论追本 + 高风险行业验证共通模式 + 沉默型崩溃 containment + 元认知不可替代性 + AI 刹车机制 + 位置性统一理论圆桌 + Governor 橡皮图章化圆桌 + Agent 失败因果链圆桌 + 品味局部客观性圆桌
 - [[2026-06-25]] — 全库盘点 + 位置性统一理论涌现 + 产出断层诊断 + 图谱碎片化分析 + Taste深层结构三重不可替代性 + AI架构盲区
 - [[2026-06-24]] — 38 条（AI管理同构性 + CIO转型 + 反馈反转 + 小团队利基 + 开源认证 + 隐私市场失灵 + AI监控AI + Meta解构 + 外部合作 + 战时状态 + 隐私分担 + 隐私约束 + CIO视角 + 小团队竞争 + 高风险验证 + 开源安全 + 组织迁移四维度 + 透明化标准 + 工作流vs管理 + 退出标准独立性 + 监控者悖论 + AI编码瓶颈 + 模拟四层 + 回填检查 + 元思考三层 + 迁移光谱 + 内态记录 + 例外升级 + AI Factory vs FDE + 标准产品边界 + 不可见编排 + 意图理解 + 学习鸿沟 + 过度合规 + Governor + 大胆模型 + 例外升级）
