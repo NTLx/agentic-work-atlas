@@ -42,7 +42,7 @@ related_entities:
 | **Agent 长期自主性工程** (新) | 当前研究聚焦单次任务，72h+ 自主运行引入漂移/上下文污染/目标衰减 | 无 entity/topic；剪藏方向提及但未探索 | 找生产级 long-running agent 复盘（Devin/OpenHands/Aide），提取漂移模式 |
 | **AI 原生测试范式** (新) | 全库测试/QA 覆盖近乎空白——非确定性系统的正确性如何定义？ | 仅有 SWE-Bench 相关 entity，无测试方法论 | 编译"Testing AI Agents"相关 source，新建 topic |
 | **Agent 记忆系统工程分类学** (新) | 7 个 memory-system tagged entity 零散，缺系统分类 | 概念分散，无 comparison | 四维度分类：短/长、情节/语义、私有/共享、显式/隐式 |
-| **Agent-to-Agent 大规模编排** (新) | 100+ agents 的涌现行为/通信拓扑/故障传播未知 | 剪藏方向提及但零覆盖 | 找 swarm/collective intelligence 一手论文 |
+| **Agent-to-Agent 大规模编排** (新) | 专精vs规模张力确认(DharmaOCR 3B beat Opus 52x)；编排层=广度/worker=深度分层架构涌现 | 有 OpenClaw+DharmaOCR raw；AdaptOrch (arxiv 2602.16873) 直接回应路由问题 | 编译 AdaptOrch；找组织偏好函数生产案例；追踪 MoE vs Multi-Agent 同构性 |
 
 ## 活跃假设
 
@@ -128,6 +128,8 @@ related_entities:
 - **自适应对齐的可行性** (新)：能否根据 Agent 内态指标动态调整对齐强度？前提是什么？
 - **认知分工的实证验证** (新)：表层判断力退化+深层判断力保留的"认知分工"模型是否有长期跟踪数据支持？
 - **AICICA 概念发展** (新)：AI-chatbots-induced cognitive atrophy 是暂时适应还是永久退化？有无干预窗口？
+- **组织偏好函数的工程化** (新)：编排层的"速度vs质量vs成本"权重如何显式注入？AdaptOrch 的 task-adaptive routing 是否可视为一种实现？
+- **MoE vs Multi-Agent 同构性** (新)：MoE 是模型内 token 路由，Multi-Agent 是系统级任务路由——两者是否共享同一套优化理论？
 
 **AI 经济学：**
 - Agent 部署的真实 TCO 结构：token 成本 / 集成成本 / 监督成本 / 失败成本各占多少？
@@ -191,6 +193,7 @@ related_entities:
 
 | 时间 | 焦点 | 关键共识 | 关键分歧 | 下次方向 |
 |------|------|---------|---------|---------|
+| 2026-06-28 | Agent 编排：专精 vs 规模 | (1) 专精模型在特定任务可击败通用模型(DharmaOCR 3B beat Opus 4.6, 52x cheaper)；(2) 编排层=广度(元认知), worker=深度(领域知识)→分层架构自然最优；(3) 生产最优="中等通用编排+专精worker"；(4) 编排层分配决策是价值对齐→需要组织偏好函数 | 编排层用最强通用(LeCun) vs 中等通用+成本控制(Schmidt) vs 需要组织偏好函数(Russell)；AdaptOrch(arxiv 2602.16873)直接回应路由问题 | 编译AdaptOrch论文；找组织偏好函数生产案例；追踪MoE vs Multi-Agent同构性 |
 | 2026-06-28 | 人的核心价值：从不可替代性到可维持性 | (1) 判断力分层：表层(评估输出)被AI侵蚀，深层(定义问题/设定标准)更抗侵蚀；(2) AI工作流系统性训练表层、萎缩深层→判断力降维；(3) 判断力是习惯不是储量——维护=使用=表达；(4) 不存在不可逆点，除非完全停止判断 | 个体可维持性(Mollick/Turkle) vs 组织可维持性(Syed)；选择悖论(维持需要判断力来选择)→维护行为本身就是判断力最低表达 | 找认知分工实证案例；编译CHI 2026 Guided Reflection论文；追踪AICICA概念 |
 | 2026-06-28 | 多 Agent 对齐强度的倒 U 型悖论 | (1) 对齐本质是外部信号覆盖内部判断——覆盖太少则群体无方向，覆盖太多则个体无判断；(2) 安全边际不可观测——Sonnet 输出 100% 但内态已分裂；(3) "调对齐参数"是永恒追逐游戏——靶心不可观测且自移动；(4) Yerkes-Dodson AI 论文直接验证倒 U 型；Alignment as Iatrogenesis 发现对齐在日语中效果反转 | 根因归因：结构(Simon)/激励(March)/文化(Schein)/抑制反噬(Taleb)；探针会被博弈(Schein：重度对齐可能已摧毁Agent独立判断前提) | 找"自适应对齐"生产案例；编译 Yerkes-Dodson AI + Iatrogenesis 论文；追踪对齐的文化依赖性 |
 | 2026-06-28 | Tokenpocalypse：企业 AI Token 支出危机 | (1) 传统 ROI 不适用——正态工具无法衡量非平稳肥尾系统；(2) 正确锚点从"位置"(ROI)转向"适应速度"(决策周期÷模型更新周期)；(3) 61% 企业无法证明 AI ROI (IDC 2025)；(4) 73% pilot 无法规模化 | 测量目的之争：内部决策(Taleb/Drucker/Bahcall) vs 外部合法性(Gorbis)；"永久过渡 vs 临时过渡"是假问题——共演化系统无终态 | 找"适应速度"指标实证案例；编译 ValueAddVC 三框架为 source-summary |
@@ -204,7 +207,7 @@ related_entities:
 
 > 完整思考日志按日归档，渐进式披露。
 
-- [[2026-06-28]] — 人的核心价值：可维持性 圆桌+追本+QA（判断力分层 · 自指悖论消解 · 习惯vs储量 · CHI 2026 Guided Reflection 联网验证）+ 多 Agent 对齐倒 U 型悖论 圆桌+追本+QA + Tokenpocalypse 圆桌+追本+QA + Agent 记忆系统分类学 + Jagged Intelligence + Agent 长期自主性漂移
+- [[2026-06-28]] — Agent 编排专精vs规模 圆桌+QA（DharmaOCR 3B beat Opus 52x · 编排层=广度worker=深度 · 帕累托最优架构 · 组织偏好函数 · AdaptOrch联网）+ 人的核心价值可维持性 + 多 Agent 对齐倒 U 型悖论 + Tokenpocalypse + Agent 记忆系统分类学 + Jagged Intelligence + Agent 长期自主性漂移
 - [[2026-06-27]] — Agenda 自清洁规则 + 开源验证器可民主化边界 + FDE 核心价值压力测试 + AI 管理同构性边界 + Minsky 悖论追本 + 高风险行业验证共通模式 + 沉默型崩溃 containment + 元认知不可替代性 + AI 刹车机制 + 位置性统一理论圆桌 + Governor 橡皮图章化圆桌 + Agent 失败因果链圆桌 + 品味局部客观性圆桌
 - [[2026-06-25]] — 全库盘点 + 位置性统一理论涌现 + 产出断层诊断 + 图谱碎片化分析 + Taste深层结构三重不可替代性 + AI架构盲区
 - [[2026-06-24]] — 38 条（AI管理同构性 + CIO转型 + 反馈反转 + 小团队利基 + 开源认证 + 隐私市场失灵 + AI监控AI + Meta解构 + 外部合作 + 战时状态 + 隐私分担 + 隐私约束 + CIO视角 + 小团队竞争 + 高风险验证 + 开源安全 + 组织迁移四维度 + 透明化标准 + 工作流vs管理 + 退出标准独立性 + 监控者悖论 + AI编码瓶颈 + 模拟四层 + 回填检查 + 元思考三层 + 迁移光谱 + 内态记录 + 例外升级 + AI Factory vs FDE + 标准产品边界 + 不可见编排 + 意图理解 + 学习鸿沟 + 过度合规 + Governor + 大胆模型 + 例外升级）
