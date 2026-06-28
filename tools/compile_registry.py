@@ -25,29 +25,11 @@ def raw_body_text(raw_path: Path) -> str:
     if not lines or lines[0].rstrip("\r\n") != "---":
         return text
 
-    block_scalar_indent: int | None = None
     offset = len(lines[0])
-    for line_index, line in enumerate(lines[1:], start=1):
-        stripped = line.rstrip("\r\n")
-        indent = len(line) - len(line.lstrip(" "))
-
-        if block_scalar_indent is not None:
-            if stripped == "---" and _block_scalar_separator_is_content(lines, line_index, block_scalar_indent):
-                offset += len(line)
-                continue
-            if stripped and indent <= block_scalar_indent:
-                block_scalar_indent = None
-            else:
-                offset += len(line)
-                continue
-
-        if stripped == "---":
-            return text[offset + len(line) :].lstrip("\r\n")
-
-        if _starts_block_scalar(stripped):
-            block_scalar_indent = indent
-
+    for line in lines[1:]:
         offset += len(line)
+        if line.rstrip("\r\n") == "---":
+            return text[offset:].lstrip("\r\n")
     return text
 
 
@@ -62,27 +44,6 @@ def expected_summary_path(raw_file: str) -> str:
 def empty_registry(now: str | None = None) -> dict:
     stamp = now or now_iso()
     return {"version": 1, "updated_at": stamp, "items": {}}
-
-
-def _starts_block_scalar(line: str) -> bool:
-    if ":" not in line:
-        return False
-    key, value = line.split(":", 1)
-    if not key.strip() or "#" in key:
-        return False
-    value = value.lstrip()
-    return value.startswith("|") or value.startswith(">")
-
-
-def _block_scalar_separator_is_content(lines: list[str], separator_index: int, block_scalar_indent: int) -> bool:
-    for line in lines[separator_index + 1 :]:
-        stripped = line.rstrip("\r\n")
-        if not stripped:
-            continue
-        indent = len(line) - len(line.lstrip(" "))
-        if indent <= block_scalar_indent:
-            return ":" in stripped and not stripped.startswith("#")
-    return False
 
 
 def _validate_registry(registry: dict, path: Path) -> None:
@@ -112,6 +73,7 @@ def load_registry(root: Path = ROOT) -> dict:
 
 def save_registry(root: Path, registry: dict) -> None:
     path = registry_path(root)
+    _validate_registry(registry, path)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         json.dumps(registry, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

@@ -37,38 +37,28 @@ def test_body_digest_ignores_frontmatter_changes(tmp_path):
     assert first == second
 
 
-def test_body_digest_ignores_frontmatter_block_scalar_separator_line(tmp_path):
+def test_body_digest_ignores_frontmatter_when_body_starts_with_mapping_like_text(tmp_path):
     compile_registry = load_compile_registry()
     raw_path = tmp_path / "raw" / "example.md"
     raw_path.parent.mkdir(parents=True, exist_ok=True)
     raw_path.write_text(
         "---\n"
-        "type: raw\n"
         "notes: |\n"
-        "  first line\n"
+        "  one\n"
         "---\n"
-        "  second line\n"
-        "created: 2026-06-28\n"
-        "---\n"
-        "\n"
-        "alpha\n"
-        "beta\n",
+        "title: x\n"
+        "body\n",
         encoding="utf-8",
     )
 
     first = compile_registry.compute_body_sha256(raw_path)
     raw_path.write_text(
         "---\n"
-        "type: raw\n"
         "notes: |\n"
-        "  first line\n"
+        "  changed\n"
         "---\n"
-        "  changed line\n"
-        "created: 2026-06-29\n"
-        "---\n"
-        "\n"
-        "alpha\n"
-        "beta\n",
+        "title: x\n"
+        "body\n",
         encoding="utf-8",
     )
     second = compile_registry.compute_body_sha256(raw_path)
@@ -125,6 +115,29 @@ def test_save_and_load_registry_round_trip(tmp_path):
 
     assert loaded == registry
     assert json.loads((tmp_path / "state" / "raw-registry.json").read_text(encoding="utf-8"))["version"] == 1
+
+
+def test_save_registry_rejects_invalid_status(tmp_path):
+    compile_registry = load_compile_registry()
+    registry = {
+        "version": 1,
+        "updated_at": "2026-06-28T10:30:00+08:00",
+        "items": {
+            "broken.md": {
+                "raw_file": "broken.md",
+                "status": "bogus",
+                "body_sha256": "abc123",
+                "updated_at": "2026-06-28T10:30:00+08:00",
+            }
+        },
+    }
+
+    try:
+        compile_registry.save_registry(tmp_path, registry)
+    except ValueError as exc:
+        assert "invalid registry file" in str(exc)
+    else:
+        raise AssertionError("expected invalid status to be rejected on save")
 
 
 def test_load_registry_rejects_invalid_persisted_status(tmp_path):
