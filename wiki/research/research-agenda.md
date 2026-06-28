@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-06-27
+updated: 2026-06-28
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -11,170 +11,121 @@ related_entities:
   - "[[LLM-Wiki]]"
   - "[[Knowledge-Compilation]]"
   - "[[Agentic-Engineering]]"
+  - "[[Agent-Harness]]"
+  - "[[Agent-Logic]]"
   - "[[Human-Governor-Agent-Operator]]"
   - "[[Forward-Deployed-AI-Enablement]]"
   - "[[Enterprise-AI-Factory]]"
-  - "[[Standard-AI-Product-Adoption]]"
-  - "[[Multi-Agent-Pathology-and-Governance]]"
-  - "[[AI-Capability-Management-Alignment]]"
-  - "[[Positionality]]"
-  - "[[Agent-Failure-Causal-Chain]]"
-  - "[[Minsky-Paradox]]"
+  - "[[Verifiability]]"
+  - "[[Tokenpocalypse]]"
+  - "[[Judgment]]"
+  - "[[ACI-Agent-Computer-Interface]]"
 ---
 
 # Agentic Work Atlas 研究议程
 
 > [!note] 使用边界
-> 本页维护当前最值得验证的问题、反例、source 需求和下一步动作。稳定结论必须回填到 entity、topic 或 comparison。已收敛内容见 [[resolved-judgments]] 和 [[exploration-archive-20260625]]。
+> 本页只保留当前最值得推进的研究方向、证伪方向、source 需求和最小动作。详细盘点、长问题清单和已卸载近况见 [[resolved-judgments]]、[[exploration-archive-20260625]]、[[exploration-archive-20260628]]。
 
 ## 当前研究焦点
 
 | 焦点 | 为什么现在重要 | 当前状态 | 下一步动作 |
 |------|----------------|----------|------------|
-| 人的核心价值层深钻 | 全库最薄弱层——14 entities (5%)、孤岛率 57%、high evidence 仅 2 | 已有 [[Wisdom-Work]]、[[Taste]]、[[Judgment]]，元认知已追本 | 选"道德判断"或"工匠精神"用 ljg-think 追本；找 AI 具身化反例 |
-| 知识图谱整合层稀薄 | 35% entity 无 topic/comparison 承载（2026-06-25 实测） | 多 hub 结构（Agentic-Engineering 119、Agent-Harness 78），非唯一 hub | 对 98 个未承载 entity 按 tag 聚类建 topic |
-| Output 产出流水线重启 | 最后 output 在 2026-06-01（26 天前），研究→产出转化率仅 7% | 研究层累计 80+ 条思考，仅 5 条转化 | 从 research-logs 提取成熟判断，选 1 个产出 |
-| AI 经济学线程 | 61% 企业无法证明 AI ROI (IDC 2025)，73% pilot 无法规模化 | 新建 [[Tokenpocalypse]] entity；有 Klarna/Lightspeed/Mercado Libre source-summary | 编译 ValueAddVC 三框架（TEI/NPV/Productivity Multiplier）；找"适应速度"指标实证案例 |
-| 中国企业 AI 采用 | 中文 source 占比仅 ~13%，中国视角严重不足 | 有 3 个中国企业案例 source 但未系统编译 | 编译 CIO 大会 raw + 美的/三一案例，提取中国模式特殊性 |
-| 多 Agent 组织病治理 | 倒 U 型悖论实证确认（Yerkes-Dodson AI + Iatrogenesis）；对齐存在文化依赖性 | [[Multi-Agent-System-Pathology]] evidence_level 升至 high；补倒 U 型+文化依赖性证据 | 编译 Yerkes-Dodson AI + Iatrogenesis 论文；找"自适应对齐"生产案例 |
-| 高风险行业 AI 验证 | 医疗/法律/金融 AI 验证范式出现但未系统编译 | 多篇 raw 已入库（LifeSciBench、AMIE、legal verifiers）未编译 | 编译 raw 提取共同模式，新建 comparison |
-| 跨层整合框架 | 四层（软工/组织/知识/人）各自独立，缺连接框架 | 有 [[Positionality]] 作为统一理论候选 | 从 Positionality 五维度推导四层操作化指标 |
-| **Agent 长期自主性工程** (新) | 当前研究聚焦单次任务，72h+ 自主运行引入漂移/上下文污染/目标衰减 | 无 entity/topic；剪藏方向提及但未探索 | 找生产级 long-running agent 复盘（Devin/OpenHands/Aide），提取漂移模式 |
-| **AI 原生测试范式** (新) | 正确性框架已建立(Dominator analysis+essential outcomes)；覆盖率四层体系涌现；Goodhart定律反博弈成关键 | 有 GitHub Dominator Analysis + ITBench source；arxiv 2603.28063 形式化证明 Goodhart | 编译PactLabs Goodhart防御架构；找production traffic sampling实证；新建 AI-Testing-Paradigm topic |
-| **Agent 记忆系统工程分类学** (新) | 7 个 memory-system tagged entity 零散，缺系统分类 | 概念分散，无 comparison | 四维度分类：短/长、情节/语义、私有/共享、显式/隐式 |
-| **Agent-to-Agent 大规模编排** (新) | 专精vs规模张力确认(DharmaOCR 3B beat Opus 52x)；编排层=广度/worker=深度分层架构涌现 | 有 OpenClaw+DharmaOCR raw；AdaptOrch (arxiv 2602.16873) 直接回应路由问题 | 编译 AdaptOrch；找组织偏好函数生产案例；追踪 MoE vs Multi-Agent 同构性 |
+| 人的核心价值可维持性 | 全库最薄弱层仍是“人如何在 AI 旁边保持判断力” | 已从“不可替代性”推进到“可维持性”；缺长期跟踪与组织级材料 | 追“判断力维护”与“AI 时代学徒制”一手案例，补 [[Judgment]] / [[Wisdom-Work]] |
+| AI 经济学与使用节律 | 成本危机已出现，但 ROI 仍解释不了真实采用节奏 | [[Tokenpocalypse]] 已立题；2026-06-26 Anthropic Economic Index 把焦点推到 work rhythms | 编译 pending raw + 找“适应速度/使用节律”案例，建 topic |
+| 托管 Agent / 计算机使用控制平面 | Agent 正从 API 工具转向托管 runtime 与跨界面行动 | 库内有 [[ACI-Agent-Computer-Interface]]、[[Agent-Harness]]、[[Agent-Containment]]；缺 platform/control-plane 主题 | 收集 computer use、managed agents、sandbox、approval loop 案例，新建 topic/comparison |
+| 评测抗博弈与基准治理 | Agent 能力上升后，评测先于模型成为失真源 | 已有 AI 原生测试框架；缺 reward hacking、judge reliability、production sampling 的系统综述 | 建 `Agent-Evaluation-Governance` 主题骨架，补 source |
+| 动态环境基准与世界模型 | 静态 benchmark 已不足以暴露长期自主与环境耦合问题 | 有 [[World-Model]]、[[Verifiability]]；缺 environment-as-benchmark 承载层 | 汇总 Qwen-AgentWorld / Open Agent Leaderboard / VitaBench 类材料 |
+| Agent logic 与轻量 harness | 企业 adoption 可能更依赖治理骨架，而不是更大模型 | 已有 [[Agent-Logic]]、[[Validation-Pipeline]]、[[Plan-as-Agent-Checkpoint]] 等零散 entity | 整合为 AI-native engineering / governed harness 主题 |
+| 长期自主性与记忆生命周期 | 长任务漂移、记忆陈旧、重置策略正在成为单独工程问题 | long-running 与 memory-system 两条线仍分裂；5 个 memory-system entity 无整合承载 | 合并成长任务记忆生命周期主题，补 postmortem 与 reset 策略 |
+| 多 Agent 编排与组织病 | 协调收益与病理暴露在同一条曲线上 | 倒 U 型悖论已坐实；编排层与 worker 层的分工框架已出现 | 追 adaptive alignment、组织偏好函数与故障传播拓扑 |
+| 中国企业 AI 采用 | 中文一手案例仍明显不足，限制组织层判断 | 有 source，但未形成中国模式 topic | 编译 CIO / 制造业 / Agent Ready 基础设施案例 |
+| 图谱整合与 output 转化 | 100 个 entity 未被 topic/comparison 承载，5 个 output 仅覆盖 12 个 entity | 真缺口不是 raw 不够，而是中层 topic 和 output 断层 | 先对 AGI-economics / memory-system / AI-native engineering 三簇建 topic，再从 2026-06-28 日志挑 1 个 output |
 
 ## 活跃假设
 
-> 未在待证伪判断中覆盖的独立假设。已验证的假设已移至 [[resolved-judgments]]。
-
 | 假设 | 处理 |
 |------|------|
-| 整合层承载提升到 80% 可自动暴露隐藏缺口 | 对 98 个未承载 entity 聚类建 topic，测量缺口发现率 |
-| Output 转化率低是流程问题（缺 research→output 标准路径）而非研究质量问题 | 建立标准转化路径，测试转化率是否提升 |
-| AI 经济学盲区导致路径选择判断失真（缺成本结构数据） | 找 3 个企业 AI agent TCO 案例验证 |
-| AI 管理同构性是有限隐喻而非普遍原理 | 剪藏 HBR + ODSC 论文后压力测试 |
-| Output 是 Wiki 的压力测试 | 保留为工作流假设，不升级为事实 entity |
-| Research agenda 只能支撑"待研究问题存在" | 所有回填检查必须区分 Raw / Wiki / Agenda / 无 |
-| FDE 的核心价值是现场到能力沉淀 | 主动寻找无需 FDE 也能改写核心工作流的反例 |
-| Enterprise AI Learning Gap 可能是产品问题也可能是组织问题 | 找学习型 AI SaaS 在低咨询条件下跨过 production 的案例 |
-| 标准 AI 产品能改写核心工作流但需组织已具备基础 | 找同一工作流下标准产品、FDE、内部 AI Factory 的成本与风险对照 |
-| 品味有"局部客观性"——特定领域内确实有更好/更差的选择 | 找更多领域特定的品味客观性证据 |
-| 品味不可替代性 = 判断力 x 责任 x 时间，AI架构无法兼容 | 用 ljg-think 追本"局部客观性标准从何而来"，找 AI 具身化反例 |
-| Minsky 悖论：稳定制造不稳定——长期平静是脆弱积累过程 | 实证量化：不同风险等级的 Agent 系统熵漂移速率 |
-| **Agent 长期自主性的漂移模式可分类** (新) | 找 3+ long-running agent 复盘，提取分类学 |
-| **AI 原生测试的核心困境不是技术而是"正确性"定义** (新) | 汇编非确定性系统正确性定义的不同范式 |
-| **Agent 记忆系统的四维度分类可覆盖 80%+ 已有 entity** (新) | 对 7 个 memory-system entity 做四维分类验证 |
-| **多 Agent 大规模编排的故障传播遵循幂律** (新) | 找 swarm robotics/分布式系统故障传播论文验证 |
+| 托管 Agent 的竞争壁垒将从“模型强弱”转向“运行时治理质量” | 收集 computer use / managed agents / approval loop 实例，比较控制平面形态 |
+| Agent logic 比更长 context 更能推动 enterprise 规模化 | 用 IBM CUGA、现有 harness 实践和 FDE 案例做对照 |
+| 评测体系的首要失真源将是 reward hacking，而非覆盖率本身 | 汇总 reward hacking、judge reliability、benchmark contamination 材料 |
+| 动态环境 benchmark 比静态 benchmark 更早暴露长期自主性缺陷 | 对比 world model / interactive benchmark 与静态 benchmark 的失效模式 |
+| 有效自主时间取决于记忆生命周期与重置策略，而不只是上下文长度 | 找 long-running postmortem、memory staleness、dreaming/reset 证据 |
+| 认知分工的稳定终态是“发散 1 人 + AI，收敛 2-3 人小组” | 找收敛任务对照实验和高风险行业反例 |
+| AI 使用节律比 ROI 更早暴露工作流是否可 agentize | 跟踪 Anthropic Economic Index、企业 token 使用与节律数据 |
+| 中国企业 AI 采用的分水岭是集成约束与组织准备度，不是模型能力 | 补制造业、客服、内部知识流案例作反证 |
+| Output 是图谱压力测试；没有 output 消费的判断会持续失真 | 从 research-log 挑 1 条直接转 output 验证 |
+| Research agenda 只能支撑“待研究问题存在”，不能支撑“事实已成立” | 所有新判断继续标注 evidence 分层，不越级回填 |
 
 ## 待证伪判断
 
-> 全部待验证和待重新讨论项已归档至 [[resolved-judgments]] 和 [[exploration-archive-20260625]]。新判断见上方"活跃假设"。
+> 新判断全部以“活跃假设”为准；已收敛条目见 [[resolved-judgments]]，详细方向库见 [[exploration-archive-20260628]]。
 
 ## Source 需求队列
 
-> 编译任务见"当前研究焦点"。本队列只列外部 source 需求。
+> 编译任务见“当前研究焦点”。本队列只列最缺的一手 source。
 
-| 优先级 | 目标 | 下一步 source | 触发行动 |
-|--------|------|---------------|----------|
-| P0 | AI 经济学 | 企业 AI agent TCO/ROI 量化分析 | 新建 topic |
-| P0 | 多 Agent 组织病 | Hidden Profile、MAEBE、Fukui 原论文 | 更新 [[Multi-Agent-Pathology-and-Governance]] |
-| P0 | 三路径成本对照 | 客服/研发/back-office 的 FDE + AI Factory + 标准产品案例 | 新建 comparison |
-| P1 | AI 管理同构性压力测试 | Kropp HBR 全文 + ODSC 论文 + Intelligent Delegation 论文 | 更新 [[AI-Capability-Management-Alignment]] |
-| P1 | 学习型 AI SaaS 绕过 FDE | Intercom Fin / Glean / Agentforce 深度案例 | 压力测试 [[Enterprise-AI-Learning-Gap]] |
-| P1 | 人的核心价值深钻 | 道德判断、工匠精神、认知谦逊的一手材料 | 新建 entity |
-| P1 | 中国企业 AI 采用 | 中国 CIO / 开源 AI 生态 / 制造业 AI 落地案例 | 新建 topic |
-| P1 | 高风险行业验证 | 医疗 FDA 审批 / 法律执业责任 / 金融实时风控案例 | 新建 comparison |
-| P1 | Agent 长期自主性漂移 (新) | Devin/OpenHands/Aide 生产复盘 + 分布式系统故障文献 | 新建 entity |
-| P1 | AI 原生测试范式 (新) | "Testing AI Agents" 论文 + 非确定性系统验证方法论 | 新建 topic |
-| P2 | 整合层承载 | 98 个未承载 entity 的聚类与 topic 承载 source | 提升整合层承载至 80% |
-| P2 | LLM Wiki 规模边界 | GBrain / Obsidian-Wiki 工程实现 | 更新 [[Agent-Knowledge-Management]] |
-| P2 | 知识 audit 指标 | 证据回链/冲突检测/概念去重实践 | 更新 lint 工作流 |
-| P2 | Output 转化路径 | research→output 标准化案例 | 建立转化流程 |
-| P2 | Agent 记忆系统分类 (新) | 认知架构（ACT-R/SOAR）+ 数据库理论（CAP for memory） | 新建 comparison |
-| P2 | Agent 大规模编排 (新) | Swarm intelligence 论文 + Akka/Erlang 分布式 Actor 模式 | 新建 entity |
+| 优先级 | 目标 | 当前缺口 | 下一步 source | 触发行动 |
+|--------|------|----------|---------------|----------|
+| P0 | 评测抗博弈与基准治理 | 缺 reward hacking、judge reliability、production sampling 的同库对照 | Reward Hacking 论文、judge panel reliability、production traffic sampling / held-out state 实践 | 新建 topic |
+| P0 | 托管 Agent / 计算机使用控制平面 | 缺托管 runtime、approval loop、sandbox 生产案例 | Google computer use、managed agents、Anthropic/OpenAI containment 与 approval loop 材料 | 新建 topic/comparison |
+| P0 | 动态环境基准与世界模型 | 缺 interactive benchmark 与 world model 串联材料 | Qwen-AgentWorld、Open Agent Leaderboard、VitaBench / ITBench-AA | 新建 topic |
+| P0 | Agent logic 与轻量 harness | 缺“治理骨架优先于大模型”的成体系论据 | IBM CUGA、agent logic、governed harness case studies | 新建 topic |
+| P1 | AI 经济学与使用节律 | 缺 cadence / adaptive speed / token governance 量化案例 | Anthropic Economic Index、Tokenpocalypse、企业 TCO / 使用节律案例 | 更新 topic |
+| P1 | 长期自主性与记忆生命周期 | 缺 72h+ postmortem 与 memory reset 策略 | Devin/OpenHands/Aide 复盘、staleness / dreaming / reset 文献 | 新建 comparison |
+| P1 | 中国企业 AI 采用 | 缺中国组织内部集成细节与约束描述 | CIO 大会、制造业 AI、Agent Ready 基础设施案例 | 新建 topic |
+| P1 | 人的核心价值可维持性 | 缺长期跟踪与组织级反依赖干预案例 | Guided reflection、AI apprenticeship、认知依赖干预研究 | 更新 topic |
+| P2 | AI-native engineering 组织 | 9 个 agentic-engineering entity 无 topic 承载 | Role merging / captain mindset / validation pipeline 一手案例 | 整合 topic |
+| P2 | AGI-economics / memory-system 整合 | 5+5 个 entity 已成簇但未成主题 | AGI 经济学 scenario 材料、memory lifecycle 架构材料 | 提升整合层承载 |
 
 ## 下一步最小实验
 
-- **Output 候选筛选**：从 research-logs 提取 3-5 个成熟 synthesized 判断（位置性操作化/Agent 失败因果链应用/品味不可替代性），选 1 个产出
-- **未承载 entity 聚类**：对 98 个无 topic/comparison 承载的 entity 按 tag 聚类，成簇的建 topic，目标整合层承载 65%→80%
-- **三路径矩阵**：选客服/研发/back-office 各一个工作流，对照标准产品 vs FDE vs AI Factory
-- **人的核心价值深钻**：用 ljg-think 对"道德判断"做 5 层追本，判断是否值得建新 entity
-- **AI 经济学启动**：找 1 个企业 AI agent TCO 案例编译为 source-summary
-- **Positionality 操作化**：从五维度推导 Agent 架构原则和可测指标
-- **Long-running agent 漂移调查** (新)：搜索 Devin/OpenHands/Aide 的 72h+ 运行复盘，提取漂移模式
-- **AI 原生测试调研** (新)：搜索 "testing AI agents" "non-deterministic system verification" 文献
-- **Agent 记忆四维分类** (新)：对已有 7 个 memory-system entity 按四维度（短/长、情节/语义、私有/共享、显式/隐式）分类
+- 编译 `raw/The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md`，把 AI 经济学从研究议程推到 source-summary。
+- 先建 3 个 topic skeleton：`Agent-Evaluation-Governance`、`Dynamic-Agent-Environments`、`AI-Native-Engineering-Organization`。
+- 把 5 个 `memory-system` entity 并到一张“记忆生命周期”框架图，验证是否真能覆盖现有概念。
+- 选 1 条 2026-06-28 日志直接写成 output，验证“output 是图谱压力测试”。
+- 对 100 个未承载 entity 先只处理 3 个成簇区：AGI-economics、memory-system、agentic-engineering。
+- 为“托管 Agent / 计算机使用控制平面”先做 1 页 source map：runtime、approval、sandbox、audit 4 列。
+- 为“评测抗博弈”先做 1 页 source map：benchmark、judge、traffic sampling、reward hacking 4 列。
 
-## 待验证问题
+## 高杠杆待验证问题
 
-> 与"活跃假设"不重复的独立问题。
+> 全量问题库见 [[exploration-archive-20260628]]；这里只留最该优先推进的问题。
 
-**知识库方法论：**
-- 整合层承载阈值：承载率提升到什么水平才能自动暴露隐藏缺口？
-- Output 转化标准：research-logs 中的 synthesized 判断什么条件下升级为 output？
-- 域级未承载率红线：不同 tag 域的未承载率红线应该不同吗（如 person 类可放宽）？
-- 编译质量衡量：除链接/frontmatter/裸符号检查外，还需要什么知识层面质量指标？
-- 探索如何避免污染事实层：未验证假设保留期限和归档触发条件？
+**运行时与控制平面：**
+- computer use 任务是否会把治理重心从“工具调用限制”转到“运行时环境设计”？
+- managed agents / hosted runtimes 是否会削弱 FDE 的一部分差异化价值，还是反而强化现场定制？
 
-**Agent 工程：**
-- Governor 橡皮图章化风险：Agent 输出量过大时审批流是否退化为形式通过？→ ✅部分回答：四层根因模型+Kahneman承受力定理+CUA Oversight实证。待实证：HITL治理vs审批安全记录对比
-- 沉默型崩溃 containment：行动不足和行动过度是否需要不同防御架构？
-- 开源模型验证器能否替代前沿模型做 RL 后训练：DeepSeek 比 Opus 便宜 60-1000x 是否让小团队也能做 RL post-training？
-- **Agent 长期自主性漂移速率** (新)：不同任务类型/模型/harness 设计下，agent 的"有效自主时间"分布？
-- **多 Agent 故障传播拓扑敏感性** (新)：通信拓扑（星型/全连接/小世界）对故障传播的影响差异？
-- **Agent 记忆的遗忘曲线** (新)：不同记忆架构下的信息保留率随时间变化？是否存在"灾难性遗忘"？
-- **对齐的文化依赖性** (新)：Alignment as Iatrogenesis 发现对齐在英语降低 CPI 但在日语放大 CPI——是语言结构还是文化因素？对齐指令的跨语言迁移性？
-- **自适应对齐的可行性** (新)：能否根据 Agent 内态指标动态调整对齐强度？前提是什么？
-- **认知分工的实证验证** (新)：表层判断力退化+深层判断力保留的"认知分工"模型是否有长期跟踪数据支持？
-- **AICICA 概念发展** (新)：AI-chatbots-induced cognitive atrophy 是暂时适应还是永久退化？有无干预窗口？
-- **组织偏好函数的工程化** (新)：编排层的"速度vs质量vs成本"权重如何显式注入？AdaptOrch 的 task-adaptive routing 是否可视为一种实现？
-- **MoE vs Multi-Agent 同构性** (新)：MoE 是模型内 token 路由，Multi-Agent 是系统级任务路由——两者是否共享同一套优化理论？
-- **决策日志的实证效果** (新)：结构化决策日志是否真的减少了 Agent 的不作为？有无 A/B 实验证据？
-- **omission bias 的 RLHF 传递** (新)：人类标注者的 omission bias 是否系统性地传递到 RLHF 训练的模型中？有无实证数据？
-- **Agent 测试的反博弈架构** (新)：production traffic sampling + adversarial red-team + 随机化essential states 的组合是否能有效对抗Goodhart定律？PactLabs 的分层防御架构是否经过实证验证？
-- **Composition coverage 的可操作性** (新)：多Agent系统中跨Agent essential state传递完整性如何测量？有无生产级工具支持？
-- **收敛任务中AI个人vs团队的对照实验** (新)：P&G只测了发散任务——在"选择最佳方案""做最终决策"等收敛任务中，AI个人是否仍优于团队？Mannheim 2025论文是否覆盖此场景？
-- **最小有效单元的行业验证** (新)：2-3人团队是否在所有行业/任务类型中成立？高风险决策（医疗/法律/金融）是否需要更大团队？
+**评测与抗博弈：**
+- production traffic sampling + held-out states + adversarial red-team 的组合，是否能实证降低 reward hacking？
+- 多 Agent 系统的 composition coverage 能否做成稳定可维护的门禁？
 
-**AI 经济学：**
-- Agent 部署的真实 TCO 结构：token 成本 / 集成成本 / 监督成本 / 失败成本各占多少？
-- FDE vs 标准产品 vs AI Factory 的成本结构差异是否决定路径选择？
-- AI 替代 vs AI 增强的 ROI 差异如何量化？
-- **"适应速度"指标是否可操作** (新)：决策周期÷模型更新周期的比率，在实际企业中如何测量？Klarna 是否符合"比率<1"模型？
+**长期自主与记忆：**
+- 不同 harness / 记忆架构下的“有效自主时间”分布是什么？
+- staleness、dreaming、summary page、shared memory 到底是互补层，还是不同命名下的同一件事？
 
-**AI 原生测试 (新)：**
-- 非确定性 Agent 系统的"正确性"如何定义？行为范围约束？统计正确？对抗鲁棒？
-- Agent 测试的覆盖率等价物是什么？状态空间覆盖？工具调用覆盖？
-- Agent 回归测试如何在模型升级时保持稳定性？
+**组织与人的位置：**
+- 判断力维护最有效的是个体反思机制，还是组织级节奏 / 责任设计？
+- 收敛任务中的最小有效单元，是否真稳定在 2-3 人，还是高度依行业和风险等级变化？
 
-**Agent 大规模编排 (新)：**
-- 100+ agent swarm 的涌现行为是可预测的还是混沌的？
-- Agent 间通信协议是否应该与人类组织通信协议同构？
-- 大规模 agent 系统的"组织债务"如何形成和消除？
+**经济学与采用：**
+- 使用节律是否比 ROI 更早、更稳地反映 adoption 真进展？
+- 中国企业落地中的真正瓶颈，是模型、数据、流程、权限，还是责任结构？
 
 ## 下一批剪藏方向
 
-> 与 Source 需求队列互补的方向性指引。具体 source 见上方队列。
+**软件工程**：托管 Agent runtime · computer use 治理 · 动态环境 benchmark · reward hacking / judge reliability · agent logic / governed harness
 
-**软件工程**：Agent 长期自主性（72h+）工程挑战与复盘 · Agent-to-Agent 大规模编排（100+ agents scaling） · AI 原生测试方法论与工具 · Agent 记忆系统架构对比 · 多模态 Agent 架构模式 · 编码 Agent 生产力实证研究
+**组织系统**：AI 使用节律 · agentic labor 分层 · 中国企业集成约束 · AI-native engineering org · 小团队决策单元
 
-**组织系统**：AI 驱动岗位消失 vs 转型一手案例 · 企业 AI 治理框架实际设计（审批流/权限矩阵/审计日志） · AI-first 组织管理实践（人管 agent） · AI 管理同构性压力测试 · 开源模型生态的治理结构（Linux Foundation/Meta/OpenAI 对比）
+**知识系统**：记忆生命周期 · world model 作为评测环境 · output 反哺 topic 的路径 · source map / control plane map
 
-**知识系统**：Agent 记忆系统工程实现 · Context engineering 系统化方法论 · 知识图谱在 agent 系统中的 production 应用 · Agent 间知识共享协议 · Wiki 自进化机制的泛化
-
-**人的核心价值**：AI 时代判断力培养方法 · 品味在 AI 生成内容中的角色 · AI 时代责任归属框架 · 人机协作认知负荷管理 · 道德判断/工匠精神/认知谦逊一手材料 · AI 时代学徒制重构实践
-
-**AI 经济学**：企业 AI agent TCO 分析 · FDE/标准产品/AI Factory 成本结构对比 · AI 替代 vs 增强 ROI 研究 · 开源模型企业 TCO 优势实证 · 知识工作的生产力度量危机
-
-**行业垂直**：医疗 AI 验证/监管（FDA/NMPA 审批） · 法律 AI 执业责任 · 金融 AI 实时风控 · 制造 AI 产线集成 · 中国制造企业（美的/三一/中基）AI 落地
-
-**新兴交叉领域 (新)**：Agent 系统技术债务的形成与消除 · AI 部署的监管套利（跨辖区合规差异） · 人机信任构建与修复机制 · Agent 身份与责任归属（法律/哲学） · Agent 失败的可逆性设计
+**人的核心价值**：判断力维护 · AI 时代学徒制 · 反认知依赖机制 · 组织如何保留异议与挑战者角色
 
 ## 操作边界
 
-**做**：不新增目录 · agenda 只记录问题不作为事实 · output 必须回填检查 · 证据不足的判断补 source 或留本页 · 详细发现归档到 research-logs
-**不做**：不引入向量数据库 · 不把一次性问题写成稳定页 · 不为探索设计复杂模板 · 不把本页当事实支撑
+**做**：agenda 只保留活跃问题和最小动作 · 详细盘点写入 research-logs / archives · output 前做回填检查 · 新方向一律带 source 需求和证伪路径
+**不做**：不把 agenda 当事实源 · 不把一次探索直接升为稳定 topic 结论 · 不为 agenda 复制 research-log 细节 · 不因为“趋势很新”就跳过证据分层
 
 ## 已收敛的操作原则
 
@@ -194,33 +145,25 @@ related_entities:
 
 ## 最近思考结论摘要
 
-> 保留最近 5 条思考日志的结论精华，为 cron 深度思考提供短期记忆。
-> 每次新思考完成后，在此追加摘要并淘汰最旧条目。
+> 只保留最近 5 条，为 cron 深度思考提供短期记忆；更早摘要见 [[exploration-archive-20260628]]。
 
 | 时间 | 焦点 | 关键共识 | 关键分歧 | 下次方向 |
 |------|------|---------|---------|---------|
-| 2026-06-28 | 认知分工的实证边界 | (1) AI把知识整合压缩到个人——发散任务有效(P&G: AI个人+0.37SD > 无AI团队+0.24SD)；(2) 收敛任务仍需团队——利益权衡+异议保留不可压缩；(3) 团队最小有效单元=决策者+挑战者+责任人(2-3人)；(4) 元分析：58%人类-AI团队未优于单独表现 | 团队终态规模(Graeber 2-3人 vs Christensen阶段演变)；AI收敛角色(Drucker vs Graeber)；表演性协作消失速度 | 找收敛任务对照实验；编译Mannheim团队-AI决策论文 |
-| 2026-06-28 | AI 原生测试：非确定性正确性框架 | (1) Agent正确性=essential outcomes可靠达成(非匹配预期输出)；(2) Dominator analysis验证结构正确性但未验证语义正确性；(3) 覆盖率四层体系：state⊂outcome⊂adversarial⊂composition；(4) Goodhart定律在AI测试中适用——需要反博弈设计 | 形式证明(Dijkstra) vs 连续度量(Whittaker)；可替换性(Liskov) vs 语义正确性；反博弈=密码学不可伪造性(Bishop) | 编译PactLabs Goodhart防御架构；找production traffic sampling实证；追踪Composition coverage |
-| 2026-06-28 | 沉默型崩溃 containment：不作为防御 | (1) "不作为"比"过度行为"更危险——无痕迹、风险积累；(2) 现有containment是禁止性架构,不作为需要义务性架构——计算不对称；(3) 解法是可见性替代强制性——结构化决策日志；(4) 决策日志主要价值是事前威慑(执法记录仪效应) | 显式声明可行性(Schneier vs Picard)；审计递归问题(Kahneman)；omission bias从标注到模型的传递 | 编译decision-trace-reconstructor；找决策日志减少不作为的实验证据 |
-| 2026-06-28 | 人的核心价值：从不可替代性到可维持性 | (1) 判断力分层：表层(评估输出)被AI侵蚀，深层(定义问题/设定标准)更抗侵蚀；(2) AI工作流系统性训练表层、萎缩深层→判断力降维；(3) 判断力是习惯不是储量——维护=使用=表达；(4) 不存在不可逆点，除非完全停止判断 | 个体可维持性(Mollick/Turkle) vs 组织可维持性(Syed)；选择悖论(维持需要判断力来选择)→维护行为本身就是判断力最低表达 | 找认知分工实证案例；编译CHI 2026 Guided Reflection论文；追踪AICICA概念 |
-| 2026-06-28 | Tokenpocalypse：企业 AI Token 支出危机 | (1) 传统 ROI 不适用——正态工具无法衡量非平稳肥尾系统；(2) 正确锚点从"位置"(ROI)转向"适应速度"(决策周期÷模型更新周期)；(3) 61% 企业无法证明 AI ROI (IDC 2025)；(4) 73% pilot 无法规模化 | 测量目的之争：内部决策(Taleb/Drucker/Bahcall) vs 外部合法性(Gorbis)；"永久过渡 vs 临时过渡"是假问题——共演化系统无终态 | 找"适应速度"指标实证案例；编译 ValueAddVC 三框架为 source-summary |
-| 2026-06-27 | Agenda 自清洁：假设生命周期管理 | (1) 假设在 agenda ≤14 天无进展→归档；(2) 输出是 agenda 最终消费者——无输出引用的假设降权；(3) 连续 2 个 explore 周期无动作→自动触发归档 | 期限刚性 vs 主题敏感性（高风险假设应更短还是更长？）判定：高风险应更短（7天）——错误保留成本更高 | 实施自清洁 cron 规则；为不同风险等级设定差异化归档期限 |
-| 2026-06-27 | 开源验证器的可民主化边界 | (1) DeepSeek 成本 60-1000x 低于 Opus 确实让 RL post-training 可民主化；(2) 但验证器质量度量（谁验证验证者？）仍是开放问题；(3) 低成本验证改变的是"实验门槛"而非"质量保证" | 验证民主化是否会导致质量军备竞赛而非质量提升？判定：短期军备竞赛→长期收敛到最低可行质量标准 | 找已验证的小团队 RL post-training 成功案例；验证器质量度量的形式化 |
-| 2026-06-27 | FDE 核心价值：从部署到工程化 | (1) FDE 核心交付物不是模型实例而是可复用能力资产；(2) 压力测试：标准产品也能沉淀能力资产（如 Glean 搜索质量随使用提升）；(3) FDE 的差异化价值在"跨工作流的组织学习" | FDE 独特价值是暂时的（产品会追上）还是结构性的（组织学习无法产品化）？判定：结构性——跨工作流组织学习需要人的判断整合 | 找 3 个标准产品沉淀组织能力的反例；区分 FDE 的"当前独特"与"结构独特" |
-| 2026-06-27 | AI 管理同构性：有限隐喻的边界 | (1) 同构性三层：目标设定✓ 反馈循环✓ 异常升级△ 动机✗ 职业发展✗；(2) 同构是学习桥梁不是最终模型——借用人的管理直觉快速上手然后建立 AI 原生管理；(3) 最大风险：用同构性回避 AI 特殊性 | 同构性能撑多久？判定：3-6 个月学习桥梁，之后必须建立 AI 原生管理 | 找已运行 12+ 月的 AI 管理团队，检验同构性何时被抛弃 |
-| 2026-06-27 | Minsky 悖论：稳定制造不稳定 + 刹车=Containment 动态维护 | (1) 安全系统长期平静≠安全证据——是熵积累；(2) 刹车不是独立组件——是 Containment 边界动态收缩+预定义降级状态机；(3) 三要素：正义文化+状态机+无感知收缩 | 熵漂移可量化吗？判定：可，用"通过率-故障率剪刀差"作为早期信号 | 不同风险等级 Agent 系统的熵漂移速率实证研究 |
+| 2026-06-28 | 全库盘点 + 外部现实对照 | (1) 真缺口是中层 topic 与 output 断层；(2) 新方向应押 runtime/control plane、evaluation governance、dynamic benchmark、agent logic；(3) 100 个未承载 entity 应先处理 AGI-economics / memory-system / agentic-engineering 三簇 | 新方向应先建 topic skeleton 还是先补 source；computer use 是工具层迭代还是治理层拐点 | 建 3 个 topic skeleton；编译 Tokenpocalypse；补 control plane / benchmark source map |
+| 2026-06-28 | 认知分工的实证边界 | (1) 发散任务可压缩到“1 人 + AI”；(2) 收敛任务仍需 2-3 人小组；(3) 团队价值上移到异议保留与责任分担 | 团队终态规模是否跨行业稳定；AI 在收敛任务中的角色是否仍有限 | 找收敛任务对照实验；编译 Mannheim 团队决策论文 |
+| 2026-06-28 | AI 原生测试：非确定性正确性框架 | (1) Agent 正确性 = reliable essential outcomes；(2) 覆盖率至少是 state / outcome / adversarial / composition 四层；(3) Goodhart 定律必须内生到评测设计里 | 形式证明 vs 连续度量；production 反博弈架构是否可落地 | 编译 PactLabs / reward hacking 材料；找 production sampling 实证 |
+| 2026-06-28 | 沉默型崩溃 containment：不作为防御 | (1) 不作为比过度行为更隐蔽；(2) 禁止性架构和义务性架构不对称；(3) 决策日志的核心价值在事前威慑 | omission bias 是否会系统性传给模型；审计递归如何收敛 | 编译 decision-trace-reconstructor；找决策日志减少不作为的证据 |
+| 2026-06-28 | Tokenpocalypse：企业 AI Token 支出危机 | (1) 传统 ROI 不适合肥尾 AI 采用；(2) 正确锚点更像节律 / 适应速度；(3) token 治理和价值衡量正在被混谈 | 节律是否真比 ROI 更可操作；“永久过渡”判断是否只是一种修辞 | 编译 pending raw；找 cadence / TCO 对照案例 |
 
 ## 思考日志索引
 
-> 完整思考日志按日归档，渐进式披露。
+> 完整日志按日归档；旧索引见 [[exploration-archive-20260628]]。
 
-- [[2026-06-28]] — 认知分工实证边界 圆桌+QA（P&G实验AI个人+0.37SD · 发散/收敛区分 · 团队最小有效单元2-3人 · 58%人类-AI团队未优于单独联网）+ AI原生测试正确性框架 + 沉默型崩溃containment + Agent 编排专精vs规模 + 人的核心价值可维持性 + 多 Agent 对齐倒 U 型悖论 + Tokenpocalypse + Agent 记忆系统分类学 + Jagged Intelligence + Agent 长期自主性漂移
-- [[2026-06-27]] — Agenda 自清洁规则 + 开源验证器可民主化边界 + FDE 核心价值压力测试 + AI 管理同构性边界 + Minsky 悖论追本 + 高风险行业验证共通模式 + 沉默型崩溃 containment + 元认知不可替代性 + AI 刹车机制 + 位置性统一理论圆桌 + Governor 橡皮图章化圆桌 + Agent 失败因果链圆桌 + 品味局部客观性圆桌
-- [[2026-06-25]] — 全库盘点 + 位置性统一理论涌现 + 产出断层诊断 + 图谱碎片化分析 + Taste深层结构三重不可替代性 + AI架构盲区
-- [[2026-06-24]] — 38 条（AI管理同构性 + CIO转型 + 反馈反转 + 小团队利基 + 开源认证 + 隐私市场失灵 + AI监控AI + Meta解构 + 外部合作 + 战时状态 + 隐私分担 + 隐私约束 + CIO视角 + 小团队竞争 + 高风险验证 + 开源安全 + 组织迁移四维度 + 透明化标准 + 工作流vs管理 + 退出标准独立性 + 监控者悖论 + AI编码瓶颈 + 模拟四层 + 回填检查 + 元思考三层 + 迁移光谱 + 内态记录 + 例外升级 + AI Factory vs FDE + 标准产品边界 + 不可见编排 + 意图理解 + 学习鸿沟 + 过度合规 + Governor + 大胆模型 + 例外升级）
-- [[2026-06-23]] — 24 条（开源安全追赶、统一透明化标准、Cybernetic Teammate、位置性统一理论涌现...）
-- [[2026-06-22]] — 29 条（不可见编排、Governor 迁移、反馈回路、沉默型崩溃、AI管理同构性、元思考不可替代性...）
-- [[2026-06-21]] — 32 条（过度合规、例外升级、不可见编排、大胆模型发散...）
-- [[2026-06-20]] — 3 条（多 Agent 内态记录、过度合规、例外升级监督）
-- [[exploration-archive-20260625]] — 全库盘点详细数据 + 已验证判断 10 条 + 概念去重候选归档
+- [[2026-06-28]] — 全库盘点 + 外部现实对照；认知分工边界；AI 原生测试；沉默型崩溃；Tokenpocalypse；记忆系统；long-running drift
+- [[2026-06-27]] — Agenda 自清洁；开源验证器；FDE 核心价值；AI 管理同构性；Minsky 悖论；高风险验证
+- [[2026-06-26]] — 位置性统一理论（启动）
+- [[2026-06-25]] — 全库盘点；位置性统一理论；产出断层；Taste 深层结构
+- [[2026-06-24]] — AI 管理同构性；CIO 转型；反馈反转；小团队利基；高风险验证
+- [[exploration-archive-20260628]] — 2026-06-28 全库快照 + 新方向库 + 卸载摘要
+- [[exploration-archive-20260625]] — 2026-06-24/25 全库盘点详细数据 + 已验证判断 + 概念去重候选
 - [[resolved-judgments]] — 2026-06-24 批次已收敛判断 15 条
