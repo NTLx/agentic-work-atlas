@@ -37,6 +37,45 @@ def test_body_digest_ignores_frontmatter_changes(tmp_path):
     assert first == second
 
 
+def test_body_digest_ignores_frontmatter_block_scalar_separator_line(tmp_path):
+    compile_registry = load_compile_registry()
+    raw_path = tmp_path / "raw" / "example.md"
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    raw_path.write_text(
+        "---\n"
+        "type: raw\n"
+        "notes: |\n"
+        "  first line\n"
+        "---\n"
+        "  second line\n"
+        "created: 2026-06-28\n"
+        "---\n"
+        "\n"
+        "alpha\n"
+        "beta\n",
+        encoding="utf-8",
+    )
+
+    first = compile_registry.compute_body_sha256(raw_path)
+    raw_path.write_text(
+        "---\n"
+        "type: raw\n"
+        "notes: |\n"
+        "  first line\n"
+        "---\n"
+        "  changed line\n"
+        "created: 2026-06-29\n"
+        "---\n"
+        "\n"
+        "alpha\n"
+        "beta\n",
+        encoding="utf-8",
+    )
+    second = compile_registry.compute_body_sha256(raw_path)
+
+    assert first == second
+
+
 def test_mark_compiled_and_mark_skipped_update_registry_entries():
     compile_registry = load_compile_registry()
     registry = {"version": 1, "updated_at": "2026-06-28T10:30:00+08:00", "items": {}}
@@ -86,3 +125,36 @@ def test_save_and_load_registry_round_trip(tmp_path):
 
     assert loaded == registry
     assert json.loads((tmp_path / "state" / "raw-registry.json").read_text(encoding="utf-8"))["version"] == 1
+
+
+def test_load_registry_rejects_invalid_persisted_status(tmp_path):
+    compile_registry = load_compile_registry()
+    registry_path = tmp_path / "state" / "raw-registry.json"
+    registry_path.parent.mkdir(parents=True, exist_ok=True)
+    registry_path.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "updated_at": "2026-06-28T10:30:00+08:00",
+                "items": {
+                    "broken.md": {
+                        "raw_file": "broken.md",
+                        "status": "bogus",
+                        "body_sha256": "abc123",
+                        "updated_at": "2026-06-28T10:30:00+08:00",
+                    }
+                },
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    try:
+        compile_registry.load_registry(tmp_path)
+    except ValueError as exc:
+        assert "invalid registry file" in str(exc)
+    else:
+        raise AssertionError("expected invalid persisted status to be rejected")

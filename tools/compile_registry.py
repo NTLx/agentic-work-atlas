@@ -8,6 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+VALID_STATUS = {"pending", "compiled", "skipped"}
 
 
 def registry_path(root: Path = ROOT) -> Path:
@@ -20,12 +21,34 @@ def now_iso() -> str:
 
 def raw_body_text(raw_path: Path) -> str:
     text = raw_path.read_text(encoding="utf-8", errors="replace")
-    if not text.startswith("---\n"):
+    lines = text.splitlines(keepends=True)
+    if not lines or lines[0].rstrip("\r\n") != "---":
         return text
-    end = text.find("\n---", 4)
-    if end == -1:
-        return text
-    return text[end + 4 :].lstrip("\n")
+
+    block_scalar_indent: int | None = None
+    offset = len(lines[0])
+    for line_index, line in enumerate(lines[1:], start=1):
+        stripped = line.rstrip("\r\n")
+        indent = len(line) - len(line.lstrip(" "))
+
+        if block_scalar_indent is not None:
+            if stripped == "---" and _block_scalar_separator_is_content(lines, line_index, block_scalar_indent):
+                offset += len(line)
+                continue
+            if stripped and indent <= block_scalar_indent:
+                block_scalar_indent = None
+            else:
+                offset += len(line)
+                continue
+
+        if stripped == "---":
+            return text[offset + len(line) :].lstrip("\r\n")
+
+        if _starts_block_scalar(stripped):
+            block_scalar_indent = indent
+
+        offset += len(line)
+    return text
 
 
 def compute_body_sha256(raw_path: Path) -> str:
@@ -41,13 +64,47 @@ def empty_registry(now: str | None = None) -> dict:
     return {"version": 1, "updated_at": stamp, "items": {}}
 
 
+def _starts_block_scalar(line: str) -> bool:
+    if ":" not in line:
+        return False
+    key, value = line.split(":", 1)
+    if not key.strip() or "#" in key:
+        return False
+    value = value.lstrip()
+    return value.startswith("|") or value.startswith(">")
+
+
+def _block_scalar_separator_is_content(lines: list[str], separator_index: int, block_scalar_indent: int) -> bool:
+    for line in lines[separator_index + 1 :]:
+        stripped = line.rstrip("\r\n")
+        if not stripped:
+            continue
+        indent = len(line) - len(line.lstrip(" "))
+        if indent <= block_scalar_indent:
+            return ":" in stripped and not stripped.startswith("#")
+    return False
+
+
+def _validate_registry(registry: dict, path: Path) -> None:
+    if not isinstance(registry, dict) or not isinstance(registry.get("items"), dict):
+        raise ValueError(f"invalid registry file: {path}")
+
+    for raw_file, entry in registry["items"].items():
+        if not isinstance(entry, dict):
+            raise ValueError(f"invalid registry file: {path}")
+        status = entry.get("status")
+        if status not in VALID_STATUS:
+            raise ValueError(f"invalid registry file: {path}")
+        if entry.get("raw_file") != raw_file:
+            raise ValueError(f"invalid registry file: {path}")
+
+
 def load_registry(root: Path = ROOT) -> dict:
     path = registry_path(root)
     if not path.exists():
         return empty_registry()
     data = json.loads(path.read_text(encoding="utf-8"))
-    if not isinstance(data, dict) or not isinstance(data.get("items"), dict):
-        raise ValueError(f"invalid registry file: {path}")
+    _validate_registry(data, path)
     data.setdefault("version", 1)
     data.setdefault("updated_at", now_iso())
     return data
