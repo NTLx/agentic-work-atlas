@@ -36,7 +36,7 @@ related_entities:
 | Output 产出流水线重启 | 最后 output 在 2026-06-01（26 天前），研究→产出转化率仅 7% | 研究层累计 80+ 条思考，仅 5 条转化 | 从 research-logs 提取成熟判断，选 1 个产出 |
 | AI 经济学线程 | 61% 企业无法证明 AI ROI (IDC 2025)，73% pilot 无法规模化 | 新建 [[Tokenpocalypse]] entity；有 Klarna/Lightspeed/Mercado Libre source-summary | 编译 ValueAddVC 三框架（TEI/NPV/Productivity Multiplier）；找"适应速度"指标实证案例 |
 | 中国企业 AI 采用 | 中文 source 占比仅 ~13%，中国视角严重不足 | 有 3 个中国企业案例 source 但未系统编译 | 编译 CIO 大会 raw + 美的/三一案例，提取中国模式特殊性 |
-| 多 Agent 组织病治理 | 一手论文（Hidden Profile、MAEBE、Fukui）待入库 | 已有 [[Multi-Agent-Pathology-and-Governance]] | 优先补一手论文和生产级 observability 复盘 |
+| 多 Agent 组织病治理 | 倒 U 型悖论实证确认（Yerkes-Dodson AI + Iatrogenesis）；对齐存在文化依赖性 | [[Multi-Agent-System-Pathology]] evidence_level 升至 high；补倒 U 型+文化依赖性证据 | 编译 Yerkes-Dodson AI + Iatrogenesis 论文；找"自适应对齐"生产案例 |
 | 高风险行业 AI 验证 | 医疗/法律/金融 AI 验证范式出现但未系统编译 | 多篇 raw 已入库（LifeSciBench、AMIE、legal verifiers）未编译 | 编译 raw 提取共同模式，新建 comparison |
 | 跨层整合框架 | 四层（软工/组织/知识/人）各自独立，缺连接框架 | 有 [[Positionality]] 作为统一理论候选 | 从 Positionality 五维度推导四层操作化指标 |
 | **Agent 长期自主性工程** (新) | 当前研究聚焦单次任务，72h+ 自主运行引入漂移/上下文污染/目标衰减 | 无 entity/topic；剪藏方向提及但未探索 | 找生产级 long-running agent 复盘（Devin/OpenHands/Aide），提取漂移模式 |
@@ -124,6 +124,8 @@ related_entities:
 - **Agent 长期自主性漂移速率** (新)：不同任务类型/模型/harness 设计下，agent 的"有效自主时间"分布？
 - **多 Agent 故障传播拓扑敏感性** (新)：通信拓扑（星型/全连接/小世界）对故障传播的影响差异？
 - **Agent 记忆的遗忘曲线** (新)：不同记忆架构下的信息保留率随时间变化？是否存在"灾难性遗忘"？
+- **对齐的文化依赖性** (新)：Alignment as Iatrogenesis 发现对齐在英语降低 CPI 但在日语放大 CPI——是语言结构还是文化因素？对齐指令的跨语言迁移性？
+- **自适应对齐的可行性** (新)：能否根据 Agent 内态指标动态调整对齐强度？前提是什么？
 
 **AI 经济学：**
 - Agent 部署的真实 TCO 结构：token 成本 / 集成成本 / 监督成本 / 失败成本各占多少？
@@ -187,6 +189,7 @@ related_entities:
 
 | 时间 | 焦点 | 关键共识 | 关键分歧 | 下次方向 |
 |------|------|---------|---------|---------|
+| 2026-06-28 | 多 Agent 对齐强度的倒 U 型悖论 | (1) 对齐本质是外部信号覆盖内部判断——覆盖太少则群体无方向，覆盖太多则个体无判断；(2) 安全边际不可观测——Sonnet 输出 100% 但内态已分裂；(3) "调对齐参数"是永恒追逐游戏——靶心不可观测且自移动；(4) Yerkes-Dodson AI 论文直接验证倒 U 型；Alignment as Iatrogenesis 发现对齐在日语中效果反转 | 根因归因：结构(Simon)/激励(March)/文化(Schein)/抑制反噬(Taleb)；探针会被博弈(Schein：重度对齐可能已摧毁Agent独立判断前提) | 找"自适应对齐"生产案例；编译 Yerkes-Dodson AI + Iatrogenesis 论文；追踪对齐的文化依赖性 |
 | 2026-06-28 | Tokenpocalypse：企业 AI Token 支出危机 | (1) 传统 ROI 不适用——正态工具无法衡量非平稳肥尾系统；(2) 正确锚点从"位置"(ROI)转向"适应速度"(决策周期÷模型更新周期)；(3) 61% 企业无法证明 AI ROI (IDC 2025)；(4) 73% pilot 无法规模化 | 测量目的之争：内部决策(Taleb/Drucker/Bahcall) vs 外部合法性(Gorbis)；"永久过渡 vs 临时过渡"是假问题——共演化系统无终态 | 找"适应速度"指标实证案例；编译 ValueAddVC 三框架为 source-summary |
 | 2026-06-27 | Agenda 自清洁：假设生命周期管理 | (1) 假设在 agenda ≤14 天无进展→归档；(2) 输出是 agenda 最终消费者——无输出引用的假设降权；(3) 连续 2 个 explore 周期无动作→自动触发归档 | 期限刚性 vs 主题敏感性（高风险假设应更短还是更长？）判定：高风险应更短（7天）——错误保留成本更高 | 实施自清洁 cron 规则；为不同风险等级设定差异化归档期限 |
 | 2026-06-27 | 开源验证器的可民主化边界 | (1) DeepSeek 成本 60-1000x 低于 Opus 确实让 RL post-training 可民主化；(2) 但验证器质量度量（谁验证验证者？）仍是开放问题；(3) 低成本验证改变的是"实验门槛"而非"质量保证" | 验证民主化是否会导致质量军备竞赛而非质量提升？判定：短期军备竞赛→长期收敛到最低可行质量标准 | 找已验证的小团队 RL post-training 成功案例；验证器质量度量的形式化 |
@@ -198,7 +201,7 @@ related_entities:
 
 > 完整思考日志按日归档，渐进式披露。
 
-- [[2026-06-28]] — Tokenpocalypse 圆桌+追本+QA（企业 AI Token 支出危机 · 测量范式重定义 · 适应速度指标 · 共演化无终态）+ Agent 记忆系统分类学 + Jagged Intelligence + Agent 长期自主性漂移
+- [[2026-06-28]] — 多 Agent 对齐倒 U 型悖论 圆桌+追本+QA（对齐覆盖两难 · 安全边际不可观测 · 永恒追逐游戏 · Yerkes-Dodson AI + Iatrogenesis 联网验证）+ Tokenpocalypse 圆桌+追本+QA + Agent 记忆系统分类学 + Jagged Intelligence + Agent 长期自主性漂移
 - [[2026-06-27]] — Agenda 自清洁规则 + 开源验证器可民主化边界 + FDE 核心价值压力测试 + AI 管理同构性边界 + Minsky 悖论追本 + 高风险行业验证共通模式 + 沉默型崩溃 containment + 元认知不可替代性 + AI 刹车机制 + 位置性统一理论圆桌 + Governor 橡皮图章化圆桌 + Agent 失败因果链圆桌 + 品味局部客观性圆桌
 - [[2026-06-25]] — 全库盘点 + 位置性统一理论涌现 + 产出断层诊断 + 图谱碎片化分析 + Taste深层结构三重不可替代性 + AI架构盲区
 - [[2026-06-24]] — 38 条（AI管理同构性 + CIO转型 + 反馈反转 + 小团队利基 + 开源认证 + 隐私市场失灵 + AI监控AI + Meta解构 + 外部合作 + 战时状态 + 隐私分担 + 隐私约束 + CIO视角 + 小团队竞争 + 高风险验证 + 开源安全 + 组织迁移四维度 + 透明化标准 + 工作流vs管理 + 退出标准独立性 + 监控者悖论 + AI编码瓶颈 + 模拟四层 + 回填检查 + 元思考三层 + 迁移光谱 + 内态记录 + 例外升级 + AI Factory vs FDE + 标准产品边界 + 不可见编排 + 意图理解 + 学习鸿沟 + 过度合规 + Governor + 大胆模型 + 例外升级）
