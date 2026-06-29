@@ -141,7 +141,7 @@ def list_pending(registry: dict) -> list[str]:
 
 def detect_legacy_compiled(raw_path: Path, root: Path) -> bool:
     text = raw_path.read_text(encoding="utf-8", errors="replace")
-    compiled_note = root / "wiki" / "sources" / raw_path.name
+    compiled_note = root / expected_summary_path(raw_path.name)
     return "## 编译摘要" in text or compiled_note.exists()
 
 
