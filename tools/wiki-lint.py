@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
+import json
 import re
 import sys
 from dataclasses import dataclass
@@ -586,7 +587,7 @@ def check_registry_consistency() -> tuple[list[Issue], list[Path], list[Path], l
         )
     try:
         registry = COMPILE_REGISTRY.load_registry(ROOT)
-    except ValueError as exc:
+    except (json.JSONDecodeError, ValueError) as exc:
         issues.append(Issue("registry-consistency", registry_path, None, str(exc)))
         return issues, [], sorted(RAW.glob("*.md")), [], []
     recorded_raw_files = set(registry.get("items", {}))
