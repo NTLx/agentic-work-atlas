@@ -251,6 +251,38 @@ def test_registry_consistency_reports_missing_summary(tmp_path, monkeypatch):
     assert any(issue.category == "registry-consistency" for issue in issues)
 
 
+def test_registry_consistency_reports_missing_registry_entry(tmp_path, monkeypatch):
+    wiki_lint = load_wiki_lint()
+    write_note(tmp_path / "index.md", "type: index\ntitle: Test\nupdated: 2026-06-28\n", "")
+    write_note(tmp_path / "README.md", "title: Readme\n", "")
+    write_note(tmp_path / "raw" / "orphan.md", "type: raw\n", "body")
+    write_registry(
+        tmp_path,
+        {
+            "version": 1,
+            "updated_at": "2026-06-28T12:30:00+08:00",
+            "items": {},
+        },
+    )
+
+    monkeypatch.setattr(wiki_lint, "ROOT", tmp_path)
+    monkeypatch.setattr(wiki_lint, "RAW", tmp_path / "raw")
+    monkeypatch.setattr(wiki_lint, "WIKI", tmp_path / "wiki")
+    monkeypatch.setattr(wiki_lint, "INDEX", tmp_path / "index.md")
+    monkeypatch.setattr(wiki_lint, "LINT_REPORT", tmp_path / "wiki" / "lint-report.md")
+
+    issues, stats, pending, skipped, candidates = wiki_lint.collect_issues()
+
+    assert stats["raw_compiled"] == 0
+    assert pending == [tmp_path / "raw" / "orphan.md"]
+    assert skipped == []
+    assert candidates == []
+    assert any(
+        issue.category == "registry-consistency" and issue.path == tmp_path / "raw" / "orphan.md"
+        for issue in issues
+    )
+
+
 def test_registry_consistency_reports_missing_registry_file(tmp_path, monkeypatch):
     wiki_lint = load_wiki_lint()
     write_note(tmp_path / "index.md", "type: index\ntitle: Test\nupdated: 2026-06-28\n", "")

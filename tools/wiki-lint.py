@@ -585,6 +585,7 @@ def check_registry_consistency() -> tuple[list[Issue], list[Path], list[Path], l
             )
         )
     registry = COMPILE_REGISTRY.load_registry(ROOT)
+    recorded_raw_files = set(registry.get("items", {}))
     registry, anomalies, candidates = COMPILE_REGISTRY.reconcile_registry(ROOT, registry=registry)
 
     compiled: list[Path] = []
@@ -592,6 +593,10 @@ def check_registry_consistency() -> tuple[list[Issue], list[Path], list[Path], l
     skipped: list[Path] = []
 
     for raw_path in sorted(RAW.glob("*.md")):
+        if raw_path.name not in recorded_raw_files:
+            pending.append(raw_path)
+            issues.append(Issue("registry-consistency", raw_path, None, "raw 缺少 registry 记录"))
+            continue
         entry = registry["items"].get(raw_path.name)
         if entry is None:
             pending.append(raw_path)

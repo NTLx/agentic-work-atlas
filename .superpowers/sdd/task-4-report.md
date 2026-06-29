@@ -157,3 +157,48 @@ uv run --with pytest --with pyyaml pytest tests/test_compile_registry.py tests/t
 Result:
 
 - `20 passed in 0.22s`
+
+## Fix Round 3
+
+### RED
+
+1. Added a missing-entry audit regression:
+   - `test_registry_consistency_reports_missing_registry_entry`
+
+Ran:
+
+```bash
+uv run --with pytest --with pyyaml pytest tests/test_wiki_lint.py -k missing_registry_entry -v
+```
+
+Observed failure:
+
+- `test_registry_consistency_reports_missing_registry_entry`
+  - actual: orphan raw was inserted into the in-memory registry as `pending` and no `registry-consistency` issue was emitted
+  - expected: an existing raw file missing from an existing registry must still surface a blocking `registry-consistency` issue
+
+### GREEN
+
+Implementation change:
+
+- `tools/wiki-lint.py` now snapshots the registry's recorded raw filenames before calling `reconcile_registry()`, then audits raw presence against that authority snapshot while still using reconciliation output for anomaly and recompile-candidate reporting.
+
+Targeted verification:
+
+```bash
+uv run --with pytest --with pyyaml pytest tests/test_wiki_lint.py -k 'missing_registry_entry or missing_registry_file or excludes_skipped_from_pending or missing_summary' -v
+```
+
+Result:
+
+- `4 passed, 6 deselected in 0.13s`
+
+Final task verification:
+
+```bash
+uv run --with pytest --with pyyaml pytest tests/test_compile_registry.py tests/test_wiki_lint.py -v
+```
+
+Result:
+
+- `21 passed in 0.26s`
