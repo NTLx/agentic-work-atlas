@@ -626,13 +626,14 @@ def check_registry_consistency() -> tuple[list[Issue], list[Path], list[Path], l
         )
 
     for candidate in candidates:
+        severity = candidate.get("severity", COMPILE_REGISTRY.candidate_severity(candidate["reason"]))
         issues.append(
             Issue(
                 "registry-consistency",
                 RAW / candidate["raw_file"],
                 None,
                 f"需重编译候选: {candidate['raw_file']} ({candidate['reason']})",
-                blocking=False,
+                blocking=severity == "blocking",
             )
         )
 

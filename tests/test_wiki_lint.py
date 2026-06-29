@@ -247,8 +247,53 @@ def test_registry_consistency_reports_missing_summary(tmp_path, monkeypatch):
     assert stats["raw_compiled"] == 1
     assert pending == []
     assert skipped == []
-    assert {"raw_file": "compiled.md", "reason": "missing-summary"} in candidates
-    assert any(issue.category == "registry-consistency" for issue in issues)
+    assert {"raw_file": "compiled.md", "reason": "missing-summary", "severity": "blocking"} in candidates
+    registry_issues = [issue for issue in issues if issue.category == "registry-consistency"]
+    assert registry_issues
+    assert any(issue.blocking for issue in registry_issues)
+    assert 'status: "FAIL"' in wiki_lint.render_report(issues, stats, pending, skipped, candidates)
+
+
+def test_registry_consistency_reports_blocking_compiled_body_drift(tmp_path, monkeypatch):
+    wiki_lint = load_wiki_lint()
+    write_note(tmp_path / "index.md", "type: index\ntitle: Test\nupdated: 2026-06-28\n", "")
+    write_note(tmp_path / "README.md", "title: Readme\n", "")
+    write_note(tmp_path / "raw" / "compiled.md", "type: raw\n", "mutated")
+    write_note(tmp_path / "wiki" / "sources" / "compiled.md", "type: source-summary\n", "## 编译摘要")
+    write_registry(
+        tmp_path,
+        {
+            "version": 1,
+            "updated_at": "2026-06-28T12:30:00+08:00",
+            "items": {
+                "compiled.md": {
+                    "raw_file": "compiled.md",
+                    "status": "compiled",
+                    "body_sha256": body_sha256("body"),
+                    "summary_path": "wiki/sources/compiled.md",
+                    "compiled_at": "2026-06-28T12:00:00+08:00",
+                    "updated_at": "2026-06-28T12:00:00+08:00",
+                }
+            },
+        },
+    )
+
+    monkeypatch.setattr(wiki_lint, "ROOT", tmp_path)
+    monkeypatch.setattr(wiki_lint, "RAW", tmp_path / "raw")
+    monkeypatch.setattr(wiki_lint, "WIKI", tmp_path / "wiki")
+    monkeypatch.setattr(wiki_lint, "INDEX", tmp_path / "index.md")
+    monkeypatch.setattr(wiki_lint, "LINT_REPORT", tmp_path / "wiki" / "lint-report.md")
+
+    issues, stats, pending, skipped, candidates = wiki_lint.collect_issues()
+
+    assert stats["raw_compiled"] == 1
+    assert pending == []
+    assert skipped == []
+    assert {"raw_file": "compiled.md", "reason": "body-changed", "severity": "blocking"} in candidates
+    registry_issues = [issue for issue in issues if issue.category == "registry-consistency"]
+    assert registry_issues
+    assert any(issue.blocking for issue in registry_issues)
+    assert 'status: "FAIL"' in wiki_lint.render_report(issues, stats, pending, skipped, candidates)
 
 
 def test_registry_consistency_reports_missing_registry_entry(tmp_path, monkeypatch):

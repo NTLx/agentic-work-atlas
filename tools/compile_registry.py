@@ -10,6 +10,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 VALID_STATUS = {"pending", "compiled", "skipped"}
+CANDIDATE_SEVERITY = {
+    "body-changed": "blocking",
+    "missing-summary": "blocking",
+    "skip-review-needed": "warning",
+}
 
 
 def registry_path(root: Path = ROOT) -> Path:
@@ -44,6 +49,18 @@ def expected_summary_path(raw_file: str) -> str:
 
 def is_sha256_digest(value: str) -> bool:
     return len(value) == 64 and all(char in "0123456789abcdef" for char in value)
+
+
+def candidate_severity(reason: str) -> str:
+    return CANDIDATE_SEVERITY.get(reason, "blocking")
+
+
+def make_candidate(raw_file: str, reason: str) -> dict:
+    return {"raw_file": raw_file, "reason": reason, "severity": candidate_severity(reason)}
+
+
+def has_blocking_findings(candidates: list[dict], anomalies: list[dict]) -> bool:
+    return bool(anomalies) or any(item.get("severity") == "blocking" for item in candidates)
 
 
 def empty_registry(now: str | None = None) -> dict:
@@ -194,13 +211,17 @@ def reconcile_registry(
             if not is_sha256_digest(stored_digest):
                 anomalies.append({"raw_file": raw_file, "reason": "invalid-body-sha256"})
             elif stored_digest != current_digest:
-                candidates.append({"raw_file": raw_file, "reason": "body-changed"})
+                candidates.append(make_candidate(raw_file, "body-changed"))
             summary_path = root / entry.get("summary_path", "")
             if not entry.get("summary_path") or not summary_path.exists():
-                candidates.append({"raw_file": raw_file, "reason": "missing-summary"})
-        else:
+                candidates.append(make_candidate(raw_file, "missing-summary"))
+        elif entry.get("status") == "pending":
             entry["body_sha256"] = current_digest
             entry["updated_at"] = stamp
+        elif entry.get("status") == "skipped":
+            stored_digest = entry.get("body_sha256", "")
+            if is_sha256_digest(stored_digest) and stored_digest != current_digest:
+                candidates.append(make_candidate(raw_file, "skip-review-needed"))
 
     for raw_file in sorted(registry["items"]):
         if raw_file not in raw_paths:
@@ -223,7 +244,10 @@ def render_status(registry: dict, recompile_candidates: list[dict], anomalies: l
     ]
     if recompile_candidates:
         lines.append("recompile-candidates:")
-        lines.extend(f"- {item['raw_file']} ({item['reason']})" for item in recompile_candidates)
+        lines.extend(
+            f"- {item['raw_file']} ({item['reason']}, severity={item.get('severity', candidate_severity(item['reason']))})"
+            for item in recompile_candidates
+        )
     if anomalies:
         lines.append("anomalies:")
         lines.extend(f"- {item['raw_file']} ({item['reason']})" for item in anomalies)
@@ -305,10 +329,10 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "reconcile":
         save_registry(args.root, registry)
         print(render_status(registry, candidates, anomalies))
-        return 1 if anomalies else 0
+        return 1 if has_blocking_findings(candidates, anomalies) else 0
 
     print(render_status(registry, candidates, anomalies))
-    return 1 if anomalies else 0
+    return 1 if has_blocking_findings(candidates, anomalies) else 0
 
 
 if __name__ == "__main__":

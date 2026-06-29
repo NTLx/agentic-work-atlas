@@ -218,7 +218,7 @@ def test_reconcile_adds_new_raw_and_reports_recompile_candidates(tmp_path):
 
     assert reconciled["items"]["fresh.md"]["status"] == "pending"
     assert anomalies == []
-    assert candidates == [{"raw_file": "compiled.md", "reason": "body-changed"}]
+    assert candidates == [{"raw_file": "compiled.md", "reason": "body-changed", "severity": "blocking"}]
 
 
 def test_reconcile_surfaces_malformed_compiled_digest(tmp_path):
@@ -247,6 +247,38 @@ def test_reconcile_surfaces_malformed_compiled_digest(tmp_path):
     )
 
     assert {"raw_file": "compiled.md", "reason": "invalid-body-sha256"} in anomalies
+
+
+def test_reconcile_keeps_skipped_digest_and_surfaces_review_candidate_on_body_change(tmp_path):
+    compile_registry = load_compile_registry()
+    skipped_raw = write_raw(tmp_path, "skipped.md", "type: raw\n", "original\n")
+    original_digest = compile_registry.compute_body_sha256(skipped_raw)
+    registry = {
+        "version": 1,
+        "updated_at": "2026-06-28T11:00:00+08:00",
+        "items": {
+            "skipped.md": {
+                "raw_file": "skipped.md",
+                "status": "skipped",
+                "body_sha256": original_digest,
+                "skip_reason_code": "off-topic",
+                "skip_note": "skip it",
+                "updated_at": "2026-06-28T11:00:00+08:00",
+            }
+        },
+    }
+
+    skipped_raw.write_text("---\ntype: raw\n---\n\nmutated\n", encoding="utf-8")
+
+    reconciled, anomalies, candidates = compile_registry.reconcile_registry(
+        tmp_path,
+        registry=registry,
+        now="2026-06-28T12:00:00+08:00",
+    )
+
+    assert anomalies == []
+    assert candidates == [{"raw_file": "skipped.md", "reason": "skip-review-needed", "severity": "warning"}]
+    assert reconciled["items"]["skipped.md"]["body_sha256"] == original_digest
 
 
 def test_cli_ensure_and_mark_compiled_round_trip(tmp_path, capsys):
@@ -296,3 +328,26 @@ def test_cli_mark_skipped_persists_reason_and_note(tmp_path):
     assert registry["items"]["skip-me.md"]["status"] == "skipped"
     assert registry["items"]["skip-me.md"]["skip_reason_code"] == "off-topic"
     assert registry["items"]["skip-me.md"]["skip_note"] == "不服务于 AI / Agent 工作主线"
+
+
+def test_cli_status_and_reconcile_exit_nonzero_for_blocking_compiled_candidates(tmp_path):
+    compile_registry = load_compile_registry()
+    compiled_raw = write_raw(tmp_path, "compiled.md", "type: raw\n", "body\n")
+    write_summary(tmp_path, "compiled.md")
+
+    assert compile_registry.main(["--root", str(tmp_path), "ensure", "compiled.md"]) == 0
+    assert compile_registry.main(
+        [
+            "--root",
+            str(tmp_path),
+            "mark-compiled",
+            "compiled.md",
+            "--summary-path",
+            "wiki/sources/compiled.md",
+        ]
+    ) == 0
+
+    compiled_raw.write_text("---\ntype: raw\n---\n\nmutated\n", encoding="utf-8")
+
+    assert compile_registry.main(["--root", str(tmp_path), "status"]) == 1
+    assert compile_registry.main(["--root", str(tmp_path), "reconcile"]) == 1
