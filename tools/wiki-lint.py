@@ -584,7 +584,11 @@ def check_registry_consistency() -> tuple[list[Issue], list[Path], list[Path], l
                 "缺少 authority registry 文件: state/raw-registry.json",
             )
         )
-    registry = COMPILE_REGISTRY.load_registry(ROOT)
+    try:
+        registry = COMPILE_REGISTRY.load_registry(ROOT)
+    except ValueError as exc:
+        issues.append(Issue("registry-consistency", registry_path, None, str(exc)))
+        return issues, [], sorted(RAW.glob("*.md")), [], []
     recorded_raw_files = set(registry.get("items", {}))
     registry, anomalies, candidates = COMPILE_REGISTRY.reconcile_registry(ROOT, registry=registry)
 

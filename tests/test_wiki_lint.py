@@ -306,3 +306,30 @@ def test_registry_consistency_reports_missing_registry_file(tmp_path, monkeypatc
         issue.category == "registry-consistency" and "raw-registry.json" in issue.message
         for issue in issues
     )
+
+
+def test_registry_consistency_reports_malformed_registry_file(tmp_path, monkeypatch):
+    wiki_lint = load_wiki_lint()
+    write_note(tmp_path / "index.md", "type: index\ntitle: Test\nupdated: 2026-06-28\n", "")
+    write_note(tmp_path / "README.md", "title: Readme\n", "")
+    write_note(tmp_path / "raw" / "compiled.md", "type: raw\n", "body")
+    registry_path = tmp_path / "state" / "raw-registry.json"
+    registry_path.parent.mkdir(parents=True, exist_ok=True)
+    registry_path.write_text('{"version": 1, "items": {"broken.md": {"status": "bogus"}}}\n', encoding="utf-8")
+
+    monkeypatch.setattr(wiki_lint, "ROOT", tmp_path)
+    monkeypatch.setattr(wiki_lint, "RAW", tmp_path / "raw")
+    monkeypatch.setattr(wiki_lint, "WIKI", tmp_path / "wiki")
+    monkeypatch.setattr(wiki_lint, "INDEX", tmp_path / "index.md")
+    monkeypatch.setattr(wiki_lint, "LINT_REPORT", tmp_path / "wiki" / "lint-report.md")
+
+    issues, stats, pending, skipped, candidates = wiki_lint.collect_issues()
+
+    assert stats["raw_compiled"] == 0
+    assert pending == [tmp_path / "raw" / "compiled.md"]
+    assert skipped == []
+    assert candidates == []
+    assert any(
+        issue.category == "registry-consistency" and issue.path == registry_path and "invalid registry file" in issue.message
+        for issue in issues
+    )
