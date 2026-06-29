@@ -20,6 +20,8 @@ Agentic Work Atlas 校验与同步门禁。
 from __future__ import annotations
 
 import argparse
+import importlib.util
+import json
 import re
 import sys
 from dataclasses import dataclass
@@ -68,6 +70,17 @@ class Issue:
 
     def rel(self) -> str:
         return self.path.relative_to(ROOT).as_posix()
+
+
+def load_compile_registry():
+    spec = importlib.util.spec_from_file_location("compile_registry", ROOT / "tools" / "compile_registry.py")
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
+
+
+COMPILE_REGISTRY = load_compile_registry()
 
 
 def markdown_files() -> list[Path]:
@@ -560,22 +573,74 @@ def fix_index_counts() -> bool:
     return False
 
 
-def raw_compile_status() -> tuple[list[Path], list[Path]]:
+def check_registry_consistency() -> tuple[list[Issue], list[Path], list[Path], list[Path], list[dict]]:
+    registry_path = ROOT / "state" / "raw-registry.json"
+    issues: list[Issue] = []
+    if not registry_path.exists():
+        issues.append(
+            Issue(
+                "registry-consistency",
+                registry_path,
+                None,
+                "缺少 authority registry 文件: state/raw-registry.json",
+            )
+        )
+    try:
+        registry = COMPILE_REGISTRY.load_registry(ROOT)
+    except (json.JSONDecodeError, ValueError) as exc:
+        issues.append(Issue("registry-consistency", registry_path, None, str(exc)))
+        return issues, [], sorted(RAW.glob("*.md")), [], []
+    recorded_raw_files = set(registry.get("items", {}))
+    registry, anomalies, candidates = COMPILE_REGISTRY.reconcile_registry(ROOT, registry=registry)
+
     compiled: list[Path] = []
     pending: list[Path] = []
-    sources_dir = WIKI / "sources"
+    skipped: list[Path] = []
 
-    for path in sorted(RAW.glob("*.md")):
-        text = path.read_text(encoding="utf-8", errors="replace")
-        compiled_note = sources_dir / f"{path.stem}.md"
-        if "## 编译摘要" in text or compiled_note.exists():
-            compiled.append(path)
+    for raw_path in sorted(RAW.glob("*.md")):
+        if raw_path.name not in recorded_raw_files:
+            pending.append(raw_path)
+            issues.append(Issue("registry-consistency", raw_path, None, "raw 缺少 registry 记录"))
+            continue
+        entry = registry["items"].get(raw_path.name)
+        if entry is None:
+            pending.append(raw_path)
+            issues.append(Issue("registry-consistency", raw_path, None, "raw 缺少 registry 记录"))
+            continue
+        status = entry.get("status", "pending")
+        if status == "compiled":
+            compiled.append(raw_path)
+        elif status == "skipped":
+            skipped.append(raw_path)
         else:
-            pending.append(path)
-    return compiled, pending
+            pending.append(raw_path)
+
+    for anomaly in anomalies:
+        issues.append(
+            Issue(
+                "registry-consistency",
+                RAW / anomaly["raw_file"],
+                None,
+                f"registry 异常: {anomaly['raw_file']} ({anomaly['reason']})",
+            )
+        )
+
+    for candidate in candidates:
+        severity = candidate.get("severity", COMPILE_REGISTRY.candidate_severity(candidate["reason"]))
+        issues.append(
+            Issue(
+                "registry-consistency",
+                RAW / candidate["raw_file"],
+                None,
+                f"需重编译候选: {candidate['raw_file']} ({candidate['reason']})",
+                blocking=severity == "blocking",
+            )
+        )
+
+    return issues, compiled, pending, skipped, candidates
 
 
-def collect_issues() -> tuple[list[Issue], dict[str, int], list[Path]]:
+def collect_issues() -> tuple[list[Issue], dict[str, int], list[Path], list[Path], list[dict]]:
     paths = markdown_files()
     issues: list[Issue] = []
     issues.extend(check_frontmatter_and_dates(paths))
@@ -592,11 +657,14 @@ def collect_issues() -> tuple[list[Issue], dict[str, int], list[Path]]:
     issues.extend(check_comparisons())
     issues.extend(check_index_counts())
 
-    compiled, pending = raw_compile_status()
+    registry_issues, compiled, pending, skipped, candidates = check_registry_consistency()
+    issues.extend(registry_issues)
+
     stats = actual_counts()
     stats["raw_compiled"] = len(compiled)
     stats["raw_pending"] = len(pending)
-    return issues, stats, pending
+    stats["raw_skipped"] = len(skipped)
+    return issues, stats, pending, skipped, candidates
 
 
 def group_issues(issues: Iterable[Issue]) -> dict[str, list[Issue]]:
@@ -610,7 +678,13 @@ def md_escape_code(value: str) -> str:
     return value.replace("`", "'").replace("\n", " / ")
 
 
-def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path]) -> str:
+def render_report(
+    issues: list[Issue],
+    stats: dict[str, int],
+    pending: list[Path],
+    skipped: list[Path],
+    candidates: list[dict],
+) -> str:
     today = datetime.now().strftime("%Y-%m-%d")
     blocking = [i for i in issues if i.blocking]
     score = max(0, 100 - len(blocking))
@@ -643,6 +717,7 @@ def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path
         f"| Raw 来源 | {stats['raw']} |",
         f"| Raw 已编译 | {stats['raw_compiled']} |",
         f"| Raw 待编译 | {stats['raw_pending']} |",
+        f"| Raw 已跳过 | {stats['raw_skipped']} |",
         f"| Entity | {stats['entities']} |",
         f"| Topic | {stats['topics']} |",
         f"| Comparison | {stats['comparisons']} |",
@@ -654,6 +729,18 @@ def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path
         lines.extend(["## 待编译 Raw", ""])
         for path in pending:
             lines.append(f"- `{md_escape_code(path.relative_to(ROOT).as_posix())}`")
+        lines.append("")
+
+    if skipped:
+        lines.extend(["## 已跳过 Raw", ""])
+        for path in skipped:
+            lines.append(f"- `{md_escape_code(path.relative_to(ROOT).as_posix())}`")
+        lines.append("")
+
+    if candidates:
+        lines.extend(["## 需重编译候选", ""])
+        for item in candidates:
+            lines.append(f"- `{item['raw_file']}` - `{item['reason']}`")
         lines.append("")
 
     lines.extend(["## 检查项", "", "| 检查项 | 问题数 |", "|--------|--------|"])
@@ -671,6 +758,7 @@ def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path
         "entity",
         "comparison",
         "index",
+        "registry-consistency",
     ):
         lines.append(f"| `{category}` | {len(grouped.get(category, []))} |")
     lines.append("")
@@ -701,11 +789,17 @@ def render_report(issues: list[Issue], stats: dict[str, int], pending: list[Path
     return "\n".join(lines)
 
 
-def print_summary(issues: list[Issue], stats: dict[str, int], pending: list[Path]) -> None:
+def print_summary(
+    issues: list[Issue],
+    stats: dict[str, int],
+    pending: list[Path],
+    skipped: list[Path],
+    candidates: list[dict],
+) -> None:
     blocking = [i for i in issues if i.blocking]
     print("Agentic Work Atlas Lint")
     print("=" * 60)
-    print(f"Raw: {stats['raw']}（已编译 {stats['raw_compiled']}，待编译 {stats['raw_pending']}）")
+    print(f"Raw: {stats['raw']}（已编译 {stats['raw_compiled']}，待编译 {stats['raw_pending']}，已跳过 {stats['raw_skipped']}）")
     print(f"Entity: {stats['entities']} | Topic: {stats['topics']} | Comparison: {stats['comparisons']} | Output: {stats['outputs']} | Research: {stats['research']}")
     print(f"阻断问题: {len(blocking)}")
 
@@ -719,6 +813,20 @@ def print_summary(issues: list[Issue], stats: dict[str, int], pending: list[Path
             print(f"- {path.relative_to(ROOT).as_posix()}")
         if len(pending) > 20:
             print(f"... 另有 {len(pending) - 20} 个")
+
+    if skipped:
+        print("\n已跳过 Raw:")
+        for path in skipped[:20]:
+            print(f"- {path.relative_to(ROOT).as_posix()}")
+        if len(skipped) > 20:
+            print(f"... 另有 {len(skipped) - 20} 个")
+
+    if candidates:
+        print("\n需重编译候选:")
+        for item in candidates[:20]:
+            print(f"- {item['raw_file']} ({item['reason']})")
+        if len(candidates) > 20:
+            print(f"... 另有 {len(candidates) - 20} 个")
 
     if issues:
         print("\n前几个问题:")
@@ -738,11 +846,11 @@ def main() -> int:
         if changed:
             print("已更新 index.md 计数")
 
-    issues, stats, pending = collect_issues()
-    print_summary(issues, stats, pending)
+    issues, stats, pending, skipped, candidates = collect_issues()
+    print_summary(issues, stats, pending, skipped, candidates)
 
     if args.write_report:
-        LINT_REPORT.write_text(render_report(issues, stats, pending), encoding="utf-8")
+        LINT_REPORT.write_text(render_report(issues, stats, pending, skipped, candidates), encoding="utf-8")
         print(f"\n已写入 {LINT_REPORT.relative_to(ROOT).as_posix()}")
 
     return 1 if any(i.blocking for i in issues) else 0
