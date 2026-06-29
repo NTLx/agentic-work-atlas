@@ -101,3 +101,59 @@ Result:
 
 - Commit created after verification:
   - `fix(lint): read raw compile status from registry`
+
+## Fix Round 2
+
+### RED
+
+1. Added a strict-authority lint regression:
+   - `test_registry_consistency_reports_missing_registry_file`
+2. Added a malformed compiled digest regression:
+   - `test_reconcile_surfaces_malformed_compiled_digest`
+3. Replaced normal-path placeholder digests in Task 4 tests with real SHA256 values so the regressions target production behavior instead of test shortcuts.
+
+Ran:
+
+```bash
+uv run --with pytest --with pyyaml pytest tests/test_wiki_lint.py -k 'missing_registry_file or excludes_skipped_from_pending or missing_summary' -v
+uv run --with pytest --with pyyaml pytest tests/test_compile_registry.py -k malformed_compiled_digest -v
+```
+
+Observed failures:
+
+- `test_registry_consistency_reports_missing_registry_file`
+  - actual: `stats["raw_compiled"] == 1`
+  - expected: missing `state/raw-registry.json` should yield a `registry-consistency` issue and keep the raw out of compiled status
+- `test_reconcile_surfaces_malformed_compiled_digest`
+  - actual: `anomalies == []`
+  - expected: malformed persisted `body_sha256` should surface as an anomaly instead of being silently ignored
+
+### GREEN
+
+Implementation changes:
+
+- Removed the `wiki-lint.py` bootstrap fallback; missing `state/raw-registry.json` now emits a blocking `registry-consistency` issue and reads empty authority state via `load_registry()`.
+- Changed `reconcile_registry()` so compiled entries with malformed persisted `body_sha256` emit `invalid-body-sha256` anomalies instead of being silently skipped.
+- Kept normal-path Task 4 tests on real SHA256 digests so production logic stays strict.
+
+Targeted verification:
+
+```bash
+uv run --with pytest --with pyyaml pytest tests/test_wiki_lint.py -k 'missing_registry_file or excludes_skipped_from_pending or missing_summary' -v
+uv run --with pytest --with pyyaml pytest tests/test_compile_registry.py -k malformed_compiled_digest -v
+```
+
+Results:
+
+- `3 passed, 6 deselected` in `tests/test_wiki_lint.py`
+- `1 passed, 10 deselected` in `tests/test_compile_registry.py`
+
+Final task verification:
+
+```bash
+uv run --with pytest --with pyyaml pytest tests/test_compile_registry.py tests/test_wiki_lint.py -v
+```
+
+Result:
+
+- `20 passed in 0.22s`

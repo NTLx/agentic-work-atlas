@@ -1,4 +1,5 @@
 import importlib.util
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -31,6 +32,10 @@ def write_summary(root: Path, raw_name: str) -> Path:
         encoding="utf-8",
     )
     return path
+
+
+def body_sha256(body: str) -> str:
+    return hashlib.sha256(body.encode("utf-8")).hexdigest()
 
 
 def test_body_digest_ignores_frontmatter_changes(tmp_path):
@@ -84,7 +89,7 @@ def test_mark_compiled_and_mark_skipped_update_registry_entries():
         registry,
         raw_file="compiled.md",
         summary_path="wiki/sources/compiled.md",
-        body_sha256="abc123",
+        body_sha256=body_sha256("compiled body"),
         now="2026-06-28T10:30:00+08:00",
     )
     skipped = compile_registry.mark_skipped(
@@ -92,7 +97,7 @@ def test_mark_compiled_and_mark_skipped_update_registry_entries():
         raw_file="skipped.md",
         reason_code="off-topic",
         note="不服务于主线问题",
-        body_sha256="def456",
+        body_sha256=body_sha256("skipped body"),
         now="2026-06-28T10:35:00+08:00",
     )
 
@@ -114,7 +119,7 @@ def test_save_and_load_registry_round_trip(tmp_path):
             "example.md": {
                 "raw_file": "example.md",
                 "status": "pending",
-                "body_sha256": "abc123",
+                "body_sha256": body_sha256("body"),
                 "updated_at": "2026-06-28T10:30:00+08:00",
             }
         },
@@ -136,7 +141,7 @@ def test_save_registry_rejects_invalid_status(tmp_path):
             "broken.md": {
                 "raw_file": "broken.md",
                 "status": "bogus",
-                "body_sha256": "abc123",
+                "body_sha256": body_sha256("body"),
                 "updated_at": "2026-06-28T10:30:00+08:00",
             }
         },
@@ -163,7 +168,7 @@ def test_load_registry_rejects_invalid_persisted_status(tmp_path):
                     "broken.md": {
                         "raw_file": "broken.md",
                         "status": "bogus",
-                        "body_sha256": "abc123",
+                        "body_sha256": body_sha256("body"),
                         "updated_at": "2026-06-28T10:30:00+08:00",
                     }
                 },
@@ -216,7 +221,7 @@ def test_reconcile_adds_new_raw_and_reports_recompile_candidates(tmp_path):
     assert candidates == [{"raw_file": "compiled.md", "reason": "body-changed"}]
 
 
-def test_reconcile_ignores_non_sha_placeholder_digests(tmp_path):
+def test_reconcile_surfaces_malformed_compiled_digest(tmp_path):
     compile_registry = load_compile_registry()
     write_raw(tmp_path, "compiled.md", "type: raw\n", "body\n")
     write_summary(tmp_path, "compiled.md")
@@ -241,8 +246,7 @@ def test_reconcile_ignores_non_sha_placeholder_digests(tmp_path):
         now="2026-06-28T12:00:00+08:00",
     )
 
-    assert anomalies == []
-    assert candidates == []
+    assert {"raw_file": "compiled.md", "reason": "invalid-body-sha256"} in anomalies
 
 
 def test_cli_ensure_and_mark_compiled_round_trip(tmp_path, capsys):

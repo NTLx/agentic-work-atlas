@@ -574,10 +574,19 @@ def fix_index_counts() -> bool:
 
 def check_registry_consistency() -> tuple[list[Issue], list[Path], list[Path], list[Path], list[dict]]:
     registry_path = ROOT / "state" / "raw-registry.json"
-    registry = COMPILE_REGISTRY.load_registry(ROOT) if registry_path.exists() else COMPILE_REGISTRY.bootstrap_registry(ROOT)
+    issues: list[Issue] = []
+    if not registry_path.exists():
+        issues.append(
+            Issue(
+                "registry-consistency",
+                registry_path,
+                None,
+                "缺少 authority registry 文件: state/raw-registry.json",
+            )
+        )
+    registry = COMPILE_REGISTRY.load_registry(ROOT)
     registry, anomalies, candidates = COMPILE_REGISTRY.reconcile_registry(ROOT, registry=registry)
 
-    issues: list[Issue] = []
     compiled: list[Path] = []
     pending: list[Path] = []
     skipped: list[Path] = []

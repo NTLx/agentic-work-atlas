@@ -191,7 +191,9 @@ def reconcile_registry(
             continue
         if entry.get("status") == "compiled":
             stored_digest = entry.get("body_sha256", "")
-            if is_sha256_digest(stored_digest) and stored_digest != current_digest:
+            if not is_sha256_digest(stored_digest):
+                anomalies.append({"raw_file": raw_file, "reason": "invalid-body-sha256"})
+            elif stored_digest != current_digest:
                 candidates.append({"raw_file": raw_file, "reason": "body-changed"})
             summary_path = root / entry.get("summary_path", "")
             if not entry.get("summary_path") or not summary_path.exists():
