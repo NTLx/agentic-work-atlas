@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 291 个 |
+| Entity 页面 | 293 个 |
 | Topic 页面 | 30 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 154 个 |
-| Source Summary | 154 个 |
+| Raw 文章 | 155 个 |
+| Source Summary | 155 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 15 个 |
 
@@ -111,7 +111,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-06-30——Anthropic Economic Index report: Cadences（2026-06-26），新增 AI-Use-Rhythm、AI-Artifact-Classification、AI-Autonomy、AI-Perception-Survey、Labor-Market-Impact 5个 entity + source summary。
+最新编译：2026-06-30——Building headless automation with Claude Code | Code w/ Claude（2025-07-31），新增 Headless-Automation、SDK-Design 等 entity + source summary。
 
 ---
 

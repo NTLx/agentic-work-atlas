@@ -688,6 +688,14 @@
       "summary_path": "wiki/sources/20260626-llm-as-judge-healthcare.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
     },
+    "20260630-building-headless-automation-claude-code.md": {
+      "body_sha256": "2fd0036a8995f9c0bb2cd4135b5f21ff1a51e938e31bf1aee45dee9b44256d3c",
+      "compiled_at": "2026-06-30T13:53:43+08:00",
+      "raw_file": "20260630-building-headless-automation-claude-code.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260630-building-headless-automation-claude-code.md",
+      "updated_at": "2026-06-30T13:53:43+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-06-29T08:23:18+08:00",
@@ -1092,7 +1100,7 @@
       "body_sha256": "ffe4aaeb8067aa19d0b38df19954ad214750b8bbb2697e0d409876a75c9901d7",
       "raw_file": "The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md",
       "status": "pending",
-      "updated_at": "2026-06-30T13:43:56+08:00"
+      "updated_at": "2026-06-30T13:53:30+08:00"
     },
     "The layoffs will continue till we learn to use AI.md": {
       "body_sha256": "378ae2ec48131cc7d1cbcf8859b782167fb486f48e5ceb7328b09e57b828fd70",
@@ -1188,7 +1196,7 @@
       "raw_file": "the-ai-jobs-transition-framework-for-the-eu.md",
       "status": "pending",
       "summary_path": null,
-      "updated_at": "2026-06-30T13:43:56+08:00"
+      "updated_at": "2026-06-30T13:53:30+08:00"
     },
     "一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统.md": {
       "body_sha256": "3e51d0d1e05990278b99b7d7c4f162bf080cdfced129866f7b2c55ae832f1c08",
@@ -1231,6 +1239,6 @@
       "updated_at": "2026-06-29T08:23:18+08:00"
     }
   },
-  "updated_at": "2026-06-30T13:44:18+08:00",
+  "updated_at": "2026-06-30T13:53:43+08:00",
   "version": 1
 }
