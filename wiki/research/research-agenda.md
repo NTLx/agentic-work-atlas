@@ -167,7 +167,7 @@ related_entities:
 |------|------|---------|---------|---------|
 | 2026-06-30 | Agent logic——比更长 context 更能推动企业规模化 | (1) Agent logic=显式状态机+declarative policy+isolation, 非workflow/prompt；(2) 探索用context，运营用agent logic——企业bottleneck在运营重复任务；(3) 真正价值在”探索→固化”生命周期：一次context探索→agent logic固化→artifact化复用；(4) Agent logic:Harness=CRD:Controller——架构分离版本耦合；(5) 需独立审计层 | 配置粒度：agent-level vs decision-pattern-level；固化时机：一次即固化 vs 多次确认后 | 找agent logic DSL工具；整合Plan-as-Agent-Checkpoint+Validation-Pipeline为topic；补IBM CUGA粒度source |
 | 2026-06-30 | 动态环境 benchmark——比静态更早暴露长期自主性缺陷 | (1) 动态=交互性(agent行动改变状态)+非平稳性(环境自己变)，静态=每次独立评估——测不同能力；(2) 自动化标注=动态评测瓶颈——因果链标注需world model；(3) 硬真实锚定+软真实扩展：少量ground truth→WM泛化→定期校准；(4) World model裁判自指陷阱——解法=环境内生ground truth(非模型输出)；(5) 动态环境反博弈寿命>静态——环境多样性>test set多样性 | World model必要性：唯一可扩展 vs 自指陷阱；Ground truth覆盖率：只硬真实可信 vs 软真实校准后可靠 | 建”动态环境评测”topic skeleton；补Qwen-AgentWorld/VitaBench/ITBench-AA数据为source |
-| 2026-06-30 | 判断力维护：个体反思 vs 组织节奏/责任设计 | (1) 退化根因非”不执行”，是”不遭遇多样性”——AI替分类+无多样性暴露；(2) 三步最小可行设计：原始信息优先+时间预算+决策追溯；(3) 个体-组织不可分割：个体需组织的”场”练习；(4) 时间预算可递减不可跳过；(5) 需要不可被KPI推翻的制度锚点 | 个体 vs 组织谁为主变量(Klein/Langer vs Edmondson/Catmull)；清单是清理跑道还是诱发mindlessness | 找NASA/Aviation/Pixar三步设计实证；设计”判断力体能测试”概念框架；追踪human-only review制度化实践 |
+| 2026-06-30 | 中国企业AI采用——集成约束才是分水岭 | (1) 瓶颈=集成约束+组织准备度>模型能力——地基碎片化根在科层制；(2) 优势=政策加速度(双引擎)，劣势=连接层碎片+计量层缺失；(3) 稳健递进=Kaizen风险——AI 6月迭代 vs 组织18-24月适应可能失配；(4) 隐性浪费>显性浪费——Token FinOps缺失；(5) 后发优势窗口=Token计量层标准化 | Skill治理: 市场淘汰(海尔) vs 中央分级(美的)；稳健递进: 本土化智慧 vs Kaizen陷阱 | 建”中国企业AI采用”topic；补美的1000亿token分项数据；追Token计量层标准化进展 |
 | 2026-06-30 | Reward hacking 取代覆盖率成为评测首要失真源 | (1) benchmark生命周期从年压缩到月——优化器速度超过评测设计速度；(2) 相关性评测必然被博弈，因果评测不可博弈但前提（变量定义）是权力问题；(3) 评测治理>测试技术：三方制衡+变量轮换；(4) 多Agent需要端到端+对抗压力+因果干预——组件评测在emergent行为前失效 | 因果评测完备性；反馈速度权衡（快测 vs 真实结果延迟验证） | 编译benchmark生命周期压缩数据为entity；建”评测治理”topic skeleton；补specification gaming/reward hacking实证文献 |
 | 2026-06-30 | 长期自主性与记忆生命周期 | (1) 有效自主时间瓶颈=记忆生命周期，非context长度——200K-1M够用；(2) 记忆衰减=存储衰退+检索干扰（双重衰减），需分别处理；(3) 记忆自我审计=自指悖论，agent不可靠→harness外部审计+agent信号分工；(4) 检索时验证(再巩固窗口)>定期全量扫描；(5) 共享记忆需风险分级——低风险退火+高风险投票 | 检索干扰 vs 存储衰退谁更致命；harness全责 vs agent信号+harness决策分工 | 整编5个memory-system entity为”记忆生命周期”topic；找72h+ postmortem实证；设计harness记忆审计最小可行协议 |
 
@@ -175,7 +175,7 @@ related_entities:
 
 > 完整日志按日归档；旧索引见 [[exploration-archive-20260628]]。
 
-- [[2026-06-30]] — 全七轮覆盖: 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · 三步设计 · Reward hacking · 评测治理三方制衡 · 记忆生命周期 · 双重衰减 · 再巩固窗口 · Agent logic · CRD-Controller · 探索→固化 · 动态环境基准 · 硬锚+软扩展
+- [[2026-06-30]] — 全八轮: 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking · 评测治理三方制衡 · 记忆生命周期 · 双重衰减 · Agent logic · CRD-Controller · 探索→固化 · 动态环境基准 · 硬锚+软扩展 · 中国企业AI采用 · Kaizen陷阱 · 计量层缺失
 - [[2026-06-28]] — 全库盘点 + 外部现实对照；认知分工边界；AI 原生测试；沉默型崩溃；Tokenpocalypse；记忆系统；long-running drift
 - [[2026-06-27]] — Agenda 自清洁；开源验证器；FDE 核心价值；AI 管理同构性；Minsky 悖论；高风险验证
 - [[2026-06-26]] — 位置性统一理论（启动）
