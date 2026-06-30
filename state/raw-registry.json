@@ -1237,6 +1237,14 @@
       "status": "compiled",
       "summary_path": "wiki/sources/用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
+    },
+    "Building headless automation with Claude Code — Code w Claude.md": {
+      "body_sha256": "4b85ce0543805279d86c8013a6966221a10852bd6c85c531933ce85ad8a7e2cb",
+      "compiled_at": "2026-06-30T14:56:42+08:00",
+      "raw_file": "Building headless automation with Claude Code — Code w Claude.md",
+      "status": "pending",
+      "summary_path": null,
+      "updated_at": "2026-06-30T14:56:42+08:00"
     }
   },
   "updated_at": "2026-06-30T13:53:43+08:00",

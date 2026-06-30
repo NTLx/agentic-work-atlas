@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 155 |
+| Raw 来源 | 156 |
 | Raw 已编译 | 153 |
-| Raw 待编译 | 2 |
+| Raw 待编译 | 3 |
 | Raw 已跳过 | 0 |
 | Entity | 293 |
 | Topic | 30 |
@@ -31,6 +31,7 @@ tags:
 
 ## 待编译 Raw
 
+- `raw/Building headless automation with Claude Code — Code w Claude.md`
 - `raw/The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md`
 - `raw/the-ai-jobs-transition-framework-for-the-eu.md`
 
