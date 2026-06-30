@@ -672,6 +672,14 @@
       "summary_path": "wiki/sources/20260625-ford-ai-quality-jd-power.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
     },
+    "20260626-anthropic-economic-index-june-2026-report.md": {
+      "body_sha256": "8058fa61279bdeb19279056a577cbb2ffd863c46f88be62bfb162582828c10cc",
+      "compiled_at": "2026-06-30T13:44:18+08:00",
+      "raw_file": "20260626-anthropic-economic-index-june-2026-report.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260626-anthropic-economic-index-june-2026-report.md",
+      "updated_at": "2026-06-30T13:44:18+08:00"
+    },
     "20260626-llm-as-judge-healthcare.md": {
       "body_sha256": "134c10db8287483c0f9d6f22011f1beda5461fecaba762ebe296182951867561",
       "compiled_at": "2026-06-29T08:23:18+08:00",
@@ -1084,7 +1092,7 @@
       "body_sha256": "ffe4aaeb8067aa19d0b38df19954ad214750b8bbb2697e0d409876a75c9901d7",
       "raw_file": "The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md",
       "status": "pending",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-06-30T13:43:56+08:00"
     },
     "The layoffs will continue till we learn to use AI.md": {
       "body_sha256": "378ae2ec48131cc7d1cbcf8859b782167fb486f48e5ceb7328b09e57b828fd70",
@@ -1174,6 +1182,14 @@
       "summary_path": "wiki/sources/how-agents-are-transforming-work.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
     },
+    "the-ai-jobs-transition-framework-for-the-eu.md": {
+      "body_sha256": "d28dcd9bc119132a46fb60b84bcf9eb550897754b61fb8930d46a02a0c86c333",
+      "compiled_at": "2026-06-30T12:24:01+08:00",
+      "raw_file": "the-ai-jobs-transition-framework-for-the-eu.md",
+      "status": "pending",
+      "summary_path": null,
+      "updated_at": "2026-06-30T13:43:56+08:00"
+    },
     "一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统.md": {
       "body_sha256": "3e51d0d1e05990278b99b7d7c4f162bf080cdfced129866f7b2c55ae832f1c08",
       "compiled_at": "2026-06-29T08:23:18+08:00",
@@ -1213,16 +1229,8 @@
       "status": "compiled",
       "summary_path": "wiki/sources/用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
-    },
-    "the-ai-jobs-transition-framework-for-the-eu.md": {
-      "body_sha256": "8047b41ecef7dcc55f148e19b0063e2c55efe84a14aed3d09879f8015d60a30c",
-      "compiled_at": "2026-06-30T12:24:01+08:00",
-      "raw_file": "the-ai-jobs-transition-framework-for-the-eu.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-06-30T12:24:01+08:00"
     }
   },
-  "updated_at": "2026-06-29T08:23:18+08:00",
+  "updated_at": "2026-06-30T13:44:18+08:00",
   "version": 1
 }
