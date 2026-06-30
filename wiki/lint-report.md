@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 154 |
-| Raw 已编译 | 152 |
+| Raw 来源 | 155 |
+| Raw 已编译 | 153 |
 | Raw 待编译 | 2 |
 | Raw 已跳过 | 0 |
-| Entity | 291 |
+| Entity | 293 |
 | Topic | 30 |
 | Comparison | 19 |
 | Output | 5 |
@@ -44,7 +44,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 6 |
+| `tag` | 11 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 0 |
@@ -61,9 +61,14 @@ tags:
 
 ### tag
 
+- `wiki/entities/SDK-Design.md` - `一次性 tag 仅出现 1 次: 'api-design'`
 - `wiki/entities/AI-Autonomy.md` - `一次性 tag 仅出现 1 次: 'autonomy'`
+- `wiki/entities/SDK-Design.md` - `一次性 tag 仅出现 1 次: 'developer-tools'`
 - `wiki/sources/20260626-anthropic-economic-index-june-2026-report.md` - `一次性 tag 仅出现 1 次: 'economic-index'`
 - `wiki/entities/Labor-Market-Impact.md` - `一次性 tag 仅出现 1 次: 'economics'`
+- `wiki/sources/20260630-building-headless-automation-claude-code.md` - `一次性 tag 仅出现 1 次: 'github-action'`
+- `wiki/entities/Headless-Automation.md` - `一次性 tag 仅出现 1 次: 'headless'`
+- `wiki/sources/20260630-building-headless-automation-claude-code.md` - `一次性 tag 仅出现 1 次: 'headless-automation'`
 - `wiki/entities/AI-Artifact-Classification.md` - `一次性 tag 仅出现 1 次: 'output-analysis'`
 - `wiki/entities/AI-Perception-Survey.md` - `一次性 tag 仅出现 1 次: 'survey'`
 - `wiki/entities/AI-Use-Rhythm.md` - `一次性 tag 仅出现 1 次: 'usage-patterns'`
