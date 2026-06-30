@@ -67,6 +67,8 @@ related_entities:
 | 治理内生性由激励对齐度决定：成本/安全可内生（激励对齐），审计/使用边界/跨模型路由不可内生（激励对立） | synthesized（圆桌辩证 + Tokenpocalypse 实证） | 找到模型厂商主动暴露自己模型系统性缺陷的公开案例；或找到模型厂商建议客户”少用自己模型”的商业行为 |
 | 灵活性悖论：治理配置越灵活 → 解读越需要专业人员 → FDE 需求放大而非缩小 | synthesized（Clayton MSP 历史类比 + Werner AWS 经验） | 找到治理配置引擎默认值 AI 化后 FDE 需求下降的企业案例；或在组织一致性高的场景中观察 FDE 需求不增反降 |
 | 独立 Agent 治理正在形成”Agent Control Plane”品类——核心四模块：策略执行/审批门/审计追踪/可观测性 | extracted（联网搜索确证：Cordum/NodeLoom/Lua Governance/Guild.ai + 多家对比指南） | 追踪 6-12 个月：如四模块被模型厂商内化吸收则品类消退；如独立厂商获融资/被收购则品类成立 |
+| Jevons 主体替换：AI 效率↑→token需求↑→资本(GPU)回报↑，劳动需求不传导——因为 token 生产的资本密集度趋近于零劳动 | synthesized（圆桌辩证 + ljg-think + OpenAI EU 框架需求弹性 0.7 估计） | 找到 AI 效率提升后某一行业人力需求同步增长的实证案例（非护理/教育等需求增长驱动的行业）；或找到 token 生产链条中某个劳动密集型环节的持续增长数据 |
+| 重组双层制度定理：重组存活 = 保护框架(劳动保障+培训+谈判) × 演化空间(内部试错+角色弹性)，两层缺一则重组坍塌为自动化 | synthesized（圆桌辩证：Acemoglu 双层制度 + 张瑞敏海尔案例 + Standing 制度侵蚀论） | 找到”保护框架弱但重组仍然成功”的行业/国家案例（除需求暴涨驱动型）；或找到”保护框架强但重组失败”的制度僵化反例 |
 
 ## Source 需求队列
 
@@ -156,17 +158,17 @@ related_entities:
 
 | 时间 | 焦点 | 关键共识 | 关键分歧 | 下次方向 |
 |------|------|---------|---------|---------|
-| 2026-06-28 | 全库盘点 + 外部现实对照 | (1) 真缺口是中层 topic 与 output 断层；(2) 新方向应押 runtime/control plane、evaluation governance、dynamic benchmark、agent logic；(3) 100 个未承载 entity 应先处理 AGI-economics / memory-system / agentic-engineering 三簇 | 新方向应先建 topic skeleton 还是先补 source；computer use 是工具层迭代还是治理层拐点 | 建 3 个 topic skeleton；编译 Tokenpocalypse；补 control plane / benchmark source map |
 | 2026-06-28 | 认知分工的实证边界 | (1) 发散任务可压缩到”1 人 + AI”；(2) 收敛任务仍需 2-3 人小组；(3) 团队价值上移到异议保留与责任分担 | 团队终态规模是否跨行业稳定；AI 在收敛任务中的角色是否仍有限 | 找收敛任务对照实验；编译 Mannheim 团队决策论文 |
 | 2026-06-28 | AI 原生测试：非确定性正确性框架 | (1) Agent 正确性 = reliable essential outcomes；(2) 覆盖率至少是 state / outcome / adversarial / composition 四层；(3) Goodhart 定律必须内生到评测设计里 | 形式证明 vs 连续度量；production 反博弈架构是否可落地 | 编译 PactLabs / reward hacking 材料；找 production sampling 实证 |
 | 2026-06-28 | 沉默型崩溃 containment：不作为防御 | (1) 不作为比过度行为更隐蔽；(2) 禁止性架构和义务性架构不对称；(3) 决策日志的核心价值在事前威慑 | omission bias 是否会系统性传给模型；审计递归如何收敛 | 编译 decision-trace-reconstructor；找决策日志减少不作为的证据 |
 | 2026-06-30 | 托管 Agent 竞争壁垒：从模型能力转向运行时治理 | (1) 模型差距在分化中缩小，构成竞争维度迁移前提；(2) 治理内生性由激励对齐度决定——成本/安全可内生，审计/边界/路由不可内生；(3) 独立治理层已形成产品类别（Cordum/NodeLoom/Lua Governance/Guild.ai）；(4) FDE 从”模型补丁商”升级为”治理翻译器” | 治理是内生（Sam线）vs 独立（Clayton线）vs 分层（Werner线）vs 运营裁决（Camille线）；灵活性是创造还是消除 FDE 需求；独立治理的核心是否只是过渡态 | 追踪 Agent Control Plane 产品演进；验证”治理不可委托定理”的实证边界；补治理自建 vs 外购决策案例 |
+| 2026-06-30 | 制度如何中介 AI 劳动力市场影响——OpenAI EU 框架 | (1) Jevons悖论发生”主体替换”——token替代劳动力成为被消费资源，传导链断裂；(2) “重组”路径最脆弱——需双层制度（保护框架+演化空间）；(3) 制度四态：给定约束/迭代地图/侵蚀残余/可重设计参数；(4) 追底：”就业”是制度史阶段，非人类参与生产的永恒形式 | 中国微观激励驱动重组 vs precarisation；Jevons 长期弹性是否追得上；制度稳定性是假设还是需要维护的稀缺资源 | 编译 EU 框架为 source-summary；建 entity”Jevons主体替换”；补中国企业实际就业变动数据 |
 
 ## 思考日志索引
 
 > 完整日志按日归档；旧索引见 [[exploration-archive-20260628]]。
 
-- [[2026-06-30]] — 托管 Agent 竞争壁垒：模型→治理 · 治理不可委托定理 · 激励对齐分界线 · 灵活性悖论 · Agent Control Plane 产品类别
+- [[2026-06-30]] — 托管 Agent 竞争壁垒：模型→治理 · 治理不可委托定理 · 激励对齐分界线 · 灵活性悖论 · Agent Control Plane 产品类别 · 制度中介 AI · Jevons主体替换 · 传导断裂三部曲
 - [[2026-06-28]] — 全库盘点 + 外部现实对照；认知分工边界；AI 原生测试；沉默型崩溃；Tokenpocalypse；记忆系统；long-running drift
 - [[2026-06-27]] — Agenda 自清洁；开源验证器；FDE 核心价值；AI 管理同构性；Minsky 悖论；高风险验证
 - [[2026-06-26]] — 位置性统一理论（启动）

@@ -1213,6 +1213,14 @@
       "status": "compiled",
       "summary_path": "wiki/sources/用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
+    },
+    "the-ai-jobs-transition-framework-for-the-eu.md": {
+      "body_sha256": "8047b41ecef7dcc55f148e19b0063e2c55efe84a14aed3d09879f8015d60a30c",
+      "compiled_at": "2026-06-30T12:24:01+08:00",
+      "raw_file": "the-ai-jobs-transition-framework-for-the-eu.md",
+      "status": "pending",
+      "summary_path": null,
+      "updated_at": "2026-06-30T12:24:01+08:00"
     }
   },
   "updated_at": "2026-06-29T08:23:18+08:00",

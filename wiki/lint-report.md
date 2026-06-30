@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 152 |
+| Raw 来源 | 153 |
 | Raw 已编译 | 151 |
-| Raw 待编译 | 1 |
+| Raw 待编译 | 2 |
 | Raw 已跳过 | 0 |
 | Entity | 286 |
 | Topic | 30 |
@@ -32,6 +32,7 @@ tags:
 ## 待编译 Raw
 
 - `raw/The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md`
+- `raw/the-ai-jobs-transition-framework-for-the-eu.md`
 
 ## 检查项
 

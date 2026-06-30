@@ -3,7 +3,7 @@ title: "The AI Jobs Transition Framework for the EU"
 author: Alex Martin Richmond
 organization: OpenAI Economic Research
 signed_by: Ronnie Chatterji (OpenAI Chief Economist)
-date: 2026-06
+date: 2026-06-01
 source: /home/lx/agentic-work-atlas/.cc-connect/attachments/the-ai-jobs-transition-framework-for-the-eu.pdf
 tags:
   - AI-economics
