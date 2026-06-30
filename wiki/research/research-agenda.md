@@ -72,6 +72,7 @@ related_entities:
 | 判断力退化真实路径：退化 = 不遭遇多样性（不由不执行导致）。AI 两条退化路径：(a) AI 替分类→Langer 的 mindlessness；(b) 无组织节奏→Catmull 的 cadence 缺失 | synthesized（圆桌辩证：Klein 经验模式识别 + Langer 正念 + Catmull dailies） | 设计”判断力体能测试”并在 AI 高暴露人群中测量；找到 AI 替分类但判断力未退化的反例（AI 做分类但人保持独立判断） |
 | 三步最小可行组织设计：原始信息优先 + 时间预算 + 决策追溯，三步缺一不可——分别防锚定/仓促/责任逃逸 | synthesized（圆桌辩证：Gawande清单 + Klein时间预算 + Edmondson决策追溯） | 找到实施三步设计中至少两步的组织（NASA/HRO/Aviation），并测量判断力维护效果 |
 | reward hacking 首要性定理：当 benchmark 生命周期 < 优化器迭代周期时，reward hacking 自动成为首要失真源 | synthesized（圆桌辩证：Bowman benchmark生命周期压缩 + Goodhart结构机制 + Pearl因果评测） | 量化 benchmark 从发布到饱和的时间序列数据；找到 benchmark 生命周期长于 5 年仍未被博弈的反例 |
+| 记忆双重衰减定理：有效自主时间瓶颈 = 记忆生命周期（存储衰退 + 检索干扰），非 context 长度。context 200K-1M 是上界但极少触及 | synthesized（圆桌辩证：Huyen生产观察 + Shoham retrieval drift + Matuschak双重框架） | 量化 72h+ agent 任务中 context 窗耗尽 vs 记忆质量衰减的发生频率比；找到 context 窗先于记忆质量成为瓶颈的任务类型 |
 | 评测治理三方制衡 > 测试技术改进：设计/验证/监管三方分离 + 变量轮换，单一利益方控制的评测体系最终被其利益博弈 | synthesized（圆桌辩证：Mitchell 权力批判 + Goodhart 变量轮换 + Karnofsky 真实结果延迟验证） | 找到三方制衡在 AI 评测中实施的案例（或类比金融审计的可行性论证） |
 
 ## Source 需求队列
@@ -162,17 +163,17 @@ related_entities:
 
 | 时间 | 焦点 | 关键共识 | 关键分歧 | 下次方向 |
 |------|------|---------|---------|---------|
-| 2026-06-28 | 沉默型崩溃 containment：不作为防御 | (1) 不作为比过度行为更隐蔽；(2) 禁止性架构和义务性架构不对称；(3) 决策日志的核心价值在事前威慑 | omission bias 是否会系统性传给模型；审计递归如何收敛 | 编译 decision-trace-reconstructor；找决策日志减少不作为的证据 |
 | 2026-06-30 | 托管 Agent 竞争壁垒：从模型能力转向运行时治理 | (1) 模型差距在分化中缩小，构成竞争维度迁移前提；(2) 治理内生性由激励对齐度决定——成本/安全可内生，审计/边界/路由不可内生；(3) 独立治理层已形成产品类别（Cordum/NodeLoom/Lua Governance/Guild.ai）；(4) FDE 从”模型补丁商”升级为”治理翻译器” | 治理是内生（Sam线）vs 独立（Clayton线）vs 分层（Werner线）vs 运营裁决（Camille线）；灵活性是创造还是消除 FDE 需求；独立治理的核心是否只是过渡态 | 追踪 Agent Control Plane 产品演进；验证”治理不可委托定理”的实证边界；补治理自建 vs 外购决策案例 |
 | 2026-06-30 | 制度如何中介 AI 劳动力市场影响——OpenAI EU 框架 | (1) Jevons悖论发生”主体替换”——token替代劳动力成为被消费资源，传导链断裂；(2) “重组”路径最脆弱——需双层制度（保护框架+演化空间）；(3) 制度四态：给定约束/迭代地图/侵蚀残余/可重设计参数；(4) 追底：”就业”是制度史阶段，非人类参与生产的永恒形式 | 中国微观激励驱动重组 vs precarisation；Jevons 长期弹性是否追得上；制度稳定性是假设还是需要维护的稀缺资源 | 编译 EU 框架为 source-summary；建 entity”Jevons主体替换”；补中国企业实际就业变动数据 |
 | 2026-06-30 | 判断力维护：个体反思 vs 组织节奏/责任设计 | (1) 退化根因非”不执行”，是”不遭遇多样性”——AI替分类+无多样性暴露；(2) 三步最小可行设计：原始信息优先+时间预算+决策追溯；(3) 个体-组织不可分割：个体需组织的”场”练习；(4) 时间预算可递减不可跳过；(5) 需要不可被KPI推翻的制度锚点 | 个体 vs 组织谁为主变量(Klein/Langer vs Edmondson/Catmull)；清单是清理跑道还是诱发mindlessness | 找NASA/Aviation/Pixar三步设计实证；设计”判断力体能测试”概念框架；追踪human-only review制度化实践 |
 | 2026-06-30 | Reward hacking 取代覆盖率成为评测首要失真源 | (1) benchmark生命周期从年压缩到月——优化器速度超过评测设计速度；(2) 相关性评测必然被博弈，因果评测不可博弈但前提（变量定义）是权力问题；(3) 评测治理>测试技术：三方制衡+变量轮换；(4) 多Agent需要端到端+对抗压力+因果干预——组件评测在emergent行为前失效 | 因果评测完备性；反馈速度权衡（快测 vs 真实结果延迟验证） | 编译benchmark生命周期压缩数据为entity；建”评测治理”topic skeleton；补specification gaming/reward hacking实证文献 |
+| 2026-06-30 | 长期自主性与记忆生命周期 | (1) 有效自主时间瓶颈=记忆生命周期，非context长度——200K-1M够用；(2) 记忆衰减=存储衰退+检索干扰（双重衰减），需分别处理；(3) 记忆自我审计=自指悖论，agent不可靠→harness外部审计+agent信号分工；(4) 检索时验证(再巩固窗口)>定期全量扫描；(5) 共享记忆需风险分级——低风险退火+高风险投票 | 检索干扰 vs 存储衰退谁更致命；harness全责 vs agent信号+harness决策分工 | 整编5个memory-system entity为”记忆生命周期”topic；找72h+ postmortem实证；设计harness记忆审计最小可行协议 |
 
 ## 思考日志索引
 
 > 完整日志按日归档；旧索引见 [[exploration-archive-20260628]]。
 
-- [[2026-06-30]] — 托管 Agent 竞争壁垒：模型→治理 · 治理不可委托定理 · 激励对齐分界线 · 灵活性悖论 · Agent Control Plane 产品类别 · 制度中介 AI · Jevons主体替换 · 传导断裂三部曲 · 判断力维护 · 三步设计 · 个体-组织界面 · Reward hacking 首要失真源 · 评测治理三方制衡
+- [[2026-06-30]] — 托管 Agent 竞争壁垒：模型→治理 · 治理不可委托定理 · 激励对齐分界线 · 灵活性悖论 · Agent Control Plane 产品类别 · 制度中介 AI · Jevons主体替换 · 传导断裂三部曲 · 判断力维护 · 三步设计 · 个体-组织界面 · Reward hacking 首要失真源 · 评测治理三方制衡 · 记忆生命周期 · 双重衰减 · 再巩固窗口
 - [[2026-06-28]] — 全库盘点 + 外部现实对照；认知分工边界；AI 原生测试；沉默型崩溃；Tokenpocalypse；记忆系统；long-running drift
 - [[2026-06-27]] — Agenda 自清洁；开源验证器；FDE 核心价值；AI 管理同构性；Minsky 悖论；高风险验证
 - [[2026-06-26]] — 位置性统一理论（启动）
