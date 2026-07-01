@@ -73,7 +73,7 @@ related_entities:
 | 重组双向制度阶段加权定理：重组存活 = 保护框架^α × 演化空间^(1-α)。α = f(AI替代速度)：替代加速期α↑(保护优先防社会崩溃)，部署成熟期α↓(演化优先防僵化)。海尔验证可行(安全网→敢尝试)但巨型企业条件不普适。保护来源三分歧：企业内化vs公民身份vs市场涌现 | synthesized（六方圆桌: Acemoglu制度塑造技术方向+张瑞敏海尔实证+Standing precariat批判+Hayek自发秩序；原始命题被修正为阶段加权而非固定乘法） | 找到”保护框架弱但重组仍然成功”的行业/国家案例(原证伪路径)；找到AI时代”保护框架强但重组失败”的制度僵化反例；测量AI替代速度与α最优值的实证关系 |
 | 判断力退化真实路径：退化 = 不遭遇多样性（不由不执行导致）。AI 两条退化路径：(a) AI 替分类→Langer 的 mindlessness；(b) 无组织节奏→Catmull 的 cadence 缺失 | synthesized（圆桌辩证：Klein 经验模式识别 + Langer 正念 + Catmull dailies） | 设计”判断力体能测试”并在 AI 高暴露人群中测量；找到 AI 替分类但判断力未退化的反例（AI 做分类但人保持独立判断） |
 | 三步+心理安全最小组织设计定理：有效决策=原始信息优先(防锚定)+时间预算(防仓促)+决策追溯(防逃逸)+心理安全(防CYA)。四者缺一不可——三重认知错误各需独立防御+信任基础。AI时代需技术强制执行(摩擦设计+强制等待+自动追溯)——不能依赖自觉 | synthesized（六方圆桌: Gawande清单逻辑+Klein时间压力+Edmondson心理安全+Kahneman认知经济；原始命题修正为四步而非三步） | 找到实施三步中至少两步的组织并测量判断力维护效果(原证伪路径)；找到"有心理安全但无决策追溯"仍能有效决策的反例 |
-| reward hacking 首要性定理：当 benchmark 生命周期 < 优化器迭代周期时，reward hacking 自动成为首要失真源 | synthesized（圆桌辩证：Bowman benchmark生命周期压缩 + Goodhart结构机制 + Pearl因果评测） | 量化 benchmark 从发布到饱和的时间序列数据；找到 benchmark 生命周期长于 5 年仍未被博弈的反例 |
+| Reward Hacking首要性+检测递归定理：首要性成立——当benchmark生命周期<优化器迭代周期时，hacking在时序上最先发生并触发失真级联(数据偏差/标注噪声/概念漂移被放大)。但"退役被破解benchmark"方案面临检测递归——检测破解需要元benchmark，元benchmark也会被破解。解方=锚定真实世界自认证指标(issue解决率/PR合并率/用户实际满意度)作为终极度量 | synthesized（六方圆桌: Goodhart定律级联+Silver RL reward specification+Bowman生命周期压缩数据+Karnofsky适应性管理+原命题检测递归修正） | 量化benchmark生命周期压缩的时间序列(MMLU→GPQA→SWE-bench→ITBench-AA)；找到生命周期长于5年仍未被hack的benchmark反例；找到成功锚定真实世界指标替代benchmark的AI评测实践 |
 | 记忆双重衰减定理：有效自主时间瓶颈 = 记忆生命周期（存储衰退 + 检索干扰），非 context 长度。context 200K-1M 是上界但极少触及 | synthesized（圆桌辩证：Huyen生产观察 + Shoham retrieval drift + Matuschak双重框架） | 量化 72h+ agent 任务中 context 窗耗尽 vs 记忆质量衰减的发生频率比；找到 context 窗先于记忆质量成为瓶颈的任务类型 |
 | 评测治理三方制衡 > 测试技术改进：设计/验证/监管三方分离 + 变量轮换，单一利益方控制的评测体系最终被其利益博弈 | synthesized（圆桌辩证：Mitchell 权力批判 + Goodhart 变量轮换 + Karnofsky 真实结果延迟验证） | 找到三方制衡在 AI 评测中实施的案例（或类比金融审计的可行性论证） |
 | Agent Logic生命周期四阶段定理：企业scaling的真正价值=管理pattern的完整生命周期(探索→固化→Artifact→维护→退役)，非仅"用context还是agent logic"。维护阶段是今天的关键缺失。触发条件≠出现次数=变异系数<阈值×关键性。五可组合原语(验证器/转换器/决策/行动/升级)×DAG编排→可组合性 | synthesized（六方圆桌: Hickey Simple/Easy原语设计 + Frazelle Docker不可变分层 + Kim DevOps三原则+变异系数触发 + Victor活系统可视化 + 原Agent logic命题扩展） | 找到实施完整四阶段生命周期(含维护/退役)的Agent工程组织案例；找到类似Docker Hub的Agent pattern共享市场；测量"固化债务"(已识别未固化的pattern×重复token成本) |
@@ -196,7 +196,7 @@ related_entities:
 
 > 完整日志按日归档；旧索引见 [[exploration-archive-20260628]]。
 
-- [[2026-07-01]] — 10轮: (1)10x协调; (2)共享记忆; (3)因果评测; (4)Screen Gate; (5)判断力退化; (6)治理内生性; (7)Agent Logic; (8)Jevons主体替换; (9)重组双层制度; (10)三步+心理安全最小组织设计。待验证5→0。待证伪27条(5条已修正)。
+- [[2026-07-01]] — 11轮: (1)10x协调; (2)共享记忆; (3)因果评测; (4)Screen Gate; (5)判断力; (6)治理内生性; (7)Agent Logic; (8)Jevons; (9)重组制度; (10)三步组织设计; (11)Reward Hacking首要性+检测递归。待验证5→0。待证伪27条(6条已修正)。
 - [[2026-06-30]] — 12轮(06-30 11轮+07-01 1轮): 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking评测治理 · 记忆生命周期双重衰减 · Agent logic CRD-Controller · 动态环境硬锚+软扩展 · 中国企业AI Kaizen陷阱 · 使用节律四层架构 · Computer use screen gate · 10x工程师AI乘数定理 · 全库盘点Orphan危机 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking · 评测治理三方制衡 · 记忆生命周期 · 双重衰减 · Agent logic · CRD-Controller · 探索→固化 · 动态环境基准 · 硬锚+软扩展 · 中国企业AI采用 · Kaizen陷阱 · 计量层缺失
 - [[2026-06-28]] — 全库盘点 + 外部现实对照；认知分工边界；AI 原生测试；沉默型崩溃；Tokenpocalypse；记忆系统；long-running drift
 - [[2026-06-27]] — Agenda 自清洁；开源验证器；FDE 核心价值；AI 管理同构性；Minsky 悖论；高风险验证
