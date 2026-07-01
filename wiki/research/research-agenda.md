@@ -76,7 +76,7 @@ related_entities:
 | reward hacking 首要性定理：当 benchmark 生命周期 < 优化器迭代周期时，reward hacking 自动成为首要失真源 | synthesized（圆桌辩证：Bowman benchmark生命周期压缩 + Goodhart结构机制 + Pearl因果评测） | 量化 benchmark 从发布到饱和的时间序列数据；找到 benchmark 生命周期长于 5 年仍未被博弈的反例 |
 | 记忆双重衰减定理：有效自主时间瓶颈 = 记忆生命周期（存储衰退 + 检索干扰），非 context 长度。context 200K-1M 是上界但极少触及 | synthesized（圆桌辩证：Huyen生产观察 + Shoham retrieval drift + Matuschak双重框架） | 量化 72h+ agent 任务中 context 窗耗尽 vs 记忆质量衰减的发生频率比；找到 context 窗先于记忆质量成为瓶颈的任务类型 |
 | 评测治理三方制衡 > 测试技术改进：设计/验证/监管三方分离 + 变量轮换，单一利益方控制的评测体系最终被其利益博弈 | synthesized（圆桌辩证：Mitchell 权力批判 + Goodhart 变量轮换 + Karnofsky 真实结果延迟验证） | 找到三方制衡在 AI 评测中实施的案例（或类比金融审计的可行性论证） |
-| Agent logic 探索→固化生命周期：企业scaling的真正价值不是用context还是agent logic——是第一次context探索pattern → agent logic固化 → artifact化复用，避免为已知模式重复支付token | synthesized（圆桌辩证：Rich Hickey Simple/Easy + Bret Victor探索/运营 + Jessie Frazelle artifact化） | 找到实施"探索→固化"生命周期的企业案例；找到 agent logic artifact（类似Dockerfile）的现有工具或DSL |
+| Agent Logic生命周期四阶段定理：企业scaling的真正价值=管理pattern的完整生命周期(探索→固化→Artifact→维护→退役)，非仅"用context还是agent logic"。维护阶段是今天的关键缺失。触发条件≠出现次数=变异系数<阈值×关键性。五可组合原语(验证器/转换器/决策/行动/升级)×DAG编排→可组合性 | synthesized（六方圆桌: Hickey Simple/Easy原语设计 + Frazelle Docker不可变分层 + Kim DevOps三原则+变异系数触发 + Victor活系统可视化 + 原Agent logic命题扩展） | 找到实施完整四阶段生命周期(含维护/退役)的Agent工程组织案例；找到类似Docker Hub的Agent pattern共享市场；测量"固化债务"(已识别未固化的pattern×重复token成本) |
 | 动态环境反博弈优势：动态benchmark寿命>静态——环境多样性>test set多样性。但元学习环境动态是新攻击面，硬真实锚定+软真实扩展是平衡方案 | synthesized（圆桌辩证：Silver交互性定义 + LeCun WM裁判 + Bach硬锚软扩展） | 量化Qwen-AgentWorld/VitaBench/ITBench-AA的"未被博弈"寿命数据；找到world model裁判被adversarial agent成功博弈的实证案例 |
 | 协调成本降解定理：协调重量 = L1(技术契约)+L2(语义诊断)+L3(优先级对齐)摩擦。AI 压 L1+L2 趋近于零→L3 从重型组织行为(会议/审批/escalation)降解为轻量微观协商(Slack DM/PR comment/agent alert) | extracted（Kunal Shah CRED实证: AI代码率5%→90%+agent跨团队冲突诊断；Andres Max 5→50人团队类比；SDLC AI Radar 2026: 73%代码变更仍需人工审查侧面验证L3存在） | 找到 AI 深度嵌入但 L3 协调仍未变轻的组织案例（AI使用率高但会议/escalation不减反增）；或找到 L1+L2 摩擦已归零但 L3 反而变重的反例 |
 | L2 Red Queen 天花板：L2 天花板是移动前线而非固定墙壁——AI 每解决一层语义冲突，组织产生新的更微妙的语义分化。技术层可推高、演化层永在但位移、人性层(身份需要)不可逾越 | synthesized（圆桌辩证 + ljg-think 追本: Jevons在语义层投影 + 功能分化必然产生语义分化 + 专业身份需要差异维持） | 量化测量: 跟踪同一团队 L2 诊断后"仍需人工介入的比例"时间序列——若持续下降则技术层主导，若稳定在某个水平则演化层主导；找到语义完全统一后专业身份依然稳固的反例(如跨功能团队的长期观察) |
@@ -196,7 +196,7 @@ related_entities:
 
 > 完整日志按日归档；旧索引见 [[exploration-archive-20260628]]。
 
-- [[2026-07-01]] — 6轮: (1)10x协调·协议网络; (2)共享记忆污染·四层防护; (3)因果评测·变量定义权; (4)Screen Gate→Agent Observability; (5)判断力退化三路径·扰动机制; (6)治理内生性三重边界·修正激励对齐命题。待验证 5→0。待证伪 27条(含1条已修正)。
+- [[2026-07-01]] — 7轮: (1)10x协调·协议网络; (2)共享记忆·四层防护; (3)因果评测·变量定义权; (4)Screen Gate→Agent Observability; (5)判断力退化·扰动机制; (6)治理内生性·三重边界; (7)Agent Logic生命周期·四阶段·五原语。待验证5→0。待证伪27条(2条已修正)。
 - [[2026-06-30]] — 12轮(06-30 11轮+07-01 1轮): 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking评测治理 · 记忆生命周期双重衰减 · Agent logic CRD-Controller · 动态环境硬锚+软扩展 · 中国企业AI Kaizen陷阱 · 使用节律四层架构 · Computer use screen gate · 10x工程师AI乘数定理 · 全库盘点Orphan危机 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking · 评测治理三方制衡 · 记忆生命周期 · 双重衰减 · Agent logic · CRD-Controller · 探索→固化 · 动态环境基准 · 硬锚+软扩展 · 中国企业AI采用 · Kaizen陷阱 · 计量层缺失
 - [[2026-06-28]] — 全库盘点 + 外部现实对照；认知分工边界；AI 原生测试；沉默型崩溃；Tokenpocalypse；记忆系统；long-running drift
 - [[2026-06-27]] — Agenda 自清洁；开源验证器；FDE 核心价值；AI 管理同构性；Minsky 悖论；高风险验证
