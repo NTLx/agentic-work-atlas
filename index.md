@@ -15,13 +15,13 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 299 个 |
+| Entity 页面 | 300 个 |
 | Topic 页面 | 31 个 |
 | Comparison 页面 | 19 个 |
 | Raw 文章 | 158 个 |
 | Source Summary | 156 个 |
 | Output 作品 | 5 个 |
-| Research 日志 | 15 个 |
+| Research 日志 | 16 个 |
 
 ### 连接拓扑（2026-06-25 实测，口径见 `schema/fragmentation-metrics.md`）
 

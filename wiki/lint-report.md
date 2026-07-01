@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-01"
-score: 98
-status: "FAIL"
+score: 100
+status: "PASS"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-07-01
 
 > [!summary] 状态
-> 门禁: **FAIL**
-> 分数: **98/100**
-> 阻断问题: **2**
+> 门禁: **PASS**
+> 分数: **100/100**
+> 阻断问题: **0**
 
 ## 统计
 
@@ -24,7 +24,7 @@ tags:
 | Raw 已编译 | 154 |
 | Raw 待编译 | 4 |
 | Raw 已跳过 | 0 |
-| Entity | 299 |
+| Entity | 300 |
 | Topic | 31 |
 | Comparison | 19 |
 | Output | 5 |
@@ -44,7 +44,7 @@ tags:
 | `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
-| `wikilink` | 2 |
+| `wikilink` | 0 |
 | `source_raw` | 0 |
 | `tag` | 25 |
 | `evidence` | 0 |
@@ -88,11 +88,6 @@ tags:
 - `wiki/entities/Theory-of-Mind.md` - `一次性 tag 仅出现 1 次: 'psychology'`
 - `wiki/entities/AI-Perception-Survey.md` - `一次性 tag 仅出现 1 次: 'survey'`
 - `wiki/entities/AI-Use-Rhythm.md` - `一次性 tag 仅出现 1 次: 'usage-patterns'`
-
-### wikilink
-
-- `wiki/research/research-agenda.md:102` - `链接目标不存在: [[exploration-archive-20260630]]`
-- `wiki/research/research-agenda.md:120` - `链接目标不存在: [[exploration-archive-20260630]]`
 
 ## 运行命令
 
