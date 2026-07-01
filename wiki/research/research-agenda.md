@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-06-28
+updated: 2026-06-30
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -40,7 +40,9 @@ related_entities:
 | 长期自主性与记忆生命周期 | 长任务漂移、记忆陈旧、重置策略正在成为单独工程问题 | long-running 与 memory-system 两条线仍分裂；5 个 memory-system entity 无整合承载 | 合并成长任务记忆生命周期主题，补 postmortem 与 reset 策略 |
 | 多 Agent 编排与组织病 | 协调收益与病理暴露在同一条曲线上 | 倒 U 型悖论已坐实；编排层与 worker 层的分工框架已出现 | 追 adaptive alignment、组织偏好函数与故障传播拓扑 |
 | 中国企业 AI 采用 | 中文一手案例仍明显不足，限制组织层判断 | 有 source，但未形成中国模式 topic | 编译 CIO / 制造业 / Agent Ready 基础设施案例 |
-| 图谱整合与 output 转化 | 100 个 entity 未被 topic/comparison 承载，5 个 output 仅覆盖 12 个 entity | 真缺口不是 raw 不够，而是中层 topic 和 output 断层 | 先对 AGI-economics / memory-system / AI-native engineering 三簇建 topic，再从 2026-06-28 日志挑 1 个 output |
+| 图谱整合与 output 转化 | 100+ entity 未被 topic/comparison 承载，output 断层阻碍判断验证 | 06-30 盘点发现 entity 增至 293，但中层 topic 仅 30，断层加剧 | 先对 AGI-economics / memory-system / agentic-engineering / 10x-engineer 四簇建 topic；从 06-30 日志挑 1 个 output |
+| 10x 工程师与 AI-native 组织 | Kunal Shah (CRED) 实证：AI代码率5%→90%一年，top10%变成"不同物种" | 已有 [[Wisdom-Work]]、[[Judgment]]、[[AI-Capability-Management-Alignment]]；缺组织级实证 | 建 AI-Native-Engineering-Org topic；补 CRED/美的组织数据 |
+| 多 Agent 编排与组织病 | 协调收益与病理在同一条曲线上 | 倒 U 型悖论已坐实；编排层与 worker 层分工已浮现 | 追 adaptive alignment、组织偏好函数与故障传播拓扑 |
 
 ## 活跃假设
 
@@ -92,51 +94,60 @@ related_entities:
 | P1 | 中国企业 AI 采用 | 缺中国组织内部集成细节与约束描述 | CIO 大会、制造业 AI、Agent Ready 基础设施案例 | 新建 topic |
 | P1 | 人的核心价值可维持性 | 缺长期跟踪与组织级反依赖干预案例 | Guided reflection、AI apprenticeship、认知依赖干预研究 | 更新 topic |
 | P2 | AI-native engineering 组织 | 9 个 agentic-engineering entity 无 topic 承载 | Role merging / captain mindset / validation pipeline 一手案例 | 整合 topic |
-| P2 | AGI-economics / memory-system 整合 | 5+5 个 entity 已成簇但未成主题 | AGI 经济学 scenario 材料、memory lifecycle 架构材料 | 提升整合层承载 |
+| P2 | Orphan 危机 + 图谱健康度 | 95/299 entity (31.8%) 未被 topic/comparison 引用；33 entity 缺 evidence_level；13/19 comparison 缺 evidence_level；0 wiki/index.md | 优先处理四簇：Harness(12)、AGI Economics(14)、Memory(6)、SDK/Headless(3) | 建 4 个 topic skeleton；补 33 entity 的 evidence_level；建 wiki/index.md |
 
-## 下一步最小实验
+## Source 需求队列
 
-- 编译 `raw/The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md`，把 AI 经济学从研究议程推到 source-summary。
-- 先建 3 个 topic skeleton：`Agent-Evaluation-Governance`、`Dynamic-Agent-Environments`、`AI-Native-Engineering-Organization`。
-- 把 5 个 `memory-system` entity 并到一张“记忆生命周期”框架图，验证是否真能覆盖现有概念。
-- 选 1 条 2026-06-28 日志直接写成 output，验证“output 是图谱压力测试”。
-- 对 100 个未承载 entity 先只处理 3 个成簇区：AGI-economics、memory-system、agentic-engineering。
-- 为“托管 Agent / 计算机使用控制平面”先做 1 页 source map：runtime、approval、sandbox、audit 4 列。
-- 为“评测抗博弈”先做 1 页 source map：benchmark、judge、traffic sampling、reward hacking 4 列。
+> 以下编译任务对标当前焦点；旧实验计划与已处理问题见 [[exploration-archive-20260630]]。当下最紧急：4 个 pending raw 等待编译。
 
-## 高杠杆待验证问题
+| 优先级 | 目标 | 当前缺口 | 下一步 source | 触发行动 |
+|--------|------|----------|---------------|----------|
+| P0 | 评测抗博弈与基准治理 | 缺 reward hacking、judge reliability、production sampling | Reward Hacking 论文、judge panel reliability、production traffic sampling | 新建 topic |
+| P0 | 托管 Agent / 计算机使用控制平面 | 缺托管 runtime、approval loop、sandbox 案例 | Google computer use、managed agents、containment/approval loop 材料 | 新建 topic/comparison |
+| P0 | 动态环境基准与世界模型 | 缺 interactive benchmark 与 world model 串联 | Qwen-AgentWorld、Open Agent Leaderboard、VitaBench / ITBench-AA | 新建 topic |
+| P0 | Agent logic 与轻量 harness | 缺"治理骨架优先于大模型"的成体系论据 | IBM CUGA、agent logic、governed harness case studies | 新建 topic |
+| P1 | AI 经济学与使用节律 | 缺 cadence / adaptive speed / token governance | Anthropic Economic Index（已有 raw）、Tokenpocalypse（已有 raw）、企业 TCO | 编译 pending raw |
+| P1 | 长期自主性与记忆生命周期 | 缺 72h+ postmortem 与 memory reset 策略 | Devin/OpenHands/Aide 复盘、staleness / dreaming / reset 文献 | 新建 comparison |
+| P1 | 中国企业 AI 采用 | 缺中国组织内部集成细节 | CIO 大会、制造业 AI、Agent Ready 基础设施 | 新建 topic |
+| P1 | 人的核心价值可维持性 | 缺长期跟踪与反依赖干预案例 | Kunal Shah 10x工程师（已有 raw）、AI apprenticeship | 更新 topic |
+| P2 | AI-native engineering 组织 | 9 agentic-engineering entity + 12 harness orphan 无 topic | Role merging / captain mindset / headless-automation | 整合 2-3 topic |
+| P2 | AGI-economics 整合 | 14 economics entity 已成簇无 topic | AGI 经济学 scenario、Jevons Paradox、Labor Market Impact | 新建 topic |
+| P2 | Orphan 危机 | 95/299 entity (31.8%) 未被 topic/comparison 引用 | 优先处理 Harness(12)、AGI Economics(14)、Memory(6)、SDK(3) 四簇 | 建 4 topic skeleton |
 
-> 全量问题库见 [[exploration-archive-20260628]]；这里只留最该优先推进的问题。
+## 高杠杆待验证问题（精简版）
 
-**运行时与控制平面：**
-- computer use 任务是否会把治理重心从“工具调用限制”转到“运行时环境设计”？
-- managed agents / hosted runtimes 是否会削弱 FDE 的一部分差异化价值，还是反而强化现场定制？
+> 以下问题来自 11 轮圆桌中未穷尽的分歧。已处理见 [[exploration-archive-20260630]]。
 
-**评测与抗博弈：**
-- production traffic sampling + held-out states + adversarial red-team 的组合，是否能实证降低 reward hacking？
-- 多 Agent 系统的 composition coverage 能否做成稳定可维护的门禁？
+- 因果评测前提（变量定义=权力）能否通过三方制衡彻底解决？
+- 两个 10x 工程师协调成本 > 2x——新协调原语能否落地？
+- 共享记忆错误污染能否被完全隔离——还是共享本质决定不可？
+- 中国稳健递进是否真在 AI 6月迭代 vs 18月适应中失配（Kaizen 陷阱）？
+- Computer use 治理是否会催生独立于 API gate 的 screen gate 新品类？
 
-**长期自主与记忆：**
-- 不同 harness / 记忆架构下的“有效自主时间”分布是什么？
-- staleness、dreaming、summary page、shared memory 到底是互补层，还是不同命名下的同一件事？
+## 图谱健康度（2026-06-30 全库盘点）
 
-**组织与人的位置：**
-- 判断力维护最有效的是个体反思机制，还是组织级节奏 / 责任设计？
-- 收敛任务中的最小有效单元，是否真稳定在 2-3 人，还是高度依行业和风险等级变化？
+| 指标 | 当前值 | 健康判断 | 动作 |
+|------|--------|---------|------|
+| Entity 总数 | 299 | 充足 | — |
+| Topic 总数 | 31 | **严重不足** (entity:topic = 9.6:1) | 新建 6-8 topic |
+| Comparison 总数 | 19 | 数量可，但 68% 缺 evidence_level | 补证据层级 |
+| Output 总数 | 5 | **严重不足** — output 是图谱压力测试 | 从 06-30 日志选 1 直接转 output |
+| Orphan entity | 95 (31.8%) | **危机信号** — 图谱断层 | 四簇优先建 topic 承载 |
+| Entity 缺 evidence_level | 33 (11%) | 中等风险 | 批量补标注 |
+| Navigation | **无 wiki/index.md** | 裸图谱 — 无入口 | 建导航页 |
+| Pending raw | 4 | 待消除 | 编译 Tokenpocalypse/EU/Kunal/SDK |
 
-**经济学与采用：**
-- 使用节律是否比 ROI 更早、更稳地反映 adoption 真进展？
-- 中国企业落地中的真正瓶颈，是模型、数据、流程、权限，还是责任结构？
+### 新方向池（基于审计发现的未覆盖区域）
 
-## 下一批剪藏方向
-
-**软件工程**：托管 Agent runtime · computer use 治理 · 动态环境 benchmark · reward hacking / judge reliability · agent logic / governed harness
-
-**组织系统**：AI 使用节律 · agentic labor 分层 · 中国企业集成约束 · AI-native engineering org · 小团队决策单元
-
-**知识系统**：记忆生命周期 · world model 作为评测环境 · output 反哺 topic 的路径 · source map / control plane map
-
-**人的核心价值**：判断力维护 · AI 时代学徒制 · 反认知依赖机制 · 组织如何保留异议与挑战者角色
+| 方向 | 为什么是新的 | 关联 entity 簇 | 优先级 |
+|------|-------------|---------------|--------|
+| **Agent Harness 统一理论** | 12 个 harness/infra entity 无 topic 承载——零散工具观察需要统一概念框架 | Agent-Ergonomics, AGENTS-md, Constraint-Infrastructure, Context-Rot, HaaS, NLAH, Ralph-Loops, Sleep-Token, Tool-Use-Architecture | P2 |
+| **AGI 经济学场景规划** | 14 个 economics entity 已成簇——含 Drip/Messy-Middle/O-Ring 等多个场景框架 | AGI-Economics, Labor-Market-Impact, Jevons-Paradox, Tokenpocalypse, AGI-Era-Talent-Allocation | P2 |
+| **Headless/SDK 自动化范式** | Claude Code SDK → 新原语（headless agent as Unix tool）→ 3 entity 等整合 | Headless-Automation, SDK-Design, Headless-Mode | P2 |
+| **AI 认知关系学** | 6 个 entity 涉及人与 AI 的认知关系（Amish/投降/共存/出逃）——未被任何 topic 承载 | AI-Amish, Cognitive-Surrender, Co-Existence, Co-Intelligence, Exit-Sovereignty | P2 |
+| **印度/全球南方 AI 采用** | Kunal Shah raw → 首次引入印度视角——高 data usage/低 productivity culture/10x engineer 现象 | 新建实体簇 | P1 |
+| **AI 数学未来** | 新 topic + source 已建（Grant Sanderson）→ 连接 Scientific-Discovery-AI, Conceptual-Breakthroughs | AI-in-Mathematics, AI-Mathematics-Future | P2 |
+| **Wiki 导航与可视化** | 无 index.md → 299 entity 无法被人类浏览 | — | P2 |
 
 ## 操作边界
 
@@ -165,18 +176,17 @@ related_entities:
 
 | 时间 | 焦点 | 关键共识 | 关键分歧 | 下次方向 |
 |------|------|---------|---------|---------|
-| 2026-06-30 | Agent logic——比更长 context 更能推动企业规模化 | (1) Agent logic=显式状态机+declarative policy+isolation, 非workflow/prompt；(2) 探索用context，运营用agent logic——企业bottleneck在运营重复任务；(3) 真正价值在”探索→固化”生命周期：一次context探索→agent logic固化→artifact化复用；(4) Agent logic:Harness=CRD:Controller——架构分离版本耦合；(5) 需独立审计层 | 配置粒度：agent-level vs decision-pattern-level；固化时机：一次即固化 vs 多次确认后 | 找agent logic DSL工具；整合Plan-as-Agent-Checkpoint+Validation-Pipeline为topic；补IBM CUGA粒度source |
-| 2026-06-30 | 动态环境 benchmark——比静态更早暴露长期自主性缺陷 | (1) 动态=交互性(agent行动改变状态)+非平稳性(环境自己变)，静态=每次独立评估——测不同能力；(2) 自动化标注=动态评测瓶颈——因果链标注需world model；(3) 硬真实锚定+软真实扩展：少量ground truth→WM泛化→定期校准；(4) World model裁判自指陷阱——解法=环境内生ground truth(非模型输出)；(5) 动态环境反博弈寿命>静态——环境多样性>test set多样性 | World model必要性：唯一可扩展 vs 自指陷阱；Ground truth覆盖率：只硬真实可信 vs 软真实校准后可靠 | 建”动态环境评测”topic skeleton；补Qwen-AgentWorld/VitaBench/ITBench-AA数据为source |
-| 2026-06-30 | 中国企业AI采用——集成约束才是分水岭 | (1) 瓶颈=集成约束+组织准备度>模型能力——地基碎片化根在科层制；(2) 优势=政策加速度(双引擎)，劣势=连接层碎片+计量层缺失；(3) 稳健递进=Kaizen风险——AI 6月迭代 vs 组织18-24月适应可能失配；(4) 隐性浪费>显性浪费——Token FinOps缺失；(5) 后发优势窗口=Token计量层标准化 | Skill治理: 市场淘汰(海尔) vs 中央分级(美的)；稳健递进: 本土化智慧 vs Kaizen陷阱 | 建”中国企业AI采用”topic；补美的1000亿token分项数据；追Token计量层标准化进展 |
-| 2026-06-30 | AI使用节律——比ROI更早暴露adoption真进展 | (1) 节律=频率梯度×任务深度梯度——最关键信号=自发找到第二个用例的速度；(2) 委托密度=不可伪造信号——agent被委托执行的频率；(3) 需区分revealed vs forced——自发=任务多样性高+高频集中；(4) 四层度量架构：计量→节律→价值映射→ROI——Tokenpocalypse=跳过2/3层；(5) Pace layering——节律在stuff/services层先浮现，ROI在structure层 | 委托频率是否真不可伪造: 是 vs 低价值高频委托=假信号 | 编译Anthropic Economic Index为source-summary；追踪task depth gradient量化方法 |
-| 2026-06-30 | Reward hacking 取代覆盖率成为评测首要失真源 | (1) benchmark生命周期从年压缩到月——优化器速度超过评测设计速度；(2) 相关性评测必然被博弈，因果评测不可博弈但前提（变量定义）是权力问题；(3) 评测治理>测试技术：三方制衡+变量轮换；(4) 多Agent需要端到端+对抗压力+因果干预——组件评测在emergent行为前失效 | 因果评测完备性；反馈速度权衡（快测 vs 真实结果延迟验证） | 编译benchmark生命周期压缩数据为entity；建”评测治理”topic skeleton；补specification gaming/reward hacking实证文献 |
-| 2026-06-30 | 长期自主性与记忆生命周期 | (1) 有效自主时间瓶颈=记忆生命周期，非context长度——200K-1M够用；(2) 记忆衰减=存储衰退+检索干扰（双重衰减），需分别处理；(3) 记忆自我审计=自指悖论，agent不可靠→harness外部审计+agent信号分工；(4) 检索时验证(再巩固窗口)>定期全量扫描；(5) 共享记忆需风险分级——低风险退火+高风险投票 | 检索干扰 vs 存储衰退谁更致命；harness全责 vs agent信号+harness决策分工 | 整编5个memory-system entity为”记忆生命周期”topic；找72h+ postmortem实证；设计harness记忆审计最小可行协议 |
+| 2026-06-30 | 中国企业AI采用——集成约束才是分水岭 | (1) 瓶颈=集成约束+组织准备度>模型能力——地基碎片化根在科层制；(2) 优势=政策加速度(双引擎)，劣势=连接层碎片+计量层缺失；(3) 稳健递进=Kaizen风险；(4) 隐性浪费>显性浪费——Token FinOps缺失 | Skill治理: 市场(海尔) vs 中央(美的)；稳健递进: 智慧 vs Kaizen陷阱 | 建topic；补美的1000亿token分项数据 |
+| 2026-06-30 | AI使用节律——比ROI更早暴露adoption真进展 | (1) 节律=频率×深度梯度+自扩散速度；(2) 委托密度=不可伪造信号；(3) 四层信号架构——计量→节律→价值→ROI | 委托频率是否真不可伪造 | 编译Anthropic Economic Index；追踪task depth gradient |
+| 2026-06-30 | Reward hacking 取代覆盖率成为评测首要失真源 | (1) benchmark生命周期从年→月；(2) 相关性评测必被博弈，因果评测不可博弈但前提可被博弈；(3) 评测治理三方制衡>测试技术 | 因果评测完备性；反馈速度权衡 | 编译reward hacking材料；建评测治理topic |
+| 2026-06-30 | 长期自主性与记忆生命周期 | (1) 有效自主时间瓶颈=记忆生命周期，非context长度；(2) 记忆衰减=存储衰退+检索干扰；(3) 共享记忆需风险分级——低风险退火+高风险投票 | 检索干扰 vs 存储衰退谁更致命 | 整编5 memory entity为topic；找72h+ postmortem |
+| 2026-06-30 | 全库盘点 + Orphan危机 + 新方向 | (1) 299 entity/31 topic——中层断层加剧；(2) 95 orphan(31.8%)——四簇优先：Harness(12)/Economics(14)/Memory(6)/SDK(3)；(3) 4 pending raw + 33 entity缺evidence_level；(4) 12活跃假设全部通过11轮圆桌触碰，待证伪库17条 | 继续深挖 vs 先建topic skeleton填补断层 | 建4 topic；编译4 pending raw；补evidence_level；建wiki/index.md |
 
 ## 思考日志索引
 
 > 完整日志按日归档；旧索引见 [[exploration-archive-20260628]]。
 
-- [[2026-06-30]] — 全八轮: 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking · 评测治理三方制衡 · 记忆生命周期 · 双重衰减 · Agent logic · CRD-Controller · 探索→固化 · 动态环境基准 · 硬锚+软扩展 · 中国企业AI采用 · Kaizen陷阱 · 计量层缺失
+- [[2026-06-30]] — 12轮(06-30 11轮+07-01 1轮): 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking评测治理 · 记忆生命周期双重衰减 · Agent logic CRD-Controller · 动态环境硬锚+软扩展 · 中国企业AI Kaizen陷阱 · 使用节律四层架构 · Computer use screen gate · 10x工程师AI乘数定理 · 全库盘点Orphan危机 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking · 评测治理三方制衡 · 记忆生命周期 · 双重衰减 · Agent logic · CRD-Controller · 探索→固化 · 动态环境基准 · 硬锚+软扩展 · 中国企业AI采用 · Kaizen陷阱 · 计量层缺失
 - [[2026-06-28]] — 全库盘点 + 外部现实对照；认知分工边界；AI 原生测试；沉默型崩溃；Tokenpocalypse；记忆系统；long-running drift
 - [[2026-06-27]] — Agenda 自清洁；开源验证器；FDE 核心价值；AI 管理同构性；Minsky 悖论；高风险验证
 - [[2026-06-26]] — 位置性统一理论（启动）

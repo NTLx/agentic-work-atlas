@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-01"
-score: 100
-status: "PASS"
+score: 98
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-07-01
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **98/100**
+> 阻断问题: **2**
 
 ## 统计
 
@@ -44,9 +44,9 @@ tags:
 | `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
-| `wikilink` | 0 |
+| `wikilink` | 2 |
 | `source_raw` | 0 |
-| `tag` | 22 |
+| `tag` | 25 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 0 |
@@ -66,13 +66,16 @@ tags:
 - `wiki/sources/20260701-grant-sanderson-ai-math-future.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260701-grant-sanderson-ai-math-future.md` - `一次性 tag 仅出现 1 次: 'AI-mathematics'`
 - `wiki/entities/SDK-Design.md` - `一次性 tag 仅出现 1 次: 'api-design'`
+- `wiki/research/research-logs/2026-06-30.md` - `一次性 tag 仅出现 1 次: 'archive'`
 - `wiki/entities/AI-Autonomy.md` - `一次性 tag 仅出现 1 次: 'autonomy'`
 - `wiki/sources/20260701-grant-sanderson-ai-math-future.md` - `一次性 tag 仅出现 1 次: 'autoregression'`
 - `wiki/sources/20260701-grant-sanderson-ai-math-future.md` - `一次性 tag 仅出现 1 次: 'conceptual-breakthroughs'`
 - `wiki/entities/SDK-Design.md` - `一次性 tag 仅出现 1 次: 'developer-tools'`
 - `wiki/sources/20260626-anthropic-economic-index-june-2026-report.md` - `一次性 tag 仅出现 1 次: 'economic-index'`
 - `wiki/entities/Labor-Market-Impact.md` - `一次性 tag 仅出现 1 次: 'economics'`
+- `wiki/research/research-logs/2026-06-30.md` - `一次性 tag 仅出现 1 次: 'exploration'`
 - `wiki/entities/AI-in-Mathematics.md` - `一次性 tag 仅出现 1 次: 'frontier'`
+- `wiki/research/research-logs/2026-06-30.md` - `一次性 tag 仅出现 1 次: 'full-inventory'`
 - `wiki/topics/AI-Mathematics-Future.md` - `一次性 tag 仅出现 1 次: 'future'`
 - `wiki/entities/Autoregressive-Generation.md` - `一次性 tag 仅出现 1 次: 'generation'`
 - `wiki/sources/20260630-building-headless-automation-claude-code.md` - `一次性 tag 仅出现 1 次: 'github-action'`
@@ -85,6 +88,11 @@ tags:
 - `wiki/entities/Theory-of-Mind.md` - `一次性 tag 仅出现 1 次: 'psychology'`
 - `wiki/entities/AI-Perception-Survey.md` - `一次性 tag 仅出现 1 次: 'survey'`
 - `wiki/entities/AI-Use-Rhythm.md` - `一次性 tag 仅出现 1 次: 'usage-patterns'`
+
+### wikilink
+
+- `wiki/research/research-agenda.md:102` - `链接目标不存在: [[exploration-archive-20260630]]`
+- `wiki/research/research-agenda.md:120` - `链接目标不存在: [[exploration-archive-20260630]]`
 
 ## 运行命令
 
