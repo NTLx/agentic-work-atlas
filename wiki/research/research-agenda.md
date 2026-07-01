@@ -55,6 +55,7 @@ related_entities:
 | 动态环境 benchmark 比静态 benchmark 更早暴露长期自主性缺陷 | 对比 world model / interactive benchmark 与静态 benchmark 的失效模式 |
 | 有效自主时间取决于记忆生命周期与重置策略，而不只是上下文长度 | 找 long-running postmortem、memory staleness、dreaming/reset 证据 |
 | 认知分工终态定理（精确化）：发散=1人+AI(最优，零协调成本)。收敛=多独立视角——至少1人不用共享AI或使用不同模型（防共同锚点）。终态可能分化为两条职业轨道：发散者(10x+AI)和收敛者(判断力小团队) | 找收敛任务对照实验(共享AI vs 不同AI vs 无AI的决策质量差异)；找高风险行业(医疗/航空)中认知分工的实证模式 |
+| AI认知关系五模式定理：五种模式(Amish/Surrender/Co-Existence/Co-Intelligence/Exit-Sovereignty)=情境工具箱，非成熟度阶梯。Exit-Sovereignty(退出主权)=元模式——所有其他模式的前提。成熟=知道何时用何模式+能自由切换。需设计模式切换affordance(可见/可逆/可理解) | synthesized（Langer正念框架+Norman affordance设计+前19轮关于判断力/认知分工/治理不可委托的综合收敛） | 测量不同职业/任务中五种模式的实际分布；设计并测试AI工具的"模式切换affordance"原型 |
 | 全球南方AI跃迁双速定理：AI可跳过技术基础设施(跃迁式采用)，不可跳过制度基础设施(组织产权/激励/契约执行)。成功=AI同时加速个体+组织制度建设。失败=只加速个体→"印度交通问题"恶化→10x工程师脱离或外流。制度缺失经济中技术革命的共性特征(De Soto/Perez) | synthesized（Shah CRED 5%→90%跃迁实证+De Soto制度经济学+Perez技术周期+前轮Jevons/重组制度交叉验证） | 找到"AI同时加速个体和组织制度建设"的成功案例(全球南方企业/国家)；测量制度滞后导致的10x工程师流失率 |
 | AI 使用节律比 ROI 更早暴露工作流是否可 agentize | 跟踪 Anthropic Economic Index、企业 token 使用与节律数据 |
 | 中国企业 AI 采用的分水岭是集成约束与组织准备度，不是模型能力 | 补制造业、客服、内部知识流案例作反证 |
@@ -199,7 +200,7 @@ related_entities:
 > 完整日志按日归档；旧索引见 [[exploration-archive-20260628]]。
 
 - [[2026-07-01]] — 12轮: 全部待验证(5→0)+7条06-30待证伪判断修正。涵盖协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境。
-- [[2026-07-02]] — 7轮: (1)评测三要素; (2)记忆双重衰减; (3)灵活性悖论; (4)治理不可委托; (5)认知分工; (6)全球南方AI; (7)Agent控制平面壁垒转移。
+- [[2026-07-02]] — 8轮: 评测三要素/记忆衰减/灵活性悖论/治理不可委托/认知分工/全球南方AI/控制平面/AI认知关系学。第20轮跨两日深度思考马拉松完成。
 - [[2026-06-30]] — 12轮(06-30 11轮+07-01 1轮): 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking评测治理 · 记忆生命周期双重衰减 · Agent logic CRD-Controller · 动态环境硬锚+软扩展 · 中国企业AI Kaizen陷阱 · 使用节律四层架构 · Computer use screen gate · 10x工程师AI乘数定理 · 全库盘点Orphan危机 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking · 评测治理三方制衡 · 记忆生命周期 · 双重衰减 · Agent logic · CRD-Controller · 探索→固化 · 动态环境基准 · 硬锚+软扩展 · 中国企业AI采用 · Kaizen陷阱 · 计量层缺失
 - [[2026-06-28]] — 全库盘点 + 外部现实对照；认知分工边界；AI 原生测试；沉默型崩溃；Tokenpocalypse；记忆系统；long-running drift
 - [[2026-06-27]] — Agenda 自清洁；开源验证器；FDE 核心价值；AI 管理同构性；Minsky 悖论；高风险验证
