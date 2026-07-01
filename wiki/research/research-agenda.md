@@ -70,7 +70,7 @@ related_entities:
 | 灵活性悖论：治理配置越灵活 → 解读越需要专业人员 → FDE 需求放大而非缩小 | synthesized（Clayton MSP 历史类比 + Werner AWS 经验） | 找到治理配置引擎默认值 AI 化后 FDE 需求下降的企业案例；或在组织一致性高的场景中观察 FDE 需求不增反降 |
 | 独立 Agent 治理正在形成”Agent Control Plane”品类——核心四模块：策略执行/审批门/审计追踪/可观测性 | extracted（联网搜索确证：Cordum/NodeLoom/Lua Governance/Guild.ai + 多家对比指南） | 追踪 6-12 个月：如四模块被模型厂商内化吸收则品类消退；如独立厂商获融资/被收购则品类成立 |
 | Jevons主体替换修正定理：传导断裂非永久——是阶段性速度错配。逆转方向可能(Acemoglu新任务+Perez部署期+Mazzucato投资方向)，但逆转速度落后于AI效率提升。政策方程式：净劳动=(新任务-旧任务)×技能转换加速×制度配套×社会契约。最终约束：政治速度 << AI速度。AI=问题+解：既是劳动替代者也是培训加速器 | synthesized（八方圆桌: Jevons原始理论+Acemoglu劳动替代/增强二分+Perez技术周期+Mazzucato政策塑造；原命题被修正为速度错配而非永久的"主体替换"） | 原证伪路径: 找到AI效率提升后某一行业人力需求同步增长的实证案例。修正证伪路径: 找到政治速度≥AI速度的领域(如某国AI政策在6个月内成功逆转劳动替代趋势) |
-| 重组双层制度定理：重组存活 = 保护框架(劳动保障+培训+谈判) × 演化空间(内部试错+角色弹性)，两层缺一则重组坍塌为自动化 | synthesized（圆桌辩证：Acemoglu 双层制度 + 张瑞敏海尔案例 + Standing 制度侵蚀论） | 找到”保护框架弱但重组仍然成功”的行业/国家案例（除需求暴涨驱动型）；或找到”保护框架强但重组失败”的制度僵化反例 |
+| 重组双向制度阶段加权定理：重组存活 = 保护框架^α × 演化空间^(1-α)。α = f(AI替代速度)：替代加速期α↑(保护优先防社会崩溃)，部署成熟期α↓(演化优先防僵化)。海尔验证可行(安全网→敢尝试)但巨型企业条件不普适。保护来源三分歧：企业内化vs公民身份vs市场涌现 | synthesized（六方圆桌: Acemoglu制度塑造技术方向+张瑞敏海尔实证+Standing precariat批判+Hayek自发秩序；原始命题被修正为阶段加权而非固定乘法） | 找到”保护框架弱但重组仍然成功”的行业/国家案例(原证伪路径)；找到AI时代”保护框架强但重组失败”的制度僵化反例；测量AI替代速度与α最优值的实证关系 |
 | 判断力退化真实路径：退化 = 不遭遇多样性（不由不执行导致）。AI 两条退化路径：(a) AI 替分类→Langer 的 mindlessness；(b) 无组织节奏→Catmull 的 cadence 缺失 | synthesized（圆桌辩证：Klein 经验模式识别 + Langer 正念 + Catmull dailies） | 设计”判断力体能测试”并在 AI 高暴露人群中测量；找到 AI 替分类但判断力未退化的反例（AI 做分类但人保持独立判断） |
 | 三步最小可行组织设计：原始信息优先 + 时间预算 + 决策追溯，三步缺一不可——分别防锚定/仓促/责任逃逸 | synthesized（圆桌辩证：Gawande清单 + Klein时间预算 + Edmondson决策追溯） | 找到实施三步设计中至少两步的组织（NASA/HRO/Aviation），并测量判断力维护效果 |
 | reward hacking 首要性定理：当 benchmark 生命周期 < 优化器迭代周期时，reward hacking 自动成为首要失真源 | synthesized（圆桌辩证：Bowman benchmark生命周期压缩 + Goodhart结构机制 + Pearl因果评测） | 量化 benchmark 从发布到饱和的时间序列数据；找到 benchmark 生命周期长于 5 年仍未被博弈的反例 |
@@ -196,7 +196,7 @@ related_entities:
 
 > 完整日志按日归档；旧索引见 [[exploration-archive-20260628]]。
 
-- [[2026-07-01]] — 8轮: (1)10x协调·协议网络; (2)共享记忆·四层防护; (3)因果评测·变量定义权; (4)Screen Gate→Agent Observability; (5)判断力退化·扰动机制; (6)治理内生性·三重边界; (7)Agent Logic生命周期·四阶段·五原语; (8)Jevons主体替换·速度错配·政策方程式。待验证5→0。待证伪27条(3条已修正)。
+- [[2026-07-01]] — 9轮: (1)10x协调; (2)共享记忆; (3)因果评测; (4)Screen Gate; (5)判断力退化; (6)治理内生性; (7)Agent Logic; (8)Jevons主体替换; (9)重组双层制度·阶段加权。待验证5→0。待证伪27条(4条已修正)。
 - [[2026-06-30]] — 12轮(06-30 11轮+07-01 1轮): 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking评测治理 · 记忆生命周期双重衰减 · Agent logic CRD-Controller · 动态环境硬锚+软扩展 · 中国企业AI Kaizen陷阱 · 使用节律四层架构 · Computer use screen gate · 10x工程师AI乘数定理 · 全库盘点Orphan危机 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking · 评测治理三方制衡 · 记忆生命周期 · 双重衰减 · Agent logic · CRD-Controller · 探索→固化 · 动态环境基准 · 硬锚+软扩展 · 中国企业AI采用 · Kaizen陷阱 · 计量层缺失
 - [[2026-06-28]] — 全库盘点 + 外部现实对照；认知分工边界；AI 原生测试；沉默型崩溃；Tokenpocalypse；记忆系统；long-running drift
 - [[2026-06-27]] — Agenda 自清洁；开源验证器；FDE 核心价值；AI 管理同构性；Minsky 悖论；高风险验证
