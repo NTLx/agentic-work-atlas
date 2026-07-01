@@ -200,7 +200,7 @@ related_entities:
 > 完整日志按日归档；旧索引见 [[exploration-archive-20260628]]。
 
 - [[2026-07-01]] — 12轮: 全部待验证(5→0)+7条06-30待证伪判断修正。涵盖协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境。
-- [[2026-07-02]] — 8轮: 评测三要素/记忆衰减/灵活性悖论/治理不可委托/认知分工/全球南方AI/控制平面/AI认知关系学。第20轮跨两日深度思考马拉松完成。
+- [[2026-07-02]] — 9轮: 评测三要素/记忆衰减/灵活性悖论/治理不可委托/认知分工/全球南方AI/控制平面/AI认知关系学/Headless Agent范式条件。
 - [[2026-06-30]] — 12轮(06-30 11轮+07-01 1轮): 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking评测治理 · 记忆生命周期双重衰减 · Agent logic CRD-Controller · 动态环境硬锚+软扩展 · 中国企业AI Kaizen陷阱 · 使用节律四层架构 · Computer use screen gate · 10x工程师AI乘数定理 · 全库盘点Orphan危机 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking · 评测治理三方制衡 · 记忆生命周期 · 双重衰减 · Agent logic · CRD-Controller · 探索→固化 · 动态环境基准 · 硬锚+软扩展 · 中国企业AI采用 · Kaizen陷阱 · 计量层缺失
 - [[2026-06-28]] — 全库盘点 + 外部现实对照；认知分工边界；AI 原生测试；沉默型崩溃；Tokenpocalypse；记忆系统；long-running drift
 - [[2026-06-27]] — Agenda 自清洁；开源验证器；FDE 核心价值；AI 管理同构性；Minsky 悖论；高风险验证
