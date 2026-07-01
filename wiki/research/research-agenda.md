@@ -54,7 +54,7 @@ related_entities:
 | 评测体系的首要失真源将是 reward hacking，而非覆盖率本身 | 汇总 reward hacking、judge reliability、benchmark contamination 材料 |
 | 动态环境 benchmark 比静态 benchmark 更早暴露长期自主性缺陷 | 对比 world model / interactive benchmark 与静态 benchmark 的失效模式 |
 | 有效自主时间取决于记忆生命周期与重置策略，而不只是上下文长度 | 找 long-running postmortem、memory staleness、dreaming/reset 证据 |
-| 认知分工的稳定终态是“发散 1 人 + AI，收敛 2-3 人小组” | 找收敛任务对照实验和高风险行业反例 |
+| 认知分工终态定理（精确化）：发散=1人+AI(最优，零协调成本)。收敛=多独立视角——至少1人不用共享AI或使用不同模型（防共同锚点）。终态可能分化为两条职业轨道：发散者(10x+AI)和收敛者(判断力小团队) | 找收敛任务对照实验(共享AI vs 不同AI vs 无AI的决策质量差异)；找高风险行业(医疗/航空)中认知分工的实证模式 |
 | AI 使用节律比 ROI 更早暴露工作流是否可 agentize | 跟踪 Anthropic Economic Index、企业 token 使用与节律数据 |
 | 中国企业 AI 采用的分水岭是集成约束与组织准备度，不是模型能力 | 补制造业、客服、内部知识流案例作反证 |
 | Output 是图谱压力测试；没有 output 消费的判断会持续失真 | 从 research-log 挑 1 条直接转 output 验证 |
@@ -198,7 +198,7 @@ related_entities:
 > 完整日志按日归档；旧索引见 [[exploration-archive-20260628]]。
 
 - [[2026-07-01]] — 12轮: 全部待验证(5→0)+7条06-30待证伪判断修正。涵盖协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境。
-- [[2026-07-02]] — 4轮: (1)评测治理三要素; (2)记忆双重衰减; (3)灵活性悖论; (4)治理不可委托(因果vs道德责任)。活跃假设全部11条已触碰。
+- [[2026-07-02]] — 5轮: (1)评测三要素; (2)记忆双重衰减; (3)灵活性悖论; (4)治理不可委托; (5)认知分工终态(发散1人+AI/收敛多独立视角)。
 - [[2026-06-30]] — 12轮(06-30 11轮+07-01 1轮): 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking评测治理 · 记忆生命周期双重衰减 · Agent logic CRD-Controller · 动态环境硬锚+软扩展 · 中国企业AI Kaizen陷阱 · 使用节律四层架构 · Computer use screen gate · 10x工程师AI乘数定理 · 全库盘点Orphan危机 托管Agent治理 · 制度中介AI · Jevons主体替换 · 判断力维护 · Reward hacking · 评测治理三方制衡 · 记忆生命周期 · 双重衰减 · Agent logic · CRD-Controller · 探索→固化 · 动态环境基准 · 硬锚+软扩展 · 中国企业AI采用 · Kaizen陷阱 · 计量层缺失
 - [[2026-06-28]] — 全库盘点 + 外部现实对照；认知分工边界；AI 原生测试；沉默型崩溃；Tokenpocalypse；记忆系统；long-running drift
 - [[2026-06-27]] — Agenda 自清洁；开源验证器；FDE 核心价值；AI 管理同构性；Minsky 悖论；高风险验证
