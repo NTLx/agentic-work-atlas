@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-06-30
+updated: 2026-07-01
 tags:
 ---
 
@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 293 个 |
-| Topic 页面 | 30 个 |
+| Entity 页面 | 299 个 |
+| Topic 页面 | 31 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 157 个 |
-| Source Summary | 155 个 |
+| Raw 文章 | 158 个 |
+| Source Summary | 156 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 15 个 |
 
@@ -66,6 +66,10 @@ tags:
 | [[wiki/entities/Agent-Ergonomics\|Agent Ergonomics（Agent 人体工学）]] | 以 Agent 为第一公民的工具设计哲学，AXI 十原则 | L8 Principal Agentic Workflow |
 | [[wiki/entities/Validation-Pipeline\|Validation Pipeline（验证管线）]] | 自动化端到端验证管线：对抗审查 + e2e + 证据生成 | L8 Principal Agentic Workflow |
 | [[wiki/entities/Captain-Mindset\|Captain Mindset（船长思维）]] | 人从 sailor 到 captain 的角色转型，规划+质量把关 | L8 Principal Agentic Workflow |
+| [[wiki/entities/AI-in-Mathematics\|AI in Mathematics（AI 数学）]] | AI在数学领域的应用与进展，包括自动定理证明、问题求解、概念发现等 | Grant Sanderson 播客 |
+| [[wiki/entities/Conceptual-Breakthroughs\|Conceptual Breakthroughs（概念突破）]] | 产生新的概念、理论或框架来统一或重新组织现有知识的能力 | Grant Sanderson 播客 |
+| [[wiki/entities/Grindability-vs-Verifiability\|Grindability vs Verifiability（可磨性与可验证性）]] | AI成功的关键因素区分：可磨性比可验证性更重要 | Grant Sanderson 播客 |
+| [[wiki/entities/Autoregressive-Generation\|Autoregressive Generation（自回归生成）]] | 通过预测下一个token来生成文本的方式，是当前LLM的核心机制 | Grant Sanderson 播客 |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
@@ -88,6 +92,8 @@ tags:
 | [[wiki/entities/NLAH\|NLAH（自然语言智能体驾驭层）]] | 将 Agent 驾驭策略从代码中外置为可执行的自然语言文档 | NLAH 论文解读 |
 | [[wiki/entities/Sleep-Token\|Sleep-Token（睡后 Token）]] | 让 Token 在人离线时持续产出候选结果的工作模式 | Qoder 工程实践 |
 | [[wiki/entities/Knowledge-Compilation\|Knowledge Compilation（知识编译）]] | 将非结构化来源提炼为结构化、可查询知识节点的动作 | Agentic Work Atlas Schema |
+| [[wiki/entities/Human-Curation\|Human Curation（人类策展）]] | 人类在信息过载时代的核心价值——选择、组织、解释信息 | Grant Sanderson 播客 |
+| [[wiki/entities/Theory-of-Mind\|Theory of Mind（心智理论）]] | 理解他人心理状态的能力，是有效沟通、教学和策展的基础 | Grant Sanderson 播客 |
 
 #### AI 政策与监管
 | Entity | 定义 | 来源 |
@@ -111,7 +117,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-06-30——Building headless automation with Claude Code | Code w/ Claude（2025-07-31），新增 Headless-Automation、SDK-Design 等 entity + source summary。
+最新编译：2026-07-01——Grant Sanderson - AI and the future of math，新增 AI-in-Mathematics、Conceptual-Breakthroughs、Grindability-vs-Verifiability、Autoregressive-Generation、Human-Curation、Theory-of-Mind 等 entity + source summary。
 
 ---
 
@@ -143,5 +149,5 @@ status             # 查看知识库状态
 
 ---
 
-*索引版本: v2.7*
-*最后更新: 2026-06-26*
+*索引版本: v2.8*
+*最后更新: 2026-07-01*

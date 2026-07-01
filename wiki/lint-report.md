@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-06-30"
+date: "2026-07-01"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-06-30
+# Agentic Work Atlas Lint 报告 - 2026-07-01
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -20,12 +20,12 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 157 |
-| Raw 已编译 | 153 |
+| Raw 来源 | 158 |
+| Raw 已编译 | 154 |
 | Raw 待编译 | 4 |
 | Raw 已跳过 | 0 |
-| Entity | 293 |
-| Topic | 30 |
+| Entity | 299 |
+| Topic | 31 |
 | Comparison | 19 |
 | Output | 5 |
 
@@ -46,7 +46,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 11 |
+| `tag` | 22 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 0 |
@@ -63,15 +63,26 @@ tags:
 
 ### tag
 
+- `wiki/sources/20260701-grant-sanderson-ai-math-future.md` - `tags 超过 5 个: 6`
+- `wiki/sources/20260701-grant-sanderson-ai-math-future.md` - `一次性 tag 仅出现 1 次: 'AI-mathematics'`
 - `wiki/entities/SDK-Design.md` - `一次性 tag 仅出现 1 次: 'api-design'`
 - `wiki/entities/AI-Autonomy.md` - `一次性 tag 仅出现 1 次: 'autonomy'`
+- `wiki/sources/20260701-grant-sanderson-ai-math-future.md` - `一次性 tag 仅出现 1 次: 'autoregression'`
+- `wiki/sources/20260701-grant-sanderson-ai-math-future.md` - `一次性 tag 仅出现 1 次: 'conceptual-breakthroughs'`
 - `wiki/entities/SDK-Design.md` - `一次性 tag 仅出现 1 次: 'developer-tools'`
 - `wiki/sources/20260626-anthropic-economic-index-june-2026-report.md` - `一次性 tag 仅出现 1 次: 'economic-index'`
 - `wiki/entities/Labor-Market-Impact.md` - `一次性 tag 仅出现 1 次: 'economics'`
+- `wiki/entities/AI-in-Mathematics.md` - `一次性 tag 仅出现 1 次: 'frontier'`
+- `wiki/topics/AI-Mathematics-Future.md` - `一次性 tag 仅出现 1 次: 'future'`
+- `wiki/entities/Autoregressive-Generation.md` - `一次性 tag 仅出现 1 次: 'generation'`
 - `wiki/sources/20260630-building-headless-automation-claude-code.md` - `一次性 tag 仅出现 1 次: 'github-action'`
 - `wiki/entities/Headless-Automation.md` - `一次性 tag 仅出现 1 次: 'headless'`
 - `wiki/sources/20260630-building-headless-automation-claude-code.md` - `一次性 tag 仅出现 1 次: 'headless-automation'`
+- `wiki/sources/20260701-grant-sanderson-ai-math-future.md` - `一次性 tag 仅出现 1 次: 'human-curation'`
+- `wiki/entities/Human-Curation.md` - `一次性 tag 仅出现 1 次: 'information-overload'`
+- `wiki/entities/Conceptual-Breakthroughs.md` - `一次性 tag 仅出现 1 次: 'innovation'`
 - `wiki/entities/AI-Artifact-Classification.md` - `一次性 tag 仅出现 1 次: 'output-analysis'`
+- `wiki/entities/Theory-of-Mind.md` - `一次性 tag 仅出现 1 次: 'psychology'`
 - `wiki/entities/AI-Perception-Survey.md` - `一次性 tag 仅出现 1 次: 'survey'`
 - `wiki/entities/AI-Use-Rhythm.md` - `一次性 tag 仅出现 1 次: 'usage-patterns'`
 

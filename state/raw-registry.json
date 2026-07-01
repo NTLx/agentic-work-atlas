@@ -696,6 +696,14 @@
       "summary_path": "wiki/sources/20260630-building-headless-automation-claude-code.md",
       "updated_at": "2026-06-30T13:53:43+08:00"
     },
+    "20260701-grant-sanderson-ai-math-future.md": {
+      "body_sha256": "47e2b1c5a6bf0dfc0aab8ec82c3e7913a3da7d0d72c3be7676fd72a701c5b24b",
+      "compiled_at": "2026-07-01T08:54:40+08:00",
+      "raw_file": "20260701-grant-sanderson-ai-math-future.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260701-grant-sanderson-ai-math-future.md",
+      "updated_at": "2026-07-01T08:54:40+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-06-29T08:23:18+08:00",
@@ -767,6 +775,14 @@
       "status": "compiled",
       "summary_path": "wiki/sources/Building an MCP Ecosystem at Pinterest.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
+    },
+    "Building headless automation with Claude Code — Code w Claude.md": {
+      "body_sha256": "4b85ce0543805279d86c8013a6966221a10852bd6c85c531933ce85ad8a7e2cb",
+      "compiled_at": "2026-06-30T14:56:42+08:00",
+      "raw_file": "Building headless automation with Claude Code — Code w Claude.md",
+      "status": "pending",
+      "summary_path": null,
+      "updated_at": "2026-06-30T14:56:42+08:00"
     },
     "Choosing to Stay Human.md": {
       "body_sha256": "86c16b59473a144155f7bdaeb0dc52f6239b5f26dee492ebb2e849db553bbb6d",
@@ -887,6 +903,14 @@
       "status": "compiled",
       "summary_path": "wiki/sources/How Procter & Gamble Uses AI to Unlock New Insights From Data  Thomas H. Davenport and Randy Bean.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
+    },
+    "How to 10x Your Value in the AI Era — Kunal Shah.md": {
+      "body_sha256": "41a5e145ebef512754b4bb052437779fb21a0ad2b0c5a17068f11a8788094523",
+      "compiled_at": "2026-06-30T16:59:27+08:00",
+      "raw_file": "How to 10x Your Value in the AI Era — Kunal Shah.md",
+      "status": "pending",
+      "summary_path": null,
+      "updated_at": "2026-06-30T16:59:27+08:00"
     },
     "How we contain Claude across products.md": {
       "body_sha256": "1e66d922dad4ebecde287bcd4fe6292b135a8d0a45df5b0f1e1dcca9d85b6852",
@@ -1237,24 +1261,8 @@
       "status": "compiled",
       "summary_path": "wiki/sources/用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
-    },
-    "Building headless automation with Claude Code — Code w Claude.md": {
-      "body_sha256": "4b85ce0543805279d86c8013a6966221a10852bd6c85c531933ce85ad8a7e2cb",
-      "compiled_at": "2026-06-30T14:56:42+08:00",
-      "raw_file": "Building headless automation with Claude Code — Code w Claude.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-06-30T14:56:42+08:00"
-    },
-    "How to 10x Your Value in the AI Era — Kunal Shah.md": {
-      "body_sha256": "41a5e145ebef512754b4bb052437779fb21a0ad2b0c5a17068f11a8788094523",
-      "compiled_at": "2026-06-30T16:59:27+08:00",
-      "raw_file": "How to 10x Your Value in the AI Era — Kunal Shah.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-06-30T16:59:27+08:00"
     }
   },
-  "updated_at": "2026-06-30T13:53:43+08:00",
+  "updated_at": "2026-07-01T08:54:40+08:00",
   "version": 1
 }
