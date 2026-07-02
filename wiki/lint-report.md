@@ -46,7 +46,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 25 |
+| `tag` | 26 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 0 |
@@ -86,6 +86,7 @@ tags:
 - `wiki/entities/Conceptual-Breakthroughs.md` - `一次性 tag 仅出现 1 次: 'innovation'`
 - `wiki/entities/AI-Artifact-Classification.md` - `一次性 tag 仅出现 1 次: 'output-analysis'`
 - `wiki/entities/Theory-of-Mind.md` - `一次性 tag 仅出现 1 次: 'psychology'`
+- `wiki/research/research-logs/resolved-principles.md` - `一次性 tag 仅出现 1 次: 'resolved-principles'`
 - `wiki/entities/AI-Perception-Survey.md` - `一次性 tag 仅出现 1 次: 'survey'`
 - `wiki/entities/AI-Use-Rhythm.md` - `一次性 tag 仅出现 1 次: 'usage-patterns'`
 
