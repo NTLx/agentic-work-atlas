@@ -32,7 +32,7 @@ related_entities:
 | Entity 缺 evidence_level | 33 (11%) | 33 | 持平 | 批量补标注 |
 | Comparison 缺 evidence_level | 13 (68%) | 13 | 持平 | 批量补标注 |
 | Navigation | 无 index.md | 无 | — | **建 wiki/index.md** |
-| Pending raw | 4 | 4 | 持平 | 编译 Tokenpocalypse/EU/Kunal/SDK |
+| Pending raw | 14 (+10) | 4 | ↑ | 编译 Tokenpocalypse/EU/Kunal/SDK + 10 新剪藏（07-02） |
 | Low-evidence 阻断 | 1 | 1 | 持平 | AI-Management-Mindset-Transfer 需补 source |
 
 ## 当前研究焦点（精简版）
@@ -41,11 +41,11 @@ related_entities:
 |------|-----------|---------|--------|
 | **图谱整合与 topic 建设** | 301 entity / 31 topic = 9.7:1，中层断层是知识库最大结构性风险 | 26轮深度思考产出49条新判断但未建 topic 承载 | 建 8-10 topic skeleton；优先四簇：Agent-Observability(4)/AGI-Economics(14)/Cognition-Relations(6)/Orchestration(8) |
 | **Output 断层** | 5 output 无法为 49 新判断提供压力测试——无 output 消费的判断会持续失真 | 07-01/02 日志有丰富原料 | 转 2 个 output：1) 25轮元合成 rank 文章；2) Agent Observability 产业分析 |
-| **Token FinOps 与 AI 计量** | 企业 AI 采用的隐性瓶颈——不知道花了多少、花在哪、产出什么 | 中国 AI 讨论指出 FinOps 缺失；库内无 entity | 新建 Token-FinOps entity；找企业 token 核算案例 |
-| **AI-native 测试与验证方法论** | 评测治理四部曲完成后，下一层是"怎么测"的工程实践 | 有 Verifiability/Grindability 但缺测试方法论 topic | 新建 AI-Native-Testing topic；收集 property-based/contract/simulation 测试案例 |
-| **跨境 AI 治理差异** | EU AI Act vs US vs 中国——不同治理框架对 Agent 部署的实质影响 | 库内无跨境治理 comparison | 新建 AI-Governance-Regimes comparison；收集 EU/US/CN 一手法规文本 |
-| **Agent-to-Agent 经济协议** | 多 Agent 编排的上限不仅是协调技术——还有 Agent 间"交易"的经济协议 | 库内有编排/倒U型但缺 Agent 经济层 | 新建 Agent-Economic-Protocols entity；追踪 Agent 间支付/信誉/合约机制 |
-| **开源 Agent 生态演化** | 开源模型追赶闭源→Agent 框架（LangGraph/CrewAI/AutoGen）成为新战场 | 库内缺开源 Agent 框架对比 | 新建 Open-Source-Agent-Ecosystem comparison |
+| **Token FinOps 与 AI 计量** | 企业 AI 采用的隐性瓶颈——不知道花了多少、花在哪、产出什么 | ✅ 新剪藏：FinOps X 2026 + Virtasant token-level visibility | 新建 Token-FinOps entity |
+| **AI-native 测试与验证方法论** | 评测治理四部曲完成后，下一层是"怎么测"的工程实践 | ✅ 新剪藏：AI Agent Evaluation Pipeline 2026 Methodology | 新建 AI-Native-Testing topic |
+| **跨境 AI 治理差异** | EU AI Act vs US vs 中国——不同治理框架对 Agent 部署的实质影响 | ✅ 新剪藏：EU AI Act Compliance for Autonomous Agents 2026 | 新建 AI-Governance-Regimes comparison |
+| **Agent-to-Agent 经济协议** | 多 Agent 编排的上限不仅是协调技术——还有 Agent 间"交易"的经济协议 | ✅ 新剪藏：Agent Protocol Ecosystem Map (MCP/A2A/ACP/UCP) | 新建 Agent-Economic-Protocols entity |
+| **开源 Agent 生态演化** | 开源模型追赶闭源→Agent 框架（LangGraph/CrewAI/AutoGen）成为新战场 | ✅ 新剪藏：LangGraph vs CrewAI vs AutoGen 2026 对比 | 新建 Open-Source-Agent-Ecosystem comparison |
 | **长期自主 Agent 的权利/责任框架** | 72h+ 自主 Agent 产生不可逆后果后——谁负责？Agent 有"权利"吗？ | 治理不可委托定理已立题；缺法律/伦理延伸 | 建 Agent-Rights-Responsibilities topic；追踪 long-running postmortem 判例 |
 
 ## 活跃假设

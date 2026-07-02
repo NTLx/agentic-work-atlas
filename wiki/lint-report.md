@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-02"
-score: 100
-status: "PASS"
+score: 85
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,17 +12,17 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-07-02
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **85/100**
+> 阻断问题: **15**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 161 |
+| Raw 来源 | 171 |
 | Raw 已编译 | 154 |
-| Raw 待编译 | 7 |
+| Raw 待编译 | 17 |
 | Raw 已跳过 | 0 |
 | Entity | 301 |
 | Topic | 31 |
@@ -31,6 +31,16 @@ tags:
 
 ## 待编译 Raw
 
+- `raw/2026-ai-agent-evaluation-pipeline-methodology.md`
+- `raw/2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md`
+- `raw/2026-eu-ai-act-compliance-autonomous-agents.md`
+- `raw/202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md`
+- `raw/20260330-reward-hacking-equilibrium-finite-evaluation.md`
+- `raw/20260512-finops-for-ai-token-level-visibility.md`
+- `raw/202606-finops-x-2026-ai-tokenomics.md`
+- `raw/20260623-ibm-cuga-agent-harness.md`
+- `raw/20260623-qwen-agentworld-language-world-models.md`
+- `raw/20260624-gemini-3-5-flash-computer-use.md`
 - `raw/20260702-ai-layoffs-reversed.md`
 - `raw/20260702-anthropic-context-engineering.md`
 - `raw/20260702-anthropic-harnesses-long-running-agents.md`
@@ -44,7 +54,7 @@ tags:
 | 检查项 | 问题数 |
 |--------|--------|
 | `frontmatter` | 0 |
-| `date` | 0 |
+| `date` | 5 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
@@ -56,13 +66,34 @@ tags:
 | `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
-| `registry-consistency` | 0 |
+| `registry-consistency` | 10 |
 
 ## 问题明细
+
+### date
+
+- `raw/2026-ai-agent-evaluation-pipeline-methodology.md` - `date 必须为 YYYY-MM-DD: 2026`
+- `raw/2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md` - `date 必须为 YYYY-MM-DD: 2026`
+- `raw/2026-eu-ai-act-compliance-autonomous-agents.md` - `date 必须为 YYYY-MM-DD: 2026`
+- `raw/202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md` - `date 必须为 YYYY-MM-DD: '2026-02'`
+- `raw/202606-finops-x-2026-ai-tokenomics.md` - `date 必须为 YYYY-MM-DD: '2026-06'`
 
 ### low-evidence
 
 - `wiki/topics/AI-Management-Mindset-Transfer.md` - `低证据页面 AI-Management-Mindset-Transfer 只能作为补 source 或探索线索`
+
+### registry-consistency
+
+- `raw/2026-ai-agent-evaluation-pipeline-methodology.md` - `raw 缺少 registry 记录`
+- `raw/2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md` - `raw 缺少 registry 记录`
+- `raw/2026-eu-ai-act-compliance-autonomous-agents.md` - `raw 缺少 registry 记录`
+- `raw/202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md` - `raw 缺少 registry 记录`
+- `raw/20260330-reward-hacking-equilibrium-finite-evaluation.md` - `raw 缺少 registry 记录`
+- `raw/20260512-finops-for-ai-token-level-visibility.md` - `raw 缺少 registry 记录`
+- `raw/202606-finops-x-2026-ai-tokenomics.md` - `raw 缺少 registry 记录`
+- `raw/20260623-ibm-cuga-agent-harness.md` - `raw 缺少 registry 记录`
+- `raw/20260623-qwen-agentworld-language-world-models.md` - `raw 缺少 registry 记录`
+- `raw/20260624-gemini-3-5-flash-computer-use.md` - `raw 缺少 registry 记录`
 
 ### tag
 
