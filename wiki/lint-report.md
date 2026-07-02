@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-07-02"
+date: "2026-07-03"
 score: 68
 status: "FAIL"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-07-02
+# Agentic Work Atlas Lint 报告 - 2026-07-03
 
 > [!summary] 状态
 > 门禁: **FAIL**
