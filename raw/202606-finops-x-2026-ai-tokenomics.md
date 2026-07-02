@@ -2,7 +2,7 @@
 source: "https://www.mavvrik.ai/blog/finops-x-2026-ai-token-economics"
 title: "FinOps X 2026 Recap: AI Tokenomics Explained"
 author: "Mavvrik"
-date: 2026-06
+date: 2026-06-01
 tags:
   - finops
   - token-economics

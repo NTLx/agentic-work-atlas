@@ -2,7 +2,7 @@
 source: "https://www.covasant.com/blogs/eu-ai-act-compliance-autonomous-agents-enterprise-2026"
 title: "EU AI Act Compliance for Autonomous AI Agents in 2026 — The Agent Governance Imperative"
 author: "Covasant"
-date: 2026
+date: 2026-01-01
 tags:
   - eu-ai-act
   - ai-governance

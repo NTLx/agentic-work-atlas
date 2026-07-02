@@ -15,8 +15,8 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 301 个 |
-| Topic 页面 | 31 个 |
+| Entity 页面 | 303 个 |
+| Topic 页面 | 38 个 |
 | Comparison 页面 | 19 个 |
 | Raw 文章 | 172 个 |
 | Source Summary | 156 个 |

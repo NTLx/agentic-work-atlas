@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-03"
-score: 68
+score: 77
 status: "FAIL"
 tags:
   - lint-report
@@ -13,8 +13,8 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **68/100**
-> 阻断问题: **32**
+> 分数: **77/100**
+> 阻断问题: **23**
 
 ## 统计
 
@@ -24,8 +24,8 @@ tags:
 | Raw 已编译 | 154 |
 | Raw 待编译 | 18 |
 | Raw 已跳过 | 0 |
-| Entity | 301 |
-| Topic | 31 |
+| Entity | 303 |
+| Topic | 38 |
 | Comparison | 19 |
 | Output | 5 |
 
@@ -55,43 +55,49 @@ tags:
 | 检查项 | 问题数 |
 |--------|--------|
 | `frontmatter` | 0 |
-| `date` | 5 |
+| `date` | 0 |
 | `hidden-char` | 0 |
-| `mathjax` | 7 |
-| `wikilink` | 9 |
+| `mathjax` | 0 |
+| `wikilink` | 0 |
 | `source_raw` | 0 |
 | `tag` | 26 |
 | `evidence` | 0 |
-| `low-evidence` | 1 |
+| `low-evidence` | 10 |
 | `stale-core` | 0 |
-| `entity` | 0 |
+| `entity` | 12 |
 | `comparison` | 0 |
 | `index` | 0 |
 | `registry-consistency` | 11 |
 
 ## 问题明细
 
-### date
+### entity
 
-- `raw/2026-ai-agent-evaluation-pipeline-methodology.md` - `date 必须为 YYYY-MM-DD: 2026`
-- `raw/2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md` - `date 必须为 YYYY-MM-DD: 2026`
-- `raw/2026-eu-ai-act-compliance-autonomous-agents.md` - `date 必须为 YYYY-MM-DD: 2026`
-- `raw/202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md` - `date 必须为 YYYY-MM-DD: '2026-02'`
-- `raw/202606-finops-x-2026-ai-tokenomics.md` - `date 必须为 YYYY-MM-DD: '2026-06'`
+- `wiki/entities/Agent-Economic-Protocols.md` - `Entity 缺少必填字段: aliases`
+- `wiki/entities/Agent-Economic-Protocols.md` - `Entity 缺少必填字段: definition`
+- `wiki/entities/Agent-Economic-Protocols.md` - `Entity 缺少必填字段: source_raw`
+- `wiki/entities/Agent-Economic-Protocols.md` - `概念 Entity 缺少章节: ## 关键数据点`
+- `wiki/entities/Agent-Economic-Protocols.md` - `概念 Entity 缺少章节: ## 前提与局限性`
+- `wiki/entities/Agent-Economic-Protocols.md` - `概念 Entity 缺少章节: ## 关联概念`
+- `wiki/entities/Token-FinOps.md` - `Entity 缺少必填字段: aliases`
+- `wiki/entities/Token-FinOps.md` - `Entity 缺少必填字段: definition`
+- `wiki/entities/Token-FinOps.md` - `Entity 缺少必填字段: source_raw`
+- `wiki/entities/Token-FinOps.md` - `概念 Entity 缺少章节: ## 关键数据点`
+- `wiki/entities/Token-FinOps.md` - `概念 Entity 缺少章节: ## 前提与局限性`
+- `wiki/entities/Token-FinOps.md` - `概念 Entity 缺少章节: ## 关联概念`
 
 ### low-evidence
 
+- `wiki/entities/Agent-Economic-Protocols.md` - `低证据页面 Agent-Economic-Protocols 只能作为补 source 或探索线索`
+- `wiki/entities/Token-FinOps.md` - `低证据页面 Token-FinOps 只能作为补 source 或探索线索`
+- `wiki/topics/AI-Cognition-Relations.md` - `低证据页面 AI-Cognition-Relations 只能作为补 source 或探索线索`
+- `wiki/topics/AI-Governance-Regimes.md` - `低证据页面 AI-Governance-Regimes 只能作为补 source 或探索线索`
 - `wiki/topics/AI-Management-Mindset-Transfer.md` - `低证据页面 AI-Management-Mindset-Transfer 只能作为补 source 或探索线索`
-
-### mathjax
-
-- `wiki/research/research-agenda.md:140` - `发现裸露 $，需用反引号包裹或反斜杠转义`
-- `wiki/research/research-logs/2026-07-02.md:448` - `发现裸露 $，需用反引号包裹或反斜杠转义`
-- `wiki/research/research-logs/2026-07-02.md:457` - `发现裸露 $，需用反引号包裹或反斜杠转义`
-- `wiki/research/research-logs/2026-07-02.md:559` - `发现裸露 $，需用反引号包裹或反斜杠转义`
-- `wiki/research/research-logs/2026-07-02.md:566` - `发现裸露 $，需用反引号包裹或反斜杠转义`
-- `wiki/research/research-logs/2026-07-02.md:568` - `发现裸露 $，需用反引号包裹或反斜杠转义`
-- `wiki/research/research-logs/2026-07-02.md:575` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+- `wiki/topics/AI-Native-Testing.md` - `低证据页面 AI-Native-Testing 只能作为补 source 或探索线索`
+- `wiki/topics/AI-Security-Privacy.md` - `低证据页面 AI-Security-Privacy 只能作为补 source 或探索线索`
+- `wiki/topics/Agent-Memory-Lifecycle.md` - `低证据页面 Agent-Memory-Lifecycle 只能作为补 source 或探索线索`
+- `wiki/topics/Agent-Observability.md` - `低证据页面 Agent-Observability 只能作为补 source 或探索线索`
+- `wiki/topics/Open-Source-Agent-Ecosystem.md` - `低证据页面 Open-Source-Agent-Ecosystem 只能作为补 source 或探索线索`
 
 ### registry-consistency
 
@@ -135,18 +141,6 @@ tags:
 - `wiki/research/research-logs/resolved-principles.md` - `一次性 tag 仅出现 1 次: 'resolved-principles'`
 - `wiki/entities/AI-Perception-Survey.md` - `一次性 tag 仅出现 1 次: 'survey'`
 - `wiki/entities/AI-Use-Rhythm.md` - `一次性 tag 仅出现 1 次: 'usage-patterns'`
-
-### wikilink
-
-- `wiki/research/research-agenda.md:51` - `链接目标不存在: [[Token-FinOps]]`
-- `wiki/research/research-agenda.md:52` - `链接目标不存在: [[AI-Native-Testing]]`
-- `wiki/research/research-agenda.md:53` - `链接目标不存在: [[AI-Governance-Regimes]]`
-- `wiki/research/research-agenda.md:54` - `链接目标不存在: [[Agent-Economic-Protocols]]`
-- `wiki/research/research-agenda.md:54` - `链接目标不存在: [[Open-Source-Agent-Ecosystem]]`
-- `wiki/research/research-agenda.md:56` - `链接目标不存在: [[Agent-Memory-Lifecycle]]`
-- `wiki/research/research-agenda.md:62` - `链接目标不存在: [[Agent-Observability]]`
-- `wiki/research/research-agenda.md:64` - `链接目标不存在: [[AI-Cognition-Relations]]`
-- `wiki/research/research-agenda.md:66` - `链接目标不存在: [[AI-Security-Privacy]]`
 
 ## 运行命令
 

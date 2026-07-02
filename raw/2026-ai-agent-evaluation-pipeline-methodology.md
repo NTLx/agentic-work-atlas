@@ -2,7 +2,7 @@
 source: "https://www.digitalapplied.com/blog/ai-agent-evaluation-pipeline-2026-testing-methodology"
 title: "Building an AI Agent Evaluation Pipeline: 2026 Methodology"
 author: "Digital Applied"
-date: 2026
+date: 2026-01-01
 tags:
   - agent-evaluation
   - testing

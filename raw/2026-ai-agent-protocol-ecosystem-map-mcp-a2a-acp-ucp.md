@@ -2,7 +2,7 @@
 source: "https://www.digitalapplied.com/blog/ai-agent-protocol-ecosystem-map-2026-mcp-a2a-acp-ucp"
 title: "AI Agent Protocol Ecosystem Map 2026: Complete Visual Guide"
 author: "Digital Applied"
-date: 2026
+date: 2026-01-01
 tags:
   - agent-protocols
   - mcp

@@ -2,7 +2,7 @@
 source: "https://pecollective.com/blog/ai-agent-frameworks-compared"
 title: "AI Agent Frameworks: LangGraph vs CrewAI vs AutoGen 2026"
 author: "PE Collective"
-date: 2026-02
+date: 2026-02-01
 tags:
   - agent-framework
   - langgraph
