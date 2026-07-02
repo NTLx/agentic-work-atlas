@@ -96,7 +96,7 @@ related_entities:
 | Reward Hacking 首要性 + 检测递归：锚定真实世界自认证指标（issue 解决率/PR 合并率）是唯一解 | synthesized | 找到成功锚定真实世界指标替代 benchmark 的实践 |
 | 评测治理三要素缺一不可：制度 × 技术 × 锚定 | synthesized | 找到缺任一要素但仍有效治理的 AI 评测体系 |
 | 多 Agent 编排倒 U 型：层级峰顶 ≈5-15。Team of Teams 可推高。瓶颈 = orchestrator context 带宽 | synthesized | 找到层级编排下 15+ Agent 仍无性能退化的案例 |
-| 重组双向制度阶段加权：保护^α × 演化^(1-α)，α = f(AI 替代速度) | synthesized | 测量 AI 替代速度与 α 最优值的实证关系 |
+| 重组双向制度阶段加权：保护^α × 演化^(1-α)，α = f(AI 替代速度, 技术方向, 劳动力群体, 技术周期)。单α不可维持——裂解为多α后，公式价值≠参数计算=结构知识+叙事工具（暴露地板与天花板缺失） | synthesized（修正：16:31 roundtable 4轮，裂解为多α+重新定位为叙事/结构工具） | 找到成功将"移动α"叙事引入实际政策辩论并影响制度设计的案例 |
 | **🆕 Agent 互操作协议收敛假说**：MCP/A2A/ACP/UCP 将在 2 年内收敛到 2 层架构——Transport（1 个胜者）+ Semantic（多协议共存） | hypothesis | 追踪协议采用率变化；找单一协议同时赢得 Transport 和 Semantic 的案例 |
 | **🆕 Token FinOps 独立品类窗口定理**：Token 成本管理的独立窗口 = f(多模型采用 × 成本不可预测性 × 语义归因需求)。窗口期 ≈ CloudHealth 之于 AWS 的 3-5 年 | hypothesis | 追踪独立 FinOps 厂商融资和产品成熟度；找云平台原生 token 管理替代独立工具的时间点 |
 | **🆕 Context Advantage 解释力边界定理**：Context advantage 在可类型化任务中有效；在独一性任务（位格→关系→意义）中漏失——"谁在做"对行为意义有构成性影响，非信息量问题 | synthesized | 测量独一性任务中 AI 输出质量=人类但位格替换后关系意义改变的实证案例 |
@@ -148,6 +148,7 @@ related_entities:
 
 | 时间 | 焦点 | 临界发现 |
 |------|------|---------|
+| 2026-07-02 | 重组双向制度阶段加权——保护^α×演化^(1-α)裂解 | 单α不可维持；新保护范式=UBI+终身学习+数据权（保护转换能力非工作）；公式价值=结构知识+叙事工具而非参数计算 |
 | 2026-07-02 | 可博弈性结构必然——Goodhart+Soros+Gödel 三重论证 | 命题修正：攻击范围=静态自我验证标准≠所有评测。有效评测=制度化纠错（速度×独立性×成本不对称）。AI Incident Reporting Act 2026-06-26=转型已启动 |
 | 2026-07-02 | Context Advantage vs Taste——Ng 重命名是进步还是语义替换？ | 双轨制定理（工程轨×审计轨+否决权）；Context 工具衰减定律（更大context→更差判断）；关心的存在论边界（关心=有限生命的不可逆投入，agent不死故无关心结构） |
 | 2026-07-02 | 全库深度盘点 | 301 entity/31 topic=9.7:1；14 entity AGI Economics 簇零承载；Output 断层 31 天无新产出；5 个 source 需求 raw 已到齐待编译 |
@@ -156,7 +157,7 @@ related_entities:
 
 ## 思考日志索引
 
-- [[2026-07-02]] — 16 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage vs Taste 双轨制/Goodhart Soros Gödel 三重论证
+- [[2026-07-02]] — 17 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage 双轨制/Goodhart Soros Gödel 三重论证/重组制度阶段加权
 - [[2026-07-01]] — 12 轮：待验证 5→0；7 条 06-30 判断修正。覆盖协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
 - [[2026-06-30]] — 全库盘点 + 多轮探索
 - [[exploration-archive-20260628]] — 06-28 全库快照 + 方向库 + 长问题库
