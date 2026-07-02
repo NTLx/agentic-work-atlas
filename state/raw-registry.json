@@ -1277,8 +1277,16 @@
       "status": "pending",
       "summary_path": null,
       "updated_at": "2026-07-02T09:29:17+08:00"
+    },
+    "20260702-ai-layoffs-reversed.md": {
+      "body_sha256": "b43a59129a9eeee60554bf6fff5a2f656079a64ea26ac352afcae2a6e371669a",
+      "compiled_at": null,
+      "raw_file": "20260702-ai-layoffs-reversed.md",
+      "status": "pending",
+      "summary_path": null,
+      "updated_at": "2026-07-02T09:51:57+08:00"
     }
   },
-  "updated_at": "2026-07-02T09:29:17+08:00",
+  "updated_at": "2026-07-02T09:51:57+08:00",
   "version": 1
 }
