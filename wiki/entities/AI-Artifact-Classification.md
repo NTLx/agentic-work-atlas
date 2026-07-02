@@ -8,7 +8,6 @@ created: 2026-06-30
 updated: 2026-06-30
 tags:
   - ai-labor
-  - output-analysis
 related_entities:
   - "[[AI-Use-Rhythm]]"
   - "[[AI-Autonomy]]"

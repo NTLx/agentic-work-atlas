@@ -7,7 +7,6 @@ created: 2026-06-30
 updated: 2026-06-30
 tags:
   - source-summary
-  - economic-index
   - ai-labor
   - anthropic
 evidence_level: high

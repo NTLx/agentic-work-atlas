@@ -12,7 +12,6 @@ claim_type: mixed
 tags:
   - AI-capabilities
   - LLM
-  - generation
 related_entities:
   - '[[AI-in-Mathematics]]'
   - '[[Conceptual-Breakthroughs]]'

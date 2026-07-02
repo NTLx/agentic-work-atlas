@@ -8,7 +8,6 @@ created: 2026-06-30
 updated: 2026-06-30
 tags:
   - ai-labor
-  - economics
 related_entities:
   - "[[AI-Perception-Survey]]"
   - "[[AI-Labor-Bottleneck-Shift]]"

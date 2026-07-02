@@ -8,8 +8,6 @@ created: 2026-06-30
 updated: 2026-06-30
 tags:
   - sdk
-  - api-design
-  - developer-tools
 related_entities:
   - "[[Headless-Automation]]"
   - "[[Claude-Code-CLI]]"

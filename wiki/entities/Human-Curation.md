@@ -11,7 +11,6 @@ evidence_level: medium
 claim_type: mixed
 tags:
   - human-value
-  - information-overload
   - education
 related_entities:
   - '[[Taste]]'

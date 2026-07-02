@@ -5,7 +5,6 @@ created: 2026-07-02
 updated: 2026-07-02
 tags:
   - research-archive
-  - resolved-principles
 related_entities:
   - "[[Positionality]]"
   - "[[Human-Governor-Agent-Operator]]"

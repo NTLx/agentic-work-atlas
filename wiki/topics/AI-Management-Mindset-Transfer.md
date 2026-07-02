@@ -4,7 +4,7 @@ title: AI 时代的管理思维迁移
 description: "管理学框架如何迁移到 AI 交互——能力-委派匹配、德鲁克元思考与人类在 AI 时代的不可替代性"
 created: 2026-06-22
 updated: 2026-06-22
-evidence_level: low
+evidence_level: medium
 claim_type: extracted
 tags:
   - management

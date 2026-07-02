@@ -8,8 +8,6 @@ updated: 2026-06-30
 tags:
   - source-summary
   - claude-code
-  - headless-automation
-  - github-action
   - sdk
 evidence_level: high
 claim_type: extracted

@@ -10,7 +10,6 @@ updated: 2026-07-01
 evidence_level: medium
 claim_type: mixed
 tags:
-  - psychology
   - AI-capabilities
   - human-value
 related_entities:

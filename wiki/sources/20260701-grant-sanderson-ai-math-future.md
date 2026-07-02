@@ -7,11 +7,7 @@ created: 2026-07-01
 updated: 2026-07-01
 tags:
   - source-summary
-  - AI-mathematics
   - AGI
-  - conceptual-breakthroughs
-  - autoregression
-  - human-curation
 evidence_level: medium
 claim_type: mixed
 ---

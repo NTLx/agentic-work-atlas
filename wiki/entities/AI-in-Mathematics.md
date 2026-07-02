@@ -12,7 +12,6 @@ claim_type: mixed
 tags:
   - AI-capabilities
   - mathematics
-  - frontier
 related_entities:
   - '[[Conceptual-Breakthroughs]]'
   - '[[Grindability-vs-Verifiability]]'

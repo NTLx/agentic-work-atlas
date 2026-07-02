@@ -1285,6 +1285,61 @@
       "status": "pending",
       "summary_path": null,
       "updated_at": "2026-07-02T09:51:57+08:00"
+    },
+    "2026-ai-agent-evaluation-pipeline-methodology.md": {
+      "body_sha256": "3074c12fd2bdb6ca5ac76eeb17dbe75f40e32dade90eb87e8044a65c5216635d",
+      "raw_file": "2026-ai-agent-evaluation-pipeline-methodology.md",
+      "status": "pending"
+    },
+    "2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md": {
+      "body_sha256": "6e15194ed2be706f899a3913dc4dabb4820ce1cca851bd6b592a14a33f44a9a2",
+      "raw_file": "2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md",
+      "status": "pending"
+    },
+    "2026-eu-ai-act-compliance-autonomous-agents.md": {
+      "body_sha256": "3873028aa5f4f5047991f3a3698ceec494c393e824ed53a5b66812e501925be7",
+      "raw_file": "2026-eu-ai-act-compliance-autonomous-agents.md",
+      "status": "pending"
+    },
+    "202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md": {
+      "body_sha256": "346e545bcd12acb2c57b39b915ea032289cc0ed89f4f37594a2968e9d554afc6",
+      "raw_file": "202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md",
+      "status": "pending"
+    },
+    "20260330-reward-hacking-equilibrium-finite-evaluation.md": {
+      "body_sha256": "81017872bf50ab59fbaea56c1dd6ff83fb8f74325f42fb3e360342c79cf78647",
+      "raw_file": "20260330-reward-hacking-equilibrium-finite-evaluation.md",
+      "status": "pending"
+    },
+    "20260512-finops-for-ai-token-level-visibility.md": {
+      "body_sha256": "81c7462f8c46596c24df29d236e76ce1a0c900d8bd311a73351f90459790ce0d",
+      "raw_file": "20260512-finops-for-ai-token-level-visibility.md",
+      "status": "pending"
+    },
+    "202606-finops-x-2026-ai-tokenomics.md": {
+      "body_sha256": "b90ad69860c94b23953044b018cf842901961353982f9d436adf5dbdfe197697",
+      "raw_file": "202606-finops-x-2026-ai-tokenomics.md",
+      "status": "pending"
+    },
+    "20260623-ibm-cuga-agent-harness.md": {
+      "body_sha256": "5ffdfe5201c7bcb73c0631e38208f06a31794b2ee067e1a08a1ad7e82e8fb7bb",
+      "raw_file": "20260623-ibm-cuga-agent-harness.md",
+      "status": "pending"
+    },
+    "20260623-qwen-agentworld-language-world-models.md": {
+      "body_sha256": "52a6b3225de3a1d8b0761c5ba78e0328de5e80edc18cc38d9727f954cc1ba456",
+      "raw_file": "20260623-qwen-agentworld-language-world-models.md",
+      "status": "pending"
+    },
+    "20260624-gemini-3-5-flash-computer-use.md": {
+      "body_sha256": "a816e875f609ce665412ddbfbc37e9112503d34ab400cf46f620668075e6af49",
+      "raw_file": "20260624-gemini-3-5-flash-computer-use.md",
+      "status": "pending"
+    },
+    "20260630-loop-engineering-andrew-ng.md": {
+      "body_sha256": "b1c3ae4c92a58770c1e7bc8cb3aa8671ae85593cd95d193cb3e6e123e2bf88b6",
+      "raw_file": "20260630-loop-engineering-andrew-ng.md",
+      "status": "pending"
     }
   },
   "updated_at": "2026-07-02T09:51:57+08:00",

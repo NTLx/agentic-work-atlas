@@ -47,22 +47,22 @@ related_entities:
 |------|-----------|---------|--------|
 | **图谱整合与 topic 建设** | 301 entity / 31 topic = 9.7:1，中层断层是最大结构性风险 | 26 轮深度思考产出 49 条新判断但未建 topic 承载 | 建 8-10 topic skeleton；优先五簇：AGI-Economics(14)/Memory-Systems(5)/Agent-Observability(4)/Orchestration(8)/Cognition-Relations(6) |
 | **Output 断层修复** | 5 output 无法验证 49 新判断；已 31 天无新产出；输出是判断质量的唯一压力测试 | 07-01/02 日志有丰富原料 | 转 ≥2 output：1) Agent Observability 产业分析；2) 26 轮元合成 rank 文章 |
-| **Token FinOps 与 AI 计量** | 企业 AI 采用的隐性瓶颈——不知道花了多少、花在哪、产出什么 | ✅ raw 已到齐（3 篇：FinOps X 2026 + Virtasant + Tokenpocalypse） | compile → 建 [[Token-FinOps]] entity + topic |
-| **AI-native 测试与验证方法论** | 评测治理四部曲完成后，下一层是"怎么测"的工程实践 | ✅ raw 已到齐（2 篇：Evaluation Pipeline + LLM-as-Judge Healthcare） | compile → 建 [[AI-Native-Testing]] topic |
-| **跨境 AI 治理差异** | EU AI Act vs US vs 中国——不同治理框架对 Agent 部署的实质影响 | ✅ raw 已到齐（2 篇：EU AI Act + Jobs Transition Framework） | compile → 建 [[AI-Governance-Regimes]] comparison |
-| **Agent 经济协议与互操作** | 多 Agent 编排的上限不仅是协调技术——还有 Agent 间"交易"的经济协议和互操作标准 | ✅ raw 已到齐（2 篇：Protocol Ecosystem Map + LangGraph/CrewAI/AutoGen 对比） | compile → 建 [[Agent-Economic-Protocols]] entity + [[Open-Source-Agent-Ecosystem]] comparison |
+| **Token FinOps 与 AI 计量** | 企业 AI 采用的隐性瓶颈——不知道花了多少、花在哪、产出什么 | ✅ raw 已到齐（3 篇：FinOps X 2026 + Virtasant + Tokenpocalypse） | compile → 建 Token FinOps entity + topic |
+| **AI-native 测试与验证方法论** | 评测治理四部曲完成后，下一层是"怎么测"的工程实践 | ✅ raw 已到齐（2 篇：Evaluation Pipeline + LLM-as-Judge Healthcare） | compile → 建 AI-Native Testing topic |
+| **跨境 AI 治理差异** | EU AI Act vs US vs 中国——不同治理框架对 Agent 部署的实质影响 | ✅ raw 已到齐（2 篇：EU AI Act + Jobs Transition Framework） | compile → 建 AI Governance Regimes comparison |
+| **Agent 经济协议与互操作** | 多 Agent 编排的上限不仅是协调技术——还有 Agent 间"交易"的经济协议和互操作标准 | ✅ raw 已到齐（2 篇：Protocol Ecosystem Map + LangGraph/CrewAI/AutoGen 对比） | compile → 建 Agent Economic Protocols entity + Open-Source Agent Ecosystem comparison |
 | **AGI 经济学：从 Token 到结构转型** | 14 entity 成簇但零 topic 承载——Demand-Collapse/Allocation-Economy/Messy-Middle/Tokenpocalypse 等孤立节点需统一框架 | 零承载，但有 26 轮思考中的 AGI 经济学三场景分析 | 建 [[AGI-Economics]] topic；将 14 entity 归入统一经济学框架 |
-| **记忆系统统一理论** | Dreaming/Staleness/Memory-Synthesis/Context-Rot 等 5 entity 分散——需统一"Agent 记忆生命周期"框架 | 记忆双重衰减定理已立题；Context 扩展悖论已识别 | 建 [[Agent-Memory-Lifecycle]] topic；对标人脑记忆模型（编码/巩固/检索/遗忘） |
+| **记忆系统统一理论** | Dreaming/Staleness/Memory-Synthesis/Context-Rot 等 5 entity 分散——需统一"Agent 记忆生命周期"框架 | 记忆双重衰减定理已立题；Context 扩展悖论已识别 | 建 Agent Memory Lifecycle topic；对标人脑记忆模型（编码/巩固/检索/遗忘） |
 
 ### 从盘点新涌现的方向
 
 | 焦点 | 为什么新 | 当前状态 | 下一步 |
 |------|---------|---------|--------|
-| **Agent Observability 作为独立品类** | 4 entity 成簇（Agent-Legibility/Agent-PR-Review 等）——可观测性可能成为 Agent 时代的"APM 市场" | 零散 entity，无 topic | 建 [[Agent-Observability]] topic；对标 Datadog/New Relic 演化路径 |
+| **Agent Observability 作为独立品类** | 4 entity 成簇（Agent-Legibility/Agent-PR-Review 等）——可观测性可能成为 Agent 时代的"APM 市场" | 零散 entity，无 topic | 建 Agent Observability topic；对标 Datadog/New Relic 演化路径 |
 | **Compliance-as-Code for AI** | EU AI Act 合规要求自动化→合规即代码可能成为 Agent 治理的基础设施层 | EU AI Act raw 已到齐 | 探索"合规即代码"模式——政策→可执行规则→自动审计 |
-| **AI 认知关系模式的形式化** | Exit-Sovereignty 元模式已识别，五种关系模式已描述——但缺乏形式化模型和测量工具 | 概念阶段，无 entity | 建 [[AI-Cognition-Relations]] topic；设计五模式测量量表 |
+| **AI 认知关系模式的形式化** | Exit-Sovereignty 元模式已识别，五种关系模式已描述——但缺乏形式化模型和测量工具 | 概念阶段，无 entity | 建 AI Cognition Relations topic；设计五模式测量量表 |
 | **开源 Agent 框架的收敛/分化** | LangGraph/CrewAI/AutoGen 正在分化——谁会赢？收敛到协议层还是产品层？ | raw 已到齐 | compile → comparison；追踪框架市场份额变化 |
-| **AI Security & Privacy 簇** | 14 entity 成簇（Agent-Containment/Prompt-Injection/Zero-PHI/MosaicLeaks/N-Hour 等）但零 topic 承载——安全是 Agent 部署的硬约束 | 零承载，entity 散落 | 建 [[AI-Security-Privacy]] topic；区分 Safety（对齐）vs Security（攻击面）两条线 |
+| **AI Security & Privacy 簇** | 14 entity 成簇（Agent-Containment/Prompt-Injection/Zero-PHI/MosaicLeaks/N-Hour 等）但零 topic 承载——安全是 Agent 部署的硬约束 | 零承载，entity 散落 | 建 AI Security AI Security & Privacy Privacy topic；区分 Safety（对齐）vs Security（攻击面）两条线 |
 | **知识库覆盖盲区** | 完全缺失的领域：Prompt Engineering / RAG 架构深度 / Multimodal AI / AI Fine-tuning / AI Hardware / AI Legal & Compliance / AI Sustainability / Agent Sandboxing | 零 entity 覆盖 | 按优先级补 source：Prompt Engineering(基础)→Agent Sandboxing(安全)→AI Legal(治理) |
 
 ## 活跃假设

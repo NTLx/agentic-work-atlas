@@ -8,7 +8,6 @@ created: 2026-06-30
 updated: 2026-06-30
 tags:
   - ai-labor
-  - usage-patterns
 related_entities:
   - "[[AI-Artifact-Classification]]"
   - "[[AI-Autonomy]]"

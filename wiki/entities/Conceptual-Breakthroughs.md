@@ -12,7 +12,6 @@ claim_type: mixed
 tags:
   - science
   - mathematics
-  - innovation
 related_entities:
   - '[[AI-in-Mathematics]]'
   - '[[Knowledge-Compilation]]'
