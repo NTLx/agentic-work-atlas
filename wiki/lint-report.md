@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-02"
-score: 75
+score: 72
 status: "FAIL"
 tags:
   - lint-report
@@ -13,8 +13,8 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **75/100**
-> 阻断问题: **25**
+> 分数: **72/100**
+> 阻断问题: **28**
 
 ## 统计
 
@@ -57,7 +57,7 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 5 |
 | `hidden-char` | 0 |
-| `mathjax` | 0 |
+| `mathjax` | 3 |
 | `wikilink` | 9 |
 | `source_raw` | 0 |
 | `tag` | 26 |
@@ -82,6 +82,12 @@ tags:
 ### low-evidence
 
 - `wiki/topics/AI-Management-Mindset-Transfer.md` - `低证据页面 AI-Management-Mindset-Transfer 只能作为补 source 或探索线索`
+
+### mathjax
+
+- `wiki/research/research-agenda.md:93` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+- `wiki/research/research-logs/2026-07-02.md:323` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+- `wiki/research/research-logs/2026-07-02.md:333` - `发现裸露 $，需用反引号包裹或反斜杠转义`
 
 ### registry-consistency
 

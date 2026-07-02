@@ -88,7 +88,9 @@ related_entities:
 |------|---------|---------|
 | 代理-现实差距是一切失真/博弈/退化/漂移的根源。Goodhart/Reward Hacking/记忆污染/变量定义权均可由此单一生成器反推 | extracted（26 轮降秩元合成） | 找到一个"度量完美代表现实、零差距、不可博弈"的 AI 评测系统 |
 | 时间不对称（后果不可预体验）决定了判断力/责任/记忆恢复不可被模拟或加速替代 | extracted（26 轮降秩元合成） | 找到模拟训练在后果真实性敏感任务中达到与真实遭遇同等效果的对照实验 |
-| 可博弈性结构必然：Goodhart + Soros 反射性 + Gödel 投影 → 不存在不可博弈的显式仲裁标准 | synthesized | 找到长期未被博弈的 AI 评测标准（如存在） |
+| 可博弈性结构必然：Goodhart + Soros 反射性 + Gödel 投影 → 不存在不可博弈的"静态/自我验证"显式仲裁标准。有效评测=制度化纠错过程=速度×独立性×成本不对称 | synthesized（修正：16:00 roundtable 4轮，攻击范围从"所有标准"缩小为"静态自我验证标准"） | 找到无需制度约束力（独立实体+强制报告+惩罚权）而长期有效的纯技术 benchmark |
+| **🆕 Gödel 不完备递归六层定理**：博弈从规则→惩罚→独立→道德→信任→共享脆弱性逐层上升，每层受限于不完备性。递归终点=共享脆弱性（博弈者⊂被博弈者→博弈成本=∞） | synthesized（Gödel+Goodhart+Soros+Karnofsky+追本6层） | 找到博弈在某制度层终止且无需共享脆弱性的案例 |
+| **🆕 AI评测制度化已启动**：US AI Incident Reporting Act (2026-06-26)=强制7天报告+`$2M`/天罚款；EU AI Act=国家主管机构；NY oversight office=72h报告 | extracted（CIO.com 2026-06-26 + EU AI Act + White & Case tracker） | 追踪首次执法行动的时间、力度和效果 |
 | 治理内生性三重边界：可内生 = 增量治理 × 低专用性 × 模式一致；必须外生 = 减量治理 × 高专用性 × 模式冲突 | synthesized | 找到"减量治理 × 高专用性 × 模式冲突"成功被内生的案例 |
 | 记忆双重衰减修正：检索干扰 > 存储衰退。Context 扩展悖论：更大 context → 更差检索 | synthesized | 测量 context 200K→2M 对检索准确率的影响 |
 | Reward Hacking 首要性 + 检测递归：锚定真实世界自认证指标（issue 解决率/PR 合并率）是唯一解 | synthesized | 找到成功锚定真实世界指标替代 benchmark 的实践 |
@@ -146,15 +148,15 @@ related_entities:
 
 | 时间 | 焦点 | 临界发现 |
 |------|------|---------|
+| 2026-07-02 | 可博弈性结构必然——Goodhart+Soros+Gödel 三重论证 | 命题修正：攻击范围=静态自我验证标准≠所有评测。有效评测=制度化纠错（速度×独立性×成本不对称）。AI Incident Reporting Act 2026-06-26=转型已启动 |
 | 2026-07-02 | Context Advantage vs Taste——Ng 重命名是进步还是语义替换？ | 双轨制定理（工程轨×审计轨+否决权）；Context 工具衰减定律（更大context→更差判断）；关心的存在论边界（关心=有限生命的不可逆投入，agent不死故无关心结构） |
 | 2026-07-02 | 全库深度盘点 | 301 entity/31 topic=9.7:1；14 entity AGI Economics 簇零承载；Output 断层 31 天无新产出；5 个 source 需求 raw 已到齐待编译 |
 | 2026-07-02 | 26 轮元合成——AI 重写工作系统的秩 | 四根柱子：代理-现实差距/时间不对称/激励结构/认知边界。能反生成全部 49 判断 |
 | 2026-07-02 | 中国企业 AI——科层碎片 + FinOps 缺失 | 瓶颈 ≠ 模型 = 组织。中国"有车没路"vs 印度"有路没车" |
-| 2026-07-02 | Agent Harness 统一理论 | 12 entity→4+1 功能框架（Context/Action/Verify/Lifecycle/Coordination） |
 
 ## 思考日志索引
 
-- [[2026-07-02]] — 15 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage vs Taste 双轨制
+- [[2026-07-02]] — 16 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage vs Taste 双轨制/Goodhart Soros Gödel 三重论证
 - [[2026-07-01]] — 12 轮：待验证 5→0；7 条 06-30 判断修正。覆盖协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
 - [[2026-06-30]] — 全库盘点 + 多轮探索
 - [[exploration-archive-20260628]] — 06-28 全库快照 + 方向库 + 长问题库
