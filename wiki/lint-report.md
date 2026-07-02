@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 158 |
+| Raw 来源 | 160 |
 | Raw 已编译 | 154 |
-| Raw 待编译 | 4 |
+| Raw 待编译 | 6 |
 | Raw 已跳过 | 0 |
 | Entity | 301 |
 | Topic | 31 |
@@ -31,6 +31,8 @@ tags:
 
 ## 待编译 Raw
 
+- `raw/20260702-anthropic-context-engineering.md`
+- `raw/20260702-anthropic-harnesses-long-running-agents.md`
 - `raw/Building headless automation with Claude Code — Code w Claude.md`
 - `raw/How to 10x Your Value in the AI Era — Kunal Shah.md`
 - `raw/The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md`

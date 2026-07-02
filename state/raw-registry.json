@@ -1261,8 +1261,24 @@
       "status": "compiled",
       "summary_path": "wiki/sources/用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
+    },
+    "20260702-anthropic-context-engineering.md": {
+      "body_sha256": "07f90f40966dfbdca43507d87c99f07076c5b8345bb202bbb26bed662b376ab9",
+      "compiled_at": null,
+      "raw_file": "20260702-anthropic-context-engineering.md",
+      "status": "pending",
+      "summary_path": null,
+      "updated_at": "2026-07-02T09:29:17+08:00"
+    },
+    "20260702-anthropic-harnesses-long-running-agents.md": {
+      "body_sha256": "f3ca5e81f6acd8fd7854c7d39d05513041069ecb6975f28e6bb2d76afe870bc3",
+      "compiled_at": null,
+      "raw_file": "20260702-anthropic-harnesses-long-running-agents.md",
+      "status": "pending",
+      "summary_path": null,
+      "updated_at": "2026-07-02T09:29:17+08:00"
     }
   },
-  "updated_at": "2026-07-01T08:54:40+08:00",
+  "updated_at": "2026-07-02T09:29:17+08:00",
   "version": 1
 }
