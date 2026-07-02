@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-02"
-score: 85
+score: 75
 status: "FAIL"
 tags:
   - lint-report
@@ -13,8 +13,8 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **85/100**
-> 阻断问题: **15**
+> 分数: **75/100**
+> 阻断问题: **25**
 
 ## 统计
 
@@ -56,8 +56,8 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 5 |
 | `hidden-char` | 0 |
-| `mathjax` | 0 |
-| `wikilink` | 0 |
+| `mathjax` | 1 |
+| `wikilink` | 9 |
 | `source_raw` | 0 |
 | `tag` | 26 |
 | `evidence` | 0 |
@@ -81,6 +81,10 @@ tags:
 ### low-evidence
 
 - `wiki/topics/AI-Management-Mindset-Transfer.md` - `低证据页面 AI-Management-Mindset-Transfer 只能作为补 source 或探索线索`
+
+### mathjax
+
+- `wiki/research/research-agenda.md:135` - `发现裸露 $，需用反引号包裹或反斜杠转义`
 
 ### registry-consistency
 
@@ -123,6 +127,18 @@ tags:
 - `wiki/research/research-logs/resolved-principles.md` - `一次性 tag 仅出现 1 次: 'resolved-principles'`
 - `wiki/entities/AI-Perception-Survey.md` - `一次性 tag 仅出现 1 次: 'survey'`
 - `wiki/entities/AI-Use-Rhythm.md` - `一次性 tag 仅出现 1 次: 'usage-patterns'`
+
+### wikilink
+
+- `wiki/research/research-agenda.md:51` - `链接目标不存在: [[Token-FinOps]]`
+- `wiki/research/research-agenda.md:52` - `链接目标不存在: [[AI-Native-Testing]]`
+- `wiki/research/research-agenda.md:53` - `链接目标不存在: [[AI-Governance-Regimes]]`
+- `wiki/research/research-agenda.md:54` - `链接目标不存在: [[Agent-Economic-Protocols]]`
+- `wiki/research/research-agenda.md:54` - `链接目标不存在: [[Open-Source-Agent-Ecosystem]]`
+- `wiki/research/research-agenda.md:56` - `链接目标不存在: [[Agent-Memory-Lifecycle]]`
+- `wiki/research/research-agenda.md:62` - `链接目标不存在: [[Agent-Observability]]`
+- `wiki/research/research-agenda.md:64` - `链接目标不存在: [[AI-Cognition-Relations]]`
+- `wiki/research/research-agenda.md:66` - `链接目标不存在: [[AI-Security-Privacy]]`
 
 ## 运行命令
 

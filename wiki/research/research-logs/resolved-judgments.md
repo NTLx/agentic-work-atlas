@@ -2,7 +2,7 @@
 type: research-archive
 title: "已收敛判断归档"
 created: 2026-06-24
-updated: 2026-06-24
+updated: 2026-07-02
 tags:
   - research-archive
 ---
@@ -100,3 +100,19 @@ tags:
 **结论**：模拟有效四层模型：L1 技术（完全有效）+ L2 情绪（部分有效）+ L3 动机（设计问题）+ L4 道德（无效）。"足够好"取决于风险等级。已更新 [[Human-Governor-Agent-Operator]]。
 
 **开放问题**：(1) L2 情绪层模拟保真度阈值；(2) L4 道德层结构替代方案。
+
+## 2026-07-02 批次（2 条）
+
+### Jevons 主体替换修正定理
+
+**结论**：AI 裁员逆转已发生——39% 企业因 AI 裁员，55% 承认裁错，32% 重招同岗。逆转机制 = AI 覆盖率缺口（94/6 规则）+ 隐性成本暴露 + Pipeline 断裂。后悔指数 ≈ 7%。证据等级从 synthesized 升级至 **extracted**（CNBC + Orgvue 1000+ C-suite 调研实证）。已更新 [[Jevons-Paradox-for-Knowledge-Work]]。
+
+**理论锚点**：代理-现实差距（Agent-Reality Gap）→ Jevons 效应在知识工作中的表现不是"需求增加"而是"主体替换-逆转"循环。政治速度 ≥ AI 速度的领域逆转更快。
+
+**开放问题**：(1) 后悔指数时间序列追踪——7% 是上升还是下降？(2) 政治速度与 AI 速度的量化比较框架；(3) 不同行业/工种的逆转率差异。
+
+### Agent Logic 生命周期五阶段修正
+
+**结论**：Agent Logic 生命周期从四阶段修正为五阶段：初始化 → 探索 → 固化 → **Artifact** → 维护 → 退役。关键修正：(1) 维护阶段从理论空白 → Anthropic 完整工程实现（long-running agent harnesses 已证明维护是独立工程阶段）；(2) Stage 0 = 环境脚手架（Harness 即环境）；(3) Artifact 作为独立阶段的识别——固化后的 Agent 行为应被封装为不可变 artifact。已更新 [[Agent-Logic]]。
+
+**开放问题**：(1) 完整五阶段实施案例（含维护阶段长度和成本数据）；(2) Artifact 阶段与其他阶段的边界何时模糊（何时需要重新进入探索）；(3) 退役阶段的触发条件——是成本阈值、准确性衰减还是环境变化？
