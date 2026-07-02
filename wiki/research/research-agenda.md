@@ -97,6 +97,9 @@ related_entities:
 | 重组双向制度阶段加权：保护^α × 演化^(1-α)，α = f(AI 替代速度) | synthesized | 测量 AI 替代速度与 α 最优值的实证关系 |
 | **🆕 Agent 互操作协议收敛假说**：MCP/A2A/ACP/UCP 将在 2 年内收敛到 2 层架构——Transport（1 个胜者）+ Semantic（多协议共存） | hypothesis | 追踪协议采用率变化；找单一协议同时赢得 Transport 和 Semantic 的案例 |
 | **🆕 Token FinOps 独立品类窗口定理**：Token 成本管理的独立窗口 = f(多模型采用 × 成本不可预测性 × 语义归因需求)。窗口期 ≈ CloudHealth 之于 AWS 的 3-5 年 | hypothesis | 追踪独立 FinOps 厂商融资和产品成熟度；找云平台原生 token 管理替代独立工具的时间点 |
+| **🆕 Context Advantage 解释力边界定理**：Context advantage 在可类型化任务中有效；在独一性任务（位格→关系→意义）中漏失——"谁在做"对行为意义有构成性影响，非信息量问题 | synthesized | 测量独一性任务中 AI 输出质量=人类但位格替换后关系意义改变的实证案例 |
+| **🆕 Context 工具使用衰减定律**：Agent 工具使用准确率随 context 长度呈对数-线性衰减 acc(n)=a-b×log₂(n)，~67K token 后跌破 0.80。更大 context → 更多混淆 | extracted | 在 >128K context 场景中找到工具使用准确率不降反升的反例 |
+| **🆕 认知背离双循环**：AI context 窗口 3,906× (2017→2026) vs 人类持续注意力下降——形成"越依赖AI→注意力越退化"的委托反馈循环 | extracted | 找到长期高频使用 AI 但注意力未退化的对照群体
 
 ## Source 需求队列
 
@@ -132,7 +135,7 @@ related_entities:
 
 - Agent 记忆系统能否统一为"编码→巩固→检索→遗忘"四阶段框架？Context-Rot 对应哪一阶段？
 - AGI 经济学的核心生成器是什么——Token 成本、劳动力替代率、还是组织学习速度？
-- Agent Observability 能否成为独立的 $10B+ 市场？它的"Datadog 时刻"何时到来？
+- Agent Observability 能否成为独立的 `$10B+` 市场？它的"Datadog 时刻"何时到来？
 - 开源 Agent 框架的竞争终局——收敛到协议标准（类似 HTTP）还是产品整合（类似 IDE）？
 - Compliance-as-Code 能否将 AI 治理从"文档合规"升级为"运行时合规"？
 - 知识库的 Output 转化率从 7% 提升到 20% 的最小可行动作是什么？
@@ -143,15 +146,15 @@ related_entities:
 
 | 时间 | 焦点 | 临界发现 |
 |------|------|---------|
+| 2026-07-02 | Context Advantage vs Taste——Ng 重命名是进步还是语义替换？ | 双轨制定理（工程轨×审计轨+否决权）；Context 工具衰减定律（更大context→更差判断）；关心的存在论边界（关心=有限生命的不可逆投入，agent不死故无关心结构） |
 | 2026-07-02 | 全库深度盘点 | 301 entity/31 topic=9.7:1；14 entity AGI Economics 簇零承载；Output 断层 31 天无新产出；5 个 source 需求 raw 已到齐待编译 |
 | 2026-07-02 | 26 轮元合成——AI 重写工作系统的秩 | 四根柱子：代理-现实差距/时间不对称/激励结构/认知边界。能反生成全部 49 判断 |
 | 2026-07-02 | 中国企业 AI——科层碎片 + FinOps 缺失 | 瓶颈 ≠ 模型 = 组织。中国"有车没路"vs 印度"有路没车" |
 | 2026-07-02 | Agent Harness 统一理论 | 12 entity→4+1 功能框架（Context/Action/Verify/Lifecycle/Coordination） |
-| 2026-07-02 | AI 认知关系五模式 | Exit-Sovereignty = 元模式。五种模式 = 情境工具箱 |
 
 ## 思考日志索引
 
-- [[2026-07-02]] — 14 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank
+- [[2026-07-02]] — 15 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage vs Taste 双轨制
 - [[2026-07-01]] — 12 轮：待验证 5→0；7 条 06-30 判断修正。覆盖协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
 - [[2026-06-30]] — 全库盘点 + 多轮探索
 - [[exploration-archive-20260628]] — 06-28 全库快照 + 方向库 + 长问题库

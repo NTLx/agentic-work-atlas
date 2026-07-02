@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 171 |
+| Raw 来源 | 172 |
 | Raw 已编译 | 154 |
-| Raw 待编译 | 17 |
+| Raw 待编译 | 18 |
 | Raw 已跳过 | 0 |
 | Entity | 301 |
 | Topic | 31 |
@@ -41,6 +41,7 @@ tags:
 - `raw/20260623-ibm-cuga-agent-harness.md`
 - `raw/20260623-qwen-agentworld-language-world-models.md`
 - `raw/20260624-gemini-3-5-flash-computer-use.md`
+- `raw/20260630-loop-engineering-andrew-ng.md`
 - `raw/20260702-ai-layoffs-reversed.md`
 - `raw/20260702-anthropic-context-engineering.md`
 - `raw/20260702-anthropic-harnesses-long-running-agents.md`
@@ -56,7 +57,7 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 5 |
 | `hidden-char` | 0 |
-| `mathjax` | 1 |
+| `mathjax` | 0 |
 | `wikilink` | 9 |
 | `source_raw` | 0 |
 | `tag` | 26 |
@@ -66,7 +67,7 @@ tags:
 | `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
-| `registry-consistency` | 10 |
+| `registry-consistency` | 11 |
 
 ## 问题明细
 
@@ -82,10 +83,6 @@ tags:
 
 - `wiki/topics/AI-Management-Mindset-Transfer.md` - `低证据页面 AI-Management-Mindset-Transfer 只能作为补 source 或探索线索`
 
-### mathjax
-
-- `wiki/research/research-agenda.md:135` - `发现裸露 $，需用反引号包裹或反斜杠转义`
-
 ### registry-consistency
 
 - `raw/2026-ai-agent-evaluation-pipeline-methodology.md` - `raw 缺少 registry 记录`
@@ -98,6 +95,7 @@ tags:
 - `raw/20260623-ibm-cuga-agent-harness.md` - `raw 缺少 registry 记录`
 - `raw/20260623-qwen-agentworld-language-world-models.md` - `raw 缺少 registry 记录`
 - `raw/20260624-gemini-3-5-flash-computer-use.md` - `raw 缺少 registry 记录`
+- `raw/20260630-loop-engineering-andrew-ng.md` - `raw 缺少 registry 记录`
 
 ### tag
 
