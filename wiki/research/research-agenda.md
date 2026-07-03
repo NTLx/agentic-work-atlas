@@ -236,7 +236,7 @@ related_entities:
 
 ## 思考日志索引
 
-- [[2026-07-04]] — 6 轮：Agent安全(roundtable) / AGI经济学(roundtable) / 重组双向制度(roundtable) / 治理内生性(roundtable) / 时间不对称(roundtable) / Context Advantage(roundtable)
+- [[2026-07-04]] — 7 轮：元方法论(roundtable) / Agent安全(roundtable) / AGI经济学(roundtable) / 重组双向制度(roundtable) / 治理内生性(roundtable) / 时间不对称(roundtable) / Context Advantage(roundtable)
 - [[2026-07-03]] — 14 轮：Agent Obs(roundtable) / 代理-现实差距(roundtable) / Compliance-as-Code(roundtable) / Reward Hacking(roundtable) / Agent协议(roundtable) / Context工具衰减(roundtable) / 多Agent编排(roundtable) / Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆(roundtable+think+联网) / 认知背离(roundtable+think+qa+联网) / AI-native测试 / AI治理 / Agent框架
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
 - [[2026-07-01]] — 12 轮：协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
