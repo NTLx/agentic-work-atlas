@@ -90,7 +90,7 @@ related_entities:
 | Reward Hacking 三层防御修正：有效性=f(信息不对称,博弈成本比,时间)×序贯衰减。三层不能消除博弈(Goodhart)——任何显式度量都能成为优化目标。信息不对称=关键(Goodfellow)，但随时间衰减(Soros反身性)。三层序贯攻破：哨兵(最高可见,最早)→主锚(数据累积,近似)→后盾(静态阈值,规避)。防御不需完美——博弈成本>诚实收益(Beck) | synthesized | 自适应哨兵(不可预测检查维度)可行性；测量不同任务类型的博弈成本比精确阈值 |
 | 评测治理三要素缺一不可：制度 × 技术 × 锚定 | synthesized | 找到缺任一要素但仍有效治理的 AI 评测体系 |
 | 多 Agent 编排峰顶修正：峰顶=f(架构模式,任务耦合度,分层压缩率)。层级+最紧密耦合(需全局共识)=5-15硬上限。Team of Teams+中等耦合=可推至~100。松散耦合=几乎无限。关键变量=任务耦合度(McChrystal)×分层修剪效率(Ng)。错误选择架构比Agent过多更致命 | synthesized | 测量不同任务耦合度×架构模式的精确峰顶位置；去中心化peer-to-peer Agent系统的context膨胀率 |
-| 重组双向制度阶段加权：保护^α × 演化^(1-α)。单α不可维持——裂解为多α后，公式价值≠参数计算=结构知识+叙事工具 | synthesized | 找到成功将"移动α"叙事引入实际政策辩论的案例 |
+| 重组双向制度阶段加权——修正版：公式价值≠参数计算=结构知识(North:揭示自我修正必要性)+叙事工具(Christensen:利益战场)+共同语言(Meadows:结构化分歧)。三阶段：S1(单α:解法)→S2(α裂解:叙事工具/战场)→S3(多α收敛:共同语言)。公式=催化剂——驱动制度演化从技术讨论→政治讨论→共同语言 | synthesized | 找成功将"移动α"叙事引入实际政策辩论的案例(原证伪); 追踪AI治理中α裂解→收敛的实际案例 |
 | Agent 互操作协议收敛假说——修正版：Transport层多协议共存(MCP/A2A/ACP)是稳定的——Agent交互异质→不同价值池(Casado)，TCP/IP单一标准类比不完全适用。前提=语义层标准化(共享Agent Capability Descriptor, "Agent的OpenAPI时刻")+中性治理组织(CNCF式)。无语义标准化→协议分化退化为厂商锁定工具→多协议共存恶化。适配器悖论：兼容性↑但语义损失↓ | hypothesis | 追踪Agent Capability Descriptor标准化进展；观测MCP/A2A生态分化vs融合趋势；中性治理组织出现信号 |
 | Token FinOps 品类窗口定理——修正版：独立窗口=语义归因层(L3:推理步↔业务目标映射)。双重挤压模型——模型厂商(上方,免费捆绑=锁定工具)+可观测性平台(下方,token=新span)。美国=CloudHealth路线(2-3年窗口→被平台收购,`$500M-$5B`品类)，中国=利基独立路线(5-7年窗口→自给自足,`$50-100M`品类)。护城河进化三阶段：可见性→语义归因→自动优化闭环 | hypothesis | 追踪模型厂商FinOps功能迭代速度；测量agent部署速度→token支出增速；找护城河阶段3(自动优化闭环)的创业案例 |
 | Context Advantage 三层边界修正：差异=信息层(可编码,可通过context消除)+存在层(关系/身份构成意义,不可消除,Nussbaum)+呈现层(当下互动不可预测,不可消除,Goffman)+制度层(责任承担位置,社会约定可移但互动结构不可平移)。可类型化任务=信息层主导→AI可替代。独一性任务=后三层叠合→"谁在做"不可替代。人的核心价值=三层叠合处 | synthesized | 找"谁在做"的构成性影响被完美context消除的独一性任务案例；测量AI普及后人类互动结构的实际变化 |
@@ -236,7 +236,7 @@ related_entities:
 
 ## 思考日志索引
 
-- [[2026-07-04]] — 3 轮：治理内生性(roundtable) / 时间不对称(roundtable) / Context Advantage(roundtable)
+- [[2026-07-04]] — 4 轮：重组双向制度(roundtable) / 治理内生性(roundtable) / 时间不对称(roundtable) / Context Advantage(roundtable)
 - [[2026-07-03]] — 14 轮：Agent Obs(roundtable) / 代理-现实差距(roundtable) / Compliance-as-Code(roundtable) / Reward Hacking(roundtable) / Agent协议(roundtable) / Context工具衰减(roundtable) / 多Agent编排(roundtable) / Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆(roundtable+think+联网) / 认知背离(roundtable+think+qa+联网) / AI-native测试 / AI治理 / Agent框架
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
 - [[2026-07-01]] — 12 轮：协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
