@@ -98,7 +98,7 @@ related_entities:
 | 认知背离双循环修正模型：六步反馈环——注意↓→AI降委托成本→AI兜底预期效应→推理动机↓→练习↓→技能退化→委托需求↑。AI是加速器非触发器。关键变量：AI兜底预期×推理动机×练习频率×时间间隙×失败可习得性 | extracted | 找到长期高频使用 AI 但注意力和判断力未退化的对照群体；或找到注意力下降在 AI 采用前已停止的纵向数据 |
 | **🆕 判断力退化隐蔽性定理**：判断力最易被委托侵蚀——退化比操作技能更隐蔽(无客观"坠机"信号)，练习需求比知识更高，退化信号被AI"看起来合理"的输出掩盖。Macnamara et al. (2024) 直接验证：AI辅助使用者常意识不到技能退化 | extracted | 找到判断力在长期高频AI使用后经客观测试无退化且自我评估准确的群体 |
 | **🆕 失败空间迁移不等价定理**：失败的学习价值=f(反馈硬度,因果透明度,自我距离⁻¹,时间窗口)。AI引入的新失败类型"可习得性"结构性地低于被替代的旧失败类型——不是因为失败不够多，而是因为穿过高熵中介 | hypothesis | 新旧失败类型可习得性直接对照实验(反馈清晰度×延迟×可重复性)；找到新失败类型学习效率≥旧失败的案例 |
-| **🆕 Screen Gate 独立品类定理**：Screen gate ≠ API gate的扩展 = 新治理层。API gate=结构化确定性规则(数据验证/rate limit/schema)。Screen gate=非结构化语义概率推断(视觉意图理解/像素级行为审计)。核心工具链=视觉意图验证+对抗UI测试+语义行为审计。独立品类成立——传统API安全工具不处理像素级意图 | synthesized | 追踪Screen gate创业公司出现；测量Computer Use场景下的行为审计准确率 |
+| **🆕 Agent生命周期四+一模型**：部署→维护(持续语义评估)→退化检测(三维漂移:Prompt+数据+反馈)→退役。独特于微服务之处=退化是静默的/语义的/需预测性维护(非crash-driven)。保质期=f(任务稳定性,环境变化速率)。核心工具链=持续语义回归测试+预测性重新部署触发。与Agent Observability深度耦合——退化检测需要语义质量判断 | synthesized | 测量不同类型Agent的实际保质期(部署→退化); 验证预测性维护触发机制的准确率 |
 
 ## Source 需求队列
 
@@ -236,7 +236,7 @@ related_entities:
 
 ## 思考日志索引
 
-- [[2026-07-04]] — 9 轮：Computer Use(roundtable) / Headless Agent(roundtable) / 元方法论(roundtable) / Agent安全(roundtable) / AGI经济学(roundtable) / 重组双向制度(roundtable) / 治理内生性(roundtable) / 时间不对称(roundtable) / Context Advantage(roundtable)
+- [[2026-07-04]] — 10 轮：Agent生命周期(roundtable) / Computer Use(roundtable) / Headless Agent(roundtable) / 元方法论(roundtable) / Agent安全(roundtable) / AGI经济学(roundtable) / 重组双向制度(roundtable) / 治理内生性(roundtable) / 时间不对称(roundtable) / Context Advantage(roundtable)
 - [[2026-07-03]] — 14 轮：Agent Obs(roundtable) / 代理-现实差距(roundtable) / Compliance-as-Code(roundtable) / Reward Hacking(roundtable) / Agent协议(roundtable) / Context工具衰减(roundtable) / 多Agent编排(roundtable) / Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆(roundtable+think+联网) / 认知背离(roundtable+think+qa+联网) / AI-native测试 / AI治理 / Agent框架
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
 - [[2026-07-01]] — 12 轮：协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
