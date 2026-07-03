@@ -1350,6 +1350,11 @@
       "body_sha256": "8b8ffa960a7f27729e630cd36d46871d75f28148164fe9ec0467aa5e3d6b8f4c",
       "raw_file": "20260702-qwen-agent-harness-practice.md",
       "status": "pending"
+    },
+    "20260703-anthropic-skill-engineering-practices.md": {
+      "body_sha256": "df7d14646d92592c00848c3ecf066daa18bc6d8966c08b5d278e3ba9c33b73ee",
+      "raw_file": "20260703-anthropic-skill-engineering-practices.md",
+      "status": "pending"
     }
   },
   "updated_at": "2026-07-02T09:51:57+08:00",
