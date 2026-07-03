@@ -93,7 +93,7 @@ related_entities:
 | 重组双向制度阶段加权：保护^α × 演化^(1-α)。单α不可维持——裂解为多α后，公式价值≠参数计算=结构知识+叙事工具 | synthesized | 找到成功将"移动α"叙事引入实际政策辩论的案例 |
 | Agent 互操作协议收敛假说——修正版：Transport层多协议共存(MCP/A2A/ACP)是稳定的——Agent交互异质→不同价值池(Casado)，TCP/IP单一标准类比不完全适用。前提=语义层标准化(共享Agent Capability Descriptor, "Agent的OpenAPI时刻")+中性治理组织(CNCF式)。无语义标准化→协议分化退化为厂商锁定工具→多协议共存恶化。适配器悖论：兼容性↑但语义损失↓ | hypothesis | 追踪Agent Capability Descriptor标准化进展；观测MCP/A2A生态分化vs融合趋势；中性治理组织出现信号 |
 | Token FinOps 品类窗口定理——修正版：独立窗口=语义归因层(L3:推理步↔业务目标映射)。双重挤压模型——模型厂商(上方,免费捆绑=锁定工具)+可观测性平台(下方,token=新span)。美国=CloudHealth路线(2-3年窗口→被平台收购,`$500M-$5B`品类)，中国=利基独立路线(5-7年窗口→自给自足,`$50-100M`品类)。护城河进化三阶段：可见性→语义归因→自动优化闭环 | hypothesis | 追踪模型厂商FinOps功能迭代速度；测量agent部署速度→token支出增速；找护城河阶段3(自动优化闭环)的创业案例 |
-| Context Advantage 解释力边界定理：在可类型化任务中有效；在独一性任务中漏失——"谁在做"对行为意义有构成性影响 | synthesized | 测量独一性任务中 AI 输出质量=人类但位格替换后关系意义改变的实证案例 |
+| Context Advantage 三层边界修正：差异=信息层(可编码,可通过context消除)+存在层(关系/身份构成意义,不可消除,Nussbaum)+呈现层(当下互动不可预测,不可消除,Goffman)+制度层(责任承担位置,社会约定可移但互动结构不可平移)。可类型化任务=信息层主导→AI可替代。独一性任务=后三层叠合→"谁在做"不可替代。人的核心价值=三层叠合处 | synthesized | 找"谁在做"的构成性影响被完美context消除的独一性任务案例；测量AI普及后人类互动结构的实际变化 |
 | Context 工具使用衰减修正：衰减=f(长度,异构度,工具描述位置)。纯文本+工具描述在末尾=阈值可推至~120K。异构context+工具描述在中间="语义岛"效应→阈值提前至~30-40K。机制=工具描述淹没+参数提取退化+任务目标漂移(Cowan:焦点竞争+焦外激活+焦点替换)。缓解优先序=工具描述优先区(位置:末尾>开头>>中间)>context裁剪>工具数量控制。最优=动态重排(3-5最相关完整描述→末尾,其余简写→开头) | extracted | 找到在异构长context(>100K)中工具使用准确率不衰减的Agent系统；测量动态重排的计算开销vs准确率收益 |
 | 认知背离双循环修正模型：六步反馈环——注意↓→AI降委托成本→AI兜底预期效应→推理动机↓→练习↓→技能退化→委托需求↑。AI是加速器非触发器。关键变量：AI兜底预期×推理动机×练习频率×时间间隙×失败可习得性 | extracted | 找到长期高频使用 AI 但注意力和判断力未退化的对照群体；或找到注意力下降在 AI 采用前已停止的纵向数据 |
 | **🆕 判断力退化隐蔽性定理**：判断力最易被委托侵蚀——退化比操作技能更隐蔽(无客观"坠机"信号)，练习需求比知识更高，退化信号被AI"看起来合理"的输出掩盖。Macnamara et al. (2024) 直接验证：AI辅助使用者常意识不到技能退化 | extracted | 找到判断力在长期高频AI使用后经客观测试无退化且自我评估准确的群体 |
@@ -220,6 +220,7 @@ related_entities:
 
 | 时间 | 焦点 | 临界发现 |
 |------|------|---------|
+| 2026-07-04 | Context Advantage三层边界修正 | 差异=信息层(可编码)+存在层(关系/身份,Nussbaum)+呈现层(当下互动,Goffman)+制度层(责任承担)；独一性任务=后三层叠合→"谁在做"不可替代；边界随社会约定移但不可消除 |
 | 2026-07-03 | 代理-现实差距二元结构 | 投影型(Gödel回响)+近似型(科学模式)；单一生成器；零差距不可达；竞赛不对称→转向不可博弈信号；仲裁者也博弈→共享脆弱性=演化 |
 | 2026-07-03 | Compliance-as-Code修正 | 可自动化≈30-40%；愿景≠自动问责="Code as Evidence"(O'Reilly)；AI合规=概率性行为(Dragan)；边界随可解释性移动 |
 | 2026-07-03 | Reward Hacking三层防御修正 | 有效性=f(信息不对称,博弈成本比,时间)×序贯衰减；三层序贯攻破:哨兵→主锚→后盾 |
@@ -235,7 +236,8 @@ related_entities:
 
 ## 思考日志索引
 
-- [[2026-07-03]] — 12 轮：Compliance-as-Code(roundtable) / Reward Hacking(roundtable) / Agent协议(roundtable) / Context工具衰减(roundtable) / 多Agent编排(roundtable) / Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆(roundtable+think+联网) / 认知背离(roundtable+think+qa+联网) / AI-native测试 / AI治理 / Agent框架
+- [[2026-07-04]] — 1 轮：Context Advantage三层边界修正(roundtable)
+- [[2026-07-03]] — 14 轮：Agent Obs(roundtable) / 代理-现实差距(roundtable) / Compliance-as-Code(roundtable) / Reward Hacking(roundtable) / Agent协议(roundtable) / Context工具衰减(roundtable) / 多Agent编排(roundtable) / Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆(roundtable+think+联网) / 认知背离(roundtable+think+qa+联网) / AI-native测试 / AI治理 / Agent框架
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
 - [[2026-07-01]] — 12 轮：协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
 - [[2026-06-30]] — 全库盘点 + 多轮探索
