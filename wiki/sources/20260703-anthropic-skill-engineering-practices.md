@@ -37,7 +37,7 @@ claim_type: extracted
 - **跨域关联3**: "Description 写给模型而非人类"揭示了 Agent 时代的一个根本转变——文档的首要读者不再是人，而是模型。这对技术写作的范式有深远影响。
 
 ### 关联概念
-- [[Skill-Engineering]]
+- Skill-Engineering（待建 entity）
 - [[Context-Engineering]]
 - [[Progressive-Disclosure]]
 - [[Agent-Harness]]

@@ -9,7 +9,6 @@ tags:
   - source-summary
   - agentic-engineering
   - skill-engineering
-  - perf-optimization
 evidence_level: high
 claim_type: extracted
 ---
@@ -37,8 +36,8 @@ claim_type: extracted
 - **跨域关联3**: "Review matters more than before"的判断与 Agentic Engineering 中"verification gap"问题呼应——Agent 产出速度提升但验证成本同步上升，人类审查者的角色从"写代码"转向"审证据"。
 
 ### 关联概念
-- [[Skill-Engineering]]
-- [[Loop-Engineering]]
-- [[Humanize-RLCR]]
-- [[KDA-Pilot]]
+- Skill-Engineering（待建 entity）
+- Loop-Engineering（待建 entity）
+- `Humanize-RLCR`（SGLang 执行+审查双角色机制）
+- `KDA-Pilot`（SGLang CUDA 内核优化 pilot）
 - [[Agentic-Engineering]]

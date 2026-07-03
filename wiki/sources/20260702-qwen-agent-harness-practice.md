@@ -8,8 +8,6 @@ updated: 2026-07-03
 tags:
   - source-summary
   - agent-harness
-  - c-end-landing
-  - org-practice
 evidence_level: high
 claim_type: extracted
 ---
@@ -39,7 +37,7 @@ claim_type: extracted
 ### 关联概念
 - [[Agent-Harness]]
 - [[Harness-Engineering]]
-- [[AIWare-Engineering]]
+- AIWare-Engineering（待建 entity）
 - [[Context-Engineering]]
-- [[Active-Service]]
-- [[链路固化]]
+- Active-Service（待建 entity）
+- 链路固化（待建 entity）
