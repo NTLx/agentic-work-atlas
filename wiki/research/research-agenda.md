@@ -85,7 +85,8 @@ related_entities:
 | 记忆双重衰减修正——Agent版：检索干扰 > 存储衰退。机制=长context中attention权重被摊薄→关键信息注意力份额↓→检索失败率↑。"Lost in the Middle"=典型表现。encoding specificity(Tulving)+attention dilution(Wei)+有限焦点(Cowan)→三源收敛 | extracted | 找到context长度增长但检索准确率不降反升的Agent系统（需排除RAG/分块等预过滤） |
 | **🆕 Context衰减三层修正模型**：L1(关联检查不可压缩性O(N²),最根本不可消除)⊃L2(attention稀疏化+无循环再处理,可工程缓解)⊃L3(编码-检索不匹配+位置效应,最便宜改善最大)。修正：L1不是"信噪比递减"而是"潜在关联检查的不可压缩性"——即使完美信号也受O(N²)约束 | extracted | 找到不依赖预知结构而在O(N)复杂度下维持检索准确率的注意力机制 |
 | **🆕 编码策略杠杆定理**：检索准确率=f(编码结构质量×信噪比)/attention稀释因子。编码时1单位投入≈检索时10单位节省。平铺式context=最低效编码。最佳实践：工具调用返回→高优先级编码区→多维索引 | synthesized | Agent多维编码vs平铺编码A/B对照实验（相同context长度，结构化索引 vs 平铺，测量工具使用准确率差异） |
-| **🆕 完美信号不可达定理**：严格"完美信号context"不可达成——因为"知道信息已完美"需无限处理预算。softmax attention权重总和=1硬约束→更多token=每token平均注意力↓。即便是纯信号，关联检查的O(N²)不可压缩性导致有限注意力预算下必然牺牲某些信号的处理精度。更大context永远有代价 | extracted | 找到在所有信息精确相关+无冗余+结构预知+长context条件下检索准确率不衰减的案例 |
+| **🆕 Skill Engineering 分层模型**：Skill=结构层(工程:接口/依赖/版本)+内容层(园艺:使用→迭代→沉淀)。两层共存——只用一范式会在另一维度失败。传统软件工程类比不够——Skill接口是自然语言，需要语义对齐而非类型系统 | synthesized | 找成功维护100+Skill概念完整性的团队实践；验证分层模型在Skill架构落地中的解释力 |
+| **🆕 Skill Engineering 成熟度三阶段**：S1(散落prompt,个人)→S2(Skill打包,团队,隐式依赖)→S3(Skill架构,形式化接口/依赖/版本/一致性检查)。Anthropic在S2.5——有分类和工具但缺形式化依赖管理 | synthesized | 追踪Anthropic或其他组织是否发布Skill依赖/版本管理工具；找到S3阶段的实践案例 |
 | Reward Hacking 三层防御定理：评测有效性=主锚(延迟不可伪造信号)×哨兵(短周期博弈可见)×后盾(偏离触发惩罚) | synthesized | 测量主锚延迟缩短极限；哨兵偏离阈值(20%)实证校准 |
 | 评测治理三要素缺一不可：制度 × 技术 × 锚定 | synthesized | 找到缺任一要素但仍有效治理的 AI 评测体系 |
 | 多 Agent 编排倒 U 型：层级峰顶 ≈5-15。Team of Teams 可推高。瓶颈 = orchestrator context 带宽 | synthesized | 找到层级编排下 15+ Agent 仍无性能退化的案例 |
@@ -219,15 +220,15 @@ related_entities:
 
 | 时间 | 焦点 | 临界发现 |
 |------|------|---------|
+| 2026-07-03 | Skill Engineering 能否成为Agent时代的"软件工程" | Skill=结构层(工程)+内容层(园艺)分层共存；概念完整性=本质复杂度(Brooks)；Thin Harness/Fat Skills边界=Harness管编排,Skills管知识；成熟度三阶段(S1散落prompt→S2打包→S3架构)；Skill接口是自然语言→需语义对齐非类型系统；Anthropic在S2.5 |
 | 2026-07-03 | Token FinOps 品类窗口定理修正 | 语义归因层(L3)=真实新数据源；双重挤压模型(模型厂商上方+可观测性下方)；美国=CloudHealth路线(2-3年→被收购,`$500M-$5B`)，中国=利基独立(5-7年,`$50-100M`)；护城河三阶段进化(可见性→语义归因→自动优化闭环)；品类上限=f(agent部署速度×模型厂商内化速度赛跑) |
 | 2026-07-03 | 记忆双重衰减修正与Context扩展悖论 | 检索干扰>存储衰退在Agent中成立；Context衰减三层修正模型(L1=O(N²)不可压缩⊃L2=attention稀疏化⊃L3=编码-检索不匹配)；完美信号不可达定理(softmax权重总和=1硬约束)；编码策略杠杆(编码1单位=检索10单位节省)；差异化编码=最小成本最高杠杆 |
 | 2026-07-03 | 认知背离双循环 | 六步反馈环(注意↓→降委托成本→AI兜底预期→推理动机↓→练习↓→退化→依赖↑)；AI=加速器非触发器；高熵中介不可逆衰减学习信号；断裂点三层因果层级：微观⊂中观⊂宏观(教育评估转向)；成人退化可逆，儿童窗口关闭可能不可逆 |
 | 2026-07-03 | AI-native 测试三支柱框架 | 正向(LLM-Judge×多模型×人类校准)+负向(Property×Adversarial)+反馈(快速循环×阈值断言)；金字塔=沙漏形；粒度=f(失败成本)；Agent Quality Pipeline 与 CI/CD 并行 |
-| 2026-07-03 | AI 治理三范式比较 | EU(事前/程序俘获)×US(事后/盲区)×CN(集中/风暴执法)；全球标准=多维度碎片化拼图；布鲁塞尔效应在 AI=多中心化 |
 
 ## 思考日志索引
 
-- [[2026-07-03]] — 6 轮：Token FinOps(roundtable) / 记忆双重衰减修正(roundtable+think+联网) / 认知背离双循环(roundtable+think+qa+联网) / AI-native 测试三支柱 / AI 治理三范式 / Agent 框架分化定理
+- [[2026-07-03]] — 7 轮：Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆双重衰减修正(roundtable+think+联网) / 认知背离双循环(roundtable+think+qa+联网) / AI-native 测试三支柱 / AI 治理三范式 / Agent 框架分化定理
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
 - [[2026-07-01]] — 12 轮：协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
 - [[2026-06-30]] — 全库盘点 + 多轮探索
