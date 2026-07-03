@@ -98,7 +98,7 @@ related_entities:
 | 认知背离双循环修正模型：六步反馈环——注意↓→AI降委托成本→AI兜底预期效应→推理动机↓→练习↓→技能退化→委托需求↑。AI是加速器非触发器。关键变量：AI兜底预期×推理动机×练习频率×时间间隙×失败可习得性 | extracted | 找到长期高频使用 AI 但注意力和判断力未退化的对照群体；或找到注意力下降在 AI 采用前已停止的纵向数据 |
 | **🆕 判断力退化隐蔽性定理**：判断力最易被委托侵蚀——退化比操作技能更隐蔽(无客观"坠机"信号)，练习需求比知识更高，退化信号被AI"看起来合理"的输出掩盖。Macnamara et al. (2024) 直接验证：AI辅助使用者常意识不到技能退化 | extracted | 找到判断力在长期高频AI使用后经客观测试无退化且自我评估准确的群体 |
 | **🆕 失败空间迁移不等价定理**：失败的学习价值=f(反馈硬度,因果透明度,自我距离⁻¹,时间窗口)。AI引入的新失败类型"可习得性"结构性地低于被替代的旧失败类型——不是因为失败不够多，而是因为穿过高熵中介 | hypothesis | 新旧失败类型可习得性直接对照实验(反馈清晰度×延迟×可重复性)；找到新失败类型学习效率≥旧失败的案例 |
-| **🆕 Agent Observability 独立窗口定理**：独立窗口=f(数据模型不兼容度,现有平台学习曲线,Agent故障经济损失规模)。三大独特数据源(推理轨迹+工具因果链+决策溯源)与传统APM request/span/log范式不兼容→独立窗口真实。窗口期3-4年(Casado)。Datadog时刻≈2027-2028(Majors)。终局=CloudHealth路线(独立→被平台收购)。护城河=语义分析能力(非metric/aggregation) | synthesized | 追踪Datadog LLM Observability功能迭代速度; 观测企业从"自建"→"购买"Agent可观测性工具的转折点 |
+| **🆕 AGI 经济学三层瓶颈模型**：L1(Token成本:下降最快,必要但非瓶颈)→L2(劳动力替代率:政策弹性,Acemoglu替代/恢复效应)→L3(组织学习速度:核心瓶颈,Perez转折点时长×Brynjolfsson生产力悖论)。AGI在Perez转折点(2026-2028→从安装期狂热转向部署期制度拉动)。经济影响=f(组织学习分布方差,制度灵活性)。历史20-30年→AGI可能8-12年(软件物理惯性更低) | synthesized | 追踪Perez转折点的触发事件(监管冲击/信任危机); 测量不同部门的组织学习速度差异 |
 
 ## Source 需求队列
 
@@ -236,7 +236,7 @@ related_entities:
 
 ## 思考日志索引
 
-- [[2026-07-04]] — 4 轮：重组双向制度(roundtable) / 治理内生性(roundtable) / 时间不对称(roundtable) / Context Advantage(roundtable)
+- [[2026-07-04]] — 5 轮：AGI经济学(roundtable) / 重组双向制度(roundtable) / 治理内生性(roundtable) / 时间不对称(roundtable) / Context Advantage(roundtable)
 - [[2026-07-03]] — 14 轮：Agent Obs(roundtable) / 代理-现实差距(roundtable) / Compliance-as-Code(roundtable) / Reward Hacking(roundtable) / Agent协议(roundtable) / Context工具衰减(roundtable) / 多Agent编排(roundtable) / Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆(roundtable+think+联网) / 认知背离(roundtable+think+qa+联网) / AI-native测试 / AI治理 / Agent框架
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
 - [[2026-07-01]] — 12 轮：协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
