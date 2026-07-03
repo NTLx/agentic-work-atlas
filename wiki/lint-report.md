@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 172 |
+| Raw 来源 | 175 |
 | Raw 已编译 | 154 |
-| Raw 待编译 | 18 |
+| Raw 待编译 | 21 |
 | Raw 已跳过 | 0 |
 | Entity | 301 |
 | Topic | 31 |
@@ -42,9 +42,12 @@ tags:
 - `raw/20260623-qwen-agentworld-language-world-models.md`
 - `raw/20260624-gemini-3-5-flash-computer-use.md`
 - `raw/20260630-loop-engineering-andrew-ng.md`
+- `raw/20260702-agent-assisted-sglang-development.md`
 - `raw/20260702-ai-layoffs-reversed.md`
 - `raw/20260702-anthropic-context-engineering.md`
 - `raw/20260702-anthropic-harnesses-long-running-agents.md`
+- `raw/20260702-qwen-agent-harness-practice.md`
+- `raw/20260703-anthropic-skill-engineering-practices.md`
 - `raw/Building headless automation with Claude Code — Code w Claude.md`
 - `raw/How to 10x Your Value in the AI Era — Kunal Shah.md`
 - `raw/The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md`
