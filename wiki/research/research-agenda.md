@@ -62,7 +62,7 @@ related_entities:
 | Headless Agent 范式三条件：结构化 I/O × 不可变 artifact × Simple 单一职责 | 找满足三条件的实现 |
 | AGI 经济学四阶段周期：Token 通胀 → Token 治理 → 结构转型 → 新均衡 | 追踪 Token 成本曲线与企业采购行为时滞 |
 | Agent 记忆统一框架假设：编码/巩固/检索/遗忘四阶段映射 Agent 记忆。Context-Rot = 检索干扰 > 存储衰退 | 测量不同记忆架构在四阶段衰减曲线 |
-| 合规即代码定理：法规效力=f(可自动化,惩罚痛度,检测概率,配置保鲜度)。终极=自动化问责 | 追踪 EU AI Act 首年自动合规覆盖率 |
+| 合规即代码定理——修正版：法规效力=f(可自动化比例,惩罚痛度,检测概率,证据保鲜度)。可自动化≈30-40%(数据治理/版本/日志)。不可自动化=judgment call。愿景修正："Compliance as Code"→"Code as Evidence"(O'Reilly)。边界随AI可解释性移动 | synthesized | 测量EU AI Act首年自动合规覆盖率；追踪Code as Evidence标准化进展 |
 | **🆕 Agent 框架分化定理**：终局=后端模式分化（按语言+用例，非前端单一赢家）。差异化=可观测性+状态管理+人机协作（非编排模型）。协议标准化后编排 commodity 化 | 追踪 LangGraph/CrewAI 在三维度功能对比；MCP/A2A 后编排层 commodity 化实证 |
 | **🆕 Agent 测试三支柱框架**：正向(LLM-Judge×多模型×人类校准) + 负向(Property 不变量×Adversarial) + 反馈(快速循环×阈值断言)。测试金字塔=沙漏形。粒度=f(失败成本) | 测量 Agent Quality Pipeline 开源实现；LLM-as-Judge 6/12/24 月漂移 |
 | **🆕 AI 治理三范式比较框架**：EU(事前/权利/程序俘获)×US(事后/行业/盲区)×CN(集中/安全/风暴执法)。全球标准=多维度碎片化拼图 | 测量"多国最严格交集"统一设计采用率；CN 制度化进程 |
@@ -220,20 +220,18 @@ related_entities:
 
 | 时间 | 焦点 | 临界发现 |
 |------|------|---------|
-| 2026-07-03 | Reward Hacking三层防御修正 | 有效性=f(信息不对称,博弈成本比,时间)×序贯衰减；Goodhart:三层不能消除博弈；Goodfellow:信息不对称=关键；Soros:反身性使不对称衰减；Beck:博弈成本>诚实收益即可 |
-| 2026-07-03 | Agent互操作协议收敛假说修正 | Transport多协议共存稳定(MCP/A2A不同价值池,Casado)；TCP/IP类比不完全适用；前提=语义标准化(Agent Capability Descriptor)+中性治理(CNCF式)；适配器悖论 |
-| 2026-07-03 | Context工具使用衰减修正 | 衰减=f(长度,异构度,工具描述位置)；纯文本+末尾=~120K,异构+中间=~30-40K；缓解=工具描述优先区>裁剪>数量控制；最优=动态重排(Liang)；工程收敛于认知心理学 |
-| 2026-07-03 | 多Agent编排倒U型修正 | 峰顶=f(架构模式,任务耦合度,分层压缩率)；层级+最紧密=5-15硬上限(McChrystal),Team of Teams=~100+；分层修剪=超越倒U型(Ng)；去中心化="集体context膨胀"(Sutskever) |
-| 2026-07-03 | Skill Engineering——Agent时代的"软件工程" | Skill=结构层(工程)+内容层(园艺)分层共存；概念完整性=本质复杂度(Brooks)；Thin Harness/Fat Skills边界；成熟度三阶段(S1散落→S2打包→S3架构)；Anthropic在S2.5 |
-| 2026-07-03 | 记忆双重衰减修正与Context扩展悖论 | 检索干扰>存储衰退在Agent中成立；Context衰减三层修正模型(L1=O(N²)⊃L2=attention稀疏化⊃L3=编码-检索不匹配)；完美信号不可达定理；编码策略杠杆(编码1≈检索10) |
-| 2026-07-03 | Skill Engineering——Agent时代的"软件工程" | Skill=结构层(工程)+内容层(园艺)分层共存；概念完整性=本质复杂度(Brooks)；Thin Harness/Fat Skills边界=Harness管编排,Skills管知识；成熟度三阶段(S1散落→S2打包→S3架构)；Skill接口=自然语言→需语义对齐非类型系统；Anthropic在S2.5 |
+| 2026-07-03 | Compliance-as-Code修正 | 可自动化≈30-40%；愿景≠自动问责="Code as Evidence"(O'Reilly)；AI合规=概率性行为(Dragan)；judgment call不可自动化；边界随可解释性移动 |
+| 2026-07-03 | Reward Hacking三层防御修正 | 有效性=f(信息不对称,博弈成本比,时间)×序贯衰减；三层不能消除博弈(Goodhart)；序贯攻破:哨兵→主锚→后盾；防御不需完美(Beck) |
+| 2026-07-03 | Agent互操作协议收敛假说修正 | Transport多协议共存稳定；TCP/IP类比不完全适用；前提=语义标准化+中性治理(CNCF式)；适配器悖论 |
+| 2026-07-03 | Context工具使用衰减修正 | 衰减=f(长度,异构度,工具描述位置)；缓解=工具描述优先区>裁剪>数量控制；最优=动态重排(Liang) |
+| 2026-07-03 | 多Agent编排倒U型修正 | 峰顶=f(架构模式,任务耦合度,分层压缩率)；层级+最紧密=5-15硬上限,Team of Teams=~100+；分层修剪=超越倒U型 |
 | 2026-07-03 | Token FinOps 品类窗口定理修正 | 语义归因层(L3)=真实新数据源；双重挤压模型(模型厂商上方+可观测性下方)；美国=CloudHealth路线(2-3年→被收购,`$500M-$5B`)，中国=利基独立(5-7年,`$50-100M`)；护城河三阶段进化(可见性→语义归因→自动优化闭环)；品类上限=f(agent部署速度×模型厂商内化速度赛跑) |
 | 2026-07-03 | 记忆双重衰减修正与Context扩展悖论 | 检索干扰>存储衰退在Agent中成立；Context衰减三层修正模型(L1=O(N²)不可压缩⊃L2=attention稀疏化⊃L3=编码-检索不匹配)；完美信号不可达定理(softmax权重总和=1硬约束)；编码策略杠杆(编码1单位=检索10单位节省)；差异化编码=最小成本最高杠杆 |
 | 2026-07-03 | 认知背离双循环 | 六步反馈环(注意↓→降委托成本→AI兜底预期→推理动机↓→练习↓→退化→依赖↑)；AI=加速器非触发器；高熵中介不可逆衰减学习信号；断裂点三层因果层级：微观⊂中观⊂宏观(教育评估转向)；成人退化可逆，儿童窗口关闭可能不可逆 |
 
 ## 思考日志索引
 
-- [[2026-07-03]] — 11 轮：Reward Hacking(roundtable) / Agent协议收敛(roundtable) / Context工具衰减(roundtable) / 多Agent编排(roundtable) / Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆双重衰减(roundtable+think+联网) / 认知背离(roundtable+think+qa+联网) / AI-native测试 / AI治理 / Agent框架
+- [[2026-07-03]] — 12 轮：Compliance-as-Code(roundtable) / Reward Hacking(roundtable) / Agent协议(roundtable) / Context工具衰减(roundtable) / 多Agent编排(roundtable) / Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆(roundtable+think+联网) / 认知背离(roundtable+think+qa+联网) / AI-native测试 / AI治理 / Agent框架
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
 - [[2026-07-01]] — 12 轮：协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
 - [[2026-06-30]] — 全库盘点 + 多轮探索
