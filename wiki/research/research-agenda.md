@@ -89,7 +89,7 @@ related_entities:
 | **🆕 Skill Engineering 成熟度三阶段**：S1(散落prompt,个人)→S2(Skill打包,团队,隐式依赖)→S3(Skill架构,形式化接口/依赖/版本/一致性检查)。Anthropic在S2.5——有分类和工具但缺形式化依赖管理 | synthesized | 追踪Anthropic或其他组织是否发布Skill依赖/版本管理工具；找到S3阶段的实践案例 |
 | Reward Hacking 三层防御定理：评测有效性=主锚(延迟不可伪造信号)×哨兵(短周期博弈可见)×后盾(偏离触发惩罚) | synthesized | 测量主锚延迟缩短极限；哨兵偏离阈值(20%)实证校准 |
 | 评测治理三要素缺一不可：制度 × 技术 × 锚定 | synthesized | 找到缺任一要素但仍有效治理的 AI 评测体系 |
-| 多 Agent 编排倒 U 型：层级峰顶 ≈5-15。Team of Teams 可推高。瓶颈 = orchestrator context 带宽 | synthesized | 找到层级编排下 15+ Agent 仍无性能退化的案例 |
+| 多 Agent 编排峰顶修正：峰顶=f(架构模式,任务耦合度,分层压缩率)。层级+最紧密耦合(需全局共识)=5-15硬上限。Team of Teams+中等耦合=可推至~100。松散耦合=几乎无限。关键变量=任务耦合度(McChrystal)×分层修剪效率(Ng)。错误选择架构比Agent过多更致命 | synthesized | 测量不同任务耦合度×架构模式的精确峰顶位置；去中心化peer-to-peer Agent系统的context膨胀率 |
 | 重组双向制度阶段加权：保护^α × 演化^(1-α)。单α不可维持——裂解为多α后，公式价值≠参数计算=结构知识+叙事工具 | synthesized | 找到成功将"移动α"叙事引入实际政策辩论的案例 |
 | Agent 互操作协议收敛假说（修正）：3-5 年多协议共存+适配器层崛起。Transport 不收敛到 1 胜者。前提=中性治理组织出现 | hypothesis | 追踪 CNCF 式 AI 协议治理组织出现 |
 | Token FinOps 品类窗口定理——修正版：独立窗口=语义归因层(L3:推理步↔业务目标映射)。双重挤压模型——模型厂商(上方,免费捆绑=锁定工具)+可观测性平台(下方,token=新span)。美国=CloudHealth路线(2-3年窗口→被平台收购,`$500M-$5B`品类)，中国=利基独立路线(5-7年窗口→自给自足,`$50-100M`品类)。护城河进化三阶段：可见性→语义归因→自动优化闭环 | hypothesis | 追踪模型厂商FinOps功能迭代速度；测量agent部署速度→token支出增速；找护城河阶段3(自动优化闭环)的创业案例 |
@@ -220,15 +220,15 @@ related_entities:
 
 | 时间 | 焦点 | 临界发现 |
 |------|------|---------|
-| 2026-07-03 | Skill Engineering 能否成为Agent时代的"软件工程" | Skill=结构层(工程)+内容层(园艺)分层共存；概念完整性=本质复杂度(Brooks)；Thin Harness/Fat Skills边界=Harness管编排,Skills管知识；成熟度三阶段(S1散落prompt→S2打包→S3架构)；Skill接口是自然语言→需语义对齐非类型系统；Anthropic在S2.5 |
+| 2026-07-03 | 多Agent编排倒U型修正 | 峰顶=f(架构模式,任务耦合度,分层压缩率)；层级+最紧密耦合=5-15硬上限(McChrystal)，Team of Teams=~100+，松散耦合=无限；分层修剪=超越倒U型的前提(Ng)；去中心化的代价="集体context膨胀"(Sutskever)；架构选择比Agent数量更关键 |
+| 2026-07-03 | Skill Engineering——Agent时代的"软件工程" | Skill=结构层(工程)+内容层(园艺)分层共存；概念完整性=本质复杂度(Brooks)；Thin Harness/Fat Skills边界=Harness管编排,Skills管知识；成熟度三阶段(S1散落→S2打包→S3架构)；Skill接口=自然语言→需语义对齐非类型系统；Anthropic在S2.5 |
 | 2026-07-03 | Token FinOps 品类窗口定理修正 | 语义归因层(L3)=真实新数据源；双重挤压模型(模型厂商上方+可观测性下方)；美国=CloudHealth路线(2-3年→被收购,`$500M-$5B`)，中国=利基独立(5-7年,`$50-100M`)；护城河三阶段进化(可见性→语义归因→自动优化闭环)；品类上限=f(agent部署速度×模型厂商内化速度赛跑) |
 | 2026-07-03 | 记忆双重衰减修正与Context扩展悖论 | 检索干扰>存储衰退在Agent中成立；Context衰减三层修正模型(L1=O(N²)不可压缩⊃L2=attention稀疏化⊃L3=编码-检索不匹配)；完美信号不可达定理(softmax权重总和=1硬约束)；编码策略杠杆(编码1单位=检索10单位节省)；差异化编码=最小成本最高杠杆 |
 | 2026-07-03 | 认知背离双循环 | 六步反馈环(注意↓→降委托成本→AI兜底预期→推理动机↓→练习↓→退化→依赖↑)；AI=加速器非触发器；高熵中介不可逆衰减学习信号；断裂点三层因果层级：微观⊂中观⊂宏观(教育评估转向)；成人退化可逆，儿童窗口关闭可能不可逆 |
-| 2026-07-03 | AI-native 测试三支柱框架 | 正向(LLM-Judge×多模型×人类校准)+负向(Property×Adversarial)+反馈(快速循环×阈值断言)；金字塔=沙漏形；粒度=f(失败成本)；Agent Quality Pipeline 与 CI/CD 并行 |
 
 ## 思考日志索引
 
-- [[2026-07-03]] — 7 轮：Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆双重衰减修正(roundtable+think+联网) / 认知背离双循环(roundtable+think+qa+联网) / AI-native 测试三支柱 / AI 治理三范式 / Agent 框架分化定理
+- [[2026-07-03]] — 8 轮：多Agent编排(roundtable) / Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆双重衰减修正(roundtable+think+联网) / 认知背离双循环(roundtable+think+qa+联网) / AI-native 测试三支柱 / AI 治理三范式 / Agent 框架分化定理
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
 - [[2026-07-01]] — 12 轮：协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
 - [[2026-06-30]] — 全库盘点 + 多轮探索
