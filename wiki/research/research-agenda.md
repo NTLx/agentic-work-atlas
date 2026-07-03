@@ -81,7 +81,7 @@ related_entities:
 | 可博弈性结构必然：Goodhart + Soros 反射性 + Gödel 投影 → 不存在不可博弈的"静态/自我验证"显式仲裁标准。有效评测=制度化纠错=速度×独立性×成本不对称 | synthesized | 找到无需制度约束力而长期有效的纯技术 benchmark |
 | Gödel 不完备递归六层定理：博弈从规则→惩罚→独立→道德→信任→共享脆弱性逐层上升，递归终点=共享脆弱性 | synthesized | 找到博弈在某制度层终止且无需共享脆弱性的案例 |
 | AI 评测制度化已启动：US AI Incident Reporting Act(2026-06-26)=强制7天报告+`$2M`/天罚款 | extracted | 追踪首次执法行动的时间、力度和效果 |
-| 治理内生性六变量定理：可内生=f(验证独立性,退出自由度,受益对称性,参与通道,知识接口化)-不可内化底线。多中心前提=共享脆弱性 | synthesized | 找到满足六变量全部正向且多中心有效的 AI 治理案例 |
+| 治理内生性六变量修正——嵌套版本：可内生=f(验证独立性,退出自由度,受益对称性,参与通道,知识接口化)×嵌套分层度-不可内化底线+选择性激励(O'Reilly:认证信任)。六变量=Ostrom八原则的AI翻译。规模=核心挑战(Olson:大异质需嵌套分层)。CNCF模式=SIG级小群体→标准化接口→选择性激励。共享脆弱性=二阶认知(非相同脆弱性—是认知到不同脆弱性只能通过合作解决) | synthesized | 找满足六变量全部正向且多中心有效的AI治理案例(证伪); 验证CNCF式嵌套分层在AI治理中的可行性 |
 | 记忆双重衰减修正——Agent版：检索干扰 > 存储衰退。机制=长context中attention权重被摊薄→关键信息注意力份额↓→检索失败率↑。"Lost in the Middle"=典型表现。encoding specificity(Tulving)+attention dilution(Wei)+有限焦点(Cowan)→三源收敛 | extracted | 找到context长度增长但检索准确率不降反升的Agent系统（需排除RAG/分块等预过滤） |
 | **🆕 Context衰减三层修正模型**：L1(关联检查不可压缩性O(N²),最根本不可消除)⊃L2(attention稀疏化+无循环再处理,可工程缓解)⊃L3(编码-检索不匹配+位置效应,最便宜改善最大)。修正：L1不是"信噪比递减"而是"潜在关联检查的不可压缩性"——即使完美信号也受O(N²)约束 | extracted | 找到不依赖预知结构而在O(N)复杂度下维持检索准确率的注意力机制 |
 | **🆕 编码策略杠杆定理**：检索准确率=f(编码结构质量×信噪比)/attention稀释因子。编码时1单位投入≈检索时10单位节省。平铺式context=最低效编码。最佳实践：工具调用返回→高优先级编码区→多维索引 | synthesized | Agent多维编码vs平铺编码A/B对照实验（相同context长度，结构化索引 vs 平铺，测量工具使用准确率差异） |
@@ -236,7 +236,7 @@ related_entities:
 
 ## 思考日志索引
 
-- [[2026-07-04]] — 1 轮：Context Advantage三层边界修正(roundtable)
+- [[2026-07-04]] — 3 轮：治理内生性(roundtable) / 时间不对称(roundtable) / Context Advantage(roundtable)
 - [[2026-07-03]] — 14 轮：Agent Obs(roundtable) / 代理-现实差距(roundtable) / Compliance-as-Code(roundtable) / Reward Hacking(roundtable) / Agent协议(roundtable) / Context工具衰减(roundtable) / 多Agent编排(roundtable) / Skill Engineering(roundtable) / Token FinOps(roundtable) / 记忆(roundtable+think+联网) / 认知背离(roundtable+think+qa+联网) / AI-native测试 / AI治理 / Agent框架
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI 认知/Headless/Harness/多 Agent 倒 U/AGI 经济学/中国 AI/元合成 rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
 - [[2026-07-01]] — 12 轮：协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
