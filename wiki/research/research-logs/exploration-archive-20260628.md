@@ -1,15 +1,15 @@
 ---
 type: research-archive
-title: "探索扩容归档（2026-06-28）"
+title: "探索扩容归档（2026-06-28，07-04 更新）"
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-07-04
 tags:
   - research-archive
 ---
 
-# 探索扩容归档（2026-06-28）
+# 探索扩容归档（2026-06-28，07-04 更新）
 
-> 本页承接 2026-06-28 的全库盘点、agenda 精简和外部现实对照。`research-agenda.md` 只保留活跃操作节；详细统计、长问题库和被卸载的近况摘要留在这里。
+> 本页承接 2026-06-28 的全库盘点、agenda 精简和外部现实对照，以及 2026-07-04 的 agenda 精简卸载。`research-agenda.md` 只保留活跃操作节；详细统计、长问题库、旧方向库和被卸载的近况摘要留在这里。
 
 ## 一、Agenda 精简记录
 
@@ -185,3 +185,60 @@ tags:
 - [[2026-06-22]] — 不可见编排、Governor 迁移、反馈回路、沉默型崩溃、AI 管理同构性、元思考不可替代性
 - [[2026-06-21]] — 过度合规、例外升级、不可见编排、大胆模型发散
 - [[2026-06-20]] — 多 Agent 内态记录、过度合规、例外升级监督
+
+## 九、07-04 Agenda 精简卸载
+
+### 旧新方向库（07-03 版，已升级到 agenda 07-04 精简版）
+
+> 以下为 07-03 版详细方向库表格，07-04 精简后以更紧凑的格式重写进 agenda。保留在此供溯源。
+
+#### 软件工程层
+
+| 方向 | 内部锚点 | 优先级 |
+|------|---------|--------|
+| AI 编程范式下一站 | Software-2.0/Software-3.0/Vibe-Coding/Code-as-Conceptual-Infrastructure | P1 |
+| Distillation 与模型经济终局 | Adversarial-Distillation/API-Distillation-Catch-Up/Model-Distillation | P1 |
+| Headless Agent 作为新范式 | Headless-Automation/Headless-Mode/HaaS/Thin-Harness-Fat-Skills | P1 |
+| Benchmark 生命周期与博弈 | SWE-Bench/CORE-Bench/ITBench/Evaluation-Set | P1 |
+| 长期自主 Agent 生命周期 | Agent-Logic/Ralph-Loops/Continual-Learning/Staleness-Problem | P0 |
+
+#### 组织系统层
+
+| 方向 | 内部锚点 | 优先级 |
+|------|---------|--------|
+| AI 时代组织形态谱系 | AI-Factory/FDE/AI-Ready-Org/Agent-First-Enterprise/Company-Brain | P0 |
+| 多 Agent 系统病态学 | Multi-Agent-System-Pathology/Shared-Memory-Contamination | P1 |
+| Computer Use 治理与 screen gate | ACI-Agent-Computer-Interface/Agent-Containment | P1 |
+| 责任架构创新 | Human-Governor-Agent-Operator/Escalation-Based-Human-Oversight | P1 |
+
+#### 知识系统层
+
+| 方向 | 内部锚点 | 优先级 |
+|------|---------|--------|
+| 知识库自身元方法论 | LLM-Wiki/Knowledge-Compilation/Context-Engineering | P0 |
+| 数据/语料作为基础设施 | Latent-Knowledge-Demand/Latent-Space-vs-Deterministic/Human-Curation | P2 |
+| Skill Engineering 工程化 | Skill-Chains/Skill-Internalization/Thin-Harness-Fat-Skills | P0 |
+
+#### 人的核心价值层
+
+| 方向 | 内部锚点 | 优先级 |
+|------|---------|--------|
+| AI 社会抵抗与拒绝者 | AI-Amish/AI-Washing/AI-Psychosis/Societal-Resilience | P2 |
+| 认知债务新型态 | Cognitive-Debt/Cognitive-Surrender | P1 |
+| 工作节奏与采用节律 | Agent-Adoption-Curve/AI-Use-Rhythm/Anthropic-Institute | P1 |
+| 智慧工作与剩余价值 | Wisdom-Work/Judgment/Taste/Discernment/Chosen-vs-Seen/Positionality | P0 |
+
+### 07-03→07-04 期间卸载的最近思考结论摘要
+
+> agenda 只保留最近 5 条；以下 8 条从 07-03 活跃区下沉。
+
+| 时间 | 焦点 | 临界发现 |
+|------|------|---------|
+| 2026-07-03 | 代理-现实差距二元结构 | 投影型(Gödel回响)+近似型(科学模式)；单一生成器；零差距不可达；竞赛不对称→转向不可博弈信号；仲裁者也博弈→共享脆弱性=演化 |
+| 2026-07-03 | Compliance-as-Code修正 | 可自动化≈30-40%；愿景≠自动问责="Code as Evidence"(O'Reilly)；AI合规=概率性行为(Dragan)；边界随可解释性移动 |
+| 2026-07-03 | Reward Hacking三层防御修正 | 有效性=f(信息不对称,博弈成本比,时间)×序贯衰减；三层序贯攻破:哨兵→主锚→后盾 |
+| 2026-07-03 | Agent互操作协议收敛假说修正 | Transport多协议共存稳定；TCP/IP类比不完全适用；前提=语义标准化+中性治理(CNCF式) |
+| 2026-07-03 | Context工具使用衰减修正 | 衰减=f(长度,异构度,工具描述位置)；缓解=工具描述优先区>裁剪>数量控制；最优=动态重排 |
+| 2026-07-03 | 多Agent编排倒U型修正 | 峰顶=f(架构模式,任务耦合度,分层压缩率)；层级+最紧密=5-15硬上限,Team of Teams=~100+ |
+| 2026-07-03 | Token FinOps 品类窗口定理修正 | 语义归因层(L3)=真实新数据源；双重挤压模型；美国=CloudHealth路线(2-3年)，中国=利基独立(5-7年) |
+| 2026-07-03 | 记忆双重衰减修正与Context扩展悖论 | 检索干扰>存储衰退；Context衰减三层修正模型；编码策略杠杆(编码1单位=检索10单位节省) |
