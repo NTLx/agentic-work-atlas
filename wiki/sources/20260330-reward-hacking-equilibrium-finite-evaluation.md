@@ -8,8 +8,8 @@ updated: 2026-07-05
 tags:
   - source-summary
   - AI-Agent
-  - ai-alignment
   - agentic-engineering
+  - verification
 evidence_level: high
 claim_type: extracted
 ---

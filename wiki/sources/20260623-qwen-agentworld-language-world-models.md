@@ -9,7 +9,6 @@ tags:
   - source-summary
   - world-model
   - AI-Agent
-  - reinforcement-learning
 evidence_level: high
 claim_type: extracted
 ---

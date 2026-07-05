@@ -7,7 +7,6 @@ created: 2026-07-05
 updated: 2026-07-05
 tags:
   - source-summary
-  - agentic-coding
   - agentic-engineering
   - AI-Agent
 evidence_level: medium

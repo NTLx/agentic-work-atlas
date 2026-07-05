@@ -7,10 +7,9 @@ created: 2026-07-03
 updated: 2026-07-03
 tags:
   - source-summary
-  - agentic-coding
-  - unknowns
-  - human-agent-collaboration
-  - fable-5
+  - agentic-engineering
+  - AI-Agent
+  - human-skill
 evidence_level: high
 claim_type: extracted
 ---
@@ -39,7 +38,7 @@ claim_type: extracted
 
 ### 关联概念
 - [[Unknowns-Framework]]
-- [[Agentic-Coding]]
+- [[Agentic-Engineering]]
 - [[Context-Engineering]]
-- [[Human-Agent-Collaboration]]
-- [[Skill-Engineering]]
+- [[Captain-Mindset]]
+- [[Skill-Chains]]
