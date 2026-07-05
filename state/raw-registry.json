@@ -1355,6 +1355,11 @@
       "body_sha256": "df7d14646d92592c00848c3ecf066daa18bc6d8966c08b5d278e3ba9c33b73ee",
       "raw_file": "20260703-anthropic-skill-engineering-practices.md",
       "status": "pending"
+    },
+    "20260703-fable-field-guide-finding-unknowns.md": {
+      "body_sha256": "691049cda90b68ed6e2ba6d375b994037ca46ab2c06a528f48abf81cdde910b8",
+      "raw_file": "20260703-fable-field-guide-finding-unknowns.md",
+      "status": "pending"
     }
   },
   "updated_at": "2026-07-02T09:51:57+08:00",
