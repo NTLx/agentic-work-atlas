@@ -20,6 +20,7 @@ related_entities:
 source_raw:
   - "[[20260608-reflecting-on-year-of-claude-code]]"
   - "[[20260616-why-is-meta-destroying-its-engineering]]"
+  - "[[20260630-loop-engineering-andrew-ng]]"
 ---
 
 > [!definition] 定义

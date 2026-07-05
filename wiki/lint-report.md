@@ -1,30 +1,30 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-07-04"
-score: 100
-status: "PASS"
+date: "2026-07-05"
+score: 96
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-07-04
+# Agentic Work Atlas Lint 报告 - 2026-07-05
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **96/100**
+> 阻断问题: **4**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 175 |
+| Raw 来源 | 176 |
 | Raw 已编译 | 154 |
-| Raw 待编译 | 21 |
+| Raw 待编译 | 22 |
 | Raw 已跳过 | 0 |
-| Entity | 301 |
+| Entity | 302 |
 | Topic | 31 |
 | Comparison | 19 |
 | Output | 5 |
@@ -48,6 +48,7 @@ tags:
 - `raw/20260702-anthropic-harnesses-long-running-agents.md`
 - `raw/20260702-qwen-agent-harness-practice.md`
 - `raw/20260703-anthropic-skill-engineering-practices.md`
+- `raw/20260703-fable-field-guide-finding-unknowns.md`
 - `raw/Building headless automation with Claude Code — Code w Claude.md`
 - `raw/How to 10x Your Value in the AI Era — Kunal Shah.md`
 - `raw/The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md`
@@ -61,9 +62,9 @@ tags:
 | `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
-| `wikilink` | 0 |
+| `wikilink` | 4 |
 | `source_raw` | 0 |
-| `tag` | 0 |
+| `tag` | 3 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -74,7 +75,18 @@ tags:
 
 ## 问题明细
 
-未发现阻断问题。
+### tag
+
+- `wiki/sources/20260703-fable-field-guide-finding-unknowns.md` - `一次性 tag 仅出现 1 次: 'fable-5'`
+- `wiki/sources/20260703-fable-field-guide-finding-unknowns.md` - `一次性 tag 仅出现 1 次: 'human-agent-collaboration'`
+- `wiki/sources/20260703-fable-field-guide-finding-unknowns.md` - `一次性 tag 仅出现 1 次: 'unknowns'`
+
+### wikilink
+
+- `wiki/sources/20260703-fable-field-guide-finding-unknowns.md:42` - `链接目标不存在: [[Unknowns-Framework]]`
+- `wiki/sources/20260703-fable-field-guide-finding-unknowns.md:43` - `链接目标不存在: [[Agentic-Coding]]`
+- `wiki/sources/20260703-fable-field-guide-finding-unknowns.md:45` - `链接目标不存在: [[Human-Agent-Collaboration]]`
+- `wiki/sources/20260703-fable-field-guide-finding-unknowns.md:46` - `链接目标不存在: [[Skill-Engineering]]`
 
 ## 运行命令
 

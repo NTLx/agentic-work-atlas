@@ -57,6 +57,7 @@ source_raw:
   - "[[20260613-qoder-human-bottleneck]]"
   - "[[20260613-aliyun-agent-infra-constraint-infrastructure]]"
   - "[[20260620-l8-principal-agentic-workflow]]"
+  - "[[20260702-anthropic-harnesses-long-running-agents]]"
 ---
 
 # Agent Harness
@@ -98,6 +99,26 @@ Beren Millidge (2023) 的精确类比：
 | 操作系统 | **Harness** |
 
 > "We have reinvented the Von Neumann architecture" — Beren Millidge
+
+## 长周期 Agent Harness 设计（Anthropic, 2026-06）
+
+Anthropic 的 Justin Young 在 Claude Agent SDK 上实验了跨多个 context window 的长周期 Agent，发现了两个核心失败模式：
+
+1. **One-shotting**：Agent 试图一次做太多，在半实现状态下耗尽 context，下个 session 的 Agent 必须猜测之前发生了什么
+2. **Premature Declaration of Victory**：看到部分进展就宣布任务完成
+
+解决方案是双 Agent 分工：
+
+- **Initializer Agent**：首次运行时设置环境——`init.sh` 脚本、`claude-progress.txt` 进度文件、200+ feature 的 JSON 列表（所有 feature 初始标记为 `passes: false`）
+- **Coding Agent**：每次只做一个 feature，完成后必须 git commit + 写 progress 更新。每次 session 启动时先读 git log 和 progress 文件获取上下文
+
+关键设计决策：
+- 使用 JSON 格式（而非 Markdown）存储 feature 列表——模型更不容易不恰当地修改 JSON 文件
+- 强措辞指令："It is unacceptable to remove or edit tests"
+- 显式要求使用浏览器自动化工具（Puppeteer MCP）做端到端测试——Agent 默认倾向于跳过验证
+- Git 作为检查点机制：允许 Agent 回滚坏变更并恢复工作状态
+
+这个方案验证了 [[Thin-Harness-Fat-Skills]] 原则：harness 只需提供环境初始化 + 结构化 artifact + 增量约束，Agent 依靠外部文件系统而非内部状态维持长期进展。
 
 ## 三层工程
 

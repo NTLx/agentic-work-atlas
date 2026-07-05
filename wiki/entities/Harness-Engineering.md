@@ -35,6 +35,7 @@ source_raw:
   - '[[20260419-agent-harness-engineering]]'
   - '[[20260608-paving-the-way-for-agents-in-biology]]'
   - '[[AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。]]'
+  - '[[20260702-anthropic-harnesses-long-running-agents]]'
 ---
 
 # Harness Engineering（驾驭工程）

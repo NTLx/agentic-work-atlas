@@ -22,6 +22,7 @@ related_entities:
   - '[[Verifiability]]'
   - '[[Ghost-Intelligence]]'
   - '[[Research-Taste]]'
+  - '[[Context-Advantage]]'
 source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
   - '[[Good Taste the Only Real Moat Left]]'

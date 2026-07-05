@@ -22,6 +22,7 @@ related_entities:
 source_raw:
   - "[[20260608-reflecting-on-year-of-claude-code]]"
   - "[[20260620-l8-principal-agentic-workflow]]"
+  - "[[20260702-anthropic-harnesses-long-running-agents]]"
 ---
 
 > [!definition] 定义

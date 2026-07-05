@@ -23,6 +23,7 @@ related_entities:
   - '[[Dominator-Analysis]]'
 source_raw:
   - "[[20260127-claude-coding-notes]]"
+  - "[[20260702-anthropic-harnesses-long-running-agents]]"
 ---
 
 # Agent Tenacity

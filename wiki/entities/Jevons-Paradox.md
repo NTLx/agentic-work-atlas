@@ -19,6 +19,7 @@ related_entities:
   - "[[Knowledge-Work]]"
 source_raw:
   - "[[20260529-ceo-ai-psychosis-equity-podcast]]"
+  - "[[20260702-ai-layoffs-reversed]]"
 ---
 
 # Jevons Paradox（杰文斯悖论）

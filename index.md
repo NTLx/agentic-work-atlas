@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-07-04
+updated: 2026-07-05
 tags:
 ---
 
@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 301 个 |
+| Entity 页面 | 302 个 |
 | Topic 页面 | 31 个 |
 | Comparison 页面 | 19 个 |
 | Raw 文章 | 176 个 |
-| Source Summary | 156 个 |
+| Source Summary | 160 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 21 个 |
 
@@ -81,6 +81,7 @@ tags:
 | [[wiki/entities/Role-Merging\|Role Merging（角色融合）]] | AI 让 PM/设计师/财务等非工程角色也能写代码，同时让工程师端到端交付产品 | Claude Code 一周年 |
 | [[wiki/entities/AI-Capability-Management-Alignment\|AI Capability-Management Alignment（AI 能力-管理对齐）]] | 不同能力层级的 AI 需要不同管理方式，与管理人的能力-委派匹配模型同构 | 数字生命卡兹克 |
 | [[wiki/entities/Agent-Adoption-Curve\|Agent Adoption Curve（智能体采纳曲线）]] | 智能体工具采纳的典型模式：开发者先采用，随后非开发者增速反超 | OpenAI Economic Research |
+| [[wiki/entities/Context-Advantage\|Context Advantage（上下文优势）]] | Andrew Ng 提出：人类在 AI 时代的不可替代性源于信息不对称而非品味 | Loop Engineering |
 | [[wiki/entities/Kun-Chen\|Kun Chen]] | 前 L8 Principal Engineer，AXI / No Mistakes / First Mate 工具链作者 | L8 Principal Agentic Workflow |
 
 #### 知识与语义
@@ -117,7 +118,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-07-01——Grant Sanderson - AI and the future of math，新增 AI-in-Mathematics、Conceptual-Breakthroughs、Grindability-vs-Verifiability、Autoregressive-Generation、Human-Curation、Theory-of-Mind 等 entity + source summary。
+最新编译：2026-07-05——Anthropic Context Engineering + Long-Running Agent Harnesses + Andrew Ng Loop Engineering + AI 裁员逆转，新增 Context-Advantage entity + 4 source summaries + 更新 10+ 实体。
 
 ---
 
@@ -149,5 +150,5 @@ status             # 查看知识库状态
 
 ---
 
-*索引版本: v2.8*
-*最后更新: 2026-07-01*
+*索引版本: v2.9*
+*最后更新: 2026-07-05*

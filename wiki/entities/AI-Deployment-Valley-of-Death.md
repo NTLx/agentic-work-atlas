@@ -21,6 +21,7 @@ related_entities:
 source_raw:
   - "[[20260601-stanford-enterprise-ai-playbook]]"
   - "[[20260601-mit-nanda-genai-divide]]"
+  - "[[20260702-ai-layoffs-reversed]]"
 ---
 
 # AI Deployment Valley of Death（AI 部署死亡谷）

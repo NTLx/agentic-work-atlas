@@ -36,6 +36,7 @@ source_raw:
   - "[[20260603-anthropic-self-service-data-analytics]]"
   - "[[20260608-become-ai-native-org]]"
   - "[[20260611-openai-harness-engineering]]"
+  - "[[20260702-anthropic-context-engineering]]"
 ---
 
 # Context Engineering
@@ -44,6 +45,20 @@ source_raw:
 > Context Engineering（上下文工程）是设计 Agent 每次推理时看到的完整信息结构——系统级的信息架构设计。Unmesh-Joshi 指出，一个具有稳定词汇和清晰 [[Conceptual-Model|概念模型]] 的代码库本身就是最重要的上下文工程（Context Engineering）。
 
 ## 核心实践案例
+
+### Anthropic：Context Engineering 的工程框架（2026-06）
+
+Anthropic Applied AI 团队（2026-06）给出了 Context Engineering 的系统化定义：**在有限注意力预算下，找到最小的高信号 token 集合来最大化期望行为**。核心理由来自 Transformer 的 n² 注意力机制——context 越长，每个 token 捕获成对关系的能力越被稀释（[[Context-Rot]]）。
+
+三个关键策略：
+
+- **Compaction（压缩）**：接近 context window 限制时总结对话历史，保留架构决策/未解决 bug/实现细节，丢弃冗余工具输出。先最大化召回率，再迭代提升精确率
+- **Structured Note-Taking（结构化笔记）**：Agent 主动写笔记持久化到 context 外部，跨 context reset 保持状态。Claude 玩 Pokemon 时用此技术维护精确计数、探索地图和策略笔记
+- **Sub-Agent 架构**：专业化子 Agent 在清洁 context 中执行深度工作，返回 1,000-2,000 token 压缩摘要。在复杂研究任务上显著优于单 Agent 系统
+
+**"Just in Time" 检索**：Agent 持有轻量标识符（文件路径、查询、链接），运行时动态加载数据，配合 [[Progressive-Disclosure]] 逐层发现。Claude Code 用此模式——写入定向查询，用 `head`/`tail` 分析大数据而不加载完整对象到 context。
+
+**System Prompt 的 "Right Altitude"**：Goldilocks zone——不过度硬编码（脆性），也不过度模糊（无信号）。具体到能有效引导，灵活到能提供强启发式。
 
 ### Pinterest：按需注入工具（Domain-specific MCP）
 [[Pinterest-Engineering]] 通过拆分多个领域特定的 **[[Model-Context-Protocol-MCP|MCP]]** 服务器，实现了上下文的“按需加载”。Agent 在处理 Presto 数据时只加载 Presto 相关的工具，而不是将所有（如 Spark, Airflow）工具全部堆在上下文窗口中。这有效地减少了噪声，提高了 Agent 决策的准确性。

@@ -23,6 +23,7 @@ related_entities:
   - "[[Verifiability]]"
 source_raw:
   - "[[Every Agentic Engineering Hack I Know (June 2026)]]"
+  - "[[20260702-anthropic-harnesses-long-running-agents]]"
 ---
 
 # Plan as Agent Checkpoint（计划即 Agent 检查点）

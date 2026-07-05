@@ -19,6 +19,7 @@ related_entities:
 source_raw:
   - "[[20260419-agent-harness-engineering]]"
   - "[[The Anatomy of an Agent Harness]]"
+  - "[[20260702-anthropic-context-engineering]]"
 ---
 
 # Context Rot（上下文腐烂）
