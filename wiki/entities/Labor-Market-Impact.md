@@ -13,6 +13,9 @@ related_entities:
   - "[[AI-Labor-Bottleneck-Shift]]"
 source_raw:
   - "[[20260626-anthropic-economic-index-june-2026-report]]"
+  - "[[20260702-ai-layoffs-reversed]]"
+  - "[[the-ai-jobs-transition-framework-for-the-eu]]"
+  - "[[How to 10x Your Value in the AI Era — Kunal Shah]]"
 ---
 
 # Labor-Market-Impact

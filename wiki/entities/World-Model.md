@@ -23,6 +23,7 @@ related_entities:
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[20260529-gemini-co-leads-origins]]"
+  - "[[20260623-qwen-agentworld-language-world-models]]"
   - "[[20260606-fei-fei-world-model-taxonomy]]"
 ---
 

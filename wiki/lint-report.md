@@ -64,7 +64,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 4 |
 | `source_raw` | 0 |
-| `tag` | 3 |
+| `tag` | 19 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -77,8 +77,24 @@ tags:
 
 ### tag
 
+- `wiki/sources/Building headless automation with Claude Code — Code w Claude.md` - `一次性 tag 仅出现 1 次: 'CI-CD'`
+- `wiki/sources/Building headless automation with Claude Code — Code w Claude.md` - `一次性 tag 仅出现 1 次: 'SDK'`
+- `wiki/sources/202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md` - `一次性 tag 仅出现 1 次: 'agent-framework'`
+- `wiki/sources/2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md` - `一次性 tag 仅出现 1 次: 'agent-protocols'`
+- `wiki/sources/20260623-qwen-agentworld-language-world-models.md` - `一次性 tag 仅出现 1 次: 'agent-simulation'`
+- `wiki/sources/20260330-reward-hacking-equilibrium-finite-evaluation.md` - `一次性 tag 仅出现 1 次: 'agentic-systems'`
+- `wiki/sources/20260330-reward-hacking-equilibrium-finite-evaluation.md` - `一次性 tag 仅出现 1 次: 'ai-alignment'`
+- `wiki/sources/2026-eu-ai-act-compliance-autonomous-agents.md` - `一次性 tag 仅出现 1 次: 'ai-governance'`
+- `wiki/sources/20260624-gemini-3-5-flash-computer-use.md` - `一次性 tag 仅出现 1 次: 'computer-use'`
+- `wiki/sources/The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md` - `一次性 tag 仅出现 1 次: 'cost-management'`
+- `wiki/sources/20260624-gemini-3-5-flash-computer-use.md` - `一次性 tag 仅出现 1 次: 'enterprise-automation'`
 - `wiki/sources/20260703-fable-field-guide-finding-unknowns.md` - `一次性 tag 仅出现 1 次: 'fable-5'`
+- `wiki/sources/Building headless automation with Claude Code — Code w Claude.md` - `一次性 tag 仅出现 1 次: 'headless-automation'`
 - `wiki/sources/20260703-fable-field-guide-finding-unknowns.md` - `一次性 tag 仅出现 1 次: 'human-agent-collaboration'`
+- `wiki/sources/the-ai-jobs-transition-framework-for-the-eu.md` - `一次性 tag 仅出现 1 次: 'policy'`
+- `wiki/sources/20260623-qwen-agentworld-language-world-models.md` - `一次性 tag 仅出现 1 次: 'reinforcement-learning'`
+- `wiki/sources/20260330-reward-hacking-equilibrium-finite-evaluation.md` - `一次性 tag 仅出现 1 次: 'reward-hacking'`
+- `wiki/sources/2026-ai-agent-evaluation-pipeline-methodology.md` - `一次性 tag 仅出现 1 次: 'testing'`
 - `wiki/sources/20260703-fable-field-guide-finding-unknowns.md` - `一次性 tag 仅出现 1 次: 'unknowns'`
 
 ### wikilink

@@ -23,6 +23,8 @@ related_entities:
   - "[[Agentic-Engineering]]"
 source_raw:
   - "[[The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI]]"
+  - "[[20260512-finops-for-ai-token-level-visibility]]"
+  - "[[202606-finops-x-2026-ai-tokenomics]]"
 ---
 
 # Tokenpocalypse（企业 AI Token 支出危机）

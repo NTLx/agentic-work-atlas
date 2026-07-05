@@ -14,6 +14,7 @@ related_entities:
   - "[[SDK-Design]]"
 source_raw:
   - "[[20260630-building-headless-automation-claude-code]]"
+  - "[[Building headless automation with Claude Code — Code w Claude]]"
 ---
 
 # Headless-Automation
