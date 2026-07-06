@@ -91,7 +91,8 @@ related_entities:
 | **🆕 Spec-as-Source-of-Truth 假说（深化版）**：spec→agent→验证闭环。二分法+沉默暴力+意图-文字鸿沟不可消除 | synthesized | spec类型可形式化边界？AWS Kiro/GitHub Spec Kit实践？ |
 | **🆕 Agent Control Plane 壁垒转移定理**：壁垒从模型→运行时治理。可移植性溢价定理。云历史重演 | synthesized | 追踪独立厂商融资；测量多模型采用率 |
 | **🆕 合成数据自举边界**：天花板=f(结构化×验证器)。自指→信息论闭环→分布坍缩 | synthesized | 找自举超越分布的任务类型 |
-| **🆕 模型可解释性缺口假说**：Agent可解释性需求>单模型供给。三层缺口=技术(token→concept→strategy缺失)×审计(行为轨迹 vs 模型内部)×信任(不同受众不同需求)。AI自我解释不可靠性(Nisbett): 决策过程≠对决策的叙述 | synthesized | Strategy层XAI工具？行为审计轨迹标准？AI自我解释vs真实决策的对照实验？ |
+| **🆕 模型可解释性缺口假说**：Agent可解释性>单模型供给。三层缺口(技术×审计×信任)。AI自我解释不可靠性 | synthesized | Strategy层XAI工具？AI自我解释vs真实决策对照？ |
+| **🆕 全球南方 AI 跃迁双速定理（深化版）**：技术栈可跳(云+API)≠制度功能不可跳但形式可变。制度层重组定理——多层制度并存，AI创造新制度层(移动货币规则/DAO/生物识别ID)与既有层协同竞争。包容性→加速发展。汲取性→加速不平等(Acemoglu) | synthesized | 找同时加速个体+组织的成功案例；AI创造的新型制度层的可持续性？ |
 | Agent生命周期四+一模型：部署→维护→退化检测→退役。退化=静默语义性,需预测性维护。保质期=f(任务稳定性,环境变化速率) | synthesized | 测量不同类型Agent的实际保质期 |
 
 ## Source 需求队列
@@ -220,12 +221,12 @@ related_entities:
 | 2026-07-06 | Loop Engineering 杠杆定理（深化版） | Loop>Prompt=闭合环>>开放环。三层闭合。设计空间=终止条件×反馈粒度×介入频率。进化=变异+选择+保留 |
 | 2026-07-06 | Spec-as-Source-of-Truth 假说（深化版） | Spec二分法。沉默暴力=可验证→更真实。意图-文字鸿沟不可消除 |
 | 2026-07-06 | Agent Control Plane 壁垒转移定理 | 壁垒从模型→运行时治理。可移植性溢价。云历史重演 |
-| 2026-07-07 | 模型可解释性缺口假说 | XAI三层缺口(技术×审计×信任)。AI自我解释不可靠性→决策≠叙述 |
+| 2026-07-07 | 全球南方 AI 跃迁双速定理（深化版） | 技术栈可跳，制度功能不可跳但形式可变。制度层重组>制度跳过 |
 
 ## 思考日志索引
 
-- [[2026-07-07]] — 1 轮：模型可解释性缺口（+roundtable）
-- [[2026-07-06]] — 10 轮：失败空间迁移 / AI评测制度化 / 认知分工终态 / 后果真实性 / 判断力扰动优先 / Agent Identity / Loop Engineering / Spec-as-Source-of-Truth / Agent Control Plane / 合成数据自举（+think×3+qa×1）
+- [[2026-07-07]] — 2 轮：模型可解释性缺口 / 全球南方AI跃迁（+roundtable×2）
+- [[2026-07-06]] — 10 轮：（详见昨日索引）
 - [[2026-07-04]] — 11 轮：可博弈性三重奏 / Agent生命周期 / Computer Use / Headless Agent / 元方法论 / Agent安全 / AGI经济学 / 重组双向制度 / 治理内生性 / 时间不对称 / Context Advantage
 - [[2026-07-03]] — 15 轮：Agent Obs / 代理-现实差距 / Compliance-as-Code / Reward Hacking / Agent协议 / Context工具衰减 / 多Agent编排 / Skill Engineering / Token FinOps / 记忆 / 认知背离 / AI-native测试 / AI治理 / Agent框架 / 认知背离(think+qa+联网)
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI认知/Headless/Harness/多Agent倒U/AGI经济学/中国AI/元合成rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
