@@ -86,7 +86,8 @@ related_entities:
 | **🆕 认知分工终态定理（修正版）**：发散=1人+AI（最大化idea throughput），收敛=满足四条件的独立判断源（非AI约束多样性×非AI中介处理×后果承担意愿×正确维度独立）。"多视角"≠"多个人"。共同锚点=偏差换噪声（Kahneman机制）。个体自我锚点需外部他者破解（Gödel自指困境） | synthesized | 找AI生成视角vs人类经历视角的对照实验；找组织中共同锚点的实证案例 |
 | **🆕 后果真实性不可消除定理（深化版）**：模拟可逼近参数更新(知识)，不可逼近结构更新(存在)。但边界不是"物理伤害vs模拟伤害"——是社会性不可逆。存在性改变=皮层+社会疼痛通路同时更新。真实后果=不可撤销的公共见证者。Line Check模式=低物理伤害×高公共见证 | synthesized | 找"公共见证驱动存在性改变"的对照证据 |
 | **🆕 判断力维护=扰动优先于校准**：扰动(框架打破)边际收益递增，校准(框架内优化)边际收益递减。AI本质=校准机+零后果反馈→双重缺失→加速判断力腐蚀。扰动源设计=公共见证机会设计 | synthesized | 找组织中刻意设计"公共见证性扰动"的案例 |
-| **🆕 Agent Identity 危机定理**：非人类identity增长>人类IAM治理增长。根因=认证+授权+审计三维被API key粗暴压缩。Agent identity=服务身份(SPIFFE)+动态provenance链("谁创建我×什么任务×什么时间窗口")。身份=签名+责任条款+时间窗口+操作范围。备选模式="数字信息素"(巢穴+任务+时间+行为去中心化信号) | synthesized | SPIFFE能否扩展到动态agent？agent冒充攻击是否已有真实案例？ |
+| **🆕 Agent Identity 危机定理**：非人类identity增长>IAM治理增长。根因=AuthN/AuthZ/Audit三维被API key压缩。Agent identity=SPIFFE+动态provenance链。备选="数字信息素"去中心化模式 | synthesized | SPIFFE能否扩展到动态agent？agent冒充攻击真实案例？ |
+| **🆕 Loop Engineering 杠杆定理（深化版）**：Loop>Prompt=闭合环信息增益>>开放环（Wiener）。三层闭合：机械错误(分钟级agentic)→设计错误(小时级human-in-loop)→市场错误(周级user-in-loop)。设计空间=终止条件×反馈粒度×人类介入频率。进化类比=变异+选择+保留+迭代——但agent需要智能变异非盲目随机 | synthesized（锚定raw/20260630-loop-engineering-andrew-ng.md） | 终止条件的最优设计？Loop vs Multi-Agent边界？编译第二篇raw(20260617) |
 | Agent生命周期四+一模型：部署→维护→退化检测→退役。退化=静默语义性,需预测性维护。保质期=f(任务稳定性,环境变化速率) | synthesized | 测量不同类型Agent的实际保质期 |
 
 ## Source 需求队列
@@ -211,12 +212,13 @@ related_entities:
 | 2026-07-06 | 认知分工终态定理（修正版） | 发散=1人+AI，收敛=四条件独立判断源。共同锚点=偏差换噪声。个体锚点需外部他者破解——Gödel自指→锚定是孤独的 |
 | 2026-07-06 | 后果真实性不可消除定理（深化版） | 不可逆≠物理伤害=社会性+公共见证。存在性改变=皮层+社会疼痛通路。设计悖论消解：分离触发器设计和后果真实性 |
 | 2026-07-06 | 判断力维护=扰动优先于校准 | 扰动递增(框架打破)→校准递减(框架内优化)。AI=校准机+零后果→双重缺失。扰动源设计=公共见证机会 |
-| 2026-07-06 | Agent Identity 危机定理 | 非人类identity增长>IAM治理。根因=API key压缩AuthN/AuthZ/Audit三维。Agent identity=SPIFFE+动态provenance链。备选="数字信息素"去中心化模式 |
-| 2026-07-04 | 可博弈性三重奏精确化 | Goodhart(条件性)+Soros(社会结构性)+Gödel(形式证明)=收敛非蕴含——实践中完备。防御性平庸=最棘手退化模式。评测永远=过程 |
+| 2026-07-06 | Agent Identity 危机定理 | 非人类identity>IAM治理。API key=匿名面具。解法=SPIFFE+provenance链或"数字信息素"去中心化模式 |
+| 2026-07-06 | Loop Engineering 杠杆定理（深化版） | Loop>Prompt=闭合环信息增益>>开放环。三层闭合：分钟→小时→周。设计空间=终止条件×反馈粒度×介入频率。进化=变异+选择+保留+迭代 |
+| 2026-07-04 | 可博弈性三重奏精确化 | Goodhart + Soros + Gödel。评测永远=过程 |
 
 ## 思考日志索引
 
-- [[2026-07-06]] — 6 轮：失败空间迁移 / AI评测制度化 / 认知分工终态 / 后果真实性 / 判断力扰动优先 / Agent Identity危机（+think×3+qa×1）
+- [[2026-07-06]] — 7 轮：失败空间迁移 / AI评测制度化 / 认知分工终态 / 后果真实性 / 判断力扰动优先 / Agent Identity危机 / Loop Engineering（+think×3+qa×1）
 - [[2026-07-04]] — 11 轮：可博弈性三重奏 / Agent生命周期 / Computer Use / Headless Agent / 元方法论 / Agent安全 / AGI经济学 / 重组双向制度 / 治理内生性 / 时间不对称 / Context Advantage
 - [[2026-07-03]] — 15 轮：Agent Obs / 代理-现实差距 / Compliance-as-Code / Reward Hacking / Agent协议 / Context工具衰减 / 多Agent编排 / Skill Engineering / Token FinOps / 记忆 / 认知背离 / AI-native测试 / AI治理 / Agent框架 / 认知背离(think+qa+联网)
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI认知/Headless/Harness/多Agent倒U/AGI经济学/中国AI/元合成rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
