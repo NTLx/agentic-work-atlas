@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-07-05
+updated: 2026-07-06
 tags:
 ---
 
@@ -18,7 +18,7 @@ tags:
 | Entity 页面 | 303 个 |
 | Topic 页面 | 31 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 176 个 |
+| Raw 文章 | 177 个 |
 | Source Summary | 174 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 21 个 |

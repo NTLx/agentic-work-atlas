@@ -5,7 +5,7 @@ aliases:
   - Taste
 definition: "在不确定条件下做出独特判断的能力，表现为能注意到什么、拒绝什么，以及精确解释哪里感觉不对的能力"
 created: 2026-04-09
-updated: 2026-06-27
+updated: 2026-07-06
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -23,10 +23,14 @@ related_entities:
   - '[[Ghost-Intelligence]]'
   - '[[Research-Taste]]'
   - '[[Context-Advantage]]'
+  - '[[Human-Curation]]'
+  - '[[Wisdom-Work]]'
+  - '[[Friction-as-Design-Signal]]'
 source_raw:
   - '[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]'
   - '[[Good Taste the Only Real Moat Left]]'
   - '[[Taste for Makers]]'
+  - '[[If You Want Taste, You''re Gonna Have to Eat]]'
 ---
 
 # Taste（品味）
@@ -155,6 +159,61 @@ Taste 的不可替代性不是单一维度，而是一个三重结构：
 
 AI的训练分布是封闭的——一旦固定，面对分布外情况只能外推，不能真正重新校准。这是AI品味的根本结构性限制。
 
+### Ability-Taste Flip：AI 时代的范式反转（Jason Liu, 2026-07）
+
+Jason Liu（@jxnlco）在 [[If You Want Taste, You're Gonna Have to Eat]] 中提出了 AI 时代 taste 的一个精确诊断：
+
+```
+艺术学校时代：Taste > Ability
+（能看到好作品但做不出来，说不清哪里好）
+
+AI 时代：Ability > Taste
+（什么都能做，但不知道什么值得做）
+```
+
+**机制**：AI 让生产成本归零，瓶颈从"会不会做"迁移到"值不值得做"。Taste 不再只是审美判断——它是"建模别人会喜欢什么"的能力，是一种**偏离安全平均值的风险承担**（"taste is a kind of risk-taking"）。
+
+**与 vibe coding 的同构**：这个翻转和 agentic engineering 领域 `vibe coding → spec-driven development` 的范式迁移是同构的。Vibe coding = 有 ability 无 taste（什么都能生成，不知道什么是好的）；Spec-driven = taste 前置（先定义"什么算好"再让 AI 执行）。
+
+### Attention Friction：品味需要的摩擦正在被系统性地移除
+
+Liu 的核心论证链：
+
+```
+品味 ↑ = f(注意力)
+注意力 ↓ = 工具移除摩擦
+∴ 品味 ↓ = 工具优化的副作用
+```
+
+具体机制（四个层面的摩擦消失）：
+1. **学习层**（Transcribing）：AI 直接给乐谱 → 跳过了反复聆听的"耳朵训练"。AI "strips the aura from learning"——消除的是技能形成所需的 "felt distance"
+2. **导航层**（Wandering）：GPS 蓝线取代自由漫游 → 不再通过迷路来"知道东西在哪"
+3. **消费层**（Eating Slowly）：二十年优化摩擦 → 摩擦才是品味的发生器——"the friction was where the taste was"
+4. **创作者层**（Authorship Collapse）：TikTok 反转了 YouTube 模式——从"关注人→看到内容"变成"内容涌入→创作者是次要的"——人们消费对象而非对象背后的决策链
+
+**应对原则**：如果工具一直在移除注意力，你必须刻意把它放回去——"If taste grows with attention, and the tools keep removing the attention, then you have to put it back on purpose."
+
+### Taste 的训练方法：Eat → Notice → Record
+
+Liu 提供了一套操作性方法，补充了已有讨论中缺失的"怎么练"维度：
+
+1. **Eat（吃）**：像厨师一样——不能只看菜单，必须去吃。试穿不买、听整张专辑、追溯鼓手的其他作品
+2. **Notice（注意）**：建立自己的感知层级——是材质触感还是垂坠感？结构和形式先于颜色。每个人的层级不同，只能通过"把东西放在身上并注意"来发现
+3. **Record（记录）**：保持"为什么"的记录——不只是消费对象，而是消费"对象背后的决策链"（谁做的？什么时候？什么情境？）
+
+### Rikyū Courage：品味 = 爱只有你能看到的东西
+
+茶道史上的辩证法（来源：冈仓天心《茶之书》）：
+
+| 人物 | 品味特征 | 社会反馈 |
+|------|---------|---------|
+| 千利休（Rikyū） | 只有利休能欣赏 | 孤独的好品味 |
+| 小堀遠州（Enshū） | 人人都说好 | 共识的好品味 |
+
+遠州承认自己**更低级**：他只是选了大多数人会喜欢的东西。利休有勇气爱只有自己能看到的东西。
+
+**核心命题**：品味 ≠ 共识。好奇心必须先于判断力（否则永远不拓宽视野），勇气在好奇心之后——诚实到爱真正与你共振的东西，即使没人在穿、没人在听、没人在买。
+
 ## 关联概念
 
 - [[Judgment]] — Taste 是 Judgment 在审美和创意领域的具体化
@@ -169,3 +228,4 @@ AI的训练分布是封闭的——一旦固定，面对分布外情况只能外
 
 - [[Good Taste the Only Real Moat Left]]
 - [[20260413-why-ai-first-strategy-wrong]] — CREAO CTO Peter Pang: "产品感知或品味很重要。你能看着一个生成的UI，在用户开口之前就知道它不对吗？"
+- [[If You Want Taste, You're Gonna Have to Eat]] — Jason Liu: ability-taste flip + attention friction + Rikyū courage

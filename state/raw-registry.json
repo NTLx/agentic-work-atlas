@@ -1360,6 +1360,14 @@
       "body_sha256": "691049cda90b68ed6e2ba6d375b994037ca46ab2c06a528f48abf81cdde910b8",
       "raw_file": "20260703-fable-field-guide-finding-unknowns.md",
       "status": "pending"
+    },
+    "If You Want Taste, You're Gonna Have to Eat.md": {
+      "body_sha256": "b232784bda6c2849e950dff3114e4f879c9966a923bda67f60b1e4765459c0ad",
+      "compiled_at": "2026-07-06T17:17:16.098089+08:00",
+      "raw_file": "If You Want Taste, You're Gonna Have to Eat.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/If You Want Taste, You're Gonna Have to Eat.md",
+      "updated_at": "2026-07-06T17:17:16.098089+08:00"
     }
   },
   "updated_at": "2026-07-02T09:51:57+08:00",
