@@ -88,7 +88,8 @@ related_entities:
 | **🆕 判断力维护=扰动优先于校准**：扰动(框架打破)边际收益递增，校准(框架内优化)边际收益递减。AI本质=校准机+零后果反馈→双重缺失→加速判断力腐蚀。扰动源设计=公共见证机会设计 | synthesized | 找组织中刻意设计"公共见证性扰动"的案例 |
 | **🆕 Agent Identity 危机定理**：非人类identity增长>IAM治理增长。根因=AuthN/AuthZ/Audit三维被API key压缩。Agent identity=SPIFFE+动态provenance链。备选="数字信息素"去中心化模式 | synthesized | SPIFFE能否扩展到动态agent？agent冒充攻击真实案例？ |
 | **🆕 Loop Engineering 杠杆定理（深化版）**：Loop>Prompt=闭合环信息增益>>开放环。三层闭合：分钟→小时→周。设计空间=终止条件×反馈粒度×介入频率。进化=变异+选择+保留+迭代 | synthesized（锚定raw/20260630） | 终止条件最优设计？Loop vs Multi-Agent边界？ |
-| **🆕 Spec-as-Source-of-Truth 假说（深化版）**：spec→agent→验证闭环取代prompt→code→人工检查。二分法：可形式化行为(API/协议)→spec=真相源；不可形式化体验(UI/美感)→spec=建议。Spec的"沉默暴力"=把可验证升格为更真实→边缘化不可形式化判断。"意图-文字鸿沟"(Holmes)不可消除 | synthesized | 什么样的spec类型可形式化验证？AWS Kiro/GitHub Spec Kit/Tessl实践案例？spec的bug如何检测——谁在验证spec？ |
+| **🆕 Spec-as-Source-of-Truth 假说（深化版）**：spec→agent→验证闭环。二分法+沉默暴力+意图-文字鸿沟不可消除 | synthesized | spec类型可形式化边界？AWS Kiro/GitHub Spec Kit实践？ |
+| **🆕 Agent Control Plane 壁垒转移定理**：壁垒从模型→运行时治理。独立窗口=f(多模型采用×监管)。可移植性溢价定理：模型commoditized时"对谁都够用">"对一个最优"。类比云历史2006-2012→AI control plane 2026→ | synthesized | 追踪独立control plane厂商融资；测量多模型采用率；model厂商内化vs第三方谁在赢？ |
 | Agent生命周期四+一模型：部署→维护→退化检测→退役。退化=静默语义性,需预测性维护。保质期=f(任务稳定性,环境变化速率) | synthesized | 测量不同类型Agent的实际保质期 |
 
 ## Source 需求队列
@@ -215,11 +216,12 @@ related_entities:
 | 2026-07-06 | 判断力维护=扰动优先于校准 | 扰动递增(框架打破)→校准递减(框架内优化)。AI=校准机+零后果→双重缺失。扰动源设计=公共见证机会 |
 | 2026-07-06 | Agent Identity 危机定理 | 非人类identity>IAM治理。API key=匿名面具。解法=SPIFFE+provenance链或"数字信息素"去中心化模式 |
 | 2026-07-06 | Loop Engineering 杠杆定理（深化版） | Loop>Prompt=闭合环>>开放环。三层闭合。设计空间=终止条件×反馈粒度×介入频率。进化=变异+选择+保留 |
-| 2026-07-06 | Spec-as-Source-of-Truth 假说（深化版） | Spec二分法。沉默暴力=可验证→更真实→淘汰不可形式化判断。意图-文字鸿沟不可消除 |
+| 2026-07-06 | Spec-as-Source-of-Truth 假说（深化版） | Spec二分法。沉默暴力=可验证→更真实。意图-文字鸿沟不可消除 |
+| 2026-07-06 | Agent Control Plane 壁垒转移定理 | 壁垒从模型→运行时治理。可移植性溢价>"对一个最优"。云历史重演→独立窗口=f(多模型×监管) |
 
 ## 思考日志索引
 
-- [[2026-07-06]] — 8 轮：失败空间迁移 / AI评测制度化 / 认知分工终态 / 后果真实性 / 判断力扰动优先 / Agent Identity / Loop Engineering / Spec-as-Source-of-Truth（+think×3+qa×1）
+- [[2026-07-06]] — 9 轮：失败空间迁移 / AI评测制度化 / 认知分工终态 / 后果真实性 / 判断力扰动优先 / Agent Identity / Loop Engineering / Spec-as-Source-of-Truth / Agent Control Plane（+think×3+qa×1）
 - [[2026-07-04]] — 11 轮：可博弈性三重奏 / Agent生命周期 / Computer Use / Headless Agent / 元方法论 / Agent安全 / AGI经济学 / 重组双向制度 / 治理内生性 / 时间不对称 / Context Advantage
 - [[2026-07-03]] — 15 轮：Agent Obs / 代理-现实差距 / Compliance-as-Code / Reward Hacking / Agent协议 / Context工具衰减 / 多Agent编排 / Skill Engineering / Token FinOps / 记忆 / 认知背离 / AI-native测试 / AI治理 / Agent框架 / 认知背离(think+qa+联网)
 - [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI认知/Headless/Harness/多Agent倒U/AGI经济学/中国AI/元合成rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
