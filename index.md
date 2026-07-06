@@ -21,7 +21,7 @@ tags:
 | Raw 文章 | 177 个 |
 | Source Summary | 174 个 |
 | Output 作品 | 5 个 |
-| Research 日志 | 21 个 |
+| Research 日志 | 22 个 |
 
 ### 连接拓扑（2026-06-25 实测，口径见 `schema/fragmentation-metrics.md`）
 
