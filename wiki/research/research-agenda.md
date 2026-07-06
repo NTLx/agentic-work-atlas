@@ -96,7 +96,8 @@ related_entities:
 | **🆕 中国 AI 双速瓶颈（深化版）**：科层碎片×FinOps缺失。"2000年代IT错误重演" | synthesized | 找Token FinOps实际建立案例 |
 | **🆕 Exit-Sovereignty 设计问题**：AI工具只有Voice无Exit→认知牢笼。强制退出=能力维护 | synthesized | Exit affordance原型？GDPR移植？ |
 | **🆕 Token FinOps 独立品类窗口**：CloudHealth时刻重演。98%团队已管理AI支出。语义归因=护城河 | extracted（锚定raw/20260512） | 追踪Token FinOps创业公司融资 |
-| **🆕 判断力净退化期量化假说**："30天法则"AI判断力类比——持续依赖AI评估30天后独立能力显著退化（表层快/深层慢但隐蔽）。检测频率≥每30天一次无AI对照测试 | synthesized | 各判断力类型的实际退化曲线测量？飞行自动化依赖研究的AI判断力移植？ |
+| **🆕 判断力净退化期量化假说**："30天法则"AI类比。表层快/深层慢但隐蔽 | synthesized | 各类型退化曲线测量 |
+| **🆕 编码策略杠杆定理（深化版·自我验证）**：原始"1:10"有条件成立——需编码格式稳定+多受众编码。16轮实践验证：结构化摘要表+frontmatter双编码→净杠杆维持1:10。不稳定编码→降到1:2 | synthesized（16轮自反验证） | Agent多维编码vs平铺编码A/B对照实验 |
 | Agent生命周期四+一模型：部署→维护→退化检测→退役。退化=静默语义性,需预测性维护。保质期=f(任务稳定性,环境变化速率) | synthesized | 测量不同类型Agent的实际保质期 |
 
 ## Source 需求队列
@@ -225,11 +226,11 @@ related_entities:
 | 2026-07-06 | Loop Engineering 杠杆定理（深化版） | Loop>Prompt=闭合环>>开放环。三层闭合。设计空间=终止条件×反馈粒度×介入频率。进化=变异+选择+保留 |
 | 2026-07-06 | Spec-as-Source-of-Truth 假说（深化版） | Spec二分法。沉默暴力=可验证→更真实。意图-文字鸿沟不可消除 |
 | 2026-07-06 | Agent Control Plane 壁垒转移定理 | 壁垒从模型→运行时治理。可移植性溢价。云历史重演 |
-| 2026-07-07 | 判断力净退化期量化假说 | "30天法则"AI类比。表层快(月)/深层慢(年)但隐蔽 |
+| 2026-07-07 | 编码策略杠杆定理（深化版·自我验证） | 1:10有条件成立——需编码稳定+多受众。16轮自反验证 |
 
 ## 思考日志索引
 
-- [[2026-07-07]] — 6 轮：模型可解释性 / 全球南方AI跃迁 / 中国AI双速 / Exit-Sovereignty / Token FinOps / 净退化期量化（+roundtable×6）
+- [[2026-07-07]] — 7 轮：模型可解释性 / 全球南方AI跃迁 / 中国AI双速 / Exit-Sovereignty / Token FinOps / 净退化期 / 编码策略杠杆（+roundtable×6+自反验证×1）
 - [[2026-07-06]] — 10 轮：（详见昨日索引）
 - [[2026-07-04]] — 11 轮：可博弈性三重奏 / Agent生命周期 / Computer Use / Headless Agent / 元方法论 / Agent安全 / AGI经济学 / 重组双向制度 / 治理内生性 / 时间不对称 / Context Advantage
 - [[2026-07-03]] — 15 轮：Agent Obs / 代理-现实差距 / Compliance-as-Code / Reward Hacking / Agent协议 / Context工具衰减 / 多Agent编排 / Skill Engineering / Token FinOps / 记忆 / 认知背离 / AI-native测试 / AI治理 / Agent框架 / 认知背离(think+qa+联网)
