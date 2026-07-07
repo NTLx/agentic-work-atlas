@@ -68,9 +68,6 @@ const config: QuartzConfig = {
 
       // 非发布内容
       "docs",
-
-      // raw 目录中的非 markdown 文件（PDF 等证据文件不发布到网站）
-      "raw/**/*.pdf",
     ],
     defaultDateType: "modified",
     theme: {
