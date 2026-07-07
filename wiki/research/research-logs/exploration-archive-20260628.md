@@ -1,15 +1,15 @@
 ---
 type: research-archive
-title: "探索扩容归档（2026-06-28，07-04 更新）"
+title: "探索扩容归档（2026-06-28，07-04/07-07 更新）"
 created: 2026-06-28
-updated: 2026-07-04
+updated: 2026-07-07
 tags:
   - research-archive
 ---
 
-# 探索扩容归档（2026-06-28，07-04 更新）
+# 探索扩容归档（2026-06-28，07-04/07-07 更新）
 
-> 本页承接 2026-06-28 的全库盘点、agenda 精简和外部现实对照，以及 2026-07-04 的 agenda 精简卸载。`research-agenda.md` 只保留活跃操作节；详细统计、长问题库、旧方向库和被卸载的近况摘要留在这里。
+> 本页承接 2026-06-28 的全库盘点、agenda 精简和外部现实对照，以及 2026-07-04 和 2026-07-07 的 agenda 精简卸载。`research-agenda.md` 只保留活跃操作节；详细统计、长问题库、旧方向库和被卸载的近况摘要留在这里。
 
 ## 一、Agenda 精简记录
 
@@ -242,3 +242,39 @@ tags:
 | 2026-07-03 | 多Agent编排倒U型修正 | 峰顶=f(架构模式,任务耦合度,分层压缩率)；层级+最紧密=5-15硬上限,Team of Teams=~100+ |
 | 2026-07-03 | Token FinOps 品类窗口定理修正 | 语义归因层(L3)=真实新数据源；双重挤压模型；美国=CloudHealth路线(2-3年)，中国=利基独立(5-7年) |
 | 2026-07-03 | 记忆双重衰减修正与Context扩展悖论 | 检索干扰>存储衰退；Context衰减三层修正模型；编码策略杠杆(编码1单位=检索10单位节省) |
+
+## 十、07-07 Agenda 精简卸载
+
+### 卸载内容
+
+| 卸载项 | 去向 | 原因 |
+|--------|------|------|
+| 待证伪判断（全部 ~30 条） | → [[resolved-judgments]] 新增 07-06/07 批次（19 条非重复） | 全部已 synthesized/extracted；11 条与旧批次重复 |
+| 新方向库详细四层表 | → 已在本文档第五节（07-04 版） | agenda 保留精简摘要版 |
+| 最近思考结论摘要（10→5） | → 已在本文档第七节（07-04 版） | 保持 agenda 5 条上限 |
+| 图谱健康度数字修正 | agenda 内原地修正 | 301→307 entity, 18→2 pending raw, 7%→1.6% 转化率 |
+| 死 topic 数量修正 | agenda 内原地修正 | 7→9（补充 OpenClaw-Agent-System, AI-Mediated-Organization） |
+
+### 07-07 全量盘点关键数字
+
+| 指标 | 值 |
+|------|-----|
+| Entity | 307 |
+| Topic | 31（9 零入链） |
+| Comparison | 19（13 零入链） |
+| Output | 5（全部零被引，转化率 1.6%） |
+| Raw | 180（2 pending） |
+| Source Summary | 178（覆盖率 98.9%） |
+| Research Log | 23 文件（16 日 + 2 专项 + 5 归档） |
+| 收敛判断 | 61 条（5 批次） |
+| 收敛原则 | 9 条 |
+| 总思考条目 | ~219 |
+
+### 07-07 新发现的缺口（此前未在 agenda 中出现）
+
+1. **Comparison 层严重欠链接** — 13/19 零入链，是知识库"隐藏资产"
+2. **Output 层终端孤岛** — 转化率仅 1.6%，34 天无新产出
+3. **缺失 10 个 topic** — Agent Harness/Coding Agents/Context Engineering/Agent Orchestration/Knowledge Compilation/Vibe Coding/Token Supply Chain/Verifiability/Headless Agent/Agent-to-Agent Economy
+4. **缺失 6 个 comparison** — Prompt vs Context Engineering/Workflow vs Agent/Frontier vs Specialized Models/Copilot vs Agent/Harness vs Swarm/RAG vs Context Engineering vs Knowledge Compilation
+5. **安全簇稀疏** — AISI/Mythos/Agent-Containment 等 entity 存在但仅 2 topic
+6. **外部新信号** — US AI Incident Reporting Act/Databricks 多 Agent 327% 增长/Forrester Agent Sprawl/S&P Global 31% 生产化/Gartner 40% 项目取消预测
