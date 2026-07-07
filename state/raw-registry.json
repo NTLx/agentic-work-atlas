@@ -1374,6 +1374,14 @@
       "status": "pending",
       "body_sha256": "324ff23292027ce5d3f6cca6a879ac25900bb06edf93f85492c220fea40299b4",
       "updated_at": "2026-07-07T09:38:49.999118+08:00"
+    },
+    "20260706-martin-fowler-fragments.md": {
+      "raw_file": "20260706-martin-fowler-fragments.md",
+      "status": "compiled",
+      "body_sha256": "8fafa0cd5b75f1f635bb4069296d81479447d7b9ec411d26b3f26558b2f87182",
+      "compiled_at": "2026-07-07T12:00:00+08:00",
+      "summary_path": "wiki/sources/20260706-martin-fowler-fragments.md",
+      "updated_at": "2026-07-07T12:00:00+08:00"
     }
   },
   "updated_at": "2026-07-07T09:38:49.999118+08:00",
