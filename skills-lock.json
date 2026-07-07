@@ -13,19 +13,47 @@
       "skillPath": "skills/json-canvas/SKILL.md",
       "computedHash": "56cbac74a93e4fba97f4d44bccfdeaae89e545b223f47df392c7705e01e6c543"
     },
+    "ljg-blind": {
+      "source": "lijigang/ljg-skills",
+      "ref": "md",
+      "sourceType": "github",
+      "skillPath": "skills/ljg-blind/SKILL.md",
+      "computedHash": "6e3e1cb1bc2c1329ba66d47c9d2c9e0f6c4d7d915b0f196c7b4ee706670015ed"
+    },
     "ljg-book": {
       "source": "lijigang/ljg-skills",
       "ref": "md",
       "sourceType": "github",
       "skillPath": "skills/ljg-book/SKILL.md",
-      "computedHash": "5a85b8c2b72a06fab5864c65620d01ddc4046b2e72934788ce66cafdc2e269fc"
+      "computedHash": "88cefacbf1ed613cdd72e270c4da9c2939193e88e0c94f857e06320cd93a5c5d"
+    },
+    "ljg-constraint": {
+      "source": "lijigang/ljg-skills",
+      "ref": "md",
+      "sourceType": "github",
+      "skillPath": "skills/ljg-constraint/SKILL.md",
+      "computedHash": "fef653d5872cf646992c679867b358d38c72c2dbb54b76fc1a1a1aaca6a14dd9"
+    },
+    "ljg-invest": {
+      "source": "lijigang/ljg-skills",
+      "ref": "md",
+      "sourceType": "github",
+      "skillPath": "skills/ljg-invest/SKILL.md",
+      "computedHash": "d5ed92d468275cc2df3c65dcd92a7d48487ded605205576463cd821e525580f0"
+    },
+    "ljg-learn": {
+      "source": "lijigang/ljg-skills",
+      "ref": "md",
+      "sourceType": "github",
+      "skillPath": "skills/ljg-learn/SKILL.md",
+      "computedHash": "2ad608aa4050855eec0430c5bb2b91b22b8fcaed7a7f3e4663095b94a78be862"
     },
     "ljg-paper": {
       "source": "lijigang/ljg-skills",
       "ref": "md",
       "sourceType": "github",
       "skillPath": "skills/ljg-paper/SKILL.md",
-      "computedHash": "ea56fe495ffdc06981eef3451611a09ea030ada256630475e21ea845cad97099"
+      "computedHash": "1a54a87790bb38c3e8099edd2dbf22365b9b55bc0c49dc8e2333f66e3a34c7a9"
     },
     "ljg-paper-river": {
       "source": "lijigang/ljg-skills",
@@ -55,6 +83,13 @@
       "skillPath": "skills/ljg-rank/SKILL.md",
       "computedHash": "4d178f8e5843c8892937105d5b028992ee3684c6a5ed5280a4bf86498833bc76"
     },
+    "ljg-read": {
+      "source": "lijigang/ljg-skills",
+      "ref": "md",
+      "sourceType": "github",
+      "skillPath": "skills/ljg-read/SKILL.md",
+      "computedHash": "44856f1774190e307c1f2cc700182bdb78e5fbdc385c6c3545d228e924becf19"
+    },
     "ljg-relationship": {
       "source": "lijigang/ljg-skills",
       "ref": "md",
@@ -67,7 +102,7 @@
       "ref": "md",
       "sourceType": "github",
       "skillPath": "skills/ljg-roundtable/SKILL.md",
-      "computedHash": "227827ad145501a58488161caf0c487d72da836dca3aeb5513e578081c0c46af"
+      "computedHash": "30947caa8c8c7572860f76451311241c31c51c35b8c0e1603c1e79938fbb201a"
     },
     "ljg-think": {
       "source": "lijigang/ljg-skills",
