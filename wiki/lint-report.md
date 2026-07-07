@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-07"
-score: 96
-status: "FAIL"
+score: 100
+status: "PASS"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,17 +12,17 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-07-07
 
 > [!summary] 状态
-> 门禁: **FAIL**
-> 分数: **96/100**
-> 阻断问题: **4**
+> 门禁: **PASS**
+> 分数: **100/100**
+> 阻断问题: **0**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 177 |
+| Raw 来源 | 178 |
 | Raw 已编译 | 155 |
-| Raw 待编译 | 22 |
+| Raw 待编译 | 23 |
 | Raw 已跳过 | 0 |
 | Entity | 306 |
 | Topic | 31 |
@@ -49,6 +49,7 @@ tags:
 - `raw/20260702-qwen-agent-harness-practice.md`
 - `raw/20260703-anthropic-skill-engineering-practices.md`
 - `raw/20260703-fable-field-guide-finding-unknowns.md`
+- `raw/20260706-goodharts-law-tyranny-of-metrics.md`
 - `raw/Building headless automation with Claude Code — Code w Claude.md`
 - `raw/How to 10x Your Value in the AI Era — Kunal Shah.md`
 - `raw/The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md`
@@ -63,8 +64,8 @@ tags:
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
-| `source_raw` | 4 |
-| `tag` | 1 |
+| `source_raw` | 0 |
+| `tag` | 0 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -75,16 +76,7 @@ tags:
 
 ## 问题明细
 
-### source_raw
-
-- `wiki/entities/Agent-Perception-Gap.md` - `source_raw 目标不存在: [[20260707-ai-agent-traps.pdf]]`
-- `wiki/entities/Agent-Traps.md` - `source_raw 目标不存在: [[20260707-ai-agent-traps.pdf]]`
-- `wiki/entities/Persona-Hyperstition.md` - `source_raw 目标不存在: [[20260707-ai-agent-traps.pdf]]`
-- `wiki/sources/20260707-ai-agent-traps.md` - `source_raw 目标不存在: [[20260707-ai-agent-traps.pdf]]`
-
-### tag
-
-- `wiki/entities/Agent-Perception-Gap.md` - `一次性 tag 仅出现 1 次: 'content-injection'`
+未发现阻断问题。
 
 ## 运行命令
 

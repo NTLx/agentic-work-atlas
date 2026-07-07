@@ -1368,8 +1368,14 @@
       "status": "compiled",
       "summary_path": "wiki/sources/If You Want Taste, You're Gonna Have to Eat.md",
       "updated_at": "2026-07-06T17:17:16.098089+08:00"
+    },
+    "20260706-goodharts-law-tyranny-of-metrics.md": {
+      "raw_file": "20260706-goodharts-law-tyranny-of-metrics.md",
+      "status": "pending",
+      "body_sha256": "324ff23292027ce5d3f6cca6a879ac25900bb06edf93f85492c220fea40299b4",
+      "updated_at": "2026-07-07T09:38:49.999118+08:00"
     }
   },
-  "updated_at": "2026-07-02T09:51:57+08:00",
+  "updated_at": "2026-07-07T09:38:49.999118+08:00",
   "version": 1
 }

@@ -100,6 +100,10 @@ def wiki_targets() -> tuple[set[str], set[str]]:
     files = markdown_files()
     stems = {p.stem for p in files}
     rels = {p.relative_to(ROOT).with_suffix("").as_posix() for p in files}
+    # Also include raw non-markdown files (e.g. PDFs) as valid source_raw targets
+    for p in RAW.iterdir():
+        if p.is_file() and p.suffix.lower() != ".md":
+            stems.add(p.stem)
     return stems, rels
 
 
@@ -206,6 +210,8 @@ def split_wikilink(raw: str) -> str:
     target = target.split("#", 1)[0].strip()
     if target.endswith(".md"):
         target = target[:-3]
+    elif target.endswith(".pdf"):
+        target = target[:-4]
     return target.strip("/")
 
 
