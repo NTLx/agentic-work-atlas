@@ -25,6 +25,8 @@ related_entities:
   - "[[Model-Safety-Divergence]]"
   - "[[Emergence-World]]"
   - "[[Agent-Failure-Causal-Chain]]"
+  - "[[Agent-Traps]]"
+  - "[[Agent-Perception-Gap]]"
 source_raw:
   - "[[How we contain Claude across products]]"
   - "[[20260518-zero-trust-for-ai-agents]]"

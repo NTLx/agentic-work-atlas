@@ -24,6 +24,7 @@ related_entities:
   - "[[Invisible-Orchestrator]]"
   - "[[Organization-as-Agent-Harness]]"
   - "[[Minsky-Paradox]]"
+  - "[[Agent-Traps]]"
 source_raw:
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
 ---

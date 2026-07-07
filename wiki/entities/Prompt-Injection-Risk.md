@@ -17,6 +17,8 @@ related_entities:
   - "[[Co-Existence]]"
   - "[[Ethan-Mollick]]"
   - "[[Exit-Sovereignty]]"
+  - "[[Agent-Traps]]"
+  - "[[Agent-Perception-Gap]]"
 source_raw:
   - "[[20260604-mollick-coexistence]]"
 ---

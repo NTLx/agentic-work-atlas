@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 303 个 |
+| Entity 页面 | 306 个 |
 | Topic 页面 | 31 个 |
 | Comparison 页面 | 19 个 |
 | Raw 文章 | 177 个 |
-| Source Summary | 174 个 |
+| Source Summary | 175 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 23 个 |
 
@@ -96,6 +96,16 @@ tags:
 | [[wiki/entities/Human-Curation\|Human Curation（人类策展）]] | 人类在信息过载时代的核心价值——选择、组织、解释信息 | Grant Sanderson 播客 |
 | [[wiki/entities/Theory-of-Mind\|Theory of Mind（心智理论）]] | 理解他人心理状态的能力，是有效沟通、教学和策展的基础 | Grant Sanderson 播客 |
 
+#### Agent 安全与攻防
+| Entity | 定义 | 来源 |
+|--------|------|------|
+| [[wiki/entities/Agent-Traps\|Agent Traps（Agent 陷阱）]] | 按 Agent 运行周期六环节分类的恶意环境内容系统框架——感知→推理→记忆→行动→多Agent→人类 | Google DeepMind AI Agent Traps |
+| [[wiki/entities/Persona-Hyperstition\|Persona Hyperstition（人格超实）]] | 关于模型"人格"的公共叙事通过检索/训练回流使模型产生符合叙事行为的自我实现反馈循环 | Google DeepMind AI Agent Traps |
+| [[wiki/entities/Agent-Perception-Gap\|Agent Perception Gap（Agent 感知差）]] | 人类和 Agent 消费同一网页时解析路径的根本差异——HTML源码树 vs 视觉渲染——是所有内容注入陷阱的共同入口 | Google DeepMind AI Agent Traps |
+| [[wiki/entities/Prompt-Injection-Risk\|Prompt Injection Risk（提示注入风险）]] | 在内容中嵌入"给 AI 看的隐藏指令"试图影响 AI 综述/推荐的风险 | Ethan Mollick Co-Existence |
+| [[wiki/entities/Agent-Containment\|Agent Containment（Agent 隔离与遏制）]] | 通过环境层隔离限制 Agent 可操作范围的安全架构 | Anthropic Security Practices |
+| [[wiki/entities/Multi-Agent-System-Pathology\|Multi-Agent System Pathology（多 Agent 系统病理）]] | 多 Agent 系统在形成组织结构后出现的协作、认知、责任和内态失真问题 | Hao 好聊趋势 |
+
 #### AI 政策与监管
 | Entity | 定义 | 来源 |
 |--------|------|------|
@@ -118,7 +128,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-07-05——Anthropic Context Engineering + Long-Running Agent Harnesses + Andrew Ng Loop Engineering + AI 裁员逆转，新增 Context-Advantage entity + 4 source summaries + 更新 10+ 实体。
+最新编译：2026-07-07——Google DeepMind AI Agent Traps 论文编译，新增 Agent-Traps / Persona-Hyperstition / Agent-Perception-Gap 三个 Entity + 1 个 source summary + 更新 3 个实体交叉链接。
 
 ---
 
@@ -150,5 +160,5 @@ status             # 查看知识库状态
 
 ---
 
-*索引版本: v2.9*
-*最后更新: 2026-07-05*
+*索引版本: v2.10*
+*最后更新: 2026-07-07*

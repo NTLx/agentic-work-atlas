@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-07"
-score: 100
-status: "PASS"
+score: 96
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-07-07
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **96/100**
+> 阻断问题: **4**
 
 ## 统计
 
@@ -24,7 +24,7 @@ tags:
 | Raw 已编译 | 155 |
 | Raw 待编译 | 22 |
 | Raw 已跳过 | 0 |
-| Entity | 303 |
+| Entity | 306 |
 | Topic | 31 |
 | Comparison | 19 |
 | Output | 5 |
@@ -63,8 +63,8 @@ tags:
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
-| `source_raw` | 0 |
-| `tag` | 0 |
+| `source_raw` | 4 |
+| `tag` | 1 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -75,7 +75,16 @@ tags:
 
 ## 问题明细
 
-未发现阻断问题。
+### source_raw
+
+- `wiki/entities/Agent-Perception-Gap.md` - `source_raw 目标不存在: [[20260707-ai-agent-traps.pdf]]`
+- `wiki/entities/Agent-Traps.md` - `source_raw 目标不存在: [[20260707-ai-agent-traps.pdf]]`
+- `wiki/entities/Persona-Hyperstition.md` - `source_raw 目标不存在: [[20260707-ai-agent-traps.pdf]]`
+- `wiki/sources/20260707-ai-agent-traps.md` - `source_raw 目标不存在: [[20260707-ai-agent-traps.pdf]]`
+
+### tag
+
+- `wiki/entities/Agent-Perception-Gap.md` - `一次性 tag 仅出现 1 次: 'content-injection'`
 
 ## 运行命令
 
