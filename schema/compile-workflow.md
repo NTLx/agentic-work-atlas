@@ -14,6 +14,17 @@ type: schema-subdoc
 
 **核心原则**：Agent 基于材料特征自主决定路径选择和技能叠加，无需用户判断或推进。
 
+## 支持的 Raw 格式
+
+`raw/` 接受以下文件格式：
+
+| 格式 | 后缀 | 读取方式 | Frontmatter |
+|------|------|----------|-------------|
+| Markdown | `.md` | `read_text()` | 有 YAML frontmatter |
+| PDF | `.pdf` | Read 工具（`pages` 参数）或 PyMuPDF 提取 | 无（元数据记录在 source summary） |
+
+PDF 文件直接存放在 `raw/`，Quartz 以可下载附件形式展示。Lint 和 Registry 均追踪 PDF 文件。
+
 ## 自主路径选择
 
 ```
@@ -84,7 +95,11 @@ Agent 读取 raw source → 自动判断材料类型 →
 
 11. 更新 index.md + comparisons（如有对比概念）
 
-12. 提交 git commit 并推送（按 Commit 规范撰写）
+12. 更新 Compile Registry
+    └─ uv run python tools/compile_registry.py mark-compiled "<raw文件名>" --summary-path "wiki/sources/<raw文件名stem>.md"
+    └─ PDF 和 Markdown 文件均需执行此步骤
+
+13. 提交 git commit 并推送（按 Commit 规范撰写）
 ```
 
 ## 标准路径（三步编译法）
@@ -142,7 +157,11 @@ Agent 读取 raw source → 自动判断材料类型 →
 10. 更新 index.md
     └─ 添加新的 entity 和 topic 条目
 
-11. 提交 git commit 并推送（按 Commit 规范撰写）
+11. 更新 Compile Registry
+    └─ uv run python tools/compile_registry.py mark-compiled "<raw文件名>" --summary-path "wiki/sources/<raw文件名stem>.md"
+    └─ PDF 和 Markdown 文件均需执行此步骤
+
+12. 提交 git commit 并推送（按 Commit 规范撰写）
 ```
 
 ## 周期性自治：盲区扫描

@@ -86,6 +86,7 @@ COMPILE_REGISTRY = load_compile_registry()
 def markdown_files() -> list[Path]:
     files = [INDEX, ROOT / "README.md"]
     files.extend(sorted(RAW.glob("*.md")))
+    files.extend(sorted(RAW.glob("*.pdf")))
     files.extend(sorted(WIKI.rglob("*.md")))
     return [p for p in files if p.exists()]
 
@@ -230,6 +231,8 @@ def check_frontmatter_and_dates(paths: Iterable[Path]) -> list[Issue]:
     iso = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
     for path in paths:
+        if path.suffix.lower() == ".pdf":
+            continue
         text = path.read_text(encoding="utf-8", errors="replace")
         data, err = load_frontmatter(path)
         if err:
@@ -538,7 +541,10 @@ def check_comparisons() -> list[Issue]:
 
 
 def count_md(directory: Path) -> int:
-    return len(list(directory.glob("*.md")))
+    count = len(list(directory.glob("*.md")))
+    if directory == RAW:
+        count += len(list(directory.glob("*.pdf")))
+    return count
 
 
 def actual_counts() -> dict[str, int]:
@@ -595,7 +601,7 @@ def check_registry_consistency() -> tuple[list[Issue], list[Path], list[Path], l
         registry = COMPILE_REGISTRY.load_registry(ROOT)
     except (json.JSONDecodeError, ValueError) as exc:
         issues.append(Issue("registry-consistency", registry_path, None, str(exc)))
-        return issues, [], sorted(RAW.glob("*.md")), [], []
+        return issues, [], COMPILE_REGISTRY.raw_files(ROOT), [], []
     recorded_raw_files = set(registry.get("items", {}))
     registry, anomalies, candidates = COMPILE_REGISTRY.reconcile_registry(ROOT, registry=registry)
 
@@ -603,7 +609,7 @@ def check_registry_consistency() -> tuple[list[Issue], list[Path], list[Path], l
     pending: list[Path] = []
     skipped: list[Path] = []
 
-    for raw_path in sorted(RAW.glob("*.md")):
+    for raw_path in COMPILE_REGISTRY.raw_files(ROOT):
         if raw_path.name not in recorded_raw_files:
             pending.append(raw_path)
             issues.append(Issue("registry-consistency", raw_path, None, "raw 缺少 registry 记录"))

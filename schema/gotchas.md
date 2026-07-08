@@ -131,19 +131,65 @@ lint 检查概念 Entity 必须包含 `## 关键数据点`、`## 前提与局限
 **陷阱**: `## 关键证据`、`## 数据`、`## 相关概念` 等变体名称不被识别，lint 仍报缺失。
 **修复**: 章节标题必须一字不差地使用规范名称。
 
+### PDF 文件作为 Raw 来源
+
+`raw/` 支持直接存放 PDF 文件（`.pdf` 后缀）。Quartz 以可下载附件展示，Lint 和 Registry 均正常追踪。
+
+**PDF 与 Markdown raw 的差异**：
+
+| 特性 | Markdown raw | PDF raw |
+|------|-------------|---------|
+| Frontmatter | 有 YAML | 无（元数据记录在 source summary） |
+| 正文读取 | `read_text()` | Read 工具 `pages` 参数 或 PyMuPDF |
+| body_sha256 | 文本哈希 | 二进制哈希 |
+| 编译后标记 | `mark-compiled` | 同（不可遗漏） |
+
+**完整工作流**：
+
+```bash
+# 1. 下载 PDF 到 raw/
+curl -sL "<url>" -o raw/<YYYYMMDD>-<slug>.pdf
+
+# 2. 提取文本用于编译（二选一）
+# 方式 A：Read 工具（适合短 PDF）
+#   Read tool, file_path=raw/<filename>.pdf, pages="1-20"
+
+# 方式 B：PyMuPDF（适合长 PDF，输出更完整）
+uv run --with pymupdf python3 -c "
+import fitz
+doc = fitz.open('raw/<filename>.pdf')
+text = '\n\n---\n\n'.join(page.get_text() for page in doc)
+with open('/tmp/paper_full.md', 'w') as f: f.write(text)
+"
+
+# 3. 正常编译（创建 source summary、entity 等）
+
+# 4. 标记为已编译（关键步骤，不可遗漏）
+uv run python tools/compile_registry.py mark-compiled "<filename>.pdf" \
+  --summary-path "wiki/sources/<filename-stem>.md"
+
+# 5. 运行 lint 验证
+uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
+```
+
+**常见遗漏**：编译完成后忘记执行 `mark-compiled`，导致 PDF 在 registry 中停留在 `pending` 状态，lint 报 `registry-consistency` 阻断。
+
 ### arxiv 论文剪藏：优先用 PDF
 
 arxiv `/html/` 版本从 LaTeX 自动转换，新论文或复杂排版常截断（缺 Discussion/Conclusion/References）。
-**始终优先用 PDF 版本剪藏**：
+**始终优先用 PDF 版本剪藏**，直接存入 `raw/`：
 
 ```bash
-curl -sL "https://arxiv.org/pdf/<arxiv_id>" -o /tmp/paper.pdf
+# 下载 PDF 直接存入 raw/（无需提取为 md）
+curl -sL "https://arxiv.org/pdf/<arxiv_id>" -o raw/<YYYYMMDD>-<slug>.pdf
+
+# 如需提取纯文本（编译时使用）
 uv run --with pymupdf python3 -c "
 import fitz
-doc = fitz.open('/tmp/paper.pdf')
+doc = fitz.open('raw/<filename>.pdf')
 text = '\n\n---\n\n'.join(page.get_text() for page in doc)
 with open('/tmp/paper_full.md', 'w') as f: f.write(text)
 "
 ```
 
-提取后验证 Discussion / Conclusion / References 齐全再写入 raw/。
+提取后验证 Discussion / Conclusion / References 齐全，然后按标准编译流程处理。

@@ -8,6 +8,24 @@
       "summary_path": "wiki/sources/(14) Jevons Paradox for Knowledge Work.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
     },
+    "2026-ai-agent-evaluation-pipeline-methodology.md": {
+      "body_sha256": "28f9f9ee15d8de41d82a2b824dbef1c8149bc0b26006ae269ea3bf9a0c4beeee",
+      "raw_file": "2026-ai-agent-evaluation-pipeline-methodology.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md": {
+      "body_sha256": "fa4cef80caa8c14880da801be6f24b492ec70b8b571fe0af381beac25f19907f",
+      "raw_file": "2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "2026-eu-ai-act-compliance-autonomous-agents.md": {
+      "body_sha256": "4d88b40d86dad1bd0848ee36ba9df73b6c423700b9f25452455234dee7a3c4cc",
+      "raw_file": "2026-eu-ai-act-compliance-autonomous-agents.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
     "20260127-claude-coding-notes.md": {
       "body_sha256": "543ec5810a31ac6322d50371502f757abdb261928302d49d2014f3e66b369b4d",
       "compiled_at": "2026-06-29T08:23:18+08:00",
@@ -15,6 +33,18 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260127-claude-coding-notes.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
+    },
+    "202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md": {
+      "body_sha256": "50c9463e18195e48acfb2e88e149fce3ead1dcf626857fffce8820f7befb02b5",
+      "raw_file": "202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260330-reward-hacking-equilibrium-finite-evaluation.md": {
+      "body_sha256": "29e634429b7f76d06b1c00ec13fe04eae81f47630b586e531bc9265e15f3ffb9",
+      "raw_file": "20260330-reward-hacking-equilibrium-finite-evaluation.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
     },
     "20260409-ai-capability-gap-ai-psychosis.md": {
       "body_sha256": "69d6cff813c2210a4b1ada48f94b2c2efc88992bba0d89df96109f3026a4f5f0",
@@ -120,6 +150,14 @@
       "summary_path": "wiki/sources/20260420-ontology-meets-agent-case-study.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
     },
+    "202605-code-cleanliness-coding-agents-minimal-pair.pdf": {
+      "body_sha256": "ff5d78e7ccbf58ca32a4b06e3a8792e40d2872a373c334b84dadc288a6b0b24a",
+      "compiled_at": "2026-07-08T15:52:43+08:00",
+      "raw_file": "202605-code-cleanliness-coding-agents-minimal-pair.pdf",
+      "status": "compiled",
+      "summary_path": "wiki/sources/202605-code-cleanliness-coding-agents-minimal-pair.md",
+      "updated_at": "2026-07-08T15:52:43+08:00"
+    },
     "20260502-most-companies-arent-ready-for-ai.md": {
       "body_sha256": "8331d0c93022ef0919570794f6939793eee8bd7fab4379f0ab0a74629258a70a",
       "compiled_at": "2026-06-29T08:23:18+08:00",
@@ -127,6 +165,12 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260502-most-companies-arent-ready-for-ai.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
+    },
+    "20260512-finops-for-ai-token-level-visibility.md": {
+      "body_sha256": "659cfa3fff68f5d838bc535308efabfabf087406b379d70cbc26c078deaf7a1e",
+      "raw_file": "20260512-finops-for-ai-token-level-visibility.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
     },
     "20260518-zero-trust-for-ai-agents.md": {
       "body_sha256": "b71bdda59e6a98b3a466344cca251bb102f272e88df1efac84a6051dd78cb836",
@@ -215,6 +259,12 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260531-thoughts-hmmz.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
+    },
+    "202606-finops-x-2026-ai-tokenomics.md": {
+      "body_sha256": "25ce8bb47668bf51c7963e72b18e7cdff86611634d841aae4dfe6c451ed0dcc7",
+      "raw_file": "202606-finops-x-2026-ai-tokenomics.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
     },
     "20260601-klarna-ai-assistant-customer-service.md": {
       "body_sha256": "65e9b41762c5e173734e8fd3e0e67adc3a1f90eee30c35a4562c2482eb24ccb6",
@@ -664,6 +714,24 @@
       "summary_path": "wiki/sources/20260620-l8-principal-agentic-workflow.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
     },
+    "20260623-ibm-cuga-agent-harness.md": {
+      "body_sha256": "ac0e557fd12b183f19d3469a57da9679ff7f517e21a8066d4baea16ec1d8b099",
+      "raw_file": "20260623-ibm-cuga-agent-harness.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260623-qwen-agentworld-language-world-models.md": {
+      "body_sha256": "6f8a17df601d2dd2c58107db520763e0657a100d622e4c0216e8346dd3b3f173",
+      "raw_file": "20260623-qwen-agentworld-language-world-models.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260624-gemini-3-5-flash-computer-use.md": {
+      "body_sha256": "e02ef1d60107787375b13c12549212f9d201054b8468995312c44e0c13140b0b",
+      "raw_file": "20260624-gemini-3-5-flash-computer-use.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
     "20260625-ford-ai-quality-jd-power.md": {
       "body_sha256": "61e8afc1ba07c0c435ebac204b1e780c1b557a7c74539922ee18fc7c7222f75b",
       "compiled_at": "2026-06-29T08:23:18+08:00",
@@ -696,6 +764,12 @@
       "summary_path": "wiki/sources/20260630-building-headless-automation-claude-code.md",
       "updated_at": "2026-06-30T13:53:43+08:00"
     },
+    "20260630-loop-engineering-andrew-ng.md": {
+      "body_sha256": "a78e5c8e811b0814c906120592f1242f5105fd8892cdc9bfc1673f9486d7b9db",
+      "raw_file": "20260630-loop-engineering-andrew-ng.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
     "20260701-grant-sanderson-ai-math-future.md": {
       "body_sha256": "47e2b1c5a6bf0dfc0aab8ec82c3e7913a3da7d0d72c3be7676fd72a701c5b24b",
       "compiled_at": "2026-07-01T08:54:40+08:00",
@@ -703,6 +777,84 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260701-grant-sanderson-ai-math-future.md",
       "updated_at": "2026-07-01T08:54:40+08:00"
+    },
+    "20260702-agent-assisted-sglang-development.md": {
+      "body_sha256": "d1576c44d76171624f281714d4520c8381a56733b334ac17b50c7949d67799ca",
+      "raw_file": "20260702-agent-assisted-sglang-development.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260702-ai-layoffs-reversed.md": {
+      "body_sha256": "29701ed7134676cef8c45eb9105667fccab3012baa2cb9e1adc759fb86c32d8e",
+      "compiled_at": null,
+      "raw_file": "20260702-ai-layoffs-reversed.md",
+      "status": "pending",
+      "summary_path": null,
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260702-anthropic-context-engineering.md": {
+      "body_sha256": "0c8cb85bf95f65daf90ddba815235d0fabaa5a0b6658a1b921c32036652d8fff",
+      "compiled_at": null,
+      "raw_file": "20260702-anthropic-context-engineering.md",
+      "status": "pending",
+      "summary_path": null,
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260702-anthropic-harnesses-long-running-agents.md": {
+      "body_sha256": "cafdd22f25eb9247356e54b2af6183e1f49cd71165106c44b02942fbf46e9c84",
+      "compiled_at": null,
+      "raw_file": "20260702-anthropic-harnesses-long-running-agents.md",
+      "status": "pending",
+      "summary_path": null,
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260702-qwen-agent-harness-practice.md": {
+      "body_sha256": "9c9f22874df1c044841cde7058ca8a8e4ef990702987a6b9c79c0a2da5b93966",
+      "raw_file": "20260702-qwen-agent-harness-practice.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260703-anthropic-skill-engineering-practices.md": {
+      "body_sha256": "96d2362429bda002bd57157f7997203386bdb4dbd965bb1cd9aef998ed70b3ea",
+      "raw_file": "20260703-anthropic-skill-engineering-practices.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260703-fable-field-guide-finding-unknowns.md": {
+      "body_sha256": "2d9b6ff798f20285a21f5ada2688f663ba4b8c9b828b4efbf7f55880a3dcf0f4",
+      "raw_file": "20260703-fable-field-guide-finding-unknowns.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260706-goodharts-law-tyranny-of-metrics.md": {
+      "body_sha256": "5354011161445af31ce2f88d77c2a08cb8face4b9cfa85451032ac9df26e4aa4",
+      "raw_file": "20260706-goodharts-law-tyranny-of-metrics.md",
+      "status": "pending",
+      "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260706-martin-fowler-fragments.md": {
+      "body_sha256": "8fafa0cd5b75f1f635bb4069296d81479447d7b9ec411d26b3f26558b2f87182",
+      "compiled_at": "2026-07-07T12:00:00+08:00",
+      "raw_file": "20260706-martin-fowler-fragments.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260706-martin-fowler-fragments.md",
+      "updated_at": "2026-07-07T12:00:00+08:00"
+    },
+    "20260707-ai-agent-traps.pdf": {
+      "body_sha256": "603f0cae8cd8ab944f3e700a169d325120db42239075350d07c8183da71a527c",
+      "compiled_at": "2026-07-08T15:52:43+08:00",
+      "raw_file": "20260707-ai-agent-traps.pdf",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260707-ai-agent-traps.md",
+      "updated_at": "2026-07-08T15:52:43+08:00"
+    },
+    "20260707-intelligence-is-free-data-systems-for-of-by-agents.md": {
+      "body_sha256": "f7527b1c979e8924a085382b4cf0ae29052677211041137ad5746dcdb3bfd71c",
+      "compiled_at": "2026-07-08T13:56:13.241407",
+      "raw_file": "20260707-intelligence-is-free-data-systems-for-of-by-agents.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260707-intelligence-is-free-data-systems-for-of-by-agents.md",
+      "updated_at": "2026-07-08T13:56:13.241407"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -777,12 +929,12 @@
       "updated_at": "2026-06-29T08:23:18+08:00"
     },
     "Building headless automation with Claude Code — Code w Claude.md": {
-      "body_sha256": "4b85ce0543805279d86c8013a6966221a10852bd6c85c531933ce85ad8a7e2cb",
+      "body_sha256": "c32096867b2992db0defc758d46f2328e95c8fc0e4d93150c7839131f3188671",
       "compiled_at": "2026-06-30T14:56:42+08:00",
       "raw_file": "Building headless automation with Claude Code — Code w Claude.md",
       "status": "pending",
       "summary_path": null,
-      "updated_at": "2026-06-30T14:56:42+08:00"
+      "updated_at": "2026-07-08T15:46:54+08:00"
     },
     "Choosing to Stay Human.md": {
       "body_sha256": "86c16b59473a144155f7bdaeb0dc52f6239b5f26dee492ebb2e849db553bbb6d",
@@ -905,12 +1057,12 @@
       "updated_at": "2026-06-29T08:23:18+08:00"
     },
     "How to 10x Your Value in the AI Era — Kunal Shah.md": {
-      "body_sha256": "41a5e145ebef512754b4bb052437779fb21a0ad2b0c5a17068f11a8788094523",
+      "body_sha256": "d80027a0495617b4f197edb81f1df2272ae7869bb6498f2a3297618d9f9a0ac5",
       "compiled_at": "2026-06-30T16:59:27+08:00",
       "raw_file": "How to 10x Your Value in the AI Era — Kunal Shah.md",
       "status": "pending",
       "summary_path": null,
-      "updated_at": "2026-06-30T16:59:27+08:00"
+      "updated_at": "2026-07-08T15:46:54+08:00"
     },
     "How we contain Claude across products.md": {
       "body_sha256": "1e66d922dad4ebecde287bcd4fe6292b135a8d0a45df5b0f1e1dcca9d85b6852",
@@ -935,6 +1087,14 @@
       "status": "compiled",
       "summary_path": "wiki/sources/ITBench-AA Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
+    },
+    "If You Want Taste, You're Gonna Have to Eat.md": {
+      "body_sha256": "b232784bda6c2849e950dff3114e4f879c9966a923bda67f60b1e4765459c0ad",
+      "compiled_at": "2026-07-06T17:17:16.098089+08:00",
+      "raw_file": "If You Want Taste, You're Gonna Have to Eat.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/If You Want Taste, You're Gonna Have to Eat.md",
+      "updated_at": "2026-07-06T17:17:16.098089+08:00"
     },
     "Improving token efficiency in GitHub Agentic Workflows.md": {
       "body_sha256": "c8fe57fb92c84363ab62b175fb3ea111f1bdfc177e8112f5a19b48248859a792",
@@ -1124,7 +1284,7 @@
       "body_sha256": "ffe4aaeb8067aa19d0b38df19954ad214750b8bbb2697e0d409876a75c9901d7",
       "raw_file": "The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md",
       "status": "pending",
-      "updated_at": "2026-06-30T13:53:30+08:00"
+      "updated_at": "2026-07-08T15:46:54+08:00"
     },
     "The layoffs will continue till we learn to use AI.md": {
       "body_sha256": "378ae2ec48131cc7d1cbcf8859b782167fb486f48e5ceb7328b09e57b828fd70",
@@ -1220,7 +1380,7 @@
       "raw_file": "the-ai-jobs-transition-framework-for-the-eu.md",
       "status": "pending",
       "summary_path": null,
-      "updated_at": "2026-06-30T13:53:30+08:00"
+      "updated_at": "2026-07-08T15:46:54+08:00"
     },
     "一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统.md": {
       "body_sha256": "3e51d0d1e05990278b99b7d7c4f162bf080cdfced129866f7b2c55ae832f1c08",
@@ -1261,137 +1421,8 @@
       "status": "compiled",
       "summary_path": "wiki/sources/用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
-    },
-    "20260702-anthropic-context-engineering.md": {
-      "body_sha256": "07f90f40966dfbdca43507d87c99f07076c5b8345bb202bbb26bed662b376ab9",
-      "compiled_at": null,
-      "raw_file": "20260702-anthropic-context-engineering.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-07-02T09:29:17+08:00"
-    },
-    "20260702-anthropic-harnesses-long-running-agents.md": {
-      "body_sha256": "f3ca5e81f6acd8fd7854c7d39d05513041069ecb6975f28e6bb2d76afe870bc3",
-      "compiled_at": null,
-      "raw_file": "20260702-anthropic-harnesses-long-running-agents.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-07-02T09:29:17+08:00"
-    },
-    "20260702-ai-layoffs-reversed.md": {
-      "body_sha256": "b43a59129a9eeee60554bf6fff5a2f656079a64ea26ac352afcae2a6e371669a",
-      "compiled_at": null,
-      "raw_file": "20260702-ai-layoffs-reversed.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-07-02T09:51:57+08:00"
-    },
-    "2026-ai-agent-evaluation-pipeline-methodology.md": {
-      "body_sha256": "3074c12fd2bdb6ca5ac76eeb17dbe75f40e32dade90eb87e8044a65c5216635d",
-      "raw_file": "2026-ai-agent-evaluation-pipeline-methodology.md",
-      "status": "pending"
-    },
-    "2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md": {
-      "body_sha256": "6e15194ed2be706f899a3913dc4dabb4820ce1cca851bd6b592a14a33f44a9a2",
-      "raw_file": "2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md",
-      "status": "pending"
-    },
-    "2026-eu-ai-act-compliance-autonomous-agents.md": {
-      "body_sha256": "3873028aa5f4f5047991f3a3698ceec494c393e824ed53a5b66812e501925be7",
-      "raw_file": "2026-eu-ai-act-compliance-autonomous-agents.md",
-      "status": "pending"
-    },
-    "202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md": {
-      "body_sha256": "346e545bcd12acb2c57b39b915ea032289cc0ed89f4f37594a2968e9d554afc6",
-      "raw_file": "202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md",
-      "status": "pending"
-    },
-    "20260330-reward-hacking-equilibrium-finite-evaluation.md": {
-      "body_sha256": "81017872bf50ab59fbaea56c1dd6ff83fb8f74325f42fb3e360342c79cf78647",
-      "raw_file": "20260330-reward-hacking-equilibrium-finite-evaluation.md",
-      "status": "pending"
-    },
-    "20260512-finops-for-ai-token-level-visibility.md": {
-      "body_sha256": "81c7462f8c46596c24df29d236e76ce1a0c900d8bd311a73351f90459790ce0d",
-      "raw_file": "20260512-finops-for-ai-token-level-visibility.md",
-      "status": "pending"
-    },
-    "202606-finops-x-2026-ai-tokenomics.md": {
-      "body_sha256": "b90ad69860c94b23953044b018cf842901961353982f9d436adf5dbdfe197697",
-      "raw_file": "202606-finops-x-2026-ai-tokenomics.md",
-      "status": "pending"
-    },
-    "20260623-ibm-cuga-agent-harness.md": {
-      "body_sha256": "5ffdfe5201c7bcb73c0631e38208f06a31794b2ee067e1a08a1ad7e82e8fb7bb",
-      "raw_file": "20260623-ibm-cuga-agent-harness.md",
-      "status": "pending"
-    },
-    "20260623-qwen-agentworld-language-world-models.md": {
-      "body_sha256": "52a6b3225de3a1d8b0761c5ba78e0328de5e80edc18cc38d9727f954cc1ba456",
-      "raw_file": "20260623-qwen-agentworld-language-world-models.md",
-      "status": "pending"
-    },
-    "20260624-gemini-3-5-flash-computer-use.md": {
-      "body_sha256": "a816e875f609ce665412ddbfbc37e9112503d34ab400cf46f620668075e6af49",
-      "raw_file": "20260624-gemini-3-5-flash-computer-use.md",
-      "status": "pending"
-    },
-    "20260630-loop-engineering-andrew-ng.md": {
-      "body_sha256": "b1c3ae4c92a58770c1e7bc8cb3aa8671ae85593cd95d193cb3e6e123e2bf88b6",
-      "raw_file": "20260630-loop-engineering-andrew-ng.md",
-      "status": "pending"
-    },
-    "20260702-agent-assisted-sglang-development.md": {
-      "body_sha256": "5e05cdb862967918de2b04d4c8d0a1bc7ff2c9a7d0c29832689bf78d80aa4802",
-      "raw_file": "20260702-agent-assisted-sglang-development.md",
-      "status": "pending"
-    },
-    "20260702-qwen-agent-harness-practice.md": {
-      "body_sha256": "8b8ffa960a7f27729e630cd36d46871d75f28148164fe9ec0467aa5e3d6b8f4c",
-      "raw_file": "20260702-qwen-agent-harness-practice.md",
-      "status": "pending"
-    },
-    "20260703-anthropic-skill-engineering-practices.md": {
-      "body_sha256": "df7d14646d92592c00848c3ecf066daa18bc6d8966c08b5d278e3ba9c33b73ee",
-      "raw_file": "20260703-anthropic-skill-engineering-practices.md",
-      "status": "pending"
-    },
-    "20260703-fable-field-guide-finding-unknowns.md": {
-      "body_sha256": "691049cda90b68ed6e2ba6d375b994037ca46ab2c06a528f48abf81cdde910b8",
-      "raw_file": "20260703-fable-field-guide-finding-unknowns.md",
-      "status": "pending"
-    },
-    "If You Want Taste, You're Gonna Have to Eat.md": {
-      "body_sha256": "b232784bda6c2849e950dff3114e4f879c9966a923bda67f60b1e4765459c0ad",
-      "compiled_at": "2026-07-06T17:17:16.098089+08:00",
-      "raw_file": "If You Want Taste, You're Gonna Have to Eat.md",
-      "status": "compiled",
-      "summary_path": "wiki/sources/If You Want Taste, You're Gonna Have to Eat.md",
-      "updated_at": "2026-07-06T17:17:16.098089+08:00"
-    },
-    "20260706-goodharts-law-tyranny-of-metrics.md": {
-      "raw_file": "20260706-goodharts-law-tyranny-of-metrics.md",
-      "status": "pending",
-      "body_sha256": "324ff23292027ce5d3f6cca6a879ac25900bb06edf93f85492c220fea40299b4",
-      "updated_at": "2026-07-07T09:38:49.999118+08:00"
-    },
-    "20260706-martin-fowler-fragments.md": {
-      "raw_file": "20260706-martin-fowler-fragments.md",
-      "status": "compiled",
-      "body_sha256": "8fafa0cd5b75f1f635bb4069296d81479447d7b9ec411d26b3f26558b2f87182",
-      "compiled_at": "2026-07-07T12:00:00+08:00",
-      "summary_path": "wiki/sources/20260706-martin-fowler-fragments.md",
-      "updated_at": "2026-07-07T12:00:00+08:00"
-    },
-    "20260707-intelligence-is-free-data-systems-for-of-by-agents.md": {
-      "raw_file": "20260707-intelligence-is-free-data-systems-for-of-by-agents.md",
-      "status": "compiled",
-      "body_sha256": "f7527b1c979e8924a085382b4cf0ae29052677211041137ad5746dcdb3bfd71c",
-      "compiled_at": "2026-07-08T13:56:13.241407",
-      "summary_path": "wiki/sources/20260707-intelligence-is-free-data-systems-for-of-by-agents.md",
-      "updated_at": "2026-07-08T13:56:13.241407"
     }
   },
-  "updated_at": "2026-07-08T14:04:47.415593",
+  "updated_at": "2026-07-08T15:52:43+08:00",
   "version": 1
 }

@@ -25,6 +25,10 @@ def now_iso() -> str:
     return datetime.now().astimezone().isoformat(timespec="seconds")
 
 
+def is_binary_raw(raw_path: Path) -> bool:
+    return raw_path.suffix.lower() in (".pdf",)
+
+
 def raw_body_text(raw_path: Path) -> str:
     text = raw_path.read_text(encoding="utf-8", errors="replace")
     lines = text.splitlines(keepends=True)
@@ -40,7 +44,17 @@ def raw_body_text(raw_path: Path) -> str:
 
 
 def compute_body_sha256(raw_path: Path) -> str:
+    if is_binary_raw(raw_path):
+        return hashlib.sha256(raw_path.read_bytes()).hexdigest()
     return hashlib.sha256(raw_body_text(raw_path).encode("utf-8")).hexdigest()
+
+
+def raw_files(root: Path = ROOT) -> list[Path]:
+    """Return all trackable raw files (markdown + supported binary formats)."""
+    raw_dir = root / "raw"
+    files = sorted(raw_dir.glob("*.md"))
+    files.extend(sorted(raw_dir.glob("*.pdf")))
+    return files
 
 
 def expected_summary_path(raw_file: str) -> str:
@@ -157,15 +171,19 @@ def list_pending(registry: dict) -> list[str]:
 
 
 def detect_legacy_compiled(raw_path: Path, root: Path) -> bool:
-    text = raw_path.read_text(encoding="utf-8", errors="replace")
     compiled_note = root / expected_summary_path(raw_path.name)
-    return "## 编译摘要" in text or compiled_note.exists()
+    if compiled_note.exists():
+        return True
+    if is_binary_raw(raw_path):
+        return False
+    text = raw_path.read_text(encoding="utf-8", errors="replace")
+    return "## 编译摘要" in text
 
 
 def bootstrap_registry(root: Path = ROOT, now: str | None = None) -> dict:
     stamp = now or now_iso()
     registry = empty_registry(stamp)
-    for raw_path in sorted((root / "raw").glob("*.md")):
+    for raw_path in raw_files(root):
         body_sha256 = compute_body_sha256(raw_path)
         if detect_legacy_compiled(raw_path, root):
             mark_compiled(
@@ -193,7 +211,7 @@ def reconcile_registry(
     registry = registry or load_registry(root)
     anomalies: list[dict] = []
     candidates: list[dict] = []
-    raw_paths = {path.name: path for path in sorted((root / "raw").glob("*.md"))}
+    raw_paths = {path.name: path for path in raw_files(root)}
 
     for raw_file, raw_path in raw_paths.items():
         entry = registry["items"].get(raw_file)

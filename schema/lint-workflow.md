@@ -36,11 +36,11 @@ uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
 ```
 
 该脚本检查：
-- YAML/frontmatter 是否能被 Quartz 解析
-- 日期是否为 `YYYY-MM-DD`
+- YAML/frontmatter 是否能被 Quartz 解析（PDF 文件自动跳过此项）
+- 日期是否为 `YYYY-MM-DD`（PDF 文件自动跳过此项）
 - 裸 `$` 是否会触发 Obsidian MathJax（不扫描 raw 原文正文，避免为渲染清洗而改动证据源）
-- wikilink 和 `source_raw` 是否指向真实文件
-- index.md 计数是否与文件系统一致
+- wikilink 和 `source_raw` 是否指向真实文件（支持 `.md` 和 `.pdf` 后缀）
+- index.md 计数是否与文件系统一致（Raw 计数包含 `.md` 和 `.pdf` 文件）
 - tag 数量和链接安全质量
 - 一次性 tag 与低证据页面
 - `evidence_level` / `claim_type` 字段取值是否合法
@@ -48,6 +48,7 @@ uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
 - Entity 标准章节和作者 Entity 验证字段
 - raw 摘要覆盖：历史 raw 内 `## 编译摘要` 或同名 `wiki/sources/` source summary 二者满足其一即可
 - raw 只做结构性门禁：frontmatter、日期和 source/raw 链接可追溯；正文清洗类问题不得成为改写 raw 的理由
+- **raw/ PDF 文件**：纳入 Registry 追踪和统计计数，body_sha256 基于二进制内容计算，不检查 frontmatter
 - `wiki/lint-report.md` 是否可生成当前报告
 
 `tools/` 必须列入 Quartz `ignorePatterns`，避免脚本被当作内容发布。
