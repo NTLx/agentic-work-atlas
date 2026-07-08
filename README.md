@@ -90,10 +90,11 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 
 四大环节完成后必须执行：
 
-1. 校验：`git status --short`；Wiki/Schema 变更运行 `uv run python tools/wiki-lint.py`
-2. 排除不应提交的产物（`.venv/`、`node_modules/`、`public/` 等）
-3. 结构化 commit message 提交
-4. `git push` 到远端；失败必须说明原因
+1. **剪藏时注册 registry**：`uv run python tools/compile_registry.py ensure "<raw文件名>.md"`（将 raw 标记为 pending，防止 lint 的 registry-consistency 检查失败）
+2. 校验：`git status --short`；Wiki/Schema 变更运行 `uv run python tools/wiki-lint.py`
+3. 排除不应提交的产物（`.venv/`、`node_modules/`、`public/` 等）
+4. 结构化 commit message 提交
+5. `git push` 到远端；失败必须说明原因
 
 **边界规则**：稳定知识进 entity/topic/comparison；表达性产物进 outputs；未验证问题只进 research agenda；output 新判断先回填检查再决定是否升级。
 
