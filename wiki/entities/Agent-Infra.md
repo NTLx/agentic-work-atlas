@@ -18,10 +18,13 @@ related_entities:
   - "[[Token-Supply-Chain]]"
   - "[[Model-Context-Protocol-MCP]]"
   - "[[Context-Engineering]]"
+  - "[[Agentic-Speculation]]"
+  - "[[Structured-Agent-Memory]]"
 source_raw:
   - "[[20260528-agentic-ai-2026-landscape]]"
   - "[[20260613-aliyun-agent-infra-constraint-infrastructure]]"
   - "[[20260617-huggingface-agentic-resource-discovery]]"
+  - "[[20260707-intelligence-is-free-data-systems-for-of-by-agents]]"
 ---
 
 > [!definition] 定义
@@ -83,3 +86,5 @@ Agent Infra 决定 AI 能替谁做事。它是 [[Agent-Harness]] 概念的生态
 - [[CLAUDE-md]] — Agent Infra 中"给 AI 写入职文档"的具体实现
 - [[Carbon-Silicon-Division]] — Agent Infra 支撑的分工模式
 - [[Constraint-Infrastructure]] — Agent Infra 中治理和安全能力域的约束基建具体实现
+- [[Agentic-Speculation]] — Agent 与数据系统交互的模式，要求数据系统作为 infra 新组件
+- [[Structured-Agent-Memory]] — 多属性结构化记忆，Agent Infra 中 Memory 组件的演化方向

@@ -53,6 +53,7 @@ docs/
 # AI Coding 工具配置目录
 .codebuddy/
 .iflow/
+.mimocode/
 .neovate/
 .qoder/
 .qwen/

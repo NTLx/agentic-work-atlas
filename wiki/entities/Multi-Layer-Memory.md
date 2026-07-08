@@ -19,6 +19,7 @@ related_entities:
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[20260526-obsidian-claude-code-brain]]'
+  - '[[20260707-intelligence-is-free-data-systems-for-of-by-agents]]'
 ---
 
 # Multi-Layer Memory
@@ -139,5 +140,6 @@ MEMORY.md: "❌ 事件驱动标的必须用条件单模板"
 - [[Agent-Orchestration]] — 编排者每周分析 MEMORY 状态并执行压缩
 - [[Headless-Mode]] — 记忆系统在无头模式下持续运营
 - [[Knowledge-Compilation]] — 知识编译是记忆系统的 Wiki 层实现
+- [[Structured-Agent-Memory]] — 按多属性维度组织的纠正性记忆，与分层记忆正交互补：分层解决"何时存/何时忘"，结构化解决"什么维度相关"
 
 ## 来源

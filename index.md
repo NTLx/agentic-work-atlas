@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 309 个 |
+| Entity 页面 | 311 个 |
 | Topic 页面 | 31 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 179 个 |
-| Source Summary | 177 个 |
+| Raw 文章 | 180 个 |
+| Source Summary | 178 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 23 个 |
 
@@ -73,6 +73,8 @@ tags:
 | [[wiki/entities/Autoregressive-Generation\|Autoregressive Generation（自回归生成）]] | 通过预测下一个token来生成文本的方式，是当前LLM的核心机制 | Grant Sanderson 播客 |
 | [[wiki/entities/Code-Cleanliness-Agent-Footprint\|Code Cleanliness Agent Footprint（代码整洁度的 Agent 足迹效应）]] | 代码整洁度不影响通过率但显著降低 agent 操作成本（token −7-8%、revisitation −34%） | SonarSource Minimal-Pair Study |
 | [[wiki/entities/Minimal-Pair-Evaluation\|Minimal Pair Evaluation（最小对比对评估）]] | 构造仅目标变量不同的仓库对以隔离其对 coding agent 的因果影响 | SonarSource Minimal-Pair Study |
+| [[wiki/entities/Agentic-Speculation\|Agentic Speculation（Agent 投机探索）]] | Agent 与数据系统交互的高吞吐异构查询流模式，80-90% 子计划重复但冗余提升成功率 | BAIR Intelligence is Free |
+| [[wiki/entities/Structured-Agent-Memory\|Structured Agent Memory（结构化 Agent 记忆）]] | 按多属性维度组织的纠正性记忆，通过属性匹配精确召回，区别于 MD+embedding 范式 | BAIR Intelligence is Free |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |

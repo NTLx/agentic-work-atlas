@@ -1382,8 +1382,16 @@
       "compiled_at": "2026-07-07T12:00:00+08:00",
       "summary_path": "wiki/sources/20260706-martin-fowler-fragments.md",
       "updated_at": "2026-07-07T12:00:00+08:00"
+    },
+    "20260707-intelligence-is-free-data-systems-for-of-by-agents.md": {
+      "raw_file": "20260707-intelligence-is-free-data-systems-for-of-by-agents.md",
+      "status": "compiled",
+      "body_sha256": "f7527b1c979e8924a085382b4cf0ae29052677211041137ad5746dcdb3bfd71c",
+      "compiled_at": "2026-07-08T13:56:13.241407",
+      "summary_path": "wiki/sources/20260707-intelligence-is-free-data-systems-for-of-by-agents.md",
+      "updated_at": "2026-07-08T13:56:13.241407"
     }
   },
-  "updated_at": "2026-07-07T09:38:49.999118+08:00",
+  "updated_at": "2026-07-08T14:04:47.415593",
   "version": 1
 }
