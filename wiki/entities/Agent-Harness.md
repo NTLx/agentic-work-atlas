@@ -58,6 +58,7 @@ source_raw:
   - "[[20260613-aliyun-agent-infra-constraint-infrastructure]]"
   - "[[20260620-l8-principal-agentic-workflow]]"
   - "[[20260702-anthropic-harnesses-long-running-agents]]"
+  - "[[202605-code-cleanliness-coding-agents-minimal-pair.pdf]]"
 ---
 
 # Agent Harness
@@ -311,6 +312,7 @@ Cursor 2026 春季报告揭示了 harness 演化的下一个阶段：**从开发
 - [[NLAH]] — 将驾驭策略从代码中外置为自然语言文档的新范式
 - [[Sleep-Token]] — Harness 基础设施使能的离线 Token 产出模式
 - [[Constraint-Infrastructure]] — Harness 方法论的基础设施化落地，将约束原则映射为可编程的平台能力
+- [[Code-Cleanliness-Agent-Footprint]] — 代码整洁度作为 harness 运行的"地形复杂度"维度
 
 ## 四层循环堆叠模型（2026-06 更新）
 

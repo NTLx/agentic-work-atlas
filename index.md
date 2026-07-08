@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-07-07
+updated: 2026-07-08
 tags:
 ---
 
@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 307 个 |
+| Entity 页面 | 309 个 |
 | Topic 页面 | 31 个 |
 | Comparison 页面 | 19 个 |
 | Raw 文章 | 179 个 |
-| Source Summary | 176 个 |
+| Source Summary | 177 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 23 个 |
 
@@ -71,6 +71,8 @@ tags:
 | [[wiki/entities/Conceptual-Breakthroughs\|Conceptual Breakthroughs（概念突破）]] | 产生新的概念、理论或框架来统一或重新组织现有知识的能力 | Grant Sanderson 播客 |
 | [[wiki/entities/Grindability-vs-Verifiability\|Grindability vs Verifiability（可磨性与可验证性）]] | AI成功的关键因素区分：可磨性比可验证性更重要 | Grant Sanderson 播客 |
 | [[wiki/entities/Autoregressive-Generation\|Autoregressive Generation（自回归生成）]] | 通过预测下一个token来生成文本的方式，是当前LLM的核心机制 | Grant Sanderson 播客 |
+| [[wiki/entities/Code-Cleanliness-Agent-Footprint\|Code Cleanliness Agent Footprint（代码整洁度的 Agent 足迹效应）]] | 代码整洁度不影响通过率但显著降低 agent 操作成本（token −7-8%、revisitation −34%） | SonarSource Minimal-Pair Study |
+| [[wiki/entities/Minimal-Pair-Evaluation\|Minimal Pair Evaluation（最小对比对评估）]] | 构造仅目标变量不同的仓库对以隔离其对 coding agent 的因果影响 | SonarSource Minimal-Pair Study |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
