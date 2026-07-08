@@ -498,6 +498,14 @@
       "summary_path": "wiki/sources/20260610-qwen-constraint-driven-engineering-experiment.md",
       "updated_at": "2026-06-29T08:23:18+08:00"
     },
+    "20260611-loss-function-development.md": {
+      "body_sha256": "3dcc0a0d4c5c63bcd92204da173cb9ab20b595f9a46eb980c967ed06cb38a210",
+      "compiled_at": "2026-07-08T17:42:09+08:00",
+      "raw_file": "20260611-loss-function-development.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260611-loss-function-development.md",
+      "updated_at": "2026-07-08T17:42:09+08:00"
+    },
     "20260611-openai-harness-engineering.md": {
       "body_sha256": "85d31337ad70b3c77352fd25d47a869438e0ee23b9312b7015a846b91d3ee1e3",
       "compiled_at": "2026-06-29T08:23:18+08:00",
@@ -732,6 +740,14 @@
       "status": "pending",
       "updated_at": "2026-07-08T15:46:54+08:00"
     },
+    "20260624-loops-rediscovering-cybernetics.md": {
+      "body_sha256": "d95ddf1de984a51e45d4f31a509d7f73beb1d00161e96e5676adc0940030acf5",
+      "compiled_at": "2026-07-08T17:42:09+08:00",
+      "raw_file": "20260624-loops-rediscovering-cybernetics.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260624-loops-rediscovering-cybernetics.md",
+      "updated_at": "2026-07-08T17:42:09+08:00"
+    },
     "20260625-ford-ai-quality-jd-power.md": {
       "body_sha256": "61e8afc1ba07c0c435ebac204b1e780c1b557a7c74539922ee18fc7c7222f75b",
       "compiled_at": "2026-06-29T08:23:18+08:00",
@@ -825,6 +841,14 @@
       "raw_file": "20260703-fable-field-guide-finding-unknowns.md",
       "status": "pending",
       "updated_at": "2026-07-08T15:46:54+08:00"
+    },
+    "20260706-getting-started-with-loops-claude-code.md": {
+      "body_sha256": "730c066de301c757ee4574baf6ef34f807a2e749c27e91c0f44f898b3d070636",
+      "compiled_at": "2026-07-08T17:42:00+08:00",
+      "raw_file": "20260706-getting-started-with-loops-claude-code.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260706-getting-started-with-loops-claude-code.md",
+      "updated_at": "2026-07-08T17:42:00+08:00"
     },
     "20260706-goodharts-law-tyranny-of-metrics.md": {
       "body_sha256": "5354011161445af31ce2f88d77c2a08cb8face4b9cfa85451032ac9df26e4aa4",
@@ -1423,6 +1447,6 @@
       "updated_at": "2026-06-29T08:23:18+08:00"
     }
   },
-  "updated_at": "2026-07-08T15:52:43+08:00",
+  "updated_at": "2026-07-08T17:42:09+08:00",
   "version": 1
 }

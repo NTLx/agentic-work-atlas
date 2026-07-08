@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 182 |
-| Raw 已编译 | 159 |
+| Raw 来源 | 185 |
+| Raw 已编译 | 162 |
 | Raw 待编译 | 23 |
 | Raw 已跳过 | 0 |
-| Entity | 311 |
+| Entity | 312 |
 | Topic | 31 |
 | Comparison | 19 |
 | Output | 5 |
@@ -65,7 +65,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 0 |
+| `tag` | 6 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -76,7 +76,14 @@ tags:
 
 ## 问题明细
 
-未发现阻断问题。
+### tag
+
+- `wiki/sources/20260624-loops-rediscovering-cybernetics.md` - `一次性 tag 仅出现 1 次: 'conceptual-framework'`
+- `wiki/sources/20260624-loops-rediscovering-cybernetics.md` - `一次性 tag 仅出现 1 次: 'control-theory'`
+- `wiki/sources/20260624-loops-rediscovering-cybernetics.md` - `一次性 tag 仅出现 1 次: 'cybernetics'`
+- `wiki/sources/20260611-loss-function-development.md` - `一次性 tag 仅出现 1 次: 'loss-function-development'`
+- `wiki/entities/Loss-Function-Development.md` - `一次性 tag 仅出现 1 次: 'product-strategy'`
+- `wiki/sources/20260611-loss-function-development.md` - `一次性 tag 仅出现 1 次: 'reward-hacking'`
 
 ## 运行命令
 
