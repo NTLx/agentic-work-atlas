@@ -8,7 +8,6 @@ updated: 2026-07-08
 tags:
   - source-summary
   - agentic-engineering
-  - loss-function-development
   - harness-engineering
   - reward-hacking
 evidence_level: medium

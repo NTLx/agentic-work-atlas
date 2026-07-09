@@ -8,9 +8,6 @@ updated: 2026-07-08
 tags:
   - source-summary
   - agentic-engineering
-  - cybernetics
-  - control-theory
-  - conceptual-framework
 evidence_level: medium
 claim_type: synthesized
 ---

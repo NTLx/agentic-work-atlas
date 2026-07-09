@@ -15,7 +15,6 @@ tags:
   - agentic-engineering
   - harness-engineering
   - agent-loops
-  - product-strategy
 related_entities:
   - "[[Agent-Loops]]"
   - "[[Agent-Harness]]"

@@ -10,8 +10,6 @@ source_raw:
   - "[[20260709-agents-that-teach-knowledge-debt]]"
 tags:
   - entity
-  - shield
-  - multi-agent-system
   - agentic-engineering
 evidence_level: medium
 claim_type: extracted
@@ -56,6 +54,11 @@ Knowledge Assessor Agent（再次）
 ### 冷启动处理
 
 Developer's Evolving Concept Map 在冷启动时通过分析开发者自己编写的代码（非 AI 生成）初始化——假设开发者自己写的代码涉及的概念是已知的。
+
+## 关键数据点
+
+- Accenture Labs 提出的多 agent 系统
+- 通过 Probe Queue + Microlearning Feed 在不打断开发流程的前提下偿还 [[Knowledge-Debt]]
 
 ## 技术栈
 

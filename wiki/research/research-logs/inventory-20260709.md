@@ -5,7 +5,6 @@ created: 2026-07-09
 tags:
   - research-archive
   - inventory
-  - deep-exploration
 ---
 
 # 07-09 深度探索详细记录
@@ -161,7 +160,7 @@ tags:
 ### 近期剪藏的涌现模式
 
 1. **从 prompting 到 loop design**：7 月集群明确转向
-2. **成本清算到来**：Martin Fowler 报告 $5M→$15M/月
+2. **成本清算到来**：Martin Fowler 报告 `$5M→$15M/月`
 3. **人类能力侵蚀成为一等关注**：SHIELD/Fable/Layoff Reversal 三个面向
 4. **中国企业 agent 实践浮现**：Qwen/钉钉/MiniMax
 5. **架构质量 = Token 效率**：首次有直接经济度量
