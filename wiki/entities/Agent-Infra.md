@@ -6,7 +6,7 @@ aliases:
   - Agent Infrastructure
 definition: "将硅基执行者接进软件世界的运行时层，包含 Coding Agent 入口、Context/Memory/Tool Use/Sandbox/AgentOps 运行时组件，以及 Agent Builder/Orchestrator/Operator 编排层"
 created: 2026-05-29
-updated: 2026-06-15
+updated: 2026-07-09
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -70,6 +70,7 @@ Agent Infra 决定 AI 能替谁做事。它是 [[Agent-Harness]] 概念的生态
 - Top 100 项目平均使用 2.8 种 coding agent 配置
 - AGENTS.md、CLAUDE.md、.cursor/rules 成为"给 AI 的入职文档"
 - 96 个 description 变化项目中，当前含 harness 的有 6 个（4 个为新增）
+- **MCP 已成事实标准（2026-07）**：OpenAI/Google/Microsoft 全部采纳；10,000+ 公开服务器；SDK 月下载 9,700 万次；41% 高级软件负责人生产使用；Linux 基金会治理（Agentic AI Foundation）；MCP 2026-07-28 RC 实现无状态核心。来源：07-09 深度思考（联网验证）
 
 ## 前提与局限性
 
