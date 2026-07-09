@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-07-09
+updated: 2026-07-10
 tags:
 ---
 
@@ -21,7 +21,7 @@ tags:
 | Raw 文章 | 187 个 |
 | Source Summary | 184 个 |
 | Output 作品 | 5 个 |
-| Research 日志 | 26 个 |
+| Research 日志 | 27 个 |
 
 ### 连接拓扑（2026-06-25 实测，口径见 `schema/fragmentation-metrics.md`）
 

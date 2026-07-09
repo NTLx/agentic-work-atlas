@@ -5,7 +5,7 @@ aliases:
   - Vibe Coding
 definition: "Andrej Karpathy 提出的编程概念，提升所有人的编程能力底线，让任何人通过自然语言和 agent 交互生成软件，原型质量是其特征"
 created: 2026-04-10
-updated: 2026-06-01
+updated: 2026-07-10
 evidence_level: high
 claim_type: mixed
 tags:
@@ -150,6 +150,19 @@ Vibe Coding 与 Software 2.0 / 3.0 的关系：
 - 质量标准：未经审查、原型质量，与生产就绪代码有本质区别
 - 术语滥用风险：不应将"任何 LLM 生成代码"都定义为 Vibe Coding
 - 反向边界：当任务需要本质复杂性判断、团队协作和责任承担时，Vibe Coding 的收益会被隐藏成本抵消
+
+## Spec-Driven Development 边界（07-10 深度思考）
+
+Vibe Coding 和 Spec-Driven Development 不是线性演化关系——它们永久共存，各自处理不同复杂度层的任务：
+
+**路径选择矩阵**：本质复杂度 × 系统生命周期 → 三条路径共存：
+- **A**: vibe → spec → production（高本质复杂度 + 长生命周期系统）
+- **B**: vibe → 被 AI 消解 → 不需要 spec（低本质复杂度 + 可端到端 AI 处理，如 menu-gen）
+- **C**: 永远 vibe（探索性/创意性/不可验证任务）
+
+**Spec 三层定理**：规则层（可形式化，硬验证）→ 模式层（可传达，软验证）→ 品质层（不可传达，委托）。Vibe Coding 处理品质层和模式层的探索部分。
+
+**框架创造边界**：Vibe Coding 的核心不可替代价值 = 框架创造——看到当前解空间之外的选项（如 Karpathy 的 menu-gen 顿悟："that app shouldn't exist"）。框架创造不可在当前框架内编码（哥德尔不完备的工程版本），需要外部他者的碰撞。来源：07-10 深度思考（roundtable+think+qa）
 
 ## 关联概念
 
