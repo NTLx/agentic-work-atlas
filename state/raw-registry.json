@@ -40,6 +40,12 @@
       "status": "pending",
       "updated_at": "2026-07-08T15:46:54+08:00"
     },
+    "20260226-pro-worker-ai-hamilton-project.md": {
+      "body_sha256": "b85017f778bbbccea1c7bc78c8c3336df17399105c7914fb60737373d2cd5649",
+      "raw_file": "20260226-pro-worker-ai-hamilton-project.md",
+      "status": "pending",
+      "updated_at": "2026-07-09T10:00:49+08:00"
+    },
     "20260330-reward-hacking-equilibrium-finite-evaluation.md": {
       "body_sha256": "29e634429b7f76d06b1c00ec13fe04eae81f47630b586e531bc9265e15f3ffb9",
       "raw_file": "20260330-reward-hacking-equilibrium-finite-evaluation.md",
@@ -1453,6 +1459,6 @@
       "updated_at": "2026-06-29T08:23:18+08:00"
     }
   },
-  "updated_at": "2026-07-09T08:53:39+08:00",
+  "updated_at": "2026-07-09T10:00:49+08:00",
   "version": 1
 }
