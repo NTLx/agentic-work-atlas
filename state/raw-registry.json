@@ -880,6 +880,12 @@
       "summary_path": "wiki/sources/20260707-intelligence-is-free-data-systems-for-of-by-agents.md",
       "updated_at": "2026-07-08T13:56:13.241407"
     },
+    "20260709-agents-that-teach-knowledge-debt.md": {
+      "body_sha256": "d07d4ff33138b33f030cce80ecaf0efd4e8a4aad815d14cb6e02581450387cff",
+      "raw_file": "20260709-agents-that-teach-knowledge-debt.md",
+      "status": "pending",
+      "updated_at": "2026-07-09T08:53:39+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-06-29T08:23:18+08:00",
@@ -1447,6 +1453,6 @@
       "updated_at": "2026-06-29T08:23:18+08:00"
     }
   },
-  "updated_at": "2026-07-08T17:42:09+08:00",
+  "updated_at": "2026-07-09T08:53:39+08:00",
   "version": 1
 }
