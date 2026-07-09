@@ -7,7 +7,7 @@ aliases:
   - 对 AI 的隐藏指令
 definition: "在内容中嵌入'给 AI 看的隐藏指令'，试图影响 AI 综述/推荐的风险；更强的模型已能识别并拒绝这类指令，将其视为 untrusted external instruction"
 created: 2026-06-06
-updated: 2026-06-16
+updated: 2026-07-10
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -53,6 +53,7 @@ source_raw:
 
 ## 前提与局限性
 - **窗口期**：在 GPT-5.5 之前的小型/早期模型上 trick 仍有效——窗口正在关闭但没完全关闭
+- **不可解内核（07-10 深度思考）**：Prompt injection 的本质 = 未经授权的框架切换。Agent 不能在框架内完全检测框架被篡改（哥德尔不完备定理的工程推论）。防御分三层：底层(已知模式检测) + 中层(经济均衡威慑) + 上层(人类安全研究发现未知攻击)。上层是耗散结构——有效性随 AI 依赖度增加而下降
 - **行业规范尚未形成**：法律/伦理/平台规则都没明确"对 AI 隐藏指令"的边界
 - **个人/小团队 vs 大企业**：个人网站 prompt injection 风险低；大企业内容涉及品牌风险
 
