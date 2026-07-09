@@ -2,1463 +2,1501 @@
   "items": {
     "(14) Jevons Paradox for Knowledge Work.md": {
       "body_sha256": "a6b800af825830f4a36a0785e1436059b170bb3a591aa80dce550e22365760b7",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:19+08:00",
       "raw_file": "(14) Jevons Paradox for Knowledge Work.md",
       "status": "compiled",
       "summary_path": "wiki/sources/(14) Jevons Paradox for Knowledge Work.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:19+08:00"
     },
     "2026-ai-agent-evaluation-pipeline-methodology.md": {
       "body_sha256": "28f9f9ee15d8de41d82a2b824dbef1c8149bc0b26006ae269ea3bf9a0c4beeee",
+      "compiled_at": "2026-07-09T13:16:35+08:00",
       "raw_file": "2026-ai-agent-evaluation-pipeline-methodology.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/2026-ai-agent-evaluation-pipeline-methodology.md",
+      "updated_at": "2026-07-09T13:16:35+08:00"
     },
     "2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md": {
       "body_sha256": "fa4cef80caa8c14880da801be6f24b492ec70b8b571fe0af381beac25f19907f",
+      "compiled_at": "2026-07-09T13:16:35+08:00",
       "raw_file": "2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp.md",
+      "updated_at": "2026-07-09T13:16:35+08:00"
     },
     "2026-eu-ai-act-compliance-autonomous-agents.md": {
       "body_sha256": "4d88b40d86dad1bd0848ee36ba9df73b6c423700b9f25452455234dee7a3c4cc",
+      "compiled_at": "2026-07-09T13:16:35+08:00",
       "raw_file": "2026-eu-ai-act-compliance-autonomous-agents.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/2026-eu-ai-act-compliance-autonomous-agents.md",
+      "updated_at": "2026-07-09T13:16:35+08:00"
     },
     "20260127-claude-coding-notes.md": {
       "body_sha256": "543ec5810a31ac6322d50371502f757abdb261928302d49d2014f3e66b369b4d",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:19+08:00",
       "raw_file": "20260127-claude-coding-notes.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260127-claude-coding-notes.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:19+08:00"
     },
     "202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md": {
       "body_sha256": "50c9463e18195e48acfb2e88e149fce3ead1dcf626857fffce8820f7befb02b5",
+      "compiled_at": "2026-07-09T13:16:19+08:00",
       "raw_file": "202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md",
+      "updated_at": "2026-07-09T13:16:19+08:00"
     },
     "20260226-pro-worker-ai-hamilton-project.md": {
       "body_sha256": "b85017f778bbbccea1c7bc78c8c3336df17399105c7914fb60737373d2cd5649",
+      "compiled_at": "2026-07-09T13:16:19+08:00",
       "raw_file": "20260226-pro-worker-ai-hamilton-project.md",
-      "status": "pending",
-      "updated_at": "2026-07-09T10:00:49+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260226-pro-worker-ai-hamilton-project.md",
+      "updated_at": "2026-07-09T13:16:19+08:00"
     },
     "20260330-reward-hacking-equilibrium-finite-evaluation.md": {
       "body_sha256": "29e634429b7f76d06b1c00ec13fe04eae81f47630b586e531bc9265e15f3ffb9",
+      "compiled_at": "2026-07-09T13:16:20+08:00",
       "raw_file": "20260330-reward-hacking-equilibrium-finite-evaluation.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260330-reward-hacking-equilibrium-finite-evaluation.md",
+      "updated_at": "2026-07-09T13:16:20+08:00"
     },
     "20260409-ai-capability-gap-ai-psychosis.md": {
       "body_sha256": "69d6cff813c2210a4b1ada48f94b2c2efc88992bba0d89df96109f3026a4f5f0",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:20+08:00",
       "raw_file": "20260409-ai-capability-gap-ai-psychosis.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260409-ai-capability-gap-ai-psychosis.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:20+08:00"
     },
     "20260410-anti-patterns.md": {
       "body_sha256": "7b75ac5a9f77f0458ab5b1059547301a2ac6b026b9e2380982eacb54700f2b3b",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:20+08:00",
       "raw_file": "20260410-anti-patterns.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260410-anti-patterns.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:20+08:00"
     },
     "20260410-better-code.md": {
       "body_sha256": "6c77229b060d0b49471e5f390b158c60bbe597f64d5782b8a9353a012049b3ee",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:20+08:00",
       "raw_file": "20260410-better-code.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260410-better-code.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:20+08:00"
     },
     "20260410-code-is-cheap.md": {
       "body_sha256": "3f345ebb977415adb2877ed9d854dc2b9ba1530701295aab173573f2fa8813b7",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:20+08:00",
       "raw_file": "20260410-code-is-cheap.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260410-code-is-cheap.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:20+08:00"
     },
     "20260410-hoard-things-you-know.md": {
       "body_sha256": "2efca6f49785f6454306e70c0efb98c2eb4478e43866b7be830da313a3434af7",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:20+08:00",
       "raw_file": "20260410-hoard-things-you-know.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260410-hoard-things-you-know.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:20+08:00"
     },
     "20260413-llm-wiki.md": {
       "body_sha256": "9c8cc828a8af2dd6cf0e3a1264118bdbaa5e1b2e9998c3a87fa7b650764d55c4",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:20+08:00",
       "raw_file": "20260413-llm-wiki.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260413-llm-wiki.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:20+08:00"
     },
     "20260413-why-ai-first-strategy-wrong.md": {
       "body_sha256": "8bdd8e2cffd90f988ba1fbcfc1f30d626b4bb13c8ce875d41675229ffddc8b40",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:20+08:00",
       "raw_file": "20260413-why-ai-first-strategy-wrong.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260413-why-ai-first-strategy-wrong.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:20+08:00"
     },
     "20260414-cybersecurity-proof-of-work.md": {
       "body_sha256": "b753c4ea2661a267368b52645b4f2fd4d41402ce0e81aba68290dd359babcf25",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:21+08:00",
       "raw_file": "20260414-cybersecurity-proof-of-work.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260414-cybersecurity-proof-of-work.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:21+08:00"
     },
     "20260414-martin-fowler-fragments.md": {
       "body_sha256": "f0da2cf042c8c7ad427b0efb93c0981dc428a1091e35d9cbb16352f95ebeea61",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:21+08:00",
       "raw_file": "20260414-martin-fowler-fragments.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260414-martin-fowler-fragments.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:21+08:00"
     },
     "20260419-agent-harness-engineering.md": {
       "body_sha256": "bc71eb446133ad0680ad5f9e2ea16ca0b7c7be2067c6d325de50131f05c3d0e5",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:21+08:00",
       "raw_file": "20260419-agent-harness-engineering.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260419-agent-harness-engineering.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:21+08:00"
     },
     "20260420-build-first-business-ontology.md": {
       "body_sha256": "9c4d3281de049ea7f918f730cc3e0e503a3d8ad850f3abaea5bf95a7657b43c4",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:21+08:00",
       "raw_file": "20260420-build-first-business-ontology.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260420-build-first-business-ontology.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:21+08:00"
     },
     "20260420-ontology-enterprise-ai-agent.md": {
       "body_sha256": "da0e7b78531697fd35965c4b2b3430864cb231a883ac6fa056798fcc102220f3",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:21+08:00",
       "raw_file": "20260420-ontology-enterprise-ai-agent.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260420-ontology-enterprise-ai-agent.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:21+08:00"
     },
     "20260420-ontology-meets-agent-case-study.md": {
       "body_sha256": "677eb38955638acaf96796875ad56e08b4363fe1f5b41cb3119c13a9c4625eb8",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:22+08:00",
       "raw_file": "20260420-ontology-meets-agent-case-study.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260420-ontology-meets-agent-case-study.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:22+08:00"
     },
     "202605-code-cleanliness-coding-agents-minimal-pair.pdf": {
       "body_sha256": "ff5d78e7ccbf58ca32a4b06e3a8792e40d2872a373c334b84dadc288a6b0b24a",
-      "compiled_at": "2026-07-08T15:52:43+08:00",
+      "compiled_at": "2026-07-09T13:16:44+08:00",
       "raw_file": "202605-code-cleanliness-coding-agents-minimal-pair.pdf",
       "status": "compiled",
       "summary_path": "wiki/sources/202605-code-cleanliness-coding-agents-minimal-pair.md",
-      "updated_at": "2026-07-08T15:52:43+08:00"
+      "updated_at": "2026-07-09T13:16:44+08:00"
     },
     "20260502-most-companies-arent-ready-for-ai.md": {
       "body_sha256": "8331d0c93022ef0919570794f6939793eee8bd7fab4379f0ab0a74629258a70a",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:22+08:00",
       "raw_file": "20260502-most-companies-arent-ready-for-ai.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260502-most-companies-arent-ready-for-ai.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:22+08:00"
     },
     "20260512-finops-for-ai-token-level-visibility.md": {
       "body_sha256": "659cfa3fff68f5d838bc535308efabfabf087406b379d70cbc26c078deaf7a1e",
+      "compiled_at": "2026-07-09T13:16:22+08:00",
       "raw_file": "20260512-finops-for-ai-token-level-visibility.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260512-finops-for-ai-token-level-visibility.md",
+      "updated_at": "2026-07-09T13:16:22+08:00"
     },
     "20260518-zero-trust-for-ai-agents.md": {
       "body_sha256": "b71bdda59e6a98b3a466344cca251bb102f272e88df1efac84a6051dd78cb836",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:22+08:00",
       "raw_file": "20260518-zero-trust-for-ai-agents.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260518-zero-trust-for-ai-agents.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:22+08:00"
     },
     "20260526-obsidian-claude-code-brain.md": {
       "body_sha256": "3c82d485eda58bd63871c55af1331217204ecbfe0086657a82b2724974451928",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:22+08:00",
       "raw_file": "20260526-obsidian-claude-code-brain.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260526-obsidian-claude-code-brain.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:22+08:00"
     },
     "20260528-agentic-ai-2026-landscape.md": {
       "body_sha256": "f406117df6999382a7adc6dd66ada29c54d09c50d4ea90302b6cc35adfe6899f",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:22+08:00",
       "raw_file": "20260528-agentic-ai-2026-landscape.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260528-agentic-ai-2026-landscape.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:22+08:00"
     },
     "20260528-ai-model-simulation.md": {
       "body_sha256": "ac996b51fd409a7ec7383d4efc647ddc629467552fef296f1291c0983564a093",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:22+08:00",
       "raw_file": "20260528-ai-model-simulation.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260528-ai-model-simulation.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:22+08:00"
     },
     "20260528-corporate-america-ai-rationing.md": {
       "body_sha256": "311badb70cd65331b207af194799a0a3164854fa04ede5aa8523a87604731606",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:22+08:00",
       "raw_file": "20260528-corporate-america-ai-rationing.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260528-corporate-america-ai-rationing.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:22+08:00"
     },
     "20260529-ceo-ai-psychosis-equity-podcast.md": {
       "body_sha256": "fcd29ba145e7913fa786a84ff1e93b78396fb669db68ded44363e305a5c76718",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:23+08:00",
       "raw_file": "20260529-ceo-ai-psychosis-equity-podcast.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260529-ceo-ai-psychosis-equity-podcast.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:23+08:00"
     },
     "20260529-gemini-co-leads-origins.md": {
       "body_sha256": "00bfefeceac9f18af1a719fb920da28b53127c07bb8851620a832ba93c398157",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:23+08:00",
       "raw_file": "20260529-gemini-co-leads-origins.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260529-gemini-co-leads-origins.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:23+08:00"
     },
     "20260529-last-technical-interview.md": {
       "body_sha256": "c2177e16a0261ddd5b817d3600d13436cbf4ce646e5b45b3384b6bef976f40c7",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:23+08:00",
       "raw_file": "20260529-last-technical-interview.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260529-last-technical-interview.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:23+08:00"
     },
     "20260530-ceo-knee-deep-building-ai.md": {
       "body_sha256": "03b7fb6e85e6d28f742af9c6be5e346c869f41cd5625a7c500c9391edbaee626",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:23+08:00",
       "raw_file": "20260530-ceo-knee-deep-building-ai.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260530-ceo-knee-deep-building-ai.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:23+08:00"
     },
     "20260530-cursor-developer-habits-report.md": {
       "body_sha256": "90861ea315b544b4d0810422194b4e599867ec81d0f84b6272b16a870907d3c6",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:23+08:00",
       "raw_file": "20260530-cursor-developer-habits-report.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260530-cursor-developer-habits-report.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:23+08:00"
     },
     "20260531-thoughts-hmmz.md": {
       "body_sha256": "5a377e3f749a084344624ddf0f58c2927cd0a4227a10476f82000a8b876a74ed",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:23+08:00",
       "raw_file": "20260531-thoughts-hmmz.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260531-thoughts-hmmz.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:23+08:00"
     },
     "202606-finops-x-2026-ai-tokenomics.md": {
       "body_sha256": "25ce8bb47668bf51c7963e72b18e7cdff86611634d841aae4dfe6c451ed0dcc7",
+      "compiled_at": "2026-07-09T13:16:33+08:00",
       "raw_file": "202606-finops-x-2026-ai-tokenomics.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/202606-finops-x-2026-ai-tokenomics.md",
+      "updated_at": "2026-07-09T13:16:33+08:00"
     },
     "20260601-klarna-ai-assistant-customer-service.md": {
       "body_sha256": "65e9b41762c5e173734e8fd3e0e67adc3a1f90eee30c35a4562c2482eb24ccb6",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:23+08:00",
       "raw_file": "20260601-klarna-ai-assistant-customer-service.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260601-klarna-ai-assistant-customer-service.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:23+08:00"
     },
     "20260601-lightspeed-fin-ai-agent.md": {
       "body_sha256": "a8accf174f9d74047692a2080e6274764ef92d6073cc9b2256b236c8dc085caf",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:24+08:00",
       "raw_file": "20260601-lightspeed-fin-ai-agent.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260601-lightspeed-fin-ai-agent.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:24+08:00"
     },
     "20260601-mercado-libre-github-copilot.md": {
       "body_sha256": "a76e24cbbb781605f62c373aeb453e52b52e9ba290ed4f6463adc48096ea59b9",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:24+08:00",
       "raw_file": "20260601-mercado-libre-github-copilot.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260601-mercado-libre-github-copilot.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:24+08:00"
     },
     "20260601-mit-nanda-genai-divide.md": {
       "body_sha256": "5402208817136b13b6db2637a941c326a232098322a54e76413a67729a8d7c8d",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:24+08:00",
       "raw_file": "20260601-mit-nanda-genai-divide.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260601-mit-nanda-genai-divide.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:24+08:00"
     },
     "20260601-octopus-energy-ai-customer-service.md": {
       "body_sha256": "96112cc5b1b7e8f60ecdeda912c1552e69ccd299f23e98e5a2308324e2568a87",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:24+08:00",
       "raw_file": "20260601-octopus-energy-ai-customer-service.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260601-octopus-energy-ai-customer-service.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:24+08:00"
     },
     "20260601-stanford-enterprise-ai-playbook.md": {
       "body_sha256": "909c055f21a3fe730e6ff378b9911ed665b65f38f23bcbb2d6c0f01f7d0046bb",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:25+08:00",
       "raw_file": "20260601-stanford-enterprise-ai-playbook.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260601-stanford-enterprise-ai-playbook.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:25+08:00"
     },
     "20260602-ibm-agent-logic-scalable-ai-adoption.md": {
       "body_sha256": "ea8c8de3bc25ff65fa92b0260669093476db719d023cd9e654bf8517a3ffe755",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:25+08:00",
       "raw_file": "20260602-ibm-agent-logic-scalable-ai-adoption.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260602-ibm-agent-logic-scalable-ai-adoption.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:25+08:00"
     },
     "20260602-karpathy-shortification-of-learning.md": {
       "body_sha256": "53a66401ff266fe2c8f841876a7069e9e28ff6490476a332332ffb9896e4fef1",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:25+08:00",
       "raw_file": "20260602-karpathy-shortification-of-learning.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260602-karpathy-shortification-of-learning.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:25+08:00"
     },
     "20260603-anthropic-self-service-data-analytics.md": {
       "body_sha256": "3ecd0f0fbbbc8b46c83207d6ff9deacc9e2a18274a8548e9c74a918c0d504ea9",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:25+08:00",
       "raw_file": "20260603-anthropic-self-service-data-analytics.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260603-anthropic-self-service-data-analytics.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:25+08:00"
     },
     "20260603-lessons-from-building-claude-code-how-we-use-skills.md": {
       "body_sha256": "fd42e8e2d96875f54c045014a12bb2328074b66cba658f4d9da496f595245eaf",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:25+08:00",
       "raw_file": "20260603-lessons-from-building-claude-code-how-we-use-skills.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260603-lessons-from-building-claude-code-how-we-use-skills.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:25+08:00"
     },
     "20260604-anthropic-recursive-self-improvement.md": {
       "body_sha256": "c4039b920f643e54575581670739af1bbdd03e63d6949685e8bc287b46d13f65",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:25+08:00",
       "raw_file": "20260604-anthropic-recursive-self-improvement.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260604-anthropic-recursive-self-improvement.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:25+08:00"
     },
     "20260604-dwarkesh-agi-scarcity.md": {
       "body_sha256": "8940ce5b5a468ad1a4c61733a568289cb278c438de8a57681911d5549d98fd7a",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:25+08:00",
       "raw_file": "20260604-dwarkesh-agi-scarcity.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260604-dwarkesh-agi-scarcity.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:25+08:00"
     },
     "20260604-mollick-coexistence.md": {
       "body_sha256": "662ec6d52b2b38201b0ae2672c8fb5b40ed015d2e9147495eee8dd5a99e5c39a",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:25+08:00",
       "raw_file": "20260604-mollick-coexistence.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260604-mollick-coexistence.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:25+08:00"
     },
     "20260604-openai-dreaming-memory.md": {
       "body_sha256": "d48425ffdb994a6cd823fe6818ea0d4adfe6653d657c198964193b0e210b9bef",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:26+08:00",
       "raw_file": "20260604-openai-dreaming-memory.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260604-openai-dreaming-memory.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:26+08:00"
     },
     "20260605-how-anthropic-uses-claude-gtm-engineering.md": {
       "body_sha256": "36d7bf755bec9b0b3a80156c10be293c112a3fa6e8bd08deb1e87fb200f00810",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:26+08:00",
       "raw_file": "20260605-how-anthropic-uses-claude-gtm-engineering.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260605-how-anthropic-uses-claude-gtm-engineering.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:26+08:00"
     },
     "20260606-fei-fei-world-model-taxonomy.md": {
       "body_sha256": "21608d467284bdc1b0ea63dc4f0f52d91973ede202fd5aeea92032c027efc94a",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:26+08:00",
       "raw_file": "20260606-fei-fei-world-model-taxonomy.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260606-fei-fei-world-model-taxonomy.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:26+08:00"
     },
     "20260606-google-agentic-rag.md": {
       "body_sha256": "624b72e4cd297ba05ed2c5bda4cfa1076c1aeaf7b771919440dca12e7edb9976",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:26+08:00",
       "raw_file": "20260606-google-agentic-rag.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260606-google-agentic-rag.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:26+08:00"
     },
     "20260606-the-minimill-of-ai.md": {
       "body_sha256": "e5fec820dfbb45896ae8cb20f99c6a732cc9c0c01ff0565d66a3e7929402c970",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:26+08:00",
       "raw_file": "20260606-the-minimill-of-ai.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260606-the-minimill-of-ai.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:26+08:00"
     },
     "20260606-thousand-token-wood.md": {
       "body_sha256": "e2126a7cd2b8097c408884eba097ed0fc00cecb0efec410843adb2ffce536eee",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:26+08:00",
       "raw_file": "20260606-thousand-token-wood.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260606-thousand-token-wood.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:26+08:00"
     },
     "20260608-become-ai-native-org.md": {
       "body_sha256": "95f7b24edeb8143cf2305760316ee57cf8bd862ef7bcf2d3865e9efbd27d7b22",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:26+08:00",
       "raw_file": "20260608-become-ai-native-org.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260608-become-ai-native-org.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:26+08:00"
     },
     "20260608-connector-observability-directory.md": {
       "body_sha256": "9211f8c1f370c43e359f17f0b301791155177e960fab9c4561b4656b3875f1dc",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:26+08:00",
       "raw_file": "20260608-connector-observability-directory.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260608-connector-observability-directory.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:26+08:00"
     },
     "20260608-paving-the-way-for-agents-in-biology.md": {
       "body_sha256": "0350efa30fe40bce89d637922f4738b48bb80f5bd16c49b1aebcf0fe632c35cc",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:27+08:00",
       "raw_file": "20260608-paving-the-way-for-agents-in-biology.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260608-paving-the-way-for-agents-in-biology.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:27+08:00"
     },
     "20260608-reflecting-on-year-of-claude-code.md": {
       "body_sha256": "1db0dceb580208883a205b6074f0fc9bbeea106a47d4c67017e9b7da02029f0c",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:27+08:00",
       "raw_file": "20260608-reflecting-on-year-of-claude-code.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260608-reflecting-on-year-of-claude-code.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:27+08:00"
     },
     "20260608-thousand-token-wood-v3.md": {
       "body_sha256": "863d0ffabb95f3ac34a6014a5bfaf410a54c79b328d3dc35317d43b19b76cd24",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:27+08:00",
       "raw_file": "20260608-thousand-token-wood-v3.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260608-thousand-token-wood-v3.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:27+08:00"
     },
     "20260609-magnetar-ai-analysts.md": {
       "body_sha256": "dee97046881c84bf7efadd3e636096ea18513642ee2c57657d843c893d0380aa",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:27+08:00",
       "raw_file": "20260609-magnetar-ai-analysts.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260609-magnetar-ai-analysts.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:27+08:00"
     },
     "20260609-whats-new-in-claude-managed-agents.md": {
       "body_sha256": "ab1d7581a98f9d014a3195ef02100f531796a277999653ae681b88cf9d286c58",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:27+08:00",
       "raw_file": "20260609-whats-new-in-claude-managed-agents.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260609-whats-new-in-claude-managed-agents.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:27+08:00"
     },
     "20260610-ai-exponential-policy.md": {
       "body_sha256": "fb1b6b50ce855cee700543e4ddeeb21de6bd4aba5fddfeaae33ea0f29d061932",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:27+08:00",
       "raw_file": "20260610-ai-exponential-policy.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260610-ai-exponential-policy.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:27+08:00"
     },
     "20260610-anthropic-ai-exploits-security-patches.md": {
       "body_sha256": "c9a0c9f0c4e914828c9d12035ead0621addef552151fc5e3cb34a994d6e3b274",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:27+08:00",
       "raw_file": "20260610-anthropic-ai-exploits-security-patches.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260610-anthropic-ai-exploits-security-patches.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:27+08:00"
     },
     "20260610-qwen-constraint-driven-engineering-experiment.md": {
       "body_sha256": "8785cef48bac6565e48e0a62f742deb44b44b620d94290afaabde7d0fe39c925",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:28+08:00",
       "raw_file": "20260610-qwen-constraint-driven-engineering-experiment.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260610-qwen-constraint-driven-engineering-experiment.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:28+08:00"
     },
     "20260611-loss-function-development.md": {
       "body_sha256": "3dcc0a0d4c5c63bcd92204da173cb9ab20b595f9a46eb980c967ed06cb38a210",
-      "compiled_at": "2026-07-08T17:42:09+08:00",
+      "compiled_at": "2026-07-09T13:16:28+08:00",
       "raw_file": "20260611-loss-function-development.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260611-loss-function-development.md",
-      "updated_at": "2026-07-08T17:42:09+08:00"
+      "updated_at": "2026-07-09T13:16:28+08:00"
     },
     "20260611-openai-harness-engineering.md": {
       "body_sha256": "85d31337ad70b3c77352fd25d47a869438e0ee23b9312b7015a846b91d3ee1e3",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:28+08:00",
       "raw_file": "20260611-openai-harness-engineering.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260611-openai-harness-engineering.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:28+08:00"
     },
     "20260613-NLAH-natural-language-agent-harnesses.md": {
       "body_sha256": "4d9dc595a8b6dc5e0b0c124cd04cb61c51aa3205a54f0fa86be1d1caad9f2002",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:28+08:00",
       "raw_file": "20260613-NLAH-natural-language-agent-harnesses.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260613-NLAH-natural-language-agent-harnesses.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:28+08:00"
     },
     "20260613-aliyun-agent-infra-constraint-infrastructure.md": {
       "body_sha256": "9fc97226f47e6d15d116a92629a1966fdddf1fda93ae3417c257583a0a7c4a71",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:28+08:00",
       "raw_file": "20260613-aliyun-agent-infra-constraint-infrastructure.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260613-aliyun-agent-infra-constraint-infrastructure.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:28+08:00"
     },
     "20260613-anthropic-public-record.md": {
       "body_sha256": "7f1fdcd9f6b64eb3b90ede1a98e90ef94c147577e2411f385ef82796f3f4b734",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:28+08:00",
       "raw_file": "20260613-anthropic-public-record.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260613-anthropic-public-record.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:28+08:00"
     },
     "20260613-coding-agent-organizational-engineering.md": {
       "body_sha256": "d10772a18d7de53abf588e7f5af672b5bdff3d8e3480bd84635a0be45c0f5084",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:28+08:00",
       "raw_file": "20260613-coding-agent-organizational-engineering.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260613-coding-agent-organizational-engineering.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:28+08:00"
     },
     "20260613-ontology-for-agent-optimization.md": {
       "body_sha256": "9651cf7e23d9d27a3619b0840be11f59ee026e352e159b0113e238b7f646ee64",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:28+08:00",
       "raw_file": "20260613-ontology-for-agent-optimization.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260613-ontology-for-agent-optimization.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:28+08:00"
     },
     "20260613-ontology-tokenmaxxing.md": {
       "body_sha256": "7450a4657a9adb226a445f30b5cf2a3feb36a257c4b4b76a020ed4c8b6ad9bdf",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:29+08:00",
       "raw_file": "20260613-ontology-tokenmaxxing.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260613-ontology-tokenmaxxing.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:29+08:00"
     },
     "20260613-qoder-human-bottleneck.md": {
       "body_sha256": "2d57ec7741f7adfe5d457a6e2f99e3dccb4031c90fc4564d598b5ff410f82f00",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:29+08:00",
       "raw_file": "20260613-qoder-human-bottleneck.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260613-qoder-human-bottleneck.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:29+08:00"
     },
     "20260615-ai-layoff-wave-powder-keg.md": {
       "body_sha256": "c74aa4052e2773be33489eebcd9120e2bd22899cf8900a85b69140504be205b3",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:29+08:00",
       "raw_file": "20260615-ai-layoff-wave-powder-keg.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260615-ai-layoff-wave-powder-keg.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:29+08:00"
     },
     "20260615-normaltech-ai-hasnt-replaced-software-engineers.md": {
       "body_sha256": "6f5d0b2ee7b4d02c5f76e90d20a9c95e740541d217990d2455e7d88d5fdd2fc1",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:29+08:00",
       "raw_file": "20260615-normaltech-ai-hasnt-replaced-software-engineers.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260615-normaltech-ai-hasnt-replaced-software-engineers.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:29+08:00"
     },
     "20260615-satyanadella-frontier-ecosystem.md": {
       "body_sha256": "23a1328b8aa6a58b14dffeab1784416e0db20e08314a9b0c05deaec46b18191a",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:29+08:00",
       "raw_file": "20260615-satyanadella-frontier-ecosystem.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260615-satyanadella-frontier-ecosystem.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:29+08:00"
     },
     "20260616-why-is-meta-destroying-its-engineering.md": {
       "body_sha256": "1e1b1cca05a9b868ebe635fb74b48c55b41ab09b58e5e875a7e4a10dc94c9423",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:29+08:00",
       "raw_file": "20260616-why-is-meta-destroying-its-engineering.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260616-why-is-meta-destroying-its-engineering.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:29+08:00"
     },
     "20260617-anthropic-claude-code-expertise.md": {
       "body_sha256": "40857d81e74ad2e844e918994ad6947862b57299b69d65b2203bb5dfe7d10297",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:29+08:00",
       "raw_file": "20260617-anthropic-claude-code-expertise.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260617-anthropic-claude-code-expertise.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:29+08:00"
     },
     "20260617-bayer-prince-agentic-rag.md": {
       "body_sha256": "48c14bd159208e174b9cce60a9fbb17e4d70dbbf9231f36d158178fa283eb54d",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:30+08:00",
       "raw_file": "20260617-bayer-prince-agentic-rag.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260617-bayer-prince-agentic-rag.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:30+08:00"
     },
     "20260617-bytebytego-open-weight-models.md": {
       "body_sha256": "2262ea964e767fcd375b1c92d90a2cc9a112ff75161911bab4b4a65b53365109",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:30+08:00",
       "raw_file": "20260617-bytebytego-open-weight-models.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260617-bytebytego-open-weight-models.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:30+08:00"
     },
     "20260617-google-amie-research-arc.md": {
       "body_sha256": "f87248293bff7472ab3b3b6df65cd07f1b697d84bbcf2ed96b31afe65fa427e0",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:30+08:00",
       "raw_file": "20260617-google-amie-research-arc.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260617-google-amie-research-arc.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:30+08:00"
     },
     "20260617-huggingface-agentic-resource-discovery.md": {
       "body_sha256": "7085912ce7e85cbdf53baf383d2162a8a31a6f8066317186a1a0b45c35efa266",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:30+08:00",
       "raw_file": "20260617-huggingface-agentic-resource-discovery.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260617-huggingface-agentic-resource-discovery.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:30+08:00"
     },
     "20260617-langchain-agent-engineering-new-discipline.md": {
       "body_sha256": "f599a868bcfe8761aba550e632fd4cac2f3771c8c7cd837694f52fd446cd72a7",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:30+08:00",
       "raw_file": "20260617-langchain-agent-engineering-new-discipline.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260617-langchain-agent-engineering-new-discipline.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:30+08:00"
     },
     "20260617-langchain-art-of-loop-engineering.md": {
       "body_sha256": "7199d259671f7208814534243203258375487375d91c7d99936580a33abf8a71",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:30+08:00",
       "raw_file": "20260617-langchain-art-of-loop-engineering.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260617-langchain-art-of-loop-engineering.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:30+08:00"
     },
     "20260617-langchain-legal-agent-verifiers.md": {
       "body_sha256": "70d19d812e8162a29c535a13e1b50a905ba4c7471de2416df9b1a94f84fc1a09",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:30+08:00",
       "raw_file": "20260617-langchain-legal-agent-verifiers.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260617-langchain-legal-agent-verifiers.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:30+08:00"
     },
     "20260617-openai-lifescibench.md": {
       "body_sha256": "e569743f3f7d6cc540305dc534664bbd0a399311eb90e17d77df05bd3a9943f6",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:31+08:00",
       "raw_file": "20260617-openai-lifescibench.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260617-openai-lifescibench.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:31+08:00"
     },
     "20260617-tim-ferriss-ai-killed-nonfiction.md": {
       "body_sha256": "f49fc94e0f06bac2e5f5341ccd1cbe85009d60ed8b6f7a7aa623778c3f7e7844",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:31+08:00",
       "raw_file": "20260617-tim-ferriss-ai-killed-nonfiction.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260617-tim-ferriss-ai-killed-nonfiction.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:31+08:00"
     },
     "20260618-cio-conference-ai-practices.md": {
       "body_sha256": "cd2eaa1b3b7cae82a7992cef2672c51fb63d6c1eab4906818a6e5036558de3fb",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:31+08:00",
       "raw_file": "20260618-cio-conference-ai-practices.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260618-cio-conference-ai-practices.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:31+08:00"
     },
     "20260618-mosaicleaks-privacy-agent.md": {
       "body_sha256": "b58529670d25ccbb43879a671f8d048462a65888c1c9b262ef892bdef2cf7bc2",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:31+08:00",
       "raw_file": "20260618-mosaicleaks-privacy-agent.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260618-mosaicleaks-privacy-agent.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:31+08:00"
     },
     "20260618-openai-rare-disease-diagnosis.md": {
       "body_sha256": "a34057504e757a7707babde8747c935914283e09c384acd4512487f37dbb9f1c",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:31+08:00",
       "raw_file": "20260618-openai-rare-disease-diagnosis.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260618-openai-rare-disease-diagnosis.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:31+08:00"
     },
     "20260619-the-data-black-hole-at-the-center-of-ai.md": {
       "body_sha256": "bc8e7d7ee23a6241df7fbdeae7bd9e1d48f1a4c3ff9e6dbf676b15297abc8959",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:31+08:00",
       "raw_file": "20260619-the-data-black-hole-at-the-center-of-ai.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260619-the-data-black-hole-at-the-center-of-ai.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:31+08:00"
     },
     "20260620-l8-principal-agentic-workflow.md": {
       "body_sha256": "2d3be631e511a43f7858f748b46f3ecef7d9eca22088a0a202f63728d7711060",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:31+08:00",
       "raw_file": "20260620-l8-principal-agentic-workflow.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260620-l8-principal-agentic-workflow.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:31+08:00"
     },
     "20260623-ibm-cuga-agent-harness.md": {
       "body_sha256": "ac0e557fd12b183f19d3469a57da9679ff7f517e21a8066d4baea16ec1d8b099",
+      "compiled_at": "2026-07-09T13:16:31+08:00",
       "raw_file": "20260623-ibm-cuga-agent-harness.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260623-ibm-cuga-agent-harness.md",
+      "updated_at": "2026-07-09T13:16:31+08:00"
     },
     "20260623-qwen-agentworld-language-world-models.md": {
       "body_sha256": "6f8a17df601d2dd2c58107db520763e0657a100d622e4c0216e8346dd3b3f173",
+      "compiled_at": "2026-07-09T13:16:32+08:00",
       "raw_file": "20260623-qwen-agentworld-language-world-models.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260623-qwen-agentworld-language-world-models.md",
+      "updated_at": "2026-07-09T13:16:32+08:00"
     },
     "20260624-gemini-3-5-flash-computer-use.md": {
       "body_sha256": "e02ef1d60107787375b13c12549212f9d201054b8468995312c44e0c13140b0b",
+      "compiled_at": "2026-07-09T13:16:32+08:00",
       "raw_file": "20260624-gemini-3-5-flash-computer-use.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260624-gemini-3-5-flash-computer-use.md",
+      "updated_at": "2026-07-09T13:16:32+08:00"
     },
     "20260624-loops-rediscovering-cybernetics.md": {
       "body_sha256": "d95ddf1de984a51e45d4f31a509d7f73beb1d00161e96e5676adc0940030acf5",
-      "compiled_at": "2026-07-08T17:42:09+08:00",
+      "compiled_at": "2026-07-09T13:16:32+08:00",
       "raw_file": "20260624-loops-rediscovering-cybernetics.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260624-loops-rediscovering-cybernetics.md",
-      "updated_at": "2026-07-08T17:42:09+08:00"
+      "updated_at": "2026-07-09T13:16:32+08:00"
     },
     "20260625-ford-ai-quality-jd-power.md": {
       "body_sha256": "61e8afc1ba07c0c435ebac204b1e780c1b557a7c74539922ee18fc7c7222f75b",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:32+08:00",
       "raw_file": "20260625-ford-ai-quality-jd-power.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260625-ford-ai-quality-jd-power.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:32+08:00"
     },
     "20260626-anthropic-economic-index-june-2026-report.md": {
       "body_sha256": "8058fa61279bdeb19279056a577cbb2ffd863c46f88be62bfb162582828c10cc",
-      "compiled_at": "2026-06-30T13:44:18+08:00",
+      "compiled_at": "2026-07-09T13:16:32+08:00",
       "raw_file": "20260626-anthropic-economic-index-june-2026-report.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260626-anthropic-economic-index-june-2026-report.md",
-      "updated_at": "2026-06-30T13:44:18+08:00"
+      "updated_at": "2026-07-09T13:16:32+08:00"
     },
     "20260626-llm-as-judge-healthcare.md": {
       "body_sha256": "134c10db8287483c0f9d6f22011f1beda5461fecaba762ebe296182951867561",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:32+08:00",
       "raw_file": "20260626-llm-as-judge-healthcare.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260626-llm-as-judge-healthcare.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:32+08:00"
     },
     "20260630-building-headless-automation-claude-code.md": {
       "body_sha256": "2fd0036a8995f9c0bb2cd4135b5f21ff1a51e938e31bf1aee45dee9b44256d3c",
-      "compiled_at": "2026-06-30T13:53:43+08:00",
+      "compiled_at": "2026-07-09T13:16:32+08:00",
       "raw_file": "20260630-building-headless-automation-claude-code.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260630-building-headless-automation-claude-code.md",
-      "updated_at": "2026-06-30T13:53:43+08:00"
+      "updated_at": "2026-07-09T13:16:32+08:00"
     },
     "20260630-loop-engineering-andrew-ng.md": {
       "body_sha256": "a78e5c8e811b0814c906120592f1242f5105fd8892cdc9bfc1673f9486d7b9db",
+      "compiled_at": "2026-07-09T13:16:33+08:00",
       "raw_file": "20260630-loop-engineering-andrew-ng.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260630-loop-engineering-andrew-ng.md",
+      "updated_at": "2026-07-09T13:16:33+08:00"
     },
     "20260701-grant-sanderson-ai-math-future.md": {
       "body_sha256": "47e2b1c5a6bf0dfc0aab8ec82c3e7913a3da7d0d72c3be7676fd72a701c5b24b",
-      "compiled_at": "2026-07-01T08:54:40+08:00",
+      "compiled_at": "2026-07-09T13:16:33+08:00",
       "raw_file": "20260701-grant-sanderson-ai-math-future.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260701-grant-sanderson-ai-math-future.md",
-      "updated_at": "2026-07-01T08:54:40+08:00"
+      "updated_at": "2026-07-09T13:16:33+08:00"
     },
     "20260702-agent-assisted-sglang-development.md": {
       "body_sha256": "d1576c44d76171624f281714d4520c8381a56733b334ac17b50c7949d67799ca",
+      "compiled_at": "2026-07-09T13:16:33+08:00",
       "raw_file": "20260702-agent-assisted-sglang-development.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260702-agent-assisted-sglang-development.md",
+      "updated_at": "2026-07-09T13:16:33+08:00"
     },
     "20260702-ai-layoffs-reversed.md": {
       "body_sha256": "29701ed7134676cef8c45eb9105667fccab3012baa2cb9e1adc759fb86c32d8e",
-      "compiled_at": null,
+      "compiled_at": "2026-07-09T13:16:33+08:00",
       "raw_file": "20260702-ai-layoffs-reversed.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260702-ai-layoffs-reversed.md",
+      "updated_at": "2026-07-09T13:16:33+08:00"
     },
     "20260702-anthropic-context-engineering.md": {
       "body_sha256": "0c8cb85bf95f65daf90ddba815235d0fabaa5a0b6658a1b921c32036652d8fff",
-      "compiled_at": null,
+      "compiled_at": "2026-07-09T13:16:33+08:00",
       "raw_file": "20260702-anthropic-context-engineering.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260702-anthropic-context-engineering.md",
+      "updated_at": "2026-07-09T13:16:33+08:00"
     },
     "20260702-anthropic-harnesses-long-running-agents.md": {
       "body_sha256": "cafdd22f25eb9247356e54b2af6183e1f49cd71165106c44b02942fbf46e9c84",
-      "compiled_at": null,
+      "compiled_at": "2026-07-09T13:16:33+08:00",
       "raw_file": "20260702-anthropic-harnesses-long-running-agents.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260702-anthropic-harnesses-long-running-agents.md",
+      "updated_at": "2026-07-09T13:16:33+08:00"
     },
     "20260702-qwen-agent-harness-practice.md": {
       "body_sha256": "9c9f22874df1c044841cde7058ca8a8e4ef990702987a6b9c79c0a2da5b93966",
+      "compiled_at": "2026-07-09T13:16:34+08:00",
       "raw_file": "20260702-qwen-agent-harness-practice.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260702-qwen-agent-harness-practice.md",
+      "updated_at": "2026-07-09T13:16:34+08:00"
     },
     "20260703-anthropic-skill-engineering-practices.md": {
       "body_sha256": "96d2362429bda002bd57157f7997203386bdb4dbd965bb1cd9aef998ed70b3ea",
+      "compiled_at": "2026-07-09T13:16:34+08:00",
       "raw_file": "20260703-anthropic-skill-engineering-practices.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260703-anthropic-skill-engineering-practices.md",
+      "updated_at": "2026-07-09T13:16:34+08:00"
     },
     "20260703-fable-field-guide-finding-unknowns.md": {
       "body_sha256": "2d9b6ff798f20285a21f5ada2688f663ba4b8c9b828b4efbf7f55880a3dcf0f4",
+      "compiled_at": "2026-07-09T13:16:34+08:00",
       "raw_file": "20260703-fable-field-guide-finding-unknowns.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260703-fable-field-guide-finding-unknowns.md",
+      "updated_at": "2026-07-09T13:16:34+08:00"
     },
     "20260706-getting-started-with-loops-claude-code.md": {
       "body_sha256": "730c066de301c757ee4574baf6ef34f807a2e749c27e91c0f44f898b3d070636",
-      "compiled_at": "2026-07-08T17:42:00+08:00",
+      "compiled_at": "2026-07-09T13:16:34+08:00",
       "raw_file": "20260706-getting-started-with-loops-claude-code.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260706-getting-started-with-loops-claude-code.md",
-      "updated_at": "2026-07-08T17:42:00+08:00"
+      "updated_at": "2026-07-09T13:16:34+08:00"
     },
     "20260706-goodharts-law-tyranny-of-metrics.md": {
       "body_sha256": "5354011161445af31ce2f88d77c2a08cb8face4b9cfa85451032ac9df26e4aa4",
+      "compiled_at": "2026-07-09T13:16:34+08:00",
       "raw_file": "20260706-goodharts-law-tyranny-of-metrics.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260706-goodharts-law-tyranny-of-metrics.md",
+      "updated_at": "2026-07-09T13:16:34+08:00"
     },
     "20260706-martin-fowler-fragments.md": {
       "body_sha256": "8fafa0cd5b75f1f635bb4069296d81479447d7b9ec411d26b3f26558b2f87182",
-      "compiled_at": "2026-07-07T12:00:00+08:00",
+      "compiled_at": "2026-07-09T13:16:34+08:00",
       "raw_file": "20260706-martin-fowler-fragments.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260706-martin-fowler-fragments.md",
-      "updated_at": "2026-07-07T12:00:00+08:00"
+      "updated_at": "2026-07-09T13:16:34+08:00"
     },
     "20260707-ai-agent-traps.pdf": {
       "body_sha256": "603f0cae8cd8ab944f3e700a169d325120db42239075350d07c8183da71a527c",
-      "compiled_at": "2026-07-08T15:52:43+08:00",
+      "compiled_at": "2026-07-09T13:16:45+08:00",
       "raw_file": "20260707-ai-agent-traps.pdf",
       "status": "compiled",
       "summary_path": "wiki/sources/20260707-ai-agent-traps.md",
-      "updated_at": "2026-07-08T15:52:43+08:00"
+      "updated_at": "2026-07-09T13:16:45+08:00"
     },
     "20260707-intelligence-is-free-data-systems-for-of-by-agents.md": {
       "body_sha256": "f7527b1c979e8924a085382b4cf0ae29052677211041137ad5746dcdb3bfd71c",
-      "compiled_at": "2026-07-08T13:56:13.241407",
+      "compiled_at": "2026-07-09T13:16:34+08:00",
       "raw_file": "20260707-intelligence-is-free-data-systems-for-of-by-agents.md",
       "status": "compiled",
       "summary_path": "wiki/sources/20260707-intelligence-is-free-data-systems-for-of-by-agents.md",
-      "updated_at": "2026-07-08T13:56:13.241407"
+      "updated_at": "2026-07-09T13:16:34+08:00"
     },
     "20260709-agents-that-teach-knowledge-debt.md": {
       "body_sha256": "d07d4ff33138b33f030cce80ecaf0efd4e8a4aad815d14cb6e02581450387cff",
+      "compiled_at": "2026-07-09T13:16:35+08:00",
       "raw_file": "20260709-agents-that-teach-knowledge-debt.md",
-      "status": "pending",
-      "updated_at": "2026-07-09T08:53:39+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260709-agents-that-teach-knowledge-debt.md",
+      "updated_at": "2026-07-09T13:16:35+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:35+08:00",
       "raw_file": "A Day in the Life of a Palantir Forward Deployed Software Engineer.md",
       "status": "compiled",
       "summary_path": "wiki/sources/A Day in the Life of a Palantir Forward Deployed Software Engineer.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:35+08:00"
     },
     "AI and the Future of Cybersecurity Why Openness Matters.md": {
       "body_sha256": "93188229c06329436b9d1b2650b53f6494b9da02eaee167e19d596cd01729370",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:35+08:00",
       "raw_file": "AI and the Future of Cybersecurity Why Openness Matters.md",
       "status": "compiled",
       "summary_path": "wiki/sources/AI and the Future of Cybersecurity Why Openness Matters.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:35+08:00"
     },
     "AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。.md": {
       "body_sha256": "f91e2899c3107673d7ae27745b09913178e66f6d6145f2bd37fb57805e3693ee",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:35+08:00",
       "raw_file": "AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。.md",
       "status": "compiled",
       "summary_path": "wiki/sources/AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:35+08:00"
     },
     "Agent pull requests are everywhere. Here's how to review them..md": {
       "body_sha256": "ae2b7e0c3799c3821135b03b388ca15c6efce5c4cb5835468b36f3e63006dc0b",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:35+08:00",
       "raw_file": "Agent pull requests are everywhere. Here's how to review them..md",
       "status": "compiled",
       "summary_path": "wiki/sources/Agent pull requests are everywhere. Here's how to review them..md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:35+08:00"
     },
     "Andrej Karpathy: From Vibe Coding to Agentic Engineering.md": {
       "body_sha256": "51f5ed85e2a91c0953c88c08983eb4deed13ae856222d6e7dfb8ea6a7e492926",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:36+08:00",
       "raw_file": "Andrej Karpathy: From Vibe Coding to Agentic Engineering.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Andrej Karpathy: From Vibe Coding to Agentic Engineering.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:36+08:00"
     },
     "Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next.md": {
       "body_sha256": "035cd873510ac9d6000db66e7064ce1710aeab451feb1dec7f5f8afc273b10b8",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:36+08:00",
       "raw_file": "Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:36+08:00"
     },
     "Building a general-purpose accessibility agent—and what we learned in the process.md": {
       "body_sha256": "52475b0a2381b633745f1fc0f0b1bc616fd660fe464df88939e21cf2198aeb62",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:36+08:00",
       "raw_file": "Building a general-purpose accessibility agent—and what we learned in the process.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Building a general-purpose accessibility agent—and what we learned in the process.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:36+08:00"
     },
     "Building an AI Factory at Procter & Gamble - Case - Faculty & Research - Harvard Business School.md": {
       "body_sha256": "32b353e584790d7d935ef6b9b5d7e5568d10dabdec50dba7833c8caf2fda2fbd",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:36+08:00",
       "raw_file": "Building an AI Factory at Procter & Gamble - Case - Faculty & Research - Harvard Business School.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Building an AI Factory at Procter & Gamble - Case - Faculty & Research - Harvard Business School.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:36+08:00"
     },
     "Building an MCP Ecosystem at Pinterest.md": {
       "body_sha256": "3a177cdbe1dc4c7d8d271a1b0d93e7a69adb58bc4183885d903e6f778e18694c",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:36+08:00",
       "raw_file": "Building an MCP Ecosystem at Pinterest.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Building an MCP Ecosystem at Pinterest.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:36+08:00"
     },
     "Building headless automation with Claude Code — Code w Claude.md": {
       "body_sha256": "c32096867b2992db0defc758d46f2328e95c8fc0e4d93150c7839131f3188671",
-      "compiled_at": "2026-06-30T14:56:42+08:00",
+      "compiled_at": "2026-07-09T13:16:36+08:00",
       "raw_file": "Building headless automation with Claude Code — Code w Claude.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/Building headless automation with Claude Code — Code w Claude.md",
+      "updated_at": "2026-07-09T13:16:36+08:00"
     },
     "Choosing to Stay Human.md": {
       "body_sha256": "86c16b59473a144155f7bdaeb0dc52f6239b5f26dee492ebb2e849db553bbb6d",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:37+08:00",
       "raw_file": "Choosing to Stay Human.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Choosing to Stay Human.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:37+08:00"
     },
     "Coding agents in the social sciences.md": {
       "body_sha256": "7b97e5308212a9605267fb531410a8c0f746233768cbc90d6ecf8903f2e73949",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:37+08:00",
       "raw_file": "Coding agents in the social sciences.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Coding agents in the social sciences.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:37+08:00"
     },
     "Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough.md": {
       "body_sha256": "a5600364d1f9b928898b7f833ad630e1e9b22dfb6287e4685c3fc2433c89cc01",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:37+08:00",
       "raw_file": "Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:37+08:00"
     },
     "Designing the hf CLI as an agent-optimized way to work with the Hub.md": {
       "body_sha256": "7b0c241f70089cf1785a5cd8a8e9200787ea18ee44d395e530529216109fbde7",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:37+08:00",
       "raw_file": "Designing the hf CLI as an agent-optimized way to work with the Hub.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Designing the hf CLI as an agent-optimized way to work with the Hub.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:37+08:00"
     },
     "Enabling agent-first process redesign.md": {
       "body_sha256": "425952a51bb4b7cfa79bcdcf9d703fae089f2edda4c58eed8e7932bbbb0847dd",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:37+08:00",
       "raw_file": "Enabling agent-first process redesign.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Enabling agent-first process redesign.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:37+08:00"
     },
     "Every Agentic Engineering Hack I Know (June 2026).md": {
       "body_sha256": "7b008db78d1e4e57bac5e37be660099ec5fefbbb47fc76c0b706694759806cb0",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:37+08:00",
       "raw_file": "Every Agentic Engineering Hack I Know (June 2026).md",
       "status": "compiled",
       "summary_path": "wiki/sources/Every Agentic Engineering Hack I Know (June 2026).md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:37+08:00"
     },
     "Forward Deployed Engineer (FDE) - NYC.md": {
       "body_sha256": "8be50f8432f480c61014fe722af8919b790c82d24c1aaa5bb9b1d7a5a2807501",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:38+08:00",
       "raw_file": "Forward Deployed Engineer (FDE) - NYC.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Forward Deployed Engineer (FDE) - NYC.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:38+08:00"
     },
     "Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？.md": {
       "body_sha256": "704de3d999d501cbc5caceed028c146437c589ccd6288bc25cc942e862fae593",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:38+08:00",
       "raw_file": "Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:38+08:00"
     },
     "Forward deployed engineering at OpenAI.md": {
       "body_sha256": "33242c7efb046871ad268473ae050c82d93dc06951eeb30a6ec678813820762e",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:38+08:00",
       "raw_file": "Forward deployed engineering at OpenAI.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Forward deployed engineering at OpenAI.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:38+08:00"
     },
     "From Strategy to Shelf How P&G Is Deploying AI.md": {
       "body_sha256": "619c1420d83d477b96743273ab2c389cb52afb1322e5ce9b23ba529691392f30",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:38+08:00",
       "raw_file": "From Strategy to Shelf How P&G Is Deploying AI.md",
       "status": "compiled",
       "summary_path": "wiki/sources/From Strategy to Shelf How P&G Is Deploying AI.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:38+08:00"
     },
     "Good Taste the Only Real Moat Left.md": {
       "body_sha256": "0455aa22742cfe382fa92b0f8c599b2875ee5708b5ca890149255f653da3ab4c",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:38+08:00",
       "raw_file": "Good Taste the Only Real Moat Left.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Good Taste the Only Real Moat Left.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:38+08:00"
     },
     "Harness, Scaffold, and the AI Agent Terms Worth Getting Right.md": {
       "body_sha256": "6bee45af6e8de2400b21d00b80861b0c895f87856dd4b6783b688b11b5c243f5",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:38+08:00",
       "raw_file": "Harness, Scaffold, and the AI Agent Terms Worth Getting Right.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Harness, Scaffold, and the AI Agent Terms Worth Getting Right.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:38+08:00"
     },
     "How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code).md": {
       "body_sha256": "2dc10702e685d838f14a976c4958ceda0fac68c42dc47339369d3fde2eb3938d",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:38+08:00",
       "raw_file": "How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code).md",
       "status": "compiled",
       "summary_path": "wiki/sources/How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code).md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:38+08:00"
     },
     "How I run multiple USD10K MRR companies on a USD20month tech stack.md": {
       "body_sha256": "e91e4176b1fb67199c8bbe143d7ddf60a757a36f21db6c1009fd2ca3290f892e",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:38+08:00",
       "raw_file": "How I run multiple USD10K MRR companies on a USD20month tech stack.md",
       "status": "compiled",
       "summary_path": "wiki/sources/How I run multiple USD10K MRR companies on a USD20month tech stack.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:38+08:00"
     },
     "How Procter & Gamble Uses AI to Unlock New Insights From Data  Thomas H. Davenport and Randy Bean.md": {
       "body_sha256": "a01d2fa0040bcf1a47e3dacabac3f920b9814ca76f63633ef7988da649b6c94e",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:39+08:00",
       "raw_file": "How Procter & Gamble Uses AI to Unlock New Insights From Data  Thomas H. Davenport and Randy Bean.md",
       "status": "compiled",
       "summary_path": "wiki/sources/How Procter & Gamble Uses AI to Unlock New Insights From Data  Thomas H. Davenport and Randy Bean.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:39+08:00"
     },
     "How to 10x Your Value in the AI Era — Kunal Shah.md": {
       "body_sha256": "d80027a0495617b4f197edb81f1df2272ae7869bb6498f2a3297618d9f9a0ac5",
-      "compiled_at": "2026-06-30T16:59:27+08:00",
+      "compiled_at": "2026-07-09T13:16:39+08:00",
       "raw_file": "How to 10x Your Value in the AI Era — Kunal Shah.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/How to 10x Your Value in the AI Era — Kunal Shah.md",
+      "updated_at": "2026-07-09T13:16:39+08:00"
     },
     "How we contain Claude across products.md": {
       "body_sha256": "1e66d922dad4ebecde287bcd4fe6292b135a8d0a45df5b0f1e1dcca9d85b6852",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:39+08:00",
       "raw_file": "How we contain Claude across products.md",
       "status": "compiled",
       "summary_path": "wiki/sources/How we contain Claude across products.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:39+08:00"
     },
     "I Am Retiring from Tech to Live Offline.md": {
       "body_sha256": "6297636c47fcc3a457a3d5c103d1351c9390c2edaf557aef23c6a3acbc1fd202",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:39+08:00",
       "raw_file": "I Am Retiring from Tech to Live Offline.md",
       "status": "compiled",
       "summary_path": "wiki/sources/I Am Retiring from Tech to Live Offline.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:39+08:00"
     },
     "ITBench-AA Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM.md": {
       "body_sha256": "5be22057647a73f03c6fd50393c6cf9f08a09c7359498ee47d78b97835654055",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:40+08:00",
       "raw_file": "ITBench-AA Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM.md",
       "status": "compiled",
       "summary_path": "wiki/sources/ITBench-AA Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:40+08:00"
     },
     "If You Want Taste, You're Gonna Have to Eat.md": {
       "body_sha256": "b232784bda6c2849e950dff3114e4f879c9966a923bda67f60b1e4765459c0ad",
-      "compiled_at": "2026-07-06T17:17:16.098089+08:00",
+      "compiled_at": "2026-07-09T13:16:39+08:00",
       "raw_file": "If You Want Taste, You're Gonna Have to Eat.md",
       "status": "compiled",
       "summary_path": "wiki/sources/If You Want Taste, You're Gonna Have to Eat.md",
-      "updated_at": "2026-07-06T17:17:16.098089+08:00"
+      "updated_at": "2026-07-09T13:16:39+08:00"
     },
     "Improving token efficiency in GitHub Agentic Workflows.md": {
       "body_sha256": "c8fe57fb92c84363ab62b175fb3ea111f1bdfc177e8112f5a19b48248859a792",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:39+08:00",
       "raw_file": "Improving token efficiency in GitHub Agentic Workflows.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Improving token efficiency in GitHub Agentic Workflows.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:39+08:00"
     },
     "Inside PG AI Factory and the Push to Operationalize AI at Scale.md": {
       "body_sha256": "d7a18b920cc6e17a55db1765dc3b51ff215db88b8a953c88ce9f502ddf564af1",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:39+08:00",
       "raw_file": "Inside PG AI Factory and the Push to Operationalize AI at Scale.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Inside PG AI Factory and the Push to Operationalize AI at Scale.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:39+08:00"
     },
     "Knowledge Work Is Dying—Here’s What Comes Next.md": {
       "body_sha256": "34f4ebbe5f276558e847027807e43583314e24ad443df705017074662b22b50e",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:40+08:00",
       "raw_file": "Knowledge Work Is Dying—Here’s What Comes Next.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Knowledge Work Is Dying—Here’s What Comes Next.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:40+08:00"
     },
     "Learning on the Shop floor.md": {
       "body_sha256": "d274d03ef64623a7442c2694af326424e635ea4652610e5f5537dfd6d35c66ad",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:40+08:00",
       "raw_file": "Learning on the Shop floor.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Learning on the Shop floor.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:40+08:00"
     },
     "MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X.md": {
       "body_sha256": "deaf080388a4e689f23ef947af3f44789f2003fe10dfe15a0b1da556382dd7cd",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:40+08:00",
       "raw_file": "MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X.md",
       "status": "compiled",
       "summary_path": "wiki/sources/MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:40+08:00"
     },
     "Maintainability sensors for coding agents.md": {
       "body_sha256": "9e51b69bab1784bf462ed33b34b9622d7df66b81503c301ec0528d3ff1b1ecba",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:40+08:00",
       "raw_file": "Maintainability sensors for coding agents.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Maintainability sensors for coding agents.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:40+08:00"
     },
     "Management as AI superpower.md": {
       "body_sha256": "590eff2e790762539d4c0ac6483e79205391af264e9f4e8afe530ade27bfb947",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:40+08:00",
       "raw_file": "Management as AI superpower.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Management as AI superpower.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:40+08:00"
     },
     "Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势.md": {
       "body_sha256": "f2c147de27b03a1ecff2465ac4da62b63df91a6457072e2c1165c9668458be98",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:40+08:00",
       "raw_file": "Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:40+08:00"
     },
     "Nemotron 3.5 Content Safety: Customizable Multimodal Safety for Global Enterprise AI.md": {
       "body_sha256": "90a52f924ef8e506b0c43370ab7074d44bd6c875675f1673691abe80fa942c4e",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:40+08:00",
       "raw_file": "Nemotron 3.5 Content Safety: Customizable Multimodal Safety for Global Enterprise AI.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Nemotron 3.5 Content Safety: Customizable Multimodal Safety for Global Enterprise AI.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:40+08:00"
     },
     "OncoAgent A Dual-Tier Multi-Agent Framework for Privacy-Preserving Oncology Clinical Decision Support.md": {
       "body_sha256": "d6f785820cc9eef5b5b02b2053c95cf5ea19c607708d20a1b87373bd16b63033",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:41+08:00",
       "raw_file": "OncoAgent A Dual-Tier Multi-Agent Framework for Privacy-Preserving Oncology Clinical Decision Support.md",
       "status": "compiled",
       "summary_path": "wiki/sources/OncoAgent A Dual-Tier Multi-Agent Framework for Privacy-Preserving Oncology Clinical Decision Support.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:41+08:00"
     },
     "Open and closed models are on different exponentials.md": {
       "body_sha256": "9df4ac04a3042cde6fb296fb20681bcc3c7be7a43b4942fe711e931729182908",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:41+08:00",
       "raw_file": "Open and closed models are on different exponentials.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Open and closed models are on different exponentials.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:41+08:00"
     },
     "OpenAI launches the OpenAI Deployment Company to help businesses build around intelligence.md": {
       "body_sha256": "e669e4d4dd96194d6510312795a87c65e3823829243e9fd9c171d236b6c29458",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:41+08:00",
       "raw_file": "OpenAI launches the OpenAI Deployment Company to help businesses build around intelligence.md",
       "status": "compiled",
       "summary_path": "wiki/sources/OpenAI launches the OpenAI Deployment Company to help businesses build around intelligence.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:41+08:00"
     },
     "OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践.md": {
       "body_sha256": "fc58b640fa43a6441fea687103fd86f1503e98d34dec565f0bce3c7a5aa4c86d",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:41+08:00",
       "raw_file": "OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践.md",
       "status": "compiled",
       "summary_path": "wiki/sources/OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:41+08:00"
     },
     "OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup.md": {
       "body_sha256": "81f11fc2cbf6d467e50c61edf85ef035edd3fec212a50410f9877a0eba3b5547",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:41+08:00",
       "raw_file": "OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup.md",
       "status": "compiled",
       "summary_path": "wiki/sources/OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:41+08:00"
     },
     "Running an AI-native engineering org.md": {
       "body_sha256": "07e55d8ce79beb7f37ec644e4dc421a5409480201a7d5391827c3f84c8f63618",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:41+08:00",
       "raw_file": "Running an AI-native engineering org.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Running an AI-native engineering org.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:41+08:00"
     },
     "Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook.md": {
       "body_sha256": "ccc745eda37cac0411fd7a14afcfeba114af09d3a568248b78d3a6cd326af786",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:41+08:00",
       "raw_file": "Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:41+08:00"
     },
     "Taste for Makers.md": {
       "body_sha256": "00c35386ad05450df51db0a7d91e5d1076a418c336ed5557463be4b2a135a26a",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:42+08:00",
       "raw_file": "Taste for Makers.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Taste for Makers.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:42+08:00"
     },
     "The Always-On Economy AI and the Next 5-7 Years.md": {
       "body_sha256": "a7a47d10c6778cf0bbd8f5c9906f8fc951402e48f43e6fe6001284286de1ba2e",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:42+08:00",
       "raw_file": "The Always-On Economy AI and the Next 5-7 Years.md",
       "status": "compiled",
       "summary_path": "wiki/sources/The Always-On Economy AI and the Next 5-7 Years.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:42+08:00"
     },
     "The Anatomy of an Agent Harness.md": {
       "body_sha256": "bc70f6ba6c125635b78d040dce3aec0064205d85290368e16332f7c976f940c1",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:42+08:00",
       "raw_file": "The Anatomy of an Agent Harness.md",
       "status": "compiled",
       "summary_path": "wiki/sources/The Anatomy of an Agent Harness.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:42+08:00"
     },
     "The Cybernetic Teammate How AI is Reshaping Collaboration and Expertise in the Workplace.md": {
       "body_sha256": "c72ed2bc0f1b788558692d5352f69ac02326bf94f8897ea4021e452d060e83d2",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:42+08:00",
       "raw_file": "The Cybernetic Teammate How AI is Reshaping Collaboration and Expertise in the Workplace.md",
       "status": "compiled",
       "summary_path": "wiki/sources/The Cybernetic Teammate How AI is Reshaping Collaboration and Expertise in the Workplace.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:42+08:00"
     },
     "The Knowledge Economy Is Over. Welcome to the Allocation Economy..md": {
       "body_sha256": "0ecea33a68f867c5e0bc854fc745c5c642a6bfa9151ba899b9408a83300a6cf3",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:42+08:00",
       "raw_file": "The Knowledge Economy Is Over. Welcome to the Allocation Economy..md",
       "status": "compiled",
       "summary_path": "wiki/sources/The Knowledge Economy Is Over. Welcome to the Allocation Economy..md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:42+08:00"
     },
     "The PR you would have opened yourself.md": {
       "body_sha256": "51763509a18732d02165538d5fbee3396fde45295f9e1fa5c99a1a493d247ba4",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:43+08:00",
       "raw_file": "The PR you would have opened yourself.md",
       "status": "compiled",
       "summary_path": "wiki/sources/The PR you would have opened yourself.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:43+08:00"
     },
     "The Return of the Deployment Company.md": {
       "body_sha256": "f2f3c64b79445d5e9622d6e32429c710c3fe2520ffbe688e3c86bb5d09218e39",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:43+08:00",
       "raw_file": "The Return of the Deployment Company.md",
       "status": "compiled",
       "summary_path": "wiki/sources/The Return of the Deployment Company.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:43+08:00"
     },
     "The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md": {
       "body_sha256": "ffe4aaeb8067aa19d0b38df19954ad214750b8bbb2697e0d409876a75c9901d7",
+      "compiled_at": "2026-07-09T13:16:43+08:00",
       "raw_file": "The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md",
-      "status": "pending",
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/The Tokenpocalypse Is Here Companies Are Scrambling To Stop Spending So Much on AI.md",
+      "updated_at": "2026-07-09T13:16:43+08:00"
     },
     "The layoffs will continue till we learn to use AI.md": {
       "body_sha256": "378ae2ec48131cc7d1cbcf8859b782167fb486f48e5ceb7328b09e57b828fd70",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:43+08:00",
       "raw_file": "The layoffs will continue till we learn to use AI.md",
       "status": "compiled",
       "summary_path": "wiki/sources/The layoffs will continue till we learn to use AI.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:43+08:00"
     },
     "The next biggest moat in AI.md": {
       "body_sha256": "5788aa362d81bf120c8a6078ce2368239888d24b35302f33cfe447cb0fd74ead",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:43+08:00",
       "raw_file": "The next biggest moat in AI.md",
       "status": "compiled",
       "summary_path": "wiki/sources/The next biggest moat in AI.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:43+08:00"
     },
     "The-Founders-Playbook-05062026_v3.md": {
       "body_sha256": "2612b271b55ccef10971cc4d5237d2c727dae05e5635e7d4797c8626a9787c36",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:42+08:00",
       "raw_file": "The-Founders-Playbook-05062026_v3.md",
       "status": "compiled",
       "summary_path": "wiki/sources/The-Founders-Playbook-05062026_v3.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:42+08:00"
     },
     "Using Git with coding agents - Agentic Engineering Patterns.md": {
       "body_sha256": "910bb8eb8c46e1294c7d31e5fe9f4f1f2412fb426119c6e81cb74f6e30b13040",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:43+08:00",
       "raw_file": "Using Git with coding agents - Agentic Engineering Patterns.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Using Git with coding agents - Agentic Engineering Patterns.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:43+08:00"
     },
     "Using LLMs to secure source code.md": {
       "body_sha256": "c2e1c1b945afb88465ff8f52cac52aace8567096837a85eb92cca83d363a26ab",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:43+08:00",
       "raw_file": "Using LLMs to secure source code.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Using LLMs to secure source code.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:43+08:00"
     },
     "Validating agentic behavior when “correct” isn’t deterministic.md": {
       "body_sha256": "99292ed6bbfca9d886da4912313f7228ed29b0d5f6cffef055ff729947d266d3",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:43+08:00",
       "raw_file": "Validating agentic behavior when “correct” isn’t deterministic.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Validating agentic behavior when “correct” isn’t deterministic.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:43+08:00"
     },
     "What Is Code?.md": {
       "body_sha256": "670552ea6b003b0ba5dc955662a6022c0fd94dd7fe66beb7b7c05c5ad9321646",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:44+08:00",
       "raw_file": "What Is Code?.md",
       "status": "compiled",
       "summary_path": "wiki/sources/What Is Code?.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:44+08:00"
     },
     "What is agentic engineering? - Agentic Engineering Patterns.md": {
       "body_sha256": "b924fb9507349110fb00db5a9147390a6e56b909cf12a1d65e2eaf10870b3351",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:43+08:00",
       "raw_file": "What is agentic engineering? - Agentic Engineering Patterns.md",
       "status": "compiled",
       "summary_path": "wiki/sources/What is agentic engineering? - Agentic Engineering Patterns.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:43+08:00"
     },
     "Why I Don’t Vibe Code.md": {
       "body_sha256": "79b9561061835ac99cd2bea0d37a96f4c4357c46c721ba9b9a824bd45a4d1622",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:44+08:00",
       "raw_file": "Why I Don’t Vibe Code.md",
       "status": "compiled",
       "summary_path": "wiki/sources/Why I Don’t Vibe Code.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:44+08:00"
     },
     "building-effective-agents-complete.md": {
       "body_sha256": "b52cdaf58933954d5442848440ce92a186720d9fc9df252aade0671c4ca939b7",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:36+08:00",
       "raw_file": "building-effective-agents-complete.md",
       "status": "compiled",
       "summary_path": "wiki/sources/building-effective-agents-complete.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:36+08:00"
     },
     "how-agents-are-transforming-work.md": {
       "body_sha256": "523edbea5d2cc3cd57f9c55e2a56fe53c933566fe1bc54cd0747a85e71e3c942",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:38+08:00",
       "raw_file": "how-agents-are-transforming-work.md",
       "status": "compiled",
       "summary_path": "wiki/sources/how-agents-are-transforming-work.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:38+08:00"
     },
     "the-ai-jobs-transition-framework-for-the-eu.md": {
       "body_sha256": "d28dcd9bc119132a46fb60b84bcf9eb550897754b61fb8930d46a02a0c86c333",
-      "compiled_at": "2026-06-30T12:24:01+08:00",
+      "compiled_at": "2026-07-09T13:16:42+08:00",
       "raw_file": "the-ai-jobs-transition-framework-for-the-eu.md",
-      "status": "pending",
-      "summary_path": null,
-      "updated_at": "2026-07-08T15:46:54+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/the-ai-jobs-transition-framework-for-the-eu.md",
+      "updated_at": "2026-07-09T13:16:42+08:00"
     },
     "一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统.md": {
       "body_sha256": "3e51d0d1e05990278b99b7d7c4f162bf080cdfced129866f7b2c55ae832f1c08",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:44+08:00",
       "raw_file": "一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统.md",
       "status": "compiled",
       "summary_path": "wiki/sources/一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:44+08:00"
     },
     "工程师抗拒被\"蒸馏\"，企业的Skills从何而来？五大招破局.md": {
       "body_sha256": "7d16cfabc3eeff5a7481456342afec1dd6b1e3f8c0de0dfbc5e26657b0128d0c",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:44+08:00",
       "raw_file": "工程师抗拒被\"蒸馏\"，企业的Skills从何而来？五大招破局.md",
       "status": "compiled",
       "summary_path": "wiki/sources/工程师抗拒被\"蒸馏\"，企业的Skills从何而来？五大招破局.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:44+08:00"
     },
     "当我们谈论 FDE 时，我们在谈论什么？.md": {
       "body_sha256": "d3176eb15629cfbfa15c74e86f7a9c3392d49c19cccc6c5f3f71066469deb5c7",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:44+08:00",
       "raw_file": "当我们谈论 FDE 时，我们在谈论什么？.md",
       "status": "compiled",
       "summary_path": "wiki/sources/当我们谈论 FDE 时，我们在谈论什么？.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:44+08:00"
     },
     "深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”.md": {
       "body_sha256": "3d2ba0dccd35d5e227df1447650c4812eb3442740683da46d3045eaf5f1cf2db",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:44+08:00",
       "raw_file": "深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”.md",
       "status": "compiled",
       "summary_path": "wiki/sources/深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:44+08:00"
     },
     "用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md": {
       "body_sha256": "6a5d9745d2afcb9d7cc319b4185659336d058b74a8473b370b58234ef8ff7a9f",
-      "compiled_at": "2026-06-29T08:23:18+08:00",
+      "compiled_at": "2026-07-09T13:16:44+08:00",
       "raw_file": "用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
       "status": "compiled",
       "summary_path": "wiki/sources/用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
-      "updated_at": "2026-06-29T08:23:18+08:00"
+      "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-09T10:00:49+08:00",
+  "updated_at": "2026-07-09T13:16:45+08:00",
   "version": 1
 }

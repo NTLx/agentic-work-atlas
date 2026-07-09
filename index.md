@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-07-08
+updated: 2026-07-09
 tags:
 ---
 
@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 312 个 |
-| Topic 页面 | 31 个 |
+| Entity 页面 | 318 个 |
+| Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 186 个 |
-| Source Summary | 181 个 |
+| Raw 文章 | 187 个 |
+| Source Summary | 184 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 23 个 |
 
@@ -76,6 +76,10 @@ tags:
 | [[wiki/entities/Minimal-Pair-Evaluation\|Minimal Pair Evaluation（最小对比对评估）]] | 构造仅目标变量不同的仓库对以隔离其对 coding agent 的因果影响 | SonarSource Minimal-Pair Study |
 | [[wiki/entities/Agentic-Speculation\|Agentic Speculation（Agent 投机探索）]] | Agent 与数据系统交互的高吞吐异构查询流模式，80-90% 子计划重复但冗余提升成功率 | BAIR Intelligence is Free |
 | [[wiki/entities/Structured-Agent-Memory\|Structured Agent Memory（结构化 Agent 记忆）]] | 按多属性维度组织的纠正性记忆，通过属性匹配精确召回，区别于 MD+embedding 范式 | BAIR Intelligence is Free |
+| [[wiki/entities/Goodharts-Law\|Goodhart's Law（古德哈特定律）]] | 当代理指标成为优化目标时就不再是好度量——指标 gaming 导致真实目标被替代 | 万维钢·现代思维工具100讲 |
+| [[wiki/entities/Knowledge-Debt\|Knowledge Debt（知识债务）]] | 开发者委托 agent 编码后沉默积累的理解缺口，与 Technical Debt 同构 | Accenture Labs SHIELD 论文 |
+| [[wiki/entities/Incidental-Learning\|Incidental Learning（附带学习）]] | 通过费力解决问题非预期获得的知识——被 AI agent 短路的学习路径 | Accenture Labs SHIELD 论文 |
+| [[wiki/entities/SHIELD\|SHIELD]] | 多 agent 系统，通过 out-of-band 渠道在不打断开发流程的前提下偿还 Knowledge Debt | Accenture Labs SHIELD 论文 |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
@@ -89,6 +93,8 @@ tags:
 | [[wiki/entities/Agent-Adoption-Curve\|Agent Adoption Curve（智能体采纳曲线）]] | 智能体工具采纳的典型模式：开发者先采用，随后非开发者增速反超 | OpenAI Economic Research |
 | [[wiki/entities/Context-Advantage\|Context Advantage（上下文优势）]] | Andrew Ng 提出：人类在 AI 时代的不可替代性源于信息不对称而非品味 | Loop Engineering |
 | [[wiki/entities/Kun-Chen\|Kun Chen]] | 前 L8 Principal Engineer，AXI / No Mistakes / First Mate 工具链作者 | L8 Principal Agentic Workflow |
+| [[wiki/entities/Pro-Worker-AI\|Pro-Worker AI（亲劳动者 AI）]] | 使人类专业知识更有价值而非更不必要的 AI 方向，核心机制是新任务创建 | Hamilton Project |
+| [[wiki/entities/Task-Framework\|Task Framework（任务框架）]] | Acemoglu/Autor 的技术变革五分类——以任务为分析单元区分自动化与新任务创建 | Hamilton Project |
 
 #### 知识与语义
 | Entity | 定义 | 来源 |
@@ -130,11 +136,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（176 个）*
+*原始剪藏文章（189 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-07-07——Google DeepMind AI Agent Traps 论文编译，新增 Agent-Traps / Persona-Hyperstition / Agent-Perception-Gap 三个 Entity + 1 个 source summary + 更新 3 个实体交叉链接。
+最新编译：2026-07-09——批量编译 3 篇未编译 raw 材料（Hamilton Project Pro-Worker AI、万维钢 Goodhart's Law、Accenture Labs Agents That Teach），新增 6 个 Entity（Pro-Worker-AI / Task-Framework / Goodharts-Law / Knowledge-Debt / Incidental-Learning / SHIELD）+ 3 个 source summary + 2 个 Topic（Pro-Worker-AI-and-Labor-Policy / Skill-Atrophy-and-Knowledge-Debt）。
 
 ---
 
@@ -166,5 +172,5 @@ status             # 查看知识库状态
 
 ---
 
-*索引版本: v2.10*
-*最后更新: 2026-07-07*
+*索引版本: v2.11*
+*最后更新: 2026-07-09*
