@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-09"
-score: 87
+score: 86
 status: "FAIL"
 tags:
   - lint-report
@@ -13,8 +13,8 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **87/100**
-> 阻断问题: **13**
+> 分数: **86/100**
+> 阻断问题: **14**
 
 ## 统计
 
@@ -36,10 +36,10 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 0 |
 | `hidden-char` | 0 |
-| `mathjax` | 0 |
+| `mathjax` | 1 |
 | `wikilink` | 7 |
 | `source_raw` | 0 |
-| `tag` | 9 |
+| `tag` | 10 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -59,12 +59,17 @@ tags:
 - `wiki/entities/SHIELD.md` - `概念 Entity 缺少章节: ## 关键数据点`
 - `wiki/entities/Task-Framework.md` - `概念 Entity 缺少章节: ## 关键数据点`
 
+### mathjax
+
+- `wiki/research/research-logs/inventory-20260709.md:164` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+
 ### tag
 
 - `wiki/topics/Skill-Atrophy-and-Knowledge-Debt.md` - `一次性 tag 仅出现 1 次: 'cognitive-offloading'`
 - `wiki/sources/20260624-loops-rediscovering-cybernetics.md` - `一次性 tag 仅出现 1 次: 'conceptual-framework'`
 - `wiki/sources/20260624-loops-rediscovering-cybernetics.md` - `一次性 tag 仅出现 1 次: 'control-theory'`
 - `wiki/sources/20260624-loops-rediscovering-cybernetics.md` - `一次性 tag 仅出现 1 次: 'cybernetics'`
+- `wiki/research/research-logs/inventory-20260709.md` - `一次性 tag 仅出现 1 次: 'deep-exploration'`
 - `wiki/sources/20260611-loss-function-development.md` - `一次性 tag 仅出现 1 次: 'loss-function-development'`
 - `wiki/entities/SHIELD.md` - `一次性 tag 仅出现 1 次: 'multi-agent-system'`
 - `wiki/entities/Loss-Function-Development.md` - `一次性 tag 仅出现 1 次: 'product-strategy'`
