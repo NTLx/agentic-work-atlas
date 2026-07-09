@@ -5,7 +5,7 @@ aliases:
   - Context Engineering
 definition: "设计 Agent 每次推理时看到的信息结构，包括项目上下文、技能按需加载、记忆层级和上下文生命周期管理"
 created: 2026-04-09
-updated: 2026-06-11
+updated: 2026-07-09
 evidence_level: high
 claim_type: mixed
 tags:
@@ -79,6 +79,14 @@ Agent 就像一个没有操作系统的进程：
 - 谁来防止 OOM（膨胀保护）？
 
 不设计就没有人管。
+
+## 三学科交叉本质（07-09 深度思考）
+
+Context Engineering 不是单一学科的应用，而是三个学科的交叉地带：信息论（Shannon 信道编码——管理信息量）、非平衡态热力学（Prigogine 耗散结构——管理动态熵增）、结构设计（Alexander 模式语言——管理结构质量）。三者缺一都是盲人摸象。
+
+Token 同时支付计算成本（Token FinOps 管理）和信息维持成本（Context Engineering 管理），两者耦合在同一个 Pareto 前沿——更好的 context 结构 → 更少的 token → 更好的结果（Anthropic skills 数据：21%→95%）。
+
+终态不是"零 context"也不是"无限 context"——是动态稳态（信息如河流持续流动但总量稳定）。这个稳态永远需要人类参与——人类 Context Advantage 的结构维度（架构直觉、概念框架）不可编码为 token，与 [[Agent-Loops]] 的人类参与线是同一个不可压缩下界。来源：07-09 深度思考（roundtable+qa）
 
 ## 上下文层级结构
 
