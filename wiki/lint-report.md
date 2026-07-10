@@ -20,14 +20,21 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 187 |
+| Raw 来源 | 191 |
 | Raw 已编译 | 187 |
-| Raw 待编译 | 0 |
+| Raw 待编译 | 4 |
 | Raw 已跳过 | 0 |
 | Entity | 320 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 5 |
+
+## 待编译 Raw
+
+- `raw/20260708-agent-loop-bytebytego.md`
+- `raw/20260708-bun-in-rust.md`
+- `raw/20260708-vercel-agent.md`
+- `raw/20260709-github-durable-owner.md`
 
 ## 检查项
 
