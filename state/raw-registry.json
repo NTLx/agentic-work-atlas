@@ -952,6 +952,12 @@
       "status": "pending",
       "updated_at": "2026-07-10T09:15:00+08:00"
     },
+    "20260712-reverse-information-paradox-nadella.md": {
+      "body_sha256": "4477f6c244f938091a2618382e121853e795dd3c397e3cf9f52506c309a9518a",
+      "raw_file": "20260712-reverse-information-paradox-nadella.md",
+      "status": "pending",
+      "updated_at": "2026-07-13T09:48:05+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1521,6 +1527,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-10T09:15:02+08:00",
+  "updated_at": "2026-07-13T09:48:05+08:00",
   "version": 1
 }
