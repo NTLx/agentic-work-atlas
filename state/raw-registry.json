@@ -922,21 +922,27 @@
     },
     "20260708-agent-loop-bytebytego.md": {
       "body_sha256": "f637bbf4a2e134d0cf965b99432275162b57604f97d5fdf911106c9c3d24f9f4",
+      "compiled_at": "2026-07-13T11:36:53+08:00",
       "raw_file": "20260708-agent-loop-bytebytego.md",
-      "status": "pending",
-      "updated_at": "2026-07-13T11:26:28+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260708-agent-loop-bytebytego.md",
+      "updated_at": "2026-07-13T11:36:53+08:00"
     },
     "20260708-bun-in-rust.md": {
       "body_sha256": "9cb0f953fed7485a350a68f6ef38f17344dc2a73665cfee874cfd4cd9219d5ae",
+      "compiled_at": "2026-07-13T11:36:54+08:00",
       "raw_file": "20260708-bun-in-rust.md",
-      "status": "pending",
-      "updated_at": "2026-07-10T09:15:01+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260708-bun-in-rust.md",
+      "updated_at": "2026-07-13T11:36:54+08:00"
     },
     "20260708-vercel-agent.md": {
       "body_sha256": "bc547bf83a09149a8e9f66d9fc49f16cd938f76b6ab7526f25320527c29abffc",
+      "compiled_at": "2026-07-13T11:36:54+08:00",
       "raw_file": "20260708-vercel-agent.md",
-      "status": "pending",
-      "updated_at": "2026-07-13T11:27:19+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260708-vercel-agent.md",
+      "updated_at": "2026-07-13T11:36:54+08:00"
     },
     "20260709-agents-that-teach-knowledge-debt.md": {
       "body_sha256": "d07d4ff33138b33f030cce80ecaf0efd4e8a4aad815d14cb6e02581450387cff",
@@ -948,15 +954,19 @@
     },
     "20260709-github-durable-owner.md": {
       "body_sha256": "d7b52945b5406bb85e9876e2131796be08f1d42d0961f7b703b22c0dc9cabdb4",
+      "compiled_at": "2026-07-13T11:36:54+08:00",
       "raw_file": "20260709-github-durable-owner.md",
-      "status": "pending",
-      "updated_at": "2026-07-13T11:27:03+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260709-github-durable-owner.md",
+      "updated_at": "2026-07-13T11:36:54+08:00"
     },
     "20260712-reverse-information-paradox-nadella.md": {
       "body_sha256": "4477f6c244f938091a2618382e121853e795dd3c397e3cf9f52506c309a9518a",
+      "compiled_at": "2026-07-13T11:36:54+08:00",
       "raw_file": "20260712-reverse-information-paradox-nadella.md",
-      "status": "pending",
-      "updated_at": "2026-07-13T11:27:40+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260712-reverse-information-paradox-nadella.md",
+      "updated_at": "2026-07-13T11:36:54+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -1527,6 +1537,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-13T11:27:40+08:00",
+  "updated_at": "2026-07-13T11:36:54+08:00",
   "version": 1
 }

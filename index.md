@@ -19,7 +19,7 @@ tags:
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
 | Raw 文章 | 192 个 |
-| Source Summary | 184 个 |
+| Source Summary | 189 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 27 个 |
 
@@ -80,6 +80,9 @@ tags:
 | [[wiki/entities/Knowledge-Debt\|Knowledge Debt（知识债务）]] | 开发者委托 agent 编码后沉默积累的理解缺口，与 Technical Debt 同构 | Accenture Labs SHIELD 论文 |
 | [[wiki/entities/Incidental-Learning\|Incidental Learning（附带学习）]] | 通过费力解决问题非预期获得的知识——被 AI agent 短路的学习路径 | Accenture Labs SHIELD 论文 |
 | [[wiki/entities/SHIELD\|SHIELD]] | 多 agent 系统，通过 out-of-band 渠道在不打断开发流程的前提下偿还 Knowledge Debt | Accenture Labs SHIELD 论文 |
+| [[wiki/entities/AI-Assisted-Port\|AI-Assisted Port（AI 辅助代码重写）]] | 利用 AI Agent 批量执行语言间代码重写并辅以对抗审查的工程范式 | Bun in Rust |
+| [[wiki/entities/Distinct-Principal-Identity\|Distinct Principal Identity（独立主体身份）]] | AI Agent 使用独立身份而非继承用户凭证，实现清晰归因与受限权限 | Vercel Agent |
+| [[wiki/entities/Plan-is-the-Permission\|Plan is the Permission（计划即权限）]] | Agent 保持只读状态，仅在明确授权时获得临时受限执行权限，执行后恢复受限 | Vercel Agent |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
@@ -107,6 +110,7 @@ tags:
 | [[wiki/entities/Knowledge-Compilation\|Knowledge Compilation（知识编译）]] | 将非结构化来源提炼为结构化、可查询知识节点的动作 | Agentic Work Atlas Schema |
 | [[wiki/entities/Human-Curation\|Human Curation（人类策展）]] | 人类在信息过载时代的核心价值——选择、组织、解释信息 | Grant Sanderson 播客 |
 | [[wiki/entities/Theory-of-Mind\|Theory of Mind（心智理论）]] | 理解他人心理状态的能力，是有效沟通、教学和策展的基础 | Grant Sanderson 播客 |
+| [[wiki/entities/Reverse-Information-Paradox\|Reverse Information Paradox（反向信息悖论）]] | AI 时代买方为使用智能必须向卖方泄露专有知识，与 Arrow 经典信息悖论对称反转 | Nadella 2026-07 |
 
 #### Agent 安全与攻防
 | Entity | 定义 | 来源 |
@@ -140,7 +144,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-07-09——批量编译 3 篇未编译 raw 材料（Hamilton Project Pro-Worker AI、万维钢 Goodhart's Law、Accenture Labs Agents That Teach），新增 6 个 Entity（Pro-Worker-AI / Task-Framework / Goodharts-Law / Knowledge-Debt / Incidental-Learning / SHIELD）+ 3 个 source summary + 2 个 Topic（Pro-Worker-AI-and-Labor-Policy / Skill-Atrophy-and-Knowledge-Debt）。
+最新编译：2026-07-13——批量编译 5 篇 raw 材料（Agent Loop ByteByteGo、Bun in Rust、Vercel Agent、GitHub Durable Owner、Nadella Reverse Information Paradox），新增 4 个 Entity（AI-Assisted-Port / Distinct-Principal-Identity / Plan-is-the-Permission / Reverse-Information-Paradox）+ 5 个 source summary。
 
 ---
 
@@ -172,5 +176,5 @@ status             # 查看知识库状态
 
 ---
 
-*索引版本: v2.11*
-*最后更新: 2026-07-09*
+*索引版本: v2.12*
+*最后更新: 2026-07-13*
