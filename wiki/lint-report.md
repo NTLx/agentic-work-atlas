@@ -1,30 +1,30 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-07-11"
-score: 100
-status: "PASS"
+date: "2026-07-13"
+score: 93
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-07-11
+# Agentic Work Atlas Lint 报告 - 2026-07-13
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **93/100**
+> 阻断问题: **7**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 191 |
+| Raw 来源 | 192 |
 | Raw 已编译 | 187 |
-| Raw 待编译 | 4 |
+| Raw 待编译 | 5 |
 | Raw 已跳过 | 0 |
-| Entity | 320 |
+| Entity | 324 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 5 |
@@ -35,6 +35,7 @@ tags:
 - `raw/20260708-bun-in-rust.md`
 - `raw/20260708-vercel-agent.md`
 - `raw/20260709-github-durable-owner.md`
+- `raw/20260712-reverse-information-paradox-nadella.md`
 
 ## 检查项
 
@@ -43,10 +44,10 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 0 |
 | `hidden-char` | 0 |
-| `mathjax` | 0 |
+| `mathjax` | 7 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 0 |
+| `tag` | 2 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 0 |
@@ -57,7 +58,20 @@ tags:
 
 ## 问题明细
 
-未发现阻断问题。
+### mathjax
+
+- `wiki/entities/AI-Assisted-Port.md:31` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+- `wiki/entities/AI-Assisted-Port.md:46` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+- `wiki/entities/AI-Assisted-Port.md:83` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+- `wiki/entities/AI-Assisted-Port.md:123` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+- `wiki/sources/20260708-bun-in-rust.md:22` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+- `wiki/sources/20260708-bun-in-rust.md:31` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+- `wiki/sources/20260708-bun-in-rust.md:49` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+
+### tag
+
+- `wiki/sources/20260709-github-durable-owner.md` - `一次性 tag 仅出现 1 次: 'organization-systems'`
+- `wiki/sources/20260708-vercel-agent.md` - `一次性 tag 仅出现 1 次: 'production-ops'`
 
 ## 运行命令
 
