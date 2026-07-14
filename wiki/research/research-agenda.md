@@ -95,7 +95,7 @@ related_entities:
 | 反效率文化悖论（修正 🔄 07-14）：原始"外部强制打破公地悲剧"需修正为天/年/十年三层嵌套治理。天尺度(SHIELD/先用自己后用AI)买时间给年尺度(无deadline/技能维护预算)，年尺度买时间给十年尺度(行业认证/税收抵免)。根因=信息-时间不对称（因果窗口≠问责窗口） | 三层嵌套的最低可行制度载体；天尺度在大多数组织中的执行率 | **强验证**（Tian Pan RCT: AI辅助组低17pp + 84%用AI但45%调试更久 + Code Turnover Rate 1.8-2.5× + 07-14 圆桌+追本完成理论修正） |
 | 图谱中层断层——Topic聚合=缺失的第五动作 | 设计自动检测 entity 簇密度≥阈值的触发条件 | prototype |
 | Agent Identity 危机定理（修正 🔄 07-14）：IAM 治理落后不是因为缺少协议——SPIFFE 薄而硬已成事实（Red Hat/Stacklok/Riptides 三条路线）。根因是治理权在技术层不可解决——阈值定义权=有穷者治理悖论 | SPIFFE 上层建筑的制度化速度；阈值定义权归属的实践 | **强验证**（联网确认 SPIFFE deployment + 07-14 圆桌+追本完成理论修正） |
-| Loop Engineering 杠杆定理：Loop 设计的杠杆 > Prompt 设计的杠杆 | loop vs prompt A/B 对照研究 | 搜索实证 |
+| Loop Engineering 杠杆定理（修正 🔄 07-14）：原"Loop>Prompt前提SNR>θ∧变异分析∧延迟<<τ"需修正为"前提=验证器类型≥概率性+异质验证器组合+渐进式部署"。启发式验证器下Prompt=Loop。ROI=N×Pe×(C_late/C_early-1)，参数未知→渐进式部署而非预计算。终局=设计loop能安全自我演化的容器（外部终止者的工程化） | 10 Design Patterns 工具化进展；过程SLO标准化 | **强验证**（10 Design Patterns + "Verification is the steering wheel" + 渐进决策规则 + 07-14 圆桌完成理论修正） |
 | 架构质量信号保质期：单次衰减+累积增强 | 跨模型代际 token delta 比较 | 追踪复现实验 |
 | Agent 测试五层效力（07-10）：OWASP L1-L2有效/L3不完整/L4不适用 | L3-L5 真实 Agent 系统效力测试 | 设计实验 |
 | **Agent 数据过度收集是系统性问题** 🆕：Grok Build CLI 非孤例，其他 coding agent 也有类似实践 | 对比 Claude Code/Codex/Gemini/Grok 的数据收集策略 | 审计报告 |
@@ -186,7 +186,7 @@ related_entities:
 
 ## 思考日志索引
 
-- [[2026-07-14]] — 深度思考×2：①Agent Identity危机定理修正（roundtable×5人3轮+think七层→有穷者治理悖论+qa×7+联网×3）②反效率文化悖论修正（roundtable×5人3轮+think七层→信息-时间不对称+qa×7+联网×3）。两条线统一底="可改变性=有穷性"（07-10存在论）。新增：权限蠕变棘轮/三层活动半径/双身份区分/治理=分配错误代价/技能退化三重不可见/嵌套治理/认证从技能转向校准质量
+- [[2026-07-14]] — 深度思考×3：①Agent Identity危机定理修正（roundtable+think→有穷者治理悖论+qa+联网）②反效率文化悖论修正（roundtable+think→信息-时间不对称+qa+联网）③Loop Engineering杠杆定理修正（roundtable+qa+联网）。三条线统一底="可改变性=有穷性"（07-10存在论）。新增11个判断：权限蠕变棘轮/三层活动半径/双身份区分/治理=分配错误代价/技能退化三重不可见/嵌套治理/认证从技能转向校准质量/验证器类型-效力对应/异质组合定理/ROI渐进式部署/过程SLO替代结果SLO
 - [[2026-07-10]] — 深度思考×18：统一生成器"自指系统结构性盲区"；"可改变性=有穷性"存在论根基
 - [[2026-07-09]] — 5 并行 agent 全量盘点 + 外部信号扫描 + 深度思考×4
 - [[inventory-20260709]] — 07-09 深度探索（簇分析/宪法审计/Output转化/外部信号）
