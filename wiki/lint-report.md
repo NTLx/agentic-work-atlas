@@ -36,10 +36,10 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 0 |
 | `hidden-char` | 0 |
-| `mathjax` | 0 |
-| `wikilink` | 1 |
+| `mathjax` | 1 |
+| `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 9 |
+| `tag` | 12 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 4 |
@@ -57,6 +57,10 @@ tags:
 - `wiki/entities/Rubric-Based-Evaluation.md` - `概念 Entity 缺少章节: ## 关键数据点`
 - `wiki/entities/Self-Hosted-Models.md` - `概念 Entity 缺少章节: ## 关键数据点`
 
+### mathjax
+
+- `wiki/research/research-logs/exploration-20260714.md:263` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+
 ### stale-core
 
 - `wiki/entities/Agent-Workflow-Patterns.md` - `核心页 Agent-Workflow-Patterns 已 90 天未更新，入链 16 条`
@@ -67,18 +71,17 @@ tags:
 ### tag
 
 - `wiki/sources/20260713-martin-fowler-fragments-july-2026.md` - `一次性 tag 仅出现 1 次: 'agent-management'`
+- `wiki/research/research-logs/exploration-20260714.md` - `一次性 tag 仅出现 1 次: 'exploration'`
+- `wiki/research/research-logs/exploration-20260714.md` - `一次性 tag 仅出现 1 次: 'external-signals'`
 - `wiki/sources/20260713-microsoft-ships-ai-agents-enterprise-scale.md` - `一次性 tag 仅出现 1 次: 'microsoft'`
 - `wiki/entities/Self-Hosted-Models.md` - `一次性 tag 仅出现 1 次: 'models'`
 - `wiki/sources/20260709-github-durable-owner.md` - `一次性 tag 仅出现 1 次: 'organization-systems'`
 - `wiki/sources/20260708-vercel-agent.md` - `一次性 tag 仅出现 1 次: 'production-ops'`
 - `wiki/entities/Rubric-Based-Evaluation.md` - `一次性 tag 仅出现 1 次: 'quality'`
+- `wiki/research/research-logs/research-snapshot-20260714.md` - `一次性 tag 仅出现 1 次: 'research-snapshot'`
 - `wiki/sources/20260713-martin-fowler-fragments-july-2026.md` - `一次性 tag 仅出现 1 次: 'self-hosted-models'`
 - `wiki/entities/Self-Hosted-Models.md` - `一次性 tag 仅出现 1 次: 'sovereignty'`
 - `wiki/sources/20260713-martin-fowler-fragments-july-2026.md` - `一次性 tag 仅出现 1 次: 'thoughtworks'`
-
-### wikilink
-
-- `wiki/sources/20260713-microsoft-ships-ai-agents-enterprise-scale.md:53` - `链接目标不存在: [[Agent-Identity]]`
 
 ## 运行命令
 

@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-07-09
+updated: 2026-07-14
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -18,157 +18,155 @@ related_entities:
 # Agentic Work Atlas 研究议程
 
 > [!note] 使用边界
-> 本页只保留活跃操作节、当前最值得推进的方向和最小动作。已收敛判断见 [[resolved-judgments]]（06-24/07-02/07-03/07-04/07-06 五批次共 61 条）；已收敛操作原则见 [[resolved-principles]]（9 条）；旧方向库与长问题库见 [[exploration-archive-20260628]]；图谱健康度历史快照见 [[research-snapshot-20260703]]；07-07 盘点详细缺口见 [[inventory-20260707]]；**07-09 深度探索详细记录见 [[inventory-20260709]]**。
+> 本页只保留活跃操作节、当前最值得推进的方向和最小动作。已收敛判断见 [[resolved-judgments]]（5 批次共 61 条）；已收敛操作原则见 [[resolved-principles]]（9 条）；旧方向库见 [[exploration-archive-20260628]]；07-07/07-09 盘点缺口见 [[inventory-20260707]] 和 [[inventory-20260709]]；健康度历史快照见 [[research-snapshot-20260714]]；07-14 深度探索详情见 [[exploration-20260714]]。
 
-## 图谱健康度（07-09 实测）
+## 图谱健康度（07-14 实测）
 
-| 指标 | 07-07 | **07-09** | 变化 | 动作 |
+| 指标 | 07-09 | **07-14** | 变化 | 动作 |
 |------|-------|-----------|------|------|
-| Entity / Topic / Comparison / Output | 307/31/19/5 | **318/33/19/5** | +11/+2/0/0 | 继续建 topic（10 新簇零承载） |
-| Entity:Topic 比 | 9.9:1 | **9.6:1** | 略改善 | 中层断层持续 |
-| 待编译 raw | 2 | **0** | ✅ 清零 | 编译完全追上 |
+| Entity / Topic / Comparison / Output | 318/33/19/5 | **328/33/19/5** | +10/0/0/0 | 中层断层恶化，建 topic 最紧迫 |
+| Entity:Topic 比 | 9.6:1 | **9.9:1** | 恶化 | 10 簇零承载 → 需建 8-10 topic |
+| 待编译 raw | 0 | **0** | ✅ 维持 | 编译健康 |
 | 零入链 comparison | 13/19 | **13/19** | 未变 | 需 topic 系统引用 |
 | 零入链 topic | 9 | **9** | 确认 | 根因=单向链接架构 |
-| 零被引 output | 5/5 | **5/5** | 未变 | Output 断层持续 |
-| Output 转化率 | 1.6% | **1.6%** | 未变 | 需写 2-3 个 output |
+| 零被引 output | 5/5 | **5/5** | 未变 | ~37 天无新产出 |
+| Lint 分数 | — | **95/100** | 5 阻断 | 修复 lint |
 
-> 完整历史快照见 [[research-snapshot-20260703]]；07-09 详细盘点见 [[inventory-20260709]]。
+> 完整历史快照见 [[research-snapshot-20260714]]。
 
-## 当前研究焦点
+## 当前研究焦点（优先级排序 — 07-14 更新）
 
-| 焦点 | 为什么重要 | 下一步 |
-|------|-----------|--------|
-| **图谱整合与 topic 建设** | 301 entity / 31 topic = 9.7:1，六簇零承载；第五动作缺失 | 建 8-10 topic skeleton；优先记忆/AGI经济/安全三簇 |
-| **Output 断层修复** | 5 output 无法验证 61 条收敛判断；零被引；已 34 天无新产出 | 转 ≥2 output：Agent Observability 产业分析 + 元合成 rank 文章 |
-| **Loop Engineering** | H1 2026 新范式：设计循环让 agent 自驱动 | clip source → 建 entity → 与 Ralph-Loops/Agent-Logic 交叉 |
-| **Agent Identity & IAM** | 非人类身份管理是 agent sprawl 的核心瓶颈 | clip source → 建 entity → 与 Agent-Security 交叉 |
-| **Spec-Driven Development** | 从 vibe coding 到 spec-driven 的范式迁移 | clip source → 建 entity → 与 Vibe-Coding/Software-2.0 交叉 |
-| **Token FinOps 与 AI 计量** | 企业 AI 采用的隐性瓶颈；98% FinOps 实践已操作 AI 成本 | compile → 建 Token FinOps entity + topic |
-| **AI-native 测试与验证** | 评测治理四部曲完成，下一层是工程实践 | 回填 → 建 AI-Native-Testing topic |
-| **跨境 AI 治理差异** | EU/US/CN 三范式对 Agent 部署的实质影响 | 回填 → 建 AI-Governance-Regimes comparison |
+| # | 焦点 | 为什么重要 | 下一步 |
+|---|------|-----------|--------|
+| **P0** | **Output 断层修复** | 5 output 零被引，~37 天无新产出；61 条收敛判断无法验证 | 写 ≥2 output：认知分工终态定理 + 元合成 rank |
+| **P0** | **Topic 建设（中层断层）** | 328 entity / 33 topic = 9.9:1；10 簇零承载 | 建 8-10 topic skeleton；优先安全/记忆/AGI经济 |
+| **P0** | **Agent 信任边界与数据治理** 🆕 | Grok Build CLI 事件：静默上传全量代码库+密钥，opt-out 无效；27,800× 过度收集；agent 数据边界=FDE 核心约束 | clip Grok 事件分析 → 建 Agent-Trust-Boundary entity + topic |
+| **P0** | **中国 AI Agent 监管冲击** 🆕 | 豆包(3.45亿MAU)/通义千问 7/15 强制关闭 Agent 功能；拟人化 AI 管理暂行办法生效；知识库零覆盖 | clip 政策原文+分析 → 建 China-AI-Agent-Regulation entity |
+| **P0** | **Agent Observability** 🆕 | 知识库零 entity！Mindwalk 3D 回放 Agent 轨迹；lab-prod gap 37%；评测框架比较涌现 | clip Datadog/New Relic APM 演化 → 建 Agent-Observability entity + topic |
+| **P0** | **Loop Engineering** | H1 2026 新范式；Data Science Dojo/AI Builder Club 发布设计模式分类；07-10 完成 4 轮深度辩证 | clip Loop Engineering 设计模式 → 建 entity → topic |
+| **P0** | **Agent Identity & IAM** | SPIFFE/SPIRE 突破：Joe Beda+IEEE 论文+HashiCorp Vault 1.21；07-10 确认 Visibility≠Enforcement | clip SPIFFE agent identity → 建 entity → topic |
+| **P0** | **Spec-Driven Development** | 工具生态成熟（Spec Kit 111K★ vs Kiro vs Tessl）；ThoughtWorks 分类法；07-10 建立三层定理 | clip SDD 工具对比 → 建 Spec-Driven-Development entity |
+| **P1** | **空 topic 填充 ×3** 🆕 | `Skill-Atrophy-and-Knowledge-Debt`(0 entity,但 6 entity 已存在未关联!) / `Pro-Worker-AI-and-Labor-Policy`(0) / `模型安全分歧`(0)；空 topic 占 9% | 为 Skill-Atrophy 填充 related_entities → 为另两个补 entity 或归档 |
+| **P1** | **Agent Governance & Delegation** 🆕 | 新 cluster(5 entity)：Distinct-Principal-Identity + Plan-is-the-Permission + Agent-Unit-of-Work + Plan-as-Agent-Checkpoint + Policy-as-Code；企业 Agent 委派治理的完整框架 | 与 Agent Identity/Security 交叉 → 建 topic 或合并 |
+| **P1** | **Token FinOps 与 AI 计量** | 独立品类确认（Helicone/Portkey/LiteLLM/Langfuse/Amnic 等 9+）；agent 推理=月度 burn 18-27%；优化可降 80% | compile raw → 建 Token-FinOps entity + topic |
+| **P1** | **Context Engineering** | 独立学科确认：Anthropic 定义 + 五大模式（Progressive Disclosure/Compression/Routing/Retrieval/Tool Mgmt）；6 entity 已就绪 | 建 topic skeleton |
+| **P1** | **AI-native 测试与验证** | 07-10 Agent 测试不可能性定理（Rice 严格适用）；AI 评测框架比较（DeepEval/Braintrust/Arize 等 7 个） | 回填 → 建 AI-Native-Testing topic |
+| **P1** | **跨境 AI 治理差异** | EU 网络安全+AI 行动计划 / 伊利诺伊 AI 安全法 / 爱尔兰 AI 监管法案 / 中国拟人化监管 → 四极分化 | 回填 → 建 AI-Governance-Regimes comparison |
+| **P1** | **中国大厂 Agent 路线分化** 🆕 | 阿里(钉钉悟空 B端)/腾讯(QClaw双线)/字节(TRAE SOLO工作台)三条路线；腾讯混元 Hy3=姚顺雨交卷(Agent 90%) | clip 36kr 分析 → 建 China-Agent-Ecosystem entity |
+| **P2** | **AI 作为科学基础设施** 🆕 | GPT-5.6 1小时证50年图论猜想；AI 数学能力质变 | 评估是否建 AI-for-Science topic（现有 3 entity） |
+| **P2** | **多模型策略与路由** 🆕 | Tokenizer 差异致隐性涨价；多模型成本优化需求；知识库零 entity | clip → 评估建 Model-Routing entity |
+| **P2** | **具身 AI 与 Agent 交汇** 🆕 | 宇树 G1 活体手术；蚂蚁 LingBot-VA 2.0；知识库零 entity | clip → 评估建 Embodied-AI entity |
+| **P2** | **胖 topic 拆分** 🆕 | `Verifiable-Agent-Engineering`(33 entity 过胖)→拆为 Verification+Security+Evaluation；`Organization-as-Agent-Harness`(25)→拆为 Harness+Governance；`Agentic-Engineering-Patterns`(25)→拆为 Core+Infrastructure | 设计拆分方案 |
+| **P2** | **Comparison 层激活** | 13/19 零入链 | 补 topic 引用 |
+| **P2** | **链接架构修复** | 单向链接致 9 topic 零入链 | entity 添加 `topics:` frontmatter |
+
+> 🆕 = 07-14 探索新增方向
 
 ## 活跃假设
 
-> 仅保留 hypothesis 级别或仍在活跃验证的条目。已 synthesized/extracted 的判断已移至 [[resolved-judgments]]。
+> 已 synthesized/extracted 的判断已移至 [[resolved-judgments]]。
 
 | 假设 | 验证方向 | 状态 |
 |------|---------|------|
-| Agent Control Plane 壁垒转移定理（修正）：壁垒非单向迁移而是四维重组（推理+治理+数据+协议）。执行-评估分离定理=共享生成器。MCP 标准化已达 70-80%（两前提中第二开关快速打开） | 追踪独立 CP 厂商融资/增长；验证可追溯性护城河量化阈值 | 部分验证（MCP 标准化强验证，独立厂商数据待收集） |
-| 认知分工终态定理（修正）：四维（个体→组织→元→群体）；AI=工具‖独立参与者；底层=风险分工（不可优化）非知识分工（可优化）；审批=有穷者签署风险接受书；组织层触发=f(协调成本×公共性) | 对照实验验证组织层触发阈值；追踪 AI 独立参与者协调模式收敛 | 部分验证（GitHub/Vercel 实证支持四维修正；风险分工理论建立；阈值待校准） |
-| 全球南方 AI 跃迁双速定理：AI 可跳过技术层，不可跳过制度层 | 找同时加速个体 + 组织的成功案例 | 待案例收集 |
-| 中国 AI 双速瓶颈：高政策推动 × 低组织准备度。瓶颈 = 科层碎片 + FinOps 缺失 | 找 Token FinOps 实际建立案例 | 部分验证（全球Token FinOps品类已成事实，9+专业工具；中国案例待收集） |
-| 合成数据自举边界：天花板 = f(任务结构化程度 × 验证器质量) | 找合成数据训练使模型超越训练分布的任务类型 | 待实证 |
-| 模型可解释性缺口：Agent 推理链可解释性 > 单模型 XAI 供给 | 测量 agent 推理链中"不可解释步骤"的比例 | 待工具/方法 |
-| 判断力净退化期量化：不同判断力类型有不同退化曲线 | 各类型退化曲线测量 | 待纵向研究 |
-| Loop 三前提定理：Loop > Prompt ⟺ SNR > θ ∧ 变异分析 ∧ 延迟 << τ。任一违反 → Prompt ≥ Loop | 对照实验：高/低 SNR × 有/无变异分析 × 快/慢延迟的 2³ 设计 | 部分验证（Bun 案例验证 L3 触发条件；分层验证模型完成工程映射；分形错误分布理论建立） |
-| 增强陷阱热力学（修正）：选择性退化（计算可逆/技术部分不可逆/框架不退化）；有穷性自我取消=底部；知道答案=信息论必然污染学习；不确定性=判断力负熵流；公地悲剧需制度治理。10分钟阈值待校准 | 追踪代际放大效应实证；验证"知道答案污染"对照实验 | 部分验证（选择性退化模型建立；信息论必然性推导完成；有穷性自我取消与认知分工终态定理闭合） |
+| Agent Control Plane 壁垒转移定理（修正）：四维重组（推理+治理+数据+协议）；MCP 标准化 70-80% | 追踪独立 CP 厂商融资/增长 | 部分验证 |
+| 认知分工终态定理（修正）：四维（个体→组织→元→群体）；AI=工具‖独立参与者；底层=风险分工（不可优化） | 对照实验验证组织层触发阈值 | 部分验证 |
+| 全球南方 AI 跃迁双速定理：AI 可跳过技术层，不可跳过制度层 | 找同时加速个体+组织的案例 | 待案例 |
+| 中国 AI 双速瓶颈：高政策推动 × 低组织准备度。瓶颈 = 科层碎片 + FinOps 缺失 | 找 Token FinOps 实际建立案例 | 部分验证 |
+| 合成数据自举边界：天花板 = f(任务结构化程度 × 验证器质量) | 找超越训练分布的任务类型 | 待实证 |
+| 判断力净退化期量化：不同判断力类型有不同退化曲线；07-10 三阶段退化类型学 | 各类型退化曲线测量 | 待纵向研究 |
+| Loop 三前提定理 + 外部终止定理（Gödel 推论）+ 完全自主 Loop 不可能定理（07-10） | 对照实验 2³ 设计 | 部分验证 |
+| 增强陷阱热力学（修正）：选择性退化；有穷性自我取消=底部；知道答案=信息论必然污染学习 | 追踪代际放大效应实证 | 部分验证 |
+| Agent 测试不可能性定理（07-10）：Rice 定理严格适用；三层不可能性；五层互补体系 | OWASP Top 10 for Agent 效力测量 | 理论建立 |
+| **Agent 信任边界危机定理** 🆕：Agent 数据收集=不可见、不可审计、不可撤销；信任边界侵蚀=f(agent 自主性 × 数据敏感度 × 用户可见性⁻¹) | Grok Build CLI 后续披露；其他 coding agent 数据实践对比 | 待证伪 |
+| **中国 AI 监管不对称冲击** 🆕：监管收紧对国内 Agent 生态的短期抑制 > 长期倒逼创新 | 豆包/通义千问关闭后用户迁移数据；国内 Agent 创业公司融资变化 | 待实证 |
+| **Token FinOps 品类定理** 🆕：Token 成本管理将成为独立企业软件品类（类比 CloudHealth）| 追踪 Helicone/Portkey/LiteLLM 等工具的 ARR 增长和融资 | 待数据 |
+
+> 🆕 = 07-14 探索新增
 
 ## 活跃验证中（精选最高优先级可证伪判断）
 
-> 从 61 条已收敛判断中挑选当前最值得投入验证资源的 5 条。完整清单见 [[resolved-judgments]]。
+> 完整清单见 [[resolved-judgments]]。
 
 | 判断 | 证伪路径 | 最小验证动作 |
 |------|---------|-------------|
-| AI 评测制度化已启动：US AI Incident Reporting Act(2026-06-26)=强制7天报告+`$2M`/天罚款 | 追踪首次执法行动的时间、力度和效果 | 设置 Google Alert |
-| 反效率文化悖论：恢复可习得性需要"刻意不效率"文化，需外部强制打破 Commons Dilemma | 找自愿采纳"学习优先于效率"并保持竞争力的组织 | 搜索 "learning over efficiency" 组织案例 |
-| 图谱中层断层——Topic聚合=缺失的第五动作：四动作模型缺少 synthesize | 设计第五动作触发条件，测试是否能自动检测 entity 簇密度≥阈值 | 实现 entity 簇密度检测 prototype |
-| Agent Identity 危机定理：非人类 identity 增长 > IAM 治理增长 | SPIFFE 能否扩展到动态 agent？agent 冒充攻击真实案例？ | 搜索 SPIFFE agent identity 实践 |
-| Loop Engineering 杠杆定理：Loop 设计的杠杆 > Prompt 设计的杠杆 | 测量不同 loop 设计模式的生产力差异 | 找 loop vs prompt A/B 对照研究 |
-| 架构质量信号保质期：模型进化使单次 token 信号衰减（Hickey），但累积经济重要性增强（Fowler） | 跨模型代际比较：同一代码库在 GPT-4/Claude-4/下一代模型上的 token delta | 追踪 SonarSource 后续研究或其他团队的复现实验 |
+| AI 评测制度化已启动：US AI Incident Reporting Act(2026-06-26)=强制7天报告+`$2M`/天罚款 | 追踪首次执法行动 | Google Alert |
+| 反效率文化悖论：恢复可习得性需要"刻意不效率"文化 | 找自愿采纳并保持竞争力的组织 | 搜索案例 |
+| 图谱中层断层——Topic聚合=缺失的第五动作 | 设计自动检测 entity 簇密度≥阈值的触发条件 | prototype |
+| Agent Identity 危机定理：非人类 identity 增长 > IAM 治理增长 | SPIFFE agent identity 实际部署案例 | 搜索 SPIFFE+agent |
+| Loop Engineering 杠杆定理：Loop 设计的杠杆 > Prompt 设计的杠杆 | loop vs prompt A/B 对照研究 | 搜索实证 |
+| 架构质量信号保质期：单次衰减+累积增强 | 跨模型代际 token delta 比较 | 追踪复现实验 |
+| Agent 测试五层效力（07-10）：OWASP L1-L2有效/L3不完整/L4不适用 | L3-L5 真实 Agent 系统效力测试 | 设计实验 |
+| **Agent 数据过度收集是系统性问题** 🆕：Grok Build CLI 非孤例，其他 coding agent 也有类似实践 | 对比 Claude Code/Codex/Gemini/Grok 的数据收集策略 | 审计报告 |
+| **中国 Agent 监管寒蝉效应** 🆕：7/15 后中国 AI Agent 创业融资/用户增长显著下降 | 追踪 Q3 2026 中国 Agent 创投数据 | 设置数据追踪 |
 
-## Source 需求队列
+> 🆕 = 07-14 探索新增
 
-| 优先级 | 目标 | 当前缺口 | 下一步 source | 触发行动 |
-|--------|------|----------|---------------|----------|
-| P0 | AGI Economics topic | 15 entity 零承载 | 经济学框架性论文 | 建 topic skeleton |
-| P0 | Memory Systems topic | 13 entity 零承载 | 认知心理学记忆模型文献 | 建 topic skeleton |
-| P0 | Security & Privacy topic | 16 entity 零承载 | 安全/隐私对标 OWASP Top 10 for Agent | 建 topic skeleton |
-| P0 | Output 断层 | 5 output 零被引，34 天无新产出 | 07-02/03/04/06/07 日志原料充足 | 写 2 个 output |
-| P0 | Loop Engineering | 知识库完全缺失 | Ng/Cherny/Steinberger + **Fareed Khan 17 技术** | clip + 建 entity |
-| P0 | Agent Identity & IAM | 知识库完全缺失 | Forrester/SPIFFE/SPIRE agent identity | clip + 建 entity |
-| P0 | Spec-Driven Development | 知识库完全缺失 | AWS Kiro/GitHub Spec Kit/Tessl | clip + 建 entity |
-| P1 | Token FinOps entity + topic | 3 raw 待编译 | raw 已到齐 | compile → 建 entity |
-| P1 | AI-Native Testing topic | 07-03 roundtable 完成 | raw 已到齐 | 回填 → 建 topic |
-| P1 | AI Governance Regimes comparison | 07-03 roundtable 完成 | raw 已到齐 | 回填 → 建 comparison |
-| P1 | Agent Observability topic | 4 entity 零承载 | Datadog/New Relic APM 演化史 | 建 topic skeleton |
-| P1 | Skill Engineering topic | 5 entity + 07-03 新剪藏 | Anthropic Skill Engineering 实践 raw | compile → 建 topic |
-| P2 | 死 topic 清理（9 个零入链） | 详见 [[inventory-20260707]] | — | 补内容 or 归档 |
-| P2 | 模型可解释性 (XAI) | 仅 3 处提及 | mechanistic interpretability 文献 | clip + 评估 |
-| P0 | Output #1: 认知分工终态定理 | 4 轮辩证最高密度 | 07-06 研究日志原料充足 | 写 output |
-| P0 | Context Engineering topic | 6 entity 已就绪 | 外部共识已形成 | 建 topic skeleton |
-| P0 | Comparison 层激活 | 13/19 零入链 | 已知哪些 topic 应引用 | 补引用 |
-| P1 | Agent Security topic | 11 entity 簇 | 已有 entity | 建 topic skeleton |
-| P1 | Agent Memory topic | 9 entity 簇 | 已有 entity | 建 topic skeleton |
-| P1 | AGI Economics topic | 12 entity 簇 | 已有 entity | 建 topic skeleton |
-| P1 | Output #2: AI 本体论改写 | 07-06 深度综合 | 配对反效率悖论 | 写 output |
-| P2 | Agent Failure Modes entity | Braintrust Topics + 88% 事件率 | 需 clip | clip + 建 entity |
-| P2 | 多模态/具身 AI entity | Microsoft CUA GA + BMW AEON | 需 clip | clip + 建 entity |
-| P2 | 中国 AI Agent 生态 | Youdao/DingTalk/MiniMax | 需 clip 中文 source | clip + 建 entity |
-| P2 | Q1 2026 source 补充 | 1-3 月仅 4 raw | 需定向 clip | clip |
+## Source 需求队列（合并去重 — 07-14 更新）
+
+| 优先级 | 目标 | 当前缺口 | 下一步 source | 行动 |
+|--------|------|----------|---------------|------|
+| P0 | **Output 断层** | ~37 天无新产出 | 07-02~07-10 研究日志 | 写 2 output |
+| P0 | **Agent 信任边界** 🆕 | entity + topic 全缺 | [Grok Build CLI exfil analysis](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547) + [对比报告](https://github.com/cereblab/grok-build-exfil-repro) | clip → entity |
+| P0 | **中国 AI 监管** 🆕 | entity 全缺 | [豆包/通义千问关闭](https://technode.com/2026/07/06/bytedances-doubao-and-alibabas-qwen-to-shut-down-ai-agent-features-on-july-15) + 拟人化管理办法原文 | clip → entity |
+| P0 | **Agent Observability** 🆕 | entity 全缺 | [Mindwalk](https://github.com/cosmtrek/mindwalk) + [评测框架比较](https://www.morphllm.com/ai-agent-evaluation-frameworks) | clip → entity |
+| P0 | **Loop Engineering** | entity + topic 全缺 | [10 Design Patterns](https://datasciencedojo.com/blog/loop-engineering-design-patterns) + [7 Design Patterns](https://pub.towardsai.net/the-7-design-patterns-every-ai-agent-developer-should-know-in-2026) | clip → entity |
+| P0 | **Agent Identity** | entity + topic 全缺 | [SPIFFE agent identity](https://stacklok.com/blog/agentic-identity-explained) + [IEEE论文](https://ieeexplore.ieee.org/document/11431026) + [HashiCorp](https://www.hashicorp.com/en/blog/spiffe-securing-the-identity-of-agentic-ai-and-non-human-actors) | clip → entity |
+| P0 | **SDD 工具生态** | entity 全缺 | [Spec Kit vs Kiro vs Tessl](https://particula.tech/blog/spec-driven-development-tools-spec-kit-vs-kiro-vs-tessl) + [SDD 2026](https://dev.to/krlz/spec-driven-development-in-2026) | clip → entity |
+| P0 | **Topic 建设 ×8** | 安全11/记忆9/AGI经济12/Token经济6/Context6/人-AI协作6/采纳部署7/评测7 | entity 已就绪 | 建 topic |
+| P1 | **Token FinOps** | 3 raw 待编译 | [Token 管理工具 Top 8](https://amnic.com/blogs/ai-token-management-tools) + [成本优化](https://regolo.ai/token-cost-optimization-in-2026) + [实际价格](https://playcode.io/blog/real-price-of-frontier-models) | compile → topic |
+| P1 | **Context Engineering** | topic 全缺 | [Sourcegraph Guide](https://sourcegraph.com/blog/context-engineering) + [State of CE 2026](https://pub.towardsai.net/state-of-context-engineering-in-2026) | 建 topic |
+| P1 | **空 topic 填充** 🆕 | 3 空 topic（9%）| Skill-Atrophy: entity 已存在(Cognitive-Offloading/Knowledge-Debt/Incidental-Learning/SHIELD)仅需关联 | 填充 related_entities |
+| P1 | **胖 topic 拆分** 🆕 | Verifiable 33 / Org-Harness 25 / Patterns 25 | 设计方案 | 设计拆分方案 |
+| P1 | **AI-Native Testing** | topic 全缺 | 07-03 roundtable + 07-10 Agent测试不可能性 | 回填 → topic |
+| P1 | **AI Governance Regimes** | comparison 全缺 | [伊利诺伊 AI 安全法](https://gov-pritzker-newsroom.prezly.com/gov-pritzker-signs-nation-leading-artificial-intelligence-safety-law) + [EU 网络安全+AI](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026DC0577) | 回填 → comparison |
+| P1 | **中国大厂路线** 🆕 | entity 全缺 | [36kr 路线分析](https://www.36kr.com/p/3747994426897156) + 腾讯混元 Hy3 | clip → entity |
+| P2 | **AI for Science** 🆕 | 仅 3 entity | GPT-5.6 数学突破 + AlphaFold 后续 | 评估建 topic |
+| P2 | **多模型策略** 🆕 | entity 全缺 | [实际价格分析](https://playcode.io/blog/real-price-of-frontier-models) | 评估 |
+| P2 | **具身 AI** 🆕 | entity 全缺 | 宇树 G1 + 蚂蚁 LingBot-VA 2.0 | clip → 评估 |
+| P2 | **Agent Failure Modes** | entity 缺失 | Braintrust Topics + 88% 事件率 | clip |
+| P2 | **死 topic 清理** | 9 零入链 topic | — | 补内容/归档 |
+
+> 🆕 = 07-14 探索新增 source
 
 ## 高杠杆待验证问题
 
-### 从思考未穷尽处
+### 从思考未穷尽处（07-09 前）
 
-- Token FinOps 能否成为独立的企业软件品类（类似 CloudHealth 之于云成本）？
+- Token FinOps 能否成为独立企业软件品类（类似 CloudHealth 之于云成本）？
 - Agent Control Plane 独立厂商能否在模型厂商内化之前建立护城河？
 - 判断力退化的"净退化期"能否被量化——不同判断力类型的时间曲线？
 - Exit-Sovereignty 能否被设计为 AI 工具的强制性 affordance？
-- 中国 AI 采用中"科层碎片化"的结构性根源——是暂时过渡还是体制性永久特征？
+- 中国 AI 采用中"科层碎片化"的结构性根源——暂时过渡还是体制性永久特征？
 
-### 从外部现实新缺口（07-04/07-07 探索）
+### 从外部现实缺口（07-04/07-09）
 
-- **Loop Engineering 的设计空间**——loop 的最优终止条件、反馈粒度、人类介入频率如何随任务类型变化？
-- **Agent Identity 的标准会是什么**——SPIFFE/SPIRE 模式能否扩展到 AI Agent？还是需要全新的 identity 范式？
-- **Spec-Driven Development 的边界**——什么类型的软件适合 spec-driven，什么类型永远需要 vibe？
-- **MCP 生态的治理风险**——Anthropic 控制的 MCP 是否会造成单点依赖？是否需要 CNCF 式中性治理？
-- **Agent 测试的"OWASP Top 10"何时出现**——Property 不变量库的标准化进度？
-- **模型可解释性在 Agent 时代是否成为瓶颈**——单模型可解释性 vs Agent 推理链可解释性的 gap 有多大？
-- **合成数据自举的数学边界**——模型能否通过自我生成数据超越训练分布？边界在哪里？
+- Loop Engineering 的设计空间——最优终止条件、反馈粒度、人类介入频率如何随任务类型变化？
+- Agent Identity 的标准——SPIFFE/SPIRE 能否扩展到 AI Agent？还是需要全新范式？
+- Spec-Driven Development 的边界——什么适合 spec-driven，什么永远需要 vibe？
+- MCP 生态的治理风险——Anthropic 控制 MCP 是否造成单点依赖？需要 CNCF 式中性治理？
+- Agent 测试的"OWASP Top 10"何时出现——Property 不变量库标准化进度？
+- 合成数据自举的数学边界——模型能否通过自我生成数据超越训练分布？
 
-### 07-09 新增问题
+### 07-10 新增
 
-- **Loop Engineering 的 17 技术如何分类**——哪些是核心循环模式，哪些是外围辅助？
-- **架构质量 = Token 效率**——这个等式是否成立？如果是，"好架构"首次有了直接经济度量
-- **Rot 失败模式**（>100k tokens 质量退化）——这对长周期 agent 的设计意味着什么？
-- **Delegative UI vs Conversational UI**——Agent 交互的下一个范式转折在哪里？
-- **中国企业 Agent 实践为何在知识库中系统性缺失**——是 source 获取问题还是主题宪法过滤？
+- Loop Engineering 的 17 技术如何分类——核心循环 vs 外围辅助？
+- 架构质量 = Token 效率——"好架构"首次有了直接经济度量？
+- Rot 失败模式（>100k tokens 质量退化）——对长周期 agent 设计的含义？
+- Delegative UI vs Conversational UI——Agent 交互的下一个范式转折？
+- 中国企业 Agent 实践为何系统性缺失——source 获取还是主题宪法过滤？
+- 框架创造不可在当前框架内编码（统一生成器修正）——各领域的投射和验证？
+- 有穷性自我取消作为增强陷阱底部——如何设计对抗制度和工具？
 
-## 07-07 盘点结论摘要
+### 07-14 新增 🆕
 
-> 完整缺口分析详见 [[inventory-20260707]]。
-
-**核心发现**：307 entity / 31 topic = 9.9:1 中层断层；11 个 entity 层系统盲区；10 个缺失 topic；6 个缺失 comparison。
-
-## 07-09 深度探索结论（本次新增）
-
-> 完整分析（10 个新簇、主题宪法审计、Output 转化分析、外部信号表）详见 [[inventory-20260709]]。
-
-**五大发现**：
-1. **10 个新 entity 簇**无 topic 承载（安全 11 / 记忆 9 / AGI 经济学 12 / Token 经济学 6 / Context 6 / 人-AI 协作 6 / 采纳部署 7 / LLM 病理 7 / 评测 7 / SE 范式 7）
-2. **Layer 3 自反性缺口**："刀不能削自己的把"——Knowledge Compilation/Context Engineering 无 topic，无质量度量 entity
-3. **链接架构根因**：单向链接导致 9 个 topic 零入链；entity 需添加 `topics:` 字段
-4. **编译已完全追上**（0 pending raw）
-5. **Output 三大推荐**：认知分工终态定理 / AI 本体论改写+反效率悖论 / Control Plane 壁垒转移
-
-**假设验证更新**（3 个增强）：
-- Control Plane 壁垒转移 → **增强**（Control Plane vs Orchestration 正式分层）
-- Agent Identity 危机 → **增强**（Identiverse 2026 确认 Visibility ≠ Enforcement）
-- Loop Engineering 杠杆 → **增强**（17 技术分类学出现）
-
-**新外部信号**（07-07 后）：Loop Engineering 17 技术分类学 / Kiro 替代 Amazon Q / Fortune 500 80%→17% 裂缝 / Context Engineering = 2026 #1 技能 / 88% 组织报告 Agent 事件 / Microsoft CUA GA / 中国 AI Agent 生态（Youdao/DingTalk/MiniMax）
-
-### 07-09 优先启动（P0）
-
-1. **Output 断层破冰** → 写认知分工终态定理 output（最高辩证密度，4 轮辩证）
-2. **Loop Engineering entity + topic** → clip Fareed Khan 17 技术 → 建 entity
-3. **Context Engineering topic** → 6 entity 已就绪 → 建 topic skeleton
-4. **Comparison 层激活** → 为 13 个零入链 comparison 补 topic 引用
-5. **链接架构修复** → 为 entity 添加 `topics:` frontmatter 字段
-
-### 07-09 短期推进（P1）
-
-6. Agent Security topic（11 entity 簇）→ 7. Agent Memory topic（9 entity 簇）→ 8. Spec-Driven Development entity（Kiro/Spec Kit）→ 9. AGI Economics topic（12 entity 簇）→ 10. Token Economics topic（6 entity）→ 11. Agent Identity entity → 12. AI Ontology Rewriting output
+- **Agent 信任边界的工程化**——能否建立类似 OWASP Top 10 的 Agent 数据治理标准？最小权限原则如何在 Agent 中实现？
+- **中国 AI 监管的全球影响**——拟人化管理范式会否输出到其他司法管辖区？对全球 Agent 产品设计的影响？
+- **Agent Observability 的三阶段成熟度**——从 log→trace→understand，当前处于哪个阶段？与 APM 演化史的可类比性？
+- **Coding Agent 的安全审计标准**——Grok Build CLI 事件后，是否需要独立的 coding agent 安全认证？
+- **多模型经济的定价透明性**——tokenizer 差异导致的实际成本偏差是否需要行业标准？
+- **AI 数学能力对"知识工作"定义的冲击**——当 AI 能证50年未解猜想，"知识工作"的边界如何重划？
+- **中国大厂 Agent 路线分化的终局**——B端（阿里）、双线（腾讯）、工作台（字节），哪种路线更可能胜出？还是永久共存？
+- **Token FinOps 从工具到平台的演化**——会否重复 CloudHealth→VMware 的路径（独立工具→被平台收购整合）？
 
 ## 最近思考结论摘要
 
@@ -176,27 +174,27 @@ related_entities:
 
 | 时间 | 焦点 | 临界发现 |
 |------|------|---------|
+| 2026-07-14 | 外部信号综合扫描 | Grok Build CLI信任边界危机(27,800×过度收集/opt-out无效)；豆包+通义千问Agent关闭(中国监管转折点)；SPIFFE Agent身份突破(IEEE论文+HashiCorp)；Loop Engineering十大设计模式主流化；SDD工具生态三强(Spec Kit/Kiro/Tessl)；Token FinOps独立品类确认(9+工具/18-27% burn rate)；中国大厂Agent三路线分化(阿里B端/腾讯双线/字节工作台)；知识库五盲区(Agent Observability/信任边界/中国监管/多模型策略/具身AI全缺) |
 | 2026-07-10 | Agent测试不可能性 | Rice定理严格适用Agent(所有非平凡语义属性不可判定)；三层不可能性(覆盖+判定+误差界)；OWASP效力=L1-L2有效/L3不完整/L4不适用；五层互补(OWASP→Property→对抗→红队→反脆弱)；L5绕过Rice(行为观察≠属性判定)；测试盲区=测试者认知框架边界 |
 | 2026-07-10 | 判断力退化类型学 | 三阶段退化(提取→重分配→确认固化)；10分钟=过渡信号(非退化起点)；审慎判断最险恶(确认偏误不可自检测)；三种维持处方(不适区间/轮换/框架碰撞)；选择性退化=最慢最隐蔽最危险 |
-| 2026-07-10 | Loop Engineering设计空间 | 终止悖论(自指必然)→外部终止定理(Gödel推论)；人类介入凸性(平时极低,突变急升,20-30%集中突变点)；嵌套终止(S1-S5每层由上层终止,S4-S5需人类)；反脆弱替代(隔离容器+失败自终止)；完全自主Loop不可能定理(外部终止者=有穷性,增强陷阱正在消灭条件) |
+| 2026-07-10 | Loop Engineering设计空间 | 终止悖论(自指必然)→外部终止定理(Gödel推论)；人类介入凸性(平时极低,突变急升,20-30%集中突变点)；嵌套终止(S1-S5每层由上层终止,S4-S5需人类)；完全自主Loop不可能定理(外部终止者=有穷性,增强陷阱正在消灭条件) |
 | 2026-07-10 | 增强陷阱热力学 | 选择性退化(计算可逆/技术部分不可逆/框架不退化)；知道答案=信息论必然污染学习(已知=零信息)；体验不可压缩(语义≠程序)；负熵流(不确定性=判断力燃料)；有穷性自我取消=增强陷阱底部；公地悲剧需制度治理非禁止 |
-| 2026-07-10 | 架构质量=Token效率？ | 非等式(投影≠定义)；行为模式(-34%质变)>>token(-7-8%量变)；DX=AX结构层同构(认知负荷管理)；分层度量(评审/投资/学习/追踪)；信号保质期(单次衰减+累积增强)；架构质量=关系属性(非固有)；帕累托前沿(非全局最优)；定义=框架选择(不可裁决) |
 
 ## 思考日志索引
 
-- [[2026-07-10]] — 深度思考×18：①Spec-Driven②Agent Security③可解释性④自举边界⑤反效率文化⑥MCP治理⑦全球南方跃迁⑧Agent Identity⑨统一生成器元分析⑩对抗性审查与分层验证⑪认知分工终态定理实证检验⑫Context Rot失败模式⑬Delegative vs Conversational UI⑭架构质量=Token效率⑮增强陷阱热力学⑯Loop Engineering设计空间⑰判断力退化类型学⑱Agent测试不可能性（Rice定理适用/三层不可能性/OWASP精确效力/五层互补体系/L5绕过Rice/测试盲区=认知框架边界）。18轮统一根基："自指系统结构性盲区"成为跨12+领域统一生成器，"可改变性=有穷性"为存在论根基
-- [[2026-07-09]] — 深度探索：5 个并行 agent 全量盘点 + 外部信号扫描 + 深度思考×4：①Loop 杠杆边界（三前提/耗散/增强陷阱）②Control Plane 壁垒转移（四维重组/执行-评估分离/MCP 70-80%）③Token FinOps（可靠性代价函数/兰道尔下界/精算学）④Context Engineering（三学科交叉/Token双重流向/Context Advantage三维/统一生成器="人类结构性理解不可编码"）
-- [[inventory-20260709]] — 07-09 深度探索详细记录（簇分析/宪法审计/Output转化/外部信号）
-- [[2026-07-07]] — 9 轮：模型可解释性 / 全球南方跃迁 / 中国双速 / Exit-Sovereignty / Token FinOps / 净退化期 / 编码杠杆 / 记忆衰减 / 图谱中层断层（+roundtable×8+自反×1）
-- [[2026-07-06]] — 10 轮：失败空间迁移 / AI评测制度化 / 认知分工 / 后果真实性 / 判断力扰动 / Agent Identity / Loop Engineering / Spec-Driven / Control Plane / 合成数据自举
-- [[2026-07-04]] — 11 轮：可博弈性三重奏 / Agent生命周期 / Computer Use / Headless Agent / 元方法论 / Agent安全 / AGI经济学 / 重组双向制度 / 治理内生性 / 时间不对称 / Context Advantage
-- [[2026-07-03]] — 15 轮：Agent Obs / 代理-现实差距 / Compliance-as-Code / Reward Hacking / Agent协议 / Context工具衰减 / 多Agent编排 / Skill Engineering / Token FinOps / 记忆 / 认知背离 / AI-native测试 / AI治理 / Agent框架 / 认知背离
-- [[2026-07-02]] — 31 轮含元合成：评测/记忆/灵活性/治理/认知/全球南方/控制平面/AI认知/Headless/Harness/多Agent倒U/AGI经济学/中国AI/元合成rank/Context Advantage/Goodhart Soros Gödel/重组制度/治理内生性/判断力扰动/后果真实性/Token FinOps
-- [[2026-07-01]] — 12 轮：协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward/动态环境
+- [[2026-07-10]] — 深度思考×18：统一生成器"自指系统结构性盲区"；"可改变性=有穷性"存在论根基
+- [[2026-07-09]] — 5 并行 agent 全量盘点 + 外部信号扫描 + 深度思考×4
+- [[inventory-20260709]] — 07-09 深度探索（簇分析/宪法审计/Output转化/外部信号）
+- [[2026-07-07]] — 9 轮：中层断层 + roundtable×8 + 自反×1
+- [[2026-07-06]] — 10 轮：失败空间迁移 / AI评测制度化 / 认知分工 / Agent Identity / Loop / SDD / Control Plane
+- [[2026-07-04]] — 11 轮：可博弈性 / Agent生命周期 / Computer Use / Headless / 元方法论 / Agent安全 / AGI经济学
+- [[2026-07-03]] — 15 轮：Agent Obs / 代理-现实差距 / Compliance-as-Code / Reward Hacking / Agent协议 / Skill Engineering / Token FinOps / 记忆 / 认知背离 / AI-native测试 / AI治理
+- [[2026-07-02]] — 31 轮含元合成 rank
+- [[2026-07-01]] — 12 轮：协调/记忆/评测/治理/判断力/经济学/组织/Agent/CU/Reward
 - [[2026-06-30]] — 全库盘点 + 多轮探索
-- [[exploration-archive-20260628]] — 06-28 全库快照 + 方向库 + 长问题库 + 07-04/07-07 卸载内容
-- [[inventory-20260707]] — 07-07 全量盘点详细记录（缺口表/方向表/死topic）
-- [[inventory-20260709]] — 07-09 深度探索详细记录（10新簇/宪法审计/Output转化/18外部信号）
-- [[research-snapshot-20260703]] — 07-03 图谱健康度快照 + 成簇分析 + 缺失领域
-- [[resolved-judgments]] — 已收敛判断（5 批次共 61 条）
+- [[exploration-archive-20260628]] — 06-28 全库快照 + 方向库 + 长问题库
+- [[inventory-20260707]] — 07-07 全量盘点详细记录
+- [[exploration-20260714]] — 07-14 深度探索详情（外部信号 38 条 + 知识库五盲区 + 新 cluster）
+- [[research-snapshot-20260714]] — 图谱健康度历史快照
+- [[resolved-judgments]] — 已收敛判断（5 批次 61 条）
 - [[resolved-principles]] — 已收敛操作原则（9 条）
