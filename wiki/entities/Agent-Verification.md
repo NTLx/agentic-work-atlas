@@ -19,7 +19,9 @@ related_entities:
   - "[[Auto-Mode]]"
   - "[[Validation-Pipeline]]"
   - "[[Captain-Mindset]]"
+  - "[[Rubric-Based-Evaluation]]"
 source_raw:
+  - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260608-reflecting-on-year-of-claude-code]]"
   - "[[20260620-l8-principal-agentic-workflow]]"
   - "[[20260702-anthropic-harnesses-long-running-agents]]"

@@ -970,15 +970,19 @@
     },
     "20260713-martin-fowler-fragments-july-2026.md": {
       "body_sha256": "5673c85658db6e94bee200bde458e8cf58efae7c39c9b81acd711f653c6a26cb",
+      "compiled_at": "2026-07-14T09:45:02+08:00",
       "raw_file": "20260713-martin-fowler-fragments-july-2026.md",
-      "status": "pending",
-      "updated_at": "2026-07-14T09:06:12+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260713-martin-fowler-fragments-july-2026.md",
+      "updated_at": "2026-07-14T09:45:02+08:00"
     },
     "20260713-microsoft-ships-ai-agents-enterprise-scale.md": {
       "body_sha256": "b969a58a838a4c38168a94fd3378ffaa5083d680eb4600f1cc254fbe9cb0b567",
+      "compiled_at": "2026-07-14T09:45:02+08:00",
       "raw_file": "20260713-microsoft-ships-ai-agents-enterprise-scale.md",
-      "status": "pending",
-      "updated_at": "2026-07-14T09:06:12+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260713-microsoft-ships-ai-agents-enterprise-scale.md",
+      "updated_at": "2026-07-14T09:45:02+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -1549,6 +1553,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-14T09:06:12+08:00",
+  "updated_at": "2026-07-14T09:45:02+08:00",
   "version": 1
 }

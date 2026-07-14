@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-07-13
+updated: 2026-07-14
 tags:
 ---
 
@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 324 个 |
+| Entity 页面 | 328 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 192 个 |
-| Source Summary | 189 个 |
+| Raw 文章 | 194 个 |
+| Source Summary | 191 个 |
 | Output 作品 | 5 个 |
 | Research 日志 | 27 个 |
 
@@ -81,8 +81,11 @@ tags:
 | [[wiki/entities/Incidental-Learning\|Incidental Learning（附带学习）]] | 通过费力解决问题非预期获得的知识——被 AI agent 短路的学习路径 | Accenture Labs SHIELD 论文 |
 | [[wiki/entities/SHIELD\|SHIELD]] | 多 agent 系统，通过 out-of-band 渠道在不打断开发流程的前提下偿还 Knowledge Debt | Accenture Labs SHIELD 论文 |
 | [[wiki/entities/AI-Assisted-Port\|AI-Assisted Port（AI 辅助代码重写）]] | 利用 AI Agent 批量执行语言间代码重写并辅以对抗审查的工程范式 | Bun in Rust |
-| [[wiki/entities/Distinct-Principal-Identity\|Distinct Principal Identity（独立主体身份）]] | AI Agent 使用独立身份而非继承用户凭证，实现清晰归因与受限权限 | Vercel Agent |
+| [[wiki/entities/Distinct-Principal-Identity\|Distinct Principal Identity（独立主体身份）]] | AI Agent 使用独立身份——从 service account 到企业组织集成（目录条目、角色、邮箱） | Vercel Agent + Microsoft Foundry |
 | [[wiki/entities/Plan-is-the-Permission\|Plan is the Permission（计划即权限）]] | Agent 保持只读状态，仅在明确授权时获得临时受限执行权限，执行后恢复受限 | Vercel Agent |
+| [[wiki/entities/Retrieval-as-a-Subagent\|Retrieval-as-a-Subagent（检索子代理）]] | 将检索包装在 agentic 循环中：规划查询 → 尝试多源 → 评估 → 重试 → 结构化失败信号 | Microsoft Foundry |
+| [[wiki/entities/Rubric-Based-Evaluation\|Rubric-Based Evaluation（基于评价标准的评估）]] | 用具体行为检查项取代泛化指标评估生产 Agent，配合 Agent Optimizer 实现自我改进循环 | Microsoft Foundry |
+| [[wiki/entities/Self-Hosted-Models\|Self-Hosted Models（自托管模型）]] | 组织自行托管开放权重模型的实践，驱动力包括成本、主权和信息安全 | Martin Fowler 2026-07 |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
@@ -98,6 +101,7 @@ tags:
 | [[wiki/entities/Kun-Chen\|Kun Chen]] | 前 L8 Principal Engineer，AXI / No Mistakes / First Mate 工具链作者 | L8 Principal Agentic Workflow |
 | [[wiki/entities/Pro-Worker-AI\|Pro-Worker AI（亲劳动者 AI）]] | 使人类专业知识更有价值而非更不必要的 AI 方向，核心机制是新任务创建 | Hamilton Project |
 | [[wiki/entities/Task-Framework\|Task Framework（任务框架）]] | Acemoglu/Autor 的技术变革五分类——以任务为分析单元区分自动化与新任务创建 | Hamilton Project |
+| [[wiki/entities/Agent-Unit-of-Work\|Agent Unit of Work（Agent 工作单元）]] | 组织愿意交给 Agent 的任务单元——大小、覆盖、交接、检查、边界构成 delegation 核心控制参数 | Martin Fowler 2026-07 |
 
 #### 知识与语义
 | Entity | 定义 | 来源 |
@@ -144,7 +148,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-07-13——批量编译 5 篇 raw 材料（Agent Loop ByteByteGo、Bun in Rust、Vercel Agent、GitHub Durable Owner、Nadella Reverse Information Paradox），新增 4 个 Entity（AI-Assisted-Port / Distinct-Principal-Identity / Plan-is-the-Permission / Reverse-Information-Paradox）+ 5 个 source summary。
+最新编译：2026-07-14——编译 2 篇 raw 材料（Microsoft Ships AI Agents at Enterprise Scale / Martin Fowler Fragments July 2026），新增 5 个 Entity（Retrieval-as-a-Subagent / Rubric-Based-Evaluation / Agent-Identity / Self-Hosted-Models / Agent-Unit-of-Work）+ 2 个 source summary。
 
 ---
 
@@ -177,4 +181,4 @@ status             # 查看知识库状态
 ---
 
 *索引版本: v2.12*
-*最后更新: 2026-07-13*
+*最后更新: 2026-07-14*

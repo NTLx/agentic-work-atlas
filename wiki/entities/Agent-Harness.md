@@ -38,7 +38,13 @@ related_entities:
   - "[[NLAH]]"
   - "[[Agent-Ergonomics]]"
   - "[[Kun-Chen]]"
+  - "[[Retrieval-as-a-Subagent]]"
+  - "[[Rubric-Based-Evaluation]]"
+  - "[[Distinct-Principal-Identity]]"
+  - "[[Agent-Unit-of-Work]]"
 source_raw:
+  - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
+  - "[[20260713-martin-fowler-fragments-july-2026]]"
   - "[[The Anatomy of an Agent Harness]]"
   - "[[Maintainability sensors for coding agents]]"
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
@@ -263,6 +269,22 @@ Cursor 2026 春季报告揭示了 harness 演化的下一个阶段：**从开发
 
 > [!tip] 演化路径
 > 单 Agent harness → 多 Agent harness → 自动化 harness → harness 即平台（SDK + Automations） → HaaS (Harness-as-a-Service)
+
+## Microsoft Foundry 五层生产架构（2026-07）
+
+Microsoft Core AI VP Marco Casalaina 描述了生产级 Agent Harness 的五层架构：
+
+| 层级 | 功能 | Microsoft 实现 |
+|------|------|---------------|
+| **Inference** | 统一模型接口，模型可替换 | 支持 11,000+ 模型（OpenAI/Anthropic/xAI/DeepSeek/MAI） |
+| **Agent Runtime** | 编排循环、工具调用、对话状态 | 框架中立（LangChain/LangGraph/CrewAI 可互换） |
+| **Observability** | 跨项目 fleet 可见性、健康评分、drift 检测 | Foundry Control Plane → Azure Monitor |
+| **Identity** | Agent 作为独立 principal 的身份和审计 | Entra 扩展（目录条目、角色分配、邮箱） |
+| **Context** | 多源检索 + 行动面 | 四个 IQ 服务通过 MCP 调用 |
+
+关键架构模式：[[Retrieval-as-a-Subagent]]（上下文层）、[[Distinct-Principal-Identity]]（身份层）、[[Rubric-Based-Evaluation]]（评估层）。
+
+核心判断：**"The harness matters as much as the model"**——Claude Opus 4.8 发布后，GitHub Copilot CLI 团队必须重新调优 harness 并重新运行评估才能上线。
 
 ## 关键数据点
 

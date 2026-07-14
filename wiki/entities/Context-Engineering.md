@@ -26,6 +26,7 @@ related_entities:
   - "[[Agent-Legibility]]"
   - "[[Context-Minimalism]]"
   - "[[Company-Brain]]"
+  - "[[Retrieval-as-a-Subagent]]"
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[What Is Code?]]'
@@ -37,6 +38,7 @@ source_raw:
   - "[[20260608-become-ai-native-org]]"
   - "[[20260611-openai-harness-engineering]]"
   - "[[20260702-anthropic-context-engineering]]"
+  - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
 ---
 
 # Context Engineering
