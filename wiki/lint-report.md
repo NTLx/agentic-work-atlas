@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-07-14"
+date: "2026-07-15"
 score: 95
 status: "FAIL"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-07-14
+# Agentic Work Atlas Lint 报告 - 2026-07-15
 
 > [!summary] 状态
 > 门禁: **FAIL**
@@ -42,7 +42,7 @@ tags:
 | `tag` | 12 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
-| `stale-core` | 4 |
+| `stale-core` | 5 |
 | `entity` | 4 |
 | `comparison` | 0 |
 | `index` | 0 |
@@ -63,10 +63,11 @@ tags:
 
 ### stale-core
 
-- `wiki/entities/Agent-Workflow-Patterns.md` - `核心页 Agent-Workflow-Patterns 已 90 天未更新，入链 16 条`
-- `wiki/entities/Discernment.md` - `核心页 Discernment 已 90 天未更新，入链 10 条`
-- `wiki/entities/Memex.md` - `核心页 Memex 已 90 天未更新，入链 15 条`
-- `wiki/entities/Specificity.md` - `核心页 Specificity 已 90 天未更新，入链 10 条`
+- `wiki/entities/Agent-Workflow-Patterns.md` - `核心页 Agent-Workflow-Patterns 已 91 天未更新，入链 16 条`
+- `wiki/entities/Dan-Shipper.md` - `核心页 Dan-Shipper 已 90 天未更新，入链 6 条`
+- `wiki/entities/Discernment.md` - `核心页 Discernment 已 91 天未更新，入链 10 条`
+- `wiki/entities/Memex.md` - `核心页 Memex 已 91 天未更新，入链 15 条`
+- `wiki/entities/Specificity.md` - `核心页 Specificity 已 91 天未更新，入链 10 条`
 
 ### tag
 
