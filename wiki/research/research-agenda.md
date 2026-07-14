@@ -93,7 +93,7 @@ related_entities:
 |------|---------|-------------|
 | AI 评测制度化已启动：US AI Incident Reporting Act(2026-06-26)=强制7天报告+`$2M`/天罚款 | 追踪首次执法行动 | Google Alert |
 | 反效率文化悖论（修正 🔄 07-14）：原始"外部强制打破公地悲剧"需修正为天/年/十年三层嵌套治理。天尺度(SHIELD/先用自己后用AI)买时间给年尺度(无deadline/技能维护预算)，年尺度买时间给十年尺度(行业认证/税收抵免)。根因=信息-时间不对称（因果窗口≠问责窗口） | 三层嵌套的最低可行制度载体；天尺度在大多数组织中的执行率 | **强验证**（Tian Pan RCT: AI辅助组低17pp + 84%用AI但45%调试更久 + Code Turnover Rate 1.8-2.5× + 07-14 圆桌+追本完成理论修正） |
-| 图谱中层断层——Topic聚合=缺失的第五动作 | 设计自动检测 entity 簇密度≥阈值的触发条件 | prototype |
+| 图谱中层断层——第五动作synthesize（修正 🔄 07-15）：原"Topic聚合=缺失动作"修正为synthesize=独立心智操作(compile输raw→entity, synthesize输已有wiki→新结构)。四层自动化梯度(L1连接密度→L2聚类→L3 skeleton→L4命名)。触发=连接密度>阈值+现有结构不再可导航。Topic从连接中浮现不从外部强加(Luhmann+Alexander) | 连接密度最优阈值；topic skeleton自动生成质量 | **强验证**（五动作模型+Karpathy/Alexander/Luhmann/Cunningham综合+07-15圆桌修正） |
 | Agent Identity 危机定理（修正 🔄 07-14）：IAM 治理落后不是因为缺少协议——SPIFFE 薄而硬已成事实（Red Hat/Stacklok/Riptides 三条路线）。根因是治理权在技术层不可解决——阈值定义权=有穷者治理悖论 | SPIFFE 上层建筑的制度化速度；阈值定义权归属的实践 | **强验证**（联网确认 SPIFFE deployment + 07-14 圆桌+追本完成理论修正） |
 | Loop Engineering 杠杆定理（修正 🔄 07-14）：原"Loop>Prompt前提SNR>θ∧变异分析∧延迟<<τ"需修正为"前提=验证器类型≥概率性+异质验证器组合+渐进式部署"。启发式验证器下Prompt=Loop。ROI=N×Pe×(C_late/C_early-1)，参数未知→渐进式部署而非预计算。终局=设计loop能安全自我演化的容器（外部终止者的工程化） | 10 Design Patterns 工具化进展；过程SLO标准化 | **强验证**（10 Design Patterns + "Verification is the steering wheel" + 渐进决策规则 + 07-14 圆桌完成理论修正） |
 | 架构质量信号保质期（修正 🔄 07-14）：原"单次衰减+累积增强"修正为"Token效率=经济暴露度=三维封装(局部+系统+历史)×修改频率"。Token=诊断信号(箭头)非度量(尺子)——绝对值无意义，delta/一阶导数有价值。双模型差分过滤训练分布污染。工程化=预警(Token斜率)→诊断(封装度量)→修复(重构) | Code Turnover Rate 标准化；双模型差分实践 | **强验证**（CTR AI:12-18% vs 人类:4-6% + 07-14圆桌完成理论修正） |
