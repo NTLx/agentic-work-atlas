@@ -5,7 +5,7 @@
       "source": "KKKKhazix/khazix-skills",
       "sourceType": "github",
       "skillPath": "aihot/SKILL.md",
-      "computedHash": "4bed39cabf0ff002db8afcf878dd9fd6e826cfd977802b0ff4150ab4ab6f03f1"
+      "computedHash": "01c9f4f97138e749aa0645cdcbb536852808847395de34d373582b489b136d03"
     },
     "json-canvas": {
       "source": "kepano/obsidian-skills",
@@ -25,7 +25,7 @@
       "ref": "md",
       "sourceType": "github",
       "skillPath": "skills/ljg-book/SKILL.md",
-      "computedHash": "88cefacbf1ed613cdd72e270c4da9c2939193e88e0c94f857e06320cd93a5c5d"
+      "computedHash": "75a0632591869634570102cd7e1e96b91a3fc3d536723a5397a01d22d095c3cd"
     },
     "ljg-constraint": {
       "source": "lijigang/ljg-skills",
@@ -53,7 +53,7 @@
       "ref": "md",
       "sourceType": "github",
       "skillPath": "skills/ljg-paper/SKILL.md",
-      "computedHash": "1a54a87790bb38c3e8099edd2dbf22365b9b55bc0c49dc8e2333f66e3a34c7a9"
+      "computedHash": "405202ed17dabab2d261840dd66c12919e5b63363a0209b99ea1e3d257920694"
     },
     "ljg-paper-river": {
       "source": "lijigang/ljg-skills",
