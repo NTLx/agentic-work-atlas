@@ -66,9 +66,12 @@ bash <(curl -fsSL https://aihot.virxact.com/aihot-skill/install.sh) \
 ```text
 请更新当前已安装的 AI HOT Skill：https://aihot.virxact.com/aihot-skill/
 先告诉我当前 aihot/SKILL.md 路径，再覆盖同一目录。
+更新后用可识别的非浏览器 User-Agent 验证一次；如果此前出现 blocked / 567，不要继续沿用 Mozilla、Chrome 或 HeadlessChrome UA。
 ```
 
 手动更新时，重新运行上面的对应 `--target` 或 `--dir` 命令。
+
+旧版 Agent 出现 `blocked / 567` 不等于 IP 被封，通常需要更新 Skill 或修正定时任务的 User-Agent。修正后只重试一次；仍失败请在反馈中附上 `requestId`。
 
 ## 能查询什么
 
