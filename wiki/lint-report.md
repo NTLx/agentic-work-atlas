@@ -20,14 +20,18 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 194 |
+| Raw 来源 | 195 |
 | Raw 已编译 | 194 |
-| Raw 待编译 | 0 |
+| Raw 待编译 | 1 |
 | Raw 已跳过 | 0 |
 | Entity | 329 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 5 |
+
+## 待编译 Raw
+
+- `raw/vibe-coding成瘾之后重建AI与生活的边界.md`
 
 ## 检查项
 

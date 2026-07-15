@@ -1512,6 +1512,12 @@
       "summary_path": "wiki/sources/the-ai-jobs-transition-framework-for-the-eu.md",
       "updated_at": "2026-07-09T13:16:42+08:00"
     },
+    "vibe-coding成瘾之后重建AI与生活的边界.md": {
+      "body_sha256": "19e62be28c433ba9c08bf916397f47b84c512208f2edb83d88980c7557aa893e",
+      "raw_file": "vibe-coding成瘾之后重建AI与生活的边界.md",
+      "status": "pending",
+      "updated_at": "2026-07-15T14:38:19+08:00"
+    },
     "一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统.md": {
       "body_sha256": "3e51d0d1e05990278b99b7d7c4f162bf080cdfced129866f7b2c55ae832f1c08",
       "compiled_at": "2026-07-09T13:16:44+08:00",
@@ -1553,6 +1559,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-14T09:45:02+08:00",
+  "updated_at": "2026-07-15T14:38:19+08:00",
   "version": 1
 }
