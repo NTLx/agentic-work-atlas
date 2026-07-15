@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-15"
-score: 95
-status: "FAIL"
+score: 100
+status: "PASS"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-07-15
 
 > [!summary] 状态
-> 门禁: **FAIL**
-> 分数: **95/100**
-> 阻断问题: **5**
+> 门禁: **PASS**
+> 分数: **100/100**
+> 阻断问题: **0**
 
 ## 统计
 
@@ -36,30 +36,19 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 0 |
 | `hidden-char` | 0 |
-| `mathjax` | 1 |
+| `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
 | `tag` | 12 |
 | `evidence` | 0 |
 | `low-evidence` | 0 |
 | `stale-core` | 5 |
-| `entity` | 4 |
+| `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
 | `registry-consistency` | 0 |
 
 ## 问题明细
-
-### entity
-
-- `wiki/entities/Agent-Unit-of-Work.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Retrieval-as-a-Subagent.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Rubric-Based-Evaluation.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Self-Hosted-Models.md` - `概念 Entity 缺少章节: ## 关键数据点`
-
-### mathjax
-
-- `wiki/research/research-logs/exploration-20260714.md:263` - `发现裸露 $，需用反引号包裹或反斜杠转义`
 
 ### stale-core
 

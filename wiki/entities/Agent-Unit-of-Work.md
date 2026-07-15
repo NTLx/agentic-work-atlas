@@ -79,3 +79,8 @@ Drucker (1959)：当工作者比管理者更了解具体细节时，管理方式
 - [[Harness-Engineering]] — 设计和维护工作单元边界是 harness engineering 的核心
 - [[Agent-Verification]] — 返回值检查是 verification 的一种形式
 - [[AI-Era-Career-Skills]] — 非工程师驾驭 Agent 扩展了 AI 时代的技能边界
+
+## 关键数据点
+
+- Kief Morris (2026-07): Thoughtworks FOSE retreat 跨多个 session 发现同一组选择被反复做出——工作单元粒度、权限边界、返回值格式
+- Martin Fowler Fragments (2026-07): 可验证、可撤销、人类可在有限时间内审查——构成 Unit of Work 的三条件

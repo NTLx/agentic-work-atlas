@@ -260,7 +260,7 @@ tags:
 
 ### 其他（5 条）
 34. Meta 关 Instagram AI 深度伪造
-35. Meta 路易斯安那 5GW 数据中心（$500亿+）
+35. Meta 路易斯安那 5GW 数据中心（`$500亿+`）
 36. PixVerse 4.39 亿美元 C 轮
 37. 11 天 Claude Fable 5 写 100 万行 Rust 重构 Bun
 38. OpenAI 新提示词指南

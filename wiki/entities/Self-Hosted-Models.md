@@ -74,3 +74,9 @@ Martin Fowler 提出的关键问题：Self-hosted models 是否会重蹈 **half-
 - [[Enterprise-AI-Model-Sourcing]] — 自托管是模型采购策略的一种
 - [[Closed-Frontier-Models-vs-Open-Model-Economy]] — 自托管位于开放模型经济的一端
 - [[Harness-Engineering]] — 自托管模型的 harness 可能需要更厚的控制层
+
+## 关键数据点
+
+- Thoughtworks FOSE retreat (2026-07): Qwen 3.6 被认为是当前本地 agentic programming 的最佳平衡点（Birgitta Böckler, Sebastian Raschka）
+- RedMonk (2026): 开源模型追赶前沿模型的时间在缩短
+- 部分公司已自托管长达两年
