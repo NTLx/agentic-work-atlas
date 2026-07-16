@@ -968,6 +968,12 @@
       "summary_path": "wiki/sources/20260712-reverse-information-paradox-nadella.md",
       "updated_at": "2026-07-13T11:36:54+08:00"
     },
+    "20260713-agentic-misalignment-summer-2026.md": {
+      "body_sha256": "79024d23bd08971584ee8e29258332a1d335c62a24ba10980438b2e538416ba1",
+      "raw_file": "20260713-agentic-misalignment-summer-2026.md",
+      "status": "pending",
+      "updated_at": "2026-07-16T09:19:25+08:00"
+    },
     "20260713-martin-fowler-fragments-july-2026.md": {
       "body_sha256": "5673c85658db6e94bee200bde458e8cf58efae7c39c9b81acd711f653c6a26cb",
       "compiled_at": "2026-07-14T09:45:02+08:00",
@@ -983,6 +989,12 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260713-microsoft-ships-ai-agents-enterprise-scale.md",
       "updated_at": "2026-07-14T09:45:02+08:00"
+    },
+    "20260715-why-i-left-google-deepmind.md": {
+      "body_sha256": "b3c4746b818d30c62bf53547f996d00234c58113d8806d65440d820fa9830b26",
+      "raw_file": "20260715-why-i-left-google-deepmind.md",
+      "status": "pending",
+      "updated_at": "2026-07-16T09:19:24+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -1559,6 +1571,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-15T14:38:19+08:00",
+  "updated_at": "2026-07-16T09:19:25+08:00",
   "version": 1
 }
