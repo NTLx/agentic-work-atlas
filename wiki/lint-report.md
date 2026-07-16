@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-16"
-score: 100
-status: "PASS"
+score: 99
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-07-16
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **99/100**
+> 阻断问题: **1**
 
 ## 统计
 
@@ -36,7 +36,7 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 0 |
 | `hidden-char` | 0 |
-| `mathjax` | 0 |
+| `mathjax` | 1 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
 | `tag` | 36 |
@@ -53,6 +53,10 @@ tags:
 ### low-evidence
 
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `低证据页面 20260715-anthropic-talent-strategy-2026 只能作为补 source 或探索线索`
+
+### mathjax
+
+- `wiki/research/research-logs/2026-07-16.md:393` - `发现裸露 $，需用反引号包裹或反斜杠转义`
 
 ### stale-core
 
