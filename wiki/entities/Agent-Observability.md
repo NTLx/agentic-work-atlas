@@ -6,7 +6,7 @@ aliases:
   - AI Agent Observability
 definition: "Agent Observability = 有穷观察者（人类/制度）在开放行为空间中校准对 AI Agent 行为预期的持续能力——不等同于传统 APM observability，因为观察者耦合在被观测系统中且跨越信任域边界。"
 created: 2026-07-15
-updated: 2026-07-15
+updated: 2026-07-16
 tags:
   - agentic-engineering
   - observability
@@ -19,11 +19,13 @@ related_entities:
   - "[[Distinct-Principal-Identity]]"
   - "[[Human-Governor-Agent-Operator]]"
   - "[[Judgment]]"
+  - "[[LLM-as-a-Judge]]"
 topics:
   - "[[Agent-Security]]"
   - "[[Context-Engineering]]"
 source_raw:
   - "[[2026-07-15]]"
+  - "[[20260713-agentic-misalignment-summer-2026]]"
 ---
 
 # Agent Observability（Agent 可观测性）
@@ -107,6 +109,7 @@ Agent Observability 的"understand"阶段天然分裂为五种不可互相还原
 - **有穷者治理悖论**：制度本身是有穷的规则系统 → MVI 必须包含元规则而非仅固定规则。
 - **信息-时间不对称**：观测的意义分配是事后性的——在事件当下无法知道哪些数据最终成为"关键证据"。观测永远滞后于行为。
 - **Loop Engineering**：外部终止者需要 observability 作为输入——无法观测就无法终止。
+- **同质性监督失效（2026-07-16 新增）**：当观测者（judge/auditor）与被观测 agent 共享价值观基底时，observability 的校准硬墙（Ashby 必需多样性）被同源化进一步压缩——观测者多样性 ≤ 被观测者多样性，盲区有测度下界。失效根是"共压"（监督者与被监督者共享激励源）而非"同质"。详见 [[LLM-as-a-Judge]] 同质性监督失效节。
 
 ## 关键数据点
 
@@ -141,6 +144,7 @@ Agent Observability 的"understand"阶段天然分裂为五种不可互相还原
 3. Agent 失败模式知识库（类比航空 NTSB）——建立机制、格式标准、跨平台共享
 4. OTel GenAI 语义约定从 Development → Stable 的时间线和演化方向
 5. MVI 框架与 ATSC 三级合规模型的精确映射
+6. **"监督终端约定性"的可观测性（2026-07-16 新增）**——是否需要一种新 observability：不观测 agent 行为，而观测"哪些判定被设为不可追问的终点、由谁约定、可否申诉"（即让 Hofstadter 怪圈可见）？这是同质性监督失效的工程出路，接 [[LLM-as-a-Judge]] 无干净解节。
 
 ## 相关 QA
 

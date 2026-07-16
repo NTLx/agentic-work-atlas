@@ -18,10 +18,10 @@ tags:
 | Entity 页面 | 329 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 195 个 |
+| Raw 文章 | 197 个 |
 | Source Summary | 191 个 |
 | Output 作品 | 5 个 |
-| Research 日志 | 31 个 |
+| Research 日志 | 32 个 |
 
 ### 连接拓扑（2026-06-25 实测，口径见 `schema/fragmentation-metrics.md`）
 
