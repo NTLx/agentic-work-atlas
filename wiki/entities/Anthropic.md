@@ -6,7 +6,7 @@ aliases:
   - Anthropic Inc
 definition: "由 Dario Amodei 等人于 2021 年创立的前沿 AI 实验室，Claude 系列模型开发方，2026 年以一手数据公开 AI 递归自我改进进程，并发布 Advanced AI Framework 政策提案"
 created: 2026-06-06
-updated: 2026-06-13
+updated: 2026-07-16
 tags:
   - organization
   - AI-frontier-lab
@@ -27,6 +27,7 @@ source_raw:
   - "[[20260610-ai-exponential-policy]]"
   - "[[20260610-anthropic-ai-exploits-security-patches]]"
   - "[[20260613-anthropic-public-record]]"
+  - "[[20260715-why-i-left-google-deepmind]]"
 validated_source: "https://www.anthropic.com/about"
 validated_at: "2026-06-06"
 ---
@@ -85,6 +86,16 @@ Anthropic 在 2026-06-10 发布了 [[AI-Policy-Framework|Advanced AI Framework]]
 ## 2026-06 Anthropic Public Record：公众态度基线
 
 Anthropic 在第一轮 [[20260613-anthropic-public-record|Anthropic Public Record]] 中把研究对象从 Claude 用户扩展到美国公众。该调查显示，公众最担心的是工作流失、认知依赖和错误信息，而不是只围绕模型失控；同时只有 15% 受访者信任 AI 公司自行决定 AI 如何开发和使用。这让 Anthropic 的政策叙事从“前沿模型风险”扩展到“公众授权、问责和社会许可”。
+
+## 2026-02 Pentagon 红线事件：承诺信用的代价验证（2026-07-16 编译新增）
+
+Alex Turner（TurnTrout）离职叙事 `[[20260715-why-i-left-google-deepmind]]` 从外部视角验证了 Anthropic 安全承诺的"代价绑定"性质，与 Google DeepMind 形成对照：
+
+- **Anthropic 守住红线**：拒绝 Pentagon"取消致命武器安全限制"要求 → 被 Hegseth 威胁列为"供应链风险"（强制所有军方承包商停用 Claude）+ 取消 `$200m` 合同 + 援引 Defense Production Act 强制供货。Anthropic 起诉 Pentagon 并守住红线。
+- **Google 没守住**：与 Pentagon 签署机密 AI 合同，限制甚至比 OpenAI 更弱，未限制致命自主武器或大规模 AI 监控。高管曾坚称"不会签"但最终签署。
+- **承诺信用判据（07-16 think 追本）**：承诺信用 = 已支付代价的总和。Anthropic 守住因其付了 Pentagon 诉讼代价，Google 没付。一个组织的"AI 安全承诺"若无对应代价支付记录，则与 motivated mislabeling 同构——从未被测量的量，从未被支付的账。
+
+此事件与 07-16 深度思考的"AI 监督 AI 同质性失效"形成互补：前者（Turner）讲人/组织层的承诺信用如何被压力侵蚀，后者讲 AI 层的监督如何被同质性失效侵蚀——两层共享同一根（共压 + 有穷性）。
 
 ## 关联概念
 | 本库主题 | Anthropic 的贡献 |
