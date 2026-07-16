@@ -24,7 +24,7 @@ tags:
 | Raw 已编译 | 198 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 342 |
+| Entity | 343 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 5 |
@@ -39,7 +39,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 32 |
+| `tag` | 36 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 5 |
@@ -64,12 +64,14 @@ tags:
 
 ### tag
 
+- `wiki/entities/Framework-Creation-Constraint.md` - `非 kebab-case tag: '知识管理'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `一次性 tag 仅出现 1 次: 'academia-industry'`
 - `wiki/sources/20260713-martin-fowler-fragments-july-2026.md` - `一次性 tag 仅出现 1 次: 'agent-management'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `一次性 tag 仅出现 1 次: 'agentic-misalignment'`
 - `wiki/sources/vibe-coding成瘾之后重建AI与生活的边界.md` - `一次性 tag 仅出现 1 次: 'ai-addiction'`
+- `wiki/entities/Framework-Creation-Constraint.md` - `一次性 tag 仅出现 1 次: 'ai-era'`
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `一次性 tag 仅出现 1 次: 'ai-ethics'`
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `一次性 tag 仅出现 1 次: 'ai-governance'`
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `一次性 tag 仅出现 1 次: 'ai-organization'`
@@ -93,9 +95,11 @@ tags:
 - `wiki/research/research-logs/research-snapshot-20260714.md` - `一次性 tag 仅出现 1 次: 'research-snapshot'`
 - `wiki/sources/20260713-martin-fowler-fragments-july-2026.md` - `一次性 tag 仅出现 1 次: 'self-hosted-models'`
 - `wiki/entities/Self-Hosted-Models.md` - `一次性 tag 仅出现 1 次: 'sovereignty'`
+- `wiki/entities/Framework-Creation-Constraint.md` - `一次性 tag 仅出现 1 次: 'systems-thinking'`
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `一次性 tag 仅出现 1 次: 'talent-flow'`
 - `wiki/sources/20260713-martin-fowler-fragments-july-2026.md` - `一次性 tag 仅出现 1 次: 'thoughtworks'`
 - `wiki/entities/Default-Side-Asymmetry.md` - `一次性 tag 仅出现 1 次: 'time-arrow'`
+- `wiki/entities/Framework-Creation-Constraint.md` - `一次性 tag 仅出现 1 次: '知识管理'`
 
 ## 运行命令
 
