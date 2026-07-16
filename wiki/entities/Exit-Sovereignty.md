@@ -20,6 +20,9 @@ related_entities:
   - "[[Prompt-Injection-Risk]]"
   - "[[Open-Source-Operational-AI-Framework]]"
   - "[[Agent-Harness]]"
+  - "[[Exit-Ratchet-and-Layering]]"
+  - "[[Credible-Threat-Structural-Binding]]"
+  - "[[Collective-Exit-Right]]"
 source_raw:
   - "[[20260604-mollick-coexistence]]"
 ---

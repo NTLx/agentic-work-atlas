@@ -24,7 +24,7 @@ tags:
 | Raw 已编译 | 198 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 337 |
+| Entity | 340 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 5 |
@@ -39,7 +39,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 29 |
+| `tag` | 31 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 5 |
@@ -75,9 +75,11 @@ tags:
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `一次性 tag 仅出现 1 次: 'ai-organization'`
 - `wiki/entities/Identity-Domain-Causal-Force.md` - `一次性 tag 仅出现 1 次: 'causal-inference'`
 - `wiki/entities/Augmentation-Trap.md` - `一次性 tag 仅出现 1 次: 'cognitive-degradation'`
+- `wiki/entities/Collective-Exit-Right.md` - `一次性 tag 仅出现 1 次: 'collective-action'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `一次性 tag 仅出现 1 次: 'evals'`
 - `wiki/research/research-logs/exploration-20260714.md` - `一次性 tag 仅出现 1 次: 'exploration'`
 - `wiki/research/research-logs/exploration-20260714.md` - `一次性 tag 仅出现 1 次: 'external-signals'`
+- `wiki/entities/Credible-Threat-Structural-Binding.md` - `一次性 tag 仅出现 1 次: 'game-theory'`
 - `wiki/entities/Identity-Domain-Causal-Force.md` - `一次性 tag 仅出现 1 次: 'identity'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `一次性 tag 仅出现 1 次: 'llm-judge'`
 - `wiki/entities/Default-Side-Asymmetry.md` - `一次性 tag 仅出现 1 次: 'metaphysics'`
