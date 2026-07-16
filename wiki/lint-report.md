@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 197 |
+| Raw 来源 | 198 |
 | Raw 已编译 | 194 |
-| Raw 待编译 | 3 |
+| Raw 待编译 | 4 |
 | Raw 已跳过 | 0 |
 | Entity | 329 |
 | Topic | 33 |
@@ -34,6 +34,7 @@ tags:
 - `raw/20260713-agentic-misalignment-summer-2026.md`
 - `raw/20260715-why-i-left-google-deepmind.md`
 - `raw/vibe-coding成瘾之后重建AI与生活的边界.md`
+- `raw/20260715-anthropic-talent-strategy-2026.pdf`
 
 ## 检查项
 

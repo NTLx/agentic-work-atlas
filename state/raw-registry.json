@@ -990,6 +990,12 @@
       "summary_path": "wiki/sources/20260713-microsoft-ships-ai-agents-enterprise-scale.md",
       "updated_at": "2026-07-14T09:45:02+08:00"
     },
+    "20260715-anthropic-talent-strategy-2026.pdf": {
+      "body_sha256": "0dd1976e6fd422b7771c646940f6be71eb443ebddb0f0b899456ccbf5b15bbbd",
+      "raw_file": "20260715-anthropic-talent-strategy-2026.pdf",
+      "status": "pending",
+      "updated_at": "2026-07-16T11:00:22+08:00"
+    },
     "20260715-why-i-left-google-deepmind.md": {
       "body_sha256": "b3c4746b818d30c62bf53547f996d00234c58113d8806d65440d820fa9830b26",
       "raw_file": "20260715-why-i-left-google-deepmind.md",
@@ -1571,6 +1577,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-16T09:19:25+08:00",
+  "updated_at": "2026-07-16T11:00:22+08:00",
   "version": 1
 }
