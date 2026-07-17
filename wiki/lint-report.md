@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-17"
-score: 96
+score: 92
 status: "FAIL"
 tags:
   - lint-report
@@ -13,8 +13,8 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **96/100**
-> 阻断问题: **4**
+> 分数: **92/100**
+> 阻断问题: **8**
 
 ## 统计
 
@@ -24,7 +24,7 @@ tags:
 | Raw 已编译 | 198 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 344 |
+| Entity | 345 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 5 |
@@ -39,11 +39,11 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 38 |
+| `tag` | 40 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 5 |
-| `entity` | 4 |
+| `entity` | 8 |
 | `comparison` | 0 |
 | `index` | 0 |
 | `registry-consistency` | 0 |
@@ -52,6 +52,10 @@ tags:
 
 ### entity
 
+- `wiki/entities/Coding-Agent-Security-Audit.md` - `Entity 缺少必填字段: source_raw`
+- `wiki/entities/Coding-Agent-Security-Audit.md` - `概念 Entity 缺少章节: ## 关键数据点`
+- `wiki/entities/Coding-Agent-Security-Audit.md` - `概念 Entity 缺少章节: ## 前提与局限性`
+- `wiki/entities/Coding-Agent-Security-Audit.md` - `概念 Entity 缺少章节: ## 关联概念`
 - `wiki/entities/Delegative-UI.md` - `Entity 缺少必填字段: source_raw`
 - `wiki/entities/Delegative-UI.md` - `概念 Entity 缺少章节: ## 关键数据点`
 - `wiki/entities/Delegative-UI.md` - `概念 Entity 缺少章节: ## 前提与局限性`
@@ -82,9 +86,11 @@ tags:
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `一次性 tag 仅出现 1 次: 'ai-ethics'`
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `一次性 tag 仅出现 1 次: 'ai-governance'`
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `一次性 tag 仅出现 1 次: 'ai-organization'`
+- `wiki/entities/Coding-Agent-Security-Audit.md` - `一次性 tag 仅出现 1 次: 'audit'`
 - `wiki/entities/Identity-Domain-Causal-Force.md` - `一次性 tag 仅出现 1 次: 'causal-inference'`
 - `wiki/entities/Augmentation-Trap.md` - `一次性 tag 仅出现 1 次: 'cognitive-degradation'`
 - `wiki/entities/Collective-Exit-Right.md` - `一次性 tag 仅出现 1 次: 'collective-action'`
+- `wiki/entities/Coding-Agent-Security-Audit.md` - `一次性 tag 仅出现 1 次: 'data-governance'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `一次性 tag 仅出现 1 次: 'evals'`
 - `wiki/entities/Anomaly-Detection-Gut.md` - `一次性 tag 仅出现 1 次: 'expertise'`
 - `wiki/research/research-logs/exploration-20260714.md` - `一次性 tag 仅出现 1 次: 'exploration'`
