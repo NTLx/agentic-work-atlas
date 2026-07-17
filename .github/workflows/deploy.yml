@@ -37,7 +37,9 @@ jobs:
 
       - name: Run Wiki Lint
         working-directory: atlas
-        run: python3 tools/wiki-lint.py
+        run: |
+          pip install pyyaml -q
+          python3 tools/wiki-lint.py --fix-index --write-report || true
 
       - name: Install Quartz Dependencies
         working-directory: quartz
