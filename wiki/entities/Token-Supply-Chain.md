@@ -75,6 +75,33 @@ Model Infra 正在走云计算早期的路径：从"能不能把服务跑起来"
 - 成本路由（RouteLLM、IPR）依赖问题难度判断的准确性；误判会导致质量下降
 - 文章数据来自蚂蚁 OpenDigger 体系，可能存在分类偏差
 
+## Token FinOps 演化路径（07-17 扩展）
+
+Token 供应链的 FinOps 层面临品类分化（roundtable 4人×2轮）：
+
+### 品类分化
+
+| 子类 | 功能 | 演化路径 | 时间 |
+|------|------|---------|------|
+| **Token 优化** | 成本可见性、用量追踪、预算告警 | → 被平台收编（模型厂商/可观测/云） | ≈2027 |
+| **Token 智能** | 跨平台路由、模型选择、prompt 优化、安全合规 | → 可能独立（需创造独立入口） | ≈2028-2030 |
+
+### 独立窗口关闭三信号
+
+1. 模型厂商内建：Anthropic Console/OpenAI dashboard 已有基础 token 用量
+2. 可观测扩展：Datadog 2026 Q1 LLM Observability beta
+3. 融资下降：Token FinOps 工具 A 轮估值 2026 < 2025
+
+### 买家优先级
+
+- 模型厂商（Anthropic/OpenAI/Google）：最可能——token 在其基础设施上跑，能提供隐私安全的分析
+- 可观测性（Datadog/New Relic）：已在加 token 维度——一维 token vs 多维关联
+- 云厂商（AWS/Azure/GCP）：如果企业 AI 入口 = Bedrock 式托管
+
+### 中国差异
+
+中国企业 AI 部署单模型为主（无多模型策略需求）+ 监管压制消费级 Agent → TAM 不足以支撑独立 Token FinOps 品类。缺失 = 结构性非临时性。
+
 ## 关联概念
 
 - [[Agentic-Workflow-Token-Efficiency]] — token 效率优化的方法论层面
