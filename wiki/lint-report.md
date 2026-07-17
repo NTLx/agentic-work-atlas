@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-17"
-score: 87
+score: 88
 status: "FAIL"
 tags:
   - lint-report
@@ -13,8 +13,8 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **87/100**
-> 阻断问题: **13**
+> 分数: **88/100**
+> 阻断问题: **12**
 
 ## 统计
 
@@ -37,7 +37,7 @@ tags:
 | `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
-| `wikilink` | 1 |
+| `wikilink` | 0 |
 | `source_raw` | 0 |
 | `tag` | 40 |
 | `evidence` | 0 |
@@ -119,10 +119,6 @@ tags:
 - `wiki/sources/20260713-martin-fowler-fragments-july-2026.md` - `一次性 tag 仅出现 1 次: 'thoughtworks'`
 - `wiki/entities/Default-Side-Asymmetry.md` - `一次性 tag 仅出现 1 次: 'time-arrow'`
 - `wiki/entities/Framework-Creation-Constraint.md` - `一次性 tag 仅出现 1 次: '知识管理'`
-
-### wikilink
-
-- `wiki/entities/Knowledge-Work-Redefinition.md:131` - `链接目标不存在: [[Cognitive-Division-of-Labor]]`
 
 ## 运行命令
 
