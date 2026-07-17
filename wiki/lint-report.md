@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-17"
-score: 92
+score: 87
 status: "FAIL"
 tags:
   - lint-report
@@ -13,8 +13,8 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **92/100**
-> 阻断问题: **8**
+> 分数: **87/100**
+> 阻断问题: **13**
 
 ## 统计
 
@@ -24,7 +24,7 @@ tags:
 | Raw 已编译 | 198 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 345 |
+| Entity | 346 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 5 |
@@ -37,13 +37,13 @@ tags:
 | `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
-| `wikilink` | 0 |
+| `wikilink` | 1 |
 | `source_raw` | 0 |
 | `tag` | 40 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 5 |
-| `entity` | 8 |
+| `entity` | 12 |
 | `comparison` | 0 |
 | `index` | 0 |
 | `registry-consistency` | 0 |
@@ -60,6 +60,10 @@ tags:
 - `wiki/entities/Delegative-UI.md` - `概念 Entity 缺少章节: ## 关键数据点`
 - `wiki/entities/Delegative-UI.md` - `概念 Entity 缺少章节: ## 前提与局限性`
 - `wiki/entities/Delegative-UI.md` - `概念 Entity 缺少章节: ## 关联概念`
+- `wiki/entities/Knowledge-Work-Redefinition.md` - `Entity 缺少必填字段: source_raw`
+- `wiki/entities/Knowledge-Work-Redefinition.md` - `概念 Entity 缺少章节: ## 关键数据点`
+- `wiki/entities/Knowledge-Work-Redefinition.md` - `概念 Entity 缺少章节: ## 前提与局限性`
+- `wiki/entities/Knowledge-Work-Redefinition.md` - `概念 Entity 缺少章节: ## 关联概念`
 
 ### low-evidence
 
@@ -115,6 +119,10 @@ tags:
 - `wiki/sources/20260713-martin-fowler-fragments-july-2026.md` - `一次性 tag 仅出现 1 次: 'thoughtworks'`
 - `wiki/entities/Default-Side-Asymmetry.md` - `一次性 tag 仅出现 1 次: 'time-arrow'`
 - `wiki/entities/Framework-Creation-Constraint.md` - `一次性 tag 仅出现 1 次: '知识管理'`
+
+### wikilink
+
+- `wiki/entities/Knowledge-Work-Redefinition.md:131` - `链接目标不存在: [[Cognitive-Division-of-Labor]]`
 
 ## 运行命令
 
