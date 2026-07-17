@@ -138,6 +138,19 @@ Schneier（圆桌，2026-07-17）："Security is a process, not a product." 对 
 - [[Flattening-as-Governance-Consequence]]：CISO 集中采购决策 = 去科层化治理在安全维度上的反向集中（安全判断从分散开发者→集中 CISO）
 - [[Token-Supply-Chain]]：代码库数据作为"行为剩余"的供应链分析
 
+## Agent Identity 分层标准化（07-18 扩展）
+
+Agent 安全的身份层（roundtable 4人×2轮）：
+
+**分层标准化**（非竞争）：
+- L1 认证层：SPIFFE SVID 扩展 agent 类型/厂商/委派链（CNCF 治理，1-2年）
+- L2 运行时治理：Agent Gateway/Firewall 协议——行为基线声明、异常检测、降级（需新社区，2-4年）
+- L3 行为担保：去中心化行为审计链+独立担保方+法律担责框架（法律创新，4-7年）
+
+**紧迫性倒置**（Marlinspike）：身份标准化不急迫（厂商"支持标准"="我们安全了"=橡皮图章）。急迫的是**行为审计格式标准**——每个 agent 必须输出的审计日志格式。
+
+**K8s 赢家公式**（Beda）：开放治理(CNCF)+API可扩展(CRD)+哲学简单(薄而硬)。SPIFFE 三者全有→先发优势。Agent Gateway 缺治理。厂商自建全缺。
+
 ## 开放问题
 
 1. DFD 格式标准化——谁来牵头？厂商(Anthropic/GitHub/Google) vs 中立机构(OWASP/W3C/Linux Foundation)？
