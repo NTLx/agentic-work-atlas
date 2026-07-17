@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-17"
-score: 100
-status: "PASS"
+score: 96
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,9 +12,9 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-07-17
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **96/100**
+> 阻断问题: **4**
 
 ## 统计
 
@@ -24,7 +24,7 @@ tags:
 | Raw 已编译 | 198 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 343 |
+| Entity | 344 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 5 |
@@ -39,16 +39,23 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 36 |
+| `tag` | 38 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 5 |
-| `entity` | 0 |
+| `entity` | 4 |
 | `comparison` | 0 |
 | `index` | 0 |
 | `registry-consistency` | 0 |
 
 ## 问题明细
+
+### entity
+
+- `wiki/entities/Delegative-UI.md` - `Entity 缺少必填字段: source_raw`
+- `wiki/entities/Delegative-UI.md` - `概念 Entity 缺少章节: ## 关键数据点`
+- `wiki/entities/Delegative-UI.md` - `概念 Entity 缺少章节: ## 前提与局限性`
+- `wiki/entities/Delegative-UI.md` - `概念 Entity 缺少章节: ## 关联概念`
 
 ### low-evidence
 
@@ -83,7 +90,9 @@ tags:
 - `wiki/research/research-logs/exploration-20260714.md` - `一次性 tag 仅出现 1 次: 'exploration'`
 - `wiki/research/research-logs/exploration-20260714.md` - `一次性 tag 仅出现 1 次: 'external-signals'`
 - `wiki/entities/Credible-Threat-Structural-Binding.md` - `一次性 tag 仅出现 1 次: 'game-theory'`
+- `wiki/entities/Delegative-UI.md` - `一次性 tag 仅出现 1 次: 'human-agent-interaction'`
 - `wiki/entities/Identity-Domain-Causal-Force.md` - `一次性 tag 仅出现 1 次: 'identity'`
+- `wiki/entities/Delegative-UI.md` - `一次性 tag 仅出现 1 次: 'interaction-design'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `一次性 tag 仅出现 1 次: 'llm-judge'`
 - `wiki/entities/Default-Side-Asymmetry.md` - `一次性 tag 仅出现 1 次: 'metaphysics'`
 - `wiki/sources/20260713-microsoft-ships-ai-agents-enterprise-scale.md` - `一次性 tag 仅出现 1 次: 'microsoft'`

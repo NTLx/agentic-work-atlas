@@ -27,6 +27,7 @@ related_entities:
   - "[[Access-Right-vs-Residual-Control]]"
   - "[[Framing-Right-Layering]]"
   - "[[L1L2L3-Power-Decomposition]]"
+  - "[[Delegative-UI]]"
 source_raw:
   - "[[20260715-anthropic-talent-strategy-2026]]"
 ---
@@ -141,3 +142,4 @@ source 误读：组织理念选择(因) → 人才涌入(果)
 - [[Framing-Right-Layering]] — 画框权分层定理（L1 分组织/部门/团队三层）
 - [[L1L2L3-Power-Decomposition]] — 权力三层分解（L1 画框/L2 编排/L3 框内判断）
 - [[Identity-Domain-Causal-Force]] — 理念因果力双域定理（经济域投影 vs 身份域独立）
+- [[Delegative-UI]] — 委派式交互是本定理在交互层的精确机制投射：实质权威从"职位"迁移到"前提规定能力"
