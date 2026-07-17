@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-07-17"
+date: "2026-07-18"
 score: 88
 status: "FAIL"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-07-17
+# Agentic Work Atlas Lint 报告 - 2026-07-18
 
 > [!summary] 状态
 > 门禁: **FAIL**
@@ -71,11 +71,11 @@ tags:
 
 ### stale-core
 
-- `wiki/entities/Agent-Workflow-Patterns.md` - `核心页 Agent-Workflow-Patterns 已 93 天未更新，入链 16 条`
-- `wiki/entities/Dan-Shipper.md` - `核心页 Dan-Shipper 已 92 天未更新，入链 6 条`
-- `wiki/entities/Discernment.md` - `核心页 Discernment 已 93 天未更新，入链 10 条`
-- `wiki/entities/Memex.md` - `核心页 Memex 已 93 天未更新，入链 15 条`
-- `wiki/entities/Specificity.md` - `核心页 Specificity 已 93 天未更新，入链 10 条`
+- `wiki/entities/Agent-Workflow-Patterns.md` - `核心页 Agent-Workflow-Patterns 已 94 天未更新，入链 16 条`
+- `wiki/entities/Dan-Shipper.md` - `核心页 Dan-Shipper 已 93 天未更新，入链 6 条`
+- `wiki/entities/Discernment.md` - `核心页 Discernment 已 94 天未更新，入链 10 条`
+- `wiki/entities/Memex.md` - `核心页 Memex 已 94 天未更新，入链 15 条`
+- `wiki/entities/Specificity.md` - `核心页 Specificity 已 94 天未更新，入链 10 条`
 
 ### tag
 

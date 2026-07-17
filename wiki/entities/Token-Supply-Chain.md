@@ -104,7 +104,7 @@ Token 供应链的 FinOps 层面临品类分化（roundtable 4人×2轮）：
 
 ## 多模型定价透明性（07-18 扩展）
 
-Tokenizer 差异导致隐性成本偏差 20-40%/prompt（roundtable 4人×2轮）。GPT(tiktoken)、Claude(自定义BPE)、Gemini(SentencePiece)的 token 定义不同→双重变量($/token × token数)同时变化→模型间成本比较=苹果比橙子。
+Tokenizer 差异导致隐性成本偏差 20-40%/prompt（roundtable 4人×2轮）。GPT(tiktoken)、Claude(自定义BPE)、Gemini(SentencePiece)的 token 定义不同→双重变量(`$/token × token`数)同时变化→模型间成本比较=苹果比橙子。
 
 **解决路径**：标准化"每单位工作成本"非"每token成本"。MLPerf for LLM Pricing——10标准任务，每任务token消耗+延迟+质量分数。
 
