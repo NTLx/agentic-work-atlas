@@ -102,6 +102,16 @@ Token 供应链的 FinOps 层面临品类分化（roundtable 4人×2轮）：
 
 中国企业 AI 部署单模型为主（无多模型策略需求）+ 监管压制消费级 Agent → TAM 不足以支撑独立 Token FinOps 品类。缺失 = 结构性非临时性。
 
+## 多模型定价透明性（07-18 扩展）
+
+Tokenizer 差异导致隐性成本偏差 20-40%/prompt（roundtable 4人×2轮）。GPT(tiktoken)、Claude(自定义BPE)、Gemini(SentencePiece)的 token 定义不同→双重变量($/token × token数)同时变化→模型间成本比较=苹果比橙子。
+
+**解决路径**：标准化"每单位工作成本"非"每token成本"。MLPerf for LLM Pricing——10标准任务，每任务token消耗+延迟+质量分数。
+
+**行业联盟路径**（O'Reilly+Thompson）：MLCommons模式→12-18月出v1.0→企业采购RFP纳入→事实标准→成熟后转正。关键障碍=Google（Gemini tokenizer效率较低→暴露隐性高成本）。
+
+**Tokenizer非竞争差异化**（Willison）：差异=历史偶然（GPT-2→tiktoken，Claude=BPE，Gemini=T5传统→SentencePiece）。标准化不压缩有意义竞争维度。
+
 ## 关联概念
 
 - [[Agentic-Workflow-Token-Efficiency]] — token 效率优化的方法论层面
