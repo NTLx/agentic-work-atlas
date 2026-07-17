@@ -89,3 +89,14 @@ Agent 比聊天机器人有更多防御面：不仅读取用户 prompt 和模型
 - [[Plan-is-the-Permission]] — 动态权限控制与身份结合形成完整安全体系
 - [[Policy-as-Code-for-Agent-Governance]] — Identity 与 policy 结合形成治理体系
 - [[Forward-Deployed-AI-Enablement]] — Agent-as-employee 与 FDE 的对照
+
+## 治理三层模型中的位置（07-17 深度思考）
+
+Distinct Principal Identity 处于 Agent 委派治理**三层保证模型**的 L1（表达保证层）。它回答了"谁在行动"——但单独的身份层不能构成治理。完整治理需要：
+
+- **L0（机制保证/独立执行层）**：独立裁决者 + 不可篡改日志 + 独立撤销通道。身份只是 L1——如果撤销通道不独立于 agent runtime，身份再清晰也无法强制收回权限。
+- **L+（意图保证/管理者委派决策）**：管理者声明委派范围和承担风险。身份让"谁的 agent 做了什么"可追溯——但追溯到的归因要有人负责，这个人就是 L+ 的管理者。
+
+产业验证（07-17 联网）：Riptides 明确指出"SPIFFE by itself only solves issuance, not policy, posture, or credential lifecycle"——身份（L1）≠ 控制（L0）。Agat Software 正在商业化 agent 执行层 runtime enforcement——这是 L0 在产业中的形态。Stacklok 指出企业架构评审核心问题已从"用哪个 LLM"变成"如何知道 agent 被允许做什么 + 运行时证明 + 事后审计"。
+
+详见：07-17 深度思考（roundtable 4人3轮+think 7层到底）→ 三层保证模型 + 数字主权不可外包残差定理
