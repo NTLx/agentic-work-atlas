@@ -1,20 +1,20 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-07-18"
-score: 88
+date: "2026-07-19"
+score: 87
 status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-07-18
+# Agentic Work Atlas Lint 报告 - 2026-07-19
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **88/100**
-> 阻断问题: **12**
+> 分数: **87/100**
+> 阻断问题: **13**
 
 ## 统计
 
@@ -27,7 +27,7 @@ tags:
 | Entity | 346 |
 | Topic | 33 |
 | Comparison | 19 |
-| Output | 5 |
+| Output | 10 |
 
 ## 待编译 Raw
 
@@ -41,10 +41,10 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 0 |
 | `hidden-char` | 0 |
-| `mathjax` | 0 |
+| `mathjax` | 1 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 40 |
+| `tag` | 41 |
 | `evidence` | 0 |
 | `low-evidence` | 1 |
 | `stale-core` | 5 |
@@ -74,19 +74,25 @@ tags:
 
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `低证据页面 20260715-anthropic-talent-strategy-2026 只能作为补 source 或探索线索`
 
+### mathjax
+
+- `wiki/research/research-logs/2026-07-18.md:352` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+
 ### stale-core
 
-- `wiki/entities/Agent-Workflow-Patterns.md` - `核心页 Agent-Workflow-Patterns 已 94 天未更新，入链 16 条`
-- `wiki/entities/Dan-Shipper.md` - `核心页 Dan-Shipper 已 93 天未更新，入链 6 条`
-- `wiki/entities/Discernment.md` - `核心页 Discernment 已 94 天未更新，入链 10 条`
-- `wiki/entities/Memex.md` - `核心页 Memex 已 94 天未更新，入链 15 条`
-- `wiki/entities/Specificity.md` - `核心页 Specificity 已 94 天未更新，入链 10 条`
+- `wiki/entities/Agent-Workflow-Patterns.md` - `核心页 Agent-Workflow-Patterns 已 95 天未更新，入链 16 条`
+- `wiki/entities/Dan-Shipper.md` - `核心页 Dan-Shipper 已 94 天未更新，入链 6 条`
+- `wiki/entities/Discernment.md` - `核心页 Discernment 已 95 天未更新，入链 10 条`
+- `wiki/entities/Memex.md` - `核心页 Memex 已 95 天未更新，入链 15 条`
+- `wiki/entities/Specificity.md` - `核心页 Specificity 已 95 天未更新，入链 10 条`
 
 ### tag
 
 - `wiki/entities/Framework-Creation-Constraint.md` - `非 kebab-case tag: '知识管理'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `tags 超过 5 个: 6`
+- `wiki/outputs/中国AI-Agent生态-监管科层路线分化.md` - `一次性 tag 仅出现 1 次: 'China'`
+- `wiki/outputs/Delegative-UI-慢速对话的认知经济学.md` - `一次性 tag 仅出现 1 次: 'Delegative-UI'`
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `一次性 tag 仅出现 1 次: 'academia-industry'`
 - `wiki/sources/20260713-martin-fowler-fragments-july-2026.md` - `一次性 tag 仅出现 1 次: 'agent-management'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `一次性 tag 仅出现 1 次: 'agentic-misalignment'`
@@ -95,25 +101,24 @@ tags:
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `一次性 tag 仅出现 1 次: 'ai-ethics'`
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `一次性 tag 仅出现 1 次: 'ai-governance'`
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `一次性 tag 仅出现 1 次: 'ai-organization'`
-- `wiki/entities/Coding-Agent-Security-Audit.md` - `一次性 tag 仅出现 1 次: 'audit'`
 - `wiki/entities/Identity-Domain-Causal-Force.md` - `一次性 tag 仅出现 1 次: 'causal-inference'`
 - `wiki/entities/Augmentation-Trap.md` - `一次性 tag 仅出现 1 次: 'cognitive-degradation'`
 - `wiki/entities/Collective-Exit-Right.md` - `一次性 tag 仅出现 1 次: 'collective-action'`
 - `wiki/entities/Coding-Agent-Security-Audit.md` - `一次性 tag 仅出现 1 次: 'data-governance'`
+- `wiki/outputs/中国AI-Agent生态-监管科层路线分化.md` - `一次性 tag 仅出现 1 次: 'ecosystem'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `一次性 tag 仅出现 1 次: 'evals'`
 - `wiki/entities/Anomaly-Detection-Gut.md` - `一次性 tag 仅出现 1 次: 'expertise'`
 - `wiki/research/research-logs/exploration-20260714.md` - `一次性 tag 仅出现 1 次: 'exploration'`
 - `wiki/research/research-logs/exploration-20260714.md` - `一次性 tag 仅出现 1 次: 'external-signals'`
 - `wiki/entities/Credible-Threat-Structural-Binding.md` - `一次性 tag 仅出现 1 次: 'game-theory'`
-- `wiki/entities/Delegative-UI.md` - `一次性 tag 仅出现 1 次: 'human-agent-interaction'`
-- `wiki/entities/Identity-Domain-Causal-Force.md` - `一次性 tag 仅出现 1 次: 'identity'`
-- `wiki/entities/Delegative-UI.md` - `一次性 tag 仅出现 1 次: 'interaction-design'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `一次性 tag 仅出现 1 次: 'llm-judge'`
 - `wiki/entities/Default-Side-Asymmetry.md` - `一次性 tag 仅出现 1 次: 'metaphysics'`
 - `wiki/sources/20260713-microsoft-ships-ai-agents-enterprise-scale.md` - `一次性 tag 仅出现 1 次: 'microsoft'`
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `一次性 tag 仅出现 1 次: 'military-ai'`
 - `wiki/entities/Self-Hosted-Models.md` - `一次性 tag 仅出现 1 次: 'models'`
+- `wiki/outputs/增强陷阱的对抗设计-暴露分化锚点.md` - `一次性 tag 仅出现 1 次: 'organization-design'`
 - `wiki/sources/20260709-github-durable-owner.md` - `一次性 tag 仅出现 1 次: 'organization-systems'`
+- `wiki/outputs/增强陷阱的对抗设计-暴露分化锚点.md` - `一次性 tag 仅出现 1 次: 'practical-guide'`
 - `wiki/sources/20260708-vercel-agent.md` - `一次性 tag 仅出现 1 次: 'production-ops'`
 - `wiki/entities/Rubric-Based-Evaluation.md` - `一次性 tag 仅出现 1 次: 'quality'`
 - `wiki/research/research-logs/research-snapshot-20260714.md` - `一次性 tag 仅出现 1 次: 'research-snapshot'`
