@@ -20,14 +20,19 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 198 |
+| Raw 来源 | 200 |
 | Raw 已编译 | 198 |
-| Raw 待编译 | 0 |
+| Raw 待编译 | 2 |
 | Raw 已跳过 | 0 |
 | Entity | 346 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 5 |
+
+## 待编译 Raw
+
+- `raw/20260717-openai-scorecard-ai-age.md`
+- `raw/20260717-schema-harness-arc-agi.md`
 
 ## 检查项
 

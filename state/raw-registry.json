@@ -1008,6 +1008,18 @@
       "summary_path": "wiki/sources/20260715-why-i-left-google-deepmind.md",
       "updated_at": "2026-07-16T11:42:00+08:00"
     },
+    "20260717-openai-scorecard-ai-age.md": {
+      "body_sha256": "ebae118be77caea5e15d716c12b9fbb5b3b16b165dbd9d90b28dbaf4abecf691",
+      "raw_file": "20260717-openai-scorecard-ai-age.md",
+      "status": "pending",
+      "updated_at": "2026-07-18T12:10:14+08:00"
+    },
+    "20260717-schema-harness-arc-agi.md": {
+      "body_sha256": "902950f76bf9324f0522f7a0e87a0a0cb62feb7ee0008b48ff4b7fe5f105166f",
+      "raw_file": "20260717-schema-harness-arc-agi.md",
+      "status": "pending",
+      "updated_at": "2026-07-18T12:10:13+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1585,6 +1597,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-16T11:43:44+08:00",
+  "updated_at": "2026-07-18T12:10:14+08:00",
   "version": 1
 }
