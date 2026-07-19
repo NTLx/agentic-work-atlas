@@ -1020,6 +1020,12 @@
       "status": "pending",
       "updated_at": "2026-07-18T12:10:13+08:00"
     },
+    "20260718-bytebytego-mcp-vs-a2a-vs-acp.md": {
+      "body_sha256": "75699ff8dd68c1bec0b322b0a5d096f7f15b7e05e6e83bf80a6578600d7997e3",
+      "raw_file": "20260718-bytebytego-mcp-vs-a2a-vs-acp.md",
+      "status": "pending",
+      "updated_at": "2026-07-19T11:58:56+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1597,6 +1603,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-18T12:10:14+08:00",
+  "updated_at": "2026-07-19T11:58:56+08:00",
   "version": 1
 }

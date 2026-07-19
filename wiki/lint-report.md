@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 200 |
+| Raw 来源 | 201 |
 | Raw 已编译 | 198 |
-| Raw 待编译 | 2 |
+| Raw 待编译 | 3 |
 | Raw 已跳过 | 0 |
 | Entity | 346 |
 | Topic | 33 |
@@ -33,6 +33,7 @@ tags:
 
 - `raw/20260717-openai-scorecard-ai-age.md`
 - `raw/20260717-schema-harness-arc-agi.md`
+- `raw/20260718-bytebytego-mcp-vs-a2a-vs-acp.md`
 
 ## 检查项
 
