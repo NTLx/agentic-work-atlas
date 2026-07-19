@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-19"
-score: 87
+score: 86
 status: "FAIL"
 tags:
   - lint-report
@@ -13,8 +13,8 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **87/100**
-> 阻断问题: **13**
+> 分数: **86/100**
+> 阻断问题: **14**
 
 ## 统计
 
@@ -46,7 +46,7 @@ tags:
 | `wikilink` | 0 |
 | `source_raw` | 0 |
 | `tag` | 41 |
-| `evidence` | 0 |
+| `evidence` | 1 |
 | `low-evidence` | 1 |
 | `stale-core` | 5 |
 | `entity` | 12 |
@@ -70,6 +70,10 @@ tags:
 - `wiki/entities/Knowledge-Work-Redefinition.md` - `概念 Entity 缺少章节: ## 关键数据点`
 - `wiki/entities/Knowledge-Work-Redefinition.md` - `概念 Entity 缺少章节: ## 前提与局限性`
 - `wiki/entities/Knowledge-Work-Redefinition.md` - `概念 Entity 缺少章节: ## 关联概念`
+
+### evidence
+
+- `wiki/entities/Context-Rot.md` - `evidence_level 必须为 high/medium/low: 'strong'`
 
 ### low-evidence
 
