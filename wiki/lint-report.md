@@ -2,7 +2,7 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-07-20"
-score: 85
+score: 84
 status: "FAIL"
 tags:
   - lint-report
@@ -13,8 +13,8 @@ tags:
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **85/100**
-> 阻断问题: **15**
+> 分数: **84/100**
+> 阻断问题: **16**
 
 ## 统计
 
@@ -48,7 +48,7 @@ tags:
 | `wikilink` | 1 |
 | `source_raw` | 0 |
 | `tag` | 41 |
-| `evidence` | 1 |
+| `evidence` | 2 |
 | `low-evidence` | 1 |
 | `stale-core` | 5 |
 | `entity` | 12 |
@@ -76,6 +76,7 @@ tags:
 ### evidence
 
 - `wiki/entities/Context-Rot.md` - `evidence_level 必须为 high/medium/low: 'strong'`
+- `wiki/entities/Flattening-as-Governance-Consequence.md` - `evidence_level 必须为 high/medium/low: 'strong'`
 
 ### low-evidence
 
