@@ -1032,6 +1032,12 @@
       "status": "pending",
       "updated_at": "2026-07-19T11:58:56+08:00"
     },
+    "20260719-if-ai-is-so-great-why-isnt-it-working.md": {
+      "body_sha256": "fb841fc3d29dfaae8b101d42a8f160ce3203367279a534bf38fd3d206d24a552",
+      "raw_file": "20260719-if-ai-is-so-great-why-isnt-it-working.md",
+      "status": "pending",
+      "updated_at": "2026-07-20T10:34:17+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1609,6 +1615,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-20T10:22:24+08:00",
+  "updated_at": "2026-07-20T10:34:17+08:00",
   "version": 1
 }

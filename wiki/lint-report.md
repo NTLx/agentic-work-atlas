@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 202 |
+| Raw 来源 | 203 |
 | Raw 已编译 | 198 |
-| Raw 待编译 | 4 |
+| Raw 待编译 | 5 |
 | Raw 已跳过 | 0 |
 | Entity | 346 |
 | Topic | 33 |
@@ -35,6 +35,7 @@ tags:
 - `raw/20260717-schema-harness-arc-agi.md`
 - `raw/20260718-ai-mania-eviscerating-decision-making.md`
 - `raw/20260718-bytebytego-mcp-vs-a2a-vs-acp.md`
+- `raw/20260719-if-ai-is-so-great-why-isnt-it-working.md`
 
 ## 检查项
 
