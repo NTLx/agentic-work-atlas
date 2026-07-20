@@ -1020,6 +1020,12 @@
       "status": "pending",
       "updated_at": "2026-07-18T12:10:13+08:00"
     },
+    "20260718-ai-mania-eviscerating-decision-making.md": {
+      "body_sha256": "d5802ce1fc5712f3f13f5c79489eb17f7fdd3026d546c55926cad385acced74b",
+      "raw_file": "20260718-ai-mania-eviscerating-decision-making.md",
+      "status": "pending",
+      "updated_at": "2026-07-20T10:22:24+08:00"
+    },
     "20260718-bytebytego-mcp-vs-a2a-vs-acp.md": {
       "body_sha256": "75699ff8dd68c1bec0b322b0a5d096f7f15b7e05e6e83bf80a6578600d7997e3",
       "raw_file": "20260718-bytebytego-mcp-vs-a2a-vs-acp.md",
@@ -1603,6 +1609,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-19T11:58:56+08:00",
+  "updated_at": "2026-07-20T10:22:24+08:00",
   "version": 1
 }
