@@ -1,20 +1,20 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-07-20"
-score: 84
+date: "2026-07-21"
+score: 83
 status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-07-20
+# Agentic Work Atlas Lint 报告 - 2026-07-21
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **84/100**
-> 阻断问题: **16**
+> 分数: **83/100**
+> 阻断问题: **17**
 
 ## 统计
 
@@ -44,7 +44,7 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 0 |
 | `hidden-char` | 0 |
-| `mathjax` | 1 |
+| `mathjax` | 2 |
 | `wikilink` | 1 |
 | `source_raw` | 0 |
 | `tag` | 41 |
@@ -85,14 +85,15 @@ tags:
 ### mathjax
 
 - `wiki/research/research-logs/2026-07-18.md:352` - `发现裸露 $，需用反引号包裹或反斜杠转义`
+- `wiki/research/research-logs/2026-07-21.md:52` - `发现裸露 $，需用反引号包裹或反斜杠转义`
 
 ### stale-core
 
-- `wiki/entities/Agent-Workflow-Patterns.md` - `核心页 Agent-Workflow-Patterns 已 96 天未更新，入链 16 条`
-- `wiki/entities/Dan-Shipper.md` - `核心页 Dan-Shipper 已 95 天未更新，入链 6 条`
-- `wiki/entities/Discernment.md` - `核心页 Discernment 已 96 天未更新，入链 10 条`
-- `wiki/entities/Memex.md` - `核心页 Memex 已 96 天未更新，入链 15 条`
-- `wiki/entities/Specificity.md` - `核心页 Specificity 已 96 天未更新，入链 10 条`
+- `wiki/entities/Agent-Workflow-Patterns.md` - `核心页 Agent-Workflow-Patterns 已 97 天未更新，入链 16 条`
+- `wiki/entities/Dan-Shipper.md` - `核心页 Dan-Shipper 已 96 天未更新，入链 6 条`
+- `wiki/entities/Discernment.md` - `核心页 Discernment 已 97 天未更新，入链 10 条`
+- `wiki/entities/Memex.md` - `核心页 Memex 已 97 天未更新，入链 15 条`
+- `wiki/entities/Specificity.md` - `核心页 Specificity 已 97 天未更新，入链 10 条`
 
 ### tag
 
