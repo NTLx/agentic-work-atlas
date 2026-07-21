@@ -175,7 +175,7 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 
 | 操作 | 子文档 |
 |------|--------|
-| 渲染/编码/工具问题 | `schema/gotchas.md` |
+| 子代理网关/渲染/编码/工具问题 | `schema/gotchas.md` |
 
 ---
 

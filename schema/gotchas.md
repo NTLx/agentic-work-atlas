@@ -25,6 +25,16 @@ uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
 # 3. 修复后重新运行确认 "阻断问题: 0"
 ```
 
+### GitHub Actions Node 弃用警告溯源
+
+弃用警告可能来自 composite action **内部按 hash 固定的传递依赖**，而非 workflow 直接引用的 action（如 `upload-pages-artifact@v4` 内部固定 `upload-artifact@v4.6.2`，警告显示后者）。workflow 层面无法覆盖，必须升级外层 action 主版本。
+```bash
+# 查看 action 内部依赖（确认新版是否已更新内部 pin）
+gh api repos/actions/<name>/contents/action.yml?ref=v<N> --jq '.content' | base64 -d | grep "uses:"
+# 监控 run 直到完成；警告在 ANNOTATIONS 段，清零即修复成功
+gh run watch <run-id> --exit-status --interval 15
+```
+
 ## Gotchas
 
 ### Unicode 文件名与 Read 工具
@@ -193,3 +203,34 @@ with open('/tmp/paper_full.md', 'w') as f: f.write(text)
 ```
 
 提取后验证 Discussion / Conclusion / References 齐全，然后按标准编译流程处理。
+
+### Subagent 网关 503：改在主回路直接执行
+
+本环境推理网关（127.0.0.1:41879）的模型通道经常不可用（`503 No available channel for model ...`）。为 subagent 显式指定 `model: sonnet/opus` 更容易命中，继承父模型也不保证可用。
+**对策**：统计型任务（盘点/grep 计数/脚本执行）遇 subagent 503 时**不要反复重试**，直接在主回路跑统计脚本，通常更快更准。联网搜索型 subagent 可改用 MCP 搜索工具（Anysearch/Tavily）绕开内置 WebSearch。
+
+### 背景 agent 的 .output 是完整 JSONL 转录
+
+背景 agent 的 `.output` 文件是完整对话转录（开头含大段系统元数据/技能列表），**直接 Read 会淹没上下文**。
+**正确做法**：背景 agent 成功时完整报告已随 task-notification 的 `<result>` 送达，无需读文件。确需提取末条结果：
+```bash
+tail -1 <output-file> | python3 -c "import json,sys; print(json.load(sys.stdin)['result'])"
+```
+
+### Lint 检查跳过行内代码
+
+`tools/wiki-lint.py` 检查 wikilink/mathjax 前会剥离行内代码（`` `...` ``）。在描述性文字中提及未创建的页面（如断链说明"Agent-Governance topic 未建"）时**必须用反引号**，裸露 `[[...]]` 会误报断链、拉低 lint 分数。
+
+### aihot API：subagent 调用返回 403
+
+aihot API 拒绝默认 curl UA（403/567）。subagent 调用常因未带正确 UA 失败。
+**正确做法**：在主回路调用 aihot skill；手动 curl 时带 `User-Agent: aihot-skill/<版本> (+https://aihot.virxact.com/aihot-skill/)`。
+
+### git commit 统计："重编译"污染 compile 计数
+
+cron 深度思考 commit 前缀为 `explore(重编译): YYYY-MM-DDTHH:MM:SS`，含 "compile" 字样——`git log --grep="compile"` 会把全部 explore 轮次算进编译数。
+**准确统计各层新增**：
+```bash
+git log --since="<date>" --diff-filter=A --name-only --pretty="" -- "wiki/sources/*.md" | grep -c .
+# 或匹配真实编译：git log --grep="^compile("
+```
