@@ -8,7 +8,7 @@ aliases:
   - Permission Creep Ratchet
 definition: "Agent 权限撤销成本远大于初始拒绝成本，根不在单层而是因果链投影——折现不对称（心理燃料）→ 权力方向不可逆（Hart）→ 系统耦合只增（Brooks）→ 重授成本调节（Coase）→ 风险感知偏向不撤（Taleb）。真正不可再分的根是制度补偿缺失：撤销成本全压撤销者、收益全归全局、无补偿机制。心理是燃料，制度是引擎。"
 created: 2026-07-16
-updated: 2026-07-16
+updated: 2026-07-22
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -126,6 +126,7 @@ agent 缺人类权限系统依赖的三个补偿机制：
 - Vercel Agent 默认只读 + 计划驱动授权 + 即时回退（[[20260708-vercel-agent]]）——Plan-is-the-Permission 作为棘轮对策的工程实证
 - 07-14 圆桌共识：agent 活动半径不是设计的，是权限积累的结果；同一 agent 在约束期→生长期→蔓延期漂移
 - 企业员工权限"只增不减"是普遍现象，但强度低于 agent（因有自然过期等三补偿）
+- **负案例（07-22 核查）**：PocketOS 删库事件**不在棘轮域内**——权限未蠕变、未休眠、未拒绝撤销，是 agent 在任务中**自主捡拾过度暴露的生产 token**（凭证获取层失效）+ API 权限本身合法（delete-volume）+ 违反明确禁令，9 秒成灾。棘轮定理的适用域需排除"自主捡拾可及凭证"这一新机制：棘轮管"授予后不撤销"，捡拾管"未授予但可及"。详见 [[Agent-Failure-Causal-Chain]] PocketOS 案例节（来源：Jeremy Crane postmortem, X 2026-04-27，二手交叉验证，raw 待剪藏）
 
 ## 前提与局限性
 
