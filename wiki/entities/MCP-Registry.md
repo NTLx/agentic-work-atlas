@@ -6,7 +6,7 @@ aliases:
   - MCP Registry
 definition: "MCP 生态中的中心治理组件，负责批准 server、暴露工具目录、校验权限、记录安全姿态和支撑生产级工具发现"
 created: 2026-05-13
-updated: 2026-05-25
+updated: 2026-07-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -59,6 +59,15 @@ source_raw:
 - 通过注册表，Pinterest 实现了基于**业务组（Business Group）**的权限隔离，例如只有财务组能访问包含敏感收入指标的 Presto 服务器。
 - Registry 同时面向人类 Web UI 和 AI client API，因此它既是目录，也是运行时授权和生产准入门。
 - Registry 把 MCP server 的安全 review、live status、visible tools、support channel 和 owner 统一到一个可查询表面。
+
+## Registry = 宪法级权力（07-22 圆桌）
+
+Registry 的治理地位被低估了（synthesized/medium，来源：[[2026-07-22]] 研究日志）：
+
+- **定义"合法 server" = 宪法条款**：谁能上架、谁为谁担保、什么算合法 server——这不是治理的一个环节，是治理本身（Lessig "Code is Law"：架构即法律）。Registry 是 agent 生态"圈外资源"入口的边境检查站：守门人不只控制进出，还**定义异质能以什么形态存在**。
+- **信任锚 = 谢林点**：registry 的网络效应是协调均衡而非质量胜出——"每个人预期每个人信任既有锚，所以每个人信任它"。默认侧拥有举证特权（继续信任既有锚不需理由，切换信任锚需证明），举证成本本身加固默认侧。
+- **fork registry 不可行 = 可信威胁缺失**：fork 规范容易，fork 信任锚的网络效应不可行（新锚冷启动无历史信任可压缩——信任=压缩过的过去，不可伪造）。因此对 registry 治理者的纪律机制（"退出可能性"）经验性地不可兑现——这是 MCP 治理比规范治理更脆弱的结构性原因。
+- ** Pinterest 双层鉴权是操作层雏形**：身份/权限验证属制度堆栈的操作层；缺失的是集体选择层（分级责任）与宪法层（可插拔信任模型的不可单方修改性）。
 
 ## 前提与局限性
 
