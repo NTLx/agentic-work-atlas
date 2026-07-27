@@ -21,6 +21,7 @@ related_entities:
   - "[[GPT-5]]"
 source_raw:
   - "[[20260604-openai-dreaming-memory]]"
+  - "[[20260717-openai-scorecard-ai-age]]"
 validated_source: "https://openai.com/about"
 validated_at: "2026-06-06"
 ---
