@@ -6,7 +6,7 @@ aliases:
   - 世界模型
 definition: "AI 系统对环境状态、因果结构和行动后果的内部表示，使 Agent 能在长期任务中预测、规划并随经验修正策略"
 created: 2026-05-18
-updated: 2026-06-06
+updated: 2026-07-27
 tags:
   - AI
   - AGI
@@ -25,6 +25,7 @@ source_raw:
   - "[[20260529-gemini-co-leads-origins]]"
   - "[[20260623-qwen-agentworld-language-world-models]]"
   - "[[20260606-fei-fei-world-model-taxonomy]]"
+  - "[[20260717-schema-harness-arc-agi]]"
 ---
 
 # World Model（世界模型）
