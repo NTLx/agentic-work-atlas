@@ -8,7 +8,7 @@ aliases:
   - CEO AI Psychosis
 definition: "因与 AI 实际工作的'最后一英里'脱节而产生的认知错位——深度用户过度外推高峰体验，CEO 过度相信 AI 能替代人类工作"
 created: 2026-04-16
-updated: 2026-06-21
+updated: 2026-07-27
 tags:
   - AI-agent
   - perception-gap
@@ -28,6 +28,7 @@ source_raw:
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
   - '[[20260529-ceo-ai-psychosis-equity-podcast]]'
   - '[[20260616-why-is-meta-destroying-its-engineering]]'
+  - '[[20260718-ai-mania-eviscerating-decision-making]]'
 ---
 
 # AI Psychosis
