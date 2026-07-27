@@ -8,7 +8,7 @@ updated: 2026-07-27
 tags:
   - source-summary
   - agentic-engineering
-  - ai-strategy
+  - enterprise-ai
   - context-engineering
   - evaluation
 evidence_level: medium

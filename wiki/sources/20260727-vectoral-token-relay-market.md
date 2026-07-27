@@ -7,9 +7,9 @@ created: 2026-07-27
 updated: 2026-07-27
 tags:
   - source-summary
-  - llm-security
+  - security
   - token-economics
-  - ai-fraud
+  - ai-security
 evidence_level: medium
 claim_type: mixed
 ---
