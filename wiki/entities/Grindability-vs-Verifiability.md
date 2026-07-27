@@ -6,7 +6,7 @@ aliases:
   - 可磨性vs可验证性
 definition: "AI成功的关键因素区分：可磨性（问题可容器化、并行化、自动化）比可验证性（问题有明确正确答案）更重要"
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-07-27
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -19,6 +19,7 @@ related_entities:
   - '[[Sample-Efficiency]]'
 source_raw:
   - '[[20260701-grant-sanderson-ai-math-future]]'
+  - '[[20260719-if-ai-is-so-great-why-isnt-it-working]]'
 ---
 
 # Grindability vs Verifiability

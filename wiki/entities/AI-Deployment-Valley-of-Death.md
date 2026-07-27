@@ -7,7 +7,7 @@ aliases:
   - 部署到 ROI 死亡谷
 definition: "AI 项目从试点或部署到可衡量 ROI 之间的断层，常由流程重构、组织阻力、数据质量和治理边界造成"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-07-27
 tags:
   - enterprise-ai
   - ai-deployment
@@ -22,6 +22,7 @@ source_raw:
   - "[[20260601-stanford-enterprise-ai-playbook]]"
   - "[[20260601-mit-nanda-genai-divide]]"
   - "[[20260702-ai-layoffs-reversed]]"
+  - "[[20260719-if-ai-is-so-great-why-isnt-it-working]]"
 ---
 
 # AI Deployment Valley of Death（AI 部署死亡谷）

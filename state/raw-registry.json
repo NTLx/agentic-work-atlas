@@ -1042,9 +1042,11 @@
     },
     "20260719-if-ai-is-so-great-why-isnt-it-working.md": {
       "body_sha256": "fb841fc3d29dfaae8b101d42a8f160ce3203367279a534bf38fd3d206d24a552",
+      "compiled_at": "2026-07-27T12:04:17+08:00",
       "raw_file": "20260719-if-ai-is-so-great-why-isnt-it-working.md",
-      "status": "pending",
-      "updated_at": "2026-07-27T10:38:55+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260719-if-ai-is-so-great-why-isnt-it-working.md",
+      "updated_at": "2026-07-27T12:04:17+08:00"
     },
     "20260727-langchain-own-your-intelligence.md": {
       "body_sha256": "3372c6f641b5fd571a653064c726da597d88ad3d14c1898d0a9ba626290e0afa",
@@ -1635,6 +1637,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-27T10:55:14+08:00",
+  "updated_at": "2026-07-27T12:04:17+08:00",
   "version": 1
 }
