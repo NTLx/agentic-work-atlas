@@ -6,7 +6,7 @@ aliases:
   - token 供应链管理
 definition: "将 token 像电力、物流和数据库一样编排的生产基础设施层，覆盖推理调度、KV cache 管理、成本路由、可观测性和治理，使 token 从聊天消耗品变成可控生产资料"
 created: 2026-05-29
-updated: 2026-06-15
+updated: 2026-07-27
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -19,10 +19,13 @@ related_entities:
   - "[[Dual-Tier-LLM-Architecture]]"
   - "[[Token-Maxing]]"
   - "[[Enterprise-AI-Rationing]]"
+  - "[[Model-Distillation]]"
+  - "[[Cybersecurity-Proof-of-Work]]"
 source_raw:
   - "[[20260528-agentic-ai-2026-landscape]]"
   - "[[20260528-corporate-america-ai-rationing]]"
   - "[[20260606-the-minimill-of-ai]]"
+  - "[[20260727-vectoral-token-relay-market]]"
 ---
 
 > [!definition] 定义
@@ -112,6 +115,27 @@ Tokenizer 差异导致隐性成本偏差 20-40%/prompt（roundtable 4人×2轮�
 
 **Tokenizer非竞争差异化**（Willison）：差异=历史偶然（GPT-2→tiktoken，Claude=BPE，Gemini=T5传统→SentencePiece）。标准化不压缩有意义竞争维度。
 
+## 灰色形态：中转产业链与滥用经济（07-27 扩展）
+
+正规 token 供应链的网关层有一个镜像暗面。Vectoral（2026-07）基于中文论坛田野调查披露的 token 中转（relay/"中转站"）产业链，四层分工与正规供应链逐层对应：
+
+| 层 | 角色 | 职责 | 正规供应链镜像 |
+|----|------|------|----------------|
+| 上游 | 卡商/号商 | 通过美欧账单检查的虚拟信用卡、批量注册账号 | 注册与支付凭据供应 |
+| 中游 | 账号池 | 聚合数百账号，管理 token 与速率限制，处理 failover，暴露单一 API | 网关与代理（LiteLLM/OpenRouter） |
+| 下游 | 中转站 | 中文产品化、账单开票、客服社群、价格竞争 | 模型路由与转售零售层 |
+| 终端 | 开发者/初创/蒸馏买家 | 采购便宜推理 | token 消费侧 |
+
+**基础设施双用**：几乎所有中转站跑在开源 OpenAI 兼容网关 one-api 或 new-api 上（前者部署量约后者 4 倍）。渠道（channel = provider + key 池）+ 倍率（multiplier）计费：面板暴露单一 OpenAI 兼容端点，按请求从池中取 key 转发、按用量×倍率扣 quota。软件本身中性——企业也自托管同款软件做团队配额与消费追踪；越线只在渠道填充被盗/泄露/池化 key 并违约转售时发生。
+
+**滥用经济学**：样例包以 425 RMB 买官方等价 `$3,333` 的 Anthropic 额度（有效费率 `$0.13/$1`，top 10 折扣中位数 94.1%-97.8%）；top 10 中转站月访问合计 360 万；产业链已配备价格比较站、联盟计划与 API key 每日抽奖。滥用方法含免费额度滥用、chargeback、预付卡、开放推理代理，以及无财务动机的 **denial of wallet**（并发请求纯烧对方预算——DDoS 的经济变体，每个请求单独看都合法可计费，更难与突发流量区分）。
+
+**关键洞察**：账号池与正规网关是**同一种基础设施、不同 key 来源**。这意味着供应链治理不能止于"用什么路由工具"，必须延伸到"key 从哪来、流量去哪"。97.8% 折扣的灰市定价同时扭曲正规采购的价格锚点（综合判断）。
+
+**防御成本博弈**（一手实践清单，按攻击路径排序）：抬高进入成本（批量注册摩擦 + 新账号限额）→ 盯住钱（预付卡/虚拟卡、账单错配、试卡小额）→ 盯住行为（注册到首个 token 的时间、模型选择、prompt 相关性）→ 账号聚类（IP sybil、设备指纹）→ 消费异常告警 → 损害控制（消费锁、并发限制、in-flight 请求预算预留）→ **静默限速**（抓到滥用不给干净错误，避免教攻击者修信号）。作者总结："让攻击你的服务贵到数字算不过来，他们就会换更容易的目标"——这是 [[Cybersecurity-Proof-of-Work]] 成本方程的欺诈经济学版本（综合判断）。
+
+**证据警示**：量化主张（"数十亿 RMB 蒸馏产业链"等）为匿名论坛证词，无独立佐证；作者经营 AI gateway 公司，叙事立场与防欺诈产品方向一致。详见 [[20260727-vectoral-token-relay-market]]。
+
 ## 关联概念
 
 - [[Agentic-Workflow-Token-Efficiency]] — token 效率优化的方法论层面
@@ -119,3 +143,5 @@ Tokenizer 差异导致隐性成本偏差 20-40%/prompt（roundtable 4人×2轮�
 - [[Dual-Tier-LLM-Architecture]] — 按复杂度路由的分层架构是 token 供应链的一种实现
 - [[Agent-Infra]] — token 供应链服务的上层
 - [[Layered-AI-Sourcing]] — 企业级模型采购是 token 供应链的组织侧映射
+- [[Model-Distillation]] — 黑市蒸馏是中转产业链的第三大需求侧（匿名证词：数十亿 RMB 产业链）
+- [[Cybersecurity-Proof-of-Work]] — 中转防御实践是攻防成本博弈的一手案例

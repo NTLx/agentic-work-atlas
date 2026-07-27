@@ -7,7 +7,7 @@ aliases:
   - Knowledge Distillation
 definition: "把大模型（教师）的能力压缩到小模型（学生）的技术，使更小更快的模型继承大模型的推理能力"
 created: 2026-05-30
-updated: 2026-06-16
+updated: 2026-07-27
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -18,8 +18,10 @@ related_entities:
   - "[[Continual-Learning]]"
   - "[[World-Model]]"
   - "[[Agentic-Engineering]]"
+  - "[[Token-Supply-Chain]]"
 source_raw:
   - "[[20260529-gemini-co-leads-origins]]"
+  - "[[20260727-vectoral-token-relay-market]]"
 ---
 
 # Model Distillation（模型蒸馏）
@@ -50,6 +52,19 @@ source_raw:
 - **"挤柠檬"隐喻**：Oriol Vinyals 描述蒸馏为"squeezing the lemon"——把大模型的"汁液"（好的部分）压进小模型
 - **LLM 数据效率差距**：人类一生听到约 `10^9`（10 亿）词，LLM 在 `10^{12}`（万亿）词上训练——效率差约 1000 倍。蒸馏和算法创新是缩小这个差距的关键方向
 
+## 黑市蒸馏产业链（07-27 扩展）
+
+蒸馏不只是实验室内的正规技术，也已形成灰色产业链。Vectoral（2026-07）披露的中文 token 中转市场论坛（V2EX）匿名证词：
+
+- "Distillation 用 Claude/CodeX 模型训练国产模型。有专门做 distillation 的中介……编程能力强的公司都在蒸馏 Claude；这是数十亿 RMB 的产业链，很多大佬一天赚几十万"（reply #38）
+- "很多业内蒸馏的已经赚到百万了"（reply #129）
+- 中转市场终端用户明确包含"用该基础设施做模型蒸馏的大型商业买家"——有效费率 `$0.13/$1` 的廉价中转 token 降低了蒸馏的数据获取成本
+
+这与正规叙事（"每代 Flash > 前代 Pro"）构成双重结构：同一项技术，一侧在实验室内部把能力压缩进更小模型，另一侧经黑市渠道把前沿能力抽取进竞争模型。前沿实验室条款禁止蒸馏，但中转基础设施使执法极难——这是 [[Token-Supply-Chain]] 滥用经济学的知识产权维度（综合判断）。
+
+> [!warning] 证据警示
+> 上述量化主张为匿名论坛证词，无独立佐证，证据强度 low；但"蒸馏专业中介"角色的存在性与已知的模型竞争动态一致。详见 [[20260727-vectoral-token-relay-market]]。
+
 ## 前提与局限性
 
 - **信息论地板**：蒸馏不可能把无限知识压进有限参数。"每代 Flash > 前代 Pro"的趋势终将遇到模型容量的理论上限
@@ -63,3 +78,4 @@ source_raw:
 - [[Continual-Learning]] — 蒸馏传递的是训练时的快照知识，不替代运行时的持续学习
 - [[World-Model]] — 蒸馏能否传递世界模型（因果结构）vs 只是传递统计模式，是开放问题
 - [[Agentic-Engineering]] — 小模型的低延迟对 Agent 工具链至关重要
+- [[Token-Supply-Chain]] — 廉价中转 token 喂养黑市蒸馏产业链（滥用经济学的知识产权维度）
