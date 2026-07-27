@@ -66,6 +66,7 @@ source_raw:
   - "[[20260702-anthropic-harnesses-long-running-agents]]"
   - "[[202605-code-cleanliness-coding-agents-minimal-pair.pdf]]"
   - "[[20260717-schema-harness-arc-agi]]"
+  - "[[20260727-langchain-own-your-intelligence]]"
 ---
 
 # Agent Harness

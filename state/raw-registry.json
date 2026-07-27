@@ -1050,9 +1050,11 @@
     },
     "20260727-langchain-own-your-intelligence.md": {
       "body_sha256": "3372c6f641b5fd571a653064c726da597d88ad3d14c1898d0a9ba626290e0afa",
+      "compiled_at": "2026-07-27T12:29:14+08:00",
       "raw_file": "20260727-langchain-own-your-intelligence.md",
-      "status": "pending",
-      "updated_at": "2026-07-27T10:38:55+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260727-langchain-own-your-intelligence.md",
+      "updated_at": "2026-07-27T12:29:14+08:00"
     },
     "20260727-vectoral-token-relay-market.md": {
       "body_sha256": "0025688ac7cfb899eb45552a0a3b00721c1d1a7d794fcc6752efb7138202abe0",
@@ -1637,6 +1639,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-27T12:04:17+08:00",
+  "updated_at": "2026-07-27T12:29:14+08:00",
   "version": 1
 }

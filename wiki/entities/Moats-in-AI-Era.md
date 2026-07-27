@@ -6,7 +6,7 @@ aliases:
   - AI 时代的护城河
 definition: "Boris Cherny 基于 Hamilton Helmer 七力框架的分析：AI 削弱切换成本和流程效力两种护城河，但网络效应、规模经济、独占资源不受影响——决定 SaaS 是否面临\"末日\""
 created: 2026-05-08
-updated: 2026-06-16
+updated: 2026-07-27
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -18,6 +18,7 @@ related_entities:
   - "[[AI-Era-Economy-Shift]]"
 source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
+  - "[[20260727-langchain-own-your-intelligence]]"
 ---
 
 # Moats in AI Era（AI 时代的护城河）
