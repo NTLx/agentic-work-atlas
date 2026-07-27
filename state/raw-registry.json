@@ -1034,9 +1034,11 @@
     },
     "20260718-bytebytego-mcp-vs-a2a-vs-acp.md": {
       "body_sha256": "75699ff8dd68c1bec0b322b0a5d096f7f15b7e05e6e83bf80a6578600d7997e3",
+      "compiled_at": "2026-07-27T10:55:14+08:00",
       "raw_file": "20260718-bytebytego-mcp-vs-a2a-vs-acp.md",
-      "status": "pending",
-      "updated_at": "2026-07-27T10:38:55+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260718-bytebytego-mcp-vs-a2a-vs-acp.md",
+      "updated_at": "2026-07-27T10:55:14+08:00"
     },
     "20260719-if-ai-is-so-great-why-isnt-it-working.md": {
       "body_sha256": "fb841fc3d29dfaae8b101d42a8f160ce3203367279a534bf38fd3d206d24a552",
@@ -1633,6 +1635,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-27T10:54:01+08:00",
+  "updated_at": "2026-07-27T10:55:14+08:00",
   "version": 1
 }

@@ -6,7 +6,7 @@ aliases:
   - Model Context Protocol
 definition: "让 AI client 通过统一客户端-服务器协议连接工具和数据源的开放标准，用来替代模型与工具之间的一对一硬编码集成"
 created: 2026-05-13
-updated: 2026-07-22
+updated: 2026-07-27
 tags:
   - AI-Agent
   - tool-use
@@ -20,6 +20,7 @@ related_entities:
   - "[[Tool-Use-Architecture]]"
 source_raw:
   - "[[Building an MCP Ecosystem at Pinterest]]"
+  - "[[20260718-bytebytego-mcp-vs-a2a-vs-acp]]"
 ---
 
 # Model Context Protocol (MCP)
