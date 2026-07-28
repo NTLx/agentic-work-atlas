@@ -5,14 +5,16 @@ aliases:
   - AI 自主性
 definition: "AI 在任务执行中自主决策的程度，从‘无’到‘极端’的5级量表"
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-28
 tags:
   - ai-labor
 related_entities:
   - "[[AI-Use-Rhythm]]"
   - "[[AI-Artifact-Classification]]"
+  - "[[Software-Development-Autonomy-Levels]]"
 source_raw:
   - "[[20260626-anthropic-economic-index-june-2026-report]]"
+  - "[[20260726-berkeley-auto-software-dev]]"
 ---
 
 # AI-Autonomy
@@ -51,3 +53,4 @@ AI 在任务执行中自主决策的程度，使用1-5级量表测量，从“�
 - [[AI-Artifact-Classification]]：自主性水平与产物类型相关。
 - [[AI-Use-Rhythm]]：非工作时间的任务可能具有更高自主性。
 - [[Labor-Market-Impact]]：自主性可能影响劳动力市场结构。
+- [[Software-Development-Autonomy-Levels]]：框架互补——本实体测任务类型的自主分布（1-5 量表），后者分 SDLC 阶段的责任转移（三级自治）。

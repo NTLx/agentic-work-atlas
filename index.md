@@ -15,10 +15,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 347 个 |
+| Entity 页面 | 348 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 206 个 |
+| Raw 文章 | 208 个 |
 | Source Summary | 191 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 39 个 |
@@ -86,6 +86,7 @@ tags:
 | [[wiki/entities/Retrieval-as-a-Subagent\|Retrieval-as-a-Subagent（检索子代理）]] | 将检索包装在 agentic 循环中：规划查询 → 尝试多源 → 评估 → 重试 → 结构化失败信号 | Microsoft Foundry |
 | [[wiki/entities/Rubric-Based-Evaluation\|Rubric-Based Evaluation（基于评价标准的评估）]] | 用具体行为检查项取代泛化指标评估生产 Agent，配合 Agent Optimizer 实现自我改进循环 | Microsoft Foundry |
 | [[wiki/entities/Self-Hosted-Models\|Self-Hosted Models（自托管模型）]] | 组织自行托管开放权重模型的实践，驱动力包括成本、主权和信息安全 | Martin Fowler 2026-07 |
+| [[wiki/entities/Software-Development-Autonomy-Levels\|Software Development Autonomy Levels（软件开发自治分级）]] | 类比 SAE 的三级自治框架（Code/Pipeline/Demand Autonomy）——按 SDLC 责任转移分级，使能力主张与问责可读 | Berkeley RDI |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
