@@ -1048,6 +1048,18 @@
       "summary_path": "wiki/sources/20260719-if-ai-is-so-great-why-isnt-it-working.md",
       "updated_at": "2026-07-27T12:04:17+08:00"
     },
+    "20260726-berkeley-auto-software-dev.md": {
+      "body_sha256": "afa7f4e8ce14ca419667bde38e3b88d1a33dc827fdb46a93bda081708be22bad",
+      "raw_file": "20260726-berkeley-auto-software-dev.md",
+      "status": "pending",
+      "updated_at": "2026-07-28T14:02:42+08:00"
+    },
+    "20260727-github-harness-is-all-you-need.md": {
+      "body_sha256": "a6fdaf3dc2f624da663f5a2734ab5c3c35071e7b02718cb860db5e0523f28bff",
+      "raw_file": "20260727-github-harness-is-all-you-need.md",
+      "status": "pending",
+      "updated_at": "2026-07-28T14:02:41+08:00"
+    },
     "20260727-langchain-own-your-intelligence.md": {
       "body_sha256": "3372c6f641b5fd571a653064c726da597d88ad3d14c1898d0a9ba626290e0afa",
       "compiled_at": "2026-07-27T12:29:14+08:00",
@@ -1649,6 +1661,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-28T13:52:35+08:00",
+  "updated_at": "2026-07-28T14:02:42+08:00",
   "version": 1
 }
