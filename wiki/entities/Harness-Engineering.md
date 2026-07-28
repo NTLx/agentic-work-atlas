@@ -5,7 +5,7 @@ aliases:
   - Harness Engineering
 definition: "工程团队的首要工作不再是编写代码，而是构建让 AI Agent 能有效工作的系统——设计 SOP、测试基础设施、集成系统、分诊系统，使 Agent 可检查、可验证、可修改。Addy Osmani (2026) 强调：**Agent = Model + Harness**，失效通常不是模型问题，而是配置（Harness）问题。"
 created: 2026-04-16
-updated: 2026-07-07
+updated: 2026-07-28
 tags:
   - AI-Agent
   - Software-Engineering
@@ -42,6 +42,7 @@ source_raw:
   - '[[AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。]]'
   - '[[20260702-anthropic-harnesses-long-running-agents]]'
   - '[[20260706-martin-fowler-fragments]]'
+  - '[[20260727-github-harness-is-all-you-need]]'
 ---
 
 # Harness Engineering（驾驭工程）
@@ -56,6 +57,11 @@ source_raw:
 
 ### Anthropic：科学驾驭（确定性检索层）
 在生物学等高精度领域，Harness Engineering 的重点是构建 **[[Deterministic-Retrieval|确定性检索层]]**。例如 gget-virus 将混乱的 Web 界面操作封装为可靠的编程接口，使 Agent 的检索准确率从 16.9% 提升至 99.7%（Anthropic, 2026）。
+
+### Burke Holland：个体级驾驭（八步工作流）
+GitHub 的 Burke Holland（2026-07）展示了 harness 工程的**个体从业者形态**——"the harness is all you need (mostly)"：生产力杠杆不来自安装新工具/skill/prompt，而来自理解 harness 本身。八步工作流全部使用 Copilot 内置功能：选工具（CLI 最接近 harness）→ YOLO 模式 + 沙箱隔离 → 原型先行（20 个 mock 并排比较；非视觉任务也做视觉原型暴露 nuance）→ plan mode 质询（边缘情况显式化；价值不在接受建议而在注入专业判断）→ Autopilot 实现（内置 loop + 自动编排：Explore 小模型读文件 / General Purpose 大模型做复杂动作）→ 人类评审迭代（taste 决定质量）→ rubber duck 跨模型评审（异构模型盲点互补，见 [[Agent-Verification]]）→ 提交（会话按主题隔离）。
+
+与 Pinterest/CREAO 的组织级案例互补：前者为团队构建 harness 系统，后者证明"learn the harness once, use it everywhere"——harness 体验正在跨工具收敛（CLI/app/IDE 共享同一核心工作流），个体只需精通工作流本身。
 
 ## 核心原则
 
@@ -173,3 +179,4 @@ Fowler 的判断：对 harness 的关注是否会被模型改进淘汰？"attent
 - [[20260419-agent-harness-engineering]] - Addy Osmani, 2026-04-19
 - [[20260608-paving-the-way-for-agents-in-biology]] - Anthropic, 2026-06-08
 - [[AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。]] - 数字生命卡兹克, 2026-06-22
+- [[20260727-github-harness-is-all-you-need]] - Burke Holland (GitHub), 2026-07-27

@@ -67,6 +67,7 @@ source_raw:
   - "[[202605-code-cleanliness-coding-agents-minimal-pair.pdf]]"
   - "[[20260717-schema-harness-arc-agi]]"
   - "[[20260727-langchain-own-your-intelligence]]"
+  - "[[20260727-github-harness-is-all-you-need]]"
 ---
 
 # Agent Harness
