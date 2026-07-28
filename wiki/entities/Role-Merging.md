@@ -6,7 +6,7 @@ aliases:
   - 角色边界模糊
 definition: "AI 让 PM/设计师/财务等非工程角色也能写代码，同时让工程师端到端交付产品；'谁写代码'不再重要，'谁有产品判断力'更重要"
 created: 2026-06-12
-updated: 2026-06-23
+updated: 2026-07-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -17,10 +17,13 @@ related_entities:
   - "[[Claude-Code-CLI]]"
   - "[[Agent-Loops]]"
   - "[[Knowledge-Work]]"
+  - "[[Task-Crossover]]"
+  - "[[Cross-Disciplinary-Generalist]]"
 source_raw:
   - "[[20260608-reflecting-on-year-of-claude-code]]"
   - "[[20260616-why-is-meta-destroying-its-engineering]]"
   - "[[20260630-loop-engineering-andrew-ng]]"
+  - "[[20260727-openai-work-at-the-frontier.pdf]]"
 ---
 
 > [!definition] 定义
@@ -47,6 +50,16 @@ Meta（2026-05/06）将 30-50% 工程师强制调去做数据标注（ADO 组织
 
 **核心区别**：角色融合是"AI 让每个人都能做更多"，角色降级是"AI 让一部分人变得多余"。前者扩大人的能力边界，后者缩小人的价值空间。
 
+## 大样本定量验证（07-28 扩展）
+
+角色融合此前只有定性证据（Anthropic 内部轶事、Boris 观察）。OpenAI Economic Research（2026-07）从另一个数据源独立验证了这一现象，并给出统计形态——[[Task-Crossover|任务跨界]]：
+
+- **规模**: 80 万+ 条 ChatGPT 工作消息 × O*NET 职业基线，职业专属消息中 **43.5%** 涉及其他职业的历史任务
+- **方向不对称**: 营销与工程的任务流动最远（非营销用户营销类消息的 25% 是制作促销材料；工程故障排查出现在 7/7 非工程职业的前三高频任务）；设计大量借用外职业任务（35.2%）但自身任务几乎不外流（1.7%）
+- **组织规模调节**: 小职场（2-5 人）典型用户跨界 18.9% vs 大职场（101+ 人）16.3%——没有专家可委派时，AI 成为专家替代。这与"工程师先 adopt → 相邻角色看一眼 → 也开始用"的企业观察互补：小组织缺少可看的相邻角色，直接转向 AI
+
+**关键边界**: 跨界测量的是"尝试"而非"胜任"——消息单位不含产出质量与采用率。角色融合的轶事证据（设计师"directly in the app instead of paying an engineer"）与跨界统计共同支持"分工在移动"，但都不能推出"专家不再需要"。
+
 ## 前提与局限性
 
 - **选择性偏差**: Anthropic 招的人本来就技术素养高，不代表所有公司的设计师都能提 PR
@@ -60,3 +73,5 @@ Meta（2026-05/06）将 30-50% 工程师强制调去做数据标注（ADO 组织
 - [[Claude-Code-CLI]] — 角色融合的工具载体
 - [[Knowledge-Work]] — AI 如何改变知识工作的定义
 - [[Agent-Loops]] — Agent 让非工程角色也能驱动开发流程
+- [[Task-Crossover]] — 角色融合的大样本定量形态（43.5% 职业专属消息跨界）
+- [[Cross-Disciplinary-Generalist]] — 角色融合在人才侧的对应形态

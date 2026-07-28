@@ -5,17 +5,19 @@ aliases:
   - 劳动力市场影响
 definition: "AI 技术对就业、工资、工作结构和劳动力市场动态的影响"
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-28
 tags:
   - ai-labor
 related_entities:
   - "[[AI-Perception-Survey]]"
   - "[[AI-Labor-Bottleneck-Shift]]"
+  - "[[Task-Crossover]]"
 source_raw:
   - "[[20260626-anthropic-economic-index-june-2026-report]]"
   - "[[20260702-ai-layoffs-reversed]]"
   - "[[the-ai-jobs-transition-framework-for-the-eu]]"
   - "[[How to 10x Your Value in the AI Era — Kunal Shah]]"
+  - "[[20260727-openai-work-at-the-frontier.pdf]]"
 ---
 
 # Labor-Market-Impact
@@ -35,6 +37,7 @@ AI 技术对就业、工资、工作结构和劳动力市场动态的影响。An
 ## 影响机制
 
 - **任务自动化**：AI 自动化特定任务，而非整个工作。
+- **任务跨界**：OpenAI Work at the Frontier（2026-07）测量到 [[Task-Crossover|任务跨界]]——职业专属 AI 使用中 43.5% 涉及其他职业的历史任务。这是任务再分配的**最上游信号**：先于就业数、工资、岗位发布等滞后指标，在职位描述修改之前就可观测。与 Anthropic Economic Index 的"暴露度"测量互补——一个测机器在执行什么，一个测人在用机器跨界做什么。
 - **技能价值变化**：57%的受访者认为 AI 提高了其技能的市场价值。
 - **工作重新定义**：AI 可能增强而非取代人类工作。
 
@@ -49,3 +52,4 @@ AI 技术对就业、工资、工作结构和劳动力市场动态的影响。An
 - [[AI-Perception-Survey]]：提供主观证据。
 - [[AI-Labor-Bottleneck-Shift]]：劳动力瓶颈从生产迁移到判断和验证。
 - [[AI-Autonomy]]：自主性可能影响劳动力市场结构。
+- [[Task-Crossover]]：任务再分配的最上游测量，先于滞后指标。

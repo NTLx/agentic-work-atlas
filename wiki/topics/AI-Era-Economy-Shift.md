@@ -3,7 +3,7 @@ type: topic
 title: AI Era Economy Shift
 description: "AI 时代经济范式转型：从知识经济到分配经济，效率提升带来需求爆发"
 created: 2026-04-10
-updated: 2026-06-20
+updated: 2026-07-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -24,6 +24,7 @@ related_entities:
   - "[[Sample-Efficiency]]"
   - "[[Amortized-Intelligence]]"
   - "[[API-Distillation-Catch-Up]]"
+  - "[[Task-Crossover]]"
 source_raw:
   - '[[The Knowledge Economy Is Over. Welcome to the Allocation Economy.]]'
   - '[[(14) Jevons Paradox for Knowledge Work]]'
@@ -34,6 +35,7 @@ source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - "[[20260613-anthropic-public-record]]"
   - '[[20260619-the-data-black-hole-at-the-center-of-ai]]'
+  - "[[20260727-openai-work-at-the-frontier.pdf]]"
 ---
 
 # AI Era Economy Shift（AI 时代经济转型）

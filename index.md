@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-07-27
+updated: 2026-07-28
 tags:
 ---
 
@@ -15,10 +15,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 346 个 |
+| Entity 页面 | 347 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 205 个 |
+| Raw 文章 | 206 个 |
 | Source Summary | 191 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 39 个 |
@@ -101,6 +101,7 @@ tags:
 | [[wiki/entities/Kun-Chen\|Kun Chen]] | 前 L8 Principal Engineer，AXI / No Mistakes / First Mate 工具链作者 | L8 Principal Agentic Workflow |
 | [[wiki/entities/Pro-Worker-AI\|Pro-Worker AI（亲劳动者 AI）]] | 使人类专业知识更有价值而非更不必要的 AI 方向，核心机制是新任务创建 | Hamilton Project |
 | [[wiki/entities/Task-Framework\|Task Framework（任务框架）]] | Acemoglu/Autor 的技术变革五分类——以任务为分析单元区分自动化与新任务创建 | Hamilton Project |
+| [[wiki/entities/Task-Crossover\|Task Crossover（任务跨界）]] | 历史上属于某职业的任务大量出现在其他职业从业者的 AI 使用中——分工重组先于职位描述变化 | OpenAI Work at the Frontier |
 | [[wiki/entities/Agent-Unit-of-Work\|Agent Unit of Work（Agent 工作单元）]] | 组织愿意交给 Agent 的任务单元——大小、覆盖、交接、检查、边界构成 delegation 核心控制参数 | Martin Fowler 2026-07 |
 
 #### 知识与语义

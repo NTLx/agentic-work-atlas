@@ -7,7 +7,7 @@ aliases:
   - 跨职能通才
 definition: "在 AI 降低执行门槛后，能把工程、产品、设计、数据、领域知识和判断力组合起来解决问题的人才形态"
 created: 2026-05-08
-updated: 2026-06-15
+updated: 2026-07-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -20,8 +20,10 @@ related_entities:
   - "[[Judgment]]"
   - "[[PM-in-AI-Era]]"
   - "[[AI-Era-Career-Skills]]"
+  - "[[Task-Crossover]]"
 source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
+  - "[[20260727-openai-work-at-the-frontier.pdf]]"
 ---
 
 # Cross-Disciplinary Generalist（跨学科通才）
@@ -41,6 +43,18 @@ source_raw:
 - 旧的全栈通常指前端、后端、DevOps 等工程内部广度；新的跨学科通才横跨产品、工程、设计、数据和领域专业。
 - 软件民主化让领域专家成为 builder，但他们仍需要 taste、judgment 和验证纪律才能做出好软件。
 - 这一人才形态与 [[PM-in-AI-Era|AI 时代 PM]] 相连：产品工作不再只是写需求，而是清除跨职能摩擦、压缩反馈闭环、组织判断。
+
+## 实证分布：三种跨界角色（07-28 扩展）
+
+跨学科通才此前只有定性描述（Boris 的团队观察）。OpenAI Work at the Frontier（2026-07）的 [[Task-Crossover|任务跨界]] 数据给出了通才形态在劳动力中的**三种实现路径**：
+
+| 角色 | 实证形态 | 数据 |
+|------|---------|------|
+| **借用型通才**（design） | 广泛吸收多领域任务，自身专业不外流 | 35.2% 消息跨界 / 设计任务仅占他职业 1.7% |
+| **源头型专家**（engineering） | 自身深耕主业，任务却被广泛借用 | 自身跨界 18.5%（最低）/ 工程任务占他职业 7.4% |
+| **双向型通才**（marketing） | 既大量跨界，任务也广泛外流 | 24.3% 跨界 / 8.9% 外流（样本最高） |
+
+这与本页"梳子型能力结构"的判断一致：至少一个足够深的主轴 + 多条横向协作能力。数据补充了一点——**组织规模调节通才需求**：小职场（2-5 人）典型用户跨界 18.9% vs 大职场 16.3%，没有专家可委派的环境更强制（也更赋能）通才形态。
 
 ## 能力结构
 
@@ -73,3 +87,4 @@ source_raw:
 - [[Taste]] - 在多个领域识别什么是好、什么只是合格
 - [[Judgment]] - 在约束、风险和后果中做取舍
 - [[AI-Era-Career-Skills]] - 职业技能从单点执行转向调度、验证和组合
+- [[Task-Crossover]] - 通才形态的大样本实证分布（借用/源头/双向三种角色）
