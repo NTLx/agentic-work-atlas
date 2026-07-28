@@ -61,3 +61,6 @@ docs/
 
 # cc-connect 系统目录
 .cc-connect/
+
+# 个人笔记目录误写入仓库（正确位置：~/Documents/notes/）
+/Documents/
