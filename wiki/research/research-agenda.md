@@ -129,6 +129,7 @@ related_entities:
 | **P2** | **AGI 基础设施金融化** 🆕（07-23） | ⬜ 未启动 | clip 日经 `$1.65` 万亿隐性债务研究（经济层最薄，结构性空白） |
 | **P2** | **METR 基准饱和** 🆕 | ⬜ 未启动 | 择要 clip 方法论内核（具体模型名属传闻，不采信） |
 | **P2** | **Cursor 群体经济学** 🆕 | 🔄 07-23 新例：Cursor Router 自动路由成本降 60% | 择要 clip Agent Swarms 博客 + Router 发布 |
+| **P2** | **形式门禁 vs 认知质量** 🆕（07-28 盲区扫描） | ⬜ 未启动 | 盲区："门过了=东西好了"——lint 只测形式合规，编译的认知质量（浓缩深度/质疑真伪/对标明度）无测量。clip《指标陷阱》(Muller) 度量替代理论 + Pirsig 质量论；研究：编译质量抽检机制设计（异构 agent 抽检，接 Berkeley 独立 verifier 命题） |
 
 > 07-21 清理：9 项已完成 source 目标删除（Output 断层/Agent Identity/Token FinOps/Context Engineering/AI-Native Testing/AI Governance Regimes/中国大厂路线/具身 AI/多模型策略），git 历史可溯。
 
