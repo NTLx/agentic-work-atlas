@@ -938,9 +938,11 @@
     },
     "20260708-towards-autonomous-software-dev.pdf": {
       "body_sha256": "d046c88d7eeb5f22b145e6bbca0df31e68b64d4f9a035d66a9df6ce1c43a7a31",
+      "compiled_at": "2026-07-28T15:04:12+08:00",
       "raw_file": "20260708-towards-autonomous-software-dev.pdf",
-      "status": "pending",
-      "updated_at": "2026-07-28T14:57:37+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260708-towards-autonomous-software-dev.md",
+      "updated_at": "2026-07-28T15:04:12+08:00"
     },
     "20260708-vercel-agent.md": {
       "body_sha256": "bc547bf83a09149a8e9f66d9fc49f16cd938f76b6ab7526f25320527c29abffc",
@@ -1671,6 +1673,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-28T14:57:37+08:00",
+  "updated_at": "2026-07-28T15:04:12+08:00",
   "version": 1
 }

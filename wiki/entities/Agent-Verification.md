@@ -28,6 +28,7 @@ source_raw:
   - "[[20260702-anthropic-harnesses-long-running-agents]]"
   - "[[20260727-github-harness-is-all-you-need]]"
   - "[[20260726-berkeley-auto-software-dev]]"
+  - "[[20260708-towards-autonomous-software-dev.pdf]]"
 ---
 
 > [!definition] 定义
@@ -52,7 +53,7 @@ source_raw:
 
 自治 agent 会同时生成实现、测试、文档和理由——创造跨越所有"互相验证的产物"的**关联失败**。因此验证软件产物不再足够，还必须审计产出它的 agent（规格、技能、记忆、决策溯源、执行轨迹）。独立验证者 agent 只有在具备**真正独立的目标**、可信的评估机制、有原则的分歧解决协议时才有效。
 
-**两侧配对的关键张力**：跨模型家族评审只是**训练数据级独立**，而主流模型训练语料高度重叠；Berkeley 要求的是**目标级独立**。Rubber duck 降低了自洽盲区风险，但未满足完全独立验证的条件——自治程度越高（[[Software-Development-Autonomy-Levels|Level II/III]]），这一缺口越致命（综合判断）。
+**两侧配对的关键张力**：跨模型家族评审只是**训练数据级独立**——完整论文给出两个具体失败机制：verifier 与 generator 可能 **talk past each other**（互不理解、无法收敛），或 **co-adapt**（共同适应，直到测试仅仅背书实现的 bug）。这正是"不同模型家族不同盲点"不够的原因：Berkeley 要求的是**目标级独立**。Rubber duck 降低了自洽盲区风险，但未满足完全独立验证的条件——自治程度越高（[[Software-Development-Autonomy-Levels|Level II/III]]），这一缺口越致命。
 
 ## 前提与局限性
 

@@ -19,8 +19,11 @@ related_entities:
   - "[[Reward-Hacking]]"
   - "[[Agentic-Engineering]]"
   - "[[Context-Engineering]]"
+  - "[[Task-Horizon]]"
+  - "[[Shared-Memory-Contamination]]"
 source_raw:
   - "[[20260726-berkeley-auto-software-dev]]"
+  - "[[20260708-towards-autonomous-software-dev.pdf]]"
 ---
 
 # Software Development Autonomy Levels（软件开发自治分级）
@@ -69,6 +72,23 @@ source_raw:
 - 最具体研究呼吁：建设仓库级规格合成 benchmark 与"规格-实现漂移"的长时程评估——没有它们，Level II/III 就绪声明无法被证实
 - 终局判断："Software becomes abundant; trust becomes scarce."
 
+## 完整版论文增补（07-28）
+
+完整 position paper（[[20260708-towards-autonomous-software-dev.pdf]]，38 页，131 篇参考文献）在四处增量上论证了本框架：
+
+**适用边界**：三级框架针对长生命周期、持续维护的软件（主系统、服务、SaaS）。当今 AI 所写代码的很大部分是单次使用（抛弃脚本、一次性分析），该领域与框架中心关切"基本正交"（长时程规格/维护/问责不适用），但并非无风险——意图错位、幻觉、意外副作用同样致害。
+
+**验证者失败机制**（CORE RISK 深化）：把检查委派给独立 verifier agent 也未必有效，有两个具体机制——**talk past**（verifier 与 generator 互不理解、无法收敛）或 **co-adapt**（共同适应，直到测试仅仅背书实现的 bug）。这解释了为何"跨模型家族盲点互补"只是数据级独立而非目标级独立（详见 [[Agent-Verification]]）。
+
+**实证锚点**：
+
+- **EvoClaw benchmark**：前沿 agent 孤立任务 >80% → 连续演化设定坍缩至至多 38%（能加功能、不能防回归）——[[Task-Horizon]] 作为独立能力维度的硬证据
+- **验证能力悬殊**：相同算法任务端到端通过率 Dafny >80% vs Lean 27%；自然语言描述带来的验证提升出奇地小 → 瓶颈在形式推理能力，不在检索/上下文
+- **MAST**：战术性修复（更好的 prompt）仅适度改进，失败率仍高于生产阈值——结构性协议重设计才是绑定约束
+- **命名新失败模式**：**slopsquatting**（AI 生成内容仿冒）、**toxic-skill propagation**（[[Shared-Memory-Contamination]] 的 skill 层同构）
+
+**制度脚手架已开始成形**：OWASP Top 10 for Agentic Applications、Microsoft Agent Governance Toolkit（开源）、AWS Agentic AI Security Scoping Matrix；监管期限：EU AI Act 高风险义务 2026-08、Colorado AI Act 2026-06。责任归属立场：agent 构建的应用泄露数据，责任归部署组织而非模型提供商——这本身是保留人类监督的强激励。
+
 ## 前提与局限性
 
 - **框架性质**: position paper 的分类法与研究议程，不是实证结论；十个预测自称"前瞻而非必然"
@@ -86,4 +106,5 @@ source_raw:
 
 ## 来源
 
-- [[20260726-berkeley-auto-software-dev]]（完整 position paper: Towards Autonomous Software Development）
+- [[20260726-berkeley-auto-software-dev]]（博客摘要版）
+- [[20260708-towards-autonomous-software-dev.pdf]]（完整 position paper: Towards Autonomous Software Development）

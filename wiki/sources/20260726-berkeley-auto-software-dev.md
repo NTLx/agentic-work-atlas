@@ -16,7 +16,7 @@ claim_type: mixed
 
 # When Coding Stops Being the Bottleneck
 
-> Berkeley RDI 等机构（Hao Wang, Ion Stoica, Dawn Song 等 12 人，2026-07-26）position paper：当编码不再是瓶颈，软件工程围绕"可信自治"重组。核心贡献是类比 SAE 自动驾驶分级的**三级软件开发自治框架**（Code / Pipeline / Demand Autonomy）+ 三个横切维度（规格粒度/时间跨度/监督模式），并提出贯穿三级的统一问题——人类意图的保存。来源：Berkeley RDI 博客（完整 position paper 另见链接）。证据等级：medium（框架级结构贡献 + 重量级作者群，但是立场论文而非实证研究，十个预测明确自称"前瞻而非必然"）。
+> Berkeley RDI 等机构（Hao Wang, Ion Stoica, Dawn Song 等 12 人，2026-07-26）position paper：当编码不再是瓶颈，软件工程围绕"可信自治"重组。核心贡献是类比 SAE 自动驾驶分级的**三级软件开发自治框架**（Code / Pipeline / Demand Autonomy）+ 三个横切维度（规格粒度/时间跨度/监督模式），并提出贯穿三级的统一问题——人类意图的保存。来源：Berkeley RDI 博客。**完整论证版本（38 页）已收录并编译：[[20260708-towards-autonomous-software-dev]]**（增量：框架适用边界、验证者失败机制 talk past/co-adapt、实证锚点、§5 对立观点）。证据等级：medium（框架级结构贡献 + 重量级作者群，但是立场论文而非实证研究，十个预测明确自称"前瞻而非必然"）。
 
 ## 编译摘要
 
