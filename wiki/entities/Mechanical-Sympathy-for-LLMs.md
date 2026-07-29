@@ -6,7 +6,7 @@ aliases:
   - LLM 机械同理心
 definition: "Martin Fowler (2026) 提出的概念——工程师应获取对 LLM 实际工作原理的经验性理解（而非推测未来能力），以便有效使用它们。源自 Martin Thompson 的 Mechanical Sympathy 概念：理解硬件实际行为以写出高性能代码"
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-07-29
 tags:
   - LLM
   - Software-Engineering
@@ -17,8 +17,10 @@ related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Harness-Engineering]]"
   - "[[AI-Capability-Gap]]"
+  - "[[Token-Supply-Chain]]"
 source_raw:
   - "[[20260706-martin-fowler-fragments]]"
+  - "[[20260728-openrouter-evaluate-llm-provider-performance]]"
 ---
 
 # Mechanical Sympathy for LLMs（LLM 机械同理心）

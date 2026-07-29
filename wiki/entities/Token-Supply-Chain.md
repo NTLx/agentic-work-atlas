@@ -6,7 +6,7 @@ aliases:
   - token 供应链管理
 definition: "将 token 像电力、物流和数据库一样编排的生产基础设施层，覆盖推理调度、KV cache 管理、成本路由、可观测性和治理，使 token 从聊天消耗品变成可控生产资料"
 created: 2026-05-29
-updated: 2026-07-27
+updated: 2026-07-29
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -26,6 +26,7 @@ source_raw:
   - "[[20260528-corporate-america-ai-rationing]]"
   - "[[20260606-the-minimill-of-ai]]"
   - "[[20260727-vectoral-token-relay-market]]"
+  - "[[20260728-openrouter-evaluate-llm-provider-performance]]"
 ---
 
 > [!definition] 定义
@@ -135,6 +136,28 @@ Tokenizer 差异导致隐性成本偏差 20-40%/prompt（roundtable 4人×2轮�
 **防御成本博弈**（一手实践清单，按攻击路径排序）：抬高进入成本（批量注册摩擦 + 新账号限额）→ 盯住钱（预付卡/虚拟卡、账单错配、试卡小额）→ 盯住行为（注册到首个 token 的时间、模型选择、prompt 相关性）→ 账号聚类（IP sybil、设备指纹）→ 消费异常告警 → 损害控制（消费锁、并发限制、in-flight 请求预算预留）→ **静默限速**（抓到滥用不给干净错误，避免教攻击者修信号）。作者总结："让攻击你的服务贵到数字算不过来，他们就会换更容易的目标"——这是 [[Cybersecurity-Proof-of-Work]] 成本方程的欺诈经济学版本（综合判断）。
 
 **证据警示**：量化主张（"数十亿 RMB 蒸馏产业链"等）为匿名论坛证词，无独立佐证；作者经营 AI gateway 公司，叙事立场与防欺诈产品方向一致。详见 [[20260727-vectoral-token-relay-market]]。
+
+## Provider 评估与路由策略（07-29 扩展）
+
+OpenRouter（2026-07）给出网关/代理层的工业方法论：**同一 model slug 在不同 provider 端点行为不同**——基础设施、量化、负载处理、路由默认值都改变结果。
+
+**四指标与 workload 适配**：
+
+| 指标 | 测量对象 | 适用 workload |
+|------|---------|--------------|
+| 延迟（TTFT） | 请求 → 首 token | 用户面 chat / agent / 流式 |
+| 吞吐 | 生成开始后的持续 tokens/sec | 批量生成 / 长文本 / 代码 |
+| 可用性 | 健康 / 错误率 / 故障期行为 | 生产应用 |
+| 量化 | 权重 serving 精度 | 质量敏感（推理 / 代码 / 长上下文） |
+
+**两条读法纪律**：
+
+- **读尾部不读均值**：p50 可以很强而 p99 很弱——均值隐藏尾部停顿，用户记住的是卡住的那次请求。chat 界面看 p90/p99 延迟，批量任务看持续输出速度
+- **查 serving 路径再怪模型**：量化是隐藏的质量变量——同一 slug 可被两家 provider 以不同精度 serving，风险梯度 fp16/bf16（低）→ fp8/int8（中）→ fp4/int4（更高）；tool-calling agent / 推理 / 代码编辑对静默质量损失容忍度低。这是 [[Mechanical-Sympathy-for-LLMs|机械同理心]] 的 serving 层操作化
+
+**评估 → 路由策略**：benchmark 排行榜只做候选短名单（六问：TTFT/输出速度是否分开报告、尾部还是均值、是否标明端点与 serving 设置、是否考虑量化、是否反映当前性能、是否匹配自己的 prompts）；最终用自己的 prompts 测量，结果固化为路由设置（sort / 百分位阈值 / quantizations 过滤 / ignore / fallbacks），而非硬编码 provider 名字。
+
+**与本节既有命题的拼合**："多模型定价透明性"（07-18）记录 tokenizer 差异 → `$/token × token 数` 双变量偏差（**计数侧**隐藏变量）；本扩展补上**质量侧**——同一模型、不同精度/基础设施 = 不同行为。两侧合起来构成模型消费的完整隐藏变量表。学术成本路由（RouteLLM/IPR）与工业路由手册互补覆盖同一命题。厂商定位提示：原文结论"用路由层别硬编码 provider"恰是 OpenRouter 产品目录，方法论可独立提取，结论参照激励结构审视（详见 [[20260728-openrouter-evaluate-llm-provider-performance]] 质疑节）。
 
 ## 关联概念
 
