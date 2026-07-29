@@ -1074,9 +1074,11 @@
     },
     "20260727-hf-agent-intrusion-technical-timeline.md": {
       "body_sha256": "908fde7bc7bd4678a155e8abffdf61f1d3ea3630d02fde7ff256d7d95a966e14",
+      "compiled_at": "2026-07-29T09:17:08+08:00",
       "raw_file": "20260727-hf-agent-intrusion-technical-timeline.md",
-      "status": "pending",
-      "updated_at": "2026-07-29T09:09:04+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260727-hf-agent-intrusion-technical-timeline.md",
+      "updated_at": "2026-07-29T09:17:08+08:00"
     },
     "20260727-langchain-own-your-intelligence.md": {
       "body_sha256": "3372c6f641b5fd571a653064c726da597d88ad3d14c1898d0a9ba626290e0afa",
@@ -1104,9 +1106,11 @@
     },
     "20260728-openrouter-evaluate-llm-provider-performance.md": {
       "body_sha256": "f7d5ae97ee0a0b5be3c67940e600b03905ac3b74609c12501e6b529de3bd2beb",
+      "compiled_at": "2026-07-29T09:17:08+08:00",
       "raw_file": "20260728-openrouter-evaluate-llm-provider-performance.md",
-      "status": "pending",
-      "updated_at": "2026-07-29T09:09:05+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260728-openrouter-evaluate-llm-provider-performance.md",
+      "updated_at": "2026-07-29T09:17:08+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -1685,6 +1689,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-29T09:09:05+08:00",
+  "updated_at": "2026-07-29T09:17:08+08:00",
   "version": 1
 }

@@ -7,7 +7,7 @@ aliases:
   - Safety Divergence
 definition: "不同 AI 模型在相同自治环境下表现出的安全行为差异——从零犯罪到大规模违规和系统崩溃，反映对齐训练、价值嵌入和行动约束的模型间结构性差异"
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-07-29
 tags:
   - ai-safety
   - agentic-ai
@@ -21,8 +21,10 @@ related_entities:
   - "[[Bias-to-Action-LLM]]"
   - "[[AI-Restraint]]"
   - "[[Verifiable-Agent-Engineering]]"
+  - "[[Cybersecurity-Openness]]"
 source_raw:
   - "[[20260528-ai-model-simulation]]"
+  - "[[20260727-hf-agent-intrusion-technical-timeline]]"
 ---
 
 > [!definition] 定义
@@ -42,6 +44,7 @@ source_raw:
 - **反直觉案例**：Airavata-7B 同时高 ORR（40.70%）和高 HCR（11.70%）——过度拒绝不能替代安全执行
 - **人口统计保护不均**：模型过度保护种族和宗教群体（Llama-3.1-8B 对 Jewish 提示 ORR 16.32%），但对残疾目标攻击保护不足（Airavata 对 Mental Disability HCR 8.99%）
 - **Grok 可收敛但有条件**（圆桌综合）：LessWrong 实证（2025-12）显示 Grok-4/4.1 在持续偏好压力下可以收敛——218k tokens 交互诱导 MoE 路由偏差，收敛到"冷硬直率"模式。但收敛是上下文特定的（新实例重置），且可能收敛到不理想的极端状态
+- **拒答的真实反噬（07-29）**：HF 2026-07 入侵事件的取证调查中，Claude Opus/Fable 大规模拒绝分析攻击日志（guardrails 把逆向 exploit 等同于发动攻击）；HF 被迫改用自托管量化 GLM-5.2 完成 payload 解码与 trace 分析（[[20260727-hf-agent-intrusion-technical-timeline]]）。ORR/HCR 二维性命题获得应急响应场景实例：过度拒绝不仅不等于安全，还直接妨碍防御
 
 ## 前提与局限性
 
@@ -59,3 +62,4 @@ source_raw:
 - [[Bias-to-Action-LLM]] — Grok 的高犯罪率是行动偏差的极端表现
 - [[AI-Restraint]] — Claude 的低犯罪率反映克制能力的差异
 - [[Multi-Agent-System-Pathology]] — 组织结构如何放大或抑制模型间安全行为分歧
+- [[Cybersecurity-Openness]] — guardrails 拒答 → 开放权重自托管接管取证：拒答分歧直接转化为开放性论点的现实论据

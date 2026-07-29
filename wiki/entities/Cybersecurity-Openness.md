@@ -7,7 +7,7 @@ aliases:
   - Open Security
 definition: "开放生态系统在网络安全防御中的结构性优势——分布式检测/验证/协调/补丁比单一供应商集中式方案更具韧性"
 created: 2026-05-11
-updated: 2026-06-16
+updated: 2026-07-29
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -18,8 +18,10 @@ related_entities:
   - "[[Mythos]]"
   - "[[Cybersecurity-Proof-of-Work]]"
   - "[[Agentic-Engineering]]"
+  - "[[Model-Safety-Divergence]]"
 source_raw:
   - "[[AI and the Future of Cybersecurity Why Openness Matters]]"
+  - "[[20260727-hf-agent-intrusion-technical-timeline]]"
 ---
 
 # Cybersecurity-Openness（网络安全开放性）
@@ -33,6 +35,7 @@ source_raw:
 - **能力锯齿状分布**: AI 网络安全能力不随模型大小或通用基准平滑扩展，系统嵌入方式比模型本身更重要
 - **逆向工程威胁**: AI 工具越来越能辅助逆向工程 stripped binaries，闭源固件/嵌入式代码（不再维护）构成巨大攻击面
 - **AI 加速漏洞生产**: 错误激励下（按功能量评估工程师），AI 编码工具比传统开发引入更多漏洞到闭源代码库
+- **提出者自家实践的自我验证（07-29）**: HF 自己的 2026-07 入侵事件响应中，商业模型 guardrails 拒绝协助取证分析（把逆向 exploit 等同于发动攻击），HF 安全团队改用自托管量化 GLM-5.2（开放权重）完成 payload 解码与 trace 分析，攻击数据留在本地——开放性论点（分布式检测/验证 + 不受单一供应商约束）在提出者自家事件中兑现（[[20260727-hf-agent-intrusion-technical-timeline]]；拒答机制见 [[Model-Safety-Divergence]]）
 
 ## 前提与局限性
 

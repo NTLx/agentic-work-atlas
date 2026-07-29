@@ -7,7 +7,7 @@ aliases:
   - Security as Proof of Work
 definition: "把网络安全理解为攻防双方投入 token 预算搜索漏洞的成本博弈"
 created: 2026-04-21
-updated: 2026-05-25
+updated: 2026-07-29
 tags:
   - cybersecurity
   - ai-security
@@ -22,6 +22,7 @@ related_entities:
   - '[[Verifiable-Agent-Engineering]]'
 source_raw:
   - "[[20260414-cybersecurity-proof-of-work]]"
+  - "[[20260727-hf-agent-intrusion-technical-timeline]]"
 ---
 
 # Cybersecurity Proof of Work
@@ -70,3 +71,4 @@ source_raw:
 1. **开源软件仍然重要**: 企业投入 tokens 审计 OSS，比自建更安全（Linus's law 扩展）
 2. **Agentic Coding 三阶段**: 开发 → 代码审查 → 安全硬化（money 是硬化阶段瓶颈）
 3. **代码成本**: 代码便宜，除非需要安全；安全成本由漏洞市场价值决定
+4. **机器速度攻击使普通弱点更昂贵**（HF 2026-07 入侵，[[20260727-hf-agent-intrusion-technical-timeline]]）：17,600 个攻击动作，成功路径藏在数千条失败路径生成的噪声里；个别漏洞全部是常规漏洞（人类攻击者同样能发现），量级改变的是防御者的关联成本——成本方程的防御侧叙事
