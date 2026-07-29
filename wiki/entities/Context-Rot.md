@@ -23,6 +23,7 @@ source_raw:
   - "[[20260708-bun-in-rust]]"
   - "[[20260708-agent-loop-bytebytego]]"
   - "[[20260708-vercel-agent]]"
+  - "[[20260728-fowler-orchestrator-tax]]"
 ---
 
 # Context Rot（上下文腐烂）
@@ -199,3 +200,4 @@ Context Rot 不是长时任务退化的唯一机制。**Causality Gap**（检索
 - [[Ralph-Loops]] - 长周期 loop 必须内建 anti-rot 机制
 - [[Agent-Loops]] - 分层验证(L3 fresh reviewer)是 anti-rot 的关键层
 - [[Human-Governor-Agent-Operator]] - Governor 也 rot → 需要 rot-proof 接口
+- [[Orchestrators-Tax]] - 从业者叙事："context 污染每轮收租"；cognitive locality = 第五约束（最优分解粒度）的实践表述；subagent 隔离 = 隔离容器模式的设计意图

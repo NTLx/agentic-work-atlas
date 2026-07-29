@@ -5,7 +5,7 @@ aliases:
   - Harness Engineering
 definition: "工程团队的首要工作不再是编写代码，而是构建让 AI Agent 能有效工作的系统——设计 SOP、测试基础设施、集成系统、分诊系统，使 Agent 可检查、可验证、可修改。Addy Osmani (2026) 强调：**Agent = Model + Harness**，失效通常不是模型问题，而是配置（Harness）问题。"
 created: 2026-04-16
-updated: 2026-07-28
+updated: 2026-07-29
 tags:
   - AI-Agent
   - Software-Engineering
@@ -43,6 +43,7 @@ source_raw:
   - '[[20260702-anthropic-harnesses-long-running-agents]]'
   - '[[20260706-martin-fowler-fragments]]'
   - '[[20260727-github-harness-is-all-you-need]]'
+  - '[[20260728-fowler-orchestrator-tax]]'
 ---
 
 # Harness Engineering（驾驭工程）
@@ -172,6 +173,7 @@ Fowler 的判断：对 harness 的关注是否会被模型改进淘汰？"attent
 - [[Deterministic-Retrieval]] - 针对特定领域（如科学、医疗）的 Harness 关键感知层
 - [[HaaS-Harness-as-a-Service]] - Harness 工程的交付范式转向
 - [[Mechanical-Sympathy-for-LLMs]] - 对 LLM 工作机制的经验性理解，是构建精准 Harness 的认知前提
+- [[Orchestrators-Tax]] - 第四种 harness：编排过程本身（前馈规则 + 反馈自评 + 人类掌舵更新 = 棘轮效应的微观实例）
 
 ## 来源
 

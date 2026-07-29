@@ -5,7 +5,7 @@ aliases:
   - Agent Orchestration
 definition: "管理多个 AI Agent 协作的核心架构，负责任务拆解、进度监控、错误处理和结果汇总"
 created: 2026-04-09
-updated: 2026-06-22
+updated: 2026-07-29
 tags:
   - AI-Agent
   - OpenClaw
@@ -27,6 +27,7 @@ source_raw:
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
   - "[[20260620-l8-principal-agentic-workflow]]"
+  - "[[20260728-fowler-orchestrator-tax]]"
 ---
 
 # Agent Orchestration
@@ -112,6 +113,7 @@ Elvis 的 Agent Swarm 系统：
 3. **协议级通信**：不是群聊问题，是协议问题——设计三态协议防止 ACK storm
 4. **自主进化**：编排者从失败中学习，写更好的 prompts
 5. **可审计编排**：编排者可以隐藏实现细节，但不应隐藏影响链条；谁改写输入、谁压制分歧、谁拥有最终写入权，都应能追踪。
+6. **保护编排者工作记忆**（[[Orchestrators-Tax]]）：subagent 的真正价值不是并行省时，而是把噪声推理挡在 orchestrator 上下文之外——token 花一次就完，context 污染此后每轮收租。任务按 cognitive locality（所需知识）切分而非按任务列表切分；文件所有权重叠是合并信号，不是 spawn 信号。
 
 ## 关键数据点
 
@@ -143,5 +145,6 @@ Elvis 的 Agent Swarm 系统：
 - [[Multi-Agent-System-Pathology]] — 多 Agent 编排成功后暴露的组织病理
 - [[Captain-Mindset]] — First Mate 作为 meta-orchestrator 的船长编排模式
 - [[Kun-Chen]] — First Mate / Treehouse 并行 worktree 编排工具链
+- [[Orchestrators-Tax]] — 编排核心问题从"跑几个 agent"转为"什么配进入 orchestrator 上下文"
 
 ## 来源

@@ -8,7 +8,7 @@ aliases:
   - 架构上下文文档
 definition: "让 Claude Code 等编码 Agent 在项目中持续继承架构决策、业务规则、范围边界和工作流约束的 Markdown 上下文合约"
 created: 2026-05-13
-updated: 2026-05-29
+updated: 2026-07-29
 tags:
   - AI-Agent
   - documentation
@@ -26,12 +26,14 @@ related_entities:
   - "[[Technical-Debt-Avoidance]]"
   - "[[Three-Layer-Agent-Memory]]"
   - "[[Capability-Map]]"
+  - "[[Orchestrators-Tax]]"
 source_raw:
   - "[[The-Founders-Playbook-05062026_v3]]"
   - "[[20260127-claude-coding-notes]]"
   - "[[The Anatomy of an Agent Harness]]"
   - "[[20260413-llm-wiki]]"
   - "[[20260528-agentic-ai-2026-landscape]]"
+  - "[[20260728-fowler-orchestrator-tax]]"
 ---
 
 # CLAUDE.md
