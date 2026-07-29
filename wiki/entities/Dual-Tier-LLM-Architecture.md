@@ -6,7 +6,7 @@ aliases:
   - 分层模型路由
 definition: "按任务复杂度在小模型与大模型之间路由请求的 LLM 系统架构"
 created: 2026-05-10
-updated: 2026-05-25
+updated: 2026-07-29
 tags:
   - AI-Architecture
   - Multi-Agent
@@ -22,6 +22,7 @@ related_entities:
 source_raw:
   - "[[OncoAgent A Dual-Tier Multi-Agent Framework for Privacy-Preserving Oncology Clinical Decision Support]]"
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
+  - "[[20260728-bytebytego-llm-search-integration-depth]]"
 evidence_level: medium
 claim_type: mixed
 ---
@@ -51,6 +52,19 @@ claim_type: mixed
 | HITL | 高风险或置信度不足 | 保留临床责任和最终判断 | 吞吐下降，需要专业人员介入 |
 
 这个模式可以迁移到企业 AI：客服、合规审查、工程支持和采购分析都可以先由复杂度评分器分流，而不是默认把所有请求交给最大模型。
+
+## 工业案例：Instacart head/tail 切分（07-29 扩展）
+
+Instacart 的搜索查询理解层（[[20260728-bytebytego-llm-search-integration-depth]]）是双层架构的第三个案例，且**路由键不同**——不是任务复杂度评分，而是流量分布：
+
+| 层 | 路由依据 | 执行路径 | 特征 |
+|----|---------|---------|------|
+| 头部 | 高频查询（见过的问题） | 离线 RAG + 缓存管线 | 延迟容忍、深度 context engineering |
+| 尾部 | 冷启动查询（底部 2%） | 实时微调 Llama-3-8B（adapter merging + H100 + autoscaling，<300ms） | 低延迟、领域知识烧进权重 |
+
+效果：query rewrite 覆盖率 50%→95%+（精度 90%+）；尾部 scroll depth -6%、投诉减半。"预计算只对会重复的查询划算"——这正是按流量分布路由的经济学。
+
+至此双层路由的键有三种形态：**任务复杂度**（OncoAgent 评分器）、**风险等级**（OncoAgent HITL 门控）、**流量分布**（Instacart head/tail）。共同结构：把不同经济性的请求放进不同执行路径，而非默认所有请求走同一条最贵的路。
 
 ## 前提与局限性
 
