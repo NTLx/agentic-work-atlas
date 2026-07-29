@@ -9,7 +9,7 @@ aliases:
   - Organization Brain
 definition: "让组织对 Agent 可读的共享上下文层——folder 树结构 + markdown 文件，Agent 可搜索、检索和写回。通过 Capture → Curate → Store → Execute → Experience 循环持续进化，让 Agent 拥有对组织的 20/20 视野。核心指标：Agent 能否在几分钟内产出基于真实数据的个性化提案。"
 created: 2026-06-23
-updated: 2026-06-23
+updated: 2026-07-29
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,8 +25,10 @@ related_entities:
   - "[[Skill-Chains]]"
   - "[[Agent-Harness]]"
   - "[[AI-Native-Engineering-Org]]"
+  - "[[Agentic-Analytics]]"
 source_raw:
   - "[[20260608-become-ai-native-org]]"
+  - "[[20260727-langchain-agent-data-stack]]"
 ---
 
 > [!definition] 定义
@@ -54,6 +56,8 @@ source_raw:
 这些不是"文件坟墓中无人查看的文档"，而是可复用知识。Brain 将这些 traces 转化为 lessons、artifacts 和更新后的 skills。
 
 > **关键约束**: 不能让 Agent 的未审核产出直接回流进 Capture。必须经过人类判断（Experience 层），确保只有"好"的 context 进入系统。
+
+**跨域印证（07-29）**：LangChain 数据栈的 endorsement 治理（[[20260727-langchain-agent-data-stack]]）是同一约束在数据域的实例——只有数据团队可标记 trusted 资产、endorsed 资产变更需评审，且"if everything is endorsed, the signal stops being useful"（信任信号与上下文注意力同为零和资源，通胀即失效）。两源独立收敛于同一回流纪律：可信 context 必须经人类守门，且守门信号本身必须稀缺。
 
 ## 关键数据点
 

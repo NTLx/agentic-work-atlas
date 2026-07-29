@@ -7,7 +7,7 @@ aliases:
   - 代理式数据分析
 definition: "用 LLM/Agent 承担自助数据分析入口，但可靠性来自 canonical datasets、semantic layer、domain skills、评测、provenance 和 correction harvesting 的系统"
 created: 2026-06-05
-updated: 2026-06-15
+updated: 2026-07-29
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -20,8 +20,11 @@ related_entities:
   - "[[Machine-Readable-Processes]]"
   - "[[Knowledge-Compilation]]"
   - "[[Thin-Harness-Fat-Skills]]"
+  - "[[Captain-Mindset]]"
+  - "[[Company-Brain]]"
 source_raw:
   - "[[20260603-anthropic-self-service-data-analytics]]"
+  - "[[20260727-langchain-agent-data-stack]]"
 ---
 
 # Agentic Analytics（代理式数据分析）
@@ -68,6 +71,23 @@ Agentic Analytics 说明 [[Context-Engineering]] 不是“把更多资料塞进�
 - Semantic layer 是指标和实体的稳定入口。
 - Skill 是 domain-specific 操作手册。
 - Eval 是判断 skill 是否仍然可信的回归测试。
+
+## LangChain 实现案例：组件框架双源互证（07-29 扩展）
+
+LangChain 数据团队的 agent-first 数据栈（2026-07，[[20260727-langchain-agent-data-stack]]）与本实体的 Anthropic 案例**组件一一对应**——两家公司、不同工具链（Claude + 内部工具 vs Hex + dbt），同一架构：
+
+| Anthropic 组件 | LangChain 实现 |
+|---------------|---------------|
+| Canonical datasets | dbt 定义（列级业务上下文：允许值 + 解释指引 + 默认过滤规则） |
+| Semantic layer | 语义模型（ARR / pipeline / customer health 等指标的稳定入口） |
+| Domain skills | Workspace guides（纯语言业务流程，git 版本化 = skill 的 PR/CI 机制） |
+| Evals | Evals（规划中：变更 → 测试 → 推广，context 管理软件开发化） |
+| Provenance footer | Endorsements + 来源透明（agent 说明用了哪些 source） |
+| Correction harvesting | Observability 反馈回路（重复问题 → dashboard；metric 挣扎 → 语义定义；用错 source → 调整 endorsement） |
+
+**新数据点**：data agent 承接 **40 倍于 3 人数据团队**的请求量；过去 30 天近 100% provisioned 用户（公司三分之一）使用，人均 23 次对话/月；**endorsement 稀缺性纪律——"if everything is endorsed, the signal stops being useful"**（只有数据团队可标记 + 变更需评审）；数据团队角色从"回答每个问题"转为"改进系统"，到达的问题变得"more complex and higher leverage"（[[Captain-Mindset]] 的数据域版本）。
+
+**警示**：40x 是对话量 vs 团队可处理人力之比（含被抑制需求的释放），无准确率指标，样本为技术素养高的 AI 公司员工。但组件框架的**跨组织稳定性**（两家公司独立收敛于同一架构）本身是强信号——比任何单一数字更值得信任。
 
 ## 前提与局限性
 
