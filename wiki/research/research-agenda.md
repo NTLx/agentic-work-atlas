@@ -130,6 +130,7 @@ related_entities:
 | **P2** | **METR 基准饱和** 🆕 | ⬜ 未启动 | 择要 clip 方法论内核（具体模型名属传闻，不采信） |
 | **P2** | **Cursor 群体经济学** 🆕 | 🔄 07-23 新例：Cursor Router 自动路由成本降 60% | 择要 clip Agent Swarms 博客 + Router 发布 |
 | **P2** | **形式门禁 vs 认知质量** 🆕（07-28 盲区扫描） | ⬜ 未启动 | 盲区："门过了=东西好了"——lint 只测形式合规，编译的认知质量（浓缩深度/质疑真伪/对标明度）无测量。clip《指标陷阱》(Muller) 度量替代理论 + Pirsig 质量论；研究：编译质量抽检机制设计（异构 agent 抽检，接 Berkeley 独立 verifier 命题） |
+| **P2** | **偏差信号化机制** 🆕（07-29 盲区扫描 #2） | ⬜ 未启动 | 盲区："偏差是事故不是信号"——公众号样式错乱 ×2 仅作重做处理，未升级查规范/管线；同类：编译产物缺标准三章节每次靠 lint 修。clip《清单革命》(Gawande) 无知之错/无能之错区分 + 棘轮制度化；研究：同类偏差二次出现自动升级机制（公众号管线 + 编译模板预置检查） |
 
 > 07-21 清理：9 项已完成 source 目标删除（Output 断层/Agent Identity/Token FinOps/Context Engineering/AI-Native Testing/AI Governance Regimes/中国大厂路线/具身 AI/多模型策略），git 历史可溯。
 
