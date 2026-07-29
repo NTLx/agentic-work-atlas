@@ -1080,6 +1080,12 @@
       "summary_path": "wiki/sources/20260727-hf-agent-intrusion-technical-timeline.md",
       "updated_at": "2026-07-29T09:17:08+08:00"
     },
+    "20260727-langchain-agent-data-stack.md": {
+      "body_sha256": "c62de7a9cd7b3b017490ee367416383c3475a8ace5bb56767c9707f6dcee94b5",
+      "raw_file": "20260727-langchain-agent-data-stack.md",
+      "status": "pending",
+      "updated_at": "2026-07-29T15:19:30+08:00"
+    },
     "20260727-langchain-own-your-intelligence.md": {
       "body_sha256": "3372c6f641b5fd571a653064c726da597d88ad3d14c1898d0a9ba626290e0afa",
       "compiled_at": "2026-07-27T12:29:14+08:00",
@@ -1103,6 +1109,18 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260727-vectoral-token-relay-market.md",
       "updated_at": "2026-07-27T12:31:09+08:00"
+    },
+    "20260728-bytebytego-llm-search-integration-depth.md": {
+      "body_sha256": "3a0ff26ebfb0799c688e620adec457a4b935793f79aaebc9e8c14845fea23714",
+      "raw_file": "20260728-bytebytego-llm-search-integration-depth.md",
+      "status": "pending",
+      "updated_at": "2026-07-29T15:19:30+08:00"
+    },
+    "20260728-fowler-orchestrator-tax.md": {
+      "body_sha256": "4b62d4f3b22e19c329f1530f94e56dc3157827ec11ff5ae1247ac07abb37f51c",
+      "raw_file": "20260728-fowler-orchestrator-tax.md",
+      "status": "pending",
+      "updated_at": "2026-07-29T15:19:30+08:00"
     },
     "20260728-openrouter-evaluate-llm-provider-performance.md": {
       "body_sha256": "f7d5ae97ee0a0b5be3c67940e600b03905ac3b74609c12501e6b529de3bd2beb",
@@ -1689,6 +1707,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-29T09:17:08+08:00",
+  "updated_at": "2026-07-29T15:19:30+08:00",
   "version": 1
 }
