@@ -6,7 +6,7 @@ aliases:
   - 可磨性vs可验证性
 definition: "AI成功的关键因素区分：可磨性（问题可容器化、并行化、自动化）比可验证性（问题有明确正确答案）更重要"
 created: 2026-07-01
-updated: 2026-07-27
+updated: 2026-07-29
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -20,6 +20,7 @@ related_entities:
 source_raw:
   - '[[20260701-grant-sanderson-ai-math-future]]'
   - '[[20260719-if-ai-is-so-great-why-isnt-it-working]]'
+  - '[[20260728-openai-scientific-computing-field-report.pdf]]'
 ---
 
 # Grindability vs Verifiability
@@ -75,6 +76,21 @@ Grant Sanderson指出，AI在数学中的成功依赖于**可磨性**，而非**
 - **网站交互**：有机器人检测，难以并行化
 - **商业决策**：每天都在变化，难以容器化
 - **市场交易**：需要与真实世界交互，难以并行化
+
+## 域边界：科学域的可验证性约束（07-29）
+
+OpenAI 科学计算 field report（[[20260728-openai-scientific-computing-field-report.pdf]]）给出本命题的域边界：在科学计算（微妙数值正确性攸关科学结论）中，**可验证性成为绑定约束**——报告结论句即 "the current bottleneck remains verification and validation"。
+
+更重要的是可验证性直接决定可达到的自主程度：
+
+| 案例 | 可验证性 | 可达自主程度 |
+|------|---------|-------------|
+| HI.SIM（字节级一致验收） | 极强 | 初始 prompt 后近无人类介入 |
+| MHCflurry（数值容差一致） | 强 | 人类定义容差并核查 |
+| bayesm（新统计功能） | 弱（后验摘要一致不够） | 密集人类诊断（收敛诊断 + 模拟校准 + 与原实现对比） |
+| FrontierSWE from-scratch 任务 | 规格难明 | agent 五项无一完成 |
+
+**命题精化**（综合判断）：**可磨性决定速度上限，可验证性决定自主上限**。两命题不矛盾——数学域（Grant Sanderson）可验证性高（形式证明可查），故可磨性主导；科学域可验证性低（微妙数值正确性需人类裁决），故可验证性成为瓶颈。哪个因素主导，看问题本身的可验证性剖面。
 
 ## 关键数据点
 

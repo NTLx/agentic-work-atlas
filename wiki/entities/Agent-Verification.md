@@ -29,6 +29,8 @@ source_raw:
   - "[[20260727-github-harness-is-all-you-need]]"
   - "[[20260726-berkeley-auto-software-dev]]"
   - "[[20260708-towards-autonomous-software-dev.pdf]]"
+  - "[[20260727-hf-agent-intrusion-technical-timeline]]"
+  - "[[20260728-openai-scientific-computing-field-report.pdf]]"
 ---
 
 > [!definition] 定义
@@ -54,6 +56,17 @@ source_raw:
 自治 agent 会同时生成实现、测试、文档和理由——创造跨越所有"互相验证的产物"的**关联失败**。因此验证软件产物不再足够，还必须审计产出它的 agent（规格、技能、记忆、决策溯源、执行轨迹）。独立验证者 agent 只有在具备**真正独立的目标**、可信的评估机制、有原则的分歧解决协议时才有效。
 
 **两侧配对的关键张力**：跨模型家族评审只是**训练数据级独立**——完整论文给出两个具体失败机制：verifier 与 generator 可能 **talk past each other**（互不理解、无法收敛），或 **co-adapt**（共同适应，直到测试仅仅背书实现的 bug）。这正是"不同模型家族不同盲点"不够的原因：Berkeley 要求的是**目标级独立**。Rubber duck 降低了自洽盲区风险，但未满足完全独立验证的条件——自治程度越高（[[Software-Development-Autonomy-Levels|Level II/III]]），这一缺口越致命。
+
+## 科学域验证：四个细化命题（07-29 编译新增）
+
+OpenAI 科学计算 field report（[[20260728-openai-scientific-computing-field-report.pdf]] 八案一手案例）在最严格正确性要求下（微妙数值错误即改变科学结论）压力测试了验证命题：
+
+1. **plausible ≠ correct**：编译通过 + "看起来合理"的输出只是极弱证据。实际观察到的微妙错误：被改的数值默认值、不当的内存分配/流式行为、静默跳过的 case——"输出貌似合理但微妙错误"
+2. **验证 harness 自身是错误来源**：HelixForge 中，下采样导致的假阳性 strand-balance 审计让 agent 去修改本来正确的 GPU 实现——人类审查需同时在两层：重写本身 + 验证 harness（后者常由 agent 辅助设计）
+3. **真实数据不可替代**：RustQC 边缘 case 只在真实公开测序数据的真实规模显现（最小数据集不够）；hifiasm 在真实人类 reads 上的加速小于合成 benchmark——性能增益随数据集衰减
+4. **技术正确性 vs 概念正确性**：agent 能提出并评估优化假设，但"下一步把优化压力投向哪里、尝试哪个高层策略"仍需人类反复决定——人类判断同时保证 technical correctness 与 conceptual correctness
+
+佐证：agent "出错时照样表达自信"（七案贡献者均为成功的主要裁决者）；HI.SIM 是唯一近自主案例，恰因其验收目标是字节级一致（可验证性极强）——自主程度由可验证性决定，见 [[Grindability-vs-Verifiability]] 域边界节。
 
 ## 前提与局限性
 

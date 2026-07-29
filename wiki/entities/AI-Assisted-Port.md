@@ -7,7 +7,7 @@ aliases:
   - AI 辅助移植
 definition: "利用 AI Agent 批量执行语言间代码重写并辅以对抗审查的工程范式"
 created: 2026-07-13
-updated: 2026-07-13
+updated: 2026-07-29
 tags:
   - agentic-engineering
   - ai-assisted-development
@@ -19,6 +19,7 @@ related_entities:
   - "[[Agentic-Engineering]]"
 source_raw:
   - "[[20260708-bun-in-rust.md]]"
+  - "[[20260728-openai-scientific-computing-field-report.pdf]]"
 ---
 
 # AI-Assisted Port
@@ -115,6 +116,28 @@ AI 辅助移植的生成条件：
 - **成本优化**: 通过模型蒸馏、缓存和批处理降低 API 费用
 - **迁移到其他语言对**: 验证该范式在 C++/Rust、Java/Kotlin、Python/TypeScript 等语言对上的适用性
 
+## 科学域多案例验证与 stewardship 维度（07-29 扩展）
+
+OpenAI 科学计算 field report（[[20260728-openai-scientific-computing-field-report.pdf]]，8 个项目一手案例，含工具原作者参与撰写）为本实体补上多个语言迁移/重写案例，并引入 Bun 案例缺失的**治理维度**：
+
+| 案例 | 迁移内容 | 规模 | 验收 |
+|------|---------|------|------|
+| MHCflurry | TensorFlow/Keras → PyTorch | 近 10,000 行 / ~130 文件 | 已发布权重原样加载、预测量容差内一致（发布为 2.2.0） |
+| rustar-aligner | STAR 的 C/C++ → Rust（从零重写） | 20,000+ 行 | 与 STAR 逐 read 比对；90% parity 之后需逐条 read 在两套实现间 trace |
+| RustQC | 传统 QC 工具 → Rust | 包级 | 186M reads 14分54秒 vs 原工具串行 15小时34分 |
+| FastQC | Java → Rust（双轨） | 包级 | 先重写为 FastQC-Rust，再把性能改进移植回上游 Java 原版 |
+| cyvcf2 | 构建/打包现代化 | 构建系统 | 并入上游 |
+
+**多案例意义**：Bun 验证"范式可行"（单一大规模案例），这五例验证"范式普适"——模式在万行级、两万行级、以及微妙数值正确性攸关的科学域都成立（RustQC/hifiasm 的边缘 case 只在真实规模显现）。
+
+**stewardship：新的绑定约束**。Bun 有明确商业 owner，不存在治理问题；科学工具所有权开放，而实现成本降低同时使"大量生产相似重写"变得容易——碎片化用户、稀释专家注意力：
+
+> There is a serious risk that this diffusion of attention will result in ecosystems of software rewrites where no one rewrite is actually validated to an extent that permits real-world usage, even if concentration of efforts into a single project would have been able to produce a usable end product.
+
+三种治理路径：并入上游（cyvcf2、MHCflurry）；双轨（FastQC：Rust 重写 + 改进移植回上游）；社区接管（rustar-aligner → scverse consortium + nf-core 集成，使未来支持不依赖单一贡献者）。与 maintainer 的沟通须**早于**重写完成——兼容性/许可/署名/发布后维护不是行政细节，而是"原型重写能否长成广泛使用的代码库"的决定条件。
+
+**经济粗估（三通道，原文明示 illustrative）**：全量 RNA-seq QC 采用 RustQC 年省约 1.2–3.7M CPU 小时；NumPy 量级维护年省约 650 maintainer-小时（`$49k–98k`）；新包固定成本降低使原本不可行的工具成为可能。原文总结：经济机会是稀缺专家努力从实现向规格/验证/治理的**再分配**（reallocation），不是净增。
+
 ## 关键数据点
 
 - 64 并发 AI 实例，4 worktree，11 天完成
@@ -131,7 +154,7 @@ AI 辅助移植的生成条件：
 - 前提：目标语言具备编译器级质量保证
 - 局限：不适用于需要语义重构的重写场景
 - 局限：结果高度依赖特定模型能力，版本更新后流程未必可复现
-- 证据强度：当前仅有一个大规模案例（Bun），缺乏多案例验证
+- 证据强度：Bun 单一大规模案例 + OpenAI 科学计算 field report 五例迁移/重写（07-29 补充），后者为 retrospective 定性样本；stewardship 维度为科学域特有（Bun 有商业 owner，无此问题）
 
 ## 关联概念
 
@@ -144,3 +167,4 @@ AI 辅助移植的生成条件：
 ## 来源
 
 - [[20260708-bun-in-rust.md]]
+- [[20260728-openai-scientific-computing-field-report.pdf]]

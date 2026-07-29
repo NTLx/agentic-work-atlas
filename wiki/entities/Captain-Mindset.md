@@ -23,6 +23,7 @@ related_entities:
 source_raw:
   - "[[20260620-l8-principal-agentic-workflow]]"
   - "[[20260608-become-ai-native-org]]"
+  - "[[20260728-openai-scientific-computing-field-report.pdf]]"
 ---
 
 > [!definition] 定义
@@ -52,6 +53,7 @@ Kun Chen (2026) 描述的船长时间分配：
 - 当 First Mate 接管编排后，作者开始"run out of ideas for what to ask"——瓶颈从执行转移到战略
 - 低风险变更不看 diff，因为管线已覆盖人类能发现的问题
 - Engineering Director 类比：director 不审 PR，通过文化和流程保证质量
+- **第三例角色转型（科学域，07-29）**：OpenAI 科学计算 field report（[[20260728-openai-scientific-computing-field-report.pdf]]）中研究者"from implementation to verification and orchestration"——定义建什么、定义如何测量正确性、决定何时发布，"researchers remain in control of the scientific direction and quality bar"。与 sailor→captain 同构：人保留方向与质量标准，agent 提供速度（Brent Pedersen：go far in science 仍需 expert guidance, understanding, taste, and care）
 
 ## 前提与局限性
 
