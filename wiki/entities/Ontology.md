@@ -7,7 +7,7 @@ aliases:
   - 本体论
 definition: "把业务概念、关系和规则形式化为机器可读语义层，用来约束 Agent 对企业事实的解释与推理"
 created: 2026-04-20
-updated: 2026-06-13
+updated: 2026-07-30
 tags:
   - Enterprise-AI
 evidence_level: high
@@ -17,12 +17,15 @@ related_entities:
   - '[[Knowledge-Graph]]'
   - '[[Enterprise-Ontology-Application]]'
   - '[[UModel]]'
+  - '[[Decision-Centric-Architecture]]'
 source_raw:
   - '[[20260420-ontology-enterprise-ai-agent]]'
   - '[[20260420-build-first-business-ontology]]'
   - '[[20260420-ontology-meets-agent-case-study]]'
   - '[[20260613-ontology-for-agent-optimization]]'
   - '[[20260613-ontology-tokenmaxxing]]'
+  - '[[20260730-palantir-ontology-connecting-agents-to-decisions]]'
+  - '[[20260730-palantir-industry-ai-unified-namespace]]'
 ---
 
 # Ontology（本体）
@@ -41,6 +44,8 @@ source_raw:
 - **Token 效率价值**：Agentic 编程的 Token 消耗 85-99% 来自 Input Token，其中依赖探索（追踪实体间关系）是最具结构性的消耗源。Ontology 把"在文本里推断关系"变成"在图谱上查询关系"，Codebase-Memory（arXiv:2603.27277）验证有图谱时 token 消耗压缩 10 倍。
 - **运维领域实证**：阿里云 [[UModel]] 在运维场景中实现从"面向数据"到"面向对象"的转变，告警时直接定位实体并沿关系链聚合关联数据，避免多轮元数据查询和字段映射推断的 Token 开销。
 - **长期价值判断**：代码场景的本体价值可能被模型内化（代码是预训练主战场），但运维等企业级领域因私有数据、关系推理本质和高准确率要求，本体价值不会被模型吃掉。Palantir 市值 3000 亿+美金是对"企业 Ontology"能力的资本市场定价。
+- **决策中心定位**（2026-04 Palantir 官方架构文）：Palantir 把 Ontology 定位为"决策操作系统"而非数据库升级——数据架构只描述数据，Ontology 进一步建模决策（上下文、候选选项、下游影响）与行动（"动词"），并自动记录 end-to-end decision lineage 作为 agentic memory 与 fine-tuning 的燃料。详见 [[Decision-Centric-Architecture]]。⚠️ vendor 立场，机制可验证、定位表述需打折。
+- **与 UNS 的层次关系**：制造业场景中 Palantir 把 Unified Namespace（ISA-95 层级 + Sparkplug B 命名）定位为纯数据层，Ontology 是其上叠加 logic + action 的决策层——数据命名统一（UNS/[[UModel]]）是本体的前置条件而非目标。
 
 ## 何时值得使用
 

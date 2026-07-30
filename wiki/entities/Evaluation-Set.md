@@ -7,7 +7,7 @@ aliases:
   - AI 评测集
 definition: "把真实业务判断、边界案例和验收规则显式化为可复用测试样本，用来评估、迭代和迁移 AI 系统行为的关键资产"
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-07-30
 tags:
   - AI-evaluation
   - AI-deployment
@@ -21,9 +21,12 @@ related_entities:
   - "[[Hardware-Sovereignty]]"
   - "[[Distributional-Alignment]]"
   - "[[Specialized-Small-Models]]"
+  - "[[Transparent-Tool-Handoff]]"
 source_raw:
   - "[[The Return of the Deployment Company]]"
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
+  - "[[20260730-palantir-responsible-ai-evals-prototype-to-production]]"
+  - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
 ---
 
 # Evaluation Set（评测集）
@@ -38,6 +41,21 @@ source_raw:
 - 文章建议企业在签 FDE 合同时明确评测集 IP、合同终止后的删除或移交、导出格式、是否可被供应商用于同业客户。
 - 在 on-prem 或内部能力建设场景中，评测集、提示配置和交互日志留在企业内部，是保持数据主权和模型迁移能力的基础。
 - DharmaOCR 案例说明，评测集也是模型采购的判别器：只有在真实任务 benchmark 上比较质量、成本和稳定性，企业才能发现专门化小模型是否优于更大的通用模型。
+
+## 运行时生命周期：评测集作为迭代引擎
+
+Palantir AIP Evals 文（2024-10）把评测集从"资产"升级为"迭代引擎"，给出单元测试范式的完整生命周期：
+
+1. **构建 Test Bench**：用 ontology 历史数据生成 Object Set-backed Test Cases（如用专家标注的历史召回决策作 ground truth）。
+2. **定义 Evaluators**：内置 no-code 比较器（如 Exact Boolean Match）/ 自定义 Python/TypeScript / LLM-as-judge。
+3. **重复运行**：每个 test case 默认跑 3 次以应对 LLM 非确定性。
+4. **Drill-down 迭代**：aggregate 指标定位失败案例 → 检查 inputs/intermediate outputs/final response → 三种修复路径（改 prompt / 补数据 / 加 tool handoff）→ re-run 防回归。
+
+示范曲线：产品召回系统准确率 41.3% → 修 prompt（补充 expert review 触发条件）→ 93.3% → 剩余失败定位为 LLM 数学错误（1.865 vs 正确 1.864）→ handoff 给 Calculator tool（[[Transparent-Tool-Handoff]]）→ 通过。
+
+Anthropic 产品团队的 "evals are the new PRDs"（[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]）从 PM 工作流侧确认同一趋势：用户反馈 → 读失败轨迹 → 凝结为 eval set → 可度量改进，evals 取代 PRD 承担需求定义功能。两条线索（平台基础设施视角 + PM 工作流视角）互为验证。
+
+⚠️ 边界：ground truth 来自人类历史决策时，evals 只能收敛到人类历史判断，不能超越它；3x 重复是朴素处理，pass@k 阈值与分布偏差校正才是真正的工程难点（参见 [[Evaluator-Miscalibration]]）。
 
 ## 前提与局限性
 

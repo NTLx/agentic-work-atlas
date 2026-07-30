@@ -3,7 +3,7 @@ type: topic
 title: Forward Deployed AI Enablement
 description: "FDE 式 AI 赋能：通过嵌入真实组织现场，发现黄金用例、穿越集成之墙，并把一次性部署沉淀为可复用的平台能力和组织能力"
 created: 2026-05-22
-updated: 2026-06-16
+updated: 2026-07-30
 evidence_level: high
 claim_type: mixed
 tags:
@@ -27,6 +27,10 @@ related_entities:
   - "[[AI-Deployment-Invisible-Costs]]"
   - "[[Open-Source-Operational-AI-Framework]]"
   - "[[Standard-AI-Product-Adoption]]"
+  - "[[Operational-Responsibility]]"
+  - "[[Decision-Centric-Architecture]]"
+  - "[[Transparent-Tool-Handoff]]"
+  - "[[Secure-Paved-Path]]"
 source_raw:
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
   - "[[当我们谈论 FDE 时，我们在谈论什么？]]"
@@ -39,6 +43,12 @@ source_raw:
   - "[[20260601-lightspeed-fin-ai-agent]]"
   - "[[20260601-mercado-libre-github-copilot]]"
   - "[[20260601-octopus-energy-ai-customer-service]]"
+  - "[[20260730-palantir-ontology-connecting-agents-to-decisions]]"
+  - "[[20260730-palantir-industry-ai-unified-namespace]]"
+  - "[[20260730-palantir-operational-responsibility]]"
+  - "[[20260730-palantir-secure-rapid-software-development-sscs]]"
+  - "[[20260730-palantir-responsible-ai-black-box-explainability]]"
+  - "[[20260730-palantir-responsible-ai-evals-prototype-to-production]]"
 ---
 
 # Forward Deployed AI Enablement（FDE 式 AI 赋能）
@@ -168,6 +178,20 @@ Klarna、Lightspeed、Mercado Libre 和 Octopus Energy 说明，FDE 不是所有
 - 让业务团队能自己继续迭代的 Center of Excellence。
 
 关键标准很简单：第 10 次赋能是否比第 1 次更省力、更清晰、更容易复用。
+
+## Palantir 机制群：FDE 落地的工程内核
+
+Palantir 2024-2026 六篇官方博客（⚠️ 全部 vendor 立场，机制层可独立验证、成效主张需打折）从内部视角展示了 FDE 模式赖以运转的工程机制群。它们回答了本 Topic 此前的空白：FDE "把一次性部署沉淀为可复用能力"具体靠什么基础设施？
+
+| 机制 | 解决的问题 | 可迁移内核 |
+|------|----------|-----------|
+| [[Decision-Centric-Architecture\|决策中心架构]] | agent 需要锚定企业实时状态而非检索快照 | data/logic/action/security 四要素统一建模；explore/stage/commit 权限分级；decision lineage 自动捕获 |
+| [[Operational-Responsibility\|运营责任制]] | 生产反馈无法到达写代码的人 | deployment agreements 换告警直连；first person paged = 最佳修复者；rotation 3-6 人规模约束 |
+| [[Transparent-Tool-Handoff\|透明工具交接]] | LLM 黑盒无法审计 | 确定性步骤 handoff 给可解释工具；tool invocation 日志 = 系统级可解释性 |
+| Evals 单元测试范式 | prototype 到 production 的信任缺口 | test bench + evaluator + 3x 重复 + drill-down 迭代（见 [[Evaluation-Set]]） |
+| [[Secure-Paved-Path\|安全铺装路径]] | 规模化开发的安全债 | 威胁模型先行分配资源；默认安全控制；端到端 provenance |
+
+这五个机制与 FDE 四要素的对应关系：**有平台** = 决策中心架构 + paved path；**产物回流** = decision lineage 数据飞轮 + evals 迭代资产；**嵌入现场**的可持续运维 = OR；**可信交付** = 透明工具交接 + evals。Palantir 的真正护城河不是 FDE 岗位本身，而是这套让 FDE 成果可沉淀、可审计、可规模化的机制群——这才是"不能学错 Palantir"的正面清单。
 
 ## 不能学错 Palantir
 

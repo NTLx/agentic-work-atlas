@@ -3,7 +3,7 @@ type: topic
 title: Enterprise-Ontology-Application
 definition: "企业级本体应用系列：用本体为 AI Agent 提供统一的业务语义层，解决企业 AI 的幻觉、语义不一致、不可解释等问题。"
 created: 2026-04-20
-updated: 2026-06-15
+updated: 2026-07-30
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -18,12 +18,15 @@ related_entities:
   - "[[Integration-Wall]]"
   - '[[UModel]]'
   - '[[Agent-Harness]]'
+  - '[[Decision-Centric-Architecture]]'
 source_raw:
   - '[[20260420-ontology-enterprise-ai-agent]]'
   - '[[20260420-build-first-business-ontology]]'
   - '[[20260420-ontology-meets-agent-case-study]]'
   - '[[20260613-ontology-for-agent-optimization]]'
   - '[[20260613-ontology-tokenmaxxing]]'
+  - '[[20260730-palantir-ontology-connecting-agents-to-decisions]]'
+  - '[[20260730-palantir-industry-ai-unified-namespace]]'
 ---
 
 # 企业级本体应用（Enterprise Ontology Application）
@@ -194,7 +197,16 @@ C2（依赖探索）是最具结构性、最适合架构手段干预的消耗源
 
 *本 Topic 整合自「企业级本体应用」系列五篇文章。*
 
+## Palantir 视角：从语义层到决策中心
+
+Palantir 2026 架构文把本体应用推进到"决策中心"定位（⚠️ vendor 立场，机制可验证、定位表述需打折），为本 Topic 补上两块增量：
+
+- **[[Decision-Centric-Architecture|决策中心架构]]**：本体不只建模"什么是什么"（名词），还建模"做了什么决策、将执行什么行动"（动词）：actions 可被 stage 为沙盒化 scenarios 供人类 review，commit 后写回业务系统；end-to-end decision lineage 自动记录决策上下文，成为 agentic memory 与 fine-tuning 的燃料。这把本 Topic 原有的"本体 + 推理机 + Agent 接口"三层架构扩展为 data/logic/action/security 四要素系统。
+- **UNS 作为制造业前置层**：Unified Namespace（ISA-95 层级 + Sparkplug B 命名 + OPC-UA/MQTT/Kafka 流式 + CDC/polling/virtualization 批式）提供纯数据层的统一命名，本体在其上叠加 logic + action。UNS 与 [[UModel]] 是同一"先统一命名实体，再跑 agent"结构在不同领域（工厂 vs IT 运维）的实例。
+- **系统级可解释性**：本体的 logic binding 工具化使 [[Transparent-Tool-Handoff|透明工具交接]] 成为可能——agent 的确定性步骤交给可解释工具，本体层同时提供执行日志的治理（marking/purpose/role 动态策略）。
+
 ## 关联 Entity
 - [[Knowledge-Graph]]
 - [[UModel]]
 - [[Agent-Harness]]
+- [[Decision-Centric-Architecture]]

@@ -7,7 +7,7 @@ aliases:
   - 前线部署工程师
 definition: "嵌入客户真实环境，把前沿 AI 能力与数据、工具和业务流程连接成可运行生产系统，并将现场发现回流为平台能力或组织能力的工程师"
 created: 2026-05-18
-updated: 2026-06-01
+updated: 2026-07-30
 tags:
   - career
   - AI-industry
@@ -36,6 +36,7 @@ source_raw:
   - "[[当我们谈论 FDE 时，我们在谈论什么？]]"
   - "[[The Return of the Deployment Company]]"
   - "[[20260530-ceo-knee-deep-building-ai]]"
+  - "[[20260730-palantir-ontology-connecting-agents-to-decisions]]"
 ---
 
 # Forward-Deployed-Engineer
@@ -52,6 +53,7 @@ source_raw:
 - yan5xu 将真正的 FDE 收束为四个必要条件：有平台、嵌入客户环境、做产品发现、产物回流平台。
 - 宝玉文章把行业信号总结为“从卖模型到卖落地”：OpenAI、Anthropic、Google 都在围绕 FDE 补企业部署能力。
 - Caffein Chen 文章从买方视角补充：2026 年 OpenAI、Anthropic、Google 同期押注 FDE，反映 AI 商业化正在从自助 SaaS 转向现场部署、隐性知识提取和评测集构建。
+- Palantir 2026 决策中心架构文给出 FDE 在客户侧的技术对象描述："AI FDE" 把客户的数据源（data sources）、逻辑资产（logic assets）与行动系统（systems of action）连接进企业 ontology；agent 以工具范式调用这三类原语，而连接工作的产品化正是飞轮回流的平台能力（[[Deployment-Product-Flywheel]]、[[Decision-Centric-Architecture]]）。
 
 ## 前提与局限性
 
