@@ -100,3 +100,4 @@ claim_type: mixed
 - [[LLM-as-a-Judge]] — rubric 设计对抗古德哈特定律的尝试
 - [[Agent-Verification]] — 超越可 gaming 代理指标的验证机制
 - [[Reward-Hacking]] — 古德哈特定律在算法尺度的同构现象
+- [[Evaluator-Miscalibration]] — 评估器校准层的古德哈特实例：锚点奖励来源数量即被模糊引用刷分

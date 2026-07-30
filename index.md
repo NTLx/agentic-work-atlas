@@ -57,6 +57,7 @@ tags:
 | [[wiki/entities/Loss-Function-Development\|Loss Function Development（损失函数开发）]] | 用大规模盲评 eval 集作为损失函数驱动 Agent 长周期优化的工程范式 | Elvis Sun LFD |
 | [[wiki/entities/Mechanical-Sympathy-for-LLMs\|Mechanical Sympathy for LLMs（LLM 机械同理心）]] | 工程师应获取对 LLM 实际工作原理的经验性理解——而非推测未来能力 | Martin Fowler 2026 |
 | [[wiki/entities/LLM-as-a-Judge\|LLM-as-a-Judge（LLM 裁判）]] | 使用 LLM 按预定义 rubric 评估另一个系统输出质量的方法论，核心是按风险分层匹配评判策略 | Li et al. 2026 |
+| [[wiki/entities/Evaluator-Miscalibration\|Evaluator Miscalibration（评估器校准错误）]] | rubric 标准冲突或锚点奖励错位使聚合分数背离真实质量——校准错误的评估比没有评估更糟 | SimilarWeb/LangSmith 2026 |
 | [[wiki/entities/Auto-Mode\|Auto Mode（自动模式）]] | Claude Code 的自动执行模式——agent 自主决定运行工具，无需逐条等待用户确认 | Claude Code 一周年 |
 | [[wiki/entities/Context-Minimalism\|Context Minimalism（上下文极简主义）]] | 给 agent 最小可能的 system prompt 和工具集，让模型自己决定如何拉取上下文 | Claude Code 一周年 |
 | [[wiki/entities/Skill-Chains\|Skill Chains（技能链）]] | 多技能顺序执行的 macro skill 模式，通过 QA skill 约束幻觉 | Become AI Native Org |

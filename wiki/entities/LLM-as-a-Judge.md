@@ -8,7 +8,7 @@ aliases:
   - 同质性监督失效
 definition: "使用 LLM 评估另一个系统（通常是另一个 AI）输出质量的方法论——裁判根据预定义 rubric 对生成内容进行打分、排名或分类；当裁判与被裁判对象共享价值观基底（同源训练/同 Constitution）时，监督会系统性失效"
 created: 2026-06-26
-updated: 2026-07-16
+updated: 2026-07-30
 tags:
   - ai-evaluation
   - methodology
@@ -21,9 +21,12 @@ related_entities:
   - "[[Verifiable-Agent-Engineering]]"
   - "[[Agent-Observability]]"
   - "[[Recursive-Self-Improvement]]"
+  - "[[Rubric-Based-Evaluation]]"
+  - "[[Evaluator-Miscalibration]]"
 source_raw:
   - "[[20260626-llm-as-judge-healthcare]]"
   - "[[20260713-agentic-misalignment-summer-2026]]"
+  - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
 ---
 
 # LLM-as-a-Judge
@@ -71,6 +74,16 @@ LLM-as-a-Judge 是"用一个 LLM 评估另一个系统输出"的方法论，最�
 **对齐水平**: Agreement rate 中位 0.83（0.66–0.96），Cohen's κ 中位 0.78（0.59–0.88），Correlation 中位 0.69（0.40–0.94）。Ensemble judges 聚在顶部。主观性强和细粒度任务垫底。
 
 **五类失败模式**: (1) 同族偏误（GPT judge GPT 共享盲区），(2) 表面替代实质（流畅=正确，自信=专业），(3) 临床语义浅层化，(4) 裁判也编造（evaluation hallucination），(5) Prompt 敏感+跨语言脆弱。
+
+---
+
+## 产品工程实践（SimilarWeb 2026）
+
+SimilarWeb Data Studio 案例（`[[20260729-similarweb-langsmith-agent-report-evaluation]]`）给出裁判在 agentic 产品中的工程形态：
+
+- **裁判即可扩展评审者**：judge prompt 三输入——用户问题、agent 输出、评判标准；返回分数 + 评语 + trace 链接，产出的是可检查信号而非黑盒裁决。
+- **标准随输出类型分流**：有期望答案 → golden answer 语义比对；开放式长文报告 → 逐维度 rubric 锚点 + faithfulness 检查（论断是否由检索数据支持）+ A/B 基线裁判。
+- **与本条失败模式的衔接**：SimilarWeb 的校准陷阱（标准冲突、锚点奖励错东西）是本页"表面替代实质""裁判也编造"等失败模式在标准设计层的轻量版本——评语已经察觉问题而分数仍然错误。可检查性（逐标准评语 + trace）是探测此类失效的基础设施；它降低"盲信分数"的风险，但不消除裁判本身的系统性偏差（见下文同质性监督失效）。详见 [[Evaluator-Miscalibration]]。
 
 ---
 

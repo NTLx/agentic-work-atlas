@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-06-07
+updated: 2026-07-30
 evidence_level: high
 claim_type: mixed
 tags:
@@ -44,6 +44,9 @@ related_entities:
   - "[[Policy-as-Code-for-Agent-Governance]]"
   - "[[Graph-Guided-Agent-Investigation]]"
   - "[[Custom-Policy-Guardrails]]"
+  - "[[LLM-as-a-Judge]]"
+  - "[[Rubric-Based-Evaluation]]"
+  - "[[Evaluator-Miscalibration]]"
 source_raw:
   - "[[The PR you would have opened yourself]]"
   - "[[用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践]]"
@@ -67,6 +70,7 @@ source_raw:
   - "[[20260602-ibm-agent-logic-scalable-ai-adoption]]"
   - "[[20260606-google-agentic-rag]]"
   - "[[Nemotron 3.5 Content Safety: Customizable Multimodal Safety for Global Enterprise AI]]"
+  - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
@@ -222,6 +226,12 @@ IBM Research 的 [[Agent-Logic|agent logic]] 把可验证 Agent 工程推进到�
 | 程序分析 | 代码结构、调用关系、测试边界 | 把确定性工作交给工具 |
 
 它也给“薄 harness”原则划出边界：当任务进入企业 IT、医疗合规、遗留系统和工业维护这类强结构环境时，薄到只剩 prompt 和工具调用，反而会把本该确定的约束重新概率化。
+
+## 评估校准也是验证边界
+
+SimilarWeb Data Studio 案例（2026-07-29）把可验证工程延伸到本 Topic 此前未直接回答的问题：**开放式长文输出**（同一问题可有多份合格报告）怎么验证？答案是分层裁判：确定性检查（工具调用合规、结构化输出有效）与 [[LLM-as-a-Judge]] 并行；裁判标准按输出类型分流——有期望答案的常规 chat 用 golden answer 语义比对，Deep Research 长文报告用逐维度 [[Rubric-Based-Evaluation]] 锚点 + faithfulness 检查（每条论断是否由检索数据支持）+ A/B 基线比较（基线是参考点，不是 ground truth）。每个分数携带评语与 trace，使"哪些 case 动了、哪些标准动了、评判者为什么说这个分"可追查。
+
+更有价值的是它的反例：两个 rubric 标准（来源广度 vs 归因质量）互相拉扯，聚合分数掩盖冲突，一次没问题的更新被误判为回归、回滚近一周。[[Evaluator-Miscalibration]] 由此给本 Topic 补上元验证原则：**评估器本身必须被验证**——校准错误的评估比没有评估更糟，因为它递给你虚假的信心。这与"成本可观测性"一节的警告同构：任何单一聚合度量（token 成本、评估总分）都会掩盖维度间的拉扯，可验证边界必须包含对度量工具本身的校准审查。
 
 ## 与现有 Topic 的关系
 
