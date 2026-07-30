@@ -23,6 +23,7 @@ related_entities:
 source_raw:
   - "[[20260604-mollick-coexistence]]"
   - "[[20260622-context-collapse-1-poisoning-copilot-memory]]"
+  - "[[20260714-context-collapse-2-when-emails-instruct]]"
 ---
 
 # Prompt Injection Risk（提示注入风险）
@@ -75,3 +76,4 @@ source_raw:
 
 - Context Collapse 系列（Håkon Måløy，MSRC 协调披露，2026-06）：攻击者网页经 Copilot 摘要流程将非用户意图的偏好持久写入 Copilot Memory，跨会话、跨 work/web 上下文存活；微软全球缓解（记忆写入与用户实际意图对齐）。这是主流商用助手被提示注入写入持久状态的一手实证，作者将统一机制命名为 [[Context-Collapse]]。
 - 方法论含义：LLM 漏洞可利用性是概率性的——复现依赖反复试验与精确 prompt 措辞，单次失败不能否定漏洞；厂商 triage 需适配（精确 prompt + 环境假设 + 多次试验成功率）。
+- Outlook 外部邮件 XPIA 获 CVE-2026-55145（2026-07-14，系列首个 CVE）：隐藏指令可伪造工具调用结果、把内部数据摘要注入外发草稿；微软缓解采用权限分离——外部邮件正文先经独立低权限 agent 摘要再进入主会话，是"检测外移给另一个 LLM"模式的商用部署实例（其原则局限见 [[Context-Collapse]]）。

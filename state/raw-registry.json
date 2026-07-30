@@ -1010,9 +1010,11 @@
     },
     "20260714-context-collapse-2-when-emails-instruct.md": {
       "body_sha256": "a6e2d527436d8c0b6ffd0cfdd24f92ea16c1e0107d7cbb7967781bb18e945e05",
+      "compiled_at": "2026-07-30T10:24:40+08:00",
       "raw_file": "20260714-context-collapse-2-when-emails-instruct.md",
-      "status": "pending",
-      "updated_at": "2026-07-30T10:19:42+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260714-context-collapse-2-when-emails-instruct.md",
+      "updated_at": "2026-07-30T10:24:40+08:00"
     },
     "20260715-anthropic-talent-strategy-2026.pdf": {
       "body_sha256": "0dd1976e6fd422b7771c646940f6be71eb443ebddb0f0b899456ccbf5b15bbbd",
@@ -1763,6 +1765,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T10:23:17+08:00",
+  "updated_at": "2026-07-30T10:24:40+08:00",
   "version": 1
 }
