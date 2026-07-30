@@ -1138,9 +1138,11 @@
     },
     "20260728-context-collapse-3-ai-worming-through-word.md": {
       "body_sha256": "db6edd7598b2cf95cd988f10f31622876faa9ce9e6fdc96a72389756d5ce6126",
+      "compiled_at": "2026-07-30T10:27:32+08:00",
       "raw_file": "20260728-context-collapse-3-ai-worming-through-word.md",
-      "status": "pending",
-      "updated_at": "2026-07-30T10:19:42+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260728-context-collapse-3-ai-worming-through-word.md",
+      "updated_at": "2026-07-30T10:27:32+08:00"
     },
     "20260728-fowler-orchestrator-tax.md": {
       "body_sha256": "4b62d4f3b22e19c329f1530f94e56dc3157827ec11ff5ae1247ac07abb37f51c",
@@ -1765,6 +1767,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T10:24:40+08:00",
+  "updated_at": "2026-07-30T10:27:32+08:00",
   "version": 1
 }

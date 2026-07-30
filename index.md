@@ -130,6 +130,7 @@ tags:
 | [[wiki/entities/Agent-Containment\|Agent Containment（Agent 隔离与遏制）]] | 通过环境层隔离限制 Agent 可操作范围的安全架构 | Anthropic Security Practices |
 | [[wiki/entities/Multi-Agent-System-Pathology\|Multi-Agent System Pathology（多 Agent 系统病理）]] | 多 Agent 系统在形成组织结构后出现的协作、认知、责任和内态失真问题 | Hao 好聊趋势 |
 | [[wiki/entities/Context-Collapse\|Context Collapse（上下文坍缩）]] | 不同信任域内容被压扁进同一模型上下文，低信任数据被解释为高信任指令的失败模式 | Context Collapse 系列 2026 |
+| [[wiki/entities/AI-Worm\|AI Worm（AI 蠕虫）]] | 借 AI 助手自身生成能力经正常工作流自传播的攻击指令——每个受感染工件成为携带内部信任的新载体 | Context Collapse Part 3 2026 |
 
 #### AI 政策与监管
 | Entity | 定义 | 来源 |

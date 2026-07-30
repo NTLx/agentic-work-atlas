@@ -8,7 +8,7 @@ aliases:
   - 网页陷阱
 definition: "嵌入在网页、邮件、文档等数字资源中，专门针对 AI Agent 的解析逻辑设计、用以操纵或利用其行为的恶意内容分类框架——按 Agent 运行周期的六个环节（感知→推理→记忆→行动→多Agent→人类）系统化"
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-07-30
 tags:
   - agent-security
   - adversarial-attack
@@ -22,8 +22,13 @@ related_entities:
   - "[[Multi-Agent-System-Pathology]]"
   - "[[Agent-Containment]]"
   - "[[Model-Safety-Divergence]]"
+  - "[[Context-Collapse]]"
+  - "[[AI-Worm]]"
 source_raw:
   - "[[20260707-ai-agent-traps.pdf]]"
+  - "[[20260622-context-collapse-1-poisoning-copilot-memory]]"
+  - "[[20260714-context-collapse-2-when-emails-instruct]]"
+  - "[[20260728-context-collapse-3-ai-worming-through-word]]"
 ---
 
 # Agent Traps（Agent 陷阱）
@@ -58,6 +63,7 @@ source_raw:
 - HTML 隐藏指令改写 AI 摘要：15–29% 成功率（Verma & Yadav, 2025）
 - AgentPoison：记忆/知识库投毒，攻击成功率 > 80%，仅需 < 0.1% 数据投毒（Chen et al., 2024）
 - Web-use Agent 数据窃取：5 个不同 Agent 中攻击成功率 > 80%（Shapira et al., 2025）
+- **六环连锁的主流产品实演**：Context Collapse 系列（Håkon Måløy, MSRC 协调披露, 2026-06/07, 含 CVE-2026-55145）在 Microsoft 365 Copilot 中完整走通六环——Content Injection（格式剥离后白字指令仍可读）→ Cognitive State（Copilot Memory 毒化，跨会话持久）→ Behavioural Control（伪造工具结果诱导用户断网、内部摘要注入外发草稿）→ Systemic（[[AI-Worm]] 经 Word 文档自传播、跨组织扩散，披露时漏洞类仍可利用）→ Human-in-the-Loop（自动化偏差使用户视 Copilot 产物为权威，视口外隐藏削弱人工审查）。Systemic 环此前标注"实证成熟度低（理论为主）"，本系列将其上修为真实产品实证
 - M365 Copilot Echoleak：单封邮件绕过分类器外泄特权上下文（Reddy & Gujral, 2025）
 - Android 通知注入：多模态 Agent 攻击成功率最高 93%（Chen et al., 2025）
 - 多 Agent 感染式越狱：一张图在所有 Agent Pairwise 交互后几乎全部感染（Gu et al., 2024）
