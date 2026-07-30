@@ -1202,21 +1202,27 @@
     },
     "20260730-lenny-anthropic-first-technical-pm-dianne-penn.md": {
       "body_sha256": "ef9ff77c30b3a1785ca41ebd63664225417c932f763adeab8186271ff198faf1",
+      "compiled_at": "2026-07-30T20:36:10+08:00",
       "raw_file": "20260730-lenny-anthropic-first-technical-pm-dianne-penn.md",
-      "status": "pending",
-      "updated_at": "2026-07-30T19:51:24+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260730-lenny-anthropic-first-technical-pm-dianne-penn.md",
+      "updated_at": "2026-07-30T20:36:10+08:00"
     },
     "20260730-lenny-netflix-cpto-systems-thinkers-elizabeth-stone.md": {
       "body_sha256": "9c3a04768e79f463147dd6251086350ecca3110490476e2f9aff29e1e89a3ea3",
+      "compiled_at": "2026-07-30T20:36:10+08:00",
       "raw_file": "20260730-lenny-netflix-cpto-systems-thinkers-elizabeth-stone.md",
-      "status": "pending",
-      "updated_at": "2026-07-30T19:51:23+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260730-lenny-netflix-cpto-systems-thinkers-elizabeth-stone.md",
+      "updated_at": "2026-07-30T20:36:10+08:00"
     },
     "20260730-lenny-tech-workers-ai-sentiment-noam-segal.md": {
       "body_sha256": "e5c4f4f0d174692bc3d40f6abbc05a24af6424c42ec7195d3dd9eaf2a4789e47",
+      "compiled_at": "2026-07-30T20:36:10+08:00",
       "raw_file": "20260730-lenny-tech-workers-ai-sentiment-noam-segal.md",
-      "status": "pending",
-      "updated_at": "2026-07-30T19:51:24+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260730-lenny-tech-workers-ai-sentiment-noam-segal.md",
+      "updated_at": "2026-07-30T20:36:10+08:00"
     },
     "20260730-palantir-industry-ai-unified-namespace.md": {
       "body_sha256": "7046e6a046971488fb8ee5831cae8e70d63ce671c77443a37bf48081837d3bcf",
@@ -1843,6 +1849,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T20:28:48+08:00",
+  "updated_at": "2026-07-30T20:36:10+08:00",
   "version": 1
 }

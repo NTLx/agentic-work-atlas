@@ -2,7 +2,7 @@
 type: topic
 title: "技能退化与知识债务"
 created: 2026-07-09
-updated: 2026-07-22
+updated: 2026-07-30
 tags:
   - topic
   - skill-atrophy
@@ -15,6 +15,7 @@ related_entities:
   - "[[Judgment-Degradation-Cascade]]"
   - "[[Augmentation-Trap]]"
   - "[[Knowledge-Work-Redefinition]]"
+  - "[[AI-Identity-Bifurcation]]"
 ---
 
 # 技能退化与知识债务
@@ -60,6 +61,17 @@ related_entities:
 | 软件工程 | AI coding agent | 调试、架构理解、代码阅读 | [[SHIELD]] 式学习感知系统 |
 
 **共同模式**：所有领域都面临同一矛盾——工具提升了短期绩效但侵蚀了长期能力，且退化是隐蔽的。
+
+## 2026 H1 现状基线：觉察已至，行为未变
+
+2026 年年度 tech worker sentiment survey（约 6000 人，[[AI-Identity-Bifurcation]]）为本主题提供了首个大规模自报告基线：
+
+- **退化被大规模自觉**："my brain is rotting"（cognitive rot）成为普遍自述——97.2% 称 AI 让自己 "better at job"，但深挖含义是 "do more faster, **not** better"。觉察窗口首次大规模打开。
+- **觉察不中断螺旋**：受访者清楚退化存在，但"if I have an easy button, I will press it"——印证 [[Augmentation-Trap]] 的"觉察窗口被同一工具压缩"：知道在退化，不足以停止退化。
+- **self-efficacy 维度**：Noam Segal 的观察把知识债务延伸到心理资本——每次人（而非 AI）独立解决问题，自我效能基线上升；每次外包，基线下降。退化不仅是能力缺口，也是"感觉自己聪明"的消失。
+- **ladder 断裂**：CS 学生 → intern → junior → senior 的职业梯级被技术从脚下抽走（[[AI-Identity-Bifurcation]] 的 ladder metaphor）——入门级岗位萎缩意味着"费力学习"的制度化场所正在消失，本主题的干预路径（最低无辅助练习）失去组织载体。
+
+基线用途：后续机制研究可引用此快照作为"退化觉察化"转折点，但 survey 为 self-report，不构成退化的客观度量。
 
 ## 干预路径
 

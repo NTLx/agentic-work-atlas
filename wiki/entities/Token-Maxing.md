@@ -6,7 +6,7 @@ aliases:
   - token 最大化
 definition: "企业无差别消耗 AI token 的现象，导致推理成本失控，迫使公司从全面实验转向配给制"
 created: 2026-05-31
-updated: 2026-06-16
+updated: 2026-07-30
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -20,6 +20,7 @@ related_entities:
   - "[[AI-First]]"
 source_raw:
   - "[[20260528-corporate-america-ai-rationing]]"
+  - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
 ---
 
 # Token Maxing（Token 最大化）
@@ -44,6 +45,15 @@ Token Maxing 不是单点浪费，而是结构性问题：
 - Goldman Sachs 预测 2030 年 token 消耗增长 24 倍至每月 120 quadrillion
 - 四大超大规模云厂商 2026 年合计资本支出 `$725 billion`
 - 47% 的企业基于 AI 幻觉做关键决策，年经济损失 `$67.4 billion`
+
+## 正面 Framing：token 作为实验投入（2026-07 冲突标记）
+
+> [!warning] 冲突标记
+> 同一术语存在两个相反的叙事框架，应并列使用而非调和：
+> - **成本框架**（本条目原定义）：token maxing = 无差别消耗 → 账单失控 → 被迫配给。证据：Uber 预算燃尽、Microsoft 强制迁移。
+> - **投入框架**（Dianne Penn / Garry Tan，2026-07）：token 是 **input**，output 是 experimentation；围绕 experimentation 设目标比围绕 token spend 设目标更准确。Garry Tan 主张"愿意年花 \$100K tokens = 活在 2028 年的工作方式"；Penn 的修正是"token spin 是输入，真正的产出是实验，也许该围绕实验来设目标"。Anthropic 内部观察：最具创造力的 prototyper 确实花大量时间与模型共处——"you have to sweat the tokens as much as you sweat the pixels"。
+
+两个框架的适用边界：**个人/产品探索层**投入框架成立（token 便宜、学习价值高）；**组织成本层**成本框架成立（无差别消耗不可观测、不可归因）。混淆两层会产生错误推论——用投入框架为组织级失控辩护，或用成本框架压制个人级实验。
 
 ## 前提与局限性
 

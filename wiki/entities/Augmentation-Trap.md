@@ -7,7 +7,7 @@ aliases:
   - AI 增强陷阱
 definition: "AI 增强工具在消除任务摩擦的同时选择性退化使用者的判断力与主体性，且退化不可由使用者自身察觉的系统性现象——根底是'可改变性=有穷性'在个体认知层的投射"
 created: 2026-07-16
-updated: 2026-07-22
+updated: 2026-07-30
 tags:
   - ai-safety
   - human-agency
@@ -27,6 +27,7 @@ topics:
   - "[[Skill-Atrophy-and-Knowledge-Debt]]"
 source_raw:
   - "[[vibe-coding成瘾之后重建AI与生活的边界]]"
+  - "[[20260730-lenny-tech-workers-ai-sentiment-noam-segal]]"
 ---
 
 # Augmentation Trap（增强陷阱）
@@ -159,6 +160,7 @@ Augmentation Trap 的逻辑底部是"有穷性自我取消"（07-10 存在论）
 - Tian Pan RCT：AI 辅助组比对照组低 17pp（07-14 联网验证）
 - Skill Atrophy Crisis：84% 用 AI 但 45% 调试更久（07-14 联网验证）
 - Code Turnover Rate：AI 生成代码 12-18% vs 人类 4-6%（07-14）
+- **2026 H1 大样本自报告**（tech worker sentiment survey，约 6000 人，[[AI-Identity-Bifurcation]]）：97.2% 称 AI 让自己"better at job"，但深挖含义是"do more faster, **not** better"——产出量上升、质量未升；"my brain is rotting" 成为普遍自述（cognitive rot：看到 AI 初始输出即接受，不施加判断）。理论新阶段：**觉察窗口已打开但行为未改变**（"if I have an easy button, I will press it"）——退化首次被大规模自觉，但自觉不足以中断螺旋，印证"觉察窗口被同一工具压缩"的局限。Segal 的 self-efficacy 账户：每次人（而非 AI）解决问题，自我效能基线上升；每次外包给模型，基线下降——把 [[Cognitive-Debt]] 延伸到心理资本维度。
 
 ## 前提与局限性
 

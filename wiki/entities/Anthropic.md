@@ -6,7 +6,7 @@ aliases:
   - Anthropic Inc
 definition: "由 Dario Amodei 等人于 2021 年创立的前沿 AI 实验室，Claude 系列模型开发方，2026 年以一手数据公开 AI 递归自我改进进程，并发布 Advanced AI Framework 政策提案"
 created: 2026-06-06
-updated: 2026-07-16
+updated: 2026-07-30
 tags:
   - organization
   - AI-frontier-lab
@@ -28,6 +28,7 @@ source_raw:
   - "[[20260610-anthropic-ai-exploits-security-patches]]"
   - "[[20260613-anthropic-public-record]]"
   - "[[20260715-why-i-left-google-deepmind]]"
+  - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
 validated_source: "https://www.anthropic.com/about"
 validated_at: "2026-06-06"
 ---
@@ -48,6 +49,17 @@ validated_at: "2026-06-06"
 | Open-ended task 成功率 | 76% | 2026-05 |
 | 研究判断胜率 | Mythos Preview 64% | 2026-04 |
 | 员工自评生产率 | 4x | 2026-03 |
+| 产品团队规模 | 5 名 product engineers（2023，Dianne Penn 作为首个 technical PM 加入）→ 30-40 PMs | 2023-2026 |
+
+## 产品组织形态（2026-07 一手访谈）
+
+Dianne Penn（Head of Product, AI Research & Labs）披露的组织结构与工作方法（⚠️ 供应商视角，成效主张需打折）：
+
+- **五大 PM 团队并行**：research PM team（model feedback → research + model launch shepherd）、Claude developer platform（APIs + managed agents）、Claude Code + Cowork、Enterprise（cost controls/RBAC/security）、Growth。
+- **Labs 孵化模式**：独立团队识别并拉扯"不连续大赌注"的线头（Claude Code、skills、Claude design、MCP 均出自 Labs）；文化原则为"strong opinion on theme, weakly held on prototype"；pod 极小（一个工程师可启动一个 bet），失败的 bet 一至两代模型后 revisit。
+- **TPM 角色定义**：first principles thinking（非 pattern matching）+ 全栈工程师背景 + 产品 taste；hiring 偏好"engineers with great product taste"而非更多 PMs；designers 多有 frontend engineering 背景。
+- **核心工作法**："evals are the new PRDs"（[[Evals-as-PRD]]）——用户反馈经失败轨迹归因凝结为 eval set，evals 同时是模型评估与产品定义工具；管理者必须 hands-on shipping 以保持对模型能力边界的 theory of mind。
+- **模型×产品互放大**：Opus 3（训练 long-form code 而非 autocomplete）是差异化起点；Opus 4.5 的采用爆发被归因于模型与 Claude Code"互为放大器"——"you need frontier products in order to have frontier models"。
 
 ## 2026-06 标志性动作：把"AI 改 AI"摆上公共议程
 

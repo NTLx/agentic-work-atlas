@@ -2,7 +2,7 @@
 type: topic
 title: AI-Era Career Skills
 created: 2026-04-09
-updated: 2026-05-25
+updated: 2026-07-30
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -21,6 +21,9 @@ related_entities:
   - "[[Chosen-vs-Seen]]"
   - "[[Software-Democratization]]"
   - "[[Cross-Disciplinary-Generalist]]"
+  - "[[Systems-Thinker-Demand]]"
+  - "[[Evals-as-PRD]]"
+  - "[[Excellence-as-Operating-System]]"
 source_raw:
   - '[[20260127-claude-coding-notes]]'
   - '[[Forward deployed engineering at OpenAI]]'
@@ -31,6 +34,8 @@ source_raw:
   - '[[Learning on the Shop floor]]'
   - "[[The next biggest moat in AI]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
+  - "[[20260730-lenny-netflix-cpto-systems-thinkers-elizabeth-stone]]"
+  - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
 ---
 
 # AI-Era Career Skills
@@ -67,6 +72,15 @@ Agent 最擅长的是在明确目标下循环尝试。Karpathy 的方法建议�
 - 要求它暴露困惑、权衡和边界条件。
 - 把臃肿实现压回更简单的方案。
 - 在代码可运行之外审查概念是否正确。
+
+### 4. 从专家到系统思维者与 evals 作者（2026 增量）
+
+两支一手访谈为技能演化补上组织层证据：
+
+- **[[Systems-Thinker-Demand|系统思维者需求]]**（Netflix CPTO Elizabeth Stone）：招聘从 local business expertise 转向 systems thinkers——agent 跨系统操作需要 source of truth 与 paved path，因此需要能跨业务域抽象 building blocks 的人；narrow specialist 让位于 "generalists or adaptable in multiple directions"。技能演化的需求侧首次获得大型非 AI 公司的确认。
+- **[[Evals-as-PRD|评测即需求文档]]**（Anthropic Dianne Penn）：PM 的核心技能从写 PRD 转向写 evals——读失败 transcripts、做失败轨迹归因、把模糊抱怨凝结为可运行评测集；配套要求是"engineers with great product taste"式的混合角色与 hands-on 使用模型的管理者。技能演化的方法论首次获得 AI Lab 内部实践确认。
+
+两个信号的交汇点：AI 时代的稀缺技能正在从"深度执行某职能"转向"跨系统抽象 + 可度量定义质量"——前者对应判断力的空间维度（zoom out），后者对应判断力的形式化维度（把"什么是好"写成 eval）。
 
 ## 关键洞察
 

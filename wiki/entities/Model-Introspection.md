@@ -6,7 +6,7 @@ aliases:
   - 模型自省
 definition: "让模型分析自己为什么会犯某个错误，从其推理链路中提取人类独立分析难以获得的洞察"
 created: 2026-05-08
-updated: 2026-06-15
+updated: 2026-07-30
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -22,6 +22,7 @@ source_raw:
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - "[[20260617-huggingface-agentic-resource-discovery]]"
+  - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
 ---
 
 # Model Introspection（模型自省）
@@ -52,6 +53,8 @@ Cat Wu 在 Anthropic 产品团队将模型自省从 debugging 技巧升级为产
 1. **能力边界测绘**：模型的自省解释暴露了它在什么类型的上下文中稳定失误、什么条件下突然变强——这比人工测试更高效地绘制了 [[Product-Overhang|产品能力溢出]] 的边界。
 2. **发布决策支撑**：通过观察模型的自省质量，产品团队可以判断某个能力是接近可用（自省能定位问题且有改进路径），还是根本不可靠（自省输出本身就是幻觉）。这直接支撑 [[Research-Preview|Research Preview]] 的发布时机决策。
 3. **评测集补充**：模型自省揭示的失败模式可以被转化为新的评测用例，补充到 [[Evaluation-Set|评测集]] 中，形成"自省 → 评测 → 训练 → 自省"的闭环。
+
+Dianne Penn（Anthropic Head of Product, AI Research & Labs，2026-07）补充了第四层——**用户反馈归因**：PM 团队读失败对话 transcripts，把模糊抱怨（"Claude hallucinated"）分解为可行动的失败分类：该调用 tool 时没调用（tool use 失败）/ 检索了正确文档但取错事实（search synthesis 失败）/ 对齐问题。这一归因过程缩短了"用户反馈 → 研究者可行动项"的距离，是 evals-as-PRD 工作流（[[Evals-as-PRD]]）的前置步骤。⚠️ 与 Palantir 可解释性文的张力：自省揭示的是 harness 层错误（prompt 误导、编排失败），不保证揭示模型内部真实原因——自省用于修 harness，[[Transparent-Tool-Handoff|工具层检查]]用于修任务执行，两者互补。
 
 ## 与人类 debugging 的结构对比
 
