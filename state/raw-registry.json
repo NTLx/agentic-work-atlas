@@ -1236,6 +1236,18 @@
       "status": "pending",
       "updated_at": "2026-07-30T18:57:53+08:00"
     },
+    "20260730-palantir-responsible-ai-black-box-explainability.md": {
+      "body_sha256": "ae69dd887f7d16708e388c3dcd096d1d73bd833d2ae01beeb79ffd1e62c1eb47",
+      "raw_file": "20260730-palantir-responsible-ai-black-box-explainability.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T20:08:16+08:00"
+    },
+    "20260730-palantir-responsible-ai-evals-prototype-to-production.md": {
+      "body_sha256": "df80b3364f0c25a21cd8024cf815a815a6c9e497fcb016f7e41f9044068da598",
+      "raw_file": "20260730-palantir-responsible-ai-evals-prototype-to-production.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T20:08:16+08:00"
+    },
     "20260730-palantir-secure-rapid-software-development-sscs.md": {
       "body_sha256": "60f8bb81bfb70bc6d31831b74bb06f3624f42da8cd955689e3d19f5c2496222e",
       "raw_file": "20260730-palantir-secure-rapid-software-development-sscs.md",
@@ -1819,6 +1831,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T19:51:24+08:00",
+  "updated_at": "2026-07-30T20:08:16+08:00",
   "version": 1
 }
