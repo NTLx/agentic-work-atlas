@@ -4,7 +4,7 @@ title: "Successful AI Deployment vs GenAI Divide"
 entity_a: "[[AI-Deployment-Valley-of-Death]]"
 entity_b: "[[The-GenAI-Divide]]"
 created: 2026-06-01
-updated: 2026-06-15
+updated: 2026-07-30
 evidence_level: high
 claim_type: mixed
 tags:
@@ -19,6 +19,7 @@ related_entities:
   - "[[Escalation-Based-Human-Oversight]]"
   - "[[AI-Ready-Organization]]"
   - "[[Standard-AI-Product-Adoption]]"
+  - "[[Alert-Closed-Loop]]"
 source_raw:
   - "[[20260601-stanford-enterprise-ai-playbook]]"
   - "[[20260601-mit-nanda-genai-divide]]"
@@ -26,6 +27,7 @@ source_raw:
   - "[[20260601-lightspeed-fin-ai-agent]]"
   - "[[20260601-mercado-libre-github-copilot]]"
   - "[[20260601-octopus-energy-ai-customer-service]]"
+  - "[[20260729-nejm-ai-triggered-rapid-response-mortality]]"
 ---
 
 # Successful AI Deployment vs GenAI Divide
@@ -72,8 +74,11 @@ source_raw:
 | Lightspeed / Fin | 全球商户支持 | 每月 43,000+ 个问题由 Fin 解决，72% resolution rate，连接 Zendesk、Salesforce、ERP 和内部 API | 供应商案例，仍依赖内部 Digital Engagement team |
 | Mercado Libre / Copilot | 软件研发 | 9,000+ 开发者使用 Copilot，客户故事称写代码时间约下降 50% | 写代码时间不等于整体工程吞吐或质量 |
 | Octopus Energy | 客服邮件 | 上线约 7 周后 44% 客户邮件至少部分由 AI 处理 | “部分处理”不等于独立解决，且保留人工检查 |
+| RWJBarnabas / Epic EDI | 住院恶化预警 | 11 家医院、23,132 名高风险患者；院内死亡率 23.1% → 18.6%（风险校正优势比降约 18%）；RRT 激活 25.3% → 37.5%；ICU 转入未显著增加 | 观察性研究、单一卫生系统；获益归因于模型 + 通知 + 责任人 + 培训 + 监控的组织组合，不能单独归于算法 |
 
 这些案例共同说明 [[Standard-AI-Product-Adoption]] 是真实路径，但不是 GenAI Divide 的反证。它们之所以成立，通常是因为目标工作流已经具备机器可读流程、清晰指标、系统接口和人类升级路径。没有这些条件，标准产品会退回 adoption 层。
+
+RWJBarnabas 的 EDI 案例是这条判断最干净的脚注：工具本身是 Epic EHR 内置的标准模块，任何使用 Epic 的医院理论上都能开通；但产生死亡率结局的是围绕工具的数年组织协作（[[Alert-Closed-Loop]]）。标准产品降低了获取门槛，没有降低生效门槛。
 
 ## 判断框架
 
@@ -96,3 +101,4 @@ source_raw:
 - [[Escalation-Based-Human-Oversight]] — 成功部署中更细的人机监督模式。
 - [[AI-Ready-Organization]] — 跨过鸿沟的组织前提。
 - [[Standard-AI-Product-Adoption]] — 标准 AI 产品绕过高接触部署的适用边界。
+- [[Alert-Closed-Loop]] — 跨越五问的交付单元：把信号变成结局的责任链。

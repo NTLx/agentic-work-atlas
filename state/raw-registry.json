@@ -1154,9 +1154,11 @@
     },
     "20260729-nejm-ai-triggered-rapid-response-mortality.md": {
       "body_sha256": "9a12bc95c8851014dcd2786a1907938a86b24b2f759d1a94e373717f0879d745",
+      "compiled_at": "2026-07-30T10:09:25+08:00",
       "raw_file": "20260729-nejm-ai-triggered-rapid-response-mortality.md",
-      "status": "pending",
-      "updated_at": "2026-07-30T09:38:32+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260729-nejm-ai-triggered-rapid-response-mortality.md",
+      "updated_at": "2026-07-30T10:09:25+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -1735,6 +1737,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T09:38:32+08:00",
+  "updated_at": "2026-07-30T10:09:25+08:00",
   "version": 1
 }

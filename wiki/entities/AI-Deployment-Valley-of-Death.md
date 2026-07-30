@@ -7,7 +7,7 @@ aliases:
   - 部署到 ROI 死亡谷
 definition: "AI 项目从试点或部署到可衡量 ROI 之间的断层，常由流程重构、组织阻力、数据质量和治理边界造成"
 created: 2026-06-01
-updated: 2026-07-27
+updated: 2026-07-30
 tags:
   - enterprise-ai
   - ai-deployment
@@ -18,11 +18,13 @@ related_entities:
   - "[[The-GenAI-Divide]]"
   - "[[Integration-Wall]]"
   - "[[Forward-Deployed-AI-Enablement]]"
+  - "[[Alert-Closed-Loop]]"
 source_raw:
   - "[[20260601-stanford-enterprise-ai-playbook]]"
   - "[[20260601-mit-nanda-genai-divide]]"
   - "[[20260702-ai-layoffs-reversed]]"
   - "[[20260719-if-ai-is-so-great-why-isnt-it-working]]"
+  - "[[20260729-nejm-ai-triggered-rapid-response-mortality]]"
 ---
 
 # AI Deployment Valley of Death（AI 部署死亡谷）
@@ -57,6 +59,7 @@ demo
 - 用 [[Escalation-Based-Human-Oversight]] 设计常规路径和例外路径。
 - 将部署经验回流为评测集、模板、数据接入规范和运维 playbook。
 - 避免只把 adoption 当成功，必须追踪工作流是否改变、成本是否下降、速度是否提升。
+- 以 [[Alert-Closed-Loop]] 为交付单元：RWJBarnabas（NEJM AI, 2026）把“模型 + 通知 + 责任人 + 流程 + 监控”作为整体交付并持续数年打磨，院内死亡率下降 4.5 个百分点——交付一个模型不等于交付一条产生结局的责任链。
 
 ## 前提与局限性
 
@@ -70,3 +73,4 @@ demo
 - [[The-GenAI-Divide]] — 大量企业卡在试点和生产前后。
 - [[Integration-Wall]] — demo 到生产的主要阻力。
 - [[Forward-Deployed-AI-Enablement]] — 穿越死亡谷的一种现场方法。
+- [[Alert-Closed-Loop]] — 项目常死于告警责任链的某个节点，而非模型性能。

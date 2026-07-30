@@ -7,7 +7,7 @@ aliases:
   - AI 集成之墙
 definition: "AI 项目从 demo 到生产落地时遇到的遗留系统、权限、SSO、数据驻留、合规、流程改造和组织采纳约束"
 created: 2026-05-22
-updated: 2026-06-04
+updated: 2026-07-30
 evidence_level: high
 claim_type: mixed
 tags:
@@ -22,11 +22,13 @@ related_entities:
   - "[[Evaluation-Set]]"
   - "[[Layered-AI-Sourcing]]"
   - "[[Open-Source-Operational-AI-Framework]]"
+  - "[[Alert-Closed-Loop]]"
 source_raw:
   - "[[当我们谈论 FDE 时，我们在谈论什么？]]"
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
   - "[[The Return of the Deployment Company]]"
   - "[[Open and closed models are on different exponentials]]"
+  - "[[20260729-nejm-ai-triggered-rapid-response-mortality]]"
 ---
 
 # Integration Wall（集成之墙）
@@ -42,6 +44,7 @@ source_raw:
 - OpenAI、Anthropic 和 Google 对 FDE 的投入，反映了 AI 行业从“模型竞赛”转向“落地竞赛”的结构性变化。
 - Caffein Chen 文章把集成之墙扩展到治理层：FDE 进入客户现场后，数据、提示、评测集、员工经验和业务规则都会重新划定边界，传统 DLP 和审计流程未必能覆盖。
 - Google Research 的水文框架说明，开源也不会自动越过集成之墙。真正让模型进入运营的是 CHMI 开发 Delft-FEWS 适配器，使模型能在水文机构的标准工作流中运行。
+- NEJM AI（2026）临床案例给出集成之墙的时间尺度：RWJBarnabas 先在一家学术医疗中心把 Epic Deterioration Index 集成进 EHR，打磨告警送达、自动通知和培训数年，评估后才快速铺向其余 10 家医院——穿墙是持续工程，不是一次性切换；墙后真正运转的是 [[Alert-Closed-Loop]] 而非模型本身。
 
 ## 前提与局限性
 
@@ -61,3 +64,4 @@ source_raw:
 - [[Evaluation-Set]] — 集成约束必须进入评测集，才能被系统性验证
 - [[Layered-AI-Sourcing]] — 根据集成厚度和数据敏感度决定本地化、FDE 或 cloud API
 - [[Open-Source-Operational-AI-Framework]] — 通过开放训练管线、文档和适配接口，让本地机构穿越集成之墙
+- [[Alert-Closed-Loop]] — 穿墙穿的不是模型接口，而是告警通知、责任人接收与复盘节点的嵌入

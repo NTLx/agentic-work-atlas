@@ -7,7 +7,7 @@ aliases:
   - 例外升级式监督
 definition: "AI 自主处理常规路径，人类审查例外、边界和高风险决策的人机监督模式"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-07-30
 tags:
   - enterprise-ai
   - governance
@@ -16,8 +16,10 @@ related_entities:
   - "[[Agent-First-Process-Redesign]]"
   - "[[Machine-Readable-Processes]]"
   - "[[AI-Deployment-Valley-of-Death]]"
+  - "[[Alert-Closed-Loop]]"
 source_raw:
   - "[[20260601-stanford-enterprise-ai-playbook]]"
+  - "[[20260729-nejm-ai-triggered-rapid-response-mortality]]"
 evidence_level: medium
 claim_type: mixed
 ---
@@ -38,6 +40,7 @@ Stanford 报告称，AI 自主处理 80% 以上任务、人类审查例外的模
 - Stanford 报告称，AI 处理 80% 以上任务、人类审查例外的 escalation-based 模式，对应约 71% 的中位生产率收益。
 - 该模式把人类监督从“每步审批”移动到“例外升级、边界判断和清障”。
 - 它与 [[Human-Governor-Agent-Operator]] 一致：Agent 执行常规路径，人类治理目标、约束和例外。
+- NEJM AI（2026）给出软件域之外的硬结局数据点：Epic Deterioration Index 持续监测全部住院患者，仅在达到最高风险阈值时自动通知快速反应团队；实施后 RRT 激活率 25.3% → 37.5%，高风险患者院内死亡率 23.1% → 18.6%（观察性研究，获益归因于包含培训和响应流程的组合，不能单独归于算法）。
 
 ## 适用条件
 
@@ -65,3 +68,4 @@ Stanford 报告称，AI 自主处理 80% 以上任务、人类审查例外的模
 - [[Agent-First-Process-Redesign]] — 需要围绕常规路径和例外路径重构流程。
 - [[Machine-Readable-Processes]] — 升级条件必须被系统读取。
 - [[AI-Deployment-Valley-of-Death]] — 清晰监督模式有助于从部署走向 ROI。
+- [[Alert-Closed-Loop]] — 例外升级要兑现价值，还依赖通知、接收、干预、复盘的运行闭环。

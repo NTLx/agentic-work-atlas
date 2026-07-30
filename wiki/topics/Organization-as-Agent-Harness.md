@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-06-16
+updated: 2026-07-30
 evidence_level: high
 claim_type: mixed
 tags:
@@ -36,6 +36,7 @@ related_entities:
   - "[[Business-Embedded-AI-Organization]]"
   - "[[AI-Native-Engineering-Org]]"
   - "[[Agentic-Analytics]]"
+  - "[[Alert-Closed-Loop]]"
 source_raw:
   - "[[Building an MCP Ecosystem at Pinterest]]"
   - '[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]'
@@ -49,6 +50,7 @@ source_raw:
   - "[[The Cybernetic Teammate How AI is Reshaping Collaboration and Expertise in the Workplace]]"
   - "[[Running an AI-native engineering org]]"
   - "[[20260603-anthropic-self-service-data-analytics]]"
+  - "[[20260729-nejm-ai-triggered-rapid-response-mortality]]"
 ---
 
 # Organization as Agent Harness（组织作为 Agent Harness）
@@ -84,6 +86,17 @@ source_raw:
 [[Agentic-Analytics]] 展示了数据组织的同一逻辑：canonical datasets、semantic layer、domain skills、evals、provenance footer 和 correction harvesting 是 analytics agent 的真实运行时。缺少这些层，Claude 能访问 warehouse 也会制造“精确错觉”。
 
 这两个样本说明，组织 harness 不是抽象隐喻，而是具体文件、PR、评测、权限、owner 和反馈回路。
+
+## 医疗组织作为算法的 harness
+
+RWJBarnabas 的 NEJM AI（2026）研究是组织 harness 在医疗领域的样本，也是迄今结局数据最硬的样本。Epic Deterioration Index 只是持续计算风险分数的模型；产生院内死亡率下降（23.1% → 18.6%，风险校正优势比降约 18%）的是模型周围的组织设施：EHR 集成、每 15 分钟重算、达到阈值自动通知快速反应团队、临床培训、以及持续的结局与工作量监控。
+
+高级作者的原话是本 Topic 的临床改写："The mortality benefit was not produced by an algorithm but by the partnership around the algorithm"（死亡率获益不是算法生产的，而是算法周围的协作生产的）。
+
+与工程组织和数据组织样本相比，医疗样本多揭示了两点：
+
+- **harness 的节点必须建制化**：快速反应团队是常设建制（人员、权限、响应流程），不是临时拉群。告警的"责任人接收"节点依赖组织建制存在，整条链路即 [[Alert-Closed-Loop]]。
+- **harness 显性化后扩容可以很快**：单点打磨成熟后，10 家医院快速铺开——通知规则、培训材料和监控指标一旦显性化，跨站点复制比模型调参更快。这正好对应四层中的流程层和学习层。
 
 ## 工具接入也需要治理层
 

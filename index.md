@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-07-29
+updated: 2026-07-30
 tags:
 ---
 
@@ -15,10 +15,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 349 个 |
+| Entity 页面 | 350 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 216 个 |
+| Raw 文章 | 217 个 |
 | Source Summary | 191 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 39 个 |
@@ -105,6 +105,7 @@ tags:
 | [[wiki/entities/Task-Framework\|Task Framework（任务框架）]] | Acemoglu/Autor 的技术变革五分类——以任务为分析单元区分自动化与新任务创建 | Hamilton Project |
 | [[wiki/entities/Task-Crossover\|Task Crossover（任务跨界）]] | 历史上属于某职业的任务大量出现在其他职业从业者的 AI 使用中——分工重组先于职位描述变化 | OpenAI Work at the Frontier |
 | [[wiki/entities/Agent-Unit-of-Work\|Agent Unit of Work（Agent 工作单元）]] | 组织愿意交给 Agent 的任务单元——大小、覆盖、交接、检查、边界构成 delegation 核心控制参数 | Martin Fowler 2026-07 |
+| [[wiki/entities/Alert-Closed-Loop\|Alert Closed Loop（告警闭环）]] | AI 风险信号经通知、责任人接收、评估、干预到复盘的完整责任链——闭环之外模型输出不产生结局价值 | NEJM AI 2026 RWJBarnabas |
 
 #### 知识与语义
 | Entity | 定义 | 来源 |
@@ -151,7 +152,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-07-14——编译 2 篇 raw 材料（Microsoft Ships AI Agents at Enterprise Scale / Martin Fowler Fragments July 2026），新增 5 个 Entity（Retrieval-as-a-Subagent / Rubric-Based-Evaluation / Agent-Identity / Self-Hosted-Models / Agent-Unit-of-Work）+ 2 个 source summary。
+最新编译：2026-07-30——编译 1 篇 raw 材料（NEJM AI: Implementation of an AI-Triggered Rapid Response，RWJBarnabas/Rutgers），新增 1 个 Entity（Alert-Closed-Loop）+ 1 个 source summary；更新 Escalation-Based-Human-Oversight、AI-Deployment-Valley-of-Death、Integration-Wall、Organization-as-Agent-Harness、Successful-AI-Deployment-vs-GenAI-Divide。
 
 ---
 
