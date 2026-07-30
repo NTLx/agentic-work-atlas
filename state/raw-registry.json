@@ -1200,11 +1200,29 @@
       "summary_path": "wiki/sources/20260729-similarweb-langsmith-agent-report-evaluation.md",
       "updated_at": "2026-07-30T10:31:15+08:00"
     },
+    "20260730-palantir-industry-ai-unified-namespace.md": {
+      "body_sha256": "7046e6a046971488fb8ee5831cae8e70d63ce671c77443a37bf48081837d3bcf",
+      "raw_file": "20260730-palantir-industry-ai-unified-namespace.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T18:57:53+08:00"
+    },
     "20260730-palantir-ontology-connecting-agents-to-decisions.md": {
       "body_sha256": "a827259db31f61fa10d79b631d52fae4b5a6ad763981f1061e96c37fa652c1a0",
       "raw_file": "20260730-palantir-ontology-connecting-agents-to-decisions.md",
       "status": "pending",
       "updated_at": "2026-07-30T18:49:45+08:00"
+    },
+    "20260730-palantir-operational-responsibility.md": {
+      "body_sha256": "267f1e8de9ce4c3673a2cf456cf25872ea5ecfed3033fe2a2e7b882c67a0a4ec",
+      "raw_file": "20260730-palantir-operational-responsibility.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T18:57:53+08:00"
+    },
+    "20260730-palantir-secure-rapid-software-development-sscs.md": {
+      "body_sha256": "60f8bb81bfb70bc6d31831b74bb06f3624f42da8cd955689e3d19f5c2496222e",
+      "raw_file": "20260730-palantir-secure-rapid-software-development-sscs.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T18:57:53+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -1783,6 +1801,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T18:49:45+08:00",
+  "updated_at": "2026-07-30T18:57:53+08:00",
   "version": 1
 }
