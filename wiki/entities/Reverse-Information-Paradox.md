@@ -7,7 +7,7 @@ aliases:
   - 逆向信息悖论
 definition: "AI 时代买方为使用智能必须向卖方泄露专有知识，与 Arrow 经典信息悖论对称反转——卖方为出售而暴露 vs 买方为使用而暴露"
 created: 2026-07-13
-updated: 2026-07-13
+updated: 2026-07-30
 tags:
   - ai-economics
   - enterprise-ai
@@ -19,8 +19,10 @@ related_entities:
   - "[[Knowledge-Work]]"
   - "[[Agentic-Analytics]]"
   - "[[Agent-Harness]]"
+  - "[[Alpha-Transfer]]"
 source_raw:
   - "[[20260712-reverse-information-paradox-nadella.md]]"
+  - "[[20260727-palantir-ai-sovereignty-alpha-playbook]]"
 ---
 
 # Reverse Information Paradox
@@ -42,7 +44,7 @@ AI 时代买方为使用智能必须向卖方泄露专有知识，与 Arrow 经�
 |------|-----------|-------------|
 | 风险方 | 卖方 | 买方 |
 | 暴露原因 | 为出售而披露 | 为使用而喂入 |
-| 解决方案 | 专利制度 | ？（信任边界 + 自主 learning loop） |
+| 解决方案 | 专利制度 | 合同层堵漏 + 信任边界 + 自主 learning loop（见 [[Alpha-Transfer]] 四层防御） |
 | 知识流向 | 卖方→买方 | 买方→卖方（非对称） |
 
 ## 约束分析
@@ -55,6 +57,7 @@ AI 时代买方为使用智能必须向卖方泄露专有知识，与 Arrow 经�
 
 - Alex Karp: "拥有生产资料" — 计算、模型、数据栈的所有权
 - 从数据积累到学习积累 — 企业 AI 信任边界的范式转换
+- Palantir AI 主权 playbook（2026-07-27）把"解决方案"一栏的问号落成条款级工程：ZDR 四条定义（不落盘/不人审/不训练/内存暂存）= 把 exhaust 留在内存里；限制使用条款 = 切断"泄露 → 转售"通道；迁移缓冲期 = 保留退出权。悖论说明为什么必然泄露，playbook 说明泄露边界可以谈判——注意其 vendor 立场（[[Alpha-Transfer]]，证据层级 low）
 
 ## 关键数据点
 

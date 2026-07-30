@@ -3,7 +3,7 @@ type: topic
 title: Enterprise AI Model Sourcing
 description: "企业 AI 模型采购不应默认等于买最大 frontier API，而应按任务分布、评测证据、成本曲线、部署约束和组织能力分层选择"
 created: 2026-05-24
-updated: 2026-06-15
+updated: 2026-07-30
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -20,10 +20,12 @@ related_entities:
   - "[[Sequence-Packing]]"
   - "[[Intelligence-Premium]]"
   - "[[Closed-Frontier-Models-vs-Open-Model-Economy]]"
+  - "[[Alpha-Transfer]]"
 source_raw:
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
   - "[[The Return of the Deployment Company]]"
   - "[[Open and closed models are on different exponentials]]"
+  - "[[20260727-palantir-ai-sovereignty-alpha-playbook]]"
 ---
 
 # Enterprise AI Model Sourcing（企业 AI 模型采购）
@@ -113,6 +115,18 @@ source_raw:
 | 达到质量阈值、成本敏感 | 开源/专门化/本地模型 | 是否低估运维和质量责任内化 |
 
 这个矩阵的作用不是给出固定答案，而是防止采购讨论停留在模型品牌排序。每个工作流都要同时看任务分布、证据强度、调用频率、数据边界和内部承接能力。
+
+## 数据主权条款也是采购变量
+
+五个采购变量之外，Palantir 的 AI 主权 playbook（2026-07-27）补上了第六个维度：选择托管路径之后，适用什么数据处理条款。核心概念是 [[Alpha-Transfer]]——企业的 prompts、responses 与使用模式承载的独特机构知识，可能经条款许可的通道转移给提供商并被转售。严格 ZDR（不落盘、不人审、不训练、仅内存暂存）是必要不充分条件：beta 服务、安全分类器触发、图像输入、prompt 缓存、超链接条款单方变更等至少八条例外路径可以稀释它。
+
+这把模型采购从"选哪个模型"扩展到"选哪种数据关系"：
+
+- frontier API 路线必须附带条款工程（ZDR + 唯一许可用途 + 变更锁定 + 迁移缓冲），否则采购的是"带泄露通道的能力"。
+- 条款需要技术门来执行：allow-list、beta header 阻断、区域路由 fail-safe——法务条款若无运行时执行，等于超链接条款（[[Policy-as-Code-for-Agent-Governance]] 的采购层镜像）。
+- 彻底路径仍是 [[Hardware-Sovereignty]]：neocloud + 开源自托管把数据留在自己控制的栈内——playbook 自身也承认，额外主权控制往往意味着自托管开源模型。
+
+注意该来源为 vendor 立场（Palantir 销售主权 AI），机制清单可作检查表，论点强度需打折。
 
 ## 边界
 

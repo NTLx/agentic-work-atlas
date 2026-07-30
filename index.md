@@ -98,6 +98,7 @@ tags:
 | [[wiki/entities/Forward-Deployed-Engineer\|Forward Deployed Engineer（前线开发工程师）]] | 深入客户现场识别约束并交付定制化 AI 解决方案的角色 | Palantir / OpenAI |
 | [[wiki/entities/Knowledge-Work\|Knowledge Work（知识工作）]] | 正在被 AI 重新定义效率边界和价值内核的工作类型 | Jevons Paradox for Knowledge Work |
 | [[wiki/entities/Role-Merging\|Role Merging（角色融合）]] | AI 让 PM/设计师/财务等非工程角色也能写代码，同时让工程师端到端交付产品 | Claude Code 一周年 |
+| [[wiki/entities/Alpha-Transfer\|Alpha Transfer（Alpha 转移）]] | 企业使用托管模型时机构独特知识经条款通道转移给提供商并被转售——ZDR 四条定义与八类稀释路径 | Palantir Playbook 2026 |
 | [[wiki/entities/AI-Capability-Management-Alignment\|AI Capability-Management Alignment（AI 能力-管理对齐）]] | 不同能力层级的 AI 需要不同管理方式，与管理人的能力-委派匹配模型同构 | 数字生命卡兹克 |
 | [[wiki/entities/Agent-Adoption-Curve\|Agent Adoption Curve（智能体采纳曲线）]] | 智能体工具采纳的典型模式：开发者先采用，随后非开发者增速反超 | OpenAI Economic Research |
 | [[wiki/entities/Context-Advantage\|Context Advantage（上下文优势）]] | Andrew Ng 提出：人类在 AI 时代的不可替代性源于信息不对称而非品味 | Loop Engineering |

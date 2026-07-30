@@ -6,7 +6,7 @@ aliases:
   - AI 时代的护城河
 definition: "Boris Cherny 基于 Hamilton Helmer 七力框架的分析：AI 削弱切换成本和流程效力两种护城河，但网络效应、规模经济、独占资源不受影响——决定 SaaS 是否面临\"末日\""
 created: 2026-05-08
-updated: 2026-07-27
+updated: 2026-07-30
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -16,9 +16,11 @@ related_entities:
   - "[[Boris-Cherny]]"
   - "[[Software-Democratization]]"
   - "[[AI-Era-Economy-Shift]]"
+  - "[[Alpha-Transfer]]"
 source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - "[[20260727-langchain-own-your-intelligence]]"
+  - "[[20260727-palantir-ai-sovereignty-alpha-playbook]]"
 ---
 
 # Moats in AI Era（AI 时代的护城河）
@@ -47,3 +49,4 @@ source_raw:
 - [[Software-Democratization]] — 护城河削弱使得更多创业者能参与竞争
 - [[Lean-Stack]] — 低成本创业的工程实践，与 AI 削弱护城河的趋势协同
 - [[Organizational-Shape-Moat]] — 从组织设计角度的互补视角：组织形态本身是 AI 时代最难复制的护城河
+- [[Alpha-Transfer]] — 独占资源护城河的侵蚀机制：alpha（机构知识/tradecraft）经 ZDR 例外与元数据使用条款，以数据形态单向转移给供应商（vendor 来源，证据层级 low）
