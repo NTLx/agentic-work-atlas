@@ -6,7 +6,7 @@ aliases:
   - "Memory Poisoning"
 definition: "多 Agent 共享记忆中的错误传播无法被架构完全隔离——但可通过四层防护架构（L0 写入标签 + L1 正交审计 + L2 置信透明 + L3 时间遗忘）+ 证据-解释分离 + 遗忘优先于纠错的原则，将污染管理到可接受水平。"
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-07-30
 evidence_level: medium
 tags:
   - memory-system
@@ -20,8 +20,11 @@ related_entities:
   - "[[Context-Rot]]"
   - "[[Context-Engineering]]"
   - "[[Agent-Harness]]"
+  - "[[Context-Collapse]]"
+  - "[[Prompt-Injection-Risk]]"
 source_raw:
   - "[[20260604-openai-dreaming-memory]]"
+  - "[[20260622-context-collapse-1-poisoning-copilot-memory]]"
 ---
 
 # 共享记忆污染治理
@@ -70,6 +73,7 @@ source_raw:
 - Galileo.ai: "memory poisoning"——幻觉通过共享记忆传播，退化渐进非即时触发
 - explainx.ai (2026): Claude CCA Domain 5 专设上下文管理与可靠性（15% 权重）
 - O'Reilly (2026): 引用 Bousetouane arXiv:2601.11653 + Cemri et al. 2503.13657
+- 攻击侧实锤（MSRC 协调披露, 2026-06）：Copilot Memory 经 XPIA 被外部网页内容写入持久偏好，跨会话、跨上下文存活（[[Context-Collapse]]）——"语义级注入"从理论风险变成带厂商全球缓解的真实事件；微软修复（记忆写入锚定用户实际意图而非被摘要内容中的指令）即本条"证据-解释分离"原则在写入侧的工程实例
 
 ## 前提与局限性
 

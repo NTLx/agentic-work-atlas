@@ -7,7 +7,7 @@ aliases:
   - 对 AI 的隐藏指令
 definition: "在内容中嵌入'给 AI 看的隐藏指令'，试图影响 AI 综述/推荐的风险；更强的模型已能识别并拒绝这类指令，将其视为 untrusted external instruction"
 created: 2026-06-06
-updated: 2026-07-10
+updated: 2026-07-30
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -19,8 +19,10 @@ related_entities:
   - "[[Exit-Sovereignty]]"
   - "[[Agent-Traps]]"
   - "[[Agent-Perception-Gap]]"
+  - "[[Context-Collapse]]"
 source_raw:
   - "[[20260604-mollick-coexistence]]"
+  - "[[20260622-context-collapse-1-poisoning-copilot-memory]]"
 ---
 
 # Prompt Injection Risk（提示注入风险）
@@ -56,6 +58,7 @@ source_raw:
 - **不可解内核（07-10 深度思考）**：Prompt injection 的本质 = 未经授权的框架切换。Agent 不能在框架内完全检测框架被篡改（哥德尔不完备定理的工程推论）。防御分三层：底层(已知模式检测) + 中层(经济均衡威慑) + 上层(人类安全研究发现未知攻击)。上层是耗散结构——有效性随 AI 依赖度增加而下降
 - **行业规范尚未形成**：法律/伦理/平台规则都没明确"对 AI 隐藏指令"的边界
 - **个人/小团队 vs 大企业**：个人网站 prompt injection 风险低；大企业内容涉及品牌风险
+- **与"模型识别能力"结论的张力消解**：Mollick 案例（GPT-5.5 识别并拒绝 "Dear AI" 式指令）与 Context Collapse 系列（后续 Part 3 在 GPT-5.6 上复现完整蠕虫攻击链）不矛盾——前者关闭的是显式、态度层的注入（指令自报家门），后者是嵌入任务内容的跨域注入；模型侧识别能力解决态度层，解决不了信任域压扁的结构层
 
 ## 关联概念
 | 本库主题 | Prompt Injection Risk 的连接 |
@@ -70,4 +73,5 @@ source_raw:
 
 ## 关键数据点
 
-（关键事实、统计、时间线从原 raw 源沉淀，见 source_raw 字段）
+- Context Collapse 系列（Håkon Måløy，MSRC 协调披露，2026-06）：攻击者网页经 Copilot 摘要流程将非用户意图的偏好持久写入 Copilot Memory，跨会话、跨 work/web 上下文存活；微软全球缓解（记忆写入与用户实际意图对齐）。这是主流商用助手被提示注入写入持久状态的一手实证，作者将统一机制命名为 [[Context-Collapse]]。
+- 方法论含义：LLM 漏洞可利用性是概率性的——复现依赖反复试验与精确 prompt 措辞，单次失败不能否定漏洞；厂商 triage 需适配（精确 prompt + 环境假设 + 多次试验成功率）。

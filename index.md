@@ -129,6 +129,7 @@ tags:
 | [[wiki/entities/Prompt-Injection-Risk\|Prompt Injection Risk（提示注入风险）]] | 在内容中嵌入"给 AI 看的隐藏指令"试图影响 AI 综述/推荐的风险 | Ethan Mollick Co-Existence |
 | [[wiki/entities/Agent-Containment\|Agent Containment（Agent 隔离与遏制）]] | 通过环境层隔离限制 Agent 可操作范围的安全架构 | Anthropic Security Practices |
 | [[wiki/entities/Multi-Agent-System-Pathology\|Multi-Agent System Pathology（多 Agent 系统病理）]] | 多 Agent 系统在形成组织结构后出现的协作、认知、责任和内态失真问题 | Hao 好聊趋势 |
+| [[wiki/entities/Context-Collapse\|Context Collapse（上下文坍缩）]] | 不同信任域内容被压扁进同一模型上下文，低信任数据被解释为高信任指令的失败模式 | Context Collapse 系列 2026 |
 
 #### AI 政策与监管
 | Entity | 定义 | 来源 |

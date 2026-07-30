@@ -746,9 +746,11 @@
     },
     "20260622-context-collapse-1-poisoning-copilot-memory.md": {
       "body_sha256": "544362c52f8061022bffbc78302add5b56e909db4584e1c01937ceaa456f322a",
+      "compiled_at": "2026-07-30T10:23:17+08:00",
       "raw_file": "20260622-context-collapse-1-poisoning-copilot-memory.md",
-      "status": "pending",
-      "updated_at": "2026-07-30T10:19:42+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260622-context-collapse-1-poisoning-copilot-memory.md",
+      "updated_at": "2026-07-30T10:23:17+08:00"
     },
     "20260623-ibm-cuga-agent-harness.md": {
       "body_sha256": "ac0e557fd12b183f19d3469a57da9679ff7f517e21a8066d4baea16ec1d8b099",
@@ -1761,6 +1763,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T10:19:42+08:00",
+  "updated_at": "2026-07-30T10:23:17+08:00",
   "version": 1
 }
