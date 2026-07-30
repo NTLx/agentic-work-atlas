@@ -1200,6 +1200,12 @@
       "summary_path": "wiki/sources/20260729-similarweb-langsmith-agent-report-evaluation.md",
       "updated_at": "2026-07-30T10:31:15+08:00"
     },
+    "20260730-palantir-ontology-connecting-agents-to-decisions.md": {
+      "body_sha256": "a827259db31f61fa10d79b631d52fae4b5a6ad763981f1061e96c37fa652c1a0",
+      "raw_file": "20260730-palantir-ontology-connecting-agents-to-decisions.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T18:49:45+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1777,6 +1783,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T14:31:16+08:00",
+  "updated_at": "2026-07-30T18:49:45+08:00",
   "version": 1
 }
