@@ -1120,6 +1120,12 @@
       "summary_path": "wiki/sources/20260727-openai-work-at-the-frontier.md",
       "updated_at": "2026-07-28T13:52:35+08:00"
     },
+    "20260727-palantir-ai-sovereignty-alpha-playbook.md": {
+      "body_sha256": "12978d42efd6ccb039476c4718fcc08de05395ac6a5bb626fcd356a1189ce614",
+      "raw_file": "20260727-palantir-ai-sovereignty-alpha-playbook.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T14:27:22+08:00"
+    },
     "20260727-vectoral-token-relay-market.md": {
       "body_sha256": "0025688ac7cfb899eb45552a0a3b00721c1d1a7d794fcc6752efb7138202abe0",
       "compiled_at": "2026-07-27T12:31:09+08:00",
@@ -1769,6 +1775,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T10:31:15+08:00",
+  "updated_at": "2026-07-30T14:27:22+08:00",
   "version": 1
 }
