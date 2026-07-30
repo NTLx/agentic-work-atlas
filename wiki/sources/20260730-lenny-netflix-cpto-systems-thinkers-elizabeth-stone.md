@@ -9,7 +9,6 @@ tags:
   - source-summary
   - netflix
   - ai-org-design
-  - career-ladder
   - systems-thinking
 evidence_level: medium
 claim_type: mixed

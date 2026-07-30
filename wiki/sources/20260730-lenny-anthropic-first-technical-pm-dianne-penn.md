@@ -38,7 +38,7 @@ claim_type: mixed
 ### 3. 对标
 - **与 Palantir evals 文的 Why/How 配对**: [[20260730-palantir-responsible-ai-evals-prototype-to-production|Palantir AIP Evals]] 提供平台基础设施视角（test bench/evaluator/iteration 循环），本集提供 PM 工作流视角（用户反馈 → 失败轨迹 → eval set）。两者共同确立 [[Evals-as-PRD]] 命题：evals 同时是工程资产与需求定义载体。
 - **[[Model-Introspection]] 的 PM 应用**: Penn 的"读 transcripts 理解失败轨迹——是幻觉？过度自信？tool use 失败？search synthesis 失败？alignment 问题？"是模型自省在用户反馈归因中的系统应用：自省不止用于单次 debugging，而是把模糊抱怨（"claude hallucinated"）转译为研究者可行动的失败分类。
-- **[[Token-Maxing]] 的正面对撞**: Garry Tan"愿年花 $100K tokens = 活在 2028"是 token maxing 的正面表述；Penn 重构框架——token 是 input 不是 ROI 代理，output 是 experimentation，"围绕 experimentation 设目标可能有不同的达成路径"。与库中 Token-Maxing 的成本失控叙事构成 framing 冲突，应并列记录。
+- **[[Token-Maxing]] 的正面对撞**: Garry Tan"愿年花 `$100K` tokens = 活在 2028"是 token maxing 的正面表述；Penn 重构框架——token 是 input 不是 ROI 代理，output 是 experimentation，"围绕 experimentation 设目标可能有不同的达成路径"。与库中 Token-Maxing 的成本失控叙事构成 framing 冲突，应并列记录。
 - **[[Mechanical-Sympathy-for-LLMs]] 的管理层版本**: Penn"管理者必须 hands-on shipping 一部分时间"与 Martin Fowler 的 LLM 机械同理心同源——对模型能力边界的 theory of mind 只能通过亲手使用获得，不能通过汇报获得。
 - **约束分析（3c）**: 硬约束——emergent capabilities 的不连续跳跃不可预测，只能被 evals 探测（scaling law 结构）；软约束——PM/engineer 比例、Labs 编制、hiring 标准（组织选择）；自设约束——"PRD 是产品开发的必要环节"被 evals-as-PRD 部分证伪（在可评测维度上）。
 

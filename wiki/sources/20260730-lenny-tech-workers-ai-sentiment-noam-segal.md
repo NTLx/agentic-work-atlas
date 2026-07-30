@@ -9,7 +9,7 @@ tags:
   - source-summary
   - tech-worker-sentiment
   - diagnostic-snapshot
-  - burnout
+  - skill-atrophy
 evidence_level: medium
 claim_type: extracted
 ---

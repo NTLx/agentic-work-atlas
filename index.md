@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 354 个 |
+| Entity 页面 | 362 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 222 个 |
-| Source Summary | 191 个 |
+| Raw 文章 | 231 个 |
+| Source Summary | 200 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 39 个 |
 
@@ -89,6 +89,8 @@ tags:
 | [[wiki/entities/Self-Hosted-Models\|Self-Hosted Models（自托管模型）]] | 组织自行托管开放权重模型的实践，驱动力包括成本、主权和信息安全 | Martin Fowler 2026-07 |
 | [[wiki/entities/Software-Development-Autonomy-Levels\|Software Development Autonomy Levels（软件开发自治分级）]] | 类比 SAE 的三级自治框架（Code/Pipeline/Demand Autonomy）——按 SDLC 责任转移分级，使能力主张与问责可读 | Berkeley RDI |
 | [[wiki/entities/Orchestrators-Tax\|Orchestrator's Tax（编排者税）]] | subagent 的真正价值是保护 orchestrator 工作记忆而非并行省时——token 花一次，context 污染每轮收租 | martinfowler.com |
+| [[wiki/entities/Transparent-Tool-Handoff\|Transparent Tool Handoff（透明工具交接）]] | 把可形式化步骤从不可解释 LLM 交接给可解释工具执行——以系统级可解释性替代模型级可解释性；CoT ≠ 真推理 | Palantir Responsible AI 2024 |
+| [[wiki/entities/Evals-as-PRD\|Evals as PRD（评测即需求文档）]] | 以可运行评测集取代传统 PRD 承担需求定义功能：用户反馈→失败轨迹归因→eval set→可度量改进 | Lenny's Podcast / Anthropic 2026 |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
@@ -108,6 +110,10 @@ tags:
 | [[wiki/entities/Task-Crossover\|Task Crossover（任务跨界）]] | 历史上属于某职业的任务大量出现在其他职业从业者的 AI 使用中——分工重组先于职位描述变化 | OpenAI Work at the Frontier |
 | [[wiki/entities/Agent-Unit-of-Work\|Agent Unit of Work（Agent 工作单元）]] | 组织愿意交给 Agent 的任务单元——大小、覆盖、交接、检查、边界构成 delegation 核心控制参数 | Martin Fowler 2026-07 |
 | [[wiki/entities/Alert-Closed-Loop\|Alert Closed Loop（告警闭环）]] | AI 风险信号经通知、责任人接收、评估、干预到复盘的完整责任链——闭环之外模型输出不产生结局价值 | NEJM AI 2026 RWJBarnabas |
+| [[wiki/entities/Operational-Responsibility\|Operational Responsibility（运营责任制）]] | 写代码的团队拥有其生产行为：最先被 paging 的人就是最适合修复的人——DevOps "you build it you run it" 的联邦制版本 | Palantir 2024 |
+| [[wiki/entities/Systems-Thinker-Demand\|Systems Thinker Demand（系统思维者需求）]] | 招聘从 local expertise 向系统思维者的结构性转移——agent 跨系统操作需要 source of truth 与 paved path | Lenny's Podcast / Netflix 2026 |
+| [[wiki/entities/Excellence-as-Operating-System\|Excellence as Operating System（卓越即操作系统）]] | Netflix 文化机制元解释：talent density + autonomy + keeper test 是到达卓越的操作系统，克制用流程修复问题的本能 | Lenny's Podcast / Netflix 2026 |
+| [[wiki/entities/AI-Identity-Bifurcation\|AI Identity Bifurcation（AI 身份极化）]] | 2026 H1 tech workforce 因 AI 一分为二（50% amplified vs 46% 三种负面立场），效应量为 manager 效应 3 倍——诊断型时间基线 | Lenny's Podcast Survey 2026 |
 
 #### 知识与语义
 | Entity | 定义 | 来源 |
@@ -121,6 +127,7 @@ tags:
 | [[wiki/entities/Human-Curation\|Human Curation（人类策展）]] | 人类在信息过载时代的核心价值——选择、组织、解释信息 | Grant Sanderson 播客 |
 | [[wiki/entities/Theory-of-Mind\|Theory of Mind（心智理论）]] | 理解他人心理状态的能力，是有效沟通、教学和策展的基础 | Grant Sanderson 播客 |
 | [[wiki/entities/Reverse-Information-Paradox\|Reverse Information Paradox（反向信息悖论）]] | AI 时代买方为使用智能必须向卖方泄露专有知识，与 Arrow 经典信息悖论对称反转 | Nadella 2026-07 |
+| [[wiki/entities/Decision-Centric-Architecture\|Decision-Centric Architecture（决策中心架构）]] | 把"决策"而非仅数据作为建模对象的架构：data/logic/action/security 四要素统一，decision lineage 自动捕获 | Palantir 2026 |
 
 #### Agent 安全与攻防
 | Entity | 定义 | 来源 |
@@ -133,6 +140,7 @@ tags:
 | [[wiki/entities/Multi-Agent-System-Pathology\|Multi-Agent System Pathology（多 Agent 系统病理）]] | 多 Agent 系统在形成组织结构后出现的协作、认知、责任和内态失真问题 | Hao 好聊趋势 |
 | [[wiki/entities/Context-Collapse\|Context Collapse（上下文坍缩）]] | 不同信任域内容被压扁进同一模型上下文，低信任数据被解释为高信任指令的失败模式 | Context Collapse 系列 2026 |
 | [[wiki/entities/AI-Worm\|AI Worm（AI 蠕虫）]] | 借 AI 助手自身生成能力经正常工作流自传播的攻击指令——每个受感染工件成为携带内部信任的新载体 | Context Collapse Part 3 2026 |
+| [[wiki/entities/Secure-Paved-Path\|Secure Paved Path（安全铺装路径）]] | 把安全控制嵌入默认开发路径：威胁模型先行分配资源，hermetic builds + 端到端 provenance，绕过比遵守更难 | Palantir SSCS 2024 |
 
 #### AI 政策与监管
 | Entity | 定义 | 来源 |
@@ -152,11 +160,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（189 个）*
+*原始剪藏文章（231 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-07-30——编译 1 篇 raw 材料（NEJM AI: Implementation of an AI-Triggered Rapid Response，RWJBarnabas/Rutgers），新增 1 个 Entity（Alert-Closed-Loop）+ 1 个 source summary；更新 Escalation-Based-Human-Oversight、AI-Deployment-Valley-of-Death、Integration-Wall、Organization-as-Agent-Harness、Successful-AI-Deployment-vs-GenAI-Divide。
+最新编译：2026-07-30——批量编译 9 篇 raw 材料（Palantir 工程机制六篇 + Lenny's Podcast 三集 transcript）。新增 8 个 Entity（Decision-Centric-Architecture、Operational-Responsibility、Transparent-Tool-Handoff、Secure-Paved-Path、Systems-Thinker-Demand、Excellence-as-Operating-System、Evals-as-PRD、AI-Identity-Bifurcation）+ 9 个 source summary；增厚 Ontology、Forward-Deployed-Engineer、Evaluation-Set、Deployment-Product-Flywheel、Token-Maxing、Model-Introspection、Augmentation-Trap、Anthropic 与 Enterprise-Ontology-Application、Forward-Deployed-AI-Enablement、AI-Era-Career-Skills、Skill-Atrophy-and-Knowledge-Debt 四个 topic。
 
 ---
 

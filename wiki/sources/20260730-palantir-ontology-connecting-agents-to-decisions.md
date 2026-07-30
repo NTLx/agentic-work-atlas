@@ -40,7 +40,7 @@ claim_type: mixed
 - **与 [[Reverse-Information-Paradox]] 的正面对撞**: Nadella 悖论指出买方为用智能必然泄露专有知识；本文的 decision lineage + fine-tuning 回流机制恰恰是泄露的制度化通道。区别在于：playbook 文献（[[20260727-palantir-ai-sovereignty-alpha-playbook]]）教买方堵漏，本文展示卖方如何把泄露设计成产品特性——两者应成对阅读。
 - **scenario staging ≈ git 工作流的操作数据迁移**: explore/stage/commit 三级权限与 branch/PR/merge 同构；文中未明说的推论是——企业操作数据正在经历代码世界十年前的 Git 化，Global Branching（文末提及）即此隐喻的字面化。可迁移到一切"高风险写回需要人工 review"的 agent 部署场景。
 - **[[Deployment-Product-Flywheel]] 的数据形态**: "decision lineage 沉淀为 fine-tuning 数据与 prompting 原则"是部署-产品飞轮在数据层的精确表述——FDE 回流的不再只是平台功能，还有决策语料。
-- **约束分析（3c）**: 硬约束——决策必须锚定企业实时状态而非检索快照（操作型 AI 的写回本质决定）；软约束——explore/stage/commit 权限分级、动态安全策略（可设计的治理层）；自设约束——"必须单一系统整合四要素"是厂商架构偏好，多系统联邦架构（如 [[Software-Supply-Chain-Security|SSCS]] 式的组件化思路）未必更差。
+- **约束分析（3c）**: 硬约束——决策必须锚定企业实时状态而非检索快照（操作型 AI 的写回本质决定）；软约束——explore/stage/commit 权限分级、动态安全策略（可设计的治理层）；自设约束——"必须单一系统整合四要素"是厂商架构偏好，多系统联邦架构（如 [[Secure-Paved-Path|SSCS]] 式的组件化思路）未必更差。
 
 ### 关联概念
 - [[Decision-Centric-Architecture]]

@@ -8,7 +8,7 @@ updated: 2026-07-30
 tags:
   - source-summary
   - palantir
-  - ai-evals
+  - AI-evaluation
   - unit-testing
   - agentic-engineering
 evidence_level: medium
