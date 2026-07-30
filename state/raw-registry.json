@@ -744,6 +744,12 @@
       "summary_path": "wiki/sources/20260620-l8-principal-agentic-workflow.md",
       "updated_at": "2026-07-09T13:16:31+08:00"
     },
+    "20260622-context-collapse-1-poisoning-copilot-memory.md": {
+      "body_sha256": "544362c52f8061022bffbc78302add5b56e909db4584e1c01937ceaa456f322a",
+      "raw_file": "20260622-context-collapse-1-poisoning-copilot-memory.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T10:19:42+08:00"
+    },
     "20260623-ibm-cuga-agent-harness.md": {
       "body_sha256": "ac0e557fd12b183f19d3469a57da9679ff7f517e21a8066d4baea16ec1d8b099",
       "compiled_at": "2026-07-09T13:16:31+08:00",
@@ -1000,6 +1006,12 @@
       "summary_path": "wiki/sources/20260713-microsoft-ships-ai-agents-enterprise-scale.md",
       "updated_at": "2026-07-14T09:45:02+08:00"
     },
+    "20260714-context-collapse-2-when-emails-instruct.md": {
+      "body_sha256": "a6e2d527436d8c0b6ffd0cfdd24f92ea16c1e0107d7cbb7967781bb18e945e05",
+      "raw_file": "20260714-context-collapse-2-when-emails-instruct.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T10:19:42+08:00"
+    },
     "20260715-anthropic-talent-strategy-2026.pdf": {
       "body_sha256": "0dd1976e6fd422b7771c646940f6be71eb443ebddb0f0b899456ccbf5b15bbbd",
       "compiled_at": "2026-07-16T11:43:44+08:00",
@@ -1120,6 +1132,12 @@
       "summary_path": "wiki/sources/20260728-bytebytego-llm-search-integration-depth.md",
       "updated_at": "2026-07-29T15:30:56+08:00"
     },
+    "20260728-context-collapse-3-ai-worming-through-word.md": {
+      "body_sha256": "db6edd7598b2cf95cd988f10f31622876faa9ce9e6fdc96a72389756d5ce6126",
+      "raw_file": "20260728-context-collapse-3-ai-worming-through-word.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T10:19:42+08:00"
+    },
     "20260728-fowler-orchestrator-tax.md": {
       "body_sha256": "4b62d4f3b22e19c329f1530f94e56dc3157827ec11ff5ae1247ac07abb37f51c",
       "compiled_at": "2026-07-29T15:30:57+08:00",
@@ -1159,6 +1177,12 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260729-nejm-ai-triggered-rapid-response-mortality.md",
       "updated_at": "2026-07-30T10:09:25+08:00"
+    },
+    "20260729-similarweb-langsmith-agent-report-evaluation.md": {
+      "body_sha256": "843b21557a306b019915ea5630e85a0e060791f83a2da4d35f053a3a794ff166",
+      "raw_file": "20260729-similarweb-langsmith-agent-report-evaluation.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T10:19:42+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -1737,6 +1761,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T10:09:25+08:00",
+  "updated_at": "2026-07-30T10:19:42+08:00",
   "version": 1
 }
