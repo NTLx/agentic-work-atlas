@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 221 |
-| Raw 已编译 | 221 |
+| Raw 来源 | 222 |
+| Raw 已编译 | 222 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 353 |
+| Entity | 354 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 10 |
@@ -41,7 +41,7 @@ tags:
 | `source_raw` | 0 |
 | `tag` | 46 |
 | `evidence` | 2 |
-| `low-evidence` | 1 |
+| `low-evidence` | 3 |
 | `stale-core` | 5 |
 | `entity` | 12 |
 | `comparison` | 0 |
@@ -72,7 +72,9 @@ tags:
 
 ### low-evidence
 
+- `wiki/entities/Alpha-Transfer.md` - `低证据页面 Alpha-Transfer 只能作为补 source 或探索线索`
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `低证据页面 20260715-anthropic-talent-strategy-2026 只能作为补 source 或探索线索`
+- `wiki/sources/20260727-palantir-ai-sovereignty-alpha-playbook.md` - `低证据页面 20260727-palantir-ai-sovereignty-alpha-playbook 只能作为补 source 或探索线索`
 
 ### mathjax
 
