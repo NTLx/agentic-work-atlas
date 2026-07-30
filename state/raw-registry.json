@@ -1264,6 +1264,12 @@
       "summary_path": "wiki/sources/20260730-palantir-responsible-ai-evals-prototype-to-production.md",
       "updated_at": "2026-07-30T20:28:48+08:00"
     },
+    "20260730-palantir-responsible-ai-hallucinations-ontology.md": {
+      "body_sha256": "41bef1a2e8c1e0a60b41815c895b70f8bfabfe8873f36941d09b909194b1a755",
+      "raw_file": "20260730-palantir-responsible-ai-hallucinations-ontology.md",
+      "status": "pending",
+      "updated_at": "2026-07-30T22:35:10+08:00"
+    },
     "20260730-palantir-secure-rapid-software-development-sscs.md": {
       "body_sha256": "60f8bb81bfb70bc6d31831b74bb06f3624f42da8cd955689e3d19f5c2496222e",
       "compiled_at": "2026-07-30T20:28:47+08:00",
@@ -1849,6 +1855,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T20:36:10+08:00",
+  "updated_at": "2026-07-30T22:35:10+08:00",
   "version": 1
 }
