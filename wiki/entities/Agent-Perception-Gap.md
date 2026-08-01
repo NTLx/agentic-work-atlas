@@ -18,6 +18,7 @@ related_entities:
   - "[[Agent-Traps]]"
   - "[[Prompt-Injection-Risk]]"
   - "[[ACI-Agent-Computer-Interface]]"
+  - "[[Agent-Environment-Misalignment]]"
 source_raw:
   - "[[20260707-ai-agent-traps.pdf]]"
 ---

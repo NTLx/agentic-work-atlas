@@ -42,6 +42,8 @@ related_entities:
   - "[[Rubric-Based-Evaluation]]"
   - "[[Distinct-Principal-Identity]]"
   - "[[Agent-Unit-of-Work]]"
+  - "[[ALIGN-Framework]]"
+  - "[[Agent-Environment-Misalignment]]"
 source_raw:
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260713-martin-fowler-fragments-july-2026]]"
@@ -68,6 +70,7 @@ source_raw:
   - "[[20260717-schema-harness-arc-agi]]"
   - "[[20260727-langchain-own-your-intelligence]]"
   - "[[20260727-github-harness-is-all-you-need]]"
+  - "[[20260801-align-agent-environment-interface.pdf]]"
 ---
 
 # Agent Harness

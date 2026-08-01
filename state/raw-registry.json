@@ -1278,6 +1278,22 @@
       "summary_path": "wiki/sources/20260730-palantir-secure-rapid-software-development-sscs.md",
       "updated_at": "2026-07-30T20:28:47+08:00"
     },
+    "20260801-align-agent-environment-interface.pdf": {
+      "body_sha256": "33fd5fb97d3b0fa3083139bddf0a43a8c459f77c902efc94701ee78bd906ddd5",
+      "compiled_at": "2026-08-01T17:47:48+08:00",
+      "raw_file": "20260801-align-agent-environment-interface.pdf",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260801-align-agent-environment-interface.md",
+      "updated_at": "2026-08-01T17:47:48+08:00"
+    },
+    "20260801-openbmb-align-tweet.md": {
+      "body_sha256": "6d661c4d7cef8f186c5637d7571d4c978ad4e0159fd542bb1164a6ea9d44ff7d",
+      "compiled_at": "2026-08-01T17:47:49+08:00",
+      "raw_file": "20260801-openbmb-align-tweet.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260801-align-agent-environment-interface.md",
+      "updated_at": "2026-08-01T17:47:49+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1855,6 +1871,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-07-30T22:35:10+08:00",
+  "updated_at": "2026-08-01T17:47:49+08:00",
   "version": 1
 }

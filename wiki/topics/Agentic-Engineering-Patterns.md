@@ -36,6 +36,8 @@ related_entities:
   - "[[AI-Native-Engineering-Org]]"
   - "[[Intelligence-Premium]]"
   - "[[Agent-Optimized-CLI]]"
+  - "[[ALIGN-Framework]]"
+  - "[[Agent-Environment-Misalignment]]"
 source_raw:
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'

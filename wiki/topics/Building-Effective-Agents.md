@@ -18,10 +18,13 @@ related_entities:
   - '[[MIT-Technology-Review-Insights]]'
   - "[[Verifiability]]"
   - "[[Bias-to-Action-LLM]]"
+  - "[[ALIGN-Framework]]"
+  - "[[Agent-Environment-Misalignment]]"
 source_raw:
   - '[[building-effective-agents-complete]]'
   - '[[The Anatomy of an Agent Harness]]'
   - '[[Validating agentic behavior when “correct” isn’t deterministic]]'
+  - "[[20260801-align-agent-environment-interface.pdf]]"
 ---
 
 # Building Effective Agents
@@ -39,6 +42,12 @@ source_raw:
 1. **Simplicity** - 保持设计简单
 2. **Transparency** - 明确展示规划步骤
 3. **Well-crafted ACI** - 精心设计 Agent-Computer Interface
+
+### 三大原则的算法化
+
+[[ALIGN-Framework|ALIGN]]（清华 NLP, 2025）实证了三大原则之一 "Well-crafted ACI" 可以**由 LLM 自主生成**：不再需要人工 handcraft 接口，而是用 Analyzer 从失败轨迹诊断错位、Optimizer 合成 Python 函数接口，实验验证对抗幻觉。同一接口 plug-and-play 跨 5 种 agent 架构和多种 backbone。
+
+这暗示 [[ACI-Agent-Computer-Interface|ACI]] 的"精心设计"不必是人工责任——可以变成自动化流水线。详见 [[Agent-Environment-Misalignment]]。
 
 ---
 

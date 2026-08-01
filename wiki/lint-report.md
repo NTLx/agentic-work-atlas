@@ -1,33 +1,39 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-07-30"
-score: 73
+date: "2026-08-01"
+score: 70
 status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-07-30
+# Agentic Work Atlas Lint 报告 - 2026-08-01
 
 > [!summary] 状态
 > 门禁: **FAIL**
-> 分数: **73/100**
-> 阻断问题: **27**
+> 分数: **70/100**
+> 阻断问题: **30**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 231 |
+| Raw 来源 | 234 |
 | Raw 已编译 | 231 |
-| Raw 待编译 | 0 |
+| Raw 待编译 | 3 |
 | Raw 已跳过 | 0 |
-| Entity | 362 |
+| Entity | 364 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 10 |
+
+## 待编译 Raw
+
+- `raw/20260730-palantir-responsible-ai-hallucinations-ontology.md`
+- `raw/20260801-openbmb-align-tweet.md`
+- `raw/20260801-align-agent-environment-interface.pdf`
 
 ## 检查项
 
@@ -37,9 +43,9 @@ tags:
 | `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 3 |
-| `wikilink` | 2 |
+| `wikilink` | 5 |
 | `source_raw` | 0 |
-| `tag` | 58 |
+| `tag` | 63 |
 | `evidence` | 2 |
 | `low-evidence` | 6 |
 | `stale-core` | 5 |
@@ -95,18 +101,20 @@ tags:
 
 ### stale-core
 
-- `wiki/entities/Agent-Workflow-Patterns.md` - `核心页 Agent-Workflow-Patterns 已 106 天未更新，入链 16 条`
-- `wiki/entities/Dan-Shipper.md` - `核心页 Dan-Shipper 已 105 天未更新，入链 6 条`
-- `wiki/entities/Discernment.md` - `核心页 Discernment 已 106 天未更新，入链 10 条`
-- `wiki/entities/Memex.md` - `核心页 Memex 已 106 天未更新，入链 15 条`
-- `wiki/entities/Specificity.md` - `核心页 Specificity 已 106 天未更新，入链 10 条`
+- `wiki/entities/Agent-Workflow-Patterns.md` - `核心页 Agent-Workflow-Patterns 已 108 天未更新，入链 16 条`
+- `wiki/entities/Dan-Shipper.md` - `核心页 Dan-Shipper 已 107 天未更新，入链 6 条`
+- `wiki/entities/Discernment.md` - `核心页 Discernment 已 108 天未更新，入链 10 条`
+- `wiki/entities/Memex.md` - `核心页 Memex 已 108 天未更新，入链 15 条`
+- `wiki/entities/Specificity.md` - `核心页 Specificity 已 108 天未更新，入链 10 条`
 
 ### tag
 
+- `wiki/entities/ALIGN-Framework.md` - `tags 超过 5 个: 6`
 - `wiki/entities/Framework-Creation-Constraint.md` - `非 kebab-case tag: '知识管理'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260718-ai-mania-eviscerating-decision-making.md` - `tags 超过 5 个: 6`
+- `wiki/sources/20260801-align-agent-environment-interface.md` - `tags 超过 5 个: 6`
 - `wiki/outputs/中国AI-Agent生态-监管科层路线分化.md` - `一次性 tag 仅出现 1 次: 'China'`
 - `wiki/outputs/Delegative-UI-慢速对话的认知经济学.md` - `一次性 tag 仅出现 1 次: 'Delegative-UI'`
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `一次性 tag 仅出现 1 次: 'academia-industry'`
@@ -118,6 +126,7 @@ tags:
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `一次性 tag 仅出现 1 次: 'ai-ethics'`
 - `wiki/sources/20260718-ai-mania-eviscerating-decision-making.md` - `一次性 tag 仅出现 1 次: 'ai-hype'`
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `一次性 tag 仅出现 1 次: 'ai-organization'`
+- `wiki/entities/ALIGN-Framework.md` - `一次性 tag 仅出现 1 次: 'automatic-optimization'`
 - `wiki/entities/Identity-Domain-Causal-Force.md` - `一次性 tag 仅出现 1 次: 'causal-inference'`
 - `wiki/sources/20260730-palantir-responsible-ai-black-box-explainability.md` - `一次性 tag 仅出现 1 次: 'chain-of-thought'`
 - `wiki/entities/Augmentation-Trap.md` - `一次性 tag 仅出现 1 次: 'cognitive-degradation'`
@@ -130,9 +139,11 @@ tags:
 - `wiki/entities/Anomaly-Detection-Gut.md` - `一次性 tag 仅出现 1 次: 'expertise'`
 - `wiki/research/research-logs/exploration-20260714.md` - `一次性 tag 仅出现 1 次: 'exploration'`
 - `wiki/research/research-logs/exploration-20260714.md` - `一次性 tag 仅出现 1 次: 'external-signals'`
+- `wiki/entities/ALIGN-Framework.md` - `一次性 tag 仅出现 1 次: 'framework'`
 - `wiki/entities/Credible-Threat-Structural-Binding.md` - `一次性 tag 仅出现 1 次: 'game-theory'`
 - `wiki/sources/20260730-palantir-industry-ai-unified-namespace.md` - `一次性 tag 仅出现 1 次: 'industry-ai'`
 - `wiki/sources/20260718-ai-mania-eviscerating-decision-making.md` - `一次性 tag 仅出现 1 次: 'institutional-capture'`
+- `wiki/sources/20260801-align-agent-environment-interface.md` - `一次性 tag 仅出现 1 次: 'interface-design'`
 - `wiki/sources/20260718-bytebytego-mcp-vs-a2a-vs-acp.md` - `一次性 tag 仅出现 1 次: 'interoperability'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `一次性 tag 仅出现 1 次: 'llm-judge'`
 - `wiki/entities/Default-Side-Asymmetry.md` - `一次性 tag 仅出现 1 次: 'metaphysics'`
@@ -164,8 +175,11 @@ tags:
 
 ### wikilink
 
+- `wiki/entities/ALIGN-Framework.md:215` - `链接目标不存在: [[Automatic-Interface-Generation]]`
+- `wiki/entities/Agent-Environment-Misalignment.md:152` - `链接目标不存在: [[Agent-Evaluation]]`
 - `wiki/research/research-logs/2026-07-20.md:156` - `链接目标不存在: [[Agent-Governance]]`
 - `wiki/sources/20260718-bytebytego-mcp-vs-a2a-vs-acp.md:44` - `链接目标不存在: [[Agent-to-Agent-Protocol-A2A]]`
+- `wiki/sources/20260801-align-agent-environment-interface.md:56` - `链接目标不存在: [[Agent-Evaluation-Methodology]]`
 
 ## 运行命令
 

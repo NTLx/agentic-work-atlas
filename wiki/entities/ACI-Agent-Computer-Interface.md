@@ -14,8 +14,11 @@ tags:
 related_entities:
   - '[[Coding-Agents]]'
   - '[[Agentic-Engineering]]'
+  - '[[ALIGN-Framework]]'
+  - '[[Agent-Environment-Misalignment]]'
 source_raw:
   - '[[building-effective-agents-complete]]'
+  - '[[20260801-align-agent-environment-interface.pdf]]'
 ---
 
 # ACI (Agent-Computer Interface)
@@ -104,7 +107,25 @@ source_raw:
 - [[Coding-Agents]] - ACI 的主要使用者
 - [[Agent-Workflow-Patterns]] - 使用 ACI 的模式
 - [[Agentic-Engineering]] - ACI 设计的上下文
+- [[ALIGN-Framework]] - ACI 的工业化、自动化版本：用 LLM 自主合成接口而非手工 handcraft
+- [[Agent-Environment-Misalignment]] - ACI 设计不足导致的具体失败模式
+
+---
+
+## 与 ALIGN 的对比
+
+| 维度 | ACI（手工） | ALIGN（自动） |
+|------|------------|---------------|
+| 设计方式 | 人类 handcraft | LLM 自主生成 |
+| 适用环境 | 单一环境 | 跨环境通用 |
+| 优化机制 | 一次性 | 迭代（从失败轨迹学习） |
+| 成本 | 高（需人工调优） | 中（多轮 LLM 调用） |
+| 维护 | 改环境需重新设计 | 自动更新 |
+| 跨 agent 迁移 | 不一定 | Plug-and-play（5 种 agent 一致受益） |
+
+ALIGN（清华 NLP, 2025）可视为**"ACI 原则的算法化实现"**——不再需要人工精心设计接口，而是让 LLM 从失败轨迹中自动合成对齐接口。Anthropic "Building Effective Agents" 的三大原则之一 "Well-crafted ACI" 在 ALIGN 这里获得了一个可规模化落地的版本。
 
 ---
 
 > **来源**：Anthropic, "Building Effective AI Agents", 2024-12-19
+> **对比来源**：Liu et al., "Agent-Environment Alignment via Automated Interface Generation", arXiv:2505.21055, 2025-05
