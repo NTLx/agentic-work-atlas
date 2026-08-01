@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 234 |
-| Raw 已编译 | 233 |
+| Raw 来源 | 235 |
+| Raw 已编译 | 234 |
 | Raw 待编译 | 1 |
 | Raw 已跳过 | 0 |
-| Entity | 364 |
+| Entity | 367 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 10 |

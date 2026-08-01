@@ -19,6 +19,7 @@ related_entities:
   - "[[Corrective-RAG]]"
   - "[[Reflexion]]"
   - "[[Verifiable-Agent-Engineering]]"
+  - "[[Long-Lived-Credential-Risk]]"
 source_raw:
   - "[[OncoAgent A Dual-Tier Multi-Agent Framework for Privacy-Preserving Oncology Clinical Decision Support]]"
 ---

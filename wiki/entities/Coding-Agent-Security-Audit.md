@@ -21,10 +21,13 @@ related_entities:
   - "[[Token-Supply-Chain]]"
   - "[[Flattening-as-Governance-Consequence]]"
   - "[[Least-Agency]]"
+  - "[[Rogue-AI-Agent]]"
+  - "[[Long-Lived-Credential-Risk]]"
 source_raw:
   - "[[20260610-anthropic-ai-exploits-security-patches]]"
   - "[[20260518-zero-trust-for-ai-agents]]"
   - "[[20260414-cybersecurity-proof-of-work]]"
+  - "[[20260801-tailscale-hugging-face-ai-agent-intrusion]]"
 ---
 
 # Coding-Agent-Security-Audit（Coding Agent 安全审计标准）

@@ -44,6 +44,8 @@ related_entities:
   - "[[Agent-Unit-of-Work]]"
   - "[[ALIGN-Framework]]"
   - "[[Agent-Environment-Misalignment]]"
+  - "[[Rogue-AI-Agent]]"
+  - "[[Long-Lived-Credential-Risk]]"
 source_raw:
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260713-martin-fowler-fragments-july-2026]]"

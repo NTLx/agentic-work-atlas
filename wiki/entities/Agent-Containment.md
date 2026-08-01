@@ -27,6 +27,8 @@ related_entities:
   - "[[Agent-Failure-Causal-Chain]]"
   - "[[Agent-Traps]]"
   - "[[Agent-Perception-Gap]]"
+  - "[[Rogue-AI-Agent]]"
+  - "[[Long-Lived-Credential-Risk]]"
 source_raw:
   - "[[How we contain Claude across products]]"
   - "[[20260518-zero-trust-for-ai-agents]]"
