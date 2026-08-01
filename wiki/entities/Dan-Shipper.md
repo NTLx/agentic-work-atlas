@@ -5,7 +5,7 @@ aliases:
   - Dan Shipper
 definition: "Every newsletter 创始人兼 CEO，AI 原生工作方式的探索者和布道者"
 created: 2026-04-10
-updated: 2026-04-16
+updated: 2026-08-01
 tags:
   - AI-Agent
   - entrepreneurship
@@ -25,6 +25,13 @@ validated_at: "2026-04-14"
 
 > [!definition] 定义
 > **Dan Shipper** 是 Every 的联合创始人兼 CEO。Every 是一个每日发布的 AI newsletter，专注于商业与技术交叉领域的深度文章。他是 Agentic Engineering、Agent-First Enterprise 等概念的早期倡导者和实践者。
+
+## 近期连接（2026-08）
+
+Every 的 AI 原生工作流方法在本知识库的多条主线上被引用：
+- [[Agent-First-Enterprise]] 与 Dan Shipper 的"链上 AI"探索同构
+- [[Allocation-Economy]] 与 Every 推动的"知识工作者重新分配"叙事一致
+- 作为 AI 原生工作方式（vibe coding → agentic engineering）的早期布道者，本 entity 多次被 Simon Willison 等人的材料交叉引用
 
 ## 主要项目
 

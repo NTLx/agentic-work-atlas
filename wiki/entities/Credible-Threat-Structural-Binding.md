@@ -12,7 +12,6 @@ evidence_level: medium
 claim_type: synthesized
 tags:
   - governance
-  - game-theory
   - incomplete-contract
   - AI-relations
 related_entities:

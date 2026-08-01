@@ -5,11 +5,9 @@ created: 2026-07-19
 updated: 2026-07-19
 status: published
 tags:
-  - China
   - AI-Agent
   - regulation
   - enterprise
-  - ecosystem
 related_entities:
   - "[[China-AI-Agent-Regulation]]"
   - "[[Knowledge-Work-Redefinition]]"

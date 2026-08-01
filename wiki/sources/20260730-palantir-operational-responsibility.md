@@ -8,7 +8,6 @@ updated: 2026-07-30
 tags:
   - source-summary
   - palantir
-  - operational-responsibility
   - sre
   - ai-ready-organization
 evidence_level: medium

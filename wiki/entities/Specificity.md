@@ -5,7 +5,7 @@ aliases:
   - Specificity
 definition: "在 AI 时代的竞争优势——能够产生深入特定上下文的内容，而不是通用但浅薄的输出"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-08-01
 tags:
   - AI-era
   - competitive-advantage
@@ -23,6 +23,13 @@ claim_type: mixed
 
 > [!definition] 定义
 > 在 AI 时代的竞争优势——能够产生深入特定上下文的内容，而不是通用但浅薄的输出。AI 让变得精致更容易，但并不让变得具体更容易。
+
+## 近期连接（2026-08）
+
+Specificity 作为"品味/判断力"主线的关键概念，近期在以下讨论中被强化：
+- [[AI-Identity-Bifurcation]] 显示 design/research 类从业者（craft specialist）最焦虑——Specificity 是其稀缺性来源，但 AI 让"中等水平的内容"廉价化
+- [[AI-Era-Taste-and-Judgment]]（topic）将 Specificity 列为 AI 时代人类核心价值锚点之一
+- 与 [[Taste]] 形成互补：Taste 决定"什么是好的"，Specificity 决定"什么是具体的"
 
 ---
 

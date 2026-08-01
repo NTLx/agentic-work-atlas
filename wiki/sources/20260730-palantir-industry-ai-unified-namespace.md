@@ -8,8 +8,6 @@ updated: 2026-07-30
 tags:
   - source-summary
   - palantir
-  - industry-ai
-  - unified-namespace
   - ontology
 evidence_level: low
 claim_type: mixed

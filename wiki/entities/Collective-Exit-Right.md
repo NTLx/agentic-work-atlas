@@ -12,7 +12,6 @@ evidence_level: medium
 claim_type: synthesized
 tags:
   - AI-policy
-  - collective-action
   - vendor-lock-in
   - AI-relations
 related_entities:

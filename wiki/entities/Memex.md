@@ -5,7 +5,7 @@ aliases:
   - Memex
 definition: "Vannevar Bush 提出的个人知识存储概念，强调关联路径比文档本身更有价值，是 LLM Wiki 的思想先驱"
 created: 2026-04-13
-updated: 2026-04-15
+updated: 2026-08-01
 tags:
   - knowledge-management
 evidence_level: high
@@ -23,6 +23,13 @@ source_raw:
 # Memex
 
 > **核心愿景**：个人知识存储，关联路径比文档更有价值
+
+## 近期连接（2026-08）
+
+Vannevar Bush 在 1945 年的"关联路径比文档本身更有价值"判断在 LLM Wiki 时代获得新的实现方式：
+- [[20260413-llm-wiki]] 把 wikilink 当作 Memex 关联路径的现代版本
+- 本知识库的 `related_entities` / `source_raw` 字段结构直接对应 Memex 的"trail of association"
+- 作为 LLM Wiki 思想先驱，本 entity 是 [[20260413-llm-wiki]] 的引用基础
 
 ## 定义
 

@@ -11,7 +11,6 @@ updated: 2026-07-30
 tags:
   - ai-safety
   - human-agency
-  - cognitive-degradation
   - augmentation-trap
 evidence_level: medium
 claim_type: synthesized

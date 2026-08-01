@@ -4,8 +4,6 @@ title: "07-14 深度探索详细记录"
 created: 2026-07-14
 tags:
   - research-archive
-  - exploration
-  - external-signals
 ---
 
 # 07-14 深度探索详细记录

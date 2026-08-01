@@ -8,9 +8,7 @@ updated: 2026-07-16
 tags:
   - source-summary
   - ai-safety
-  - ai-ethics
   - alignment
-  - military-ai
   - ai-governance
 evidence_level: high
 claim_type: extracted

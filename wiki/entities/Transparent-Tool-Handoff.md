@@ -11,7 +11,6 @@ updated: 2026-07-30
 tags:
   - agentic-engineering
   - explainability
-  - responsible-ai
 evidence_level: medium
 claim_type: mixed
 related_entities:

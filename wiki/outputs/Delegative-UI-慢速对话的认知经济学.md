@@ -6,7 +6,6 @@ updated: 2026-07-19
 status: published
 tags:
   - interaction-design
-  - Delegative-UI
   - human-agent-interaction
   - cognitive-science
   - organization

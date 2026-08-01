@@ -13,7 +13,6 @@ claim_type: mixed
 tags:
   - evaluation
   - production-agents
-  - quality
 related_entities:
   - "[[Agent-Verification]]"
   - "[[Agent-Harness]]"

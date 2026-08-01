@@ -5,7 +5,7 @@ aliases:
   - Discernment
 definition: "透过数据看清本质、聚焦关键的能力——如果不能清晰看自己，就不能清晰看世界"
 created: 2026-04-09
-updated: 2026-04-15
+updated: 2026-08-01
 tags:
   - Knowledge-Work
   - decision-making
@@ -22,6 +22,13 @@ source_raw:
 
 > [!definition] 定义
 > Discernment（判断力）是透过数据看清本质、聚焦关键的能力。核心洞察：如果不能清晰地看自己，就不能清晰地看世界。
+
+## 近期连接（2026-08）
+
+Discernment 作为"人的剩余价值"主线的核心概念，近期在以下讨论中被强化：
+- [[Judgment-Degradation-Cascade]] 提供"判断力退化级联"的反向机制——AI 替代搜索环后人类的判断力培养路径
+- [[Carbon-Silicon-Division]] 提出"判断位置跃迁"——从"执行判断=怎么证"转向"导航判断=往哪走"，Discernment 是该跃迁的底层能力
+- [[AI-Era-Taste-and-Judgment]]（topic）将 Discernment 列为 AI 时代人类核心价值锚点之一
 
 ## 核心要点
 

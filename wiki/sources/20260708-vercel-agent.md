@@ -8,7 +8,6 @@ updated: 2026-07-13
 tags:
   - source-summary
   - agentic-engineering
-  - production-ops
 evidence_level: medium
 claim_type: extracted
 ---

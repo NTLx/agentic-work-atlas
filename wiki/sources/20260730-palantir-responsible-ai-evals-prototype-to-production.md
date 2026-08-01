@@ -9,7 +9,6 @@ tags:
   - source-summary
   - palantir
   - AI-evaluation
-  - unit-testing
   - agentic-engineering
 evidence_level: medium
 claim_type: mixed

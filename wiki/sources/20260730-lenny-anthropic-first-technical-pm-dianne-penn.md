@@ -8,8 +8,6 @@ updated: 2026-07-30
 tags:
   - source-summary
   - anthropic
-  - eval-driven-development
-  - tpm-role
   - product-management
 evidence_level: medium
 claim_type: mixed

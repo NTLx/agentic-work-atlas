@@ -8,8 +8,6 @@ updated: 2026-07-30
 tags:
   - source-summary
   - palantir
-  - supply-chain-security
-  - threat-modeling
   - software-engineering
 evidence_level: low
 claim_type: mixed

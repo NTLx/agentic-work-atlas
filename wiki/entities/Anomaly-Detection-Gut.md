@@ -11,7 +11,6 @@ tags:
   - cognitive-science
   - human-skill
   - automation
-  - expertise
 related_entities:
   - "[[Judgment-Degradation-Cascade]]"
   - "[[Judgment]]"

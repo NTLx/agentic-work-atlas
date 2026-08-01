@@ -12,8 +12,6 @@ evidence_level: medium
 claim_type: extracted
 tags:
   - infrastructure
-  - models
-  - sovereignty
 related_entities:
   - "[[Agent-Harness]]"
   - "[[Enterprise-AI-Model-Sourcing]]"

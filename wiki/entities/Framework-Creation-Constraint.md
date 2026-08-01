@@ -8,9 +8,7 @@ definition: "框架创造不可在当前框架内编码\"不是逻辑死路而�
 created: 2026-07-16
 updated: 2026-07-16
 tags:
-  - 知识管理
   - systems-thinking
-  - ai-era
 related_entities:
   - "[[Augmentation-Trap]]"
   - "[[Judgment-Degradation-Cascade]]"

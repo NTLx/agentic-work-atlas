@@ -16,7 +16,6 @@ tags:
   - AI-Agent
   - coding-agent
   - audit
-  - data-governance
 related_entities:
   - "[[Context-Rot]]"
   - "[[Token-Supply-Chain]]"

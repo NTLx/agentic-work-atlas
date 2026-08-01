@@ -9,7 +9,6 @@ tags:
   - source-summary
   - palantir
   - explainability
-  - chain-of-thought
   - agentic-engineering
 evidence_level: medium
 claim_type: mixed

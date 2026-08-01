@@ -13,9 +13,7 @@ evidence_level: medium
 claim_type: synthesized
 tags:
   - governance
-  - time-arrow
   - incomplete-contract
-  - metaphysics
 related_entities:
   - "[[Permission-Ratchet-Mechanism]]"
   - "[[Plan-is-the-Permission]]"

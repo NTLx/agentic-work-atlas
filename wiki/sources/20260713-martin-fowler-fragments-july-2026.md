@@ -8,9 +8,6 @@ updated: 2026-07-14
 tags:
   - source-summary
   - harness-engineering
-  - self-hosted-models
-  - agent-management
-  - thoughtworks
 evidence_level: medium
 claim_type: mixed
 ---

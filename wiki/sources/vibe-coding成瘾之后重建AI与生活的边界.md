@@ -8,7 +8,6 @@ updated: 2026-07-16
 tags:
   - source-summary
   - vibe-coding
-  - ai-addiction
   - human-agency
   - augmentation-trap
 evidence_level: high

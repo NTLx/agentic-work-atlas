@@ -3,6 +3,7 @@ title: "Institutional Knowledge"
 created: 2026-06-27
 updated: 2026-06-27
 tags:
+
 aliases:
   - 制度性知识
   - 组织知识

@@ -7,10 +7,7 @@ created: 2026-07-27
 updated: 2026-07-27
 tags:
   - source-summary
-  - ai-hype
-  - organizational-decision-making
   - ai-failure
-  - institutional-capture
   - ai-governance
 evidence_level: medium
 claim_type: mixed

@@ -5,7 +5,7 @@ aliases:
   - Agent Workflow Patterns
 definition: "构建 Agentic 系统的模式集合，从简单组合到自主 Agent 的渐进式架构"
 created: 2026-04-10
-updated: 2026-04-15
+updated: 2026-08-01
 tags:
   - AI-Agent
   - architecture
@@ -21,6 +21,12 @@ source_raw:
 # Agent Workflow Patterns（Agent 工作流模式）
 
 > **核心理念**：从简单开始，只在需要时增加复杂性
+
+## 近期连接（2026-08）
+
+本概念作为"模式层"被以下近期 entity 引用，与 [[Agent-Harness|Agent Harness]]（运行时层）形成"模式+运行时"的两层结构：
+- [[Building-Effective-Agents]] 在"从模式到 Harness"章节把工作流模式映射到 Anthropic 五层模型
+- [[Agent-Environment-Misalignment]] 与本概念的 INFERRULES / WRAPSTEP 同构：环境接口也是一种工作流模式
 
 ## 定义
 

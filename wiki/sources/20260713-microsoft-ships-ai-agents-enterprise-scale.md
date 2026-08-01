@@ -9,7 +9,6 @@ tags:
   - source-summary
   - agent-harness
   - production-agents
-  - microsoft
   - evaluation
 evidence_level: medium
 claim_type: mixed

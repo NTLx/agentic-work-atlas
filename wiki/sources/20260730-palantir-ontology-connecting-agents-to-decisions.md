@@ -9,7 +9,6 @@ tags:
   - source-summary
   - palantir
   - ontology
-  - decision-centric
   - enterprise-ai
 evidence_level: low
 claim_type: mixed

@@ -13,7 +13,6 @@ claim_type: synthesized
 tags:
   - organization
   - identity
-  - causal-inference
   - incomplete-contract
 related_entities:
   - "[[Flattening-as-Governance-Consequence]]"

@@ -7,9 +7,6 @@ created: 2026-07-16
 updated: 2026-07-16
 tags:
   - source-summary
-  - talent-flow
-  - academia-industry
-  - ai-organization
   - anthropic
 evidence_level: low
 claim_type: mixed
