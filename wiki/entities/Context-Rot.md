@@ -7,7 +7,7 @@ aliases:
 definition: "随着上下文窗口逐渐填充，LLM 的推理、指令遵循和任务完成能力逐渐下降的现象，特别是关键信号落在窗口中间位置时表现最差。"
 created: 2026-06-10
 updated: 2026-07-22
-evidence_level: strong  # 三层结构+多层腐烂栈+尺度依赖定理+联网5篇实证交叉验证
+evidence_level: high  # 三层结构+多层腐烂栈+尺度依赖定理+联网5篇实证交叉验证
 claim_type: mixed
 tags:
   - LLM

@@ -50,6 +50,14 @@ source_raw:
 
 Stone 的操作化建议：每解决一个问题，向外 zoom 一层——"what am I assuming is true about the broader space"。不必 boil the ocean，只对自己负责的部分做一次放大审视：这个功能支撑什么更大的消费者问题？构建方式能否跨内容类型规模化？另一个等价表述：像你的 manager 一样思考（"are there ways that I can do my job that helps my manager do their job?"）。
 
+## 关键数据点
+
+- 三大职能转向（Netflix 样本）：
+  - Engineering：从 local business expertise 转向 distributed systems / infrastructure / paved-path builders
+  - Design：从"为特定功能做设计"转向 design systems thinking
+  - 通才化："fewer specialists and more generalists"，但 narrow specialization 保留给世界级深点（encoding / playback systems）
+- 平台化原则：paved path 让 80% 团队不必重建 building blocks
+
 ## 前提与局限性
 
 - **规模前提**：该转向在数千人的组织中最强（tribal knowledge 失效）；小团队仍可能 local expertise 优先。

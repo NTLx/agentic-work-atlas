@@ -22,7 +22,10 @@ related_entities:
   - "[[Token-Supply-Chain]]"
   - "[[Flattening-as-Governance-Consequence]]"
   - "[[Least-Agency]]"
-source_raw: []
+source_raw:
+  - "[[20260610-anthropic-ai-exploits-security-patches]]"
+  - "[[20260518-zero-trust-for-ai-agents]]"
+  - "[[20260414-cybersecurity-proof-of-work]]"
 ---
 
 # Coding-Agent-Security-Audit（Coding Agent 安全审计标准）
@@ -30,7 +33,14 @@ source_raw: []
 > [!definition] 定义
 > **Coding Agent 安全审计标准** 是将审计范式从传统"行为审计"（审计已知攻击面）升级为**数据流审计**（Data Flow Audit）的新框架。核心机制 = DFD（Data Flow Declaration，机器可读数据流声明）+ VDF（Verified Data Flow，独立验证实际数据流）。目标：让 coding agent 的数据收集行为从"不可审计的黑箱"变为"声明可读、实际可测的灰箱"。
 
-## 为什么传统框架不够：四维攻击面
+## 关键数据点
+
+- 攻击面乘性：`攻击面(agent) = 工具调用 × 文件访问 × 代码执行 × 网络访问`，维度间交互创造不可枚举的攻击路径
+- Iternal 2026：65% 组织有 agent 安全事件，86% 对 AI 数据流无可见性，仅 14.4% 有完整安全审批
+- Lushbinary 2026：已实现 agent session 的 SBOM 生成 + pre-session/runtime/post-session/CI-CD gate 四阶段安全模型
+- 核心金句（Schneier）："Security is not a product, it's a process"——对 coding agent 升级为"审计持续演化的行为空间"
+
+## 前提与局限性
 
 Coding agent 的攻击面与传统 SaaS 工具有本质不同：
 
@@ -131,7 +141,7 @@ Schneier（圆桌，2026-07-17）："Security is a process, not a product." 对 
 | 法律层 | 2-4年 | 代码库数据产权在 AI 训练数据立法框架中定义 | 与 GDPR/数字市场法演进同步 |
 | 制度层 | 4-7年 | 可执行认证体系 + 独立审计市场 + 违规制裁 | 需政治意志（通常由灾难性事件催化） |
 
-## 与既有理论的连接
+## 关联概念
 
 - Agent-Trust-Boundary（V×C×A框架）：DFD+VDF = 可见性(V)工程化；分层标注 = 可控性(C)工程化；第三方审计 = 可验证性(A)工程化
 - Agent OWASP Top 10：安全审计标准 = 意识文档(形态1)的下一步（检测框架/安全厂商形态2）

@@ -50,6 +50,14 @@ SSCS 项目的启动顺序不是"买工具"或"过合规"，而是：
 > [!warning] 规模化传播是风险放大器
 > 10K repos 用中央 config-as-code 仓库管理：一行 YAML 改动即可批量推送仓库配置（含安全控制开关）。这既是 paved path 的分发机制，也是最大的单点风险——"Security was not a primary consideration in the development of most of these tools because they were built to reduce friction at all costs"。内部效率工具的安全债往往是 SSCS 项目的主要清理对象。**推论：规模化传播安全控制的工具，本身需要最高等级的变更治理（多人 review + 金丝雀推送 + 回滚审计）。**
 
+## 关键数据点
+
+- Palantir 规模：10K repos / GitHub Enterprise 实例
+- 五大风险区块：Source Control & Software Design / Third-Party Dependencies / Builds & Artifact Publishing / Artifact Storage / Artifact Deployment
+- 威胁假设取最高档：APT（零日、社工、人力招募、近距离渗透、供应链攻击）+ assume breach
+- Hermetic builds：构建仅依赖显式声明的输入；commit 加密签名
+- Config-as-code 双刃剑：一行 YAML 改动可批量推送仓库配置
+
 ## 前提与局限性
 
 - **资源预设**：Palantir 方案含"拒 SaaS + 全自托管 + FedRAMP/IL5/IL6"，预设军工级工程资源与合规要求；对多数组织，云厂商安全投入高于自建，"自托管更安全"不成立。

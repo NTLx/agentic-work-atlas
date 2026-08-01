@@ -23,13 +23,24 @@ related_entities:
   - "[[Permission-Ratchet-Mechanism]]"
   - "[[Carbon-Silicon-Division]]"
   - "[[ACI-Agent-Computer-Interface]]"
-source_raw: []
+source_raw:
+  - "[[20260717-openai-scorecard-ai-age]]"
+  - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
 ---
 
 # Delegative UI（委派式交互）
 
 > [!definition] 定义
 > **Delegative UI** 不是 Conversational UI 的对立面——两者共享"对话"这一基本结构。Delegative UI = **慢速对话**（slow dialogue）：回合粒度从秒/分钟级变为小时/天级，反馈带宽从全带宽（过程体感）变为窄带（结构化结果摘要），意图密度从低（渐进式澄清）变为高（一次性打包目标+约束+验收标准+异常升级规则）。
+
+## 关键数据点
+
+- 形式化：`Delegative 可行 ⇔ (目标已知 ∧ 路径可预判)`，`需要 Conversational ⇐ (目标涌现 ∨ 路径不可预判)`
+- 认知代价 = 错误模型存量 × 存活时间 × 传播因子(k>1)；存活时间 ∝ 1/f（反馈频率）
+- Norman 四缓解策略：过程可见性（Andon 板）、解释性中间输出、可中断性、事后溯因
+- Ambient UI 推送频率：微打断累积效应——N 次微打断的认知代价 > 1 次完整打断（不被登记为中断，不触发注意力恢复机制）
+- 制度化缺口 = 三个未定义：约定标准（ISO 26262 类比缺失）/ 可审计度量（无标准化判断力评估工具）/ 可问责边界（无"谁决定/谁负责"制度）
+- 来源池：Suchman、Norman、Simon、Villani、Tao、Graham、Fry、Mickos、Seely Brown 圆桌 2026-07-17 + ljg-think 2026-07-17
 
 ## Suchman 穿透：对话光谱而非类别二分
 
@@ -107,7 +118,7 @@ Delegative UI 不改变形式权威（组织层级、任命权），但改变了
 
 **实践含义**：Delegative UI 的安全部署边界 = **约定边界**而非技术边界。解决路径不是"做更多实验找到正确度量"——不存在"正确的"度量。解决路径是建立被广泛接受的度量约定，并让其可操作化、可审计、可争议。这是治理问题。
 
-## 制度化缺口
+## 前提与局限性
 
 Delegative UI 安全部署缺乏三个制度化要素：
 
@@ -121,7 +132,7 @@ Delegative UI 安全部署缺乏三个制度化要素：
 
 技术部署在前，治理制度化在后——滞后窗口 = 决策在"直觉过度谨慎"和"直觉过度放权"之间振荡的空间。
 
-## 与既有理论的连接
+## 关联概念
 
 - [[Flattening-as-Governance-Consequence]]：Delegative UI = 该定理的交互层机制投射（中间层契约化转译被 agent 替代）
 - [[Judgment-Degradation-Cascade]]：慢速对话 = 判断力训练频率↓ → 可能加速退化级联

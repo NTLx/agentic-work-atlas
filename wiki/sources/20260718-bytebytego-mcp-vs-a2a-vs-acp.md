@@ -40,7 +40,7 @@ claim_type: extracted
 
 ### 关联概念
 - [[Model-Context-Protocol-MCP]]
-- [[Agent-to-Agent-Protocol-A2A]]
+- Agent-to-Agent Protocol (A2A)
 - [[Agent-Orchestration]]
 - [[Three-State-Protocol]]
 - [[Agent-Containment]]

@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-08-01"
-score: 70
-status: "FAIL"
+score: 100
+status: "PASS"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,17 +12,17 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-08-01
 
 > [!summary] 状态
-> 门禁: **FAIL**
-> 分数: **70/100**
-> 阻断问题: **30**
+> 门禁: **PASS**
+> 分数: **100/100**
+> 阻断问题: **0**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
 | Raw 来源 | 234 |
-| Raw 已编译 | 231 |
-| Raw 待编译 | 3 |
+| Raw 已编译 | 233 |
+| Raw 待编译 | 1 |
 | Raw 已跳过 | 0 |
 | Entity | 364 |
 | Topic | 33 |
@@ -32,8 +32,6 @@ tags:
 ## 待编译 Raw
 
 - `raw/20260730-palantir-responsible-ai-hallucinations-ontology.md`
-- `raw/20260801-openbmb-align-tweet.md`
-- `raw/20260801-align-agent-environment-interface.pdf`
 
 ## 检查项
 
@@ -42,47 +40,19 @@ tags:
 | `frontmatter` | 0 |
 | `date` | 0 |
 | `hidden-char` | 0 |
-| `mathjax` | 3 |
-| `wikilink` | 5 |
+| `mathjax` | 0 |
+| `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 63 |
-| `evidence` | 2 |
+| `tag` | 59 |
+| `evidence` | 0 |
 | `low-evidence` | 6 |
 | `stale-core` | 5 |
-| `entity` | 20 |
+| `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
 | `registry-consistency` | 0 |
 
 ## 问题明细
-
-### entity
-
-- `wiki/entities/AI-Identity-Bifurcation.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Coding-Agent-Security-Audit.md` - `Entity 缺少必填字段: source_raw`
-- `wiki/entities/Coding-Agent-Security-Audit.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Coding-Agent-Security-Audit.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Coding-Agent-Security-Audit.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Decision-Centric-Architecture.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Delegative-UI.md` - `Entity 缺少必填字段: source_raw`
-- `wiki/entities/Delegative-UI.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Delegative-UI.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Delegative-UI.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Evals-as-PRD.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Excellence-as-Operating-System.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Knowledge-Work-Redefinition.md` - `Entity 缺少必填字段: source_raw`
-- `wiki/entities/Knowledge-Work-Redefinition.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Knowledge-Work-Redefinition.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Knowledge-Work-Redefinition.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Operational-Responsibility.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Secure-Paved-Path.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Systems-Thinker-Demand.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Transparent-Tool-Handoff.md` - `概念 Entity 缺少章节: ## 关键数据点`
-
-### evidence
-
-- `wiki/entities/Context-Rot.md` - `evidence_level 必须为 high/medium/low: 'strong'`
-- `wiki/entities/Flattening-as-Governance-Consequence.md` - `evidence_level 必须为 high/medium/low: 'strong'`
 
 ### low-evidence
 
@@ -92,12 +62,6 @@ tags:
 - `wiki/sources/20260730-palantir-industry-ai-unified-namespace.md` - `低证据页面 20260730-palantir-industry-ai-unified-namespace 只能作为补 source 或探索线索`
 - `wiki/sources/20260730-palantir-ontology-connecting-agents-to-decisions.md` - `低证据页面 20260730-palantir-ontology-connecting-agents-to-decisions 只能作为补 source 或探索线索`
 - `wiki/sources/20260730-palantir-secure-rapid-software-development-sscs.md` - `低证据页面 20260730-palantir-secure-rapid-software-development-sscs 只能作为补 source 或探索线索`
-
-### mathjax
-
-- `wiki/research/research-logs/2026-07-18.md:352` - `发现裸露 $，需用反引号包裹或反斜杠转义`
-- `wiki/research/research-logs/2026-07-21.md:52` - `发现裸露 $，需用反引号包裹或反斜杠转义`
-- `wiki/sources/20260718-ai-mania-eviscerating-decision-making.md:32` - `发现裸露 $，需用反引号包裹或反斜杠转义`
 
 ### stale-core
 
@@ -109,12 +73,10 @@ tags:
 
 ### tag
 
-- `wiki/entities/ALIGN-Framework.md` - `tags 超过 5 个: 6`
 - `wiki/entities/Framework-Creation-Constraint.md` - `非 kebab-case tag: '知识管理'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260718-ai-mania-eviscerating-decision-making.md` - `tags 超过 5 个: 6`
-- `wiki/sources/20260801-align-agent-environment-interface.md` - `tags 超过 5 个: 6`
 - `wiki/outputs/中国AI-Agent生态-监管科层路线分化.md` - `一次性 tag 仅出现 1 次: 'China'`
 - `wiki/outputs/Delegative-UI-慢速对话的认知经济学.md` - `一次性 tag 仅出现 1 次: 'Delegative-UI'`
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `一次性 tag 仅出现 1 次: 'academia-industry'`
@@ -126,7 +88,6 @@ tags:
 - `wiki/sources/20260715-why-i-left-google-deepmind.md` - `一次性 tag 仅出现 1 次: 'ai-ethics'`
 - `wiki/sources/20260718-ai-mania-eviscerating-decision-making.md` - `一次性 tag 仅出现 1 次: 'ai-hype'`
 - `wiki/sources/20260715-anthropic-talent-strategy-2026.md` - `一次性 tag 仅出现 1 次: 'ai-organization'`
-- `wiki/entities/ALIGN-Framework.md` - `一次性 tag 仅出现 1 次: 'automatic-optimization'`
 - `wiki/entities/Identity-Domain-Causal-Force.md` - `一次性 tag 仅出现 1 次: 'causal-inference'`
 - `wiki/sources/20260730-palantir-responsible-ai-black-box-explainability.md` - `一次性 tag 仅出现 1 次: 'chain-of-thought'`
 - `wiki/entities/Augmentation-Trap.md` - `一次性 tag 仅出现 1 次: 'cognitive-degradation'`
@@ -143,7 +104,6 @@ tags:
 - `wiki/entities/Credible-Threat-Structural-Binding.md` - `一次性 tag 仅出现 1 次: 'game-theory'`
 - `wiki/sources/20260730-palantir-industry-ai-unified-namespace.md` - `一次性 tag 仅出现 1 次: 'industry-ai'`
 - `wiki/sources/20260718-ai-mania-eviscerating-decision-making.md` - `一次性 tag 仅出现 1 次: 'institutional-capture'`
-- `wiki/sources/20260801-align-agent-environment-interface.md` - `一次性 tag 仅出现 1 次: 'interface-design'`
 - `wiki/sources/20260718-bytebytego-mcp-vs-a2a-vs-acp.md` - `一次性 tag 仅出现 1 次: 'interoperability'`
 - `wiki/sources/20260713-agentic-misalignment-summer-2026.md` - `一次性 tag 仅出现 1 次: 'llm-judge'`
 - `wiki/entities/Default-Side-Asymmetry.md` - `一次性 tag 仅出现 1 次: 'metaphysics'`
@@ -172,14 +132,6 @@ tags:
 - `wiki/sources/20260730-palantir-industry-ai-unified-namespace.md` - `一次性 tag 仅出现 1 次: 'unified-namespace'`
 - `wiki/sources/20260730-palantir-responsible-ai-evals-prototype-to-production.md` - `一次性 tag 仅出现 1 次: 'unit-testing'`
 - `wiki/entities/Framework-Creation-Constraint.md` - `一次性 tag 仅出现 1 次: '知识管理'`
-
-### wikilink
-
-- `wiki/entities/ALIGN-Framework.md:215` - `链接目标不存在: [[Automatic-Interface-Generation]]`
-- `wiki/entities/Agent-Environment-Misalignment.md:152` - `链接目标不存在: [[Agent-Evaluation]]`
-- `wiki/research/research-logs/2026-07-20.md:156` - `链接目标不存在: [[Agent-Governance]]`
-- `wiki/sources/20260718-bytebytego-mcp-vs-a2a-vs-acp.md:44` - `链接目标不存在: [[Agent-to-Agent-Protocol-A2A]]`
-- `wiki/sources/20260801-align-agent-environment-interface.md:56` - `链接目标不存在: [[Agent-Evaluation-Methodology]]`
 
 ## 运行命令
 

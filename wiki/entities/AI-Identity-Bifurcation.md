@@ -58,6 +58,16 @@ source_raw:
 
 本 survey 贡献了多个可复用的命名：**ladder metaphor**（CS 学生 → intern → junior → senior 的职业梯级被技术从脚下抽走）、**cognitive rot**（看到 AI 输出就接受、不施加判断）、**AI confidence theater**（"coding is dead / design is dead / SaaS is dead" 式不实宣言）、**smiling exhaustion**、**full gas on neutral**（IC 大量构建 micro-SaaS 但无影响力）。
 
+## 关键数据点
+
+- 2026 H1 survey：约 6000 人样本（Noam Segal × Lenny Rachitsky）
+- AI 立场对 burnout / optimism / layoff worry 的解释效应量（Cohen's D）≈ manager + founder happiness 效应的 3 倍
+- 四原型占比：Energized/Amplified 41-50%、Conflicted/Redefined 27-35%、Disoriented/Destabilized 12-14%、Resentful/Diminished 5-12%
+- Burnout >moderate：44.7%（2025）→ 54.7%（2026，+11pt YoY）
+- Optimism about role/career：54.8% → 48.7%
+- 97.2% 称 AI 让自己 "better at job"，但深挖 = "do more faster, but not better"
+- Career recommendation NPS 全体为负，designers/researchers 最负面
+
 ## 前提与局限性
 
 - **诊断而非机制**：本实体是时间点快照与现象命名，不构成因果机制证据；burnout 上升无法从裁员潮、行业整合等混杂因素中隔离 AI 的贡献。

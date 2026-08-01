@@ -10,7 +10,7 @@ aliases:
 definition: "AI 时代组织扁平化不是组织理念的选择，而是 agent 不可契约化这一技术事实的治理后果——当执行单元从可契约化的人类员工变为不可契约化的 agent，剩余控制权的最优配置必然向操作端迁移，原本靠契约化转译存在的中间管理层失去经济基础，组织被迫扁平。"
 created: 2026-07-16
 extended: 2026-07-20
-evidence_level: strong  # 修正版——三边界条件+新raw(Varick+Ludicity)产业实证补充
+evidence_level: high  # 修正版——三边界条件+新raw(Varick+Ludicity)产业实证补充
 claim_type: synthesized
 tags:
   - organization

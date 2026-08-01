@@ -66,6 +66,12 @@ PRD 并未死亡（与 OpenAI Codex 负责人的判断收敛），但功能收�
 | PM 工作流 | Dianne Penn（Anthropic） | evals 如何取代需求定义、失败轨迹归因方法、PRD 功能收窄 |
 | 平台基础设施 | [[20260730-palantir-responsible-ai-evals-prototype-to-production\|Palantir AIP Evals]] | test bench / evaluator / 3x 重复 / drill-down 迭代的运行时生命周期 |
 
+## 关键数据点
+
+- Dianne Penn 案例：从"Claude is not good at following instructions"的模糊抱怨 → 80% 归因到 JSON schema 输出失败 → 生成 30-40 个失败样例 → 收敛到 99.9% 准确率
+- "you don't need hundreds, just 10 great evals"——质量重于数量
+- Eval 同时承担产品评估工具 + 产品定义工具双重身份
+
 ## 前提与局限性
 
 - **适用域**：命题成立的前提是产品质量可归约为可评测的行为维度。UX 质感、品牌、情感共鸣等不可评测维度仍需 vision 文档——口号的适用域比表述窄。

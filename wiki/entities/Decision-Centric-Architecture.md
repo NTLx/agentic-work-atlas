@@ -57,6 +57,12 @@ source_raw:
 - **AI 闭环范围是可调刻度**：每个 agent 被视为"新员工"，默认只能 stage、须人工 review；凭 granular logging 选择哪些 trusted 流程可自动闭环，授权范围可外科手术式扩大/收缩。制造业版本将同一思想表述为五级自治标尺（manual → assisted → semi-automated → highly automated → fully autonomous）。
 - **Decision lineage 数据飞轮**：全部决策事后可作 fine-tuning 数据与 agent prompting 原则——这是 [[Deployment-Product-Flywheel|部署-产品飞轮]] 在数据层的形态：FDE 回流的不仅是平台功能，还有决策语料。
 
+## 关键数据点
+
+- 四要素模型：data / logic / action / security 整合进单一语义系统（Palantir 提出）
+- explore/stage/commit 三级权限原生建模，类比代码世界的 Git branching/PR/merge
+- 制造业版本将自治分为五级：manual → assisted → semi-automated → highly automated → fully autonomous
+
 ## 前提与局限性
 
 - **厂商立场**：该架构由 Palantir 提出并与其 AIP/Ontology 产品绑定，"必须单一系统整合四要素"含架构偏好；多系统联邦方案未必更差。

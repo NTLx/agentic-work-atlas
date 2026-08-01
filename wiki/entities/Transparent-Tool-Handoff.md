@@ -54,6 +54,13 @@ code debugger 的 LLM 版本：输入数据到 LLM 驱动函数 → 观察每一
 
 Debugger 暴露 **how**（系统做了什么），工具源码检查给出 **why**（为何此逻辑产生此结果）。在 evals 迭代循环中，同一模式用于失败案例 drill-down：如产品召回系统将数学计算失败定位后 handoff 给 Calculator tool（准确率 41.3% → 93.3% → tool 修复）。
 
+## 关键数据点
+
+- CoT "reasoning" 可与真正的预测原因完全无关（Anthropic 研究 / Miller 2018 / Lipton《Mythos of Model Explainability》）
+- LLM Debugger 模式：输入数据 → 观察 tool invocation 的 input/output/execution log → 导航 tool call 序列
+- 产品召回案例：数学计算失败从 LLM 41.3% → Calculator tool handoff 后 93.3%
+- 黑盒转移：tool invocation 日志解释"系统做了什么"，不解释"LLM 为何选择调用这个工具"——黑盒从整个系统缩小到 LLM 的选择，未被消除
+
 ## 前提与局限性
 
 - **能力天花板**：能 handoff 给可解释工具的任务本身是确定性、可形式化的；最需要解释的高风险模糊判断恰恰无法 handoff。

@@ -45,6 +45,13 @@ source_raw:
 - **Air-gapped NOC 模式**：为 classified 网络设 24/7 Network Operations Center 做远程调试、磁盘扫描新软件包、一线终端支持；on-call 人员夜间可回家信任 NOC 兜底。
 - **文化中心职责 = editing, not authoring**：持续最小化中心协调的必要性，因为中心化 prioritization 天然是瓶颈。
 
+## 关键数据点
+
+- 核心原则："always page the person best equipped to fix the problem first"
+- Apollo 把年度高风险人工升级转为每日数千次无感升级
+- Rotation 规模约束：单 rotation 至少 3 人有访问权，4-5 人舒适，超过 6 人因频率过低失去熟练度；引入 secondary rotation 时人数翻倍
+- 适用域：air-gapped classified 网络 + 24/7 NOC 远程调试
+
 ## 前提与局限性
 
 - **成立条件**：每个部署片段能归属一个足够小、边界清晰的团队。平台型组织（一个底层服务被数百团队依赖）中 ownership 会被稀释为 on-call 轮役。

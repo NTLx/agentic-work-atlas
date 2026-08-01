@@ -46,6 +46,13 @@ source_raw:
 
 Netflix 不重写每级 career ladder，而是在所有 talent 之上叠加 **AI fluency aspiration**：形式因职能与职业阶段而异（experimentation mindset / 知道 AI 何时有用 / 实际用 AI 构建），按季度甚至按月演化。配套实践：coding 面试允许候选人使用 AI 工具。Junior talent 仍保留（intern + new grad），因为其 native AI fluency 与消费者直觉，但需要更多 "what good looks like" 的 mentorship。
 
+## 关键数据点
+
+- Netflix culture deck 与 AI lab 文化（high agency / autonomy / talent density / 快速实验）高度收敛
+- Coding 面试允许候选人使用 AI 工具
+- Keeper test 核心问题："would I fight so hard to keep you?"
+- 文化纪律金句："every time we added more process, we spent more time without getting better outcomes"
+
 ## 前提与局限性
 
 - **昂贵前提**：整套机制依赖 talent density，而 top-of-market pay + keeper test 的高 churn 文化在多数组织与多数国家不可移植。
