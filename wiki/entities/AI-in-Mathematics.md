@@ -6,7 +6,7 @@ aliases:
   - 数学AI
 definition: "AI在数学领域的应用与进展，包括自动定理证明、问题求解、概念发现等，被认为是AI能力的前沿指标"
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-08-02
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -19,6 +19,7 @@ related_entities:
   - '[[Scientific-Discovery-AI]]'
 source_raw:
   - '[[20260701-grant-sanderson-ai-math-future]]'
+  - '[[20260801-lean-kernel-soundness-bug-postmortem]]'
 ---
 
 # AI in Mathematics
@@ -57,6 +58,7 @@ Grant Sanderson认为，数学是观察超级智能的第一个领域。AI在数
 - AI在2024年IMO中差点获得金牌（因组合数学问题失分）
 - OpenAI模型找到了单位距离问题猜想的反例
 - Montgomery-Dyson在IAS的午餐对话揭示了随机矩阵理论与Riemann假设的联系
+- **AI 双重角色：exploit 生产者 × 验证器审计者**（2026-08 Lean kernel 事后分析）：AI 辅助产出的 Collatz "反证"精准利用了 Lean kernel 与 nanoda 检查器各自的实现缺陷（两个不相关 bug 对齐），同时骗过两端——AI 生成的验证级产物开始压力测试*验证基础设施本身*；同一事件中 OpenAI 的 cybersecurity 专用 AI 又反向找出 Lean kernel 的更多编程错误。数学前沿的攻防两端同时加速（[[20260801-lean-kernel-soundness-bug-postmortem]]，验证独立性分析见 [[Agent-Verification]] 形式验证镜像节）。
 
 ## 前提与局限性
 

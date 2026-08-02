@@ -8,8 +8,6 @@ updated: 2026-08-02
 tags:
   - source-summary
   - palantir
-  - responsible-ai
-  - hallucination
   - ontology
   - agentic-engineering
 evidence_level: medium

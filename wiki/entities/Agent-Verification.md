@@ -6,7 +6,7 @@ aliases:
   - Agentic Verification
 definition: "Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境、执行操作、观察结果并判断是否通过"
 created: 2026-06-12
-updated: 2026-07-28
+updated: 2026-08-02
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -31,6 +31,7 @@ source_raw:
   - "[[20260708-towards-autonomous-software-dev.pdf]]"
   - "[[20260727-hf-agent-intrusion-technical-timeline]]"
   - "[[20260728-openai-scientific-computing-field-report.pdf]]"
+  - "[[20260801-lean-kernel-soundness-bug-postmortem]]"
 ---
 
 > [!definition] 定义
@@ -67,6 +68,22 @@ OpenAI 科学计算 field report（[[20260728-openai-scientific-computing-field-
 4. **技术正确性 vs 概念正确性**：agent 能提出并评估优化假设，但"下一步把优化压力投向哪里、尝试哪个高层策略"仍需人类反复决定——人类判断同时保证 technical correctness 与 conceptual correctness
 
 佐证：agent "出错时照样表达自信"（七案贡献者均为成功的主要裁决者）；HI.SIM 是唯一近自主案例，恰因其验收目标是字节级一致（可验证性极强）——自主程度由可验证性决定，见 [[Grindability-vs-Verifiability]] 域边界节。
+
+## 形式验证镜像：验证器独立性与新鲜度（08-01 编译）
+
+Lean kernel soundness bug #14576 事后分析（[[20260801-lean-kernel-soundness-bug-postmortem]]）在正确性保证最强的领域（数学证明检查，字节级判定）压力测试了验证命题，并把上文的独立性框架精确化：
+
+| 独立性层级 | Agent 域实例 | 形式验证域对应 |
+|-----------|-------------|---------------|
+| 训练数据级 | 跨模型家族 rubber duck 评审 | —（同一实现的不同视角，独立性最弱） |
+| 实现级 | — | Lean kernel vs nanoda（不同语言、不同团队的独立实现） |
+| 目标级 | 具备真正独立目标的验证者 agent | lean4lean（kernel 实现其类型理论的**形式化证明**） |
+
+三个新命题：
+
+1. **独立性是结构属性，新鲜度是运维属性，缺一不可**：exploit 同时骗过 Lean kernel 与 nanoda，因为两个不相关 bug 恰好对齐——独立检查*机制*依然成立（攻破需两个独立实现各有一个不同 bug），但 nanoda 的 bug 早一周已修复，**持有旧版本的独立检查等于没有独立检查**。"users who rely on it need current versions of both"——异构验证必须配套版本跟踪（comparator.live 每日同步 nanoda 上游）。
+2. **bug 独立性可能被信息渠道侵蚀**：无法排除 AI 模型见过 nanoda 的公开 bug 报告后定向构造 exploit。若攻击方能系统性 harvest 多个检查器的公开缺陷，独立性假设退化为"未公开 bug 的独立性"——这与 co-adapt 机制（verifier 与 generator 共同适应）在结构上同源。
+3. **enforcement point 必须独立于不可信组件**："健全性不能依赖不可信组件拒绝构造坏项，kernel 必须在自己的进程内独立拒绝 ill-typed 声明"——与 agent 域"containment 不能依赖模型自我克制、护栏必须由 [[Agent-Harness]] 独立执行"是同一条信任边界原则。"移除 metaprogramming 防攻击"等同于"靠 prompt 约束模型"——把安全寄托在不可信组件的自我克制上。
 
 ## 前提与局限性
 

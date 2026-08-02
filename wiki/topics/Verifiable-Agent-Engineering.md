@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-07-30
+updated: 2026-08-02
 evidence_level: high
 claim_type: mixed
 tags:
@@ -71,6 +71,7 @@ source_raw:
   - "[[20260606-google-agentic-rag]]"
   - "[[Nemotron 3.5 Content Safety: Customizable Multimodal Safety for Global Enterprise AI]]"
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
+  - "[[20260801-lean-kernel-soundness-bug-postmortem]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
@@ -232,6 +233,14 @@ IBM Research 的 [[Agent-Logic|agent logic]] 把可验证 Agent 工程推进到�
 SimilarWeb Data Studio 案例（2026-07-29）把可验证工程延伸到本 Topic 此前未直接回答的问题：**开放式长文输出**（同一问题可有多份合格报告）怎么验证？答案是分层裁判：确定性检查（工具调用合规、结构化输出有效）与 [[LLM-as-a-Judge]] 并行；裁判标准按输出类型分流——有期望答案的常规 chat 用 golden answer 语义比对，Deep Research 长文报告用逐维度 [[Rubric-Based-Evaluation]] 锚点 + faithfulness 检查（每条论断是否由检索数据支持）+ A/B 基线比较（基线是参考点，不是 ground truth）。每个分数携带评语与 trace，使"哪些 case 动了、哪些标准动了、评判者为什么说这个分"可追查。
 
 更有价值的是它的反例：两个 rubric 标准（来源广度 vs 归因质量）互相拉扯，聚合分数掩盖冲突，一次没问题的更新被误判为回归、回滚近一周。[[Evaluator-Miscalibration]] 由此给本 Topic 补上元验证原则：**评估器本身必须被验证**——校准错误的评估比没有评估更糟，因为它递给你虚假的信心。这与"成本可观测性"一节的警告同构：任何单一聚合度量（token 成本、评估总分）都会掩盖维度间的拉扯，可验证边界必须包含对度量工具本身的校准审查。
+
+## 验证器自身也是验证边界：形式验证镜像
+
+Lean kernel soundness bug #14576 事后分析（[[20260801-lean-kernel-soundness-bug-postmortem]]）把"评估器必须被验证"推进到正确性保证最强的领域：AI 辅助构造的 Collatz "反证"同时骗过了 Lean 官方 kernel 和独立检查器 nanoda——因为两个不相关的实现 bug 恰好对齐。它给本 Topic 三个增量：
+
+- **独立性有效，但以新鲜度为前提**：攻破独立检查需要两个独立实现各有一个不同 bug，机制本身成立；但 nanoda 的 bug 早一周已修复，持有旧版本等于没有独立检查。异构验证必须配套版本跟踪基础设施（comparator.live 每日同步）。
+- **信任边界原则**："健全性不能依赖不可信组件拒绝构造坏项；kernel 必须在自己的进程内独立拒绝"——与"containment 不能依赖模型自我克制、护栏必须由 harness 独立执行"是同一条原则（详见 [[Agent-Verification]] 形式验证镜像节）。
+- **攻防两端同时加速**：AI 既生产 exploit，又审计验证器（OpenAI 安全 AI 找出更多 kernel 错误）——可验证边界不是静态建设，而是 [[Cybersecurity-Proof-of-Work|proof-of-work 式]]的持续投入竞争。
 
 ## 与现有 Topic 的关系
 

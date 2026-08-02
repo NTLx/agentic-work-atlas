@@ -6,7 +6,7 @@ aliases:
   - 可验证性
 definition: "决定 LLM 自动化能力的关键维度——能客观验证输出质量的领域可通过 RLVR 训练持续提升，不能验证的领域模型进步受限"
 created: 2026-05-08
-updated: 2026-05-26
+updated: 2026-08-02
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,6 +25,7 @@ related_entities:
 source_raw:
   - "[[Andrej Karpathy: From Vibe Coding to Agentic Engineering]]"
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
+  - "[[20260801-lean-kernel-soundness-bug-postmortem]]"
 ---
 
 # Verifiability（可验证性）
@@ -42,6 +43,7 @@ source_raw:
 ## 前提与局限性
 
 - 当前框架下，"可验证"主要指有客观自动化验证方式（测试、数学证明、eval 分数）。
+- **验证器正确性是元前提**：RLVR 飞轮隐含"验证器本身正确"。Lean kernel soundness bug（#14576）表明，连数学证明检查——可验证性最强、字节级判定的领域——验证器也会有实现缺陷并被 AI 辅助精准利用；可验证性因而不是二元属性，而是"验证器可信度"的连续函数，依赖独立实现与版本新鲜度（详见 [[Agent-Verification]] 形式验证镜像节）。
 - 写作、设计等主观领域可通过 LLM 评审团等方式逼近可验证性，但精度下降。
 - Karpathy 认为长期看"几乎一切都可以被做成可验证的"，区别只是难度。
 - 对创业者而言，在未被 labs 覆盖的可验证领域建立 RL 环境，是结构性机会。
