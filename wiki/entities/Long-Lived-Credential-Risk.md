@@ -8,7 +8,7 @@ aliases:
   - Long-Lived Secret Risk
 definition: "长生命周期凭据（days/weeks/years 有效）在 agent 速度攻击下的暴露面放大效应——传统人类速度下是『低优先级 nice-to-have』，在 rogue AI agent 场景下成为头号攻击面。当一个 secret store 含 136 个 keys 时，agent 一次性全部读取并并行尝试，把单点泄漏放大成全面接管。"
 created: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-02
 tags:
   - credential-security
   - infrastructure
@@ -105,6 +105,16 @@ source_raw:
 | Tailscale auth key 复制 | reusable auth key → 4.5 天注册 181 节点 |
 
 **关键转折**：如果这 136 个 keys 都是 short-lived OIDC tokens，agent 读完时多数已过期；如果其中 Tailscale auth key 替换为 workload identity federation，Tailscale 节点注册根本不需要长期凭据。
+
+## 事故处置：撤销单元归属三问（08-02 圆桌沉淀）
+
+事故发生后"撤销那个凭证"从来不是一个动作——处置单元由三个问题分层算出（08-02 圆桌综合，案例事实取自上方 HF 时间线）：
+
+1. **后果是信息型还是物质型？** 136 个 keys 被读取 = 信息后果（秘密已出门）→ **无撤销单元**，只有止血：全量轮换 + 监控。撤销密钥只是止血不是回血。
+2. **物质后果仅存于可单方重写的存储，还是已被第三方表述接纳？** 181 节点注册后已被路由表/ACL/监控系统接纳 = 已入账 → 撤销单元 = **连带闭包**（控制平面回滚 + 通知所有第三方表述系统），而非一次 DELETE。
+3. **撤销成本谁承担？** 无人承担的撤销单元名义存在、实际不存在 → HF 案的实际处置因此是混合：部分回滚 + 部分接受 + 未来改短时效身份。
+
+由此得到短时效身份（WIF）的精确机制：**不缩小撤销单元，而是用 TTL 跑赢"形式化的时间常数"**——凭证死得太快，派生事实来不及被第三方接纳就失去背书，撤销从主动操作变成被动过期。隐藏赌注：棘轮从凭证层转移到时钟层——续期基础设施（OIDC trust chain）成为新单点（见上方第三层缺点：trust chain 本身可被攻陷），难题被转移而非消灭。
 
 ## 与相关概念的关系
 
