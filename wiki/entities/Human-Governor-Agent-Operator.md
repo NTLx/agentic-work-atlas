@@ -5,7 +5,7 @@ aliases:
   - Human Governor Agent Operator
 definition: "人类设定目标和约束、Agent 负责执行与优化流程的人机分工模式"
 created: 2026-04-09
-updated: 2026-06-23
+updated: 2026-08-02
 tags:
   - AI-Agent
   - Enterprise-Architecture
@@ -22,6 +22,7 @@ source_raw:
   - "[[20260601-stanford-enterprise-ai-playbook]]"
   - "[[Every Agentic Engineering Hack I Know (June 2026)]]"
   - "[[20260613-anthropic-public-record]]"
+  - "[[20260730-palantir-responsible-ai-hallucinations-ontology]]"
 ---
 
 # Human-Governor-Agent-Operator
@@ -70,6 +71,7 @@ Matt Van Horn 的多会话工作流把该模式缩小到个人工作台：四到
 - 传统模式：人类所有层级决策；Governor-Operator 模式：人类仅处理战略与例外
 - 常规和重复性任务越来越多地自动处理，员工聚焦于高价值、创造性、战略性工作
 - **E100 案例**（CDO Magazine, 2026-05）：AI Agent 实现 88% 触摸式执行，人类从"数据录入检查员"转变为"异常专家"——停留在 Operator 位置但需要治理机制（多阶段逻辑门、置信度阈值）。回收期 2 个月，年 ROI 超 500%。说明 Governor 和 Operator 是连续光谱上的位置，不是离散角色。
+- **Palantir AIP 的 HITL queue 模式**（Responsible AI #1, 2024-07）：AI 生成的库存调拨提案不直接写回外部系统，而是 "queue up" 等待 domain expert 显式 approve/reject，并可回溯方案如何得出——这是 Governor 模式的 vendor 正面实现（防幻觉三层防御的最后一层）。但其退化路径正是下文橡皮图章化：vendor 展示了 queue 的理想形态，未回答审批量超过处理能力后的退化问题。
 
 ## 前提与局限性
 

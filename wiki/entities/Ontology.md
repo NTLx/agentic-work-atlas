@@ -5,9 +5,12 @@ aliases:
   - Ontology
   - 本体
   - 本体论
+  - Ontology-Augmented Generation
+  - OAG
+  - 本体增强生成
 definition: "把业务概念、关系和规则形式化为机器可读语义层，用来约束 Agent 对企业事实的解释与推理"
 created: 2026-04-20
-updated: 2026-07-30
+updated: 2026-08-02
 tags:
   - Enterprise-AI
 evidence_level: high
@@ -26,6 +29,7 @@ source_raw:
   - '[[20260613-ontology-tokenmaxxing]]'
   - '[[20260730-palantir-ontology-connecting-agents-to-decisions]]'
   - '[[20260730-palantir-industry-ai-unified-namespace]]'
+  - '[[20260730-palantir-responsible-ai-hallucinations-ontology]]'
 ---
 
 # Ontology（本体）
@@ -46,6 +50,7 @@ source_raw:
 - **长期价值判断**：代码场景的本体价值可能被模型内化（代码是预训练主战场），但运维等企业级领域因私有数据、关系推理本质和高准确率要求，本体价值不会被模型吃掉。Palantir 市值 3000 亿+美金是对"企业 Ontology"能力的资本市场定价。
 - **决策中心定位**（2026-04 Palantir 官方架构文）：Palantir 把 Ontology 定位为"决策操作系统"而非数据库升级——数据架构只描述数据，Ontology 进一步建模决策（上下文、候选选项、下游影响）与行动（"动词"），并自动记录 end-to-end decision lineage 作为 agentic memory 与 fine-tuning 的燃料。详见 [[Decision-Centric-Architecture]]。⚠️ vendor 立场，机制可验证、定位表述需打折。
 - **与 UNS 的层次关系**：制造业场景中 Palantir 把 Unified Namespace（ISA-95 层级 + Sparkplug B 命名）定位为纯数据层，Ontology 是其上叠加 logic + action 的决策层——数据命名统一（UNS/[[UModel]]）是本体的前置条件而非目标。
+- **反幻觉 grounding 层**（2024-07 Palantir Responsible AI #1）：幻觉是 LLM 生成能力的结构性副产品，不可仅靠 retrain 消除，因此需要架构层 grounding。Palantir 把 LLM 经 search-query 间接访问 Ontology（元数据 + data 工具，而非 prompt 塞全表）的模式命名为 **OAG（Ontology-Augmented Generation）**——RAG 的企业领域特化。它与 tool handoff（计算交接给确定性函数）、human-in-the-loop 审核（提案入队不直接落库）构成按幻觉成因分层的三层防御，三层都建在 Ontology 的 data/logic/action 三要素上。⚠️ vendor 立场：机制可验证，演示为虚构案例、无失效率数据；且 grounding 有效性受制于 ABox 事实的新鲜度与建模质量。
 
 ## 何时值得使用
 

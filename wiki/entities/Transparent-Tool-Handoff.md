@@ -7,7 +7,7 @@ aliases:
   - Transparent Handoff
 definition: "将复杂任务从不可解释的 LLM 交接给可解释工具（业务逻辑/决策树/回归模型/自定义函数）执行，LLM 只做编排——以系统级可解释性替代模型级可解释性的架构模式"
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-02
 tags:
   - agentic-engineering
   - explainability
@@ -22,6 +22,7 @@ related_entities:
 source_raw:
   - "[[20260730-palantir-responsible-ai-black-box-explainability]]"
   - "[[20260730-palantir-responsible-ai-evals-prototype-to-production]]"
+  - "[[20260730-palantir-responsible-ai-hallucinations-ontology]]"
 ---
 
 # Transparent-Tool-Handoff（透明工具交接）
@@ -59,6 +60,7 @@ Debugger 暴露 **how**（系统做了什么），工具源码检查给出 **why
 - LLM Debugger 模式：输入数据 → 观察 tool invocation 的 input/output/execution log → 导航 tool call 序列
 - 产品召回案例：数学计算失败从 LLM 41.3% → Calculator tool handoff 后 93.3%
 - 黑盒转移：tool invocation 日志解释"系统做了什么"，不解释"LLM 为何选择调用这个工具"——黑盒从整个系统缩小到 LLM 的选择，未被消除
+- **正确性动机**（Responsible AI #1）：handoff 不只服务于可解释性（#2 视角），还直接修复一类计算幻觉——"next token prediction is the wrong type of computation"。Titan 卡车定位案例：LLM 用 token 预测模拟距离算术，返回 Albany（正确为 Providence）；handoff 给 Haversine Function 后正确。与 #2 同一案例构成 handoff 的双重动机：**正确性（修幻觉）+ 可解释性（修调试）**。
 
 ## 前提与局限性
 
