@@ -1286,6 +1286,12 @@
       "summary_path": "wiki/sources/20260801-align-agent-environment-interface.md",
       "updated_at": "2026-08-01T17:47:48+08:00"
     },
+    "20260801-lean-kernel-soundness-bug-postmortem.md": {
+      "body_sha256": "a94bac4e8b1a937906d0767f35a1ec15ec0a23b68a4b013dc633c34cc99bc3aa",
+      "raw_file": "20260801-lean-kernel-soundness-bug-postmortem.md",
+      "status": "pending",
+      "updated_at": "2026-08-02T17:20:14+08:00"
+    },
     "20260801-openbmb-align-tweet.md": {
       "body_sha256": "6d661c4d7cef8f186c5637d7571d4c978ad4e0159fd542bb1164a6ea9d44ff7d",
       "compiled_at": "2026-08-01T17:47:49+08:00",
@@ -1879,6 +1885,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-01T22:58:18+08:00",
+  "updated_at": "2026-08-02T17:20:14+08:00",
   "version": 1
 }
