@@ -8,6 +8,12 @@
       "summary_path": "wiki/sources/(14) Jevons Paradox for Knowledge Work.md",
       "updated_at": "2026-07-09T13:16:19+08:00"
     },
+    "202310-superlinear-returns.md": {
+      "body_sha256": "6efe542e3cebbcf7d8cdf69bece05ab8074f728cce202ff8865e3fd6e91fc959",
+      "raw_file": "202310-superlinear-returns.md",
+      "status": "pending",
+      "updated_at": "2026-08-03T15:08:07+08:00"
+    },
     "2026-ai-agent-evaluation-pipeline-methodology.md": {
       "body_sha256": "28f9f9ee15d8de41d82a2b824dbef1c8149bc0b26006ae269ea3bf9a0c4beeee",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1889,6 +1895,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-02T19:13:08+08:00",
+  "updated_at": "2026-08-03T15:08:07+08:00",
   "version": 1
 }
