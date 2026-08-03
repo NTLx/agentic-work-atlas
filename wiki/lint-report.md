@@ -24,7 +24,7 @@ tags:
 | Raw 已编译 | 236 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 367 |
+| Entity | 368 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 10 |
