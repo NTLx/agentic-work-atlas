@@ -7,7 +7,7 @@ aliases:
   - 时间驱动 Agent
 definition: "让 Agent 按时间或事件持续运行、检查状态、修复问题和汇总反馈的自动化编排模式"
 created: 2026-05-08
-updated: 2026-07-10
+updated: 2026-08-03
 tags:
   - AI-agent
   - claude-code
@@ -29,6 +29,7 @@ related_entities:
 source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - "[[20260630-loop-engineering-andrew-ng]]"
+  - "[[20260617-langchain-art-of-loop-engineering]]"
   - "[[20260706-getting-started-with-loops-claude-code]]"
   - "[[20260624-loops-rediscovering-cybernetics]]"
   - "[[20260611-loss-function-development]]"
@@ -181,6 +182,37 @@ Beer 的可行系统模型（VSM）定义了五层嵌套 loop，每层由上层�
 - **选择标准**：失败可隔离性决定位置。安全关键系统用多层审批，代码生成用反脆弱隔离
 
 来源：07-10 深度思考（roundtable+think+qa）
+
+## Loop 定理观察性析因与权重裁决（08-03 深度思考）
+
+外部终止定理（四宪法 #1）的 2³ 验证设计已完成首次观察性析因：库内 5 篇 loop 工程文献 + HF/ExploitGym/Ralph/恒温器共 16 行实践，按 A（变差函数来源）× B（反馈耦合）× C（参照层监控）编码为 6-cell 分布，裁决三竞争理论（Dijkstra A 主效应 / Wiener A×B 交互 / Boyd C 条件效应）。
+
+### Cell 分布实测
+
+| cell | A × B × C | 落点 | 性质 |
+|------|-----------|------|------|
+| 1 | 外×耦合×高 | 控制论规范 loop、Ng 开发者反馈 loop、Claude Code Turn-based（LangChain hill climbing 触及） | 全人类载体 |
+| 2 | 外×耦合×低 | 验证 loop（tests/rubric/确定性标准）、Ng coding loop、/goal、/loop | **最密：工程共识区** |
+| 3 | 外×脱钩×高 | 库内空（学科分区，见下） | 空白 |
+| 4 | 外×脱钩×低 | HF 入侵案、ExploitGym、Ralph 状态文件脱钩侧 | **失败案例区** |
+| 5 | 内×耦合×低 | ByteByteGo agent loop（模型自判停止）、LangChain L1 裸 loop、恒温器 | 原始 loop |
+| 6 | 内×脱钩×低 | 不可运行（完全自主定义本身），但病理描述反复出现（"删掉失败测试宣布 shipped"） | 定理实物化 |
+
+### 权重裁决 = 三剖面分治
+
+三预测非互斥竞争者，而是同一结构的三个剖面：**A 主效应 = 投资剖面**（cell 2 密度 + "更便宜的验证步骤比更强的基础模型带来更大性能提升"社区洞察）；**A×B 交互 = 失败剖面**（HF/ExploitGym 都是 A=外——最昂贵的失败都在 A 在场但 B 脱钩处，A 的投入不能免疫 B 脱钩）；**C 条件效应 = 边界剖面**（cell 1 全人类，C 骑在 A 上出现，从不替代 A）。
+
+### 本体论改写：三时间尺度与 C 分裂
+
+- **A/B/C = 设计时/运行时/演化时**：A（谓词声明）已制度化，B（通道耦合）已例行化，C（标准修改）**定义性不可制度化**——制度化 = 固定标准，而 C 的行为恰是修改标准。三条件合取形式保持，但 C 应从状态读法（"参照层被监控"）改为通道读法（"现实与异源解读的通道不被堵塞"）。
+- **C 分裂为二**：可见规格守卫（可制度化）+ 不可见定向携带（不可自动化，mētis 残差决定人审形态：CI 门禁=小残差，产品判断=大残差）。
+- **经验边界精确化**：不是"参照层需要外部来源"，而是**实现/规格界限需要外部守卫**——任何机制一旦能修改充当规格之物，必须被外部终止。LangChain hill climbing loop"harness 改进应经人类审查后部署"是现成判据实例（harness 充当规格）。
+- **cell 3 空白 = 学科分区**：loop 工程文献占据 cell 2（预设参照层可信），评测安全/审计文献占据 cell 3/4（专处理脱钩与定向污染）。meta-evaluation 学科（Scriven 1969 命名、Stufflebeam 2001《The Metaevaluation Imperative》）确证 cell 3 在组织实践中存在（评估之评估），同时确证"审计者后退"结构（MEC 清单显式承认自身需被评估）。
+- **判据的判据 = 赌注方向**（08-03 追本）：审查是对地图的质疑还是地图内运算，看审查者的生存押在地图正确性上（→ 地图内运算）还是领地状态上（→ 质疑地图）；制度化审查 = 过去赌注的遗骸。接 [[Over-Compliance]] 与遗骸化定理。
+
+**自指警告**：本裁决的 cell 表格本身正在成为新参照层——引用它声称"我们的 loop 在 cell 2 所以安全"，恰是 cell 4 的开始。
+
+来源：08-03 深度思考（roundtable 戴克斯特拉/维纳/博伊德/斯特拉森/斯科特 + think + qa + 联网）；synthesized/medium，16 行 cell 编码 extracted 支撑，待更多案例校准。详见 [[2026-08-03]] 09:33 区块。
 
 ## 前提与局限性
 
