@@ -3,7 +3,7 @@ type: raw
 source: "https://paulgraham.com/superlinear.html"
 author:
   - "[[Paul-Graham]]"
-published: "2023-10"
+published: "2023-10-01"  # 原文仅标 October 2023，月级精度取月初；最早可证公开出现 2023-10-17（HN）
 created: "2026-08-03"
 tags:
   - clippings
