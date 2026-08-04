@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 239 |
+| Raw 来源 | 240 |
 | Raw 已编译 | 236 |
-| Raw 待编译 | 3 |
+| Raw 待编译 | 4 |
 | Raw 已跳过 | 0 |
 | Entity | 368 |
 | Topic | 33 |
@@ -33,6 +33,7 @@ tags:
 
 - `raw/202310-superlinear-returns.md`
 - `raw/20260802-lenny-cpo-regrets-product-management-whatnot.md`
+- `raw/20260803-google-agent-skills-build-test-scale.md`
 - `raw/20260803-latent-space-inference-engineering-baseten.md`
 
 ## 检查项

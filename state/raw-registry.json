@@ -1324,6 +1324,12 @@
       "status": "pending",
       "updated_at": "2026-08-04T09:08:39+08:00"
     },
+    "20260803-google-agent-skills-build-test-scale.md": {
+      "body_sha256": "3e2d627d24315c4cb80a234f24d471406f12789d7fd633dc860a89cd8f7a4da5",
+      "raw_file": "20260803-google-agent-skills-build-test-scale.md",
+      "status": "pending",
+      "updated_at": "2026-08-04T09:21:32+08:00"
+    },
     "20260803-latent-space-inference-engineering-baseten.md": {
       "body_sha256": "9a6e1845aca2270f5f89a8b61a38da5c3d4ea4efe58919790e96805eadf739f2",
       "raw_file": "20260803-latent-space-inference-engineering-baseten.md",
@@ -1907,6 +1913,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-04T09:08:39+08:00",
+  "updated_at": "2026-08-04T09:21:32+08:00",
   "version": 1
 }
