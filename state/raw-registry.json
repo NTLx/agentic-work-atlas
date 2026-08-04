@@ -1318,6 +1318,18 @@
       "summary_path": "wiki/sources/20260801-tailscale-hugging-face-ai-agent-intrusion.md",
       "updated_at": "2026-08-01T22:58:18+08:00"
     },
+    "20260802-lenny-cpo-regrets-product-management-whatnot.md": {
+      "body_sha256": "f20103251fc40ac609433418cd81aea6a4f09f8afccf8f6c506904d250af2612",
+      "raw_file": "20260802-lenny-cpo-regrets-product-management-whatnot.md",
+      "status": "pending",
+      "updated_at": "2026-08-04T09:08:39+08:00"
+    },
+    "20260803-latent-space-inference-engineering-baseten.md": {
+      "body_sha256": "9a6e1845aca2270f5f89a8b61a38da5c3d4ea4efe58919790e96805eadf739f2",
+      "raw_file": "20260803-latent-space-inference-engineering-baseten.md",
+      "status": "pending",
+      "updated_at": "2026-08-04T09:08:39+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1895,6 +1907,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-03T15:08:07+08:00",
+  "updated_at": "2026-08-04T09:08:39+08:00",
   "version": 1
 }
