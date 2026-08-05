@@ -1336,6 +1336,24 @@
       "status": "pending",
       "updated_at": "2026-08-04T09:08:39+08:00"
     },
+    "20260804-agent-development-lifecycle-adlc.md": {
+      "body_sha256": "799c3cac3c5389b77f094135c4be0049996c148aa44958d8572d1abac84ceed3",
+      "raw_file": "20260804-agent-development-lifecycle-adlc.md",
+      "status": "pending",
+      "updated_at": "2026-08-05T18:17:37+08:00"
+    },
+    "20260804-astro-software-factory-issue-triage.md": {
+      "body_sha256": "6b878f37b1ae9391bf59513b8213d481520c47da5600471219491fde4152cbbd",
+      "raw_file": "20260804-astro-software-factory-issue-triage.md",
+      "status": "pending",
+      "updated_at": "2026-08-05T18:17:36+08:00"
+    },
+    "20260804-stacked-prs-giant-ai-generated.md": {
+      "body_sha256": "2d0143475e3202f7dc6702d5828104b149646686f9d514a4cf98e32cbb9253d9",
+      "raw_file": "20260804-stacked-prs-giant-ai-generated.md",
+      "status": "pending",
+      "updated_at": "2026-08-05T18:17:35+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1913,6 +1931,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-04T09:21:32+08:00",
+  "updated_at": "2026-08-05T18:17:37+08:00",
   "version": 1
 }
