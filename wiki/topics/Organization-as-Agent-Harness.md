@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-07-30
+updated: 2026-08-06
 evidence_level: high
 claim_type: mixed
 tags:
@@ -37,6 +37,7 @@ related_entities:
   - "[[AI-Native-Engineering-Org]]"
   - "[[Agentic-Analytics]]"
   - "[[Alert-Closed-Loop]]"
+  - "[[Human-Owns-Output]]"
 source_raw:
   - "[[Building an MCP Ecosystem at Pinterest]]"
   - '[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]'
@@ -51,6 +52,7 @@ source_raw:
   - "[[Running an AI-native engineering org]]"
   - "[[20260603-anthropic-self-service-data-analytics]]"
   - "[[20260729-nejm-ai-triggered-rapid-response-mortality]]"
+  - "[[20260805-how-we-use-ai-cloudflare-os]]"
 ---
 
 # Organization as Agent Harness（组织作为 Agent Harness）
@@ -97,6 +99,21 @@ RWJBarnabas 的 NEJM AI（2026）研究是组织 harness 在医疗领域的样�
 
 - **harness 的节点必须建制化**：快速反应团队是常设建制（人员、权限、响应流程），不是临时拉群。告警的"责任人接收"节点依赖组织建制存在，整条链路即 [[Alert-Closed-Loop]]。
 - **harness 显性化后扩容可以很快**：单点打磨成熟后，10 家医院快速铺开——通知规则、培训材料和监控指标一旦显性化，跨站点复制比模型调参更快。这正好对应四层中的流程层和学习层。
+
+## 全员 AI 平台的 harness 样本：Cloudflare OS
+
+Cloudflare OS（CIO Sam Rhea, 2026-08-05，来源 [[20260805-how-we-use-ai-cloudflare-os]]）是"企业内部通用 agent 平台作为 harness"的完整样本——四层全覆盖，且目标用户是**全员（含非工程师）**：
+
+| 四层 | Cloudflare OS 的对应实现 |
+|------|-------------------------|
+| 目标层 | 五原则 + JTBD 优先：员工先定义"要完成的工作"再找工具，不为 AI 而 AI |
+| 流程层 | skill files + 自然语言描述 workflow → agent 生成代码 → 按需/定时/事件触发。机器可读流程的**民主化**：非工程师也能定义可运行工作流 |
+| 权限层 | 最完整的工程实现：never more permission + ephemeral 云环境 + MCP Portal + 自建 MCP server + AI Gateway + gatekeeper（共享即重新认证，agent 继承接收者权限） |
+| 学习层 | magic email alias（真人+AI 值守邮箱收集"不想做的活"→ 提炼 skills）+ champion 扩散（不设专职 AI 团队，找各角色 early adopters 当 champion + 嵌入实习生） |
+
+**与工程/数据/医疗样本的差异**：Cloudflare OS 强调 **ephemeral 云环境的安全模型**——agent 只访问用户引入会话的数据，而非本机全部凭据；安全团队有审计可见性与网络控制权。这把"Agent 能碰到什么"从个人本机边界变成组织可审计的云边界。
+
+**可迁移内核**：① 魔法邮箱是反向筛选 JTBD 的低门槛机制（员工不愿交创意、愿交苦活）——context/skill 资产从真实需求反向长出；② champion 扩散证明"不设专职 AI 团队"也能规模化——用组织内部网络而非新部门推动采纳；③ 权限边界（gatekeeper 共享即重新认证）与 [[Human-Owns-Output]]（责任随岗位继承）协同，才是完整的组织 harness 权限+责任闭环。
 
 ## 工具接入也需要治理层
 

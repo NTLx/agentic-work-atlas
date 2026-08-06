@@ -5,7 +5,7 @@ aliases:
   - Context Engineering
 definition: "设计 Agent 每次推理时看到的信息结构，包括项目上下文、技能按需加载、记忆层级和上下文生命周期管理"
 created: 2026-04-09
-updated: 2026-07-09
+updated: 2026-08-06
 evidence_level: high
 claim_type: mixed
 tags:
@@ -39,6 +39,7 @@ source_raw:
   - "[[20260611-openai-harness-engineering]]"
   - "[[20260702-anthropic-context-engineering]]"
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
+  - "[[20260805-how-we-use-ai-cloudflare-os]]"
 ---
 
 # Context Engineering
@@ -70,6 +71,18 @@ Anthropic Applied AI 团队（2026-06）给出了 Context Engineering 的系统�
 [[Agentic-Analytics]] 把 Context Engineering 的边界讲得更硬：不是把 data warehouse、历史 SQL 和文档全塞给 Claude，而是构造 canonical datasets、semantic layer、domain skills、evals 和 provenance。
 
 Anthropic 的关键数据点是，访问数千个历史 SQL 文件只带来不到 1 个百分点准确率提升；没有 skills 时准确率不超过 21%，有 skills 后整体超过 95%。这说明上下文工程的核心不是资料数量，而是资料是否处在正确抽象层、是否有 owner、是否能被评测和维护。
+
+### Cloudflare：组织级 canonical context layer（08-06 补充）
+
+Cloudflare Cloudflare OS（CIO Sam Rhea, 2026-08-05，来源 [[20260805-how-we-use-ai-cloudflare-os]]）把 Context Engineering 推到组织治理维度：
+
+- **原则 4「组织上下文 > 模型」**：投入时间打造 curated canonical context layer，让 workflow/agent 知道 Cloudflare 的规范与现状——"The context from the organization matters more than the model"
+- **Engineering Codex**：工程部门的权威指南，opinionated by design。"Policies tell you what you can't do, whereas a Codex tells you what you should do"，每个代码库有 domain owner 对"好"负责；agents 用它审 Merge Request / 技术设计 / 事件报告
+- **跨 SDLC 铺开**：Codex context 被 agents 用于计划、MR 审查、设计审查、事件审查——上下文不只是信息结构，还是组织规范与价值判断的固化载体
+- **成效（自报）**：4 个月 flag 近 25 万潜在问题、阻止 16,000 merges、约 600 个架构问题在设计阶段被发现
+- **magic email → skills**：非工程侧先收集"不想做的活"，人工观察模式提炼 skill + context 文件 + 数据连接，再平台化——context 资产从真实需求反向长出
+
+**与既有框架的关系**：Codex 是 Context Engineering 的「组织规范承载」维度——比 Anthropic 的最小高信号 token 集更强调"应该做什么"的价值判断层；"组织上下文>模型"与 [[Context-Advantage]]（人类 context 优势）在组织层的对应；magic email 提炼路径是 skills 资产从真实 JTBD 反向长出的实证（对照 Anthropic skills 数据 21%→95% 的增益逻辑）。
 
 ## 核心问题：Agent 系统的热力学第二定律
 

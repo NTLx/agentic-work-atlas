@@ -8,7 +8,7 @@ aliases:
   - Permission Creep Ratchet
 definition: "Agent 权限撤销成本远大于初始拒绝成本，根不在单层而是因果链投影——折现不对称（心理燃料）→ 权力方向不可逆（Hart）→ 系统耦合只增（Brooks）→ 重授成本调节（Coase）→ 风险感知偏向不撤（Taleb）。真正不可再分的根是制度补偿缺失：撤销成本全压撤销者、收益全归全局、无补偿机制。心理是燃料，制度是引擎。"
 created: 2026-07-16
-updated: 2026-07-22
+updated: 2026-08-06
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -22,9 +22,11 @@ related_entities:
   - "[[Policy-as-Code-for-Agent-Governance]]"
   - "[[Distinct-Principal-Identity]]"
   - "[[Default-Side-Asymmetry]]"
+  - "[[Human-Owns-Output]]"
 source_raw:
   - "[[20260708-vercel-agent]]"
   - "[[20260419-agent-harness-engineering]]"
+  - "[[20260805-how-we-use-ai-cloudflare-os]]"
 ---
 
 # Permission-Ratchet-Mechanism（权限蠕变棘轮定理）
@@ -111,6 +113,22 @@ agent 缺人类权限系统依赖的三个补偿机制：
 ## 工程对策与局限
 
 [[Plan-is-the-Permission]] 是针对棘轮的工程对策——权限随计划闭合自动失效，消灭"持久权限"概念。但它是**对称反例的局部实现**，仅适用低频高价值操作（生产回滚），不适用高频操作（每次 commit 会决策成本爆炸）。详见 [[Default-Side-Asymmetry]]。
+
+## 预防式对策：Cloudflare 的 never-more-permission（08-06 补充）
+
+Cloudflare Cloudflare OS 提供**预防式**的棘轮对策——不解决"撤销"，而是消灭"越界与复制"（来源 [[20260805-how-we-use-ai-cloudflare-os]]）：
+
+| Cloudflare OS 机制 | 对棘轮的预防机制 |
+|-------------------|-----------------|
+| 原则 5「用 AI 时权限绝不越界」 | 设计约束层面：agent 权限 ≤ 使用者既有权限，杜绝"授予时超发" |
+| ephemeral 云环境 | agent 只访问会话内引入的数据，不携带本机全部凭据——缩小可蠕变权限的初始面 |
+| gatekeeper 分享语义（共享即重新认证） | agent 共享时继承**接收者**权限而非创建者权限——消灭"权限复制"这一棘轮入口：共享不产生持久权限副本 |
+| MCP Portal + 自建 MCP server | 每个系统记录按角色/地区限流，权限边界下沉到连接层 |
+| AI Gateway | 推理全量路由：DLP 阻断敏感数据外发 + 按角色门控模型——运行时约束 |
+
+**对棘轮三条件的针对性**：gatekeeper 直接命中「持久授予」——共享不产生持久权限副本，每个接收者独立认证，agent 无"被复制出去的永久凭据"；ephemeral 环境削弱「休眠不可观测」——环境随会话消亡，不产生无人认领的长寿 agent。
+
+**与 Plan-is-the-Permission 的关系**：Plan-is-the-Permission 治"撤销成本高"（临时授权随计划闭合）；never-more-permission 治"越界与复制"（共享即重新认证）。二者互补：前者让权限有自然终点，后者让权限不扩散。**未覆盖盲区**：文章未提 agent 权限的**授予后收缩/过期审计**（棘轮 L2 触发层），"授予后权限漂移"仍缺对策（综合判断，见 source summary 质疑）。
 
 ## 棘轮适用域
 

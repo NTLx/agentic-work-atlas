@@ -15,7 +15,7 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 368 个 |
+| Entity 页面 | 369 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
 | Raw 文章 | 244 个 |
@@ -114,6 +114,7 @@ tags:
 | [[wiki/entities/Systems-Thinker-Demand\|Systems Thinker Demand（系统思维者需求）]] | 招聘从 local expertise 向系统思维者的结构性转移——agent 跨系统操作需要 source of truth 与 paved path | Lenny's Podcast / Netflix 2026 |
 | [[wiki/entities/Excellence-as-Operating-System\|Excellence as Operating System（卓越即操作系统）]] | Netflix 文化机制元解释：talent density + autonomy + keeper test 是到达卓越的操作系统，克制用流程修复问题的本能 | Lenny's Podcast / Netflix 2026 |
 | [[wiki/entities/AI-Identity-Bifurcation\|AI Identity Bifurcation（AI 身份极化）]] | 2026 H1 tech workforce 因 AI 一分为二（50% amplified vs 46% 三种负面立场），效应量为 manager 效应 3 倍——诊断型时间基线 | Lenny's Podcast Survey 2026 |
+| [[wiki/entities/Human-Owns-Output\|Human Owns Output（人类拥有输出）]] | agent 输出责任归属人类使用者并随岗位继承——AI 是工具/工具制造者而非团队成员 | Cloudflare 2026-08 |
 
 #### 知识与语义
 | Entity | 定义 | 来源 |

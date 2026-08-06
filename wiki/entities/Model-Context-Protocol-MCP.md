@@ -6,7 +6,7 @@ aliases:
   - Model Context Protocol
 definition: "让 AI client 通过统一客户端-服务器协议连接工具和数据源的开放标准，用来替代模型与工具之间的一对一硬编码集成"
 created: 2026-05-13
-updated: 2026-07-27
+updated: 2026-08-06
 tags:
   - AI-Agent
   - tool-use
@@ -21,6 +21,7 @@ related_entities:
 source_raw:
   - "[[Building an MCP Ecosystem at Pinterest]]"
   - "[[20260718-bytebytego-mcp-vs-a2a-vs-acp]]"
+  - "[[20260805-how-we-use-ai-cloudflare-os]]"
 ---
 
 # Model Context Protocol (MCP)
@@ -46,6 +47,16 @@ MCP 的核心价值不是“多一个 API 标准”，而是把 agent tool use �
 4. **接入日常 surface**：MCP 不只在实验环境中运行，而是进入内部 Web Chat、IDE integration 和内部聊天机器人，让 agent 在员工实际工作场景中调用工具。
 
 这些选择说明：企业 MCP 的重点不是连接数量，而是最小权限、上下文清洁度和工具 owner 责任。
+
+## Cloudflare 的治理强化案例（08-06 补充）
+
+Cloudflare Cloudflare OS（CIO Sam Rhea, 2026-08-05，来源 [[20260805-how-we-use-ai-cloudflare-os]]）用 MCP 连接内部系统记录，但强调**自建以控权限**：
+
+1. **自建 MCP server 即使有原生版**："In most cases, we build and deploy our own implementation of an MCP server for each system of record, even when the system of record provides a native version." 理由：可加额外控制层，如按角色/地区限流（rate limits by role or region）。Cloudflare Workers 提供 serverless 部署，维护负担近零。
+2. **MCP Portal 做会话权限映射**：MCP 标准只定义"连接"，权限语义由 Portal 落地——用户会话在 Cloudflare OS 的访问 scoped 到其在系统记录里的既有权限集（follow our rule around permissions）。
+3. **与 Pinterest 的互补**：Pinterest 强调中心化 [[MCP-Registry]]（哪些 server 被批准、谁能访问）；Cloudflare 强调"自建 MCP server 加权限控制层"——在连接层就落地最小权限，而非依赖单个系统记录的原生实现。
+
+**可迁移内核**：企业 MCP 治理的两个维度缺一不可——注册表（管"能用什么"）与自建控制层（管"用什么权限、以什么速率"）。原生 MCP server 往往缺少角色/地区限流能力，自建是补权限边界而非重复造轮子。
 
 ## 核心组件
 
