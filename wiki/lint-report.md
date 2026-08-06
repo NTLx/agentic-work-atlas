@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-08-04"
+date: "2026-08-06"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-08-04
+# Agentic Work Atlas Lint 报告 - 2026-08-06
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 240 |
+| Raw 来源 | 244 |
 | Raw 已编译 | 236 |
-| Raw 待编译 | 4 |
+| Raw 待编译 | 8 |
 | Raw 已跳过 | 0 |
 | Entity | 368 |
 | Topic | 33 |
@@ -35,6 +35,10 @@ tags:
 - `raw/20260802-lenny-cpo-regrets-product-management-whatnot.md`
 - `raw/20260803-google-agent-skills-build-test-scale.md`
 - `raw/20260803-latent-space-inference-engineering-baseten.md`
+- `raw/20260804-agent-development-lifecycle-adlc.md`
+- `raw/20260804-astro-software-factory-issue-triage.md`
+- `raw/20260804-stacked-prs-giant-ai-generated.md`
+- `raw/20260805-how-we-use-ai-cloudflare-os.md`
 
 ## 检查项
 
@@ -49,7 +53,7 @@ tags:
 | `tag` | 0 |
 | `evidence` | 0 |
 | `low-evidence` | 6 |
-| `stale-core` | 0 |
+| `stale-core` | 3 |
 | `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
@@ -65,6 +69,12 @@ tags:
 - `wiki/sources/20260730-palantir-industry-ai-unified-namespace.md` - `低证据页面 20260730-palantir-industry-ai-unified-namespace 只能作为补 source 或探索线索`
 - `wiki/sources/20260730-palantir-ontology-connecting-agents-to-decisions.md` - `低证据页面 20260730-palantir-ontology-connecting-agents-to-decisions 只能作为补 source 或探索线索`
 - `wiki/sources/20260730-palantir-secure-rapid-software-development-sscs.md` - `低证据页面 20260730-palantir-secure-rapid-software-development-sscs 只能作为补 source 或探索线索`
+
+### stale-core
+
+- `wiki/entities/Boris-Cherny.md` - `核心页 Boris-Cherny 已 90 天未更新，入链 10 条`
+- `wiki/entities/Claude-Code-CLI.md` - `核心页 Claude-Code-CLI 已 90 天未更新，入链 38 条`
+- `wiki/entities/Judgment.md` - `核心页 Judgment 已 90 天未更新，入链 57 条`
 
 ## 运行命令
 

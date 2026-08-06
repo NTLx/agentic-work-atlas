@@ -1354,6 +1354,12 @@
       "status": "pending",
       "updated_at": "2026-08-05T18:17:35+08:00"
     },
+    "20260805-how-we-use-ai-cloudflare-os.md": {
+      "body_sha256": "4381581849f1377b453f55bfd52830b910dd1e15b78d7507dce65bd2cbb4ece2",
+      "raw_file": "20260805-how-we-use-ai-cloudflare-os.md",
+      "status": "pending",
+      "updated_at": "2026-08-06T14:40:38+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1931,6 +1937,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-05T18:17:37+08:00",
+  "updated_at": "2026-08-06T14:40:38+08:00",
   "version": 1
 }
