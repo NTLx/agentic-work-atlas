@@ -1364,9 +1364,11 @@
     },
     "20260805-personalization-mirage-llm-over-inference.pdf": {
       "body_sha256": "980d7f9e629ed34ff0f2c5e37800d6dfaaedeccccb3744659451f5239ed2532b",
+      "compiled_at": "2026-08-07T09:18:03+08:00",
       "raw_file": "20260805-personalization-mirage-llm-over-inference.pdf",
-      "status": "pending",
-      "updated_at": "2026-08-07T08:21:01+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260805-personalization-mirage-llm-over-inference.md",
+      "updated_at": "2026-08-07T09:18:03+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -1945,6 +1947,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-07T08:21:01+08:00",
+  "updated_at": "2026-08-07T09:18:03+08:00",
   "version": 1
 }

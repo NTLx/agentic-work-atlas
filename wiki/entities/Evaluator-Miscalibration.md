@@ -8,7 +8,7 @@ aliases:
   - Calibration Trap
 definition: "评估器测量的不是你真正关心的行为：rubric 标准互相冲突或锚点奖励了错误的东西，使聚合分数与真实质量背离——校准错误的评估比没有评估更糟，因为它递给你虚假的信心"
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-07
 tags:
   - evaluation
   - agentic-engineering
@@ -16,8 +16,10 @@ related_entities:
   - "[[LLM-as-a-Judge]]"
   - "[[Rubric-Based-Evaluation]]"
   - "[[Goodharts-Law]]"
+  - "[[Over-Inference]]"
 source_raw:
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
+  - "[[20260805-personalization-mirage-llm-over-inference]]"
 evidence_level: medium
 claim_type: mixed
 ---
@@ -45,6 +47,17 @@ claim_type: mixed
 - 检查锚点的激励方向：这个锚点被游戏化时，最省力的刷分行为是什么？那个行为是否是你真正想要的？
 - 对标准做正交性审查：一版输出能否在 A 标准上升的同时在 B 标准下降？若能且两者都重要，聚合分数不可单独决策。
 - 评估器本身进入验证循环：rubric 改动也要用小规模评估 + trace 检查验证，而不是只凭直觉重写。
+
+## 自评反转：校准错误的极端形态（08-07 补充）
+
+当**模型自身充当评估器**（self-audit）时，校准错误达到系统性反转程度。MirageBench（arXiv 2608.04570, 2026-08，来源 [[20260805-personalization-mirage-llm-over-inference]]）给出最极端的实证：
+
+- **跨模型自评与实测负相关**：12 模型自评 OI 与独立 judge 实测 OI 的 Spearman ρ = −0.60（p=0.044，**exploratory**，CI [−0.90,+0.06]）。自报 OI 最低的 Qwen3-8B（13.0%）实测最高（48.7%）——**自评最安全的模型实测最危险**。
+- **机制 = differential self-labeling strictness（差分自标严格度）**：宽松自标者（GPT-4o-mini/Qwen3-8B）把几乎所有自己的推断标为"reasonable"，不产生校准信号；严格自标者（Claude/GLM/Kimi）愿把推断标为有问题。自评分数反映的是"标注严格度"而非"实际行为"——这正是本 Entity 讲的锚点激励错位在自评层的形态：**自评的"锚点"由模型自身的自我标签倾向决定，跨模型不可比**。
+- **与 Goodharts-Law 同构**：自报 OI 一旦成为选型指标就失效——选"自评最安全"的模型恰恰选中最危险的。
+- **作用域分裂**：自评绝对水平不可作跨模型安全比较器；模型内相对排序仍可用（AUROC 0.58–0.83）。诊断时应问：这是跨模型比较（→ 必须外部 judge）还是模型内排序（→ 自评可用）？
+
+与本 Entity 前文的差异：前文讲**外部评估器**标准设计错误（SimilarWeb 案例）；本条讲**模型自评**作为评估器时，其"校准锚点"（自我标签倾向）本身是模型属性，无法标准化。两层叠加意味着"让模型评估自己"比"让评估器评估模型"更不可靠。
 
 ## 前提与局限性
 

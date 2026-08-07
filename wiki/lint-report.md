@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-08-06"
+date: "2026-08-07"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-08-06
+# Agentic Work Atlas Lint 报告 - 2026-08-07
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 244 |
-| Raw 已编译 | 237 |
+| Raw 来源 | 245 |
+| Raw 已编译 | 238 |
 | Raw 待编译 | 7 |
 | Raw 已跳过 | 0 |
-| Entity | 369 |
+| Entity | 370 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 10 |
@@ -71,9 +71,9 @@ tags:
 
 ### stale-core
 
-- `wiki/entities/Boris-Cherny.md` - `核心页 Boris-Cherny 已 90 天未更新，入链 10 条`
-- `wiki/entities/Claude-Code-CLI.md` - `核心页 Claude-Code-CLI 已 90 天未更新，入链 38 条`
-- `wiki/entities/Judgment.md` - `核心页 Judgment 已 90 天未更新，入链 57 条`
+- `wiki/entities/Boris-Cherny.md` - `核心页 Boris-Cherny 已 91 天未更新，入链 10 条`
+- `wiki/entities/Claude-Code-CLI.md` - `核心页 Claude-Code-CLI 已 91 天未更新，入链 38 条`
+- `wiki/entities/Judgment.md` - `核心页 Judgment 已 91 天未更新，入链 57 条`
 
 ## 运行命令
 

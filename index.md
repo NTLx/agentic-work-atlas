@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-08-06
+updated: 2026-08-07
 tags:
 ---
 
@@ -15,10 +15,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 369 个 |
+| Entity 页面 | 370 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 244 个 |
+| Raw 文章 | 245 个 |
 | Source Summary | 238 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
@@ -58,6 +58,7 @@ tags:
 | [[wiki/entities/Mechanical-Sympathy-for-LLMs\|Mechanical Sympathy for LLMs（LLM 机械同理心）]] | 工程师应获取对 LLM 实际工作原理的经验性理解——而非推测未来能力 | Martin Fowler 2026 |
 | [[wiki/entities/LLM-as-a-Judge\|LLM-as-a-Judge（LLM 裁判）]] | 使用 LLM 按预定义 rubric 评估另一个系统输出质量的方法论，核心是按风险分层匹配评判策略 | Li et al. 2026 |
 | [[wiki/entities/Evaluator-Miscalibration\|Evaluator Miscalibration（评估器校准错误）]] | rubric 标准冲突或锚点奖励错位使聚合分数背离真实质量——校准错误的评估比没有评估更糟 | SimilarWeb/LangSmith 2026 |
+| [[wiki/entities/Over-Inference\|Over Inference（过度推断）]] | LLM 生成个性化 claims 超出证据支持的属性——12 模型全中招（均值 41.6%），自评 OI 与实测负相关（Self-Monitoring Inversion） | MirageBench 2026 |
 | [[wiki/entities/Auto-Mode\|Auto Mode（自动模式）]] | Claude Code 的自动执行模式——agent 自主决定运行工具，无需逐条等待用户确认 | Claude Code 一周年 |
 | [[wiki/entities/Context-Minimalism\|Context Minimalism（上下文极简主义）]] | 给 agent 最小可能的 system prompt 和工具集，让模型自己决定如何拉取上下文 | Claude Code 一周年 |
 | [[wiki/entities/Skill-Chains\|Skill Chains（技能链）]] | 多技能顺序执行的 macro skill 模式，通过 QA skill 约束幻觉 | Become AI Native Org |
