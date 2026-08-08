@@ -1370,6 +1370,12 @@
       "summary_path": "wiki/sources/20260805-personalization-mirage-llm-over-inference.md",
       "updated_at": "2026-08-07T09:18:03+08:00"
     },
+    "20260806-openai-chatgpt-work-adoption.md": {
+      "body_sha256": "60e913e43e087cb827d2b96241ae71a1686252c3de1c2a39b99fcf0f43925906",
+      "raw_file": "20260806-openai-chatgpt-work-adoption.md",
+      "status": "pending",
+      "updated_at": "2026-08-08T16:44:59+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1947,6 +1953,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-07T09:18:03+08:00",
+  "updated_at": "2026-08-08T16:44:59+08:00",
   "version": 1
 }
