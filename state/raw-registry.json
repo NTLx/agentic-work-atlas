@@ -1376,6 +1376,12 @@
       "status": "pending",
       "updated_at": "2026-08-08T16:44:59+08:00"
     },
+    "20260810-the-playbook-for-building-high-talent.md": {
+      "body_sha256": "6be6670bab466d6f60ebed5c50334cafd44687d0cbaea4c10dda14f371518bf2",
+      "raw_file": "20260810-the-playbook-for-building-high-talent.md",
+      "status": "pending",
+      "updated_at": "2026-08-10T09:10:44+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1953,6 +1959,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-08T16:44:59+08:00",
+  "updated_at": "2026-08-10T09:10:44+08:00",
   "version": 1
 }
