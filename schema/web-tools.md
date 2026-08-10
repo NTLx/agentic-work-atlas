@@ -35,3 +35,58 @@ Agent 根据任务性质自主选择最合适的联网工具，不强制绑定�
 - 字符串匹配失败时，尝试读取精确行内容查看实际字符
 - 可先更新其他字段（如 updated 日期）作为突破口
 - index.md 编辑时注意统计数字和 footer 分开更新
+
+## Substack/Lenny's Newsletter 抓取模式
+
+当 Jina 返回 `AuthenticationRequiredError: ... bad network reputation (AS36352)`，
+或文章主页面是付费墙但页内嵌了 podcast transcript（如 Lenny's Newsletter）时，
+用以下路径绕过：
+
+### 1. 抓 HTML 找 transcript URL
+
+```bash
+curl -sL -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ..." \
+  "https://www.lennysnewsletter.com/p/<slug>" -o /tmp/article.html
+
+# 在 HTML 中 grep Substack CDN 上的 transcription.json（带签名参数）
+grep -oE "https://substackcdn.com/video_upload/post/20[0-9]+/[a-f0-9-]+/[0-9]+/transcription.json[^\"\\\\]+" \
+  /tmp/article.html | sort -u
+```
+
+### 2. 定位当前文章的 post_id
+
+文章 slug（`/p/<slug>`）和 post_id 都在 HTML 里。post_id 与文章 slug 在 React initial state 中**位置相邻**，
+可用 Python 找 URL 偏移最接近 slug 出现位置的 transcription.json：
+
+```python
+import re
+html = open('/tmp/article.html').read()
+slug_pos = html.find('<article-slug>')
+url_re = re.compile(r'https://substackcdn\.com/video_upload/post/(\d+)/[a-f0-9-]+/\d+/transcription\.json\?[^\"\\]+')
+candidates = [(abs(m.start() - slug_pos), m.group()) for m in url_re.finditer(html)]
+candidates.sort()
+print(candidates[0][1])  # 最近的 = 当前文章的 transcript
+```
+
+### 3. 抓 transcript JSON 并清洗
+
+```bash
+curl -sL "<transcription_url>" -o /tmp/transcript.json
+```
+
+JSON 结构：`[{"start": 0.1, "end": 5.9, "text": "...", "words": [...]}, ...]`，含 word-level Whisper 置信度。
+Raw 文件只保留 `text` 字段、合并段落即可：
+
+```python
+import json
+data = json.load(open('/tmp/transcript.json'))
+text = ' '.join(seg['text'].strip() for seg in data if seg.get('text','').strip())
+```
+
+### 4. 注意事项
+
+- **签名 URL 短期有效**（小时级）：HTML 和 transcription.json 必须在同一会话内抓取，跨会话会 403
+- post_id 是 Substack 内部递增 id，与发布时间正相关但**不**等于 slug
+- 同时存在 `transcription.json`（带 speaker 对齐）和 `unaligned_transcription.json`（无 speaker label），
+  选前者质量更好
+- transcript 不属付费内容——这是 Substack 公开给搜索引擎索引的版本
