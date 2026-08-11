@@ -1286,6 +1286,12 @@
       "summary_path": "wiki/sources/20260730-palantir-secure-rapid-software-development-sscs.md",
       "updated_at": "2026-07-30T20:28:47+08:00"
     },
+    "20260731-tragedy-cognitive-commons-ai-expertise.pdf": {
+      "body_sha256": "22624688f04a9759f9b7bb846b2e7f64ccc3687786541bbe3992eecf5ba51b6d",
+      "raw_file": "20260731-tragedy-cognitive-commons-ai-expertise.pdf",
+      "status": "pending",
+      "updated_at": "2026-08-11T10:20:00+08:00"
+    },
     "20260801-align-agent-environment-interface.pdf": {
       "body_sha256": "33fd5fb97d3b0fa3083139bddf0a43a8c459f77c902efc94701ee78bd906ddd5",
       "compiled_at": "2026-08-01T17:47:48+08:00",
@@ -1971,6 +1977,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-11T09:29:38+08:00",
+  "updated_at": "2026-08-11T10:20:00+08:00",
   "version": 1
 }
