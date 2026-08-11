@@ -1382,6 +1382,18 @@
       "status": "pending",
       "updated_at": "2026-08-10T09:10:44+08:00"
     },
+    "20260811-databricks-genie-grounding-governance.md": {
+      "body_sha256": "49d95968528df95b9219fc795d1720a0cc3845d7f4b17f65052952827b2233b0",
+      "raw_file": "20260811-databricks-genie-grounding-governance.md",
+      "status": "pending",
+      "updated_at": "2026-08-11T09:29:37+08:00"
+    },
+    "20260811-vasuman-ai-adoption-is-a-myth.md": {
+      "body_sha256": "bfb200a10acab2a107c7241e0b13a792867c645012e22f6b70102b8b48af3a33",
+      "raw_file": "20260811-vasuman-ai-adoption-is-a-myth.md",
+      "status": "pending",
+      "updated_at": "2026-08-11T09:29:38+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1959,6 +1971,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-10T09:10:44+08:00",
+  "updated_at": "2026-08-11T09:29:38+08:00",
   "version": 1
 }
