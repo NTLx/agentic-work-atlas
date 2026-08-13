@@ -54,6 +54,12 @@
       "summary_path": "wiki/sources/202602-ai-agent-frameworks-langgraph-crewai-autogen-comparison.md",
       "updated_at": "2026-07-09T13:16:19+08:00"
     },
+    "20260215-recall-bottleneck-parametric-factuality.pdf": {
+      "body_sha256": "b3543f6761395d0d65270c5e70f6534e0800b5ba58e9e250c4b91cd4dcb87fd9",
+      "raw_file": "20260215-recall-bottleneck-parametric-factuality.pdf",
+      "status": "pending",
+      "updated_at": "2026-08-13T09:49:26+08:00"
+    },
     "20260226-pro-worker-ai-hamilton-project.md": {
       "body_sha256": "b85017f778bbbccea1c7bc78c8c3336df17399105c7914fb60737373d2cd5649",
       "compiled_at": "2026-07-09T13:16:19+08:00",
@@ -1400,6 +1406,24 @@
       "status": "pending",
       "updated_at": "2026-08-11T09:29:38+08:00"
     },
+    "20260812-github-ai-first-contributors.md": {
+      "body_sha256": "90842d41d666b2d14fe544bf05ec0e8998749c946a9087989d6db09bfd54d239",
+      "raw_file": "20260812-github-ai-first-contributors.md",
+      "status": "pending",
+      "updated_at": "2026-08-13T09:49:26+08:00"
+    },
+    "20260812-google-recall-bottleneck-factuality.md": {
+      "body_sha256": "b30883c7db9b9882eb79739df3330d297b6edd10a3d3e867c8b2b9d7f4baef20",
+      "raw_file": "20260812-google-recall-bottleneck-factuality.md",
+      "status": "pending",
+      "updated_at": "2026-08-13T09:49:26+08:00"
+    },
+    "20260813-pl-tokens-token-efficiency.md": {
+      "body_sha256": "235471ab11d87225717950b8100eec455028ad7c36673493f11c0c64781e1f4e",
+      "raw_file": "20260813-pl-tokens-token-efficiency.md",
+      "status": "pending",
+      "updated_at": "2026-08-13T09:49:26+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -1977,6 +2001,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-11T10:20:00+08:00",
+  "updated_at": "2026-08-13T09:49:26+08:00",
   "version": 1
 }

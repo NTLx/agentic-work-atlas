@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-08-07"
+date: "2026-08-13"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-08-07
+# Agentic Work Atlas Lint 报告 - 2026-08-13
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -20,9 +20,9 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 245 |
+| Raw 来源 | 254 |
 | Raw 已编译 | 238 |
-| Raw 待编译 | 7 |
+| Raw 待编译 | 16 |
 | Raw 已跳过 | 0 |
 | Entity | 370 |
 | Topic | 33 |
@@ -38,6 +38,15 @@ tags:
 - `raw/20260804-agent-development-lifecycle-adlc.md`
 - `raw/20260804-astro-software-factory-issue-triage.md`
 - `raw/20260804-stacked-prs-giant-ai-generated.md`
+- `raw/20260806-openai-chatgpt-work-adoption.md`
+- `raw/20260810-the-playbook-for-building-high-talent.md`
+- `raw/20260811-databricks-genie-grounding-governance.md`
+- `raw/20260811-vasuman-ai-adoption-is-a-myth.md`
+- `raw/20260812-github-ai-first-contributors.md`
+- `raw/20260812-google-recall-bottleneck-factuality.md`
+- `raw/20260813-pl-tokens-token-efficiency.md`
+- `raw/20260215-recall-bottleneck-parametric-factuality.pdf`
+- `raw/20260731-tragedy-cognitive-commons-ai-expertise.pdf`
 
 ## 检查项
 
@@ -52,7 +61,7 @@ tags:
 | `tag` | 0 |
 | `evidence` | 0 |
 | `low-evidence` | 6 |
-| `stale-core` | 3 |
+| `stale-core` | 8 |
 | `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
@@ -71,9 +80,14 @@ tags:
 
 ### stale-core
 
-- `wiki/entities/Boris-Cherny.md` - `核心页 Boris-Cherny 已 91 天未更新，入链 10 条`
-- `wiki/entities/Claude-Code-CLI.md` - `核心页 Claude-Code-CLI 已 91 天未更新，入链 38 条`
-- `wiki/entities/Judgment.md` - `核心页 Judgment 已 91 天未更新，入链 57 条`
+- `wiki/entities/Agent-Native.md` - `核心页 Agent-Native 已 92 天未更新，入链 10 条`
+- `wiki/entities/Agent-PR-Review.md` - `核心页 Agent-PR-Review 已 94 天未更新，入链 16 条`
+- `wiki/entities/Boris-Cherny.md` - `核心页 Boris-Cherny 已 97 天未更新，入链 10 条`
+- `wiki/entities/Claude-Code-CLI.md` - `核心页 Claude-Code-CLI 已 97 天未更新，入链 38 条`
+- `wiki/entities/GBrain.md` - `核心页 GBrain 已 92 天未更新，入链 10 条`
+- `wiki/entities/Judgment.md` - `核心页 Judgment 已 97 天未更新，入链 57 条`
+- `wiki/entities/Knowledge-Work.md` - `核心页 Knowledge-Work 已 92 天未更新，入链 24 条`
+- `wiki/entities/Software-2.0.md` - `核心页 Software-2.0 已 92 天未更新，入链 9 条`
 
 ## 运行命令
 
