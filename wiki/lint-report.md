@@ -39,7 +39,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 27 |
+| `tag` | 28 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
 | `stale-core` | 7 |
@@ -78,6 +78,7 @@ tags:
 - `wiki/sources/20260811-vasuman-ai-adoption-is-a-myth.md` - `一次性 tag 仅出现 1 次: 'agent-rollout'`
 - `wiki/sources/20260810-the-playbook-for-building-high-talent.md` - `一次性 tag 仅出现 1 次: 'ai-era-org'`
 - `wiki/entities/Validation-Tether.md` - `一次性 tag 仅出现 1 次: 'ai-oversight'`
+- `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'china-enterprise'`
 - `wiki/sources/20260731-tragedy-cognitive-commons-ai-expertise.md` - `一次性 tag 仅出现 1 次: 'cognitive-commons'`
 - `wiki/entities/Cognitive-Commons.md` - `一次性 tag 仅出现 1 次: 'collective-action'`
 - `wiki/sources/20260812-github-ai-first-contributors.md` - `一次性 tag 仅出现 1 次: 'contributor-governance'`
