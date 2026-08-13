@@ -7,7 +7,7 @@ aliases:
   - Systems Thinking Shift
 definition: "AI 时代组织招聘从 local business expertise 向 systems thinkers 的结构性转移：agent 跨系统操作需要统一的 source of truth 与 paved path，因此需要能跨业务域抽象 building blocks 的人"
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-13
 tags:
   - ai-org-design
   - career
@@ -24,6 +24,8 @@ topics:
   - "[[AI-Era-Career-Skills]]"
 source_raw:
   - "[[20260730-lenny-netflix-cpto-systems-thinkers-elizabeth-stone]]"
+  - "[[20260802-lenny-cpo-regrets-product-management-whatnot]]"
+  - "[[20260810-the-playbook-for-building-high-talent]]"
 ---
 
 # Systems-Thinker-Demand（系统思维者需求）
@@ -63,6 +65,14 @@ Stone 的操作化建议：每解决一个问题，向外 zoom 一层——"what
 - **规模前提**：该转向在数千人的组织中最强（tribal knowledge 失效）；小团队仍可能 local expertise 优先。
 - **与 craft 焦虑的张力**：同年 tech worker survey（[[AI-Identity-Bifurcation]]）显示 craft 类从业者（design/research）最焦虑——系统思维者需求上升与中位 craft 从业者贬值是同一结构的两面；Stone 所言"craft 仍稀缺"指顶级 craft。
 - **平台成本未定价**：paved path 的构建与维护本身消耗大量系统思维者时间，存在"为脚手架而脚手架"的过建风险。
+
+## 现场样本（2026-08，三源独立收敛）
+
+- **Whatnot（组织内实例）**：负责时尚卖家新销售格式的 senior PM 横跨 listings、logistics、payments 三个系统，且"不存在任何单一 EM 拥有她"——这正是"能跨业务域抽象"的人在真实工作形态里的样子：以问题为边界，而非以所有权为边界。
+- **Adam Ward（招聘口语版）**：Cursor 招聘负责人称 "systems thinking 出现在我最近四个播客里"，是 AI 时代最显著上升的招聘属性；并给出操作性定义——"what is the fundamental root problem we're trying to solve，然后把它切成小 pieces"、"systems thinking 听起来很战略，实际极其 tactical"。搜索策略也从"哪个公司够亮"转向按特征反查（"哪些公司的 JD 也把这些特征放进去"）。
+- **Stone（Netflix，存量实体主源）**：agent 跨系统操作 → 需要 source of truth + paved path → 需要抽象 building blocks 的平台构建者。
+
+三条路径（组织岗位、招聘词表、文化战略）指向同一结构：systems thinking 从"软性优点"变成 AI 时代不可回避的岗位需求。
 
 ## 关联概念
 

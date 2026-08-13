@@ -7,7 +7,7 @@ aliases:
   - 前线部署工程师
 definition: "嵌入客户真实环境，把前沿 AI 能力与数据、工具和业务流程连接成可运行生产系统，并将现场发现回流为平台能力或组织能力的工程师"
 created: 2026-05-18
-updated: 2026-07-30
+updated: 2026-08-13
 tags:
   - career
   - AI-industry
@@ -37,6 +37,7 @@ source_raw:
   - "[[The Return of the Deployment Company]]"
   - "[[20260530-ceo-knee-deep-building-ai]]"
   - "[[20260730-palantir-ontology-connecting-agents-to-decisions]]"
+  - "[[20260810-the-playbook-for-building-high-talent]]"
 ---
 
 # Forward-Deployed-Engineer
@@ -54,6 +55,14 @@ source_raw:
 - 宝玉文章把行业信号总结为“从卖模型到卖落地”：OpenAI、Anthropic、Google 都在围绕 FDE 补企业部署能力。
 - Caffein Chen 文章从买方视角补充：2026 年 OpenAI、Anthropic、Google 同期押注 FDE，反映 AI 商业化正在从自助 SaaS 转向现场部署、隐性知识提取和评测集构建。
 - Palantir 2026 决策中心架构文给出 FDE 在客户侧的技术对象描述："AI FDE" 把客户的数据源（data sources）、逻辑资产（logic assets）与行动系统（systems of action）连接进企业 ontology；agent 以工具范式调用这三类原语，而连接工作的产品化正是飞轮回流的平台能力（[[Deployment-Product-Flywheel]]、[[Decision-Centric-Architecture]]）。
+
+## 人才供给侧信号（2026-08，Adam Ward）
+
+Cursor 招聘负责人 Adam Ward 给 FDE 补充了人才供给侧剖面（此前实体侧重平台与组织定义）：
+
+- **当前最热的需求**："one thing that's really in demand is this forward-deployed engineer——technical person who can partner with sales and partner with a customer to deploy what can be a very technical and maybe overwhelming product"。他明言这是**真实的供需缺口**（"a real supply demand issue right now"）。
+- **FDE 画像**：不是 AI researcher，而是"3-5 年前的全栈工程师，现在从终端走出来走进公司与客户"；驱动因素之一是"CFOs start to get the bill coming"——token 从 maxing 转向 optimizing 时，需要有人帮企业想"最佳方案"并部署进 workforce。
+- **需求动机**：CEO 视角把 FDE 视为"AI 进入真实组织"的人力桥梁——与 [[AI-Ready-Organization]] 的"组织可读性"互补：组织读不懂自己时，FDE 是外部翻译器。
 
 ## 前提与局限性
 

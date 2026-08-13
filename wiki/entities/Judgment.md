@@ -5,7 +5,7 @@ aliases:
   - Judgment
 definition: "在信息不完整、没有明确规则可循的情况下，做出高质量决策的能力"
 created: 2026-04-09
-updated: 2026-05-08
+updated: 2026-08-13
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,6 +25,7 @@ source_raw:
   - '[[Good Taste the Only Real Moat Left]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
   - '[[20260625-ford-ai-quality-jd-power]]'
+  - '[[20260810-the-playbook-for-building-high-talent]]'
 ---
 
 # Judgment（判断力）
@@ -105,6 +106,10 @@ Ford 案例（→ [[20260625-ford-ai-quality-jd-power]]）证实了 Judgment 的
 - 不存在独立于使用的"维护行为"——每一次质疑 AI 输出都是判断力的维护
 - "不可逆点"只在一种情况下存在：完全停止判断——那不是退化，是放弃
 - **认知分工**可能是解法：表层退化释放认知资源给深层，但前提是有意识地选择维持哪些
+
+## 招聘侧印证（2026-08）
+
+Adam Ward（Cursor 招聘负责人）将 "taste, decision-making, problem solving, curiosity" 列为 IC 在 AI 时代回归的核心特性（"rise of the power of IC"）——与 Ford 案例（20260625）同向：判断力不是可外包的软技能，而是 AI 时代选人与留人的硬通货。
 
 ## 来源
 

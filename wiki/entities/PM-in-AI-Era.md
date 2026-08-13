@@ -6,7 +6,7 @@ aliases:
   - AI 时代的产品经理
 definition: "AI 时代 PM 从路线图对齐者转变为高速公路设计者——系统性消除从想法到用户手中的每一步摩擦"
 created: 2026-05-08
-updated: 2026-05-26
+updated: 2026-08-13
 tags:
   - product-management
   - AI-era
@@ -22,6 +22,7 @@ related_entities:
 source_raw:
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
+  - "[[20260802-lenny-cpo-regrets-product-management-whatnot]]"
 evidence_level: medium
 claim_type: mixed
 ---
@@ -61,6 +62,15 @@ claim_type: mixed
 传统 PM 角色的核心假设是"PM 不写代码、工程师不做产品决策"。AI 时代这个假设正在瓦解：PM 在写代码、工程师在做 PM 的活、设计师也能改代码。专业化从"职业身份"变为"能力工具箱"。
 
 这意味着 PM 的核心竞争力不再是"会写 PRD"或"会协调排期"，而是 [[Taste|品味]] 和 [[Judgment|判断力]]——"代码越来越便宜，决定写什么变得更有价值"。这与 [[Cross-Disciplinary-Generalist|跨领域通才]] 的趋势一致：AI 时代最稀缺的不是单一技能的深度，而是跨领域判断的广度。
+
+## Whatnot 样本：PM 即"拥有问题的 IC"（强度最高的组织结构化）
+
+Tom Verrilli（Whatnot CPO，2026-08）把"PM 从协调者变所有权者"推进到结构层：20 个 PM 覆盖 1200+ 员工（对比参访者估计的 Twitch + eBay 400+），且**PM 映射到问题而非工程经理**——负责时尚卖家新销售格式的 senior PM 横跨 listings、logistics、payments 三个系统，没有任何单一 EM 拥有她。特质：
+
+- PM 几乎全是 senior IC，"把时间花在 endless alignment meetings 上、又痒着想 build"的人；title/comp 不区分 manager 与 IC，管理的 PM also 90%+ 时间当 IC。
+- 招聘策略是"almost exclusively senior PM"或转化"已懂客户的 sales/ops 人员"（客户理解 > 流程专精）。
+- "Speed is the entire premise. Once it's lost, it never comes back."——速度不是副作用而是组织设计原则（约 3 个 ship/不 ship 决策/天、750 实验/年）。
+- 与 Cat Wu 路径的关系：Cat 靠 Research Preview 等机制压低发布摩擦；Whatnot 靠砍掉中间协调层整体压缩 PM 数量。两条路径在"减少想法到用户之间的摩擦"上收敛，结构手段不同。
 
 ## 关联概念
 

@@ -21,6 +21,7 @@ related_entities:
 source_raw:
   - "[[20260706-martin-fowler-fragments]]"
   - "[[20260728-openrouter-evaluate-llm-provider-performance]]"
+  - "[[20260813-pl-tokens-token-efficiency]]"
 ---
 
 # Mechanical Sympathy for LLMs（LLM 机械同理心）

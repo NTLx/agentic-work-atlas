@@ -7,7 +7,7 @@ aliases:
   - Campfire Model
 definition: "用付费短期真实工作替代传统技术面试的招聘模式，通过实际协作而非模拟评估来筛选工程师"
 created: 2026-05-31
-updated: 2026-06-16
+updated: 2026-08-13
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -21,6 +21,7 @@ related_entities:
   - "[[AI-Era-Career-Skills]]"
 source_raw:
   - "[[20260529-last-technical-interview]]"
+  - "[[20260810-the-playbook-for-building-high-talent]]"
 ---
 
 # Campfire Hiring（篝火式招聘）
@@ -65,6 +66,17 @@ AI 从两个方向同时瓦解传统面试的信号基础：
 2. **评估毒化**：离线编码评估被 AI 作弊摧毁
 
 Yegge 的结论是："传统技术面试将像颅相学（phrenology）一样，变成一个可爱的历史注脚。"
+
+## 规模化佐证：Cursor 的 Long Onsite Work Sample（Adam Ward，2026-08）
+
+Cursor 招聘负责人 Adam Ward 提供了 Campfire 模式的规模化与市场化佐证：
+
+- **work sample 是"预测力最高"的信号**："research has shown work samples are the highest predictor of success at a company, yet most companies still do one-to-one across the table assessments"。
+- **长期 onsite 项目**：Cursor 部分角色用"长时现场真实工作"评估（side-by-side work、围绕餐食、精编见面人选），同时给候选人强烈信号（self-selection 需要真实输入）。
+- **反证案例**：Michael Terrell 曾尝试移除 work trial（因成本高、候选人负担重），结果 "totally tanked their signal"，被迫恢复——验证了"移除真实工作评估 = 失去信号"。
+- **全员参与的工种分解**：并非人人做 trial——有人做午餐、有人做 greet、有人做项目，"we all have a role to play in recruiting"；把 Campfire 从"一次试用"拆成"组织内分工协作的评估事件"。
+
+这使 Campfire Hiring 从 1990 年代 Geoworks 的孤例扩展为 2026 年 AI 前沿公司的现行实践。
 
 ## 前提与局限性
 

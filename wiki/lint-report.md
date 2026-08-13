@@ -21,32 +21,13 @@ tags:
 | 类别 | 数量 |
 |------|------|
 | Raw 来源 | 254 |
-| Raw 已编译 | 238 |
-| Raw 待编译 | 16 |
+| Raw 已编译 | 254 |
+| Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 370 |
+| Entity | 383 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 10 |
-
-## 待编译 Raw
-
-- `raw/202310-superlinear-returns.md`
-- `raw/20260802-lenny-cpo-regrets-product-management-whatnot.md`
-- `raw/20260803-google-agent-skills-build-test-scale.md`
-- `raw/20260803-latent-space-inference-engineering-baseten.md`
-- `raw/20260804-agent-development-lifecycle-adlc.md`
-- `raw/20260804-astro-software-factory-issue-triage.md`
-- `raw/20260804-stacked-prs-giant-ai-generated.md`
-- `raw/20260806-openai-chatgpt-work-adoption.md`
-- `raw/20260810-the-playbook-for-building-high-talent.md`
-- `raw/20260811-databricks-genie-grounding-governance.md`
-- `raw/20260811-vasuman-ai-adoption-is-a-myth.md`
-- `raw/20260812-github-ai-first-contributors.md`
-- `raw/20260812-google-recall-bottleneck-factuality.md`
-- `raw/20260813-pl-tokens-token-efficiency.md`
-- `raw/20260215-recall-bottleneck-parametric-factuality.pdf`
-- `raw/20260731-tragedy-cognitive-commons-ai-expertise.pdf`
 
 ## 检查项
 
@@ -58,10 +39,10 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 0 |
+| `tag` | 27 |
 | `evidence` | 0 |
-| `low-evidence` | 6 |
-| `stale-core` | 8 |
+| `low-evidence` | 7 |
+| `stale-core` | 7 |
 | `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
@@ -77,17 +58,47 @@ tags:
 - `wiki/sources/20260730-palantir-industry-ai-unified-namespace.md` - `低证据页面 20260730-palantir-industry-ai-unified-namespace 只能作为补 source 或探索线索`
 - `wiki/sources/20260730-palantir-ontology-connecting-agents-to-decisions.md` - `低证据页面 20260730-palantir-ontology-connecting-agents-to-decisions 只能作为补 source 或探索线索`
 - `wiki/sources/20260730-palantir-secure-rapid-software-development-sscs.md` - `低证据页面 20260730-palantir-secure-rapid-software-development-sscs 只能作为补 source 或探索线索`
+- `wiki/sources/20260811-databricks-genie-grounding-governance.md` - `低证据页面 20260811-databricks-genie-grounding-governance 只能作为补 source 或探索线索`
 
 ### stale-core
 
 - `wiki/entities/Agent-Native.md` - `核心页 Agent-Native 已 92 天未更新，入链 10 条`
-- `wiki/entities/Agent-PR-Review.md` - `核心页 Agent-PR-Review 已 94 天未更新，入链 16 条`
+- `wiki/entities/Agent-PR-Review.md` - `核心页 Agent-PR-Review 已 94 天未更新，入链 19 条`
 - `wiki/entities/Boris-Cherny.md` - `核心页 Boris-Cherny 已 97 天未更新，入链 10 条`
 - `wiki/entities/Claude-Code-CLI.md` - `核心页 Claude-Code-CLI 已 97 天未更新，入链 38 条`
 - `wiki/entities/GBrain.md` - `核心页 GBrain 已 92 天未更新，入链 10 条`
-- `wiki/entities/Judgment.md` - `核心页 Judgment 已 97 天未更新，入链 57 条`
-- `wiki/entities/Knowledge-Work.md` - `核心页 Knowledge-Work 已 92 天未更新，入链 24 条`
+- `wiki/entities/Knowledge-Work.md` - `核心页 Knowledge-Work 已 92 天未更新，入链 26 条`
 - `wiki/entities/Software-2.0.md` - `核心页 Software-2.0 已 92 天未更新，入链 9 条`
+
+### tag
+
+- `wiki/sources/20260804-agent-development-lifecycle-adlc.md` - `一次性 tag 仅出现 1 次: 'adlc'`
+- `wiki/sources/20260811-databricks-genie-grounding-governance.md` - `一次性 tag 仅出现 1 次: 'agent-governance'`
+- `wiki/sources/20260804-agent-development-lifecycle-adlc.md` - `一次性 tag 仅出现 1 次: 'agent-orchestration'`
+- `wiki/sources/20260811-vasuman-ai-adoption-is-a-myth.md` - `一次性 tag 仅出现 1 次: 'agent-rollout'`
+- `wiki/sources/20260810-the-playbook-for-building-high-talent.md` - `一次性 tag 仅出现 1 次: 'ai-era-org'`
+- `wiki/entities/Validation-Tether.md` - `一次性 tag 仅出现 1 次: 'ai-oversight'`
+- `wiki/sources/20260731-tragedy-cognitive-commons-ai-expertise.md` - `一次性 tag 仅出现 1 次: 'cognitive-commons'`
+- `wiki/entities/Cognitive-Commons.md` - `一次性 tag 仅出现 1 次: 'collective-action'`
+- `wiki/sources/20260812-github-ai-first-contributors.md` - `一次性 tag 仅出现 1 次: 'contributor-governance'`
+- `wiki/sources/20260813-pl-tokens-token-efficiency.md` - `一次性 tag 仅出现 1 次: 'dan-luu'`
+- `wiki/sources/20260813-pl-tokens-token-efficiency.md` - `一次性 tag 仅出现 1 次: 'evals'`
+- `wiki/entities/Stacked-PRs.md` - `一次性 tag 仅出现 1 次: 'git'`
+- `wiki/sources/20260812-google-recall-bottleneck-factuality.md` - `一次性 tag 仅出现 1 次: 'google-research'`
+- `wiki/sources/20260811-databricks-genie-grounding-governance.md` - `一次性 tag 仅出现 1 次: 'grounding'`
+- `wiki/entities/Distributed-Mastery.md` - `一次性 tag 仅出现 1 次: 'human-ai-collaboration'`
+- `wiki/entities/Inference-Engineering.md` - `一次性 tag 仅出现 1 次: 'inference'`
+- `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'inference-engineering'`
+- `wiki/sources/20260804-astro-software-factory-issue-triage.md` - `一次性 tag 仅出现 1 次: 'issue-triage'`
+- `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'kv-cache'`
+- `wiki/entities/Agent-Development-Lifecycle.md` - `一次性 tag 仅出现 1 次: 'lifecycle'`
+- `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'paul-graham'`
+- `wiki/sources/20260804-stacked-prs-giant-ai-generated.md` - `一次性 tag 仅出现 1 次: 'reviewability'`
+- `wiki/sources/20260803-google-agent-skills-build-test-scale.md` - `一次性 tag 仅出现 1 次: 'skill-governance'`
+- `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'speculative-decoding'`
+- `wiki/sources/20260804-stacked-prs-giant-ai-generated.md` - `一次性 tag 仅出现 1 次: 'stacked-prs'`
+- `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'superlinear-returns'`
+- `wiki/sources/20260806-openai-chatgpt-work-adoption.md` - `一次性 tag 仅出现 1 次: 'work-usage'`
 
 ## 运行命令
 

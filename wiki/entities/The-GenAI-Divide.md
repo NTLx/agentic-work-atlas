@@ -7,7 +7,7 @@ aliases:
   - 生成式 AI 鸿沟
 definition: "企业 GenAI 高采用但低业务转化的断裂：个人工具普及很快，核心工作流和 P&L impact 却难以进入生产"
 created: 2026-06-01
-updated: 2026-06-15
+updated: 2026-08-13
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -19,8 +19,10 @@ related_entities:
   - "[[AI-Deployment-Valley-of-Death]]"
   - "[[AI-Ready-Organization]]"
   - "[[Integration-Wall]]"
+  - "[[AI-Adoption-Barbell]]"
 source_raw:
   - "[[20260601-mit-nanda-genai-divide]]"
+  - "[[20260811-vasuman-ai-adoption-is-a-myth]]"
 ---
 
 # The GenAI Divide（生成式 AI 鸿沟）
@@ -40,6 +42,14 @@ MIT/NANDA 报告给出的关键区别是：个人生产率工具可以靠低摩�
 - 超过 80% 的组织探索或试点 ChatGPT/Copilot 等工具，近 40% 报告已部署。
 - 60% 的组织评估过 enterprise-grade custom/vendor systems，20% 到达 pilot，只有 5% 到达 production。
 - 报告认为核心障碍不是基础设施、监管或人才，而是 [[Enterprise-AI-Learning-Gap|learning gap]]。
+
+## 组织内机制：度量错位（2026-08，Vas）
+
+MIT/NANDA 给出了断裂的存在，Vas（Varick Agents CEO）给出了断裂为何能长期维持的组织内机制：**adoption 指标把技能连续谱折叠成二元 yes/no**——"adoption is binary, skill is a spectrum"。
+
+被追踪的是"登录了吗、每周够 5 个 prompt 吗"，而决定业务结果的是"用得多熟、每 token 的 ROI 是多少"。于是 McKinsey 2025 出现"88% 组织在至少一个职能用 AI、仅 6% 的 EBIT >5% 来自 AI"与 MIT 的"5% 试点榨出价值"同时为真——不是数字矛盾，而是被度量的问题（登录）与业务相关的问题（技能产出）脱钩。
+
+**测量建议（同源主张，需保守使用）**：停止向 board 报 "adoption"，改报"工作当前 手动/混合/全自动化"的份额——把指标从"有没有人在用"换成"工作有多少被改写"。
 
 ## 前提与局限性
 

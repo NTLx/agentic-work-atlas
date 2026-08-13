@@ -7,7 +7,7 @@ aliases:
   - AI 原生工程组织
 definition: "把 AI coding agent 作为默认工作基础设施后，围绕验证、review、安全、产品判断、JIT planning 和 dogfooding 重写的软件工程组织"
 created: 2026-06-05
-updated: 2026-06-23
+updated: 2026-08-13
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -27,6 +27,7 @@ source_raw:
   - "[[Running an AI-native engineering org]]"
   - "[[20260616-why-is-meta-destroying-its-engineering]]"
   - "[[20260608-become-ai-native-org]]"
+  - "[[20260802-lenny-cpo-regrets-product-management-whatnot]]"
 ---
 
 # AI-Native Engineering Org（AI 原生工程组织）
@@ -71,6 +72,17 @@ AI 会让 PM、工程师、设计、内容和运营都能跨界执行。但责�
 ### 4. 指标不能迷信吞吐
 
 PR cycle time、Claude-assisted commits、onboarding ramp 都是有用信号，但不是最终目标。AI 原生工程组织必须避免把“更快产出”误判为“更好产品”。
+
+## 样本扩展：Whatnot 的"问题映射 + 人人 ship"组织
+
+Whatnot（2026-08，Tom Verrilli CPO）提供了 AI 原生工程组织的另一种实现，核心不是"全员用同一款 agent 工具"，而是结构与速度前提的激进扁平化：
+
+- PM 层压缩到极致（20 PM / 1200+ 员工），PM **映射到问题而非工程经理**——senior PM 横跨 listings/logistics/payments 三个系统。
+- 无 manager/IC 区分的 title 与 comp；管理的 PM 90%+ 时间也在做 IC。
+- **人人 ship**：CEO 亲自处理 Zendesk 升级、cofounder 亲手 onboard 澳洲首个卖家、CPO 自己 vibe code——自上而下示范"身份不豁免执行"。
+- 速度是组织原则本身："Speed is the entire premise. Once it's lost, it never comes back."（750 实验/年，每决定快 3 天 → 卖家 2 年 `$1.1B` 增量收益）。
+
+与 Claude Code 团队样本的关系：后者靠"验证/review/安全/产品判断"成为新瓶颈（能力约束视角）；Whatnot 靠"谁拥有问题 + 谁对结果负责"扁平化（责任结构视角）。两者共同点：角色边界变薄（PM 写代码、CPO vibe code），而责任落到具体问题 owner 上。
 
 ## 关键数据点
 

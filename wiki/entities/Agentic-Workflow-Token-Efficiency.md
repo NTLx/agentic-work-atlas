@@ -30,6 +30,7 @@ source_raw:
   - "[[20260606-the-minimill-of-ai]]"
   - "[[Designing the hf CLI as an agent-optimized way to work with the Hub]]"
   - "[[202605-code-cleanliness-coding-agents-minimal-pair.pdf]]"
+  - "[[20260813-pl-tokens-token-efficiency]]"
 ---
 
 # Agentic-Workflow-Token-Efficiency（Agentic Workflow Token 效率）

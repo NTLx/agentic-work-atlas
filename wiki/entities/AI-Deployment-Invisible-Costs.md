@@ -7,7 +7,7 @@ aliases:
   - 企业 AI 隐性成本
 definition: "AI 成功部署中常被 ROI 低估的变革管理、流程重设计、数据质量、失败试验和组织学习成本"
 created: 2026-06-01
-updated: 2026-06-16
+updated: 2026-08-13
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -21,6 +21,7 @@ related_entities:
   - "[[Deployment-Product-Flywheel]]"
 source_raw:
   - "[[20260601-stanford-enterprise-ai-playbook]]"
+  - "[[20260811-vasuman-ai-adoption-is-a-myth]]"
 ---
 
 # AI Deployment Invisible Costs（AI 部署隐性成本）
@@ -42,6 +43,12 @@ source_raw:
 - Stanford 报告称 77% 的最难挑战是 change management、data quality、process redesign 等无形成本。
 - 61% 的成功项目至少包含一次先前失败，而失败成本通常不会出现在最终 ROI 中。
 - 报告认为技术常常不是最难部分，真正差异来自组织准备度、流程、领导力和愿意改变/试错的能力。
+
+## 完美 rollout 也存在推广成本（2026-08，Vas）
+
+Vas（Varick Agents CEO）提出了隐性成本的一个反直觉形态：**不需要失败的部署，完美的 rollout 本身就有隐藏账单**——某 exec 签 8 位数 license 后"约 10% 的人烧 90% 的 token"；若其余 90% 按 top decile 用法消费，花费约 10x，`$10M` 承诺变 `$100M`。best case 变 worst case。
+
+机制：采纳的隐藏成本不是"试点失败"，而是"期望所有人都会学，但多数人学不会/永远到不了第二档用法"的学习与推广成本（`[[AI-Adoption-Barbell|采纳杠铃]]`）。预算若只按 power user 爪度的 license/token 建模，会让放大 10 倍的尾部成本静默爆发。
 
 ## 治理含义
 

@@ -10,9 +10,11 @@
     },
     "202310-superlinear-returns.md": {
       "body_sha256": "6efe542e3cebbcf7d8cdf69bece05ab8074f728cce202ff8865e3fd6e91fc959",
+      "compiled_at": "2026-08-13T10:54:31+08:00",
       "raw_file": "202310-superlinear-returns.md",
-      "status": "pending",
-      "updated_at": "2026-08-03T15:08:07+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/202310-superlinear-returns.md",
+      "updated_at": "2026-08-13T10:54:31+08:00"
     },
     "2026-ai-agent-evaluation-pipeline-methodology.md": {
       "body_sha256": "28f9f9ee15d8de41d82a2b824dbef1c8149bc0b26006ae269ea3bf9a0c4beeee",
@@ -56,9 +58,11 @@
     },
     "20260215-recall-bottleneck-parametric-factuality.pdf": {
       "body_sha256": "b3543f6761395d0d65270c5e70f6534e0800b5ba58e9e250c4b91cd4dcb87fd9",
+      "compiled_at": "2026-08-13T10:54:31+08:00",
       "raw_file": "20260215-recall-bottleneck-parametric-factuality.pdf",
-      "status": "pending",
-      "updated_at": "2026-08-13T09:49:26+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260215-recall-bottleneck-parametric-factuality.md",
+      "updated_at": "2026-08-13T10:54:31+08:00"
     },
     "20260226-pro-worker-ai-hamilton-project.md": {
       "body_sha256": "b85017f778bbbccea1c7bc78c8c3336df17399105c7914fb60737373d2cd5649",
@@ -1294,9 +1298,11 @@
     },
     "20260731-tragedy-cognitive-commons-ai-expertise.pdf": {
       "body_sha256": "22624688f04a9759f9b7bb846b2e7f64ccc3687786541bbe3992eecf5ba51b6d",
+      "compiled_at": "2026-08-13T10:54:31+08:00",
       "raw_file": "20260731-tragedy-cognitive-commons-ai-expertise.pdf",
-      "status": "pending",
-      "updated_at": "2026-08-11T10:20:00+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260731-tragedy-cognitive-commons-ai-expertise.md",
+      "updated_at": "2026-08-13T10:54:31+08:00"
     },
     "20260801-align-agent-environment-interface.pdf": {
       "body_sha256": "33fd5fb97d3b0fa3083139bddf0a43a8c459f77c902efc94701ee78bd906ddd5",
@@ -1332,39 +1338,51 @@
     },
     "20260802-lenny-cpo-regrets-product-management-whatnot.md": {
       "body_sha256": "f20103251fc40ac609433418cd81aea6a4f09f8afccf8f6c506904d250af2612",
+      "compiled_at": "2026-08-13T10:45:18+08:00",
       "raw_file": "20260802-lenny-cpo-regrets-product-management-whatnot.md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:08:39+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260802-lenny-cpo-regrets-product-management-whatnot.md",
+      "updated_at": "2026-08-13T10:45:18+08:00"
     },
     "20260803-google-agent-skills-build-test-scale.md": {
       "body_sha256": "3e2d627d24315c4cb80a234f24d471406f12789d7fd633dc860a89cd8f7a4da5",
+      "compiled_at": "2026-08-13T10:54:31+08:00",
       "raw_file": "20260803-google-agent-skills-build-test-scale.md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:21:32+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260803-google-agent-skills-build-test-scale.md",
+      "updated_at": "2026-08-13T10:54:31+08:00"
     },
     "20260803-latent-space-inference-engineering-baseten.md": {
       "body_sha256": "9a6e1845aca2270f5f89a8b61a38da5c3d4ea4efe58919790e96805eadf739f2",
+      "compiled_at": "2026-08-13T10:54:31+08:00",
       "raw_file": "20260803-latent-space-inference-engineering-baseten.md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:08:39+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260803-latent-space-inference-engineering-baseten.md",
+      "updated_at": "2026-08-13T10:54:31+08:00"
     },
     "20260804-agent-development-lifecycle-adlc.md": {
       "body_sha256": "799c3cac3c5389b77f094135c4be0049996c148aa44958d8572d1abac84ceed3",
+      "compiled_at": "2026-08-13T10:54:31+08:00",
       "raw_file": "20260804-agent-development-lifecycle-adlc.md",
-      "status": "pending",
-      "updated_at": "2026-08-05T18:17:37+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260804-agent-development-lifecycle-adlc.md",
+      "updated_at": "2026-08-13T10:54:31+08:00"
     },
     "20260804-astro-software-factory-issue-triage.md": {
       "body_sha256": "6b878f37b1ae9391bf59513b8213d481520c47da5600471219491fde4152cbbd",
+      "compiled_at": "2026-08-13T10:54:31+08:00",
       "raw_file": "20260804-astro-software-factory-issue-triage.md",
-      "status": "pending",
-      "updated_at": "2026-08-05T18:17:36+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260804-astro-software-factory-issue-triage.md",
+      "updated_at": "2026-08-13T10:54:31+08:00"
     },
     "20260804-stacked-prs-giant-ai-generated.md": {
       "body_sha256": "2d0143475e3202f7dc6702d5828104b149646686f9d514a4cf98e32cbb9253d9",
+      "compiled_at": "2026-08-13T10:54:32+08:00",
       "raw_file": "20260804-stacked-prs-giant-ai-generated.md",
-      "status": "pending",
-      "updated_at": "2026-08-05T18:17:35+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260804-stacked-prs-giant-ai-generated.md",
+      "updated_at": "2026-08-13T10:54:32+08:00"
     },
     "20260805-how-we-use-ai-cloudflare-os.md": {
       "body_sha256": "4381581849f1377b453f55bfd52830b910dd1e15b78d7507dce65bd2cbb4ece2",
@@ -1384,45 +1402,59 @@
     },
     "20260806-openai-chatgpt-work-adoption.md": {
       "body_sha256": "60e913e43e087cb827d2b96241ae71a1686252c3de1c2a39b99fcf0f43925906",
+      "compiled_at": "2026-08-13T10:45:18+08:00",
       "raw_file": "20260806-openai-chatgpt-work-adoption.md",
-      "status": "pending",
-      "updated_at": "2026-08-08T16:44:59+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260806-openai-chatgpt-work-adoption.md",
+      "updated_at": "2026-08-13T10:45:18+08:00"
     },
     "20260810-the-playbook-for-building-high-talent.md": {
       "body_sha256": "6be6670bab466d6f60ebed5c50334cafd44687d0cbaea4c10dda14f371518bf2",
+      "compiled_at": "2026-08-13T10:45:19+08:00",
       "raw_file": "20260810-the-playbook-for-building-high-talent.md",
-      "status": "pending",
-      "updated_at": "2026-08-10T09:10:44+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260810-the-playbook-for-building-high-talent.md",
+      "updated_at": "2026-08-13T10:45:19+08:00"
     },
     "20260811-databricks-genie-grounding-governance.md": {
       "body_sha256": "49d95968528df95b9219fc795d1720a0cc3845d7f4b17f65052952827b2233b0",
+      "compiled_at": "2026-08-13T10:54:32+08:00",
       "raw_file": "20260811-databricks-genie-grounding-governance.md",
-      "status": "pending",
-      "updated_at": "2026-08-11T09:29:37+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260811-databricks-genie-grounding-governance.md",
+      "updated_at": "2026-08-13T10:54:32+08:00"
     },
     "20260811-vasuman-ai-adoption-is-a-myth.md": {
       "body_sha256": "bfb200a10acab2a107c7241e0b13a792867c645012e22f6b70102b8b48af3a33",
+      "compiled_at": "2026-08-13T10:45:19+08:00",
       "raw_file": "20260811-vasuman-ai-adoption-is-a-myth.md",
-      "status": "pending",
-      "updated_at": "2026-08-11T09:29:38+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260811-vasuman-ai-adoption-is-a-myth.md",
+      "updated_at": "2026-08-13T10:45:19+08:00"
     },
     "20260812-github-ai-first-contributors.md": {
       "body_sha256": "90842d41d666b2d14fe544bf05ec0e8998749c946a9087989d6db09bfd54d239",
+      "compiled_at": "2026-08-13T10:54:32+08:00",
       "raw_file": "20260812-github-ai-first-contributors.md",
-      "status": "pending",
-      "updated_at": "2026-08-13T09:49:26+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260812-github-ai-first-contributors.md",
+      "updated_at": "2026-08-13T10:54:32+08:00"
     },
     "20260812-google-recall-bottleneck-factuality.md": {
       "body_sha256": "b30883c7db9b9882eb79739df3330d297b6edd10a3d3e867c8b2b9d7f4baef20",
+      "compiled_at": "2026-08-13T10:54:32+08:00",
       "raw_file": "20260812-google-recall-bottleneck-factuality.md",
-      "status": "pending",
-      "updated_at": "2026-08-13T09:49:26+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260812-google-recall-bottleneck-factuality.md",
+      "updated_at": "2026-08-13T10:54:32+08:00"
     },
     "20260813-pl-tokens-token-efficiency.md": {
       "body_sha256": "235471ab11d87225717950b8100eec455028ad7c36673493f11c0c64781e1f4e",
+      "compiled_at": "2026-08-13T10:54:32+08:00",
       "raw_file": "20260813-pl-tokens-token-efficiency.md",
-      "status": "pending",
-      "updated_at": "2026-08-13T09:49:26+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260813-pl-tokens-token-efficiency.md",
+      "updated_at": "2026-08-13T10:54:32+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -2001,6 +2033,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-13T09:49:26+08:00",
+  "updated_at": "2026-08-13T10:54:32+08:00",
   "version": 1
 }

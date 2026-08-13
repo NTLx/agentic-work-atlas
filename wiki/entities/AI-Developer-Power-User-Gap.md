@@ -7,7 +7,7 @@ aliases:
   - AI 开发者 Power User 差距
 definition: "AI 编码工具使用中 P99 开发者产出远超中位数的极端幂律分布现象——Gini 系数 0.72-0.77，P99 产出为 P50 的 46 倍"
 created: 2026-05-30
-updated: 2026-06-16
+updated: 2026-08-13
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -18,8 +18,10 @@ related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Jevons-Paradox-for-Knowledge-Work]]"
   - "[[AI-Capability-Gap]]"
+  - "[[AI-Adoption-Barbell]]"
 source_raw:
   - "[[20260530-cursor-developer-habits-report]]"
+  - "[[20260811-vasuman-ai-adoption-is-a-myth]]"
 ---
 
 # AI-Developer-Power-User-Gap（AI 开发者 Power User 差距）
@@ -81,6 +83,16 @@ P90 和 P99 开发者的绝对代码行/周与中位数的差距在持续扩大�
 ## 与 AI-Capability-Gap 的区别
 
 [[AI-Capability-Gap]] 关注的是**模型能力与用户认知之间的鸿沟**（专业用户对 Agent 编程能力的震撼 vs 日常用户的无感）。Power User Gap 关注的是**用户之间的使用分化**（同样使用 AI 工具的开发者之间的产出差距）。两者互补：前者是"知不知道 AI 能做什么"，后者是"同样知道但用起来差多少"。
+
+## 从开发者到全组织：barbell 推广（2026-08）
+
+Vas（Varick Agents CEO）把同一分化结构从"开发者工具的产出幂律"推广到"全组织的用与不用"（2026-08-07 X post）：任何组织——50 人或 5000 人——AI 使用都呈 **5-10% power users / 20% 用得差 / 70% 几乎不用** 的分层，且 "even a perfect rollout still produces a barbell"（某 exec 签 8 位数 license 后约 10% 的人烧 90% 的 token）。
+
+与本实体（Cursor 幂律）的异同：
+- 相同结构：价值高度集中在少数人。
+- 关键差异：Cursor 数据是"使用者内部"的产出幂律（一样在用的人，产出差 46 倍）；Vas 的分层是"是否在用 / 用得好不好"的组织全章分布。二者合成 `[[AI-Adoption-Barbell|采纳杠铃分布]]`：不仅用得多的人强，还有大多数根本不用。
+
+启示：Power User Gap 不只在活跃用户之间，还体现在"能成为 power user 的人"与"永远到不了该状态的人"之间——后者是组织 AI ROI 的真正漏损点。
 
 ## 关联概念
 

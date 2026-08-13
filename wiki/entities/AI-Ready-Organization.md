@@ -6,7 +6,7 @@ aliases:
   - AI 就绪组织
 definition: "能清晰描述自身目标、流程、策略，从而让 AI 有效执行的组织状态——AI 的瓶颈不在技术，而在企业自身的混乱"
 created: 2026-05-09
-updated: 2026-06-23
+updated: 2026-08-13
 evidence_level: high
 claim_type: mixed
 tags:
@@ -29,6 +29,7 @@ source_raw:
   - "[[20260601-mit-nanda-genai-divide]]"
   - "[[20260618-cio-conference-ai-practices]]"
   - "[[20260625-ford-ai-quality-jd-power]]"
+  - "[[20260811-vasuman-ai-adoption-is-a-myth]]"
 ---
 
 # AI-Ready Organization（AI 就绪组织）
@@ -138,6 +139,14 @@ MIT/NANDA 的 GenAI Divide 报告从失败侧补充了另一半证据：企业�
 **三道护栏是刚性需求**：责任护栏、可解释护栏、兜底护栏——尤其在中国合规环境（网信办+发改委+工信部《智能体规范应用与创新发展实施意见》）下。
 
 **CIO 角色跃迁**：从"交付中心"到"业务共创伙伴"——出海 IT 成功 = 技术能力 + 管理体系 × 业务信任。
+
+## 张力点：后台化是否会绕过 AI-ready？（2026-08，Vas）
+
+Vas（Varick Agents CEO）主张对"永远学不会的大多数"不要改造工作方式，而是**把 AI 塞进既有系统后台**（人退化为 approve/reject 接口）——这给 AI-ready 的前置门禁制造了一个张力：
+
+- 若"后台化"成立，AI-ready 的"人必须能用/能读 AI"前提被绕过：并不需要组织全员可读，只要系统对待我们的可读性足够，AI 就能在后台改写工作（如 AP 发票 90% 自动化）。
+- 但支撑该路径的前提恰好是 AI-ready 的另一半：**流程本身已被稳定描述**（Vas 需要先做工作流审计，找到最重复的流程才能建后台 agent）——即"AI-ready 的流程可读"仍是必要条件，只是落到系统而非个人。
+- 综合判断：后台化是对"组织可读性"的一种替代交付——不要求人可读 AI，只要求流程可被写成 agent 的输入输出契约。两者是互补而非替代：混乱组织后台化同样会把模糊性自动化。
 
 ## 前提与局限性
 

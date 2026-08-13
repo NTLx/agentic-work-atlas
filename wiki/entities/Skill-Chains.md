@@ -21,8 +21,10 @@ related_entities:
   - "[[Agent-Loops]]"
   - "[[Thin-Harness-Fat-Skills]]"
   - "[[Agentic-Engineering]]"
+  - "[[Skills-as-Products]]"
 source_raw:
   - "[[20260608-become-ai-native-org]]"
+  - "[[20260812-github-ai-first-contributors]]"
 ---
 
 > [!definition] 定义
@@ -67,6 +69,14 @@ LCA 的提案 skill chain 实例：
 - **顺序执行延迟**: 多 skill 串联增加总执行时间，复杂 chain 可能需要数分钟
 - **错误传播**: 上游 skill 的错误输出会被下游 skill 当作输入，可能放大错误
 - **编排复杂度**: 管理 skill 间的依赖、输入输出格式和错误处理增加工程成本
+
+## 触发与发现机制（2026-08-13 编译新增）
+
+AutoGPT（[[20260812-github-ai-first-contributors]]）澄清了 skill 在链式触发前的**发现（discovery）机制**，是 Skill Chain 能自动启动的前提：
+
+- **description 预扫描**：skill 是"instruction file with a description that tells the agent when to load it"——agent 在启动时扫描全部 skill 的 description，任务匹配时才拉入完整指令，因此 skill 可跨目录动态加载，不受 `AGENTS.md` 目录作用域限制（目录作用域 vs skill 跨目录发现）。
+- **措辞触发实例**：AutoGPT 的 PR 模板要求"test plan"且措辞"casually mentions testing the pull request"——该短语触发名为 `test PR` 的 skill，agent 为填 checkbox 自动安装 agent browser、起 app、真跑代码（"The agent set out to fill in a checkbox and ended up running the code"）。后端 `pr-address` skill 则声明 fix→commit→push→reply→resolve 的合法序列。
+- **与 [[Skills-as-Products]] 的互补**：Google Agent Skills 把"description 引导装载"工程化为 SKILL.md 的标准化规范——发现机制是 Skill Chain 的装载侧，[[Skills-as-Products|技能即产品]] 治理是它的质量侧。
 
 ## 关联概念
 

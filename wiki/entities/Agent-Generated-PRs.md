@@ -18,9 +18,13 @@ related_entities:
   - "[[Agent-PR-Review]]"
   - "[[Agentic-Engineering]]"
   - "[[Compound-Engineering]]"
+  - "[[Stacked-PRs]]"
+  - "[[Policy-as-Code-for-Agent-Governance]]"
 source_raw:
   - "[[The PR you would have opened yourself]]"
   - "[[20260530-cursor-developer-habits-report]]"
+  - "[[20260812-github-ai-first-contributors]]"
+  - "[[20260804-stacked-prs-giant-ai-generated]]"
 ---
 
 # Agent-Generated-PRs（Agent 生成的 PR）
@@ -73,6 +77,24 @@ HuggingFace 的 transformers-to-mlx 项目展示了可行方案：
 - 提供比中位数 PR 更多的数据（生成示例、数值比较、逐层对比）
 - 始终披露 agent-assisted
 - Skill 不会自动打开 PR，需贡献者确认结果
+
+## 治理视角：AutoGPT 的 gate 栈与巨型 PR（2026-08-13 编译新增）
+
+AutoGPT（[[20260812-github-ai-first-contributors]]）把"Agent 生成的 PR"从质量问题变成**门禁治理问题**——受访时 AutoGPT 约 180K stars、~150 个 open PRs（大块由 agent 生成，含 Copilot/OpenClaw/internal tooling），其核心立场："It's basically somebody else paying for your compute"——接受贡献，但让"唯一能进门的方式是为你工作方式服务的方式"。
+
+### 五类 gate（把规则物理化为墙）
+
+| Gate | 机制 | 行为效应 |
+|------|------|---------|
+| PR 模板强制 | "不匹配模板自动关闭"的 tooling | **规则先于自动化改变行为**——agent 先遵循模板；人类不按模板视为"真人"更宽容 |
+| test plan 措辞 | 模板措辞触发 `test PR` skill | agent 为填 checkbox 自动装 agent browser、起 app、真跑代码 |
+| CI 当墙 | Codecov 覆盖率 = required check | agent 自读失败、加载测试 skill 补测试，无人要求 |
+| CLA 人形探测器 | 浏览器 + OAuth 单独域（agent 难通过） | 一周不签则关 PR；加人回环 |
+| commit SHA 解决 review thread | `pr-address` skill 声明 fix→commit→push→reply→resolve | 反"acknowledged 不算修复"、反 recycle 旧 commit |
+
+### 巨型 PR 数据（GitHub, [[20260804-stacked-prs-giant-ai-generated]]）
+- 一个 shopping assistant 提示几分钟产出一个 **1,721 行 diff**（数据模型+API+接线+UI 混在一起），reviewer 被"长的 AI 描述"劝退："I'll review this later"
+- 对应 [[Stacked-PRs]]：拆成 data→API→wiring→UX 依赖链栈恢复可审查性
 
 ## 前提与局限性
 

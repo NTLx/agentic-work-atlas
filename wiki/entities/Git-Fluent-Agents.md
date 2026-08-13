@@ -15,8 +15,10 @@ tags:
 related_entities:
   - '[[Agentic-Engineering]]'
   - '[[History-Rewriting]]'
+  - "[[Stacked-PRs]]"
 source_raw:
   - '[[Using Git with coding agents - Agentic Engineering Patterns]]'
+  - "[[20260804-stacked-prs-giant-ai-generated]]"
 ---
 
 # Git-Fluent Agents
@@ -63,6 +65,17 @@ Use git bisect to find when this bug was introduced
 - Agent 可以分析冲突代码意图，智能解决 merge conflict，并确保测试通过后才完成合并
 - Frontier models 对 commit message 有很好品味，通常比开发者自己写的更好
 - Git clone 包含完整历史，使"潜入历史"零网络开销
+
+## Stacked PRs 工作流（2026-08-13 编译新增）
+
+GitHub 的 stacked pull requests（[[20260804-stacked-prs-giant-ai-generated]]）把"分支依赖 + 级联 rebase"变成 agent 可执行的确定命令，是 Git-Fluent 的高级形态：
+
+- **工具**：`gh extension install github/gh-stack` + `gh skill install github/gh-stack`（或 `npx skills add`）
+- **命令序列**：`gh init stack`（设栈基）→ `gh stack add`（在上一层之上建新分支）→ `gh stack push` / `gh stack submit`（提交整栈，PR 顶部生成栈地图导航）
+- **反馈传播**：底层修复后 `gh stack sync` 从 origin 拉取、对底层之上每个分支**级联 rebase**、推送并同步 PR 状态——"the change ripples upward without anyone touching layers two, three, or four by hand"
+- **风险坑**：Web 端 rebase 按钮会把 committer 重置为点击者、commits **不签名**（对签名提交强制的团队是 silent-breaking）；文档推荐终端执行 `gh stack rebase && gh stack push`
+
+这组命令把 [[History-Rewriting]]（rebase/冲突解决）从"高风险手工操作"变成"可编排、可同步的确定性流程"，直接扩展 Agent 的高级版本控制能力边界。
 
 ## 前提与局限性
 

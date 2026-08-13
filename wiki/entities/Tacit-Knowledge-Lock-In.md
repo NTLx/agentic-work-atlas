@@ -7,7 +7,7 @@ aliases:
   - 默会知识锁定
 definition: "供应商通过掌握客户未写成文档的业务规则、评测集和流程调优经验形成的锁定，比传统 UI 习惯锁定更隐蔽、更难迁移"
 created: 2026-05-23
-updated: 2026-05-26
+updated: 2026-08-13
 tags:
   - AI-deployment
   - enterprise
@@ -25,6 +25,7 @@ related_entities:
 source_raw:
   - "[[The Return of the Deployment Company]]"
   - "[[Forward deployed engineering at OpenAI]]"
+  - "[[20260811-vasuman-ai-adoption-is-a-myth]]"
 ---
 
 # Tacit Knowledge Lock-In（隐性知识锁定）
@@ -77,6 +78,12 @@ source_raw:
 [[Deployment-Product-Flywheel|部署产品飞轮]] 和隐性知识锁定之间存在根本张力：供应商的飞轮需要把现场经验抽象成通用平台能力（这对所有客户有益），但这个抽象过程会不可避免地吸收客户的专有业务知识。客户需要区分两类知识：通用行业知识（供应商抽象后对所有客户有益）和企业专有规则（不应被不可见地吸收进供应商平台）。
 
 [[Specialization-Compounds|专门化复利]] 在这里形成交叉：如果企业自己拥有 [[Evaluation-Set|评测集]] 和微调能力，专门化复利会在企业内部积累；如果评测集留在供应商手中，企业只是在为供应商的专门化飞轮供料。
+
+## 正向机制的交叉：共享 skill 库（2026-08，Vas）
+
+本实体聚焦锁定风险；Vas（Varick Agents CEO）给出隐性知识显式化的**内部化正面机制**：给组织 top slice 一个"发布场所"——共享 skill 数据库（每个 skill 可发布、排名、被他人安装）——"这是 Vas 见过唯一能把一个人的突破变成可分享物的机制"。
+
+意义：当隐性知识以 skill 形式沉淀在组织内部资产（而非供应商系统）时，[[Deployment-Product-Flywheel|专门的复利]] 在组织侧积累，正对应本实体"评测集产权决定复利在哪侧"的启示。互补约束：即便做了共享库，Vas 也承认"50% 的人永远不会用 skill"——显式化机制只能覆盖愿意消费知识的那一半。
 
 ## 关联概念
 

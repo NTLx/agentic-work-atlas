@@ -5,7 +5,7 @@ aliases:
   - Taste
 definition: "在不确定条件下做出独特判断的能力，表现为能注意到什么、拒绝什么，以及精确解释哪里感觉不对的能力"
 created: 2026-04-09
-updated: 2026-07-06
+updated: 2026-08-13
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -31,6 +31,7 @@ source_raw:
   - '[[Good Taste the Only Real Moat Left]]'
   - '[[Taste for Makers]]'
   - '[[If You Want Taste, You''re Gonna Have to Eat]]'
+  - '[[20260810-the-playbook-for-building-high-talent]]'
 ---
 
 # Taste（品味）
@@ -223,6 +224,10 @@ Liu 提供了一套操作性方法，补充了已有讨论中缺失的"怎么练
 - [[Discernment]] — Taste 与 Discernment 同属判别力维度
 - [[Decision-Quality]] — Taste 为 Decision Quality 提供审美和创意维度的判别力
 - [[Refusal]] — Taste 的核心动作是"拒绝什么"
+
+## 招聘侧印证：IC 品味与判断力的回归（2026-08）
+
+Adam Ward（Cursor 招聘负责人）从人才市场侧独立给出同一信号："past 12 months, the rise of the power of IC——taste, decision-making, problem solving, curiosity are coming back up to the surface"。这与本实体"AI 时代 Taste 重新成为稀缺能力"互补：[[AI-Identity-Bifurcation]] 提供感受侧数据、[[Systems-Thinker-Demand]] 提供需求侧机制，此处是招聘词表侧的确认——IC 的 taste/judgment 明确进入一线 AI 公司的选人标准。
 
 ## 来源
 

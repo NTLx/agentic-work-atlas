@@ -18,9 +18,13 @@ related_entities:
   - "[[Agent-Workflow-Patterns]]"
   - "[[AI-Ready-Organization]]"
   - "[[Agent-Generated-PRs]]"
+  - "[[Stacked-PRs]]"
+  - "[[Policy-as-Code-for-Agent-Governance]]"
 source_raw:
   - "[[Agent pull requests are everywhere. Here's how to review them.]]"
   - "[[The PR you would have opened yourself]]"
+  - "[[20260812-github-ai-first-contributors]]"
+  - "[[20260804-stacked-prs-giant-ai-generated]]"
 ---
 
 # Agent-PR-Review（Agent PR 审查）
@@ -132,6 +136,17 @@ CI Agent 中的提示注入是真实且被低估的：
 - GitHub Copilot 代码审查已处理超过 6000 万次审查
 - 超过 1/5 的代码审查涉及 Agent
 - 2026 年 1 月研究 "More Code, Less Reuse" 发现 Agent 代码引入更多冗余
+
+## 机制化策略（2026-08-13 编译新增）
+
+### 反 Agent 幽灵：`pr-address` skill（AutoGPT）
+对应上文第 4 个检查点（Agentic Ghosting），AutoGPT 给出了机制化方案：一个 `pr-address` skill 声明唯一合法序列 **fix → commit → push → reply → resolve**，且 reply 必须链接修复 commit 的完整 SHA（取自 `git rev-parse HEAD`，防止 recycle 旧 commit），skill 显式命名反模式："Acknowledged" is not a fix，引用不触及被标行的 commit 也不是 fix。
+
+### 巨型 AI PR 的审查修复：Stacked PRs
+- 触发场景：AI 一次性产出 1,721 行 diff，reviewer 被"长的 AI 描述"劝退 → 搁置
+- 解法（[[Stacked-PRs]]）：拆成每层单一关注点的依赖链栈（data/API/wiring/UX），**每层配不同 owner 审查**（data owner / UI owner），CI 对统一栈基评估
+- 审查纪律：**自顶向下读**获上下文、**自底向上审查**在预定 checkpoints 上构建；底层反馈修复后 `gh stack sync` 级联 rebase 向上传播，无需手工 cherry-pick
+- 对应"何时要求拆分 PR"标准（diff 触及 >5 不相关文件 / 无法一句话描述）的直接解法：栈化把"拆分"从纪律变成工具支持的工作流
 
 ## 前提与局限性
 

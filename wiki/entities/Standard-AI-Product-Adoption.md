@@ -7,7 +7,7 @@ aliases:
   - 标准产品路径
 definition: "企业通过成熟 AI SaaS、API 或平台功能直接改写既有高频工作流的路径；成功前提是流程、知识、权限和指标已经足够机器可读"
 created: 2026-06-05
-updated: 2026-06-24
+updated: 2026-08-13
 tags:
   - enterprise-ai
   - ai-deployment
@@ -23,6 +23,7 @@ source_raw:
   - "[[20260601-lightspeed-fin-ai-agent]]"
   - "[[20260601-mercado-libre-github-copilot]]"
   - "[[20260601-octopus-energy-ai-customer-service]]"
+  - "[[20260811-vasuman-ai-adoption-is-a-myth]]"
 evidence_level: medium
 claim_type: mixed
 ---
@@ -102,6 +103,15 @@ L1: 执行          L2: 标记         L3: 顾问        L4: 不可进入
 3. **边界外**：元分析——跨个体/跨组织对比，暴露系统性偏差
 
 累积效应：决策者被更好的信息和反馈包围，决策质量在 5 年内实质性提升——而 AI 从未替代过一次决策。
+
+## 后台化升级路径：人是接口而非操作者（2026-08，Vas）
+
+标准产品路径的又一实现形态来自 Vas（Varick Agents CEO）：**把 AI 塞进用户已有系统的后台**——"人不需要一个帮忙做完工作的工具，他们只想工作做完"。对"永远学不会 prompt/建 agent"的大多数，不要试图改变他们的工作方式，直接：
+
+- 找出最重复的流程，在 Salesforce / NetSuite / Dynamics 等既有 systems of record 里 build agents；
+- 人退化为 approve/reject/edit 自动化结果的接口人——如 AP analysts 整天移发票，"90% 完全可自动化"，分析师成为结果审批者而非操作者。
+
+这是"人类升级路径"（[[Escalation-Based-Human-Oversight]]）的最极端形态：升级路径从"偶尔发生"变成"设计上的默认交互"（任务自动完成，人只在二次确认时入局）。注意与 FDE 路径的结合（由其审计实际工作流），以及作者立场（销售该服务）。
 
 ## 前提与局限性
 

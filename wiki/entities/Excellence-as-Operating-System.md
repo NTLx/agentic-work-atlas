@@ -7,7 +7,7 @@ aliases:
   - Excellence-as-OS
 definition: "Netflix 文化机制的总框架：文化要素（talent density、autonomy、keeper test）不是目的本身，而是到达卓越的操作系统——给顶级人才自主权与问责，克制用流程修复问题的本能"
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-13
 tags:
   - organization
   - ai-org-design
@@ -21,6 +21,7 @@ related_entities:
   - "[[Founder-Mode]]"
 source_raw:
   - "[[20260730-lenny-netflix-cpto-systems-thinkers-elizabeth-stone]]"
+  - "[[20260810-the-playbook-for-building-high-talent]]"
 ---
 
 # Excellence-as-Operating-System（卓越即操作系统）
@@ -45,6 +46,15 @@ source_raw:
 ## AI 时代的叠加层
 
 Netflix 不重写每级 career ladder，而是在所有 talent 之上叠加 **AI fluency aspiration**：形式因职能与职业阶段而异（experimentation mindset / 知道 AI 何时有用 / 实际用 AI 构建），按季度甚至按月演化。配套实践：coding 面试允许候选人使用 AI 工具。Junior talent 仍保留（intern + new grad），因为其 native AI fluency 与消费者直觉，但需要更多 "what good looks like" 的 mentorship。
+
+## 同行证据：Cursor 的 talent density 执行（Adam Ward，2026-08）
+
+Cursor 招聘负责人 Adam Ward 用招聘侧实践印证"talent density 是操作系统的组件而非目标"：
+
+- 创始团队亲自 hire 前 80 人（"他们知道这有多难，也爱做"），exec 把 talent 排第一——与 Netflix"给顶级人才自主权 + 问责"的底座同构。
+- 反对用流程修复人才问题：把 recruiting 的 accountability 从"recruiting 部门"拿回给 hiring manager——recruiter 是"confidence engine，不是 decision-making engine"，因为"只有 hiring manager 得到好/坏 hire 的 joy 和 pain"（与 Netflix 克制流程修复本能同义）。
+- "talent density is a collective nature"——10X 的团队而不是 10X 的个人（"you can't have a 10X person on a bad team"），呼应 excellence-as-OS 的"决策下沉依赖高密度人才"前提。
+- 局限同样暴露：该模式依赖 top-of-market pay + 极稀缺的战略 recruiter，与实体"昂贵前提"一致，非多数组织可复制。
 
 ## 关键数据点
 

@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 370 个 |
+| Entity 页面 | 383 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
 | Raw 文章 | 254 个 |
-| Source Summary | 238 个 |
+| Source Summary | 254 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
 
@@ -92,6 +92,11 @@ tags:
 | [[wiki/entities/Orchestrators-Tax\|Orchestrator's Tax（编排者税）]] | subagent 的真正价值是保护 orchestrator 工作记忆而非并行省时——token 花一次，context 污染每轮收租 | martinfowler.com |
 | [[wiki/entities/Transparent-Tool-Handoff\|Transparent Tool Handoff（透明工具交接）]] | 把可形式化步骤从不可解释 LLM 交接给可解释工具执行——以系统级可解释性替代模型级可解释性；CoT ≠ 真推理 | Palantir Responsible AI 2024 |
 | [[wiki/entities/Evals-as-PRD\|Evals as PRD（评测即需求文档）]] | 以可运行评测集取代传统 PRD 承担需求定义功能：用户反馈→失败轨迹归因→eval set→可度量改进 | Lenny's Podcast / Anthropic 2026 |
+| [[wiki/entities/Agent-Development-Lifecycle\|ADLC（Agent 开发生命周期）]] | AI 时代取代 SDLC 的生命周期范式——agent 覆盖全生命周期，Workflow 取代 CI/CD 作为编排原语 | Cloudflare 2026 |
+| [[wiki/entities/Inference-Engineering\|Inference Engineering（推理工程）]] | 把训练好的权重变成快、可靠、可负担、能规模化服务产品的工程学科——KV cache/speculative decoding/量化/结构化输出 | Latent Space / Baseten 2026 |
+| [[wiki/entities/Skills-as-Products\|Skills as Products（技能即产品）]] | 把 agent skill 当长期维护的产品治理——标准目录 + CI 管线 + 持续评估 + 责任到人 | Google Agent Skills 2026 |
+| [[wiki/entities/Software-Factory\|Software Factory（软件工厂）]] | Agent 驱动的自动化软件生产系统——接受 bug/feature 输入，agent 链完成 build→deploy→manage，人只留灵感品味判断 | Cloudflare 2026 |
+| [[wiki/entities/Stacked-PRs\|Stacked PRs（堆叠 PR）]] | 把巨型 PR 按逻辑分层拆成依赖链栈，每个 PR 单一关注点，恢复 AI 大 diff 的可审查性 | GitHub 2026 |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
@@ -116,6 +121,12 @@ tags:
 | [[wiki/entities/Excellence-as-Operating-System\|Excellence as Operating System（卓越即操作系统）]] | Netflix 文化机制元解释：talent density + autonomy + keeper test 是到达卓越的操作系统，克制用流程修复问题的本能 | Lenny's Podcast / Netflix 2026 |
 | [[wiki/entities/AI-Identity-Bifurcation\|AI Identity Bifurcation（AI 身份极化）]] | 2026 H1 tech workforce 因 AI 一分为二（50% amplified vs 46% 三种负面立场），效应量为 manager 效应 3 倍——诊断型时间基线 | Lenny's Podcast Survey 2026 |
 | [[wiki/entities/Human-Owns-Output\|Human Owns Output（人类拥有输出）]] | agent 输出责任归属人类使用者并随岗位继承——AI 是工具/工具制造者而非团队成员 | Cloudflare 2026-08 |
+| [[wiki/entities/AI-Adoption-Barbell\|AI Adoption Barbell（AI 采纳杠铃）]] | 组织内 AI 使用恒呈分层常态（5-10% power users / 70% 几乎不用），adoption 指标折叠技能谱导致"高采纳无影响" | Varick Agents 2026 |
+| [[wiki/entities/Cognitive-Commons\|Cognitive Commons（认知公地）]] | 职业层面共享的深层专业知识池，靠入门就业"附带再生"，AI 采纳可使其再生机制被理性组织行为耗尽 | Lovett 2026 |
+| [[wiki/entities/Distributed-Mastery\|Distributed Mastery（分布式精通）]] | 编排 human-AI 系统产出专业质量的熟练度，可产出结果但不提供实质验证所需的独立领域判断 | Lovett 2026 |
+| [[wiki/entities/Internalized-Mastery\|Internalized Mastery（内部化精通）]] | 通过持续认知挣扎内化的深层领域知识，构成实质验证 AI 输出的独立基础，不能靠观察或 AI 辅助获得 | Lovett 2026 |
+| [[wiki/entities/Validation-Tether\|Validation Tether（验证系绳）]] | 有效 AI 编排对内化精通的根本依赖——实质验证需独立领域知识识别表层一致输出中的实质错误 | Lovett 2026 |
+| [[wiki/entities/Superlinear-Returns\|Superlinear Returns（超线性回报）]] | 表现与回报的超线性关系，归约为指数增长 + 阈值两成因，学习是同时具备两者的最重要案例 | Paul Graham 2023 |
 
 #### 知识与语义
 | Entity | 定义 | 来源 |
@@ -130,6 +141,8 @@ tags:
 | [[wiki/entities/Theory-of-Mind\|Theory of Mind（心智理论）]] | 理解他人心理状态的能力，是有效沟通、教学和策展的基础 | Grant Sanderson 播客 |
 | [[wiki/entities/Reverse-Information-Paradox\|Reverse Information Paradox（反向信息悖论）]] | AI 时代买方为使用智能必须向卖方泄露专有知识，与 Arrow 经典信息悖论对称反转 | Nadella 2026-07 |
 | [[wiki/entities/Decision-Centric-Architecture\|Decision-Centric Architecture（决策中心架构）]] | 把"决策"而非仅数据作为建模对象的架构：data/logic/action/security 四要素统一，decision lineage 自动捕获 | Palantir 2026 |
+| [[wiki/entities/Knowledge-Profiling\|Knowledge Profiling（知识画像）]] | 以事实为单位的 LLM 事实性诊断框架——分离"没学到"与"学到了取不出"，召回是前沿模型事实性的瓶颈 | Google Research 2026 |
+| [[wiki/entities/Reversal-Curse\|Reversal Curse（反转诅咒）]] | LLM 记住"A 是 B"却答不出"什么是 B"——知识画像研究再框架为 recall 不对称而非知识缺失 | Google Research 2026 |
 
 #### Agent 安全与攻防
 | Entity | 定义 | 来源 |
@@ -162,11 +175,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（231 个）*
+*原始剪藏文章（254 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-07-30——批量编译 9 篇 raw 材料（Palantir 工程机制六篇 + Lenny's Podcast 三集 transcript）。新增 8 个 Entity（Decision-Centric-Architecture、Operational-Responsibility、Transparent-Tool-Handoff、Secure-Paved-Path、Systems-Thinker-Demand、Excellence-as-Operating-System、Evals-as-PRD、AI-Identity-Bifurcation）+ 9 个 source summary；增厚 Ontology、Forward-Deployed-Engineer、Evaluation-Set、Deployment-Product-Flywheel、Token-Maxing、Model-Introspection、Augmentation-Trap、Anthropic 与 Enterprise-Ontology-Application、Forward-Deployed-AI-Enablement、AI-Era-Career-Skills、Skill-Atrophy-and-Knowledge-Debt 四个 topic。
+最新编译：2026-08-13——批量编译 16 篇 raw 材料（recall 论文+Google 博客、认知公地论文、Databricks Genie、GitHub AI-first 贡献者、Google Agent Skills、ADLC、Astro triage、Stacked PRs、Latent Space inference engineering、OpenAI 工作采纳、talent playbook、Vas 采纳神话、Dan Luu token 效率、Paul Graham 超线性回报等）。新增 13 个 Entity（Knowledge-Profiling、Reversal-Curse、Cognitive-Commons、Internalized-Mastery、Distributed-Mastery、Validation-Tether、Inference-Engineering、Superlinear-Returns、Agent-Development-Lifecycle、Software-Factory、Skills-as-Products、Stacked-PRs、AI-Adoption-Barbell）；增厚 Agent-Generated-PRs、AGENTS-md、Agent-PR-Review、Git-Fluent-Agents、Skill-Chains、Agent-Adoption-Curve、Systems-Thinker-Demand、Excellence-as-Operating-System、Campfire-Hiring、Taste、Judgment、Tacit-Knowledge-Lock-In、Token-Supply-Chain、Mechanical-Sympathy-for-LLMs 等 20+ 个既有 Entity。
 
 ---
 
