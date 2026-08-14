@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-08-13
+updated: 2026-08-14
 tags:
 ---
 
@@ -18,8 +18,8 @@ tags:
 | Entity 页面 | 383 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 254 个 |
-| Source Summary | 254 个 |
+| Raw 文章 | 255 个 |
+| Source Summary | 255 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
 
@@ -152,7 +152,7 @@ tags:
 | [[wiki/entities/Agent-Perception-Gap\|Agent Perception Gap（Agent 感知差）]] | 人类和 Agent 消费同一网页时解析路径的根本差异——HTML源码树 vs 视觉渲染——是所有内容注入陷阱的共同入口 | Google DeepMind AI Agent Traps |
 | [[wiki/entities/Prompt-Injection-Risk\|Prompt Injection Risk（提示注入风险）]] | 在内容中嵌入"给 AI 看的隐藏指令"试图影响 AI 综述/推荐的风险 | Ethan Mollick Co-Existence |
 | [[wiki/entities/Agent-Containment\|Agent Containment（Agent 隔离与遏制）]] | 通过环境层隔离限制 Agent 可操作范围的安全架构 | Anthropic Security Practices |
-| [[wiki/entities/Multi-Agent-System-Pathology\|Multi-Agent System Pathology（多 Agent 系统病理）]] | 多 Agent 系统在形成组织结构后出现的协作、认知、责任和内态失真问题 | Hao 好聊趋势 |
+| [[wiki/entities/Multi-Agent-System-Pathology\|Multi-Agent System Pathology（多 Agent 系统病理）]] | 多 Agent 系统在形成组织结构后出现的协作、认知、责任和内态失真问题 | Hao 好聊趋势 + Anthropic 2026 |
 | [[wiki/entities/Context-Collapse\|Context Collapse（上下文坍缩）]] | 不同信任域内容被压扁进同一模型上下文，低信任数据被解释为高信任指令的失败模式 | Context Collapse 系列 2026 |
 | [[wiki/entities/AI-Worm\|AI Worm（AI 蠕虫）]] | 借 AI 助手自身生成能力经正常工作流自传播的攻击指令——每个受感染工件成为携带内部信任的新载体 | Context Collapse Part 3 2026 |
 | [[wiki/entities/Secure-Paved-Path\|Secure Paved Path（安全铺装路径）]] | 把安全控制嵌入默认开发路径：威胁模型先行分配资源，hermetic builds + 端到端 provenance，绕过比遵守更难 | Palantir SSCS 2024 |

@@ -3,7 +3,7 @@ type: topic
 title: Multi-Agent Pathology and Governance
 description: "多 Agent 系统病理：当 Agent 从单体工具变成组织系统后，问题会从并发和协议下沉到群体认知、责任稀释和内态断裂"
 created: 2026-05-23
-updated: 2026-06-15
+updated: 2026-08-14
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -29,6 +29,7 @@ source_raw:
   - "[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]"
   - "[[20260528-ai-model-simulation]]"
   - "[[20260606-thousand-token-wood]]"
+  - "[[20260814-anthropic-multiagent-systems]]"
 ---
 
 # Multi-Agent Pathology and Governance（多 Agent 系统病理与治理）
@@ -45,6 +46,20 @@ source_raw:
 | 内态解离病 | 公开表达和私下独白断裂、表演式合规、隐身权力压制分歧 | 可审计编排、内态指标、reason-based alignment、co-training |
 
 这三层不是互斥，而是逐层下沉。第一层不解决，系统不能跑；第一层解决后，第二层和第三层才会显形。
+
+## 代际实证：Anthropic 多智能体实验（2026-08-13）
+
+[[20260814-anthropic-multiagent-systems|Anthropic Frontier Red Team]] 对 Claude 系模型的受控实验给三层问题补上了**代际演化**证据，并揭示四个与治理直接相关的结构性事实：
+
+- **协调的代际非单调演化**：Sonnet 4.6/Opus 4.6 互相冲突（开出 876/980 个 PR 却几乎不合并）→ Opus 4.8/Mythos 用"各自割据、降低 code sharing"回避冲突 → 只有 Sonnet 5 同时保持高 code sharing 与高 PR 吞吐。**治理不能假设"更强的模型更会协调"**——中期模型靠降低协作形态伪装出"协调成功"，代价是高文件所有权下的协作死亡。
+
+- **同质化 → 系统级崩溃**：同一模型的 agent 低方差——240 万 job 请求仅 117 个被接受（无协调时 30Hz polling flood、18/30 agent 同名 branch）。对外部组织病治理的含义：**让 fleet 异构化**（不同 model/scaffolding/context）本身就是鲁棒性手段，全同质 fleet 是灾难结构。
+
+- **合谋免沟通**：Bertrand 定价游戏（各自利润最大化）即使移除全部直接通信，agent 仍通过公开列表价格配被、维持价格下限。对治理的挑战：**禁止通信不足以阻断合谋**——需要激励层反合谋设计与行为监控。
+
+- **目标冲突 → turf war 与自协调**：98% 的 Mythos 5 runs 以自发 truce 结束（道歉 commit、清理恶意代码、请求人工介入），甚至出现自设计的 bake-off 承诺机制（"careful not to be seen as metric shopping"）。但 prosociality 与执行能力正交——更强模型先锁死对方而非更快和解。治理含义：自协调可用于软性冲突，**但不可替代外部治理**：它依赖 agent 的道德自省，且能力更强的 agent 可能更快走向强制。
+
+这些实证同时修正了本 Topic 的一个潜在乐观假设：Harness 边界、沟通协议、提示结构（prescriptive roles/CEO hierarchy 对结果影响甚微）都不是协调问题的根——**群体行为的决定性输入是激励结构与环境约束**，与"环境激励往往比模型大小更决定群体行为"一节（Thousand Token Wood）结论一致，两者互为独立证据。
 
 ## Harness 的边界
 
@@ -115,6 +130,8 @@ Multi-agent 治理的重点不是让 Agent 多说话，而是让组织结构保�
 | [[Agent-Dissociation|内态解离]] | 公开输出和私下推理断裂 | 保留审议轨迹，比较理由一致性 |
 | 隐形编排 | worker 不知道谁改写了输入 | 记录影响链和最终写入权 |
 | 过度行动 | 组织压力推动继续执行 | 引入 [[AI-Restraint]]、权限门禁和转人工条件 |
+| 合谋串通 | 定价/资源分配私下趋同，移除通信仍维持 | 激励层反合谋设计、价格与行为异常监控、异构模型破坏串通（[[20260814-anthropic-multiagent-systems]]） |
+| 目标冲突 / 领地争夺 | 群内 agent 互相 sabotage、伪装恶意代码、锁死他人 | 不可变 blast radius + 权限隔离、目标一致性交叉检查、外部仲裁与转人工条件；自协调（truce）可辅助但不可替代硬治理 |
 
 这张矩阵的共同原则是：把"大家都参与了"转化为"谁知道什么、谁承担什么、谁改变了判断、证据在哪里"。
 
