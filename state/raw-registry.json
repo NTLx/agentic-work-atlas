@@ -1456,6 +1456,12 @@
       "summary_path": "wiki/sources/20260813-pl-tokens-token-efficiency.md",
       "updated_at": "2026-08-13T10:54:32+08:00"
     },
+    "20260814-anthropic-multiagent-systems.md": {
+      "body_sha256": "aa73cc916b22083b9a224d851e92304d8b9f43f5908a33f686661f3bba49a9de",
+      "raw_file": "20260814-anthropic-multiagent-systems.md",
+      "status": "pending",
+      "updated_at": "2026-08-14T10:45:58+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -2033,6 +2039,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-13T10:54:32+08:00",
+  "updated_at": "2026-08-14T10:45:58+08:00",
   "version": 1
 }
