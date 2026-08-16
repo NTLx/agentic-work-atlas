@@ -2,8 +2,8 @@
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
 date: "2026-08-16"
-score: 100
-status: "PASS"
+score: 94
+status: "FAIL"
 tags:
   - lint-report
   - wiki-maintenance
@@ -12,26 +12,25 @@ tags:
 # Agentic Work Atlas Lint 报告 - 2026-08-16
 
 > [!summary] 状态
-> 门禁: **PASS**
-> 分数: **100/100**
-> 阻断问题: **0**
+> 门禁: **FAIL**
+> 分数: **94/100**
+> 阻断问题: **6**
 
 ## 统计
 
 | 类别 | 数量 |
 |------|------|
 | Raw 来源 | 258 |
-| Raw 已编译 | 256 |
-| Raw 待编译 | 2 |
+| Raw 已编译 | 257 |
+| Raw 待编译 | 1 |
 | Raw 已跳过 | 0 |
-| Entity | 385 |
+| Entity | 388 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 10 |
 
 ## 待编译 Raw
 
-- `raw/20260816-anthropic-claude-text-watermark.md`
 - `raw/20260816-earendil-pi-compaction.md`
 
 ## 检查项
@@ -42,9 +41,9 @@ tags:
 | `date` | 0 |
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
-| `wikilink` | 0 |
+| `wikilink` | 6 |
 | `source_raw` | 0 |
-| `tag` | 39 |
+| `tag` | 43 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
 | `stale-core` | 7 |
@@ -90,8 +89,11 @@ tags:
 - `wiki/entities/Cognitive-Commons.md` - `一次性 tag 仅出现 1 次: 'collective-action'`
 - `wiki/sources/20260812-github-ai-first-contributors.md` - `一次性 tag 仅出现 1 次: 'contributor-governance'`
 - `wiki/sources/20260813-pl-tokens-token-efficiency.md` - `一次性 tag 仅出现 1 次: 'dan-luu'`
+- `wiki/sources/20260816-anthropic-claude-text-watermark.md` - `一次性 tag 仅出现 1 次: 'eu-ai-act'`
 - `wiki/sources/20260813-pl-tokens-token-efficiency.md` - `一次性 tag 仅出现 1 次: 'evals'`
+- `wiki/entities/C2PA-Content-Credentials.md` - `一次性 tag 仅出现 1 次: 'file-metadata'`
 - `wiki/entities/Stacked-PRs.md` - `一次性 tag 仅出现 1 次: 'git'`
+- `wiki/entities/SynthID-Text.md` - `一次性 tag 仅出现 1 次: 'google-deepmind'`
 - `wiki/sources/20260812-google-recall-bottleneck-factuality.md` - `一次性 tag 仅出现 1 次: 'google-research'`
 - `wiki/sources/20260811-databricks-genie-grounding-governance.md` - `一次性 tag 仅出现 1 次: 'grounding'`
 - `wiki/sources/20260815-autodesign-meta-harness-optimization.md` - `一次性 tag 仅出现 1 次: 'harness-optimization'`
@@ -106,6 +108,7 @@ tags:
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'multiagent-coordination'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'multiagent-systems'`
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'multimodal-evaluation'`
+- `wiki/entities/C2PA-Content-Credentials.md` - `一次性 tag 仅出现 1 次: 'open-standard'`
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'paper-to-poster'`
 - `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'paul-graham'`
 - `wiki/entities/Meta-Harness-Optimization.md` - `一次性 tag 仅出现 1 次: 'recursive-improvement'`
@@ -116,6 +119,15 @@ tags:
 - `wiki/sources/20260804-stacked-prs-giant-ai-generated.md` - `一次性 tag 仅出现 1 次: 'stacked-prs'`
 - `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'superlinear-returns'`
 - `wiki/sources/20260806-openai-chatgpt-work-adoption.md` - `一次性 tag 仅出现 1 次: 'work-usage'`
+
+### wikilink
+
+- `wiki/entities/C2PA-Content-Credentials.md:84` - `链接目标不存在: [[Content-Provenance]]`
+- `wiki/entities/Claude-Text-Watermark.md:106` - `链接目标不存在: [[EU-AI-Act]]`
+- `wiki/entities/Claude-Text-Watermark.md:107` - `链接目标不存在: [[Content-Provenance]]`
+- `wiki/entities/SynthID-Text.md:88` - `链接目标不存在: [[Content-Provenance]]`
+- `wiki/sources/20260816-anthropic-claude-text-watermark.md:78` - `链接目标不存在: [[EU-AI-Act]]`
+- `wiki/sources/20260816-anthropic-claude-text-watermark.md:79` - `链接目标不存在: [[Content-Provenance]]`
 
 ## 运行命令
 

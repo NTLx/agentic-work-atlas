@@ -1474,9 +1474,11 @@
     },
     "20260816-anthropic-claude-text-watermark.md": {
       "body_sha256": "91344d65727283330e5f42d08f9ad6e401937e682e92fb445fb59fa1e2fbdbdd",
+      "compiled_at": "2026-08-16T16:59:31+08:00",
       "raw_file": "20260816-anthropic-claude-text-watermark.md",
-      "status": "pending",
-      "updated_at": "2026-08-16T16:46:35+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260816-anthropic-claude-text-watermark.md",
+      "updated_at": "2026-08-16T16:59:31+08:00"
     },
     "20260816-earendil-pi-compaction.md": {
       "body_sha256": "1aa0523ab42f480e6efd375c60d15120afe8db78b7eef6fcf2714196129c8285",
@@ -2061,6 +2063,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-16T16:49:41+08:00",
+  "updated_at": "2026-08-16T16:59:31+08:00",
   "version": 1
 }

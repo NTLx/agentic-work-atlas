@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 385 个 |
+| Entity 页面 | 388 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
 | Raw 文章 | 258 个 |
-| Source Summary | 256 个 |
+| Source Summary | 257 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
 
@@ -165,6 +165,9 @@ tags:
 | [[wiki/entities/Frontier-Developer-Obligations\|Frontier Developer Obligations（前沿开发者义务）]] | Anthropic 提出的前沿 AI 开发者必须承担的监管义务体系 | Anthropic AI Framework |
 | [[wiki/entities/Societal-Resilience\|Societal Resilience（社会韧性）]] | 社会层面抵御和恢复 AI 可能加速或启用的威胁的能力 | Anthropic AI Framework |
 | [[wiki/entities/Collingridge-Dilemma\|Collingridge Dilemma（科林格里奇困境）]] | 技术影响在早期难以预见，等到清晰时已难以管理 | Dario Amodei |
+| [[wiki/entities/Claude-Text-Watermark\|Claude Text Watermark（Claude 文本水印）]] | Anthropic 为 Claude 输出嵌入的 SynthID-Text 变体文本水印，通过随机性源切换让第三方可用 key 事后验证文本归属 | Anthropic 2026-08 |
+| [[wiki/entities/SynthID-Text\|SynthID-Text]] | Google DeepMind 于 Nature 2024 发布的 LLM 文本水印算法，Aaronson 2022 提案的算法实现；当前主流 LLM 文本水印的算法祖先 | DeepMind 2024 |
+| [[wiki/entities/C2PA-Content-Credentials\|C2PA Content Credentials（C2PA 内容凭证）]] | C2PA 联盟维护的开放行业标准，通过 cryptographically signed metadata 声明文件来源与处理历史；与文本水印机制独立但协同 | Anthropic 2026-08 |
 
 #### 多 Agent 系统与涌现
 | Entity | 定义 | 来源 |
@@ -181,7 +184,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-08-16——编译 AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design（arXiv:2608.13560）。新增 2 个 Entity（Meta-Harness-Optimization、PosterBench）；增厚 Agent-Harness（添加 source_raw + 关联）与 Recursive-Self-Improvement（添加 harness 层 RSI 关联）。
+最新编译：2026-08-16——编译 Anthropic Claude 文本水印文档（how Claude's text watermark works）。新增 3 个 Entity（Claude-Text-Watermark、SynthID-Text、C2PA-Content-Credentials）；增厚 Anthropic（添加 source_raw + 关联）。
 
 ---
 

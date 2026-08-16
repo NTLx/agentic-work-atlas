@@ -6,7 +6,7 @@ aliases:
   - Anthropic Inc
 definition: "由 Dario Amodei 等人于 2021 年创立的前沿 AI 实验室，Claude 系列模型开发方，2026 年以一手数据公开 AI 递归自我改进进程，并发布 Advanced AI Framework 政策提案"
 created: 2026-06-06
-updated: 2026-07-30
+updated: 2026-08-16
 tags:
   - organization
   - AI-frontier-lab
@@ -22,6 +22,8 @@ related_entities:
   - "[[Frontier-Developer-Obligations]]"
   - "[[Societal-Resilience]]"
   - "[[AI-Policy-Framework]]"
+  - "[[Claude-Text-Watermark]]"
+  - "[[N-Hour]]"
 source_raw:
   - "[[20260604-anthropic-recursive-self-improvement]]"
   - "[[20260610-ai-exponential-policy]]"
@@ -29,6 +31,7 @@ source_raw:
   - "[[20260613-anthropic-public-record]]"
   - "[[20260715-why-i-left-google-deepmind]]"
   - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
+  - "[[20260816-anthropic-claude-text-watermark]]"
 validated_source: "https://www.anthropic.com/about"
 validated_at: "2026-06-06"
 ---
