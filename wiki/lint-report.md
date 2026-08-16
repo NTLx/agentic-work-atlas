@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-08-14"
+date: "2026-08-16"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-08-14
+# Agentic Work Atlas Lint 报告 - 2026-08-16
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 255 |
-| Raw 已编译 | 255 |
+| Raw 来源 | 256 |
+| Raw 已编译 | 256 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 383 |
+| Entity | 385 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 10 |
@@ -39,7 +39,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 32 |
+| `tag` | 39 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
 | `stale-core` | 7 |
@@ -62,13 +62,13 @@ tags:
 
 ### stale-core
 
-- `wiki/entities/Agent-Native.md` - `核心页 Agent-Native 已 93 天未更新，入链 10 条`
-- `wiki/entities/Agent-PR-Review.md` - `核心页 Agent-PR-Review 已 95 天未更新，入链 19 条`
-- `wiki/entities/Boris-Cherny.md` - `核心页 Boris-Cherny 已 98 天未更新，入链 10 条`
-- `wiki/entities/Claude-Code-CLI.md` - `核心页 Claude-Code-CLI 已 98 天未更新，入链 38 条`
-- `wiki/entities/GBrain.md` - `核心页 GBrain 已 93 天未更新，入链 10 条`
-- `wiki/entities/Knowledge-Work.md` - `核心页 Knowledge-Work 已 93 天未更新，入链 26 条`
-- `wiki/entities/Software-2.0.md` - `核心页 Software-2.0 已 93 天未更新，入链 9 条`
+- `wiki/entities/Agent-Native.md` - `核心页 Agent-Native 已 95 天未更新，入链 10 条`
+- `wiki/entities/Agent-PR-Review.md` - `核心页 Agent-PR-Review 已 97 天未更新，入链 19 条`
+- `wiki/entities/Boris-Cherny.md` - `核心页 Boris-Cherny 已 100 天未更新，入链 10 条`
+- `wiki/entities/Claude-Code-CLI.md` - `核心页 Claude-Code-CLI 已 100 天未更新，入链 38 条`
+- `wiki/entities/GBrain.md` - `核心页 GBrain 已 95 天未更新，入链 10 条`
+- `wiki/entities/Knowledge-Work.md` - `核心页 Knowledge-Work 已 95 天未更新，入链 26 条`
+- `wiki/entities/Software-2.0.md` - `核心页 Software-2.0 已 95 天未更新，入链 9 条`
 
 ### tag
 
@@ -89,16 +89,23 @@ tags:
 - `wiki/entities/Stacked-PRs.md` - `一次性 tag 仅出现 1 次: 'git'`
 - `wiki/sources/20260812-google-recall-bottleneck-factuality.md` - `一次性 tag 仅出现 1 次: 'google-research'`
 - `wiki/sources/20260811-databricks-genie-grounding-governance.md` - `一次性 tag 仅出现 1 次: 'grounding'`
+- `wiki/sources/20260815-autodesign-meta-harness-optimization.md` - `一次性 tag 仅出现 1 次: 'harness-optimization'`
 - `wiki/entities/Distributed-Mastery.md` - `一次性 tag 仅出现 1 次: 'human-ai-collaboration'`
 - `wiki/entities/Inference-Engineering.md` - `一次性 tag 仅出现 1 次: 'inference'`
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'inference-engineering'`
 - `wiki/sources/20260804-astro-software-factory-issue-triage.md` - `一次性 tag 仅出现 1 次: 'issue-triage'`
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'kv-cache'`
 - `wiki/entities/Agent-Development-Lifecycle.md` - `一次性 tag 仅出现 1 次: 'lifecycle'`
+- `wiki/entities/Meta-Harness-Optimization.md` - `一次性 tag 仅出现 1 次: 'long-horizon-agent'`
+- `wiki/sources/20260815-autodesign-meta-harness-optimization.md` - `一次性 tag 仅出现 1 次: 'meta-harness'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'multiagent-coordination'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'multiagent-systems'`
+- `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'multimodal-evaluation'`
+- `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'paper-to-poster'`
 - `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'paul-graham'`
+- `wiki/entities/Meta-Harness-Optimization.md` - `一次性 tag 仅出现 1 次: 'recursive-improvement'`
 - `wiki/sources/20260804-stacked-prs-giant-ai-generated.md` - `一次性 tag 仅出现 1 次: 'reviewability'`
+- `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'rubric-evaluation'`
 - `wiki/sources/20260803-google-agent-skills-build-test-scale.md` - `一次性 tag 仅出现 1 次: 'skill-governance'`
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'speculative-decoding'`
 - `wiki/sources/20260804-stacked-prs-giant-ai-generated.md` - `一次性 tag 仅出现 1 次: 'stacked-prs'`

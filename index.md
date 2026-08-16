@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-08-14
+updated: 2026-08-16
 tags:
 ---
 
@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 383 个 |
+| Entity 页面 | 385 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 255 个 |
-| Source Summary | 255 个 |
+| Raw 文章 | 256 个 |
+| Source Summary | 256 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
 
@@ -45,6 +45,8 @@ tags:
 |--------|------|------|
 | [[wiki/entities/Agentic-Engineering\|Agentic Engineering（代理式工程）]] | 默认使用 Agent 辅助并持续改进的软件工程范式 | Agentic Engineering Patterns |
 | [[wiki/entities/Agent-Harness\|Agent Harness（智能体脚手架）]] | 包装模型并提供工具、上下文、护栏的运行时环境 | The Anatomy of an Agent Harness |
+| [[wiki/entities/Meta-Harness-Optimization\|Meta-Harness Optimization（Meta-Harness 优化）]] | 把 harness H 本身作为优化目标，由 Meta-Harness Optimizer 在外层反馈环中递归改写 harness 代码；模型参数 θ 固定 | AutoDesign 2026 |
+| [[wiki/entities/PosterBench\|PosterBench]] | AutoDesign 发布的 paper-to-poster 七维评估基准（100 papers Main Track + 10 papers mini）+ 933 人类盲评对 | AutoDesign 2026 |
 | [[wiki/entities/Constraint-Infrastructure\|Constraint Infrastructure（约束基建）]] | 系统化保证 Agent 运行时行为边界的基础设施层 | 阿里云 Agent Infra 约束基建 |
 | [[wiki/entities/Constraint-Driven-Engineering\|Constraint-Driven Engineering（约束驱动工程）]] | 通过分阶段硬约束与分层验收实现 Agent 交付收敛的范式 | Qwen3.7-Max Experiment |
 | [[wiki/entities/Automated-Criteria\|Automated Criteria（自动化判据）]] | 从编排层到真机层客观判定 Agent 执行结果是否成功的体系 | Qwen3.7-Max Experiment |
@@ -175,11 +177,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（254 个）*
+*原始剪藏文章（256 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-08-13——批量编译 16 篇 raw 材料（recall 论文+Google 博客、认知公地论文、Databricks Genie、GitHub AI-first 贡献者、Google Agent Skills、ADLC、Astro triage、Stacked PRs、Latent Space inference engineering、OpenAI 工作采纳、talent playbook、Vas 采纳神话、Dan Luu token 效率、Paul Graham 超线性回报等）。新增 13 个 Entity（Knowledge-Profiling、Reversal-Curse、Cognitive-Commons、Internalized-Mastery、Distributed-Mastery、Validation-Tether、Inference-Engineering、Superlinear-Returns、Agent-Development-Lifecycle、Software-Factory、Skills-as-Products、Stacked-PRs、AI-Adoption-Barbell）；增厚 Agent-Generated-PRs、AGENTS-md、Agent-PR-Review、Git-Fluent-Agents、Skill-Chains、Agent-Adoption-Curve、Systems-Thinker-Demand、Excellence-as-Operating-System、Campfire-Hiring、Taste、Judgment、Tacit-Knowledge-Lock-In、Token-Supply-Chain、Mechanical-Sympathy-for-LLMs 等 20+ 个既有 Entity。
+最新编译：2026-08-16——编译 AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design（arXiv:2608.13560）。新增 2 个 Entity（Meta-Harness-Optimization、PosterBench）；增厚 Agent-Harness（添加 source_raw + 关联）与 Recursive-Self-Improvement（添加 harness 层 RSI 关联）。
 
 ---
 

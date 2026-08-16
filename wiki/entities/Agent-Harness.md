@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-07-27
+updated: 2026-08-16
 evidence_level: high
 claim_type: mixed
 tags:
@@ -46,6 +46,7 @@ related_entities:
   - "[[Agent-Environment-Misalignment]]"
   - "[[Rogue-AI-Agent]]"
   - "[[Long-Lived-Credential-Risk]]"
+  - "[[Meta-Harness-Optimization]]"
 source_raw:
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260713-martin-fowler-fragments-july-2026]]"
@@ -73,6 +74,7 @@ source_raw:
   - "[[20260727-langchain-own-your-intelligence]]"
   - "[[20260727-github-harness-is-all-you-need]]"
   - "[[20260801-align-agent-environment-interface.pdf]]"
+  - "[[20260815-autodesign-meta-harness-optimization]]"
 ---
 
 # Agent Harness

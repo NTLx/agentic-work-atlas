@@ -8,7 +8,7 @@ aliases:
   - AI 改 AI
 definition: "AI 系统设计、训练或验证其下一代或同代继任者的能力；当这一回路达到某临界点，AI 进步速度由机器而非人类决定"
 created: 2026-06-06
-updated: 2026-06-16
+updated: 2026-08-16
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,8 +25,10 @@ related_entities:
   - "[[AI-Psychosis]]"
   - "[[Coding-Agents]]"
   - "[[Agentic-Engineering]]"
+  - "[[Meta-Harness-Optimization]]"
 source_raw:
   - "[[20260604-anthropic-recursive-self-improvement]]"
+  - "[[20260815-autodesign-meta-harness-optimization]]"
 ---
 
 # Recursive Self-Improvement（递归自我改进）
