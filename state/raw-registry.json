@@ -1482,9 +1482,11 @@
     },
     "20260816-earendil-pi-compaction.md": {
       "body_sha256": "1aa0523ab42f480e6efd375c60d15120afe8db78b7eef6fcf2714196129c8285",
+      "compiled_at": "2026-08-16T17:11:05+08:00",
       "raw_file": "20260816-earendil-pi-compaction.md",
-      "status": "pending",
-      "updated_at": "2026-08-16T16:49:41+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260816-earendil-pi-compaction.md",
+      "updated_at": "2026-08-16T17:11:05+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -2063,6 +2065,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-16T16:59:31+08:00",
+  "updated_at": "2026-08-16T17:11:05+08:00",
   "version": 1
 }

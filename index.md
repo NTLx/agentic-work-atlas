@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 388 个 |
+| Entity 页面 | 389 个 |
 | Topic 页面 | 33 个 |
 | Comparison 页面 | 19 个 |
 | Raw 文章 | 258 个 |
-| Source Summary | 257 个 |
+| Source Summary | 258 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
 
@@ -54,6 +54,7 @@ tags:
 | [[wiki/entities/HaaS-Harness-as-a-Service\|HaaS (Harness-as-a-Service)]] | 从提供底层模型 API 转向提供预配置 Agent 运行时的服务范式 | Agent Harness Engineering |
 | [[wiki/entities/Context-Rot\|Context Rot（上下文腐烂）]] | 随着窗口填充，模型推理和任务完成能力非线性下降的现象 | Agent Harness Engineering |
 | [[wiki/entities/Ralph-Loops\|Ralph Loops]] | 拦截退出信号并重注入提示，实现 Agent 长程任务的循环技术 | Agent Harness Engineering |
+| [[wiki/entities/Compaction\|Compaction（上下文压缩）]] | Coding agent 长会话中通过独立 LLM 调用把较老轮次序列化为结构化摘要（goal/progress/key decisions）；与 prompt cache 存在结构性张力 | Earendil Pi 2026-08 |
 | [[wiki/entities/AGENTS-md\|AGENTS.md]] | 作为 Agent "棘轮"规则手册的根目录规范文件 | Agent Harness Engineering |
 | [[wiki/entities/Agent-Verification\|Agent Verification（Agent 自主验证）]] | Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境 | Claude Code 一周年 |
 | [[wiki/entities/Loss-Function-Development\|Loss Function Development（损失函数开发）]] | 用大规模盲评 eval 集作为损失函数驱动 Agent 长周期优化的工程范式 | Elvis Sun LFD |
@@ -184,7 +185,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-08-16——编译 Anthropic Claude 文本水印文档（how Claude's text watermark works）。新增 3 个 Entity（Claude-Text-Watermark、SynthID-Text、C2PA-Content-Credentials）；增厚 Anthropic（添加 source_raw + 关联）。
+最新编译：2026-08-16——编译 Earendil Pi 压缩机制（How Compaction Works in Pi）。新增 1 个 Entity（Compaction）；增厚 Context-Engineering（添加 source_raw + 关联）。
 
 ---
 
