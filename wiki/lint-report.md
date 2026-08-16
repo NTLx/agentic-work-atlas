@@ -20,14 +20,19 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 256 |
+| Raw 来源 | 258 |
 | Raw 已编译 | 256 |
-| Raw 待编译 | 0 |
+| Raw 待编译 | 2 |
 | Raw 已跳过 | 0 |
 | Entity | 385 |
 | Topic | 33 |
 | Comparison | 19 |
 | Output | 10 |
+
+## 待编译 Raw
+
+- `raw/20260816-anthropic-claude-text-watermark.md`
+- `raw/20260816-earendil-pi-compaction.md`
 
 ## 检查项
 
