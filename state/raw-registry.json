@@ -1464,6 +1464,12 @@
       "summary_path": "wiki/sources/20260814-anthropic-multiagent-systems.md",
       "updated_at": "2026-08-14T10:55:46+08:00"
     },
+    "20260815-autodesign-meta-harness-optimization.pdf": {
+      "body_sha256": "9e9b8532f29ab9d12756f4dba5cc8d1577feb9b0057ae1ae6f2bcc9f04ce06d8",
+      "raw_file": "20260815-autodesign-meta-harness-optimization.pdf",
+      "status": "pending",
+      "updated_at": "2026-08-16T16:05:00+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -2041,6 +2047,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-14T10:55:46+08:00",
+  "updated_at": "2026-08-16T16:05:00+08:00",
   "version": 1
 }
