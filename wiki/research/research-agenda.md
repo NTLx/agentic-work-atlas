@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-04
+updated: 2026-08-17
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -45,6 +45,7 @@ related_entities:
 | **P1** | **MCP 无状态转折** | 07-28 规范：有状态→无状态 + MRTR + 授权加固；SDK 月下载 5 亿；NSA 安全指南 + CSA 缺陷研究 | clip 规范 + NSA 指南 → 更新 MCP entity（接 07-22 制度堆栈判断） |
 | **P1** | **FDE 化（厂商部署转型）** | OpenAI Presence（07-22，托管式部署）+ 收购约 150 FDE + 招聘同比 +1000%——FDE 从 Palantir 独有变为实验室标配 | clip Presence 发布 → 更新 Forward-Deployed-AI-Enablement topic |
 | **P1** | **事故案例库补全** | AFCC 正文仅 2 案（PocketOS / OpenAI×HF）；Anthropic 三案（07-30）= 第 8 案，披露级联起点 | clip Anthropic 博客；GuardFall/AI Now/ClawHavoc/Amazon 四案降 P2（外部材料获取成本高） |
+| **P2** | **AI 时代设计方法论对照**（OpenAI/Claude/Anthropic 三家对照）🆕（08-17）：Ian Silber 在 [[20260816-openai-head-of-design-best-time]] 提出「Just do less + Systems thinking + Capability overhang + Broad spectrum user」方法论四件套；与 Lenny 调查中"设计师最不幸福"形成张力；与 [[AI-Era-Designer-Role]] topic 关联。多源对照候选：Jenny Wen（Claude head of design, "design process is dead"）+ Joel Lewenstein（Anthropic head of design, Ian 好友）+ Mike Krieger（Anthropic CPO）+ Kevin Weil（OpenAI 前 CPO, "model today is worst we'll ever have"）+ Andrew Ambrosino（OpenAI Codex lead）+ Marc Andreessen 三-way standoff（PM/工程师/设计师 Spider-Man meme） | 至少 2 份对照访谈 raw clip（优先 Jenny Wen + Joel Lewenstein，因为直接对话题）+ 校正 topic 中"OpenAI 视角"是否在三家形成共识 vs 分歧 | 候选（synthesized/medium，单源 Ian 立场 + Lenny 调查数据；待对照 raw） |
 | **P2** | **未编织 topic 修复** | 模型安全分歧有正文但 `[[]]` 零编织；6 topic 零入链；真薄仅 AI-Management-Mindset-Transfer | 链接修复 + 薄 topic 处置（并入相邻 topic 或补实质内容） |
 | **P2** | **复核队列清理** | 87 review（23.7%）/ 18 疑似重复 | 随 P0 机制化首次执行 top10 |
 | **P2** | **Verifiable-Agent 三分（余两腿）** | 最胖 topic（86 链接）；security 腿随安全 topic 拆出后余 Verification + Evaluation | 安全腿完成后执行 |

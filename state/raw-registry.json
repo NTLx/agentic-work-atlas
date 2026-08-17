@@ -1488,6 +1488,14 @@
       "summary_path": "wiki/sources/20260816-earendil-pi-compaction.md",
       "updated_at": "2026-08-16T17:11:05+08:00"
     },
+    "20260816-openai-head-of-design-best-time.md": {
+      "body_sha256": "f6afe82e099a317acab5bf6dfc9b0b0b0222ad91d4df7bb49fd9059d3e932bc0",
+      "compiled_at": "2026-08-17T10:29:07+08:00",
+      "raw_file": "20260816-openai-head-of-design-best-time.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260816-openai-head-of-design-best-time.md",
+      "updated_at": "2026-08-17T10:29:07+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -2065,6 +2073,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-16T17:11:05+08:00",
+  "updated_at": "2026-08-17T10:29:07+08:00",
   "version": 1
 }
