@@ -1464,6 +1464,14 @@
       "summary_path": "wiki/sources/20260814-anthropic-multiagent-systems.md",
       "updated_at": "2026-08-14T10:55:46+08:00"
     },
+    "20260814-i-remain-a-skeptic.md": {
+      "body_sha256": "67da0c29c5265adfc94222b839e28da6494becdcd40732529840802b53e4abda",
+      "compiled_at": "2026-08-19T08:19:15+08:00",
+      "raw_file": "20260814-i-remain-a-skeptic.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260814-i-remain-a-skeptic.md",
+      "updated_at": "2026-08-19T08:19:15+08:00"
+    },
     "20260815-autodesign-meta-harness-optimization.pdf": {
       "body_sha256": "9e9b8532f29ab9d12756f4dba5cc8d1577feb9b0057ae1ae6f2bcc9f04ce06d8",
       "compiled_at": "2026-08-16T16:19:49+08:00",
@@ -1471,6 +1479,14 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260815-autodesign-meta-harness-optimization.md",
       "updated_at": "2026-08-16T16:19:49+08:00"
+    },
+    "20260815-engineers-history-reinvention.md": {
+      "body_sha256": "51d4b92df12a965b8b3f8289c60ecaacb11a10d9abd0747adc85c31826fec399",
+      "compiled_at": "2026-08-19T08:19:15+08:00",
+      "raw_file": "20260815-engineers-history-reinvention.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260815-engineers-history-reinvention.md",
+      "updated_at": "2026-08-19T08:19:15+08:00"
     },
     "20260816-anthropic-claude-text-watermark.md": {
       "body_sha256": "91344d65727283330e5f42d08f9ad6e401937e682e92fb445fb59fa1e2fbdbdd",
@@ -2073,6 +2089,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-17T10:29:07+08:00",
+  "updated_at": "2026-08-19T08:19:15+08:00",
   "version": 1
 }

@@ -3,7 +3,7 @@ type: topic
 title: Code as Conceptual Infrastructure
 description: "代码作为概念基础设施：AI 让指令生成变便宜后，软件的核心资产上移为词汇、边界、模型和语义约束"
 created: 2026-05-18
-updated: 2026-05-22
+updated: 2026-08-19
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,9 +25,12 @@ related_entities:
   - "[[Essential-Complexity]]"
   - "[[Friction-as-Design-Signal]]"
   - "[[Ownership]]"
+  - "[[Peter-Naur]]"
+  - "[[Joshua-Barretto]]"
 source_raw:
   - "[[What Is Code?]]"
   - "[[20260420-ontology-enterprise-ai-agent]]"
+  - "[[20260814-i-remain-a-skeptic]]"
   - "[[20260420-build-first-business-ontology]]"
   - "[[20260420-ontology-meets-agent-case-study]]"
   - "[[20260413-llm-wiki]]"

@@ -3,7 +3,7 @@ type: topic
 title: AI 时代的管理思维迁移
 description: "管理学框架如何迁移到 AI 交互——能力-委派匹配、德鲁克元思考与人类在 AI 时代的不可替代性"
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-08-19
 evidence_level: medium
 claim_type: extracted
 tags:
@@ -17,8 +17,11 @@ related_entities:
   - "[[Judgment]]"
   - "[[Taste]]"
   - "[[Digital-Life-Kazke|数字生命卡兹克]]"
+  - "[[Mythical-Man-Month]]"
+  - "[[Horn]]"
 source_raw:
   - "[[AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。]]"
+  - "[[20260815-engineers-history-reinvention]]"
 ---
 
 # AI 时代的管理思维迁移
