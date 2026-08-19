@@ -1512,6 +1512,30 @@
       "summary_path": "wiki/sources/20260816-openai-head-of-design-best-time.md",
       "updated_at": "2026-08-17T10:29:07+08:00"
     },
+    "20260819-anthropic-claude-tag-oncall.md": {
+      "body_sha256": "62ac34ea3fe586f9fdd19d038b66bb0ec9ae089c6a9c02f900437d5cef57980a",
+      "compiled_at": "2026-08-19T17:59:40+08:00",
+      "raw_file": "20260819-anthropic-claude-tag-oncall.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260819-anthropic-claude-tag-oncall.md",
+      "updated_at": "2026-08-19T17:59:40+08:00"
+    },
+    "20260819-google-ai-evals-inspect-skill.md": {
+      "body_sha256": "6d4e1b6b85454e8ee87f6f5426f1b143c0953a6edc22adffc060254ed0fd436a",
+      "compiled_at": "2026-08-19T18:01:41+08:00",
+      "raw_file": "20260819-google-ai-evals-inspect-skill.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260819-google-ai-evals-inspect-skill.md",
+      "updated_at": "2026-08-19T18:01:41+08:00"
+    },
+    "20260819-ibm-altk-evolve-memory-dosage.md": {
+      "body_sha256": "01b0ee42a656441f936fb7e009efb9b20a6575212f9d05e9faaa1bfddf55de01",
+      "compiled_at": "2026-08-19T18:03:32+08:00",
+      "raw_file": "20260819-ibm-altk-evolve-memory-dosage.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260819-ibm-altk-evolve-memory-dosage.md",
+      "updated_at": "2026-08-19T18:03:32+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -2089,6 +2113,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-19T08:19:15+08:00",
+  "updated_at": "2026-08-19T18:03:32+08:00",
   "version": 1
 }

@@ -75,6 +75,7 @@ source_raw:
   - "[[20260727-github-harness-is-all-you-need]]"
   - "[[20260801-align-agent-environment-interface.pdf]]"
   - "[[20260815-autodesign-meta-harness-optimization]]"
+  - "[[20260819-anthropic-claude-tag-oncall]]"
 ---
 
 # Agent Harness

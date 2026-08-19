@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-08-16
+updated: 2026-08-19
 tags:
 ---
 
@@ -15,11 +15,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 389 个 |
-| Topic 页面 | 33 个 |
+| Entity 页面 | 408 个 |
+| Topic 页面 | 34 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 258 个 |
-| Source Summary | 258 个 |
+| Raw 文章 | 264 个 |
+| Source Summary | 261 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
 
@@ -100,6 +100,13 @@ tags:
 | [[wiki/entities/Skills-as-Products\|Skills as Products（技能即产品）]] | 把 agent skill 当长期维护的产品治理——标准目录 + CI 管线 + 持续评估 + 责任到人 | Google Agent Skills 2026 |
 | [[wiki/entities/Software-Factory\|Software Factory（软件工厂）]] | Agent 驱动的自动化软件生产系统——接受 bug/feature 输入，agent 链完成 build→deploy→manage，人只留灵感品味判断 | Cloudflare 2026 |
 | [[wiki/entities/Stacked-PRs\|Stacked PRs（堆叠 PR）]] | 把巨型 PR 按逻辑分层拆成依赖链栈，每个 PR 单一关注点，恢复 AI 大 diff 的可审查性 | GitHub 2026 |
+| [[Claude-Tag\|Claude Tag]] | Anthropic 出品的 Slack-resident AI agent 产品，持有独立 service account 与跨事故记忆 | Anthropic 2026-08 |
+| [[On-Call-Agent\|On-Call Agent]] | agent 作为事故 first responder 直接承担 production incident 的检测/分诊/响应 | Anthropic CI 2026-08 |
+| [[Lessons-MD-Self-Improvement\|Lessons-MD Self-Improvement]] | 事故 lessons 自动写入 markdown → 新事故先读 → 多次出现的模式 promote 到 investigation skill | Anthropic CI 2026-08 |
+| [[Decoupled-Grader-Architecture\|Decoupled Grader Architecture]] | solver/grader 拆解为不同模型 + strict-binary rubric + 程序化 reduction 的架构 | Google DevRel 2026-08 |
+| [[Five-Diagnostic-Outcomes-Skill-Eval\|Five Diagnostic Outcomes for Skill Eval]] | skill vs baseline 的 5 种诊断结果分类，从 High-Efficiency Capability Lift 到 Context Overload | Google DevRel 2026-08 |
+| [[ALTK-Evolve\|ALTK-Evolve]] | IBM Research 的 agent learning library——从 trajectory 蒸馏 guideline set，推理时注入 | IBM Research 2026-08 |
+| [[Agentic-Memory-Dosage\|Agentic Memory Dosage]] | agentic memory 的最优剂量依赖模型能力——三种模式 (strong-headroom / weak-selective / saturated) | IBM Research 2026-08 |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
@@ -181,11 +188,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（256 个）*
+*原始剪藏文章（261 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-08-16——编译 Earendil Pi 压缩机制（How Compaction Works in Pi）。新增 1 个 Entity（Compaction）；增厚 Context-Engineering（添加 source_raw + 关联）。
+最新编译：2026-08-19——编译 Claude Tag CI/CD on-call + Google AI Evals + IBM ALTK-Evolve memory dosage（新增 Claude-Tag / On-Call-Agent / Lessons-MD-Self-Improvement / Decoupled-Grader-Architecture / Five-Diagnostic-Outcomes-Skill-Eval / ALTK-Evolve / Agentic-Memory-Dosage 共 7 个 entity；增厚 Agent-Orchestration / Agent-Harness / Alert-Closed-Loop / Operational-Responsibility / LLM-as-a-Judge / Rubric-Based-Evaluation / Skills-as-Products / Structured-Agent-Memory 的 source_raw 关联）。
 
 ---
 

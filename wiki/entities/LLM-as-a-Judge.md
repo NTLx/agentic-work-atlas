@@ -27,6 +27,7 @@ source_raw:
   - "[[20260626-llm-as-judge-healthcare]]"
   - "[[20260713-agentic-misalignment-summer-2026]]"
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
+  - "[[20260819-google-ai-evals-inspect-skill]]"
 ---
 
 # LLM-as-a-Judge

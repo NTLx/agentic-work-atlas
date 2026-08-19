@@ -25,6 +25,7 @@ related_entities:
 source_raw:
   - "[[20260803-google-agent-skills-build-test-scale]]"
   - "[[20260812-github-ai-first-contributors]]"
+  - "[[20260819-google-ai-evals-inspect-skill]]"
 ---
 
 # Skills-as-Products（技能即产品）

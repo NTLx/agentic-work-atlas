@@ -23,6 +23,7 @@ related_entities:
 source_raw:
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
+  - "[[20260819-google-ai-evals-inspect-skill]]"
 ---
 
 # Rubric-Based Evaluation

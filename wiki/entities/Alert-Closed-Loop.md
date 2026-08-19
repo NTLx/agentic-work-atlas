@@ -20,6 +20,7 @@ related_entities:
   - "[[Agent-Observability]]"
 source_raw:
   - "[[20260729-nejm-ai-triggered-rapid-response-mortality]]"
+  - "[[20260819-anthropic-claude-tag-oncall]]"
 evidence_level: medium
 claim_type: mixed
 ---
