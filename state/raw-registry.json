@@ -1552,6 +1552,22 @@
       "summary_path": "wiki/sources/20260820-arxiv-2608.16753-mathematics-ai.md",
       "updated_at": "2026-08-20T12:18:02+08:00"
     },
+    "20260820-bytebytego-graphrag.md": {
+      "body_sha256": "600110977ecdd0781756230a27f64472408ffe1743332029eee67af0bb22f20e",
+      "compiled_at": "2026-08-20T13:31:27+08:00",
+      "raw_file": "20260820-bytebytego-graphrag.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260820-bytebytego-graphrag.md",
+      "updated_at": "2026-08-20T13:31:27+08:00"
+    },
+    "20260820-rachel-laycock-citizens-agents-experts.md": {
+      "body_sha256": "3fdfdeb28860b0fb1d783d250c6fc7fae742715bd06884d0e971cba0156d4007",
+      "compiled_at": "2026-08-20T13:36:31+08:00",
+      "raw_file": "20260820-rachel-laycock-citizens-agents-experts.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260820-rachel-laycock-citizens-agents-experts.md",
+      "updated_at": "2026-08-20T13:36:31+08:00"
+    },
     "20260820-slack-human-agent-teams.md": {
       "body_sha256": "36522dc3c432b1d1b2bb9f94878d45eee17ad7168fa81c9df887b8019ca5531a",
       "compiled_at": "2026-08-20T12:13:04+08:00",
@@ -2145,6 +2161,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-20T12:20:59+08:00",
+  "updated_at": "2026-08-20T13:36:31+08:00",
   "version": 1
 }

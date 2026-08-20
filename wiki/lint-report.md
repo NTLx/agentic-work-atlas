@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 268 |
-| Raw 已编译 | 268 |
+| Raw 来源 | 270 |
+| Raw 已编译 | 270 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 421 |
+| Entity | 425 |
 | Topic | 34 |
 | Comparison | 19 |
 | Output | 10 |
@@ -39,7 +39,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 84 |
+| `tag` | 87 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
 | `stale-core` | 0 |
@@ -75,6 +75,7 @@ tags:
 - `wiki/sources/20260811-vasuman-ai-adoption-is-a-myth.md` - `一次性 tag 仅出现 1 次: 'agent-rollout'`
 - `wiki/entities/TDD-for-Agents.md` - `一次性 tag 仅出现 1 次: 'agent-verification'`
 - `wiki/sources/20260815-engineers-history-reinvention.md` - `一次性 tag 仅出现 1 次: 'agentic-orchestration'`
+- `wiki/sources/20260820-bytebytego-graphrag.md` - `一次性 tag 仅出现 1 次: 'agentic-rag'`
 - `wiki/sources/20260810-the-playbook-for-building-high-talent.md` - `一次性 tag 仅出现 1 次: 'ai-era-org'`
 - `wiki/entities/Validation-Tether.md` - `一次性 tag 仅出现 1 次: 'ai-oversight'`
 - `wiki/sources/20260820-arxiv-2608.15304-cognition-induced-risks.md` - `一次性 tag 仅出现 1 次: 'alignment-faking'`
@@ -90,17 +91,18 @@ tags:
 - `wiki/sources/20260816-earendil-pi-compaction.md` - `一次性 tag 仅出现 1 次: 'compaction'`
 - `wiki/entities/C0-C1-C2-Consciousness-Framework.md` - `一次性 tag 仅出现 1 次: 'consciousness'`
 - `wiki/sources/20260812-github-ai-first-contributors.md` - `一次性 tag 仅出现 1 次: 'contributor-governance'`
+- `wiki/entities/Rachel-Laycock.md` - `一次性 tag 仅出现 1 次: 'cto'`
 - `wiki/sources/20260813-pl-tokens-token-efficiency.md` - `一次性 tag 仅出现 1 次: 'dan-luu'`
 - `wiki/entities/Five-Diagnostic-Outcomes-Skill-Eval.md` - `一次性 tag 仅出现 1 次: 'diagnostics'`
 - `wiki/sources/20260816-anthropic-claude-text-watermark.md` - `一次性 tag 仅出现 1 次: 'eu-ai-act'`
 - `wiki/entities/Explain-Test-Gold-Standard.md` - `一次性 tag 仅出现 1 次: 'evaluation-criteria'`
 - `wiki/sources/20260814-i-remain-a-skeptic.md` - `一次性 tag 仅出现 1 次: 'evidence-gap'`
 - `wiki/entities/C2PA-Content-Credentials.md` - `一次性 tag 仅出现 1 次: 'file-metadata'`
-- `wiki/entities/C0-C1-C2-Consciousness-Framework.md` - `一次性 tag 仅出现 1 次: 'framework'`
 - `wiki/entities/Stacked-PRs.md` - `一次性 tag 仅出现 1 次: 'git'`
 - `wiki/entities/SynthID-Text.md` - `一次性 tag 仅出现 1 次: 'google-deepmind'`
 - `wiki/sources/20260812-google-recall-bottleneck-factuality.md` - `一次性 tag 仅出现 1 次: 'google-research'`
 - `wiki/entities/Decoupled-Grader-Architecture.md` - `一次性 tag 仅出现 1 次: 'grading'`
+- `wiki/sources/20260820-bytebytego-graphrag.md` - `一次性 tag 仅出现 1 次: 'graphrag'`
 - `wiki/sources/20260811-databricks-genie-grounding-governance.md` - `一次性 tag 仅出现 1 次: 'grounding'`
 - `wiki/sources/20260815-autodesign-meta-harness-optimization.md` - `一次性 tag 仅出现 1 次: 'harness-optimization'`
 - `wiki/entities/Distributed-Mastery.md` - `一次性 tag 仅出现 1 次: 'human-ai-collaboration'`
@@ -130,6 +132,7 @@ tags:
 - `wiki/entities/TDD-for-Agents.md` - `一次性 tag 仅出现 1 次: 'red-green-tdd'`
 - `wiki/sources/20260819-ibm-altk-evolve-memory-dosage.md` - `一次性 tag 仅出现 1 次: 'research-methodology'`
 - `wiki/sources/20260804-stacked-prs-giant-ai-generated.md` - `一次性 tag 仅出现 1 次: 'reviewability'`
+- `wiki/entities/Agentic-RAG.md` - `一次性 tag 仅出现 1 次: 'routing'`
 - `wiki/entities/Decoupled-Grader-Architecture.md` - `一次性 tag 仅出现 1 次: 'rubric-design'`
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'rubric-evaluation'`
 - `wiki/entities/Lessons-MD-Self-Improvement.md` - `一次性 tag 仅出现 1 次: 'self-improvement'`

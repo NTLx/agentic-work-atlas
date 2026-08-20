@@ -16,6 +16,7 @@ related_entities:
 source_raw:
   - "[[20260420-build-first-business-ontology]]"
   - "[[20260420-ontology-enterprise-ai-agent]]"
+  - "[[20260820-bytebytego-graphrag.md]]"
 ---
 
 # Knowledge Graph

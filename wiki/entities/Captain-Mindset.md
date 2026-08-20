@@ -20,6 +20,7 @@ related_entities:
   - "[[Role-Merging]]"
   - "[[Validation-Pipeline]]"
   - "[[Agent-Orchestration]]"
+  - "[[Citizens-Agents-Experts-Framework]]"
 source_raw:
   - "[[20260620-l8-principal-agentic-workflow]]"
   - "[[20260608-become-ai-native-org]]"

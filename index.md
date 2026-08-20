@@ -15,10 +15,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 421 个 |
+| Entity 页面 | 425 个 |
 | Topic 页面 | 34 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 268 个 |
+| Raw 文章 | 270 个 |
 | Source Summary | 261 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
@@ -120,6 +120,10 @@ tags:
 | [[Cognition-Induced-Risks\|Cognition Induced Risks]] | agentic AI 风险按 cognitive scope 三层分析（physical/social/self-referential） | Wang et al. 2026-08 |
 | [[Cognitive-Scope-Framework\|Cognitive Scope Framework]] | physical/social/self-referential 三层认知范围分类 | Wang et al. 2026-08 |
 | [[C0-C1-C2-Consciousness-Framework\|C0 C1 C2 Consciousness Framework]] | Chalmers 意识三层在 LLM 上的应用（当前 LLM 处于 C0 + emerging C1） | Wang et al. 2026-08 |
+| [[GraphRAG\|GraphRAG]] | knowledge graph + 预生成 community reports 解决 global query blind spot | ByteByteGo 2026-08 |
+| [[Agentic-RAG\|Agentic RAG]] | 用 LLM classifier 按 query 类型路由到不同 retrieval strategy | ByteByteGo 2026-08 |
+| [[Citizens-Agents-Experts-Framework\|Citizens Agents Experts Framework]] | Citizens 任何能 build 的人 + Agents 执行 + Experts 治理 | Rachel Laycock 2026-08 |
+| [[Rachel-Laycock\|Rachel Laycock]] | Thoughtworks CTO，AI 时代 engineering judgment 是真正稀缺 | Rachel Laycock 2026-08 |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
@@ -205,7 +209,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-08-20——编译 Talking Postgres (Simon Willison) + Slack Human-Agent Teams + Tao Mathematics in Age of AI + Cognition-Induced Risks 共 4 个 source（新增 Explain-Test-Gold-Standard / TDD-for-Agents / Features-Are-Cheap-Paradox / Slop-Proxy / Human-Agent-Teams / Conversation-as-Knowledge-Base / Show-and-Tell-Adoption / Terence-Tao / Proof-Indigestion / Mathematical-Canonicalization / Cognition-Induced-Risks / Cognitive-Scope-Framework / C0-C1-C2-Consciousness-Framework 共 13 个 entity；更新 Simon-Willison / Claude-Tag）。
+最新编译：2026-08-20——编译 ByteByteGo GraphRAG + Rachel Laycock Citizens/Agents/Experts 共 2 个 source（新增 GraphRAG / Agentic-RAG / Citizens-Agents-Experts-Framework / Rachel-Laycock 共 4 个 entity；更新 Knowledge-Graph / Captain-Mindset）。
 
 ---
 
