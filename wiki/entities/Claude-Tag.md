@@ -10,10 +10,10 @@ created: 2026-08-19
 updated: 2026-08-19
 tags:
   - agentic-engineering
-  - product
   - on-call
   - mcp
   - claude-tag
+  - product-page
 evidence_level: medium
 claim_type: mixed
 related_entities:

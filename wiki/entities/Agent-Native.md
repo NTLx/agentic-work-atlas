@@ -6,7 +6,7 @@ aliases:
   - Agent 原生
 definition: "为 AI agent 而非人类设计的基础设施、文档、流程和交互界面——将系统分解为传感器（sensors）和执行器（actuators），让 agent 可以直接理解和操作"
 created: 2026-05-08
-updated: 2026-05-13
+updated: 2026-08-20
 tags:
   - AI
   - agent

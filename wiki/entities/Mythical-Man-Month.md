@@ -58,3 +58,31 @@ Fred Brooks 1975 年出版的软件工程经典，源自其 1964 年 IBM System/
 
 - Wikipedia: https://en.wikipedia.org/wiki/The_Mythical-Man-Month
 - Essay: https://web.archive.org/web/20200713185401/http://worrydream.com/whatever/sources/Brooks-MythicalManMonth.pdf
+
+## 关键数据点
+
+- Fred Brooks 1975 年出版，源自 1964 年 IBM System/360 操作系统管理经验
+- Brooks 法则：向已延期项目增加人手只会让它更延期
+- 沟通路径数公式：n(n-1)/2——沟通开销随 headcount 平方增长
+- "外科手术式团队"——少数精干成员比大量平庸成员产出更高
+- 1995 年 20 周年纪念版增补"没有银弹"反思
+- 被 Horn 2026-08 重新映射为 "spinning up ten agents" 的 multi-agent 挑战
+- 多 agent framework（AutoGen、CrewAI）协调成本是 scaling 核心瓶颈
+
+## 前提与局限性
+
+- 1975 年观察基于大型机时代，与 AI 时代 multi-agent 通信成本同构但未必同机制——agent 通信可能通过 handoff/memory 而非实时交互
+- Brooks 法则的"增加人手延期"假设团队成员需要培训——AI agent 即时部署可能减轻此效应
+- 沟通开销二次方在结构化通信协议（如 ACP、三态协议）下可能压缩
+- 经典理论未必能解释"agent 池"模式（如 GitHub Copilot 大规模并行 agent）
+- [[Orchestrators-Tax]] 重新定义"外科手术式团队"——编排者承担 cognitive locality 切分责任
+
+## 关联概念
+
+- [[Horn]] — 重新映射人月神话到 AI agent 时代
+- [[Agent-Harness-Engineering]] — Harness 管理 multi-agent 通信
+- [[Multi-Agent-System-Pathology]] — multi-agent 群体的组织病理
+- [[Agent-Orchestration]] — 编排层处理 Brooks 沟通开销
+- [[Orchestrators-Tax]] — 编排者承担 cognitive locality 切分
+- [[Peter-Naur]] — 与人月神话并称的软件工程哲学经典
+- [[Software-Development-Autonomy-Levels]] — 不同自治级别下 Brooks 法则表现不同

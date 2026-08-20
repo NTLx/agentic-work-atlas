@@ -5,7 +5,7 @@ aliases:
   - Software 2.0
 definition: "Andrej Karpathy 提出的软件开发范式转变，从程序员编写代码转向程序员编写目标、神经网络通过数据编程"
 created: 2026-04-13
-updated: 2026-05-13
+updated: 2026-08-20
 tags:
   - AI-Agent
   - neural-networks

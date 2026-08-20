@@ -14,7 +14,7 @@ tags:
   - sre
   - ci-cd
   - on-call
-  - fde
+  - incident-response
 evidence_level: medium
 claim_type: mixed
 related_entities:

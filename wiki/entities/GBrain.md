@@ -5,7 +5,7 @@ aliases:
   - GBrain
 definition: "Garry Tan 构建的 Agent 知识管理系统——混合检索（向量粗筛 + 文件精读）+ 基于规则的图谱实体关系，以 Thin Harness, Fat Skills 为设计哲学"
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-08-20
 tags:
   - knowledge-management
   - AI

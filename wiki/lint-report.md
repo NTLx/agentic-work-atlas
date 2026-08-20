@@ -1,20 +1,20 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-08-19"
-score: 65
-status: "FAIL"
+date: "2026-08-20"
+score: 100
+status: "PASS"
 tags:
   - lint-report
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-08-19
+# Agentic Work Atlas Lint 报告 - 2026-08-20
 
 > [!summary] 状态
-> 门禁: **FAIL**
-> 分数: **65/100**
-> 阻断问题: **35**
+> 门禁: **PASS**
+> 分数: **100/100**
+> 阻断问题: **0**
 
 ## 统计
 
@@ -39,54 +39,16 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 64 |
+| `tag` | 62 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
-| `stale-core` | 7 |
-| `entity` | 35 |
+| `stale-core` | 0 |
+| `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
 | `registry-consistency` | 0 |
 
 ## 问题明细
-
-### entity
-
-- `wiki/entities/Agent-Harness-Engineering.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Agent-Harness-Engineering.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Agent-Harness-Engineering.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Build-First-Business-Ontology.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Build-First-Business-Ontology.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Build-First-Business-Ontology.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Capability-Overhang.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Capability-Overhang.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Horn.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Horn.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Horn.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Ian-Silber.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Ian-Silber.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Ian-Silber.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Joshua-Barretto.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Joshua-Barretto.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Joshua-Barretto.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Just-Do-Less.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Just-Do-Less.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Just-Do-Less.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Lenny-Rachitsky.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Lenny-Rachitsky.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Lenny-Rachitsky.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Mythical-Man-Month.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Mythical-Man-Month.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Mythical-Man-Month.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/OpenAI-Design-Team.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/OpenAI-Design-Team.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/OpenAI-Design-Team.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Peter-Naur.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Peter-Naur.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Peter-Naur.md` - `概念 Entity 缺少章节: ## 关联概念`
-- `wiki/entities/Systems-Thinking.md` - `概念 Entity 缺少章节: ## 关键数据点`
-- `wiki/entities/Systems-Thinking.md` - `概念 Entity 缺少章节: ## 前提与局限性`
-- `wiki/entities/Systems-Thinking.md` - `概念 Entity 缺少章节: ## 关联概念`
 
 ### low-evidence
 
@@ -98,19 +60,8 @@ tags:
 - `wiki/sources/20260730-palantir-secure-rapid-software-development-sscs.md` - `低证据页面 20260730-palantir-secure-rapid-software-development-sscs 只能作为补 source 或探索线索`
 - `wiki/sources/20260811-databricks-genie-grounding-governance.md` - `低证据页面 20260811-databricks-genie-grounding-governance 只能作为补 source 或探索线索`
 
-### stale-core
-
-- `wiki/entities/Agent-Native.md` - `核心页 Agent-Native 已 98 天未更新，入链 10 条`
-- `wiki/entities/Agent-PR-Review.md` - `核心页 Agent-PR-Review 已 100 天未更新，入链 19 条`
-- `wiki/entities/Boris-Cherny.md` - `核心页 Boris-Cherny 已 103 天未更新，入链 10 条`
-- `wiki/entities/Claude-Code-CLI.md` - `核心页 Claude-Code-CLI 已 103 天未更新，入链 38 条`
-- `wiki/entities/GBrain.md` - `核心页 GBrain 已 98 天未更新，入链 10 条`
-- `wiki/entities/Knowledge-Work.md` - `核心页 Knowledge-Work 已 98 天未更新，入链 26 条`
-- `wiki/entities/Software-2.0.md` - `核心页 Software-2.0 已 98 天未更新，入链 10 条`
-
 ### tag
 
-- `wiki/sources/20260815-engineers-history-reinvention.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260804-agent-development-lifecycle-adlc.md` - `一次性 tag 仅出现 1 次: 'adlc'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'agent-alignment'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'agent-collusion'`
@@ -129,24 +80,24 @@ tags:
 - `wiki/sources/20260816-earendil-pi-compaction.md` - `一次性 tag 仅出现 1 次: 'compaction'`
 - `wiki/sources/20260812-github-ai-first-contributors.md` - `一次性 tag 仅出现 1 次: 'contributor-governance'`
 - `wiki/sources/20260813-pl-tokens-token-efficiency.md` - `一次性 tag 仅出现 1 次: 'dan-luu'`
+- `wiki/entities/Five-Diagnostic-Outcomes-Skill-Eval.md` - `一次性 tag 仅出现 1 次: 'diagnostics'`
 - `wiki/sources/20260816-anthropic-claude-text-watermark.md` - `一次性 tag 仅出现 1 次: 'eu-ai-act'`
 - `wiki/sources/20260814-i-remain-a-skeptic.md` - `一次性 tag 仅出现 1 次: 'evidence-gap'`
-- `wiki/entities/On-Call-Agent.md` - `一次性 tag 仅出现 1 次: 'fde'`
 - `wiki/entities/C2PA-Content-Credentials.md` - `一次性 tag 仅出现 1 次: 'file-metadata'`
 - `wiki/entities/Stacked-PRs.md` - `一次性 tag 仅出现 1 次: 'git'`
 - `wiki/entities/SynthID-Text.md` - `一次性 tag 仅出现 1 次: 'google-deepmind'`
 - `wiki/sources/20260812-google-recall-bottleneck-factuality.md` - `一次性 tag 仅出现 1 次: 'google-research'`
+- `wiki/entities/Decoupled-Grader-Architecture.md` - `一次性 tag 仅出现 1 次: 'grading'`
 - `wiki/sources/20260811-databricks-genie-grounding-governance.md` - `一次性 tag 仅出现 1 次: 'grounding'`
 - `wiki/sources/20260815-autodesign-meta-harness-optimization.md` - `一次性 tag 仅出现 1 次: 'harness-optimization'`
 - `wiki/entities/Distributed-Mastery.md` - `一次性 tag 仅出现 1 次: 'human-ai-collaboration'`
-- `wiki/entities/Lessons-MD-Self-Improvement.md` - `一次性 tag 仅出现 1 次: 'incident-response'`
 - `wiki/entities/Inference-Engineering.md` - `一次性 tag 仅出现 1 次: 'inference'`
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'inference-engineering'`
 - `wiki/sources/20260819-google-ai-evals-inspect-skill.md` - `一次性 tag 仅出现 1 次: 'inspect-ai'`
 - `wiki/sources/20260804-astro-software-factory-issue-triage.md` - `一次性 tag 仅出现 1 次: 'issue-triage'`
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'kv-cache'`
+- `wiki/entities/ALTK-Evolve.md` - `一次性 tag 仅出现 1 次: 'library'`
 - `wiki/entities/Agent-Development-Lifecycle.md` - `一次性 tag 仅出现 1 次: 'lifecycle'`
-- `wiki/entities/Decoupled-Grader-Architecture.md` - `一次性 tag 仅出现 1 次: 'llm-as-a-judge'`
 - `wiki/entities/Meta-Harness-Optimization.md` - `一次性 tag 仅出现 1 次: 'long-horizon-agent'`
 - `wiki/entities/Five-Diagnostic-Outcomes-Skill-Eval.md` - `一次性 tag 仅出现 1 次: 'mental-models'`
 - `wiki/sources/20260815-autodesign-meta-harness-optimization.md` - `一次性 tag 仅出现 1 次: 'meta-harness'`
@@ -157,11 +108,12 @@ tags:
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'paper-to-poster'`
 - `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'paul-graham'`
 - `wiki/entities/Lenny-Rachitsky.md` - `一次性 tag 仅出现 1 次: 'podcast'`
-- `wiki/entities/Claude-Tag.md` - `一次性 tag 仅出现 1 次: 'product'`
+- `wiki/entities/Claude-Tag.md` - `一次性 tag 仅出现 1 次: 'product-page'`
 - `wiki/entities/Capability-Overhang.md` - `一次性 tag 仅出现 1 次: 'product-philosophy'`
 - `wiki/entities/Meta-Harness-Optimization.md` - `一次性 tag 仅出现 1 次: 'recursive-improvement'`
 - `wiki/sources/20260819-ibm-altk-evolve-memory-dosage.md` - `一次性 tag 仅出现 1 次: 'research-methodology'`
 - `wiki/sources/20260804-stacked-prs-giant-ai-generated.md` - `一次性 tag 仅出现 1 次: 'reviewability'`
+- `wiki/entities/Decoupled-Grader-Architecture.md` - `一次性 tag 仅出现 1 次: 'rubric-design'`
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'rubric-evaluation'`
 - `wiki/entities/Lessons-MD-Self-Improvement.md` - `一次性 tag 仅出现 1 次: 'self-improvement'`
 - `wiki/entities/Systems-Thinking.md` - `一次性 tag 仅出现 1 次: 'skill'`
@@ -170,8 +122,6 @@ tags:
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'speculative-decoding'`
 - `wiki/sources/20260804-stacked-prs-giant-ai-generated.md` - `一次性 tag 仅出现 1 次: 'stacked-prs'`
 - `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'superlinear-returns'`
-- `wiki/entities/ALTK-Evolve.md` - `一次性 tag 仅出现 1 次: 'tool'`
-- `wiki/sources/20260815-engineers-history-reinvention.md` - `一次性 tag 仅出现 1 次: 'waterfail-revival'`
 - `wiki/sources/20260806-openai-chatgpt-work-adoption.md` - `一次性 tag 仅出现 1 次: 'work-usage'`
 - `wiki/entities/Lenny-Rachitsky.md` - `一次性 tag 仅出现 1 次: 'workforce-research'`
 

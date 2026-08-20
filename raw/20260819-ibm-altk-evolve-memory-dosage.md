@@ -21,7 +21,7 @@ tags:
   - "agentic-memory"
   - "context-engineering"
   - "ibm-research"
-  - "agent-learning"
+  - "experimental-design"
 ---
 
 # How Much Memory Does Your Agent Actually Need?

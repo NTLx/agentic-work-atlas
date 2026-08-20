@@ -53,3 +53,25 @@ Horn 与 [[Joshua-Barretto]] 同日段（08-14/08-15）发表文章形成完整�
 - HN 主页: https://news.ycombinator.com/item?id=49293184
 - 博客: https://horn.gg/blog/
 - Author Entity 验证状态：部分（HN 链接可证，但作者真实姓名待补）
+
+## 关键数据点
+
+- Horn 2026-08 HN top post ID: 49293184
+- 核心论断字数（snarky 风格）：3 个历史先例（statistics→data science / finance→crypto / program management→agentic orchestration）
+- 推荐书单 6 本：Making Things Happen / PMBOK / Mythical Man-Month / Royce 1970 / High Output Management / The Goal
+- 与 jsbarretto 2026-08-14 文章同日段发表——形成完整反方视角
+
+## 前提与局限性
+
+- snarky 抱怨语气是 HN 社区反管理文化信号，非中性论证
+- "重新发明 = 完全相同"的强论断需谨慎——deep learning、CRDT、open source 确有真正新增范式
+- 推荐书单为程序管理/瀑布/约束理论，selection bias 偏经典——AI 工程前沿未必纳入
+- HN 评论员视野，无法代表工程师群体主流观点
+
+## 关联概念
+
+- [[Mythical-Man-Month]] — Horn 推荐；6 本书之一，沟通开销二次方定律
+- [[Peter-Naur]] — 1985 论文在 LLM 时代被重新引用
+- [[Joshua-Barretto]] — 同期发表反方视角文章，共同引用 Peter Naur
+- [[Agent-Harness-Engineering]] — "agentic orchestration = program management" 命题的目标对象
+- Program Management（学科）— 重新发明前的原始学科（forward reference，未建 entity）

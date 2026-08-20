@@ -67,3 +67,30 @@ Ian 提到"my own team when we do similar surveys internally"：
 Ian 是 OpenAI 团队负责人。引用其内部观察时区分：
 - **一手观察**：内部 survey 数据、团队实践描述——可信
 - **方法论辩护**：Just do less / well-rounded team——可能是 OpenAI 文化适配建议，不是普适法则
+
+## 关键数据点
+
+- Ian Silber 自 2023 起任 Head of Product Design——任期约 3 年至 2026-08
+- 团队 DNA：research lab DNA——"that DNA is deeply embedded in everything we do"
+- 招聘标准不要求 AI 背景——更看重 curiosity 和 aptitude
+- 核心能力：Prototyping + Point of view + Strategic thinking
+- 关键趋势能力：Systems thinking——Lenny 在 5 期 podcast 中连续听到
+- 团队构成：generalists + visual designers + brand team + prototypers + product thinkers
+- 内部观察：工程师 10x-100x 产出、设计师未同等获益、但团队整体幸福感较高
+
+## 前提与局限性
+
+- 内部观察（工程师 10x、设计师未同等获益）来自 Ian 内部 survey，非公开数据
+- 招聘标准"不要求 AI 背景"是 OpenAI 特有，可能不适用于非 research lab 团队
+- "well-rounded team" 依赖高密度人才市场——小城市或非头部公司无法复制
+- "Just do less" 是 OpenAI 文化适配的方法论，未必普适
+- Lenny 公开 survey "设计师最不幸福" 与 OpenAI 内部 "幸福感较高" 形成对比——可能因为 OpenAI 有 research lab DNA
+
+## 关联概念
+
+- [[Ian-Silber]] — 团队负责人
+- [[Just-Do-Less]] — 团队方法论核心
+- [[Capability-Overhang]] — 团队设计哲学
+- [[Systems-Thinking]] — 团队招聘核心能力
+- [[AI-Era-Designer-Role]] — AI 时代设计师角色演化（forward reference，未建 entity）
+- [[OpenClaw-Agent-System]] — OpenAI 同期研究 Agent 系统的对比

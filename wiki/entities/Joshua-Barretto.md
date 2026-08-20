@@ -46,3 +46,28 @@ source_raw:
 - 个人博客: https://blog.jsbarretto.com/
 - 原文: https://blog.jsbarretto.com/post/i-remain-a-skeptic
 - 邮件: joshua@jsbarretto.com
+
+## 关键数据点
+
+- 2026-08 文章 URL: https://blog.jsbarretto.com/post/i-remain-a-skeptic
+- 核心论断：`$1.5T` LLM 投资后，独立研究稀缺；现有研究仅显示边际或负面生产力收益
+- 引用：Peter Naur 1985 "code is an input to the software development process and not an output"
+- 7 条论证每条都有具体观察支撑（非纯态度）
+- 多库被 FAANG 公司依赖——具备下游反馈独特位置
+
+## 前提与局限性
+
+- 作者坚定 skeptic——可能有过度悲观倾向
+- selection bias——顶级开源维护者样本不能代表普通开发者
+- `$1.5T` 数字未给出确切来源——可能是粗略估算
+- 个人博客非 peer-reviewed——结论需 cross-check
+- 与 [[Ian-Silber]] 的乐观论断形成对照——保留两份可让主线避免单一视角
+
+## 关联概念
+
+- [[Peter-Naur]] — jsbarretto 引用最多的理论来源
+- [[Taste]] — 与 ability-taste flip 同构
+- [[Jevons-Paradox-for-Knowledge-Work]] — 知识工作悖论的相关证据
+- [[Horn]] — 同期反方视角作者，共同引用 Peter Naur
+- [[AI-Psychosis]] — AI 时代认知偏差
+- [[Judgment]] — 判断力是 Naur "theory" 在 AI 时代的最直接表现

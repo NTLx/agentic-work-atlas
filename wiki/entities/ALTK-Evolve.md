@@ -12,7 +12,7 @@ tags:
   - agentic-engineering
   - agentic-memory
   - ibm-research
-  - tool
+  - library
   - context-engineering
 evidence_level: high
 claim_type: extracted

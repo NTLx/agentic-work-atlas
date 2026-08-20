@@ -73,3 +73,29 @@ Ian 自陈从 Instagram 带到 OpenAI 的方法论迁移：
 - [[Capability-Overhang]]：当 capability overhang 严重时（多数人只用 5% 功能），"do less" 是合理策略
 - [[Build-First-Business-Ontology]]：ontology 优先于 UI 的原则与"Just do less"同构
 - [[Vibe-Coding]]：vibe coder 滥用"Just do less"会产出不可维护代码——边界要靠 taste 把握
+
+## 关键数据点
+
+- Ian Silber 2026-08 Lenny 访谈原文："Just do less. Don't design it if you don't have to"
+- Ian 自陈从 Instagram "do the simple thing first" 口号带到 OpenAI
+- 两档设计 effort：某些 feature "sweat the details"（100 try 99 throw out），某些 "ship in 4 hours"
+- 反例条件：stable enterprise 产品 / 早期产品 / 0→1 阶段不适用
+- OpenAI 模型每月变化、产品每日变化——research lab 节奏决定"Just do less"成立
+
+## 前提与局限性
+
+- 依赖前提：产品已存在可复用的 system primitives（零起步产品不适用）
+- 依赖前提：团队 velocity 极高、产品快速演化（slow-moving 产品不适用）
+- Ian 自己承认："it depends on what stage you're at in the process"——判别标准未明说
+- 风险：过度 do less 可能导致产品缺乏差异化，被 capability overhang 压缩
+- 在银行/医疗等稳定业务中"Just do less" 可能退化为"功能不够"
+
+## 关联概念
+
+- [[Ian-Silber]] — 原则提出者
+- [[Systems-Thinking]] — Just do less 是 systems thinking 在设计领域的应用
+- [[Capability-Overhang]] — Overhang 严重时 do less 是合理策略
+- [[OpenAI-Design-Team]] — 团队层面的实践
+- [[Build-First-Business-Ontology]] — ontology 优先于 UI 与 Just do less 同构
+- [[Vibe-Coding]] — vibe coder 滥用 Just do less 的边界要靠 taste
+- [[Taste]] — Just do less 的边界判断靠 taste 把握

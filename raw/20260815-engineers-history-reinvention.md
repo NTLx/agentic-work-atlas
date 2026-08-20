@@ -13,7 +13,6 @@ tags:
   - program-management
   - agentic-orchestration
   - reinvention
-  - waterfail-revival
 ---
 
 ## 来源元信息

@@ -6,7 +6,7 @@ aliases:
   - Agent Pull Request Review
 definition: "审查 Agent 生成的 Pull Request 的系统性策略——关注 CI 游戏化、代码重用盲点、幻觉正确性、Agent 幽灵、工作流安全等 5 个关键检查点"
 created: 2026-05-09
-updated: 2026-05-11
+updated: 2026-08-20
 tags:
   - Agentic-Engineering
   - code-review

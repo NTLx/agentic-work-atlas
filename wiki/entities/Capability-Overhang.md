@@ -83,3 +83,19 @@ Capability overhang（能力远大于使用）
 - **窄用户产品**：Notion、Cursor、Figma 主要服务一类用户，overhang 不是关键设计挑战
 - **early-stage 产品**：capability 不足，没有 overhang 问题
 - **B2B 嵌入式产品**：用户被 role 限定，不需要面对 broad spectrum
+
+## 关键数据点
+
+- Ian Silber 2026-08 Lenny 访谈原文："vast majority of the people are getting a sliver of the true value"
+- 同构现象历史案例：Excel 95% 用户只用 5% 功能、AutoCAD 多数项目只用基础建模、iPhone 早期能力给开发者后期 distill 给大众
+- OpenAI 应对策略：ChatGPT 主体验极简、Codex + ChatGPT Work + Desktop app 给 cutting edge 用户
+- 终极目标："things will truly become for billions of users when they don't have to think about a switch or a mode"
+
+## 关联概念
+
+- [[Ian-Silber]] — Capability Overhang 的提出者
+- [[Just-Do-Less]] — Overhang 越大越要克制
+- [[OpenAI-Design-Team]] — 团队层面处理 overhang 的实践
+- [[Systems-Thinking]] — Layered exposure 是 systems thinking 在 UI 层的应用
+- [[Vibe-Coding]] — vibe coder 用 5% 框架完成 80% 工作也是 overhang 现象
+- [[AI-Adoption-Barbell]] — Adoption 上 5-10% power users / 70% 几乎不用 与 capability overhang 同源

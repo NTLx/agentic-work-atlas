@@ -50,3 +50,26 @@ Ian 是 OpenAI Head of Design，访谈中"AI 时代设计仍然重要"的论断�
 - X: https://x.com/iansilber
 - LinkedIn: https://www.linkedin.com/in/iansilber
 - 个人网站: https://iansilber.com/
+
+## 关键数据点
+
+- 任期：2023 至今任 OpenAI Head of Product Design
+- 前职：Groupon 早期 → Instagram 8 年（参与 Reels）→ Artifact 短期 → OpenAI
+- 2026-08 Lenny Podcast 5 期中独立出现 "systems thinking"——印证跨岗位硬需求
+- 访谈中"Ian 自陈 imposter syndrome 在任何阶段都常见"——进 OpenAI 时很 intimidating
+
+## 前提与局限性
+
+- Ian 是 OpenAI Head of Design，访谈中"AI 时代设计仍然重要"的论断有自我辩护成分
+- 区分一手观察（来自 OpenAI 设计实践，可信）vs brand-color 论断（Just do less、well-rounded team 可能是 OpenAI 文化适配建议）
+- Lenny podcast 单期内容，受访谈氛围影响——受访者偏好"有故事"的表达，未必系统性
+- 推荐书目/方法论的 selection bias——推荐的是 OpenAI 文化适配的方法论
+
+## 关联概念
+
+- [[OpenAI-Design-Team]] — Ian 领导的团队
+- [[Lenny-Rachitsky]] — 2026-08 访谈主持人
+- [[Just-Do-Less]] — Ian 提出的核心方法论
+- [[Capability-Overhang]] — Ian 观察的产品设计现象
+- [[Systems-Thinking]] — Ian 强调的设计能力
+- [[AI-Era-Designer-Role]] — AI 时代设计师角色演化（forward reference，未建 entity）

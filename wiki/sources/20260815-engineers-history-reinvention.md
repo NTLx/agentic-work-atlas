@@ -11,7 +11,6 @@ tags:
   - program-management
   - agentic-orchestration
   - reinvention
-  - waterfail-revival
 evidence_level: medium
 claim_type: mixed
 ---

@@ -68,3 +68,26 @@ source_raw:
 - [[20260420-ontology-meets-agent-case-study]]
 - [[20260613-ontology-for-agent-optimization]]
 - [[20260613-ontology-tokenmaxxing]]
+
+## 关键数据点
+
+- TBox = 类层级 + 属性 + 约束（schema 维度）；ABox = 具体实例（data 维度）；推理发生在两者结合处
+- 工具链分工：RDF 适合 ABox、OWL 适合 TBox、reasoner（HermiT/Pellet）自动推导、GraphDB/Jena 适合 RDF/OWL/SPARQL、Neo4j 适合显式关系分析
+- Owlready2 示例：本体可运行时加载、注入事实、调用推理机、返回结论——业务规则从自然语言改写为可推理模型
+- 5 个一手 raw 支撑该方法论（20260420 × 3 + 20260613 × 2）
+
+## 前提与局限性
+
+- ontology 工程成本/收益比随业务规模非线性——简单业务场景可能不需要完整 ontology（硬编码规则就够）
+- 对推理机性能有依赖——query 慢时延迟不可接受
+- 模型/规则的边界判定需要本体工程专家——团队需要特定技能
+- 与 vector DB/RAG 路线有方法论竞争；不必然互斥，但优先级冲突需要选边
+
+## 关联概念
+
+- [[Ontology]] — 本体论的一般概念
+- [[Agent-Harness-Engineering]] — Harness schema 与 ontology 工程同源
+- [[Systems-Thinking]] — ontology 是系统 schema 的形式化
+- [[Enterprise-AI-Model-Sourcing]] — 企业 AI 落地中 ontology 是数据底座
+- [[Just-Do-Less]] — "复用 ontology primitives 而非硬编码规则" 是 Just do less 在数据层
+- [[Knowledge-Work]] — 知识工作中"理解系统全貌"的需求与 ontology 共建

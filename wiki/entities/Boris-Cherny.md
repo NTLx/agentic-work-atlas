@@ -8,7 +8,7 @@ definition: "Claude Code 之父，Anthropic 核心开发者。经济学专业自
 validated_source: "https://baike.baidu.com/item/鲍里斯·切尔尼/67586672"
 validated_at: "2026-05-08"
 created: 2026-05-08
-updated: 2026-05-08
+updated: 2026-08-20
 tags:
   - person
   - AI-Agent

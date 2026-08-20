@@ -66,3 +66,27 @@ source_raw:
 - [[20260613-NLAH-natural-language-agent-harnesses]]
 - [[20260623-ibm-cuga-agent-harness]]
 - [[20260702-qwen-agent-harness-practice]]
+
+## 关键数据点
+
+- Anthropic 内部 Terminal Bench 2.0 排名：仅优化 Harness（不换模型权重）从前 30 跃升至前 5
+- Claude Opus 4.6 自定义 Harness 下评分远高于默认 Harness——单一变更即可改变 Top 30 → Top 5
+- 每 1 步 Agent 操作 99% 成功率 → 10 步流程端到端仅 ~90.4%——错误复合效应
+- Anthropic 长周期 Agent 拆分为 Initializer Agent + Coding Agent，Coding Agent 每次只做一个 feature 并强制 git commit
+
+## 前提与局限性
+
+- "Harness 是核心变量" 的命题在模型平台期成立；模型快速跃升期（如 GPT-5+ 引入原生长程规划）时部分 Harness 形态会变成技术债
+- 通用 Harness 模式可能压低垂直领域（生物、医药）对高度定制 Harness 的需求
+- 棘轮纪律过度收紧会导致 `AGENTS.md` 长度爆炸，加剧 context rot；过度宽松则失去工程化收益
+- Harness 有效性高度依赖具体模型——harness 优化可能仅对特定 benchmark 优化，未必泛化
+
+## 关联概念
+
+- [[Agent-Harness]] — Agent Harness Engineering 的产出物
+- [[Context-Engineering]] — Harness 内部管理模型看到什么的子学科
+- [[Harness-Engineering]] — 同义别名
+- [[Just-Do-Less]] — Harness 复用 primitives 与"Just do less"方法论同源
+- [[Systems-Thinking]] — Harness 工程是 systems thinking 在 Agent 周边的工程化
+- [[Build-First-Business-Ontology]] — Harness schema 优先与 ontology 优先于 UI 同构
+- [[Mythical-Man-Month]] — Brooks 沟通开销二次方定律在 multi-agent Harness 上重现

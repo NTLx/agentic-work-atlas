@@ -11,8 +11,8 @@ tags:
   - "clippings"
   - "evals"
   - "verification"
-  - "inspect-ai"
   - "agent-skills"
+  - "rubric-design"
 ---
 
 # Designing AI Evals: Clarity Now and Visualization Next
