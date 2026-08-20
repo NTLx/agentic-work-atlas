@@ -23,8 +23,10 @@ related_entities:
   - "[[On-Call-Agent]]"
   - "[[Lessons-MD-Self-Improvement]]"
   - "[[Skills-as-Products]]"
+  - "[[Human-Agent-Teams]]"
 source_raw:
   - "[[20260819-anthropic-claude-tag-oncall]]"
+  - "[[20260820-slack-human-agent-teams]]"
 ---
 
 # Claude Tag

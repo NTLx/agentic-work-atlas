@@ -1536,6 +1536,38 @@
       "summary_path": "wiki/sources/20260819-ibm-altk-evolve-memory-dosage.md",
       "updated_at": "2026-08-19T18:03:32+08:00"
     },
+    "20260820-arxiv-2608.15304-cognition-induced-risks.pdf": {
+      "body_sha256": "8d4fa7fd9fe4d021a2a976d7c2c0cca3fa17e412acf8d2710fe48b523d9702a6",
+      "compiled_at": "2026-08-20T12:20:59+08:00",
+      "raw_file": "20260820-arxiv-2608.15304-cognition-induced-risks.pdf",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260820-arxiv-2608.15304-cognition-induced-risks.md",
+      "updated_at": "2026-08-20T12:20:59+08:00"
+    },
+    "20260820-arxiv-2608.16753-mathematics-ai.pdf": {
+      "body_sha256": "ea1d16a81ec79f362914f85b832996e3eb8c3b81b1c983358fc6d76ac7420ee0",
+      "compiled_at": "2026-08-20T12:18:02+08:00",
+      "raw_file": "20260820-arxiv-2608.16753-mathematics-ai.pdf",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260820-arxiv-2608.16753-mathematics-ai.md",
+      "updated_at": "2026-08-20T12:18:02+08:00"
+    },
+    "20260820-slack-human-agent-teams.md": {
+      "body_sha256": "36522dc3c432b1d1b2bb9f94878d45eee17ad7168fa81c9df887b8019ca5531a",
+      "compiled_at": "2026-08-20T12:13:04+08:00",
+      "raw_file": "20260820-slack-human-agent-teams.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260820-slack-human-agent-teams.md",
+      "updated_at": "2026-08-20T12:13:04+08:00"
+    },
+    "20260820-talking-postgres-simon-willison-ai.md": {
+      "body_sha256": "896034bc2cad3bfe9efb38def97c1fae8d11eb827a38a914164d32728858c16f",
+      "compiled_at": "2026-08-20T12:11:17+08:00",
+      "raw_file": "20260820-talking-postgres-simon-willison-ai.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260820-talking-postgres-simon-willison-ai.md",
+      "updated_at": "2026-08-20T12:11:17+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -2113,6 +2145,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-19T18:03:32+08:00",
+  "updated_at": "2026-08-20T12:20:59+08:00",
   "version": 1
 }

@@ -15,10 +15,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 408 个 |
+| Entity 页面 | 421 个 |
 | Topic 页面 | 34 个 |
 | Comparison 页面 | 19 个 |
-| Raw 文章 | 264 个 |
+| Raw 文章 | 268 个 |
 | Source Summary | 261 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
@@ -107,6 +107,19 @@ tags:
 | [[Five-Diagnostic-Outcomes-Skill-Eval\|Five Diagnostic Outcomes for Skill Eval]] | skill vs baseline 的 5 种诊断结果分类，从 High-Efficiency Capability Lift 到 Context Overload | Google DevRel 2026-08 |
 | [[ALTK-Evolve\|ALTK-Evolve]] | IBM Research 的 agent learning library——从 trajectory 蒸馏 guideline set，推理时注入 | IBM Research 2026-08 |
 | [[Agentic-Memory-Dosage\|Agentic Memory Dosage]] | agentic memory 的最优剂量依赖模型能力——三种模式 (strong-headroom / weak-selective / saturated) | IBM Research 2026-08 |
+| [[Explain-Test-Gold-Standard\|Explain Test Gold Standard]] | AI 生成代码可上线判据——'Could I explain this code to somebody else?' | Simon Willison 2026-08 |
+| [[TDD-for-Agents\|TDD for Agents]] | red-green TDD 作为 coding agent 核心验证范式，让 agent 跑每行代码 | Simon Willison 2026-08 |
+| [[Features-Are-Cheap-Paradox\|Features Are Cheap Paradox]] | feature 边际成本骤降后选择标准从'能不能做'变成'哪些不该做' | Simon Willison 2026-08 |
+| [[Slop-Proxy\|Slop Proxy]] | 用 AI 生成可见但无实际价值的产出作为工作证明 | Simon Willison 2026-08 |
+| [[Human-Agent-Teams\|Human Agent Teams]] | 人类 + AI agent 在共享工作环境中循环 handoff 的协作形态 | Anthropic+Slack 2026-08 |
+| [[Conversation-as-Knowledge-Base\|Conversation as Knowledge Base]] | workplace conversation 本身就是 KB，agent 让会话从 noise 变可消费 | Slack CPO 2026-08 |
+| [[Show-and-Tell-Adoption\|Show and Tell Adoption]] | 公开演示新工作方式让 adoption 自组织传播 | Slack CPO 2026-08 |
+| [[Terence-Tao\|Terence Tao]] | 菲尔兹奖得主，ICM 2026 提出 proof indigestion 与 canonicalization | Tao 2026-08 |
+| [[Proof-Indigestion\|Proof Indigestion]] | proof scarcity → proof abundance 时代相变，5-stage pipeline 失配 | Tao ICM 2026 |
+| [[Mathematical-Canonicalization\|Mathematical Canonicalization]] | 把数学结果融入 definitive theory 的最终阶段，最有价值 | Tao ICM 2026 |
+| [[Cognition-Induced-Risks\|Cognition Induced Risks]] | agentic AI 风险按 cognitive scope 三层分析（physical/social/self-referential） | Wang et al. 2026-08 |
+| [[Cognitive-Scope-Framework\|Cognitive Scope Framework]] | physical/social/self-referential 三层认知范围分类 | Wang et al. 2026-08 |
+| [[C0-C1-C2-Consciousness-Framework\|C0 C1 C2 Consciousness Framework]] | Chalmers 意识三层在 LLM 上的应用（当前 LLM 处于 C0 + emerging C1） | Wang et al. 2026-08 |
 
 #### 组织与变革
 | Entity | 定义 | 来源 |
@@ -192,7 +205,7 @@ tags:
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-08-19——编译 Claude Tag CI/CD on-call + Google AI Evals + IBM ALTK-Evolve memory dosage（新增 Claude-Tag / On-Call-Agent / Lessons-MD-Self-Improvement / Decoupled-Grader-Architecture / Five-Diagnostic-Outcomes-Skill-Eval / ALTK-Evolve / Agentic-Memory-Dosage 共 7 个 entity；增厚 Agent-Orchestration / Agent-Harness / Alert-Closed-Loop / Operational-Responsibility / LLM-as-a-Judge / Rubric-Based-Evaluation / Skills-as-Products / Structured-Agent-Memory 的 source_raw 关联）。
+最新编译：2026-08-20——编译 Talking Postgres (Simon Willison) + Slack Human-Agent Teams + Tao Mathematics in Age of AI + Cognition-Induced Risks 共 4 个 source（新增 Explain-Test-Gold-Standard / TDD-for-Agents / Features-Are-Cheap-Paradox / Slop-Proxy / Human-Agent-Teams / Conversation-as-Knowledge-Base / Show-and-Tell-Adoption / Terence-Tao / Proof-Indigestion / Mathematical-Canonicalization / Cognition-Induced-Risks / Cognitive-Scope-Framework / C0-C1-C2-Consciousness-Framework 共 13 个 entity；更新 Simon-Willison / Claude-Tag）。
 
 ---
 

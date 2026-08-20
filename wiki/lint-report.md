@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 264 |
-| Raw 已编译 | 264 |
+| Raw 来源 | 268 |
+| Raw 已编译 | 268 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 408 |
+| Entity | 421 |
 | Topic | 34 |
 | Comparison | 19 |
 | Output | 10 |
@@ -39,7 +39,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 62 |
+| `tag` | 84 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
 | `stale-core` | 0 |
@@ -62,28 +62,41 @@ tags:
 
 ### tag
 
+- `wiki/sources/20260820-arxiv-2608.15304-cognition-induced-risks.md` - `tags 超过 5 个: 6`
+- `wiki/sources/20260820-arxiv-2608.16753-mathematics-ai.md` - `tags 超过 5 个: 6`
+- `wiki/sources/20260820-slack-human-agent-teams.md` - `tags 超过 5 个: 6`
+- `wiki/sources/20260820-talking-postgres-simon-willison-ai.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260804-agent-development-lifecycle-adlc.md` - `一次性 tag 仅出现 1 次: 'adlc'`
+- `wiki/entities/Show-and-Tell-Adoption.md` - `一次性 tag 仅出现 1 次: 'adoption'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'agent-alignment'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'agent-collusion'`
 - `wiki/sources/20260811-databricks-genie-grounding-governance.md` - `一次性 tag 仅出现 1 次: 'agent-governance'`
 - `wiki/sources/20260804-agent-development-lifecycle-adlc.md` - `一次性 tag 仅出现 1 次: 'agent-orchestration'`
 - `wiki/sources/20260811-vasuman-ai-adoption-is-a-myth.md` - `一次性 tag 仅出现 1 次: 'agent-rollout'`
+- `wiki/entities/TDD-for-Agents.md` - `一次性 tag 仅出现 1 次: 'agent-verification'`
 - `wiki/sources/20260815-engineers-history-reinvention.md` - `一次性 tag 仅出现 1 次: 'agentic-orchestration'`
 - `wiki/sources/20260810-the-playbook-for-building-high-talent.md` - `一次性 tag 仅出现 1 次: 'ai-era-org'`
 - `wiki/entities/Validation-Tether.md` - `一次性 tag 仅出现 1 次: 'ai-oversight'`
+- `wiki/sources/20260820-arxiv-2608.15304-cognition-induced-risks.md` - `一次性 tag 仅出现 1 次: 'alignment-faking'`
+- `wiki/entities/Show-and-Tell-Adoption.md` - `一次性 tag 仅出现 1 次: 'change-management'`
 - `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'china-enterprise'`
 - `wiki/entities/Mythical-Man-Month.md` - `一次性 tag 仅出现 1 次: 'classic'`
 - `wiki/entities/Peter-Naur.md` - `一次性 tag 仅出现 1 次: 'classical-theory'`
+- `wiki/entities/Cognitive-Scope-Framework.md` - `一次性 tag 仅出现 1 次: 'classification'`
 - `wiki/sources/20260731-tragedy-cognitive-commons-ai-expertise.md` - `一次性 tag 仅出现 1 次: 'cognitive-commons'`
+- `wiki/entities/Cognitive-Scope-Framework.md` - `一次性 tag 仅出现 1 次: 'cognitive-framework'`
 - `wiki/entities/Cognitive-Commons.md` - `一次性 tag 仅出现 1 次: 'collective-action'`
 - `wiki/entities/Mythical-Man-Month.md` - `一次性 tag 仅出现 1 次: 'communication-overhead'`
 - `wiki/sources/20260816-earendil-pi-compaction.md` - `一次性 tag 仅出现 1 次: 'compaction'`
+- `wiki/entities/C0-C1-C2-Consciousness-Framework.md` - `一次性 tag 仅出现 1 次: 'consciousness'`
 - `wiki/sources/20260812-github-ai-first-contributors.md` - `一次性 tag 仅出现 1 次: 'contributor-governance'`
 - `wiki/sources/20260813-pl-tokens-token-efficiency.md` - `一次性 tag 仅出现 1 次: 'dan-luu'`
 - `wiki/entities/Five-Diagnostic-Outcomes-Skill-Eval.md` - `一次性 tag 仅出现 1 次: 'diagnostics'`
 - `wiki/sources/20260816-anthropic-claude-text-watermark.md` - `一次性 tag 仅出现 1 次: 'eu-ai-act'`
+- `wiki/entities/Explain-Test-Gold-Standard.md` - `一次性 tag 仅出现 1 次: 'evaluation-criteria'`
 - `wiki/sources/20260814-i-remain-a-skeptic.md` - `一次性 tag 仅出现 1 次: 'evidence-gap'`
 - `wiki/entities/C2PA-Content-Credentials.md` - `一次性 tag 仅出现 1 次: 'file-metadata'`
+- `wiki/entities/C0-C1-C2-Consciousness-Framework.md` - `一次性 tag 仅出现 1 次: 'framework'`
 - `wiki/entities/Stacked-PRs.md` - `一次性 tag 仅出现 1 次: 'git'`
 - `wiki/entities/SynthID-Text.md` - `一次性 tag 仅出现 1 次: 'google-deepmind'`
 - `wiki/sources/20260812-google-recall-bottleneck-factuality.md` - `一次性 tag 仅出现 1 次: 'google-research'`
@@ -95,35 +108,44 @@ tags:
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'inference-engineering'`
 - `wiki/sources/20260819-google-ai-evals-inspect-skill.md` - `一次性 tag 仅出现 1 次: 'inspect-ai'`
 - `wiki/sources/20260804-astro-software-factory-issue-triage.md` - `一次性 tag 仅出现 1 次: 'issue-triage'`
+- `wiki/entities/Features-Are-Cheap-Paradox.md` - `一次性 tag 仅出现 1 次: 'jevons-paradox'`
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'kv-cache'`
 - `wiki/entities/ALTK-Evolve.md` - `一次性 tag 仅出现 1 次: 'library'`
 - `wiki/entities/Agent-Development-Lifecycle.md` - `一次性 tag 仅出现 1 次: 'lifecycle'`
 - `wiki/entities/Meta-Harness-Optimization.md` - `一次性 tag 仅出现 1 次: 'long-horizon-agent'`
 - `wiki/entities/Five-Diagnostic-Outcomes-Skill-Eval.md` - `一次性 tag 仅出现 1 次: 'mental-models'`
 - `wiki/sources/20260815-autodesign-meta-harness-optimization.md` - `一次性 tag 仅出现 1 次: 'meta-harness'`
+- `wiki/entities/Slop-Proxy.md` - `一次性 tag 仅出现 1 次: 'metrics-anti-pattern'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'multiagent-coordination'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'multiagent-systems'`
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'multimodal-evaluation'`
 - `wiki/entities/C2PA-Content-Credentials.md` - `一次性 tag 仅出现 1 次: 'open-standard'`
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'paper-to-poster'`
 - `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'paul-graham'`
-- `wiki/entities/Lenny-Rachitsky.md` - `一次性 tag 仅出现 1 次: 'podcast'`
+- `wiki/entities/Features-Are-Cheap-Paradox.md` - `一次性 tag 仅出现 1 次: 'prioritization'`
 - `wiki/entities/Claude-Tag.md` - `一次性 tag 仅出现 1 次: 'product-page'`
 - `wiki/entities/Capability-Overhang.md` - `一次性 tag 仅出现 1 次: 'product-philosophy'`
+- `wiki/entities/Features-Are-Cheap-Paradox.md` - `一次性 tag 仅出现 1 次: 'product-strategy'`
 - `wiki/entities/Meta-Harness-Optimization.md` - `一次性 tag 仅出现 1 次: 'recursive-improvement'`
+- `wiki/entities/TDD-for-Agents.md` - `一次性 tag 仅出现 1 次: 'red-green-tdd'`
 - `wiki/sources/20260819-ibm-altk-evolve-memory-dosage.md` - `一次性 tag 仅出现 1 次: 'research-methodology'`
 - `wiki/sources/20260804-stacked-prs-giant-ai-generated.md` - `一次性 tag 仅出现 1 次: 'reviewability'`
 - `wiki/entities/Decoupled-Grader-Architecture.md` - `一次性 tag 仅出现 1 次: 'rubric-design'`
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'rubric-evaluation'`
 - `wiki/entities/Lessons-MD-Self-Improvement.md` - `一次性 tag 仅出现 1 次: 'self-improvement'`
+- `wiki/sources/20260820-talking-postgres-simon-willison-ai.md` - `一次性 tag 仅出现 1 次: 'simon-willison'`
 - `wiki/entities/Systems-Thinking.md` - `一次性 tag 仅出现 1 次: 'skill'`
 - `wiki/entities/Five-Diagnostic-Outcomes-Skill-Eval.md` - `一次性 tag 仅出现 1 次: 'skill-evaluation'`
 - `wiki/sources/20260803-google-agent-skills-build-test-scale.md` - `一次性 tag 仅出现 1 次: 'skill-governance'`
+- `wiki/entities/Slop-Proxy.md` - `一次性 tag 仅出现 1 次: 'slopocalypse'`
+- `wiki/entities/Mathematical-Canonicalization.md` - `一次性 tag 仅出现 1 次: 'slow-science'`
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'speculative-decoding'`
 - `wiki/sources/20260804-stacked-prs-giant-ai-generated.md` - `一次性 tag 仅出现 1 次: 'stacked-prs'`
 - `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'superlinear-returns'`
+- `wiki/entities/TDD-for-Agents.md` - `一次性 tag 仅出现 1 次: 'testing'`
 - `wiki/sources/20260806-openai-chatgpt-work-adoption.md` - `一次性 tag 仅出现 1 次: 'work-usage'`
 - `wiki/entities/Lenny-Rachitsky.md` - `一次性 tag 仅出现 1 次: 'workforce-research'`
+- `wiki/entities/Conversation-as-Knowledge-Base.md` - `一次性 tag 仅出现 1 次: 'workplace-conversation'`
 
 ## 运行命令
 

@@ -5,20 +5,26 @@ aliases:
   - Simon Willison
 definition: "AI/LLM 领域知名博主和技术专家，Django Web 框架联合创始人，专注于 AI 辅助编程、大语言模型应用和开源软件"
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-08-20
 tags:
   - person
   - open-source
+  - agentic-engineering
 related_entities:
   - '[[Agentic-Engineering]]'
   - '[[Coding-Agents]]'
   - '[[Claude-Code-CLI]]'
+  - '[[Explain-Test-Gold-Standard]]'
+  - '[[TDD-for-Agents]]'
+  - '[[Features-Are-Cheap-Paradox]]'
+  - '[[Slop-Proxy]]'
 source_raw:
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'
   - '[[20260410-hoard-things-you-know]]'
   - '[[20260410-better-code]]'
   - '[[20260410-anti-patterns]]'
+  - '[[20260820-talking-postgres-simon-willison-ai]]'
 validated_source: "https://simonwillison.net/"
 validated_at: "2026-04-14"
 ---
