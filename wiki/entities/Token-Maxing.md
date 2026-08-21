@@ -6,7 +6,7 @@ aliases:
   - token 最大化
 definition: "企业无差别消耗 AI token 的现象，导致推理成本失控，迫使公司从全面实验转向配给制"
 created: 2026-05-31
-updated: 2026-07-30
+updated: 2026-08-21
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -18,9 +18,11 @@ related_entities:
   - "[[Agentic-Workflow-Token-Efficiency]]"
   - "[[Token-Supply-Chain]]"
   - "[[AI-First]]"
+  - "[[Token-Maxing-vs-Token-Efficient]]"
 source_raw:
   - "[[20260528-corporate-america-ai-rationing]]"
   - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
+  - "[[20260819-valley101-e249-token-economic-pivot]]"
 ---
 
 # Token Maxing（Token 最大化）
@@ -55,6 +57,11 @@ Token Maxing 不是单点浪费，而是结构性问题：
 
 两个框架的适用边界：**个人/产品探索层**投入框架成立（token 便宜、学习价值高）；**组织成本层**成本框架成立（无差别消耗不可观测、不可归因）。混淆两层会产生错误推论——用投入框架为组织级失控辩护，或用成本框架压制个人级实验。
 
+## 阶段二：Token Efficient（2026 下半年起，详见 [[Token-Maxing-vs-Token-Efficient]]）
+
+> [!info] 阶段演化（2026-08-21 补充）
+> 硅谷101 E249（2026-08-19）明确：2026 年下半年开始，工程纪律追上来了——三个事件（GPT-5.5 / DeepSeek V4 / Fable 5）击碎了 Token Maxing 的「合理性假设」。Token Maxing 不是被取代，而是被纳入更大的「Token Maxing → Token Efficient」时序递进；详见 [[Token-Maxing-vs-Token-Efficient]] 对比页。
+
 ## 前提与局限性
 
 - Token Maxing 可能是学习曲线的一部分——早期广泛实验后自然收敛到高价值场景
@@ -68,3 +75,4 @@ Token Maxing 不是单点浪费，而是结构性问题：
 - [[Agentic-Workflow-Token-Efficiency]] — 技术层面的应对策略
 - [[Token-Supply-Chain]] — 基础设施层面的 token 治理框架
 - [[AI-First]] — Token Maxing 是 AI-First 战略的成本侧反面
+- [[Token-Maxing-vs-Token-Efficient]] — 阶段递进对比页：Token Maxing 是 Token Efficient 的过渡阶段

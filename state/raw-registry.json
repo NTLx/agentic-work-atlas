@@ -1536,6 +1536,14 @@
       "summary_path": "wiki/sources/20260819-ibm-altk-evolve-memory-dosage.md",
       "updated_at": "2026-08-19T18:03:32+08:00"
     },
+    "20260819-valley101-e249-token-economic-pivot.md": {
+      "body_sha256": "455e4e710aeff5dc33f3b7643313cc943418b999d660a3fee65541be45e3d605",
+      "compiled_at": "2026-08-21T18:32:18+08:00",
+      "raw_file": "20260819-valley101-e249-token-economic-pivot.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260819-valley101-e249-token-economic-pivot.md",
+      "updated_at": "2026-08-21T18:32:18+08:00"
+    },
     "20260820-arxiv-2608.15304-cognition-induced-risks.pdf": {
       "body_sha256": "8d4fa7fd9fe4d021a2a976d7c2c0cca3fa17e412acf8d2710fe48b523d9702a6",
       "compiled_at": "2026-08-20T12:20:59+08:00",
@@ -2161,6 +2169,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-20T13:36:31+08:00",
+  "updated_at": "2026-08-21T18:32:18+08:00",
   "version": 1
 }

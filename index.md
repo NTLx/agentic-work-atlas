@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-08-20
+updated: 2026-08-21
 tags:
 ---
 
@@ -15,10 +15,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 425 个 |
+| Entity 页面 | 426 个 |
 | Topic 页面 | 34 个 |
-| Comparison 页面 | 19 个 |
-| Raw 文章 | 270 个 |
+| Comparison 页面 | 20 个 |
+| Raw 文章 | 271 个 |
 | Source Summary | 261 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
@@ -45,6 +45,7 @@ tags:
 |--------|------|------|
 | [[wiki/entities/Agentic-Engineering\|Agentic Engineering（代理式工程）]] | 默认使用 Agent 辅助并持续改进的软件工程范式 | Agentic Engineering Patterns |
 | [[wiki/entities/Agent-Harness\|Agent Harness（智能体脚手架）]] | 包装模型并提供工具、上下文、护栏的运行时环境 | The Anatomy of an Agent Harness |
+| [[wiki/entities/OpenClaw\|OpenClaw]] | Peter Steinberger 2025-11 开源、本地优先的个人 Agent 运行时，被广泛视为 Agent 元年标志事件 | 硅谷101 E249 + Agentic AI 2026 Landscape |
 | [[wiki/entities/Meta-Harness-Optimization\|Meta-Harness Optimization（Meta-Harness 优化）]] | 把 harness H 本身作为优化目标，由 Meta-Harness Optimizer 在外层反馈环中递归改写 harness 代码；模型参数 θ 固定 | AutoDesign 2026 |
 | [[wiki/entities/PosterBench\|PosterBench]] | AutoDesign 发布的 paper-to-poster 七维评估基准（100 papers Main Track + 10 papers mini）+ 933 人类盲评对 | AutoDesign 2026 |
 | [[wiki/entities/Constraint-Infrastructure\|Constraint Infrastructure（约束基建）]] | 系统化保证 Agent 运行时行为边界的基础设施层 | 阿里云 Agent Infra 约束基建 |
@@ -205,11 +206,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（261 个）*
+*原始剪藏文章（262 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-08-20——编译 ByteByteGo GraphRAG + Rachel Laycock Citizens/Agents/Experts 共 2 个 source（新增 GraphRAG / Agentic-RAG / Citizens-Agents-Experts-Framework / Rachel-Laycock 共 4 个 entity；更新 Knowledge-Graph / Captain-Mindset）。
+最新编译：2026-08-21——编译 硅谷101 E249 Token 经济转点（OpenClaw / Hermes / Raft / Agent 元年）共 1 个 source（新增 OpenClaw / Token-Maxing-vs-Token-Efficient 共 2 个页面；更新 Token-Maxing）。
 
 ---
 
@@ -241,5 +242,5 @@ status             # 查看知识库状态
 
 ---
 
-*索引版本: v2.12*
-*最后更新: 2026-07-14*
+*索引版本: v2.13*
+*最后更新: 2026-08-21*
