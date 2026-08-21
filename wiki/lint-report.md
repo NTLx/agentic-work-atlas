@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-08-20"
+date: "2026-08-21"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-08-20
+# Agentic Work Atlas Lint 报告 - 2026-08-21
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -20,13 +20,13 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 270 |
-| Raw 已编译 | 270 |
+| Raw 来源 | 271 |
+| Raw 已编译 | 271 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 425 |
+| Entity | 426 |
 | Topic | 34 |
-| Comparison | 19 |
+| Comparison | 20 |
 | Output | 10 |
 
 ## 检查项
@@ -39,10 +39,10 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 87 |
+| `tag` | 92 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
-| `stale-core` | 0 |
+| `stale-core` | 5 |
 | `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
@@ -59,6 +59,14 @@ tags:
 - `wiki/sources/20260730-palantir-ontology-connecting-agents-to-decisions.md` - `低证据页面 20260730-palantir-ontology-connecting-agents-to-decisions 只能作为补 source 或探索线索`
 - `wiki/sources/20260730-palantir-secure-rapid-software-development-sscs.md` - `低证据页面 20260730-palantir-secure-rapid-software-development-sscs 只能作为补 source 或探索线索`
 - `wiki/sources/20260811-databricks-genie-grounding-governance.md` - `低证据页面 20260811-databricks-genie-grounding-governance 只能作为补 source 或探索线索`
+
+### stale-core
+
+- `wiki/comparisons/RAG-vs-LLM-Wiki.md` - `核心页 RAG-vs-LLM-Wiki 已 90 天未更新，入链 15 条`
+- `wiki/entities/AI-Factory.md` - `核心页 AI-Factory 已 90 天未更新，入链 13 条`
+- `wiki/entities/Agent-Swarm.md` - `核心页 Agent-Swarm 已 90 天未更新，入链 13 条`
+- `wiki/entities/Hardware-Sovereignty.md` - `核心页 Hardware-Sovereignty 已 90 天未更新，入链 19 条`
+- `wiki/entities/Layered-AI-Sourcing.md` - `核心页 Layered-AI-Sourcing 已 90 天未更新，入链 22 条`
 
 ### tag
 
@@ -91,6 +99,7 @@ tags:
 - `wiki/sources/20260816-earendil-pi-compaction.md` - `一次性 tag 仅出现 1 次: 'compaction'`
 - `wiki/entities/C0-C1-C2-Consciousness-Framework.md` - `一次性 tag 仅出现 1 次: 'consciousness'`
 - `wiki/sources/20260812-github-ai-first-contributors.md` - `一次性 tag 仅出现 1 次: 'contributor-governance'`
+- `wiki/comparisons/Token-Maxing-vs-Token-Efficient.md` - `一次性 tag 仅出现 1 次: 'cost-vs-input'`
 - `wiki/entities/Rachel-Laycock.md` - `一次性 tag 仅出现 1 次: 'cto'`
 - `wiki/sources/20260813-pl-tokens-token-efficiency.md` - `一次性 tag 仅出现 1 次: 'dan-luu'`
 - `wiki/entities/Five-Diagnostic-Outcomes-Skill-Eval.md` - `一次性 tag 仅出现 1 次: 'diagnostics'`
@@ -114,6 +123,7 @@ tags:
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'kv-cache'`
 - `wiki/entities/ALTK-Evolve.md` - `一次性 tag 仅出现 1 次: 'library'`
 - `wiki/entities/Agent-Development-Lifecycle.md` - `一次性 tag 仅出现 1 次: 'lifecycle'`
+- `wiki/entities/OpenClaw.md` - `一次性 tag 仅出现 1 次: 'local-first'`
 - `wiki/entities/Meta-Harness-Optimization.md` - `一次性 tag 仅出现 1 次: 'long-horizon-agent'`
 - `wiki/entities/Five-Diagnostic-Outcomes-Skill-Eval.md` - `一次性 tag 仅出现 1 次: 'mental-models'`
 - `wiki/sources/20260815-autodesign-meta-harness-optimization.md` - `一次性 tag 仅出现 1 次: 'meta-harness'`
@@ -124,6 +134,7 @@ tags:
 - `wiki/entities/C2PA-Content-Credentials.md` - `一次性 tag 仅出现 1 次: 'open-standard'`
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'paper-to-poster'`
 - `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'paul-graham'`
+- `wiki/entities/OpenClaw.md` - `一次性 tag 仅出现 1 次: 'personal-agent'`
 - `wiki/entities/Features-Are-Cheap-Paradox.md` - `一次性 tag 仅出现 1 次: 'prioritization'`
 - `wiki/entities/Claude-Tag.md` - `一次性 tag 仅出现 1 次: 'product-page'`
 - `wiki/entities/Capability-Overhang.md` - `一次性 tag 仅出现 1 次: 'product-philosophy'`
@@ -137,6 +148,7 @@ tags:
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'rubric-evaluation'`
 - `wiki/entities/Lessons-MD-Self-Improvement.md` - `一次性 tag 仅出现 1 次: 'self-improvement'`
 - `wiki/sources/20260820-talking-postgres-simon-willison-ai.md` - `一次性 tag 仅出现 1 次: 'simon-willison'`
+- `wiki/sources/20260819-valley101-e249-token-economic-pivot.md` - `一次性 tag 仅出现 1 次: 'singularity'`
 - `wiki/entities/Systems-Thinking.md` - `一次性 tag 仅出现 1 次: 'skill'`
 - `wiki/entities/Five-Diagnostic-Outcomes-Skill-Eval.md` - `一次性 tag 仅出现 1 次: 'skill-evaluation'`
 - `wiki/sources/20260803-google-agent-skills-build-test-scale.md` - `一次性 tag 仅出现 1 次: 'skill-governance'`
@@ -146,6 +158,7 @@ tags:
 - `wiki/sources/20260804-stacked-prs-giant-ai-generated.md` - `一次性 tag 仅出现 1 次: 'stacked-prs'`
 - `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'superlinear-returns'`
 - `wiki/entities/TDD-for-Agents.md` - `一次性 tag 仅出现 1 次: 'testing'`
+- `wiki/sources/20260819-valley101-e249-token-economic-pivot.md` - `一次性 tag 仅出现 1 次: 'valley101'`
 - `wiki/sources/20260806-openai-chatgpt-work-adoption.md` - `一次性 tag 仅出现 1 次: 'work-usage'`
 - `wiki/entities/Lenny-Rachitsky.md` - `一次性 tag 仅出现 1 次: 'workforce-research'`
 - `wiki/entities/Conversation-as-Knowledge-Base.md` - `一次性 tag 仅出现 1 次: 'workplace-conversation'`
