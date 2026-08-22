@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-08-21
+updated: 2026-08-22
 tags:
 ---
 
@@ -15,10 +15,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 426 个 |
+| Entity 页面 | 428 个 |
 | Topic 页面 | 34 个 |
 | Comparison 页面 | 20 个 |
-| Raw 文章 | 271 个 |
+| Raw 文章 | 274 个 |
 | Source Summary | 261 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
@@ -85,6 +85,7 @@ tags:
 | [[wiki/entities/Goodharts-Law\|Goodhart's Law（古德哈特定律）]] | 当代理指标成为优化目标时就不再是好度量——指标 gaming 导致真实目标被替代 | 万维钢·现代思维工具100讲 |
 | [[wiki/entities/Knowledge-Debt\|Knowledge Debt（知识债务）]] | 开发者委托 agent 编码后沉默积累的理解缺口，与 Technical Debt 同构 | Accenture Labs SHIELD 论文 |
 | [[wiki/entities/Incidental-Learning\|Incidental Learning（附带学习）]] | 通过费力解决问题非预期获得的知识——被 AI agent 短路的学习路径 | Accenture Labs SHIELD 论文 |
+| [[wiki/entities/4D-AI-Fluency-Framework\|4D AI Fluency Framework]] | Anthropic 内部 AI 教育骨架——以「增加 human agency」为核心，围绕四维能力训练学员对 AI 任务的判断、表达、审查、伦理披露；Claude Academy 产品化 | Anthropic Academy 2026-08 |
 | [[wiki/entities/SHIELD\|SHIELD]] | 多 agent 系统，通过 out-of-band 渠道在不打断开发流程的前提下偿还 Knowledge Debt | Accenture Labs SHIELD 论文 |
 | [[wiki/entities/AI-Assisted-Port\|AI-Assisted Port（AI 辅助代码重写）]] | 利用 AI Agent 批量执行语言间代码重写并辅以对抗审查的工程范式 | Bun in Rust |
 | [[wiki/entities/Distinct-Principal-Identity\|Distinct Principal Identity（独立主体身份）]] | AI Agent 使用独立身份——从 service account 到企业组织集成（目录条目、角色、邮箱） | Vercel Agent + Microsoft Foundry |
@@ -97,6 +98,7 @@ tags:
 | [[wiki/entities/Transparent-Tool-Handoff\|Transparent Tool Handoff（透明工具交接）]] | 把可形式化步骤从不可解释 LLM 交接给可解释工具执行——以系统级可解释性替代模型级可解释性；CoT ≠ 真推理 | Palantir Responsible AI 2024 |
 | [[wiki/entities/Evals-as-PRD\|Evals as PRD（评测即需求文档）]] | 以可运行评测集取代传统 PRD 承担需求定义功能：用户反馈→失败轨迹归因→eval set→可度量改进 | Lenny's Podcast / Anthropic 2026 |
 | [[wiki/entities/Agent-Development-Lifecycle\|ADLC（Agent 开发生命周期）]] | AI 时代取代 SDLC 的生命周期范式——agent 覆盖全生命周期，Workflow 取代 CI/CD 作为编排原语 | Cloudflare 2026 |
+| [[wiki/entities/AI-Native-SDLC\|AI-Native SDLC（AI 原生 SDLC）]] | Anthropic 官方六阶段 SDLC 重构（Plan/Design/Build/Test/Deploy/Maintain）+ intent.md / spec.md / plan.md 契约 + CLAUDE.md / Skills / Hooks / Evals 四大基础设施 | Anthropic Playbook 2026-08 |
 | [[wiki/entities/Inference-Engineering\|Inference Engineering（推理工程）]] | 把训练好的权重变成快、可靠、可负担、能规模化服务产品的工程学科——KV cache/speculative decoding/量化/结构化输出 | Latent Space / Baseten 2026 |
 | [[wiki/entities/Skills-as-Products\|Skills as Products（技能即产品）]] | 把 agent skill 当长期维护的产品治理——标准目录 + CI 管线 + 持续评估 + 责任到人 | Google Agent Skills 2026 |
 | [[wiki/entities/Software-Factory\|Software Factory（软件工厂）]] | Agent 驱动的自动化软件生产系统——接受 bug/feature 输入，agent 链完成 build→deploy→manage，人只留灵感品味判断 | Cloudflare 2026 |
@@ -206,11 +208,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（262 个）*
+*原始剪藏文章（274 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-08-21——编译 硅谷101 E249 Token 经济转点（OpenClaw / Hermes / Raft / Agent 元年）共 1 个 source（新增 OpenClaw / Token-Maxing-vs-Token-Efficient 共 2 个页面；更新 Token-Maxing）。
+最新编译：2026-08-22——编译 Anthropic 官方三连（Claude Code Startups Guide + Claude Academy + AI-Native SDLC Playbook）共 3 个 source（新增 AI-Native-SDLC / 4D-AI-Fluency-Framework 共 2 个 entity；更新 Claude-Code-CLI / Claude-Tag）。
 
 ---
 
@@ -242,5 +244,5 @@ status             # 查看知识库状态
 
 ---
 
-*索引版本: v2.13*
-*最后更新: 2026-08-21*
+*索引版本: v2.14*
+*最后更新: 2026-08-22*

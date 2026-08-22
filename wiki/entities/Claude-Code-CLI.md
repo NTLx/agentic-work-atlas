@@ -5,7 +5,7 @@ aliases:
   - Claude Code CLI
 definition: "Anthropic 出品的终端原生 AI 编程助手，代理式编码环境，可读取文件、执行命令、编辑代码、运行测试并自主解决问题"
 created: 2026-04-09
-updated: 2026-08-20
+updated: 2026-08-22
 tags:
   - AI-Agent
   - Claude-Code
@@ -18,6 +18,7 @@ related_entities:
   - '[[Boris-Cherny]]'
   - '[[Headless-Mode]]'
   - '[[Agent-Orchestration]]'
+  - '[[AI-Native-SDLC]]'
 source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
@@ -26,6 +27,8 @@ source_raw:
   - '[[The-Founders-Playbook-05062026_v3]]'
   - "[[20260603-lessons-from-building-claude-code-how-we-use-skills]]"
   - "[[20260609-whats-new-in-claude-managed-agents]]"
+  - "[[20260822-the-ai-native-sdlc-playbook]]"
+  - "[[20260822-claude-code-guide-for-startups]]"
 ---
 
 # Claude Code CLI

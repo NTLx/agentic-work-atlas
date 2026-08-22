@@ -1592,6 +1592,30 @@
       "summary_path": "wiki/sources/20260820-talking-postgres-simon-willison-ai.md",
       "updated_at": "2026-08-20T12:11:17+08:00"
     },
+    "20260822-anthropics-approach-to-teaching-and-learning-ai.md": {
+      "body_sha256": "beadda35814cdea6911ab436ba5facdaa5e657731825341bb4af9f32428cbfdc",
+      "compiled_at": "2026-08-22T12:58:00+08:00",
+      "raw_file": "20260822-anthropics-approach-to-teaching-and-learning-ai.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260822-anthropics-approach-to-teaching-and-learning-ai.md",
+      "updated_at": "2026-08-22T12:58:00+08:00"
+    },
+    "20260822-claude-code-guide-for-startups.md": {
+      "body_sha256": "e29f7661fe4a52bd867de2fe311b55814d72c2ccd77a0bb224fb00a0cf8fc37b",
+      "compiled_at": "2026-08-22T12:58:00+08:00",
+      "raw_file": "20260822-claude-code-guide-for-startups.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260822-claude-code-guide-for-startups.md",
+      "updated_at": "2026-08-22T12:58:00+08:00"
+    },
+    "20260822-the-ai-native-sdlc-playbook.md": {
+      "body_sha256": "594fbb8e7340156ba2a87fdadabca99de2a583a617196e3163de0b64dfac0e6f",
+      "compiled_at": "2026-08-22T12:58:00+08:00",
+      "raw_file": "20260822-the-ai-native-sdlc-playbook.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260822-the-ai-native-sdlc-playbook.md",
+      "updated_at": "2026-08-22T12:58:00+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -2169,6 +2193,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-21T18:32:18+08:00",
+  "updated_at": "2026-08-22T12:58:00+08:00",
   "version": 1
 }

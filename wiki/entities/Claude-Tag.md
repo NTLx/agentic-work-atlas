@@ -7,7 +7,7 @@ aliases:
   - Claude On-Call
 definition: "Anthropic 出品的 Slack-resident AI agent 产品——Claude 拥有独立 service account，作为常驻成员加入 on-call Slack 频道，跨事故保有记忆、能调用 MCP Connectors 工具、按 markdown skill 文件执行 on-call 流程"
 created: 2026-08-19
-updated: 2026-08-19
+updated: 2026-08-22
 tags:
   - agentic-engineering
   - on-call
@@ -24,9 +24,12 @@ related_entities:
   - "[[Lessons-MD-Self-Improvement]]"
   - "[[Skills-as-Products]]"
   - "[[Human-Agent-Teams]]"
+  - "[[AI-Native-SDLC]]"
 source_raw:
   - "[[20260819-anthropic-claude-tag-oncall]]"
   - "[[20260820-slack-human-agent-teams]]"
+  - "[[20260822-the-ai-native-sdlc-playbook]]"
+  - "[[20260822-claude-code-guide-for-startups]]"
 ---
 
 # Claude Tag
