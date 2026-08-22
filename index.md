@@ -15,10 +15,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 428 个 |
+| Entity 页面 | 430 个 |
 | Topic 页面 | 34 个 |
 | Comparison 页面 | 20 个 |
-| Raw 文章 | 274 个 |
+| Raw 文章 | 276 个 |
 | Source Summary | 261 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 43 个 |
@@ -45,6 +45,7 @@ tags:
 |--------|------|------|
 | [[wiki/entities/Agentic-Engineering\|Agentic Engineering（代理式工程）]] | 默认使用 Agent 辅助并持续改进的软件工程范式 | Agentic Engineering Patterns |
 | [[wiki/entities/Agent-Harness\|Agent Harness（智能体脚手架）]] | 包装模型并提供工具、上下文、护栏的运行时环境 | The Anatomy of an Agent Harness |
+| [[wiki/entities/EnvHarness\|EnvHarness（Environment Harness）]] | 包裹静态环境的可编程层（Stage / Contract / Chain 三类组件）— Agent Harness 在环境侧的对称概念，不改环境实现也不动 verifier | arXiv:2608.19880 2026-08 |
 | [[wiki/entities/OpenClaw\|OpenClaw]] | Peter Steinberger 2025-11 开源、本地优先的个人 Agent 运行时，被广泛视为 Agent 元年标志事件 | 硅谷101 E249 + Agentic AI 2026 Landscape |
 | [[wiki/entities/Meta-Harness-Optimization\|Meta-Harness Optimization（Meta-Harness 优化）]] | 把 harness H 本身作为优化目标，由 Meta-Harness Optimizer 在外层反馈环中递归改写 harness 代码；模型参数 θ 固定 | AutoDesign 2026 |
 | [[wiki/entities/PosterBench\|PosterBench]] | AutoDesign 发布的 paper-to-poster 七维评估基准（100 papers Main Track + 10 papers mini）+ 933 人类盲评对 | AutoDesign 2026 |
@@ -208,11 +209,11 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（274 个）*
+*原始剪藏文章（276 个）*
 
 *所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
 
-最新编译：2026-08-22——编译 Anthropic 官方三连（Claude Code Startups Guide + Claude Academy + AI-Native SDLC Playbook）共 3 个 source（新增 AI-Native-SDLC / 4D-AI-Fluency-Framework 共 2 个 entity；更新 Claude-Code-CLI / Claude-Tag）。
+最新编译：2026-08-22——编译 arXiv:2608.19880 EnvHarness（环境侧可编程 harness，三类组件 Stage/Contract/Chain + 四阶段自动化 EnvRigger）共 1 个 source（新增 EnvHarness / EnvRigger 共 2 个 entity；evidence_level: high，跨 5 个 benchmark / 4 个领域实证 +9.0 分提升）。
 
 ---
 
@@ -244,5 +245,5 @@ status             # 查看知识库状态
 
 ---
 
-*索引版本: v2.14*
+*索引版本: v2.15*
 *最后更新: 2026-08-22*

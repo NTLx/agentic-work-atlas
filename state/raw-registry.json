@@ -1616,6 +1616,22 @@
       "summary_path": "wiki/sources/20260822-the-ai-native-sdlc-playbook.md",
       "updated_at": "2026-08-22T12:58:00+08:00"
     },
+    "2608.19880-envharness-agent-learning.md": {
+      "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
+      "compiled_at": "2026-08-22T14:01:13+08:00",
+      "raw_file": "2608.19880-envharness-agent-learning.md",
+      "status": "compiled",
+      "summary_path": "wiki/sources/2608.19880-envharness-agent-learning.md",
+      "updated_at": "2026-08-22T14:01:13+08:00"
+    },
+    "2608.19880-envharness-agent-learning.pdf": {
+      "body_sha256": "3859eed3337e0324ef94f38ca21f69cc6daa15b5a78497680370959223d51fd4",
+      "compiled_at": "2026-08-22T13:49:21+08:00",
+      "raw_file": "2608.19880-envharness-agent-learning.pdf",
+      "status": "compiled",
+      "summary_path": "wiki/sources/2608.19880-envharness-agent-learning.md",
+      "updated_at": "2026-08-22T13:49:21+08:00"
+    },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -2193,6 +2209,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-22T12:58:00+08:00",
+  "updated_at": "2026-08-22T14:01:13+08:00",
   "version": 1
 }

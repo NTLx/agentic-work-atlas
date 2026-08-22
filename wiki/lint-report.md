@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 274 |
-| Raw 已编译 | 274 |
+| Raw 来源 | 276 |
+| Raw 已编译 | 276 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 428 |
+| Entity | 430 |
 | Topic | 34 |
 | Comparison | 20 |
 | Output | 10 |
@@ -39,7 +39,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 92 |
+| `tag` | 96 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
 | `stale-core` | 13 |
@@ -82,6 +82,7 @@ tags:
 - `wiki/sources/20260820-arxiv-2608.16753-mathematics-ai.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260820-slack-human-agent-teams.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260820-talking-postgres-simon-willison-ai.md` - `tags 超过 5 个: 6`
+- `wiki/sources/2608.19880-envharness-agent-learning.md` - `tags 超过 5 个: 6`
 - `wiki/entities/Show-and-Tell-Adoption.md` - `一次性 tag 仅出现 1 次: 'adoption'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'agent-alignment'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'agent-collusion'`
@@ -96,6 +97,7 @@ tags:
 - `wiki/sources/20260822-claude-code-guide-for-startups.md` - `一次性 tag 仅出现 1 次: 'ai-native-startup'`
 - `wiki/entities/Validation-Tether.md` - `一次性 tag 仅出现 1 次: 'ai-oversight'`
 - `wiki/sources/20260820-arxiv-2608.15304-cognition-induced-risks.md` - `一次性 tag 仅出现 1 次: 'alignment-faking'`
+- `wiki/sources/2608.19880-envharness-agent-learning.md` - `一次性 tag 仅出现 1 次: 'arxiv'`
 - `wiki/entities/Show-and-Tell-Adoption.md` - `一次性 tag 仅出现 1 次: 'change-management'`
 - `wiki/sources/20260618-cio-conference-ai-practices.md` - `一次性 tag 仅出现 1 次: 'china-enterprise'`
 - `wiki/entities/Mythical-Man-Month.md` - `一次性 tag 仅出现 1 次: 'classic'`
@@ -112,6 +114,8 @@ tags:
 - `wiki/entities/Rachel-Laycock.md` - `一次性 tag 仅出现 1 次: 'cto'`
 - `wiki/sources/20260813-pl-tokens-token-efficiency.md` - `一次性 tag 仅出现 1 次: 'dan-luu'`
 - `wiki/entities/Five-Diagnostic-Outcomes-Skill-Eval.md` - `一次性 tag 仅出现 1 次: 'diagnostics'`
+- `wiki/sources/2608.19880-envharness-agent-learning.md` - `一次性 tag 仅出现 1 次: 'envharness'`
+- `wiki/sources/2608.19880-envharness-agent-learning.md` - `一次性 tag 仅出现 1 次: 'envrigger'`
 - `wiki/sources/20260816-anthropic-claude-text-watermark.md` - `一次性 tag 仅出现 1 次: 'eu-ai-act'`
 - `wiki/entities/Explain-Test-Gold-Standard.md` - `一次性 tag 仅出现 1 次: 'evaluation-criteria'`
 - `wiki/sources/20260814-i-remain-a-skeptic.md` - `一次性 tag 仅出现 1 次: 'evidence-gap'`
