@@ -5,7 +5,11 @@ description = "Python tooling for Agentic Work Atlas wiki maintenance"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+  # Wiki 维护门禁脚本（lint / registry / audit）共用。
   "PyYAML>=6.0.2",
+  # PDF 编译路径的基础工具链：raw/ 中的 .pdf 通过 tools/pdf-extract.py 提取文本后进入 Wiki。
+  # 提升为项目级一等依赖（取代一次性 uv run --with pymupdf 注入），保证 CI 与本地依赖路径一致。
+  "PyMuPDF>=1.24.0",
 ]
 
 [tool.uv]

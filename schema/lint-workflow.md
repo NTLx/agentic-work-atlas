@@ -32,7 +32,7 @@ type: schema-subdoc
 通用维护脚本放在 `tools/`，不绑定任何 Agent 插件目录。
 
 ```bash
-uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
+uv run python tools/wiki-lint.py --fix-index --write-report
 ```
 
 该脚本检查：

@@ -35,11 +35,15 @@ jobs:
         with:
           node-version: 22
 
+      - uses: astral-sh/setup-uv@v6
+        with:
+          working-directory: atlas
+
       - name: Run Wiki Lint
         working-directory: atlas
         run: |
-          pip install pyyaml -q
-          python3 tools/wiki-lint.py --fix-index --write-report || true
+          uv sync
+          uv run python tools/wiki-lint.py --fix-index --write-report || true
 
       - name: Install Quartz Dependencies
         working-directory: quartz

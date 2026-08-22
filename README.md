@@ -106,7 +106,7 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 |------|------|
 | `compile` / `compile <文件名>` | 编译 raw（优先 ljg 增强路径） |
 | `compile-ljg` / `compile-book` / `compile-qa` | ljg 专项编译 |
-| `lint` | `uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report` |
+| `lint` | `uv run python tools/wiki-lint.py --fix-index --write-report` |
 | `audit-entities` | `python3 tools/entity-audit.py --write-report` |
 | `fix-lint` | 按 lint 报告逐项修复 |
 | `什么是 <概念>?` | 概念查询（优先 ljg-qa） |

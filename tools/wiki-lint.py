@@ -11,10 +11,10 @@ Agentic Work Atlas 校验与同步门禁。
 - 报告仍缺少摘要覆盖的 raw 文件（历史 raw 编译摘要或同名 source summary 二者满足其一）
 
 用法:
-  uv run --with pyyaml python tools/wiki-lint.py
-  uv run --with pyyaml python tools/wiki-lint.py --fix-index
-  uv run --with pyyaml python tools/wiki-lint.py --write-report
-  uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
+  uv run python tools/wiki-lint.py
+  uv run python tools/wiki-lint.py --fix-index
+  uv run python tools/wiki-lint.py --write-report
+  uv run python tools/wiki-lint.py --fix-index --write-report
 """
 
 from __future__ import annotations
@@ -791,7 +791,7 @@ def render_report(
             "## 运行命令",
             "",
             "```bash",
-            "uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report",
+            "uv run python tools/wiki-lint.py --fix-index --write-report",
             "```",
             "",
             "*本报告由 `tools/wiki-lint.py` 生成。*",

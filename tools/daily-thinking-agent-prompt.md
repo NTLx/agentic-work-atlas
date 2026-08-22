@@ -113,7 +113,7 @@ Skill(skill: "ljg-roundtable", args: "[焦点核心问题或判断]\n\n【自治
 
 1. 运行 lint，报错则修复后重跑直到通过：
    ```bash
-   uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
+   uv run python tools/wiki-lint.py --fix-index --write-report
    ```
 2. 用 TIMESTAMP 提交：
    ```

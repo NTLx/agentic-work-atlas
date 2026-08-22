@@ -178,7 +178,7 @@ tags:
 ## 运行命令
 
 ```bash
-uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
+uv run python tools/wiki-lint.py --fix-index --write-report
 ```
 
 *本报告由 `tools/wiki-lint.py` 生成。*

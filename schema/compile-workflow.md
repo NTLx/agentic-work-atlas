@@ -21,7 +21,7 @@ type: schema-subdoc
 | 格式 | 后缀 | 读取方式 | Frontmatter |
 |------|------|----------|-------------|
 | Markdown | `.md` | `read_text()` | 有 YAML frontmatter |
-| PDF | `.pdf` | Read 工具（`pages` 参数）或 PyMuPDF 提取 | 无（元数据记录在 source summary） |
+| PDF | `.pdf` | `tools/pdf-extract.py` 提取至 stdout/临时文件 | 无（元数据记录在 source summary） |
 
 PDF 文件直接存放在 `raw/`，Quartz 以可下载附件形式展示。Lint 和 Registry 均追踪 PDF 文件。
 

@@ -20,7 +20,7 @@ python3 -c "import sys; print(sys.argv[1].encode().decode('unicode_escape').enco
 
 ```bash
 # 1. 本地复现 CI 错误（--fix-index 自动修复 index 计数，--write-report 写入报告）
-uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
+uv run python tools/wiki-lint.py --fix-index --write-report
 # 2. 只看阻断级问题（exit code 1 = 有阻断）；tag 问题是 non-blocking，不影响 CI
 # 3. 修复后重新运行确认 "阻断问题: 0"
 ```
@@ -150,9 +150,29 @@ lint 检查概念 Entity 必须包含 `## 关键数据点`、`## 前提与局限
 | 特性 | Markdown raw | PDF raw |
 |------|-------------|---------|
 | Frontmatter | 有 YAML | 无（元数据记录在 source summary） |
-| 正文读取 | `read_text()` | Read 工具 `pages` 参数 或 PyMuPDF |
+| 正文读取 | `read_text()` | `tools/pdf-extract.py` 提取至 stdout/临时文件 |
 | body_sha256 | 文本哈希 | 二进制哈希 |
 | 编译后标记 | `mark-compiled` | 同（不可遗漏） |
+
+**标准入口：`tools/pdf-extract.py`**
+
+PDF 文本提取统一通过项目级脚本（依赖已声明在 `pyproject.toml`，无需 `--with` 注入）：
+
+```bash
+# 默认输出到 stdout
+uv run python tools/pdf-extract.py raw/<filename.pdf>
+
+# 写入临时文件（与 inline 模式行为一致）
+uv run python tools/pdf-extract.py raw/<filename.pdf> --out /tmp/paper_full.md
+
+# 仅提取前 N 页（1-indexed inclusive，与 Read 工具的 pages="1-20" 对齐）
+uv run python tools/pdf-extract.py raw/<filename.pdf> --pages 1-20
+
+# 严格模式：若提取文本为空（图像型 PDF）则 exit 2
+uv run python tools/pdf-extract.py raw/<filename.pdf> --strict
+```
+
+底层为 PyMuPDF（mupdf C 库），不依赖 poppler-utils；与 pdftotext 的关键区别在于跨平台一致。
 
 **完整工作流**：
 
@@ -160,27 +180,29 @@ lint 检查概念 Entity 必须包含 `## 关键数据点`、`## 前提与局限
 # 1. 下载 PDF 到 raw/
 curl -sL "<url>" -o raw/<YYYYMMDD>-<slug>.pdf
 
-# 2. 提取文本用于编译（二选一）
-# 方式 A：Read 工具（适合短 PDF）
-#   Read tool, file_path=raw/<filename>.pdf, pages="1-20"
-
-# 方式 B：PyMuPDF（适合长 PDF，输出更完整）
-uv run --with pymupdf python3 -c "
-import fitz
-doc = fitz.open('raw/<filename>.pdf')
-text = '\n\n---\n\n'.join(page.get_text() for page in doc)
-with open('/tmp/paper_full.md', 'w') as f: f.write(text)
-"
+# 2. 提取文本用于编译
+uv run python tools/pdf-extract.py raw/<filename.pdf> --out /tmp/paper_full.md
 
 # 3. 正常编译（创建 source summary、entity 等）
 
 # 4. 标记为已编译（关键步骤，不可遗漏）
-uv run python tools/compile_registry.py mark-compiled "<filename>.pdf" \
+uv run python tools/compile_registry.py mark-compiled "<filename.pdf>" \
   --summary-path "wiki/sources/<filename-stem>.md"
 
 # 5. 运行 lint 验证
-uv run --with pyyaml python tools/wiki-lint.py --fix-index --write-report
+uv run python tools/wiki-lint.py --fix-index --write-report
 ```
+
+**Raw 不可变原则**：提取出的文本只是辅助视图，**不入仓**。每次编译按需重新提取，避免污染原始 PDF 与 raw/ 目录。
+
+**Read 工具与 pdf-extract 的分工**：
+
+| 工具 | 适用场景 |
+|------|---------|
+| Read（agent 内置，`pages` 参数） | agent loop 内即时查阅短 PDF 段落（≤20 页），无需落盘 |
+| `tools/pdf-extract.py` | 脚本化、可复用、可管道化的标准提取路径，输出到文件或 stdout |
+
+两者不互斥。Read 适合交互场景，`pdf-extract` 适合系统化处理与流水线集成。
 
 **常见遗漏**：编译完成后忘记执行 `mark-compiled`，导致 PDF 在 registry 中停留在 `pending` 状态，lint 报 `registry-consistency` 阻断。
 
@@ -193,13 +215,8 @@ arxiv `/html/` 版本从 LaTeX 自动转换，新论文或复杂排版常截断�
 # 下载 PDF 直接存入 raw/（无需提取为 md）
 curl -sL "https://arxiv.org/pdf/<arxiv_id>" -o raw/<YYYYMMDD>-<slug>.pdf
 
-# 如需提取纯文本（编译时使用）
-uv run --with pymupdf python3 -c "
-import fitz
-doc = fitz.open('raw/<filename>.pdf')
-text = '\n\n---\n\n'.join(page.get_text() for page in doc)
-with open('/tmp/paper_full.md', 'w') as f: f.write(text)
-"
+# 如需提取纯文本（编译时使用）—— 用项目级标准入口
+uv run python tools/pdf-extract.py raw/<filename.pdf> --out /tmp/paper_full.md
 ```
 
 提取后验证 Discussion / Conclusion / References 齐全，然后按标准编译流程处理。
