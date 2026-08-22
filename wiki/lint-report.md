@@ -1,7 +1,7 @@
 ---
 type: lint-report
 title: "Agentic Work Atlas Lint 报告"
-date: "2026-08-21"
+date: "2026-08-22"
 score: 100
 status: "PASS"
 tags:
@@ -9,7 +9,7 @@ tags:
   - wiki-maintenance
 ---
 
-# Agentic Work Atlas Lint 报告 - 2026-08-21
+# Agentic Work Atlas Lint 报告 - 2026-08-22
 
 > [!summary] 状态
 > 门禁: **PASS**
@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 271 |
-| Raw 已编译 | 271 |
+| Raw 来源 | 274 |
+| Raw 已编译 | 274 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Entity | 426 |
+| Entity | 428 |
 | Topic | 34 |
 | Comparison | 20 |
 | Output | 10 |
@@ -42,7 +42,7 @@ tags:
 | `tag` | 92 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
-| `stale-core` | 5 |
+| `stale-core` | 13 |
 | `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
@@ -62,11 +62,19 @@ tags:
 
 ### stale-core
 
-- `wiki/comparisons/RAG-vs-LLM-Wiki.md` - `核心页 RAG-vs-LLM-Wiki 已 90 天未更新，入链 15 条`
-- `wiki/entities/AI-Factory.md` - `核心页 AI-Factory 已 90 天未更新，入链 13 条`
-- `wiki/entities/Agent-Swarm.md` - `核心页 Agent-Swarm 已 90 天未更新，入链 13 条`
-- `wiki/entities/Hardware-Sovereignty.md` - `核心页 Hardware-Sovereignty 已 90 天未更新，入链 19 条`
-- `wiki/entities/Layered-AI-Sourcing.md` - `核心页 Layered-AI-Sourcing 已 90 天未更新，入链 22 条`
+- `wiki/comparisons/RAG-vs-LLM-Wiki.md` - `核心页 RAG-vs-LLM-Wiki 已 91 天未更新，入链 15 条`
+- `wiki/entities/AI-Factory.md` - `核心页 AI-Factory 已 91 天未更新，入链 13 条`
+- `wiki/entities/Agent-Swarm.md` - `核心页 Agent-Swarm 已 91 天未更新，入链 13 条`
+- `wiki/entities/Hardware-Sovereignty.md` - `核心页 Hardware-Sovereignty 已 91 天未更新，入链 19 条`
+- `wiki/entities/Layered-AI-Sourcing.md` - `核心页 Layered-AI-Sourcing 已 91 天未更新，入链 22 条`
+- `wiki/sources/20260414-cybersecurity-proof-of-work.md` - `核心页 20260414-cybersecurity-proof-of-work 已 90 天未更新，入链 9 条`
+- `wiki/sources/Andrej Karpathy: From Vibe Coding to Agentic Engineering.md` - `核心页 Andrej Karpathy: From Vibe Coding to Agentic Engineering 已 90 天未更新，入链 19 条`
+- `wiki/sources/Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next.md` - `核心页 Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next 已 90 天未更新，入链 21 条`
+- `wiki/sources/Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough.md` - `核心页 Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough 已 90 天未更新，入链 8 条`
+- `wiki/sources/How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code).md` - `核心页 How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code) 已 90 天未更新，入链 9 条`
+- `wiki/sources/The-Founders-Playbook-05062026_v3.md` - `核心页 The-Founders-Playbook-05062026_v3 已 90 天未更新，入链 12 条`
+- `wiki/sources/Validating agentic behavior when “correct” isn’t deterministic.md` - `核心页 Validating agentic behavior when “correct” isn’t deterministic 已 90 天未更新，入链 6 条`
+- `wiki/sources/深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”.md` - `核心页 深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化” 已 90 天未更新，入链 11 条`
 
 ### tag
 
@@ -74,7 +82,6 @@ tags:
 - `wiki/sources/20260820-arxiv-2608.16753-mathematics-ai.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260820-slack-human-agent-teams.md` - `tags 超过 5 个: 6`
 - `wiki/sources/20260820-talking-postgres-simon-willison-ai.md` - `tags 超过 5 个: 6`
-- `wiki/sources/20260804-agent-development-lifecycle-adlc.md` - `一次性 tag 仅出现 1 次: 'adlc'`
 - `wiki/entities/Show-and-Tell-Adoption.md` - `一次性 tag 仅出现 1 次: 'adoption'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'agent-alignment'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'agent-collusion'`
@@ -85,6 +92,8 @@ tags:
 - `wiki/sources/20260815-engineers-history-reinvention.md` - `一次性 tag 仅出现 1 次: 'agentic-orchestration'`
 - `wiki/sources/20260820-bytebytego-graphrag.md` - `一次性 tag 仅出现 1 次: 'agentic-rag'`
 - `wiki/sources/20260810-the-playbook-for-building-high-talent.md` - `一次性 tag 仅出现 1 次: 'ai-era-org'`
+- `wiki/sources/20260822-the-ai-native-sdlc-playbook.md` - `一次性 tag 仅出现 1 次: 'ai-native-sdlc'`
+- `wiki/sources/20260822-claude-code-guide-for-startups.md` - `一次性 tag 仅出现 1 次: 'ai-native-startup'`
 - `wiki/entities/Validation-Tether.md` - `一次性 tag 仅出现 1 次: 'ai-oversight'`
 - `wiki/sources/20260820-arxiv-2608.15304-cognition-induced-risks.md` - `一次性 tag 仅出现 1 次: 'alignment-faking'`
 - `wiki/entities/Show-and-Tell-Adoption.md` - `一次性 tag 仅出现 1 次: 'change-management'`
@@ -122,7 +131,6 @@ tags:
 - `wiki/entities/Features-Are-Cheap-Paradox.md` - `一次性 tag 仅出现 1 次: 'jevons-paradox'`
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'kv-cache'`
 - `wiki/entities/ALTK-Evolve.md` - `一次性 tag 仅出现 1 次: 'library'`
-- `wiki/entities/Agent-Development-Lifecycle.md` - `一次性 tag 仅出现 1 次: 'lifecycle'`
 - `wiki/entities/OpenClaw.md` - `一次性 tag 仅出现 1 次: 'local-first'`
 - `wiki/entities/Meta-Harness-Optimization.md` - `一次性 tag 仅出现 1 次: 'long-horizon-agent'`
 - `wiki/entities/Five-Diagnostic-Outcomes-Skill-Eval.md` - `一次性 tag 仅出现 1 次: 'mental-models'`
