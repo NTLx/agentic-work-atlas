@@ -7,7 +7,7 @@ aliases:
   - Paved Path Security
 definition: "把安全控制嵌入默认开发路径的平台策略：让安全的方式成为最容易的方式，开发者无需主动选择即获得签名、隔离与 provenance，绕过比遵守更难"
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-24
 tags:
   - software-engineering
   - security
@@ -48,6 +48,17 @@ SSCS 项目的启动顺序不是"买工具"或"过合规"，而是：
 
 > [!warning] 规模化传播是风险放大器
 > 10K repos 用中央 config-as-code 仓库管理：一行 YAML 改动即可批量推送仓库配置（含安全控制开关）。这既是 paved path 的分发机制，也是最大的单点风险——"Security was not a primary consideration in the development of most of these tools because they were built to reduce friction at all costs"。内部效率工具的安全债往往是 SSCS 项目的主要清理对象。**推论：规模化传播安全控制的工具，本身需要最高等级的变更治理（多人 review + 金丝雀推送 + 回滚审计）。**
+
+## 防御形态学定位：活墙实例（08-24 圆桌，synthesized/medium）
+
+> 开放域防御定价定理（[[research-agenda]] 97 行）的形态学二分：墙 = 遗骸形态（便宜可展示可表演）、市场 = 活体形态（定价/限责/要求对手方结算）。本实体按该框架定位 **paved path = 工具链默认值形态的"墙"**，但 **08-24 形态学二分破产裁决修正此定位**——墙不必然死，真变量 = 结算通道开放度 × 重构密度。
+
+- **paved path 是"墙"而非"市场"的证据**：防护价值内嵌默认路径（开发者无选择即获得），非由外部对手方定价结算——采用成本零（工具链默认值），展示性强（安全报告可视）。
+- **它是活墙的证据（重构密度高）**：SSCS 的存活因素正是"被击打且击打被记录"——威胁模型先行（按区块量化风险并随组织考古重绘 ground truth）+ 威胁假设取最高档（APT + assume breach）意味着墙持续在被真实威胁重新审视；Hermetic builds / provenance 每次构建都被显式校验。这不是墙不被质疑，是墙每轮构建都在接受挑战。
+- **墙的失效面 = 漂移对象（接三对象修正）**：paved path 防的是"决策对象"（开发者走错路）；它的漂移对象是**安全松弛的正常化**——成本压力下把 guardrail 调松一档、把"临时豁免"变成常态；形状对象是 **config-as-code 本身被攻破** → 一行 YAML 批量下发 = 攻击者借墙放大伤害（与 Config-as-Code 双刃剑节直接衔接）。
+- **推论**：paved path 要长期存活，处方 = 保持重构密度（威胁模型定期重绘 + 金丝雀推送 + 变更治理）+ 对 config-as-code 这一单点用最高等级变更治理（见上节警告）——这正是"活墙"的组织形态。
+
+来源：08-24 圆桌（[[research-agenda]] 新判断行「开放域防御三对象 + 锚对手无关性」）。
 
 ## 关键数据点
 
