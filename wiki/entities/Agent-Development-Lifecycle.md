@@ -57,6 +57,16 @@ CI/CD pipeline 只是 Workflow 的特例：Workflow 持久化状态、可重试�
 | 编排原语 | CI/CD pipeline（线性步骤） | Workflow（状态机 + 事件触发 + spawn） |
 | 关键约束 | 人工审批 | programmatic / reproducible / atomic / permissioned |
 
+## AI-Native SDLC 契约产物（Anthropic 官方版，08-22 补充）
+
+Anthropic（Louis Claxton，2026-08-21，[[20260822-the-ai-native-sdlc-playbook]]）为 ADLC 提供了六阶段（Plan / Design / Build / Test / Deploy / Maintain）的官方契约产物形态。核心是 **loop 非 pipeline** + **intent 第一公民**：
+
+- **intent.md**（第一公民 = source of truth）：发起人用自己语言写问题/目标/约束三段式，Design/Build 分别派生 spec.md 与 plan.md；
+- **四大基础设施**：CLAUDE.md（context）/ Skills（机构知识）/ Hooks（build-time 硬门禁）/ Evals（20-50 真实任务 + CI 周期，stage-gate 版 QA）；
+- **瓶颈左移的明确表述**：code 不再是瓶颈后，瓶颈左移到 build 之前（plan / design / review / test），人只留 inspiration / taste / judgement——与 ADLC 对照表的"人的位置"一致。
+
+**待升级的验证缺口（08-23 圆桌，synthesized/medium，见 research-agenda "双层结算 + 意图=承诺=钟"行）**：intent 验证是 [[Generation-Verification-Asymmetry]] 在需求域的实例——intent 不能自证覆盖真实问题，下游四层（hooks/evals/review/人工）全在 intent 下游，产物无法确证母体；且 intent.md 疑为双契约文档（problem/outcome = 方向层 hypothesis 不可验证，constraints = 规格层 truth 可 eval 撞败），贴同一 source-of-truth 标签可能是范畴错误。Playbook 原文对 spec-review 是否覆盖 intent 约束、intent 是否有 provenance 未在 source summary 中确认（联网核验挂账）。
+
 ## 关键数据点
 
 - SDLC 溯源：RAND 1975 的 Systems Development Lifecycle
