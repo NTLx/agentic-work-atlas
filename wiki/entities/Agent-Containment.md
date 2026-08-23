@@ -366,6 +366,15 @@ Meta 的退出标准由 CEO 设定（"AI 模型达标后恢复正常"），但"�
 - 审计者自身有 omission bias 时会忽略日志中的不作为信号
 - Agent 生成的决策日志可能是幻觉——需要独立验证机制
 
+## 外部标准化现状：OWASP GenAI 项目与 Agent Control Standard（2026-08-23 一手核查）
+
+Agent containment 的外部标准化正处于**文档态的进行时**（OWASP 官方域一手核查，08-23）：
+
+- **OWASP GenAI Security Project**：LLM Top 10 2026 版（08-04 发布），600+ 专家 / 8000+ 社区成员，使命明确覆盖 "LLMs, agentic AI systems, and AI-driven applications"——问责层（清单）载体已经存在且在持续迭代
+- **Agent Control Standard（ACS）**（GenAI-Security-Project/agent-control-standard，08-11 活跃）：定义 **Observed Agent × Guardian Agent** 交互协议 + OpenTelemetry/OCSF 可观测性 + Agent BOM（动态物料清单），指导原则 "inspectable, traceable, instrumentable"
+- **协议寄生路线获得正向实例**：ACS 路线图计划 v1 做 FastMCP/A2A 客户端插桩（受控观察），v3 扩展 A2A/MCP 支持 deny/modify 操作——完全符合"授权层 = 协议寄生唯一持续产出事实标准路线"的模式；但当前参考实现仍是 v1 待办、adoption 数据为零，即**规范已起草、工作标准未成形**
+- **与席层缺失定理的对接**：ACS 的 Guardian Agent ≈ 物质层席位的第一个工程化雏形——它把"读取运行中的 agent 行为"做成协议，而非先做危险分析上位规范，恰好印证"缺的是席位通道而非顶层规范"的归约（详见 research-agenda 席层缺失定理行）
+
 ## 关联概念
 
 - [[Agent-Harness]] — Containment 是 Harness 第 12 组件（安全执行环境）的架构级扩展
