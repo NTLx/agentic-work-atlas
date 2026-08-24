@@ -18,7 +18,7 @@ tags:
   - communication-overhead
 related_entities:
   - "[[Horn]]"
-  - "[[Agent-Harness-Engineering]]"
+  - "[[Harness-Engineering]]"
   - "[[Multi-Agent-System]]"
 source_raw:
   - "[[20260815-engineers-history-reinvention]]"
@@ -44,7 +44,7 @@ Fred Brooks 1975 年出版的软件工程经典，源自其 1964 年 IBM System/
 
 ## 与库中概念的对标
 
-- 与 [[Agent-Harness-Engineering]] 同构：harness 设计需要管理 multi-agent 通信
+- 与 [[Harness-Engineering]] 同构：harness 设计需要管理 multi-agent 通信
 - 与库中 multi-agent 主题（如有 entity）同构
 - 与 Geoffrey Litt "Understanding is the new bottleneck"（forward reference）间接同构——agent 协调是新瓶颈
 
@@ -80,7 +80,7 @@ Fred Brooks 1975 年出版的软件工程经典，源自其 1964 年 IBM System/
 ## 关联概念
 
 - [[Horn]] — 重新映射人月神话到 AI agent 时代
-- [[Agent-Harness-Engineering]] — Harness 管理 multi-agent 通信
+- [[Harness-Engineering]] — Harness 管理 multi-agent 通信
 - [[Multi-Agent-System-Pathology]] — multi-agent 群体的组织病理
 - [[Agent-Orchestration]] — 编排层处理 Brooks 沟通开销
 - [[Orchestrators-Tax]] — 编排者承担 cognitive locality 切分

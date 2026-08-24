@@ -3,9 +3,10 @@ type: entity
 title: Harness Engineering
 aliases:
   - Harness Engineering
+  - Agent Harness Engineering
 definition: "工程团队的首要工作不再是编写代码，而是构建让 AI Agent 能有效工作的系统——设计 SOP、测试基础设施、集成系统、分诊系统，使 Agent 可检查、可验证、可修改。Addy Osmani (2026) 强调：**Agent = Model + Harness**，失效通常不是模型问题，而是配置（Harness）问题。"
 created: 2026-04-16
-updated: 2026-07-29
+updated: 2026-08-25
 tags:
   - AI-Agent
   - Software-Engineering
@@ -44,6 +45,9 @@ source_raw:
   - '[[20260706-martin-fowler-fragments]]'
   - '[[20260727-github-harness-is-all-you-need]]'
   - '[[20260728-fowler-orchestrator-tax]]'
+  - '[[20260613-NLAH-natural-language-agent-harnesses]]'
+  - '[[20260623-ibm-cuga-agent-harness]]'
+  - '[[20260702-qwen-agent-harness-practice]]'
 ---
 
 # Harness Engineering（驾驭工程）
@@ -77,6 +81,18 @@ GitHub 的 Burke Holland（2026-07）展示了 harness 工程的**个体从业�
 
 ### 棘轮效应（The Ratchet）
 Addy Osmani 指出：Harness Engineering 是一种棘轮式的迭代过程。每当 Agent 犯错，工程师不应仅通过重试解决，而应在 Harness 中增加约束、工具或校验，确保该错误永久性消失。
+
+棘轮不是“规则越多越好”。过度追加约束会使 `AGENTS.md` 膨胀、加剧 context rot，并让系统对新任务僵化。约束应有可观测失败支撑，并定期合并或删除失效规则。
+
+### Harness 是可实验对象，不是胶水堆积
+
+同一模型只改变 Harness，Terminal Bench 2.0 排名可从前 30 提升到前 5，说明 Harness 会实质改变系统能力。[[20260613-NLAH-natural-language-agent-harnesses]] 进一步把 Harness 表示成可执行自然语言并做消融：文件持久化状态稳定增益，多候选搜索和上下文压缩却可能降低表现。正确做法是用任务级评测选择机制，而不是不断累加脚手架。
+
+实现形态也在分化：[[20260623-ibm-cuga-agent-harness]] 把治理策略内置进运行时；[[20260702-qwen-agent-harness-practice]] 则强调 Harness 的短期收益很高，但其中一部分会随基础模型进步而淘汰。Harness 因而必须同时具备可验证性和可替换性。
+
+### 长程任务：把状态移出上下文
+
+长任务中的 context reset、compaction 和 hand-off file 不是模型能力替代品，而是状态治理机制。优先把进度、feature 清单和验证结果写入可检查的外部 artifact；只有在外部状态不足时才增加 prompt 内上下文。
 
 ### HaaS (Harness-as-a-Service)
 随着 Agent SDK（如 Claude Agent SDK, OpenAI Agents SDK）的成熟，Harness 开始以服务形式交付。开发者不再从零构建循环和工具分发，而是通过配置 HaaS 运行时来快速部署领域 Agent。
@@ -160,6 +176,7 @@ Fowler 的判断：对 harness 的关注是否会被模型改进淘汰？"attent
 - **局限**：转型代价真实——员工不确定感、CTO 每天 18 小时、高级工程师质疑自身价值
 - **局限**：文章作者利益相关——CREAO 是 Agent 平台，用自家 Agent 重建自家平台
 - **风险**：6 阶段部署流水线的确定性依赖 CI 覆盖率——未覆盖的边界仍是盲区
+- **风险**：Harness 优化可能只适配特定模型或 benchmark；模型跃升后，旧脚手架可能成为技术债
 
 ## 关联概念
 

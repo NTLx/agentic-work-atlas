@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Inference Engineering (Latent Space / Baseten)"
-source_raw:
-  - "[[20260803-latent-space-inference-engineering-baseten]]"
+canonical_url: "https://www.latent.space/p/inference-eng"
+raw_state: index
+original_raw_file: "20260803-latent-space-inference-engineering-baseten.md"
+original_body_sha256: "9a6e1845aca2270f5f89a8b61a38da5c3d4ea4efe58990e96805eadf739f2"
+indexed_at: "2026-08-25T01:40:22+08:00"
+source_locator: "Latent Space Inference Engineering（2026-08-03）：00:00:00 / 00:03:18 / 00:28:22 / 00:32:15 分别定位 200K-token KV-cache routing、speculative decoding、quantization 与推理加速；另涵盖 production-ready serving。"
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-08-25
 tags:
   - source-summary
   - inference-engineering
@@ -16,6 +20,8 @@ claim_type: extracted
 ---
 
 # Inference Engineering（推理工程）—— Latent Space 对话 Baseten
+
+> Raw 生命周期：本地 transcript 已降级为可恢复索引；关键机制可按 `source_locator` 返回原节目核验。
 
 > 来源：Latent Space 播客（latent.space/p/inference-eng，2026-08-03），嘉宾 Baseten 的 Philip Kiely（《Inference Engineering》作者）与 Ali Taha，主持 swyx / Vibhu Sapra。**证据定级 medium**：一手专家对话，机制解释密度高、可信；但嘉宾是刚完成 `$13B` Series F 的 Baseten 员工，存在厂商乐观偏差，个别"20%/100%/200% 增益、10× 加速"属语境依赖的营销性表述。定位：标准路径（三步编译法），claim_type: extracted（机制提取为主）。
 

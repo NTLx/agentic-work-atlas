@@ -16,7 +16,7 @@ tags:
   - local-first
 related_entities:
   - "[[Agent-Harness]]"
-  - "[[Agent-Harness-Engineering]]"
+  - "[[Harness-Engineering]]"
   - "[[Agent-Native]]"
   - "[[Agentic-Memory-Dosage]]"
   - "[[Agent-Loops]]"
@@ -97,7 +97,7 @@ Peter 在 OpenClaw 开发期间曾单日提交 627 次代码（约 2.3 分钟一
 
 ## 关联概念
 
-- [[Agent-Harness]] / [[Agent-Harness-Engineering]] — OpenClaw 是 Harness 层的代表性工程实践
+- [[Agent-Harness]] / [[Harness-Engineering]] — OpenClaw 是 Harness 层的代表性工程实践
 - [[Agent-Native]] — OpenClaw 推动 Agent-Native 概念从理论走向产品
 - [[Agent-Loops]] — heartbeat 是 Agent 循环的早期示范
 - [[Agentic-Memory-Dosage]] — OpenClaw 暴露的 memory 痛点对应此概念

@@ -106,7 +106,7 @@ T 型（深度 + 协作）               T 型 + AI literacy + 跨产品形态�
 - [[Capability-Overhang]] — 产品设计哲学
 - [[Taste]] — Point of view 的更一般化讨论
 - [[Jevons-Paradox-for-Knowledge-Work]] — 剪刀差的理论背景
-- [[Agent-Harness-Engineering]] — Systems thinking 的 agent 侧同构
+- [[Harness-Engineering]] — Systems thinking 的 agent 侧同构
 - [[Vibe-Coding]] — 与设计/开发的边界讨论
 - [[Build-First-Business-Ontology]] — ontology 优先于 UI
 

@@ -828,11 +828,15 @@
     },
     "20260626-llm-as-judge-healthcare.md": {
       "body_sha256": "134c10db8287483c0f9d6f22011f1beda5461fecaba762ebe296182951867561",
+      "canonical_url": "https://arxiv.org/abs/2605.25273v1",
       "compiled_at": "2026-07-09T13:16:32+08:00",
+      "indexed_at": "2026-08-25T01:40:22+08:00",
       "raw_file": "20260626-llm-as-judge-healthcare.md",
+      "raw_state": "index",
+      "retention_note": "Compiled scoping review; PRISMA counts, forest plots, statistics, and failure modes are located in the source summary.",
       "status": "compiled",
       "summary_path": "wiki/sources/20260626-llm-as-judge-healthcare.md",
-      "updated_at": "2026-07-09T13:16:32+08:00"
+      "updated_at": "2026-08-25T01:41:07+08:00"
     },
     "20260630-building-headless-automation-claude-code.md": {
       "body_sha256": "2fd0036a8995f9c0bb2cd4135b5f21ff1a51e938e31bf1aee45dee9b44256d3c",
@@ -1061,11 +1065,15 @@
     },
     "20260715-why-i-left-google-deepmind.md": {
       "body_sha256": "b3c4746b818d30c62bf53547f996d00234c58113d8806d65440d820fa9830b26",
+      "canonical_url": "https://turntrout.com/why-i-left-google-deepmind",
       "compiled_at": "2026-07-16T11:42:00+08:00",
+      "indexed_at": "2026-08-25T01:40:22+08:00",
       "raw_file": "20260715-why-i-left-google-deepmind.md",
+      "raw_state": "index",
+      "retention_note": "Compiled first-person account; source summary retains the event chain and section anchors.",
       "status": "compiled",
       "summary_path": "wiki/sources/20260715-why-i-left-google-deepmind.md",
-      "updated_at": "2026-07-16T11:42:00+08:00"
+      "updated_at": "2026-08-25T01:41:08+08:00"
     },
     "20260717-openai-scorecard-ai-age.md": {
       "body_sha256": "ebae118be77caea5e15d716c12b9fbb5b3b16b165dbd9d90b28dbaf4abecf691",
@@ -1382,11 +1390,15 @@
     },
     "20260803-latent-space-inference-engineering-baseten.md": {
       "body_sha256": "9a6e1845aca2270f5f89a8b61a38da5c3d4ea4efe58919790e96805eadf739f2",
+      "canonical_url": "https://www.latent.space/p/inference-eng",
       "compiled_at": "2026-08-13T10:54:31+08:00",
+      "indexed_at": "2026-08-25T01:40:22+08:00",
       "raw_file": "20260803-latent-space-inference-engineering-baseten.md",
+      "raw_state": "index",
+      "retention_note": "Compiled public transcript; source summary retains timestamps for the core inference mechanisms.",
       "status": "compiled",
       "summary_path": "wiki/sources/20260803-latent-space-inference-engineering-baseten.md",
-      "updated_at": "2026-08-13T10:54:31+08:00"
+      "updated_at": "2026-08-25T01:41:07+08:00"
     },
     "20260804-agent-development-lifecycle-adlc.md": {
       "body_sha256": "799c3cac3c5389b77f094135c4be0049996c148aa44958d8572d1abac84ceed3",
@@ -1441,11 +1453,15 @@
     },
     "20260810-the-playbook-for-building-high-talent.md": {
       "body_sha256": "6be6670bab466d6f60ebed5c50334cafd44687d0cbaea4c10dda14f371518bf2",
+      "canonical_url": "https://www.lennysnewsletter.com/p/the-playbook-for-building-high-talent",
       "compiled_at": "2026-08-13T10:45:19+08:00",
+      "indexed_at": "2026-08-25T01:40:22+08:00",
       "raw_file": "20260810-the-playbook-for-building-high-talent.md",
+      "raw_state": "index",
+      "retention_note": "Compiled public interview transcript; source summary retains the main mechanisms and topic anchors.",
       "status": "compiled",
       "summary_path": "wiki/sources/20260810-the-playbook-for-building-high-talent.md",
-      "updated_at": "2026-08-13T10:45:19+08:00"
+      "updated_at": "2026-08-25T01:41:08+08:00"
     },
     "20260811-databricks-genie-grounding-governance.md": {
       "body_sha256": "49d95968528df95b9219fc795d1720a0cc3845d7f4b17f65052952827b2233b0",
@@ -2252,6 +2268,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-25T01:31:00+08:00",
+  "updated_at": "2026-08-25T01:41:08+08:00",
   "version": 1
 }

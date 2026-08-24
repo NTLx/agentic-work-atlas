@@ -53,7 +53,7 @@ claim_type: mixed
 
 - **「养龙虾」（迭代 Agent 学习用户数字足迹）↔ [[Agentic-Speculation|Agent 推测]] vs 真实代理**：嘉宾把「养龙虾」定位为 Agent 过滤而非完全代理——这是 [[Agent-Containment|Agent 收容]] 的一种隐式实践：让 Agent 替你**接收信息**而非替你**做决定**。这种「数字助理而非数字代理」的中间形态，是当前 Agent 工程中最被低估的工作流设计模式（综合判断）。
 - **「Gödel machine 自改进系统」 ↔ 元学习 / AutoML 演进**：东旭对「真正 AGI」的 Gödel machine 标准并非空想——它对应学界 [[Sample-Efficiency]] 与 AutoML 的研究方向，但工程上始终卡在「安全自改进」的护栏问题上。当前所有「自改进」Agent（OpenClaw、Hermes Skills 蒸馏）都不是真正的 Gödel machine——它们是人类辅助下的局部优化（综合判断）。
-- **「删生产库 vs 信任 AI」** ↔ [[Agent-Ergonomics|Agent 人体工学]] / 错误代价不对称：东旭自报删库事故但继续高强度使用 Agent——这种「事故-反思-继续」的循环，是 [[Agent-Harness-Engineering|Harness 工程]] 的核心动力学。信任不是建在「AI > 人类」宣称上，而是建在「自运行系统」的可恢复性上（综合判断）。
+- **「删生产库 vs 信任 AI」** ↔ [[Agent-Ergonomics|Agent 人体工学]] / 错误代价不对称：东旭自报删库事故但继续高强度使用 Agent——这种「事故-反思-继续」的循环，是 [[Harness-Engineering|Harness 工程]] 的核心动力学。信任不是建在「AI > 人类」宣称上，而是建在「自运行系统」的可恢复性上（综合判断）。
 
 ### 3c. 约束（边界分析）
 
@@ -70,7 +70,7 @@ claim_type: mixed
 - [[Token-Supply-Chain]] — Token 从采购到消费的治理框架，与本期「observability 投资机会」对应
 - [[Jevons-Paradox]] / [[Jevons-Paradox-for-Knowledge-Work]] — 本期嘉宾直接调用此概念论证 Agent 时代总消耗上升
 - [[Agent-Native]] — 东旭提出可操作的判断标准（去掉 AI 后能否运行 / 成本是否涨 1000 倍）
-- [[Agent-Harness]] / [[Agent-Harness-Engineering]] — OpenClaw / Hermes / Raft 都是 Harness 层实践
+- [[Agent-Harness]] / [[Harness-Engineering]] — OpenClaw / Hermes / Raft 都是 Harness 层实践
 - [[Agent-Observability]] — 东旭投资原则「Token 花在哪了」直接对应
 - [[Agentic-Memory-Dosage]] — OpenClaw 「memory 是持续痛点」的对应概念
 - [[Forward-Deployed-Engineer|FDE]] — 张宏江投资地图中的明确落点（Microsoft 6000 人 Frontier Company）

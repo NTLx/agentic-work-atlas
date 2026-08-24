@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Why I Left Google DeepMind"
-source_raw:
-  - "[[20260715-why-i-left-google-deepmind]]"
+canonical_url: "https://turntrout.com/why-i-left-google-deepmind"
+raw_state: index
+original_raw_file: "20260715-why-i-left-google-deepmind.md"
+original_body_sha256: "b3c4746b818d30c62bf53547f996d00234c58113d8806d65440d820fa9830b26"
+indexed_at: "2026-08-25T01:40:22+08:00"
+source_locator: "章节锚点：The Pentagon tries to intimidate Anthropic、The Framework I created、Google quietly signs the deal、Reflections；核心证据围绕 Google/Pentagon 合同、Anthropic 红线与承诺代价。"
 created: 2026-07-16
-updated: 2026-07-16
+updated: 2026-08-25
 tags:
   - source-summary
   - ai-safety
@@ -15,6 +19,8 @@ claim_type: extracted
 ---
 
 # Why I Left Google DeepMind
+
+> Raw 生命周期：本地全文已降级为可恢复索引；事件链可按 `source_locator` 返回作者原文核验。
 
 > Alex Turner（TurnTrout，原 Google DeepMind 研究科学家）2026-07-15 一手叙事。记述他因 Google 签署无限制军方 AI 合同而离职的全过程，以及对"AI 伦理承诺在压力下如何失效"的反思。一手材料，证据等级 high。
 

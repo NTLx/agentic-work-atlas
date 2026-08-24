@@ -76,6 +76,6 @@ python3 tools/entity-audit.py --write-report
 ## Raw 关联概念规范
 
 - 此规范只用于理解和清理历史 raw；新编译禁止向 raw 新增"关联概念"区块。
-- 历史 raw 中已有的关联概念必须使用 `[[wikilink]]` 格式，禁止纯文本（如 `- ConceptName` 无效）。
-- 所有链接必须指向已存在的 Entity/Topic 页面。
+- 历史 raw 中已有的“关联概念”属于不可信旧注释，不参与图谱维护；不得仅为修复其链接而改写 `full` 原文。
+- 可写 Wiki 层的链接必须指向已存在的 Entity/Topic 页面；`raw/` 不发布，也不作为反向链接口径。
 - 新流程的关联概念必须沉淀到 `wiki/sources/`、Entity、Topic 或 Comparison，并确保每条引用都有对应页面。

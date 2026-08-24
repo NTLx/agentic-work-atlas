@@ -62,7 +62,7 @@ claim_type: mixed
 
 #### 3a. 跨域类比
 
-- **"重新发明 = 不读 manual" ↔ [[Agent-Harness-Engineering]]**：Harness 是工程化"manual"，Agent = Model + Harness。这与 horn 的核心命题同构——harness engineering 是 manual-reading 的工程化。
+- **"重新发明 = 不读 manual" ↔ [[Harness-Engineering]]**：Harness 是工程化"manual"，Agent = Model + Harness。这与 horn 的核心命题同构——harness engineering 是 manual-reading 的工程化。
 - **"agentic orchestration = program management" ↔ 软工程项目管理经典**：与 [[Mythical-Man-Month]] 概念直接相关——Brook 1975 关于 communication overhead 二次方的论断被作者重新映射到 agent 管理。
 - **"Mythical Man-Month 通信开销 ↔ Multi-Agent 系统复杂度"**：与库中 multi-agent 主题同构——多个 agent 之间的协调成本确实是 scaling 的核心问题。
 - **"Royce 1970 瀑布论文 ↔ spec-driven development"**：Royce 论文实际是论证瀑布的失败（多数读者忽略）——这与 [[Software-2.0]] / spec-driven 的现代 AI 时代讨论同构。
@@ -84,7 +84,7 @@ claim_type: mixed
 - [[Horn]]（Author，待 validated_source）
 - [[Mythical-Man-Month]]（forward reference，跨源经典）
 - [[Peter-Naur]]（forward reference，与 jsbarretto 共享引用）
-- [[Agent-Harness-Engineering]]
+- [[Harness-Engineering]]
 - Waterfall（forward reference，单源待建 entity）
 - [[Software-2.0]]（forward reference，库中 raw 已存但 entity 待复核）
 - Geoffrey-Litt（forward reference，被引用的 upstream）

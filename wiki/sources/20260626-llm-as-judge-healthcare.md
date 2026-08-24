@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "LLM-as-a-Judge in Healthcare: A Scoping Analysis of Applications, Methods, and Human Alignment"
-source_raw:
-  - "[[20260626-llm-as-judge-healthcare]]"
+canonical_url: "https://arxiv.org/abs/2605.25273v1"
+raw_state: index
+original_raw_file: "20260626-llm-as-judge-healthcare.md"
+original_body_sha256: "134c10db8287483c0f9d6f22011f1beda5461fecaba762ebe296182951867561"
+indexed_at: "2026-08-25T01:40:22+08:00"
+source_locator: "arXiv 2605.25273v1：PRISMA 流程 541→287→169→134；三组森林图覆盖 13+10+13 项研究；核心统计为 agreement 0.66–0.96、Cohen’s κ 0.59–0.88，并讨论五类失败模式。"
 created: 2026-06-26
-updated: 2026-06-26
+updated: 2026-08-25
 tags:
   - source-summary
   - healthcare
@@ -14,6 +18,8 @@ claim_type: mixed
 ---
 
 # LLM-as-a-Judge in Healthcare
+
+> Raw 生命周期：本地全文已降级为可恢复索引；研究流程、森林图和统计量可按 `source_locator` 返回 arXiv 原文核验。
 
 > Li et al., 2026. arXiv:2605.25273v1 — PRISMA scoping review, 134 studies.
 

@@ -15,7 +15,7 @@ tags:
   - method
 related_entities:
   - "[[Ontology-Meets-Agent]]"
-  - "[[Agent-Harness-Engineering]]"
+  - "[[Harness-Engineering]]"
 source_raw:
   - "[[20260420-build-first-business-ontology]]"
   - "[[20260420-ontology-enterprise-ai-agent]]"
@@ -53,7 +53,7 @@ source_raw:
 
 - **Just do less ↔ 复用 TBox primitives**：Ian Silber 的"Just do less"在数据/规则层的对应是"复用 ontology primitives 而非硬编码规则"
 - **Build-First vs Build-Later**：ontology 优先于 UI；类似"schema 优先于 view"在传统软件工程中的位置
-- **Agent-Harness-Engineering ↔ Harness Schema**：harness 中 agent 调用工具的 schema 定义，本质上是 ontology 的工程化
+- **Harness-Engineering ↔ Harness Schema**：harness 中 agent 调用工具的 schema 定义，本质上是 ontology 的工程化
 
 ## 立场偏见提醒
 
@@ -86,7 +86,7 @@ source_raw:
 ## 关联概念
 
 - [[Ontology]] — 本体论的一般概念
-- [[Agent-Harness-Engineering]] — Harness schema 与 ontology 工程同源
+- [[Harness-Engineering]] — Harness schema 与 ontology 工程同源
 - [[Systems-Thinking]] — ontology 是系统 schema 的形式化
 - [[Enterprise-AI-Model-Sourcing]] — 企业 AI 落地中 ontology 是数据底座
 - [[Just-Do-Less]] — "复用 ontology primitives 而非硬编码规则" 是 Just do less 在数据层

@@ -68,13 +68,13 @@ claim_type: mixed
 
 - **Capability overhang ↔ 工具表达力的浪费**：OpenAI 模型能力远超大多数用户的实际使用——和 Excel 95% 用户只用 5% 功能、AutoCAD 多数项目只用基础建模是同一种现象。这与 [[Vibe-Coding]] 中 vibe coder 用 5% 框架完成 80% 工作同构。
 
-- **Building in public + 快速反馈 ↔ Lean Startup methodology**：Ian 提到 "big swings and learn quickly"——这是 Lean Startup 的 "build-measure-learn" 循环在 AI 产品设计领域的具体实现。同 [[Agent-Harness-Engineering]] 中"快速迭代 loop"的思路同构。
+- **Building in public + 快速反馈 ↔ Lean Startup methodology**：Ian 提到 "big swings and learn quickly"——这是 Lean Startup 的 "build-measure-learn" 循环在 AI 产品设计领域的具体实现。同 [[Harness-Engineering]] 中"快速迭代 loop"的思路同构。
 
 - **Systems thinking 成为跨岗位硬需求 ↔ Agent 时代的 harness engineering**：Lenny 在 5 期连续 podcast 中听到 systems thinking——说明这是 AI 时代跨职能的硬技能。设计 system primitives ↔ Agentic Engineering 中构建可组合 harness，同构。
 
 #### 3b. 旁逸（隐含的跨域洞察）
 
-- **「Imposter syndrome 在任何阶段都常见」**——Ian 个人反思中提到，进 OpenAI 时很 intimidated，找朋友聊发现都有同样感受。这是一个关于"快速变化的领域普遍存在 competence anxiety"的现象，可对应到 [[Agent-Harness-Engineering]] 等任何 AI 时代新角色。
+- **「Imposter syndrome 在任何阶段都常见」**——Ian 个人反思中提到，进 OpenAI 时很 intimidated，找朋友聊发现都有同样感受。这是一个关于"快速变化的领域普遍存在 competence anxiety"的现象，可对应到 [[Harness-Engineering]] 等任何 AI 时代新角色。
 - **「公司 DNA 比个人意志更顽固」**——Ian 自陈从 Groupon 到 Instagram 到 OpenAI，每家公司 DNA 都不一样，"you're not going to change that culture... help round it out maybe"。这条隐含洞察对 FDE 部署有意义——不是去改造客户公司文化，而是 round out 现有 DNA。
 
 #### 3c. 约束分析
@@ -105,7 +105,7 @@ claim_type: mixed
 - Broad-Spectrum-User（forward reference，单源待建 entity）
 - Building-In-Public（forward reference，单源待建 entity）
 - [[Jevons-Paradox-for-Knowledge-Work]]
-- [[Agent-Harness-Engineering]]
+- [[Harness-Engineering]]
 - [[Vibe-Coding]]
 - [[Build-First-Business-Ontology]]
 - AI-Confidence-Theater（forward reference，Elena Verna 提出，无独立 raw）

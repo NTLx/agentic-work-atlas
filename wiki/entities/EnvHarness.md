@@ -18,7 +18,7 @@ tags:
   - paper
 related_entities:
   - "[[Agent-Harness]]"
-  - "[[Agent-Harness-Engineering]]"
+  - "[[Harness-Engineering]]"
   - "[[Thin-Harness-Fat-Skills]]"
   - "[[EnvRigger]]"
   - "[[Self-Evolving-Agent]]"
@@ -115,7 +115,7 @@ source_raw:
 
 ## 关联概念
 
-- [[Agent-Harness]] / [[Agent-Harness-Engineering]] — 直接对称概念
+- [[Agent-Harness]] / [[Harness-Engineering]] — 直接对称概念
 - [[EnvRigger]] — 自动化 EnvHarness customization 流程
 - Self-Evolving-Agent — 本文是 environment 维度 self-evolution 的具体化（待建 entity）
 - [[Lessons-MD-Self-Improvement]] — trajectory → improvement 的同构机制

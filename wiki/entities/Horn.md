@@ -17,7 +17,7 @@ tags:
 related_entities:
   - "[[Mythical-Man-Month]]"
   - "[[Peter-Naur]]"
-  - "[[Agent-Harness-Engineering]]"
+  - "[[Harness-Engineering]]"
 source_raw:
   - "[[20260815-engineers-history-reinvention]]"
 ---
@@ -73,5 +73,5 @@ Horn 与 [[Joshua-Barretto]] 同日段（08-14/08-15）发表文章形成完整�
 - [[Mythical-Man-Month]] — Horn 推荐；6 本书之一，沟通开销二次方定律
 - [[Peter-Naur]] — 1985 论文在 LLM 时代被重新引用
 - [[Joshua-Barretto]] — 同期发表反方视角文章，共同引用 Peter Naur
-- [[Agent-Harness-Engineering]] — "agentic orchestration = program management" 命题的目标对象
+- [[Harness-Engineering]] — "agentic orchestration = program management" 命题的目标对象
 - Program Management（学科）— 重新发明前的原始学科（forward reference，未建 entity）

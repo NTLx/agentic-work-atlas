@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "The playbook for building high talent density teams | Adam Ward, Head of Talent at Cursor"
-source_raw:
-  - "[[20260810-the-playbook-for-building-high-talent]]"
+canonical_url: "https://www.lennysnewsletter.com/p/the-playbook-for-building-high-talent"
+raw_state: index
+original_raw_file: "20260810-the-playbook-for-building-high-talent.md"
+original_body_sha256: "6be6670bab466d6f60ebed5c50334cafd44687d0cbaea4c10dda14f371518bf2"
+indexed_at: "2026-08-25T01:40:22+08:00"
+source_locator: "Lenny’s Podcast（2026-08-09）：funnel of doom、scoping → mapping → relentless pursuit、work sample / onsite、FDE、IC taste / judgment 等主题锚点；完整 transcript 由文章及其 podcast 链接恢复。"
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-08-25
 tags:
   - source-summary
   - talent
@@ -14,6 +18,8 @@ claim_type: mixed
 ---
 
 # The playbook for building high talent density teams | Adam Ward, Head of Talent at Cursor
+
+> Raw 生命周期：本地 transcript 已降级为可恢复索引；招聘机制和岗位变化可按 `source_locator` 返回原节目核验。
 
 > 来源：Lenny's Podcast 访谈（2026-08-09），Adam Ward（Cursor 招聘负责人，原 Pinterest 全球招聘负责人、Facebook 65 人招聘团队负责人）。**证据定级 medium**：完整 transcript 公开（非 paywall），机制具体、含大量一手案例；但全部为招聘负责人自我报告、无对照组或独立数据审计，且领域重心在招聘组织机制，岗位演化部分贴近主线、招聘操作细节偏泛组织管理。
 

@@ -14,7 +14,7 @@ tags:
   - ai-era
   - skill
 related_entities:
-  - "[[Agent-Harness-Engineering]]"
+  - "[[Harness-Engineering]]"
   - "[[Just-Do-Less]]"
   - "[[Ian-Silber]]"
 source_raw:
@@ -83,7 +83,7 @@ source_raw:
 
 ## 关联概念
 
-- [[Agent-Harness-Engineering]] — Harness 是 systems thinking 在 agent 周边的工程化
+- [[Harness-Engineering]] — Harness 是 systems thinking 在 agent 周边的工程化
 - [[Build-First-Business-Ontology]] — ontology 是系统的 schema 形式
 - [[Just-Do-Less]] — Systems thinking 在工程层面的方法论
 - [[Ian-Silber]] — Ian 在 Lenny podcast 反复强调
