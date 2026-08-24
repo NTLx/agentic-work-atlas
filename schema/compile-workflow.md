@@ -23,7 +23,7 @@ type: schema-subdoc
 | Markdown | `.md` | `read_text()` | 有 YAML frontmatter |
 | PDF | `.pdf` | `tools/pdf-extract.py` 提取至 stdout/临时文件 | 无（元数据记录在 source summary） |
 
-PDF 文件直接存放在 `raw/`，Quartz 以可下载附件形式展示。Lint 和 Registry 均追踪 PDF 文件。
+PDF 在编译期间可存放于 `raw/`，但不进入 Quartz 发布面。编译完成后的全文去留由 `schema/compile-operations.md` 结算；可从稳定一手地址恢复的 PDF 默认降级为 `index`。
 
 ## 自主路径选择
 
@@ -73,8 +73,9 @@ Agent 读取 raw source → 自动判断材料类型 →
    └─ 搬运到 wiki/{entities|topics|comparisons}/
    └─ 历史 raw 中已有 `## 编译摘要` 保留，但新流程禁止追加到 raw
 
-6. 创建/更新 entity 页面
+6. 评估并按需创建/更新 entity 页面
    └─ 写入 wiki/entities/
+   └─ 优先更新已有页面；新 Entity 必须满足 `schema/entity-spec.md` 的准入条件
    └─ wikilink 必须使用 kebab-case 文件名格式（如 [[Vibe-Coding]]）
    └─ source_raw 必须使用短链接格式（纯文件名）
    └─ 如有冲突，在 entity 中标注冲突标记
@@ -95,9 +96,10 @@ Agent 读取 raw source → 自动判断材料类型 →
 
 11. 更新 index.md + comparisons（如有对比概念）
 
-12. 更新 Compile Registry
+12. 更新 Compile Registry 并结算 Raw 生命周期
     └─ uv run python tools/compile_registry.py mark-compiled "<raw文件名>" --summary-path "wiki/sources/<raw文件名stem>.md"
     └─ PDF 和 Markdown 文件均需执行此步骤
+    └─ 随后按 `schema/compile-operations.md` 选择 full / index；compile 不直接选择 removed
 
 13. 提交 git commit 并推送（按 Commit 规范撰写）
 ```
@@ -130,8 +132,9 @@ Agent 读取 raw source → 自动判断材料类型 →
    └─ 源材料讨论 AI 公司/产品 → ljg-invest
    （评估标准与增强路径步骤 4 相同）
 
-5. 为每个概念创建/更新 entity 页面
+5. 评估概念并按需创建/更新 entity 页面
    └─ 写入 wiki/entities/
+   └─ 优先更新已有页面或写入 topic 小节；不得把单篇术语机械拆成 Entity
    └─ wikilink 必须使用 kebab-case 文件名格式（如 [[Vibe-Coding]]）
    └─ source_raw 必须使用短链接格式（纯文件名）
    └─ 如有冲突，在 entity 中标注冲突标记
@@ -157,33 +160,14 @@ Agent 读取 raw source → 自动判断材料类型 →
 10. 更新 index.md
     └─ 添加新的 entity 和 topic 条目
 
-11. 更新 Compile Registry
+11. 更新 Compile Registry 并结算 Raw 生命周期
     └─ uv run python tools/compile_registry.py mark-compiled "<raw文件名>" --summary-path "wiki/sources/<raw文件名stem>.md"
     └─ PDF 和 Markdown 文件均需执行此步骤
+    └─ 随后按 `schema/compile-operations.md` 选择 full / index；compile 不直接选择 removed
 
 12. 提交 git commit 并推送（按 Commit 规范撰写）
 ```
 
-## 周期性自治：盲区扫描
+## 单篇改动边界
 
-Agent 在编译流程中自主维护盲区扫描周期：
-
-```
-计数器：每完成 1 篇编译 → counter + 1
-当 counter ≥ 5 时：
-  ├─ 自动触发 ljg-blind（盲区扫描）
-  ├─ 扫描最近对话历史，暴露思维盲区
-  ├─ 从微信读书挑选精准补章
-  ├─ 输出充实 wiki/research/research-agenda.md 的 Source 需求队列
-  └─ counter 归零
-```
-
-此机制确保知识库不会在某个方向上过度自信而不自知。
-
-**触及范围**：单篇 source 编译可能影响 10-15 个 wiki 页面
-- 新建 entities（3-5 个）
-- 更新相关 entities（添加关联）
-- 创建/更新 topic（整合主题）
-- 更新 comparisons（如有对比）
-- 更新 index.md
-- 提交 git commit 并推送
+单篇编译默认只创建 source summary，并更新 0–2 个已有稳定页面。新建 Entity、Topic 或 Comparison 必须分别满足对应准入条件；由材料暴露出的新研究问题交给 `explore`，不在 compile 中自动扩张研究空间。

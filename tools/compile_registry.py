@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 VALID_STATUS = {"pending", "compiled", "skipped"}
+VALID_RAW_STATE = {"full", "index", "removed"}
 CANDIDATE_SEVERITY = {
     "body-changed": "blocking",
     "missing-summary": "blocking",
@@ -65,12 +66,29 @@ def is_sha256_digest(value: str) -> bool:
     return len(value) == 64 and all(char in "0123456789abcdef" for char in value)
 
 
+def is_http_url(value: str) -> bool:
+    return value.startswith(("https://", "http://")) and len(value.split("://", 1)[1]) > 0
+
+
+def is_iso_timestamp(value: str) -> bool:
+    try:
+        datetime.fromisoformat(value)
+    except (TypeError, ValueError):
+        return False
+    return True
+
+
 def candidate_severity(reason: str) -> str:
     return CANDIDATE_SEVERITY.get(reason, "blocking")
 
 
 def make_candidate(raw_file: str, reason: str) -> dict:
     return {"raw_file": raw_file, "reason": reason, "severity": candidate_severity(reason)}
+
+
+def raw_state(entry: dict) -> str:
+    """Return the retention state, preserving compatibility with v1 entries."""
+    return entry.get("raw_state", "full")
 
 
 def has_blocking_findings(candidates: list[dict], anomalies: list[dict]) -> bool:
@@ -94,6 +112,27 @@ def _validate_registry(registry: dict, path: Path) -> None:
             raise ValueError(f"invalid registry file: {path}")
         if entry.get("raw_file") != raw_file:
             raise ValueError(f"invalid registry file: {path}")
+        state = raw_state(entry)
+        if state not in VALID_RAW_STATE:
+            raise ValueError(f"invalid registry file: {path}")
+        if state == "index":
+            if status != "compiled":
+                raise ValueError(f"invalid registry file: {path}")
+            if not is_sha256_digest(entry.get("body_sha256", "")):
+                raise ValueError(f"invalid registry file: {path}")
+            if not isinstance(entry.get("summary_path"), str) or not entry["summary_path"]:
+                raise ValueError(f"invalid registry file: {path}")
+            if not isinstance(entry.get("canonical_url"), str) or not is_http_url(entry["canonical_url"]):
+                raise ValueError(f"invalid registry file: {path}")
+            if not isinstance(entry.get("indexed_at"), str) or not is_iso_timestamp(entry["indexed_at"]):
+                raise ValueError(f"invalid registry file: {path}")
+        elif state == "removed":
+            if status == "pending" or not is_sha256_digest(entry.get("body_sha256", "")):
+                raise ValueError(f"invalid registry file: {path}")
+            if not isinstance(entry.get("retired_at"), str) or not is_iso_timestamp(entry["retired_at"]):
+                raise ValueError(f"invalid registry file: {path}")
+            if not isinstance(entry.get("retire_reason"), str) or not entry["retire_reason"].strip():
+                raise ValueError(f"invalid registry file: {path}")
 
 
 def load_registry(root: Path = ROOT) -> dict:
@@ -121,6 +160,7 @@ def mark_compiled(registry: dict, raw_file: str, summary_path: str, body_sha256:
     entry = {
         "raw_file": raw_file,
         "status": "compiled",
+        "raw_state": "full",
         "body_sha256": body_sha256,
         "summary_path": summary_path,
         "compiled_at": now,
@@ -135,6 +175,7 @@ def mark_skipped(registry: dict, raw_file: str, reason_code: str, note: str, bod
     entry = {
         "raw_file": raw_file,
         "status": "skipped",
+        "raw_state": "full",
         "body_sha256": body_sha256,
         "skip_reason_code": reason_code,
         "skip_note": note,
@@ -151,10 +192,13 @@ def ensure_entry(registry: dict, raw_file: str, body_sha256: str, now: str) -> d
         entry = {
             "raw_file": raw_file,
             "status": "pending",
+            "raw_state": "full",
             "body_sha256": body_sha256,
             "updated_at": now,
         }
         registry["items"][raw_file] = entry
+    elif raw_state(entry) != "full":
+        raise ValueError(f"raw lifecycle record already exists: {raw_file}={raw_state(entry)}")
     elif entry.get("status") == "pending":
         entry["body_sha256"] = body_sha256
         entry["updated_at"] = now
@@ -170,6 +214,44 @@ def list_pending(registry: dict) -> list[str]:
     )
 
 
+def set_raw_state(
+    registry: dict,
+    raw_file: str,
+    state: str,
+    *,
+    canonical_url: str | None = None,
+    indexed_at: str | None = None,
+    retired_at: str | None = None,
+    retire_reason: str | None = None,
+    archive_uri: str | None = None,
+    retention_note: str | None = None,
+    now: str,
+) -> dict:
+    """Update retention metadata without touching the raw file on disk."""
+    if state not in VALID_RAW_STATE:
+        raise ValueError(f"invalid raw state: {state}")
+    entry = registry["items"].get(raw_file)
+    if entry is None:
+        raise ValueError(f"raw registry entry not found: {raw_file}")
+
+    entry["raw_state"] = state
+    if canonical_url is not None:
+        entry["canonical_url"] = canonical_url
+    if indexed_at is not None:
+        entry["indexed_at"] = indexed_at
+    if retired_at is not None:
+        entry["retired_at"] = retired_at
+    if retire_reason is not None:
+        entry["retire_reason"] = retire_reason
+    if archive_uri is not None:
+        entry["archive_uri"] = archive_uri
+    if retention_note is not None:
+        entry["retention_note"] = retention_note
+    entry["updated_at"] = now
+    registry["updated_at"] = now
+    return entry
+
+
 def detect_legacy_compiled(raw_path: Path, root: Path) -> bool:
     compiled_note = root / expected_summary_path(raw_path.name)
     if compiled_note.exists():
@@ -182,6 +264,7 @@ def detect_legacy_compiled(raw_path: Path, root: Path) -> bool:
 
 def bootstrap_registry(root: Path = ROOT, now: str | None = None) -> dict:
     stamp = now or now_iso()
+    existing = load_registry(root) if registry_path(root).exists() else None
     registry = empty_registry(stamp)
     for raw_path in raw_files(root):
         body_sha256 = compute_body_sha256(raw_path)
@@ -197,9 +280,14 @@ def bootstrap_registry(root: Path = ROOT, now: str | None = None) -> dict:
             registry["items"][raw_path.name] = {
                 "raw_file": raw_path.name,
                 "status": "pending",
+                "raw_state": "full",
                 "body_sha256": body_sha256,
                 "updated_at": stamp,
             }
+    if existing:
+        for raw_file, entry in existing.get("items", {}).items():
+            if raw_state(entry) in {"index", "removed"}:
+                registry["items"][raw_file] = dict(entry)
     registry["updated_at"] = stamp
     return registry
 
@@ -220,9 +308,19 @@ def reconcile_registry(
             registry["items"][raw_file] = {
                 "raw_file": raw_file,
                 "status": "pending",
+                "raw_state": "full",
                 "body_sha256": current_digest,
                 "updated_at": stamp,
             }
+            continue
+        if raw_state(entry) != "full":
+            anomalies.append(
+                {
+                    "raw_file": raw_file,
+                    "reason": "raw-state-drift",
+                    "raw_state": raw_state(entry),
+                }
+            )
             continue
         if entry.get("status") == "compiled":
             stored_digest = entry.get("body_sha256", "")
@@ -243,7 +341,14 @@ def reconcile_registry(
 
     for raw_file in sorted(registry["items"]):
         if raw_file not in raw_paths:
-            anomalies.append({"raw_file": raw_file, "reason": "missing-raw"})
+            entry = registry["items"][raw_file]
+            state = raw_state(entry)
+            if state == "index":
+                summary_path = root / entry.get("summary_path", "")
+                if not entry.get("summary_path") or not summary_path.exists():
+                    candidates.append(make_candidate(raw_file, "missing-summary"))
+            elif state != "removed":
+                anomalies.append({"raw_file": raw_file, "reason": "missing-raw"})
 
     registry["updated_at"] = stamp
     return registry, anomalies, candidates
@@ -251,14 +356,18 @@ def reconcile_registry(
 
 def render_status(registry: dict, recompile_candidates: list[dict], anomalies: list[dict]) -> str:
     counts = {"pending": 0, "compiled": 0, "skipped": 0}
+    raw_state_counts = {state: 0 for state in VALID_RAW_STATE}
     for entry in registry.get("items", {}).values():
         status = entry.get("status", "pending")
         counts[status] = counts.get(status, 0) + 1
+        state = raw_state(entry)
+        raw_state_counts[state] = raw_state_counts.get(state, 0) + 1
 
     lines = [
         "Raw Compile Registry",
         "=" * 60,
         f"pending={counts.get('pending', 0)} compiled={counts.get('compiled', 0)} skipped={counts.get('skipped', 0)}",
+        f"raw_state=full:{raw_state_counts['full']} index:{raw_state_counts['index']} removed:{raw_state_counts['removed']}",
     ]
     if recompile_candidates:
         lines.append("recompile-candidates:")
@@ -295,6 +404,18 @@ def build_parser() -> argparse.ArgumentParser:
     mark_skipped_parser.add_argument("raw_file")
     mark_skipped_parser.add_argument("--reason-code", required=True)
     mark_skipped_parser.add_argument("--note", required=True)
+
+    set_state_parser = subparsers.add_parser(
+        "set-raw-state", help="Update raw retention state without modifying files"
+    )
+    set_state_parser.add_argument("raw_file")
+    set_state_parser.add_argument("state", choices=("index", "removed"))
+    set_state_parser.add_argument("--canonical-url")
+    set_state_parser.add_argument("--indexed-at")
+    set_state_parser.add_argument("--retired-at")
+    set_state_parser.add_argument("--retire-reason")
+    set_state_parser.add_argument("--archive-uri")
+    set_state_parser.add_argument("--retention-note")
     return parser
 
 
@@ -341,6 +462,23 @@ def main(argv: list[str] | None = None) -> int:
         )
         save_registry(args.root, registry)
         print(f"skipped {args.raw_file}")
+        return 0
+
+    if args.command == "set-raw-state":
+        set_raw_state(
+            registry,
+            raw_file=args.raw_file,
+            state=args.state,
+            canonical_url=args.canonical_url,
+            indexed_at=args.indexed_at,
+            retired_at=args.retired_at,
+            retire_reason=args.retire_reason,
+            archive_uri=args.archive_uri,
+            retention_note=args.retention_note,
+            now=now_iso(),
+        )
+        save_registry(args.root, registry)
+        print(f"set raw state {args.raw_file}={args.state}")
         return 0
 
     registry, anomalies, candidates = reconcile_registry(args.root, registry=registry)

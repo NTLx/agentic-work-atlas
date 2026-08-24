@@ -143,7 +143,7 @@ lint 检查概念 Entity 必须包含 `## 关键数据点`、`## 前提与局限
 
 ### PDF 文件作为 Raw 来源
 
-`raw/` 支持直接存放 PDF 文件（`.pdf` 后缀）。Quartz 以可下载附件展示，Lint 和 Registry 均正常追踪。
+`raw/` 支持在编译期间存放 PDF 文件（`.pdf` 后缀）；Quartz 不发布 raw。Lint 和 Registry 负责追踪全文及其生命周期。
 
 **PDF 与 Markdown raw 的差异**：
 
@@ -189,11 +189,11 @@ uv run python tools/pdf-extract.py raw/<filename.pdf> --out /tmp/paper_full.md
 uv run python tools/compile_registry.py mark-compiled "<filename.pdf>" \
   --summary-path "wiki/sources/<filename-stem>.md"
 
-# 5. 运行 lint 验证
+# 5. 按 schema/compile-operations.md 结算 full / index，再运行 lint
 uv run python tools/wiki-lint.py --fix-index --write-report
 ```
 
-**Raw 不可变原则**：提取出的文本只是辅助视图，**不入仓**。每次编译按需重新提取，避免污染原始 PDF 与 raw/ 目录。
+**Raw 不可变原则**：提取出的文本只是辅助视图，**不入仓**。处于 `full` 状态时按需重新提取；若稳定一手 URL 足以恢复且摘要已完整，编译后通常降级为 `index`。
 
 **Read 工具与 pdf-extract 的分工**：
 
@@ -208,8 +208,7 @@ uv run python tools/wiki-lint.py --fix-index --write-report
 
 ### arxiv 论文剪藏：优先用 PDF
 
-arxiv `/html/` 版本从 LaTeX 自动转换，新论文或复杂排版常截断（缺 Discussion/Conclusion/References）。
-**始终优先用 PDF 版本剪藏**，直接存入 `raw/`：
+arxiv `/html/` 版本从 LaTeX 自动转换，新论文或复杂排版可能截断（缺 Discussion/Conclusion/References）。编译时优先读取 PDF，但不因此默认永久保留本地副本：
 
 ```bash
 # 下载 PDF 直接存入 raw/（无需提取为 md）
@@ -219,7 +218,7 @@ curl -sL "https://arxiv.org/pdf/<arxiv_id>" -o raw/<YYYYMMDD>-<slug>.pdf
 uv run python tools/pdf-extract.py raw/<filename.pdf> --out /tmp/paper_full.md
 ```
 
-提取后验证 Discussion / Conclusion / References 齐全，然后按标准编译流程处理。
+提取后验证 Discussion / Conclusion / References 齐全，然后按标准编译流程处理；source summary 记录 canonical URL，生命周期按 `schema/compile-operations.md` 结算。
 
 ### Subagent 网关 503：改在主回路直接执行
 

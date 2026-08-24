@@ -6,7 +6,7 @@ import * as Plugin from "./quartz/plugins"
  *
  * 方案 C：直接使用仓库根目录作为 content
  * - 通过 ignorePatterns 排除所有无关文件
- * - raw/ 和 wiki/ 自然映射为网站目录结构
+ * - wiki/ 映射为网站知识内容；raw/ 与操作日志明确排除
  */
 
 const config: QuartzConfig = {
@@ -68,6 +68,9 @@ const config: QuartzConfig = {
 
       // 非发布内容
       "docs",
+      // 原始证据与操作日志只供 Agent 按需读取，不进入公开知识面
+      "raw",
+      "wiki/research/research-logs",
     ],
     defaultDateType: "modified",
     theme: {

@@ -19,6 +19,7 @@ Agentic Work Atlas 通过 Quartz 自动部署为 GitHub Pages 网站。
 - 系统文件：`.obsidian`, `.git`, `.DS_Store`
 - 配置文件：`package.json`, `quartz.config.ts`, `tsconfig.json`
 - Schema 文件：`README.md`, `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`（兼容其他 AI 工具）
-- 日志文档：`lint-report.md`
+- 日志文档：`lint-report.md`、`wiki/research/research-logs/`
 - 工具/插件目录：`tools`, `.agents`, `.claude`
+- 原始证据：`raw/`（只供 Agent 定向取证，不属于发布面）
 - 其他目录：`docs`, `node_modules`

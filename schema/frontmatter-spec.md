@@ -11,6 +11,8 @@ type: schema-subdoc
 
 Raw frontmatter 是剪藏元数据，不是编译产物。编译阶段不得为了"补全知识图谱"而回写 raw frontmatter 或正文；作者、概念、主题等结构化关系应写入 `wiki/sources/`、Entity、Topic 或 Comparison。只有 metadata 本身导致 lint/渲染/链接失败时，才允许最小修复。
 
+Raw 生命周期由 `state/raw-registry.json` 管理。`raw_state: full` 时原文件必须存在且正文不可改；`index` 时原文件从当前工作树移除，由同名 source summary 保存 canonical URL、原始正文摘要哈希与证据定位；`removed` 只保留 Registry 墓碑及必要的删除说明。
+
 ```yaml
 ---
 type: raw

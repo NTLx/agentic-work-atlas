@@ -16,6 +16,7 @@ type: schema-subdoc
 | **完整性检查** | Entity 是否包含必填字段（定义、关键数据点、前提与局限性、关联概念） | 标记缺失字段 |
 | **孤岛检测** | 入链和出链都少于 2 的页面（仅实体 entities 和对比 comparisons，排除 outputs 和 topics） | 建议建立关联或合并 |
 | **摘要覆盖检查** | raw/ 中哪些文件既没有历史 `## 编译摘要`，也没有同名 `wiki/sources/{raw 文件名}.md` source summary | 列出待处理文件 |
+| **Raw 生命周期** | Registry 的 `full / index / removed` 与文件、摘要及恢复信息是否一致 | 状态漂移或缺关键元数据时阻断 |
 | **Comparison 元数据** | 所有 comparison 必须有 `updated` 字段 | 补全缺失 |
 | **Tag 质量** | tag 超过 5 个、包含空格/下划线/特殊字符、疑似一次性标签 | 默认非阻断提醒 |
 | **证据字段** | `evidence_level` / `claim_type` 取值不合法 | 阻断，必须修正 |
@@ -50,6 +51,8 @@ Recompile guard 默认只允许本次 Research 日志和 `research-agenda.md`，
 - 裸 `$` 是否会触发 Obsidian MathJax（不扫描 raw 原文正文，避免为渲染清洗而改动证据源）
 - wikilink 和 `source_raw` 是否指向真实文件（支持 `.md` 和 `.pdf` 后缀）
 - index.md 计数是否与文件系统一致（Raw 计数包含 `.md` 和 `.pdf` 文件）
+- Registry 同时保留编译状态 `pending / compiled / skipped` 与生命周期 `full / index / removed`；历史条目缺 `raw_state` 时按 `full` 兼容
+- `full` 要求原文件存在；`index` 要求原文件不存在且有 source summary、canonical URL 和索引时间；`removed` 要求原文件不存在且有删除时间与原因
 - tag 数量和链接安全质量
 - 一次性 tag 与低证据页面
 - `evidence_level` / `claim_type` 字段取值是否合法
@@ -57,7 +60,7 @@ Recompile guard 默认只允许本次 Research 日志和 `research-agenda.md`，
 - Entity 标准章节和作者 Entity 验证字段
 - raw 摘要覆盖：历史 raw 内 `## 编译摘要` 或同名 `wiki/sources/` source summary 二者满足其一即可
 - raw 只做结构性门禁：frontmatter、日期和 source/raw 链接可追溯；正文清洗类问题不得成为改写 raw 的理由
-- **raw/ PDF 文件**：纳入 Registry 追踪和统计计数，body_sha256 基于二进制内容计算，不检查 frontmatter
+- **raw/ PDF 文件**：仅 `full` 状态的 PDF 保留在工作树；body_sha256 基于二进制内容计算，不检查 frontmatter
 - `wiki/lint-report.md` 是否可生成当前报告
 
 `tools/` 必须列入 Quartz `ignorePatterns`，避免脚本被当作内容发布。

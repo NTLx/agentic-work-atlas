@@ -405,3 +405,58 @@ def test_registry_consistency_reports_malformed_registry_json(tmp_path, monkeypa
         issue.category == "registry-consistency" and issue.path == registry_path and "Expecting value" in issue.message
         for issue in issues
     )
+
+
+def test_registry_lifecycle_states_are_counted_without_becoming_pending(tmp_path, monkeypatch):
+    wiki_lint = load_wiki_lint()
+    (tmp_path / "raw").mkdir()
+    write_note(tmp_path / "index.md", "type: index\ntitle: Test\nupdated: 2026-06-28\n", "")
+    write_note(tmp_path / "README.md", "title: Readme\n", "")
+    write_note(tmp_path / "wiki" / "sources" / "indexed.md", "type: source-summary\n", "## 编译摘要")
+    write_registry(
+        tmp_path,
+        {
+            "version": 1,
+            "updated_at": "2026-06-28T12:30:00+08:00",
+            "items": {
+                "indexed.pdf": {
+                    "raw_file": "indexed.pdf",
+                    "status": "compiled",
+                    "raw_state": "index",
+                    "body_sha256": body_sha256("indexed body"),
+                    "summary_path": "wiki/sources/indexed.md",
+                    "canonical_url": "https://example.com/indexed.pdf",
+                    "indexed_at": "2026-06-28T12:10:00+08:00",
+                    "updated_at": "2026-06-28T12:10:00+08:00",
+                },
+                "retired.md": {
+                    "raw_file": "retired.md",
+                    "status": "compiled",
+                    "raw_state": "removed",
+                    "body_sha256": body_sha256("retired body"),
+                    "retired_at": "2026-06-28T12:20:00+08:00",
+                    "retire_reason": "被一手来源替代",
+                    "updated_at": "2026-06-28T12:20:00+08:00",
+                },
+            },
+        },
+    )
+
+    monkeypatch.setattr(wiki_lint, "ROOT", tmp_path)
+    monkeypatch.setattr(wiki_lint, "RAW", tmp_path / "raw")
+    monkeypatch.setattr(wiki_lint, "WIKI", tmp_path / "wiki")
+    monkeypatch.setattr(wiki_lint, "INDEX", tmp_path / "index.md")
+    monkeypatch.setattr(wiki_lint, "LINT_REPORT", tmp_path / "wiki" / "lint-report.md")
+
+    issues, stats, pending, skipped, candidates = wiki_lint.collect_issues()
+
+    assert pending == []
+    assert skipped == []
+    assert candidates == []
+    assert stats["raw_full"] == 0
+    assert stats["raw_indexed"] == 1
+    assert stats["raw_removed"] == 1
+    assert not [issue for issue in issues if issue.category == "registry-consistency"]
+    report = wiki_lint.render_report(issues, stats, pending, skipped, candidates)
+    assert "| Raw 索引化 | 1 |" in report
+    assert "| Raw 已移除 | 1 |" in report

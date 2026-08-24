@@ -15,6 +15,8 @@ type: source-summary
 title: "{原文标题}"
 source_raw:
   - "[[{raw 文件名}]]"
+canonical_url: "https://一手来源"
+raw_state: full
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 tags:
@@ -48,6 +50,10 @@ claim_type: mixed
 - [[概念A]]
 - [[概念B]]
 ```
+
+`canonical_url` 是原始来源的稳定地址，不是转载页或搜索结果。关键数据应在正文记录页码、章节、表格或时间戳等 `source locator`。
+
+当 Raw 降级为 `index` 时，source summary 成为证据索引页：移除已失效的 `source_raw`，把 `raw_state` 改为 `index`，并补充 `original_raw_file`、Registry 中保存的 `body_sha256`、`indexed_at` 与证据定位。`removed` 来源保留 summary 时，应标明 `raw_state: removed` 和删除原因；该页不再作为独立 Evidence。
 
 # 证据强度与推断标记
 

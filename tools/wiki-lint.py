@@ -620,6 +620,11 @@ def check_registry_consistency() -> tuple[list[Issue], list[Path], list[Path], l
             issues.append(Issue("registry-consistency", raw_path, None, "raw 缺少 registry 记录"))
             continue
         status = entry.get("status", "pending")
+        raw_state = entry.get("raw_state", "full")
+        if raw_state != "full":
+            # reconcile_registry reports the state drift; do not also classify
+            # an indexed/retired artifact as pending compilation work.
+            continue
         if status == "compiled":
             compiled.append(raw_path)
         elif status == "skipped":
@@ -676,6 +681,17 @@ def collect_issues() -> tuple[list[Issue], dict[str, int], list[Path], list[Path
     stats["raw_compiled"] = len(compiled)
     stats["raw_pending"] = len(pending)
     stats["raw_skipped"] = len(skipped)
+    lifecycle_counts = {"full": 0, "index": 0, "removed": 0}
+    try:
+        registry = COMPILE_REGISTRY.load_registry(ROOT)
+    except (json.JSONDecodeError, ValueError):
+        registry = {"items": {}}
+    for entry in registry.get("items", {}).values():
+        raw_state = entry.get("raw_state", "full")
+        lifecycle_counts[raw_state] = lifecycle_counts.get(raw_state, 0) + 1
+    stats["raw_full"] = lifecycle_counts.get("full", 0)
+    stats["raw_indexed"] = lifecycle_counts.get("index", 0)
+    stats["raw_removed"] = lifecycle_counts.get("removed", 0)
     return issues, stats, pending, skipped, candidates
 
 
@@ -730,6 +746,9 @@ def render_report(
         f"| Raw 已编译 | {stats['raw_compiled']} |",
         f"| Raw 待编译 | {stats['raw_pending']} |",
         f"| Raw 已跳过 | {stats['raw_skipped']} |",
+        f"| Raw 全文保留 | {stats['raw_full']} |",
+        f"| Raw 索引化 | {stats['raw_indexed']} |",
+        f"| Raw 已移除 | {stats['raw_removed']} |",
         f"| Entity | {stats['entities']} |",
         f"| Topic | {stats['topics']} |",
         f"| Comparison | {stats['comparisons']} |",
@@ -811,7 +830,11 @@ def print_summary(
     blocking = [i for i in issues if i.blocking]
     print("Agentic Work Atlas Lint")
     print("=" * 60)
-    print(f"Raw: {stats['raw']}（已编译 {stats['raw_compiled']}，待编译 {stats['raw_pending']}，已跳过 {stats['raw_skipped']}）")
+    print(
+        f"Raw 文件: {stats['raw']}（全文 {stats['raw_full']}，索引 {stats['raw_indexed']}，"
+        f"已移除 {stats['raw_removed']}；已编译 {stats['raw_compiled']}，"
+        f"待编译 {stats['raw_pending']}，已跳过 {stats['raw_skipped']}）"
+    )
     print(f"Entity: {stats['entities']} | Topic: {stats['topics']} | Comparison: {stats['comparisons']} | Output: {stats['outputs']} | Research: {stats['research']}")
     print(f"阻断问题: {len(blocking)}")
 

@@ -24,7 +24,7 @@ type: schema-subdoc
 | **ljg-think** (追本之箭) | compile(追加), explore | 纵向深钻 | `wiki/topics/` | 层层降深（表象→机理→原理→公理）→ 主题深度分析 |
 | **ljg-rank** (降秩) | compile(追加), explore | 领域降秩（生成力） | `wiki/topics/` | 找 2-3 个不可约生成器 → Topic 核心结构 |
 | **ljg-constraint** (约束) | compile(追加), explore | 约束分析（边界力） | `wiki/topics/`, `wiki/entities/` | 硬/软/自设约束分类 → 解空间映射 → 与 ljg-rank 互补 |
-| **ljg-blind** (盲区扫描) | explore(周期性) | 元认知审计 | `wiki/research/research-agenda.md` | 对话历史盲区 + 微信读书精准补章 → Source 需求队列 |
+| **ljg-blind** (盲区扫描) | explore(按需) | 元认知审计 | `wiki/research/research-agenda.md` | 具体盲区假设 + 定向补充材料 → Source 需求队列 |
 | **ljg-plain** (白话) | audit, produce | 可读性校验 | N/A | Entity definition / Output 可读性校验（12 岁可读测试） |
 | **ljg-writes** (写作引擎) | produce | 观点驱动写作 | `wiki/outputs/` | 观点驱动写作 → 博客/笔记作品 |
 | **ljg-roundtable** (圆桌) | produce, explore | 多视角辩证 | `wiki/outputs/` 或 research agenda | 结构化多立场辩论 → 证伪方向、分歧点、共识边界 |
@@ -55,7 +55,7 @@ Agent 在每次编译/探索时自动执行以下决策，无需用户指令：
 | 源材料涉及**新领域/行业**（首次出现的领域级分析） | ljg-rank + ljg-constraint | 同时分析生成器和约束条件，两者配对输出 topic 页面 |
 | 源材料含**跨域引用或类比**（引用其他领域文献/现象） | ljg-read | 伴读式分析，追踪跨域关联，旁逸洞察注入 source summary |
 | 源材料讨论 **AI 公司/产品/项目**（FDE 相关） | ljg-invest | 用「秩序创造机器」框架评估收录价值 |
-| 最近 **5 篇编译**未触发盲区扫描 | ljg-blind | 扫描对话历史思维盲区，输出充实 research agenda 的 Source 需求队列 |
+| 用户明确要求，或 agenda 已记录具体盲区审计需求 | ljg-blind | 检查该盲区假设，结果进入 Source 需求队列 |
 
 ### 产出时：技能选择
 
