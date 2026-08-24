@@ -42,7 +42,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 97 |
+| `tag` | 98 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
 | `stale-core` | 100 |
@@ -70,7 +70,7 @@ tags:
 - `wiki/entities/AI-Capability-Gap.md` - `核心页 AI-Capability-Gap 已 91 天未更新，入链 29 条`
 - `wiki/entities/AI-Factory.md` - `核心页 AI-Factory 已 94 天未更新，入链 13 条`
 - `wiki/entities/AI-Native-Shipping.md` - `核心页 AI-Native-Shipping 已 91 天未更新，入链 9 条`
-- `wiki/entities/Agent-Cognitive-Loafing.md` - `核心页 Agent-Cognitive-Loafing 已 91 天未更新，入链 8 条`
+- `wiki/entities/Agent-Cognitive-Loafing.md` - `核心页 Agent-Cognitive-Loafing 已 91 天未更新，入链 7 条`
 - `wiki/entities/Agent-Dissociation.md` - `核心页 Agent-Dissociation 已 91 天未更新，入链 9 条`
 - `wiki/entities/Agent-First-Enterprise.md` - `核心页 Agent-First-Enterprise 已 91 天未更新，入链 20 条`
 - `wiki/entities/Agent-Swarm.md` - `核心页 Agent-Swarm 已 94 天未更新，入链 13 条`
@@ -85,7 +85,7 @@ tags:
 - `wiki/entities/Golden-Case.md` - `核心页 Golden-Case 已 91 天未更新，入链 12 条`
 - `wiki/entities/Hardware-Sovereignty.md` - `核心页 Hardware-Sovereignty 已 94 天未更新，入链 19 条`
 - `wiki/entities/Input-Output-Outcome.md` - `核心页 Input-Output-Outcome 已 91 天未更新，入链 11 条`
-- `wiki/entities/Jagged-Intelligence.md` - `核心页 Jagged-Intelligence 已 91 天未更新，入链 20 条`
+- `wiki/entities/Jagged-Intelligence.md` - `核心页 Jagged-Intelligence 已 91 天未更新，入链 19 条`
 - `wiki/entities/Knowledge-Graph.md` - `核心页 Knowledge-Graph 已 92 天未更新，入链 11 条`
 - `wiki/entities/Latent-Space-vs-Deterministic.md` - `核心页 Latent-Space-vs-Deterministic 已 91 天未更新，入链 7 条`
 - `wiki/entities/Layered-AI-Sourcing.md` - `核心页 Layered-AI-Sourcing 已 94 天未更新，入链 22 条`
@@ -221,6 +221,7 @@ tags:
 - `wiki/entities/Inference-Engineering.md` - `一次性 tag 仅出现 1 次: 'inference'`
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'inference-engineering'`
 - `wiki/sources/20260819-google-ai-evals-inspect-skill.md` - `一次性 tag 仅出现 1 次: 'inspect-ai'`
+- `wiki/research/research-logs/inventory-20260802.md` - `一次性 tag 仅出现 1 次: 'inventory'`
 - `wiki/sources/20260804-astro-software-factory-issue-triage.md` - `一次性 tag 仅出现 1 次: 'issue-triage'`
 - `wiki/entities/Features-Are-Cheap-Paradox.md` - `一次性 tag 仅出现 1 次: 'jevons-paradox'`
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'kv-cache'`

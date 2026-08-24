@@ -88,8 +88,11 @@ tags:
 | 活跃 | 有 source 需求、待验证或待证伪 | 保留在 agenda 操作节 |
 | 收敛 | Claim 已 falsified、已解决或没有下一动作 | 从 Queue 移除，结果保留在 research log；晋升候选交给 compile/audit |
 | 休眠 | 长期无进展、无 source 支撑、无 output 使用 | 标为 blocked 并写 Retry，或由普通 explore 归档/删除 |
+| 历史冗余 | 无 agenda/稳定页引用、无独特 Evidence locator，且结论已迁移或没有 decision-grade 增量 | 从工作树删除；在日志索引记录范围与可恢复 Git commit |
 
 agenda 条目不得无限累积。当条目长期停留在活跃状态而无进展时，应在 explore 环节中决定：补 source、归档或删除。
+
+Research 日志也不永久保留。压缩前必须检查 Wiki/agenda 反向引用；删除批次必须可从一个明确 Git commit 恢复。不要在仓库内另建 archive 复制全文，也不要把 transcript 重写成另一份长摘要。
 
 ## 操作边界
 
