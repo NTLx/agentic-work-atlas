@@ -13,7 +13,7 @@
 - **知识系统**：LLM Wiki、知识编译、context engineering、本体、可复用语义层
 - **人的核心价值**：判断力、品味、概念建模、责任承担与智慧工作
 
-### LLM Wiki 四动作模型
+### LLM Wiki 操作模型
 
 | 动作 | 输入 | 输出 | 主要落点 |
 |------|------|------|----------|
@@ -21,10 +21,11 @@
 | `audit(scope)` 审查 | wiki 范围或全库 | 问题清单、修复建议 | `wiki/lint-report.md`、git commit |
 | `produce(query)` 输出 | Wiki + 用户问题 | 文章、报告、回答 | `wiki/outputs/` 或对话 |
 | `explore(topic)` 探索 | 既有 Wiki 结构 | 新问题、反例、source 需求 | 更新 `wiki/research/research-agenda.md` |
+| `recompile` 持续重编译 | 已有 research Claim | Claim 的认识变化 / 下一 Gap | `wiki/research/`，必要时补 1 个稳定页 |
 
 日常四大环节：**剪藏 clip → 编译 compile → 输出 produce → 探索 explore**。`audit` 是贯穿全程的质量门。
 
-`recompile(claim)` 是 `explore` 的受限维护子流程：只检查 agenda 队列中的一个既有 Claim，只写 Research，不自动晋升稳定 Wiki。
+`recompile(claim)` 是 `explore` 的受限维护子流程：只检查 agenda 队列中的一个既有 Claim，以 Research 沉淀为主；仅在协议规定的 extracted 事实例外下补 1 个已有稳定页。
 
 ### 用户意图推断：剪藏信号
 
@@ -147,7 +148,7 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 |------|--------|
 | 探索新问题 | `schema/explore-workflow.md` |
 | 管理 research agenda | `schema/research-module.md` |
-| 定时重编译 Claim | `tools/daily-thinking-agent-prompt.md` + `schema/research-module.md` |
+| 持续重编译已有研究判断 | `schema/recompile-workflow.md` |
 
 ### 审计
 

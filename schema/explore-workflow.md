@@ -10,7 +10,7 @@ type: schema-subdoc
 Explore 有两个不同模式：
 
 - **开放探索**：发现新问题、反例方向和 Source 需求。
-- **Claim Recompile**：只检查 agenda 队列中的一个既有 Claim，不负责发现第二个主题。可执行 Prompt 以 `tools/daily-thinking-agent-prompt.md` 为唯一事实源。
+- **Claim Recompile**：只检查 agenda 队列中的一个既有 Claim，不负责发现第二个主题。`tools/daily-thinking-agent-prompt.md` 是执行入口，`schema/recompile-workflow.md` 是唯一运行协议。
 
 ## Explore 管控规则
 
