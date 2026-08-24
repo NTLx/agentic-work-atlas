@@ -15,10 +15,10 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 426 个 |
+| Entity 页面 | 424 个 |
 | Topic 页面 | 34 个 |
 | Comparison 页面 | 20 个 |
-| Raw 文章 | 263 个 |
+| Raw 文章 | 262 个 |
 | Source Summary | 261 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 12 个 |
@@ -86,7 +86,6 @@ tags:
 | [[wiki/entities/Goodharts-Law\|Goodhart's Law（古德哈特定律）]] | 当代理指标成为优化目标时就不再是好度量——指标 gaming 导致真实目标被替代 | 万维钢·现代思维工具100讲 |
 | [[wiki/entities/Knowledge-Debt\|Knowledge Debt（知识债务）]] | 开发者委托 agent 编码后沉默积累的理解缺口，与 Technical Debt 同构 | Accenture Labs SHIELD 论文 |
 | [[wiki/entities/Incidental-Learning\|Incidental Learning（附带学习）]] | 通过费力解决问题非预期获得的知识——被 AI agent 短路的学习路径 | Accenture Labs SHIELD 论文 |
-| [[wiki/entities/4D-AI-Fluency-Framework\|4D AI Fluency Framework]] | Anthropic 内部 AI 教育骨架——以「增加 human agency」为核心，围绕四维能力训练学员对 AI 任务的判断、表达、审查、伦理披露；Claude Academy 产品化 | Anthropic Academy 2026-08 |
 | [[wiki/entities/SHIELD\|SHIELD]] | 多 agent 系统，通过 out-of-band 渠道在不打断开发流程的前提下偿还 Knowledge Debt | Accenture Labs SHIELD 论文 |
 | [[wiki/entities/AI-Assisted-Port\|AI-Assisted Port（AI 辅助代码重写）]] | 利用 AI Agent 批量执行语言间代码重写并辅以对抗审查的工程范式 | Bun in Rust |
 | [[wiki/entities/Distinct-Principal-Identity\|Distinct Principal Identity（独立主体身份）]] | AI Agent 使用独立身份——从 service account 到企业组织集成（目录条目、角色、邮箱） | Vercel Agent + Microsoft Foundry |

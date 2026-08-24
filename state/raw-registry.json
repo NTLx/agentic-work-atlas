@@ -624,11 +624,15 @@
     },
     "20260615-normaltech-ai-hasnt-replaced-software-engineers.md": {
       "body_sha256": "6f5d0b2ee7b4d02c5f76e90d20a9c95e740541d217990d2455e7d88d5fdd2fc1",
+      "canonical_url": "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
       "compiled_at": "2026-07-09T13:16:29+08:00",
+      "indexed_at": "2026-08-25T01:30:48+08:00",
       "raw_file": "20260615-normaltech-ai-hasnt-replaced-software-engineers.md",
+      "raw_state": "index",
+      "retention_note": "Stable source summary preserves the DED model and evidence locators; canonical article remains publicly recoverable.",
       "status": "compiled",
       "summary_path": "wiki/sources/20260615-normaltech-ai-hasnt-replaced-software-engineers.md",
-      "updated_at": "2026-07-09T13:16:29+08:00"
+      "updated_at": "2026-08-25T01:31:00+08:00"
     },
     "20260615-satyanadella-frontier-ecosystem.md": {
       "body_sha256": "23a1328b8aa6a58b14dffeab1784416e0db20e08314a9b0c05deaec46b18191a",
@@ -2248,6 +2252,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-25T01:13:10+08:00",
+  "updated_at": "2026-08-25T01:31:00+08:00",
   "version": 1
 }

@@ -39,6 +39,19 @@ Entity 不是术语抽取结果，而是可复用的知识节点。默认立场�
 - **降级候选**：单源且无图谱入链；优先合并到更大的 Entity/topic/source summary，除非用户明确需要独立页。
 - **删除前置条件**：删除前必须确认内容已迁移到 raw/source summary/topic，且所有 wikilink 已修复。
 
+### 降级执行门
+
+只有同时满足以下条件，才可直接删除独立 Entity：
+
+1. 只有一份独立来源；同一 raw 与其 source summary 只算一份来源。
+2. `entity_in==0`，且没有 Topic、Comparison、Output 或活跃 Research 依赖该页面。
+3. 可复用事实已由 source summary 或相邻 Topic 完整保留；不迁移纯推演、长篇 transcript 或重复表述。
+4. 已修复索引和全部 wikilink，并通过 lint。
+
+删除后不创建 archive、墓碑页或 legacy 副本；Git 历史就是恢复层。疑似重复、人物节点和仍有活跃 Claim 依赖的页面只进入人工复核，不自动删除。
+
+以下任一情况触发一次小批量 Entity 审计：自上次审计后新增 25 个 Entity、Entity:Topic 比继续上升，或整合层未承载率超过 `schema/fragmentation-metrics.md` 的阈值。每批只处理证据充分的 `merge-or-demote` 项，不把整个 `review` 队列一次性自动清空。
+
 > **"图谱入链"口径**：本节的"图谱入链"指**知识层互引口径**（被其他 entity 引用），由 `entity-audit.py` 的 `entity_in` 字段提供。区分三档口径（全图入链 / 知识层互引 / 整合层承载）见 `schema/fragmentation-metrics.md`。"无图谱入链"在该口径下指 `entity_in==0`，不等于"全库无人引用"。
 
 ## Entity 审计命令

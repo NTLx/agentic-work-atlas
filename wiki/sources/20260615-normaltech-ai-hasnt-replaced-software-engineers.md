@@ -1,10 +1,13 @@
 ---
 type: source-summary
 title: "Why AI hasn't replaced software engineers, and won't"
-source_raw:
-  - "[[20260615-normaltech-ai-hasnt-replaced-software-engineers]]"
+canonical_url: "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers"
+raw_state: index
+original_raw_file: "20260615-normaltech-ai-hasnt-replaced-software-engineers.md"
+original_body_sha256: "6f5d0b2ee7b4d02c5f76e90d20a9c95e740541d217990d2455e7d88d5fdd2fc1"
+indexed_at: "2026-08-25T01:30:48+08:00"
 created: 2026-06-15
-updated: 2026-06-15
+updated: 2026-08-25
 tags:
   - source-summary
   - agentic-engineering
@@ -15,6 +18,8 @@ claim_type: mixed
 ---
 
 # Why AI hasn't replaced software engineers, and won't
+
+> Raw 生命周期：本地全文已降级为可恢复索引；关键数字与模型边界可从 canonical URL 返回 NormalTech 原文核验。
 
 ## 收录判断
 

@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-06-05
+updated: 2026-08-25
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -34,6 +34,7 @@ source_raw:
   - "[[A Day in the Life of a Palantir Forward Deployed Software Engineer]]"
   - "[[Running an AI-native engineering org]]"
   - "[[20260603-anthropic-self-service-data-analytics]]"
+  - "[[20260615-normaltech-ai-hasnt-replaced-software-engineers]]"
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
@@ -75,6 +76,10 @@ Outcome 更不一定改善
 [[Running an AI-native engineering org]] 给出了软件组织内部的直接样本：当 Claude Code 团队默认使用 coding agents 后，写代码、测试和重构不再是主要瓶颈，verification、code review、security 和 product taste 成为更稀缺能力。
 
 [[20260603-anthropic-self-service-data-analytics]] 给出了数据团队样本：SQL 生成不是瓶颈，真正瓶颈是 canonical datasets、semantic layer、domain skills、evals 和 correction harvesting。两者都说明同一规律：AI 降低局部生成成本后，价值迁移到判断、语义、验证和组织学习。
+
+### Decide–Execute–Deliver：软件工程样本
+
+[[20260615-normaltech-ai-hasnt-replaced-software-engineers]] 将软件工程拆为 Decide、Execute、Deliver 三层。AI 主要压缩 Execute，即写代码、调试和测试；Decide（决定做什么）与 Deliver（验证、交付和承担责任）仍是主要瓶颈。该文引用的研究显示，AI agents 让代码行数增加约 8 倍，但 releases 只增加约 30%，说明生成量不会自动转化为交付结果。
 
 ## Jevons 悖论的劳动版本
 

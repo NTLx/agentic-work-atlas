@@ -4,11 +4,9 @@ title: "Anthropic's Approach to Teaching and Learning AI（Claude Academy 介绍
 source_raw:
   - "[[20260822-anthropics-approach-to-teaching-and-learning-ai]]"
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-08-25
 tags:
   - source-summary
-  - ai-education
-  - ai-fluency
   - anthropic-official
 evidence_level: high
 claim_type: mixed
@@ -75,6 +73,7 @@ claim_type: mixed
 - [[Knowledge-Compilation]] — AI 反哺通用学习是编译的逆向操作
 - [[Sample-Efficiency]] — 迁移假设的学界基础
 
-### 待补 entity 候选
-- **4D AI Fluency Framework** — Anthropic 内部框架，已用于 employee onboarding，可能成为 Claude Academy 的核心方法论；建议建独立 entity
-- **Claude Academy** — Anthropic 新教育产品，2026-08 上线；具备产品级 multi-source 复用价值，建议建独立 entity
+### 稳定层边界
+
+- **4D AI Fluency Framework** — Anthropic 内部框架，已用于 employee onboarding；当前公开材料未展开四维定义，作为单一来源事实保留在本摘要，不单独晋升 Entity
+- **Claude Academy** — 当前只有单一产品发布来源，先保留在 source summary；出现独立来源或跨页面复用需求后再评估 Entity
