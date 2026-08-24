@@ -1,10 +1,13 @@
 ---
 type: source-summary
 title: "Empty Shelves or Lost Keys? Recall Is the Bottleneck for Parametric Factuality"
-source_raw:
-  - "[[20260215-recall-bottleneck-parametric-factuality]]"
+canonical_url: "https://arxiv.org/abs/2602.14080"
+raw_state: index
+original_raw_file: "20260215-recall-bottleneck-parametric-factuality.pdf"
+original_body_sha256: "b3543f6761395d0d65270c5e70f6534e0800b5ba58e9e250c4b91cd4dcb87fd9"
+indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-08-25
 tags:
   - source-summary
   - llm-memory
@@ -15,6 +18,8 @@ claim_type: mixed
 ---
 
 # Empty Shelves or Lost Keys? Recall Is the Bottleneck for Parametric Factuality
+
+> Raw 生命周期：本地 PDF 已降级为可恢复索引；精确引用时从 canonical URL 回到 arXiv 原文核验。
 
 > 来源与证据定级：Calderon, Ben-David, Gekhman, Ofek & Yona（Google Research + Technion），ICML 2026 论文，arXiv:2602.14080v2。一手大规模实证：WikiProfile 基准（2,150 条自然维基事实 × 10 任务 × 8 采样 × 13 个 LLM，约 450 万条打分），peered-reviewed。取 `high` 因属一手大规模实证；但作者为 Google Research 且评测自家 Gemini 系列，存在利益相关，且单一研究未被独立复现，故 claim_type 标 `mixed`。
 

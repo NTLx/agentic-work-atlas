@@ -487,6 +487,15 @@ def check_stale_core_pages(
 def check_source_raw() -> list[Issue]:
     issues: list[Issue] = []
     stems, rels = wiki_targets()
+    try:
+        registry = COMPILE_REGISTRY.load_registry(ROOT)
+    except (json.JSONDecodeError, ValueError):
+        registry = {"items": {}}
+    states_by_stem: dict[str, set[str]] = {}
+    for raw_file, entry in registry.get("items", {}).items():
+        states_by_stem.setdefault(Path(raw_file).stem, set()).add(
+            entry.get("raw_state", "full")
+        )
 
     for path in sorted(WIKI.rglob("*.md")):
         data, err = load_frontmatter(path)
@@ -499,6 +508,12 @@ def check_source_raw() -> list[Issue]:
             target = split_wikilink(item[2:-2])
             if not target_exists(target, stems, rels):
                 issues.append(Issue("source_raw", path, None, f"source_raw 目标不存在: {item}"))
+                continue
+            target_states = states_by_stem.get(Path(target).stem, set())
+            if target_states == {"removed"}:
+                issues.append(
+                    Issue("source_raw", path, None, f"source_raw 引用了已移除 Evidence: {item}")
+                )
     return issues
 
 

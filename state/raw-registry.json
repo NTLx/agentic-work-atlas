@@ -58,11 +58,14 @@
     },
     "20260215-recall-bottleneck-parametric-factuality.pdf": {
       "body_sha256": "b3543f6761395d0d65270c5e70f6534e0800b5ba58e9e250c4b91cd4dcb87fd9",
+      "canonical_url": "https://arxiv.org/abs/2602.14080",
       "compiled_at": "2026-08-13T10:54:31+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "20260215-recall-bottleneck-parametric-factuality.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/20260215-recall-bottleneck-parametric-factuality.md",
-      "updated_at": "2026-08-13T10:54:31+08:00"
+      "updated_at": "2026-08-25T01:13:07+08:00"
     },
     "20260226-pro-worker-ai-hamilton-project.md": {
       "body_sha256": "b85017f778bbbccea1c7bc78c8c3336df17399105c7914fb60737373d2cd5649",
@@ -186,11 +189,14 @@
     },
     "202605-code-cleanliness-coding-agents-minimal-pair.pdf": {
       "body_sha256": "ff5d78e7ccbf58ca32a4b06e3a8792e40d2872a373c334b84dadc288a6b0b24a",
+      "canonical_url": "https://arxiv.org/abs/2605.20049",
       "compiled_at": "2026-07-09T13:16:44+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "202605-code-cleanliness-coding-agents-minimal-pair.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/202605-code-cleanliness-coding-agents-minimal-pair.md",
-      "updated_at": "2026-07-09T13:16:44+08:00"
+      "updated_at": "2026-08-25T01:13:08+08:00"
     },
     "20260502-most-companies-arent-ready-for-ai.md": {
       "body_sha256": "8331d0c93022ef0919570794f6939793eee8bd7fab4379f0ab0a74629258a70a",
@@ -930,11 +936,14 @@
     },
     "20260707-ai-agent-traps.pdf": {
       "body_sha256": "603f0cae8cd8ab944f3e700a169d325120db42239075350d07c8183da71a527c",
+      "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438",
       "compiled_at": "2026-07-09T13:16:45+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "20260707-ai-agent-traps.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/20260707-ai-agent-traps.md",
-      "updated_at": "2026-07-09T13:16:45+08:00"
+      "updated_at": "2026-08-25T01:13:08+08:00"
     },
     "20260707-intelligence-is-free-data-systems-for-of-by-agents.md": {
       "body_sha256": "f7527b1c979e8924a085382b4cf0ae29052677211041137ad5746dcdb3bfd71c",
@@ -962,11 +971,14 @@
     },
     "20260708-towards-autonomous-software-dev.pdf": {
       "body_sha256": "d046c88d7eeb5f22b145e6bbca0df31e68b64d4f9a035d66a9df6ce1c43a7a31",
+      "canonical_url": "https://rdi.berkeley.edu/assets/position-auto-sd.pdf",
       "compiled_at": "2026-07-28T15:04:12+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "20260708-towards-autonomous-software-dev.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/20260708-towards-autonomous-software-dev.md",
-      "updated_at": "2026-07-28T15:04:12+08:00"
+      "updated_at": "2026-08-25T01:13:08+08:00"
     },
     "20260708-vercel-agent.md": {
       "body_sha256": "bc547bf83a09149a8e9f66d9fc49f16cd938f76b6ab7526f25320527c29abffc",
@@ -1036,9 +1048,12 @@
       "body_sha256": "0dd1976e6fd422b7771c646940f6be71eb443ebddb0f0b899456ccbf5b15bbbd",
       "compiled_at": "2026-07-16T11:43:44+08:00",
       "raw_file": "20260715-anthropic-talent-strategy-2026.pdf",
+      "raw_state": "removed",
+      "retire_reason": "AI 生成的低证据二手综述，无可靠 canonical source，且未被稳定知识页或活跃 Claim 使用",
+      "retired_at": "2026-08-25T01:10:28+08:00",
       "status": "compiled",
       "summary_path": "wiki/sources/20260715-anthropic-talent-strategy-2026.md",
-      "updated_at": "2026-07-16T11:43:44+08:00"
+      "updated_at": "2026-08-25T01:13:10+08:00"
     },
     "20260715-why-i-left-google-deepmind.md": {
       "body_sha256": "b3c4746b818d30c62bf53547f996d00234c58113d8806d65440d820fa9830b26",
@@ -1130,11 +1145,14 @@
     },
     "20260727-openai-work-at-the-frontier.pdf": {
       "body_sha256": "3ffb4cc2bb97aaac8dc0f5bf715ee17f6f4b4629097b89558aa9d8ab199d4781",
+      "canonical_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/",
       "compiled_at": "2026-07-28T13:52:35+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "20260727-openai-work-at-the-frontier.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/20260727-openai-work-at-the-frontier.md",
-      "updated_at": "2026-07-28T13:52:35+08:00"
+      "updated_at": "2026-08-25T01:13:08+08:00"
     },
     "20260727-palantir-ai-sovereignty-alpha-playbook.md": {
       "body_sha256": "12978d42efd6ccb039476c4718fcc08de05395ac6a5bb626fcd356a1189ce614",
@@ -1186,11 +1204,14 @@
     },
     "20260728-openai-scientific-computing-field-report.pdf": {
       "body_sha256": "195870578f3cdc21128252d2ab0dcdafeb70f6783c086e8c96f24d035adee127",
+      "canonical_url": "https://openai.com/index/scientific-computing-agentic-ai/",
       "compiled_at": "2026-07-29T17:20:00+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "20260728-openai-scientific-computing-field-report.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/20260728-openai-scientific-computing-field-report.md",
-      "updated_at": "2026-07-29T17:20:00+08:00"
+      "updated_at": "2026-08-25T01:13:09+08:00"
     },
     "20260728-openrouter-evaluate-llm-provider-performance.md": {
       "body_sha256": "f7d5ae97ee0a0b5be3c67940e600b03905ac3b74609c12501e6b529de3bd2beb",
@@ -1306,11 +1327,14 @@
     },
     "20260801-align-agent-environment-interface.pdf": {
       "body_sha256": "33fd5fb97d3b0fa3083139bddf0a43a8c459f77c902efc94701ee78bd906ddd5",
+      "canonical_url": "https://arxiv.org/abs/2505.21055",
       "compiled_at": "2026-08-01T17:47:48+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "20260801-align-agent-environment-interface.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/20260801-align-agent-environment-interface.md",
-      "updated_at": "2026-08-01T17:47:48+08:00"
+      "updated_at": "2026-08-25T01:13:09+08:00"
     },
     "20260801-lean-kernel-soundness-bug-postmortem.md": {
       "body_sha256": "a94bac4e8b1a937906d0767f35a1ec15ec0a23b68a4b013dc633c34cc99bc3aa",
@@ -1394,11 +1418,14 @@
     },
     "20260805-personalization-mirage-llm-over-inference.pdf": {
       "body_sha256": "980d7f9e629ed34ff0f2c5e37800d6dfaaedeccccb3744659451f5239ed2532b",
+      "canonical_url": "https://arxiv.org/abs/2608.04570",
       "compiled_at": "2026-08-07T09:18:03+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "20260805-personalization-mirage-llm-over-inference.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/20260805-personalization-mirage-llm-over-inference.md",
-      "updated_at": "2026-08-07T09:18:03+08:00"
+      "updated_at": "2026-08-25T01:13:09+08:00"
     },
     "20260806-openai-chatgpt-work-adoption.md": {
       "body_sha256": "60e913e43e087cb827d2b96241ae71a1686252c3de1c2a39b99fcf0f43925906",
@@ -1474,11 +1501,14 @@
     },
     "20260815-autodesign-meta-harness-optimization.pdf": {
       "body_sha256": "9e9b8532f29ab9d12756f4dba5cc8d1577feb9b0057ae1ae6f2bcc9f04ce06d8",
+      "canonical_url": "https://arxiv.org/abs/2608.13560",
       "compiled_at": "2026-08-16T16:19:49+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "20260815-autodesign-meta-harness-optimization.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/20260815-autodesign-meta-harness-optimization.md",
-      "updated_at": "2026-08-16T16:19:49+08:00"
+      "updated_at": "2026-08-25T01:13:09+08:00"
     },
     "20260815-engineers-history-reinvention.md": {
       "body_sha256": "51d4b92df12a965b8b3f8289c60ecaacb11a10d9abd0747adc85c31826fec399",
@@ -1546,19 +1576,25 @@
     },
     "20260820-arxiv-2608.15304-cognition-induced-risks.pdf": {
       "body_sha256": "8d4fa7fd9fe4d021a2a976d7c2c0cca3fa17e412acf8d2710fe48b523d9702a6",
+      "canonical_url": "https://arxiv.org/abs/2608.15304",
       "compiled_at": "2026-08-20T12:20:59+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "20260820-arxiv-2608.15304-cognition-induced-risks.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/20260820-arxiv-2608.15304-cognition-induced-risks.md",
-      "updated_at": "2026-08-20T12:20:59+08:00"
+      "updated_at": "2026-08-25T01:13:09+08:00"
     },
     "20260820-arxiv-2608.16753-mathematics-ai.pdf": {
       "body_sha256": "ea1d16a81ec79f362914f85b832996e3eb8c3b81b1c983358fc6d76ac7420ee0",
+      "canonical_url": "https://arxiv.org/abs/2608.16753",
       "compiled_at": "2026-08-20T12:18:02+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "20260820-arxiv-2608.16753-mathematics-ai.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/20260820-arxiv-2608.16753-mathematics-ai.md",
-      "updated_at": "2026-08-20T12:18:02+08:00"
+      "updated_at": "2026-08-25T01:13:10+08:00"
     },
     "20260820-bytebytego-graphrag.md": {
       "body_sha256": "600110977ecdd0781756230a27f64472408ffe1743332029eee67af0bb22f20e",
@@ -1626,11 +1662,14 @@
     },
     "2608.19880-envharness-agent-learning.pdf": {
       "body_sha256": "3859eed3337e0324ef94f38ca21f69cc6daa15b5a78497680370959223d51fd4",
+      "canonical_url": "https://arxiv.org/abs/2608.19880",
       "compiled_at": "2026-08-22T13:49:21+08:00",
+      "indexed_at": "2026-08-25T01:10:28+08:00",
       "raw_file": "2608.19880-envharness-agent-learning.pdf",
+      "raw_state": "index",
       "status": "compiled",
       "summary_path": "wiki/sources/2608.19880-envharness-agent-learning.md",
-      "updated_at": "2026-08-22T13:49:21+08:00"
+      "updated_at": "2026-08-25T01:13:10+08:00"
     },
     "A Day in the Life of a Palantir Forward Deployed Software Engineer.md": {
       "body_sha256": "47cb0f98cecadfd5bd8a45206286ba805a4a89026bb5a0d7962ef9ad3c689515",
@@ -2209,6 +2248,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-22T14:01:13+08:00",
+  "updated_at": "2026-08-25T01:13:10+08:00",
   "version": 1
 }

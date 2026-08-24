@@ -460,3 +460,60 @@ def test_registry_lifecycle_states_are_counted_without_becoming_pending(tmp_path
     report = wiki_lint.render_report(issues, stats, pending, skipped, candidates)
     assert "| Raw 索引化 | 1 |" in report
     assert "| Raw 已移除 | 1 |" in report
+
+
+def test_source_raw_allows_indexed_evidence_and_blocks_removed_evidence(tmp_path, monkeypatch):
+    wiki_lint = load_wiki_lint()
+    (tmp_path / "raw").mkdir()
+    write_note(tmp_path / "wiki" / "sources" / "indexed.md", "type: source-summary\n", "")
+    write_note(tmp_path / "wiki" / "sources" / "removed.md", "type: source-summary\n", "")
+    write_note(
+        tmp_path / "wiki" / "entities" / "Example.md",
+        """type: entity
+title: Example
+source_raw:
+  - "[[indexed.pdf]]"
+  - "[[removed.pdf]]"
+""",
+        "",
+    )
+    write_registry(
+        tmp_path,
+        {
+            "version": 1,
+            "updated_at": "2026-06-28T12:30:00+08:00",
+            "items": {
+                "indexed.pdf": {
+                    "raw_file": "indexed.pdf",
+                    "status": "compiled",
+                    "raw_state": "index",
+                    "body_sha256": body_sha256("indexed body"),
+                    "summary_path": "wiki/sources/indexed.md",
+                    "canonical_url": "https://example.com/indexed.pdf",
+                    "indexed_at": "2026-06-28T12:10:00+08:00",
+                    "updated_at": "2026-06-28T12:10:00+08:00",
+                },
+                "removed.pdf": {
+                    "raw_file": "removed.pdf",
+                    "status": "compiled",
+                    "raw_state": "removed",
+                    "body_sha256": body_sha256("removed body"),
+                    "retired_at": "2026-06-28T12:20:00+08:00",
+                    "retire_reason": "低质量来源",
+                    "updated_at": "2026-06-28T12:20:00+08:00",
+                },
+            },
+        },
+    )
+
+    monkeypatch.setattr(wiki_lint, "ROOT", tmp_path)
+    monkeypatch.setattr(wiki_lint, "RAW", tmp_path / "raw")
+    monkeypatch.setattr(wiki_lint, "WIKI", tmp_path / "wiki")
+    monkeypatch.setattr(wiki_lint, "INDEX", tmp_path / "index.md")
+
+    issues = wiki_lint.check_source_raw()
+
+    assert len(issues) == 1
+    assert issues[0].category == "source_raw"
+    assert "已移除 Evidence" in issues[0].message
+    assert "removed.pdf" in issues[0].message

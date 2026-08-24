@@ -1,10 +1,13 @@
 ---
 type: source-summary
 title: "Towards Autonomous Software Development (Position Paper, 完整版)"
-source_raw:
-  - "[[20260708-towards-autonomous-software-dev.pdf]]"
+canonical_url: "https://rdi.berkeley.edu/assets/position-auto-sd.pdf"
+raw_state: index
+original_raw_file: "20260708-towards-autonomous-software-dev.pdf"
+original_body_sha256: "d046c88d7eeb5f22b145e6bbca0df31e68b64d4f9a035d66a9df6ce1c43a7a31"
+indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-07-28
-updated: 2026-07-28
+updated: 2026-08-25
 tags:
   - source-summary
   - agentic-engineering
@@ -15,6 +18,8 @@ claim_type: mixed
 ---
 
 # Towards Autonomous Software Development（完整 position paper）
+
+> Raw 生命周期：本地 PDF 已降级为可恢复索引；下文保留 §3–§5 的定位，精确引用从 canonical URL 回到 Berkeley RDI 原文核验。
 
 > 本 source 是 [[20260726-berkeley-auto-software-dev]]（Berkeley RDI 博客摘要版，2026-07-26）的**完整论证版本**（38 页，PDF 2026-07-08，同一作者群，131 篇参考文献）。博客版已编译的内容（三级框架、三横切维度、CORE RISK、六大转变、十个预测）此处不重复，本摘要只承载**增量**：框架适用边界、验证者失败机制、实证数据锚点、命名新失败模式、制度脚手架、以及博客整节省略的 §5 对立观点。来源：https://rdi.berkeley.edu/assets/position-auto-sd.pdf。证据等级：medium（框架级贡献 + 引用密集的论证，但仍是 position paper，实证锚点多来自所引文献而非本文实验）。
 

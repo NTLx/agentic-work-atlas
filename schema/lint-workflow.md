@@ -49,7 +49,7 @@ Recompile guard 默认只允许本次 Research 日志和 `research-agenda.md`，
 - YAML/frontmatter 是否能被 Quartz 解析（PDF 文件自动跳过此项）
 - 日期是否为 `YYYY-MM-DD`（PDF 文件自动跳过此项）
 - 裸 `$` 是否会触发 Obsidian MathJax（不扫描 raw 原文正文，避免为渲染清洗而改动证据源）
-- wikilink 和 `source_raw` 是否指向真实文件（支持 `.md` 和 `.pdf` 后缀）
+- wikilink 和 `source_raw` 是否指向真实 Evidence（支持 `full` 文件与 Registry-backed `index`；阻断 `removed`）
 - index.md 计数是否与文件系统一致（Raw 计数包含 `.md` 和 `.pdf` 文件）
 - Registry 同时保留编译状态 `pending / compiled / skipped` 与生命周期 `full / index / removed`；历史条目缺 `raw_state` 时按 `full` 兼容
 - `full` 要求原文件存在；`index` 要求原文件不存在且有 source summary、canonical URL 和索引时间；`removed` 要求原文件不存在且有删除时间与原因

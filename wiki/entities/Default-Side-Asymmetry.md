@@ -8,7 +8,7 @@ aliases:
   - 时间之矢治理定理
 definition: "任何权限（及一切治理）制度都必然有'默认侧'——默认批准（持久授予）则撤销难，默认拒绝（自动过期）则续期难——两侧永远不对称，棘轮只能转移不能消除。不可消除根=时间之矢：治理决定必然落在时间轴上，授予面向开放未来（可积累依赖）、撤销面向封闭过去（拆已积累依赖），未来与过去在物理上不平等。消除棘轮=消除时间之矢=不可能。这是 07-14 有穷者治理悖论的最深形式：开放系统中不存在对称治理，非因有穷者能力不足，是因对称在时间有向世界里根本不存在。"
 created: 2026-07-16
-updated: 2026-07-16
+updated: 2026-08-25
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -18,7 +18,6 @@ related_entities:
   - "[[Permission-Ratchet-Mechanism]]"
   - "[[Plan-is-the-Permission]]"
   - "[[Flattening-as-Governance-Consequence]]"
-  - "[[Identity-Domain-Causal-Force]]"
 source_raw:
   - "[[20260708-vercel-agent]]"
 ---
@@ -103,4 +102,3 @@ Coase 提出"全权限自动过期系统"作为对称反例。它不消除棘轮
 - [[Permission-Ratchet-Mechanism]] — 本定理是其"不可消除只能转移"的深层根
 - [[Plan-is-the-Permission]] — 对称反例的局部实现（压在未来侧）
 - [[Flattening-as-Governance-Consequence]] — 同属"治理后果非理念选择"簇，本定理是其时间维度的根
-- [[Identity-Domain-Causal-Force]] — 同属"经验成功但本体不完整"的理论形态，本定理把治理不对称追到存在论层

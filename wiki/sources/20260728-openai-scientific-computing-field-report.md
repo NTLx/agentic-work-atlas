@@ -1,10 +1,13 @@
 ---
 type: source-summary
 title: "Scientific computing in the age of agentic AI: an exploratory field report（完整版）"
-source_raw:
-  - "[[20260728-openai-scientific-computing-field-report.pdf]]"
+canonical_url: "https://openai.com/index/scientific-computing-agentic-ai/"
+raw_state: index
+original_raw_file: "20260728-openai-scientific-computing-field-report.pdf"
+original_body_sha256: "195870578f3cdc21128252d2ab0dcdafeb70f6783c086e8c96f24d035adee127"
+indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-07-29
-updated: 2026-07-29
+updated: 2026-08-25
 tags:
   - source-summary
   - agentic-engineering
@@ -14,6 +17,8 @@ claim_type: mixed
 ---
 
 # Scientific computing in the age of agentic AI: an exploratory field report（完整版）
+
+> Raw 生命周期：本地 PDF 已降级为可恢复索引；八个项目案例与性能数据的精确引用从 canonical URL 回到 OpenAI 原始报告核验。
 
 > 完整版 field report（55 页，Jeremy Li & Andrew Ho (OpenAI) 等 21 人，2026-07-28），含八个项目团队一手案例：MHCflurry（TF→PyTorch）、rustar-aligner（STAR C/C++→Rust 20k+ 行）、RustQC（186M reads 14分54秒 vs 15小时34分）、hifiasm、HelixForge（GPU-native）、cyvcf2、bayesm、HI.SIM。摘要版命题见 [[20260728-openai-scientific-computing-agentic-ai]]，本页承载增量：案例实证谱系、验证机制细节、stewardship 论证与经济学估算。证据等级：medium（一手案例厚实且由工具原作者参与撰写，但 retrospective 窄样本 + 定性判断 + 无对照；OpenAI/Codex 推广立场）。
 

@@ -1,10 +1,13 @@
 ---
 type: source-summary
 title: "The Personalization Mirage: How LLMs Fabricate User Profiles, and Why Self-Monitoring Misleads"
-source_raw:
-  - "[[20260805-personalization-mirage-llm-over-inference]]"
+canonical_url: "https://arxiv.org/abs/2608.04570"
+raw_state: index
+original_raw_file: "20260805-personalization-mirage-llm-over-inference.pdf"
+original_body_sha256: "980d7f9e629ed34ff0f2c5e37800d6dfaaedeccccb3744659451f5239ed2532b"
+indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-08-25
 tags:
   - source-summary
   - evaluation
@@ -16,6 +19,8 @@ claim_type: mixed
 ---
 
 # The Personalization Mirage（个性化幻象）
+
+> Raw 生命周期：本地 PDF 已降级为可恢复索引；MirageBench、Self-Monitoring Inversion 与 Accum pilot 的精确引用从 canonical URL 回到 arXiv 原文核验。
 
 > 来源：arXiv 2608.04570 (cs.CL)，Yushi Sun (LIGHTSPEED) / Yanjie Zhang、Rui Sheng (HKUST)，2026-08-05。**证据定级 high**：一手大规模实证——143,616 条 judged claims、12 模型 7 家族、独立 judge 经盲标人类标注验证（Cohen's κ=0.863 四类 / 0.900 二值）。主要结论（OI 普遍性）稳健；**Self-Monitoring Inversion 为 exploratory 发现**（n=12，bootstrap CI 含零），需单独降权。编译定位：ljg-paper 增强路径（评测论文 + 核心发现），claim_type: mixed。
 

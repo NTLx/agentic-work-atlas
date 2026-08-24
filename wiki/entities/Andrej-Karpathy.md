@@ -7,7 +7,7 @@ definition: "提出 Software 2.0、Vibe Coding 和 LLM Wiki 等概念的 AI 研�
 validated_source: "https://karpathy.ai/"
 validated_at: "2026-05-22"
 created: 2026-04-13
-updated: 2026-07-16
+updated: 2026-08-25
 tags:
   - person
   - openai
@@ -28,7 +28,6 @@ source_raw:
   - '[[20260413-llm-wiki]]'
   - '[[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]]'
   - '[[20260409-ai-capability-gap-ai-psychosis]]'
-  - '[[20260715-anthropic-talent-strategy-2026]]'
 ---
 
 # Andrej Karpathy

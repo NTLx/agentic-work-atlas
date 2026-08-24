@@ -10,7 +10,8 @@ aliases:
 definition: "AI 时代组织扁平化不是组织理念的选择，而是 agent 不可契约化这一技术事实的治理后果——当执行单元从可契约化的人类员工变为不可契约化的 agent，剩余控制权的最优配置必然向操作端迁移，原本靠契约化转译存在的中间管理层失去经济基础，组织被迫扁平。"
 created: 2026-07-16
 extended: 2026-07-20
-evidence_level: high  # 修正版——三边界条件+新raw(Varick+Ludicity)产业实证补充
+updated: 2026-08-25
+evidence_level: medium
 claim_type: synthesized
 tags:
   - organization
@@ -24,12 +25,11 @@ related_entities:
   - "[[Allocation-Economy]]"
   - "[[Recursive-Self-Improvement]]"
   - "[[Founder-Mode]]"
-  - "[[Access-Right-vs-Residual-Control]]"
-  - "[[Framing-Right-Layering]]"
-  - "[[L1L2L3-Power-Decomposition]]"
   - "[[Delegative-UI]]"
 source_raw:
-  - "[[20260715-anthropic-talent-strategy-2026]]"
+  - "[[20260604-anthropic-recursive-self-improvement]]"
+  - "[[20260718-ai-mania-eviscerating-decision-making]]"
+  - "[[20260719-if-ai-is-so-great-why-isnt-it-working]]"
 ---
 
 # Flattening-as-Governance-Consequence（去科层化治理后果定理）
@@ -114,7 +114,7 @@ source 误读：组织理念选择(因) → 人才涌入(果)
 | 预测逆向流动（agent 渗透浅→深） | ✓ | ✗ |
 | 可证伪 | ✓（agent 渗透深却更科层化=反例） | ✗（理念主观） |
 
-经济结构语言预测力碾压组织理念语言。但这碾压**仅限外部行为预测域**——在身份形成与留任的内部因果层，理念可能仍有独立因果力（见 [[Identity-Domain-Causal-Force]] 的双域定理）。
+经济结构语言的外部预测力更强；但在身份形成与留任的内部因果层，理念可能仍有独立因果力。这个身份域假设目前缺少可区分的外部证据，不应单独稳定化。
 
 ## 外部实证佐证（联网）
 
@@ -156,8 +156,4 @@ source 误读：组织理念选择(因) → 人才涌入(果)
 - [[Allocation-Economy]] — maker 变 manager 的经济转型，与本定理的"IC 内化 L2 编排权"同构
 - [[Recursive-Self-Improvement]] — "工程师 8x、团队规模不变"是"IC 杠杆反超"的一手结构性证据
 - [[Founder-Mode]] — CEO/CTO 回到 coding 是"管理岗不如 IC 岗有杠杆"在创始人层的镜像
-- [[Access-Right-vs-Residual-Control]] — 权力本体迁移定理（剩余控制权→接入权+agent 判断权）
-- [[Framing-Right-Layering]] — 画框权分层定理（L1 分组织/部门/团队三层）
-- [[L1L2L3-Power-Decomposition]] — 权力三层分解（L1 画框/L2 编排/L3 框内判断）
-- [[Identity-Domain-Causal-Force]] — 理念因果力双域定理（经济域投影 vs 身份域独立）
 - [[Delegative-UI]] — 委派式交互是本定理在交互层的精确机制投射：实质权威从"职位"迁移到"前提规定能力"

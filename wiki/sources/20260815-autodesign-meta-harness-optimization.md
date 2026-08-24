@@ -1,10 +1,13 @@
 ---
 type: source-summary
 title: "AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design"
-source_raw:
-  - "[[20260815-autodesign-meta-harness-optimization]]"
+canonical_url: "https://arxiv.org/abs/2608.13560"
+raw_state: index
+original_raw_file: "20260815-autodesign-meta-harness-optimization.pdf"
+original_body_sha256: "9e9b8532f29ab9d12756f4dba5cc8d1577feb9b0057ae1ae6f2bcc9f04ce06d8"
+indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-08-25
 tags:
   - source-summary
   - meta-harness
@@ -30,6 +33,8 @@ venue: "arXiv:2608.13560 (Tech Report, v1, 2026-08-15)"
 ---
 
 # AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design
+
+> Raw 生命周期：本地 PDF 已降级为可恢复索引；PosterBench 主实验、Figure 13 与数据卡片的精确引用从 canonical URL 回到 arXiv 原文核验。
 
 > 来源：arXiv:2608.13560（Tech Report, 2026-08-15）。**证据定级 medium**：单篇 Tech Report + 自建基准 PosterBench（100 paper Main Track）+ 7 配置 controlled track + 11 志愿者盲评（n=933 pairwise），证据完整但无第三方独立复现；**claim_type mixed**：算法/基准/指标为原文提取，跨库对标为综合判断。
 

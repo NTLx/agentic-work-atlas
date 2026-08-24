@@ -3,8 +3,10 @@ type: source-summary
 title: "The Tragedy of the Cognitive Commons: How AI Could Disrupt the Regeneration of Professional Expertise"
 source_raw:
   - "[[20260731-tragedy-cognitive-commons-ai-expertise]]"
+canonical_url: "https://arxiv.org/abs/2607.29380"
+raw_state: full
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-08-25
 tags:
   - source-summary
   - cognitive-commons

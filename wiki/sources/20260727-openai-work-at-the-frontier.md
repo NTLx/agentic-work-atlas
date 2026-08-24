@@ -1,10 +1,13 @@
 ---
 type: source-summary
 title: "Work at the Frontier: How AI is expanding what people do at work"
-source_raw:
-  - "[[20260727-openai-work-at-the-frontier.pdf]]"
+canonical_url: "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+raw_state: index
+original_raw_file: "20260727-openai-work-at-the-frontier.pdf"
+original_body_sha256: "3ffb4cc2bb97aaac8dc0f5bf715ee17f6f4b4629097b89558aa9d8ab199d4781"
+indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-07-28
-updated: 2026-07-28
+updated: 2026-08-25
 tags:
   - source-summary
   - ai-labor
@@ -15,6 +18,8 @@ claim_type: mixed
 ---
 
 # Work at the Frontier: How AI is expanding what people do at work
+
+> Raw 生命周期：本地 PDF 已降级为可恢复索引；样本量与 task crossover 数据的精确引用从 canonical URL 回到 OpenAI 原始报告核验。
 
 > OpenAI Economic Research（Caroline Chin, Alex Martin Richmond, 2026-07）分析 80 万+ 条美国 ChatGPT 用户的工作相关消息，以 O*NET 职业数据库为历史基线测量 **task crossover**（任务跨界）：16.8% 的工作消息涉及其他职业的历史任务，职业专属消息中跨界比例达 43.5%。核心发现：AI 不仅改变工作如何做，更改变**谁来做**——职业边界在职位描述修改之前就已经开始松动。来源：OpenAI 官方研究页面（2026-07-27）。证据等级：medium（大样本一手使用数据 + 严谨方法论与局限性声明，但测量单位为消息而非工作成果，且 OpenAI 研究自家产品影响的立场需纳入考量）。
 

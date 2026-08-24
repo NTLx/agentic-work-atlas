@@ -2,10 +2,14 @@
 type: source-summary
 title: "Agent-Environment Alignment via Automated Interface Generation (ALIGN)"
 source_raw:
-  - "[[20260801-align-agent-environment-interface.pdf]]"
   - "[[20260801-openbmb-align-tweet.md]]"
+canonical_url: "https://arxiv.org/abs/2505.21055"
+raw_state: index
+original_raw_file: "20260801-align-agent-environment-interface.pdf"
+original_body_sha256: "33fd5fb97d3b0fa3083139bddf0a43a8c459f77c902efc94701ee78bd906ddd5"
+indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-25
 tags:
   - source-summary
   - agentic-engineering
@@ -17,6 +21,8 @@ claim_type: extracted
 ---
 
 # Agent-Environment Alignment via Automated Interface Generation（ALIGN 论文）
+
+> Raw 生命周期：论文 PDF 已降级为可恢复索引；关键结果定位见下文 Table 1–5 与 Algorithm 1，精确引用从 canonical URL 回到 arXiv 原文核验。
 
 > TsinghuaNLP (THUNLP-MT) / OpenBMB 论文（2025-05-27, arXiv:2505.21055）。首个**自动生成** agent-environment 对齐接口的框架。
 >

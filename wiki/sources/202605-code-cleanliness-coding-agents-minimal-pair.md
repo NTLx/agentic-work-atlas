@@ -1,10 +1,13 @@
 ---
 type: source-summary
 title: "Does Code Cleanliness Affect Coding Agents? A Controlled Minimal-Pair Study"
-source_raw:
-  - "[[202605-code-cleanliness-coding-agents-minimal-pair.pdf]]"
+canonical_url: "https://arxiv.org/abs/2605.20049"
+raw_state: index
+original_raw_file: "202605-code-cleanliness-coding-agents-minimal-pair.pdf"
+original_body_sha256: "ff5d78e7ccbf58ca32a4b06e3a8792e40d2872a373c334b84dadc288a6b0b24a"
+indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-07-08
-updated: 2026-07-08
+updated: 2026-08-25
 tags:
   - source-summary
   - agentic-engineering
@@ -16,6 +19,8 @@ claim_type: extracted
 ---
 
 # Does Code Cleanliness Affect Coding Agents? A Controlled Minimal-Pair Study
+
+> Raw 生命周期：本地 PDF 已降级为可恢复索引；关键对照数据定位见下文 Table 4，其他精确引用从 canonical URL 回到 arXiv 原文核验。
 
 > SonarSource 论文（2026-05, arXiv:2605.20049v1），首次用最小对比对方法隔离代码整洁度对 coding agent 的独立影响。
 

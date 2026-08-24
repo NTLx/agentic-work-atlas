@@ -13,6 +13,8 @@ Raw frontmatter 是剪藏元数据，不是编译产物。编译阶段不得为�
 
 Raw 生命周期由 `state/raw-registry.json` 管理。`raw_state: full` 时原文件必须存在且正文不可改；`index` 时原文件从当前工作树移除，由同名 source summary 保存 canonical URL、原始正文摘要哈希与证据定位；`removed` 只保留 Registry 墓碑及必要的删除说明。
 
+为兼容历史页面，稳定页的 `source_raw` 表示“原始证据身份”：`full` 时链接到 `raw/` 全文，`index` 时同名链接落到 source summary，并由 Registry 的 canonical URL 与哈希恢复原文。`removed` 不再是可用 Evidence，禁止继续出现在稳定页的 `source_raw` 中。
+
 ```yaml
 ---
 type: raw

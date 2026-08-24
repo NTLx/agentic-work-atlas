@@ -1,10 +1,13 @@
 ---
 type: source-summary
 title: "2026 年 Anthropic 人才战略升级：CTO 与学界大牛入职动因及行业影响深度解析"
-source_raw:
-  - "[[20260715-anthropic-talent-strategy-2026]]"
+raw_state: removed
+original_raw_file: "20260715-anthropic-talent-strategy-2026.pdf"
+original_body_sha256: "0dd1976e6fd422b7771c646940f6be71eb443ebddb0f0b899456ccbf5b15bbbd"
+retired_at: "2026-08-25T01:10:28+08:00"
+retire_reason: "AI 生成的低证据二手综述，无可靠 canonical source，且未被稳定知识页或活跃 Claim 使用"
 created: 2026-07-16
-updated: 2026-07-16
+updated: 2026-08-25
 tags:
   - source-summary
   - anthropic
@@ -13,6 +16,8 @@ claim_type: mixed
 ---
 
 # 2026 年 Anthropic 人才战略升级
+
+> Raw 生命周期：原始 PDF 已移除。此页仅保留删除依据与历史导航，不能作为事实 Evidence；若其中事件仍有价值，须重新找到一手来源。
 
 > ⚠️ **证据等级 low**：本文是 AI 生成的二手综述（PDF metadata 显示 ContentProducer/Propagator 为国内平台 ID，producer 为 iText 7.1.15 转换器，文末标注"超级小爱 AI 生成"）。文内大量具体数字带"业内人士指出""一位教授所言"等不可验证引用，文末列 40 条参考文献但未逐一标注对应。按主题宪法，本文定位为**现象索引**（提供事件清单和人才流向框架），关键数字须回溯到参考文献原始报道后才能沉淀为事实。`claim_type: mixed`——事件框架为 extracted，因果解释为 synthesized。
 

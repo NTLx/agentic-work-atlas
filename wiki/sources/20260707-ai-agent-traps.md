@@ -1,10 +1,13 @@
 ---
 type: source-summary
 title: "AI Agent Traps"
-source_raw:
-  - "[[20260707-ai-agent-traps.pdf]]"
+canonical_url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438"
+raw_state: index
+original_raw_file: "20260707-ai-agent-traps.pdf"
+original_body_sha256: "603f0cae8cd8ab944f3e700a169d325120db42239075350d07c8183da71a527c"
+indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-08-25
 tags:
   - source-summary
   - agent-security
@@ -15,6 +18,8 @@ claim_type: extracted
 ---
 
 # AI Agent Traps
+
+> Raw 生命周期：本地 PDF 已降级为可恢复索引；此页保留六类 taxonomy 的 evidence map，精确引用从 canonical URL 回到 SSRN 原文核验。
 
 > Google DeepMind 研究论文，首次系统性提出 AI Agent 陷阱的六类分类框架。
 
