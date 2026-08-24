@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-24
+updated: 2026-08-24T21:01:12
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -38,10 +38,10 @@ related_entities:
 - Priority: P1
 - Claim: Agent 的数据过度收集来自任务代理架构，而不是单一产品或单一厂商的实现失误。
 - Gap: Counterexample
-- Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`
+- Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`、`raw/How we contain Claude across products.md`、`raw/20260518-zero-trust-for-ai-agents.md`、`raw/20260616-why-is-meta-destroying-its-engineering.md`、`raw/20260714-context-collapse-2-when-emails-instruct.md`
 - Evidence goal: 找到权限范围相近但能长期保持数据最小化的 Agent，或跨厂商重复出现的同类失效。
-- Last checked: none
-- Next: 检查仓库内 Claude Code、Codex、Gemini、Grok 的隐私与权限材料
+- Last checked: 2026-08-24 · strengthened
+- Next: 在仓库外搜索已部署的 privacy-aware agent 系统（PA-DR 生产应用或其他 privacy-by-design 框架）
 - Retry: now
 
 ### CR-003 · AI 监督 AI 存在共模误差下界
@@ -140,15 +140,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
-| 2026-08-24T17:00 | 反馈真空病理 | refined (reasoning) | 将“惊奇”载体从身体修正为公开性，但外部搜索失败；未增加证据，稳定页写入已回迁 Research。 |
+| 2026-08-24T21:01 | Agent 数据过度收集结构性 | strengthened | MosaicLeaks 证明任务性能训练系统性增加泄漏；跨厂商均出现数据过度收集；PA-DR 可缓解但无 deployed 反例。 |
+| 2026-08-24T17:00 | 反馈真空病理 | refined (reasoning) | 将”惊奇”载体从身体修正为公开性，但外部搜索失败；未增加证据，稳定页写入已回迁 Research。 |
 | 2026-08-24T16:00 | 工具性收敛弱压力 | refined (reasoning) | 三条件模型降为机制搜索线索；能力被视为使能变量，仍缺独立实证。 |
 | 2026-08-24T15:00 | 元满意化阈值 | no_delta | 产生多组 synthesized 解释但无新证据，不进入稳定 Wiki。 |
 | 2026-08-24T14:00 | Agent 归因不动点 | refined (mixed) | 保留 source 支撑的归因四层结构；其余推导已从稳定 Comparison 回迁 Research。 |
-| 2026-08-24T12:00 | 认知公地与技能退化 | refined (mixed) | 现有 raw 支持能力再生风险；双层退化与 near-miss 机制仍需反例检验，进入 CR-005。 |
 
 ## 思考日志索引
 
-- [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化
+- [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002
 - [[2026-08-23]] — 深度思考×13；Alpha Transfer、判断力与认知公地
 - [[2026-08-04]] — 深度思考×11；08-03 判断的边界与反例复核
 - [[2026-08-03]] — 深度思考×33；生成器降秩、前瞻预测与多项形式化
