@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-24T21:01:12
+updated: 2026-08-24T22:01:19
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -51,8 +51,8 @@ related_entities:
 - Gap: Evidence
 - Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`、`raw/20260330-reward-hacking-equilibrium-finite-evaluation.md`
 - Evidence goal: 找到跨模型监督的错误相关性或干预前后变化；理论同构和角色共识不计。
-- Last checked: 2026-08-03 · refined
-- Next: 检查已有 source/raw 中是否有跨模型 disagreement 或分布外错误相关数据
+- Last checked: 2026-08-24 · strengthened
+- Next: 搜索 ensemble judge / multi-model jury 的误差相关性实证数据，量化共模残差来源分解
 - Retry: now
 
 ### CR-004 · Agent Observability 上界随层级变化
@@ -140,15 +140,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-24T22:01 | AI 监督 AI 共模误差下界 | strengthened | 跨模型误标率：同质 62-86%、异质 1-14%；残差不可消除，来源是训练目标/价值观结构性共享。 |
 | 2026-08-24T21:01 | Agent 数据过度收集结构性 | strengthened | MosaicLeaks 证明任务性能训练系统性增加泄漏；跨厂商均出现数据过度收集；PA-DR 可缓解但无 deployed 反例。 |
 | 2026-08-24T17:00 | 反馈真空病理 | refined (reasoning) | 将”惊奇”载体从身体修正为公开性，但外部搜索失败；未增加证据，稳定页写入已回迁 Research。 |
 | 2026-08-24T16:00 | 工具性收敛弱压力 | refined (reasoning) | 三条件模型降为机制搜索线索；能力被视为使能变量，仍缺独立实证。 |
 | 2026-08-24T15:00 | 元满意化阈值 | no_delta | 产生多组 synthesized 解释但无新证据，不进入稳定 Wiki。 |
-| 2026-08-24T14:00 | Agent 归因不动点 | refined (mixed) | 保留 source 支撑的归因四层结构；其余推导已从稳定 Comparison 回迁 Research。 |
 
 ## 思考日志索引
 
-- [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002
+- [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
 - [[2026-08-23]] — 深度思考×13；Alpha Transfer、判断力与认知公地
 - [[2026-08-04]] — 深度思考×11；08-03 判断的边界与反例复核
 - [[2026-08-03]] — 深度思考×33；生成器降秩、前瞻预测与多项形式化
