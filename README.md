@@ -24,6 +24,8 @@
 
 日常四大环节：**剪藏 clip → 编译 compile → 输出 produce → 探索 explore**。`audit` 是贯穿全程的质量门。
 
+`recompile(claim)` 是 `explore` 的受限维护子流程：只检查 agenda 队列中的一个既有 Claim，只写 Research，不自动晋升稳定 Wiki。
+
 ### 用户意图推断：剪藏信号
 
 当用户**仅提供**以下输入而未附加明确指令时，默认推断为**剪藏（clip）**意图：
@@ -109,6 +111,7 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 | `lint` | `uv run python tools/wiki-lint.py --fix-index --write-report` |
 | `audit-entities` | `python3 tools/entity-audit.py --write-report` |
 | `fix-lint` | 按 lint 报告逐项修复 |
+| `recompile` | 按 `tools/daily-thinking-agent-prompt.md` 检查一个队列 Claim |
 | `什么是 <概念>?` | 概念查询（优先 ljg-qa） |
 | `关于 <主题> 有什么讨论?` | 主题查询（ljg-rank / ljg-think） |
 | `辩论 <主题>` | 多视角探索（ljg-roundtable） |
@@ -144,6 +147,7 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 |------|--------|
 | 探索新问题 | `schema/explore-workflow.md` |
 | 管理 research agenda | `schema/research-module.md` |
+| 定时重编译 Claim | `tools/daily-thinking-agent-prompt.md` + `schema/research-module.md` |
 
 ### 审计
 

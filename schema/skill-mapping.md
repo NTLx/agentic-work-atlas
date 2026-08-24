@@ -28,6 +28,8 @@ type: schema-subdoc
 | **ljg-plain** (白话) | audit, produce | 可读性校验 | N/A | Entity definition / Output 可读性校验（12 岁可读测试） |
 | **ljg-writes** (写作引擎) | produce | 观点驱动写作 | `wiki/outputs/` | 观点驱动写作 → 博客/笔记作品 |
 | **ljg-roundtable** (圆桌) | produce, explore | 多视角辩证 | `wiki/outputs/` 或 research agenda | 结构化多立场辩论 → 证伪方向、分歧点、共识边界 |
+| **ljg-roundtable-recompile** | recompile | 无人值守竞争解释检验 | 无直接写入 | 最多三轮分析角色交锋 → 隐含假设、反例、区分性观察；不生成 Evidence |
+| **ljg-think-recompile** | recompile | 无人值守机制/边界澄清 | 无直接写入 | 最多五层可证伪下钻 → 机制、必要前提、替代解释与停止理由 |
 | **ljg-invest** (投资分析) | explore(FDE 专项) | 秩序创造机器评估 | source summary / entity 补充 | 「混沌→秩序」框架判断 AI 项目是否值得深度收录 |
 | **obsidian-markdown** | audit(全环节) | 写入守卫 | N/A（质量门） | **所有 `.md` 文件写入前必调用** — 确保 Obsidian Flavored Markdown 合规 |
 
@@ -62,6 +64,19 @@ Agent 在每次编译/探索时自动执行以下决策，无需用户指令：
 | 需要博客/笔记输出 | ljg-writes |
 | Topic 有争议性、需要多立场检验 | ljg-roundtable |
 | Entity/Output 可读性不达标 | ljg-plain |
+
+### 定时 Claim Recompile
+
+```text
+Evidence / Counterexample Gap → 定向检索或一次外部搜索
+Counterexample 且存在竞争解释 → ljg-roundtable-recompile
+Boundary / Mechanism 且事实充分 → ljg-think-recompile
+```
+
+- 一次运行最多一个重型 reasoning Skill；`obsidian-markdown` 写入守卫不计入此上限。
+- 外部搜索和重型 reasoning Skill二选一。
+- 原始 `ljg-roundtable` / `ljg-think` 会交互并写外部笔记，不用于定时重编译。
+- `ljg-qa` 只处理源材料或开放探索，不处理 recompile 产生的 synthesized 判断。
 
 ## 辅助技能（特定场景可选）
 

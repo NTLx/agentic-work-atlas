@@ -103,6 +103,18 @@ Scope 标识操作的聚焦对象，使用 kebab-case：
 - Source 需求: {下一轮剪藏目标}
 ```
 
+Claim Recompile 是 `explore` 的受限子类型，不新增 commit type：
+
+```text
+explore(recompile): {Claim 简称} — {Delta}
+
+- claim: {CR-ID}
+- gap: {Evidence|Counterexample|Boundary|Mechanism}
+- action: {本轮唯一主要动作}
+- delta: {Delta} ({Basis})
+- next: {下一步或 none}
+```
+
 ## Commit 示例
 
 **编译操作：**
@@ -162,3 +174,5 @@ docs(schema): 用 Git Commit 规范替代 log.md 记录操作历史
 - **fix 类型必须说明修复方式**：不能只写"修复了 bug"
 - **每次操作一个 commit**：编译一个 raw source = 一个 commit，不要批量合并多个编译
 - **四大环节完成即推送**：`clip`、`compile`、`output`、`explore` 完成后必须 `git push`，远端 commit history 才是完整 LLM Wiki 日志
+- **无人值守任务显式暂存**：禁止 `git add -A`。只暂存本轮声明拥有的文件，并在提交前检查 `git diff --cached --name-only`。
+- **无人值守提交非交互执行**：使用 `git commit -m "..." -m "..."`，不能运行会打开编辑器的裸 `git commit`。

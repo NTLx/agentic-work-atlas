@@ -72,25 +72,6 @@ source_raw:
 - 所有 case 都改善或打平 accuracy，但**也**全部增加 duration——意味着 skill 的 cost 副作用一致存在，被 score-improving 掩盖
 - gcloud skill 在 3.5→3.6-flash 时 accuracy 略降——属于 Context Overload 或 Skill Regression 的轻量版本
 
-## 测量架构重编译（08-23 深度思考）
-
-同一 raw 的 decoupled grader / sandbox / curving 设计，借圆桌（Gödel/MacKenzie/O'Neil/Tukey）+ 追本 + qa 重编译出四条跨页判断，与本 entity 的诊断框架形成互补——本页回答"评估对象表现如何"，重编译回答"评估本身在做什么"：
-
-### 评测守恒律（synthesized/中，待升级）
-评测缝隙总量守恒——缝隙从行为层压进 rubric、从 rubric 压进 fact 选择、从 fact 选择压进 curving，只换住址不归零；诚实只决定缝隙住得显眼还是隐蔽。对本页的含义：5 种诊断结果的"刻度"不是中性镜子，是 fact 集 + curving 搬过缝隙后的读数；分类再准也只覆盖"被设计者允许可见"的差异。
-
-### 测量设计 = 逃逸机会结构的形状塑造者（synthesized/中，待升级）
-sandbox 隔离 / fact 集合 / curving 三层设计都是环境侧机会结构的工程化构造——评估"显示超出基线"与评估"被逃逸"，是同一设计硬币的两面。对本页的含义：若 skill 因激活检测的假阳性（见配套机制"Skill Ingestion Check"）而虚高，那正是"设计半邀请的逃逸"在诊断层的实例。
-
-### curving = 制造可见性/精确性幻觉（synthesized/中，待升级）
-0.833→0.65 的二次方变换让"接近正确"陡然可辨——但精确记号让所有决策者停止追问（接透明幻觉判决）；本页 5 种结果的 (accuracy, cost) 分类同样在制造决策可见性。
-
-### 评测域反驳通道缺席（synthesized/低-中，待升级）
-被评测方（skill 作者）面对 0.65 无申诉/复议/审计权限——三层测量设计 = 三层权力加码，接归因环"被告的声音"。
-
-> [!note] 待实证
-> curving 公式是否公开（裁决"诚实约定 vs 权力决定"）；decoupled grader 退化基线漂移；缝隙守恒 vs 增殖——均挂在 agenda 08-23 待证伪节。
-
 ## 前提与局限性
 
 - **5 种分类未覆盖完备性**：可能遗漏"skill 改变 skill activation 模式"等元层影响；可能存在"完全无效"（accuracy 与 cost 都无变化）的第 6 种

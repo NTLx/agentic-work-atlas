@@ -35,6 +35,15 @@ type: schema-subdoc
 uv run python tools/wiki-lint.py --fix-index --write-report
 ```
 
+普通 audit/维护可使用上述写报告模式。定时 Claim Recompile 使用只读检查，避免无知识变化时改写生成文件：
+
+```bash
+uv run python tools/wiki-lint.py
+python3 tools/recompile-guard.py --base "$BASELINE" --log-date "$RUN_DATE" --max-stable 0
+```
+
+Recompile guard 默认只允许本次 Research 日志和 `research-agenda.md`，稳定页上限为 0；只有人工显式传入参数时才可开放既有稳定页或 index/report。它同时阻断 raw 变更、新建稳定页、transcript、无关路径、过长日志，以及超过 300 行 / 60 KB / 单行 600 字符的 agenda。完整 index/report 刷新留给 audit 任务。
+
 该脚本检查：
 - YAML/frontmatter 是否能被 Quartz 解析（PDF 文件自动跳过此项）
 - 日期是否为 `YYYY-MM-DD`（PDF 文件自动跳过此项）

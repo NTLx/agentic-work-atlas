@@ -13,7 +13,7 @@ Research 是与 entities / topics / comparisons / sources / outputs 并列的 Wi
 
 ```
 wiki/research/
-├── research-agenda.md          ← 活跃议程（cron 输入/输出索引，保持 ≤300 行）
+├── research-agenda.md          ← 活跃议程（cron 输入/输出索引，保持紧凑）
 └── research-logs/
     └── YYYY-MM-DD.md           ← 每日思考日志归档（按日期拆分）
 ```
@@ -22,9 +22,36 @@ wiki/research/
 
 Research 模块的核心设计原则：**操作层紧凑，详情归档**。
 
-- **research-agenda.md** 是 cron 深度思考 Agent 的输入文件，必须保持紧凑（≤300 行）。只保留操作节（选焦点用）和索引（溯源用）。
-- **research-logs/** 存放完整思考日志，按日期拆分，按需查阅。
+- **research-agenda.md** 是定时 Claim Recompile Agent 的输入文件，必须同时满足：≤300 行、≤60 KB、最长单行 ≤600 字符。只保留操作节和索引；解释 Delta 所需的详情进入日志。
+- **research-logs/** 存放证据、关键推理和结果构成的紧凑判定链，按日期拆分，按需查阅；不保存 Skill transcript。
 - **最近思考结论摘要**：agenda 内维护一张表格（最近 5 条结论精华），作为 cron Agent 的短期记忆桥接，避免重复探索已收敛的问题。
+
+## Claim Recompile Queue
+
+`research-agenda.md` 维护 `## Claim Recompile Queue`，作为定时重编译的唯一选题入口。队列最多保留 12 个活跃 Claim；发现新问题属于普通 `explore`，不能由 recompile 扫描全库生成。
+
+每个 Claim 使用稳定 ID，并保持字段紧凑：
+
+```markdown
+### CR-001 · Claim 简称
+- Status: ready | blocked | resolved
+- Priority: P0 | P1 | P2
+- Claim: 一句可判断真伪或边界的命题
+- Gap: Evidence | Counterexample | Boundary | Mechanism
+- Evidence: raw/<精确文件名> | <一手 URL>；source summary 只作导航，同源只计一次
+- Evidence goal: 什么观察会改变判断
+- Last checked: YYYY-MM-DD · delta
+- Next: 下一步唯一主要动作
+- Retry: now | YYYY-MM-DD | new-source:<目标>
+```
+
+选择规则是：`Status: ready`、Retry 条件已满足、最近未检查；再按优先级和 `Last checked` 最旧者选择。`blocked` 必须写明恢复条件，不能每轮重复尝试。
+
+## Recompile Delta
+
+一次有效检查只记录一个 Delta：`strengthened`、`weakened`、`falsified`、`refined`、`blocked` 或 `no_delta`，同时记录 `Basis: evidence | reasoning | mixed` 和 Claim 的 Before/After。Reasoning-only 最多得到 `refined`，不得提高 evidence level。
+
+证据单位必须落到独立 raw 或一手 URL。Entity、Topic 和 source summary 可用于定位，但不构成新的独立证据；多个页面回链同一 raw 仍只计一份。
 
 ## Research Agenda Frontmatter
 
@@ -59,8 +86,8 @@ tags:
 | 状态 | 条件 | 处理 |
 |------|------|------|
 | 活跃 | 有 source 需求、待验证或待证伪 | 保留在 agenda 操作节 |
-| 收敛 | 已被 compile/output 消化，或已有 source 支撑 | 移入 `## 已收敛的操作原则`，从活跃节删除 |
-| 休眠 | 长期无进展、无 source 支撑、无 output 使用 | 归档到 research-logs/ 或直接删除 |
+| 收敛 | Claim 已 falsified、已解决或没有下一动作 | 从 Queue 移除，结果保留在 research log；晋升候选交给 compile/audit |
+| 休眠 | 长期无进展、无 source 支撑、无 output 使用 | 标为 blocked 并写 Retry，或由普通 explore 归档/删除 |
 
 agenda 条目不得无限累积。当条目长期停留在活跃状态而无进展时，应在 explore 环节中决定：补 source、归档或删除。
 
@@ -71,4 +98,6 @@ agenda 条目不得无限累积。当条目长期停留在活跃状态而无进�
 - **不新增目录**：不建 `explore/`、`audit/`、`claims/` 等子目录；所有研究内容在 `wiki/research/` 内完成。
 - **不建一次性知识页**：单次思考的结论不直接创建 entity/topic；先沉淀到 agenda 或 research-logs，经验证后再升级。
 - **agenda 不是事实源**：`evidence_level: low` 的页面不能单独支撑 output 新判断升级；agenda 条目同理。
+- **定时重编译只写 Research**：自动任务不修改 entity/topic/comparison。发现 extracted 事实时只登记 `promotion candidate`，由后续 compile/audit 晋升。
+- **外部搜索先登记**：尚未 clip/compile 的 URL 只进入日志和 Source 需求队列，不进入稳定 Wiki。
 - **每次思考后更新索引**：在 research-agenda.md 中更新"最近思考结论摘要"表格（保持 5 行）和"思考日志索引"。

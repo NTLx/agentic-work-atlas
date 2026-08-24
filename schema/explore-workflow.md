@@ -7,6 +7,11 @@ type: schema-subdoc
 
 # Explore 管控规则与 Source 需求
 
+Explore 有两个不同模式：
+
+- **开放探索**：发现新问题、反例方向和 Source 需求。
+- **Claim Recompile**：只检查 agenda 队列中的一个既有 Claim，不负责发现第二个主题。可执行 Prompt 以 `tools/daily-thinking-agent-prompt.md` 为唯一事实源。
+
 ## Explore 管控规则
 
 `explore(topic)` 的输出必须包含：
@@ -30,6 +35,12 @@ Explore 可调用的技能（Agent 自主判断触发时机，无需用户指令
 | **ljg-read** (伴读) | 探索中需要跨域联想激发新方向 | 跨域旁逸 → 发现被忽略的类比和关联 |
 | **ljg-invest** (投资分析) | 探索涉及 AI 公司/项目评估时 | 秩序创造机器框架 → 判断收录价值 |
 | **aihot** | 需要外部现实对照"业界现在怎么样了" | 查询最新 AI 行业动态，为证伪方向提供外部参照 |
+
+### Claim Recompile 技能边界
+
+定时重编译默认不调用重型 Skill。一次运行最多调用 `ljg-roundtable-recompile` 或 `ljg-think-recompile` 其中一个：前者只处理无法由 source 区分的竞争解释，后者只处理证据已基本充分的 Boundary/Mechanism Gap。外部搜索与重型 Skill 同轮互斥。本模式不调用 `ljg-qa`，也不调用会交互并写外部笔记的原始 roundtable/think Skill。
+
+Skill 输出属于 reasoning，不是 Evidence；完整 transcript 不进入仓库。Claim Recompile 只修改 Research，稳定 Wiki 晋升由独立 compile/audit 操作完成。
 
 ### 周期性盲区自治
 
