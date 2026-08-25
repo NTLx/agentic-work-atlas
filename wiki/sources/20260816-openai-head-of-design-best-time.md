@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "OpenAI's Head of Design: This is the best time in history to be a designer"
-source_raw:
-  - "[[20260816-openai-head-of-design-best-time]]"
+canonical_url: "https://www.lennysnewsletter.com/p/openais-head-of-design-this-is-the"
+raw_state: index
+original_raw_file: "20260816-openai-head-of-design-best-time.md"
+original_body_sha256: "f6afe82e099a317acab5bf6dfc9b0b0b0222ad91d4df7bb49fd9059d3e932bc0"
+indexed_at: "2026-08-25T08:44:41+08:00"
+source_locator: "Lenny’s Podcast Ian Silber 访谈：Preview / Transcript 中定位工程师 10–100× 产出、不可压缩的 design feedback loop、user understanding / novelty / point of view、Just do less 与 systems thinking。"
 created: "2026-08-17"
-updated: "2026-08-17"
+updated: "2026-08-25"
 tags:
   - source-summary
   - design
@@ -16,6 +20,8 @@ claim_type: mixed
 ---
 
 # OpenAI's Head of Design — Ian Silber x Lenny Rachitsky (2026-08)
+
+> Raw 生命周期：本地 transcript 已降级为可恢复索引；设计判断与组织实践可按 `source_locator` 返回原节目核验。
 
 ## 编译摘要
 

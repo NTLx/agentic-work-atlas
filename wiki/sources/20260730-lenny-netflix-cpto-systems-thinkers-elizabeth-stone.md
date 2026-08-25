@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Why Netflix is betting on systems thinkers—not specialists—in the AI era"
-source_raw:
-  - "[[20260730-lenny-netflix-cpto-systems-thinkers-elizabeth-stone]]"
+canonical_url: "https://pod.wave.co/podcast/lennys-podcast-product-career-growth-b65486a6-7cff-4966-bbea-2bc239e90aa4/netflix-cpto-on-ai-and-the-future-of-product-and-tech-roles-elizabeth-stone"
+raw_state: index
+original_raw_file: "20260730-lenny-netflix-cpto-systems-thinkers-elizabeth-stone.md"
+original_body_sha256: "9c3a04768e79f463147dd6251086350ecca3110490476e2f9aff29e1e89a3ea3"
+indexed_at: "2026-08-25T08:44:41+08:00"
+source_locator: "Elizabeth Stone 访谈 transcript：角色融合但 craft 未消失、distributed systems / paved paths、design systems thinking、AI-fluency career ladder、talent density / accountability / keeper test 与 junior mentorship；Apple Podcasts episode 1000777423324。"
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-25
 tags:
   - source-summary
   - ai-org-design
@@ -14,6 +18,8 @@ claim_type: mixed
 ---
 
 # Why Netflix is betting on systems thinkers—not specialists—in the AI era
+
+> Raw 生命周期：本地 transcript 已降级为可恢复索引；组织机制可按 `source_locator` 返回公开 transcript 核验。
 
 > 来源：Lenny's Podcast（2026-07-19，约 1h 6min），Elizabeth Stone（Netflix CPTO，前 Lyft VP Science / Nuna COO）访谈。**证据定级 medium**：低风险一手组织实践分享——Netflix 非 AI Lab，无产品叙事自利；但全部为单一高管视角的经验判断，无内部数据披露。
 

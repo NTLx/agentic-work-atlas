@@ -256,11 +256,15 @@
     },
     "20260529-ceo-ai-psychosis-equity-podcast.md": {
       "body_sha256": "fcd29ba145e7913fa786a84ff1e93b78396fb669db68ded44363e305a5c76718",
+      "canonical_url": "https://techcrunch.com/2026/05/27/tech-ceos-are-apparently-suffering-from-ai-psychosis/",
       "compiled_at": "2026-07-09T13:16:23+08:00",
+      "indexed_at": "2026-08-25T08:44:41+08:00",
       "raw_file": "20260529-ceo-ai-psychosis-equity-podcast.md",
+      "raw_state": "index",
+      "retention_note": "Compiled public article and podcast transcript; source summary retains the timestamp and cited-case anchors.",
       "status": "compiled",
       "summary_path": "wiki/sources/20260529-ceo-ai-psychosis-equity-podcast.md",
-      "updated_at": "2026-07-09T13:16:23+08:00"
+      "updated_at": "2026-08-25T08:45:44+08:00"
     },
     "20260529-gemini-co-leads-origins.md": {
       "body_sha256": "00bfefeceac9f18af1a719fb920da28b53127c07bb8851620a832ba93c398157",
@@ -1251,19 +1255,27 @@
     },
     "20260730-lenny-anthropic-first-technical-pm-dianne-penn.md": {
       "body_sha256": "ef9ff77c30b3a1785ca41ebd63664225417c932f763adeab8186271ff198faf1",
+      "canonical_url": "https://pod.wave.co/podcast/lennys-podcast-product-career-growth-b65486a6-7cff-4966-bbea-2bc239e90aa4/anthropics-first-technical-pm-on-token-maxing-the-jagged-edge-and-living-in-the-future-dianne-penn",
       "compiled_at": "2026-07-30T20:36:10+08:00",
+      "indexed_at": "2026-08-25T08:44:41+08:00",
       "raw_file": "20260730-lenny-anthropic-first-technical-pm-dianne-penn.md",
+      "raw_state": "index",
+      "retention_note": "Compiled public transcript; source summary retains the eval-driven product and role evidence anchors.",
       "status": "compiled",
       "summary_path": "wiki/sources/20260730-lenny-anthropic-first-technical-pm-dianne-penn.md",
-      "updated_at": "2026-07-30T20:36:10+08:00"
+      "updated_at": "2026-08-25T08:45:44+08:00"
     },
     "20260730-lenny-netflix-cpto-systems-thinkers-elizabeth-stone.md": {
       "body_sha256": "9c3a04768e79f463147dd6251086350ecca3110490476e2f9aff29e1e89a3ea3",
+      "canonical_url": "https://pod.wave.co/podcast/lennys-podcast-product-career-growth-b65486a6-7cff-4966-bbea-2bc239e90aa4/netflix-cpto-on-ai-and-the-future-of-product-and-tech-roles-elizabeth-stone",
       "compiled_at": "2026-07-30T20:36:10+08:00",
+      "indexed_at": "2026-08-25T08:44:41+08:00",
       "raw_file": "20260730-lenny-netflix-cpto-systems-thinkers-elizabeth-stone.md",
+      "raw_state": "index",
+      "retention_note": "Compiled public transcript; source summary retains the systems-thinking and organization evidence anchors.",
       "status": "compiled",
       "summary_path": "wiki/sources/20260730-lenny-netflix-cpto-systems-thinkers-elizabeth-stone.md",
-      "updated_at": "2026-07-30T20:36:10+08:00"
+      "updated_at": "2026-08-25T08:45:44+08:00"
     },
     "20260730-lenny-tech-workers-ai-sentiment-noam-segal.md": {
       "body_sha256": "e5c4f4f0d174692bc3d40f6abbc05a24af6424c42ec7195d3dd9eaf2a4789e47",
@@ -1497,11 +1509,15 @@
     },
     "20260813-pl-tokens-token-efficiency.md": {
       "body_sha256": "235471ab11d87225717950b8100eec455028ad7c36673493f11c0c64781e1f4e",
+      "canonical_url": "https://danluu.com/pl-tokens/",
       "compiled_at": "2026-08-13T10:54:32+08:00",
+      "indexed_at": "2026-08-25T08:44:41+08:00",
       "raw_file": "20260813-pl-tokens-token-efficiency.md",
+      "raw_state": "index",
+      "retention_note": "Compiled public experiment; source summary retains task, holdout, appendix, and limitation anchors.",
       "status": "compiled",
       "summary_path": "wiki/sources/20260813-pl-tokens-token-efficiency.md",
-      "updated_at": "2026-08-13T10:54:32+08:00"
+      "updated_at": "2026-08-25T08:45:44+08:00"
     },
     "20260814-anthropic-multiagent-systems.md": {
       "body_sha256": "aa73cc916b22083b9a224d851e92304d8b9f43f5908a33f686661f3bba49a9de",
@@ -1556,11 +1572,15 @@
     },
     "20260816-openai-head-of-design-best-time.md": {
       "body_sha256": "f6afe82e099a317acab5bf6dfc9b0b0b0222ad91d4df7bb49fd9059d3e932bc0",
+      "canonical_url": "https://www.lennysnewsletter.com/p/openais-head-of-design-this-is-the",
       "compiled_at": "2026-08-17T10:29:07+08:00",
+      "indexed_at": "2026-08-25T08:44:41+08:00",
       "raw_file": "20260816-openai-head-of-design-best-time.md",
+      "raw_state": "index",
+      "retention_note": "Compiled public interview; source summary retains the design and systems-thinking evidence anchors.",
       "status": "compiled",
       "summary_path": "wiki/sources/20260816-openai-head-of-design-best-time.md",
-      "updated_at": "2026-08-17T10:29:07+08:00"
+      "updated_at": "2026-08-25T08:45:43+08:00"
     },
     "20260819-anthropic-claude-tag-oncall.md": {
       "body_sha256": "62ac34ea3fe586f9fdd19d038b66bb0ec9ae089c6a9c02f900437d5cef57980a",
@@ -2268,6 +2288,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-25T01:41:08+08:00",
+  "updated_at": "2026-08-25T08:45:44+08:00",
   "version": 1
 }

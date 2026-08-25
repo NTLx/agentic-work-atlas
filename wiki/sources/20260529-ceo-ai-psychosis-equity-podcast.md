@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "CEO AI Psychosis + AI 分化 + 反 AI 反弹"
-source_raw:
-  - "[[20260529-ceo-ai-psychosis-equity-podcast]]"
+canonical_url: "https://techcrunch.com/2026/05/27/tech-ceos-are-apparently-suffering-from-ai-psychosis/"
+raw_state: index
+original_raw_file: "20260529-ceo-ai-psychosis-equity-podcast.md"
+original_body_sha256: "fcd29ba145e7913fa786a84ff1e93b78396fb669db68ded44363e305a5c76718"
+indexed_at: "2026-08-25T08:44:41+08:00"
+source_locator: "TechCrunch 文章及 Equity transcript：AI psychosis / AI 与 headcount 章节从 00:27:31 开始；相关节目 https://www.youtube.com/watch?v=-EKoqUbG-is，另定位 2026 layoff data、ClickUp case、Gartner data 与 Aaron Levie tweet。"
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-08-25
 tags:
   - source-summary
   - ai-psychosis
@@ -14,6 +18,8 @@ tags:
 ---
 
 # CEO AI Psychosis + AI 分化 + 反 AI 反弹
+
+> Raw 生命周期：本地文章与 transcript 合集已降级为可恢复索引；报道与播客锚点均记录在 `source_locator`。
 
 ## 编译摘要
 

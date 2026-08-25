@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Anthropic's first technical PM on token maxing, the jagged edge, and living in the future"
-source_raw:
-  - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
+canonical_url: "https://pod.wave.co/podcast/lennys-podcast-product-career-growth-b65486a6-7cff-4966-bbea-2bc239e90aa4/anthropics-first-technical-pm-on-token-maxing-the-jagged-edge-and-living-in-the-future-dianne-penn"
+raw_state: index
+original_raw_file: "20260730-lenny-anthropic-first-technical-pm-dianne-penn.md"
+original_body_sha256: "ef9ff77c30b3a1785ca41ebd63664225417c932f763adeab8186271ff198faf1"
+indexed_at: "2026-08-25T08:44:41+08:00"
+source_locator: "Dianne Penn 访谈 transcript：evals are the new PRDs、Opus 3→4.5 转折、model introspection、token maxing、PM 团队结构与 engineers-with-product-taste 招聘偏好；Apple Podcasts episode 1000778409270。"
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-25
 tags:
   - source-summary
   - anthropic
@@ -14,6 +18,8 @@ claim_type: mixed
 ---
 
 # Anthropic's first technical PM on token maxing, the jagged edge, and living in the future
+
+> Raw 生命周期：本地 transcript 已降级为可恢复索引；产品机制可按 `source_locator` 返回公开 transcript 核验。
 
 > 来源：Lenny's Podcast（2026-07-26，约 1h 34min），Dianne Penn（Anthropic Head of Product for AI Research & Labs，2023 年作为第一个 technical PM 加入时产品团队仅 5 名工程师）访谈。**证据定级 medium**：Anthropic 是产品供应方，Penn 对 Claude 编码能力的赞美需打折；但 eval-driven 工作流、PM 角色重构、Labs 孵化机制属可独立验证的方法论一手材料。
 

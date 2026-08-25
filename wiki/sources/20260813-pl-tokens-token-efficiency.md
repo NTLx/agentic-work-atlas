@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "How do programming languages impact token efficiency and correctness?"
-source_raw:
-  - "[[20260813-pl-tokens-token-efficiency]]"
+canonical_url: "https://danluu.com/pl-tokens/"
+raw_state: index
+original_raw_file: "20260813-pl-tokens-token-efficiency.md"
+original_body_sha256: "235471ab11d87225717950b8100eec455028ad7c36673493f11c0c64781e1f4e"
+indexed_at: "2026-08-25T08:44:41+08:00"
+source_locator: "Dan Luu 的 programming-language token eval：Zstd、Pandoc、What does it all mean? 及 Appendix（medium / ultra、Guards of Atlantis、eval limitations）；核心结论是不能由两个任务推出语言类别的强优劣。"
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-08-25
 tags:
   - source-summary
   - dan-luu
@@ -16,6 +20,8 @@ claim_type: extracted
 ---
 
 # 编程语言如何影响 token 效率与正确性？（Dan Luu）
+
+> Raw 生命周期：本地全文已降级为可恢复索引；实验任务、holdout 与局限可按 `source_locator` 返回作者原文核验。
 
 > 来源：Dan Luu（danluu.com/pl-tokens/，2026-08）。**证据定级 medium**：作者是有信誉的工程师（前验证工程师、曾发现 zstd 数据损坏 bug），方法论上有预注册猜测、holdout 测试、无网络隔离等严谨设计；但作者**自己反复声明**这份 eval 是"quick and dirty"、修复过 100+ bug、只有两个任务，结论只能 refute 强主张，不能证明任何具体语言优劣。定位：标准路径（三步编译法），claim_type: extracted（核心是证伪，非综合判断）。
 
