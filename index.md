@@ -11,7 +11,9 @@ tags:
 
 ---
 
-## 📊 知识库概览
+## 📊 知识库状态
+
+当前页面数量由 `tools/wiki-lint.py --fix-index` 自动维护。
 
 | 指标 | 数值 |
 |-----|------|
@@ -19,20 +21,11 @@ tags:
 | Topic 页面 | 34 个 |
 | Comparison 页面 | 20 个 |
 | Raw 文章 | 243 个 |
-| Source Summary | 261 个 |
+| Source Summary | 274 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 13 个 |
 
-### 连接拓扑（2026-06-25 实测，口径见 `schema/fragmentation-metrics.md`）
-
-| 指标 | 口径 | 实测 | 健康判定 |
-|------|------|------|---------|
-| 全图零入链 entity | 全图入链 | 1.1% (3/280) | 健康 |
-| 知识层零互引 entity | 知识层互引 | 6.8% (19/280) | 健康 |
-| 整合层未承载 entity | 整合层承载 | 35.0% (98/280) | 碎片化（目标 ≤20%） |
-| 单点挂靠 entity | 知识层互引 | 16.8% (47/280) | 偏高（目标 <10%） |
-| Top 3 hub | 知识层互引 | Agentic-Engineering 119 / Agent-Harness 78 / Context-Engineering 50 | 幂律温和，不干预 |
-| Output 转化率 | 产出层 | 5 / 67+ 思考 ≈ 7% | 断层（目标 ≥20%） |
+详细图谱健康状态见 [[wiki/lint-report|最新知识库健康报告]]（由 `tools/entity-audit.py` 与 `tools/wiki-lint.py` 实测产生）。
 
 ---
 
@@ -208,11 +201,7 @@ tags:
 
 ## 📄 Raw (raw/)
 
-*原始剪藏文章（276 个）*
-
-*所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。*
-
-最新编译：2026-08-22——编译 arXiv:2608.19880 EnvHarness（环境侧可编程 harness，三类组件 Stage/Contract/Chain + 四阶段自动化 EnvRigger）共 1 个 source（新增 EnvHarness / EnvRigger 共 2 个 entity；evidence_level: high，跨 5 个 benchmark / 4 个领域实证 +9.0 分提升）。
+*所有文章存放在 `raw/` 目录，使用短链接格式引用（如 `[[文章名]]`）。Raw 计数以「知识库状态」表为准。*
 
 ---
 
@@ -244,5 +233,4 @@ status             # 查看知识库状态
 
 ---
 
-*索引版本: v2.15*
-*最后更新: 2026-08-22*
+*本索引由 `tools/wiki-lint.py --fix-index` 自动维护。*

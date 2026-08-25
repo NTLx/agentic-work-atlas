@@ -50,50 +50,9 @@ Karpathy 关于 [[Shortification-of-Learning|学习短视频化]] 的提醒让�
 
 ## 编译流程（Ingest）
 
-### 标准流程
+编译是 Raw → Wiki 的知识转化动作。具体执行流程、单次修改范围与运行约束，统一以 `schema/compile-workflow.md` 为准；lint 门禁以 `schema/lint-workflow.md` 与 `tools/wiki-lint.py` 为准。本文档只说明概念定位，不复制运行规则。
 
-```
-1. Read    → 读取 raw source
-2. Analyze → 分析主题、确定分类
-3. Extract → 提取 3-5 个核心概念
-4. Create  → 创建/更新 entity 页面
-5. Link    → 更新 topic 页面、建立关联
-6. Index   → 更新 index.md
-7. Commit  → 提交 git commit（按 Commit 规范撰写）
-```
-
-### 单源编译示例
-
-一篇关于"Agentic Engineering"的文章：
-
-```
-Raw Source: what-is-agentic-engineering.md
-    ↓ (LLM 编译)
-Entities Created:
-    - Agentic-Engineering.md
-    - Coding-Agents.md
-    - Code-Execution.md
-    - Vibe-Coding.md
-Topics Updated:
-    - Agentic-Engineering-Patterns.md
-Index Updated:
-    - 添加 4 个 entity 条目
-    - 添加 topic 引用
-Log Entry:
-    - ## [2026-04-10] ingest | what-is-agentic-engineering
-```
-
-### 触及范围
-
-> [!important] 单源编译的影响
-> **一篇 source 可能触及 10-15 个 wiki 页面**
-
-- 新建 entities（3-5 个）
-- 更新相关 entities（添加关联）
-- 创建/更新 topic（整合主题）
-- 更新 index.md
-- 更新 comparisons（如有对比）
-- 提交 git commit
+核心定位：compile 创建/更新 source summary 与少量已有稳定页面，必要时补充 typed relations 与重要综合判断；新研究问题交给 `explore`，不在 compile 中扩张。
 
 ## 编译产物类型
 
@@ -117,18 +76,9 @@ Log Entry:
 
 ## 编译质量保障
 
-### Lint 检查
+### 质量门禁
 
-定期执行 lint 操作：
-
-```
-Lint 检查项：
-    - 矛盾检测（页面间矛盾）
-    - 孤儿检测（无引用的 entity）
-    - 过期检测（被新 source 超越的 claims）
-    - 缺失检测（提及但无页面的概念）
-    - 链接检测（失效的 wikilinks）
-```
+定期执行 `tools/wiki-lint.py` 校验并生成 `wiki/lint-report.md`；具体检查项与门禁规则以 `schema/lint-workflow.md` 为准。
 
 ### 版本控制
 
@@ -255,10 +205,9 @@ Query → Answer → File back to Wiki → Compounding
 
 ## 关键数据点
 
-- 单篇 source 编译可能触及 10-15 个 wiki 页面
 - Wiki 规模在 ~100 篇 sources、数百个页面时，index.md 仍可有效工作
 - 一次编译，后续查询免费（相比 RAG 每次查询都需付出 token 成本）
-- 三步编译法：浓缩（≤3 条核心结论）→ 质疑（4 个问题）→ 对标（3 个跨域关联）
+- 三步编译法（浓缩 → 质疑 → 对标）的具体运行约束以 `schema/three-step-method.md` 为准
 
 ## 前提与局限性
 

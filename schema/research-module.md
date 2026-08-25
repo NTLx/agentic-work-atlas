@@ -9,6 +9,8 @@ type: schema-subdoc
 
 Research 是与 entities / topics / comparisons / sources / outputs 并列的 Wiki 模块，承载未验证问题、活跃假设和深度思考记录。它不是事实层，而是"我们正在研究什么"的操作层。
 
+> **运行行为归属**：Recompile 的选择、Gap 判断、Action、Delta 与稳定页写入规则，统一以 `schema/recompile-workflow.md` 为准。本文档不重复定义运行行为，只维护 Research 的数据结构、生命周期与日志规则。
+
 ## 目录结构
 
 ```
@@ -45,13 +47,11 @@ Research 模块的核心设计原则：**操作层紧凑，详情归档**。
 - Retry: now | YYYY-MM-DD | new-source:<目标>
 ```
 
-选择规则是：`Status: ready`、Retry 条件已满足、最近未检查；再按优先级和 `Last checked` 最旧者选择。`blocked` 必须写明恢复条件，不能每轮重复尝试。
+选择规则：`Status: ready`、Retry 条件已满足、最近未检查、再按优先级与 `Last checked` 最旧者选择；`blocked` 必须写明恢复条件。具体选择与可行动条件判定以 `schema/recompile-workflow.md` 为准。
 
 ## Recompile Delta
 
-一次有效检查只记录一个 Delta：`strengthened`、`weakened`、`falsified`、`refined`、`blocked` 或 `no_delta`，同时记录 `Basis: evidence | reasoning | mixed` 和 Claim 的 Before/After。Reasoning-only 最多得到 `refined`，不得提高 evidence level。
-
-证据单位必须落到独立 raw 或一手 URL。Entity、Topic 和 source summary 可用于定位，但不构成新的独立证据；多个页面回链同一 raw 仍只计一份。
+Delta 的类型、Basis 检查、证据单位约束与"一次检查只记录一个 Delta"的规则，属于 recompile 运行行为，统一以 `schema/recompile-workflow.md` 为准。本文档不重复定义。
 
 ## Research Agenda Frontmatter
 
@@ -101,6 +101,6 @@ Research 日志也不永久保留。压缩前必须检查 Wiki/agenda 反向引�
 - **不新增目录**：不建 `explore/`、`audit/`、`claims/` 等子目录；所有研究内容在 `wiki/research/` 内完成。
 - **不建一次性知识页**：单次思考的结论不直接创建 entity/topic；先沉淀到 agenda 或 research-logs，经验证后再升级。
 - **agenda 不是事实源**：`evidence_level: low` 的页面不能单独支撑 output 新判断升级；agenda 条目同理。
-- **定时重编译只写 Research**：自动任务不修改 entity/topic/comparison。发现 extracted 事实时只登记 `promotion candidate`，由后续 compile/audit 晋升。
+- **定时重编译边界**：recompile 对稳定页的修改权限、每轮动作预算与 promotion candidate 机制，以 `schema/recompile-workflow.md` 为准，本文档不重复定义。
 - **外部搜索先登记**：尚未 clip/compile 的 URL 只进入日志和 Source 需求队列，不进入稳定 Wiki。
 - **每次思考后更新索引**：在 research-agenda.md 中更新"最近思考结论摘要"表格（保持 5 行）和"思考日志索引"。

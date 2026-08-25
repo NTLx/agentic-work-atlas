@@ -43,6 +43,7 @@ COUNT_LABELS = {
     "Topic 页面": ("topics", WIKI / "topics"),
     "Comparison 页面": ("comparisons", WIKI / "comparisons"),
     "Raw 文章": ("raw", RAW),
+    "Source Summary": ("sources", WIKI / "sources"),
     "Output 作品": ("outputs", WIKI / "outputs"),
     "Research 日志": ("research", WIKI / "research" / "research-logs"),
 }

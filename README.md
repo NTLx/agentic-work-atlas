@@ -81,6 +81,26 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 
 ---
 
+## 三类信息归属（Single Source of Truth）
+
+仓库中的信息严格分为三类，各自只在唯一位置维护，不得相互复制：
+
+| 信息 | 唯一归属 |
+|------|---------|
+| **当前如何运行**（Rules） | `README.md` + `schema/*` |
+| **我们知道什么**（Knowledge） | `wiki/*` |
+| **仓库当前状态**（Report/State） | `tools/*` 实测产生的报告（如 `wiki/lint-report.md`） |
+
+即：Schema = Rules；Wiki = Knowledge；Report = State。
+
+**Rule only lives once**：概念可以重复解释（Concept may be copied），运行规则只能引用、不复制。
+
+- Wiki 可解释「Knowledge Compilation 是什么」，但不能长期保存「一次 compile 创建几个 Entity、触及多少页面、搜索预算多少」等运行规则；一切当前运行约束以 `schema/*` 为准。
+- Schema 不保存动态状态（当前 Entity 数量、碎片率、review 数等）；这些由 `wiki/lint-report.md` 或 research log 承载。
+- 新增规则前先问「这条规则已经在哪里定义了？」已有则链接过去，不复制。
+
+---
+
 ## 语言规范
 
 - Wiki 生成内容默认**中文**；raw 原文、专有名词、代码标识符保留原文
