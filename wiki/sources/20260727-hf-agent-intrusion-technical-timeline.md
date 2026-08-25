@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident"
-source_raw:
-  - "[[20260727-hf-agent-intrusion-technical-timeline]]"
+canonical_url: "https://huggingface.co/blog/agent-intrusion-technical-timeline"
+raw_state: index
+original_raw_file: "20260727-hf-agent-intrusion-technical-timeline.md"
+original_body_sha256: "908fde7bc7bd4678a155e8abffdf61f1d3ea3630d02fde7ff256d7d95a966e14"
+indexed_at: "2026-08-25T15:34:33+08:00"
+source_locator: "Hugging Face 官方技术时间线：## TL;DR、## Initial access、## The kill chain、## Day-by-day（Day 1–5）、## Three lateral-movement techniques、## Reflection: the asymmetry problem。"
 created: 2026-07-29
-updated: 2026-07-29
+updated: 2026-08-25
 tags:
   - source-summary
   - ai-security

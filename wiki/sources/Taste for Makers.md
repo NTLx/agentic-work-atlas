@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Taste for Makers"
-source_raw:
-  - "[[Taste for Makers]]"
+canonical_url: "https://paulgraham.com/taste.html"
+raw_state: index
+original_raw_file: "Taste for Makers.md"
+original_body_sha256: "00c35386ad05450df51db0a7d91e5d1076a418c336ed5557463be4b2a135a26a"
+indexed_at: "2026-08-25T15:34:33+08:00"
+source_locator: "Paul Graham 官方单页文章：正文以 Good design is simple、timeless、solves the right problem、suggestive、hard、looks easy 等加粗段落展开。"
 created: 2026-05-24
-updated: 2026-05-25
+updated: 2026-08-25
 tags:
   - source-summary
   - taste

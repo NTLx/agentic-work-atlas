@@ -10,11 +10,15 @@
     },
     "202310-superlinear-returns.md": {
       "body_sha256": "6efe542e3cebbcf7d8cdf69bece05ab8074f728cce202ff8865e3fd6e91fc959",
+      "canonical_url": "https://paulgraham.com/superlinear.html",
       "compiled_at": "2026-08-13T10:54:31+08:00",
+      "indexed_at": "2026-08-25T15:34:33+08:00",
       "raw_file": "202310-superlinear-returns.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留指数增长/阈值机制与局限，可由 Paul Graham 官方文章恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/202310-superlinear-returns.md",
-      "updated_at": "2026-08-13T10:54:31+08:00"
+      "updated_at": "2026-08-25T15:36:09+08:00"
     },
     "2026-ai-agent-evaluation-pipeline-methodology.md": {
       "body_sha256": "28f9f9ee15d8de41d82a2b824dbef1c8149bc0b26006ae269ea3bf9a0c4beeee",
@@ -1010,11 +1014,15 @@
     },
     "20260709-agents-that-teach-knowledge-debt.md": {
       "body_sha256": "d07d4ff33138b33f030cce80ecaf0efd4e8a4aad815d14cb6e02581450387cff",
+      "canonical_url": "https://arxiv.org/html/2607.06101v1",
       "compiled_at": "2026-07-09T13:16:35+08:00",
+      "indexed_at": "2026-08-25T15:34:33+08:00",
       "raw_file": "20260709-agents-that-teach-knowledge-debt.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留论文章节、SHIELD 架构与局限，可由 arXiv 版本化 HTML 恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260709-agents-that-teach-knowledge-debt.md",
-      "updated_at": "2026-07-09T13:16:35+08:00"
+      "updated_at": "2026-08-25T15:36:09+08:00"
     },
     "20260709-github-durable-owner.md": {
       "body_sha256": "d7b52945b5406bb85e9876e2131796be08f1d42d0961f7b703b22c0dc9cabdb4",
@@ -1129,11 +1137,15 @@
     },
     "20260726-berkeley-auto-software-dev.md": {
       "body_sha256": "afa7f4e8ce14ca419667bde38e3b88d1a33dc827fdb46a93bda081708be22bad",
+      "canonical_url": "https://rdi.berkeley.edu/blog/auto-software-dev/",
       "compiled_at": "2026-07-28T14:42:32+08:00",
+      "indexed_at": "2026-08-25T15:34:33+08:00",
       "raw_file": "20260726-berkeley-auto-software-dev.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留自治分级、level-skipping、意图保存与预测章节定位，可由 Berkeley RDI 官方页面恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260726-berkeley-auto-software-dev.md",
-      "updated_at": "2026-07-28T14:42:32+08:00"
+      "updated_at": "2026-08-25T15:36:09+08:00"
     },
     "20260727-github-harness-is-all-you-need.md": {
       "body_sha256": "a6fdaf3dc2f624da663f5a2734ab5c3c35071e7b02718cb860db5e0523f28bff",
@@ -1145,11 +1157,15 @@
     },
     "20260727-hf-agent-intrusion-technical-timeline.md": {
       "body_sha256": "908fde7bc7bd4678a155e8abffdf61f1d3ea3630d02fde7ff256d7d95a966e14",
+      "canonical_url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
       "compiled_at": "2026-07-29T09:17:08+08:00",
+      "indexed_at": "2026-08-25T15:34:33+08:00",
       "raw_file": "20260727-hf-agent-intrusion-technical-timeline.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留入侵阶段、五层信任边界、逐日时间线与防御反思，可由 Hugging Face 官方技术时间线恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260727-hf-agent-intrusion-technical-timeline.md",
-      "updated_at": "2026-07-29T09:17:08+08:00"
+      "updated_at": "2026-08-25T15:36:08+08:00"
     },
     "20260727-langchain-agent-data-stack.md": {
       "body_sha256": "c62de7a9cd7b3b017490ee367416383c3475a8ace5bb56767c9707f6dcee94b5",
@@ -1180,11 +1196,15 @@
     },
     "20260727-palantir-ai-sovereignty-alpha-playbook.md": {
       "body_sha256": "12978d42efd6ccb039476c4718fcc08de05395ac6a5bb626fcd356a1189ce614",
+      "canonical_url": "https://blog.palantir.com/ai-sovereignty-is-your-alpha-how-to-avoid-transferring-your-alpha-to-a-hosted-model-provider-774a1b35bf98",
       "compiled_at": "2026-07-30T14:31:16+08:00",
+      "indexed_at": "2026-08-25T15:34:33+08:00",
       "raw_file": "20260727-palantir-ai-sovereignty-alpha-playbook.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留合同、ZDR 例外、allow-list 与运营连续性小节定位，保留厂商偏差标记，可由 Palantir 官方博客恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260727-palantir-ai-sovereignty-alpha-playbook.md",
-      "updated_at": "2026-07-30T14:31:16+08:00"
+      "updated_at": "2026-08-25T15:36:09+08:00"
     },
     "20260727-vectoral-token-relay-market.md": {
       "body_sha256": "0025688ac7cfb899eb45552a0a3b00721c1d1a7d794fcc6752efb7138202abe0",
@@ -1303,11 +1323,15 @@
     },
     "20260730-palantir-ontology-connecting-agents-to-decisions.md": {
       "body_sha256": "a827259db31f61fa10d79b631d52fae4b5a6ad763981f1061e96c37fa652c1a0",
+      "canonical_url": "https://blog.palantir.com/connecting-agents-to-decisions-277dee8ddb40",
       "compiled_at": "2026-07-30T20:28:46+08:00",
+      "indexed_at": "2026-08-25T15:34:33+08:00",
       "raw_file": "20260730-palantir-ontology-connecting-agents-to-decisions.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留 Data/Logic/Action/Security 架构与运营示例定位，保留厂商偏差标记，可由 Palantir 官方博客恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260730-palantir-ontology-connecting-agents-to-decisions.md",
-      "updated_at": "2026-07-30T20:28:46+08:00"
+      "updated_at": "2026-08-25T15:36:09+08:00"
     },
     "20260730-palantir-operational-responsibility.md": {
       "body_sha256": "267f1e8de9ce4c3673a2cf456cf25872ea5ecfed3033fe2a2e7b882c67a0a4ec",
@@ -1529,11 +1553,15 @@
     },
     "20260814-anthropic-multiagent-systems.md": {
       "body_sha256": "aa73cc916b22083b9a224d851e92304d8b9f43f5908a33f686661f3bba49a9de",
+      "canonical_url": "https://www.anthropic.com/research/multiagent-systems",
       "compiled_at": "2026-08-14T10:55:46+08:00",
+      "indexed_at": "2026-08-25T15:34:33+08:00",
       "raw_file": "20260814-anthropic-multiagent-systems.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留协调、从众、认知失败与目标冲突实验定位，可由 Anthropic 官方研究页恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260814-anthropic-multiagent-systems.md",
-      "updated_at": "2026-08-14T10:55:46+08:00"
+      "updated_at": "2026-08-25T15:36:08+08:00"
     },
     "20260814-i-remain-a-skeptic.md": {
       "body_sha256": "67da0c29c5265adfc94222b839e28da6494becdcd40732529840802b53e4abda",
@@ -1773,11 +1801,15 @@
     },
     "Building a general-purpose accessibility agent—and what we learned in the process.md": {
       "body_sha256": "52475b0a2381b633745f1fc0f0b1bc616fd660fe464df88939e21cf2198aeb62",
+      "canonical_url": "https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/",
       "compiled_at": "2026-07-09T13:16:36+08:00",
+      "indexed_at": "2026-08-25T15:34:33+08:00",
       "raw_file": "Building a general-purpose accessibility agent—and what we learned in the process.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留 agent 设计、token 效率、局限与人工评估定位，可由 GitHub 官方博客恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/Building a general-purpose accessibility agent—and what we learned in the process.md",
-      "updated_at": "2026-07-09T13:16:36+08:00"
+      "updated_at": "2026-08-25T15:36:09+08:00"
     },
     "Building an AI Factory at Procter & Gamble - Case - Faculty & Research - Harvard Business School.md": {
       "body_sha256": "32b353e584790d7d935ef6b9b5d7e5568d10dabdec50dba7833c8caf2fda2fbd",
@@ -2097,11 +2129,15 @@
     },
     "Taste for Makers.md": {
       "body_sha256": "00c35386ad05450df51db0a7d91e5d1076a418c336ed5557463be4b2a135a26a",
+      "canonical_url": "https://paulgraham.com/taste.html",
       "compiled_at": "2026-07-09T13:16:42+08:00",
+      "indexed_at": "2026-08-25T15:34:33+08:00",
       "raw_file": "Taste for Makers.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留文章核心设计原则与原文段落定位，可由 Paul Graham 官方文章恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/Taste for Makers.md",
-      "updated_at": "2026-07-09T13:16:42+08:00"
+      "updated_at": "2026-08-25T15:36:09+08:00"
     },
     "The Always-On Economy AI and the Next 5-7 Years.md": {
       "body_sha256": "a7a47d10c6778cf0bbd8f5c9906f8fc951402e48f43e6fe6001284286de1ba2e",
@@ -2304,6 +2340,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-25T15:30:19+08:00",
+  "updated_at": "2026-08-25T15:36:09+08:00",
   "version": 1
 }

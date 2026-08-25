@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Building a general-purpose accessibility agent—and what we learned in the process"
-source_raw:
-  - "[[Building a general-purpose accessibility agent—and what we learned in the process]]"
+canonical_url: "https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/"
+raw_state: index
+original_raw_file: "Building a general-purpose accessibility agent—and what we learned in the process.md"
+original_body_sha256: "52475b0a2381b633745f1fc0f0b1bc616fd660fe464df88939e21cf2198aeb62"
+indexed_at: "2026-08-25T15:34:33+08:00"
+source_locator: "GitHub 官方博客：## Mindset、## Past efforts、## Efficient token consumption、## Acknowledging limitations、## Learning in the open；关键指标在对应小节正文。"
 created: 2026-05-24
-updated: 2026-05-25
+updated: 2026-08-25
 tags:
   - source-summary
   - accessibility

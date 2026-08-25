@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Connecting Agents to Decisions"
-source_raw:
-  - "[[20260730-palantir-ontology-connecting-agents-to-decisions]]"
+canonical_url: "https://blog.palantir.com/connecting-agents-to-decisions-277dee8ddb40"
+raw_state: index
+original_raw_file: "20260730-palantir-ontology-connecting-agents-to-decisions.md"
+original_body_sha256: "a827259db31f61fa10d79b631d52fae4b5a6ad763981f1061e96c37fa652c1a0"
+indexed_at: "2026-08-25T15:34:33+08:00"
+source_locator: "Palantir 官方博客：## Data、## Logic、## Action、## Security、## An Operational Example、## Onward with the Ontology、## Real-World Examples。"
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-25
 tags:
   - source-summary
   - palantir

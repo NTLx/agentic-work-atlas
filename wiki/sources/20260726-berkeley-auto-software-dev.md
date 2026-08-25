@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "When Coding Stops Being the Bottleneck: Towards Autonomous Software Development"
-source_raw:
-  - "[[20260726-berkeley-auto-software-dev]]"
+canonical_url: "https://rdi.berkeley.edu/blog/auto-software-dev/"
+raw_state: index
+original_raw_file: "20260726-berkeley-auto-software-dev.md"
+original_body_sha256: "afa7f4e8ce14ca419667bde38e3b88d1a33dc827fdb46a93bda081708be22bad"
+indexed_at: "2026-08-25T15:34:33+08:00"
+source_locator: "Berkeley RDI 原文：## A Shared Vocabulary for Software Autonomy、## Autonomy Has More Than One Dimension、## The Unifying Problem: Preserving Human Intent、## The Mispractice Already Emerging: Level-Skipping、## Six Structural Shifts、## Ten Predictions About the Future of Software Development。"
 created: 2026-07-28
-updated: 2026-07-28
+updated: 2026-08-25
 tags:
   - source-summary
   - agentic-engineering

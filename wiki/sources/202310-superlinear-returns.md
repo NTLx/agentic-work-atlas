@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Superlinear Returns"
-source_raw:
-  - "[[202310-superlinear-returns]]"
+canonical_url: "https://paulgraham.com/superlinear.html"
+raw_state: index
+original_raw_file: "202310-superlinear-returns.md"
+original_body_sha256: "6efe542e3cebbcf7d8cdf69bece05ab8074f728cce202ff8865e3fd6e91fc959"
+indexed_at: "2026-08-25T15:34:33+08:00"
+source_locator: "Paul Graham 官方单页文章：正文围绕 exponential growth 与 thresholds 两类成因、学习的复利效应、机会与不平等展开；原文无分节标题。"
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-08-25
 tags:
   - source-summary
   - economics

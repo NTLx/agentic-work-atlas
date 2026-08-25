@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "AI Sovereignty is Your Alpha: How to Avoid Transferring Your Alpha to a Hosted Model Provider"
-source_raw:
-  - "[[20260727-palantir-ai-sovereignty-alpha-playbook]]"
+canonical_url: "https://blog.palantir.com/ai-sovereignty-is-your-alpha-how-to-avoid-transferring-your-alpha-to-a-hosted-model-provider-774a1b35bf98"
+raw_state: index
+original_raw_file: "20260727-palantir-ai-sovereignty-alpha-playbook.md"
+original_body_sha256: "12978d42efd6ccb039476c4718fcc08de05395ac6a5bb626fcd356a1189ce614"
+indexed_at: "2026-08-25T15:34:33+08:00"
+source_locator: "Palantir 官方博客：§1 Contractually Protect Your Alpha（含 ZDR）、§2 Track and Permit Only Services、§3 Clamp Down on Unilateral Changes、§4 Mitigate Risk of Operational Disruption、Key Takeaways。"
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-25
 tags:
   - source-summary
   - enterprise-ai

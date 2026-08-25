@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Agents That Teach: Designing Incidental Learning into AI-Assisted Development"
-source_raw:
-  - "[[20260709-agents-that-teach-knowledge-debt]]"
+canonical_url: "https://arxiv.org/html/2607.06101v1"
+raw_state: index
+original_raw_file: "20260709-agents-that-teach-knowledge-debt.md"
+original_body_sha256: "d07d4ff33138b33f030cce80ecaf0efd4e8a4aad815d14cb6e02581450387cff"
+indexed_at: "2026-08-25T15:34:33+08:00"
+source_locator: "arXiv HTML 原文：§2 Related Work、§3 Designing Incidental Learning into Developer-Agent Interactions、§4 SHIELD（§4.1 Architecture、§4.2 Implementation）、§5 Conclusion and Future Work。"
 created: 2026-07-09
-updated: 2026-07-09
+updated: 2026-08-25
 tags:
   - source-summary
   - knowledge-debt

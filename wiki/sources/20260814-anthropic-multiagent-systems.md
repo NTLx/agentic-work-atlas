@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Patterns and problems in multiagent systems（Anthropic Frontier Red Team）"
-source_raw:
-  - "[[20260814-anthropic-multiagent-systems]]"
+canonical_url: "https://www.anthropic.com/research/multiagent-systems"
+raw_state: index
+original_raw_file: "20260814-anthropic-multiagent-systems.md"
+original_body_sha256: "aa73cc916b22083b9a224d851e92304d8b9f43f5908a33f686661f3bba49a9de"
+indexed_at: "2026-08-25T15:34:33+08:00"
+source_locator: "Anthropic Frontier Red Team 原文：## Measuring coordination、## Failures from conformity、## Epistemic failures、## Incompatible goals、## Conclusion。"
 created: 2026-08-14
-updated: 2026-08-14
+updated: 2026-08-25
 tags:
   - source-summary
   - multiagent-systems

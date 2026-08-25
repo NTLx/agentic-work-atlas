@@ -20,12 +20,12 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 249 |
-| Raw 已编译 | 249 |
+| Raw 来源 | 240 |
+| Raw 已编译 | 240 |
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
-| Raw 全文保留 | 249 |
-| Raw 索引化 | 26 |
+| Raw 全文保留 | 240 |
+| Raw 索引化 | 35 |
 | Raw 已移除 | 1 |
 | Entity | 423 |
 | Topic | 34 |
@@ -45,7 +45,7 @@ tags:
 | `tag` | 99 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
-| `stale-core` | 100 |
+| `stale-core` | 99 |
 | `entity` | 0 |
 | `comparison` | 0 |
 | `index` | 0 |
@@ -144,7 +144,6 @@ tags:
 - `wiki/sources/OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践.md` - `核心页 OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践 已 92 天未更新，入链 16 条`
 - `wiki/sources/OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup.md` - `核心页 OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup 已 92 天未更新，入链 7 条`
 - `wiki/sources/Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook.md` - `核心页 Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook 已 92 天未更新，入链 8 条`
-- `wiki/sources/Taste for Makers.md` - `核心页 Taste for Makers 已 92 天未更新，入链 8 条`
 - `wiki/sources/The Always-On Economy AI and the Next 5-7 Years.md` - `核心页 The Always-On Economy AI and the Next 5-7 Years 已 92 天未更新，入链 5 条`
 - `wiki/sources/The Anatomy of an Agent Harness.md` - `核心页 The Anatomy of an Agent Harness 已 92 天未更新，入链 11 条`
 - `wiki/sources/The Cybernetic Teammate How AI is Reshaping Collaboration and Expertise in the Workplace.md` - `核心页 The Cybernetic Teammate How AI is Reshaping Collaboration and Expertise in the Workplace 已 92 天未更新，入链 5 条`
