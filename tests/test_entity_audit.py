@@ -90,6 +90,20 @@ def test_duplicate_candidates_ignore_aliases_that_only_share_generic_tokens():
     assert candidates == []
 
 
+def test_duplicate_candidates_ignore_single_meaningful_token_alias_collision():
+    entity_audit = load_entity_audit()
+    rows = [
+        make_entity(entity_audit, "Agent-Harness", "Agent Harness", ["Harness"]),
+        make_entity(entity_audit, "EnvHarness", "EnvHarness", ["Harness"]),
+        make_entity(entity_audit, "Sleep-Token", "Sleep Token", ["Token"]),
+        make_entity(entity_audit, "Token-Maxing", "Token Maxing", ["Token"]),
+    ]
+
+    candidates = entity_audit.duplicate_candidates(rows)
+
+    assert candidates == []
+
+
 def test_render_summary_counts_duplicate_candidates():
     entity_audit = load_entity_audit()
     rows = [

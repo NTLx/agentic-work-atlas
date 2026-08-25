@@ -66,7 +66,7 @@ python3 tools/entity-audit.py --write-report
 - `strengthen`：值得保留但需要补来源或链接
 - `review`：复核队列；单源且缺 topic/comparison 承载
 - `merge-or-demote`：合并或降级队列；单源且无图谱入链
-- `疑似重复队列`：基于标题、aliases 和 token overlap 的重复候选；只用于复核，不自动合并
+- `疑似重复队列`：基于标题、aliases 和保守的多词 token overlap 的重复候选；单个领域词不构成重复信号；只用于复核，不自动合并
 
 ## 重复来源：保留一手来源
 

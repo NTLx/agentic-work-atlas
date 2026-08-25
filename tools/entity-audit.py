@@ -132,10 +132,18 @@ def name_tokens(value: str) -> set[str]:
 
 
 def normalized_names(names: set[str]) -> set[str]:
+    """Return conservative canonical aliases for duplicate detection.
+
+    A single non-generic token is too weak as an alias signal in this
+    vocabulary (for example, ``harness`` or ``token`` appears in many
+    unrelated concepts).  Keep only aliases with at least two meaningful
+    tokens; title-token overlap remains available as a separate, stricter
+    fallback below.
+    """
     normalized: set[str] = set()
     for name in names:
         tokens = name_tokens(name)
-        if tokens:
+        if len(tokens) >= 2:
             normalized.add(" ".join(sorted(tokens)))
     return normalized
 
