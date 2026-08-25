@@ -158,9 +158,8 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 
 | 操作 | 子文档 |
 |------|--------|
-| 检索知识 | `schema/query-workflow.md` |
+| 检索知识 + 构建上下文包 | `schema/query-workflow.md` |
 | 生成 output | `schema/output-workflow.md` |
-| 构建 context pack | `schema/context-pack.md` |
 
 ### 探索与研究
 
