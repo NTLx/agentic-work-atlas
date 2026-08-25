@@ -66,6 +66,39 @@ source_raw:
 - 示例：`[[Vibe-Coding|Vibe Coding]]`、`[[Knowledge-Work|Knowledge Work]]`
 - 好处：渲染时显示自然名称，同时保持 kebab-case 文件名兼容性
 
+### Typed Relations（可选）
+
+绝大部分概念关系使用 `related_entities` 表达，其语义是「两个概念存在值得导航的关联」。
+
+仅当**关系方向本身具有推理价值**时才使用可选 `relations` 字段。判断标准：如果不知道关系的方向和类型，会不会影响未来理解或推理？会才使用；否则 `related_entities` 即可。
+
+```yaml
+related_entities:
+  - "[[Context-Engineering]]"
+  - "[[Agent-Harness]]"
+relations:
+  depends_on:
+    - "[[Agent-Verification]]"
+  enables:
+    - "[[Agent-Autonomy]]"
+```
+
+第一版只允许下列六种 predicate，不继续扩展：
+
+| Predicate | 含义 |
+|-----------|------|
+| `is_a` | A 是 B 的一种 |
+| `part_of` | A 是 B 的组成部分 |
+| `depends_on` | A 成立或运行依赖 B |
+| `enables` | A 使 B 成为可能 |
+| `contradicts` | A 与 B 的核心判断存在实质冲突 |
+| `supersedes` | A 在特定语境下取代 B |
+
+规则：
+- 不要为「图谱更完整」写 `related_to` 之类的空泛 predicate——它与 `related_entities` 重复。
+- 不强制所有页面都有 `relations`；没有推理价值就省略。
+- Target 使用 kebab-case wikilink（`[[Agent-Verification]]`），lint 会校验 predicate 白名单与 target 存在性。
+
 ## Author Entity Pages
 
 ```yaml

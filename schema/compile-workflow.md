@@ -171,3 +171,22 @@ Agent 读取 raw source → 自动判断材料类型 →
 ## 单篇改动边界
 
 单篇编译默认只创建 source summary，并更新 0–2 个已有稳定页面。新建 Entity、Topic 或 Comparison 必须分别满足对应准入条件；由材料暴露出的新研究问题交给 `explore`，不在 compile 中自动扩张研究空间。
+
+### 补充 Typed Relations（可选）
+
+只有当「不知道关系的方向和类型，会影响未来理解或推理」时才写 `relations`；否则用 `related_entities` 即可。predicate 白名单与用法见 `schema/frontmatter-spec.md`。不要为「图谱更完整」写空泛 `related_to`，也不要给所有 Entity 批量补 relations。
+
+### 重要综合判断（Claim + Evidence + Boundary）
+
+当编译产生重要的 synthesized 判断（Agent 综合形成、可能被多个问题复用、可能被新证据支持/削弱/限定、对结论有实质影响）时，在稳定页面正文使用统一三字段格式：
+
+- **判断**：Agent 自治程度提高通常会增加 verification 成本。
+  - **证据**：[[Source-A]]；[[Source-B]]
+  - **边界**：主要适用于长程、开放式、高自主任务。
+
+约束：
+- **Evidence 必须指向证据**：raw/source/一手 URL 可以；Entity/Topic 可以帮助定位，但不能因为 Wiki 自己重复了一次判断就变成第二份证据（Evidence ≠ Reasoning）。
+- **Boundary 原则上必须给出**：确实无明确边界时写「当前未发现明确边界」，不默认无限适用。
+- 不新增 confidence/claim_id/status 等字段；Research 引用稳定判断时使用 Source page + Claim 文本，CR 编号属于 Research 的既有机制。
+
+单篇编译不因为以上机制而：创建大量 Claim、给全图补 relations、创建 Context Pack 文件、重扫 Wiki 或新建 Research。

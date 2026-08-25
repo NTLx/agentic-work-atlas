@@ -59,6 +59,14 @@ ZERO_WIDTH = ("\ufeff", "\u200b", "\u200c", "\u200d", "\u2060")
 TAG_PATTERN = re.compile(r"^[A-Za-z][A-Za-z0-9]*(?:[-/][A-Za-z0-9]+)*$")
 EVIDENCE_LEVELS = {"high", "medium", "low"}
 CLAIM_TYPES = {"extracted", "synthesized", "mixed"}
+RELATION_PREDICATES = {
+    "is_a",
+    "part_of",
+    "depends_on",
+    "enables",
+    "contradicts",
+    "supersedes",
+}
 
 
 @dataclass(frozen=True)
@@ -341,6 +349,42 @@ def as_list(value) -> list:
     if isinstance(value, list):
         return value
     return [value]
+
+
+def check_relations(paths: Iterable[Path]) -> list[Issue]:
+    issues: list[Issue] = []
+    stems, rels = wiki_targets()
+
+    for path in paths:
+        data, err = load_frontmatter(path)
+        if err or not data:
+            continue
+        relations = data.get("relations")
+        if relations is None:
+            continue
+        if not isinstance(relations, dict):
+            issues.append(Issue("relations", path, None, "relations 必须是 mapping"))
+            continue
+        for pred, targets in relations.items():
+            if pred not in RELATION_PREDICATES:
+                issues.append(
+                    Issue(
+                        "relations",
+                        path,
+                        None,
+                        f"非法 predicate: {pred!r}（白名单: {', '.join(sorted(RELATION_PREDICATES))}）",
+                    )
+                )
+            for item in as_list(targets):
+                if not isinstance(item, str) or not item.startswith("[[") or not item.endswith("]]"):
+                    issues.append(
+                        Issue("relations", path, None, f"relations.{pred} 必须是 wikilink 短链接: {item!r}")
+                    )
+                    continue
+                target = split_wikilink(item[2:-2])
+                if not target_exists(target, stems, rels):
+                    issues.append(Issue("relations", path, None, f"relations.{pred} 目标不存在: {item}"))
+    return issues
 
 
 def check_tag_quality(paths: Iterable[Path]) -> list[Issue]:
@@ -680,6 +724,7 @@ def collect_issues() -> tuple[list[Issue], dict[str, int], list[Path], list[Path
     issues.extend(check_hidden_chars(paths))
     issues.extend(check_dollars(paths))
     issues.extend(check_wikilinks(wiki_link_files()))
+    issues.extend(check_relations(wiki_link_files()))
     issues.extend(check_source_raw())
     issues.extend(check_tag_quality(wiki_link_files()))
     issues.extend(check_singleton_tags(wiki_link_files()))
@@ -797,6 +842,7 @@ def render_report(
         "hidden-char",
         "mathjax",
         "wikilink",
+        "relations",
         "source_raw",
         "tag",
         "evidence",

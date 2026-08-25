@@ -47,6 +47,7 @@ tags:
 | `hidden-char` | 0 |
 | `mathjax` | 0 |
 | `wikilink` | 0 |
+| `relations` | 0 |
 | `source_raw` | 0 |
 | `tag` | 99 |
 | `evidence` | 0 |
