@@ -20,17 +20,21 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 240 |
+| Raw 来源 | 241 |
 | Raw 已编译 | 240 |
-| Raw 待编译 | 0 |
+| Raw 待编译 | 1 |
 | Raw 已跳过 | 0 |
-| Raw 全文保留 | 240 |
+| Raw 全文保留 | 241 |
 | Raw 索引化 | 35 |
 | Raw 已移除 | 1 |
 | Entity | 423 |
 | Topic | 34 |
 | Comparison | 20 |
 | Output | 10 |
+
+## 待编译 Raw
+
+- `raw/20260825-enterprise-ai-workflow-redesign.md`
 
 ## 检查项
 
