@@ -20,11 +20,11 @@ tags:
 
 | 类别 | 数量 |
 |------|------|
-| Raw 来源 | 241 |
+| Raw 来源 | 243 |
 | Raw 已编译 | 240 |
-| Raw 待编译 | 1 |
+| Raw 待编译 | 3 |
 | Raw 已跳过 | 0 |
-| Raw 全文保留 | 241 |
+| Raw 全文保留 | 243 |
 | Raw 索引化 | 35 |
 | Raw 已移除 | 1 |
 | Entity | 423 |
@@ -34,7 +34,9 @@ tags:
 
 ## 待编译 Raw
 
+- `raw/20260825-emerge-enterprise-ai-adoption.md`
 - `raw/20260825-enterprise-ai-workflow-redesign.md`
+- `raw/20260825-forward-deployed-table-stakes-saas.md`
 
 ## 检查项
 
