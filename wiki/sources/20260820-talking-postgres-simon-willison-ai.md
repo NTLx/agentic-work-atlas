@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Talking Postgres Ep 42 — How AI is changing software development with Simon Willison"
-source_raw:
-  - "[[20260820-talking-postgres-simon-willison-ai]]"
+canonical_url: "https://share.transistor.fm/s/fe88354c/transcript"
+raw_state: index
+original_raw_file: "20260820-talking-postgres-simon-willison-ai.md"
+original_body_sha256: "896034bc2cad3bfe9efb38def97c1fae8d11eb827a38a914164d32728858c16f"
+indexed_at: "2026-08-25T15:29:10+08:00"
+source_locator: "Talking Postgres Ep 42 transcript：09:12（red-green TDD）、23:01（解释金标准）、51:57 与 1:00:45（feature 取舍与工程管理），均按节目时间戳定位。"
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-08-25
 tags:
   - source-summary
   - agentic-engineering

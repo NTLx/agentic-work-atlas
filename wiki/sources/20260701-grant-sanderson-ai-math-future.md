@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Grant Sanderson - AI and the future of math"
-source_raw:
-  - "[[20260701-grant-sanderson-ai-math-future]]"
+canonical_url: "https://www.dwarkesh.com/p/grant-sanderson-2"
+raw_state: index
+original_raw_file: "20260701-grant-sanderson-ai-math-future.md"
+original_body_sha256: "47e2b1c5a6bf0dfc0aab8ec82c3e7913a3da7d0d72c3be7676fd72a701c5b24b"
+indexed_at: "2026-08-25T15:29:10+08:00"
+source_locator: "Dwarkesh Patel Podcast 页面：00:11:32（概念突破验证循环）、00:26:12（AI 证明与人类理解）、00:38:08（跨领域连接）、00:53:48（可磨性与现实任务）。"
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-08-25
 tags:
   - source-summary
   - AGI

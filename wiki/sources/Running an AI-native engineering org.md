@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Running an AI-native engineering org"
-source_raw:
-  - "[[Running an AI-native engineering org]]"
+canonical_url: "https://claude.com/blog/running-an-ai-native-engineering-org"
+raw_state: index
+original_raw_file: "Running an AI-native engineering org.md"
+original_body_sha256: "07e55d8ce79beb7f37ec644e4dc421a5409480201a7d5391827c3f84c8f63618"
+indexed_at: "2026-08-25T15:29:10+08:00"
+source_locator: "Claude 官方博客与配套视频：bottleneck shift（00:04:55–00:05:59）、JIT planning（00:08:28–00:11:30）、verification 与 human review（00:11:30–00:15:40）、结果指标（00:24:05–00:25:51）。"
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-08-25
 tags:
   - source-summary
   - agentic-engineering

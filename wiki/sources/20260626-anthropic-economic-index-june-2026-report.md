@@ -1,10 +1,14 @@
 ---
 type: source-summary
 title: "Anthropic Economic Index report: Cadences"
-source_raw:
-  - "[[20260626-anthropic-economic-index-june-2026-report]]"
+canonical_url: "https://www.anthropic.com/research/economic-index-june-2026-report"
+raw_state: index
+original_raw_file: "20260626-anthropic-economic-index-june-2026-report.md"
+original_body_sha256: "8058fa61279bdeb19279056a577cbb2ffd863c46f88be62bfb162582828c10cc"
+indexed_at: "2026-08-25T15:29:10+08:00"
+source_locator: "Anthropic Economic Index 原文：§ Cadences（Figure 1.1–1.4）、§ Artifacts（Figure 2.1–2.6）、§ Perceptions（约 9,700 名受访者；Figure 3.1–3.9）。"
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-08-25
 tags:
   - source-summary
   - ai-labor

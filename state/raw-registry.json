@@ -824,11 +824,15 @@
     },
     "20260626-anthropic-economic-index-june-2026-report.md": {
       "body_sha256": "8058fa61279bdeb19279056a577cbb2ffd863c46f88be62bfb162582828c10cc",
+      "canonical_url": "https://www.anthropic.com/research/economic-index-june-2026-report",
       "compiled_at": "2026-07-09T13:16:32+08:00",
+      "indexed_at": "2026-08-25T15:29:10+08:00",
       "raw_file": "20260626-anthropic-economic-index-june-2026-report.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留章节、图表、样本量与关键指标定位，可由 Anthropic 官方报告恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260626-anthropic-economic-index-june-2026-report.md",
-      "updated_at": "2026-07-09T13:16:32+08:00"
+      "updated_at": "2026-08-25T15:30:11+08:00"
     },
     "20260626-llm-as-judge-healthcare.md": {
       "body_sha256": "134c10db8287483c0f9d6f22011f1beda5461fecaba762ebe296182951867561",
@@ -860,11 +864,15 @@
     },
     "20260701-grant-sanderson-ai-math-future.md": {
       "body_sha256": "47e2b1c5a6bf0dfc0aab8ec82c3e7913a3da7d0d72c3be7676fd72a701c5b24b",
+      "canonical_url": "https://www.dwarkesh.com/p/grant-sanderson-2",
       "compiled_at": "2026-07-09T13:16:33+08:00",
+      "indexed_at": "2026-08-25T15:29:10+08:00",
       "raw_file": "20260701-grant-sanderson-ai-math-future.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留关键结论、质疑、对标及节目时间戳，可由官方页面恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260701-grant-sanderson-ai-math-future.md",
-      "updated_at": "2026-07-09T13:16:33+08:00"
+      "updated_at": "2026-08-25T15:30:11+08:00"
     },
     "20260702-agent-assisted-sglang-development.md": {
       "body_sha256": "d1576c44d76171624f281714d4520c8381a56733b334ac17b50c7949d67799ca",
@@ -1662,11 +1670,15 @@
     },
     "20260820-talking-postgres-simon-willison-ai.md": {
       "body_sha256": "896034bc2cad3bfe9efb38def97c1fae8d11eb827a38a914164d32728858c16f",
+      "canonical_url": "https://share.transistor.fm/s/fe88354c/transcript",
       "compiled_at": "2026-08-20T12:11:17+08:00",
+      "indexed_at": "2026-08-25T15:29:10+08:00",
       "raw_file": "20260820-talking-postgres-simon-willison-ai.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留关键判断与节目时间戳，可由 Transistor transcript 恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260820-talking-postgres-simon-willison-ai.md",
-      "updated_at": "2026-08-20T12:11:17+08:00"
+      "updated_at": "2026-08-25T15:30:11+08:00"
     },
     "20260822-anthropics-approach-to-teaching-and-learning-ai.md": {
       "body_sha256": "beadda35814cdea6911ab436ba5facdaa5e657731825341bb4af9f32428cbfdc",
@@ -2065,11 +2077,15 @@
     },
     "Running an AI-native engineering org.md": {
       "body_sha256": "07e55d8ce79beb7f37ec644e4dc421a5409480201a7d5391827c3f84c8f63618",
+      "canonical_url": "https://claude.com/blog/running-an-ai-native-engineering-org",
       "compiled_at": "2026-07-09T13:16:41+08:00",
+      "indexed_at": "2026-08-25T15:29:10+08:00",
       "raw_file": "Running an AI-native engineering org.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；source summary 保留组织机制、视频时间戳与官方博客定位，可由 Claude 官方页面恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/Running an AI-native engineering org.md",
-      "updated_at": "2026-07-09T13:16:41+08:00"
+      "updated_at": "2026-08-25T15:30:11+08:00"
     },
     "Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook.md": {
       "body_sha256": "ccc745eda37cac0411fd7a14afcfeba114af09d3a568248b78d3a6cd326af786",
@@ -2288,6 +2304,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-25T08:45:44+08:00",
+  "updated_at": "2026-08-25T15:30:19+08:00",
   "version": 1
 }

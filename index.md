@@ -18,7 +18,7 @@ tags:
 | Entity 页面 | 423 个 |
 | Topic 页面 | 34 个 |
 | Comparison 页面 | 20 个 |
-| Raw 文章 | 253 个 |
+| Raw 文章 | 249 个 |
 | Source Summary | 261 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 13 个 |
