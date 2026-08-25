@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-24T22:01:19
+updated: 2026-08-25T15:09:53
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -27,11 +27,12 @@ related_entities:
 - Priority: P0
 - Claim: AI 评测治理已从自愿最佳实践进入可执行、可处罚的制度阶段。
 - Gap: Evidence
-- Evidence: `raw/2026-eu-ai-act-compliance-autonomous-agents.md`；现有材料不是执法记录
+- Evidence: `raw/2026-eu-ai-act-compliance-autonomous-agents.md`；欧盟委员会执行框架与 2026-07-31 官方公告
 - Evidence goal: 找到首轮正式执法、罚单或具有强制效果的官方决定；只有规则生效不足以 strengthened。
-- Last checked: 2026-08-24 · no_delta
-- Next: 外部搜索欧盟委员会及成员国监管机构的一手执法记录
-- Retry: now
+- Basis: evidence
+- Last checked: 2026-08-25T15:09:53 · refined
+- Next: 寻找 2026-08-02 之后首个实际执法决定或罚单，区分执行能力与已发生执法
+- Retry: new-source:first-AI-Act-enforcement-decision
 
 ### CR-002 · Agent 数据过度收集具有系统性
 - Status: ready
@@ -140,14 +141,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-25T15:09 | AI 评测制度化进入执行期 | refined | 欧盟委员会确认 AI Office 与成员国主管机关已开始执行 AI Act，官方框架列出 RFI、模型评估、限制供给与罚款权限；尚未找到具体罚单或执法决定。 |
 | 2026-08-24T22:01 | AI 监督 AI 共模误差下界 | strengthened | 跨模型误标率：同质 62-86%、异质 1-14%；残差不可消除，来源是训练目标/价值观结构性共享。 |
 | 2026-08-24T21:01 | Agent 数据过度收集结构性 | strengthened | MosaicLeaks 证明任务性能训练系统性增加泄漏；跨厂商均出现数据过度收集；PA-DR 可缓解但无 deployed 反例。 |
 | 2026-08-24T17:00 | 反馈真空病理 | refined (reasoning) | 将”惊奇”载体从身体修正为公开性，但外部搜索失败；未增加证据，稳定页写入已回迁 Research。 |
 | 2026-08-24T16:00 | 工具性收敛弱压力 | refined (reasoning) | 三条件模型降为机制搜索线索；能力被视为使能变量，仍缺独立实证。 |
-| 2026-08-24T15:00 | 元满意化阈值 | no_delta | 产生多组 synthesized 解释但无新证据，不进入稳定 Wiki。 |
 
 ## 思考日志索引
 
+- [[2026-08-25]] — recompile CR-001；官方执行框架已生效，但实际罚单/执法决定仍缺
 - [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
 - [[2026-08-23]] — 深度思考×13；Alpha Transfer、判断力与认知公地
 - [[2026-08-04]] — 深度思考×11；08-03 判断的边界与反例复核

@@ -42,7 +42,7 @@ tags:
 | `mathjax` | 0 |
 | `wikilink` | 0 |
 | `source_raw` | 0 |
-| `tag` | 98 |
+| `tag` | 99 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
 | `stale-core` | 100 |
@@ -242,6 +242,7 @@ tags:
 - `wiki/entities/Claude-Tag.md` - `一次性 tag 仅出现 1 次: 'product-page'`
 - `wiki/entities/Capability-Overhang.md` - `一次性 tag 仅出现 1 次: 'product-philosophy'`
 - `wiki/entities/Features-Are-Cheap-Paradox.md` - `一次性 tag 仅出现 1 次: 'product-strategy'`
+- `wiki/research/research-logs/2026-08-25.md` - `一次性 tag 仅出现 1 次: 'recompile'`
 - `wiki/entities/Meta-Harness-Optimization.md` - `一次性 tag 仅出现 1 次: 'recursive-improvement'`
 - `wiki/entities/TDD-for-Agents.md` - `一次性 tag 仅出现 1 次: 'red-green-tdd'`
 - `wiki/sources/20260819-ibm-altk-evolve-memory-dosage.md` - `一次性 tag 仅出现 1 次: 'research-methodology'`
