@@ -1732,6 +1732,39 @@
       "summary_path": "wiki/sources/20260822-the-ai-native-sdlc-playbook.md",
       "updated_at": "2026-08-22T12:58:00+08:00"
     },
+    "20260824-forge-one-polluted-page-llm-recommenders.md": {
+      "body_sha256": "171bed4d23ff2d45b16a02f3190b16d2e24384224b5dd6755f48787584b8b3e7",
+      "canonical_url": "https://arxiv.org/html/2606.13610v2",
+      "compiled_at": "2026-08-26T11:49:55+08:00",
+      "indexed_at": "2026-08-26T11:51:11+08:00",
+      "raw_file": "20260824-forge-one-polluted-page-llm-recommenders.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260824-forge-one-polluted-page-llm-recommenders.md",
+      "updated_at": "2026-08-26T11:51:11+08:00"
+    },
+    "20260824-how-long-should-an-agent-live.md": {
+      "body_sha256": "856101508356c5f52241a0b2aa2d3560c5d256e764423d1523a265754cc96e69",
+      "canonical_url": "https://tomtunguz.com/how-long-should-an-agent-live/",
+      "compiled_at": "2026-08-26T11:49:55+08:00",
+      "indexed_at": "2026-08-26T11:51:11+08:00",
+      "raw_file": "20260824-how-long-should-an-agent-live.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260824-how-long-should-an-agent-live.md",
+      "updated_at": "2026-08-26T11:51:11+08:00"
+    },
+    "20260825-dwarkesh-dylan-patel-3.md": {
+      "body_sha256": "9e2f973cf7b5f014ec5f31cfbdf09c9630e9278b8657b9e9dbe2615c3983bdaa",
+      "canonical_url": "https://www.dwarkesh.com/p/dylan-patel-3",
+      "compiled_at": "2026-08-26T11:49:56+08:00",
+      "indexed_at": "2026-08-26T11:51:11+08:00",
+      "raw_file": "20260825-dwarkesh-dylan-patel-3.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260825-dwarkesh-dylan-patel-3.md",
+      "updated_at": "2026-08-26T11:51:11+08:00"
+    },
     "20260825-emerge-enterprise-ai-adoption.md": {
       "body_sha256": "75fd37e8492249c6cfd792f376022bc9c4d07b4faf2c1f50803be5f0b49466a6",
       "compiled_at": "2026-08-26T09:39:36+08:00",
@@ -1754,6 +1787,17 @@
       "raw_state": "full",
       "status": "pending",
       "updated_at": "2026-08-25T17:59:00+08:00"
+    },
+    "20260825-openrouter-choose-best-ai-model.md": {
+      "body_sha256": "f08e905b9e932f3d9e561aa724e1283f85a9c03c54e2f2323cac16d7069d214c",
+      "canonical_url": "https://openrouter.ai/blog/tutorials/choose-best-ai-model/",
+      "compiled_at": "2026-08-26T11:49:55+08:00",
+      "indexed_at": "2026-08-26T11:51:11+08:00",
+      "raw_file": "20260825-openrouter-choose-best-ai-model.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260825-openrouter-choose-best-ai-model.md",
+      "updated_at": "2026-08-26T11:51:11+08:00"
     },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
@@ -2363,6 +2407,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-26T09:39:36+08:00",
+  "updated_at": "2026-08-26T11:51:11+08:00",
   "version": 1
 }
