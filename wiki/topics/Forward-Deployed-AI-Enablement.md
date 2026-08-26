@@ -3,7 +3,7 @@ type: topic
 title: Forward Deployed AI Enablement
 description: "FDE 式 AI 赋能：通过嵌入真实组织现场，发现黄金用例、穿越集成之墙，并把一次性部署沉淀为可复用的平台能力和组织能力"
 created: 2026-05-22
-updated: 2026-08-06
+updated: 2026-08-26
 evidence_level: high
 claim_type: mixed
 tags:
@@ -50,6 +50,7 @@ source_raw:
   - "[[20260730-palantir-responsible-ai-black-box-explainability]]"
   - "[[20260730-palantir-responsible-ai-evals-prototype-to-production]]"
   - "[[20260805-how-we-use-ai-cloudflare-os]]"
+  - "[[20260825-forward-deployed-table-stakes-saas]]"
 ---
 
 # Forward Deployed AI Enablement（FDE 式 AI 赋能）
@@ -210,6 +211,21 @@ Palantir 2024-2026 六篇官方博客（⚠️ 全部 vendor 立场，机制层�
 | [[Secure-Paved-Path\|安全铺装路径]] | 规模化开发的安全债 | 威胁模型先行分配资源；默认安全控制；端到端 provenance |
 
 这五个机制与 FDE 四要素的对应关系：**有平台** = 决策中心架构 + paved path；**产物回流** = decision lineage 数据飞轮 + evals 迭代资产；**嵌入现场**的可持续运维 = OR；**可信交付** = 透明工具交接 + evals。Palantir 的真正护城河不是 FDE 岗位本身，而是这套让 FDE 成果可沉淀、可审计、可规模化的机制群——这才是"不能学错 Palantir"的正面清单。
+
+## 产业规模数据：为什么 2026 是 FDE 临界点
+
+[[20260825-forward-deployed-table-stakes-saas|Furmansky（2026-03）]]为"为什么主要玩家全押注 FDE"补充了市场层证据（⚠️ 实践者引用的二手数据，准确时点 2026 年 3 月）：
+
+- **岗位市场**：FDE 岗位发布 2025 年 1-9 月暴增 800%+（Indeed / FT）；行业观察标题即"2026: FDE 成为 SaaS 准入门槛"
+- **OpenAI**：Frontier Alliance 结构化企业项目，FDE 与 BCG/McKinsey/Accenture/Capgemini 四家咨询结对；FDE 团队 2025 年从 2 人 → 52 人，嵌入 Morgan Stanley 等客户；企业占 OpenAI 营收约 40%（CFO 预期年底近 50%）
+- **Anthropic**：激进扩张 Applied AI 团队——招 FDE、Technical Deployment Leads、Solutions Architects，交付 MCP servers / sub-agents / agent skills 并提供白手套部署支持；团队据报增长 5x
+
+**产业逻辑（值得提取的机制）**：
+- **AI SaaS = value opportunity 而非 defined product**——任何单点 AI 功能有抛硬币概率在 6 个月内被通用 agent 超越，所以"发现楔形产品→同款卖数万客户→80% 毛利"的 SaaS 公式失效；供应商用"薄 agentic 平台 + 每客户重定制"回应
+- **客户不知买什么**——传统客户发现在 AI 时代像"iPhone 前问用户最喜欢的 App"；最珍贵用例只能*因为*技术而存在，必须"在房间内"才能发现
+- **FDE 跨 engagement 的模式识别**是内部团队永远得不到的——这是 FDE 规模化的核心经济论据
+
+**与库内框架的校准**：该文把 FDE 定位为"咨询式技术骨干"（挖掘+实施+训练），偏向前三要素（嵌入现场/产品发现/构建），**回流层缺位**——它讲清了"为什么现在必须 FDE"，但不讲"如何把一次性部署沉淀为平台能力"。与下述 Palantir 机制群结合才完整：市场宏观层补"为什么"，机制群补"靠什么沉淀"。
 
 ## 不能学错 Palantir
 
