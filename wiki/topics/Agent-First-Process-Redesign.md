@@ -2,7 +2,7 @@
 type: topic
 title: Agent-First Process Redesign
 created: 2026-04-09
-updated: 2026-06-01
+updated: 2026-08-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -24,6 +24,7 @@ source_raw:
   - '[[20260502-most-companies-arent-ready-for-ai]]'
   - '[[The layoffs will continue till we learn to use AI]]'
   - "[[20260601-stanford-enterprise-ai-playbook]]"
+  - "[[20260825-enterprise-ai-workflow-redesign]]"
 ---
 
 # Agent-First Process Redesign（Agent-First 流程重构）
@@ -54,6 +55,20 @@ Stanford 51 个成功部署案例补充了一个重要细节：人类监督不�
 在这种模式里，Agent 处理常规路径，人类处理例外、边界、高风险判断和清障。报告称，AI 自主处理 80% 以上任务、人类审查例外的模式，对应最高中位生产率收益，约 71%。
 
 这把 Agent-First 的治理原则具体化了：流程重构要同时设计“自动完成路径”和“升级给人的路径”。没有升级路径，自动化会放大错误；没有常规自动路径，人类仍被困在流程节点上。
+
+## 三类人-AI 交接的操作参数（08-26 补充）
+
+[[20260825-enterprise-ai-workflow-redesign|Workflow Redesign（2026-07）]]把「例外升级式监督」细化为三类 handoff，每类带准确率阈值、风险与度量：
+
+| 交接类型 | AI 角色 | 人角色 | 适用条件（经验值） | 关键风险 | 度量 |
+|---------|--------|--------|-------------------|---------|------|
+| **AI 优先** | 产首稿/推荐/分类 | 验证、批准或纠正 | AI 准确率 85%+，纠错快速 | 审查走过场 → 错误累积 | 必须定义"审查要检查什么"而非只定义"要审查" |
+| **人优先** | 实时建议/检索上下文/标记问题 | 主导工作 | 需判断与创造力，AI 无法复制 | AI 频繁打断/经常错 → 被关闭 | 建议接受率（非功能激活率） |
+| **全自动** | 端到端处理，仅超标升级 | 只处理例外 | 高量、单笔风险有界、准确率 95%+ | 例外队列被忽略 | "自动化前先构建例外工作流" |
+
+**AI 改写率（override rate）作为人机校准指标**：AI 输出被用户更改/拒绝的百分比——<5% 表示橡皮图章（危险，错误未被审查），>40% 表示 AI 不够有用（不值得流程改变），目标 10–25%（人类判断在同 AI 辅助运作的活跃区间）。
+
+**Deloitte 量化背景**：2026 研究显示 48% 组织部署 AI 未重构工作流、40% 部分重构、仅 12% 规模化重构——部署-采纳鸿沟的行业基线，说明多数组织停留在「把 Agent 插入旧流程」的 Copilot 级（成熟度模型 Level 1），未到达 Agent-First 的 Level 2。
 
 ## 经济驱动：不要做漂亮试点
 
