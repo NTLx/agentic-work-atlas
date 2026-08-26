@@ -6,7 +6,7 @@ aliases:
   - context rot
 definition: "随着上下文窗口逐渐填充，LLM 的推理、指令遵循和任务完成能力逐渐下降的现象，特别是关键信号落在窗口中间位置时表现最差。"
 created: 2026-06-10
-updated: 2026-07-22
+updated: 2026-08-26
 evidence_level: high  # 三层结构+多层腐烂栈+尺度依赖定理+联网5篇实证交叉验证
 claim_type: mixed
 tags:
@@ -24,6 +24,7 @@ source_raw:
   - "[[20260708-agent-loop-bytebytego]]"
   - "[[20260708-vercel-agent]]"
   - "[[20260728-fowler-orchestrator-tax]]"
+  - "[[20260824-how-long-should-an-agent-live]]"
 ---
 
 # Context Rot（上下文腐烂）
@@ -150,6 +151,20 @@ L3：... → 无限递归（turtles all the way down）
 | Rot-proof 人类接口 | 人类看结构化摘要，不暴露原始上下文 | Vercel Agent "checkout 500错误，建议回滚" |
 
 违反任何一条 → rot 逃逸概率指数级增长。来源：07-10 深度思考（roundtable+think+qa）
+
+## 会话生命周期管理：24h 重置与委派（08-26 补充）
+
+[[20260824-how-long-should-an-agent-live|Tunguz（2026-08）]]给出五模式在"个人事务型 agent"场景的操作化：**每日 24 小时协调者 + 30 秒窄专业子代理**。
+
+- **隔离容器模式的操作实现**：协调者会话每天午夜整体丢弃，rot 无机会累积——把"最大有效运行时间 ≤ f(隔离容器刷新率)"（长周期约束 #1）定标为一天。系统 prompt 明示生命周期："Your session lives for 24 hours... At midnight, save durable learnings to preferences.md and terminate."
+- **客观信号锚的具体化**：临时指令（"这周感冒，取消晨会"）的过期机制缺失会让三月指令在十一月仍生效——会话级遗忘是唯一不可假装的过期信号
+- **consolidation = 分层熵减**：夜间离线 summarizer 把持久偏好（"Tomasz 喜欢 30 分钟会议"）写入磁盘永久笔记，其余日间闲聊丢弃——与 [[Memory-Summary-Page]] 的"外部化可持续记忆"一致
+
+**与 Compaction 的张力（重要综合判断）**：
+- **判断**：会话生命周期管理有两条正交路线——Compaction 主张"压缩旧轮次继续跑"（保留连续性、支付结构摘要），Tunguz 主张"整会话丢弃、只留落盘偏好"（保卫生、放弃连续性），适用不同任务谱系：可委派事务 vs 长程收敛迭代。
+  - **证据**：[[20260824-how-long-should-an-agent-live]]；[[Compaction]] 定义
+  - **边界**：24h 重置对"必须维持跨日中间状态"的长程工作（研究、整仓重构）会丢失隐性上下文；两条路线应在 harness 层面共存，按任务类型选择会话卫生策略
+- **安全维度**：长会话的跨会话记忆投毒（Sleeper Memory Poisoning）与 compaction 丢安全约束（Governance Decay，30–59% episode）正是本实体"指令腐烂"层的实证——重置是免去会话启动分类器的一种低成本缓解
 
 ## 双重 Rot 共振（共模故障）
 
