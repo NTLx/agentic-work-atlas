@@ -776,7 +776,6 @@ def render_report(
 ) -> str:
     today = datetime.now().strftime("%Y-%m-%d")
     blocking = [i for i in issues if i.blocking]
-    score = max(0, 100 - len(blocking))
     status = "PASS" if not blocking else "FAIL"
     grouped = group_issues(issues)
 
@@ -785,7 +784,6 @@ def render_report(
         "type: lint-report",
         'title: "Agentic Work Atlas Lint 报告"',
         f'date: "{today}"',
-        f"score: {score}",
         f'status: "{status}"',
         "tags:",
         "  - lint-report",
@@ -796,7 +794,6 @@ def render_report(
         "",
         f"> [!summary] 状态",
         f"> 门禁: **{status}**",
-        f"> 分数: **{score}/100**",
         f"> 阻断问题: **{len(blocking)}**",
         "",
         "## 统计",
