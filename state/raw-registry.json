@@ -1734,10 +1734,12 @@
     },
     "20260825-emerge-enterprise-ai-adoption.md": {
       "body_sha256": "75fd37e8492249c6cfd792f376022bc9c4d07b4faf2c1f50803be5f0b49466a6",
+      "compiled_at": "2026-08-26T09:39:36+08:00",
       "raw_file": "20260825-emerge-enterprise-ai-adoption.md",
       "raw_state": "full",
-      "status": "pending",
-      "updated_at": "2026-08-25T17:59:00+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260825-emerge-enterprise-ai-adoption.md",
+      "updated_at": "2026-08-26T09:39:36+08:00"
     },
     "20260825-enterprise-ai-workflow-redesign.md": {
       "body_sha256": "52f7cdd6dc8667bf912cfe9407b0e517da3dbca91091ad481c5f00fc225d5f22",
@@ -2361,6 +2363,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-25T17:59:00+08:00",
+  "updated_at": "2026-08-26T09:39:36+08:00",
   "version": 1
 }

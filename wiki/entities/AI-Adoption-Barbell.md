@@ -7,7 +7,7 @@ aliases:
   - 组织 AI 分层
 definition: "组织内 AI 使用恒呈分层常态（5-10% power users、20% 用得差、70% 几乎不用），且即使完美 rollout 也如此；adoption 指标把技能连续谱折叠成二元 yes/no，造成'高采纳率、无业务影响'的度量错位"
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-08-26
 tags:
   - ai-adoption
   - ai-deployment
@@ -22,6 +22,10 @@ related_entities:
 source_raw:
   - "[[20260811-vasuman-ai-adoption-is-a-myth]]"
   - "[[20260530-cursor-developer-habits-report]]"
+  - "[[20260825-emerge-enterprise-ai-adoption]]"
+relations:
+  enables:
+    - "[[Forward-Deployed-Engineer]]"
 ---
 
 # AI-Adoption-Barbell（采纳杠铃分布）
@@ -44,6 +48,14 @@ source_raw:
 - McKinsey 2025：88% 组织在至少一个业务职能用 AI，仅 6% 的 EBIT >5% 来自 AI
 - MIT NANDA GenAI Divide：5% 的集成试点榨出数百万价值，其余 95% 无 P&L 影响
 - 交叉证据：Cursor 2026 使用数据（使用者内部产出幂律，Gini 0.72-0.77、P99 = P50 的 46x）支持同一分化结构
+
+## 结构性采纳 gap（2026-08，Emerge VC 市场分析）
+
+[[20260825-emerge-enterprise-ai-adoption]] 从供给侧确认并扩展 Barbell：采纳 gap 是**结构的**（激励／流程／数据／治理），不是技术成熟度。
+
+- **个体采纳领先组织采纳**：54% 员工即使用未授权也会用 AI（BCG）；88% 员工工作中用 AI，但仅 5% 是效率提升 >20% 的 advanced users（EY）。Shadow AI（Menlo 报告 +68% 同比）是 Barbell 底部力量的公开显现——员工不等组织 rollout 自己先动。
+- **更强模型不收紧 gap**：agents 依赖已重设计的流程、可访问的数据、可运行的治理；"agentic AI 提高能力上限，不降低采纳所需的下限投入"（综合判断详见 source summary）。
+- **对策市场分层**：服务端（FDE、流程重设计、Workflow-Transformation-as-a-Service）与 in-workflow enablement 承接 Barbell 的"后台化"路径；人被推向对 agent 的监督（operator → supervisor）。这正是 Barbell 现象使现场介入角色（[[Forward-Deployed-Engineer]]）成为结构性必要的原因。
 
 ## 前提与局限性
 

@@ -19,8 +19,8 @@ tags:
 | 类别 | 数量 |
 |------|------|
 | Raw 来源 | 243 |
-| Raw 已编译 | 240 |
-| Raw 待编译 | 3 |
+| Raw 已编译 | 241 |
+| Raw 待编译 | 2 |
 | Raw 已跳过 | 0 |
 | Raw 全文保留 | 243 |
 | Raw 索引化 | 35 |
@@ -32,7 +32,6 @@ tags:
 
 ## 待编译 Raw
 
-- `raw/20260825-emerge-enterprise-ai-adoption.md`
 - `raw/20260825-enterprise-ai-workflow-redesign.md`
 - `raw/20260825-forward-deployed-table-stakes-saas.md`
 
@@ -47,7 +46,7 @@ tags:
 | `wikilink` | 0 |
 | `relations` | 0 |
 | `source_raw` | 0 |
-| `tag` | 99 |
+| `tag` | 100 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
 | `stale-core` | 102 |
@@ -217,6 +216,7 @@ tags:
 - `wiki/entities/Explain-Test-Gold-Standard.md` - `一次性 tag 仅出现 1 次: 'evaluation-criteria'`
 - `wiki/sources/20260814-i-remain-a-skeptic.md` - `一次性 tag 仅出现 1 次: 'evidence-gap'`
 - `wiki/entities/C2PA-Content-Credentials.md` - `一次性 tag 仅出现 1 次: 'file-metadata'`
+- `wiki/sources/20260825-emerge-enterprise-ai-adoption.md` - `一次性 tag 仅出现 1 次: 'forward-deployed-engineer'`
 - `wiki/entities/Stacked-PRs.md` - `一次性 tag 仅出现 1 次: 'git'`
 - `wiki/entities/SynthID-Text.md` - `一次性 tag 仅出现 1 次: 'google-deepmind'`
 - `wiki/sources/20260812-google-recall-bottleneck-factuality.md` - `一次性 tag 仅出现 1 次: 'google-research'`

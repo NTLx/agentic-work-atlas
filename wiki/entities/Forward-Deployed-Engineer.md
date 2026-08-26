@@ -7,7 +7,7 @@ aliases:
   - 前线部署工程师
 definition: "嵌入客户真实环境，把前沿 AI 能力与数据、工具和业务流程连接成可运行生产系统，并将现场发现回流为平台能力或组织能力的工程师"
 created: 2026-05-18
-updated: 2026-08-13
+updated: 2026-08-26
 tags:
   - career
   - AI-industry
@@ -38,6 +38,7 @@ source_raw:
   - "[[20260530-ceo-knee-deep-building-ai]]"
   - "[[20260730-palantir-ontology-connecting-agents-to-decisions]]"
   - "[[20260810-the-playbook-for-building-high-talent]]"
+  - "[[20260825-emerge-enterprise-ai-adoption]]"
 ---
 
 # Forward-Deployed-Engineer
@@ -63,6 +64,15 @@ Cursor 招聘负责人 Adam Ward 给 FDE 补充了人才供给侧剖面（此前
 - **当前最热的需求**："one thing that's really in demand is this forward-deployed engineer——technical person who can partner with sales and partner with a customer to deploy what can be a very technical and maybe overwhelming product"。他明言这是**真实的供需缺口**（"a real supply demand issue right now"）。
 - **FDE 画像**：不是 AI researcher，而是"3-5 年前的全栈工程师，现在从终端走出来走进公司与客户"；驱动因素之一是"CFOs start to get the bill coming"——token 从 maxing 转向 optimizing 时，需要有人帮企业想"最佳方案"并部署进 workforce。
 - **需求动机**：CEO 视角把 FDE 视为"AI 进入真实组织"的人力桥梁——与 [[AI-Ready-Organization]] 的"组织可读性"互补：组织读不懂自己时，FDE 是外部翻译器。
+
+## 市场侧信号（2026-08，Emerge / Furmansky）
+
+[[20260825-emerge-enterprise-ai-adoption]] 与 Furmansky 的 FDE 论补充了**需求侧规模证据**：
+
+- **前沿实验室集中押注**：OpenAI Frontier Alliance（2026）把 FDE 与 BCG / McKinsey / Accenture / Capgemini 配对；OpenAI FDE 团队 2025 年从 2 人扩到 52 人；Anthropic Applied AI 团队（FDE / Technical Deployment Leads / Solutions Architects）报告增长 5x。
+- **招聘爆炸**：FDE 职位发布 2025 年 1–9 月增长超过 800%（Indeed / FT）。
+- **结构性成因**：企业自己无法挖掘自身流程知识（"收入不到小国 GDP 就养不起严格维护的 BPMN/DMN"），FDE 是执行"流程考古"并把发现转成可复用资产的人。
+- **产品与部署边界模糊**：SaaS 公司正在变成"定制化 + 现场交付"的服务混合体（表 stakes），FDE 从"寻找定制化"走向产品回流（与 [[Deployment-Product-Flywheel]] 一致）。
 
 ## 前提与局限性
 
