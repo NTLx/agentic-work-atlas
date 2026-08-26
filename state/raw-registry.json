@@ -1776,17 +1776,25 @@
     },
     "20260825-enterprise-ai-workflow-redesign.md": {
       "body_sha256": "52f7cdd6dc8667bf912cfe9407b0e517da3dbca91091ad481c5f00fc225d5f22",
+      "canonical_url": "https://www.institutepm.com/knowledge-hub/enterprise-ai-workflow-redesign",
+      "compiled_at": "2026-08-26T13:35:09+08:00",
+      "indexed_at": "2026-08-26T13:40:00+08:00",
       "raw_file": "20260825-enterprise-ai-workflow-redesign.md",
-      "raw_state": "full",
-      "status": "pending",
-      "updated_at": "2026-08-25T15:40:17+08:00"
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260825-enterprise-ai-workflow-redesign.md",
+      "updated_at": "2026-08-26T13:40:00+08:00"
     },
     "20260825-forward-deployed-table-stakes-saas.md": {
       "body_sha256": "993a429da92237c0c5c423e37e177f5470f8ac479dbcf8fcdd4f5d0eaa724489",
+      "canonical_url": "https://magneticgrowth.substack.com/p/2026-the-year-of-the-forward-deployed",
+      "compiled_at": "2026-08-26T13:35:09+08:00",
+      "indexed_at": "2026-08-26T13:40:00+08:00",
       "raw_file": "20260825-forward-deployed-table-stakes-saas.md",
-      "raw_state": "full",
-      "status": "pending",
-      "updated_at": "2026-08-25T17:59:00+08:00"
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260825-forward-deployed-table-stakes-saas.md",
+      "updated_at": "2026-08-26T13:40:00+08:00"
     },
     "20260825-openrouter-choose-best-ai-model.md": {
       "body_sha256": "f08e905b9e932f3d9e561aa724e1283f85a9c03c54e2f2323cac16d7069d214c",
@@ -2407,6 +2415,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-26T11:51:11+08:00",
+  "updated_at": "2026-08-26T13:52:02+08:00",
   "version": 1
 }
