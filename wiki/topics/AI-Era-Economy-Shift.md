@@ -3,7 +3,7 @@ type: topic
 title: AI Era Economy Shift
 description: "AI 时代经济范式转型：从知识经济到分配经济，效率提升带来需求爆发"
 created: 2026-04-10
-updated: 2026-07-28
+updated: 2026-08-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -36,6 +36,7 @@ source_raw:
   - "[[20260613-anthropic-public-record]]"
   - '[[20260619-the-data-black-hole-at-the-center-of-ai]]'
   - "[[20260727-openai-work-at-the-frontier.pdf]]"
+  - "[[20260825-dwarkesh-dylan-patel-3]]"
 ---
 
 # AI Era Economy Shift（AI 时代经济转型）
@@ -149,6 +150,26 @@ Ethan Mollick 的委托决策公式：
 AI 接管任务，但需要人整合工作流产生真正价值。
 
 [[20260613-anthropic-public-record|Anthropic Public Record]] 给这个乐观叙事补上公众侧约束：64% 美国受访者担心 AI 导致工作流失，且这是各州、党派和教育背景中最稳定的第一担忧。因此，Jevons 式需求扩张不能直接推出个体层面的就业安全；中间还隔着岗位迁移、再培训、收入分配和社会信任。
+
+---
+
+## 宏观侧：算力集中与 AI 劳动力集中（08-26 补充）
+
+[[20260825-dwarkesh-dylan-patel-3|Dylan Patel×Dwarkesh，2026-08]] 把经济转型的**宏观资本层**补进本 topic：分配经济讲就业侧如何重组，算力集中讲 AI 未来经济的力量源头如何集中。
+
+**算力集中化**：两大实验室将很快占据世界大部分增量算力——2027 年预计 40–50%，2028 年底前控制大部分可用 FLOPs。自我强化机制：实验室营收/兆瓦远超他人（Anthropic 最高 \$50M/MW），"若花 \$10 得 \$50 就能把利润再投入训练"——集中因可变现能力而正反馈。算力供给成为瓶颈而非需求。
+
+**AI 劳动力等效人口**：前沿 AI 等效人口以 ~10×/年增长（FLOP 4-5×/年 × 每能力所需算力降 3×/年），少数公司可能拥有比地球人口还多的有效 AI 劳动力。
+
+**资本钳制**：2024–2029 ~\$11T AI CapEx 中 ~\$5T 需举债；利率上升冲击非 AI 资产与非 AI 敞口国家（Dwarkesh-Basil Halperin 的"第二次 Volcker 冲击"类比）。
+
+**与本 topic 已有内容的关系**：
+- [[Jevons-Paradox-for-Knowledge-Work|Jevons 悖论]]讲需求爆发（就业侧），算力集中讲供给控制（产业侧）——前者是分配经济的乐观面，后者是资本集中的结构面，两条线共同构成 AI 经济全景
+- 与 [[AI-Labor-Bottleneck-Shift|劳动力瓶颈转换]] 的对接：算力集中是"未来劳动力属于少数公司"预测的物理前提
+- **部署端民主化 vs 训练端集中化**：本库大量材料（lean indie engineering、agent 个体杠杆）强调部署端民主化；算力集中叙事强调训练端集中化——两者不冲突但坐标系不同，讨论 AI 工作未来时需同时保持这两根轴
+
+> [!warning] 边界
+> 上述为宏观产业预测（观点而非数据，SemiAnalysis 视角），包含明确弹性假设；应读作"看多极端情景"而非预测，需与库内 [[20260604-dwarkesh-agi-scarcity|AGI 稀缺性对谈]] 并行校准。
 
 ---
 
