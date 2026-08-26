@@ -19,13 +19,11 @@ related_entities:
   - "[[AI-Deployment-Invisible-Costs]]"
   - "[[AI-Ready-Organization]]"
   - "[[Agent-Adoption-Curve]]"
+  - "[[Forward-Deployed-Engineer]]"
 source_raw:
   - "[[20260811-vasuman-ai-adoption-is-a-myth]]"
   - "[[20260530-cursor-developer-habits-report]]"
   - "[[20260825-emerge-enterprise-ai-adoption]]"
-relations:
-  enables:
-    - "[[Forward-Deployed-Engineer]]"
 ---
 
 # AI-Adoption-Barbell（采纳杠铃分布）
@@ -55,7 +53,7 @@ relations:
 
 - **个体采纳领先组织采纳**：54% 员工即使用未授权也会用 AI（BCG）；88% 员工工作中用 AI，但仅 5% 是效率提升 >20% 的 advanced users（EY）。Shadow AI（Menlo 报告 +68% 同比）是 Barbell 底部力量的公开显现——员工不等组织 rollout 自己先动。
 - **更强模型不收紧 gap**：agents 依赖已重设计的流程、可访问的数据、可运行的治理；"agentic AI 提高能力上限，不降低采纳所需的下限投入"（综合判断详见 source summary）。
-- **对策市场分层**：服务端（FDE、流程重设计、Workflow-Transformation-as-a-Service）与 in-workflow enablement 承接 Barbell 的"后台化"路径；人被推向对 agent 的监督（operator → supervisor）。这正是 Barbell 现象使现场介入角色（[[Forward-Deployed-Engineer]]）成为结构性必要的原因。
+- **对策市场分层**：服务端（FDE、流程重设计、Workflow-Transformation-as-a-Service）与 in-workflow enablement 承接 Barbell 的"后台化"路径；人被推向对 agent 的监督（operator → supervisor）。这一判断与现场介入角色（[[Forward-Deployed-Engineer]]）的需求上升相互印证。
 
 ## 前提与局限性
 

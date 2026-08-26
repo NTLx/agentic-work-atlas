@@ -71,6 +71,14 @@ const config: QuartzConfig = {
       // 原始证据与操作日志只供 Agent 按需读取，不进入公开知识面
       "raw",
       "wiki/research/research-logs",
+
+      // 工程/运行状态（git 追踪但不进入知识展示面）
+      "state",
+      "tests",
+      "pyproject.toml",
+      "uv.lock",
+      ".venv",
+      "TIMESTAMP",
     ],
     defaultDateType: "modified",
     theme: {

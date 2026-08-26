@@ -119,7 +119,7 @@ Delta
 
 python3 -c "from datetime import datetime; print(datetime.now().isoformat(timespec='seconds'))"
 
-保存为 "TIMESTAMP"。
+保存为 "TIMESTAMP"（本轮运行变量，只在日志与 commit 中引用；不创建 TIMESTAMP 文件，不写入仓库）。
 
 本轮所有日志和提交统一引用该值。
 
