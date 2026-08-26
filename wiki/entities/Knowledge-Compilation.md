@@ -5,7 +5,7 @@ aliases:
   - Knowledge Compilation
 definition: "LLM Wiki 的核心操作，将原始知识源通过 LLM 转化为结构化 Wiki，实现知识的持久累积和高效复用"
 created: 2026-04-13
-updated: 2026-07-28
+updated: 2026-08-26
 evidence_level: high
 claim_type: mixed
 tags:
@@ -206,7 +206,7 @@ Query → Answer → File back to Wiki → Compounding
 ## 关键数据点
 
 - Wiki 规模在 ~100 篇 sources、数百个页面时，index.md 仍可有效工作
-- 一次编译，后续查询免费（相比 RAG 每次查询都需付出 token 成本）
+- 一次编译后，后续查询无需重复承担该 source 的完整理解与结构化成本（Query 自身的搜索、上下文读取与推理成本仍在）
 - 三步编译法（浓缩 → 质疑 → 对标）的具体运行约束以 `schema/three-step-method.md` 为准
 
 ## 前提与局限性
@@ -223,5 +223,4 @@ Query → Answer → File back to Wiki → Compounding
 - [[Context-Engineering]] — 编译时的上下文优化
 - [[Multi-Layer-Memory]] — 编译产物的记忆层级
 - [[Software-Development-Autonomy-Levels]] — 跨域同构：其"specification distillation"（agent 把对话/示例/修正持续编译成持久结构化规格）是知识编译在软件规格域的实例
-- [[20260625-ford-ai-quality-jd-power]] — 反面案例：Ford 未能将资深工程师的制度性知识"编译"进 AI 系统，导致质量缺陷
-- [[20260625-ford-ai-quality-jd-power]] — Ford 案例：资深工程师的制度性知识未完成"编译"进 AI 系统，导致系统产出缺陷；印证了编译流程中"人参与指导"的必要性
+- [[20260625-ford-ai-quality-jd-power]] — 反面案例：Ford 未能将资深工程师的制度性知识"编译"进 AI 系统，导致质量缺陷；印证编译流程中"人参与指导"的必要性

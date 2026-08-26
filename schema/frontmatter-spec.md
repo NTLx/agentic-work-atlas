@@ -39,6 +39,8 @@ tags:
 
 ## Entity Pages
 
+> 修改 stable Wiki 页面**知识正文**时必须同步更新 frontmatter 的 `updated` 日期；纯格式修复（不改变知识内容）除外。`stale-core` 检查依赖该字段判断知识老化。
+
 ```yaml
 ---
 type: entity
