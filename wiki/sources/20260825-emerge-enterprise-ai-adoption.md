@@ -1,10 +1,11 @@
 ---
 type: source-summary
 title: "Enterprise AI adoption: are 'forward deployed engineers' the whole solution?"
-source_raw:
-  - "[[20260825-emerge-enterprise-ai-adoption]]"
 canonical_url: "https://emergecapital.vc/enterprise-ai-adoption-are-forward-deployed-engineers-the-whole-solution/"
-raw_state: full
+raw_state: index
+original_raw_file: "20260825-emerge-enterprise-ai-adoption.md"
+original_body_sha256: "75fd37e8492249c6cfd792f376022bc9c4d07b4faf2c1f50803be5f0b49466a6"
+indexed_at: "2026-08-26T14:00:00+08:00"
 created: 2026-08-26
 updated: 2026-08-26
 tags:
@@ -15,6 +16,8 @@ tags:
 evidence_level: medium
 claim_type: mixed
 ---
+> Raw 生命周期：Emerge VC 原文已降级为可恢复索引；精确引用时从 canonical URL 回到原文核验。
+
 
 # Enterprise AI adoption: are 'forward deployed engineers' the whole solution?
 
