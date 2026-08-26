@@ -353,11 +353,15 @@ def as_list(value) -> list:
 
 def check_relations(paths: Iterable[Path]) -> list[Issue]:
     issues: list[Issue] = []
-    stems, rels = wiki_targets()
+    entity_stems = {p.stem for p in (WIKI / "entities").glob("*.md")}
 
     for path in paths:
         data, err = load_frontmatter(path)
         if err or not data:
+            continue
+        if data.get("type") != "entity":
+            if "relations" in data:
+                issues.append(Issue("relations", path, None, "relations 只允许出现在 type: entity 页面"))
             continue
         relations = data.get("relations")
         if relations is None:
@@ -382,8 +386,10 @@ def check_relations(paths: Iterable[Path]) -> list[Issue]:
                     )
                     continue
                 target = split_wikilink(item[2:-2])
-                if not target_exists(target, stems, rels):
-                    issues.append(Issue("relations", path, None, f"relations.{pred} 目标不存在: {item}"))
+                if target not in entity_stems:
+                    issues.append(
+                        Issue("relations", path, None, f"relations.{pred} 目标必须指向实体 Entity: {item}")
+                    )
     return issues
 
 

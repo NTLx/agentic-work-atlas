@@ -176,6 +176,8 @@ Agent 读取 raw source → 自动判断材料类型 →
 
 只有当「不知道关系的方向和类型，会影响未来理解或推理」时才写 `relations`；否则用 `related_entities` 即可。predicate 白名单与用法见 `schema/frontmatter-spec.md`。不要为「图谱更完整」写空泛 `related_to`，也不要给所有 Entity 批量补 relations。
 
+`relations` 只允许出现在 `type: entity` 页面，且 target 只能指向 `wiki/entities/` 下的实体（Entity → Entity）；Entity → Source 的证据链继续用 `source_raw`。
+
 ### 重要综合判断（Claim + Evidence + Boundary）
 
 当编译产生重要的 synthesized 判断（Agent 综合形成、可能被多个问题复用、可能被新证据支持/削弱/限定、对结论有实质影响）时，在稳定页面正文使用统一三字段格式：

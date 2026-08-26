@@ -517,3 +517,109 @@ source_raw:
     assert issues[0].category == "source_raw"
     assert "已移除 Evidence" in issues[0].message
     assert "removed.pdf" in issues[0].message
+
+
+def test_relations_valid_entity_to_entity_passes(tmp_path, monkeypatch):
+    wiki_lint = load_wiki_lint()
+    (tmp_path / "wiki" / "entities").mkdir(parents=True)
+    write_note(tmp_path / "wiki" / "entities" / "Target-A.md", "type: entity\n", "")
+    write_note(tmp_path / "wiki" / "entities" / "Target-B.md", "type: entity\n", "")
+    path = write_note(
+        tmp_path / "wiki" / "entities" / "Example.md",
+        """type: entity
+relations:
+  depends_on:
+    - "[[Target-A]]"
+  enables:
+    - "[[Target-B]]"
+""",
+        "",
+    )
+    monkeypatch.setattr(wiki_lint, "WIKI", tmp_path / "wiki")
+
+    issues = wiki_lint.check_relations([path])
+
+    assert issues == []
+
+
+def test_relations_illegal_predicate_fails(tmp_path, monkeypatch):
+    wiki_lint = load_wiki_lint()
+    (tmp_path / "wiki" / "entities").mkdir(parents=True)
+    write_note(tmp_path / "wiki" / "entities" / "Target-A.md", "type: entity\n", "")
+    path = write_note(
+        tmp_path / "wiki" / "entities" / "Example.md",
+        """type: entity
+relations:
+  related_to:
+    - "[[Target-A]]"
+""",
+        "",
+    )
+    monkeypatch.setattr(wiki_lint, "WIKI", tmp_path / "wiki")
+
+    issues = wiki_lint.check_relations([path])
+
+    assert any("非法 predicate" in i.message for i in issues)
+    assert all(i.blocking for i in issues)
+
+
+def test_relations_missing_target_fails(tmp_path, monkeypatch):
+    wiki_lint = load_wiki_lint()
+    (tmp_path / "wiki" / "entities").mkdir(parents=True)
+    path = write_note(
+        tmp_path / "wiki" / "entities" / "Example.md",
+        """type: entity
+relations:
+  depends_on:
+    - "[[Nonexistent-Target]]"
+""",
+        "",
+    )
+    monkeypatch.setattr(wiki_lint, "WIKI", tmp_path / "wiki")
+
+    issues = wiki_lint.check_relations([path])
+
+    assert any("目标必须指向实体 Entity" in i.message for i in issues)
+    assert all(i.blocking for i in issues)
+
+
+def test_relations_non_wikilink_target_fails(tmp_path, monkeypatch):
+    wiki_lint = load_wiki_lint()
+    (tmp_path / "wiki" / "entities").mkdir(parents=True)
+    write_note(tmp_path / "wiki" / "entities" / "Target-A.md", "type: entity\n", "")
+    path = write_note(
+        tmp_path / "wiki" / "entities" / "Example.md",
+        """type: entity
+relations:
+  depends_on:
+    - "Target-A"
+""",
+        "",
+    )
+    monkeypatch.setattr(wiki_lint, "WIKI", tmp_path / "wiki")
+
+    issues = wiki_lint.check_relations([path])
+
+    assert any("必须是 wikilink" in i.message for i in issues)
+    assert all(i.blocking for i in issues)
+
+
+def test_relations_rejected_on_non_entity_pages(tmp_path, monkeypatch):
+    wiki_lint = load_wiki_lint()
+    (tmp_path / "wiki" / "entities").mkdir(parents=True)
+    write_note(tmp_path / "wiki" / "entities" / "Target-A.md", "type: entity\n", "")
+    path = write_note(
+        tmp_path / "wiki" / "topics" / "Example.md",
+        """type: topic
+relations:
+  depends_on:
+    - "[[Target-A]]"
+""",
+        "",
+    )
+    monkeypatch.setattr(wiki_lint, "WIKI", tmp_path / "wiki")
+
+    issues = wiki_lint.check_relations([path])
+
+    assert any("只允许出现在 type: entity" in i.message for i in issues)
+    assert all(i.blocking for i in issues)

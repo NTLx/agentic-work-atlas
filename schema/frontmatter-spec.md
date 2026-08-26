@@ -95,9 +95,11 @@ relations:
 | `supersedes` | A 在特定语境下取代 B |
 
 规则：
+- `relations` 只允许出现在 `type: entity` 页面，target 只能指向 `wiki/entities/` 下的实体（Entity → Entity）。
+- Entity → Source 的证据链继续用 `source_raw`；Entity → Topic 的导航继续用普通 wikilink。
 - 不要为「图谱更完整」写 `related_to` 之类的空泛 predicate——它与 `related_entities` 重复。
 - 不强制所有页面都有 `relations`；没有推理价值就省略。
-- Target 使用 kebab-case wikilink（`[[Agent-Verification]]`），lint 会校验 predicate 白名单与 target 存在性。
+- Target 使用 kebab-case wikilink（`[[Agent-Verification]]`）；lint 校验页面类型、predicate 白名单与 target 是否指向实体。
 
 ## Author Entity Pages
 
