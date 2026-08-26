@@ -3,7 +3,7 @@ type: topic
 title: Enterprise AI Model Sourcing
 description: "企业 AI 模型采购不应默认等于买最大 frontier API，而应按任务分布、评测证据、成本曲线、部署约束和组织能力分层选择"
 created: 2026-05-24
-updated: 2026-07-30
+updated: 2026-08-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -26,6 +26,7 @@ source_raw:
   - "[[The Return of the Deployment Company]]"
   - "[[Open and closed models are on different exponentials]]"
   - "[[20260727-palantir-ai-sovereignty-alpha-playbook]]"
+  - "[[20260825-openrouter-choose-best-ai-model]]"
 ---
 
 # Enterprise AI Model Sourcing（企业 AI 模型采购）
@@ -102,6 +103,22 @@ source_raw:
 - 内部能力：评测集、训练数据、微调管线、本地推理和运维团队能否沉淀为长期能力。
 
 没有内部微调与评测能力，专门化只是供应商给出的卖点。有了这些能力，专门化才会变成企业自己的模型组合策略。
+
+## 成本判据：成本/完成任务，而非成本/token（08-26 补充）
+
+[[20260825-openrouter-choose-best-ai-model|OpenRouter（2026-08）]]把"成本曲线"变量操作化为明确公式：
+
+```
+cost per task = (input tokens × input price + output tokens × output price) × expected attempts
+```
+
+核心洞察：**低单价模型在重试、长输出、需要更强模型兜底时更贵**。经济单位是"完成一次任务的总成本"，不是 API 标价。Chen et al.(2026)《The Price Reversal Phenomenon》：32% 的模型对中低标价模型总成本反而更高，极端 28× 反转；同一 query 两个模型的思考 token 消耗差 900%，重复运行单查询波动最高 9.7×。
+
+这修正了采购讨论的一个常见误区：
+- 按 token 比价（\$0.75 vs \$2.00/M input）只反映单位价，漏掉 `expected attempts` 项——而该项通常决定结果
+- 实测判据：GPT-5.4 mini 标价约为 Claude Sonnet 5 的 1/2.4，但若 Sonnet 5 首试成功 95%，mini 必须首试成功 ≥40% 才真正更便宜；低于 40% 时"更便宜的 token 更昂贵的完成任务"
+
+采购流程含义：benchmark 只做短名单过滤器（滤到几个候选），决策用**你自己 prompts** 在真实工作负载上测量，终点是成本/1,000 完成任务而非模型品牌排序。对无法构造真实评测集的团队，该流程无法启动——评测集基础设施是成本判据的前提条件。
 
 ## 最小采购判断矩阵
 
