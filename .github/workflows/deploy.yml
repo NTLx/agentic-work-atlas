@@ -39,11 +39,16 @@ jobs:
         with:
           working-directory: atlas
 
-      - name: Run Wiki Lint
+      - name: Run Wiki Lint (gate)
         working-directory: atlas
         run: |
           uv sync
-          uv run python tools/wiki-lint.py --fix-index --write-report || true
+          uv run python tools/wiki-lint.py --fix-index --write-report
+          git diff --exit-code -- index.md wiki/lint-report.md
+
+      - name: Run Tests
+        working-directory: atlas
+        run: uv run --with pytest pytest -q
 
       - name: Install Quartz Dependencies
         working-directory: quartz
