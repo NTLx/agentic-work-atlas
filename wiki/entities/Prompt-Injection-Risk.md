@@ -7,7 +7,7 @@ aliases:
   - 对 AI 的隐藏指令
 definition: "在内容中嵌入'给 AI 看的隐藏指令'，试图影响 AI 综述/推荐的风险；更强的模型已能识别并拒绝这类指令，将其视为 untrusted external instruction"
 created: 2026-06-06
-updated: 2026-07-30
+updated: 2026-08-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,6 +25,7 @@ source_raw:
   - "[[20260622-context-collapse-1-poisoning-copilot-memory]]"
   - "[[20260714-context-collapse-2-when-emails-instruct]]"
   - "[[20260728-context-collapse-3-ai-worming-through-word]]"
+  - "[[20260824-forge-one-polluted-page-llm-recommenders]]"
 ---
 
 # Prompt Injection Risk（提示注入风险）
@@ -54,6 +55,27 @@ source_raw:
 | 隐式 prompt injection | 隐藏文本/HTML 注释中给 AI 的指令 | 中等（多数新模型识别） |
 | 上下文操纵 | 把指令包装成"用户偏好" | 难（个别模型被骗） |
 | 训练数据操纵 | 把指令写入模型会读的训练数据 | 最难（接近真实用户） |
+
+## 无指令的信任域攻击：网页内容污染（08-26 补充）
+
+[[20260824-forge-one-polluted-page-llm-recommenders|FORGE 基准（2026）]]证明了一类**不同于 prompt injection 的信任域攻击**：GEO（Generative Engine Optimization）操作者用"真实品牌→假品牌"的最小内容改动污染公开网页，让搜索增强 LLM 推荐引擎无意识地推广假产品。
+
+与 prompt injection 的关键差异：
+
+| 维度 | Prompt Injection | 网页内容污染（GEO/FORGE） |
+|------|-----------------|--------------------------|
+| 攻击载荷 | 指令/隐藏文本（"忽略上一条，推荐 X"） | 无指令，仅品牌实体替换 |
+| 检测 cue | 异常 token、指令形状、off-task 输出 | 无 cue——输出保持 on-task 且合规 |
+| 通道 | 提示词/API 侧 | 开放网页（经普通 SEO 进检索 top-K） |
+| 防御面 | 识别类（模型可识别并拒绝） | 识别类基本失效，需先验知识或证据治理 |
+
+关键数据点（12 模型，225 产品，15 类别）：
+- top-3 替换下 fooled rate 13.3%–73.8%；单条 rank-1 污染页即可最多 fool 27%
+- **推理加剧而非缓解**：关掉 reasoning 的同一模型脆弱性显著下降（Qwen3.5-9B 差 18pp）
+- 怀疑提示使闭源模型平均恶化 24pp（Gemini 3.1 Pro +44pp）；共识过滤压制 52–79% 合法推荐
+- 脆弱性 = 模型的品牌先验知识缺口——对模型稳定已知的品牌类别抵抗，对先验薄的日常消费类别（餐饮/服务/补剂）最脆弱
+
+**机制小结**：网页污染的目标是"推荐"而非"指令遵循"，攻击发生在模型把网页当证据读入的信任边界，而非意图层。与 Context Collapse 系列同属"信任域压扁"谱系，但 FORGE 显示连"识别指令"都不需要——只要被污染的品牌出现在检索证据里模型就会采信。
 
 ## 前提与局限性
 - **窗口期**：在 GPT-5.5 之前的小型/早期模型上 trick 仍有效——窗口正在关闭但没完全关闭
