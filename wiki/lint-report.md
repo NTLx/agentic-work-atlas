@@ -23,7 +23,7 @@ tags:
 | Raw 待编译 | 0 |
 | Raw 已跳过 | 0 |
 | Raw 全文保留 | 240 |
-| Raw 索引化 | 43 |
+| Raw 索引化 | 44 |
 | Raw 已移除 | 1 |
 | Entity | 423 |
 | Topic | 34 |
@@ -41,7 +41,7 @@ tags:
 | `wikilink` | 0 |
 | `relations` | 0 |
 | `source_raw` | 0 |
-| `tag` | 112 |
+| `tag` | 116 |
 | `evidence` | 0 |
 | `low-evidence` | 7 |
 | `stale-core` | 107 |
@@ -104,7 +104,7 @@ tags:
 - `wiki/entities/Technical-Debt-Avoidance.md` - `核心页 Technical-Debt-Avoidance 已 93 天未更新，入链 15 条`
 - `wiki/entities/Thin-Harness-Fat-Skills.md` - `核心页 Thin-Harness-Fat-Skills 已 93 天未更新，入链 28 条`
 - `wiki/entities/Tobi-Lütke.md` - `核心页 Tobi-Lütke 已 92 天未更新，入链 6 条`
-- `wiki/entities/Tool-Use-Architecture.md` - `核心页 Tool-Use-Architecture 已 93 天未更新，入链 14 条`
+- `wiki/entities/Tool-Use-Architecture.md` - `核心页 Tool-Use-Architecture 已 93 天未更新，入链 15 条`
 - `wiki/entities/Ubiquitous-Language.md` - `核心页 Ubiquitous-Language 已 93 天未更新，入链 10 条`
 - `wiki/entities/Vocabulary-Building.md` - `核心页 Vocabulary-Building 已 93 天未更新，入链 9 条`
 - `wiki/entities/YAGNI.md` - `核心页 YAGNI 已 93 天未更新，入链 8 条`
@@ -241,6 +241,7 @@ tags:
 - `wiki/sources/20260804-astro-software-factory-issue-triage.md` - `一次性 tag 仅出现 1 次: 'issue-triage'`
 - `wiki/entities/Features-Are-Cheap-Paradox.md` - `一次性 tag 仅出现 1 次: 'jevons-paradox'`
 - `wiki/sources/20260803-latent-space-inference-engineering-baseten.md` - `一次性 tag 仅出现 1 次: 'kv-cache'`
+- `wiki/sources/20260826-latent-space-anima-physical-world-models.md` - `一次性 tag 仅出现 1 次: 'latent-space'`
 - `wiki/entities/ALTK-Evolve.md` - `一次性 tag 仅出现 1 次: 'library'`
 - `wiki/sources/20260824-forge-one-polluted-page-llm-recommenders.md` - `一次性 tag 仅出现 1 次: 'llm-recommender'`
 - `wiki/entities/OpenClaw.md` - `一次性 tag 仅出现 1 次: 'local-first'`
@@ -251,10 +252,12 @@ tags:
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'multiagent-coordination'`
 - `wiki/sources/20260814-anthropic-multiagent-systems.md` - `一次性 tag 仅出现 1 次: 'multiagent-systems'`
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'multimodal-evaluation'`
+- `wiki/sources/20260826-latent-space-anima-physical-world-models.md` - `一次性 tag 仅出现 1 次: 'neural-operators'`
 - `wiki/entities/C2PA-Content-Credentials.md` - `一次性 tag 仅出现 1 次: 'open-standard'`
 - `wiki/entities/PosterBench.md` - `一次性 tag 仅出现 1 次: 'paper-to-poster'`
 - `wiki/sources/202310-superlinear-returns.md` - `一次性 tag 仅出现 1 次: 'paul-graham'`
 - `wiki/entities/OpenClaw.md` - `一次性 tag 仅出现 1 次: 'personal-agent'`
+- `wiki/sources/20260826-latent-space-anima-physical-world-models.md` - `一次性 tag 仅出现 1 次: 'physical-world-models'`
 - `wiki/entities/Features-Are-Cheap-Paradox.md` - `一次性 tag 仅出现 1 次: 'prioritization'`
 - `wiki/entities/Claude-Tag.md` - `一次性 tag 仅出现 1 次: 'product-page'`
 - `wiki/entities/Capability-Overhang.md` - `一次性 tag 仅出现 1 次: 'product-philosophy'`
@@ -282,6 +285,7 @@ tags:
 - `wiki/sources/20260824-forge-one-polluted-page-llm-recommenders.md` - `一次性 tag 仅出现 1 次: 'trust-boundary'`
 - `wiki/research/research-logs/2026-08-24.md` - `一次性 tag 仅出现 1 次: 'uncertainty-seigniorage'`
 - `wiki/sources/20260819-valley101-e249-token-economic-pivot.md` - `一次性 tag 仅出现 1 次: 'valley101'`
+- `wiki/sources/20260826-latent-space-anima-physical-world-models.md` - `一次性 tag 仅出现 1 次: 'weather-modeling'`
 - `wiki/sources/20260806-openai-chatgpt-work-adoption.md` - `一次性 tag 仅出现 1 次: 'work-usage'`
 - `wiki/sources/20260825-enterprise-ai-workflow-redesign.md` - `一次性 tag 仅出现 1 次: 'workflow-redesign'`
 - `wiki/entities/Lenny-Rachitsky.md` - `一次性 tag 仅出现 1 次: 'workforce-research'`
