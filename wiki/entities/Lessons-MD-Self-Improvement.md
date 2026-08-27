@@ -8,7 +8,7 @@ aliases:
   - Incident Lessons Loop
 definition: "事故 lessons 自动写入 markdown 文件（lessons.md）→ 新事故开始先读 lessons.md 形成首假设 → 多次出现的模式 promote 到 investigation skill——agent 跨事故自蒸馏经验并沉淀为系统层资产的循环模式"
 created: 2026-08-19
-updated: 2026-08-19
+updated: 2026-08-26
 tags:
   - agentic-engineering
   - self-improvement
@@ -25,6 +25,7 @@ related_entities:
   - "[[Knowledge-Debt]]"
 source_raw:
   - "[[20260819-anthropic-claude-tag-oncall]]"
+  - "[[20260826-warp-self-improving-agents-on-claude]]"
 ---
 
 # Lessons-MD Self-Improvement
@@ -70,6 +71,23 @@ investigation skill（长期资产）
 > "query the data first, then theorize. Config tells you what could go wrong; metrics tell you what did."
 
 ——这是从一次工程师基于 config 文件做假设、忽略 metrics 的失败事故中蒸馏出来的，沉淀后改变了后续所有调查顺序。
+
+## Warp 变体：双 Skill 主动编辑循环（08-26 补充）
+
+[[20260826-warp-self-improving-agents-on-claude|Warp（2026-08）]]把同一「反馈→文件→改进」机制实现为**双 skill 架构**，与 Claude Tag 的三段循环形成对照：
+
+| 维度 | Lessons-MD（Claude Tag） | Skill-Self-Improvement（Warp） |
+|------|--------------------------|-------------------------------|
+| 触发 | 事故后自动 append + "promote" 两级蒸馏 | Improver 观察者按 schedule 主动拉反馈 |
+| 改进动作 | 模式多次出现才 promote 到长期 skill | Improver 直接编辑 base skill 的最小改动 |
+| 产出载体 | lessons.md → investigation skill | base skill（领域） + improver skill（改进） |
+| 门禁 | promote 阈值人工判断 | 改动走正常 PR/代码评审流（人类 reviewer gate） |
+| 反馈来源 | 事故复盘 | 工作流内 PR/issue 评论直接标注（低摩擦） |
+
+**三个补充洞见**：
+- **反馈消失问题**：Warp 明确诊断"反馈到 agent 随会话结束即消失，移除 critical context"——lessons.md 的根本价值是同一问题（把会话外反馈固化到文件）
+- **改进载体是 skill 文件而非 harness 代码**：与 [[Meta-Harness-Optimization]]（改 harness，有 J_train∧J_dev 硬 gate）形成对照——Warp 的 gate 是人类 reviewer（软 gate）
+- **improver skill 可复用**："improver skill 跨用例差异很小"——把"改进机制"与"领域知识"分离，是 Lessons-MD 未显式讲清的结构
 
 ## 与 ALTK-Evolve 的剂量问题
 

@@ -1809,6 +1809,17 @@
       "summary_path": "wiki/sources/20260825-openrouter-choose-best-ai-model.md",
       "updated_at": "2026-08-26T11:51:11+08:00"
     },
+    "20260826-warp-self-improving-agents-on-claude.md": {
+      "body_sha256": "13d351d8fbeb81bb399811f06be48ac671a857cd6fc8b12d524001fe895d7c14",
+      "canonical_url": "https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude",
+      "compiled_at": "2026-08-27T11:56:37+08:00",
+      "indexed_at": "2026-08-27T11:56:37+08:00",
+      "raw_file": "20260826-warp-self-improving-agents-on-claude.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260826-warp-self-improving-agents-on-claude.md",
+      "updated_at": "2026-08-27T11:56:37+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -2417,6 +2428,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-26T16:53:17+08:00",
+  "updated_at": "2026-08-27T12:01:17+08:00",
   "version": 1
 }
