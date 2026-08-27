@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把巨大组合搜索空间、明确目标函数、数据或模拟器和工具调用结合起来，用 AI 寻找科学突破方案的系统形态"
 created: 2026-05-08
-updated: 2026-06-10
+updated: 2026-08-27
 tags:
   - AI
   - science
@@ -24,6 +24,7 @@ related_entities:
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[20260608-paving-the-way-for-agents-in-biology]]"
+  - "[[20260826-latent-space-anima-physical-world-models]]"
 ---
 
 # Scientific Discovery AI（科学发现 AI）
@@ -55,6 +56,28 @@ Hassabis 从 AlphaGo 和 AlphaFold 总结出一个模式：当问题可以被描
 | 框架型发现 | 提出新的问题、理论或解释结构 | [[Einstein-Test|Einstein Test]] 所关心的新理论生成 |
 
 当前方法在第一层更有把握。第二层需要更强的类比推理、世界模型、持续学习和对“什么问题重要”的判断。
+
+## 第二条路线：连续物理系统的结构先验（08-27 补充）
+
+Hassabis 叙事的"组合搜索 + 目标函数"是一种科学发现路线；[[20260826-latent-space-anima-physical-world-models|Anima Anandkumar（2026-08）]]补上了第二种——**连续物理系统（天气/聚变/流体）用结构归纳偏置建模**。两者共享"用 AI 找科学方案"的目标，但搜索空间与先验来源不同：
+
+| 维度 | 组合搜索路线（Hassabis） | 连续系统路线（Anima） |
+|------|------------------------|----------------------|
+| 问题空间 | 离散组合（蛋白质折叠、分子、围棋） | 连续演化（大气、等离子体、流体） |
+| 核心机制 | 海量搜索 + 目标函数 | Neural Operators（函数映射）+ 物理先验 |
+| 先验来源 | 规则、仿真器、策略网络 | PDE 结构、球谐/Fourier 基底、物理直觉 |
+| 规模假设 | 可扩充（锦上添花的 scale 故事） | 反抗 token scaling（数据稀缺 + 百亿级 context） |
+| 代表系统 | AlphaGo / AlphaFold | FourCastNet / Spherical FNO / TorchLean |
+
+**关键机制（值得沉淀）**：
+- **Neural Operators**：把"网格建模"改为"任意分辨率输入输出间的函数映射"——不再建模 grid，而是建模跨尺度演化的函数；Fourier Neural Operator 在频域学习，球谐变体把"地球是球"的先验 baked in，模型可稳定滚动数月而非数天
+- **物理世界比预期宽容**：聚变数百个样例即可预测 plasma disruptions，AI 仿真比传统仿真快 ~100 万倍——结构先验大幅降低数据需求，与语言模型的 scale 依赖形成对照
+- **context 的物理上限**："网格 1000³ ≈ 数百亿到万亿 context length，所以别想用 transformer 做这个规模"——这是 token scaling 的科学域边界证据
+
+**长期愿景**：`物理基础模型`（跨多现象、模拟 + 设计）；但与语言模型不同——"把深度学习有效成分变得更有原则（principled）"，而非等价 scale 故事。
+
+> [!warning] 边界
+> "数千样例即可"依赖特定领域（低维去歧义问题）；"百万倍快"为受访者主张需检原论文。两条路线的划分是机制性对照，不是 Either/Or——真实科学发现系统可能二者结合（结构先验 + 组合搜索）
 
 ## 从科学突破到运营基础设施
 
