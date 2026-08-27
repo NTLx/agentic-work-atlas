@@ -23,7 +23,7 @@ tags:
 | Raw 文章 | 240 个 |
 | Source Summary | 282 个 |
 | Output 作品 | 10 个 |
-| Research 日志 | 13 个 |
+| Research 日志 | 14 个 |
 
 详细图谱健康状态见 [[wiki/lint-report|最新知识库健康报告]]（由 `tools/entity-audit.py` 与 `tools/wiki-lint.py` 实测产生）。
 

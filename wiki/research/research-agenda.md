@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-25T15:09:53
+updated: 2026-08-27T14:05:51
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -72,10 +72,10 @@ related_entities:
 - Priority: P0
 - Claim: 组织从 AI 获得局部效率收益的同时，会把专业能力再生成本外部化到整个职业共同体。
 - Gap: Counterexample
-- Evidence: `raw/20260731-tragedy-cognitive-commons-ai-expertise.pdf`、`raw/20260730-lenny-tech-workers-ai-sentiment-noam-segal.md`
-- Evidence goal: 找到高 AI 采纳但入门训练、独立验证能力和专家补充率长期不降的组织或职业。
-- Last checked: 2026-08-24 · refined (mixed)
-- Next: 在现有 raw/source 中寻找明确保护学徒期或提升独立验证能力的反例
+- Evidence: `raw/20260731-tragedy-cognitive-commons-ai-expertise.pdf`、`raw/20260730-lenny-tech-workers-ai-sentiment-noam-segal.md`、`raw/Learning on the Shop floor.md`
+- Evidence goal: 找到第二个"高采纳 + 维持学徒/独立验证"的组织或职业，或验证 Shopify 案例长期性
+- Last checked: 2026-08-27 · weakened
+- Next: 仓库外搜索第二个高采纳且再生内部化的组织/职业，或验证 Shopify 长期性；无新反例则不重复
 - Retry: now
 
 ### CR-006 · 评测逃逸是系统性机制而非孤立 harness 事故
@@ -141,14 +141,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-27T14:05 | AI 采纳侵蚀专业能力再生 | weakened | 部署级反例 Shopify/River：public-only 公开频道 + Lehrwerkstatt 在高 AI 采纳下把专业再生成本留在组织内部；Claim 由普遍预测收窄为条件命题，仍缺第二个独立案例与纵向验证。 |
 | 2026-08-25T15:09 | AI 评测制度化进入执行期 | refined | 欧盟委员会确认 AI Office 与成员国主管机关已开始执行 AI Act，官方框架列出 RFI、模型评估、限制供给与罚款权限；尚未找到具体罚单或执法决定。 |
 | 2026-08-24T22:01 | AI 监督 AI 共模误差下界 | strengthened | 跨模型误标率：同质 62-86%、异质 1-14%；残差不可消除，来源是训练目标/价值观结构性共享。 |
 | 2026-08-24T21:01 | Agent 数据过度收集结构性 | strengthened | MosaicLeaks 证明任务性能训练系统性增加泄漏；跨厂商均出现数据过度收集；PA-DR 可缓解但无 deployed 反例。 |
 | 2026-08-24T17:00 | 反馈真空病理 | refined (reasoning) | 将”惊奇”载体从身体修正为公开性，但外部搜索失败；未增加证据，稳定页写入已回迁 Research。 |
-| 2026-08-24T16:00 | 工具性收敛弱压力 | refined (reasoning) | 三条件模型降为机制搜索线索；能力被视为使能变量，仍缺独立实证。 |
 
 ## 思考日志索引
 
+- [[2026-08-27]] — recompile CR-005；Shopify/River 部署级反例收窄专业再生外部化预测
 - [[2026-08-25]] — recompile CR-001；官方执行框架已生效，但实际罚单/执法决定仍缺
 - [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
 - [[2026-08-23]] — 深度思考×13；Alpha Transfer、判断力与认知公地
