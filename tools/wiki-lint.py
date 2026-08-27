@@ -15,6 +15,7 @@ Agentic Work Atlas 校验与同步门禁。
   uv run python tools/wiki-lint.py --fix-index
   uv run python tools/wiki-lint.py --write-report
   uv run python tools/wiki-lint.py --fix-index --write-report
+  uv run python tools/wiki-lint.py --fix-index --write-report --as-of YYYY-MM-DD
 """
 
 from __future__ import annotations
@@ -635,14 +636,14 @@ def check_index_counts() -> list[Issue]:
     return issues
 
 
-def fix_index_counts() -> bool:
+def fix_index_counts(as_of: date | None = None) -> bool:
     text = INDEX.read_text(encoding="utf-8")
     original = text
     counts = actual_counts()
 
     for label, (key, _) in COUNT_LABELS.items():
         text = re.sub(rf"\| {re.escape(label)} \| \d+ 个 \|", f"| {label} | {counts[key]} 个 |", text)
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = (as_of or date.today()).isoformat()
     text = re.sub(r"^updated: \d{4}-\d{2}-\d{2}$", f"updated: {today}", text, count=1, flags=re.M)
 
     if text != original:
@@ -723,7 +724,9 @@ def check_registry_consistency() -> tuple[list[Issue], list[Path], list[Path], l
     return issues, compiled, pending, skipped, candidates
 
 
-def collect_issues() -> tuple[list[Issue], dict[str, int], list[Path], list[Path], list[dict]]:
+def collect_issues(
+    as_of: date | None = None,
+) -> tuple[list[Issue], dict[str, int], list[Path], list[Path], list[dict]]:
     paths = markdown_files()
     issues: list[Issue] = []
     issues.extend(check_frontmatter_and_dates(paths))
@@ -736,7 +739,7 @@ def collect_issues() -> tuple[list[Issue], dict[str, int], list[Path], list[Path
     issues.extend(check_singleton_tags(wiki_link_files()))
     issues.extend(check_evidence_schema(wiki_link_files()))
     issues.extend(check_low_evidence_pages(wiki_link_files()))
-    issues.extend(check_stale_core_pages(wiki_link_files()))
+    issues.extend(check_stale_core_pages(wiki_link_files(), today=as_of))
     issues.extend(check_entities())
     issues.extend(check_comparisons())
     issues.extend(check_index_counts())
@@ -779,8 +782,9 @@ def render_report(
     pending: list[Path],
     skipped: list[Path],
     candidates: list[dict],
+    as_of: date | None = None,
 ) -> str:
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = (as_of or date.today()).isoformat()
     blocking = [i for i in issues if i.blocking]
     status = "PASS" if not blocking else "FAIL"
     grouped = group_issues(issues)
@@ -875,7 +879,8 @@ def render_report(
             "## 运行命令",
             "",
             "```bash",
-            "uv run python tools/wiki-lint.py --fix-index --write-report",
+            f"uv run python tools/wiki-lint.py --fix-index --write-report"
+            + (f" --as-of {today}" if as_of else ""),
             "```",
             "",
             "*本报告由 `tools/wiki-lint.py` 生成。*",
@@ -939,18 +944,32 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="检查并同步 Agentic Work Atlas")
     parser.add_argument("--fix-index", action="store_true", help="更新 index.md 计数和 updated 日期")
     parser.add_argument("--write-report", action="store_true", help="写入 wiki/lint-report.md")
+    parser.add_argument(
+        "--as-of",
+        default=None,
+        help="将报告作为截至该日期 YYYY-MM-DD 的快照生成（默认今天）",
+    )
     args = parser.parse_args()
 
+    as_of: date | None = None
+    if args.as_of:
+        try:
+            as_of = date.fromisoformat(args.as_of)
+        except ValueError:
+            parser.error(f"--as-of 必须是 YYYY-MM-DD，收到: {args.as_of!r}")
+    as_of = as_of or date.today()
+
     if args.fix_index:
-        changed = fix_index_counts()
+        changed = fix_index_counts(as_of=as_of)
         if changed:
             print("已更新 index.md 计数")
 
-    issues, stats, pending, skipped, candidates = collect_issues()
+    issues, stats, pending, skipped, candidates = collect_issues(as_of=as_of)
     print_summary(issues, stats, pending, skipped, candidates)
 
     if args.write_report:
-        LINT_REPORT.write_text(render_report(issues, stats, pending, skipped, candidates), encoding="utf-8")
+        report = render_report(issues, stats, pending, skipped, candidates, as_of=as_of)
+        LINT_REPORT.write_text(report, encoding="utf-8")
         print(f"\n已写入 {LINT_REPORT.relative_to(ROOT).as_posix()}")
 
     return 1 if any(i.blocking for i in issues) else 0

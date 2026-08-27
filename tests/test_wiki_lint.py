@@ -623,3 +623,64 @@ relations:
 
     assert any("只允许出现在 type: entity" in i.message for i in issues)
     assert all(i.blocking for i in issues)
+
+
+def test_as_of_makes_report_deterministic(tmp_path, monkeypatch):
+    wiki_lint = load_wiki_lint()
+    (tmp_path / "raw").mkdir(parents=True)
+    (tmp_path / "wiki" / "entities").mkdir(parents=True)
+    index_path = write_note(tmp_path / "index.md", "type: index\ntitle: Test\nupdated: 2026-08-01\n", "")
+    write_note(tmp_path / "README.md", "title: Readme\n", "")
+
+    monkeypatch.setattr(wiki_lint, "ROOT", tmp_path)
+    monkeypatch.setattr(wiki_lint, "RAW", tmp_path / "raw")
+    monkeypatch.setattr(wiki_lint, "WIKI", tmp_path / "wiki")
+    monkeypatch.setattr(wiki_lint, "INDEX", tmp_path / "index.md")
+    monkeypatch.setattr(wiki_lint, "LINT_REPORT", tmp_path / "wiki" / "lint-report.md")
+
+    # 相同 as-of：index 写出的 updated 取自 as-of 而非墙钟，重复运行幂等
+    assert wiki_lint.fix_index_counts(as_of=date(2026, 8, 26))
+    index_first = index_path.read_text(encoding="utf-8")
+    assert "updated: 2026-08-26" in index_first
+    assert not wiki_lint.fix_index_counts(as_of=date(2026, 8, 26))
+    assert index_path.read_text(encoding="utf-8") == index_first
+
+    # 相同 as-of：报告完全一致，且日期、运行命令都引用 as-of
+    stats = {
+        "raw": 1, "raw_compiled": 1, "raw_pending": 0, "raw_skipped": 0,
+        "raw_full": 1, "raw_indexed": 0, "raw_removed": 0,
+        "entities": 1, "topics": 0, "comparisons": 0, "outputs": 0, "research": 0,
+    }
+    report_first = wiki_lint.render_report([], stats, [], [], [], as_of=date(2026, 8, 26))
+    assert 'date: "2026-08-26"' in report_first
+    assert "# Agentic Work Atlas Lint 报告 - 2026-08-26" in report_first
+    assert "--as-of 2026-08-26" in report_first
+    assert wiki_lint.render_report([], stats, [], [], [], as_of=date(2026, 8, 26)) == report_first
+
+    # 不同 as-of：报告日期随之变化（证明日期由 as-of 控制，而非其余状态）
+    report_other = wiki_lint.render_report([], stats, [], [], [], as_of=date(2026, 8, 27))
+    assert report_other != report_first
+    assert 'date: "2026-08-27"' in report_other
+
+
+def test_stale_core_respects_as_of(tmp_path):
+    wiki_lint = load_wiki_lint()
+    core = write_note(
+        tmp_path / "wiki" / "entities" / "Core-Concept.md",
+        "title: Core Concept\nupdated: 2026-05-29\ntags:\n  - ai-agent\n",
+        "",
+    )
+    ref_a = write_note(tmp_path / "wiki" / "topics" / "A.md", "title: A\n", "[[Core-Concept]]")
+    ref_b = write_note(tmp_path / "wiki" / "comparisons" / "B.md", "title: B\n", "[[Core-Concept]]")
+
+    # 截止 2026-08-26 为 89 天，未达 90 天阈值
+    assert not wiki_lint.check_stale_core_pages(
+        [core, ref_a, ref_b], today=date(2026, 8, 26), stale_days=90, min_inbound=2
+    )
+    # 截止 2026-08-27 恰好 90 天，跨入 stale
+    issues = wiki_lint.check_stale_core_pages(
+        [core, ref_a, ref_b], today=date(2026, 8, 27), stale_days=90, min_inbound=2
+    )
+    assert len(issues) == 1
+    assert issues[0].category == "stale-core"
+    assert not issues[0].blocking

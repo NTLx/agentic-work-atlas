@@ -43,7 +43,18 @@ jobs:
         working-directory: atlas
         run: |
           uv sync
-          uv run python tools/wiki-lint.py --fix-index --write-report
+
+          # 用仓库已提交 lint-report 声明的日期做 as-of，重现「截至该日期的快照」，
+          # 使生成结果与运行当天无关（deterministic），只随 repo 状态变化。
+          REPORT_DATE=$(sed -n 's/^date: "\(.*\)"$/\1/p' wiki/lint-report.md | head -1)
+          if [ -z "$REPORT_DATE" ]; then
+            REPORT_DATE=$(date -u +%F)
+          fi
+
+          uv run python tools/wiki-lint.py \
+            --fix-index \
+            --write-report \
+            --as-of "$REPORT_DATE"
           git diff --exit-code -- index.md wiki/lint-report.md
 
       - name: Run Tests
