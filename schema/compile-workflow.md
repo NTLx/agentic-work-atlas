@@ -101,7 +101,9 @@ Agent 读取 raw source → 自动判断材料类型 →
     └─ PDF 和 Markdown 文件均需执行此步骤
     └─ 随后按 `schema/compile-operations.md` 选择 full / index；compile 不直接选择 removed
 
-13. 提交 git commit 并推送（按 Commit 规范撰写）
+13. 只读校验：`uv run python tools/wiki-lint.py --as-of "$(git show -s --format=%cs HEAD)"`（存在 blocking 即失败，含未与文件系统对齐的 index 计数；不需要生成/提交 wiki/lint-report.md）
+
+14. 提交 git commit 并推送（按 Commit 规范撰写）
 ```
 
 ## 标准路径（三步编译法）
@@ -165,7 +167,9 @@ Agent 读取 raw source → 自动判断材料类型 →
     └─ PDF 和 Markdown 文件均需执行此步骤
     └─ 随后按 `schema/compile-operations.md` 选择 full / index；compile 不直接选择 removed
 
-12. 提交 git commit 并推送（按 Commit 规范撰写）
+12. 只读校验：`uv run python tools/wiki-lint.py --as-of "$(git show -s --format=%cs HEAD)"`（存在 blocking 即失败，含未与文件系统对齐的 index 计数；不需要生成/提交 wiki/lint-report.md）
+
+13. 提交 git commit 并推送（按 Commit 规范撰写）
 ```
 
 ## 单篇改动边界

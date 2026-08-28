@@ -64,7 +64,7 @@ Layer 1: Wiki (wiki/)              ← LLM 维护层
   ├── entities/      概念页面       ├── topics/        主题页面
   ├── comparisons/   对比分析       ├── sources/       来源摘要
   ├── outputs/       输出作品       ├── research/      研究模块
-  └── lint-report.md
+  └── lint-report.md   （派生审计产物，本地生成，不进入版本控制）
 Git History                        ← 结构化 commit 记录操作日志
 Schema (README.md + schema/*)      ← 工作流定义与规范
 ```
@@ -83,20 +83,20 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 
 ## 三类信息归属（Single Source of Truth）
 
-仓库中的信息严格分为三类，各自只在唯一位置维护，不得相互复制：
+仓库中的信息严格分为三类，各自只在唯一位置维护，不得相互复制；另有派生视图：
 
 | 信息 | 唯一归属 |
 |------|---------|
 | **当前如何运行**（Rules） | `README.md` + `schema/*` |
 | **我们知道什么**（Knowledge） | `wiki/*` |
-| **仓库当前状态**（Report/State） | `tools/*` 实测产生的报告（如 `wiki/lint-report.md`） |
+| **仓库当前状态**（Operational State） | `state/*` 与需版本化的导航状态（如 `index.md`）、实际文件树 |
 
-即：Schema = Rules；Wiki = Knowledge；Report = State。
+即：Schema = Rules；Wiki = Knowledge；State = 需版本化的事实。**Derived Report 不是 SoT**：`tools/*` 从当前 State 生成的报告（如 `wiki/lint-report.md`）是可再生审计产物，不参与 Git commit 一致性门禁；需要审计详情时本地生成即可。
 
 **Rule only lives once**：概念可以重复解释（Concept may be copied），运行规则只能引用、不复制。
 
 - Wiki 可解释「Knowledge Compilation 是什么」，但不能长期保存「一次 compile 创建几个 Entity、触及多少页面、搜索预算多少」等运行规则；一切当前运行约束以 `schema/*` 为准。
-- Schema 不保存动态状态（当前 Entity 数量、碎片率、review 数等）；这些由 `wiki/lint-report.md` 或 research log 承载。
+- Schema 不保存动态状态（当前 Entity 数量、碎片率、review 数等）；这些由生成产物 `wiki/lint-report.md`（本地生成）或 research log 承载。
 - 新增规则前先问「这条规则已经在哪里定义了？」已有则链接过去，不复制。
 
 ---
@@ -210,7 +210,7 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 | `README.md` | Schema 主文件（本文件） |
 | `CLAUDE.md` / `AGENTS.md` | → README.md 软链接 |
 | `index.md` | 知识库索引 |
-| `wiki/lint-report.md` | 最新 lint 报告 |
+| `wiki/lint-report.md` | 最新 lint 报告（派生审计产物，本地 audit 生成，不提交） |
 | `tools/wiki-lint.py` | Wiki 维护门禁脚本 |
 | `tools/entity-audit.py` | Entity 价值审计脚本 |
 | `schema/*.md` | 按需加载的规范子文档 |

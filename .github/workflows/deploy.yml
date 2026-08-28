@@ -44,18 +44,12 @@ jobs:
         run: |
           uv sync
 
-          # 用仓库已提交 lint-report 声明的日期做 as-of，重现「截至该日期的快照」，
-          # 使生成结果与运行当天无关（deterministic），只随 repo 状态变化。
-          REPORT_DATE=$(sed -n 's/^date: "\(.*\)"$/\1/p' wiki/lint-report.md | head -1)
-          if [ -z "$REPORT_DATE" ]; then
-            REPORT_DATE=$(date -u +%F)
-          fi
+          # 只读校验：以本 commit 的提交日期作为时间基准（as-of），
+          # 同一 commit 无论哪天重跑，stale-core 等检查结果恒定。
+          # lint-report 为派生审计产物，CI 不生成、不提交、不比对。
+          AS_OF=$(git show -s --format=%cs HEAD)
 
-          uv run python tools/wiki-lint.py \
-            --fix-index \
-            --write-report \
-            --as-of "$REPORT_DATE"
-          git diff --exit-code -- index.md wiki/lint-report.md
+          uv run python tools/wiki-lint.py --as-of "$AS_OF"
 
       - name: Run Tests
         working-directory: atlas

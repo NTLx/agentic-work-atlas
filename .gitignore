@@ -67,3 +67,6 @@ docs/
 
 # 定时任务临时变量（recompile 运行变量，不进入仓库）
 TIMESTAMP
+
+# 派生审计报告：由 tools/wiki-lint.py 从当前 State 再生成，不作为提交一致性约束
+wiki/lint-report.md

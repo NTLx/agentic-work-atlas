@@ -37,7 +37,6 @@ def make_repo(tmp_path: Path) -> Path:
         "wiki/research/research-logs/2026-08-24.md": "# Log\n",
         "wiki/entities/Existing.md": "# Existing\n",
         "index.md": "# Index\n",
-        "wiki/lint-report.md": "# Report\n",
         "raw/source.md": "# Raw\n",
     }
     for name, content in files.items():
@@ -63,7 +62,6 @@ def test_clean_tree_and_allowed_mixed_changes_pass(tmp_path):
     (repo / "wiki/research/research-logs/2026-08-24.md").write_text("# Log\nchanged\n", encoding="utf-8")
     (repo / "wiki/entities/Existing.md").write_text("# Existing\nchanged\n", encoding="utf-8")
     (repo / "index.md").write_text("# Index\nchanged\n", encoding="utf-8")
-    (repo / "wiki/lint-report.md").write_text("# Report\nchanged\n", encoding="utf-8")
     git(repo, "add", "wiki/research/research-agenda.md", "wiki/entities/Existing.md")
     result = invoke(
         repo,

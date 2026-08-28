@@ -24,7 +24,7 @@ from typing import Iterable, Sequence
 
 DEFAULT_LOCK_PATH = Path(f"/run/user/{os.getuid()}/agentic-work-atlas-recompile.lock")
 AGENDA_PATH = "wiki/research/research-agenda.md"
-LINT_PATHS = {"index.md", "wiki/lint-report.md"}
+LINT_PATHS = {"index.md"}
 STABLE_PREFIXES = ("wiki/entities/", "wiki/topics/", "wiki/comparisons/")
 AGENDA_MAX_BYTES = 60 * 1024
 AGENDA_MAX_LINES = 300
@@ -462,7 +462,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--allow-maintenance",
         action="store_true",
-        help="also allow index.md and wiki/lint-report.md; disabled by default",
+        help="also allow index.md; disabled by default",
     )
     _add_lock_path(parser)
     subparsers = parser.add_subparsers(dest="command")
