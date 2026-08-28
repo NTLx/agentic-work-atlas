@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-27T14:05:51
+updated: 2026-08-29T00:01:30
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -52,9 +52,9 @@ related_entities:
 - Gap: Evidence
 - Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`、`raw/20260330-reward-hacking-equilibrium-finite-evaluation.md`
 - Evidence goal: 找到跨模型监督的错误相关性或干预前后变化；理论同构和角色共识不计。
-- Last checked: 2026-08-24 · strengthened
-- Next: 搜索 ensemble judge / multi-model jury 的误差相关性实证数据，量化共模残差来源分解
-- Retry: now
+- Last checked: 2026-08-29T00:01:30 · strengthened
+- Next: clip 并编译 arXiv 2604.07650；编译通过后评估 LLM-as-a-Judge「激励共压层未经独立实证」flag 收敛，或对 Anthropic mislabeling 残差做 BEIw/CIG 来源分解
+- Retry: new-source:arxiv-2604.07650-clipped
 
 ### CR-004 · Agent Observability 上界随层级变化
 - Status: ready
@@ -117,7 +117,7 @@ related_entities:
 |---|---|---|---|
 | P0 | EU AI Act 首轮执法 | 只有规则生效与二手解释，缺官方执法事件 | clip → CR-001 |
 | P0 | Anthropic 三起评测事故 | 已联网核查但未进入 raw/source | clip + compile → CR-006 |
-| P0 | 跨模型监督相关误差 | 缺独立模型组合的误差相关数据 | clip/compile → CR-003 |
+| P0 | arXiv 2604.07650 行为纠缠框架 | 已定位但未 clip/compile | clip → compile → CR-003 / LLM-as-a-Judge 激励共压 flag |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
 | P1 | Agent 隐私对照 | 缺跨厂商同权限口径对比 | clip/compile → CR-002 |
@@ -141,14 +141,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-29T00:01 | AI 监督 AI 共模误差下界 | strengthened | arXiv 2604.07650 实测 6 家族 18 模型跨族行为纠缠普遍存在，纠缠度与 judge 过度背书偏误显著相关（ρ=0.64–0.71）；「不同家族⇒监督独立」被实证证伪，机制定位到共享谱系；纠缠感知重加权 +4.5% 验证精度，下界限定于模型间依赖结构层。 |
 | 2026-08-27T14:05 | AI 采纳侵蚀专业能力再生 | weakened | 部署级反例 Shopify/River：public-only 公开频道 + Lehrwerkstatt 在高 AI 采纳下把专业再生成本留在组织内部；Claim 由普遍预测收窄为条件命题，仍缺第二个独立案例与纵向验证。 |
 | 2026-08-25T15:09 | AI 评测制度化进入执行期 | refined | 欧盟委员会确认 AI Office 与成员国主管机关已开始执行 AI Act，官方框架列出 RFI、模型评估、限制供给与罚款权限；尚未找到具体罚单或执法决定。 |
 | 2026-08-24T22:01 | AI 监督 AI 共模误差下界 | strengthened | 跨模型误标率：同质 62-86%、异质 1-14%；残差不可消除，来源是训练目标/价值观结构性共享。 |
 | 2026-08-24T21:01 | Agent 数据过度收集结构性 | strengthened | MosaicLeaks 证明任务性能训练系统性增加泄漏；跨厂商均出现数据过度收集；PA-DR 可缓解但无 deployed 反例。 |
-| 2026-08-24T17:00 | 反馈真空病理 | refined (reasoning) | 将”惊奇”载体从身体修正为公开性，但外部搜索失败；未增加证据，稳定页写入已回迁 Research。 |
 
 ## 思考日志索引
 
+- [[2026-08-29]] — recompile CR-003；arXiv 2604.07650 实证跨族行为纠缠与判官过度背书偏误关联，共模误差下界 strengthened
 - [[2026-08-27]] — recompile CR-005；Shopify/River 部署级反例收窄专业再生外部化预测
 - [[2026-08-25]] — recompile CR-001；官方执行框架已生效，但实际罚单/执法决定仍缺
 - [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
