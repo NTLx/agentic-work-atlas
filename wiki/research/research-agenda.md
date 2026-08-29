@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-29T01:01:23
+updated: 2026-08-29T10:00:53
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -27,12 +27,12 @@ related_entities:
 - Priority: P0
 - Claim: AI 评测治理已从自愿最佳实践进入可执行、可处罚的制度阶段。
 - Gap: Evidence
-- Evidence: `raw/2026-eu-ai-act-compliance-autonomous-agents.md`；欧盟委员会执行框架与 2026-07-31 官方公告
-- Evidence goal: 找到首轮正式执法、罚单或具有强制效果的官方决定；只有规则生效不足以 strengthened。
+- Evidence: `raw/2026-eu-ai-act-compliance-autonomous-agents.md`；2026-08-02 官方执行公告；首轮罚单一致二手报道（€47M 三案，详见 2026-08-29 日志）
+- Evidence goal: 首轮执法实例已定位（strengthened）；剩余为官方一手决定文本核对
 - Basis: evidence
-- Last checked: 2026-08-25T15:09:53 · refined
-- Next: 寻找 2026-08-02 之后首个实际执法决定或罚单，区分执行能力与已发生执法
-- Retry: new-source:first-AI-Act-enforcement-decision
+- Last checked: 2026-08-29T10:00:53 · strengthened
+- Next: clip AI Office 首轮罚款官方公告核对 €47M 三案细节；核对后 CR-001 证据目标达成，收敛或转执法扩散观察
+- Retry: new-source:AI-Office-first-fines-official
 
 ### CR-002 · Agent 数据过度收集具有系统性
 - Status: ready
@@ -115,7 +115,7 @@ related_entities:
 
 | 优先级 | 目标 | 当前缺口 | 触发行动 |
 |---|---|---|---|
-| P0 | EU AI Act 首轮执法 | 只有规则生效与二手解释，缺官方执法事件 | clip → CR-001 |
+| P0 | EU AI Act 首轮罚款官方决定 | 已由一致二手报道定位 €47M 三案，缺官方决定原文 | clip → 核对 CR-001 |
 | P0 | Anthropic 三起评测事故 | 已联网核查但未进入 raw/source | clip + compile → CR-006 |
 | P0 | arXiv 2604.07650 行为纠缠框架 | 已定位但未 clip/compile | clip → compile → CR-003 / LLM-as-a-Judge 激励共压 flag |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
@@ -141,16 +141,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-29T10:00 | AI 评测制度化进入执行期 | strengthened | AI Office 于 2026-08-02 生效后数日内开出首批 €47M 罚单（招聘 €18M/信贷 €14M/零售情绪识别 €15M，案件预建），CNIL 并行 RFI；证据为两条一致二手报道，官方决定文本待核对。 |
 | 2026-08-29T01:01 | Agent Observability 上界 | refined | 对照 Connector 仪表盘与 Google evals 两份 raw：结构层=可枚举计数（tool calls/延迟/错误率）、行为层=必须在 baseline 对照下采样竞速（capability/skill 效用无法直接读，只能统计推断）、意图层=只能经结构 flag+行为结局交叉推断（Skill Ingestion Check 失败则测得 baseline 而非 skill 效用）。三层不是并列观测类别：行为推断以通过结构门为前提。 |
 | 2026-08-29T00:01 | AI 监督 AI 共模误差下界 | strengthened | arXiv 2604.07650 实测 6 家族 18 模型跨族行为纠缠普遍存在，纠缠度与 judge 过度背书偏误显著相关（ρ=0.64–0.71）；「不同家族⇒监督独立」被实证证伪，机制定位到共享谱系；纠缠感知重加权 +4.5% 验证精度，下界限定于模型间依赖结构层。 |
 | 2026-08-27T14:05 | AI 采纳侵蚀专业能力再生 | weakened | 部署级反例 Shopify/River：public-only 公开频道 + Lehrwerkstatt 在高 AI 采纳下把专业再生成本留在组织内部；Claim 由普遍预测收窄为条件命题，仍缺第二个独立案例与纵向验证。 |
 | 2026-08-25T15:09 | AI 评测制度化进入执行期 | refined | 欧盟委员会确认 AI Office 与成员国主管机关已开始执行 AI Act，官方框架列出 RFI、模型评估、限制供给与罚款权限；尚未找到具体罚单或执法决定。 |
-| 2026-08-24T22:01 | AI 监督 AI 共模误差下界 | strengthened | 跨模型误标率：同质 62-86%、异质 1-14%；残差不可消除，来源是训练目标/价值观结构性共享。 |
-| 2026-08-24T21:01 | Agent 数据过度收集结构性 | strengthened | MosaicLeaks 证明任务性能训练系统性增加泄漏；跨厂商均出现数据过度收集；PA-DR 可缓解但无 deployed 反例。 |
 
 ## 思考日志索引
 
-- [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）
+- [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）；recompile CR-001（AI Office 首轮 €47M 罚单，制度化执法 strengthened）
 - [[2026-08-27]] — recompile CR-005；Shopify/River 部署级反例收窄专业再生外部化预测
 - [[2026-08-25]] — recompile CR-001；官方执行框架已生效，但实际罚单/执法决定仍缺
 - [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
