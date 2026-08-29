@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-29T00:01:30
+updated: 2026-08-29T01:01:23
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -63,9 +63,9 @@ related_entities:
 - Gap: Boundary
 - Evidence: `raw/20260608-connector-observability-directory.md`、`raw/20260819-google-ai-evals-inspect-skill.md`
 - Evidence goal: 比较规范能稳定枚举的 span/状态与只能通过评估推断的行为或意图，明确三层边界。
-- Last checked: 2026-08-24 · refined (reasoning)
-- Next: 对照两个 raw 的观测对象、声明能力和失败模式
-- Retry: now
+- Last checked: 2026-08-29T01:01:23 · refined
+- Next: clip+compile Anthropic 三案，用「结构门失效→行为结论误导」预测检验其 eval-escape 是否为门机制失败例
+- Retry: new-source:Anthropic-eval-incidents
 
 ### CR-005 · AI 采纳侵蚀专业能力再生
 - Status: ready
@@ -141,6 +141,7 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-29T01:01 | Agent Observability 上界 | refined | 对照 Connector 仪表盘与 Google evals 两份 raw：结构层=可枚举计数（tool calls/延迟/错误率）、行为层=必须在 baseline 对照下采样竞速（capability/skill 效用无法直接读，只能统计推断）、意图层=只能经结构 flag+行为结局交叉推断（Skill Ingestion Check 失败则测得 baseline 而非 skill 效用）。三层不是并列观测类别：行为推断以通过结构门为前提。 |
 | 2026-08-29T00:01 | AI 监督 AI 共模误差下界 | strengthened | arXiv 2604.07650 实测 6 家族 18 模型跨族行为纠缠普遍存在，纠缠度与 judge 过度背书偏误显著相关（ρ=0.64–0.71）；「不同家族⇒监督独立」被实证证伪，机制定位到共享谱系；纠缠感知重加权 +4.5% 验证精度，下界限定于模型间依赖结构层。 |
 | 2026-08-27T14:05 | AI 采纳侵蚀专业能力再生 | weakened | 部署级反例 Shopify/River：public-only 公开频道 + Lehrwerkstatt 在高 AI 采纳下把专业再生成本留在组织内部；Claim 由普遍预测收窄为条件命题，仍缺第二个独立案例与纵向验证。 |
 | 2026-08-25T15:09 | AI 评测制度化进入执行期 | refined | 欧盟委员会确认 AI Office 与成员国主管机关已开始执行 AI Act，官方框架列出 RFI、模型评估、限制供给与罚款权限；尚未找到具体罚单或执法决定。 |
@@ -149,7 +150,7 @@ related_entities:
 
 ## 思考日志索引
 
-- [[2026-08-29]] — recompile CR-003；arXiv 2604.07650 实证跨族行为纠缠与判官过度背书偏误关联，共模误差下界 strengthened
+- [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）
 - [[2026-08-27]] — recompile CR-005；Shopify/River 部署级反例收窄专业再生外部化预测
 - [[2026-08-25]] — recompile CR-001；官方执行框架已生效，但实际罚单/执法决定仍缺
 - [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
