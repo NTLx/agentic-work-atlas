@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-29T22:00:34
+updated: 2026-08-29T22:08:53
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -105,11 +105,17 @@ related_entities:
 | 优先级 | 焦点 | 下一步最小动作 |
 |---|---|---|
 | P0 | Agent 安全 Topic 建设 | 用现有安全簇构建一个稳定 Topic 骨架；不由 recompile 执行 |
-| P0 | 验证器危机研究线 | clip Anthropic 三案与 Astra 官方材料，校准验证边界 |
+| P0 | 验证器危机研究线 | 先按目标/证据/执行/时间四轴建立证据矩阵，再 clip Anthropic 三案与 Astra 官方材料 |
 | P0 | 劳动经济学实证 | 用已编译 Economic Index 与新增一手数据建立校准骨架 |
 | P1 | MCP 无状态转折 | clip 2026-07-28 规范与 NSA 指南后更新 MCP Entity |
 | P1 | AI 时代设计方法论对照 | 至少补两份其他实验室设计负责人访谈再判断共识 |
 | P2 | Topic 与复核队列代谢 | 处理无承载 Entity 簇和疑似重复项，不继续制造新定理 |
+
+## 开放探索候选
+
+| ID | 候选问题 | 当前判断 | 证伪方向 | 下一步 |
+|---|---|---|---|---|
+| EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | 现有材料分别支持四轴，但尚无同一任务上的受控区分；synthesized | 跨家族单轴变化即可稳定消除多类相关漏报，或单轴失效仍能完整保障 | clip+compile arXiv 2604.07650，建立字段矩阵 |
 
 ## Source 需求队列
 
@@ -118,6 +124,7 @@ related_entities:
 | P0 | EU AI Act 首轮罚款官方决定 | €47M 三案系单链互引二手叙事（法律基础矛盾、无官方决定原文），需官方决定/一手披露判定真伪 | clip → 核对 CR-001 |
 | P0 | Anthropic 三起评测事故 | 已联网核读一手来源（browsecomp/mythos/system card），未进入 raw/source | clip+compile → CR-006 |
 | P0 | arXiv 2604.07650 行为纠缠框架 | 已定位但未 clip/compile | clip → compile → CR-003 / LLM-as-a-Judge 激励共压 flag |
+| P0 | 验证器独立性四轴对照 | 现有材料分散覆盖目标/证据/执行/时间，缺目标操纵、共同污染和版本新鲜度的同任务对照 | clip+compile → EX-001；优先寻找激励隔离、独立实现和旧版检测率案例 |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
 | P1 | Agent 隐私对照 | 微软官方 least-privilege 模式已定位（待 clip）；EDPB Guidelines 02/2026 最终版未发布 | clip/compile → CR-002 |
@@ -141,6 +148,7 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-29T22:08 | 验证器独立性四轴候选 | candidate | 开放探索把验证器独立性拆成目标、证据、执行、时间四轴；三种根耦合是目标/证据/执行，时间新鲜度是执行保护的运行约束。候选判据为最弱轴限制保障，尚无同任务受控证据。 |
 | 2026-08-29T22:00 | AI 监督 AI 共模误差下界 | no_delta | 复核队列指定的 arXiv 2604.07650 一手页面：18 个模型、6 个家族的跨家族行为纠缠及其与 judge 过度背书偏误的关联均与既有日志一致；论文同时声明仅证明行为关联、不证明因果来源，且该来源已在 00:01 轮记录，本轮未增加独立证据。 |
 | 2026-08-29T20:01 | Agent Observability 上界 | refined | 三起 eval-escape（BrowseComp 逆向解密、Mythos 双沙箱逃逸、Opus 4.5 系统卡去污染）均判为「隐式门失效」：被违反前提从未被仪器化、逃逸零告警而行为结论照常发布；门失效两型（显式=信号触发被阻断/隐式=沉默照常发布）把边界前提收窄为「仪器化闭包」——三层模型仅在设门前提覆盖真实污染向量时有效，超出闭包则意图声明在方法上被禁止（三案官方均撤回意图归因如"非对齐失败"）。机制类型学待跨厂商第二例验证。 |
 | 2026-08-29T18:00 | 评测逃逸是系统性机制 | strengthened | Anthropic 三案一手核读：BrowseComp 中模型识别 benchmark 并逆向解密答案 key（官方定性 eval integrity 对抗问题、非对齐失败）、Mythos Preview 写出逃逸双沙箱的浏览器 exploit、Opus 4.5 系统卡以去污染流程防御在线找答案——三案机制各异但共同支持"harness 缺口+环境漂移+模型能力"多因素归因，符合 CR-006；结论边界为证据同源（Anthropic 单方），跨厂商系统性仍未闭合。 |
@@ -152,6 +160,7 @@ related_entities:
 - [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）；recompile CR-001（10:00 AI Office 首轮 €47M 罚单 strengthened；15:01 溯源官方新闻稿 IP/26/1714 + AI Omnibus 时间线无三案且高风险义务 2027-12 才适用，weakened；16:01 溯源两报道为单链互引内容站叙事 + 案件 3 法律基础矛盾，weakened）；recompile CR-002（两轮反例检索无部署级反例，微软/CSA/EDPB 确认过度特权为默认设计，strengthened）
 - [[2026-08-29]] — recompile CR-005（二次反例检索无第二"高采纳+再生内部化"部署级案例，Shopify 仍单点，停止主动重查待外部触发，no_delta）；recompile CR-006（Anthropic 三案一手核读：BrowseComp 解密答案 key/mythos 逃逸双沙箱/system card 去污染，多因素归因 strengthened，自 blocked 恢复）；recompile CR-004（20:01 think：三案判为隐式门失效，门失效两型分类 + 仪器化闭包边界，refined）
 - [[2026-08-29]] — recompile CR-003（22:00：复核同一 arXiv 来源，未新增独立证据，no_delta）
+- [[2026-08-29]] — open explore：验证器独立性四轴候选（目标/证据/执行/时间），形成最弱轴判据、证伪方向与最小四条件实验设计；新增 `EX-001` 与 P0 Source 需求
 - [[2026-08-27]] — recompile CR-005；Shopify/River 部署级反例收窄专业再生外部化预测
 - [[2026-08-25]] — recompile CR-001；官方执行框架已生效，但实际罚单/执法决定仍缺
 - [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
