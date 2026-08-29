@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-29T11:00:51
+updated: 2026-08-29T12:00:37
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -73,10 +73,10 @@ related_entities:
 - Claim: 组织从 AI 获得局部效率收益的同时，会把专业能力再生成本外部化到整个职业共同体。
 - Gap: Counterexample
 - Evidence: `raw/20260731-tragedy-cognitive-commons-ai-expertise.pdf`、`raw/20260730-lenny-tech-workers-ai-sentiment-noam-segal.md`、`raw/Learning on the Shop floor.md`
-- Evidence goal: 找到第二个"高采纳 + 维持学徒/独立验证"的组织或职业，或验证 Shopify 案例长期性
-- Last checked: 2026-08-27 · weakened
-- Next: 仓库外搜索第二个高采纳且再生内部化的组织/职业，或验证 Shopify 长期性；无新反例则不重复
-- Retry: now
+- Evidence goal: 找到第二个"高采纳 + 维持学徒/独立验证"的组织或职业，或验证 Shopify 案例长期性（08-29 两轮定向检索已确认暂无部署级第二反例）
+- Last checked: 2026-08-29T12:00:37 · no_delta
+- Next: 停止主动重查；等待外部触发——第二"高采纳+再生内部化"组织/职业案例披露，或 Shopify/Lehrwerkstatt 纵向（专家补充率长期不降）数据
+- Retry: new-source:apprenticeship-counterexample-disclosures
 
 ### CR-006 · 评测逃逸是系统性机制而非孤立 harness 事故
 - Status: blocked
@@ -141,15 +141,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-29T12:00 | AI 采纳侵蚀专业能力再生 | no_delta | 两轮定向反例检索（学徒制/内部 mentorship 角度）未找到第二个"高采纳+再生内部化"部署级组织案例；Shopify 仍为唯一部署级反例，检索重量为规范性建议与招聘营销。Google 25% 代码 AI 生成+减入门招聘、Reddit senior 抱怨 junior 培养危机为二手观点层，不达证据级。Claim 沿 08-27 边界（默认外部化，可条件性内部化）无变化；停止主动重查，等待第二反例披露或 Shopify 纵向数据触发。 |
 | 2026-08-29T11:00 | Agent 数据过度收集结构性 | strengthened | 两轮定向反例检索无部署级反例；微软官方 least-privilege 模式确认 agent 默认积累过度权限（permission creep / over-broad tool access）、CSA 命名"Overprivileged by Design"、EDPB 02/2026 把数据最小化引向 agent 决策链每步且多家 DPA 已调查；"而非单一厂商实现失误"获得跨厂商/跨辖区一致性支持。 |
 | 2026-08-29T10:00 | AI 评测制度化进入执行期 | strengthened | AI Office 于 2026-08-02 生效后数日内开出首批 €47M 罚单（招聘 €18M/信贷 €14M/零售情绪识别 €15M，案件预建），CNIL 并行 RFI；证据为两条一致二手报道，官方决定文本待核对。 |
 | 2026-08-29T01:01 | Agent Observability 上界 | refined | 对照 Connector 仪表盘与 Google evals 两份 raw：结构层=可枚举计数（tool calls/延迟/错误率）、行为层=必须在 baseline 对照下采样竞速（capability/skill 效用无法直接读，只能统计推断）、意图层=只能经结构 flag+行为结局交叉推断（Skill Ingestion Check 失败则测得 baseline 而非 skill 效用）。三层不是并列观测类别：行为推断以通过结构门为前提。 |
 | 2026-08-29T00:01 | AI 监督 AI 共模误差下界 | strengthened | arXiv 2604.07650 实测 6 家族 18 模型跨族行为纠缠普遍存在，纠缠度与 judge 过度背书偏误显著相关（ρ=0.64–0.71）；「不同家族⇒监督独立」被实证证伪，机制定位到共享谱系；纠缠感知重加权 +4.5% 验证精度，下界限定于模型间依赖结构层。 |
-| 2026-08-27T14:05 | AI 采纳侵蚀专业能力再生 | weakened | 部署级反例 Shopify/River：public-only 公开频道 + Lehrwerkstatt 在高 AI 采纳下把专业再生成本留在组织内部；Claim 由普遍预测收窄为条件命题，仍缺第二个独立案例与纵向验证。 |
 
 ## 思考日志索引
 
-- [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）；recompile CR-001（AI Office 首轮 €47M 罚单，制度化执法 strengthened）；recompile CR-002（两轮反例检索无部署级反例，微软/CSA/EDPB 确认过度特权为默认设计，strengthened）
+- [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）；recompile CR-001（AI Office 首轮 €47M 罚单，制度化执法 strengthened）；recompile CR-002（两轮反例检索无部署级反例，微软/CSA/EDPB 确认过度特权为默认设计，strengthened）；recompile CR-005（二次反例检索无第二"高采纳+再生内部化"部署级案例，Shopify 仍单点，停止主动重查待外部触发，no_delta）
 - [[2026-08-27]] — recompile CR-005；Shopify/River 部署级反例收窄专业再生外部化预测
 - [[2026-08-25]] — recompile CR-001；官方执行框架已生效，但实际罚单/执法决定仍缺
 - [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
