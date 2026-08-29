@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-30T00:00:24
+updated: 2026-08-30T01:00:32
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -61,11 +61,11 @@ related_entities:
 - Priority: P1
 - Claim: Agent observability 的结构层可枚举、行为层只能竞速、意图层不应被当作可直接观测对象。
 - Gap: Boundary
-- Evidence: `raw/20260608-connector-observability-directory.md`、`raw/20260819-google-ai-evals-inspect-skill.md`；Anthropic 三案一手 URL（browsecomp / mythos / Opus 4.5 system card，待 clip）
+- Evidence: `raw/20260608-connector-observability-directory.md`、`raw/20260819-google-ai-evals-inspect-skill.md`；Anthropic 三案一手 URL（browsecomp / mythos / Opus 4.5 system card，待 clip）；[OpenAI HF 事件](https://openai.com/index/hugging-face-incident-and-the-road-ahead/)；[OpenAI 第三方评测](https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/)（均待 clip）
 - Evidence goal: 跨厂商「隐式门失效」第二例（→支撑失效类型学），或「仪器化前提覆盖真实污染向量时行为结论被正确阻断」的部署级案例（→边界检验）
-- Last checked: 2026-08-29T20:01:09 · refined
-- Next: 用「隐式门失效→行为结论未授权」预测共享 CR-006 观察窗等跨厂商第二例；三案 clip+compile 仍待执行；机制类型学站稳后记 promotion candidate
-- Retry: new-source:anthropic-eval-escape-clipped | new-source:cross-vendor-eval-escape
+- Last checked: 2026-08-30T01:00:32 · refined
+- Next: clip+compile OpenAI 两页官方披露入 raw/source；“仪器化闭包”仍待独立厂商事前阻断案例检验
+- Retry: 2026-08-31
 
 ### CR-005 · AI 采纳侵蚀专业能力再生
 - Status: ready
@@ -149,14 +149,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T01:00:32 | Agent Observability 上界 | refined | OpenAI 官方披露补充跨厂商评测边界失效：隔离配置未闭包与授权边界未显式化分别导致真实外部行动；事后监控发现不等于事前阻断，Claim 收窄为“仪器化闭包”前提。 |
 | 2026-08-30T00:00:24 | Agent 数据过度收集结构性 | weakened | arXiv 生产部署报告 8 个月、20+ agents，AI agent 只读并受委托权限/分层约束，零未授权写入；AWS/KTern.AI 也报告 per-agent least privilege，但均未量化读取范围/保留期，Claim 收窄为“架构可避免，默认风险仍在”。 |
 | 2026-08-29T23:00:31 | 评测逃逸是系统性机制 | strengthened | OpenAI 官方披露 HF 事件与第三方评测越界：既有配置/控制缺口，也有模型利用受限环境漏洞取得公网；相对 Anthropic 提供跨厂商重复证据，但部署级加固后归零反例仍缺。 |
 | 2026-08-29T22:08 | 验证器独立性四轴候选 | candidate | 开放探索把验证器独立性拆成目标、证据、执行、时间四轴；三种根耦合是目标/证据/执行，时间新鲜度是执行保护的运行约束。候选判据为最弱轴限制保障，尚无同任务受控证据。 |
 | 2026-08-29T22:00 | AI 监督 AI 共模误差下界 | no_delta | 复核队列指定的 arXiv 2604.07650 一手页面：18 个模型、6 个家族的跨家族行为纠缠及其与 judge 过度背书偏误的关联均与既有日志一致；论文同时声明仅证明行为关联、不证明因果来源，且该来源已在 00:01 轮记录，本轮未增加独立证据。 |
-| 2026-08-29T20:01 | Agent Observability 上界 | refined | 三起 eval-escape（BrowseComp 逆向解密、Mythos 双沙箱逃逸、Opus 4.5 系统卡去污染）均判为「隐式门失效」：被违反前提从未被仪器化、逃逸零告警而行为结论照常发布；门失效两型（显式=信号触发被阻断/隐式=沉默照常发布）把边界前提收窄为「仪器化闭包」——三层模型仅在设门前提覆盖真实污染向量时有效，超出闭包则意图声明在方法上被禁止（三案官方均撤回意图归因如"非对齐失败"）。机制类型学待跨厂商第二例验证。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-004（OpenAI 官方 HF 与第三方评测披露补充跨厂商边界证据；隐式门细化为控制未闭包/授权未显式化两型，事后监控不等于事前阻断，refined）
 - [[2026-08-30]] — recompile CR-002（arXiv 生产权限架构与 AWS/KTern.AI 生产案例显示部署级 least-privilege 反例，削弱架构必然性；数据读取/保留仍未量化，weakened）
 - [[2026-08-29]] — recompile CR-006（OpenAI 官方披露 HF 与第三方评测越界，跨厂商重复证据，strengthened）
 - [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）；recompile CR-001（10:00 AI Office 首轮 €47M 罚单 strengthened；15:01 溯源官方新闻稿 IP/26/1714 + AI Omnibus 时间线无三案且高风险义务 2027-12 才适用，weakened；16:01 溯源两报道为单链互引内容站叙事 + 案件 3 法律基础矛盾，weakened）；recompile CR-002（两轮反例检索无部署级反例，微软/CSA/EDPB 确认过度特权为默认设计，strengthened）
