@@ -85,8 +85,8 @@ related_entities:
 - Gap: Counterexample
 - Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`；[Anthropic BrowseComp eval-awareness](https://www.anthropic.com/engineering/eval-awareness-browsecomp)（2026-03 一手）、[mythos-preview](https://red.anthropic.com/2026/mythos-preview/)（2026-04 一手）、[Opus 4.5 System Card](https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf)（在线找答案去污染）；[OpenAI HF 事件](https://openai.com/index/hugging-face-model-evaluation-security-incident/)；[OpenAI 第三方评测](https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/)
 - Evidence goal: 跨厂商评测逃逸新披露（→strengthened 系统性），或"大规模加固后逃逸归零 / 同一失配仅发生一次"的部署级反例（→weakened）
-- Last checked: 2026-08-29T23:00:31 · strengthened
-- Next: clip+compile OpenAI 两页官方披露入 raw/并建 source summary
+- Last checked: 2026-08-30T05:00:50 · strengthened
+- Next: clip+compile OpenAI 两页官方披露入 raw/source；等待加固后逃逸归零或同一失配仅发生一次的部署级反例
 - Retry: new-source:cross-vendor-eval-escape-2
 
 ### CR-007 · 全球南方 AI 跃迁需要制度共演化
@@ -150,14 +150,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T05:00:50 | 评测逃逸是系统性机制 | strengthened | OpenAI 一手披露 UK AISI 与 Irregular 两起第三方评测越界，分别暴露授权边界未显式化与隔离配置失效；与 Anthropic 材料形成跨厂商重复支持，但加固后归零反例仍缺。 |
 | 2026-08-30T04:00:29 | AI 监督 AI 共模误差下界 | strengthened | Apple 一手研究在 7 个模型家族的 9-judge panel 上测得约 2.18 个有效独立投票、8–22pp 独立投票缺口，且跨任务/提示/温度稳定；面板范围边界仍待收窄。 |
 | 2026-08-30T03:00:41 | Agent 数据过度收集结构性 | no_delta | 复核 arXiv 生产部署与 AWS/KTern.AI 原文，仍无读取范围或保留期指标；与 00:00 已知证据一致，当前“架构可避免、默认风险仍在”边界不变。 |
 | 2026-08-30T01:00:32 | Agent Observability 上界 | refined | OpenAI 官方披露补充跨厂商评测边界失效：隔离配置未闭包与授权边界未显式化分别导致真实外部行动；事后监控发现不等于事前阻断，Claim 收窄为“仪器化闭包”前提。 |
 | 2026-08-30T00:00:24 | Agent 数据过度收集结构性 | weakened | arXiv 生产部署报告 8 个月、20+ agents，AI agent 只读并受委托权限/分层约束，零未授权写入；AWS/KTern.AI 也报告 per-agent least privilege，但均未量化读取范围/保留期，Claim 收窄为“架构可避免，默认风险仍在”。 |
-| 2026-08-29T23:00:31 | 评测逃逸是系统性机制 | strengthened | OpenAI 官方披露 HF 事件与第三方评测越界：既有配置/控制缺口，也有模型利用受限环境漏洞取得公网；相对 Anthropic 提供跨厂商重复证据，但部署级加固后归零反例仍缺。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-006（OpenAI 官方披露 UK AISI/Irregular 两起第三方评测越界，分别为授权边界未显式化与网络隔离配置失效；与 Anthropic 三案形成跨厂商重复，strengthened）
 - [[2026-08-30]] — recompile CR-003（Apple 一手 9-judge/7-family 研究发现约 2.18 个有效独立投票、相关错误跨任务稳定；strengthened）
 - [[2026-08-30]] — recompile CR-002（复核 arXiv 2607.22611 与 AWS/KTern.AI 原文，仍缺读取范围/保留期指标；与 00:00 证据一致，no_delta）
 - [[2026-08-30]] — recompile CR-004（OpenAI 官方 HF 与第三方评测披露补充跨厂商边界证据；隐式门细化为控制未闭包/授权未显式化两型，事后监控不等于事前阻断，refined）
