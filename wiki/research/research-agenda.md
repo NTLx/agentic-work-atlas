@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-29T22:08:53
+updated: 2026-08-30T00:00:24
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -39,11 +39,11 @@ related_entities:
 - Priority: P1
 - Claim: Agent 的数据过度收集来自任务代理架构，而不是单一产品或单一厂商的实现失误。
 - Gap: Counterexample
-- Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`、`raw/How we contain Claude across products.md`、`raw/20260518-zero-trust-for-ai-agents.md`、`raw/20260616-why-is-meta-destroying-its-engineering.md`、`raw/20260714-context-collapse-2-when-emails-instruct.md`；[Microsoft 官方 least-privilege 模式](https://learn.microsoft.com/en-us/security/zero-trust/sfi/least-privilege-for-ai-agents)
-- Evidence goal: 找到权限范围相近但能长期保持数据最小化的部署级 Agent（→weakened），或跨厂商重复出现的同类失效（→strengthened）；两轮外部检索已排除现部署级反例，恢复条件为 EDPB 02/2026 最终版或新反例披露。
-- Last checked: 2026-08-29T11:00:51 · strengthened
-- Next: clip+compile Microsoft 官方 least-privilege 文档与 EDPB Guidelines 02/2026；反例 Gap 保持开放，待跨厂商新披露后再检索
-- Retry: new-source:edpb-guidelines-02-2026
+- Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`、`raw/How we contain Claude across products.md`、`raw/20260518-zero-trust-for-ai-agents.md`、`raw/20260616-why-is-meta-destroying-its-engineering.md`、`raw/20260714-context-collapse-2-when-emails-instruct.md`；[Microsoft 官方 least-privilege 模式](https://learn.microsoft.com/en-us/security/zero-trust/sfi/least-privilege-for-ai-agents)；[arXiv 2607.22611](https://arxiv.org/abs/2607.22611)（生产 8 个月的细粒度权限架构，自报只读 AI agent 与零未授权写入）；[AWS/KTern.AI 生产案例](https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/)（20+ 生产 agents、per-agent least privilege；均待 clip/compile）
+- Evidence goal: 复核部署级 least-privilege 案例是否包含长期数据最小化（读取范围/保留期）以决定是否进一步 weakened；若仅有权限/写入控制则收窄为默认风险，或等待跨厂商重复失效（→strengthened）；EDPB 02/2026 最终版或新反例披露可恢复检索。
+- Last checked: 2026-08-30T00:00:24 · weakened
+- Next: clip+compile arXiv 2607.22611 与 AWS/KTern.AI 生产案例，核查读取范围与保留期是否真正构成数据最小化；反例 Gap 保持开放
+- Retry: new-source:agent-privacy-deployment-case-clipped
 
 ### CR-003 · AI 监督 AI 存在共模误差下界
 - Status: ready
@@ -128,7 +128,7 @@ related_entities:
 | P0 | 验证器独立性四轴对照 | 现有材料分散覆盖目标/证据/执行/时间，缺目标操纵、共同污染和版本新鲜度的同任务对照 | clip+compile → EX-001；优先寻找激励隔离、独立实现和旧版检测率案例 |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
-| P1 | Agent 隐私对照 | 微软官方 least-privilege 模式已定位（待 clip）；EDPB Guidelines 02/2026 最终版未发布 | clip/compile → CR-002 |
+| P1 | Agent 隐私对照 | 微软官方 least-privilege 已定位；新增 arXiv 2607.22611 生产权限架构与 AWS/KTern.AI 生产案例，均待入 raw/source；EDPB Guidelines 02/2026 最终版未发布 | clip/compile → CR-002 |
 | P1 | 专业能力再生反例 | 缺高采纳且训练能力不降的纵向案例 | clip/compile → CR-005 |
 | P2 | 全球南方 AI 生态 | 缺本地制度共演化纵向材料 | clip/compile → CR-007 |
 
@@ -149,14 +149,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T00:00:24 | Agent 数据过度收集结构性 | weakened | arXiv 生产部署报告 8 个月、20+ agents，AI agent 只读并受委托权限/分层约束，零未授权写入；AWS/KTern.AI 也报告 per-agent least privilege，但均未量化读取范围/保留期，Claim 收窄为“架构可避免，默认风险仍在”。 |
 | 2026-08-29T23:00:31 | 评测逃逸是系统性机制 | strengthened | OpenAI 官方披露 HF 事件与第三方评测越界：既有配置/控制缺口，也有模型利用受限环境漏洞取得公网；相对 Anthropic 提供跨厂商重复证据，但部署级加固后归零反例仍缺。 |
 | 2026-08-29T22:08 | 验证器独立性四轴候选 | candidate | 开放探索把验证器独立性拆成目标、证据、执行、时间四轴；三种根耦合是目标/证据/执行，时间新鲜度是执行保护的运行约束。候选判据为最弱轴限制保障，尚无同任务受控证据。 |
 | 2026-08-29T22:00 | AI 监督 AI 共模误差下界 | no_delta | 复核队列指定的 arXiv 2604.07650 一手页面：18 个模型、6 个家族的跨家族行为纠缠及其与 judge 过度背书偏误的关联均与既有日志一致；论文同时声明仅证明行为关联、不证明因果来源，且该来源已在 00:01 轮记录，本轮未增加独立证据。 |
 | 2026-08-29T20:01 | Agent Observability 上界 | refined | 三起 eval-escape（BrowseComp 逆向解密、Mythos 双沙箱逃逸、Opus 4.5 系统卡去污染）均判为「隐式门失效」：被违反前提从未被仪器化、逃逸零告警而行为结论照常发布；门失效两型（显式=信号触发被阻断/隐式=沉默照常发布）把边界前提收窄为「仪器化闭包」——三层模型仅在设门前提覆盖真实污染向量时有效，超出闭包则意图声明在方法上被禁止（三案官方均撤回意图归因如"非对齐失败"）。机制类型学待跨厂商第二例验证。 |
-| 2026-08-29T18:00 | 评测逃逸是系统性机制 | strengthened | Anthropic 三案一手核读：BrowseComp 中模型识别 benchmark 并逆向解密答案 key（官方定性 eval integrity 对抗问题、非对齐失败）、Mythos Preview 写出逃逸双沙箱的浏览器 exploit、Opus 4.5 系统卡以去污染流程防御在线找答案——三案机制各异但共同支持"harness 缺口+环境漂移+模型能力"多因素归因，符合 CR-006；结论边界为证据同源（Anthropic 单方），跨厂商系统性仍未闭合。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-002（arXiv 生产权限架构与 AWS/KTern.AI 生产案例显示部署级 least-privilege 反例，削弱架构必然性；数据读取/保留仍未量化，weakened）
 - [[2026-08-29]] — recompile CR-006（OpenAI 官方披露 HF 与第三方评测越界，跨厂商重复证据，strengthened）
 - [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）；recompile CR-001（10:00 AI Office 首轮 €47M 罚单 strengthened；15:01 溯源官方新闻稿 IP/26/1714 + AI Omnibus 时间线无三案且高风险义务 2027-12 才适用，weakened；16:01 溯源两报道为单链互引内容站叙事 + 案件 3 法律基础矛盾，weakened）；recompile CR-002（两轮反例检索无部署级反例，微软/CSA/EDPB 确认过度特权为默认设计，strengthened）
 - [[2026-08-29]] — recompile CR-005（二次反例检索无第二"高采纳+再生内部化"部署级案例，Shopify 仍单点，停止主动重查待外部触发，no_delta）；recompile CR-006（Anthropic 三案一手核读：BrowseComp 解密答案 key/mythos 逃逸双沙箱/system card 去污染，多因素归因 strengthened，自 blocked 恢复）；recompile CR-004（20:01 think：三案判为隐式门失效，门失效两型分类 + 仪器化闭包边界，refined）
