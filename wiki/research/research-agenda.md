@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-29T10:00:53
+updated: 2026-08-29T11:00:51
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -39,11 +39,11 @@ related_entities:
 - Priority: P1
 - Claim: Agent 的数据过度收集来自任务代理架构，而不是单一产品或单一厂商的实现失误。
 - Gap: Counterexample
-- Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`、`raw/How we contain Claude across products.md`、`raw/20260518-zero-trust-for-ai-agents.md`、`raw/20260616-why-is-meta-destroying-its-engineering.md`、`raw/20260714-context-collapse-2-when-emails-instruct.md`
-- Evidence goal: 找到权限范围相近但能长期保持数据最小化的 Agent，或跨厂商重复出现的同类失效。
-- Last checked: 2026-08-24 · strengthened
-- Next: 在仓库外搜索已部署的 privacy-aware agent 系统（PA-DR 生产应用或其他 privacy-by-design 框架）
-- Retry: now
+- Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`、`raw/How we contain Claude across products.md`、`raw/20260518-zero-trust-for-ai-agents.md`、`raw/20260616-why-is-meta-destroying-its-engineering.md`、`raw/20260714-context-collapse-2-when-emails-instruct.md`；[Microsoft 官方 least-privilege 模式](https://learn.microsoft.com/en-us/security/zero-trust/sfi/least-privilege-for-ai-agents)
+- Evidence goal: 找到权限范围相近但能长期保持数据最小化的部署级 Agent（→weakened），或跨厂商重复出现的同类失效（→strengthened）；两轮外部检索已排除现部署级反例，恢复条件为 EDPB 02/2026 最终版或新反例披露。
+- Last checked: 2026-08-29T11:00:51 · strengthened
+- Next: clip+compile Microsoft 官方 least-privilege 文档与 EDPB Guidelines 02/2026；反例 Gap 保持开放，待跨厂商新披露后再检索
+- Retry: new-source:edpb-guidelines-02-2026
 
 ### CR-003 · AI 监督 AI 存在共模误差下界
 - Status: ready
@@ -120,7 +120,7 @@ related_entities:
 | P0 | arXiv 2604.07650 行为纠缠框架 | 已定位但未 clip/compile | clip → compile → CR-003 / LLM-as-a-Judge 激励共压 flag |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
-| P1 | Agent 隐私对照 | 缺跨厂商同权限口径对比 | clip/compile → CR-002 |
+| P1 | Agent 隐私对照 | 微软官方 least-privilege 模式已定位（待 clip）；EDPB Guidelines 02/2026 最终版未发布 | clip/compile → CR-002 |
 | P1 | 专业能力再生反例 | 缺高采纳且训练能力不降的纵向案例 | clip/compile → CR-005 |
 | P2 | 全球南方 AI 生态 | 缺本地制度共演化纵向材料 | clip/compile → CR-007 |
 
@@ -141,15 +141,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-29T11:00 | Agent 数据过度收集结构性 | strengthened | 两轮定向反例检索无部署级反例；微软官方 least-privilege 模式确认 agent 默认积累过度权限（permission creep / over-broad tool access）、CSA 命名"Overprivileged by Design"、EDPB 02/2026 把数据最小化引向 agent 决策链每步且多家 DPA 已调查；"而非单一厂商实现失误"获得跨厂商/跨辖区一致性支持。 |
 | 2026-08-29T10:00 | AI 评测制度化进入执行期 | strengthened | AI Office 于 2026-08-02 生效后数日内开出首批 €47M 罚单（招聘 €18M/信贷 €14M/零售情绪识别 €15M，案件预建），CNIL 并行 RFI；证据为两条一致二手报道，官方决定文本待核对。 |
 | 2026-08-29T01:01 | Agent Observability 上界 | refined | 对照 Connector 仪表盘与 Google evals 两份 raw：结构层=可枚举计数（tool calls/延迟/错误率）、行为层=必须在 baseline 对照下采样竞速（capability/skill 效用无法直接读，只能统计推断）、意图层=只能经结构 flag+行为结局交叉推断（Skill Ingestion Check 失败则测得 baseline 而非 skill 效用）。三层不是并列观测类别：行为推断以通过结构门为前提。 |
 | 2026-08-29T00:01 | AI 监督 AI 共模误差下界 | strengthened | arXiv 2604.07650 实测 6 家族 18 模型跨族行为纠缠普遍存在，纠缠度与 judge 过度背书偏误显著相关（ρ=0.64–0.71）；「不同家族⇒监督独立」被实证证伪，机制定位到共享谱系；纠缠感知重加权 +4.5% 验证精度，下界限定于模型间依赖结构层。 |
 | 2026-08-27T14:05 | AI 采纳侵蚀专业能力再生 | weakened | 部署级反例 Shopify/River：public-only 公开频道 + Lehrwerkstatt 在高 AI 采纳下把专业再生成本留在组织内部；Claim 由普遍预测收窄为条件命题，仍缺第二个独立案例与纵向验证。 |
-| 2026-08-25T15:09 | AI 评测制度化进入执行期 | refined | 欧盟委员会确认 AI Office 与成员国主管机关已开始执行 AI Act，官方框架列出 RFI、模型评估、限制供给与罚款权限；尚未找到具体罚单或执法决定。 |
 
 ## 思考日志索引
 
-- [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）；recompile CR-001（AI Office 首轮 €47M 罚单，制度化执法 strengthened）
+- [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）；recompile CR-001（AI Office 首轮 €47M 罚单，制度化执法 strengthened）；recompile CR-002（两轮反例检索无部署级反例，微软/CSA/EDPB 确认过度特权为默认设计，strengthened）
 - [[2026-08-27]] — recompile CR-005；Shopify/River 部署级反例收窄专业再生外部化预测
 - [[2026-08-25]] — recompile CR-001；官方执行框架已生效，但实际罚单/执法决定仍缺
 - [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
