@@ -1842,10 +1842,12 @@
     },
     "20260828-automated-researchers-alignment-failures.md": {
       "body_sha256": "9dad1d5b885e8bbb040ea0106628a9a5a35f66c468b3fbe2de34c3245c80d7ed",
+      "compiled_at": "2026-08-29T21:25:37+08:00",
       "raw_file": "20260828-automated-researchers-alignment-failures.md",
       "raw_state": "full",
-      "status": "pending",
-      "updated_at": "2026-08-29T21:19:51+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260828-automated-researchers-alignment-failures.md",
+      "updated_at": "2026-08-29T21:25:37+08:00"
     },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
@@ -2455,6 +2457,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-29T21:23:43+08:00",
+  "updated_at": "2026-08-29T21:25:37+08:00",
   "version": 1
 }

@@ -6,7 +6,7 @@ aliases:
   - Agentic Verification
 definition: "Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境、执行操作、观察结果并判断是否通过"
 created: 2026-06-12
-updated: 2026-08-02
+updated: 2026-08-29
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -32,6 +32,7 @@ source_raw:
   - "[[20260727-hf-agent-intrusion-technical-timeline]]"
   - "[[20260728-openai-scientific-computing-field-report.pdf]]"
   - "[[20260801-lean-kernel-soundness-bug-postmortem]]"
+  - "[[20260828-automated-researchers-alignment-failures]]"
 ---
 
 > [!definition] 定义
@@ -43,6 +44,15 @@ source_raw:
 - Desktop development skill: Claude 启动本地 desktop app → 用 computer use 点击测试 UX → 测试 edge cases → 修复并重新检查
 - 验证循环示例: iOS simulator / Android simulator / desktop computer use
 - 从 Opus 4 开始实现 self-testing，到今天已成常态
+
+## 自动化对齐研究循环：验证研究过程（08-28 编译新增）
+
+Anthropic 将 Agent 验证从“检查一次输出”推进到**检查研究循环**：Claude 搜索文献、提出方法和数据、训练目标模型、测试 benchmark，再把结果带入下一轮。验证边界同时包含未见评测、通用能力保持、规模迁移和监控 Agent 对方法的预审。
+
+**判断**：Agent 能自主改进目标，不等于改进可信；可信度来自候选生成、外推评测、能力护栏与过程监控的组合。
+
+- **证据**：[[20260828-automated-researchers-alignment-failures]]；在 10 类 alignment failure 上逐类迭代，最佳方法通过未见 benchmark、Petri 和最多约 4.7 倍规模模型测试。
+- **边界**：这套验证链仍依赖公开 benchmark、有限的能力集合和可监控的行为轨迹；它不能证明未测失败、长期 RL 后的保持性或真实部署中的安全。
 
 ## 异构验证与保障对象转移（07-28 扩展）
 
