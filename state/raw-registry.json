@@ -1724,6 +1724,13 @@
       "summary_path": "wiki/sources/20260822-claude-code-guide-for-startups.md",
       "updated_at": "2026-08-22T12:58:00+08:00"
     },
+    "20260822-just-a-rumour-of-a-bug.md": {
+      "body_sha256": "9ffa568ab04fe8bcbfc9dd93d83f819062bf61fe7375b2cc4a7d3e42951a9ce9",
+      "raw_file": "20260822-just-a-rumour-of-a-bug.md",
+      "raw_state": "full",
+      "status": "pending",
+      "updated_at": "2026-08-29T21:19:51+08:00"
+    },
     "20260822-the-ai-native-sdlc-playbook.md": {
       "body_sha256": "594fbb8e7340156ba2a87fdadabca99de2a583a617196e3163de0b64dfac0e6f",
       "compiled_at": "2026-08-22T12:58:00+08:00",
@@ -1830,6 +1837,13 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260826-warp-self-improving-agents-on-claude.md",
       "updated_at": "2026-08-27T11:56:37+08:00"
+    },
+    "20260828-automated-researchers-alignment-failures.md": {
+      "body_sha256": "9dad1d5b885e8bbb040ea0106628a9a5a35f66c468b3fbe2de34c3245c80d7ed",
+      "raw_file": "20260828-automated-researchers-alignment-failures.md",
+      "raw_state": "full",
+      "status": "pending",
+      "updated_at": "2026-08-29T21:19:51+08:00"
     },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
@@ -2439,6 +2453,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-27T15:58:06+08:00",
+  "updated_at": "2026-08-29T21:19:51+08:00",
   "version": 1
 }
