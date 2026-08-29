@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-29T15:01:08
+updated: 2026-08-29T16:01:09
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -27,12 +27,12 @@ related_entities:
 - Priority: P0
 - Claim: AI 评测治理已从自愿最佳实践进入可执行、可处罚的制度阶段。
 - Gap: Evidence
-- Evidence: `raw/2026-eu-ai-act-compliance-autonomous-agents.md`；官方执法启动新闻稿 [IP/26/1714](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1714)（2026-07-31）与生效日新闻页（均无 €47M 三案记录）；AI Omnibus 将高风险义务推迟至 2027-12/2028-08；€47M 三案仅一致二手报道（详见 2026-08-29 日志）
-- Evidence goal: 官方处罚决定文本或对 €47M 三案的法律基础核对——确认在高风险义务推迟后哪些义务可于 2026-08 受罚；官方确认则回 strengthened，报道系误归因则 falsified 候选
+- Evidence: `raw/2026-eu-ai-act-compliance-autonomous-agents.md`；官方执法启动新闻稿 [IP/26/1714](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1714)（2026-07-31）与生效日新闻页（均无 €47M 三案记录）；AI Omnibus 将高风险义务推迟至 2027-12/2028-08；€47M 三案经溯源性定向为单链互引的二手内容站叙事（AI Policy Desk 引 Artur Markus 为源，官方锚点零罚款，案件 3 法律基础两文冲突，详见 2026-08-29 日志）
+- Evidence goal: 官方 AI Office/委员会处罚决定文本发布（确认或证伪 €47M 实例），或独立一手披露出现；€47M 三案现为 falsified 候选，制度能力面已一手确认
 - Basis: evidence
-- Last checked: 2026-08-29T15:01:08 · weakened
-- Next: clip 官方新闻稿 IP/26/1714 与 AI Omnibus 时间线入 raw/；定向核对 AI Policy Desk/Artur Markus €47M 三案报道的原始来源与处罚法律基础（报道引用的官方页已核对，不含罚单）
-- Retry: now
+- Last checked: 2026-08-29T16:01:09 · weakened
+- Next: 收敛为触发式复查，不再主动检索——等待 (a) AI Office 官方处罚决定文本，或 (b) 独立一手披露；时间观察锚点：AI Omnibus 新增禁止实践条（2026-12 生效）后第一次可验证执法 action
+- Retry: new-source:eu-ai-act-official-penalty-decision
 
 ### CR-002 · Agent 数据过度收集具有系统性
 - Status: ready
@@ -115,7 +115,7 @@ related_entities:
 
 | 优先级 | 目标 | 当前缺口 | 触发行动 |
 |---|---|---|---|
-| P0 | EU AI Act 首轮罚款官方决定 | 已由一致二手报道定位 €47M 三案，缺官方决定原文 | clip → 核对 CR-001 |
+| P0 | EU AI Act 首轮罚款官方决定 | €47M 三案系单链互引二手叙事（法律基础矛盾、无官方决定原文），需官方决定/一手披露判定真伪 | clip → 核对 CR-001 |
 | P0 | Anthropic 三起评测事故 | 已联网核查但未进入 raw/source | clip + compile → CR-006 |
 | P0 | arXiv 2604.07650 行为纠缠框架 | 已定位但未 clip/compile | clip → compile → CR-003 / LLM-as-a-Judge 激励共压 flag |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
@@ -141,15 +141,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-29T16:01 | AI 评测制度化进入执行期 | weakened | 定向溯源两篇 €47M 三案报道：AI Policy Desk 引 Artur Markus 为源（单链互引），官方锚点为零罚款委员会页，案件 3 法律基础两文互相矛盾，信贷案自认正式决定未发布；"首轮已实际处罚"支柱进一步降为来源缺基，成 falsified 候选；制度能力面仍获一手确认。 |
 | 2026-08-29T15:01 | AI 评测制度化进入执行期 | weakened | 溯源官方一手核对：执法启动新闻稿 IP/26/1714（07-31）与生效日新闻页（08-02）均无 €47M 三案记录，仅宣告 GPAI/禁止实践/透明度可执行；AI Omnibus 把高风险义务推迟至 2027-12/2028-08，而二手报道把招聘 AI 案归因于 Annex III/Art 14 高风险义务，时间线矛盾。「已实际处罚 €47M 三案」支柱被实质削弱（10:00 的 strengthened 回落），制度执行能力本身获一手确认；边界标注高风险义务在 2026-08 不可罚。 |
 | 2026-08-29T12:00 | AI 采纳侵蚀专业能力再生 | no_delta | 两轮定向反例检索（学徒制/内部 mentorship 角度）未找到第二个"高采纳+再生内部化"部署级组织案例；Shopify 仍为唯一部署级反例，检索重量为规范性建议与招聘营销。Google 25% 代码 AI 生成+减入门招聘、Reddit senior 抱怨 junior 培养危机为二手观点层，不达证据级。Claim 沿 08-27 边界（默认外部化，可条件性内部化）无变化；停止主动重查，等待第二反例披露或 Shopify 纵向数据触发。 |
 | 2026-08-29T11:00 | Agent 数据过度收集结构性 | strengthened | 两轮定向反例检索无部署级反例；微软官方 least-privilege 模式确认 agent 默认积累过度权限（permission creep / over-broad tool access）、CSA 命名"Overprivileged by Design"、EDPB 02/2026 把数据最小化引向 agent 决策链每步且多家 DPA 已调查；"而非单一厂商实现失误"获得跨厂商/跨辖区一致性支持。 |
 | 2026-08-29T10:00 | AI 评测制度化进入执行期 | strengthened | AI Office 于 2026-08-02 生效后数日内开出首批 €47M 罚单（招聘 €18M/信贷 €14M/零售情绪识别 €15M，案件预建），CNIL 并行 RFI；证据为两条一致二手报道，官方决定文本待核对。 |
-| 2026-08-29T01:01 | Agent Observability 上界 | refined | 对照 Connector 仪表盘与 Google evals 两份 raw：结构层=可枚举计数（tool calls/延迟/错误率）、行为层=必须在 baseline 对照下采样竞速（capability/skill 效用无法直接读，只能统计推断）、意图层=只能经结构 flag+行为结局交叉推断（Skill Ingestion Check 失败则测得 baseline 而非 skill 效用）。三层不是并列观测类别：行为推断以通过结构门为前提。 |
 
 ## 思考日志索引
 
-- [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）；recompile CR-001（10:00 AI Office 首轮 €47M 罚单 strengthened；15:01 溯源官方新闻稿 IP/26/1714 + AI Omnibus 时间线无三案且高风险义务 2027-12 才适用，weakened）；recompile CR-002（两轮反例检索无部署级反例，微软/CSA/EDPB 确认过度特权为默认设计，strengthened）；recompile CR-005（二次反例检索无第二"高采纳+再生内部化"部署级案例，Shopify 仍单点，停止主动重查待外部触发，no_delta）
+- [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）；recompile CR-001（10:00 AI Office 首轮 €47M 罚单 strengthened；15:01 溯源官方新闻稿 IP/26/1714 + AI Omnibus 时间线无三案且高风险义务 2027-12 才适用，weakened；16:01 溯源两报道为单链互引内容站叙事 + 案件 3 法律基础矛盾，weakened）；recompile CR-002（两轮反例检索无部署级反例，微软/CSA/EDPB 确认过度特权为默认设计，strengthened）；recompile CR-005（二次反例检索无第二"高采纳+再生内部化"部署级案例，Shopify 仍单点，停止主动重查待外部触发，no_delta）
 - [[2026-08-27]] — recompile CR-005；Shopify/River 部署级反例收窄专业再生外部化预测
 - [[2026-08-25]] — recompile CR-001；官方执行框架已生效，但实际罚单/执法决定仍缺
 - [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
