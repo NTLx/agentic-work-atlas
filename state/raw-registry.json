@@ -1726,12 +1726,15 @@
     },
     "20260822-just-a-rumour-of-a-bug.md": {
       "body_sha256": "9ffa568ab04fe8bcbfc9dd93d83f819062bf61fe7375b2cc4a7d3e42951a9ce9",
+      "canonical_url": "https://anil.recoil.org/notes/rumour-is-the-exploit",
       "compiled_at": "2026-08-29T21:23:43+08:00",
+      "indexed_at": "2026-08-29T21:47:12+08:00",
       "raw_file": "20260822-just-a-rumour-of-a-bug.md",
-      "raw_state": "full",
+      "raw_state": "index",
+      "retention_note": "已完成编译；Source Summary 保留关键证据与定位，可由作者公开文章恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260822-just-a-rumour-of-a-bug.md",
-      "updated_at": "2026-08-29T21:23:43+08:00"
+      "updated_at": "2026-08-29T21:47:42+08:00"
     },
     "20260822-the-ai-native-sdlc-playbook.md": {
       "body_sha256": "594fbb8e7340156ba2a87fdadabca99de2a583a617196e3163de0b64dfac0e6f",
@@ -1842,12 +1845,15 @@
     },
     "20260828-automated-researchers-alignment-failures.md": {
       "body_sha256": "9dad1d5b885e8bbb040ea0106628a9a5a35f66c468b3fbe2de34c3245c80d7ed",
+      "canonical_url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
       "compiled_at": "2026-08-29T21:25:37+08:00",
+      "indexed_at": "2026-08-29T21:47:12+08:00",
       "raw_file": "20260828-automated-researchers-alignment-failures.md",
-      "raw_state": "full",
+      "raw_state": "index",
+      "retention_note": "已完成编译；Source Summary 保留研究循环、实验与监控证据定位，可由 Anthropic 官方文章恢复原文。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260828-automated-researchers-alignment-failures.md",
-      "updated_at": "2026-08-29T21:25:37+08:00"
+      "updated_at": "2026-08-29T21:47:42+08:00"
     },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
@@ -2457,6 +2463,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-29T21:25:37+08:00",
+  "updated_at": "2026-08-29T21:48:51+08:00",
   "version": 1
 }

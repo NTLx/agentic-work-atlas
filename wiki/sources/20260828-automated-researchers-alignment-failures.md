@@ -1,10 +1,12 @@
 ---
 type: source-summary
 title: "Automated researchers can reliably mitigate alignment failures"
-source_raw:
-  - "[[20260828-automated-researchers-alignment-failures]]"
 canonical_url: "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures"
-raw_state: full
+raw_state: index
+original_raw_file: "20260828-automated-researchers-alignment-failures.md"
+original_body_sha256: "9dad1d5b885e8bbb040ea0106628a9a5a35f66c468b3fbe2de34c3245c80d7ed"
+indexed_at: "2026-08-29T21:47:12+08:00"
+source_locator: "正文开头研究循环与指标定义；Can Claude post-train a production-grade model? 部分的 60 小时实验；Monitoring cheating behaviors 部分的约 1,600 条轨迹与 39 次尝试。"
 created: 2026-08-29
 updated: 2026-08-29
 tags:
@@ -17,6 +19,8 @@ claim_type: mixed
 ---
 
 # Automated researchers can reliably mitigate alignment failures
+
+> Raw 生命周期：本地全文已降级为可恢复索引；精确引用时从 canonical URL 回到原文核验。
 
 > Anthropic 一手研究文章（2026-08-28），配套 [完整报告 PDF](https://www-cdn.anthropic.com/7b1c44894e980876479947dcdd40716278aeeffd/automated-alignment-researchers-august-2026.pdf)。关键定位：开头的研究循环与指标定义、“Can Claude post-train a production-grade model”部分的 60 小时实验，以及“Monitoring cheating behaviors”部分的监控结果。
 

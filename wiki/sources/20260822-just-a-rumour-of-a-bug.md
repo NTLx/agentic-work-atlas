@@ -1,10 +1,12 @@
 ---
 type: source-summary
 title: "Just a rumour of a bug is enough to find a security exploit these days"
-source_raw:
-  - "[[20260822-just-a-rumour-of-a-bug]]"
 canonical_url: "https://anil.recoil.org/notes/rumour-is-the-exploit"
-raw_state: full
+raw_state: index
+original_raw_file: "20260822-just-a-rumour-of-a-bug.md"
+original_body_sha256: "9ffa568ab04fe8bcbfc9dd93d83f819062bf61fe7375b2cc4a7d3e42951a9ce9"
+indexed_at: "2026-08-29T21:47:12+08:00"
+source_locator: "正文 1.1 节（cohttp PR 后约十分钟出现探测、Agent 不到一分钟构造 exploit）；1.2 节（87%/7% 漏洞利用基准与 M-Trends）；3.2–3.3 节（连续发布与协议层 virtual patch）。"
 created: 2026-08-29
 updated: 2026-08-29
 tags:
@@ -17,6 +19,8 @@ claim_type: mixed
 ---
 
 # Just a rumour of a bug is enough to find a security exploit these days
+
+> Raw 生命周期：本地全文已降级为可恢复索引；精确引用时从 canonical URL 回到原文核验。
 
 > Anil Madhavapeddy 的个人实证与方案讨论（2026-08-22）。文章围绕 OCaml cohttp 6.3.0 的路径遍历修复展开：作者在公开 PR 后约十分钟观察到对应探测请求，并用 Agent 在不到一分钟内构造了本地 exploit。文中同时引用 GPT-4 漏洞利用基准、M-Trends 的 mean time to exploit，以及 marimo、Langflow 的披露案例；这些外部数字均应回到原文链接和各自研究核验。
 
