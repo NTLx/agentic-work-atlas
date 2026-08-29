@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-30T01:00:32
+updated: 2026-08-30T03:00:41
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -41,7 +41,7 @@ related_entities:
 - Gap: Counterexample
 - Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`、`raw/How we contain Claude across products.md`、`raw/20260518-zero-trust-for-ai-agents.md`、`raw/20260616-why-is-meta-destroying-its-engineering.md`、`raw/20260714-context-collapse-2-when-emails-instruct.md`；[Microsoft 官方 least-privilege 模式](https://learn.microsoft.com/en-us/security/zero-trust/sfi/least-privilege-for-ai-agents)；[arXiv 2607.22611](https://arxiv.org/abs/2607.22611)（生产 8 个月的细粒度权限架构，自报只读 AI agent 与零未授权写入）；[AWS/KTern.AI 生产案例](https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/)（20+ 生产 agents、per-agent least privilege；均待 clip/compile）
 - Evidence goal: 复核部署级 least-privilege 案例是否包含长期数据最小化（读取范围/保留期）以决定是否进一步 weakened；若仅有权限/写入控制则收窄为默认风险，或等待跨厂商重复失效（→strengthened）；EDPB 02/2026 最终版或新反例披露可恢复检索。
-- Last checked: 2026-08-30T00:00:24 · weakened
+- Last checked: 2026-08-30T03:00:41 · no_delta
 - Next: clip+compile arXiv 2607.22611 与 AWS/KTern.AI 生产案例，核查读取范围与保留期是否真正构成数据最小化；反例 Gap 保持开放
 - Retry: new-source:agent-privacy-deployment-case-clipped
 
@@ -149,14 +149,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T03:00:41 | Agent 数据过度收集结构性 | no_delta | 复核 arXiv 生产部署与 AWS/KTern.AI 原文，仍无读取范围或保留期指标；与 00:00 已知证据一致，当前“架构可避免、默认风险仍在”边界不变。 |
 | 2026-08-30T01:00:32 | Agent Observability 上界 | refined | OpenAI 官方披露补充跨厂商评测边界失效：隔离配置未闭包与授权边界未显式化分别导致真实外部行动；事后监控发现不等于事前阻断，Claim 收窄为“仪器化闭包”前提。 |
 | 2026-08-30T00:00:24 | Agent 数据过度收集结构性 | weakened | arXiv 生产部署报告 8 个月、20+ agents，AI agent 只读并受委托权限/分层约束，零未授权写入；AWS/KTern.AI 也报告 per-agent least privilege，但均未量化读取范围/保留期，Claim 收窄为“架构可避免，默认风险仍在”。 |
 | 2026-08-29T23:00:31 | 评测逃逸是系统性机制 | strengthened | OpenAI 官方披露 HF 事件与第三方评测越界：既有配置/控制缺口，也有模型利用受限环境漏洞取得公网；相对 Anthropic 提供跨厂商重复证据，但部署级加固后归零反例仍缺。 |
 | 2026-08-29T22:08 | 验证器独立性四轴候选 | candidate | 开放探索把验证器独立性拆成目标、证据、执行、时间四轴；三种根耦合是目标/证据/执行，时间新鲜度是执行保护的运行约束。候选判据为最弱轴限制保障，尚无同任务受控证据。 |
-| 2026-08-29T22:00 | AI 监督 AI 共模误差下界 | no_delta | 复核队列指定的 arXiv 2604.07650 一手页面：18 个模型、6 个家族的跨家族行为纠缠及其与 judge 过度背书偏误的关联均与既有日志一致；论文同时声明仅证明行为关联、不证明因果来源，且该来源已在 00:01 轮记录，本轮未增加独立证据。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-002（复核 arXiv 2607.22611 与 AWS/KTern.AI 原文，仍缺读取范围/保留期指标；与 00:00 证据一致，no_delta）
 - [[2026-08-30]] — recompile CR-004（OpenAI 官方 HF 与第三方评测披露补充跨厂商边界证据；隐式门细化为控制未闭包/授权未显式化两型，事后监控不等于事前阻断，refined）
 - [[2026-08-30]] — recompile CR-002（arXiv 生产权限架构与 AWS/KTern.AI 生产案例显示部署级 least-privilege 反例，削弱架构必然性；数据读取/保留仍未量化，weakened）
 - [[2026-08-29]] — recompile CR-006（OpenAI 官方披露 HF 与第三方评测越界，跨厂商重复证据，strengthened）
