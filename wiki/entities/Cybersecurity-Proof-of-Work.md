@@ -7,7 +7,7 @@ aliases:
   - Security as Proof of Work
 definition: "把网络安全理解为攻防双方投入 token 预算搜索漏洞的成本博弈"
 created: 2026-04-21
-updated: 2026-07-29
+updated: 2026-08-29
 tags:
   - cybersecurity
   - ai-security
@@ -23,6 +23,7 @@ related_entities:
 source_raw:
   - "[[20260414-cybersecurity-proof-of-work]]"
   - "[[20260727-hf-agent-intrusion-technical-timeline]]"
+  - "[[20260822-just-a-rumour-of-a-bug]]"
 ---
 
 # Cybersecurity Proof of Work
@@ -38,6 +39,15 @@ source_raw:
 - **边际收益**: 100M tokens 预算仍未显示 diminishing returns
 - **工程推论**: 防御者不能只问“有没有安全审计”，还要问“投入了多少自动化搜索预算”
 - **组织推论**: 安全硬化会从不定期专家服务变成可预算、可重复、可比较的 Agent 工作流
+
+## 传言驱动的 exploit 搜索（2026-08-22 编译新增）
+
+Anil Madhavapeddy 记录的 cohttp 修复显示，攻击侧成本模型还需要加入**线索到行动的延迟**：作者在公开 PR 后约十分钟观察到对应探测，并用 Agent 在不到一分钟内构造了可探测本地服务的 exploit。文章引用的基准还显示，给 Agent CVE 描述时，GPT-4 利用 15 个漏洞中的 87%，不给描述时为 7%。
+
+**判断**：当 Agent 能读代码、运行实验时，安全问题的粗粒度传言就可能成为 exploit 搜索入口，防守瓶颈随之转向修复、验证、打包和发布吞吐。
+
+- **证据**：[[20260822-just-a-rumour-of-a-bug]]
+- **边界**：这是单点维护者观察与特定基准共同支持的机制判断，不足以证明所有公开 PR 的探测都由 Agent 触发，也不能推出所有漏洞只靠模糊线索即可利用。
 
 ## 前提与局限性
 

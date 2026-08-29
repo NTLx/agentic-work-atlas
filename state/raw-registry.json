@@ -1726,10 +1726,12 @@
     },
     "20260822-just-a-rumour-of-a-bug.md": {
       "body_sha256": "9ffa568ab04fe8bcbfc9dd93d83f819062bf61fe7375b2cc4a7d3e42951a9ce9",
+      "compiled_at": "2026-08-29T21:23:43+08:00",
       "raw_file": "20260822-just-a-rumour-of-a-bug.md",
       "raw_state": "full",
-      "status": "pending",
-      "updated_at": "2026-08-29T21:19:51+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260822-just-a-rumour-of-a-bug.md",
+      "updated_at": "2026-08-29T21:23:43+08:00"
     },
     "20260822-the-ai-native-sdlc-playbook.md": {
       "body_sha256": "594fbb8e7340156ba2a87fdadabca99de2a583a617196e3163de0b64dfac0e6f",
@@ -2453,6 +2455,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-29T21:19:51+08:00",
+  "updated_at": "2026-08-29T21:23:43+08:00",
   "version": 1
 }
