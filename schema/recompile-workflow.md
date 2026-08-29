@@ -77,6 +77,16 @@ Evidence 是能够约束 Claim 的来源材料，例如：
 
 同一 raw 及其 source summary 只算同一份来源依据。
 
+Source-Class Gate
+
+如果当前 Evidence goal 明确要求特定来源类别，例如官方文件、一手来源、原始数据、正式决定或直接实验结果，则在取得该来源类别之前，不得仅凭二手报道、转载、聚合页或搜索摘要把 Claim 判为 `strengthened` 或 `falsified`。
+
+低一级来源可以用于定位 Evidence、暴露矛盾、收窄边界或形成后续检索方向，但不能替代 Evidence goal 指定的来源类别。
+
+在目标 source class 尚未取得时，应根据实际结果使用 `refined`、`blocked` 或 `no_delta`。
+
+多个页面如果来自同一原始报道链、互相转载或共享同一个未核实源，不视为多个独立 Evidence。
+
 ---
 
 Reasoning
@@ -265,6 +275,8 @@ think
 
 Evidence goal: [我要寻找什么，以及什么结果可能改变当前 Claim]
 
+如果 Evidence goal 指定了 source class，搜索与结算必须先通过 Source-Class Gate；二手结果只能作为线索，不能替代目标来源类别。
+
 如果需要联网，按仓库路由加载：
 
 "schema/web-tools.md"
@@ -406,6 +418,8 @@ no_delta
 使用以下检查：
 
 «如果删除本轮所有新增的解释性文字，只看 Evidence、Claim 和它的适用边界，我们对它知道的东西是否发生了变化？»
+
+如果 Evidence goal 指定了 source class，先检查本轮是否取得该来源类别；未取得时，`strengthened` 或 `falsified` 不得仅由低一级来源支撑。
 
 如果没有：
 
