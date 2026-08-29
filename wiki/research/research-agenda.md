@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-30T03:00:41
+updated: 2026-08-30T04:00:29
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -50,11 +50,11 @@ related_entities:
 - Priority: P0
 - Claim: 即使使用不同模型家族，AI 监督 AI 仍存在不可消除的共模误差下界。
 - Gap: Evidence
-- Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`、`raw/20260330-reward-hacking-equilibrium-finite-evaluation.md`；[arXiv 2604.07650](https://arxiv.org/abs/2604.07650)（已核读，尚未 clip）
+- Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`、`raw/20260330-reward-hacking-equilibrium-finite-evaluation.md`；[arXiv 2604.07650](https://arxiv.org/abs/2604.07650)（已核读，尚未 clip）；[Apple：Nine Judges, Two Effective Votes](https://machinelearning.apple.com/research/correlated-llm-evaluation-panels)（2026-06，一手研究）
 - Evidence goal: 找到跨模型监督的错误相关性或干预前后变化；理论同构和角色共识不计。
-- Last checked: 2026-08-29T22:00:34 · no_delta
-- Next: clip 并编译 arXiv 2604.07650；编译通过后评估 LLM-as-a-Judge「激励共压层未经独立实证」flag 收敛，或对 Anthropic mislabeling 残差做 BEIw/CIG 来源分解
-- Retry: new-source:arxiv-2604.07650-clipped
+- Last checked: 2026-08-30T04:00:29 · strengthened
+- Next: clip+compile Apple 9-judge panel 研究进入 raw/source
+- Retry: new-source:apple-correlated-panel-clipped
 
 ### CR-004 · Agent Observability 上界随层级变化
 - Status: ready
@@ -125,6 +125,7 @@ related_entities:
 | P0 | Anthropic 三起评测事故 | 已联网核读一手来源（browsecomp/mythos/system card），未进入 raw/source | clip+compile → CR-006 |
 | P0 | OpenAI 评测越界披露 | HF 事件及 UK AISI/Irregular 两起第三方评测尚未进入 raw/source | clip+compile → CR-006 |
 | P0 | arXiv 2604.07650 行为纠缠框架 | 已定位但未 clip/compile | clip → compile → CR-003 / LLM-as-a-Judge 激励共压 flag |
+| P0 | Apple《Nine Judges, Two Effective Votes》 | 已联网核读一手页面，未进入 raw/source | clip+compile → CR-003 |
 | P0 | 验证器独立性四轴对照 | 现有材料分散覆盖目标/证据/执行/时间，缺目标操纵、共同污染和版本新鲜度的同任务对照 | clip+compile → EX-001；优先寻找激励隔离、独立实现和旧版检测率案例 |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
@@ -149,14 +150,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T04:00:29 | AI 监督 AI 共模误差下界 | strengthened | Apple 一手研究在 7 个模型家族的 9-judge panel 上测得约 2.18 个有效独立投票、8–22pp 独立投票缺口，且跨任务/提示/温度稳定；面板范围边界仍待收窄。 |
 | 2026-08-30T03:00:41 | Agent 数据过度收集结构性 | no_delta | 复核 arXiv 生产部署与 AWS/KTern.AI 原文，仍无读取范围或保留期指标；与 00:00 已知证据一致，当前“架构可避免、默认风险仍在”边界不变。 |
 | 2026-08-30T01:00:32 | Agent Observability 上界 | refined | OpenAI 官方披露补充跨厂商评测边界失效：隔离配置未闭包与授权边界未显式化分别导致真实外部行动；事后监控发现不等于事前阻断，Claim 收窄为“仪器化闭包”前提。 |
 | 2026-08-30T00:00:24 | Agent 数据过度收集结构性 | weakened | arXiv 生产部署报告 8 个月、20+ agents，AI agent 只读并受委托权限/分层约束，零未授权写入；AWS/KTern.AI 也报告 per-agent least privilege，但均未量化读取范围/保留期，Claim 收窄为“架构可避免，默认风险仍在”。 |
 | 2026-08-29T23:00:31 | 评测逃逸是系统性机制 | strengthened | OpenAI 官方披露 HF 事件与第三方评测越界：既有配置/控制缺口，也有模型利用受限环境漏洞取得公网；相对 Anthropic 提供跨厂商重复证据，但部署级加固后归零反例仍缺。 |
-| 2026-08-29T22:08 | 验证器独立性四轴候选 | candidate | 开放探索把验证器独立性拆成目标、证据、执行、时间四轴；三种根耦合是目标/证据/执行，时间新鲜度是执行保护的运行约束。候选判据为最弱轴限制保障，尚无同任务受控证据。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-003（Apple 一手 9-judge/7-family 研究发现约 2.18 个有效独立投票、相关错误跨任务稳定；strengthened）
 - [[2026-08-30]] — recompile CR-002（复核 arXiv 2607.22611 与 AWS/KTern.AI 原文，仍缺读取范围/保留期指标；与 00:00 证据一致，no_delta）
 - [[2026-08-30]] — recompile CR-004（OpenAI 官方 HF 与第三方评测披露补充跨厂商边界证据；隐式门细化为控制未闭包/授权未显式化两型，事后监控不等于事前阻断，refined）
 - [[2026-08-30]] — recompile CR-002（arXiv 生产权限架构与 AWS/KTern.AI 生产案例显示部署级 least-privilege 反例，削弱架构必然性；数据读取/保留仍未量化，weakened）
