@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-30T12:00:35
+updated: 2026-08-30T13:00:40
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -41,7 +41,7 @@ related_entities:
 - Gap: Counterexample
 - Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`、`raw/How we contain Claude across products.md`、`raw/20260518-zero-trust-for-ai-agents.md`、`raw/20260616-why-is-meta-destroying-its-engineering.md`、`raw/20260714-context-collapse-2-when-emails-instruct.md`；[Microsoft 官方 least-privilege 模式](https://learn.microsoft.com/en-us/security/zero-trust/sfi/least-privilege-for-ai-agents)；[arXiv 2607.22611](https://arxiv.org/abs/2607.22611)（生产 8 个月的细粒度权限架构，自报只读 AI agent 与零未授权写入）；[AWS/KTern.AI 生产案例](https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/)（20+ 生产 agents、per-agent least privilege；均待 clip/compile）
 - Evidence goal: 复核部署级 least-privilege 案例是否包含长期数据最小化（读取范围/保留期）以决定是否进一步 weakened；若仅有权限/写入控制则收窄为默认风险，或等待跨厂商重复失效（→strengthened）；EDPB 02/2026 最终版或新反例披露可恢复检索。
-- Last checked: 2026-08-30T08:00:54 · weakened
+- Last checked: 2026-08-30T13:00:40 · no_delta
 - Next: clip+compile Numezis 案例，核查匿名部署的可验证细节与长期数据最小化；反例 Gap 保持开放
 - Retry: new-source:numezis-agent-privacy-case-clipped
 
@@ -153,14 +153,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T13:00:40 | Agent 数据过度收集结构性 | no_delta | 复核 Numezis 同一匿名案例；虽明确 6 个月部署、逐客户/法人隔离与模型无保留，仍无读取量或 TTL 数据，长期性缺口不变。 |
 | 2026-08-30T12:00:35 | Agent Observability 上界 | refined | Google DeepMind AI Control 定义 coverage、recall、time-to-response 与同步阻断指标及目标；Roadmap 仍属理论/拟议保障，未给逐案实测，边界进一步收窄。 |
 | 2026-08-30T11:00:32 | AI 监督 AI 共模误差下界 | strengthened | 新一手跨模型共识 verifier 研究观察到任务域相关的共享错误下界，换生成模型家族后复现；数学近零、科学非零，普遍化仍受限。 |
 | 2026-08-30T09:56:29 | 评测逃逸是系统性机制 | blocked | 定向检索未找到独立部署级加固后归零/单次失配反例；SandboxBench 仅为受控工作报告，OpenAI 部署模拟无逃逸指标。 |
 | 2026-08-30T09:00:48 | Agent Observability 上界 | refined | Google DeepMind 将边界具体化为低风险异步观察、高风险同步阻断；coverage/recall/响应时间与可见 CoT 限制说明架构指标不等于仪器化闭包实证。 |
-| 2026-08-30T08:00:54 | Agent 数据过度收集结构性 | weakened | Numezis 匿名瑞士 SME 生产案例报告按客户/法人隔离读取、逐工具权限、模型无保留/不训练；证明架构可实现数据最小化，但长期性与可推广性仍待检验。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-002（复核 Numezis 同一匿名瑞士 SME 案例：6 个月部署、逐客户/法人隔离、模型无保留；未提供读取量或 TTL，长期数据最小化缺口不变，no_delta）
 - [[2026-08-30]] — recompile CR-004（Google DeepMind AI Control blog 与 v0.1 Roadmap 定义 coverage/recall/time-to-response 与同步阻断指标及目标，但未给逐案实测；observability 边界进一步细化，refined）
 - [[2026-08-30]] — recompile CR-003（跨模型共识 verifier 研究报告任务域相关的共享错误下界，换生成模型家族后复现；数学近零、科学非零，strengthened）
 - [[2026-08-30]] — recompile CR-006（定向检索未找到独立部署级“加固后逃逸归零/同一失配仅一次”反例；受控实验与部署模拟均不足，blocked）
