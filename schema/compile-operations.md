@@ -55,6 +55,12 @@ Registry 的 `raw_state` 表示证据保留状态：
 
 生命周期命令以 `tools/compile_registry.py --help` 为准。典型顺序：先完成 source summary 与恢复信息，再移除原文件、设置状态、运行 lint。
 
+### index.md 计数同步
+
+`index.md` 的概览计数是 versioned Operational State，由 `wiki-lint.py --fix-index` 同步。新增或移除 raw 文件（全文剪藏新增、生命周期降级移除）会改变计数对象，必须在提交前运行 --fix-index 同步计数并执行完整 Blocking 校验；不得把同步留给后续 compile。
+
+--fix-index 同时刷新 `updated` 日期，因此只在确实新增/删除计数对象时运行；explore / recompile no_delta 等无计数变化的操作不需要运行。
+
 ## 编译写入边界
 
 - 新编译写入 `wiki/sources/`，不向 raw 正文追加摘要。

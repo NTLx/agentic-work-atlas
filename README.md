@@ -114,7 +114,9 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 四大环节完成后必须执行：
 
 1. **全文剪藏时注册 registry**：`uv run python tools/compile_registry.py ensure "<raw文件名>"`（支持 `.md` / `.pdf`，将 raw 标记为 pending；只登记 Source 需求时不创建 raw）
-2. 校验：`git status --short`；Wiki/Schema 变更运行 `uv run python tools/wiki-lint.py`
+2. 校验：`git status --short`
+   - 若本轮新增/删除会影响 index.md 统计的文件（含全文剪藏新增 raw），先运行 `uv run python tools/wiki-lint.py --fix-index` 同步计数并通过 Blocking 校验
+   - 其余 Wiki/Schema 变更运行 `uv run python tools/wiki-lint.py`
 3. 排除不应提交的产物（`.venv/`、`node_modules/`、`public/` 等）
 4. 结构化 commit message 提交
 5. `git push` 到远端；失败必须说明原因
