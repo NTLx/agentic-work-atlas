@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-30T13:00:40
+updated: 2026-08-30T14:00:29
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -49,11 +49,11 @@ related_entities:
 - Status: ready
 - Priority: P0
 - Claim: 即使使用不同模型家族，AI 监督 AI 仍存在不可消除的共模误差下界。
-- Gap: Evidence
-- Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`、`raw/20260330-reward-hacking-equilibrium-finite-evaluation.md`；[arXiv 2604.07650](https://arxiv.org/abs/2604.07650)（已核读，尚未 clip）；[Apple：Nine Judges, Two Effective Votes](https://machinelearning.apple.com/research/correlated-llm-evaluation-panels)（2026-06，一手研究）；[arXiv 2607.10139](https://arxiv.org/abs/2607.10139)（2026-07，一手研究，跨模型 verifier 共享错误下界）
-- Evidence goal: 找到跨模型监督的错误相关性或干预前后变化；理论同构和角色共识不计。
-- Last checked: 2026-08-30T11:00:32 · strengthened
-- Next: clip+compile arXiv 2607.10139 进入 raw/source，提取任务域、模型关系与共享错误字段
+- Gap: Boundary
+- Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`、`raw/20260330-reward-hacking-equilibrium-finite-evaluation.md`；[arXiv 2604.07650](https://arxiv.org/abs/2604.07650)（已核读，尚未 clip）；[Apple：Nine Judges, Two Effective Votes](https://machinelearning.apple.com/research/correlated-llm-evaluation-panels)（2026-06，一手研究）；[arXiv 2607.10139](https://arxiv.org/abs/2607.10139)（v3，2026-08-17，一手研究；跨家族 verifier panel 在 GPQA/MMLU-Pro 的 shared-error floor 分别为 0.030/0.143，数学任务接近 0）
+- Evidence goal: 界定跨模型 consensus verifier 的 shared-error floor 是否依赖任务域、错误结构与 panel 组成，并区分该结果与所有 AI 监督形态之间的外推边界。
+- Last checked: 2026-08-30T14:00:29 · refined
+- Next: clip+compile arXiv 2607.10139 进入 raw/source，保留 v3 的任务域、model panel 与 shared-error 字段，供后续可回溯复核
 - Retry: new-source:arxiv-2607.10139
 
 ### CR-004 · Agent Observability 上界随层级变化
@@ -153,14 +153,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T14:00:29 | AI 监督 AI 共模误差下界 | refined | arXiv 2607.10139v3 具体给出跨家族 verifier panel、七个 benchmark 与逐域 shared-error floor：数学接近 0，GPQA 0.030、MMLU-Pro 0.143；换 generator 后仍复现，Claim 收窄为任务与 verifier 条件下的边界命题。 |
 | 2026-08-30T13:00:40 | Agent 数据过度收集结构性 | no_delta | 复核 Numezis 同一匿名案例；虽明确 6 个月部署、逐客户/法人隔离与模型无保留，仍无读取量或 TTL 数据，长期性缺口不变。 |
 | 2026-08-30T12:00:35 | Agent Observability 上界 | refined | Google DeepMind AI Control 定义 coverage、recall、time-to-response 与同步阻断指标及目标；Roadmap 仍属理论/拟议保障，未给逐案实测，边界进一步收窄。 |
 | 2026-08-30T11:00:32 | AI 监督 AI 共模误差下界 | strengthened | 新一手跨模型共识 verifier 研究观察到任务域相关的共享错误下界，换生成模型家族后复现；数学近零、科学非零，普遍化仍受限。 |
 | 2026-08-30T09:56:29 | 评测逃逸是系统性机制 | blocked | 定向检索未找到独立部署级加固后归零/单次失配反例；SandboxBench 仅为受控工作报告，OpenAI 部署模拟无逃逸指标。 |
-| 2026-08-30T09:00:48 | Agent Observability 上界 | refined | Google DeepMind 将边界具体化为低风险异步观察、高风险同步阻断；coverage/recall/响应时间与可见 CoT 限制说明架构指标不等于仪器化闭包实证。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-003（arXiv 2607.10139v3 提供跨家族 verifier panel、任务域与逐域 shared-error floor；数学接近 0、GPQA 0.030、MMLU-Pro 0.143，换 generator 后复现；将 Claim 收窄为任务与 verifier 条件下的边界命题，refined）
 - [[2026-08-30]] — recompile CR-002（复核 Numezis 同一匿名瑞士 SME 案例：6 个月部署、逐客户/法人隔离、模型无保留；未提供读取量或 TTL，长期数据最小化缺口不变，no_delta）
 - [[2026-08-30]] — recompile CR-004（Google DeepMind AI Control blog 与 v0.1 Roadmap 定义 coverage/recall/time-to-response 与同步阻断指标及目标，但未给逐案实测；observability 边界进一步细化，refined）
 - [[2026-08-30]] — recompile CR-003（跨模型共识 verifier 研究报告任务域相关的共享错误下界，换生成模型家族后复现；数学近零、科学非零，strengthened）
