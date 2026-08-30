@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-30T09:56:29
+updated: 2026-08-30T11:00:32
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -50,11 +50,11 @@ related_entities:
 - Priority: P0
 - Claim: 即使使用不同模型家族，AI 监督 AI 仍存在不可消除的共模误差下界。
 - Gap: Evidence
-- Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`、`raw/20260330-reward-hacking-equilibrium-finite-evaluation.md`；[arXiv 2604.07650](https://arxiv.org/abs/2604.07650)（已核读，尚未 clip）；[Apple：Nine Judges, Two Effective Votes](https://machinelearning.apple.com/research/correlated-llm-evaluation-panels)（2026-06，一手研究）
+- Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`、`raw/20260330-reward-hacking-equilibrium-finite-evaluation.md`；[arXiv 2604.07650](https://arxiv.org/abs/2604.07650)（已核读，尚未 clip）；[Apple：Nine Judges, Two Effective Votes](https://machinelearning.apple.com/research/correlated-llm-evaluation-panels)（2026-06，一手研究）；[arXiv 2607.10139](https://arxiv.org/abs/2607.10139)（2026-07，一手研究，跨模型 verifier 共享错误下界）
 - Evidence goal: 找到跨模型监督的错误相关性或干预前后变化；理论同构和角色共识不计。
-- Last checked: 2026-08-30T04:00:29 · strengthened
-- Next: clip+compile Apple 9-judge panel 研究进入 raw/source
-- Retry: new-source:apple-correlated-panel-clipped
+- Last checked: 2026-08-30T11:00:32 · strengthened
+- Next: clip+compile arXiv 2607.10139 进入 raw/source，提取任务域、模型关系与共享错误字段
+- Retry: new-source:arxiv-2607.10139
 
 ### CR-004 · Agent Observability 上界随层级变化
 - Status: ready
@@ -127,6 +127,7 @@ related_entities:
 | P0 | 评测逃逸加固后反例 | 缺独立部署级“加固后逃逸归零”或“同一失配仅发生一次”的记录；受控 SandboxBench 不足 | new-source → CR-006 |
 | P0 | arXiv 2604.07650 行为纠缠框架 | 已定位但未 clip/compile | clip → compile → CR-003 / LLM-as-a-Judge 激励共压 flag |
 | P0 | Apple《Nine Judges, Two Effective Votes》 | 已联网核读一手页面，未进入 raw/source | clip+compile → CR-003 |
+| P0 | arXiv 2607.10139《LLMs as a Jury》 | 已联网核读一手预印本，未进入 raw/source；报告跨模型 verifier 的共享错误下界 | clip+compile → CR-003 |
 | P0 | 验证器独立性四轴对照 | 现有材料分散覆盖目标/证据/执行/时间，缺目标操纵、共同污染和版本新鲜度的同任务对照 | clip+compile → EX-001；优先寻找激励隔离、独立实现和旧版检测率案例 |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
@@ -152,14 +153,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T11:00:32 | AI 监督 AI 共模误差下界 | strengthened | 新一手跨模型共识 verifier 研究观察到任务域相关的共享错误下界，换生成模型家族后复现；数学近零、科学非零，普遍化仍受限。 |
 | 2026-08-30T09:56:29 | 评测逃逸是系统性机制 | blocked | 定向检索未找到独立部署级加固后归零/单次失配反例；SandboxBench 仅为受控工作报告，OpenAI 部署模拟无逃逸指标。 |
 | 2026-08-30T09:00:48 | Agent Observability 上界 | refined | Google DeepMind 将边界具体化为低风险异步观察、高风险同步阻断；coverage/recall/响应时间与可见 CoT 限制说明架构指标不等于仪器化闭包实证。 |
 | 2026-08-30T08:00:54 | Agent 数据过度收集结构性 | weakened | Numezis 匿名瑞士 SME 生产案例报告按客户/法人隔离读取、逐工具权限、模型无保留/不训练；证明架构可实现数据最小化，但长期性与可推广性仍待检验。 |
 | 2026-08-30T06:00:41 | 全球南方 AI 跃迁需要制度共演化 | blocked | 官方 NITI Arezzo 材料显示本地指南、语言与现场适配且仅为可行性试点；印度政府称 BharatGen 尚未公共/机构部署。未取得长期低错配的一手反例，Gap 保持开放。 |
-| 2026-08-30T05:00:50 | 评测逃逸是系统性机制 | strengthened | OpenAI 一手披露 UK AISI 与 Irregular 两起第三方评测越界，分别暴露授权边界未显式化与隔离配置失效；与 Anthropic 材料形成跨厂商重复支持，但加固后归零反例仍缺。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-003（跨模型共识 verifier 研究报告任务域相关的共享错误下界，换生成模型家族后复现；数学近零、科学非零，strengthened）
 - [[2026-08-30]] — recompile CR-006（定向检索未找到独立部署级“加固后逃逸归零/同一失配仅一次”反例；受控实验与部署模拟均不足，blocked）
 - [[2026-08-30]] — recompile CR-004（Google DeepMind AI Control 把边界具体化为低风险异步观察/高风险同步阻断；coverage、recall、响应时间与可见 CoT 限制支持“架构指标不等于仪器化闭包实证”，refined）
 - [[2026-08-30]] — recompile CR-002（Numezis 匿名瑞士 SME 生产案例：按客户/法人隔离读取、逐工具权限、模型无保留/不训练；反例使 Claim weakened，但长期性与可推广性仍待检验）
