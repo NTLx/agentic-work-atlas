@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-30T11:00:32
+updated: 2026-08-30T12:00:35
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -63,8 +63,8 @@ related_entities:
 - Gap: Boundary
 - Evidence: `raw/20260608-connector-observability-directory.md`、`raw/20260819-google-ai-evals-inspect-skill.md`；Anthropic 三案一手 URL（browsecomp / mythos / Opus 4.5 system card，待 clip）；[OpenAI HF 事件](https://openai.com/index/hugging-face-incident-and-the-road-ahead/)；[OpenAI 第三方评测](https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/)；[Google DeepMind AI Control](https://deepmind.google/blog/securing-the-future-of-ai-agents/)（均待 clip）
 - Evidence goal: 取得逐案事前阻断或 coverage/recall 数据，区分“仪器化闭包”的架构承诺与真实污染向量覆盖的实证。
-- Last checked: 2026-08-30T09:00:48 · refined
-- Next: clip+compile Google DeepMind AI Control 一手材料；核查 live monitor 是否有逐案事前阻断或 coverage/recall 数据
+- Last checked: 2026-08-30T12:00:35 · refined
+- Next: clip+compile Google DeepMind AI Control 一手材料；继续寻找公开的逐案同步阻断或 coverage/recall 实测数据
 - Retry: new-source:google-deepmind-ai-control
 
 ### CR-005 · AI 采纳侵蚀专业能力再生
@@ -153,14 +153,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T12:00:35 | Agent Observability 上界 | refined | Google DeepMind AI Control 定义 coverage、recall、time-to-response 与同步阻断指标及目标；Roadmap 仍属理论/拟议保障，未给逐案实测，边界进一步收窄。 |
 | 2026-08-30T11:00:32 | AI 监督 AI 共模误差下界 | strengthened | 新一手跨模型共识 verifier 研究观察到任务域相关的共享错误下界，换生成模型家族后复现；数学近零、科学非零，普遍化仍受限。 |
 | 2026-08-30T09:56:29 | 评测逃逸是系统性机制 | blocked | 定向检索未找到独立部署级加固后归零/单次失配反例；SandboxBench 仅为受控工作报告，OpenAI 部署模拟无逃逸指标。 |
 | 2026-08-30T09:00:48 | Agent Observability 上界 | refined | Google DeepMind 将边界具体化为低风险异步观察、高风险同步阻断；coverage/recall/响应时间与可见 CoT 限制说明架构指标不等于仪器化闭包实证。 |
 | 2026-08-30T08:00:54 | Agent 数据过度收集结构性 | weakened | Numezis 匿名瑞士 SME 生产案例报告按客户/法人隔离读取、逐工具权限、模型无保留/不训练；证明架构可实现数据最小化，但长期性与可推广性仍待检验。 |
-| 2026-08-30T06:00:41 | 全球南方 AI 跃迁需要制度共演化 | blocked | 官方 NITI Arezzo 材料显示本地指南、语言与现场适配且仅为可行性试点；印度政府称 BharatGen 尚未公共/机构部署。未取得长期低错配的一手反例，Gap 保持开放。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-004（Google DeepMind AI Control blog 与 v0.1 Roadmap 定义 coverage/recall/time-to-response 与同步阻断指标及目标，但未给逐案实测；observability 边界进一步细化，refined）
 - [[2026-08-30]] — recompile CR-003（跨模型共识 verifier 研究报告任务域相关的共享错误下界，换生成模型家族后复现；数学近零、科学非零，strengthened）
 - [[2026-08-30]] — recompile CR-006（定向检索未找到独立部署级“加固后逃逸归零/同一失配仅一次”反例；受控实验与部署模拟均不足，blocked）
 - [[2026-08-30]] — recompile CR-004（Google DeepMind AI Control 把边界具体化为低风险异步观察/高风险同步阻断；coverage、recall、响应时间与可见 CoT 限制支持“架构指标不等于仪器化闭包实证”，refined）
