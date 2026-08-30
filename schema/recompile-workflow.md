@@ -94,8 +94,7 @@ Reasoning
 Reasoning 是对 Evidence 的解释、比较和推导，包括：
 
 - Agent 自己的综合分析；
-- "ljg-roundtable" 输出；
-- "ljg-think" 输出；
+- 当前按动态协议激活的 Skill 输出；
 - 类比、机制模型和概念推演。
 
 Reasoning 不是 Evidence。
@@ -235,8 +234,7 @@ Gap: Evidence | Counterexample | Boundary | Mechanism
 每轮只选择一个主要 Action：
 
 evidence_search
-roundtable
-think
+reasoning_operator
 
 不要把它们串成固定流水线。
 
@@ -300,105 +298,44 @@ Missing: [需要什么材料]
 
 搜索失败不会让内部推理获得更高可信度。
 
-本轮选择 "evidence_search" 后，不再调用 "roundtable" 或 "think"。
+本轮选择 "evidence_search" 后，不再选择 reasoning operator。
 
 如果搜索结果暴露了新的解释问题，把它写入 "Next"。
 
 ---
 
-3.2 "roundtable"
+3.2 "reasoning_operator"
 
-"roundtable" 是竞争解释与反例生成器，不是默认深度思考步骤。
+reasoning operator 不是默认步骤，只在 Evidence 已足够支持一次局部分析、而当前
+Gap 主要是竞争解释、Mechanism 或 Boundary 时考虑。若真正缺的是事实、案例或
+反例，应先执行 `evidence_search`；只是觉得“还能再深入一点”也不足以触发它。
 
-只在以下情况下使用：
+调用前加载 `schema/skill-mapping.md`，查看 Runtime 当前发现的 Skill 描述。只可
+选择明确支持 headless、无人值守且输入契约适配当前 Gap 的 Skill；不得把交互式
+Skill 自行模拟成无人值守 operator。选择 `none` 也是有效结果。
 
-- 已经拥有足够基本 Evidence；
-- 存在两个以上合理解释；
-- 有重要隐含假设需要暴露；
-- 同一组事实存在真实的解释竞争；
-- 单纯继续搜索资料不会解决当前分歧。
-
-如果真正缺的是事实，不调用 roundtable。
-
-调用前按仓库路由加载：
-
-"schema/skill-mapping.md"
-
-必须通过 Skill 工具调用 "ljg-roundtable"，不得自行模拟该 Skill。
-
-给 Skill 的输入只包含：
+给所选 Skill 的输入只包含：
 
 - Claim；
-- 当前关键 Evidence；
-- 需要区分的竞争解释或假设。
+- Gap；
+- 已知的、可回溯的关键 Evidence；
+- 当前需要区分的竞争解释、机制或边界问题。
 
 在 args 末尾附加：
 
-【无人值守模式】本次任务无人值守。请自主完成本次分析并自然收束，不询问用户、不等待用户输入。只聚焦当前 Claim 的竞争解释、隐含假设、反例和边界；不要判断证据等级，不要负责写入 Wiki。
+【无人值守模式】本次任务无人值守。请自主完成本次分析并自然收束，不询问用户、不等待用户输入。只聚焦当前 Claim 和指定 Gap；输出属于 reasoning，不判断证据等级，不写入 Wiki，不创建文件或外部笔记。
 
-如果 Skill 仍然返回需要用户选择的菜单或问题：
+如果 Skill 返回需要用户选择的菜单或问题：
 
 - 不询问用户；
-- 不为了继续圆桌而反复调用；
-- 使用当前已经返回的有效材料；
+- 不重复调用以推进交互；
+- 使用已经返回的有效材料；
 - 在 Reasoning 中注明“Skill 提前停在交互边界”；
 - 进入 "SETTLE"。
 
-不要为了达到某个轮数继续讨论。
-
-本轮使用 roundtable 后，不再调用 think 或联网扩展研究。
-
-发现新的 Gap 时写入 "Next"。
-
----
-
-3.3 "think"
-
-"think" 用于机制或概念边界分析。
-
-适用于：
-
-- "Mechanism"
-- Evidence 已较充分、但仍无法澄清的 "Boundary"
-
-不适用于：
-
-- 缺事实；
-- 缺案例；
-- 缺反例；
-- 只是觉得“还能再深入一点”。
-
-调用前按仓库路由加载：
-
-"schema/skill-mapping.md"
-
-必须通过 Skill 工具调用 "ljg-think"，不得自行模拟。
-
-输入应包含：
-
-- Claim；
-- 已知 Evidence；
-- 当前需要澄清的机制或边界。
-
-在 args 末尾附加：
-
-【无人值守模式】本次任务无人值守。请自主完成分析，不询问用户、不等待输入。目标是澄清当前 Claim 的机制、必要前提或概念边界；输出属于 reasoning，不负责判断证据等级，也不负责写入 Wiki。
-
-当继续下钻只会产生无法被 Evidence 区分的更底层故事时，停止。
-
-本轮使用 think 后，不再调用 roundtable 或联网扩展研究。
-
-发现新的 Evidence Gap 时，将其记录到 "Next"。
-
----
-
-3.4 不使用 "ljg-qa"
-
-"ljg-qa" 不属于 recompile 主循环。
-
-它适合把已有知识转化成可检索 Q-A，而不是验证一个新 Claim。
-
-本任务不调用 "ljg-qa"。
+不要为了达到某个轮数继续分析。当下钻只会产生无法被 Evidence 区分的故事时
+停止；发现新的 Gap 时写入 "Next"。本轮完成 reasoning operator 后，不再调用
+另一个 reasoning operator，也不联网扩展研究。
 
 ---
 
@@ -427,8 +364,7 @@ Delta: no_delta
 
 以下情况不能被包装成知识增量：
 
-- roundtable 达成了共识；
-- think 产生了更抽象的解释；
+- reasoning operator 达成了共识或产生了更抽象的解释；
 - 创建了一个新术语；
 - 给旧观点取了“定理”名称；
 - 生成了一段更有说服力的 prose；
@@ -452,7 +388,7 @@ wiki/research/research-logs/YYYY-MM-DD.md
 
 - Claim: [一个命题]
 - Gap: [Evidence | Counterexample | Boundary | Mechanism]
-- Action: [evidence_search | roundtable | think]
+- Action: [evidence_search | reasoning_operator]
 
 ### Evidence
 - [supports | challenges | bounds] [raw/source/URL] — [具体约束 Claim 的内容]
@@ -471,8 +407,7 @@ Evidence 与 Reasoning 必须分开。
 
 不要保存：
 
-- 完整 roundtable transcript；
-- 完整 think transcript；
+- 完整 Skill transcript；
 - Skill 的长篇原始输出；
 - 与最终 Delta 无关的思维旁支。
 
@@ -535,8 +470,7 @@ Synthesized 判断只留 Research。
 - 新因果模型；
 - 新规律；
 - 新机制理论；
-- roundtable 共识；
-- think 推导；
+- reasoning operator 的共识或推导；
 - 新“定理”；
 - 尚需反例或现实验证的解释。
 
@@ -608,9 +542,8 @@ Schema 也按分支加载：
 - Claim：1 个；
 - Gap：1 个；
 - 主要 Action：1 个；
-- 重型 Skill：最多 1 个；
-- "roundtable" 与 "think" 不在同一轮同时使用；
-- "ljg-qa"：0；
+- reasoning operator：最多 1 个；
+- 不因 Skill 数量增加而增加 Action；
 - 外部搜索 query：最多 2 次；
 - 实际打开外部来源：最多 3 个；
 - Stable Wiki：最多修改 1 个已有页面，默认 0；
@@ -637,7 +570,7 @@ Token 使用目标：
 - 一个 Action 已经产生 Delta；
 - 已明确 "blocked"；
 - 当前剩余动作只会产生更多解释，而不会改变知识状态；
-- 已完成本轮唯一重型 Skill；
+- 已完成本轮唯一 reasoning operator；
 - 外部搜索预算耗尽；
 - 继续工作需要切换到另一个主要 Gap；
 - 接近运行预算或外部调度器时间限制。
@@ -732,10 +665,10 @@ stdout
 时间：[TIMESTAMP]
 Claim：[Claim | none]
 Gap：[Gap | none]
-Action：[evidence_search | roundtable | think | none]
+Action：[evidence_search | reasoning_operator | none]
 Delta：[strengthened | weakened | falsified | refined | blocked | no_delta | none]
 Evidence：[N]
-Skill：[none | roundtable | think]
+Skill：[none | 当前选中的 headless Skill]
 Stable Wiki：[0 | 1]
 Next：[下一步 | none]
 Commit：[hash | none]

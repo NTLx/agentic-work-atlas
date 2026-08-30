@@ -1,99 +1,112 @@
 ---
-title: "ljg 技能与 Wiki 工作流映射"
+title: "Agent Skills 使用协议"
 type: schema-subdoc
 ---
 
 > 本文档是 Agentic Work Atlas Schema 子文档，由 README.md 路由表按需加载。
 
-# ljg 技能与 Wiki 工作流映射
+# Agent Skills 使用协议
 
-## 核心原则：Agent 自主决策
+## 定位
 
-所有技能选择由 Agent 基于材料特征自主判断，无需用户触发。Agent 在编译/探索/产出各环节自动评估材料属性，决定调用哪些技能、以什么顺序组合。用户的角色是提供材料和方向，不是驱动流程。
+Agent Skills 是可选的局部认知或执行能力。它们是 Operator，不是 Wiki
+Workflow Owner：Skill 可以帮助理解、分析、表达或获取信息，但不拥有 Raw
+生命周期、Evidence 认证、Wiki 页面准入、写入范围或 Git 操作的控制权。
 
-## 核心技能
+Wiki Schema 负责知识生命周期与约束；Agent 负责根据当前任务和认知缺口决定
+是否调用 Skill。安装了某个 Skill，不代表任何任务都必须使用它。
 
-| 技能 | 所在环节 | 定位 | Wiki 输出目录 | 编译产出 |
-|------|----------|------|-------------|---------|
-| **ljg-paper** (读论文) | compile | 论文类文章编译器 | `wiki/entities/` | 命题七拍叙事 + 速读卡 → 浓缩+质疑+对标 + 核心概念提取 |
-| **ljg-paper-river** (倒读法) | compile | 研究型论文关系构建器 | `wiki/comparisons/` | 5 层倒读+正向追踪 → 概念演化脉络 + 对比分析维度 |
-| **ljg-book** (拆书) | compile | 书籍类 raw 编译器 | `wiki/entities/` | 取景框 f(x) 分析 + hard-to-vary 检验 + 参考系图 |
-| **ljg-qa** (问答提取) | compile, explore | 信息提问机 | 编译时注入 source summary；探索时生成探测问题 | 核心观点抽成 Q-A 对，为 entity/topic 提供结构化骨架 |
-| **ljg-learn** (概念解剖) | compile(追加) | 概念八维度解剖 | `wiki/entities/` | 历史/辩证/现象/语言/形式/存在/美感/元反思 → 顿悟句 → entity 核心定义 |
-| **ljg-read** (伴读) | compile(增强) | 深度伴读与跨域旁逸 | source summary 增强 | 结构标注 + 深度提问 + 跨域旁逸 → 跨领域类比洞察 |
-| **ljg-think** (追本之箭) | compile(追加), explore | 纵向深钻 | `wiki/topics/` | 层层降深（表象→机理→原理→公理）→ 主题深度分析 |
-| **ljg-rank** (降秩) | compile(追加), explore | 领域降秩（生成力） | `wiki/topics/` | 找 2-3 个不可约生成器 → Topic 核心结构 |
-| **ljg-constraint** (约束) | compile(追加), explore | 约束分析（边界力） | `wiki/topics/`, `wiki/entities/` | 硬/软/自设约束分类 → 解空间映射 → 与 ljg-rank 互补 |
-| **ljg-blind** (盲区扫描) | explore(按需) | 元认知审计 | `wiki/research/research-agenda.md` | 具体盲区假设 + 定向补充材料 → Source 需求队列 |
-| **ljg-plain** (白话) | audit, produce | 可读性校验 | N/A | Entity definition / Output 可读性校验（12 岁可读测试） |
-| **ljg-writes** (写作引擎) | produce | 观点驱动写作 | `wiki/outputs/` | 观点驱动写作 → 博客/笔记作品 |
-| **ljg-roundtable** (圆桌) | produce, explore | 多视角辩证 | `wiki/outputs/` 或 research agenda | 结构化多立场辩论 → 证伪方向、分歧点、共识边界 |
-| **ljg-roundtable-recompile** | recompile | 无人值守竞争解释检验 | 无直接写入 | 最多三轮分析角色交锋 → 隐含假设、反例、区分性观察；不生成 Evidence |
-| **ljg-think-recompile** | recompile | 无人值守机制/边界澄清 | 无直接写入 | 最多五层可证伪下钻 → 机制、必要前提、替代解释与停止理由 |
-| **ljg-invest** (投资分析) | explore(FDE 专项) | 秩序创造机器评估 | source summary / entity 补充 | 「混沌→秩序」框架判断 AI 项目是否值得深度收录 |
-| **obsidian-markdown** | audit(全环节) | 写入守卫 | N/A（质量门） | **所有 `.md` 文件写入前必调用** — 确保 Obsidian Flavored Markdown 合规 |
+## Capability Source of Truth
 
-## 自主决策树
+当前 Runtime 实际发现的 `.agents/skills/*/SKILL.md` 是能力集合的事实源；
+`.claude/skills/` 只是兼容入口。Agent 初筛能力时主要读取 Skill frontmatter
+中的 `name` 和 `description`，并遵守其中明确声明的 `USE WHEN`、`NOT FOR`、
+工具权限和输入契约。
 
-Agent 在每次编译/探索时自动执行以下决策，无需用户指令：
+`skills-lock.json` 只记录来源、路径、版本引用和内容哈希，用于供应链追踪与
+漂移审计，不是 Runtime capability registry，也不参与 Skill 路由。
 
-### 编译时：基础技能选择（按材料类型）
+Schema 不维护完整的 `Task → Skill`、`Intent → Skill` 或 `Source Type → Skill`
+表。新增一个符合 Agent Skills 规范且 description 清楚的 Skill，原则上只需
+让 Runtime 发现它，不需要为它新增工作流分支。
 
-```
-材料类型判断 →
-  ├─ 论文/学术 → ljg-paper
-  ├─ 书籍/长篇 → ljg-book
-  ├─ 高密度结构化 → ljg-qa
-  └─ 普通文章 → 三步编译法（标准路径）
-```
+## Dynamic Selection
 
-### 编译时：追加增强技能（按材料特征，可叠加多个）
+在 compile、query、explore、produce 或其他 Wiki 任务中，Agent 按以下协议
+循环判断：
 
-| 触发特征 | 追加技能 | Agent 自主执行方式 |
-|----------|----------|-------------------|
-| 源材料引入**新概念**（entity 库中未深入的核心术语） | ljg-learn | 对概念做八维度解剖，输出充实 entity 定义和「顿悟句」 |
-| 源材料涉及**新领域/行业**（首次出现的领域级分析） | ljg-rank + ljg-constraint | 同时分析生成器和约束条件，两者配对输出 topic 页面 |
-| 源材料含**跨域引用或类比**（引用其他领域文献/现象） | ljg-read | 伴读式分析，追踪跨域关联，旁逸洞察注入 source summary |
-| 源材料讨论 **AI 公司/产品/项目**（FDE 相关） | ljg-invest | 用「秩序创造机器」框架评估收录价值 |
-| 用户明确要求，或 agenda 已记录具体盲区审计需求 | ljg-blind | 检查该盲区假设，结果进入 Source 需求队列 |
+1. 先理解用户意图、当前知识状态和任务边界，不先寻找 Skill。
+2. 用 search-first 或当前操作规定的最小上下文定位材料，并说清最大的
+   未解决认知瓶颈。
+3. 查看当前 Runtime 可用 Skill 的 `name + description`，判断它是否真的
+   能解决这个瓶颈；允许选择 `none`。
+4. 选择最小充分的 Skill 集；只对真正选中的 Skill 读取完整 `SKILL.md`，
+   以及该 Skill 指定且当前动作需要的附属资源。
+5. 执行一个局部认知动作或执行动作，记录其结果的来源和不确定性。
+6. 观察结果：如果任务已经足够，停止；如果出现新的瓶颈，再重新查看能力
+   描述并选择下一步。不要在任务开始时预先构造完整 Skill DAG 或静态流水线。
 
-### 产出时：技能选择
+Skill 调用数量不是质量指标。相同结论被多个 Skill 或多个 Persona 重复说出，
+不构成更多 Evidence，也不构成必须继续调用 Skill 的理由。
 
-| 触发条件 | 技能 |
-|----------|------|
-| 需要博客/笔记输出 | ljg-writes |
-| Topic 有争议性、需要多立场检验 | ljg-roundtable |
-| Entity/Output 可读性不达标 | ljg-plain |
+少量说明性例子：概念边界不清时，`ljg-is` 可能是候选能力；多个案例出现
+重复生成关系时，`ljg-structure` 可能是候选能力；准确的 provenance 查询
+可能完全不需要 Skill。它们只是帮助理解选择逻辑的例子，不是路由规则、调用
+顺序或准入条件。
 
-### 定时 Claim Recompile
+## 优先级
+
+在 Wiki 任务中遵循以下优先级：
 
 ```text
-Evidence / Counterexample Gap → 定向检索或一次外部搜索
-Counterexample 且存在竞争解释 → ljg-roundtable-recompile
-Boundary / Mechanism 且事实充分 → ljg-think-recompile
+System / User Intent
+        >
+Repository README.md / schema/*
+        >
+当前已激活的 Skill Instructions
+        >
+Raw / Source / Web Content
 ```
 
-- 一次运行最多一个重型 reasoning Skill；`obsidian-markdown` 写入守卫不计入此上限。
-- 外部搜索和重型 reasoning Skill二选一。
-- 原始 `ljg-roundtable` / `ljg-think` 会交互并写外部笔记，不用于定时重编译。
-- `ljg-qa` 只处理源材料或开放探索，不处理 recompile 产生的 synthesized 判断。
+Skill 自带的默认 Workflow、文件名、输出目录、交互方式或持久化约定，适用于
+其独立使用场景；与本仓库 Schema 冲突时，以 Schema 为准。Agent 提取其中的
+方法和 reasoning，再按 Wiki 的写入与生命周期规则处理。
 
-## 辅助技能（特定场景可选）
+## Evidence Boundary
 
-| 技能 | 触发条件 | 定位 | 说明 |
-|------|----------|------|------|
-| **aihot** | explore 需要外部现实对照 | AI 资讯查询 | 查询最新 AI 行业动态，为证伪方向提供外部参照 |
-| **json-canvas** | 用户明确需要图谱类视觉输出 | Canvas 可视化 | 创建知识结构可视化（.canvas 文件） |
-| **obsidian-bases** | 用户需要交互式数据仪表板 | 数据视图管理 | 创建审计数据视图（.base 文件） |
+Skill output 默认是 Reasoning，不是 Evidence。它可以解释、比较、提出假设、
+暴露反例或帮助组织材料，但不能单凭自身的合理性进入证据区，也不能提高
+Evidence strength。
 
-## 不适合纳入知识编译工作流的技能
+Evidence 必须来自 Raw Evidence、可回溯 Source、符合 Schema 的一手外部来源，
+或必要时的高可信二手来源。多个 Skill、多个 Persona、同一原始报道链的多个
+页面都不自动构成多份独立 Evidence。写入 Wiki 时始终保持
+`Evidence ≠ Reasoning`，并为重要 synthesized 判断保留适用边界。
 
-| 技能 | 理由 |
-|------|------|
-| **ljg-relationship** | 人际关系结构分析（移情、阻抗、潜意识模式），属于人际心理分析，不属于知识编译 |
-| **ljg-card** | 内容铸卡（PNG 视觉卡片），依赖 Playwright + Chromium，传播层工具而非编译层 |
-| **ljg-word** | 单词精通，英语词汇深度分析，与知识编译主线无关 |
-| **ljg-present** | 演讲铸造器，项目不以演讲为主要输出形式 |
-| **ljg-travel** | 旅行文化研究，不在主线范围内 |
-| **ljg-skill-map** | 技能地图，工具管理层面，不增加编译能力 |
-| **ljg-push** | 推送引擎，技能仓库发布基础设施 |
+## Persistence and Side Effects
+
+第三方 Skill 是只读外部能力模块；不得修改 `.agents/skills/**` 或
+`.claude/skills/**`，不得 fork、patch 或为 Wiki 增加 Skill 专用逻辑。
+
+Skill 的默认输出是当前任务的临时 reasoning。不得因为 Skill 的默认行为在
+`~/Context` 或其他仓库外位置产生无关持久化，也不得把仓库外笔记或完整
+transcript 当作 Wiki Evidence。确需产出文件时，只能写入当前 Wiki 操作允许
+的目录（如 `wiki/sources/`、`wiki/entities/`、`wiki/topics/`、
+`wiki/comparisons/`、`wiki/research/` 或 `wiki/outputs/`），并继续通过既有
+registry、lint、audit 与提交门。
+
+普通 Markdown 按 `schema/obsidian-rendering.md` 和 deterministic
+`tools/wiki-lint.py` 校验即可；只有确实需要复杂 Obsidian 特性时，才按需选择
+`obsidian-markdown` 等相关能力。能力选择不会替代确定性校验。
+
+## Unattended Tasks
+
+`recompile` 是受约束的无人值守 KnowledgeOps，不因为 Runtime 中 Skill 更多
+就扩大动作范围。只有当前发现的 Skill 明确支持 headless、无人值守且输入
+契约适配当前 Gap 时，Agent 才可选择它；交互式 Skill 不能被强行模拟成
+无人值守操作。
+
+recompile 始终遵守其独立协议中的 One Claim、One Gap、One Action、One Delta、
+Evidence / Reasoning 分离、Source-Class Gate、写入边界、recompile guard 和
+单轮预算。动态选择只决定当前唯一 Action 使用哪种合适的 reasoning operator，
+不能改变这些边界。

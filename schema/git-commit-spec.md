@@ -54,7 +54,7 @@ Scope 标识操作的聚焦对象，使用 kebab-case：
 
 ```
 - 来源: {URL} ({平台}, {作者})
-- 编译方式: {标准路径/ljg 增强路径}
+- 编译方式: {三步编译法；动态选择的 Skill 或 none}
 - 新增 Entity: {Entity-A}, {Entity-B}
 - 更新 Entity: {Entity-C}, {Entity-D}
 - 新增 Topic: {Topic-A}
@@ -122,7 +122,7 @@ explore(recompile): {Claim 简称} — {Delta}
 compile(Karpathy-AI-Capability-Gap): 编译 Karpathy AI 能力鸿沟帖
 
 - 来源: https://x.com/karpathy/status/... (X/Twitter, Andrej Karpathy)
-- 编译方式: 标准路径（三步编译法）+ 附加思考整合
+- 编译方式: 三步编译法 + 动态认知选择（使用的能力或 none）
 - 附加资料: 池建强微信公众号 + 墨问笔记
 - 新增 Entity: AI-Psychosis, AI-Capability-Gap
 - 更新 Entity: Andrej-Karpathy, Vibe-Coding, Software-2.0, Claude-Code-CLI

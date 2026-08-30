@@ -92,7 +92,8 @@ Quartz 构建要求所有日期字段（published/created/updated）为 ISO 8601
 部分 entity 文件仍保留 ljg-learn 八维拆解原始输出（`# 定锚 / # 八刀 / # 内观 / # 压缩`），
 缺少标准 entity 格式。需转换为：`> [!definition] 定义` + `## 关键数据点` + `## 前提与局限性` + `## 关联概念`。
 已修复 Taste/Judgment/Coding-Agents/Dan-Shipper，但仍需批量扫描确认。
-**注意**: ljg-learn 技能已移除，新编译不再产生此格式；但历史遗留 entity 仍需清理。
+**注意**: 这是旧版 ljg-learn 输出格式，新编译不应直接产生此 Entity 页面格式；
+当前是否使用某个 Skill 由 `schema/skill-mapping.md` 的动态选择协议决定。
 
 ### 文件末尾导航链接
 

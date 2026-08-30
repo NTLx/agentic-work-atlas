@@ -101,6 +101,27 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 
 ---
 
+## Agent Skills 使用边界
+
+Agent Skills 是 Wiki 可动态调用的外部能力。当前 Runtime 实际发现的
+`.agents/skills/*/SKILL.md` 及其 `name`、`description` 是能力选择依据；
+Schema 不维护完整 Skill 路由表。Agent 先理解任务和认知缺口，再选择 0–N 个
+最小充分的 Skill，执行后观察结果并按需重新选择。处理 compile、query、explore、
+produce 或 recompile 时，只有涉及 Skill 选择或约束才按需读取
+`schema/skill-mapping.md` 的具体协议。
+
+Skill 只提供局部认知或执行方法，不拥有 Wiki 生命周期控制权。在 Wiki 任务中：
+
+- Repository Schema 高于 Skill 自带的默认 Workflow、输出路径和持久化行为。
+- Skill output 默认属于 Reasoning，而非 Evidence；必须保持
+  `Evidence ≠ Reasoning`。
+- Skill 默认的 `~/Context` 等外部持久化不得污染 Wiki 工作流。
+- `.agents/skills/**` 与 `.claude/skills/**` 是只读的第三方能力，不得修改、
+  fork 或 patch。
+- `recompile` 等无人值守操作仍受各自 bounded autonomy 协议约束。
+
+---
+
 ## 语言规范
 
 - Wiki 生成内容默认**中文**；raw 原文、专有名词、代码标识符保留原文
@@ -129,16 +150,16 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 
 | 命令 | 说明 |
 |------|------|
-| `compile` / `compile <文件名>` | 编译 raw（优先 ljg 增强路径） |
-| `compile-ljg` / `compile-book` / `compile-qa` | ljg 专项编译 |
+| `compile` / `compile <文件名>` | 编译 raw（按当前认知缺口动态选择能力） |
 | `lint` | `uv run python tools/wiki-lint.py --fix-index --write-report` |
 | `audit-entities` | `python3 tools/entity-audit.py --write-report` |
+| `audit-skills` | `uv run python tools/skill-audit.py`（只读供应链与安装状态审计） |
 | `fix-lint` | 按 lint 报告逐项修复 |
 | `recompile` | 按 `tools/daily-thinking-agent-prompt.md` 检查一个队列 Claim |
-| `什么是 <概念>?` | 概念查询（优先 ljg-qa） |
-| `关于 <主题> 有什么讨论?` | 主题查询（ljg-rank / ljg-think） |
-| `辩论 <主题>` | 多视角探索（ljg-roundtable） |
-| `AI 资讯` | 查询最新 AI 动态（aihot） |
+| `什么是 <概念>?` | 概念查询（search-first，是否使用能力由 Agent 判断） |
+| `关于 <主题> 有什么讨论?` | 主题查询（search-first，按需选择能力） |
+| `辩论 <主题>` | 多视角探索或输出（按当前问题动态选择能力） |
+| `AI 资讯` | 查询最新 AI 动态 |
 
 ---
 
@@ -192,7 +213,7 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 
 | 操作 | 子文档 |
 |------|--------|
-| 选择 ljg 技能 | `schema/skill-mapping.md` |
+| Agent Skills 使用协议 | `schema/skill-mapping.md` |
 | git commit + push | `schema/git-commit-spec.md` |
 | 联网查询 | `schema/web-tools.md` |
 | Quartz 部署 | `schema/quartz-deploy.md` |
@@ -215,6 +236,7 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 | `wiki/lint-report.md` | 最新 lint 报告（派生审计产物，本地 audit 生成，不提交） |
 | `tools/wiki-lint.py` | Wiki 维护门禁脚本 |
 | `tools/entity-audit.py` | Entity 价值审计脚本 |
+| `tools/skill-audit.py` | Agent Skills 安装、lock 与兼容入口漂移审计（只读） |
 | `schema/*.md` | 按需加载的规范子文档 |
 
 **Compile 注意事项**：先判题后编译（按主题宪法判断是否属于主线）；不修改 raw 正文；raw 元数据修复最小化。

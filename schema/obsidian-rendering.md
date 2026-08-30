@@ -36,15 +36,18 @@ Obsidian 使用 `$` 作为行内 LaTeX 公式分隔符。**任何 `$` 出现在�
 
 ## 编写前检查清单
 
-在写入任何 `.md` 文件前，Agent 必须调用 **obsidian-markdown** 技能进行格式校验。
+普通 Markdown 写入不要求调用任何 Skill：直接遵循本规范，并让
+`tools/wiki-lint.py` 做确定性校验。只有在确实需要复杂的 Obsidian 特性，且
+当前 Runtime 中的 Skill 描述与任务匹配时，Agent 才按
+`schema/skill-mapping.md` 的协议选择 `obsidian-markdown` 或其他能力。Skill
+选择不能替代 lint，也不能改变 Wiki 的写入边界。
 
-1. **调用 obsidian-markdown 技能**：确保 Obsidian Flavored Markdown 合规（wikilink、callout、properties 语法，避免 MathJax 冲突、emphasis 错位、frontmatter 错误）
-2. **aliases 字段**：Entity 必须包含 `aliases` 字段，值为自然语言名称（供 Obsidian "未链接提及" 识别）
-3. **`$` 符号扫描**：新写入的 Wiki/Schema 正文无裸露的 `$`；raw 原文正文不做清洗式改写
-4. **emphasis 配对**：`*` / `_` / `~` 成对出现
-5. **YAML 有效性**：frontmatter 中 special chars（`#`, `:`, `{}`, `[]`, `&`, `*`）必须用引号包裹
-6. **wikilink 格式**：双括号内使用 kebab-case，无空格；正文引用优先使用管道语法 `[[Kebab-Case|Natural Name]]`
-7. **无隐藏字符**：无 BOM、零宽字符（U+200B 等）
+1. **aliases 字段**：Entity 必须包含 `aliases` 字段，值为自然语言名称（供 Obsidian "未链接提及" 识别）
+2. **`$` 符号扫描**：新写入的 Wiki/Schema 正文无裸露的 `$`；raw 原文正文不做清洗式改写
+3. **emphasis 配对**：`*` / `_` / `~` 成对出现
+4. **YAML 有效性**：frontmatter 中 special chars（`#`, `:`, `{}`, `[]`, `&`, `*`）必须用引号包裹
+5. **wikilink 格式**：双括号内使用 kebab-case，无空格；正文引用优先使用管道语法 `[[Kebab-Case|Natural Name]]`
+6. **无隐藏字符**：无 BOM、零宽字符（U+200B 等）
 
 ## 快速诊断命令
 

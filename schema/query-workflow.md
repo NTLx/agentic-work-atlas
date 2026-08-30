@@ -10,10 +10,11 @@ type: schema-subdoc
 
 ## 检索策略：search-first
 
-不再默认从完整 `index.md` 开始。`index.md` 只是人类浏览入口、顶层导航与不知道搜索什么时的 fallback，不是每次查询的强制上下文。
+不再默认从完整 `index.md` 开始。`index.md` 只是人类浏览入口、顶层导航与不知道
+搜索什么时的 fallback，不是每次查询的强制上下文。
 
-```
-理解 query intent
+```text
+理解 query
 ↓
 精确搜索标题 / aliases / tag / 关键词（不使用完整 index）
 ↓
@@ -40,7 +41,8 @@ type: schema-subdoc
 
 ## 上下文构建（临时 Context Pack）
 
-Context Pack 是当前任务的内部 working memory，不保存成文件、不新增 YAML。Agent 内部临时判断五个变量：
+Context Pack 是当前任务的内部 working memory，不保存成文件、不新增 YAML。Agent
+内部临时判断五个变量：
 
 - `intent`：五种 intent 之一
 - `query`：原始问题
@@ -76,21 +78,40 @@ Do not assume:
 
 默认不落盘。若保存，落入 `wiki/outputs/`，并在文末加入 `## 回填检查`。
 
-Context Pack 不得直接升级为 entity/topic/comparison。只有其中的新判断通过回填检查并能回链 raw/source/Wiki，才允许进入稳定 Wiki。
+Context Pack 不得直接升级为 entity/topic/comparison。只有其中的新判断通过回填
+检查并能回链 raw/source/Wiki，才允许进入稳定 Wiki。
 
 ## 查询模式
 
 | 模式 | 示例查询 | 检索路径 |
 |-----|---------|---------|
-| 概念查询 | "什么是 Knowledge Work?" | search → Entity → 必要时 Source |
-| 主题查询 | "关于 AI 替代有什么讨论？" | search → Topic → Entities |
-| 对比查询 | "A 和 B 有什么区别？" | search → comparisons |
-| 溯源查询 | "这个观点来自哪篇文章？" | Wiki → Raw → source URL |
+| 概念查询 | “什么是 Knowledge Work?” | search → Entity → 必要时 Source |
+| 主题查询 | “关于 AI 替代有什么讨论？” | search → Topic → Entities |
+| 对比查询 | “A 和 B 有什么区别？” | search → comparisons |
+| 溯源查询 | “这个观点来自哪篇文章？” | Wiki → Raw → source URL |
 
-## Query 增强（ljg 驱动）
+## 按需使用 Agent Skills
 
-| 增强 | 方式 | 效果 |
-|------|------|------|
-| **ljg-qa 问答提取** | 对查询中的概念调用 ljg-qa | Q-A 对直接回答"什么是 X"并提供推理链 |
-| **ljg-think 追本之箭** | 对复杂观点/现象调用 ljg-think | 层层降深，揭示底层结构 |
-| **ljg-roundtable 圆桌** | 对有争议的话题调用 ljg-roundtable | 多立场辩证，暴露分歧和共识边界 |
+search-first 和 bounded context 优先于 Skill 选择。完成有限检索后，Agent 先判断
+上下文是否已经足以回答：
+
+```text
+上下文足够 → 直接回答，可以完全不使用 Skill
+上下文不足 → 说明最大的理解瓶颈
+             ↓
+             查看 Runtime 当前发现的 Skill 的 name + description
+             ↓
+             选择 none 或最小充分的相关 Skill
+             ↓
+             按需读取 SKILL.md，执行一次 reasoning enhancement
+             ↓
+             观察结果，必要时重新判断；然后回答
+```
+
+这里没有 Query → Skill 的固定映射。概念理解、机制深挖、结构辨认或争议分析都
+可能需要不同能力，也都可能在已有上下文充分时不需要 Skill。Skill output 默认
+是 Reasoning，不是 Evidence；答案中的事实仍须回链 Wiki、Source 或 Raw，且
+遵守 `schema/skill-mapping.md` 的优先级、持久化和副作用边界。
+
+查询只为当前回答建立 bounded context，不因为调用 Skill 自动创建 Entity、Topic、
+Comparison、Raw 或外部笔记。

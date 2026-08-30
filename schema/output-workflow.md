@@ -7,11 +7,15 @@ type: schema-subdoc
 
 # Outputs 工作流
 
-| 增强 | 方式 | 效果 |
-|------|------|------|
-| **ljg-writes 写作引擎** | 对 Topic/Entity 观点调用 ljg-writes | 输出 wiki/outputs/ 博客/笔记 |
-| **ljg-roundtable 圆桌** | 对有争议的 output 主题调用 ljg-roundtable | 多立场辩证，让 output 包含分歧而非只表达单方 |
-| **ljg-plain 白话重写** | 对 Entity definition 或 output 调用 ljg-plain | 校验"12 岁可读"质量标准 |
+先确定输出对象、读者、已有 Wiki 依据和表达瓶颈，再按
+`schema/skill-mapping.md` 查看 Runtime 当前发现的 Skill 描述。Agent 可以直接
+写作，也可以选择一个或多个互补能力；是否使用、使用顺序和是否重新选择由
+中间结果决定，不维护 Output → Skill 固定映射。Skill output 默认是 reasoning，
+不能替代来源回链或 Output 回填门控。
+
+用户只要求一次性回答时，可以不写文件，也可以完全不使用 Skill。需要持久化时，
+只能写入本流程允许的 `wiki/outputs/`，并遵守 Repository Schema 高于 Skill 原生
+workflow 的优先级；不得因 Skill 的默认目录或笔记行为写入无关位置。
 
 ## Output 回填门控
 

@@ -48,6 +48,7 @@ type: schema-subdoc
 | 重复概念候选（标题/aliases/token 高度重叠） | `tools/entity-audit.py` 复核队列；不自动合并 |
 | Raw backlog 提醒（逾期未编译） | 人工触发 compile；lint 只在报告列出"待编译 Raw" |
 | Entity 价值 / 主题覆盖 / 幂律结构 | `tools/entity-audit.py` |
+| Agent Skill 安装、lock、目录哈希与 Claude 兼容入口漂移 | `tools/skill-audit.py`；只读报告，不参与 Skill 路由 |
 
 ## 运行方式
 
@@ -67,6 +68,14 @@ uv run python tools/wiki-lint.py --fix-index --write-report
 ```
 
 `--fix-index` 同步版本化的 `index.md` 计数；`--write-report` 生成 `wiki/lint-report.md` 供本地查看审计详情，该文件被 `.gitignore` 忽略，不要求随 commit 提交。知识变更（compile/recompile 等）只需通过只读校验即可提交，无需强制生成报告。
+
+Skill 供应链审计是独立的只读检查：
+
+```bash
+uv run python tools/skill-audit.py
+```
+
+它扫描当前 Runtime 的 `SKILL.md`、`skills-lock.json` 和 `.claude/skills/` 软链接，报告 frontmatter、安装/锁定差异、目录哈希漂移及兼容入口问题；不会删除、更新或修复任何 Skill、lock 条目或软链接。发现错误时退出码为 1；警告本身不阻断命令。
 
 ## Recompile Guard（只读约束）
 
