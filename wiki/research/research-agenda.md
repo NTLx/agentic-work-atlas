@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-30T04:00:29
+updated: 2026-08-30T08:00:54
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -41,9 +41,9 @@ related_entities:
 - Gap: Counterexample
 - Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`、`raw/How we contain Claude across products.md`、`raw/20260518-zero-trust-for-ai-agents.md`、`raw/20260616-why-is-meta-destroying-its-engineering.md`、`raw/20260714-context-collapse-2-when-emails-instruct.md`；[Microsoft 官方 least-privilege 模式](https://learn.microsoft.com/en-us/security/zero-trust/sfi/least-privilege-for-ai-agents)；[arXiv 2607.22611](https://arxiv.org/abs/2607.22611)（生产 8 个月的细粒度权限架构，自报只读 AI agent 与零未授权写入）；[AWS/KTern.AI 生产案例](https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/)（20+ 生产 agents、per-agent least privilege；均待 clip/compile）
 - Evidence goal: 复核部署级 least-privilege 案例是否包含长期数据最小化（读取范围/保留期）以决定是否进一步 weakened；若仅有权限/写入控制则收窄为默认风险，或等待跨厂商重复失效（→strengthened）；EDPB 02/2026 最终版或新反例披露可恢复检索。
-- Last checked: 2026-08-30T03:00:41 · no_delta
-- Next: clip+compile arXiv 2607.22611 与 AWS/KTern.AI 生产案例，核查读取范围与保留期是否真正构成数据最小化；反例 Gap 保持开放
-- Retry: new-source:agent-privacy-deployment-case-clipped
+- Last checked: 2026-08-30T08:00:54 · weakened
+- Next: clip+compile Numezis 案例，核查匿名部署的可验证细节与长期数据最小化；反例 Gap 保持开放
+- Retry: new-source:numezis-agent-privacy-case-clipped
 
 ### CR-003 · AI 监督 AI 存在共模误差下界
 - Status: ready
@@ -129,7 +129,7 @@ related_entities:
 | P0 | 验证器独立性四轴对照 | 现有材料分散覆盖目标/证据/执行/时间，缺目标操纵、共同污染和版本新鲜度的同任务对照 | clip+compile → EX-001；优先寻找激励隔离、独立实现和旧版检测率案例 |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
-| P1 | Agent 隐私对照 | 微软官方 least-privilege 已定位；新增 arXiv 2607.22611 生产权限架构与 AWS/KTern.AI 生产案例，均待入 raw/source；EDPB Guidelines 02/2026 最终版未发布 | clip/compile → CR-002 |
+| P1 | Agent 隐私对照 | 微软官方 least-privilege 已定位；新增 arXiv 2607.22611、AWS/KTern.AI 与 [Numezis 匿名 SME 案例](https://advisory.numezis.com/en/work/business-agent-platform-sme)，均待入 raw/source；EDPB Guidelines 02/2026 最终版未发布 | clip/compile → CR-002 |
 | P1 | 专业能力再生反例 | 缺高采纳且训练能力不降的纵向案例 | clip/compile → CR-005 |
 | P2 | 全球南方 AI 生态 | 缺已长期运行且能报告本地制度/评价标准与部署结果的一手材料；现有 NITI Arezzo 仅为试点，BharatGen 尚未公共/机构部署 | new-source → CR-007 |
 
@@ -150,14 +150,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T08:00:54 | Agent 数据过度收集结构性 | weakened | Numezis 匿名瑞士 SME 生产案例报告按客户/法人隔离读取、逐工具权限、模型无保留/不训练；证明架构可实现数据最小化，但长期性与可推广性仍待检验。 |
 | 2026-08-30T06:00:41 | 全球南方 AI 跃迁需要制度共演化 | blocked | 官方 NITI Arezzo 材料显示本地指南、语言与现场适配且仅为可行性试点；印度政府称 BharatGen 尚未公共/机构部署。未取得长期低错配的一手反例，Gap 保持开放。 |
 | 2026-08-30T05:00:50 | 评测逃逸是系统性机制 | strengthened | OpenAI 一手披露 UK AISI 与 Irregular 两起第三方评测越界，分别暴露授权边界未显式化与隔离配置失效；与 Anthropic 材料形成跨厂商重复支持，但加固后归零反例仍缺。 |
 | 2026-08-30T04:00:29 | AI 监督 AI 共模误差下界 | strengthened | Apple 一手研究在 7 个模型家族的 9-judge panel 上测得约 2.18 个有效独立投票、8–22pp 独立投票缺口，且跨任务/提示/温度稳定；面板范围边界仍待收窄。 |
 | 2026-08-30T03:00:41 | Agent 数据过度收集结构性 | no_delta | 复核 arXiv 生产部署与 AWS/KTern.AI 原文，仍无读取范围或保留期指标；与 00:00 已知证据一致，当前“架构可避免、默认风险仍在”边界不变。 |
-| 2026-08-30T01:00:32 | Agent Observability 上界 | refined | OpenAI 官方披露补充跨厂商评测边界失效：隔离配置未闭包与授权边界未显式化分别导致真实外部行动；事后监控发现不等于事前阻断，Claim 收窄为“仪器化闭包”前提。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-002（Numezis 匿名瑞士 SME 生产案例：按客户/法人隔离读取、逐工具权限、模型无保留/不训练；反例使 Claim weakened，但长期性与可推广性仍待检验）
 - [[2026-08-30]] — recompile CR-007（NITI Arezzo 为本地适配的短期可行性试点，BharatGen 尚未公共/机构部署；未发现长期低错配一手反例，blocked）
 - [[2026-08-30]] — recompile CR-006（OpenAI 官方披露 UK AISI/Irregular 两起第三方评测越界，分别为授权边界未显式化与网络隔离配置失效；与 Anthropic 三案形成跨厂商重复，strengthened）
 - [[2026-08-30]] — recompile CR-003（Apple 一手 9-judge/7-family 研究发现约 2.18 个有效独立投票、相关错误跨任务稳定；strengthened）
