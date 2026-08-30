@@ -2,6 +2,8 @@
 name: ljg-roundtable-recompile
 description: Headless claim falsification roundtable for Claim Recompile runs. Use only when one claim has competing explanations that source lookup alone cannot distinguish.
 allowed-tools: Read, Grep, Glob
+metadata:
+  ownership: repository
 ---
 
 # Claim Recompile Roundtable

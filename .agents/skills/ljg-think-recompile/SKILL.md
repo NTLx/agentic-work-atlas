@@ -2,6 +2,8 @@
 name: ljg-think-recompile
 description: Headless mechanism and boundary analysis for Claim Recompile runs. Use only when existing evidence is adequate but a claim's mechanism or applicability boundary remains unclear.
 allowed-tools: Read, Grep, Glob
+metadata:
+  ownership: repository
 ---
 
 # Claim Recompile Think

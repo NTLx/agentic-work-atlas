@@ -103,12 +103,14 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 
 ## Agent Skills 使用边界
 
-Agent Skills 是 Wiki 可动态调用的外部能力。当前 Runtime 实际发现的
-`.agents/skills/*/SKILL.md` 及其 `name`、`description` 是能力选择依据；
-Schema 不维护完整 Skill 路由表。Agent 先理解任务和认知缺口，再选择 0–N 个
-最小充分的 Skill，执行后观察结果并按需重新选择。处理 compile、query、explore、
-produce 或 recompile 时，只有涉及 Skill 选择或约束才按需读取
-`schema/skill-mapping.md` 的具体协议。
+Agent Skills 的能力定义来自各 Skill 自身的 `name`、`description` 和
+`SKILL.md`。仓库中的 `.agents/skills/` 保存项目能力库存，不等于所有 Runtime
+的自动发现入口；Agent 当前实际可调用什么，以当前 Runtime 已发现并向模型暴露
+的 Skill catalog 为准。不同 Runtime 的发现入口可能不同；Claude Code 的项目级
+Skill 通过 `.claude/skills/` 暴露。Schema 不维护完整 Skill 路由表。Agent 先
+理解任务和认知缺口，再选择 0–N 个最小充分的 Skill，执行后观察结果并按需重新
+选择。处理 compile、query、explore、produce 或 recompile 时，只有涉及 Skill
+选择或约束才按需读取 `schema/skill-mapping.md` 的具体协议。
 
 Skill 只提供局部认知或执行方法，不拥有 Wiki 生命周期控制权。在 Wiki 任务中：
 
@@ -116,8 +118,10 @@ Skill 只提供局部认知或执行方法，不拥有 Wiki 生命周期控制�
 - Skill output 默认属于 Reasoning，而非 Evidence；必须保持
   `Evidence ≠ Reasoning`。
 - Skill 默认的 `~/Context` 等外部持久化不得污染 Wiki 工作流。
-- `.agents/skills/**` 与 `.claude/skills/**` 是只读的第三方能力，不得修改、
-  fork 或 patch。
+- 由 `skills-lock.json` 管理的第三方 Skill 内容只读，不得被 Wiki Workflow 修改、
+  fork 或 patch；仓库自有 Skill 按明确的 ownership metadata 管理。
+- Runtime 兼容入口（例如 `.claude/skills/` 软链接）属于仓库集成层；可以为仓库
+  自有 Skill 维护，但不得借此修改第三方 Skill 内容。
 - `recompile` 等无人值守操作仍受各自 bounded autonomy 协议约束。
 
 ---

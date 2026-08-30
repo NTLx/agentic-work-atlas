@@ -314,6 +314,13 @@ Gap 主要是竞争解释、Mechanism 或 Boundary 时考虑。若真正缺的�
 选择明确支持 headless、无人值守且输入契约适配当前 Gap 的 Skill；不得把交互式
 Skill 自行模拟成无人值守 operator。选择 `none` 也是有效结果。
 
+如果当前 Gap 确实需要 reasoning operator，但 Runtime catalog 中没有安全、headless、
+输入契约匹配的候选，记录 `Skill: none` 后直接进入 "SETTLE"。此时不得自行模拟
+某个 Skill，不得把 Action 改成联网搜索或其他未经选择的动作：若缺少 operator 使
+Gap 无法推进，使用 `Delta: blocked` 并记录
+`Missing: eligible headless reasoning operator`；若已有材料已足以确认本轮没有
+进一步变化，使用 `Delta: no_delta`。
+
 给所选 Skill 的输入只包含：
 
 - Claim；

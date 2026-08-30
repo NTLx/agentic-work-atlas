@@ -62,13 +62,6 @@
       "skillPath": "skills/ljg-paper/SKILL.md",
       "computedHash": "c18956e42c2422b518e7716484ea0f4f996c323ae15a585faf6c606b8b53072d"
     },
-    "ljg-paper-river": {
-      "source": "lijigang/ljg-skills",
-      "ref": "md",
-      "sourceType": "github",
-      "skillPath": "skills/ljg-paper-river/SKILL.md",
-      "computedHash": "0b77d3c27af9da4549a00dd52b458acbaa06364bd284e5f7c9c8a55da8e3c174"
-    },
     "ljg-plain": {
       "source": "lijigang/ljg-skills",
       "ref": "md",

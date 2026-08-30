@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only audit for installed Agent Skills and their supply-chain lock.
+"""Read-only audit for the repository Skill inventory and its supply-chain lock.
 
 The audit reports installation, metadata, lock, folder-hash, and Claude
 compatibility drift. It never edits a skill, the lock file, or a symlink.
@@ -43,6 +43,9 @@ class AuditReport:
 
     installed: dict[str, InstalledSkill] = field(default_factory=dict)
     locked: dict[str, dict] = field(default_factory=dict)
+    external_managed: list[str] = field(default_factory=list)
+    repository_owned: list[str] = field(default_factory=list)
+    unmanaged: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
     claude_valid: list[str] = field(default_factory=list)
@@ -109,7 +112,7 @@ def compute_skill_folder_hash(skill_dir: Path) -> str:
 def _discover_installed(repo: Path, report: AuditReport) -> None:
     skills_dir = repo / AGENTS_SKILLS_DIRNAME
     if not skills_dir.is_dir():
-        report.errors.append(f"缺少 Runtime Skill 目录: {skills_dir}")
+        report.errors.append(f"缺少仓库 Skill 能力库存目录: {skills_dir}")
         return
 
     for directory in sorted(skills_dir.iterdir(), key=lambda item: item.name):
@@ -143,6 +146,15 @@ def _discover_installed(repo: Path, report: AuditReport) -> None:
         )
 
 
+def _declared_ownership(metadata: dict) -> str | None:
+    ownership_metadata = metadata.get("metadata")
+    if not isinstance(ownership_metadata, dict):
+        return None
+    if ownership_metadata.get("ownership") == "repository":
+        return "repository"
+    return None
+
+
 def _load_lock(repo: Path, report: AuditReport) -> None:
     path = repo / LOCK_FILENAME
     try:
@@ -154,7 +166,7 @@ def _load_lock(repo: Path, report: AuditReport) -> None:
     if not isinstance(data, dict):
         report.errors.append(f"{path} 顶层必须是对象")
         return
-    if not isinstance(data.get("version"), int):
+    if not isinstance(data.get("version"), int) or isinstance(data.get("version"), bool):
         report.errors.append(f"{path} 缺少整数 version")
     skills = data.get("skills")
     if not isinstance(skills, dict):
@@ -200,15 +212,40 @@ def _load_lock(repo: Path, report: AuditReport) -> None:
         if ref is not None and not isinstance(ref, str):
             report.errors.append(f"{label} 的 ref 必须是字符串")
 
-        installed = report.installed.get(skill_name)
-        if installed is None:
+        if skill_name not in report.installed:
             report.errors.append(f"已锁定但未安装: {skill_name}")
-        elif isinstance(computed_hash, str) and HASH_PATTERN.fullmatch(computed_hash):
-            if installed.folder_hash and installed.folder_hash.lower() != computed_hash.lower():
-                report.errors.append(
-                    f"Skill 目录哈希漂移: {skill_name} "
-                    f"(lock={computed_hash}, actual={installed.folder_hash})"
-                )
+
+
+def _classify_ownership(report: AuditReport) -> None:
+    for name, installed in sorted(report.installed.items()):
+        declared_ownership = _declared_ownership(installed.metadata)
+        if name in report.locked:
+            if declared_ownership == "repository":
+                report.errors.append(f"所有权冲突: {name} 同时声明 repository-owned 且存在 lock 条目")
+            report.external_managed.append(name)
+        elif declared_ownership == "repository":
+            report.repository_owned.append(name)
+        else:
+            report.unmanaged.append(name)
+            report.warnings.append(f"未托管 Skill: {name}")
+
+
+def _audit_hashes(report: AuditReport) -> None:
+    for name in report.external_managed:
+        installed = report.installed[name]
+        entry = report.locked.get(name)
+        if not isinstance(entry, dict):
+            continue
+        computed_hash = entry.get("computedHash")
+        if not isinstance(computed_hash, str) or not HASH_PATTERN.fullmatch(computed_hash):
+            continue
+        if installed.folder_hash and installed.folder_hash.lower() != computed_hash.lower():
+            report.warnings.append(
+                f"Hash advisory: {name} 的 installed-copy hash 与 skills-lock.json 不同 "
+                f"(lock={computed_hash}, actual={installed.folder_hash})；可能由 source/install "
+                "漂移、过滤文件或平台字节差异造成，请先对照原始 source snapshot 核验，"
+                "再判断是否属于完整性问题"
+            )
 
 
 def _audit_claude_links(repo: Path, report: AuditReport) -> None:
@@ -226,7 +263,12 @@ def _audit_claude_links(repo: Path, report: AuditReport) -> None:
             report.errors.append(f"Claude 入口不是软链接: {entry.name}")
             continue
 
-        target = entry.resolve(strict=False)
+        try:
+            target = entry.resolve(strict=False)
+        except (OSError, RuntimeError) as exc:
+            report.claude_invalid.append(entry.name)
+            report.errors.append(f"Claude 入口无法解析: {entry.name}: {exc}")
+            continue
         try:
             relative_target = target.relative_to(agents_root)
         except ValueError:
@@ -259,12 +301,8 @@ def audit_repo(repo: Path = ROOT) -> AuditReport:
     report = AuditReport()
     _discover_installed(resolved_repo, report)
     _load_lock(resolved_repo, report)
-
-    installed_names = set(report.installed)
-    locked_names = set(report.locked)
-    for name in sorted(installed_names - locked_names):
-        report.warnings.append(f"已安装但未锁定: {name}")
-
+    _classify_ownership(report)
+    _audit_hashes(report)
     _audit_claude_links(resolved_repo, report)
     return report
 
@@ -278,6 +316,11 @@ def _print_findings(title: str, findings: list[str], stream: TextIO) -> None:
         print("- 无", file=stream)
 
 
+def _print_names(title: str, names: list[str], stream: TextIO) -> None:
+    value = ", ".join(names) if names else "无"
+    print(f"- {title}: {value}", file=stream)
+
+
 def print_report(report: AuditReport, stream: TextIO = sys.stdout) -> None:
     """Print a stable, Chinese, read-only audit report."""
 
@@ -285,6 +328,11 @@ def print_report(report: AuditReport, stream: TextIO = sys.stdout) -> None:
     print(file=stream)
     print(f"已安装: {len(report.installed)}", file=stream)
     print(f"已锁定: {len(report.locked)}", file=stream)
+    print(file=stream)
+    print("所有权分类:", file=stream)
+    _print_names("External-managed（外部锁定）", report.external_managed, stream)
+    _print_names("Repository-owned（仓库自有）", report.repository_owned, stream)
+    _print_names("Unmanaged（未托管）", report.unmanaged, stream)
     print(file=stream)
     _print_findings("错误", report.errors, stream)
     _print_findings("警告", report.warnings, stream)
