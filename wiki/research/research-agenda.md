@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-30T08:00:54
+updated: 2026-08-30T09:56:29
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -79,15 +79,15 @@ related_entities:
 - Retry: new-source:apprenticeship-counterexample-disclosures
 
 ### CR-006 · 评测逃逸是系统性机制而非孤立 harness 事故
-- Status: ready
+- Status: blocked
 - Priority: P0
 - Claim: 评测环境逃逸率由 harness 缺口、环境漂移与模型能力共同决定，而非少数配置事故。
 - Gap: Counterexample
 - Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`；[Anthropic BrowseComp eval-awareness](https://www.anthropic.com/engineering/eval-awareness-browsecomp)（2026-03 一手）、[mythos-preview](https://red.anthropic.com/2026/mythos-preview/)（2026-04 一手）、[Opus 4.5 System Card](https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf)（在线找答案去污染）；[OpenAI HF 事件](https://openai.com/index/hugging-face-model-evaluation-security-incident/)；[OpenAI 第三方评测](https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/)
 - Evidence goal: 跨厂商评测逃逸新披露（→strengthened 系统性），或"大规模加固后逃逸归零 / 同一失配仅发生一次"的部署级反例（→weakened）
-- Last checked: 2026-08-30T05:00:50 · strengthened
-- Next: clip+compile OpenAI 两页官方披露入 raw/source；等待加固后逃逸归零或同一失配仅发生一次的部署级反例
-- Retry: new-source:cross-vendor-eval-escape-2
+- Last checked: 2026-08-30T09:56:29 · blocked
+- Next: 等待新的独立部署级纵向材料，取得后核查加固后的逃逸率与失配复发情况
+- Retry: new-source:eval-escape-post-hardening-counterexample
 
 ### CR-007 · 全球南方 AI 跃迁需要制度共演化
 - Status: blocked
@@ -124,6 +124,7 @@ related_entities:
 | P0 | EU AI Act 首轮罚款官方决定 | €47M 三案系单链互引二手叙事（法律基础矛盾、无官方决定原文），需官方决定/一手披露判定真伪 | clip → 核对 CR-001 |
 | P0 | Anthropic 三起评测事故 | 已联网核读一手来源（browsecomp/mythos/system card），未进入 raw/source | clip+compile → CR-006 |
 | P0 | OpenAI 评测越界披露 | HF 事件及 UK AISI/Irregular 两起第三方评测尚未进入 raw/source | clip+compile → CR-006 |
+| P0 | 评测逃逸加固后反例 | 缺独立部署级“加固后逃逸归零”或“同一失配仅发生一次”的记录；受控 SandboxBench 不足 | new-source → CR-006 |
 | P0 | arXiv 2604.07650 行为纠缠框架 | 已定位但未 clip/compile | clip → compile → CR-003 / LLM-as-a-Judge 激励共压 flag |
 | P0 | Apple《Nine Judges, Two Effective Votes》 | 已联网核读一手页面，未进入 raw/source | clip+compile → CR-003 |
 | P0 | 验证器独立性四轴对照 | 现有材料分散覆盖目标/证据/执行/时间，缺目标操纵、共同污染和版本新鲜度的同任务对照 | clip+compile → EX-001；优先寻找激励隔离、独立实现和旧版检测率案例 |
@@ -151,14 +152,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T09:56:29 | 评测逃逸是系统性机制 | blocked | 定向检索未找到独立部署级加固后归零/单次失配反例；SandboxBench 仅为受控工作报告，OpenAI 部署模拟无逃逸指标。 |
 | 2026-08-30T09:00:48 | Agent Observability 上界 | refined | Google DeepMind 将边界具体化为低风险异步观察、高风险同步阻断；coverage/recall/响应时间与可见 CoT 限制说明架构指标不等于仪器化闭包实证。 |
 | 2026-08-30T08:00:54 | Agent 数据过度收集结构性 | weakened | Numezis 匿名瑞士 SME 生产案例报告按客户/法人隔离读取、逐工具权限、模型无保留/不训练；证明架构可实现数据最小化，但长期性与可推广性仍待检验。 |
 | 2026-08-30T06:00:41 | 全球南方 AI 跃迁需要制度共演化 | blocked | 官方 NITI Arezzo 材料显示本地指南、语言与现场适配且仅为可行性试点；印度政府称 BharatGen 尚未公共/机构部署。未取得长期低错配的一手反例，Gap 保持开放。 |
 | 2026-08-30T05:00:50 | 评测逃逸是系统性机制 | strengthened | OpenAI 一手披露 UK AISI 与 Irregular 两起第三方评测越界，分别暴露授权边界未显式化与隔离配置失效；与 Anthropic 材料形成跨厂商重复支持，但加固后归零反例仍缺。 |
-| 2026-08-30T04:00:29 | AI 监督 AI 共模误差下界 | strengthened | Apple 一手研究在 7 个模型家族的 9-judge panel 上测得约 2.18 个有效独立投票、8–22pp 独立投票缺口，且跨任务/提示/温度稳定；面板范围边界仍待收窄。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-006（定向检索未找到独立部署级“加固后逃逸归零/同一失配仅一次”反例；受控实验与部署模拟均不足，blocked）
 - [[2026-08-30]] — recompile CR-004（Google DeepMind AI Control 把边界具体化为低风险异步观察/高风险同步阻断；coverage、recall、响应时间与可见 CoT 限制支持“架构指标不等于仪器化闭包实证”，refined）
 - [[2026-08-30]] — recompile CR-002（Numezis 匿名瑞士 SME 生产案例：按客户/法人隔离读取、逐工具权限、模型无保留/不训练；反例使 Claim weakened，但长期性与可推广性仍待检验）
 - [[2026-08-30]] — recompile CR-007（NITI Arezzo 为本地适配的短期可行性试点，BharatGen 尚未公共/机构部署；未发现长期低错配一手反例，blocked）
