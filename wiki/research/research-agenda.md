@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-30T14:00:29
+updated: 2026-08-30T15:00:33
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -63,8 +63,8 @@ related_entities:
 - Gap: Boundary
 - Evidence: `raw/20260608-connector-observability-directory.md`、`raw/20260819-google-ai-evals-inspect-skill.md`；Anthropic 三案一手 URL（browsecomp / mythos / Opus 4.5 system card，待 clip）；[OpenAI HF 事件](https://openai.com/index/hugging-face-incident-and-the-road-ahead/)；[OpenAI 第三方评测](https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/)；[Google DeepMind AI Control](https://deepmind.google/blog/securing-the-future-of-ai-agents/)（均待 clip）
 - Evidence goal: 取得逐案事前阻断或 coverage/recall 数据，区分“仪器化闭包”的架构承诺与真实污染向量覆盖的实证。
-- Last checked: 2026-08-30T12:00:35 · refined
-- Next: clip+compile Google DeepMind AI Control 一手材料；继续寻找公开的逐案同步阻断或 coverage/recall 实测数据
+- Last checked: 2026-08-30T15:00:33 · refined
+- Next: clip+compile Google DeepMind AI Control 一手材料；核查运行时路径闭包、逐案同步阻断或 coverage/recall 实测数据
 - Retry: new-source:google-deepmind-ai-control
 
 ### CR-005 · AI 采纳侵蚀专业能力再生
@@ -153,14 +153,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-30T15:00:33 | Agent Observability 上界 | refined | 将“结构层可枚举”限定为已声明且被记录的接口/事件目录；只有运行时可达路径被权限、隔离和日志闭包覆盖时才转为有效 observability。 |
 | 2026-08-30T14:00:29 | AI 监督 AI 共模误差下界 | refined | arXiv 2607.10139v3 具体给出跨家族 verifier panel、七个 benchmark 与逐域 shared-error floor：数学接近 0，GPQA 0.030、MMLU-Pro 0.143；换 generator 后仍复现，Claim 收窄为任务与 verifier 条件下的边界命题。 |
 | 2026-08-30T13:00:40 | Agent 数据过度收集结构性 | no_delta | 复核 Numezis 同一匿名案例；虽明确 6 个月部署、逐客户/法人隔离与模型无保留，仍无读取量或 TTL 数据，长期性缺口不变。 |
 | 2026-08-30T12:00:35 | Agent Observability 上界 | refined | Google DeepMind AI Control 定义 coverage、recall、time-to-response 与同步阻断指标及目标；Roadmap 仍属理论/拟议保障，未给逐案实测，边界进一步收窄。 |
 | 2026-08-30T11:00:32 | AI 监督 AI 共模误差下界 | strengthened | 新一手跨模型共识 verifier 研究观察到任务域相关的共享错误下界，换生成模型家族后复现；数学近零、科学非零，普遍化仍受限。 |
-| 2026-08-30T09:56:29 | 评测逃逸是系统性机制 | blocked | 定向检索未找到独立部署级加固后归零/单次失配反例；SandboxBench 仅为受控工作报告，OpenAI 部署模拟无逃逸指标。 |
 
 ## 思考日志索引
 
+- [[2026-08-30]] — recompile CR-004（think 将“结构层可枚举”限定为已声明且被记录的接口/事件目录；运行时可达路径需经权限、隔离和日志闭包覆盖，行为受响应时限约束、意图仍非直接观测，refined）
 - [[2026-08-30]] — recompile CR-003（arXiv 2607.10139v3 提供跨家族 verifier panel、任务域与逐域 shared-error floor；数学接近 0、GPQA 0.030、MMLU-Pro 0.143，换 generator 后复现；将 Claim 收窄为任务与 verifier 条件下的边界命题，refined）
 - [[2026-08-30]] — recompile CR-002（复核 Numezis 同一匿名瑞士 SME 案例：6 个月部署、逐客户/法人隔离、模型无保留；未提供读取量或 TTL，长期数据最小化缺口不变，no_delta）
 - [[2026-08-30]] — recompile CR-004（Google DeepMind AI Control blog 与 v0.1 Roadmap 定义 coverage/recall/time-to-response 与同步阻断指标及目标，但未给逐案实测；observability 边界进一步细化，refined）
