@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-31T13:21:31
+updated: 2026-08-31T14:08:44
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -104,7 +104,7 @@ related_entities:
 
 | 优先级 | 焦点 | 下一步最小动作 |
 |---|---|---|
-| P0 | Agent 安全 Topic 建设 | 用现有安全簇构建一个稳定 Topic 骨架；不由 recompile 执行 |
+| P0 | Agent 安全 Topic 建设 | 用现有安全簇构建一个稳定 Topic 骨架，并补齐动作授权、独立执行、撤销/恢复字段；不由 recompile 执行 |
 | P0 | 验证器危机研究线 | 按独立性四轴、证据覆盖/解释能力与 reference integrity 建立矩阵，再 clip AgentJudgeBench、Anthropic 三案与 Astra 官方材料 |
 | P0 | 劳动经济学实证 | 用已编译 Economic Index 与新增一手数据建立校准骨架 |
 | P1 | MCP 无状态转折 | clip 2026-07-28 规范与 NSA 指南后更新 MCP Entity |
@@ -119,6 +119,7 @@ related_entities:
 | EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将信息取得、状态验证、过程验证分开测量；现有四轴模型尚未把“看见关键状态”和“正确使用证据”从独立性中拆出；synthesized | 在同一任务、同一模型与同一访问权限下，跨家族/独立性变化无法稳定改善漏报，或静态低覆盖验证与可交互验证表现相当 | clip+compile AJ-Bench，建立“静态/可交互 × 同族/跨族”矩阵；与 EX-001 合并判定边界 |
 | EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 选择性委派研究把路由器定义为必须定位“人类优于 Agent 的区域”的 rejector；已核读但未剪藏的一手研究提示隐藏特征、误校准和消息 framing 都会改变升级质量；synthesized | 找到 observable-only 路由在分布漂移、专家能力差异和人类负载变化下与 human-context/oracle 路由等效的部署级证据，或主动升级对漏报、过载和人类判断无显著影响 | clip+compile 校准与 selective delegation 一手研究，寻找部署级 proactive escalation case；与 CR-004 / EX-002 对照 |
 | EX-004 | 在验证器模型/目标独立性与证据覆盖之外，reference integrity（真值来源、语义等价、版本同步与呈现方式）是否构成独立必要门？ | AgentJudgeBench、ABC、GeneBench、AcquaBench 与 tau3 修复共同把问题收窄为 oracle/source-lineage gate：目标可辨识、来源不污染、规格/expected action 可回链；不是第五个模型独立性轴，仍待控制 EX-001/EX-002 后验证独立残差；refined | 同任务随机化无 reference/正确 reference/语义等价 reference/错误 reference 后，裁判错误、校准和排序对 reference 不敏感；或差异完全由已有目标耦合/证据覆盖解释 | clip+compile AgentJudgeBench、ABC、GeneBench、AcquaBench、OpenAI coding audit、tau3 task fixes、ELT-Bench-Verified；建立 reference owner—semantic equivalence—version—interface—lineage 字段矩阵；与 EX-001/EX-002 合并判定边界 |
+| EX-005 | 在检测与判定都正确时，动作授权、独立执行点与撤销/恢复时限是否仍构成 Agent 安全的独立必要门？ | HF 事件显示监控可关联出攻击信号却未正确升级；Anthropic 将诊断 Agent 保持只读、把合并/部署交给人；Google/Microsoft 把逐动作授权、同步阻断、撤销与责任单列；现有证据支持新增候选，但尚无匹配控制研究；synthesized | 在同一 trace、verdict、工具 schema 与负载下随机化直接执行、人审、确定性任务授权和独立撤销/回滚；若未授权动作、误阻断、响应时限、恢复时间无差异，或全部差异由检测/升级解释，则并回 CR-004/EX-003/普通 IAM | clip+compile 权限/执行控制一手研究与真实 incident response trace；建立 detection→verdict→authorization→actuation→recovery 字段矩阵，并按风险/可逆性区分同步阻断与异步复核 |
 
 ## Source 需求队列
 
@@ -148,6 +149,10 @@ related_entities:
 | P0 | ELT-Bench-Verified benchmark audit | 已联网核读一手论文，尚未进入 raw/source；需提取 ground-truth error、脚本误报、人类 agreement 和修正前后排名 | clip+compile → EX-004 |
 | P1 | 真实 Agent trace 的语义等价与 reference 版本 | 缺同一生产任务上“结构不同但结果等价”的 reference、版本变更和独立裁决记录 | new-source → EX-004 |
 | P1 | reference 呈现方式的因果对照 | 缺把正确 reference、错误 reference、只给 rubric 和不展示 reference 随机化的 live-agent judge 研究 | new-source → EX-004 |
+| P0 | Agent permissions：interface 到 enforcement | 已核读 arXiv 2607.13718，尚未进入 raw/source；需提取权限规格、推导、运行时执行、审批透明度、撤销与 reviewer overhead 字段 | clip+compile → EX-005 |
+| P0 | Deterministic pre-action authorization | 已核读 arXiv 2603.20953，尚未进入 raw/source；需核查威胁模型、可复现性、独立证据与 pre-tool-call gate 边界；论文自报结果不作既成事实 | clip+compile → EX-005 |
+| P1 | 逐动作授权、撤销与恢复实测 | Microsoft/Google 官方材料已提出高影响动作同步阻断、逐动作授权、kill switch 与恢复；缺 token TTL、撤销耗时、阻断延迟、回滚成功率等部署数据 | new-source → EX-005 |
+| P1 | Agent incident response actuation trace | HF 与 Anthropic 材料只提供关键节点的局部证据；缺同一生产任务中 flag→owner→block/rollback→recovery→review 的完整时间线与对照 | new-source → EX-005 |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
 | P1 | Google DeepMind AI Control / live monitoring | 官方材料已定位 coverage、recall、响应时间与异步/同步阻断边界，缺逐案阻断或覆盖率实证 | clip/compile → CR-004 |
@@ -172,14 +177,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-31T14:08:44 | 动作授权与执行闭环 | new_gap | 正确检测/判定之后仍可能在逐动作授权、独立执行、同步阻断或撤销/恢复上失效；新增 EX-005，暂不升级稳定页。 |
 | 2026-08-31T13:03:27 | 真值参考完整性与锚定效应 | refined | 补充一手材料把 EX-004 收窄为 oracle/source-lineage gate：目标可辨识、来源污染、expected action/规格回链与版本完整性；它不是第五个模型独立性轴，仍待与 EX-001/EX-002 做受控拆分。 |
 | 2026-08-31T12:02:57 | Facilitator 主动升级的校准瓶颈 | new_gap | 选择性委派把“何时叫人”变成 rejector 的二阶校准问题；人类隐藏信息、误校准和消息 framing 都能造成漏升级或改变人类判断；新增 EX-003，暂不升级稳定页。 |
 | 2026-08-31T11:22:38 | 验证器独立性与证据覆盖 | refined | AJ-Bench 将信息取得、状态验证、过程验证分开，且工具调用、工具结果解释、证据充分后的推理仍分别失败；“独立性”不能替代“证据覆盖/解释能力”，新增 EX-002，暂不升级稳定页。 |
 | 2026-08-30T15:00:33 | Agent Observability 上界 | refined | 将“结构层可枚举”限定为已声明且被记录的接口/事件目录；只有运行时可达路径被权限、隔离和日志闭包覆盖时才转为有效 observability。 |
-| 2026-08-30T14:00:29 | AI 监督 AI 共模误差下界 | refined | arXiv 2607.10139v3 具体给出跨家族 verifier panel、七个 benchmark 与逐域 shared-error floor：数学接近 0，GPQA 0.030、MMLU-Pro 0.143；换 generator 后仍复现，Claim 收窄为任务与 verifier 条件下的边界命题。 |
 
 ## 思考日志索引
 
+- [[2026-08-31]] — open explore：把检测/判定之后的动作授权、独立执行点与撤销/恢复时限拆成 Agent 安全的新候选层；与 CR-004 的可观测性、EX-003 的升级路由和 EX-004 的 oracle/source-lineage gate 分界，新增 `EX-005`
 - [[2026-08-31]] — open explore follow-up：Agentic Benchmark Checklist、GeneBench、AcquaBench、tau3 与 OpenAI 新审计把 EX-004 从泛 reference integrity 收窄为 oracle/source-lineage gate，新增目标可辨识、来源污染和 expected action 回链字段
 - [[2026-08-31]] — open explore：把 reference integrity 从模型独立性与证据覆盖中拆出；AgentJudgeBench 的 GT/无 GT/corrupted-GT 对照与 OpenAI/ELT-Bench benchmark audit 指向真值来源、语义、版本和呈现方式的独立缺口，新增 `EX-004`
 - [[2026-08-31]] — open explore：把 Twilight Factory 的 facilitator agent 还原为选择性委派/二阶校准问题；人类隐藏信息、误校准与消息 framing 形成新监督盲区，新增 `EX-003`
