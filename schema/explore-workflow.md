@@ -34,6 +34,30 @@ Skill 输出只能作为 reasoning：不能自动成为事实、Evidence、稳�
 也不能仅凭多个 Skill 的一致意见扩大 Research Agenda。Source 需求、反例方向和
 最小实验仍须按本文件及 `schema/research-module.md` 的边界写入。
 
+### Research metabolism
+
+开放 Explore 的成功标准是研究是否发生了有效代谢，而不是每轮新增 EX。一次
+Explore 可以产生 `new_gap`、`refined`、`merged`、`retired` 或 `no_delta`；这些是
+本轮 reasoning 的结果，不是新的 frontmatter 字段或 Research 状态机。
+
+创建新的 EX 之前，先查看当前 CR 与开放 EX，找出语义和实验设计最接近的既有候选，
+并判断本轮发现是否可以：
+
+1. refine；
+2. 收窄 boundary；
+3. 增加反例；
+4. 增加 Source 需求；
+5. merge；或
+6. retire。
+
+如果可以，优先更新已有问题，不新建编号。当已有问题已经有明确待 clip / compile
+的 Source、待验证 benchmark、反例方向或可执行的最小实验，并且这些行动足以推进
+当前研究时，优先推进或收窄已有候选，不仅因为还能抽象出下一层控制面就制造新的
+缺口。
+
+真正正交的新 Gap 仍然可以创建，但正文 reasoning 必须回答：为什么不能并入最接近
+的既有 CR / EX；什么未来证据会迫使它重新合并回去。
+
 ### Claim Recompile 技能边界
 
 定时重编译是 bounded autonomy，而不是开放探索。它只能从当前明确支持

@@ -73,13 +73,35 @@ PDF 在编译期间可存放于 `raw/`，但不进入 Quartz 发布面。编译�
    输出路径不改变 Wiki 目录规则。
 6. **更新导航**：按实际新增或删除的页面更新 `index.md`；有真实对比内容时
    才更新 comparison 页面。
-7. **更新 Compile Registry 并结算 Raw 生命周期**：全文剪藏时先执行：
+7. **更新 Compile Registry 并结算 Raw 生命周期**：全文剪藏时可以较早执行：
 
    ```bash
    uv run python tools/compile_registry.py ensure "<raw文件名>"
    ```
 
-   编译完成后执行：
+   但必须先完成 Raw 获取、修复和内容最终定稿，再执行 `mark-compiled`。定稿后不再
+   修改 Raw 正文、格式、换行或 frontmatter；如 `mark-compiled` 后确实发生任何
+   Raw 内容变化，提交前必须重新执行 `mark-compiled`。固定顺序为：
+
+   ```text
+   获取 / 修复 Raw
+           ↓
+   Raw 内容最终定稿
+           ↓
+   之后不再修改 Raw 正文或格式
+           ↓
+   mark-compiled
+           ↓
+   生成最终 body_sha256
+           ↓
+   Raw lifecycle settlement
+           ↓
+   wiki-lint
+           ↓
+   commit
+   ```
+
+   内容定稿后执行：
 
    ```bash
    uv run python tools/compile_registry.py mark-compiled "<raw文件名>" \

@@ -30,6 +30,11 @@ Claude Code 的项目级 Skills 通过 `.claude/skills/` 自动发现。
 `skills-lock.json` 只记录来源、路径、版本引用和内容哈希，用于供应链追踪与
 漂移审计，不是 Runtime capability registry，也不参与 Skill 路由。
 
+没有可追溯代码仓库、但通过外部文本文件或其他人工方式获得的第三方 Skill，仍按
+`external-managed` 能力处理；使用 `skills-lock.json` 记录 `sourceType: manual`、
+说明性的分发来源/版本以及当前安装快照 hash。不要为了消除 `unmanaged` 状态而将其
+错误声明为 `repository-owned`。
+
 Schema 不维护完整的 `Task → Skill`、`Intent → Skill` 或 `Source Type → Skill`
 表。新增一个符合 Agent Skills 规范且 description 清楚的 Skill，原则上只需
 让 Runtime 发现它，不需要为它新增工作流分支。
