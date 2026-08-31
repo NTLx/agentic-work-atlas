@@ -1281,6 +1281,15 @@
       "summary_path": "wiki/sources/20260729-similarweb-langsmith-agent-report-evaluation.md",
       "updated_at": "2026-07-30T10:31:15+08:00"
     },
+    "20260730-jeff-dean-1-rule-building-ai.md": {
+      "body_sha256": "8df7076b58acec070efc750101a01485a372701b87707940973bcdddf4e76f0e",
+      "compiled_at": "2026-08-31T15:24:55+08:00",
+      "raw_file": "20260730-jeff-dean-1-rule-building-ai.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260730-jeff-dean-1-rule-building-ai.md",
+      "updated_at": "2026-08-31T15:24:55+08:00"
+    },
     "20260730-lenny-anthropic-first-technical-pm-dianne-penn.md": {
       "body_sha256": "ef9ff77c30b3a1785ca41ebd63664225417c932f763adeab8186271ff198faf1",
       "canonical_url": "https://pod.wave.co/podcast/lennys-podcast-product-career-growth-b65486a6-7cff-4966-bbea-2bc239e90aa4/anthropics-first-technical-pm-on-token-maxing-the-jagged-edge-and-living-in-the-future-dianne-penn",
@@ -2499,6 +2508,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-31T12:38:07+08:00",
+  "updated_at": "2026-08-31T15:24:55+08:00",
   "version": 1
 }

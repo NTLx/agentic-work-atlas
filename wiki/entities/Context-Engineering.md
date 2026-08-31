@@ -5,7 +5,7 @@ aliases:
   - Context Engineering
 definition: "设计 Agent 每次推理时看到的信息结构，包括项目上下文、技能按需加载、记忆层级和上下文生命周期管理"
 created: 2026-04-09
-updated: 2026-08-16
+updated: 2026-08-31
 evidence_level: high
 claim_type: mixed
 tags:
@@ -28,6 +28,8 @@ related_entities:
   - "[[Company-Brain]]"
   - "[[Retrieval-as-a-Subagent]]"
   - "[[Compaction]]"
+  - "[[Inference-Engineering]]"
+  - "[[Recursive-Self-Improvement]]"
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[What Is Code?]]'
@@ -42,6 +44,7 @@ source_raw:
   - "[[20260816-earendil-pi-compaction]]"
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260805-how-we-use-ai-cloudflare-os]]"
+  - "[[20260730-jeff-dean-1-rule-building-ai]]"
 ---
 
 # Context Engineering
@@ -85,6 +88,15 @@ Cloudflare Cloudflare OS（CIO Sam Rhea, 2026-08-05，来源 [[20260805-how-we-u
 - **magic email → skills**：非工程侧先收集"不想做的活"，人工观察模式提炼 skill + context 文件 + 数据连接，再平台化——context 资产从真实需求反向长出
 
 **与既有框架的关系**：Codex 是 Context Engineering 的「组织规范承载」维度——比 Anthropic 的最小高信号 token 集更强调"应该做什么"的价值判断层；"组织上下文>模型"与 [[Context-Advantage]]（人类 context 优势）在组织层的对应；magic email 提炼路径是 skills 资产从真实 JTBD 反向长出的实证（对照 Anthropic skills 数据 21%→95% 的增益逻辑）。
+
+### Jeff Dean：上下文是可执行系统的一部分（2026-07）
+
+Jeff Dean 在 Root Access 访谈中把模型明确放回更大的系统：模型只是组件，Agent 还需要工具、检索、历史信息、技能、工具选择、问题分解、多种尝试和评估器（16:11）。他举例说明，给 Agent 一个关于 benchmark、代码修改和性能测量的 skill，就能把专家原本会做的优化步骤变成可迭代的工作循环（19:46）。
+
+**判断**：上下文工程的目标不是让 Agent 记住更多，而是让 Agent 在正确的任务、工具、状态和评估回路中持续行动。
+
+- **证据**：[[20260730-jeff-dean-1-rule-building-ai]]
+- **边界**：访谈中关于 Agent 可运行数天或数周的描述，以及内部 benchmark skill 的效果，属于案例与前瞻判断；它们没有公开任务完成率、人工介入频次或跨组织复现实验。
 
 ## 核心问题：Agent 系统的热力学第二定律
 

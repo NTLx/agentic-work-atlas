@@ -8,7 +8,7 @@ aliases:
   - AI 改 AI
 definition: "AI 系统设计、训练或验证其下一代或同代继任者的能力；当这一回路达到某临界点，AI 进步速度由机器而非人类决定"
 created: 2026-06-06
-updated: 2026-08-16
+updated: 2026-08-31
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -26,9 +26,12 @@ related_entities:
   - "[[Coding-Agents]]"
   - "[[Agentic-Engineering]]"
   - "[[Meta-Harness-Optimization]]"
+  - "[[Context-Engineering]]"
+  - "[[Agent-Verification]]"
 source_raw:
   - "[[20260604-anthropic-recursive-self-improvement]]"
   - "[[20260815-autodesign-meta-harness-optimization]]"
+  - "[[20260730-jeff-dean-1-rule-building-ai]]"
 ---
 
 # Recursive Self-Improvement（递归自我改进）
@@ -67,6 +70,17 @@ Anthropic 2026-05 一手数据：
 3. **Full recursive** — AI 设计自己的继任者，节奏由算力决定
 
 公共子集：无论哪个 case，"verification 必须现在做"。
+
+## 实验回路是递归改进的中间层（2026-07）
+
+Jeff Dean 将 AlphaChip、AlphaEvolve 和模型改进归结为同一套科学方法：提出实验、实现运行实验所需的东西、评估结果，再把有效结果整合回更高层系统（42:08）。当高层目标能够被拆成子问题，而每个子问题都有足够快、可测量的评估器时，系统就能从少量人工实验转向大量自动实验。
+
+访谈还给出一个评估器加速的案例：用神经网络近似昂贵的量子化学模拟器，声称在近似准确的前提下把验证速度提高约 300,000 倍；这让原本只能筛选少量候选的流程变成可以批量探索的实验回路。
+
+**判断**：递归自我改进能否从愿景变成可运行能力，关键不只是模型能否生成候选，而是候选能否进入足够快、可验证、可组合的实验回路。
+
+- **证据**：[[20260730-jeff-dean-1-rule-building-ai]]
+- **边界**：300,000 倍是访谈中的案例数字，不是本文独立验证的 benchmark；评估器近似误差、分布外可靠性和人工复核成本未披露。
 
 ## 前提与局限性
 - **80% ≠ 100%** — 80% 是 commit-level 不是 deploy-level；merge 不等于 production
