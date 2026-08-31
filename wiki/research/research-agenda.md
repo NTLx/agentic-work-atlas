@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-30T15:00:33
+updated: 2026-08-31T11:22:38
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -105,7 +105,7 @@ related_entities:
 | 优先级 | 焦点 | 下一步最小动作 |
 |---|---|---|
 | P0 | Agent 安全 Topic 建设 | 用现有安全簇构建一个稳定 Topic 骨架；不由 recompile 执行 |
-| P0 | 验证器危机研究线 | 先按目标/证据/执行/时间四轴建立证据矩阵，再 clip Anthropic 三案与 Astra 官方材料 |
+| P0 | 验证器危机研究线 | 先按独立性四轴与证据覆盖/解释能力建立矩阵，再 clip AJ-Bench、Anthropic 三案与 Astra 官方材料 |
 | P0 | 劳动经济学实证 | 用已编译 Economic Index 与新增一手数据建立校准骨架 |
 | P1 | MCP 无状态转折 | clip 2026-07-28 规范与 NSA 指南后更新 MCP Entity |
 | P1 | AI 时代设计方法论对照 | 至少补两份其他实验室设计负责人访谈再判断共识 |
@@ -116,6 +116,7 @@ related_entities:
 | ID | 候选问题 | 当前判断 | 证伪方向 | 下一步 |
 |---|---|---|---|---|
 | EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | 现有材料分别支持四轴，但尚无同一任务上的受控区分；synthesized | 跨家族单轴变化即可稳定消除多类相关漏报，或单轴失效仍能完整保障 | clip+compile arXiv 2604.07650，建立字段矩阵 |
+| EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将信息取得、状态验证、过程验证分开测量；现有四轴模型尚未把“看见关键状态”和“正确使用证据”从独立性中拆出；synthesized | 在同一任务、同一模型与同一访问权限下，跨家族/独立性变化无法稳定改善漏报，或静态低覆盖验证与可交互验证表现相当 | clip+compile AJ-Bench，建立“静态/可交互 × 同族/跨族”矩阵；与 EX-001 合并判定边界 |
 
 ## Source 需求队列
 
@@ -129,6 +130,7 @@ related_entities:
 | P0 | Apple《Nine Judges, Two Effective Votes》 | 已联网核读一手页面，未进入 raw/source | clip+compile → CR-003 |
 | P0 | arXiv 2607.10139《LLMs as a Jury》 | 已联网核读一手预印本，未进入 raw/source；报告跨模型 verifier 的共享错误下界 | clip+compile → CR-003 |
 | P0 | 验证器独立性四轴对照 | 现有材料分散覆盖目标/证据/执行/时间，缺目标操纵、共同污染和版本新鲜度的同任务对照 | clip+compile → EX-001；优先寻找激励隔离、独立实现和旧版检测率案例 |
+| P0 | AJ-Bench 环境感知验证基准 | 已核读一手预印本，报告 155 个任务、516 条轨迹、工具交互与四类失败；尚未进入 raw/source，需核查其访问、状态/过程验证与 FPR/FNR 字段 | clip+compile → EX-002 |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
 | P1 | Google DeepMind AI Control / live monitoring | 官方材料已定位 coverage、recall、响应时间与异步/同步阻断边界，缺逐案阻断或覆盖率实证 | clip/compile → CR-004 |
@@ -153,14 +155,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-31T11:22:38 | 验证器独立性与证据覆盖 | refined | AJ-Bench 将信息取得、状态验证、过程验证分开，且工具调用、工具结果解释、证据充分后的推理仍分别失败；“独立性”不能替代“证据覆盖/解释能力”，新增 EX-002，暂不升级稳定页。 |
 | 2026-08-30T15:00:33 | Agent Observability 上界 | refined | 将“结构层可枚举”限定为已声明且被记录的接口/事件目录；只有运行时可达路径被权限、隔离和日志闭包覆盖时才转为有效 observability。 |
 | 2026-08-30T14:00:29 | AI 监督 AI 共模误差下界 | refined | arXiv 2607.10139v3 具体给出跨家族 verifier panel、七个 benchmark 与逐域 shared-error floor：数学接近 0，GPQA 0.030、MMLU-Pro 0.143；换 generator 后仍复现，Claim 收窄为任务与 verifier 条件下的边界命题。 |
 | 2026-08-30T13:00:40 | Agent 数据过度收集结构性 | no_delta | 复核 Numezis 同一匿名案例；虽明确 6 个月部署、逐客户/法人隔离与模型无保留，仍无读取量或 TTL 数据，长期性缺口不变。 |
 | 2026-08-30T12:00:35 | Agent Observability 上界 | refined | Google DeepMind AI Control 定义 coverage、recall、time-to-response 与同步阻断指标及目标；Roadmap 仍属理论/拟议保障，未给逐案实测，边界进一步收窄。 |
-| 2026-08-30T11:00:32 | AI 监督 AI 共模误差下界 | strengthened | 新一手跨模型共识 verifier 研究观察到任务域相关的共享错误下界，换生成模型家族后复现；数学近零、科学非零，普遍化仍受限。 |
 
 ## 思考日志索引
 
+- [[2026-08-31]] — open explore：把验证器独立性与证据覆盖/解释能力拆开；AJ-Bench 提供信息取得、状态验证、过程验证及四类失败的待剪藏一手基准，新增 `EX-002`
 - [[2026-08-30]] — recompile CR-004（think 将“结构层可枚举”限定为已声明且被记录的接口/事件目录；运行时可达路径需经权限、隔离和日志闭包覆盖，行为受响应时限约束、意图仍非直接观测，refined）
 - [[2026-08-30]] — recompile CR-003（arXiv 2607.10139v3 提供跨家族 verifier panel、任务域与逐域 shared-error floor；数学接近 0、GPQA 0.030、MMLU-Pro 0.143，换 generator 后复现；将 Claim 收窄为任务与 verifier 条件下的边界命题，refined）
 - [[2026-08-30]] — recompile CR-002（复核 Numezis 同一匿名瑞士 SME 案例：6 个月部署、逐客户/法人隔离、模型无保留；未提供读取量或 TTL，长期数据最小化缺口不变，no_delta）
