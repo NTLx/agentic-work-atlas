@@ -6,7 +6,7 @@ aliases:
   - AI 时代的产品经理
 definition: "AI 时代 PM 从路线图对齐者转变为高速公路设计者——系统性消除从想法到用户手中的每一步摩擦"
 created: 2026-05-08
-updated: 2026-08-13
+updated: 2026-08-31
 tags:
   - product-management
   - AI-era
@@ -19,10 +19,12 @@ related_entities:
   - "[[Product-Overhang]]"
   - "[[Research-Preview]]"
   - "[[Boris-Cherny]]"
+  - "[[Human-Agent-Teams]]"
 source_raw:
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - "[[20260802-lenny-cpo-regrets-product-management-whatnot]]"
+  - "[[20260830-lenny-ai-third-era-persistent-ai-coworkers]]"
 evidence_level: medium
 claim_type: mixed
 ---
@@ -71,6 +73,20 @@ Tom Verrilli（Whatnot CPO，2026-08）把"PM 从协调者变所有权者"推进
 - 招聘策略是"almost exclusively senior PM"或转化"已懂客户的 sales/ops 人员"（客户理解 > 流程专精）。
 - "Speed is the entire premise. Once it's lost, it never comes back."——速度不是副作用而是组织设计原则（约 3 个 ship/不 ship 决策/天、750 实验/年）。
 - 与 Cat Wu 路径的关系：Cat 靠 Research Preview 等机制压低发布摩擦；Whatnot 靠砍掉中间协调层整体压缩 PM 数量。两条路径在"减少想法到用户之间的摩擦"上收敛，结构手段不同。
+
+## Tara Seshan 样本：PM 从写文档转向设计学习回路（2026-08）
+
+Tara Seshan 对 OpenAI 产品工作的描述，把本页的"高速公路设计"进一步落到一个学习回路：在快速、涌现的 AI 市场中，PM 应定义最重要的假设，尽快做出可以被用户尝试的东西，读取结果，再修正假设。她把未来工作概括为 **steering**（定方向、给反馈、做有观点的选择）与 **rowing**（执行具体划行）之分；Agent 承担更多 rowing 后，PM 的价值不在于保留所有执行动作，而在于让团队选择更值得的问题、形成更快的反馈回路。
+
+- **经验验证优先**：与其写一份关于未来很长时间的理论计划，不如找到能决定产品成败的核心问题，并设计最快、最有效的测试。
+- **雄心成为杠杆**：AI 扩大了个人从想法到原型、设计、定价和分析的可执行范围；PM 的新作用之一，是持续追问能否做得更快、更大、更接近真正愿景。
+- **角色边界变薄，责任不变薄**：工程、设计和 PM 可以跨边界拿起工作，但必须有人是 DRI，持续回答产品是否被使用、是否有效、是否达到质量要求。
+- **写作分层**：writing as reporting 可以交给模型做总结、转译和状态汇报；writing as thinking 仍是形成问题、观点和方案的认知工作。她在 OpenAI 更常用 mocks/prototypes 和实验结果沟通，而不是把长文档本身当作思考证明。
+
+**判断**：AI 时代 PM 的核心迁移不是从“写文档”变成“什么都不做”，而是从维护执行叙事转向设计可验证的学习系统，并在更高抽象层持续 steering。
+
+- **证据**：[[20260830-lenny-ai-third-era-persistent-ai-coworkers]]（07:33–13:04、20:42–26:02、42:48–44:06、53:13–60:13）。
+- **边界**：这是前沿 AI 产品负责人的组织实践与自我描述；高度依赖模型快速进步、研究—产品紧耦合、数据可访问和组织允许快速试错，不能直接外推到高合规或反馈周期很长的行业。
 
 ## 关联概念
 

@@ -25,9 +25,13 @@ related_entities:
   - "[[Show-and-Tell-Adoption]]"
   - "[[Skills-as-Products]]"
   - "[[Twilight-Factory]]"
+  - "[[Personal-AI-Assistant]]"
+  - "[[PM-in-AI-Era]]"
+  - "[[Agent-Harness]]"
 source_raw:
   - "[[20260820-slack-human-agent-teams]]"
   - "[[20260831-agency-and-agents]]"
+  - "[[20260830-lenny-ai-third-era-persistent-ai-coworkers]]"
 ---
 
 # Human Agent Teams（人机协作团队）
@@ -48,6 +52,33 @@ Agent: 重做 / 准备下一步
     ↓
 循环到目标完成
 ```
+
+## Persistent Coworker：从 handoff 到持续协作
+
+Tara Seshan 把工作接口的下一步描述为 **persistent coworker**：Agent 在更高抽象层持续工作，人类按同步节奏查看进展、补充方向和反馈，而不是每一步都重新发起一次请求。她还设想“multiplayer”式协作：不同人的 Agent 在共同工作中互相检查、共享结果，人类共同 steering 一组 Agent。
+
+这为本页增加了一个时间尺度和协作尺度上的扩展：
+
+| 维度 | Human Agent Teams | Persistent Coworker |
+|------|-------------------|--------------------|
+| 时间尺度 | 一轮或多轮 handoff loop | 跨更长时间持续工作、按节奏同步 |
+| 协作对象 | 人与 Agent 在共享环境中交接 | 多个人与各自 Agent 共同 steering |
+| 人类动作 | review / decide / redirect | 设定方向、形成判断、检查进度与责任 |
+| 主要新增约束 | scope、handoff latency、共享上下文 | 长程状态、权限、数据访问、可靠性 |
+
+**判断**：persistent coworker 不是把 Human Agent Teams 变成“无人团队”，而是把 handoff 从事件触发机制扩展为持续工作关系；它的成立依赖人类仍拥有方向、责任和验证权。
+
+- **证据**：[[20260830-lenny-ai-third-era-persistent-ai-coworkers]]（00:00、16:02–20:00）。
+- **边界**：该词在访谈中是产品方向和未来形态的描述，不是已完成标准；“像同事”不等同于 Agent 已具备稳定记忆、组织身份或独立责任。
+
+## Persistent 不等于只靠模型智力
+
+访谈特别强调，云端 Agent 是否有用还取决于能否访问 Google Docs、Slack、公司数据库等真实工作系统，以及云端基础设施和可靠性。对组织来说，Agent 的能力边界因此同时由模型、上下文、权限、连接器和运行时共同决定。
+
+这与本页的 shared context 原则相连：共享环境不只是方便协作的 UI，也必须成为可审计的上下文、权限和责任边界。否则，persistent 只会把一次性错误延长为长程错误。
+
+- **证据**：[[20260830-lenny-ai-third-era-persistent-ai-coworkers]]（19:09–19:39、29:50–33:27）。
+- **边界**：访谈给出的是产品负责人的设计判断，没有给出连接器可靠性、权限隔离或长程任务成功率的独立测量。
 
 ## Twilight Factory：主动式 handoff
 

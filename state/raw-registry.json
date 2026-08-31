@@ -1873,6 +1873,15 @@
       "summary_path": "wiki/sources/20260829-rise-and-fall-of-agent-civilizations.md",
       "updated_at": "2026-08-30T10:04:41+08:00"
     },
+    "20260830-lenny-ai-third-era-persistent-ai-coworkers.md": {
+      "body_sha256": "0fd93fff562bfff4032ccf013ecd45b9ea097ee6ce4e4bc54f968f9603859881",
+      "compiled_at": "2026-08-31T12:33:39+08:00",
+      "raw_file": "20260830-lenny-ai-third-era-persistent-ai-coworkers.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260830-lenny-ai-third-era-persistent-ai-coworkers.md",
+      "updated_at": "2026-08-31T12:33:39+08:00"
+    },
     "20260831-agency-and-agents.md": {
       "body_sha256": "4400a0a4fdbdd6df36dfd99a3b206b7e08f9718bf5471c695fded761eb2f9134",
       "compiled_at": "2026-08-31T10:50:58+08:00",
@@ -2490,6 +2499,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-31T10:50:58+08:00",
+  "updated_at": "2026-08-31T12:33:39+08:00",
   "version": 1
 }
