@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-31T15:03:55
+updated: 2026-08-31T16:04:28
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -121,6 +121,7 @@ related_entities:
 | EX-004 | 在验证器模型/目标独立性与证据覆盖之外，reference integrity（真值来源、语义等价、版本同步与呈现方式）是否构成独立必要门？ | AgentJudgeBench、ABC、GeneBench、AcquaBench 与 tau3 修复共同把问题收窄为 oracle/source-lineage gate：目标可辨识、来源不污染、规格/expected action 可回链；不是第五个模型独立性轴，仍待控制 EX-001/EX-002 后验证独立残差；refined | 同任务随机化无 reference/正确 reference/语义等价 reference/错误 reference 后，裁判错误、校准和排序对 reference 不敏感；或差异完全由已有目标耦合/证据覆盖解释 | clip+compile AgentJudgeBench、ABC、GeneBench、AcquaBench、OpenAI coding audit、tau3 task fixes、ELT-Bench-Verified；建立 reference owner—semantic equivalence—version—interface—lineage 字段矩阵；与 EX-001/EX-002 合并判定边界 |
 | EX-005 | 在检测与判定都正确时，动作授权、独立执行点与撤销/恢复时限是否仍构成 Agent 安全的独立必要门？ | HF 事件显示监控可关联出攻击信号却未正确升级；Anthropic 将诊断 Agent 保持只读、把合并/部署交给人；Google/Microsoft 把逐动作授权、同步阻断、撤销与责任单列；现有证据支持新增候选，但尚无匹配控制研究；synthesized | 在同一 trace、verdict、工具 schema 与负载下随机化直接执行、人审、确定性任务授权和独立撤销/回滚；若未授权动作、误阻断、响应时限、恢复时间无差异，或全部差异由检测/升级解释，则并回 CR-004/EX-003/普通 IAM | clip+compile 权限/执行控制一手研究与真实 incident response trace；建立 detection→verdict→authorization→actuation→recovery 字段矩阵，并按风险/可逆性区分同步阻断与异步复核 |
 | EX-006 | 高影响/不可逆动作的治理约束，是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达决策/执行边界，而非普通 token-stream 文本？ | Governance Decay/Ghost in the Context 将 policy-carriage 拆为存在、语义健全和绑定正确；Sleeper Memory Poisoning 显示记忆可成为跨会话延迟攻击通道；现有结果主要是受控/模拟，且固定装配器下未稳定产生越权动作；synthesized | 若受保护 token/pinning + preflight + action guard 在同任务、同 trace、同负载下与外部 control plane 在状态完整性、越权动作、延迟和可用性上等效，或高风险 token-only 生产系统长期无 carriage failure，则削弱独立控制面命题 | clip+compile 四篇一手研究；建立 policy owner—provenance—binding—budget—survival—action-boundary—fail-closed 字段矩阵，并与 EX-005 / CR-004 / CR-002 合并判定边界 |
+| EX-007 | 自我改进 Agent 是否需要独立的变更闸门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | Jeff Dean、Meta-Harness 与 Uber 材料都把评估回路、harness、路由和技能纳入持续优化；现有 gate 主要防训练集过拟合，缺跨版本的外部 oracle、冻结控制面和变更归因；synthesized | 若冻结外部 oracle/隐藏任务/高风险策略后，内部 gate 与独立 gate 在质量、安全、回滚和跨任务迁移上等效，或全部差异可由 EX-004/EX-006 解释，则削弱独立变更闸门 | new-source → EX-007；寻找 self-improving agent 的独立复评、版本回放、canary/rollback 与生产变更审计，并与 EX-004 / EX-006 合并判定边界 |
 
 ## Source 需求队列
 
@@ -158,6 +159,8 @@ related_entities:
 | P0 | Governance Decay / ConstraintRot | [arXiv 2606.22528](https://arxiv.org/abs/2606.22528) v2 已核读但未进入 raw/source；需核查 compaction、summarizer injection、Constraint Pinning 与 operator-impersonation 的对照，以及 token-stream 外部权威通道这一开放边界 | clip+compile → EX-006 / CR-004 |
 | P0 | Sleeper Memory Poisoning | [arXiv 2605.15338](https://arxiv.org/abs/2605.15338) v2 已核读但未进入 raw/source；需提取 memory write—retrieve—use 三阶段、删除/纠正/用户审查/来源谱系防御缺口，并与 CR-002 区分数据最小化问题 | clip+compile → EX-006 / CR-002 |
 | P1 | Security-Recall Divergence | [arXiv 2604.20911](https://arxiv.org/abs/2604.20911) 已核读但未进入 raw/source；需核查 omission/commission 不对称、Safe Turn Depth 与格式代理限制，不能把代理约束直接外推为真实泄露风险 | clip+compile → EX-006 / CR-004 |
+| P0 | 自我改进回路的独立变更审计 | 现有 Meta-Harness 只有 train/dev gate，Uber 只有内部 benchmark 与 session 指标；缺冻结外部 oracle、跨版本回放、独立安全策略和变更归因 | new-source → EX-007 |
+| P1 | 生产 Agent fleet 的自修改纵向记录 | 缺 prompt/skill/router/evaluator 变更的 owner、版本、canary、回滚、隐藏 holdout 与质量/安全联合结果 | new-source → EX-007 |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
 | P1 | Google DeepMind AI Control / live monitoring | 官方材料已定位 coverage、recall、响应时间与异步/同步阻断边界，缺逐案阻断或覆盖率实证 | clip/compile → CR-004 |
@@ -182,14 +185,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-08-31T16:04:28 | 自我改进闭环的变更治理 | new_gap | Jeff Dean、Meta-Harness 与 Uber 把评估回路和 harness 纳入持续优化；新增 EX-007，要求区分真实能力提升与评估器/目标/策略共变。 |
 | 2026-08-31T15:03:55 | 治理状态承载与控制面完整性 | new_gap | 记忆污染与上下文压缩暴露：高影响动作的治理约束可能在决策前被删除、弱化或错绑；新增 EX-006，暂不升级稳定页。 |
 | 2026-08-31T14:08:44 | 动作授权与执行闭环 | new_gap | 正确检测/判定之后仍可能在逐动作授权、独立执行、同步阻断或撤销/恢复上失效；新增 EX-005，暂不升级稳定页。 |
 | 2026-08-31T13:03:27 | 真值参考完整性与锚定效应 | refined | 补充一手材料把 EX-004 收窄为 oracle/source-lineage gate：目标可辨识、来源污染、expected action/规格回链与版本完整性；它不是第五个模型独立性轴，仍待与 EX-001/EX-002 做受控拆分。 |
 | 2026-08-31T12:02:57 | Facilitator 主动升级的校准瓶颈 | new_gap | 选择性委派把“何时叫人”变成 rejector 的二阶校准问题；人类隐藏信息、误校准和消息 framing 都能造成漏升级或改变人类判断；新增 EX-003，暂不升级稳定页。 |
-| 2026-08-31T11:22:38 | 验证器独立性与证据覆盖 | refined | AJ-Bench 将信息取得、状态验证、过程验证分开，且工具调用、工具结果解释、证据充分后的推理仍分别失败；“独立性”不能替代“证据覆盖/解释能力”，新增 EX-002，暂不升级稳定页。 |
 
 ## 思考日志索引
 
+- [[2026-08-31]] — open explore：把 self-improving agent 的评估器、harness、技能和策略共变拆成变更治理问题；新增 `EX-007`，要求独立外部 oracle、冻结控制面、版本回放与回滚证据
 - [[2026-08-31]] — open explore：把高影响动作前的治理状态承载拆成 policy-carriage / control-plane integrity 候选；记忆写入、上下文压缩和决策时装配可能删除、弱化或错绑规则，新增 `EX-006`
 - [[2026-08-31]] — open explore：把检测/判定之后的动作授权、独立执行点与撤销/恢复时限拆成 Agent 安全的新候选层；与 CR-004 的可观测性、EX-003 的升级路由和 EX-004 的 oracle/source-lineage gate 分界，新增 `EX-005`
 - [[2026-08-31]] — open explore follow-up：Agentic Benchmark Checklist、GeneBench、AcquaBench、tau3 与 OpenAI 新审计把 EX-004 从泛 reference integrity 收窄为 oracle/source-lineage gate，新增目标可辨识、来源污染和 expected action 回链字段
