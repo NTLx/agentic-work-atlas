@@ -9,7 +9,7 @@ aliases:
   - 人机协作团队
 definition: "人类 + AI agent 在共享工作环境中循环 handoff 的协作形态——agent 做 production work（drafting/summarizing/monitoring/preparing），人做 review/decide/redirect；核心节律是 handoff loop 而非 one-shot delegation"
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-08-31
 tags:
   - organization
   - agentic-engineering
@@ -24,8 +24,10 @@ related_entities:
   - "[[Conversation-as-Knowledge-Base]]"
   - "[[Show-and-Tell-Adoption]]"
   - "[[Skills-as-Products]]"
+  - "[[Twilight-Factory]]"
 source_raw:
   - "[[20260820-slack-human-agent-teams]]"
+  - "[[20260831-agency-and-agents]]"
 ---
 
 # Human Agent Teams（人机协作团队）
@@ -46,6 +48,19 @@ Agent: 重做 / 准备下一步
     ↓
 循环到目标完成
 ```
+
+## Twilight Factory：主动式 handoff
+
+[[Twilight-Factory|Twilight Factory]] 把本页的 handoff loop 再向前推进一步：不是只等人类发起任务或审查结果，而是由 facilitator agent 主动判断什么时候需要人类介入。文章列出四类触发点：
+
+| 触发点 | 人类介入的理由 | 人类提供的价值 |
+|--------|----------------|----------------|
+| **审批** | 行动涉及外部世界、金钱、敏感资料或超出授权 | 授权、拒绝和责任承担 |
+| **专业知识** | Agent 缺少领域经验或现场上下文 | 专业事实、约束和经验 |
+| **观点方差** | Agent 输出过度收敛，多个方案只是同一答案的变体 | 反例、异质视角和替代路径 |
+| **有趣的决策** | 选择本身承载工作意义和判断训练 | 参与方向选择并形成经验 |
+
+这一区分了两个层次：Human Agent Teams 主要定义人和 Agent 如何在共享环境中交接；Twilight Factory 主要定义由谁决定何时交接，以及人类介入不只为了拦截风险，也为了补知识、补多样性和保留判断力。
 
 ## 关键实践（Slack + Anthropic 观察）
 
@@ -87,6 +102,7 @@ Agent: 重做 / 准备下一步
 - **不适用**: 完全自治任务（无 human review 必要）
 - **测量困境**: outcome measurement 本质不可量化（Jaime 承认）
 - **心理安全门槛**: public 工作需 employee 信任组织
+- **Facilitator 风险**: 主动求助仍依赖 facilitator agent 的判断；如果它漏掉未知的专业知识或把少数视角判为噪声，系统可能把人类引入错误节点。Twilight Factory 目前是设计主张，不是生产验证结果。
 
 ## 配套机制
 
@@ -105,5 +121,6 @@ Agent: 重做 / 准备下一步
 - [[Conversation-as-Knowledge-Base]] — Slack 的核心命题
 - [[Show-and-Tell-Adoption]] — adoption 推广机制
 - [[Skills-as-Products]] — agent 角色治理
+- [[Twilight-Factory]] — 由 facilitator agent 主动路由人类介入的组织设计
 - [[Organization-as-Agent-Harness]] — 组织层是 agent harness 的一种
 - [[AI-Ready-Organization]] — readiness 前提

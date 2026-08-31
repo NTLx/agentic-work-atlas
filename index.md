@@ -17,11 +17,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 423 个 |
+| Entity 页面 | 424 个 |
 | Topic 页面 | 34 个 |
 | Comparison 页面 | 20 个 |
-| Raw 文章 | 242 个 |
-| Source Summary | 287 个 |
+| Raw 文章 | 243 个 |
+| Source Summary | 288 个 |
 | Output 作品 | 10 个 |
 | Research 日志 | 16 个 |
 
@@ -126,6 +126,7 @@ tags:
 |--------|------|------|
 | [[wiki/entities/AI-Ready-Organization\|AI-Ready Organization（AI 就绪组织）]] | 具有清晰流程语义、数据基座和容错机制的组织形态 | Stanford Enterprise AI Playbook |
 | [[wiki/entities/AI-Factory\|AI Factory（AI 工厂）]] | 将 AI 能力规模化、标准化交付的组织化生产线 | P&G Case Study |
+| [[wiki/entities/Twilight-Factory\|Twilight Factory（暮光工厂）]] | Agent 完成大部分工作，由 facilitator agent 主动路由人在审批、专业知识、观点方差和有趣决策节点介入的组织设计 | Ethan Mollick 2026-08-31 |
 | [[wiki/entities/Forward-Deployed-Engineer\|Forward Deployed Engineer（前线开发工程师）]] | 深入客户现场识别约束并交付定制化 AI 解决方案的角色 | Palantir / OpenAI |
 | [[wiki/entities/Knowledge-Work\|Knowledge Work（知识工作）]] | 正在被 AI 重新定义效率边界和价值内核的工作类型 | Jevons Paradox for Knowledge Work |
 | [[wiki/entities/Role-Merging\|Role Merging（角色融合）]] | AI 让 PM/设计师/财务等非工程角色也能写代码，同时让工程师端到端交付产品 | Claude Code 一周年 |
