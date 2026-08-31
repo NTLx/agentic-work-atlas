@@ -6,7 +6,7 @@ aliases:
   - Token Efficiency
 definition: "通过 API 代理记录、自动化审计、MCP 工具裁剪、CLI 替代等手段，系统性优化 Agentic Workflows 的 token 成本"
 created: 2026-05-09
-updated: 2026-06-07
+updated: 2026-08-31
 tags:
   - Agentic-Engineering
   - cost-optimization
@@ -21,6 +21,8 @@ related_entities:
   - "[[Enterprise-AI-Rationing]]"
   - "[[Specialized-Small-Models]]"
   - "[[Agent-Optimized-CLI]]"
+  - "[[Software-Factory]]"
+  - "[[Context-Engineering]]"
   - "[[Code-Cleanliness-Agent-Footprint]]"
   - "[[Minimal-Pair-Evaluation]]"
 source_raw:
@@ -31,6 +33,7 @@ source_raw:
   - "[[Designing the hf CLI as an agent-optimized way to work with the Hub]]"
   - "[[202605-code-cleanliness-coding-agents-minimal-pair.pdf]]"
   - "[[20260813-pl-tokens-token-efficiency]]"
+  - "[[20260828-uber-software-factory]]"
 ---
 
 # Agentic-Workflow-Token-Efficiency（Agentic Workflow Token 效率）
@@ -103,6 +106,21 @@ Hugging Face 的 `hf` CLI 提供了一个更进一步的例子：有时真正该
 - `--json`、`-q`、`--dry-run`、`--yes` 把 CLI 变成可组合、可重试的系统调用
 
 文章报告在复杂 Hub 任务中，`hf` CLI 相对手写 `curl` / SDK 可把 token 使用压到约 1.3x 到 1.8x 的差距内；在多步任务上，后者甚至会花掉 2.4x 到 6x token。这里节省的并不只是“调用成本”，更是 Agent 不再需要自己推导调用顺序、命令参数和失败恢复逻辑。
+
+## Uber 规模化补充：把 Token 效率纳入 Software Factory（2026-08）
+
+Uber 的一手实践把 token 优化从单个工作流的技巧提升为托管 Agent 车队的运营控制面：
+
+- **先以完成任务为单位选模型**：每个 managed agent 都从真实工作构建 benchmark，在统一 harness 中比较 frontier 与 open-weight 模型，按完成任务成本、输出质量和可靠性寻找 Pareto 前沿；uReview 还对真实 PR 的已知 bug 评分 precision、recall、F1、延迟、超时和噪声。主模型负责分解和评价，定义清楚的 subtask 默认交给更便宜的模型。
+- **把重复上下文成本显式化**：Uber 报告在 1M context window 模型上仍于 400K token 触发自动 compaction，并把 reasoning effort 默认设为 Medium；prompt cache 的读取消耗可降到标准输入价格的 0.1x，但 TTL 要按交互间隔选择，交互式 session 从 5 分钟改为 1 小时，短生命周期 subagent 仍保留 5 分钟。
+- **把工具协议从模型上下文中移走**：超过 1,000 个 MCP server 统一经过 gateway；直接预加载 100 个以上工具约产生 50K–70K token schema 开销，CLI tool resolution 和 tool search 改为调用时解析。code-mode 把 SQL 轮询等多步过程放进脚本，原文报告单次测试 token 减少超过 50%，批量流程超过 90%。
+- **从减少 token 转向减少盲搜**：AI Context Graph 连接 30 多个内部系统，包含 2,400 万节点和 8,000 万条边；一个有 graph grounding 的案例 38 秒得出答案，未 grounding 的 Agent 搜索 20 分钟、启动 2 个 subagent、出现 3 次错误后仍误判数据不可查询。
+- **把成本反馈放回运行时**：status line 显示实时花费，harness pool 统一管理交互式预算，Slack 在 50/80/100% 预期花费处提醒；session dashboard 进一步识别 16 类 anti-pattern，并给出财务影响和修复建议。
+
+**综合判断**：生产级 token efficiency 不是“少发几个请求”，而是把模型选择、上下文生命周期、工具接口、组织语义层和成本反馈共同设计成一个闭环。
+
+- **证据**：[[20260828-uber-software-factory]]（“The Cost Equation”至“Session Analysis Dashboard”）。
+- **边界**：上述幅度均为 Uber 内部测量；图谱、gateway、统一 harness 和 session trace 基础设施的建设成本未披露，不能把单项数字直接当作普适基准。
 
 ## 模型经济学：成本异质性
 
