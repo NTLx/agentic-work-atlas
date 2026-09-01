@@ -3,7 +3,7 @@ type: topic
 title: Enterprise AI Model Sourcing
 description: "企业 AI 模型采购不应默认等于买最大 frontier API，而应按任务分布、评测证据、成本曲线、部署约束和组织能力分层选择"
 created: 2026-05-24
-updated: 2026-08-26
+updated: 2026-09-01
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -27,6 +27,7 @@ source_raw:
   - "[[Open and closed models are on different exponentials]]"
   - "[[20260727-palantir-ai-sovereignty-alpha-playbook]]"
   - "[[20260825-openrouter-choose-best-ai-model]]"
+  - "[[20260831-the-price-of-entry-to-the-frontier]]"
 ---
 
 # Enterprise AI Model Sourcing（企业 AI 模型采购）
@@ -41,6 +42,21 @@ source_raw:
 [[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]] 提供了一个反例边界：在巴西葡萄牙语 OCR 这个具体企业域里，专门化 3B 模型在质量、成本和稳定性上同时胜出。它不证明“规模不重要”，但证明“规模不是唯一应该优先测试的变量”。
 
 这让模型采购从品牌排序变成系统设计问题。
+
+## 新增维度：访问权与退出权
+
+[[20260831-the-price-of-entry-to-the-frontier]] 补上了模型采购的上游约束：模型不一定继续以“任何客户都能按 token 购买”的方式存在。实验室可能通过可信伙伴计划、地区和国籍限制、政府许可或产品默认集成控制访问；SaaS 产品也可能把单一模型写进用户已经依赖的工作界面。
+
+- **判断**：企业模型采购必须同时管理能力、价格、访问权和退出权；一个价格可接受的模型，如果被地区限制、配额、默认集成或许可门槛锁住，仍可能不是可持续的基础设施。
+  - **证据**：[[20260831-the-price-of-entry-to-the-frontier]]；[Salesforce 与 Anthropic 的 Claudeforce 公告](https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/)；[Anthropic 关于 Fable 5 与 Mythos 5 访问指令的声明](https://www.anthropic.com/news/fable-mythos-access)。
+  - **边界**：这些材料记录的是 2026 年的具体产品合作与政府事件，不能推出所有模型都会永久采用同样的封闭策略。
+
+因此，采购评审在原有五个变量之外，还应问：
+
+- 访问由谁决定：供应商、产品平台、政府，还是客户自己的部署环境？
+- 模型能否替换：API、prompt、工具调用、评测集和数据管线是否可迁移？
+- 默认集成带来的便利，是否换来了单一供应商的架构依赖？
+- 开放权重的许可、托管、安全审查、硬件和运维条件是否真的可承受？
 
 ## 五个采购变量
 

@@ -1900,6 +1900,18 @@
       "summary_path": "wiki/sources/20260831-agency-and-agents.md",
       "updated_at": "2026-08-31T10:50:58+08:00"
     },
+    "20260831-the-price-of-entry-to-the-frontier.md": {
+      "body_sha256": "b6a3c10da3ab0ff933db036a7d1fd7dd400daa2a12f93b6aefb10ae9988f960e",
+      "canonical_url": "https://tomtunguz.com/the-great-segmentation/",
+      "compiled_at": "2026-09-01T15:29:16+08:00",
+      "indexed_at": "2026-09-01T15:29:30+08:00",
+      "raw_file": "20260831-the-price-of-entry-to-the-frontier.md",
+      "raw_state": "index",
+      "retention_note": "公开博客已编译；保留 source summary、正文哈希和 canonical URL 作为可恢复证据索引。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260831-the-price-of-entry-to-the-frontier.md",
+      "updated_at": "2026-09-01T15:29:43+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -2508,6 +2520,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-08-31T15:24:55+08:00",
+  "updated_at": "2026-09-01T15:29:43+08:00",
   "version": 1
 }
