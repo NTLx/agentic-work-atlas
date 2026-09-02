@@ -28,6 +28,7 @@ source_raw:
   - "[[20260730-palantir-responsible-ai-evals-prototype-to-production]]"
   - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
   - "[[20260901-google-ai-evaluations-trust]]"
+  - "[[20260901-databricks-genie-ontology-data-stack]]"
 ---
 
 # Evaluation Set（评测集）
@@ -65,6 +66,14 @@ Google Developer Relations（2026-09）补充了评测集的题目设计约束�
 **判断**：评测集的信号质量首先取决于题目是否能区分工具增量、覆盖独立能力并避免把未声明的要求偷偷交给 grader。
 - **证据**：[[20260901-google-ai-evaluations-trust]]
 - **边界**：这些规则来自实践指南，不是带对照组和置信区间的因果研究；多轮交互、审批顺序或安全停机只有在被明确写入需求时，才应进入路径 rubric。
+
+## 评测集的业务语义治理
+
+Databricks Genie Ontology（2026-09）把评测集推进到业务语义治理：每个优先业务域要维护代表性问题、expected answer、authoritative source、ground truth、acceptance criteria、人工 review 和阈值。回答失败后，修复应回到真正承载错误的 Page、Metric View、元数据、权限、认证状态或 Agent instructions，而不是盲目改 prompt。
+
+**判断**：评测集不仅定义题目测什么，还要定义在什么业务语义、权限上下文和权威来源下算对。
+- **证据**：[[20260901-databricks-genie-ontology-data-stack]]
+- **边界**：Databricks 的闭环来自厂商产品材料，没有独立证明每个治理动作在不同企业中的因果效果；同一问题因权限不同而有不同答案时，评测集需记录权限上下文。
 
 ## 前提与局限性
 

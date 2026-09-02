@@ -1912,6 +1912,15 @@
       "summary_path": "wiki/sources/20260831-the-price-of-entry-to-the-frontier.md",
       "updated_at": "2026-09-01T15:29:43+08:00"
     },
+    "20260901-databricks-genie-ontology-data-stack.md": {
+      "body_sha256": "f0512de11ff06bc2c82e6569a56b1cec440a070a82e0a8a13125563ecb1fa043",
+      "compiled_at": "2026-09-02T09:45:34+08:00",
+      "raw_file": "20260901-databricks-genie-ontology-data-stack.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260901-databricks-genie-ontology-data-stack.md",
+      "updated_at": "2026-09-02T09:45:34+08:00"
+    },
     "20260901-google-ai-evaluations-trust.md": {
       "body_sha256": "f204b6d7188f763869b3310e56955a5c92e168bc6535be80a1b8c08a9803956f",
       "compiled_at": "2026-09-02T09:42:12+08:00",
@@ -2538,6 +2547,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-02T09:44:55+08:00",
+  "updated_at": "2026-09-02T09:45:34+08:00",
   "version": 1
 }
