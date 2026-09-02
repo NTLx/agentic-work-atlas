@@ -7,7 +7,7 @@ aliases:
   - Agent Optimizer
 definition: "用具体行为检查项（rubric）取代泛化指标（groundedness/coherence）来评估生产 Agent 的方法。每个 rubric 是针对特定用例的 yes/no 检查，由拥有该 Agent 的团队编写。Microsoft 的 Agent Optimizer 可基于 rubric 失败自动生成候选修复。"
 created: 2026-07-14
-updated: 2026-07-30
+updated: 2026-09-02
 evidence_level: high
 claim_type: mixed
 tags:
@@ -24,6 +24,7 @@ source_raw:
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
   - "[[20260819-google-ai-evals-inspect-skill]]"
+  - "[[20260901-google-ai-evaluations-trust]]"
 ---
 
 # Rubric-Based Evaluation
@@ -48,6 +49,16 @@ Rubric 是针对特定用例的 yes/no 行为检查：
 - 完成预订后，Agent 是否向用户确认了详情？
 
 关键特征：**由拥有 Agent 的团队编写**，因此反映实际期望行为而非抽象指标。
+
+## 评测题目与评分对象的对齐
+
+Google Developer Relations（2026-09）从评测设计侧补充了三个边界：
+
+- **先制造区分度**：如果不带 skill 的 baseline 已经高分，题目可能过易，无法显示工具增量；应提高真实任务的复杂度，或重新审视工具范围。
+- **只评分明确要求的结果**：prompt 没有要求的细节不能成为 grader 的扣分项；需要精确实现时，要求必须写进 prompt。
+- **目的优先于固定路径**：Agent 绕过自定义工具却得到正确结果，是工具设计的反馈，不应被自动判错。只有当工具调用、审批顺序或审计轨迹本身是需求时，才把它们显式写入 rubric。
+
+这把 rubric 的工作边界从“检查行为”扩展为“保证被检查的行为确实是需求”：题目定义测试空间，rubric 定义验收边界，二者错位时分数会制造假信号。
 
 ## 分级锚点 vs yes/no 检查（SimilarWeb 2026 补充）
 

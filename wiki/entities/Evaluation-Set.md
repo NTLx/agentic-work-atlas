@@ -7,7 +7,7 @@ aliases:
   - AI 评测集
 definition: "把真实业务判断、边界案例和验收规则显式化为可复用测试样本，用来评估、迭代和迁移 AI 系统行为的关键资产"
 created: 2026-05-23
-updated: 2026-07-30
+updated: 2026-09-02
 tags:
   - AI-evaluation
   - AI-deployment
@@ -27,6 +27,7 @@ source_raw:
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
   - "[[20260730-palantir-responsible-ai-evals-prototype-to-production]]"
   - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
+  - "[[20260901-google-ai-evaluations-trust]]"
 ---
 
 # Evaluation Set（评测集）
@@ -56,6 +57,14 @@ Palantir AIP Evals 文（2024-10）把评测集从"资产"升级为"迭代引擎
 Anthropic 产品团队的 "evals are the new PRDs"（[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]）从 PM 工作流侧确认同一趋势：用户反馈 → 读失败轨迹 → 凝结为 eval set → 可度量改进，evals 取代 PRD 承担需求定义功能。两条线索（平台基础设施视角 + PM 工作流视角）互为验证。
 
 ⚠️ 边界：ground truth 来自人类历史决策时，evals 只能收敛到人类历史判断，不能超越它；3x 重复是朴素处理，pass@k 阈值与分布偏差校正才是真正的工程难点（参见 [[Evaluator-Miscalibration]]）。
+
+## 评测题目设计的信号质量
+
+Google Developer Relations（2026-09）补充了评测集的题目设计约束：题目必须足够难以越过 baseline ceiling，每个 prompt 测试独立能力，grader 只评分 prompt 明确要求的结果；除非路径本身是需求，否则应评估最终目的而不是固定工具调用轨迹。[[Rubric-Based-Evaluation|基于评价标准的评估]] 因而不只是写 scorer，还要先保证测试题目产生可区分、低重叠的信号。
+
+**判断**：评测集的信号质量首先取决于题目是否能区分工具增量、覆盖独立能力并避免把未声明的要求偷偷交给 grader。
+- **证据**：[[20260901-google-ai-evaluations-trust]]
+- **边界**：这些规则来自实践指南，不是带对照组和置信区间的因果研究；多轮交互、审批顺序或安全停机只有在被明确写入需求时，才应进入路径 rubric。
 
 ## 前提与局限性
 
