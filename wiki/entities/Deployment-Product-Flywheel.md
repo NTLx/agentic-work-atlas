@@ -7,7 +7,7 @@ aliases:
   - FDE 飞轮
 definition: "FDE 模式中的核心复利机制：客户现场的碎石路方案被抽象为平台能力，让下一次部署成本下降、产品杠杆上升"
 created: 2026-05-22
-updated: 2026-07-30
+updated: 2026-09-02
 tags:
   - AI-deployment
   - product-management
@@ -27,6 +27,7 @@ source_raw:
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
   - "[[The Return of the Deployment Company]]"
   - "[[20260730-palantir-ontology-connecting-agents-to-decisions]]"
+  - "[[20260901-openai-ai-native-company-workflows]]"
 ---
 
 # Deployment-Product Flywheel（部署-产品飞轮）
@@ -42,6 +43,14 @@ source_raw:
 - 宝玉文章也强调 Palantir FDE 的关键不只是交付，而是在客户端提炼通用需求，反馈回产品团队做成标准化功能。
 - Caffein Chen 文章提醒：从供应商看，客户现场经验回流是飞轮；从客户看，同一过程也可能把专有隐性知识、评测集和流程经验留在供应商侧。
 - Palantir 决策中心架构文（2026-04）给出飞轮的**数据形态**：end-to-end decision lineage 自动捕获每次决策的上下文、数据版本与执行路径，事后可作 fine-tuning 数据与 agent prompting 原则——FDE 回流的不再只是平台功能，还有决策语料。这是飞轮从"功能复利"到"语料复利"的升级。⚠️ 同一机制也是 [[Alpha-Transfer|alpha 转移]]的最大通道：lineage 既是资产也是泄露面，买方需在合同中界定决策数据的归属与导出权。
+
+## 内部工作流的复利形态
+
+OpenAI（2026-09）把部署-产品飞轮从供应商交付扩展到企业内部运营：Basis 将一次演示过的 onboarding 变成 reusable skill，Clay 用持久 workspace 和 subagent 保持 account context，Exa 把机会监测推进为带 tests 和 human review 的 tested artifact。六步清单要求把 context、permissions、evaluations、review points、owners、measures 和 enablement 保留下来，再复制到下一个 value surface。
+
+**判断**：飞轮真正回流的不是一个“成功案例”，而是下一次工作流可以直接继承的上下文、约束、评测和责任结构。
+- **证据**：[[20260901-openai-ai-native-company-workflows]]；[[20260730-palantir-ontology-connecting-agents-to-decisions]]
+- **边界**：OpenAI 的案例是组织内部实践，不证明跨组织复制必然成功；若原流程依赖个人判断、权限或未记录的例外，复用前仍需重新验证。
 
 ## 前提与局限性
 

@@ -6,7 +6,7 @@ aliases:
   - AI 就绪组织
 definition: "能清晰描述自身目标、流程、策略，从而让 AI 有效执行的组织状态——AI 的瓶颈不在技术，而在企业自身的混乱"
 created: 2026-05-09
-updated: 2026-08-13
+updated: 2026-09-02
 evidence_level: high
 claim_type: mixed
 tags:
@@ -30,6 +30,7 @@ source_raw:
   - "[[20260618-cio-conference-ai-practices]]"
   - "[[20260625-ford-ai-quality-jd-power]]"
   - "[[20260811-vasuman-ai-adoption-is-a-myth]]"
+  - "[[20260901-openai-ai-native-company-workflows]]"
 ---
 
 # AI-Ready Organization（AI 就绪组织）
@@ -99,6 +100,14 @@ AI-ready 是 [[Agent-First-Enterprise]] 的入口状态，不是终点。
 ```
 
 如果跳过 AI-ready 直接做 Agent-first，结果通常是把旧流程的模糊性自动化。Agent 会更快地产出，但组织仍然不知道哪些产出有效、谁负责、何时停止。
+
+## 新证据：工作流成为可复制的运营能力
+
+OpenAI（2026-09）用 Basis、Clay 和 Exa 三个案例把 AI-ready 的抽象要求落到工作流：稳定流程被封装为有触发条件、步骤、工具和 done 定义的 skill；变化中的工作需要持久上下文、刷新节奏和贴近推荐的证据；从机会到执行则需要工具、测试、权限和发货前 review。
+
+**判断**：AI-ready 不只是“组织能描述流程”，还包括能把经过验证的流程连同 owner、权限、评测、review points 和指标带到下一个工作面。
+- **证据**：[[20260901-openai-ai-native-company-workflows]] 的三个案例和 `Six steps to experiment now and scale what works` 清单。
+- **边界**：OpenAI 案例来自选定 startup，8.3 倍 output tokens 是使用深度 proxy 而非价值指标；可复制性取决于组织是否能持续维护上下文、权限和反馈。
 
 ## 治理用法
 
