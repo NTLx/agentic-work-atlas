@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T00:44:53+08:00
+updated: 2026-09-05T00:56:27+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -53,7 +53,7 @@ related_entities:
 - Gap: Boundary
 - Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`、`raw/20260330-reward-hacking-equilibrium-finite-evaluation.md`；[arXiv 2604.07650](https://arxiv.org/abs/2604.07650)（已核读，尚未 clip）；[Apple：Nine Judges, Two Effective Votes](https://machinelearning.apple.com/research/correlated-llm-evaluation-panels)（2026-06，一手研究）；[arXiv 2607.10139](https://arxiv.org/abs/2607.10139)（v3，2026-08-17，一手研究；跨家族 verifier panel 在 GPQA/MMLU-Pro 的 shared-error floor 分别为 0.030/0.143，数学任务接近 0）
 - Evidence goal: 界定跨模型 consensus verifier 的 shared-error floor 是否依赖任务域、错误结构与 panel 组成，并区分该结果与所有 AI 监督形态之间的外推边界。
-- Last checked: 2026-08-30T14:00:29 · refined
+- Last checked: 2026-09-05T00:56:27 · no_delta
 - Next: clip+compile arXiv 2607.10139 进入 raw/source，保留 v3 的任务域、model panel 与 shared-error 字段，供后续可回溯复核
 - Retry: new-source:arxiv-2607.10139
 
@@ -187,14 +187,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T00:56:27 | AI 监督 AI 共模误差下界 | no_delta | `ljg-think-recompile` 复核：shared-error floor 仍只适用于特定任务错误结构与跨模型 consensus/verifier panel；数学近零不构成反例，不能外推到所有 AI 监督形式。 |
 | 2026-09-05T00:44:53 | 自我改进闭环的变更治理 | refined | GitHub 案例显示普通离线质量门漏掉 prompt 引起的并行回归；把 EX-007 收窄为两层：不可改写的行为契约门，以及冻结外部 oracle/policy 的独立归因与安全门。 |
 | 2026-08-31T16:04:28 | 自我改进闭环的变更治理 | new_gap | Jeff Dean、Meta-Harness 与 Uber 把评估回路和 harness 纳入持续优化；新增 EX-007，要求区分真实能力提升与评估器/目标/策略共变。 |
 | 2026-08-31T15:03:55 | 治理状态承载与控制面完整性 | new_gap | 记忆污染与上下文压缩暴露：高影响动作的治理约束可能在决策前被删除、弱化或错绑；新增 EX-006，暂不升级稳定页。 |
 | 2026-08-31T14:08:44 | 动作授权与执行闭环 | new_gap | 正确检测/判定之后仍可能在逐动作授权、独立执行、同步阻断或撤销/恢复上失效；新增 EX-005，暂不升级稳定页。 |
-| 2026-08-31T13:03:27 | 真值参考完整性与锚定效应 | refined | 补充一手材料把 EX-004 收窄为 oracle/source-lineage gate：目标可辨识、来源污染、expected action/规格回链与版本完整性；它不是第五个模型独立性轴，仍待与 EX-001/EX-002 做受控拆分。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — recompile CR-003：`ljg-think-recompile` 复核既有跨模型 consensus/verifier 证据；没有超出已知任务与 panel 条件边界的新证据，no_delta
 - [[2026-09-05]] — open explore：GitHub prompt 压缩案例显示离线门漏掉并行行为回归；结合 Anthropic 的 harness 演化与 Uber 的固定模型归因，将 `EX-007` 收窄为行为契约门 + 独立归因/安全门
 - [[2026-08-31]] — open explore：把 self-improving agent 的评估器、harness、技能和策略共变拆成变更治理问题；新增 `EX-007`，要求独立外部 oracle、冻结控制面、版本回放与回滚证据
 - [[2026-08-31]] — open explore：把高影响动作前的治理状态承载拆成 policy-carriage / control-plane integrity 候选；记忆写入、上下文压缩和决策时装配可能删除、弱化或错绑规则，新增 `EX-006`
