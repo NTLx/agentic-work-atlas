@@ -26,32 +26,21 @@ PDF 在编译期间可存放于 `raw/`，但不进入 Quartz 发布面。编译�
 
 ## Compile Control Plane / Execution Plane
 
-Compile 的生命周期和质量门由 Schema 固定；编译执行默认由一个 bounded
-compile worker 完成。Main Agent 不先完整读取长 Source 再自行分析，而是：
+Compile 的生命周期和质量门由 Schema 固定。Orchestrator 先完成主题判题、生命周期
+边界和 bounded compile work unit，再独立选择最小充分的 Skill 或 `none`，选择 direct、
+delegated 或 bounded parallel execution，最后观察结果并完成验收。具体执行方式和
+真实 Skill execution 以 `schema/skill-mapping.md` 为准。
 
-1. 完成主题判题、生命周期边界和最小规划，只读取完成规划所需的少量 metadata
-   及直接相关 Wiki 状态；
-2. 识别当前最大的认知或执行瓶颈，查看 Runtime catalog，选择最小充分的 Skill
-   或 `none`；
-3. 若选择 Skill，Main Agent 完整读取实际 `SKILL.md` 和当前动作需要的
-   references，执行 compatibility check；
-4. 向 compile worker 派发 bounded task，并传递选中 Skill 的 exact locator/path
-   或 `none`。具体 dispatch 与真实 Skill execution 以
-   `schema/skill-mapping.md` 为准。
+实际 compile execution context 负责读取 Source、执行三步编译法及选中 Skill 的方法，
+分离 Evidence 与 Reasoning，生成 Source Summary，在允许范围内修改必要的稳定页、
+cross-link、dedup 和 provenance，并执行 registry 操作与 lint 等确定性质量门。若为
+`none`，直接完成 compile task，不模拟其他 Skill。
 
-Compile worker 负责：
-
-- 实际读取 Source；
-- 执行三步编译法及选中 Skill 的方法；`none` 路径不模拟其他 Skill；
-- 分离 Evidence 与 Reasoning，生成 Source Summary；
-- 在允许范围内修改必要的稳定页、cross-link、dedup 和 provenance；
-- 执行 registry 操作与 lint 等确定性质量门。
-
-Worker 若发现需要另一种明显不同的 Skill，停止当前 execution slice 并返回
-`New bottleneck`；不自行选择第二 Skill，也不 spawn 子 Agent。Main Agent 观察
-结果、检查 diff 和 validation，再决定停止、验收或 re-select 并派发下一 slice。
-即使选择 `Skill: none`，compile execution 仍由 worker 完成；不能因此由 Main
-Agent 接管完整编译。
+Compile execution context 若发现需要另一种明显不同的能力，返回 `New bottleneck` 或
+等价信号，由 Orchestrator 观察结果、检查 diff 和 validation，再决定停止、验收或
+replan。短 Source、metadata 修复或一次简单 Source Summary 可以 direct execution；
+长论文、大篇 Source、复杂 Skill、大量 cross-source synthesis 或大上下文则可考虑
+delegation，但不设固定阈值。
 
 三步编译法仍可作为 source summary 的最低分析合同（详见
 `schema/three-step-method.md`）：提炼核心结论及证据、检查前提和边界、做
@@ -59,7 +48,7 @@ Agent 接管完整编译。
 
 ## KnowledgeOps 不变量
 
-Compile worker 完成 execution 后，按以下固定边界沉淀结果；Main Agent 最终审查
+实际 execution context 完成 execution 后，按以下固定边界沉淀结果；Orchestrator 最终审查
 是否越过这些边界并完成验收：
 
 1. **生成 Source Summary**：默认创建或更新
@@ -73,7 +62,7 @@ Compile worker 完成 execution 后，按以下固定边界沉淀结果；Main A
 3. **区分判断与证据**：重要 synthesized 判断使用统一的“判断 / 证据 / 边界”
    结构。证据必须指向 raw、source 或合规外部来源；Wiki 页面只能帮助定位，
    不能因重复了同一判断而成为第二份证据。
-4. **由 worker 执行 post-compile 质量门**：
+4. **由实际 execution context 执行 post-compile 质量门**：
    - `cross-link`：只补自然且有用的 source/entity/topic/comparison 链接；
      弱关联只记录，不为完整性强行加链。
    - `dedup-audit`：检查别名、缩写、翻译、更窄版本与已有页面的重叠，优先

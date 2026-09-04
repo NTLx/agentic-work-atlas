@@ -144,7 +144,7 @@ git status --short
 
 ---
 
-1. SELECT — Main Agent 选择一个 Claim
+1. SELECT — Orchestrator 选择一个 Claim
 
 1.1 最小读取
 
@@ -195,7 +195,7 @@ git status --short
 
 ---
 
-2. DIAGNOSE — Main Agent 找到当前 Gap
+2. DIAGNOSE — Orchestrator 找到当前 Gap
 
 读取当前 Claim 直接引用的材料。
 
@@ -229,22 +229,22 @@ Gap: Evidence | Counterexample | Boundary | Mechanism
 
 ---
 
-3. ACT — Main dispatch，Worker 执行一个最小动作
+3. ACT — Orchestrator 选择执行方式并完成一个最小动作
 
-每轮只选择一个主要 Action；Action 属于 worker execution，不能由 Main Agent
-在主回路中自行完成：
+每轮只选择一个主要 Action。Orchestrator 根据当前任务、上下文、Skill、成本和
+Runtime capability，选择 direct execution、Execution Delegate 或其他合法的
+Runtime 执行机制；Schema 不要求 Action 离开当前 Orchestrator：
 
 evidence_search
 reasoning_operator
 
 不要把它们串成固定流水线。
 
-Main Agent 根据 Claim、Gap 和 side-effect budget 规划一个 bounded worker task，
-然后派发给唯一的 active worker。Worker 不得 spawn 另一个 agent；若执行中发现
-需要第二个认知 operator，返回 `New bottleneck`，本轮停止，交给 Main 在后续
-re-select。若 worker spawn 因瞬时 Runtime/gateway 问题失败，Main 最多做一次
-bounded retry；仍失败则停止 execution slice 并以 `blocked` 或 `failed` 结束，
-不得把失败改成 `Skill: none`，也不得由 Main 接管实际 Action。
+Orchestrator 根据 Claim、Gap 和 side-effect budget 定义 bounded work unit，并让
+实际 execution context 执行。若执行中发现需要第二个认知 operator，execution
+context 返回 `New bottleneck`，本轮停止，交给 Orchestrator 后续 replan。某个
+delegation mechanism 失败时，Orchestrator 重新评估其他合法 delegate 或 direct
+execution；不得把失败改成 `Skill: none` 或模拟 Skill。
 
 一旦一个 Action 已足以产生 Delta，就进入 "SETTLE"。
 
@@ -260,8 +260,8 @@ bounded retry；仍失败则停止 execution slice 并以 `blocked` 或 `failed`
 - 大多数 "Counterexample"
 - 需要检查 source 是否真的定义了某个边界的 "Boundary"
 
-Main Agent 先确定 Evidence goal，然后 dispatch evidence_search worker。Main 不
-自行执行本轮 substantive search。Worker 先搜索仓库已有材料：
+Orchestrator 先确定 Evidence goal，再选择 direct 或 delegated execution。实际
+execution context 先搜索仓库已有材料：
 
 优先顺序：
 
@@ -278,13 +278,13 @@ Main Agent 先确定 Evidence goal，然后 dispatch evidence_search worker。Ma
 
 联网只在仓库 Evidence 不足时使用。
 
-Worker 执行联网前先写一句：
+实际 execution context 执行联网前先写一句：
 
 Evidence goal: [我要寻找什么，以及什么结果可能改变当前 Claim]
 
 如果 Evidence goal 指定了 source class，搜索与结算必须先通过 Source-Class Gate；二手结果只能作为线索，不能替代目标来源类别。
 
-如果需要联网，worker 按仓库路由加载：
+如果需要联网，实际 execution context 按仓库路由加载：
 
 "schema/web-tools.md"
 
@@ -307,8 +307,9 @@ Missing: [需要什么材料]
 
 搜索失败不会让内部推理获得更高可信度。
 
-本轮选择 "evidence_search" 后，不再选择 reasoning operator。Worker 返回
-Evidence package；Main 只观察、审查和结算，不把搜索交回自己执行。
+本轮选择 "evidence_search" 后，不再选择 reasoning operator。实际 execution
+context 返回 Evidence package；Orchestrator 只观察、审查和结算，不在同一 Action
+中追加另一种动作。
 
 如果搜索结果暴露了新的解释问题，把它写入 "Next"。
 
@@ -320,12 +321,12 @@ reasoning operator 不是默认步骤，只在 Evidence 已足够支持一次局
 Gap 主要是竞争解释、Mechanism 或 Boundary 时考虑。若真正缺的是事实、案例或
 反例，应先执行 `evidence_search`；只是觉得“还能再深入一点”也不足以触发它。
 
-由 Main Agent 加载 `schema/skill-mapping.md`，查看 Runtime 当前发现的 Skill 描述。
+由 Orchestrator 加载 `schema/skill-mapping.md`，查看 Runtime 当前发现的 Skill 描述。
 只可选择明确支持 headless、无人值守且输入契约适配当前 Gap 的 Skill；不得把
 交互式 Skill 自行模拟成无人值守 operator。选择 `none` 也是有效结果。若选择
-Skill，Main 必须完整读取实际 `SKILL.md`、必要 references，完成 compatibility
-check，并把 exact locator/path 传给 worker；worker 执行前必须再次读取同一个
-实际 `SKILL.md`。
+Skill，Orchestrator 按当前 Runtime 的 invocation semantics 获得足够的 capability
+information 并完成 compatibility check；实际执行该 Action 的 execution context
+必须获得并遵循 Skill 的 authoritative instructions。
 
 如果当前 Gap 确实需要 reasoning operator，但 Runtime catalog 中没有安全、headless、
 输入契约匹配的候选，记录 `Skill: none` 后直接进入 "SETTLE"。此时不得自行模拟
@@ -334,18 +335,18 @@ Gap 无法推进，使用 `Delta: blocked` 并记录
 `Missing: eligible headless reasoning operator`；若已有材料已足以确认本轮没有
 进一步变化，使用 `Delta: no_delta`。
 
-Main 发给 reasoning worker 的输入只包含：
+传给 reasoning execution context 的输入只包含：
 
 - Claim；
 - Gap；
 - 已知的、可回溯的关键 Evidence；
 - 当前需要区分的竞争解释、机制或边界问题。
 
-在 worker brief 中附加：
+在 bounded task contract 中附加：
 
 【无人值守模式】本次任务无人值守。请自主完成本次分析并自然收束，不询问用户、不等待用户输入。只聚焦当前 Claim 和指定 Gap；输出属于 reasoning，不判断证据等级，不写入 Wiki，不创建文件或外部笔记。
 
-如果 worker 加载的 Skill 返回需要用户选择的菜单或问题：
+如果实际 execution context 加载的 Skill 返回需要用户选择的菜单或问题：
 
 - 不询问用户；
 - 不重复调用以推进交互；
@@ -354,14 +355,16 @@ Main 发给 reasoning worker 的输入只包含：
 - 进入 "SETTLE"。
 
 不要为了达到某个轮数继续分析。当下钻只会产生无法被 Evidence 区分的故事时
-停止；发现新的 Gap 时由 worker 返回 `New bottleneck` 并写入 "Next"。本轮完成
-reasoning operator 后，不再调用另一个 reasoning operator，也不联网扩展研究。
+停止；发现新的 Gap 时由实际 execution context 返回 `New bottleneck` 并写入
+"Next"。本轮完成 reasoning operator 后，不再调用另一个 reasoning operator，
+也不联网扩展研究。
 
 ---
 
-4. SETTLE — Main Agent 判断知识是否发生变化
+4. SETTLE — Orchestrator 判断知识是否发生变化
 
-Worker 完成唯一 Action 并返回后，Main Agent 立即判断 Delta。Worker 不拥有
+实际 execution context 完成唯一 Action 并返回后，Orchestrator 立即判断 Delta。
+Execution Context 不拥有
 最终 Delta 裁决权，也不能把自己的 reasoning 直接升级为 Evidence。
 
 只允许：
@@ -397,12 +400,12 @@ Delta: no_delta
 
 Research Log
 
-SETTLE 后的写入与验证仍由 worker 完成。Main Agent 先根据 worker result、Evidence、
-Reasoning、diff 和 validation 决定唯一 Delta，再向**同一个 worker**发送一次
-settlement/persistence follow-up，要求它只持久化 Main 已决定的结果、运行 lint，
-并按既有规范 commit / push。该 follow-up 不是第二个 epistemic Action；不得在其中
-新搜索、新选 Skill、新做 reasoning operator 或重新分析 Gap。Main 只做控制面检查、
-观察验证结果和最终验收。
+SETTLE 后的写入与验证可以由 Orchestrator、原 execution context 或另一个合法
+execution context 完成。Orchestrator 先根据 execution result、Evidence、Reasoning、
+diff 和 validation 决定唯一 Delta，再要求负责 persistence 的 context 只持久化已决定
+的结果、运行 lint，并按既有规范 commit / push。该 persistence 不是第二个 epistemic
+Action；不得在其中新搜索、新选 Skill、新做 reasoning operator 或重新分析 Gap。
+Orchestrator 只做控制面检查、观察验证结果和最终验收，不要求 follow-up 回到同一个 context。
 
 只要实际选中并检查了 Claim，就记录一次紧凑日志。
 
@@ -417,7 +420,7 @@ wiki/research/research-logs/YYYY-MM-DD.md
 - Claim: [一个命题]
 - Gap: [Evidence | Counterexample | Boundary | Mechanism]
 - Action: [evidence_search | reasoning_operator]
-- Skill: [none | 实际 worker 加载的 Skill 与 locator]
+- Skill: [none | 实际 execution context 加载的 Skill 与 locator]
 
 ### Evidence
 - [supports | challenges | bounds] [raw/source/URL] — [具体约束 Claim 的内容]
@@ -645,18 +648,19 @@ Next
    - 仓库外笔记的复制；
    - 为了“丰富内容”产生的额外页面。
 
-4. 由 settlement worker 运行：
+4. 由负责 persistence 的 execution context 运行：
 
 uv run python tools/wiki-lint.py --fix-index --write-report
 
-5. Main Agent 观察 lint 结果；若 lint 报错，worker 只修复本轮导致的问题并重新
-   运行。无法安全修复则将结果报告为 `failed`，不由 Main Agent 接管写入：
+5. Orchestrator 观察 lint 结果；若 lint 报错，负责 persistence 的 execution context
+   只修复本轮导致的问题并重新运行。无法安全修复则将结果报告为 `failed`，不扩大
+   本轮写入范围：
 
    - 只修复本轮导致的问题；
    - 修复后重新运行；
    - 无法安全修复则恢复本轮修改并结束为 "failed"。
 
-6. settlement worker 提交前加载：
+6. 负责 persistence 的 execution context 提交前加载：
 
 schema/git-commit-spec.md
 
@@ -675,8 +679,8 @@ recompile: [Claim 简称] — [Delta]
 - delta: [Delta]
 - next: [Next | none]
 
-7. settlement worker 提交并推送；Main Agent 检查 commit、diff 和 validation 后
-   完成验收。
+7. 负责 persistence 的 execution context 提交并推送；Orchestrator 检查 commit、
+   diff 和 validation 后完成验收。
 
 push 失败：
 
@@ -699,7 +703,7 @@ Gap：[Gap | none]
 Action：[evidence_search | reasoning_operator | none]
 Delta：[strengthened | weakened | falsified | refined | blocked | no_delta | none]
 Evidence：[N]
-Skill：[none | worker 实际加载的 headless Skill 与 locator]
+Skill：[none | 实际 execution context 加载的 headless Skill 与 locator]
 Stable Wiki：[0 | 1]
 Next：[下一步 | none]
 Commit：[hash | none]

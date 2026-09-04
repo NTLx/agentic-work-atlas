@@ -23,10 +23,9 @@ Wiki Schema 负责知识生命周期与约束；Agent 负责根据当前任务�
 方法、工具权限和输入契约。
 
 仓库中的 `.agents/skills/` 是本仓库的 canonical Skill capability inventory。
-它是否也是 Runtime discovery surface 取决于 Runtime；当前 Codex 原生发现
-repository-level `.agents/skills/**/SKILL.md`，Claude Code 则继续通过
-`.claude/skills/` compatibility surface 暴露。当前会话真正可用的能力始终以
-Runtime 实际发现并向模型暴露的 catalog 为准。
+不同 Runtime 可以直接发现它，也可以通过自己的 compatibility surface（例如
+`.claude/skills/`）暴露；当前会话真正可用的能力始终以 Runtime 实际发现并向模型
+暴露的 catalog 为准。
 
 `skills-lock.json` 只记录来源、路径、版本引用和内容哈希，用于供应链追踪与
 漂移审计，不是 Runtime capability registry，也不参与 Skill 路由。
@@ -40,110 +39,147 @@ Schema 不维护完整的 `Task → Skill`、`Intent → Skill` 或 `Source Type
 表。新增一个符合 Agent Skills 规范且 description 清楚的 Skill，原则上只需
 让 Runtime 发现它，不需要为它新增工作流分支。
 
-## Control Plane / Execution Plane
+## Orchestrator / Execution Context
 
-Repository Schema owns lifecycle and policy. Main Agent is the Control Plane；
-Worker Subagent is the Execution Plane；Skill is the local cognitive or execution
-operator；deterministic tools own validation。
+Repository Schema owns lifecycle and policy。Orchestrator 是当前负责整体任务控制
+的 Agent，通常就是产品中的 Main Agent；Schema 不依赖这些命名。实际 work unit 由
+Execution Context 执行：它可以是 Orchestrator 自己，也可以是当前 Runtime 提供的
+其他上下文。当 Orchestrator 把 bounded work unit 交给另一个 execution context 时，
+该 context 称为 Execution Delegate。这是逻辑角色，不等同于任何特定产品功能。
 
-### Main Agent：Control Plane
+Orchestrator 负责：
 
-Main Agent 负责：
+1. 理解用户目标，加载必要 Schema，明确 Knowledge lifecycle 和 side-effect budget；
+2. 获取完成规划所需的最小上下文，识别当前 bounded work unit 与主要瓶颈；
+3. 查看 Runtime catalog，独立判断选择一个 Skill 或 `none`；
+4. 获得足够的 capability information 来完成 selection、compatibility 和 execution
+   planning；需要读取 name/description、完整 `SKILL.md`、references，或由 Runtime
+   提供其他 trusted capability contract，取决于当前 Runtime 的 invocation semantics；
+5. 选择 direct、delegated 或 bounded parallel execution；
+6. 观察 execution result、Evidence、Reasoning、Changes、Validation 和 side effects；
+7. 必要时 replan，并完成 Wiki lifecycle、Evidence、promotion、Delta 的最终裁决。
 
-1. 理解用户目标，加载当前 operation 所需 Schema，并判断生命周期边界；
-2. 获取完成规划所需的最小仓库状态，识别当前最大的认知或执行瓶颈；
-3. 查看 Runtime Skill catalog，选择一个 Skill 或 `none`；
-4. 对选中的 Skill 完整读取实际 `SKILL.md`，按需加载当前动作所需 references，
-   并完成 compatibility check；
-5. 设计 bounded worker task，传递实际 Skill locator/path 或 `none`；
-6. 观察 worker 的 Evidence、Reasoning、Changes 和 Validation，检查 diff 与
-   deterministic validation；
-7. 判断是否需要 re-select，做 Wiki lifecycle、Evidence、promotion、Delta 的
-   最终裁决，并验收任务完成状态。
+Orchestrator 可以直接完成低成本、低歧义、短程、上下文很小且没有明显 delegation
+收益的 work unit，例如精确搜索、provenance 查询、少量 metadata 读取、deterministic
+检查或很小的 bounded Wiki 修改。它也可以把较重、长程、需要隔离或可并行的 work unit
+交给 Execution Delegate。
 
-Main Agent 默认不直接完成 substantive KnowledgeOps：不完整读取待编译长 Source
-并分析，不执行三步编译、结构/约束/论文分析或 Skill reasoning procedure，
-不执行任务型检索，不编写 Source Summary、Entity、Topic、Comparison、Research
-Log 或 Output，也不因 `Skill: none` 接管整个任务。`git status`、`git diff`、
-读取 README/schema、读取少量 routing metadata、观察 worker 结果和检查 validation
-属于允许的 control-plane inspection。
+Execution Context 负责在 bounded contract 内获得必要上下文、获得 Skill 的 authoritative
+instructions（若选择了 Skill）、调用工具、完成 reasoning、执行允许的写入与验证，并
+返回 decision-grade result。它不拥有 Wiki lifecycle、Evidence strength、promotion 或
+Delta 的最终裁决权，也不得未经 Orchestrator 裁决扩大任务范围。
 
-### Worker Subagent：Execution Plane
+## Independent Decisions: Capability vs Execution
 
-Worker 在一个 bounded execution slice 内实际读取材料、执行所选 Skill 或直接
-完成 `none` 路径的 task，调用工具、完成 reasoning、在允许范围内写入和验证，
-然后返回 decision-grade result。Worker 不拥有 Wiki lifecycle 最终裁决权，
-不得 spawn subagent；Root Main Agent 是唯一 dispatcher。
+Skill selection 与 execution strategy 是两个独立决策：
 
-Runtime 支持时，Main Agent 默认使用 native subagent 的 fresh-context 语义，优先
-`fork_turns: none` 或等价能力。不要为此创建 repository config。Worker context
-应只包含 repository instructions、explicit task brief、selected Skill 和必要
-Evidence，不继承 Main 的全部长对话。
+```text
+Capability: 需要额外 Skill X，或 none
+Execution:  direct、delegated，或 parallel delegates
+```
+
+合法组合包括 `Skill: none` + direct、`Skill: none` + delegated、已选 Skill + direct，
+以及已选 Skill + delegated。`Skill: none` 只说明当前 work unit 不需要额外认知
+Operator，不要求也不禁止 delegation。
+
+## Execution Strategy
+
+不要建立 classifier 或固定 topology。以下因素明显存在时，优先考虑 Execution Delegate：
+
+- 需要加载大量 task-local context，或需要真实执行较重 Skill 的完整 procedure；
+- 工作长程、多步骤，或会产生较多 intermediate output；
+- 独立 context 能减少 Orchestrator context pollution，或需要更合适的模型、权限、环境；
+- 多个子任务彼此独立，存在真实 parallelism，或需要隔离较大的写入/工具执行；
+- delegation 的额外 context、token、latency、协调和失败成本低于 direct execution。
+
+反之，direct execution 是一等路径。Orchestrator 应采用最小充分 execution topology；
+delegation 和 Agent 数量都不是质量指标。
+
+当采用 delegation 时，Orchestrator 使用当前 Runtime 实际可用且最合适的 mechanism。
+Schema 不规定 subagent、child thread、session、worker、executor package、remote Agent
+或其他 primitive，也不维护 Runtime 到 mechanism 的映射。建立 clean、partial、isolated、
+explicit context package 或其他上下文的具体方式由 Runtime 自行决定，但应优先提供
+minimal sufficient context，避免无必要复制完整主会话。
+
+默认保持 shallow delegation。只有当 task contract 允许、进一步 delegation 明显提高
+质量或效率，且不突破 scope、side-effect、budget、ownership、single-writer 和
+Evidence 边界时，Execution Context 才可继续 bounded delegation。不得创建新的 Skill
+routing hierarchy、扩大 stable Wiki 修改范围或形成 uncontrolled agent swarm；对同一组
+仓库文件默认保持 single writer，并行优先用于 read-only 或隔离验证。
 
 ## Dynamic Orchestration
 
-各 Wiki operation 默认遵循以下循环，不预先构造 Skill DAG 或固定流水线：
+各 Wiki operation 遵循以下通用循环，不预先构造 Skill DAG 或固定流水线：
 
 ```text
-PLAN       Main：理解 operation、加载 Schema、确定 side-effect budget 和 execution slice
+PLAN
   ↓
-SELECT     Main：查看 Runtime catalog，选择最小充分 Skill 或 none
+SELECT CAPABILITY
   ↓
-LOAD       Main：读取实际 SKILL.md、必要 references，完成 compatibility check
+CHOOSE EXECUTION MODE
   ↓
-DISPATCH   Main：派发一个 bounded worker task，传递 exact locator 或 none
+EXECUTE
   ↓
-EXECUTE    Worker：读取 Skill、执行 task、在预算内写入和验证
+OBSERVE
   ↓
-OBSERVE    Main：审查 result、Evidence/Reasoning、diff 和 deterministic validation
-  ↓
-RE-SELECT  只有出现不同新瓶颈时，Main 再选择并派发下一 execution slice
+REPLAN
 ```
 
-Worker 发现另一种明显不同的 Skill 才能继续时必须停止并返回
-`New bottleneck`，不能自行选择第二 Skill、继续 spawn 或形成递归 swarm。默认
-保持一个 active execution worker；只有彼此独立的 read-only 工作才可并行，
-不得并行写入同一 `wiki/`、`raw/`、`state/` 或 `index.md`。
+- **PLAN**：Orchestrator 理解 operation、加载必要 Schema、确定 lifecycle、side-effect
+  budget 和 bounded work unit。
+- **SELECT CAPABILITY**：选择最小充分 Skill 或 `none`。
+- **CHOOSE EXECUTION MODE**：根据任务、上下文、Skill、成本和 Runtime capability 选择
+  direct、delegated 或 bounded parallel execution。
+- **EXECUTE**：实际 execution context 获得必要 context 和 Skill instructions，执行 task，
+  在预算内写入和验证。
+- **OBSERVE**：Orchestrator 审查 result、Evidence/Reasoning、diff、validation、side effects
+  和新的 bottleneck。
+- **REPLAN**：若出现新的瓶颈，重新独立选择 capability 与 execution mode；不预先建立完整 DAG。
 
-Skill 数量不是质量指标；一个 bounded slice 通常由一个 worker 完成 read、reason、
-write、validate。`Skill: none` 表示不需要额外 Operator，但仍由 worker 执行：
-**Zero Skill ≠ Zero Delegation**。如果已确定需要 Skill 而 worker 无法启动，
-不能将失败改写成 `none` 或由 Main Agent 接管 substantive execution。
+Execution Context 若发现当前 work unit 需要另一种明显不同的能力，应返回 `New bottleneck`
+或等价信号，由 Orchestrator 决定是否 replan。它不因这个信号自动扩大研究、写入范围或
+生命周期。并行执行不得同时修改同一 `wiki/`、`raw/`、`state/` 或 `index.md`，除非 Runtime
+明确提供安全 isolation / merge semantics 且 Orchestrator 有明确理由使用。
 
 ## Real Skill Execution
 
-只有同时满足以下条件，才可称为实际 Skill execution：
+只有同时满足以下条件，才可声称使用某 Skill：
 
 1. Skill 来自当前 Runtime catalog 或由用户明确指定；
-2. Main Agent 读取实际 Skill instruction，并通过 compatibility check；
-3. Main Agent 将 Skill 的实际 locator/path 传给 worker；
-4. Worker 在执行前自己完整读取同一个 `SKILL.md` 及当前动作所需 references；
-5. Worker 实际执行 Skill 规定的方法、工具、脚本或 reasoning procedure；
-6. Worker 将结果返回 Main Agent；
-7. Main Agent 再按 Schema 决定结果如何进入 Knowledge lifecycle。
+2. 实际执行该 work unit 的 execution context 获得了该 Skill 的 authoritative instructions；
+3. 该 context 实际遵循了与当前任务相关的方法、procedure、tools、scripts、references 或约束；
+4. Skill 的 compatibility / side-effect 要求满足当前 Repository Schema；
+5. 结果明确区分 Evidence、Skill-assisted Reasoning、execution result 和 validation；
+6. Orchestrator 仍按 Schema 完成最终 Evidence、lifecycle、promotion 或 Delta 裁决。
 
-以下不算真实 Skill 调用：Main Agent 仅声明使用 Skill 后自行推理；按记忆模拟
-Skill；Worker 未读取实际 `SKILL.md`；把 Skill 风格的 reasoning 当作 invocation；
-或 `Skill: none` 时由 Main 模拟某个 Skill。
+Orchestrator 是否需要完整读取 `SKILL.md`，取决于当前 Runtime 的 Skill invocation semantics。
+如果 Runtime 明确要求 Orchestrator 在执行或 delegation 前完整读取 Skill instructions，则
+必须遵守 Runtime 自身要求；否则 Orchestrator 只需获得足够的 trusted capability information
+来完成 selection、compatibility 和 planning。无论如何，实际 execution context 始终必须
+获得 authoritative execution instructions。
 
-### Worker Dispatch Brief
+以下不算真实 Skill 调用：只声称使用 Skill 后自行推理；按记忆或相似风格模拟；实际 context
+未获得 `SKILL.md` 或等价 authoritative instructions；或把 Skill output 当成 Evidence。
 
-不创建 brief 文件。Main Agent 在 subagent message 中传递临时、bounded brief，
-至少包含：
+### Execution Delegate Contract
+
+不创建 contract 文件。采用 delegate 时，Orchestrator 传递 bounded、语义性的 task contract；
+不要求某个 Runtime 使用完全相同的字段格式。最小内容包括：
 
 ```text
 Operation:
 Task:
 Inputs:
 - ...
-Relevant Evidence:
+Relevant Evidence / Context:
 - ...
-Selected Skill:
-<exact runtime locator/path | none>
-Repository Rules:
-- obey README.md and relevant schema/*
+Capability:
+<Skill / none>
+Constraints:
+- obey Repository Schema and relevant schema/*
 - Evidence != Reasoning
 - Schema > Skill native workflow
+- ...
 Side-effect Budget:
 - ...
 Write Scope:
@@ -152,7 +188,7 @@ Stop Conditions:
 - ...
 Return:
 - Status
-- Skill actually loaded
+- Capability actually used
 - Evidence
 - Reasoning
 - Changes
@@ -160,21 +196,15 @@ Return:
 - New bottleneck
 ```
 
-不要把整个 Schema 复制进 brief；Worker 通过仓库自身读取必要规则。
+不要把整个 Schema 复制进 contract；Execution Context 通过仓库自身读取必要规则。
 
-### Worker Execution Contract
-
-收到 `Selected Skill: <path>` 时，Worker 必须打开并完整读取该实际 `SKILL.md`，
-按需读取 references，遵守 Schema 高于 Skill 的优先级，在 side-effect budget 内
-执行并返回结果。收到 `Selected Skill: none` 时，不加载无关 Skill、不模拟任何
-Skill，直接完成 worker task。Worker 不拥有最终 lifecycle、Evidence strength、
-promotion 或 Delta 裁决。
-
-Worker 返回紧凑结果，不返回完整 transcript：
+当 Capability 为某 Skill 时，实际执行 context 必须获得其 authoritative instructions；
+当 Capability 为 `none` 时，不加载无关 Skill、不模拟任何 Skill。Execution Context 返回
+紧凑结果，不返回完整 transcript：
 
 ```text
 Status: success | blocked | partial | failed
-Skill actually loaded: <skill name + locator | none | failed: reason>
+Capability actually used: <skill name + locator | none | failed: reason>
 Evidence: - ...
 Reasoning: - ...
 Changes: - ...
@@ -182,8 +212,10 @@ Validation: - ...
 New bottleneck: <none | description>
 ```
 
-若 worker spawn 因瞬时 Runtime 问题失败，Main Agent 最多做一次 bounded retry；
-仍失败则停止 execution slice，明确返回 `blocked` 或 `failed`，不得默默接管。
+某个 delegation mechanism 因瞬时 Runtime 问题失败时，不要无限重试同一种 mechanism。
+Orchestrator 应重新评估其他合法 delegate 或 direct execution；如果没有任何能真实执行
+该 task / Skill 的 execution context，才明确返回 `blocked` 或 `failed`。不得因 delegation
+失败而把 Skill 改写成 `none`，也不得凭记忆模拟 Skill。
 
 Skill 调用数量不是质量指标。相同结论被多个 Skill 或多个 Persona 重复说出，
 不构成更多 Evidence，也不构成必须继续调用 Skill 的理由。

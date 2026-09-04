@@ -7,21 +7,19 @@ type: schema-subdoc
 
 # Outputs 工作流
 
-Main Agent 先确定输出对象、读者、已有 Wiki 依据、Evidence scope 和表达瓶颈，
-再按 `schema/skill-mapping.md` 查看 Runtime 当前发现的 Skill 描述。Main 选择
-Skill 或 `none`，若选 Skill 则读取实际 `SKILL.md` 并检查 compatibility，然后
-派发一个 bounded output worker。Worker 读取必要 Wiki、读取实际 Skill（若有）、
-生成内容，按允许范围写 `wiki/outputs/` 并完成回填检查。Skill output 默认是
-reasoning，不能替代来源回链或 Output 回填门控。
+Orchestrator 先确定输出对象、读者、已有 Wiki 依据、Evidence scope 和表达瓶颈，
+再按 `schema/skill-mapping.md` 查看 Runtime 当前发现的 Skill 描述，独立选择 Skill
+或 `none`，以及 direct 或 delegated execution。实际 execution context 读取必要 Wiki、
+获得真实 Skill instructions（若有）、生成内容，按允许范围写 `wiki/outputs/` 并完成
+回填检查。Skill output 默认是 reasoning，不能替代来源回链或 Output 回填门控。
 
-Worker 若暴露新的不同表达或证据瓶颈，返回 `New bottleneck`；由 Main Agent
-观察后决定是否 re-select 并派发 correction worker。Main 不直接替代 writer
-worker 完成最终长文。
+如果 execution context 暴露新的不同表达或证据瓶颈，返回 `New bottleneck`；由
+Orchestrator 观察后决定是否 replan。输出长度、上下文规模、Skill、写作复杂度和 context
+pollution 可以影响选择，但不规定长文必须 delegated；简单回答可以 direct。
 
-用户只要求一次性回答时，可以不写文件，也可以选择 `Skill: none`，但实际 output
-execution 仍由 worker 完成。需要持久化时，只能写入本流程允许的 `wiki/outputs/`，
-并遵守 Repository Schema 高于 Skill 原生 workflow 的优先级；不得因 Skill 的默认
-目录或笔记行为写入无关位置。
+用户只要求一次性回答时，可以不写文件，也可以选择 `Skill: none`。需要持久化时，只能
+写入本流程允许的 `wiki/outputs/`，并遵守 Repository Schema 高于 Skill 原生 workflow
+的优先级；不得因 Skill 的默认目录或笔记行为写入无关位置。
 
 ## Output 回填门控
 

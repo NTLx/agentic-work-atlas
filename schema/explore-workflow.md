@@ -24,18 +24,18 @@ Explore 有两个不同模式：
 - **下一步目标建议**：下一轮最应该推进哪个主题、问题或剪藏方向。
 - **最小实验**：下一步最小可执行动作。
 
-这些是 Research lifecycle 的输出契约，不是 Skill 调用契约。Main Agent 选择探索
+这些是 Research lifecycle 的输出契约，不是 Skill 调用契约。Orchestrator 选择探索
 范围，检查 Research metabolism，读取少量当前 Wiki、Research Agenda 和相关 Source
-metadata，判断最大的研究缺口，查看 Runtime catalog 并选择 Skill 或 `none`；若
-选择 Skill，Main 先读取实际 `SKILL.md` 和必要 references，完成 compatibility
-check 后 dispatch explore worker。Worker 读取必要 Wiki / Source，实际执行 Skill，
-寻找反例、建立 Source 需求、形成最小实验，并在允许时更新 agenda。Main 观察结果，
-把它裁决为 `new_gap`、`refined`、`merged`、`retired` 或 `no_delta`，并判断是否
-允许创建新 EX。
+metadata，判断最大的研究缺口，查看 Runtime catalog 并独立选择 Skill 或 `none`，再
+选择 direct、delegated 或 bounded parallel execution。实际 execution context 读取必要
+Wiki / Source，获得真实 Skill instructions（若有），寻找反例、建立 Source 需求、
+形成最小实验，并在允许时更新 agenda。Orchestrator 观察结果，把它裁决为 `new_gap`、
+`refined`、`merged`、`retired` 或 `no_delta`，并判断是否允许创建新 EX。
 
-即使选择 `Skill: none`，explore execution 仍由 worker 完成；worker 不自行发现并
-选择第二 Skill，也不继续 spawn。Worker 发现新的不同瓶颈时只返回 `New bottleneck`，
-由 Main Agent 决定是否 re-select。不得预先生成完整 Skill 表或固定 Skill pipeline。
+简单 Explore 可以 direct；context 较大、需要重 Skill 或存在真正独立的只读研究时可以
+delegated。Execution context 发现新的不同瓶颈时只返回 `New bottleneck`，由 Orchestrator
+决定是否 replan；若使用 delegate，它不拥有 EX 创建的最终裁决权，也不得无限扩张
+research 或自行改变 lifecycle。不得预先生成完整 Skill 表或固定 Skill pipeline。
 
 Skill 输出只能作为 reasoning：不能自动成为事实、Evidence、稳定 Claim 或新页面，
 也不能仅凭多个 Skill 的一致意见扩大 Research Agenda。Source 需求、反例方向和

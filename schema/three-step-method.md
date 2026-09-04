@@ -7,10 +7,10 @@ type: schema-subdoc
 
 # 三步编译法
 
-三步编译法属于 compile execution，由当前 compile worker 完成。若 Main Agent
-已为当前 execution slice 选择 Skill，worker 在读取实际 `SKILL.md` 后执行相应
-方法；若为 `none`，worker 直接完成三步编译，不模拟其他 Skill。整个三步法通常
-由同一个 worker 完成，不拆成三个 subagent。
+三步编译法属于 compile execution contract，由实际执行当前 compile work unit 的
+execution context 完成。若选择 Skill，实际 execution context 必须获得并遵循其
+authoritative instructions；若为 `none`，直接执行三步法，不模拟其他 Skill。整个
+三步法通常由同一个 execution context 完成，不拆成三个 delegates。
 
 当执行 compile 或 rebuild 时，对每篇文章执行：
 
@@ -37,19 +37,19 @@ type: schema-subdoc
 
 ### 3b. 旁逸（跨域联想）
 1. 源材料中是否有隐含的跨域引用或类比（作者未显式展开的）？
-2. 如果跨域洞察足够深（不只是表面类比，而是逻辑结构同构），worker 执行 Main
-   已按 `schema/skill-mapping.md` 选择并加载的能力；是否使用伴读类 Skill 由
-   实际瓶颈决定
+2. 如果跨域洞察足够深（不只是表面类比，而是逻辑结构同构），实际 execution context
+   执行 Orchestrator 已按 `schema/skill-mapping.md` 选择并加载的能力；是否使用伴读类
+   Skill 由实际瓶颈决定
 3. 旁逸发现注入 source summary，可能触发新 entity 创建或已有 entity 关联更新；
    Skill 产生的解释仍属于 reasoning，不是 Evidence
 
 ### 3c. 约束（边界分析）
 1. 结论成立依赖哪些约束条件？
 2. 这些约束是硬约束（世界规律）、软约束（规则制度）、还是自设约束（「我们行业特殊」式的解释）？
-3. 如果约束分类不清晰，worker 执行 Main 已选择的合适约束分析能力；不因方法
-   名称或材料类型而强制调用某个 Skill
+3. 如果约束分类不清晰，实际 execution context 执行 Orchestrator 已选择的合适约束
+   分析能力；不因方法名称或材料类型而强制调用某个 Skill
 
-**自主决策**：3b 和 3c 是否使用 Skill 由 Main Agent 根据当前认知瓶颈判断，
-不需要用户指令。若跨域洞察浅且约束清晰，Main 可选择 `none`，由同一个 compile
-worker 只做 3a 的手动对标；所有结果仍须回到 compile 的 provenance、Entity 准入
+**自主决策**：3b 和 3c 是否使用 Skill 由 Orchestrator 根据当前认知瓶颈判断，
+不需要用户指令。若跨域洞察浅且约束清晰，Orchestrator 可选择 `none`，由同一个
+compile execution context 只做 3a 的手动对标；所有结果仍须回到 compile 的 provenance、Entity 准入
 和写入边界。

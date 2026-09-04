@@ -19,10 +19,13 @@
 
 本任务无人值守。所有可由证据和任务逻辑决定的事项自行裁决，不询问用户、不等待用户输入。只有确实需要用户权威、偏好或外部缺失材料才能继续时，按 Workflow 记录为 "blocked" 并结束。
 
-当前会话中的 Root Agent 是本轮 Control Plane。按
-`schema/recompile-workflow.md` 完成 Claim/Gap/Action 规划和最终 Delta 裁决；
-实际 Action 与其后的允许写入/验证通过 native worker subagent 执行。不得由
-Root Agent 模拟 Skill 或替代 worker 完成 Action。
+当前 Root/Main Agent 是本轮 Control Plane。按照
+`schema/recompile-workflow.md` 完成 Claim、Gap、Action 规划和最终 Delta 裁决。
+
+实际 Action 采用 direct execution、Execution Delegate 或当前 Runtime 其他原生
+执行机制，由 Agent 根据任务、上下文、Skill、成本和 Runtime capability 自行判断。
+
+如果声称使用 Skill，实际执行上下文必须真实加载并执行该 Skill；不得模拟。
 
 不要为了消耗预算继续思考。
 

@@ -221,22 +221,21 @@ uv run python tools/pdf-extract.py raw/<filename.pdf> --out /tmp/paper_full.md
 
 提取后验证 Discussion / Conclusion / References 齐全，然后按标准编译流程处理；source summary 记录 canonical URL，生命周期按 `schema/compile-operations.md` 结算。
 
-### Subagent unavailable / 503
+### Delegated execution unavailable
 
-本环境推理网关（127.0.0.1:41879）的模型通道可能返回
-`503 No available channel for model ...`。如果 worker spawn 因瞬时 Runtime/gateway
-问题失败：
+在当前曾观察到的某些 background-agent Runtime 中，推理网关
+（127.0.0.1:41879）的模型通道可能返回 `503 No available channel for model ...`。
+某个 delegation mechanism 失败时，不要无限重试同一种方式。Orchestrator 应重新
+评估当前 Runtime 的 execution strategy：可以选择另一种合法 delegate，也可以在
+当前 execution context 能真实执行 task / Skill、且不突破 side-effect boundary 时
+改为 direct execution。
 
-1. 先确认这是 transient spawn failure；
-2. 最多做一次 bounded retry；
-3. 仍失败则停止当前 execution slice，返回 `blocked` 或 `failed`；
-4. Main Agent 不得默默接管 substantive KnowledgeOps，也不得模拟本应由 worker
-   执行的 Skill。
+如果不存在任何合法 execution context，明确结束为 `blocked` 或 `failed`。delegation
+失败不等于 `Skill: none`，也不允许凭记忆模拟 Skill。Orchestrator 仍可执行
+`git status`、查看 diff 等纯 deterministic control-plane 检查；这不改变真实 Skill
+execution 的要求。
 
-Main 仍可执行纯 deterministic control-plane 检查，例如 `git status`、查看 diff
-和判断 worker 是否成功；这不改变 substantive execution 必须由 worker 完成的边界。
-
-### 背景 agent 的 .output 是完整 JSONL 转录
+### 某些 background-agent Runtime 的 `.output` 是完整 JSONL 转录
 
 背景 agent 的 `.output` 文件是完整对话转录（开头含大段系统元数据/技能列表），**直接 Read 会淹没上下文**。
 **正确做法**：背景 agent 成功时完整报告已随 task-notification 的 `<result>` 送达，无需读文件。确需提取末条结果：
@@ -248,12 +247,12 @@ tail -1 <output-file> | python3 -c "import json,sys; print(json.load(sys.stdin)[
 
 `tools/wiki-lint.py` 检查 wikilink/mathjax 前会剥离行内代码（`` `...` ``）。在描述性文字中提及未创建的页面（如断链说明"Agent-Governance topic 未建"）时**必须用反引号**，裸露 `[[...]]` 会误报断链、拉低 lint 分数。
 
-### aihot API：worker 调用返回 403
+### aihot API：execution context 调用返回 403
 
-aihot API 对 `User-Agent` 有要求，默认 curl UA 可能返回 403/567。执行 aihot 的
-worker 必须实际加载 aihot Skill，并按照该 Skill 当前要求调用工具/API，包括所需
-的 `User-Agent`。如果 worker Runtime 缺乏对应能力，返回 `blocked`；不要把 Skill
-调用偷偷移动到 Main Agent。
+aihot API 对 `User-Agent` 有要求，默认 curl UA 可能返回 403/567。实际执行 aihot
+work unit 的 execution context 必须加载 aihot Skill，并按照该 Skill 当前要求调用
+工具/API，包括所需的 `User-Agent`。如果当前 Runtime 缺乏对应能力，返回 `blocked`；
+不要把真实 Skill 调用偷偷移动到另一个未获得其 instructions 的 context。
 
 ### git commit 统计："重编译"污染 compile 计数
 

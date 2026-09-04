@@ -7,10 +7,12 @@ cases:
     expected_outcomes:
       - 能定位已有 Wiki 页面或 Source
       - 给出可回溯来源
-      - 即使 Skill 为 none，实际 provenance retrieval 仍由 query worker 完成
+      - Skill:none 不预设 execution topology，direct 与 delegated 都可按任务成本选择
+      - 不调用不必要的 Skill
     forbidden_outcomes:
       - 为了回答而调用不必要的深度 Skill
-      - Main Agent 以 Skill:none 为理由直接接管完整 substantive execution
+      - 为了 delegation 而 delegation
+      - 把 Skill:none 伪装成某个 Skill 的模拟调用
       - 创建 Wiki 页面
       - 修改 raw 或写入外部笔记
     routing:
@@ -93,12 +95,13 @@ cases:
     input: "编译一篇普通的 Agent 工程文章，并判断它是否值得进入 Wiki。"
     expected_outcomes:
       - 可以在没有 Skill 时完成 Source Summary
-      - 即使 Skill 为 none，实际 compile execution 仍由 compile worker 完成
+      - direct 或 delegated execution 都合法，且由实际 execution context 完成 compile work unit
       - 遵守主题宪法、provenance 和 Entity/Topic 准入
       - lint 与 Compile Registry 仍作为确定性质量门
     forbidden_outcomes:
       - 为了使用 Skill 而使用 Skill
-      - Main Agent 以 Skill:none 为理由直接接管完整 substantive execution
+      - 因为存在 Skill 或 delegate primitive 就机械 delegation
+      - 把 Skill:none 伪装成某个 Skill 的模拟调用
       - 把 Skill reasoning 直接写成 Evidence
       - 创建与材料无关的稳定页面
     routing:
@@ -113,24 +116,24 @@ cases:
         - "修改 raw 正文"
         - "写入 Skill 默认目录或第三方 Skill"
 
-  - id: compile-real-skill-delegation
+  - id: compile-real-skill-execution
     operation: compile
     input: >
       编译一份存在明确结构分析瓶颈的 Agent 工程材料。
       当前 Runtime 中存在至少一个描述匹配的结构分析 Skill。
     expected_outcomes:
-      - Main Agent 负责判断瓶颈并从 Runtime catalog 选择最小充分能力
-      - Main Agent 在 dispatch 前读取实际选中 Skill 的完整 instructions
-      - worker 收到选中 Skill 的实际 locator 或 path
-      - worker 在执行任务前自己读取同一实际 Skill
-      - 实际结构分析由 worker 完成，而不是 Main Agent 模拟
-      - worker 返回 Evidence 与 Reasoning 分离的结果
-      - Main Agent 观察结果后再完成 Wiki lifecycle 裁决
+      - Orchestrator 从 Runtime catalog 选择最小充分能力
+      - Skill selection 与 execution strategy 分别判断
+      - 实际执行该结构分析的 execution context 获得真实 Skill instructions
+      - Skill 的实际 procedure 被用于当前 work unit
+      - Evidence 与 Skill-assisted Reasoning 被区分
+      - execution result 最终仍经过 Wiki lifecycle 与 deterministic validation
     forbidden_outcomes:
-      - Main Agent 仅声明使用某 Skill 后自行完成结构分析
-      - worker 未读取实际 SKILL.md 就声称调用了 Skill
+      - 只声明使用某 Skill 而未加载 authoritative instructions
+      - 根据记忆或类似风格模拟 Skill
       - 把类似 Skill 风格的 reasoning 当成真实 Skill invocation
-      - worker 继续 spawn 下一层 subagent
+      - 因为存在 Skill 就机械创建 delegate
+      - 无边界地继续 delegation 或形成 uncontrolled swarm
       - Skill output 被当成独立 Evidence
     routing:
       exact_skill_set_required: false
@@ -138,36 +141,36 @@ cases:
       required: true
       must_preserve: "Evidence != Reasoning"
     side_effects:
-      allowed: "Schema 允许的 bounded compile worker execution"
+      allowed: "Schema 允许的 bounded compile execution"
       forbidden:
         - "修改第三方 Skill"
         - "向 Skill 默认外部目录持久化"
-        - "并发 worker 修改同一 Wiki 文件"
+        - "并发 execution contexts 修改同一 Wiki 文件"
 
-  - id: subagent-unavailable-no-simulation
+  - id: execution-replan-no-simulation
     operation: compile
     input: >
       当前任务已经确定需要一个 Runtime Skill，
-      但实际 worker subagent 无法启动或连续失败。
+      但首选 delegation mechanism 无法启动。
     expected_outcomes:
-      - Main Agent 保留当前计划和已确认的 Skill 选择事实
-      - 对明确的 transient spawn failure 最多进行一次 bounded retry
-      - worker 仍不可用时任务明确结束为 blocked 或 failed
-      - 不把 execution failure 伪装为 Skill none
+      - Orchestrator 重新评估当前 Runtime 可用 execution strategy
+      - 可以选择其他 delegate 或合法 direct execution
+      - 无论选择哪种方式，实际 execution context 都必须真实加载所需 Skill
+      - 没有任何合法 execution context 时明确 blocked 或 failed
     forbidden_outcomes:
-      - Main Agent 自己执行本应由 worker 完成的 Skill procedure
-      - Main Agent 模拟 Skill reasoning 并声称调用成功
-      - 为完成任务无限重试 subagent
-      - 因 worker 不可用而降低 Evidence 或 side-effect 标准
+      - 因 delegation 失败而凭记忆模拟 Skill
+      - 把 execution failure 伪装成 Skill none
+      - 无限重试同一种 delegation mechanism
+      - 因 fallback 降低 Evidence 或 side-effect 标准
     routing:
       exact_skill_set_required: false
     evidence_boundary:
       required: true
       must_preserve: "Evidence != Reasoning"
     side_effects:
-      allowed: "只允许控制面检查与一次 bounded retry"
+      allowed: "bounded execution replanning"
       forbidden:
-        - "Main Agent 接管 substantive execution"
+        - "模拟 Skill invocation"
         - "修改第三方 Skill"
 
   - id: compile-paper
@@ -199,12 +202,12 @@ cases:
     expected_outcomes:
       - 先完成 Source 读取和主题判题，再识别认知瓶颈
       - 在 Observe 之后可以重新查看 catalog 并选择下一步能力
-      - worker 发现不同瓶颈时停止并返回 New bottleneck，由 Main Agent re-select
+      - 当前 execution context 暴露不同瓶颈，由 Orchestrator re-plan
       - 不预先构造完整 Skill DAG 或静态流水线
       - 最终仍回到 Source Summary、准入、provenance 和 lint
     forbidden_outcomes:
       - 任务开始时批量激活预设 Skill 集合
-      - worker 自己选择第二 Skill 或继续 spawn 子 Agent
+      - execution context 未经 Orchestrator 判断就选择第二 Skill 或无限 delegation
       - 因中间结果而越过 Wiki 写入边界
     routing:
       exact_skill_set_required: false

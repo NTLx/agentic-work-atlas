@@ -92,29 +92,29 @@ Context Pack 不得直接升级为 entity/topic/comparison。只有其中的新�
 
 ## 按需使用 Agent Skills
 
-search-first 和 bounded context 优先于 Skill 选择。Main Agent 可以读取标题、
-aliases 和少量 routing state 来确定 query 边界，但不先完成完整答案：
+search-first 和 bounded context 优先于 Skill 选择。Orchestrator 可以读取标题、
+aliases 和少量 routing state 来确定 query 边界，然后独立完成 capability 与 execution
+决策：
 
 ```text
-Main：理解 query / intent / lifecycle，建立最小 routing context
+理解 query / intent / lifecycle，建立最小 routing context
   ↓
-Main：识别瓶颈，选择 none 或最小充分 Skill
+search-first，找到 bounded context
   ↓
-Main：若选 Skill，读取实际 SKILL.md、必要 references，检查 compatibility
+选择 none 或最小充分 Skill
   ↓
-Main：dispatch query worker，传递 exact locator 或 none
+选择 direct、delegated 或 bounded parallel execution
   ↓
-Worker：search-first，读取最终 bounded context，执行 Skill 或 zero-Skill retrieval
+实际 execution context 执行检索/Skill，返回 Evidence / Reasoning 分离的 answer package
   ↓
-Worker：返回 Evidence / Reasoning 分离的 answer package
-  ↓
-Main：审查结果，必要时 re-select，然后回答
+Orchestrator 观察结果，必要时 replan，然后回答
 ```
 
-即使 Skill 为 `none`，实际 provenance search、retrieval 和 synthesis 仍由 query
-worker 完成；**Zero Skill ≠ Zero Delegation**。Worker 不自行选择第二 Skill 或
-spawn 子 Agent。若需要另一种明显不同的能力，返回新瓶颈，由 Main Agent 决定是否
-重新派发。
+简单 provenance、Entity 查询、少量页面检索和 bounded compare 通常可以 direct；大范围
+cross-source synthesis、重 Skill、大量独立证据搜索或明显需要 context isolation 时可以
+delegated。`Skill: none` 只表示不需要额外能力，不预设 execution topology，也不要求
+为了形式创建 delegate。实际 execution context 若暴露新瓶颈，由 Orchestrator 决定是否
+重新选择 capability 和 execution mode。
 
 这里没有 Query → Skill 的固定映射。概念理解、机制深挖、结构辨认或争议分析都
 可能需要不同能力，也都可能在已有上下文充分时不需要 Skill。Skill output 默认
