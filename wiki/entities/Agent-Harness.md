@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-08-16
+updated: 2026-09-05
 evidence_level: high
 claim_type: mixed
 tags:
@@ -76,6 +76,10 @@ source_raw:
   - "[[20260801-align-agent-environment-interface.pdf]]"
   - "[[20260815-autodesign-meta-harness-optimization]]"
   - "[[20260819-anthropic-claude-tag-oncall]]"
+  - "[[20260902-bytebytego-rag-translator-model]]"
+  - "[[20260902-meta-organizational-second-brain]]"
+  - "[[20260902-google-harness-engineering]]"
+  - "[[20260902-google-ai-agents-challenge-patterns]]"
 ---
 
 # Agent Harness
@@ -137,6 +141,16 @@ Anthropic 的 Justin Young 在 Claude Agent SDK 上实验了跨多个 context wi
 - Git 作为检查点机制：允许 Agent 回滚坏变更并恢复工作状态
 
 这个方案验证了 [[Thin-Harness-Fat-Skills]] 原则：harness 只需提供环境初始化 + 结构化 artifact + 增量约束，Agent 依靠外部文件系统而非内部状态维持长期进展。
+
+## 2026-09 补充：Harness 也控制证据入口与组织记忆
+
+四篇新材料把 Harness 的边界从“包裹模型的运行时”推进到三个相互连接的层面：
+
+- ByteByteGo 说明 embedding、chunk、metadata、版本和 reranker 决定哪些证据有机会进入上下文；更强的生成模型无法修复未被检索出来的事实。
+- Meta 的 Organizational Second Brain 把组织知识、专家 recipes、依赖图、评估和专家反馈编排成可审计的知识运行时，并通过回归测试让纠正产生持久收益。
+- Google 的 harness 实践把 sandbox、失败日志回送、测试节点和 kill switch 组合成可停止的 repair loop；Challenge 案例则展示了双向 MCP、事件并行、统一验证和分层路由等可组合模式。
+
+综合判断：Agent Harness 不只是让模型“能调用工具”，而是规定它能看到哪些证据、能触碰哪些状态、如何从失败中恢复，以及哪些结果才允许离开系统。
 
 ## 三层工程
 

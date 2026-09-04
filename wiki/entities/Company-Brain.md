@@ -9,7 +9,7 @@ aliases:
   - Organization Brain
 definition: "让组织对 Agent 可读的共享上下文层——folder 树结构 + markdown 文件，Agent 可搜索、检索和写回。通过 Capture → Curate → Store → Execute → Experience 循环持续进化，让 Agent 拥有对组织的 20/20 视野。核心指标：Agent 能否在几分钟内产出基于真实数据的个性化提案。"
 created: 2026-06-23
-updated: 2026-07-29
+updated: 2026-09-05
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -29,6 +29,7 @@ related_entities:
 source_raw:
   - "[[20260608-become-ai-native-org]]"
   - "[[20260727-langchain-agent-data-stack]]"
+  - "[[20260902-meta-organizational-second-brain]]"
 ---
 
 > [!definition] 定义
@@ -43,6 +44,12 @@ source_raw:
 | **Store** | 存入 Brain（folder 树 + markdown 文件） | Agent 可搜索、检索、写回 |
 | **Execute** | Agent 利用 context 执行工作（skill chains、prototypes） | 基于 context 的个性化产出 |
 | **Experience** | 客户体验 → 信号回流（买更多？流失更快？） | 市场反馈回流进系统 |
+
+## Organizational Second Brain：把专家纠正编译回系统
+
+Meta 的合规领域案例补充了 Company Brain 的关键闭环：高密度、高频的组织立场和决策框架进入结构化知识层；稀疏、情境化的材料保留在 RAG 中按需取用；专家的纠正经过根因诊断、最小编辑、对抗审查、回放和回归测试后，才回写为可复用资产。
+
+这意味着 Company Brain 不应只是“把信息收集起来”。它还需要把知识文件与推理 recipes 分离，记录依赖关系，并把每次人工纠正转化为未来更新必须通过的测试。综合判断：组织记忆的复利来自可验证的回流，而不是来自存储更多文档。
 
 ## Traces / Exhaust（决策痕迹）
 

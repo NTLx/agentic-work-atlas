@@ -1939,6 +1939,18 @@
       "summary_path": "wiki/sources/20260901-openai-ai-native-company-workflows.md",
       "updated_at": "2026-09-02T09:44:55+08:00"
     },
+    "20260902-bytebytego-rag-translator-model.md": {
+      "body_sha256": "961b413a518b566032c55554ee5e6c178930339ca00d87bd1337a8c60323237d",
+      "canonical_url": "https://blog.bytebytego.com/p/how-to-shrink-a-language-model-without",
+      "compiled_at": "2026-09-05T01:56:45+08:00",
+      "indexed_at": "2026-09-05T01:57:30+08:00",
+      "raw_file": "20260902-bytebytego-rag-translator-model.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；公开 canonical URL 可恢复原文，保留 source summary、正文哈希与证据定位。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260902-bytebytego-rag-translator-model.md",
+      "updated_at": "2026-09-05T01:57:32+08:00"
+    },
     "20260902-github-ai-coding-cost-efficiency.md": {
       "body_sha256": "34fef17c27e3e750a9d6b12296760156ddbd91d9d3caf83bcb0aa17c62524a7e",
       "canonical_url": "https://github.blog/ai-and-ml/github-copilot/how-we-make-ai-coding-more-cost-efficient-without-sacrificing-task-quality/",
@@ -1950,6 +1962,42 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260902-github-ai-coding-cost-efficiency.md",
       "updated_at": "2026-09-05T00:38:38+08:00"
+    },
+    "20260902-google-ai-agents-challenge-patterns.md": {
+      "body_sha256": "bb592bdd2fe206e668beb4abc3ec61885033e4eb56406731fc7bc21c0ef6a624",
+      "canonical_url": "https://developers.googleblog.com/4-engineering-patterns-behind-the-strongest-ai-agents-challenge-submissions/",
+      "compiled_at": "2026-09-05T01:57:10+08:00",
+      "indexed_at": "2026-09-05T01:57:30+08:00",
+      "raw_file": "20260902-google-ai-agents-challenge-patterns.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；公开 canonical URL 可恢复原文，保留 source summary、正文哈希与证据定位。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260902-google-ai-agents-challenge-patterns.md",
+      "updated_at": "2026-09-05T01:57:32+08:00"
+    },
+    "20260902-google-harness-engineering.md": {
+      "body_sha256": "ca4794f0599a8d40e10fa9161cd018d961d8b85089f21f9e50694eb8a9fbb096",
+      "canonical_url": "https://dev.to/googleai/what-is-harness-engineering-and-why-should-i-care-8n0",
+      "compiled_at": "2026-09-05T01:57:09+08:00",
+      "indexed_at": "2026-09-05T01:57:30+08:00",
+      "raw_file": "20260902-google-harness-engineering.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；公开 canonical URL 可恢复原文，保留 source summary、正文哈希与证据定位。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260902-google-harness-engineering.md",
+      "updated_at": "2026-09-05T01:57:32+08:00"
+    },
+    "20260902-meta-organizational-second-brain.md": {
+      "body_sha256": "a19011d04fdf8504ba840bdc1d139f96cdf81ab1ce088e1ee1653a950b82e3d3",
+      "canonical_url": "https://engineering.fb.com/2026/09/02/ml-applications/organizational-second-brain-ai-learns-from-experts/",
+      "compiled_at": "2026-09-05T01:57:09+08:00",
+      "indexed_at": "2026-09-05T01:57:30+08:00",
+      "raw_file": "20260902-meta-organizational-second-brain.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；公开 canonical URL 可恢复原文，保留 source summary、正文哈希与证据定位。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260902-meta-organizational-second-brain.md",
+      "updated_at": "2026-09-05T01:57:32+08:00"
     },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
@@ -2559,6 +2607,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-05T00:38:38+08:00",
+  "updated_at": "2026-09-05T01:57:32+08:00",
   "version": 1
 }

@@ -6,7 +6,7 @@ aliases:
   - Agent Harness Engineering
 definition: "工程团队的首要工作不再是编写代码，而是构建让 AI Agent 能有效工作的系统——设计 SOP、测试基础设施、集成系统、分诊系统，使 Agent 可检查、可验证、可修改。Addy Osmani (2026) 强调：**Agent = Model + Harness**，失效通常不是模型问题，而是配置（Harness）问题。"
 created: 2026-04-16
-updated: 2026-08-25
+updated: 2026-09-05
 tags:
   - AI-Agent
   - Software-Engineering
@@ -48,6 +48,8 @@ source_raw:
   - '[[20260613-NLAH-natural-language-agent-harnesses]]'
   - '[[20260623-ibm-cuga-agent-harness]]'
   - '[[20260702-qwen-agent-harness-practice]]'
+  - '[[20260902-google-harness-engineering]]'
+  - '[[20260902-google-ai-agents-challenge-patterns]]'
 ---
 
 # Harness Engineering（驾驭工程）
@@ -67,6 +69,12 @@ source_raw:
 GitHub 的 Burke Holland（2026-07）展示了 harness 工程的**个体从业者形态**——"the harness is all you need (mostly)"：生产力杠杆不来自安装新工具/skill/prompt，而来自理解 harness 本身。八步工作流全部使用 Copilot 内置功能：选工具（CLI 最接近 harness）→ YOLO 模式 + 沙箱隔离 → 原型先行（20 个 mock 并排比较；非视觉任务也做视觉原型暴露 nuance）→ plan mode 质询（边缘情况显式化；价值不在接受建议而在注入专业判断）→ Autopilot 实现（内置 loop + 自动编排：Explore 小模型读文件 / General Purpose 大模型做复杂动作）→ 人类评审迭代（taste 决定质量）→ rubber duck 跨模型评审（异构模型盲点互补，见 [[Agent-Verification]]）→ 提交（会话按主题隔离）。
 
 与 Pinterest/CREAO 的组织级案例互补：前者为团队构建 harness 系统，后者证明"learn the harness once, use it everywhere"——harness 体验正在跨工具收敛（CLI/app/IDE 共享同一核心工作流），个体只需精通工作流本身。
+
+## 2026-09 补充：把可靠性写进所有路径
+
+Google 的实践型解释把 Harness Engineering 收束为三个最低限度动作：明确 sandbox 边界，把构建/测试错误形成 repair loop，以及用可发现的仓库结构替代巨型说明书。Google AI Agents Challenge 的优秀案例进一步显示，降级模型、廉价路由、并行分支和对外 MCP 都必须穿过同一质量门；否则只是产生了多条未统一验证的产品路径。
+
+这补足了“棘轮”原则：真正值得固化的不是更多 prompt，而是可重复的边界、状态、反馈和验收条件。
 
 ## 核心原则
 

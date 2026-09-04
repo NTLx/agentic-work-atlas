@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-08-06
+updated: 2026-09-05
 evidence_level: high
 claim_type: mixed
 tags:
@@ -53,6 +53,7 @@ source_raw:
   - "[[20260603-anthropic-self-service-data-analytics]]"
   - "[[20260729-nejm-ai-triggered-rapid-response-mortality]]"
   - "[[20260805-how-we-use-ai-cloudflare-os]]"
+  - "[[20260902-meta-organizational-second-brain]]"
 ---
 
 # Organization as Agent Harness（组织作为 Agent Harness）
@@ -80,6 +81,12 @@ source_raw:
 | 学习层 | 经验如何沉淀 | 公开交互、复盘、可复用指令和知识 |
 
 这四层不是管理学装饰。它们就是 Agent 的上下文窗口之外的真实上下文。
+
+## 专家知识的第二大脑：从隐性经验到可回归资产
+
+Meta 的 Organizational Second Brain 把组织 Harness 的学习层具体化：离线编译把专家经验变成 position、taxonomy、routing 和 gateway 文件；recipes 单独承载分析程序；专家 checkpoint、escalation、replay 和 regression test 则控制知识如何更新。专家的每次纠正只有在通过根因归因、最小编辑和回归验证后，才成为下一次运行可复用的组织记忆。
+
+这补充了本 Topic 的四层模型：组织不只要“有知识”，还要能区分知识错误与程序错误，并让修复留下可追踪、可复现的测试证据。
 
 ## 工程组织与数据组织的 harness 样本
 

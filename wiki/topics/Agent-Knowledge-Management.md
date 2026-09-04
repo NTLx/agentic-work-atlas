@@ -2,7 +2,7 @@
 type: topic
 title: "Agent 知识管理与自进化"
 created: 2026-05-13
-updated: 2026-06-05
+updated: 2026-09-05
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -34,6 +34,8 @@ source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[20260602-karpathy-shortification-of-learning]]"
   - "[[20260603-anthropic-self-service-data-analytics]]"
+  - "[[20260902-bytebytego-rag-translator-model]]"
+  - "[[20260902-meta-organizational-second-brain]]"
 ---
 
 # Agent 知识管理与自进化
@@ -67,6 +69,12 @@ Karpathy 关于 [[Shortification-of-Learning|学习短视频化]] 的判断给�
 Anthropic 自助数据分析实践提供了一个反向证据：让 agent 访问数千个历史 SQL 文件，只让准确率提升不到 1 个百分点；80% 错误答案的答案其实已经在 corpus 中，但 agent 没有正确使用。真正提升来自 domain skills、semantic layer、canonical datasets、evals 和 correction harvesting。
 
 这说明 Agent 知识管理的关键不是“能不能搜到”，而是“是否把材料编译成可执行、可验证、会随系统变更更新的知识资产”。[[Agentic-Analytics]] 是 LLM Wiki 思路在企业数据分析中的工程化版本。
+
+## 高密度知识与稀疏证据的分层
+
+Meta 的 Organizational Second Brain 给出一个可迁移的分层：高密度、经常被引用的组织立场、决策框架和边界例子进入可维护的 wiki；低密度、只在特定情境出现的规格、历史记录和外部材料继续通过 semantic/lexical RAG 按需获取。
+
+ByteByteGo 的检索分析补上了另一半：RAG 的 embedding 只是证据入口，语义相似不保证回答相关；版本、数字、否定、权限和领域词汇仍需 metadata、规则、reranker 或确定性工具约束。综合判断：知识层负责沉淀“组织如何理解”，RAG 负责补充“这次需要的稀疏证据”，二者不能互相冒充。
 
 ## LLM Wiki 的三层架构
 

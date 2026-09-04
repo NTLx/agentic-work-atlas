@@ -5,7 +5,7 @@ aliases:
   - Agent Workflow Patterns
 definition: "构建 Agentic 系统的模式集合，从简单组合到自主 Agent 的渐进式架构"
 created: 2026-04-10
-updated: 2026-08-01
+updated: 2026-09-05
 tags:
   - AI-Agent
   - architecture
@@ -16,6 +16,7 @@ related_entities:
   - '[[ACI-Agent-Computer-Interface]]'
 source_raw:
   - '[[building-effective-agents-complete]]'
+  - '[[20260902-google-ai-agents-challenge-patterns]]'
 ---
 
 # Agent Workflow Patterns（Agent 工作流模式）
@@ -27,6 +28,19 @@ source_raw:
 本概念作为"模式层"被以下近期 entity 引用，与 [[Agent-Harness|Agent Harness]]（运行时层）形成"模式+运行时"的两层结构：
 - [[Building-Effective-Agents]] 在"从模式到 Harness"章节把工作流模式映射到 Anthropic 五层模型
 - [[Agent-Environment-Misalignment]] 与本概念的 INFERRULES / WRAPSTEP 同构：环境接口也是一种工作流模式
+
+## 2026-09 参赛实践：四种可组合模式
+
+Google 从优秀参赛作品中提炼出四个工作流模式的工程化变体：
+
+| 模式 | 作用 | 关键边界 |
+|------|------|----------|
+| 双向 MCP | Agent 既调用自己的工具，也把受限推理暴露给其他 Agent | 对外 surface 必须鉴权，返回值应有范围 |
+| 事件驱动并行 | 共享 typed event 让独立分支同时响应 | 只有无依赖分支适合并行，需处理幂等与重试 |
+| 同标准 fallback | 主模型和降级模型共享同一验证函数 | 任何路径都不能绕过质量门 |
+| 分层路由 | regex/廉价分类先处理可判定请求，再升级复杂任务 | 路由误判可能挡住需要深推理的请求 |
+
+这四种模式说明，工作流设计的核心不是堆叠 Agent 名称，而是安排状态流转、并发、降级和验证，使不同执行路径仍受同一契约约束。
 
 ## 定义
 
