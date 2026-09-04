@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T05:33:29+08:00
+updated: 2026-09-05T06:00:32+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -42,8 +42,8 @@ related_entities:
 - Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`、`raw/How we contain Claude across products.md`、`raw/20260518-zero-trust-for-ai-agents.md`、`raw/20260616-why-is-meta-destroying-its-engineering.md`、`raw/20260714-context-collapse-2-when-emails-instruct.md`；[Microsoft 官方 least-privilege 模式](https://learn.microsoft.com/en-us/security/zero-trust/sfi/least-privilege-for-ai-agents)；
   [arXiv 2607.22611](https://arxiv.org/abs/2607.22611)（生产 8 个月的细粒度权限架构，自报只读 AI agent 与零未授权写入）；[AWS/KTern.AI 生产案例](https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/)（20+ 生产 agents、per-agent least privilege；均待 clip/compile）
 - Evidence goal: 复核部署级 least-privilege 案例是否包含长期数据最小化（读取范围/保留期）以决定是否进一步 weakened；若仅有权限/写入控制则收窄为默认风险，或等待跨厂商重复失效（→strengthened）；EDPB 02/2026 最终版或新反例披露可恢复检索。
-- Last checked: 2026-08-30T13:00:40 · no_delta
-- Next: clip+compile Numezis 案例，核查匿名部署的可验证细节与长期数据最小化；反例 Gap 保持开放
+- Last checked: 2026-09-05T06:00:32 · no_delta
+- Next: clip+compile Numezis 案例，固化已披露的隔离/保留字段；若仍无读取量或 TTL，收窄为默认过度权限风险；不再重复检索同一页面
 - Retry: new-source:numezis-agent-privacy-case-clipped
 
 ### CR-003 · AI 监督 AI 存在共模误差下界
@@ -190,14 +190,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T06:00:32+08:00 | Agent 数据过度收集具有系统性 | no_delta | Numezis 页面仍只有约 6 个月匿名部署、按法人/客户文件隔离、无模型保留与 90 天运营对照；未提供读取量、上下文保留期、删除/TTL 或更长纵向数据，长期数据最小化缺口不变。 |
 | 2026-09-05T05:33:29+08:00 | Facilitator 升级与交接 | refined | Google SRE/AWS 材料把 handoff 具体化为结构化上下文契约与可测的完整性/延迟指标；这使 EX-003 区分“路由正确”与“人能接住”，但尚无交接包消融和人类决策结果的独立实证。 |
 | 2026-09-05T05:00:35 | AI 评测制度化进入执行期 | refined | 官方页面确认 AI Office/成员国的可执行、可处罚能力，但未提供 €47M 三案决定文本；二手追踪报告原作者撤回该说法，三案降为未证实，不作 falsified。 |
-| 2026-09-05T04:31:37+08:00 | Agent Safety Topic 边界 | refined | 五阶段均可由现有 Entity/Source summary 提供局部对象与失败信号，且 EX-004/005/006 保持不同边界；owner、action-surface coverage、撤销权与 recovery SLA 仍是未闭合字段，不把 Topic 写成已解决安全定理。 |
 | 2026-09-05T04:01:23+08:00 | Agent observability 上界 | refined | Google DeepMind Roadmap 把 coverage/recall/time-to-response 具体化，并给出 R2 的 >99% coverage、<24h 目标；但这些是要求而非实测，recall 阈值留待未来，攻击模型与 live simulation 仍属理论/拟议。 |
 | 2026-09-05T03:32:14 | Agent Safety Topic 边界 | refined | 安全簇已有 containment、最小代理权、身份、策略、可观测性与动作授权/恢复材料，但缺少统一 Topic 和闭合导航；先做五阶段骨架，不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — recompile CR-002：再次核查 Numezis 匿名 SME 案例；页面仍无读取量、上下文保留期、删除/TTL 或更长纵向数据，反例仍只改变“架构必然性”而未补足长期数据最小化，no_delta
 - [[2026-09-05]] — open explore：Google SRE AI Operator 与 AWS Agentic AI Lens 把 handoff 明确为结构化上下文契约，并提出完整性、延迟和协作成功率指标；将 `EX-003` 收窄为“路由选择”与“交接包可接住性”两层，不新增 EX
 - [[2026-09-05]] — recompile CR-001：官方执行框架与 AI Office 页面继续确认可执行/可处罚能力；二手追踪报告 €47M 叙事已被原作者撤回，未取得官方决定，实例证据收窄为未证实，refined
 - [[2026-09-05]] — open explore：完成 Agent Safety “检测→判定→授权→执行→撤销/恢复”五阶段字段映射；确认结构边界成立，但 owner、action-surface coverage、撤销权和 recovery SLA 未闭合，不新增 EX
