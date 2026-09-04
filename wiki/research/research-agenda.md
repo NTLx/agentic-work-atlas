@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T04:31:37+08:00
+updated: 2026-09-05T05:00:35+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -27,11 +27,11 @@ related_entities:
 - Priority: P0
 - Claim: AI 评测治理已从自愿最佳实践进入可执行、可处罚的制度阶段。
 - Gap: Evidence
-- Evidence: `raw/2026-eu-ai-act-compliance-autonomous-agents.md`；官方执法启动新闻稿 [IP/26/1714](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1714)（2026-07-31）与生效日新闻页（均无 €47M 三案记录）；AI Omnibus 将高风险义务推迟至 2027-12/2028-08；€47M 三案经溯源性定向为单链互引的二手内容站叙事（AI Policy Desk 引 Artur Markus 为源，官方锚点零罚款，案件 3 法律基础两文冲突，详见 2026-08-29 日志）
+- Evidence: `raw/2026-eu-ai-act-compliance-autonomous-agents.md`；官方执法启动新闻稿 [IP/26/1714](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1714)（2026-07-31）与生效日新闻页（均无 €47M 三案记录）；AI Omnibus 将高风险义务推迟至 2027-12/2028-08；€47M 三案经溯源性定向为单链互引的二手内容站叙事，且 [AI in Europe 追踪](https://aiineurope.co/policy/europe-act-tracker-2026-08-31) 报告原作者已撤回该说法（均不能替代官方决定，详见 2026-09-05 日志）
 - Evidence goal: 官方 AI Office/委员会处罚决定文本发布（确认或证伪 €47M 实例），或独立一手披露出现；€47M 三案现为 falsified 候选，制度能力面已一手确认
 - Basis: evidence
-- Last checked: 2026-08-29T16:01:09 · weakened
-- Next: 收敛为触发式复查，不再主动检索——等待 (a) AI Office 官方处罚决定文本，或 (b) 独立一手披露；时间观察锚点：AI Omnibus 新增禁止实践条（2026-12 生效）后第一次可验证执法 action
+- Last checked: 2026-09-05T05:00:35 · refined
+- Next: 收敛为触发式复查，不再主动检索——€47M 三案保持未证实；等待 (a) AI Office 官方处罚决定文本，或 (b) 独立一手披露；时间观察锚点：AI Omnibus 新增禁止实践条（2026-12 生效）后第一次可验证执法 action
 - Retry: new-source:eu-ai-act-official-penalty-decision
 
 ### CR-002 · Agent 数据过度收集具有系统性
@@ -190,15 +190,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T05:00:35 | AI 评测制度化进入执行期 | refined | 官方页面确认 AI Office/成员国的可执行、可处罚能力，但未提供 €47M 三案决定文本；二手追踪报告原作者撤回该说法，三案降为未证实，不作 falsified。 |
 | 2026-09-05T04:31:37+08:00 | Agent Safety Topic 边界 | refined | 五阶段均可由现有 Entity/Source summary 提供局部对象与失败信号，且 EX-004/005/006 保持不同边界；owner、action-surface coverage、撤销权与 recovery SLA 仍是未闭合字段，不把 Topic 写成已解决安全定理。 |
 | 2026-09-05T04:01:23+08:00 | Agent observability 上界 | refined | Google DeepMind Roadmap 把 coverage/recall/time-to-response 具体化，并给出 R2 的 >99% coverage、<24h 目标；但这些是要求而非实测，recall 阈值留待未来，攻击模型与 live simulation 仍属理论/拟议。 |
 | 2026-09-05T03:32:14 | Agent Safety Topic 边界 | refined | 安全簇已有 containment、最小代理权、身份、策略、可观测性与动作授权/恢复材料，但缺少统一 Topic 和闭合导航；先做五阶段骨架，不新增 EX。 |
 | 2026-09-05T02:02:46 | 动作授权与执行闭环 | refined | FORGE/OAP 在受控任务中为确定性 pre-action reference monitor 提供收敛的独立层证据；但完整拦截面、状态契约、撤销/回滚与允许范围内副作用仍是边界，Janus 显示人审不是统一最优解。 |
-| 2026-09-05T01:57:43 | 验证器的 reference integrity 与 success provenance | refined | AgentJudgeBench 的 C3 仅支持有限 reference-interface/content sensitivity，且有单标注者与公式—案例边界；结合 AcquaBench 将 EX-004 保留为静态 oracle integrity + 动态 success provenance 两个子门，暂不新增候选。 |
-| 2026-09-05T00:56:27 | AI 监督 AI 共模误差下界 | no_delta | `ljg-think-recompile` 复核：shared-error floor 仍只适用于特定任务错误结构与跨模型 consensus/verifier panel；数学近零不构成反例，不能外推到所有 AI 监督形式。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — recompile CR-001：官方执行框架与 AI Office 页面继续确认可执行/可处罚能力；二手追踪报告 €47M 叙事已被原作者撤回，未取得官方决定，实例证据收窄为未证实，refined
 - [[2026-09-05]] — open explore：完成 Agent Safety “检测→判定→授权→执行→撤销/恢复”五阶段字段映射；确认结构边界成立，但 owner、action-surface coverage、撤销权和 recovery SLA 未闭合，不新增 EX
 - [[2026-09-05]] — recompile CR-004：核读 Google DeepMind AI Control 博客与 Roadmap；将 coverage/recall/time-to-response 的架构指标与 R2 目标同实测区分，确认逐案阻断与完整污染覆盖仍无实证，refined
 - [[2026-09-05]] — open explore：安全 Entity/Source 簇缺少独立 Topic；核对 `Agent-Containment`、`Least-Agency`、`Distinct-Principal-Identity`、`Policy-as-Code`、`Agent-Observability` 与现有安全 source summary，收窄为“检测→判定→授权→执行→撤销/恢复”五阶段骨架，不新增 EX
