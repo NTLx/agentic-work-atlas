@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T06:00:32+08:00
+updated: 2026-09-05T07:00:28+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -53,7 +53,7 @@ related_entities:
 - Gap: Boundary
 - Evidence: `raw/20260713-agentic-misalignment-summer-2026.md`、`raw/20260330-reward-hacking-equilibrium-finite-evaluation.md`；[arXiv 2604.07650](https://arxiv.org/abs/2604.07650)（已核读，尚未 clip）；[Apple：Nine Judges, Two Effective Votes](https://machinelearning.apple.com/research/correlated-llm-evaluation-panels)（2026-06，一手研究）；[arXiv 2607.10139](https://arxiv.org/abs/2607.10139)（v3，2026-08-17，一手研究；跨家族 verifier panel 在 GPQA/MMLU-Pro 的 shared-error floor 分别为 0.030/0.143，数学任务接近 0）
 - Evidence goal: 界定跨模型 consensus verifier 的 shared-error floor 是否依赖任务域、错误结构与 panel 组成，并区分该结果与所有 AI 监督形态之间的外推边界。
-- Last checked: 2026-09-05T00:56:27 · no_delta
+- Last checked: 2026-09-05T07:00:28 · no_delta
 - Next: clip+compile arXiv 2607.10139 进入 raw/source，保留 v3 的任务域、model panel 与 shared-error 字段，供后续可回溯复核
 - Retry: new-source:arxiv-2607.10139
 
@@ -190,14 +190,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T07:00:28 | AI 监督 AI 共模误差下界 | no_delta | 定向复核 arXiv 2607.10139v3；shared-error floor 仍限定于特定 consensus/verifier、任务错误结构与 panel 条件，数学近零、GPQA/MMLU-Pro 非零；没有支持外推至所有 AI 监督形态的新边界。 |
 | 2026-09-05T06:00:32+08:00 | Agent 数据过度收集具有系统性 | no_delta | Numezis 页面仍只有约 6 个月匿名部署、按法人/客户文件隔离、无模型保留与 90 天运营对照；未提供读取量、上下文保留期、删除/TTL 或更长纵向数据，长期数据最小化缺口不变。 |
 | 2026-09-05T05:33:29+08:00 | Facilitator 升级与交接 | refined | Google SRE/AWS 材料把 handoff 具体化为结构化上下文契约与可测的完整性/延迟指标；这使 EX-003 区分“路由正确”与“人能接住”，但尚无交接包消融和人类决策结果的独立实证。 |
 | 2026-09-05T05:00:35 | AI 评测制度化进入执行期 | refined | 官方页面确认 AI Office/成员国的可执行、可处罚能力，但未提供 €47M 三案决定文本；二手追踪报告原作者撤回该说法，三案降为未证实，不作 falsified。 |
 | 2026-09-05T04:01:23+08:00 | Agent observability 上界 | refined | Google DeepMind Roadmap 把 coverage/recall/time-to-response 具体化，并给出 R2 的 >99% coverage、<24h 目标；但这些是要求而非实测，recall 阈值留待未来，攻击模型与 live simulation 仍属理论/拟议。 |
-| 2026-09-05T03:32:14 | Agent Safety Topic 边界 | refined | 安全簇已有 containment、最小代理权、身份、策略、可观测性与动作授权/恢复材料，但缺少统一 Topic 和闭合导航；先做五阶段骨架，不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — recompile CR-003：复核 arXiv 2607.10139v3；shared-error floor 仍是任务错误结构与 consensus panel 条件量，不能外推至所有 AI 监督形态，no_delta
 - [[2026-09-05]] — recompile CR-002：再次核查 Numezis 匿名 SME 案例；页面仍无读取量、上下文保留期、删除/TTL 或更长纵向数据，反例仍只改变“架构必然性”而未补足长期数据最小化，no_delta
 - [[2026-09-05]] — open explore：Google SRE AI Operator 与 AWS Agentic AI Lens 把 handoff 明确为结构化上下文契约，并提出完整性、延迟和协作成功率指标；将 `EX-003` 收窄为“路由选择”与“交接包可接住性”两层，不新增 EX
 - [[2026-09-05]] — recompile CR-001：官方执行框架与 AI Office 页面继续确认可执行/可处罚能力；二手追踪报告 €47M 叙事已被原作者撤回，未取得官方决定，实例证据收窄为未证实，refined
