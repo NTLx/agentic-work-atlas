@@ -221,10 +221,20 @@ uv run python tools/pdf-extract.py raw/<filename.pdf> --out /tmp/paper_full.md
 
 提取后验证 Discussion / Conclusion / References 齐全，然后按标准编译流程处理；source summary 记录 canonical URL，生命周期按 `schema/compile-operations.md` 结算。
 
-### Subagent 网关 503：改在主回路直接执行
+### Subagent unavailable / 503
 
-本环境推理网关（127.0.0.1:41879）的模型通道经常不可用（`503 No available channel for model ...`）。为 subagent 显式指定 `model: sonnet/opus` 更容易命中，继承父模型也不保证可用。
-**对策**：统计型任务（盘点/grep 计数/脚本执行）遇 subagent 503 时**不要反复重试**，直接在主回路跑统计脚本，通常更快更准。联网搜索型 subagent 可改用 MCP 搜索工具（Anysearch/Tavily）绕开内置 WebSearch。
+本环境推理网关（127.0.0.1:41879）的模型通道可能返回
+`503 No available channel for model ...`。如果 worker spawn 因瞬时 Runtime/gateway
+问题失败：
+
+1. 先确认这是 transient spawn failure；
+2. 最多做一次 bounded retry；
+3. 仍失败则停止当前 execution slice，返回 `blocked` 或 `failed`；
+4. Main Agent 不得默默接管 substantive KnowledgeOps，也不得模拟本应由 worker
+   执行的 Skill。
+
+Main 仍可执行纯 deterministic control-plane 检查，例如 `git status`、查看 diff
+和判断 worker 是否成功；这不改变 substantive execution 必须由 worker 完成的边界。
 
 ### 背景 agent 的 .output 是完整 JSONL 转录
 
@@ -238,10 +248,12 @@ tail -1 <output-file> | python3 -c "import json,sys; print(json.load(sys.stdin)[
 
 `tools/wiki-lint.py` 检查 wikilink/mathjax 前会剥离行内代码（`` `...` ``）。在描述性文字中提及未创建的页面（如断链说明"Agent-Governance topic 未建"）时**必须用反引号**，裸露 `[[...]]` 会误报断链、拉低 lint 分数。
 
-### aihot API：subagent 调用返回 403
+### aihot API：worker 调用返回 403
 
-aihot API 拒绝默认 curl UA（403/567）。subagent 调用常因未带正确 UA 失败。
-**正确做法**：在主回路调用 aihot skill；手动 curl 时带 `User-Agent: aihot-skill/<版本> (+https://aihot.virxact.com/aihot-skill/)`。
+aihot API 对 `User-Agent` 有要求，默认 curl UA 可能返回 403/567。执行 aihot 的
+worker 必须实际加载 aihot Skill，并按照该 Skill 当前要求调用工具/API，包括所需
+的 `User-Agent`。如果 worker Runtime 缺乏对应能力，返回 `blocked`；不要把 Skill
+调用偷偷移动到 Main Agent。
 
 ### git commit 统计："重编译"污染 compile 计数
 

@@ -7,15 +7,21 @@ type: schema-subdoc
 
 # Outputs 工作流
 
-先确定输出对象、读者、已有 Wiki 依据和表达瓶颈，再按
-`schema/skill-mapping.md` 查看 Runtime 当前发现的 Skill 描述。Agent 可以直接
-写作，也可以选择一个或多个互补能力；是否使用、使用顺序和是否重新选择由
-中间结果决定，不维护 Output → Skill 固定映射。Skill output 默认是 reasoning，
-不能替代来源回链或 Output 回填门控。
+Main Agent 先确定输出对象、读者、已有 Wiki 依据、Evidence scope 和表达瓶颈，
+再按 `schema/skill-mapping.md` 查看 Runtime 当前发现的 Skill 描述。Main 选择
+Skill 或 `none`，若选 Skill 则读取实际 `SKILL.md` 并检查 compatibility，然后
+派发一个 bounded output worker。Worker 读取必要 Wiki、读取实际 Skill（若有）、
+生成内容，按允许范围写 `wiki/outputs/` 并完成回填检查。Skill output 默认是
+reasoning，不能替代来源回链或 Output 回填门控。
 
-用户只要求一次性回答时，可以不写文件，也可以完全不使用 Skill。需要持久化时，
-只能写入本流程允许的 `wiki/outputs/`，并遵守 Repository Schema 高于 Skill 原生
-workflow 的优先级；不得因 Skill 的默认目录或笔记行为写入无关位置。
+Worker 若暴露新的不同表达或证据瓶颈，返回 `New bottleneck`；由 Main Agent
+观察后决定是否 re-select 并派发 correction worker。Main 不直接替代 writer
+worker 完成最终长文。
+
+用户只要求一次性回答时，可以不写文件，也可以选择 `Skill: none`，但实际 output
+execution 仍由 worker 完成。需要持久化时，只能写入本流程允许的 `wiki/outputs/`，
+并遵守 Repository Schema 高于 Skill 原生 workflow 的优先级；不得因 Skill 的默认
+目录或笔记行为写入无关位置。
 
 ## Output 回填门控
 

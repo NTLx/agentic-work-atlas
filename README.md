@@ -104,13 +104,13 @@ Schema (README.md + schema/*)      ← 工作流定义与规范
 ## Agent Skills 使用边界
 
 Agent Skills 的能力定义来自各 Skill 自身的 `name`、`description` 和
-`SKILL.md`。仓库中的 `.agents/skills/` 保存项目能力库存，不等于所有 Runtime
-的自动发现入口；Agent 当前实际可调用什么，以当前 Runtime 已发现并向模型暴露
-的 Skill catalog 为准。不同 Runtime 的发现入口可能不同；Claude Code 的项目级
-Skill 通过 `.claude/skills/` 暴露。Schema 不维护完整 Skill 路由表。Agent 先
-理解任务和认知缺口，再选择 0–N 个最小充分的 Skill，执行后观察结果并按需重新
-选择。处理 compile、query、explore、produce 或 recompile 时，只有涉及 Skill
-选择或约束才按需读取 `schema/skill-mapping.md` 的具体协议。
+`SKILL.md`。仓库中的 `.agents/skills/` 是本仓库的 canonical capability
+inventory；对当前 Codex，它也是原生 repository-level Skill discovery
+surface。Claude Code 则继续通过 `.claude/skills/` compatibility surface 暴露。
+当前会话真正可用什么，始终以 Runtime 实际发现并向模型暴露的 Skill catalog 为准。
+Schema 不维护完整 Skill 路由表。处理 compile、query、explore、produce 或
+recompile 时，只有涉及 Skill 选择或约束才按需读取
+`schema/skill-mapping.md` 的具体协议。
 
 Skill 只提供局部认知或执行方法，不拥有 Wiki 生命周期控制权。在 Wiki 任务中：
 
@@ -123,6 +123,24 @@ Skill 只提供局部认知或执行方法，不拥有 Wiki 生命周期控制�
 - Runtime 兼容入口（例如 `.claude/skills/` 软链接）属于仓库集成层；可以为仓库
   自有 Skill 维护，但不得借此修改第三方 Skill 内容。
 - `recompile` 等无人值守操作仍受各自 bounded autonomy 协议约束。
+
+### Agent orchestration boundary
+
+在 Runtime 支持 native subagent 时，本仓库默认采用 Main Agent / Worker
+分层：
+
+- Main Agent 是 Control Plane：负责理解意图、加载 Schema、识别当前瓶颈、
+  选择并读取 Skill、检查 compatibility、派发 worker、观察结果、re-select
+  和最终 Knowledge lifecycle 裁决。
+- Worker Subagent 是 Execution Plane：负责实际读取材料、执行所选 Skill、
+  调用工具、完成 reasoning、进行当前操作允许的写入与验证。
+- Main Agent 不通过复述或模仿 Skill 方法来代替实际 worker execution。
+- 选择 Skill 时，Main 与 worker 都读取同一个实际 Skill：Main 用于选择和
+  policy check，worker 用于真正执行。
+- `Skill: none` 只表示不需要额外认知 Operator，不表示 Main Agent 接管执行。
+- worker 不继续 spawn 子 Agent；Root Main Agent 是唯一 dispatcher。
+
+具体协议见 `schema/skill-mapping.md`。
 
 ---
 

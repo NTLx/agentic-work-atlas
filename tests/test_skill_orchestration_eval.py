@@ -12,6 +12,8 @@ REQUIRED_CASES = {
     "query-mechanism-evidence-boundary",
     "explore-generative-structure",
     "compile-ordinary-article",
+    "compile-real-skill-delegation",
+    "subagent-unavailable-no-simulation",
     "compile-paper",
     "compile-dynamic-reselection",
     "recompile-evidence-gap",

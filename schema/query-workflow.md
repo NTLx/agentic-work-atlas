@@ -92,21 +92,29 @@ Context Pack 不得直接升级为 entity/topic/comparison。只有其中的新�
 
 ## 按需使用 Agent Skills
 
-search-first 和 bounded context 优先于 Skill 选择。完成有限检索后，Agent 先判断
-上下文是否已经足以回答：
+search-first 和 bounded context 优先于 Skill 选择。Main Agent 可以读取标题、
+aliases 和少量 routing state 来确定 query 边界，但不先完成完整答案：
 
 ```text
-上下文足够 → 直接回答，可以完全不使用 Skill
-上下文不足 → 说明最大的理解瓶颈
-             ↓
-             查看 Runtime 当前发现的 Skill 的 name + description
-             ↓
-             选择 none 或最小充分的相关 Skill
-             ↓
-             按需读取 SKILL.md，执行一次 reasoning enhancement
-             ↓
-             观察结果，必要时重新判断；然后回答
+Main：理解 query / intent / lifecycle，建立最小 routing context
+  ↓
+Main：识别瓶颈，选择 none 或最小充分 Skill
+  ↓
+Main：若选 Skill，读取实际 SKILL.md、必要 references，检查 compatibility
+  ↓
+Main：dispatch query worker，传递 exact locator 或 none
+  ↓
+Worker：search-first，读取最终 bounded context，执行 Skill 或 zero-Skill retrieval
+  ↓
+Worker：返回 Evidence / Reasoning 分离的 answer package
+  ↓
+Main：审查结果，必要时 re-select，然后回答
 ```
+
+即使 Skill 为 `none`，实际 provenance search、retrieval 和 synthesis 仍由 query
+worker 完成；**Zero Skill ≠ Zero Delegation**。Worker 不自行选择第二 Skill 或
+spawn 子 Agent。若需要另一种明显不同的能力，返回新瓶颈，由 Main Agent 决定是否
+重新派发。
 
 这里没有 Query → Skill 的固定映射。概念理解、机制深挖、结构辨认或争议分析都
 可能需要不同能力，也都可能在已有上下文充分时不需要 Skill。Skill output 默认
