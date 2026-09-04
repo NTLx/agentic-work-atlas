@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-08-31T16:04:28
+updated: 2026-09-05T00:44:53+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -39,7 +39,8 @@ related_entities:
 - Priority: P1
 - Claim: Agent 的数据过度收集来自任务代理架构，而不是单一产品或单一厂商的实现失误。
 - Gap: Counterexample
-- Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`、`raw/How we contain Claude across products.md`、`raw/20260518-zero-trust-for-ai-agents.md`、`raw/20260616-why-is-meta-destroying-its-engineering.md`、`raw/20260714-context-collapse-2-when-emails-instruct.md`；[Microsoft 官方 least-privilege 模式](https://learn.microsoft.com/en-us/security/zero-trust/sfi/least-privilege-for-ai-agents)；[arXiv 2607.22611](https://arxiv.org/abs/2607.22611)（生产 8 个月的细粒度权限架构，自报只读 AI agent 与零未授权写入）；[AWS/KTern.AI 生产案例](https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/)（20+ 生产 agents、per-agent least privilege；均待 clip/compile）
+- Evidence: `raw/20260618-mosaicleaks-privacy-agent.md`、`raw/How we contain Claude across products.md`、`raw/20260518-zero-trust-for-ai-agents.md`、`raw/20260616-why-is-meta-destroying-its-engineering.md`、`raw/20260714-context-collapse-2-when-emails-instruct.md`；[Microsoft 官方 least-privilege 模式](https://learn.microsoft.com/en-us/security/zero-trust/sfi/least-privilege-for-ai-agents)；
+  [arXiv 2607.22611](https://arxiv.org/abs/2607.22611)（生产 8 个月的细粒度权限架构，自报只读 AI agent 与零未授权写入）；[AWS/KTern.AI 生产案例](https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/)（20+ 生产 agents、per-agent least privilege；均待 clip/compile）
 - Evidence goal: 复核部署级 least-privilege 案例是否包含长期数据最小化（读取范围/保留期）以决定是否进一步 weakened；若仅有权限/写入控制则收窄为默认风险，或等待跨厂商重复失效（→strengthened）；EDPB 02/2026 最终版或新反例披露可恢复检索。
 - Last checked: 2026-08-30T13:00:40 · no_delta
 - Next: clip+compile Numezis 案例，核查匿名部署的可验证细节与长期数据最小化；反例 Gap 保持开放
@@ -121,7 +122,7 @@ related_entities:
 | EX-004 | 在验证器模型/目标独立性与证据覆盖之外，reference integrity（真值来源、语义等价、版本同步与呈现方式）是否构成独立必要门？ | AgentJudgeBench、ABC、GeneBench、AcquaBench 与 tau3 修复共同把问题收窄为 oracle/source-lineage gate：目标可辨识、来源不污染、规格/expected action 可回链；不是第五个模型独立性轴，仍待控制 EX-001/EX-002 后验证独立残差；refined | 同任务随机化无 reference/正确 reference/语义等价 reference/错误 reference 后，裁判错误、校准和排序对 reference 不敏感；或差异完全由已有目标耦合/证据覆盖解释 | clip+compile AgentJudgeBench、ABC、GeneBench、AcquaBench、OpenAI coding audit、tau3 task fixes、ELT-Bench-Verified；建立 reference owner—semantic equivalence—version—interface—lineage 字段矩阵；与 EX-001/EX-002 合并判定边界 |
 | EX-005 | 在检测与判定都正确时，动作授权、独立执行点与撤销/恢复时限是否仍构成 Agent 安全的独立必要门？ | HF 事件显示监控可关联出攻击信号却未正确升级；Anthropic 将诊断 Agent 保持只读、把合并/部署交给人；Google/Microsoft 把逐动作授权、同步阻断、撤销与责任单列；现有证据支持新增候选，但尚无匹配控制研究；synthesized | 在同一 trace、verdict、工具 schema 与负载下随机化直接执行、人审、确定性任务授权和独立撤销/回滚；若未授权动作、误阻断、响应时限、恢复时间无差异，或全部差异由检测/升级解释，则并回 CR-004/EX-003/普通 IAM | clip+compile 权限/执行控制一手研究与真实 incident response trace；建立 detection→verdict→authorization→actuation→recovery 字段矩阵，并按风险/可逆性区分同步阻断与异步复核 |
 | EX-006 | 高影响/不可逆动作的治理约束，是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达决策/执行边界，而非普通 token-stream 文本？ | Governance Decay/Ghost in the Context 将 policy-carriage 拆为存在、语义健全和绑定正确；Sleeper Memory Poisoning 显示记忆可成为跨会话延迟攻击通道；现有结果主要是受控/模拟，且固定装配器下未稳定产生越权动作；synthesized | 若受保护 token/pinning + preflight + action guard 在同任务、同 trace、同负载下与外部 control plane 在状态完整性、越权动作、延迟和可用性上等效，或高风险 token-only 生产系统长期无 carriage failure，则削弱独立控制面命题 | clip+compile 四篇一手研究；建立 policy owner—provenance—binding—budget—survival—action-boundary—fail-closed 字段矩阵，并与 EX-005 / CR-004 / CR-002 合并判定边界 |
-| EX-007 | 自我改进 Agent 是否需要独立的变更闸门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | Jeff Dean、Meta-Harness 与 Uber 材料都把评估回路、harness、路由和技能纳入持续优化；现有 gate 主要防训练集过拟合，缺跨版本的外部 oracle、冻结控制面和变更归因；synthesized | 若冻结外部 oracle/隐藏任务/高风险策略后，内部 gate 与独立 gate 在质量、安全、回滚和跨任务迁移上等效，或全部差异可由 EX-004/EX-006 解释，则削弱独立变更闸门 | new-source → EX-007；寻找 self-improving agent 的独立复评、版本回放、canary/rollback 与生产变更审计，并与 EX-004 / EX-006 合并判定边界 |
+| EX-007 | 自我改进 Agent 是否需要独立的变更闸门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | GitHub 一手案例显示普通离线质量门可漏掉 prompt 引起的并行行为回归；因此至少要区分不可改写的行为契约门与独立归因/安全门。后者仍缺跨版本外部 oracle、冻结控制面和 rollback 证据；refined | 若受保护行为契约 + 工作流本地在线复评已能捕获所有行为变化，且在冻结 oracle/policy 后无需额外独立门即可稳定保持质量、安全、跨任务迁移和回放一致性，则收窄；若 evaluator/policy 共变仍能制造内部得分提升而外部指标不升，则保留 | new-source → EX-007；寻找保留测试/行为契约、离线→在线差异、独立复评与生产 rollback 的一手记录，并与 EX-004 / EX-006 合并判定边界 |
 
 ## Source 需求队列
 
@@ -160,6 +161,7 @@ related_entities:
 | P0 | Sleeper Memory Poisoning | [arXiv 2605.15338](https://arxiv.org/abs/2605.15338) v2 已核读但未进入 raw/source；需提取 memory write—retrieve—use 三阶段、删除/纠正/用户审查/来源谱系防御缺口，并与 CR-002 区分数据最小化问题 | clip+compile → EX-006 / CR-002 |
 | P1 | Security-Recall Divergence | [arXiv 2604.20911](https://arxiv.org/abs/2604.20911) 已核读但未进入 raw/source；需核查 omission/commission 不对称、Safe Turn Depth 与格式代理限制，不能把代理约束直接外推为真实泄露风险 | clip+compile → EX-006 / CR-004 |
 | P0 | 自我改进回路的独立变更审计 | 现有 Meta-Harness 只有 train/dev gate，Uber 只有内部 benchmark 与 session 指标；缺冻结外部 oracle、跨版本回放、独立安全策略和变更归因 | new-source → EX-007 |
+| P0 | Harness 行为契约与保留测试区 | GitHub 案例显示离线评测漏掉并行回归，另有官方开发实践把只能由人改动的保留测试作为 contract gate；缺跨版本、跨产品的行为不变量与回滚记录 | new-source → EX-007 |
 | P1 | 生产 Agent fleet 的自修改纵向记录 | 缺 prompt/skill/router/evaluator 变更的 owner、版本、canary、回滚、隐藏 holdout 与质量/安全联合结果 | new-source → EX-007 |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
@@ -185,14 +187,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T00:44:53 | 自我改进闭环的变更治理 | refined | GitHub 案例显示普通离线质量门漏掉 prompt 引起的并行回归；把 EX-007 收窄为两层：不可改写的行为契约门，以及冻结外部 oracle/policy 的独立归因与安全门。 |
 | 2026-08-31T16:04:28 | 自我改进闭环的变更治理 | new_gap | Jeff Dean、Meta-Harness 与 Uber 把评估回路和 harness 纳入持续优化；新增 EX-007，要求区分真实能力提升与评估器/目标/策略共变。 |
 | 2026-08-31T15:03:55 | 治理状态承载与控制面完整性 | new_gap | 记忆污染与上下文压缩暴露：高影响动作的治理约束可能在决策前被删除、弱化或错绑；新增 EX-006，暂不升级稳定页。 |
 | 2026-08-31T14:08:44 | 动作授权与执行闭环 | new_gap | 正确检测/判定之后仍可能在逐动作授权、独立执行、同步阻断或撤销/恢复上失效；新增 EX-005，暂不升级稳定页。 |
 | 2026-08-31T13:03:27 | 真值参考完整性与锚定效应 | refined | 补充一手材料把 EX-004 收窄为 oracle/source-lineage gate：目标可辨识、来源污染、expected action/规格回链与版本完整性；它不是第五个模型独立性轴，仍待与 EX-001/EX-002 做受控拆分。 |
-| 2026-08-31T12:02:57 | Facilitator 主动升级的校准瓶颈 | new_gap | 选择性委派把“何时叫人”变成 rejector 的二阶校准问题；人类隐藏信息、误校准和消息 framing 都能造成漏升级或改变人类判断；新增 EX-003，暂不升级稳定页。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：GitHub prompt 压缩案例显示离线门漏掉并行行为回归；结合 Anthropic 的 harness 演化与 Uber 的固定模型归因，将 `EX-007` 收窄为行为契约门 + 独立归因/安全门
 - [[2026-08-31]] — open explore：把 self-improving agent 的评估器、harness、技能和策略共变拆成变更治理问题；新增 `EX-007`，要求独立外部 oracle、冻结控制面、版本回放与回滚证据
 - [[2026-08-31]] — open explore：把高影响动作前的治理状态承载拆成 policy-carriage / control-plane integrity 候选；记忆写入、上下文压缩和决策时装配可能删除、弱化或错绑规则，新增 `EX-006`
 - [[2026-08-31]] — open explore：把检测/判定之后的动作授权、独立执行点与撤销/恢复时限拆成 Agent 安全的新候选层；与 CR-004 的可观测性、EX-003 的升级路由和 EX-004 的 oracle/source-lineage gate 分界，新增 `EX-005`
