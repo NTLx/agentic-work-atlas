@@ -62,10 +62,10 @@ related_entities:
 - Priority: P1
 - Claim: Agent observability 的结构层可枚举、行为层只能竞速、意图层不应被当作可直接观测对象。
 - Gap: Boundary
-- Evidence: `raw/20260608-connector-observability-directory.md`、`raw/20260819-google-ai-evals-inspect-skill.md`；Anthropic 三案一手 URL（browsecomp / mythos / Opus 4.5 system card，待 clip）；[OpenAI HF 事件](https://openai.com/index/hugging-face-incident-and-the-road-ahead/)；[OpenAI 第三方评测](https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/)；[Google DeepMind AI Control](https://deepmind.google/blog/securing-the-future-of-ai-agents/)（均待 clip）
+- Evidence: `raw/20260608-connector-observability-directory.md`、`raw/20260819-google-ai-evals-inspect-skill.md`；Anthropic 三案、OpenAI HF/第三方评测 URL；[Google DeepMind AI Control](https://deepmind.google/blog/securing-the-future-of-ai-agents/) 与 [Roadmap PDF](https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/securing-the-future-of-ai-agents/gdm-ai-control-roadmap.pdf)（均待 clip）
 - Evidence goal: 取得逐案事前阻断或 coverage/recall 数据，区分“仪器化闭包”的架构承诺与真实污染向量覆盖的实证。
-- Last checked: 2026-08-30T15:00:33 · refined
-- Next: clip+compile Google DeepMind AI Control 一手材料；核查运行时路径闭包、逐案同步阻断或 coverage/recall 实测数据
+- Last checked: 2026-09-05T04:01:23+08:00 · refined
+- Next: clip+compile Google DeepMind AI Control 博客与 Roadmap；核查运行时路径闭包、逐案同步阻断或 coverage/recall 实测数据
 - Retry: new-source:google-deepmind-ai-control
 
 ### CR-005 · AI 采纳侵蚀专业能力再生
@@ -190,6 +190,7 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T04:01:23+08:00 | Agent observability 上界 | refined | Google DeepMind Roadmap 把 coverage/recall/time-to-response 具体化，并给出 R2 的 >99% coverage、<24h 目标；但这些是要求而非实测，recall 阈值留待未来，攻击模型与 live simulation 仍属理论/拟议。 |
 | 2026-09-05T03:32:14 | Agent Safety Topic 边界 | refined | 安全簇已有 containment、最小代理权、身份、策略、可观测性与动作授权/恢复材料，但缺少统一 Topic 和闭合导航；先做五阶段骨架，不新增 EX。 |
 | 2026-09-05T02:02:46 | 动作授权与执行闭环 | refined | FORGE/OAP 在受控任务中为确定性 pre-action reference monitor 提供收敛的独立层证据；但完整拦截面、状态契约、撤销/回滚与允许范围内副作用仍是边界，Janus 显示人审不是统一最优解。 |
 | 2026-09-05T01:57:43 | 验证器的 reference integrity 与 success provenance | refined | AgentJudgeBench 的 C3 仅支持有限 reference-interface/content sensitivity，且有单标注者与公式—案例边界；结合 AcquaBench 将 EX-004 保留为静态 oracle integrity + 动态 success provenance 两个子门，暂不新增候选。 |
@@ -198,6 +199,7 @@ related_entities:
 
 ## 思考日志索引
 
+- [[2026-09-05]] — recompile CR-004：核读 Google DeepMind AI Control 博客与 Roadmap；将 coverage/recall/time-to-response 的架构指标与 R2 目标同实测区分，确认逐案阻断与完整污染覆盖仍无实证，refined
 - [[2026-09-05]] — open explore：安全 Entity/Source 簇缺少独立 Topic；核对 `Agent-Containment`、`Least-Agency`、`Distinct-Principal-Identity`、`Policy-as-Code`、`Agent-Observability` 与现有安全 source summary，收窄为“检测→判定→授权→执行→撤销/恢复”五阶段骨架，不新增 EX
 - [[2026-09-05]] — open explore：AgentJudgeBench 的 C3（仅单 generator/双 judge）与 scout 边界核对，结合 AcquaBench 的 CLEAN/GOLD/SHAM、D2 将 `EX-004` 收窄为静态 oracle integrity + 动态 success provenance 两个子门，暂不新增候选
 - [[2026-09-05]] — open explore：FORGE/OAP/Janus 定向核验；把 `EX-005` 收窄为确定性 pre-action enforcement 的独立性获得初步支持，撤销/回滚与人审最优性继续开放
