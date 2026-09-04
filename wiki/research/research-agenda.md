@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T07:00:28+08:00
+updated: 2026-09-05T07:31:22+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -118,7 +118,7 @@ related_entities:
 |---|---|---|---|---|
 | EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | 现有材料分别支持四轴，但尚无同一任务上的受控区分；synthesized | 跨家族单轴变化即可稳定消除多类相关漏报，或单轴失效仍能完整保障 | clip+compile arXiv 2604.07650，建立字段矩阵 |
 | EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将信息取得、状态验证、过程验证分开测量；现有四轴模型尚未把“看见关键状态”和“正确使用证据”从独立性中拆出；synthesized | 在同一任务、同一模型与同一访问权限下，跨家族/独立性变化无法稳定改善漏报，或静态低覆盖验证与可交互验证表现相当 | clip+compile AJ-Bench，建立“静态/可交互 × 同族/跨族”矩阵；与 EX-001 合并判定边界 |
-| EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 选择性委派研究把路由器定义为必须定位“人类优于 Agent 的区域”的 rejector；现有材料支持隐藏特征与消息 framing 会改变升级质量；Google SRE/AWS 又把交接包、完整调查历史和交接完整性明确化，说明“升级给对人”与“让人能接住”是两个可分离操作；synthesized/refined | 在固定升级触发、专家和 Agent 输出后，完整/最小/带模型结论的交接包对人类正确率、处置延迟、补问次数和过度依赖均无稳定差异，或差异完全由 CR-004 的可见性/EX-002 的证据覆盖解释；反之若交接包残差持续存在，保留为 EX-003 内部独立子门 | clip+compile Google SRE AI Operator 与 AWS handoff guidance；建立“路由选择 × 交接包 × 消息 framing × 专家负载”矩阵，先固定路由做 context ablation，再与 CR-004 / EX-002 对照 |
+| EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 选择性委派研究把路由器定义为必须定位“人类优于 Agent 的区域”的 rejector；现有材料支持隐藏特征与消息 framing 会改变升级质量；Google SRE/AWS 又把交接包、完整调查历史和交接完整性明确化，Google Cloud 的运行时字段进一步显示接收队列、目标人可用性、等待/转接失败也是独立的接收面变量；synthesized/refined | 在固定升级触发、专家身份、Agent 输出和接收面可用性后，完整/最小/证据-only/带模型结论的交接包对人类正确率、处置延迟、补问次数和过度依赖均无稳定差异，或差异完全由 CR-004 的可见性、EX-002 的证据覆盖、消息 framing 或接收队列解释；反之若交接包残差持续存在，保留为 EX-003 内部独立子门 | clip+compile Google SRE AI Operator 与 AWS handoff guidance；补查 Google Cloud escalation/transfer telemetry；建立“路由选择 × 交接包 × 消息 framing × 专家负载/队列”矩阵，先固定路由与接收面做 context ablation，再与 CR-004 / EX-002 对照 |
 | EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench C3（1 generator/2 judges）仅支持有限 reference-interface/content sensitivity；AcquaBench CLEAN/GOLD/SHAM / D2 支持动态 success provenance；先为同一 oracle/source-lineage 候选，待交叉操纵后判断是否拆分；refined | 固定 trace 随机化无/正确/等价/错误 reference，或固定 reference 随机化 CLEAN/GOLD/SHAM；若 judge/score 与 human adjudication 不变，或差异可由 EX-001/EX-002 解释，则收窄或并回 | clip+compile AgentJudgeBench、AcquaBench、ABC、GeneBench、OpenAI coding audit、tau3、ELT-Bench-Verified；审查代码/数据与公式—案例对应关系；建立 `reference condition × information provenance` 矩阵；寻找真实/可回放第二案例 |
 | EX-005 | 在检测与判定都正确时，动作授权、独立执行点与撤销/恢复时限是否仍构成 Agent 安全的独立必要门？ | FORGE/OAP 两条实现线均把确定性 pre-action reference monitor 与模型判断分开，并在受控任务中降低越权；保证依赖完整拦截面与状态契约，且未覆盖恢复、允许范围内副作用或人审最优性；refined | 在同一 trace、verdict、工具 schema 与负载下随机化 prompt-only、模型 guard、确定性 reference monitor 与 monitor+rollback；若固定 verdict 后无 enforcement 残差，或所有差异由检测/升级解释，则并回 CR-004/EX-003/普通 IAM | clip+compile FORGE/OAP/Janus；寻找独立复现、token TTL、撤销耗时、回滚成功率和完整 incident trace；按风险/可逆性区分同步阻断与异步复核 |
 | EX-006 | 高影响/不可逆动作的治理约束，是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达决策/执行边界，而非普通 token-stream 文本？ | Governance Decay/Ghost in the Context 将 policy-carriage 拆为存在、语义健全和绑定正确；Sleeper Memory Poisoning 显示记忆可成为跨会话延迟攻击通道；现有结果主要是受控/模拟，且固定装配器下未稳定产生越权动作；synthesized | 若受保护 token/pinning + preflight + action guard 在同任务、同 trace、同负载下与外部 control plane 在状态完整性、越权动作、延迟和可用性上等效，或高风险 token-only 生产系统长期无 carriage failure，则削弱独立控制面命题 | clip+compile 四篇一手研究；建立 policy owner—provenance—binding—budget—survival—action-boundary—fail-closed 字段矩阵，并与 EX-005 / CR-004 / CR-002 合并判定边界 |
@@ -142,6 +142,7 @@ related_entities:
 | P0 | 选择性预测的校准失效 | PMLR 333（2026）多模态 ICU 研究显示聚合指标会遮蔽按类别误校准；需提取 per-class calibration、deferral 与 expert load 结果及任务边界 | clip+compile → EX-003 |
 | P1 | 人类-路由消息效应 | arXiv 2112.06751 显示 deferral status 与 model prediction 的组合会改变人类准确性；需核对 messaging、human-in-loop 指标与外推边界 | clip+compile → EX-003 |
 | P0 | 主动升级的部署级长程案例与交接契约 | Google SRE AI Operator 报告结构化上下文目录、完整调查历史交接、数千起 incident 与 human Golden Data；AWS Agentic AI Lens 明确要求交接延迟、上下文完整性和协作成功率，但两者都缺固定升级触发下的交接包消融、人类决策质量与长期漂移对照 | clip+compile → EX-003；优先入库 Google SRE AI Operator 与 AWS handoff guidance，再寻找独立部署级长程案例 |
+| P1 | 接收面与转接遥测 | Google Cloud CCAI 官方 schema 将升级原因、目标人、等待/连接时长、队列、转接失败、服务等级和 deflection 分开记录；但它是客服转接模型，不等于长程 Agent 的人类处置证据 | clip+compile → EX-003；寻找能同时报告 handoff packet、接收负载/队列和人类结果的部署级案例 |
 | P0 | AgentJudgeBench reference 对照 | v1 PDF scout 已核读；C3 仅一个 generator/两个 judge，需入库单标注者限制、公式—案例不一致、结构/语义等价案例与 programmatic-reference 字段，并审查代码/数据 | clip+compile → EX-004，并与 EX-001/EX-002 共用 `reference condition × information provenance` 字段表 |
 | P0 | OpenAI coding evaluation audits | 已联网核读两份官方材料，尚未进入 raw/source；需提取题面、测试、gold patch、低覆盖、独立人审与训练污染的归因字段 | clip+compile → EX-004 |
 | P0 | Agentic Benchmark Checklist | 已核读一手论文，尚未进入 raw/source；需提取 task/outcome validity、ground-truth 审查、语义等价、环境冻结与污染控制字段 | clip+compile → EX-004 |
@@ -190,6 +191,7 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T07:31:22+08:00 | Facilitator 升级与接收面 | refined | Google Cloud CCAI 将目标人、队列、等待/连接时长、转接失败和服务等级作为独立升级遥测；Google SecOps 参考架构把结构化汇总、迭代上限与报告回链分开。它们把“人能否接住”扩展为交接包 × 接收面，但仍无固定路由下的人类结果对照，不新增 EX。 |
 | 2026-09-05T07:00:28 | AI 监督 AI 共模误差下界 | no_delta | 定向复核 arXiv 2607.10139v3；shared-error floor 仍限定于特定 consensus/verifier、任务错误结构与 panel 条件，数学近零、GPQA/MMLU-Pro 非零；没有支持外推至所有 AI 监督形态的新边界。 |
 | 2026-09-05T06:00:32+08:00 | Agent 数据过度收集具有系统性 | no_delta | Numezis 页面仍只有约 6 个月匿名部署、按法人/客户文件隔离、无模型保留与 90 天运营对照；未提供读取量、上下文保留期、删除/TTL 或更长纵向数据，长期数据最小化缺口不变。 |
 | 2026-09-05T05:33:29+08:00 | Facilitator 升级与交接 | refined | Google SRE/AWS 材料把 handoff 具体化为结构化上下文契约与可测的完整性/延迟指标；这使 EX-003 区分“路由正确”与“人能接住”，但尚无交接包消融和人类决策结果的独立实证。 |
@@ -198,6 +200,7 @@ related_entities:
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：Google Cloud CCAI escalation telemetry 与 Google SecOps 架构把接收队列、转接失败、结构化汇总和迭代上限加入 handoff 分析；将 `EX-003` 收窄为“交接包 × 接收面”两层，不新增 EX
 - [[2026-09-05]] — recompile CR-003：复核 arXiv 2607.10139v3；shared-error floor 仍是任务错误结构与 consensus panel 条件量，不能外推至所有 AI 监督形态，no_delta
 - [[2026-09-05]] — recompile CR-002：再次核查 Numezis 匿名 SME 案例；页面仍无读取量、上下文保留期、删除/TTL 或更长纵向数据，反例仍只改变“架构必然性”而未补足长期数据最小化，no_delta
 - [[2026-09-05]] — open explore：Google SRE AI Operator 与 AWS Agentic AI Lens 把 handoff 明确为结构化上下文契约，并提出完整性、延迟和协作成功率指标；将 `EX-003` 收窄为“路由选择”与“交接包可接住性”两层，不新增 EX
