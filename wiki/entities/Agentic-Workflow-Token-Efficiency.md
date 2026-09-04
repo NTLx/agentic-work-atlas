@@ -6,7 +6,7 @@ aliases:
   - Token Efficiency
 definition: "通过 API 代理记录、自动化审计、MCP 工具裁剪、CLI 替代等手段，系统性优化 Agentic Workflows 的 token 成本"
 created: 2026-05-09
-updated: 2026-08-31
+updated: 2026-09-05
 tags:
   - Agentic-Engineering
   - cost-optimization
@@ -27,6 +27,7 @@ related_entities:
   - "[[Minimal-Pair-Evaluation]]"
 source_raw:
   - "[[Improving token efficiency in GitHub Agentic Workflows]]"
+  - "[[20260902-github-ai-coding-cost-efficiency]]"
   - "[[20260530-cursor-developer-habits-report]]"
   - "[[20260528-corporate-america-ai-rationing]]"
   - "[[20260606-the-minimill-of-ai]]"
@@ -207,6 +208,25 @@ ET = m × (1.0 × I + 0.1 × C + 4.0 × O)
 - 错误的 bash 模式配置导致 Agent 陷入 64 轮回退循环
 - Agent 手动读取源代码重建编译器输出
 - 一个配置修复消除循环
+
+## GitHub Copilot：优化完整任务而非局部调用（2026-09）
+
+**判断**：AI 编程的成本优化目标应是“以相同任务质量完成任务所需的总工作”，而非单次工具调用的 token 数。harness 的优先级是删除模型不需要做的工作，同时保留完成任务所需的信息与行为。
+
+- **证据**：[[20260902-github-ai-coding-cost-efficiency]]；RTK 在测试配置中缩短工具输出，却因信息缺失诱发重读与重跑；选择性压缩、删除 `view` 行号、批处理后台完成通知则分别从信息、格式和 orchestration 层减少重复工作。
+- **边界**：GitHub 的实验主要覆盖 Copilot CLI 与 Copilot code review；benchmark 组成、样本量、置信区间和 goodput 定义未完整披露，不能把相对成本变化直接当作所有 Agent 工作流的普适收益。
+
+### 四类可迁移的 harness 改动
+
+1. **压缩重复噪声，不压缩语义**：source-like 和任意命令输出保持原样；搜索结果可无损重排；只对 install、build、test、progress 等重复噪声做选择性压缩，并保留原文恢复路径。
+2. **先删无效格式，再删信息**：`view` 工具移除不再服务编辑流程的行号前缀，离线模型推理成本约下降 5%，线上 Copilot CLI 日均每用户约下降 3%，文件内容本身未改变。
+3. **把 prompt 当行为接口测试**：压缩 task-tool prompt 的首次线上版本把并行 Agent 意外串行化；新增行为回归测试后，用更短但更开放的指令恢复并行。最终每轮移除约 1,300 个 prompt tokens，会话总 prompt tokens 约少 1.8%，每活跃小时归一化成本约低 2.9%。
+4. **让完成事件携带结果**：后台 shell 与 sub-agent 完成后，harness 批量发送已有结果，避免 Agent 额外发起 retrieval turn；官方示例从四次模型调用变成一次处理两个结果的调用，AI Credits 相关用量约降 2.3%。
+
+**综合判断**：生产级 token efficiency 的核心单位不是 token，而是“未引入重复工作的有效任务进展”。这把成本优化从输出裁剪问题提升为 harness 的信息保真、行为契约和 round-trip 设计问题。
+
+- **证据**：[[20260902-github-ai-coding-cost-efficiency]]；[[Improving token efficiency in GitHub Agentic Workflows]]。
+- **边界**：过程信号（轮次、恢复次数、工具完成率、prompt tokens）不能替代结果质量；任何改动都必须在实际 workflow、模型、任务分布和产品表面中分别验证。
 
 ## 新增证据：代码质量作为第四类效率杠杆
 
