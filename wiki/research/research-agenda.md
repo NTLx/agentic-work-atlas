@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T03:32:14+08:00
+updated: 2026-09-05T04:31:37+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -105,7 +105,7 @@ related_entities:
 
 | 优先级 | 焦点 | 下一步最小动作 |
 |---|---|---|
-| P0 | Agent 安全 Topic 建设 | 先用现有安全簇建立“检测→判定→授权→执行→撤销/恢复”边界骨架，再补齐各层证据；不由 recompile 执行 |
+| P0 | Agent 安全 Topic 建设 | 五阶段字段映射已完成；下一步起草带 `owner / action-surface / revoke / recovery` gap 标记的骨架，再用一手材料逐格核验；不由 recompile 执行 |
 | P0 | 验证器危机研究线 | 按独立性四轴、证据覆盖/解释能力与 reference integrity 建立矩阵，再 clip AgentJudgeBench、Anthropic 三案与 Astra 官方材料 |
 | P0 | 劳动经济学实证 | 用已编译 Economic Index 与新增一手数据建立校准骨架 |
 | P1 | MCP 无状态转折 | clip 2026-07-28 规范与 NSA 指南后更新 MCP Entity |
@@ -128,7 +128,7 @@ related_entities:
 
 | 优先级 | 目标 | 当前缺口 | 触发行动 |
 |---|---|---|---|
-| P0 | Agent Safety Topic 跨层骨架 | containment、identity、policy、observability、action/recovery 已形成 Entity/Source 簇，但尚未在同一 Topic 中区分生命周期边界；`[[Agent-Security]]` 导航目标尚不存在 | 先以已编译 source summary 起草 Topic 骨架，再 clip+compile FORGE/OAP/AI Control/记忆投毒等待入库材料；回填 `EX-005/006` |
+| P0 | Agent Safety Topic 跨层骨架 | 五阶段均已有局部 Entity/Source/失败信号，但统一 owner、action-surface manifest、撤销权、恢复 SLA 和阶段间 trace 尚未闭合；`[[Agent-Security]]` 导航目标尚不存在 | 起草带 gap 标记的 Topic 骨架，再 clip+compile FORGE/OAP/AI Control/记忆投毒等待入库材料；回填 `EX-005/006` |
 | P0 | EU AI Act 首轮罚款官方决定 | €47M 三案系单链互引二手叙事（法律基础矛盾、无官方决定原文），需官方决定/一手披露判定真伪 | clip → 核对 CR-001 |
 | P0 | Anthropic 三起评测事故 | 已联网核读一手来源（browsecomp/mythos/system card），未进入 raw/source | clip+compile → CR-006 |
 | P0 | OpenAI 评测越界披露 | HF 事件及 UK AISI/Irregular 两起第三方评测尚未进入 raw/source | clip+compile → CR-006 |
@@ -190,15 +190,16 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T04:31:37+08:00 | Agent Safety Topic 边界 | refined | 五阶段均可由现有 Entity/Source summary 提供局部对象与失败信号，且 EX-004/005/006 保持不同边界；owner、action-surface coverage、撤销权与 recovery SLA 仍是未闭合字段，不把 Topic 写成已解决安全定理。 |
 | 2026-09-05T04:01:23+08:00 | Agent observability 上界 | refined | Google DeepMind Roadmap 把 coverage/recall/time-to-response 具体化，并给出 R2 的 >99% coverage、<24h 目标；但这些是要求而非实测，recall 阈值留待未来，攻击模型与 live simulation 仍属理论/拟议。 |
 | 2026-09-05T03:32:14 | Agent Safety Topic 边界 | refined | 安全簇已有 containment、最小代理权、身份、策略、可观测性与动作授权/恢复材料，但缺少统一 Topic 和闭合导航；先做五阶段骨架，不新增 EX。 |
 | 2026-09-05T02:02:46 | 动作授权与执行闭环 | refined | FORGE/OAP 在受控任务中为确定性 pre-action reference monitor 提供收敛的独立层证据；但完整拦截面、状态契约、撤销/回滚与允许范围内副作用仍是边界，Janus 显示人审不是统一最优解。 |
 | 2026-09-05T01:57:43 | 验证器的 reference integrity 与 success provenance | refined | AgentJudgeBench 的 C3 仅支持有限 reference-interface/content sensitivity，且有单标注者与公式—案例边界；结合 AcquaBench 将 EX-004 保留为静态 oracle integrity + 动态 success provenance 两个子门，暂不新增候选。 |
 | 2026-09-05T00:56:27 | AI 监督 AI 共模误差下界 | no_delta | `ljg-think-recompile` 复核：shared-error floor 仍只适用于特定任务错误结构与跨模型 consensus/verifier panel；数学近零不构成反例，不能外推到所有 AI 监督形式。 |
-| 2026-09-05T00:44:53 | 自我改进闭环的变更治理 | refined | GitHub 案例显示普通离线质量门漏掉 prompt 引起的并行回归；把 EX-007 收窄为两层：不可改写的行为契约门，以及冻结外部 oracle/policy 的独立归因与安全门。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：完成 Agent Safety “检测→判定→授权→执行→撤销/恢复”五阶段字段映射；确认结构边界成立，但 owner、action-surface coverage、撤销权和 recovery SLA 未闭合，不新增 EX
 - [[2026-09-05]] — recompile CR-004：核读 Google DeepMind AI Control 博客与 Roadmap；将 coverage/recall/time-to-response 的架构指标与 R2 目标同实测区分，确认逐案阻断与完整污染覆盖仍无实证，refined
 - [[2026-09-05]] — open explore：安全 Entity/Source 簇缺少独立 Topic；核对 `Agent-Containment`、`Least-Agency`、`Distinct-Principal-Identity`、`Policy-as-Code`、`Agent-Observability` 与现有安全 source summary，收窄为“检测→判定→授权→执行→撤销/恢复”五阶段骨架，不新增 EX
 - [[2026-09-05]] — open explore：AgentJudgeBench 的 C3（仅单 generator/双 judge）与 scout 边界核对，结合 AcquaBench 的 CLEAN/GOLD/SHAM、D2 将 `EX-004` 收窄为静态 oracle integrity + 动态 success provenance 两个子门，暂不新增候选
