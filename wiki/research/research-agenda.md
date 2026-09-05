@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T23:35:35+08:00
+updated: 2026-09-06T00:39:36+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -121,7 +121,7 @@ related_entities:
 | EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量，并区分“误读工具输出”和“证据正确但推理错误”；SkillTV-Bench 进一步把“环境可访问”与“按检查策略主动取得/解释证据”分开，但其 JudgeSkill、source-verifier 与任务构造仍未独立操纵；refined | 固定模型/验证器、任务、reference 与访问权限后，静态低覆盖、可交互读取和显式检查策略对照不改变漏报，或差异完全由 token budget、模型相关性或真值瑕疵解释 | clip+compile AJ-Bench 与 SkillTV-Bench，建立“物理可见性 × 检查策略 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并与 EX-001 对齐 |
 | EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 选择性委派研究将路由器定义为定位“人类优于 Agent 区域”的 rejector；现有材料支持隐藏特征和 framing 改变升级质量；Google SRE/AWS 明确结构化交接与完整性，Google Cloud 将目标人、队列、等待/转接失败作为独立接收变量；synthesized/refined | 在固定升级触发、专家身份、Agent 输出和接收面可用性后，完整/最小/证据-only/带模型结论的交接包对人类正确率、处置延迟、补问次数和过度依赖均无稳定差异，或差异完全由 CR-004 的可见性、EX-002 的证据覆盖、消息 framing 或接收队列解释；反之若交接包残差持续存在，保留为 EX-003 内部独立子门 | clip+compile Google SRE AI Operator 与 AWS handoff guidance；补查 Google Cloud escalation/transfer telemetry；建立“路由选择 × 交接包 × 消息 framing × 专家负载/队列”矩阵，先固定路由与接收面做 context ablation，再与 CR-004 / EX-002 对照 |
 | EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench 有 standard/without/corrupted-GT；AcquaBench 有同 qid 的 CLEAN/GOLD/SHAM。两门可分别操纵，但尚缺同一 task/trace 上同时控制 verifier independence、evidence visibility 并使用外部 oracle 的交叉证据；refined | 固定 trace 后分别随机化 reference 与 provenance；若 judge/score 与 human adjudication 不变，或差异可由 EX-001/EX-002 解释，则收窄或并回 | clip+compile 两组材料及 ABC、GeneBench、OpenAI audit、tau3、ELT；核对代码/数据与公式—案例对应关系，建立 `reference condition × information provenance × verifier independence` 交叉表 |
-| EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence 分开了 checkpoint-restore 与外部副作用；HBHC 支持有界阻断未来调用；Google/Microsoft/AWS 显示传播、session、在途连接和恢复有不同时间语义；缺 action-surface 分母；refined | 固定 trace/verdict/工具 schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若三层无残差则并回 CR-004/EX-003/IAM | clip+compile ACRFence、HBHC、Google/Microsoft/AWS 撤销材料；寻找独立生产 trace 与 post-state 分母 |
+| EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence 分开了 checkpoint-restore 与外部副作用；HBHC 支持有界阻断未来调用；Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 显示凭据失效、在途停止、提交状态不确定与效果对账具有不同语义；缺 action-surface 与 post-state 分母；refined | 固定 trace/verdict/工具 schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消接受、进程停止与最终 post-state 可稳定等价，或未知提交完全由既有变量解释，则收窄/并回；反之保留 commit-state uncertainty 子门 | clip+compile ACRFence、HBHC、Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth、AWS Step Functions 材料；寻找带权威 post-state、补偿结果和责任接管的生产 trace |
 | EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | 四篇一手论文支持 context eviction/weakening/misbinding、compaction decay 和跨会话记忆污染；但 action-level 结果有限，未证明 OOB control plane 普遍必要；refined | 若 protected policy + deterministic preflight/action guard 与 OOB registry 在固定 verdict、action-surface、延迟和 recovery 上等效，则 OOB 仅是实现选项；若语义约束与 memory recovery 不衰减，则收窄为特定实现风险 | clip+compile 四篇研究；建立 `provenance → binding → budget/survival → verdict → action boundary → recovery` 矩阵，再做固定 verdict 的 carrier × enforcement 对照 |
 | EX-007 | 自我改进 Agent 的变更晋级是否需要按变更对象分层的不可自证门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | 本地材料显示三类对象不能共用一个 gate：行为组件可能出现结果不变但并行/停止/副作用顺序回归；评估/目标组件可能因 benchmark 内部适配抬高分数；策略/执行组件可能绕过安全边界。固定开发 gate 可审计候选选择，但不等于外部真值或安全保证；refined | 若固定模型/任务后，行为契约能捕获所有行为组件线上残差；若评估/目标共变仍能在冻结外部 oracle、hidden holdout 和独立安全复评上稳定复现；或所有残差最终可由 `EX-004/006` 解释，则削弱或合并 `EX-007` | new-source → EX-007；先补 SkillTV/第二个行为回归案例，再寻找同一变更的 offline→online、独立复评、policy 冻结与 rollback 记录；没有新证据前不再抽象第四类 gate |
 
@@ -165,7 +165,7 @@ related_entities:
 | P1 | AWS Druva production recovery workflow | 已有 8–10 agents、scoped permissions 与 recovery workflow 的客户披露；缺授权、撤销、回滚和 action-surface 分母 | clip+compile → EX-005 |
 | P0 | ACRFence / checkpoint-restore 副作用 | 已核读 10/10 重复提交与 stateless token resurrection；缺 mitigation 实现评估、跨框架复现和真实外部 post-state | clip+compile → EX-005 |
 | P0 | HBHC / 有界层级撤销 | 已核读 49-agent 受控结果；需核代码、网络分区/旁路覆盖与 revoked-after-send 条件，不能把未来调用阻断当作回滚 | clip+compile → EX-005 |
-| P1 | 逐动作授权、撤销与恢复实测 | OpenAI/HF 事故材料提供重建、凭据/账户/工作负载遏制和批量停机的事故级锚点；仍缺 token TTL、逐动作撤销耗时、阻断延迟、回滚成功率等可比较部署数据 | clip+compile → EX-005 |
+| P1 | 逐动作授权、撤销与恢复实测 | OpenAI/HF 事故材料提供重建、凭据/账户/工作负载遏制和批量停机的事故级锚点；MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 补足任务取消、令牌失效、heartbeat/终态送达、状态查询与补偿语义；仍缺逐动作撤销耗时、提交状态未知率、post-state 对账、回滚成功率和 MTTR | clip+compile → EX-005 |
 | P0 | 跨系统撤销传播与恢复链 | Google IAM 策略变更通常约 2 分钟、可能 7 分钟以上；Entra 应用自有 session 需应用撤销；GitHub 事故显示恢复、豁免、缓存刷新和确认分步完成；缺 Agent action 同链实测 | clip+compile → EX-005 / CR-004 |
 | P1 | Agent incident response actuation trace | OpenAI/HF 材料补足一条从告警到调查、遏制、重建、再次暴露到更广停机的事故级链条；仍缺同一生产任务中带稳定事件标识、明确 verdict/owner 的 `flag→owner→block/rollback→recovery→review` 完整时间线与对照 | clip+compile → EX-005 / Agent-Security Topic |
 | P0 | Policy-carriage integrity / ControlCapsule | [arXiv 2605.12535](https://arxiv.org/abs/2605.12535) v3 已核读但未进入 raw/source；需提取 policy 的存在、语义健全、对象绑定、有效预算、preflight 与 action-boundary 指标，并保留其 0/90 action-level negative boundary | clip+compile → EX-006 |
@@ -205,14 +205,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-06T00:39:36+08:00 | EX-005 撤销后的在途动作与效果收敛 | refined | MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 的一手材料显示凭据/任务失效、在途停止、提交状态不确定和效果对账/补偿具有不同对象与时序；新增 `commit-state uncertainty` 子门。控制面终态不证明 post-state 收敛；不新增 EX。 |
 | 2026-09-05T23:35:35+08:00 | AI 时代设计方法论对照 | partial | Anthropic 团队案例支持设计—工程工作流进入代码、系统状态和可交互原型；Google PAIR 与 Microsoft Research 支持将反馈/控制、模型行为/错误纳入设计对象，但二者较旧且非当前产品团队材料；不证明判断/责任已成为跨公司主要瓶颈，不新增 EX。 |
 | 2026-09-05T22:32:45+08:00 | EX-005 撤销、在途执行与外部效果 | refined | ACRFence 显示 checkpoint-restore 可重放外部副作用，HBHC 仅保证有界阻断未来调用；Google/Microsoft/AWS 材料显示撤销传播、应用 session、既有连接和恢复具有不同时间语义。将 `EX-005` 收窄为 `authority stop`、`in-flight stop`、`effect reconciliation` 三层，不新增 EX。 |
 | 2026-09-05T21:35:29+08:00 | EX-004 reference integrity 与 success provenance | refined | AgentJudgeBench 提供 standard/without/corrupted-GT 的 reference 对照，AcquaBench 提供 CLEAN/GOLD/SHAM 的目标值替换；前者依赖程序化 reference，后者四个 action channel 共享 evidence store。两门可分别审计，但尚无同一 task/trace 上结合 verifier independence、evidence visibility 与外部 oracle 的交叉实验；不新增 EX。 |
-| 2026-09-05T20:31:48+08:00 | 劳动经济学企业扩张与职业入口 | refined | Ramp 的高强度采用者两年后 headcount 与入门 headcount 同时增长；Dallas Fed/Census 的职业暴露与早期职业招聘却出现收缩，二者不构成直接反例，而是提示企业净量、职业构成与入门流量是不同层次；将“再生是否外部化”收窄为需看入门流量、内部晋升、工资溢价与培训投入的联合校准，不新增 EX。 |
 | 2026-09-05T19:32:09+08:00 | CR-004 OTel 状态、转移与安全责任链 | refined | OTel 主分支仍只有 Development 状态的 agent/workflow/plan/tool spans；开放 PR #483 补状态 delta、#447 补部分转移拓扑，但二者仍不证明业务 post-state、授权/实际放行、handoff owner/ack 或 revoke/recovery；不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-06]] — open explore：补查 MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 一手材料；确认凭据/任务失效、在途停止、提交状态不确定与效果对账/补偿具有不同对象和时序，新增 `commit-state uncertainty` 作为 `EX-005` 子门，不新增 EX
 - [[2026-09-05]] — open explore：核对 Anthropic Product Design team、Claude Design、Google PAIR 与 Microsoft Research/Agent design foundations 一手材料；初步支持设计对象扩展到模型/系统行为、反馈/控制和可执行工作流，但当前材料不足以证明判断/责任已成为跨公司主要瓶颈，结果 `partial`，不新增 EX
 - [[2026-09-05]] — open explore：核对 ACRFence、HBHC、Google IAM propagation、Microsoft Entra emergency revocation、GitHub May availability report 与 AWS Agentic AI/DevOps containment；确认权限停止、在途连接停止和已提交外部效果收敛具有不同时间/对象语义，收窄 `EX-005` 为三层恢复门，不新增 EX
 - [[2026-09-05]] — open explore：核对 Ramp、Dallas Fed、Federal Reserve、Atlanta Fed 与 Census 一手劳动数据；确认企业净 headcount 增长、职业岗位/早期职业招聘收缩和管理者未来预期处于不同测量层，收窄劳动经济学校准问题为“企业扩张 × 职业构成 × 入门流量 × 再生代理”的交叉矩阵，不新增 EX
