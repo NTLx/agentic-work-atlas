@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T07:31:22+08:00
+updated: 2026-09-05T08:33:05+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -105,7 +105,7 @@ related_entities:
 
 | 优先级 | 焦点 | 下一步最小动作 |
 |---|---|---|
-| P0 | Agent 安全 Topic 建设 | 五阶段字段映射已完成；下一步起草带 `owner / action-surface / revoke / recovery` gap 标记的骨架，再用一手材料逐格核验；不由 recompile 执行 |
+| P0 | Agent 安全 Topic 建设 | 五阶段骨架已起草；下一步用一手材料逐格核验 `owner / action-surface / revoke / recovery` gap，不把结构地图当作安全效果证据；不由 recompile 执行 |
 | P0 | 验证器危机研究线 | 按独立性四轴、证据覆盖/解释能力与 reference integrity 建立矩阵，再 clip AgentJudgeBench、Anthropic 三案与 Astra 官方材料 |
 | P0 | 劳动经济学实证 | 用已编译 Economic Index 与新增一手数据建立校准骨架 |
 | P1 | MCP 无状态转折 | clip 2026-07-28 规范与 NSA 指南后更新 MCP Entity |
@@ -128,7 +128,7 @@ related_entities:
 
 | 优先级 | 目标 | 当前缺口 | 触发行动 |
 |---|---|---|---|
-| P0 | Agent Safety Topic 跨层骨架 | 五阶段均已有局部 Entity/Source/失败信号，但统一 owner、action-surface manifest、撤销权、恢复 SLA 和阶段间 trace 尚未闭合；`[[Agent-Security]]` 导航目标尚不存在 | 起草带 gap 标记的 Topic 骨架，再 clip+compile FORGE/OAP/AI Control/记忆投毒等待入库材料；回填 `EX-005/006` |
+| P0 | Agent Safety Topic 跨层核验 | 五阶段骨架已建立，但统一 owner、action-surface manifest、撤销权、恢复 SLA 和阶段间 trace 尚未闭合 | clip+compile FORGE/OAP/AI Control/记忆投毒等待入库材料；逐格回填 `EX-005/006`，不把结构地图升级为效果证据 |
 | P0 | EU AI Act 首轮罚款官方决定 | €47M 三案系单链互引二手叙事（法律基础矛盾、无官方决定原文），需官方决定/一手披露判定真伪 | clip → 核对 CR-001 |
 | P0 | Anthropic 三起评测事故 | 已联网核读一手来源（browsecomp/mythos/system card），未进入 raw/source | clip+compile → CR-006 |
 | P0 | OpenAI 评测越界披露 | HF 事件及 UK AISI/Irregular 两起第三方评测尚未进入 raw/source | clip+compile → CR-006 |
@@ -191,15 +191,16 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T08:33:05+08:00 | Agent Safety Topic 边界 | refined | 现有安全 Entity/Source 可按“检测→判定→授权→执行→撤销/恢复”形成结构 Topic；五阶段对象、失败信号和候选责任角色可分，但 owner、action-surface、撤销/恢复指标仍未闭合，创建最小 `Agent-Security` 骨架，不新增 EX。 |
 | 2026-09-05T07:31:22+08:00 | Facilitator 升级与接收面 | refined | Google Cloud CCAI 将目标人、队列、等待/连接时长、转接失败和服务等级作为独立升级遥测；Google SecOps 参考架构把结构化汇总、迭代上限与报告回链分开。它们把“人能否接住”扩展为交接包 × 接收面，但仍无固定路由下的人类结果对照，不新增 EX。 |
 | 2026-09-05T07:00:28 | AI 监督 AI 共模误差下界 | no_delta | 定向复核 arXiv 2607.10139v3；shared-error floor 仍限定于特定 consensus/verifier、任务错误结构与 panel 条件，数学近零、GPQA/MMLU-Pro 非零；没有支持外推至所有 AI 监督形态的新边界。 |
 | 2026-09-05T06:00:32+08:00 | Agent 数据过度收集具有系统性 | no_delta | Numezis 页面仍只有约 6 个月匿名部署、按法人/客户文件隔离、无模型保留与 90 天运营对照；未提供读取量、上下文保留期、删除/TTL 或更长纵向数据，长期数据最小化缺口不变。 |
 | 2026-09-05T05:33:29+08:00 | Facilitator 升级与交接 | refined | Google SRE/AWS 材料把 handoff 具体化为结构化上下文契约与可测的完整性/延迟指标；这使 EX-003 区分“路由正确”与“人能接住”，但尚无交接包消融和人类决策结果的独立实证。 |
-| 2026-09-05T05:00:35 | AI 评测制度化进入执行期 | refined | 官方页面确认 AI Office/成员国的可执行、可处罚能力，但未提供 €47M 三案决定文本；二手追踪报告原作者撤回该说法，三案降为未证实，不作 falsified。 |
 | 2026-09-05T04:01:23+08:00 | Agent observability 上界 | refined | Google DeepMind Roadmap 把 coverage/recall/time-to-response 具体化，并给出 R2 的 >99% coverage、<24h 目标；但这些是要求而非实测，recall 阈值留待未来，攻击模型与 live simulation 仍属理论/拟议。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：将现有 Agent 安全 Entity/Source 映射为“检测→判定→授权→执行→撤销/恢复”五阶段 Topic 骨架；确认结构边界成立但 owner、action-surface、撤销/恢复仍缺实证，不新增 EX
 - [[2026-09-05]] — open explore：Google Cloud CCAI escalation telemetry 与 Google SecOps 架构把接收队列、转接失败、结构化汇总和迭代上限加入 handoff 分析；将 `EX-003` 收窄为“交接包 × 接收面”两层，不新增 EX
 - [[2026-09-05]] — recompile CR-003：复核 arXiv 2607.10139v3；shared-error floor 仍是任务错误结构与 consensus panel 条件量，不能外推至所有 AI 监督形态，no_delta
 - [[2026-09-05]] — recompile CR-002：再次核查 Numezis 匿名 SME 案例；页面仍无读取量、上下文保留期、删除/TTL 或更长纵向数据，反例仍只改变“架构必然性”而未补足长期数据最小化，no_delta
