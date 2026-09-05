@@ -105,7 +105,7 @@ related_entities:
 
 | 优先级 | 焦点 | 下一步最小动作 |
 |---|---|---|
-| P0 | Agent 安全 Topic 建设 | 五阶段骨架已起草；下一步用一手材料逐格核验 `owner / action-surface / revoke / recovery` gap，不把结构地图当作安全效果证据；不由 recompile 执行 |
+| P0 | Agent 安全 Topic 建设 | 五阶段骨架已起草；下一步以事件级标识对齐 `flag → verdict → authorization → actuation → revoke/recovery → review`，逐格核验 `owner / action-surface`，不把结构地图当作安全效果证据；不由 recompile 执行 |
 | P0 | 验证器危机研究线 | 按独立性四轴、证据覆盖/解释能力与 reference integrity 建立矩阵，再 clip AgentJudgeBench、Anthropic 三案与 Astra 官方材料 |
 | P0 | 劳动经济学实证 | 用已编译 Economic Index 与新增一手数据建立校准骨架 |
 | P1 | MCP 无状态转折 | clip 2026-07-28 规范与 NSA 指南后更新 MCP Entity |
@@ -128,7 +128,7 @@ related_entities:
 
 | 优先级 | 目标 | 当前缺口 | 触发行动 |
 |---|---|---|---|
-| P0 | Agent Safety Topic 跨层核验 | 五阶段骨架已建立，但统一 owner、action-surface manifest、撤销权、恢复 SLA 和阶段间 trace 尚未闭合 | clip+compile FORGE/OAP/AI Control/记忆投毒等待入库材料；逐格回填 `EX-005/006`，不把结构地图升级为效果证据 |
+| P0 | Agent Safety Topic 跨层核验 | 五阶段骨架已建立，但现有材料各覆盖局部阶段，缺同一任务的稳定事件标识、统一 owner、action-surface manifest、撤销权、恢复 SLA 和阶段间 trace | clip+compile FORGE/OAP/AI Control/记忆投毒等待入库材料；用事件级字段逐格回填 `EX-005/006`，不把结构地图升级为效果证据 |
 | P0 | EU AI Act 首轮罚款官方决定 | €47M 三案系单链互引二手叙事（法律基础矛盾、无官方决定原文），需官方决定/一手披露判定真伪 | clip → 核对 CR-001 |
 | P0 | Anthropic 三起评测事故 | 已联网核读一手来源（browsecomp/mythos/system card），未进入 raw/source | clip+compile → CR-006 |
 | P0 | OpenAI 评测越界披露 | HF 事件及 UK AISI/Irregular 两起第三方评测尚未进入 raw/source | clip+compile → CR-006 |
@@ -159,7 +159,7 @@ related_entities:
 | P0 | FORGE / Formal Policy Enforcement | arXiv 2602.16708 v3 提供多 Agent reference monitor、provenance substrate 与受控任务结果，尚未进入 raw/source；需保留 assume/guarantee、instrumented-surface、并发与 recovery 边界 | clip+compile → EX-005 |
 | P1 | Janus 用户参与式权限管理 | arXiv 2607.01510 以 6 个 permission assistant、3 类 synthetic responder 做小规模对照；需提取人审—负担—攻击调用权衡及 synthetic responder 限制 | clip+compile → EX-005 |
 | P1 | 逐动作授权、撤销与恢复实测 | Microsoft/Google 官方材料已提出高影响动作同步阻断、逐动作授权、kill switch 与恢复；缺 token TTL、撤销耗时、阻断延迟、回滚成功率等部署数据 | new-source → EX-005 |
-| P1 | Agent incident response actuation trace | HF 与 Anthropic 材料只提供关键节点的局部证据；缺同一生产任务中 flag→owner→block/rollback→recovery→review 的完整时间线与对照 | new-source → EX-005 |
+| P1 | Agent incident response actuation trace | HF 与 Anthropic 材料分别提供攻击链或 on-call 局部节点；缺同一生产任务中带稳定事件标识的 `flag→owner→block/rollback→recovery→review` 完整时间线与对照 | new-source → EX-005 / Agent-Security Topic |
 | P0 | Policy-carriage integrity / ControlCapsule | [arXiv 2605.12535](https://arxiv.org/abs/2605.12535) v3 已核读但未进入 raw/source；需提取 policy 的存在、语义健全、对象绑定、有效预算、preflight 与 action-boundary 指标，并保留其 0/90 action-level negative boundary | clip+compile → EX-006 |
 | P0 | Governance Decay / ConstraintRot | [arXiv 2606.22528](https://arxiv.org/abs/2606.22528) v2 已核读但未进入 raw/source；需核查 compaction、summarizer injection、Constraint Pinning 与 operator-impersonation 的对照，以及 token-stream 外部权威通道这一开放边界 | clip+compile → EX-006 / CR-004 |
 | P0 | Sleeper Memory Poisoning | [arXiv 2605.15338](https://arxiv.org/abs/2605.15338) v2 已核读但未进入 raw/source；需提取 memory write—retrieve—use 三阶段、删除/纠正/用户审查/来源谱系防御缺口，并与 CR-002 区分数据最小化问题 | clip+compile → EX-006 / CR-002 |
@@ -191,12 +191,11 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T09:32:09+08:00 | Agent Safety 事件级证据连续性 | refined | 不同来源虽分别覆盖检测、授权、执行或恢复，但不能拼接为同一任务的安全闭环；下一步需用稳定事件标识对齐 `flag→verdict→authorization→actuation→revoke/recovery→review`，不新增 EX。 |
 | 2026-09-05T08:33:05+08:00 | Agent Safety Topic 边界 | refined | 现有安全 Entity/Source 可按“检测→判定→授权→执行→撤销/恢复”形成结构 Topic；五阶段对象、失败信号和候选责任角色可分，但 owner、action-surface、撤销/恢复指标仍未闭合，创建最小 `Agent-Security` 骨架，不新增 EX。 |
 | 2026-09-05T07:31:22+08:00 | Facilitator 升级与接收面 | refined | Google Cloud CCAI 将目标人、队列、等待/连接时长、转接失败和服务等级作为独立升级遥测；Google SecOps 参考架构把结构化汇总、迭代上限与报告回链分开。它们把“人能否接住”扩展为交接包 × 接收面，但仍无固定路由下的人类结果对照，不新增 EX。 |
 | 2026-09-05T07:00:28 | AI 监督 AI 共模误差下界 | no_delta | 定向复核 arXiv 2607.10139v3；shared-error floor 仍限定于特定 consensus/verifier、任务错误结构与 panel 条件，数学近零、GPQA/MMLU-Pro 非零；没有支持外推至所有 AI 监督形态的新边界。 |
 | 2026-09-05T06:00:32+08:00 | Agent 数据过度收集具有系统性 | no_delta | Numezis 页面仍只有约 6 个月匿名部署、按法人/客户文件隔离、无模型保留与 90 天运营对照；未提供读取量、上下文保留期、删除/TTL 或更长纵向数据，长期数据最小化缺口不变。 |
-| 2026-09-05T05:33:29+08:00 | Facilitator 升级与交接 | refined | Google SRE/AWS 材料把 handoff 具体化为结构化上下文契约与可测的完整性/延迟指标；这使 EX-003 区分“路由正确”与“人能接住”，但尚无交接包消融和人类决策结果的独立实证。 |
-| 2026-09-05T04:01:23+08:00 | Agent observability 上界 | refined | Google DeepMind Roadmap 把 coverage/recall/time-to-response 具体化，并给出 R2 的 >99% coverage、<24h 目标；但这些是要求而非实测，recall 阈值留待未来，攻击模型与 live simulation 仍属理论/拟议。 |
 
 ## 思考日志索引
 
