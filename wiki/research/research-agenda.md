@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T19:32:09+08:00
+updated: 2026-09-05T20:31:48+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -108,7 +108,7 @@ related_entities:
 |---|---|---|
 | P0 | Agent 安全 Topic 建设 | 五阶段骨架已起草；下一步以事件级标识对齐 `flag → verdict → authorization → actuation → revoke/recovery → review`，逐格核验 `owner / action-surface`，不把结构地图当作安全效果证据；不由 recompile 执行 |
 | P0 | 验证器危机研究线 | 按独立性四轴、证据覆盖/解释能力与 reference integrity 建立矩阵，再 clip AgentJudgeBench、Anthropic 三案与 Astra 官方材料 |
-| P0 | 劳动经济学实证 | 用已编译 Economic Index 与新增一手数据建立校准骨架 |
+| P0 | 劳动经济学实证 | 先按“企业净 headcount × 职业/入门流量 × 再生代理”建立校准骨架；不要用企业扩张直接抵消入门招聘收缩 |
 | P1 | MCP 无状态转折 | 先区分传输层去 session 与应用层状态迁移；核对显式 handle、MRTR、每请求元数据、幂等/撤销/replay 与事件谱系，再更新 MCP Entity |
 | P1 | AI 时代设计方法论对照 | 至少补两份其他实验室设计负责人访谈再判断共识 |
 | P2 | Topic 与复核队列代谢 | 处理无承载 Entity 簇和疑似重复项，不继续制造新定理 |
@@ -172,7 +172,8 @@ related_entities:
 | P0 | 自我改进回路的独立变更审计 | 现有 Meta-Harness 只有 train/dev gate，Uber 只有内部 benchmark 与 session 指标；缺冻结外部 oracle、跨版本回放、独立安全策略和变更归因 | new-source → EX-007 |
 | P0 | Harness 行为契约与保留测试区 | GitHub 案例显示离线评测漏掉并行回归，另有官方开发实践把只能由人改动的保留测试作为 contract gate；缺跨版本、跨产品的行为不变量与回滚记录 | new-source → EX-007 |
 | P1 | 生产 Agent fleet 的自修改纵向记录 | 缺 prompt/skill/router/evaluator 变更的 owner、版本、canary、回滚、隐藏 holdout 与质量/安全联合结果 | new-source → EX-007 |
-| P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
+| P0 | 劳动经济学企业—职业交叉校准 | Ramp 高强度采用者的 headcount/entry-level 变化，与 Dallas Fed、Census 的职业暴露/早期职业招聘收缩处在不同测量层；缺跨层对齐 | clip+compile Ramp、Dallas Fed 0901、Census CES-26-27；建立 firm × occupation × entry-flow 字段表 |
+| P0 | 劳动经济学代表性与预期偏差 | Atlanta Fed 近 6,000 家四国企业调查显示过去三年影响有限、未来预期生产率上升而就业下降；缺与实际招聘流量的同窗校准 | clip+compile Atlanta Fed Firm Data on AI；区分 realized / expected / platform-selected evidence |
 | P1 | OTel GenAI 正式规范与开放提案 | 主分支仍为 Development，缺 authorization、post-state、revoke/recovery 和完整 action-surface 分母；PR #483 仅提议 state delta，PR #447 仅提议部分 tool/API transfer，均仍 Open | clip+compile → CR-004；补官方 conformance/实现测试 → CR-004 |
 | P1 | Google DeepMind AI Control / live monitoring | 官方材料已定位 coverage、recall、响应时间与异步/同步阻断边界，缺逐案阻断或覆盖率实证 | clip/compile → CR-004 |
 | P1 | MCP 2026-07-28 无状态转折 | 传输层移除协议 session，但应用仍可用显式 handle、MRTR、业务 cache 和幂等键保留状态；缺 handle 绑定、TTL、撤销、replay、故障转移与事件谱系的迁移对照 | clip+compile → MCP Entity；new-source → `EX-005/006` / `CR-004` |
@@ -197,14 +198,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T20:31:48+08:00 | 劳动经济学企业扩张与职业入口 | refined | Ramp 的高强度采用者两年后 headcount 与入门 headcount 同时增长；Dallas Fed/Census 的职业暴露与早期职业招聘却出现收缩，二者不构成直接反例，而是提示企业净量、职业构成与入门流量是不同层次；将“再生是否外部化”收窄为需看入门流量、内部晋升、工资溢价与培训投入的联合校准，不新增 EX。 |
 | 2026-09-05T19:32:09+08:00 | CR-004 OTel 状态、转移与安全责任链 | refined | OTel 主分支仍只有 Development 状态的 agent/workflow/plan/tool spans；开放 PR #483 补状态 delta、#447 补部分转移拓扑，但二者仍不证明业务 post-state、授权/实际放行、handoff owner/ack 或 revoke/recovery；不新增 EX。 |
 | 2026-09-05T16:37:33+08:00 | EX-006 治理状态承载与动作边界 | refined | 四篇一手论文支持 context eviction/weakening/misbinding、compaction decay 和跨会话记忆污染，但不证明 OOB control plane 普遍必要；将 EX-006 收窄为“决策时状态完整性门 + 独立动作边界 enforcement”两门，不新增 EX。 |
 | 2026-09-05T15:32:07+08:00 | 动作授权与恢复的遥测字段 | refined | Microsoft、Google、AWS 形成动作控制面的结构重复；已有 incident/trace/审批/工具/缓解字段骨架，但仍缺 verdict/authorization/revoke/rollback/recovery 与 action-surface 分母，收窄 `EX-005`，不新增 EX。 |
 | 2026-09-05T14:32:55+08:00 | 自我改进变更对象与晋级门 | refined | `EX-007` 收窄为变更晋级的归因与不可自改写问题：行为组件需行为契约/线上复评，评估与目标组件需冻结外部 oracle，策略与执行组件需独立安全门；不与 `EX-004/006` 合并，不新增 EX。 |
-| 2026-09-05T13:40:57+08:00 | 判定之后的动作授权与恢复实测 | refined | OpenAI/HF 事件给出事故级的告警→响应→遏制/重建→再次暴露→批量停机链条；受控 HBHC、CommitGuard、ContainmentBench 说明指标可定义但不是部署证据。仍缺 verdict→actuation、撤销/回滚/MTTR 的统一事件字段与分母；收窄 `EX-005`，不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：核对 Ramp、Dallas Fed、Federal Reserve、Atlanta Fed 与 Census 一手劳动数据；确认企业净 headcount 增长、职业岗位/早期职业招聘收缩和管理者未来预期处于不同测量层，收窄劳动经济学校准问题为“企业扩张 × 职业构成 × 入门流量 × 再生代理”的交叉矩阵，不新增 EX
 - [[2026-09-05]] — open explore：核对 OTel 主分支与开放 PR #483/#447；确认 #483 只表达 runtime-owned state delta、#447 只补部分 tool/API transfer，二者均不闭合 business post-state、授权实际放行、handoff owner/ack 或 revoke/recovery，收窄 `CR-004`，不新增 EX
 - [[2026-09-05]] — open explore：核读 OTel GenAI agent/framework、GenAI spans 与 Trace API，并核对 guardrail PR #427；确认标准 trace 可枚举结构与局部 lineage，但不携带授权、实际副作用、恢复或交接语义，收窄 `CR-004`，不新增 EX
 - [[2026-09-05]] — open explore：核读 Ghost in the Context、Governance Decay、Hidden in Memory 与 Security-Recall Divergence；确认治理状态存在装配、压缩、跨会话和抑制性约束衰减，但四篇都没有证明 OOB control plane 普遍必要；将 `EX-006` 收窄为决策时状态完整性门 + 独立动作边界 enforcement，不新增 EX
