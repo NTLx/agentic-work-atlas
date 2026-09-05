@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T16:37:33+08:00
+updated: 2026-09-05T17:39:01+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -62,10 +62,10 @@ related_entities:
 - Priority: P1
 - Claim: Agent observability 的结构层可枚举、行为层只能竞速、意图层不应被当作可直接观测对象。
 - Gap: Boundary
-- Evidence: `raw/20260608-connector-observability-directory.md`、`raw/20260819-google-ai-evals-inspect-skill.md`；Anthropic 三案、OpenAI HF/第三方评测 URL；[Google DeepMind AI Control](https://deepmind.google/blog/securing-the-future-of-ai-agents/) 与 [Roadmap PDF](https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/securing-the-future-of-ai-agents/gdm-ai-control-roadmap.pdf)（均待 clip）
-- Evidence goal: 取得逐案事前阻断或 coverage/recall 数据，区分“仪器化闭包”的架构承诺与真实污染向量覆盖的实证。
-- Last checked: 2026-09-05T10:01:20 · refined
-- Next: clip+compile Google DeepMind AI Control 博客与 Roadmap；逐格核查运行时 action-surface、逐案阻断、coverage/recall 实测与事件级责任字段
+- Evidence: `raw/20260608-connector-observability-directory.md`、`raw/20260819-google-ai-evals-inspect-skill.md`；Anthropic 三案、OpenAI HF/第三方评测 URL；[Google DeepMind AI Control](https://deepmind.google/blog/securing-the-future-of-ai-agents/) 与 [Roadmap PDF](https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/securing-the-future-of-ai-agents/gdm-ai-control-roadmap.pdf)（均待 clip）；[OTel GenAI agent/framework 规范](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md) 与 [Trace API](https://opentelemetry.io/docs/specs/otel/trace/api/)（待 clip）
+- Evidence goal: 取得逐案事前阻断或 coverage/recall 数据，区分“仪器化闭包”的架构承诺与真实污染向量覆盖的实证，并核对标准 trace 是否足以重建 action-surface 与责任链。
+- Last checked: 2026-09-05T17:39:01 · refined
+- Next: clip+compile OTel GenAI agent/framework、通用 GenAI spans 与 Trace API；逐格核查原生 span/event/link 与 action-surface、verdict、authorization、actuation、revoke/recovery、review 字段的边界
 - Retry: new-source:google-deepmind-ai-control
 
 ### CR-005 · AI 采纳侵蚀专业能力再生
@@ -172,7 +172,7 @@ related_entities:
 | P0 | Harness 行为契约与保留测试区 | GitHub 案例显示离线评测漏掉并行回归，另有官方开发实践把只能由人改动的保留测试作为 contract gate；缺跨版本、跨产品的行为不变量与回滚记录 | new-source → EX-007 |
 | P1 | 生产 Agent fleet 的自修改纵向记录 | 缺 prompt/skill/router/evaluator 变更的 owner、版本、canary、回滚、隐藏 holdout 与质量/安全联合结果 | new-source → EX-007 |
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
-| P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
+| P1 | OTel GenAI 正式规范 | 已核读官方 agent/framework、GenAI spans 与 Trace API；现行语义仍为 Development，能记录局部 lineage 与 tool payload，但缺 authorization、post-state、revoke/recovery、handoff 和完整 action-surface 分母 | clip+compile → CR-004 |
 | P1 | Google DeepMind AI Control / live monitoring | 官方材料已定位 coverage、recall、响应时间与异步/同步阻断边界，缺逐案阻断或覆盖率实证 | clip/compile → CR-004 |
 | P1 | MCP 2026-07-28 无状态转折 | 传输层移除协议 session，但应用仍可用显式 handle、MRTR、业务 cache 和幂等键保留状态；缺 handle 绑定、TTL、撤销、replay、故障转移与事件谱系的迁移对照 | clip+compile → MCP Entity；new-source → `EX-005/006` / `CR-004` |
 | P1 | Agent 隐私对照 | 微软官方 least-privilege 已定位；新增 arXiv 2607.22611、AWS/KTern.AI 与 [Numezis 匿名 SME 案例](https://advisory.numezis.com/en/work/business-agent-platform-sme)，均待入 raw/source；EDPB Guidelines 02/2026 最终版未发布 | clip/compile → CR-002 |
@@ -196,14 +196,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T17:39:01+08:00 | CR-004 OTel GenAI 语义边界 | refined | OTel 可枚举 agent/workflow/plan/tool invocation、局部 lineage 和通用 error，但不能独立表达授权、实际 action effect、证据可访问性/解释、human handoff 或安全责任链；结构化 trace 不是 action-surface 闭包，不新增 EX。 |
 | 2026-09-05T16:37:33+08:00 | EX-006 治理状态承载与动作边界 | refined | 四篇一手论文支持 context eviction/weakening/misbinding、compaction decay 和跨会话记忆污染，但不证明 OOB control plane 普遍必要；将 EX-006 收窄为“决策时状态完整性门 + 独立动作边界 enforcement”两门，不新增 EX。 |
 | 2026-09-05T15:32:07+08:00 | 动作授权与恢复的遥测字段 | refined | Microsoft、Google、AWS 形成动作控制面的结构重复；已有 incident/trace/审批/工具/缓解字段骨架，但仍缺 verdict/authorization/revoke/rollback/recovery 与 action-surface 分母，收窄 `EX-005`，不新增 EX。 |
 | 2026-09-05T14:32:55+08:00 | 自我改进变更对象与晋级门 | refined | `EX-007` 收窄为变更晋级的归因与不可自改写问题：行为组件需行为契约/线上复评，评估与目标组件需冻结外部 oracle，策略与执行组件需独立安全门；不与 `EX-004/006` 合并，不新增 EX。 |
 | 2026-09-05T13:40:57+08:00 | 判定之后的动作授权与恢复实测 | refined | OpenAI/HF 事件给出事故级的告警→响应→遏制/重建→再次暴露→批量停机链条；受控 HBHC、CommitGuard、ContainmentBench 说明指标可定义但不是部署证据。仍缺 verdict→actuation、撤销/回滚/MTTR 的统一事件字段与分母；收窄 `EX-005`，不新增 EX。 |
-| 2026-09-05T12:32:07+08:00 | MCP 无状态转折 | refined | 2026-07-28 移除的是传输层 protocol session，不是应用状态；状态转为显式 handle、MRTR 和每请求元数据，新的验证对象是绑定、TTL、撤销、replay、幂等和事件谱系；不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：核读 OTel GenAI agent/framework、GenAI spans 与 Trace API，并核对 guardrail PR #427；确认标准 trace 可枚举结构与局部 lineage，但不携带授权、实际副作用、恢复或交接语义，收窄 `CR-004`，不新增 EX
 - [[2026-09-05]] — open explore：核读 Ghost in the Context、Governance Decay、Hidden in Memory 与 Security-Recall Divergence；确认治理状态存在装配、压缩、跨会话和抑制性约束衰减，但四篇都没有证明 OOB control plane 普遍必要；将 `EX-006` 收窄为决策时状态完整性门 + 独立动作边界 enforcement，不新增 EX
 - [[2026-09-05]] — open explore：核对 Microsoft Azure SRE Agent 审计/指标文档、Google SRE Gemini CLI 案例、AWS Agentic Incident Response PoC 与 Druva production case；确认权限、审批、执行、验证和审计存在跨厂商结构重复，但缺 verdict/authorization/revoke/rollback/recovery 与 action-surface 分母，收窄 `EX-005`，不新增 EX
 - [[2026-09-05]] — open explore：将 `EX-007` 从抽象独立闸门收窄为“变更对象→失败信号→晋级门”映射；行为组件需行为契约/线上复评，评估与目标组件需冻结外部 oracle，策略与执行组件需独立安全门；不与 `EX-004/006` 合并，不新增 EX
