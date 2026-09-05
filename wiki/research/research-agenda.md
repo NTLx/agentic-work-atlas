@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T08:33:05+08:00
+updated: 2026-09-05T10:01:20+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -64,8 +64,8 @@ related_entities:
 - Gap: Boundary
 - Evidence: `raw/20260608-connector-observability-directory.md`、`raw/20260819-google-ai-evals-inspect-skill.md`；Anthropic 三案、OpenAI HF/第三方评测 URL；[Google DeepMind AI Control](https://deepmind.google/blog/securing-the-future-of-ai-agents/) 与 [Roadmap PDF](https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/securing-the-future-of-ai-agents/gdm-ai-control-roadmap.pdf)（均待 clip）
 - Evidence goal: 取得逐案事前阻断或 coverage/recall 数据，区分“仪器化闭包”的架构承诺与真实污染向量覆盖的实证。
-- Last checked: 2026-09-05T04:01:23+08:00 · refined
-- Next: clip+compile Google DeepMind AI Control 博客与 Roadmap；核查运行时路径闭包、逐案同步阻断或 coverage/recall 实测数据
+- Last checked: 2026-09-05T10:01:20 · refined
+- Next: clip+compile Google DeepMind AI Control 博客与 Roadmap；逐格核查运行时 action-surface、逐案阻断、coverage/recall 实测与事件级责任字段
 - Retry: new-source:google-deepmind-ai-control
 
 ### CR-005 · AI 采纳侵蚀专业能力再生
@@ -191,14 +191,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T10:01:20 | Agent Observability 上界随层级变化 | refined | Google DeepMind 定义 coverage/recall/time-to-response 并报告百万任务监控原型，但未给逐案阻断或完整污染覆盖实测；收窄为“指标化控制面可观测性 ≠ 行为覆盖闭包”。 |
 | 2026-09-05T09:32:09+08:00 | Agent Safety 事件级证据连续性 | refined | 不同来源虽分别覆盖检测、授权、执行或恢复，但不能拼接为同一任务的安全闭环；下一步需用稳定事件标识对齐 `flag→verdict→authorization→actuation→revoke/recovery→review`，不新增 EX。 |
 | 2026-09-05T08:33:05+08:00 | Agent Safety Topic 边界 | refined | 现有安全 Entity/Source 可按“检测→判定→授权→执行→撤销/恢复”形成结构 Topic；五阶段对象、失败信号和候选责任角色可分，但 owner、action-surface、撤销/恢复指标仍未闭合，创建最小 `Agent-Security` 骨架，不新增 EX。 |
 | 2026-09-05T07:31:22+08:00 | Facilitator 升级与接收面 | refined | Google Cloud CCAI 将目标人、队列、等待/连接时长、转接失败和服务等级作为独立升级遥测；Google SecOps 参考架构把结构化汇总、迭代上限与报告回链分开。它们把“人能否接住”扩展为交接包 × 接收面，但仍无固定路由下的人类结果对照，不新增 EX。 |
 | 2026-09-05T07:00:28 | AI 监督 AI 共模误差下界 | no_delta | 定向复核 arXiv 2607.10139v3；shared-error floor 仍限定于特定 consensus/verifier、任务错误结构与 panel 条件，数学近零、GPQA/MMLU-Pro 非零；没有支持外推至所有 AI 监督形态的新边界。 |
-| 2026-09-05T06:00:32+08:00 | Agent 数据过度收集具有系统性 | no_delta | Numezis 页面仍只有约 6 个月匿名部署、按法人/客户文件隔离、无模型保留与 90 天运营对照；未提供读取量、上下文保留期、删除/TTL 或更长纵向数据，长期数据最小化缺口不变。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — recompile CR-004：Google DeepMind AI Control 定义 coverage/recall/time-to-response 并披露百万任务监控原型，但无逐案阻断或完整污染覆盖实测；将“指标化控制面可观测性”与“行为覆盖闭包”分开，refined
 - [[2026-09-05]] — open explore：将现有 Agent 安全 Entity/Source 映射为“检测→判定→授权→执行→撤销/恢复”五阶段 Topic 骨架；确认结构边界成立但 owner、action-surface、撤销/恢复仍缺实证，不新增 EX
 - [[2026-09-05]] — open explore：Google Cloud CCAI escalation telemetry 与 Google SecOps 架构把接收队列、转接失败、结构化汇总和迭代上限加入 handoff 分析；将 `EX-003` 收窄为“交接包 × 接收面”两层，不新增 EX
 - [[2026-09-05]] — recompile CR-003：复核 arXiv 2607.10139v3；shared-error floor 仍是任务错误结构与 consensus panel 条件量，不能外推至所有 AI 监督形态，no_delta
