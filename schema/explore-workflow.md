@@ -41,6 +41,14 @@ Skill 输出只能作为 reasoning：不能自动成为事实、Evidence、稳�
 也不能仅凭多个 Skill 的一致意见扩大 Research Agenda。Source 需求、反例方向和
 最小实验仍须按本文件及 `schema/research-module.md` 的边界写入。
 
+### Stable Wiki promotion 边界
+
+Open Explore 的生命周期 ownership 到 Research 为止。它可以形成
+`Promotion candidate`，例如记录目标稳定页、理由和 Evidence basis，但默认不得直接
+创建 `wiki/entities/*`、`wiki/topics/*` 或 `wiki/comparisons/*` 作为最终 promotion。
+稳定页的结构验收与写入继续复用 `compile` 或 `audit`；Explore 只发现候选，不独占
+stable knowledge promotion。
+
 ### Research metabolism
 
 开放 Explore 的成功标准是研究是否发生了有效代谢，而不是每轮新增 EX。一次
@@ -64,6 +72,18 @@ Explore 可以产生 `new_gap`、`refined`、`merged`、`retired` 或 `no_delta`
 
 真正正交的新 Gap 仍然可以创建，但正文 reasoning 必须回答：为什么不能并入最接近
 的既有 CR / EX；什么未来证据会迫使它重新合并回去。
+
+### Evidence debt preference
+
+当 Research 已经形成明确的 Source、直接相关的当前 Gap，以及足以推进该 Gap 的
+可执行 `P0` / `P1` `clip+compile` action 时，该项就是 actionable evidence debt。若
+继续 Explore 主要只会对同一个问题再生成一层 `refined` reasoning，默认优先完成
+Evidence ingestion，再回到 Explore 或 Recompile。
+
+这不是禁止 Explore 的硬计数器。Source 不可获取、新问题真正正交、尚需先澄清
+Source goal、用户明确要求探索，或新的外部事件改变问题时，仍可继续 Explore。研究
+代谢的成功不只看是否少建 EX，还要看是否推动了 Evidence ingestion、merge、retire
+或 stable knowledge 的后续验收。
 
 ### Claim Recompile 技能边界
 

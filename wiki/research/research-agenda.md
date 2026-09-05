@@ -199,7 +199,6 @@ related_entities:
 | 2026-09-05T11:31:49+08:00 | 证据可见性与检查策略 | refined | SkillTV-Bench 将环境可访问与主动检查策略分开：环境/工具本身不足，JudgeSkill 的 inspection plan/log 可能是中介；但其固定 gate 与 source-verifier 仍属 benchmark 内部闭环，不能替代外部 oracle。收窄 `EX-002/007`，不新增 EX。 |
 | 2026-09-05T10:32:18+08:00 | 验证器三门的可分性 | refined | `2604.07650` 测输出错误相关性，AJ-Bench 测环境证据取得/解释，AgentJudgeBench 与 AcquaBench 测 reference 与成功来源；三者可共用交叉矩阵但不能互相替代，下一步是固定任务与 trace 的三门 factorial 对照。 |
 | 2026-09-05T10:01:20 | Agent Observability 上界随层级变化 | refined | Google DeepMind 定义 coverage/recall/time-to-response 并报告百万任务监控原型，但未给逐案阻断或完整污染覆盖实测；收窄为“指标化控制面可观测性 ≠ 行为覆盖闭包”。 |
-| 2026-09-05T09:32:09+08:00 | Agent Safety 事件级证据连续性 | refined | 不同来源虽分别覆盖检测、授权、执行或恢复，但不能拼接为同一任务的安全闭环；下一步需用稳定事件标识对齐 `flag→verdict→authorization→actuation→revoke/recovery→review`，不新增 EX。 |
 
 ## 思考日志索引
 

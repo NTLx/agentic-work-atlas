@@ -26,7 +26,7 @@ Research 模块的核心设计原则：**操作层紧凑，详情归档**。
 
 - **research-agenda.md** 是定时 Claim Recompile Agent 的输入文件，必须同时满足：≤300 行、≤60 KB、最长单行 ≤600 字符。只保留操作节和索引；解释 Delta 所需的详情进入日志。
 - **research-logs/** 存放证据、关键推理和结果构成的紧凑判定链，按日期拆分，按需查阅；不保存 Skill transcript。
-- **最近思考结论摘要**：agenda 内维护一张表格（最近 5 条结论精华），作为 cron Agent 的短期记忆桥接，避免重复探索已收敛的问题。
+- **最近思考结论摘要**：agenda 内维护一张表格（最近 5 条结论精华），作为 cron Agent 的短期记忆桥接，避免重复探索已收敛的问题；超过 5 条由 `wiki-lint` 作为阻断问题检查。
 
 ## Claim Recompile Queue
 
@@ -47,7 +47,9 @@ Research 模块的核心设计原则：**操作层紧凑，详情归档**。
 - Retry: now | YYYY-MM-DD | new-source:<目标>
 ```
 
-选择规则：`Status: ready`、Retry 条件已满足、最近未检查、再按优先级与 `Last checked` 最旧者选择；`blocked` 必须写明恢复条件。具体选择与可行动条件判定以 `schema/recompile-workflow.md` 为准。
+选择规则：先按 `schema/recompile-workflow.md` 的 Retry hard gate 过滤，再保留
+`Status: ready` 且当前动作可执行的 Claim，最后按优先级与 `Last checked` 最旧者选择；
+`blocked` 必须写明恢复条件。具体选择与可行动条件判定以该工作流为准。
 
 ## Recompile Delta
 

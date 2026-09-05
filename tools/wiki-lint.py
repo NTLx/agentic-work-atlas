@@ -38,6 +38,8 @@ WIKI = ROOT / "wiki"
 RAW = ROOT / "raw"
 INDEX = ROOT / "index.md"
 LINT_REPORT = WIKI / "lint-report.md"
+RECENT_SUMMARY_TITLE = "## 最近思考结论摘要"
+RECENT_SUMMARY_MAX_ROWS = 5
 
 COUNT_LABELS = {
     "Entity 页面": ("entities", WIKI / "entities"),
@@ -234,6 +236,62 @@ def target_exists(target: str, stems: set[str], rels: set[str]) -> bool:
 
 def line_number(text: str, pos: int) -> int:
     return text.count("\n", 0, pos) + 1
+
+
+def is_table_separator(line: str) -> bool:
+    cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+    return bool(cells) and all(re.fullmatch(r":?-{3,}:?", cell) for cell in cells)
+
+
+def check_recent_research_summary(path: Path | None = None) -> list[Issue]:
+    """Block research agendas whose recent-summary table exceeds five rows."""
+
+    agenda = path or WIKI / "research" / "research-agenda.md"
+    if not agenda.is_file():
+        return []
+
+    lines = agenda.read_text(encoding="utf-8", errors="replace").splitlines()
+    heading_index = next(
+        (index for index, line in enumerate(lines) if line.strip() == RECENT_SUMMARY_TITLE),
+        None,
+    )
+    if heading_index is None:
+        return []
+
+    table_started = False
+    header_seen = False
+    separator_seen = False
+    data_rows: list[int] = []
+
+    for index in range(heading_index + 1, len(lines)):
+        stripped = lines[index].strip()
+        if not table_started:
+            if not stripped:
+                continue
+            if not stripped.startswith("|"):
+                break
+            table_started = True
+        if not stripped or not stripped.startswith("|"):
+            break
+        if not header_seen:
+            header_seen = True
+        elif not separator_seen:
+            if not is_table_separator(stripped):
+                break
+            separator_seen = True
+        else:
+            data_rows.append(index + 1)
+
+    if len(data_rows) <= RECENT_SUMMARY_MAX_ROWS:
+        return []
+    return [
+        Issue(
+            "research-summary",
+            agenda,
+            data_rows[RECENT_SUMMARY_MAX_ROWS],
+            "research recent-summary exceeds 5 rows",
+        )
+    ]
 
 
 def check_frontmatter_and_dates(paths: Iterable[Path]) -> list[Issue]:
@@ -730,6 +788,7 @@ def collect_issues(
     paths = markdown_files()
     issues: list[Issue] = []
     issues.extend(check_frontmatter_and_dates(paths))
+    issues.extend(check_recent_research_summary())
     issues.extend(check_hidden_chars(paths))
     issues.extend(check_dollars(paths))
     issues.extend(check_wikilinks(wiki_link_files()))
@@ -858,6 +917,7 @@ def render_report(
         "entity",
         "comparison",
         "index",
+        "research-summary",
         "registry-consistency",
     ):
         lines.append(f"| `{category}` | {len(grouped.get(category, []))} |")

@@ -138,6 +138,51 @@ source_raw:
     assert not issues
 
 
+def test_recent_research_summary_allows_zero_to_five_rows(tmp_path):
+    wiki_lint = load_wiki_lint()
+    agenda = tmp_path / "wiki" / "research" / "research-agenda.md"
+
+    for count in (0, 5):
+        rows = "\n".join(
+            f"| 2026-06-{index + 1:02d} | Claim {index} | refined | note |"
+            for index in range(count)
+        )
+        agenda.parent.mkdir(parents=True, exist_ok=True)
+        agenda.write_text(
+            "## 最近思考结论摘要\n\n"
+            "| 时间 | Claim | Delta | 摘要 |\n"
+            "|---|---|---|---|\n"
+            f"{rows}\n",
+            encoding="utf-8",
+        )
+
+        assert wiki_lint.check_recent_research_summary(agenda) == []
+
+
+def test_recent_research_summary_over_five_rows_is_blocking(tmp_path):
+    wiki_lint = load_wiki_lint()
+    agenda = tmp_path / "wiki" / "research" / "research-agenda.md"
+    rows = "\n".join(
+        f"| 2026-06-{index + 1:02d} | Claim {index} | refined | note |"
+        for index in range(6)
+    )
+    agenda.parent.mkdir(parents=True, exist_ok=True)
+    agenda.write_text(
+        "## 最近思考结论摘要\n\n"
+        "| 时间 | Claim | Delta | 摘要 |\n"
+        "|---|---|---|---|\n"
+        f"{rows}\n",
+        encoding="utf-8",
+    )
+
+    issues = wiki_lint.check_recent_research_summary(agenda)
+
+    assert len(issues) == 1
+    assert issues[0].category == "research-summary"
+    assert issues[0].blocking
+    assert issues[0].message == "research recent-summary exceeds 5 rows"
+
+
 def test_stale_core_pages_are_non_blocking_maintenance_signals(tmp_path):
     wiki_lint = load_wiki_lint()
     core = write_note(

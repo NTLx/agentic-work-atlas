@@ -171,7 +171,7 @@ git status --short
 
 1.2 可行动条件
 
-优先选择同时满足以下条件的 Claim：
+Retry 过滤完成后，优先选择同时满足以下条件的 Claim：
 
 - 已经有明确问题或缺口；
 - 当前存在可以执行的下一动作；
@@ -192,6 +192,41 @@ git status --short
 直接结束。
 
 不创建空日志，不制造 commit。
+
+### 1.3 Retry eligibility hard gate
+
+`Status: ready` 只表示 Claim 尚未结束，不表示本轮一定可执行。候选集必须先按
+Retry 过滤，再检查状态与动作可执行性，最后才按 Priority 和 `Last checked` 排序：
+
+```text
+Claim Queue
+↓ Retry filter
+↓ Status/actionability filter
+↓ Priority
+↓ Last checked
+↓ SELECT one
+```
+
+因此本轮的资格条件是：
+
+```text
+Eligible = Status: ready
+           AND Retry condition satisfied
+           AND current action is executable
+```
+
+Retry 语义只有以下三类：
+
+- `Retry: now`：立即满足。
+- `Retry: YYYY-MM-DD`：以本轮当前日期判断；当前日期达到或超过该日期时满足。
+- `Retry: new-source:<target>`：只有目标对应的知识状态发生了真实变化才满足，例如目标
+  Source 新增到 `raw/` 或 `wiki/sources/`，或对应 Registry / Source Summary 记录发生了
+  新状态，或出现明确的新版本/新一手材料。重新搜索、重新打开或再次引用同一个 URL
+  不算满足；“Next”中写了 `clip+compile` 也不算已经完成。
+
+Retry 未满足的 Claim 在本轮是 `ineligible`，不得先按 Priority 选中再在后续步骤跳过，
+也不应为它创建日志或 `no_delta` commit。`blocked`、没有可执行动作或没有任何
+Retry 满足项时，本次无可行动 Claim，直接退出。
 
 ---
 
@@ -249,6 +284,22 @@ execution；不得把失败改成 `Skill: none` 或模拟 Skill。
 一旦一个 Action 已足以产生 Delta，就进入 "SETTLE"。
 
 如果 Action 暴露出新的不同 Gap，把它记入 "Next"，交给后续运行。
+
+### Action / Skill consistency
+
+本轮的日志、实际执行和 Skill 使用必须共同表示同一个唯一 Action。`Skill` 字段只在
+实际 execution context 获得并执行了该 Skill 的 authoritative instructions 时记录；
+只读过 Skill 以评估兼容性时不记录为已使用。
+
+- `Action: evidence_search`：本轮只寻找、核验和提取 Evidence，默认记录
+  `Skill: none`。只有 Runtime 中存在明确以 Evidence retrieval 为方法的真实 Skill，且
+  本轮实际执行的唯一动作就是该检索方法时，才可记录该 Skill。不得在同一轮偷偷执行
+  `reasoning_operator`。
+- `Action: reasoning_operator`：才允许执行与当前 Gap 兼容的 headless reasoning Skill，
+  每轮最多一个；没有合适 Skill 时记录 `Skill: none`，不得模拟其方法。
+
+如果 evidence search 暴露出需要 Boundary、Mechanism 或其他新的 reasoning bottleneck，
+记录 `New bottleneck` 并结束本轮，下一次运行再重新选择 `reasoning_operator`。
 
 ---
 
@@ -310,6 +361,10 @@ Missing: [需要什么材料]
 本轮选择 "evidence_search" 后，不再选择 reasoning operator。实际 execution
 context 返回 Evidence package；Orchestrator 只观察、审查和结算，不在同一 Action
 中追加另一种动作。
+
+`evidence_search` 的默认日志因此是 `Action: evidence_search`、`Skill: none`；若使用
+检索 Skill，必须是实际执行过的、只服务于本轮 Evidence goal 的 Skill，而不是
+`ljg-think-recompile` 等 reasoning operator。
 
 如果搜索结果暴露了新的解释问题，把它写入 "Next"。
 
@@ -512,7 +567,8 @@ Synthesized 判断只留 Research。
 
 promotion candidate
 
-本任务到此为止。
+stable page 的最终验收交给 `compile` 或 `audit`；Research / recompile 只记录候选，
+不把 reasoning 直接晋升为稳定知识。
 
 ---
 
