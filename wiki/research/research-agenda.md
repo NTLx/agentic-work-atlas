@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-06T01:33:20+08:00
+updated: 2026-09-06T02:31:58+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -109,7 +109,7 @@ related_entities:
 | P0 | Agent 安全 Topic 建设 | 五阶段骨架已起草；下一步以事件级标识对齐 `flag → verdict → authorization → actuation → revoke/recovery → review`，逐格核验 `owner / action-surface`，不把结构地图当作安全效果证据；不由 recompile 执行 |
 | P0 | 验证器危机研究线 | 按独立性四轴、证据覆盖/解释能力与 reference integrity 建立矩阵，再 clip AgentJudgeBench、Anthropic 三案与 Astra 官方材料 |
 | P0 | 劳动经济学实证 | 先按“企业净 headcount × 职业/入门流量 × 再生代理”建立校准骨架；不要用企业扩张直接抵消入门招聘收缩 |
-| P1 | MCP 无状态转折 | 先区分传输层去 session 与应用层状态迁移；核对显式 handle、MRTR、每请求元数据、幂等/撤销/replay 与事件谱系，再更新 MCP Entity |
+| P1 | MCP 无状态转折 | 已确认 2026-07-28 去掉的是协议层 session，不是应用状态：显式 handle、Tasks durable state、MRTR 与 cache 重新承载状态；下一步核对 handle/task 的主体绑定、TTL、撤销、replay、故障转移与 effect lineage，再更新 MCP Entity |
 | P1 | AI 时代设计方法论对照 | 初步支持设计对象扩展到模型/系统行为、反馈/控制和可执行工作流；Anthropic 有团队案例，Google/Microsoft 目前只有方法指南；下一步补当前负责人/团队材料与责任、返工、反馈时延字段 |
 | P2 | Topic 与复核队列代谢 | 处理无承载 Entity 簇和疑似重复项，不继续制造新定理 |
 
@@ -179,7 +179,7 @@ related_entities:
 | P0 | 劳动经济学代表性与预期偏差 | Atlanta Fed 近 6,000 家四国企业调查显示过去三年影响有限、未来预期生产率上升而就业下降；缺与实际招聘流量的同窗校准 | clip+compile Atlanta Fed Firm Data on AI；区分 realized / expected / platform-selected evidence |
 | P1 | OTel GenAI 正式规范与开放提案 | 主分支仍为 Development，缺 authorization、post-state、revoke/recovery 和完整 action-surface 分母；PR #483 仅提议 state delta，PR #447 仅提议部分 tool/API transfer，均仍 Open | clip+compile → CR-004；补官方 conformance/实现测试 → CR-004 |
 | P1 | Google DeepMind AI Control / live monitoring | 官方材料已定位 coverage、recall、响应时间与异步/同步阻断边界，缺逐案阻断或覆盖率实证 | clip/compile → CR-004 |
-| P1 | MCP 2026-07-28 无状态转折 | 传输层移除协议 session，但应用仍可用显式 handle、MRTR、业务 cache 和幂等键保留状态；缺 handle 绑定、TTL、撤销、replay、故障转移与事件谱系的迁移对照 | clip+compile → MCP Entity；new-source → `EX-005/006` / `CR-004` |
+| P1 | MCP 2026-07-28 无状态转折 | 一手规范确认状态从 transport session 分散到显式 handle、Tasks store、MRTR request state、cache 与 per-request metadata；Tasks 取消仍是最终一致且协作式，缺生产级 handle/task 主体绑定、TTL/撤销/replay、故障转移与 effect lineage 对照 | clip+compile → MCP Entity；new-source → `EX-005/006` / `CR-004` |
 | P0 | Anthropic 设计负责人一手公开文本 | 官方 Product Design team case study 支持代码化原型、系统状态与 edge-case 设计，但缺 Jenny Wen / Joel Lewenstein 对模型行为、反馈、工作流和责任边界的直接说明 | clip+compile → AI-Era-Designer-Role |
 | P0 | Google Gemini / DeepMind 当前设计团队材料 | Google PAIR 支持反馈、控制与模型行为是设计对象，但不是当前 Gemini/DeepMind 产品团队的实际工作流或结果证据 | new-source → AI-Era-Designer-Role |
 | P0 | Microsoft AI / Copilot 当前设计团队材料 | Microsoft Research 的 2019 指南与 2026 Agent 设计基础支持 inference、错误、控制与长期行为设计，但缺当前组织分工、上线控制与反馈闭环 | new-source → AI-Era-Designer-Role |
@@ -205,14 +205,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-06T02:31:58+08:00 | MCP 2026-07-28 无状态转折 | refined | 去除协议 session 只消除了传输层粘性；显式 handle、Tasks durable state、MRTR 与 cache 重新分配了状态责任。Tasks 的 cancel ack 不保证停工或最终 `cancelled`，且 task 状态不等于下游 effect；暂不新增 EX，先补 handle/task 的绑定、TTL、撤销、replay、故障转移与 effect lineage 证据。 |
 | 2026-09-06T01:33:20+08:00 | EX-007 自我改进 Agent 的变更晋级 | refined | HELIX 支持用 recipe/lockfile/trace/verifier 保留 intervention identity，并用配对轨迹发现“目标通过但回归”和“代码干净但语义错误”；Evo-Harness 显示自生成反馈可低于不演化基线，环境反馈的粒度会改变结果；Anthropic AAR 的 hidden holdout/独立 evaluator 能隔离部分作弊但事后监控仍非完整安全门。EX-007 收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX。 |
 | 2026-09-06T00:39:36+08:00 | EX-005 撤销后的在途动作与效果收敛 | refined | MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 的一手材料显示凭据/任务失效、在途停止、提交状态不确定和效果对账/补偿具有不同对象与时序；新增 `commit-state uncertainty` 子门。控制面终态不证明 post-state 收敛；不新增 EX。 |
 | 2026-09-05T23:35:35+08:00 | AI 时代设计方法论对照 | partial | Anthropic 团队案例支持设计—工程工作流进入代码、系统状态和可交互原型；Google PAIR 与 Microsoft Research 支持将反馈/控制、模型行为/错误纳入设计对象，但二者较旧且非当前产品团队材料；不证明判断/责任已成为跨公司主要瓶颈，不新增 EX。 |
 | 2026-09-05T22:32:45+08:00 | EX-005 撤销、在途执行与外部效果 | refined | ACRFence 显示 checkpoint-restore 可重放外部副作用，HBHC 仅保证有界阻断未来调用；Google/Microsoft/AWS 材料显示撤销传播、应用 session、既有连接和恢复具有不同时间语义。将 `EX-005` 收窄为 `authority stop`、`in-flight stop`、`effect reconciliation` 三层，不新增 EX。 |
-| 2026-09-05T21:35:29+08:00 | EX-004 reference integrity 与 success provenance | refined | AgentJudgeBench 提供 standard/without/corrupted-GT 的 reference 对照，AcquaBench 提供 CLEAN/GOLD/SHAM 的目标值替换；前者依赖程序化 reference，后者四个 action channel 共享 evidence store。两门可分别审计，但尚无同一 task/trace 上结合 verifier independence、evidence visibility 与外部 oracle 的交叉实验；不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-06]] — open explore：核对 MCP 2026-07-28 正式规范、Tasks extension、C# SDK stateless 文档与 SEP-2549；确认去除的是协议层 session，状态被转移到显式 handle、Tasks store、MRTR request state、cache 和 per-request metadata，且 Tasks cancel 仍是协作式/最终一致；新增 handle/task 绑定、TTL、撤销、replay、故障转移与 effect lineage 的 Source 需求，不新增 EX
 - [[2026-09-06]] — open explore：核对 HELIX、Evo-Harness 与 Anthropic Automated Researcher/Weak-to-Strong Researcher；确认 recipe/trace 只能解决 intervention identity，环境 feedback 的来源与粒度会改变演化结果，hidden holdout/独立 evaluator 仍不能替代不可改写 control plane 与安全复评；将 `EX-007` 收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX
 - [[2026-09-06]] — open explore：补查 MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 一手材料；确认凭据/任务失效、在途停止、提交状态不确定与效果对账/补偿具有不同对象和时序，新增 `commit-state uncertainty` 作为 `EX-005` 子门，不新增 EX
 - [[2026-09-05]] — open explore：核对 Anthropic Product Design team、Claude Design、Google PAIR 与 Microsoft Research/Agent design foundations 一手材料；初步支持设计对象扩展到模型/系统行为、反馈/控制和可执行工作流，但当前材料不足以证明判断/责任已成为跨公司主要瓶颈，结果 `partial`，不新增 EX
