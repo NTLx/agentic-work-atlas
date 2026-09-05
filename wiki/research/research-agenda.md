@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T22:32:45+08:00
+updated: 2026-09-05T23:35:35+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -110,7 +110,7 @@ related_entities:
 | P0 | 验证器危机研究线 | 按独立性四轴、证据覆盖/解释能力与 reference integrity 建立矩阵，再 clip AgentJudgeBench、Anthropic 三案与 Astra 官方材料 |
 | P0 | 劳动经济学实证 | 先按“企业净 headcount × 职业/入门流量 × 再生代理”建立校准骨架；不要用企业扩张直接抵消入门招聘收缩 |
 | P1 | MCP 无状态转折 | 先区分传输层去 session 与应用层状态迁移；核对显式 handle、MRTR、每请求元数据、幂等/撤销/replay 与事件谱系，再更新 MCP Entity |
-| P1 | AI 时代设计方法论对照 | 至少补两份其他实验室设计负责人访谈再判断共识 |
+| P1 | AI 时代设计方法论对照 | 初步支持设计对象扩展到模型/系统行为、反馈/控制和可执行工作流；Anthropic 有团队案例，Google/Microsoft 目前只有方法指南；下一步补当前负责人/团队材料与责任、返工、反馈时延字段 |
 | P2 | Topic 与复核队列代谢 | 处理无承载 Entity 簇和疑似重复项，不继续制造新定理 |
 
 ## 开放探索候选
@@ -180,6 +180,10 @@ related_entities:
 | P1 | OTel GenAI 正式规范与开放提案 | 主分支仍为 Development，缺 authorization、post-state、revoke/recovery 和完整 action-surface 分母；PR #483 仅提议 state delta，PR #447 仅提议部分 tool/API transfer，均仍 Open | clip+compile → CR-004；补官方 conformance/实现测试 → CR-004 |
 | P1 | Google DeepMind AI Control / live monitoring | 官方材料已定位 coverage、recall、响应时间与异步/同步阻断边界，缺逐案阻断或覆盖率实证 | clip/compile → CR-004 |
 | P1 | MCP 2026-07-28 无状态转折 | 传输层移除协议 session，但应用仍可用显式 handle、MRTR、业务 cache 和幂等键保留状态；缺 handle 绑定、TTL、撤销、replay、故障转移与事件谱系的迁移对照 | clip+compile → MCP Entity；new-source → `EX-005/006` / `CR-004` |
+| P0 | Anthropic 设计负责人一手公开文本 | 官方 Product Design team case study 支持代码化原型、系统状态与 edge-case 设计，但缺 Jenny Wen / Joel Lewenstein 对模型行为、反馈、工作流和责任边界的直接说明 | clip+compile → AI-Era-Designer-Role |
+| P0 | Google Gemini / DeepMind 当前设计团队材料 | Google PAIR 支持反馈、控制与模型行为是设计对象，但不是当前 Gemini/DeepMind 产品团队的实际工作流或结果证据 | new-source → AI-Era-Designer-Role |
+| P0 | Microsoft AI / Copilot 当前设计团队材料 | Microsoft Research 的 2019 指南与 2026 Agent 设计基础支持 inference、错误、控制与长期行为设计，但缺当前组织分工、上线控制与反馈闭环 | new-source → AI-Era-Designer-Role |
+| P1 | 跨公司设计结果对照 | 缺 feedback latency、原型—上线周期、返工/事故、模型/产品改动链与责任 owner 的同口径记录 | new-source → AI-Era-Designer-Role |
 | P1 | Agent 隐私对照 | 微软官方 least-privilege 已定位；新增 arXiv 2607.22611、AWS/KTern.AI 与 [Numezis 匿名 SME 案例](https://advisory.numezis.com/en/work/business-agent-platform-sme)，均待入 raw/source；EDPB Guidelines 02/2026 最终版未发布 | clip/compile → CR-002 |
 | P1 | 专业能力再生反例 | 缺高采纳且训练能力不降的纵向案例 | clip/compile → CR-005 |
 | P2 | 全球南方 AI 生态 | 缺已长期运行且能报告本地制度/评价标准与部署结果的一手材料；现有 NITI Arezzo 仅为试点，BharatGen 尚未公共/机构部署 | new-source → CR-007 |
@@ -201,14 +205,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T23:35:35+08:00 | AI 时代设计方法论对照 | partial | Anthropic 团队案例支持设计—工程工作流进入代码、系统状态和可交互原型；Google PAIR 与 Microsoft Research 支持将反馈/控制、模型行为/错误纳入设计对象，但二者较旧且非当前产品团队材料；不证明判断/责任已成为跨公司主要瓶颈，不新增 EX。 |
 | 2026-09-05T22:32:45+08:00 | EX-005 撤销、在途执行与外部效果 | refined | ACRFence 显示 checkpoint-restore 可重放外部副作用，HBHC 仅保证有界阻断未来调用；Google/Microsoft/AWS 材料显示撤销传播、应用 session、既有连接和恢复具有不同时间语义。将 `EX-005` 收窄为 `authority stop`、`in-flight stop`、`effect reconciliation` 三层，不新增 EX。 |
 | 2026-09-05T21:35:29+08:00 | EX-004 reference integrity 与 success provenance | refined | AgentJudgeBench 提供 standard/without/corrupted-GT 的 reference 对照，AcquaBench 提供 CLEAN/GOLD/SHAM 的目标值替换；前者依赖程序化 reference，后者四个 action channel 共享 evidence store。两门可分别审计，但尚无同一 task/trace 上结合 verifier independence、evidence visibility 与外部 oracle 的交叉实验；不新增 EX。 |
 | 2026-09-05T20:31:48+08:00 | 劳动经济学企业扩张与职业入口 | refined | Ramp 的高强度采用者两年后 headcount 与入门 headcount 同时增长；Dallas Fed/Census 的职业暴露与早期职业招聘却出现收缩，二者不构成直接反例，而是提示企业净量、职业构成与入门流量是不同层次；将“再生是否外部化”收窄为需看入门流量、内部晋升、工资溢价与培训投入的联合校准，不新增 EX。 |
 | 2026-09-05T19:32:09+08:00 | CR-004 OTel 状态、转移与安全责任链 | refined | OTel 主分支仍只有 Development 状态的 agent/workflow/plan/tool spans；开放 PR #483 补状态 delta、#447 补部分转移拓扑，但二者仍不证明业务 post-state、授权/实际放行、handoff owner/ack 或 revoke/recovery；不新增 EX。 |
-| 2026-09-05T16:37:33+08:00 | EX-006 治理状态承载与动作边界 | refined | 四篇一手论文支持 context eviction/weakening/misbinding、compaction decay 和跨会话记忆污染，但不证明 OOB control plane 普遍必要；将 EX-006 收窄为“决策时状态完整性门 + 独立动作边界 enforcement”两门，不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：核对 Anthropic Product Design team、Claude Design、Google PAIR 与 Microsoft Research/Agent design foundations 一手材料；初步支持设计对象扩展到模型/系统行为、反馈/控制和可执行工作流，但当前材料不足以证明判断/责任已成为跨公司主要瓶颈，结果 `partial`，不新增 EX
 - [[2026-09-05]] — open explore：核对 ACRFence、HBHC、Google IAM propagation、Microsoft Entra emergency revocation、GitHub May availability report 与 AWS Agentic AI/DevOps containment；确认权限停止、在途连接停止和已提交外部效果收敛具有不同时间/对象语义，收窄 `EX-005` 为三层恢复门，不新增 EX
 - [[2026-09-05]] — open explore：核对 Ramp、Dallas Fed、Federal Reserve、Atlanta Fed 与 Census 一手劳动数据；确认企业净 headcount 增长、职业岗位/早期职业招聘收缩和管理者未来预期处于不同测量层，收窄劳动经济学校准问题为“企业扩张 × 职业构成 × 入门流量 × 再生代理”的交叉矩阵，不新增 EX
 - [[2026-09-05]] — open explore：核对 AgentJudgeBench、AcquaBench、ABC、GeneBench、OpenAI coding audits、τ³-bench 与 ELT-Bench-Verified；确认 reference integrity 与 success provenance 有分别操纵/审计证据，但缺 verifier independence × evidence visibility × external oracle 的同 trace 交叉设计，收窄 `EX-004`，不新增 EX
