@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T13:40:57+08:00
+updated: 2026-09-05T14:32:55+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -122,7 +122,7 @@ related_entities:
 | EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench 的 C3 显示 judge 可能只锚定 reference block，且其 programmatic reference 与单标注者人类判断在语义等价处有差异；AcquaBench 则操纵正确目标可得性与匹配的错误 source exposure。两者应暂视为耦合但不可替代的两个子门，尚未有交叉因果证据；refined | 固定 trace 随机化无/正确/语义等价/错误 reference，或固定 reference 随机化 CLEAN/GOLD/SHAM；若 judge/score 与 human adjudication 不变，或差异可由 EX-001/EX-002 解释，则收窄或并回 | clip+compile AgentJudgeBench、AcquaBench、ABC、GeneBench、OpenAI coding audit、tau3、ELT-Bench-Verified；审查代码/数据与公式—案例对应关系；先做 `reference condition × information provenance × verifier independence` 交叉表，再寻找真实/可回放第二案例 |
 | EX-005 | 在检测与判定都正确时，动作授权、独立执行点与撤销/恢复时限是否仍构成 Agent 安全的独立必要门？ | FORGE/OAP 两条实现线均把确定性 pre-action reference monitor 与模型判断分开，并在受控任务中降低越权；OpenAI/HF 事件提供事故级授权、遏制、重建、再次暴露与批量停机链条，但没有统一 verdict→actuation、撤销、回滚或 MTTR 分母；refined | 在同一 trace、verdict、工具 schema 与负载下随机化 prompt-only、模型 guard、确定性 reference monitor 与 monitor+rollback；若固定 verdict 后无 enforcement 残差，或所有差异由检测/升级解释，则并回 CR-004/EX-003/普通 IAM | clip+compile FORGE/OAP/Janus 与 [OpenAI/HF 事件材料](https://openai.com/index/hugging-face-incident-and-the-road-ahead/)；寻找独立复现、token TTL、撤销耗时、回滚成功率和完整 incident trace；按风险/可逆性区分同步阻断与异步复核 |
 | EX-006 | 高影响/不可逆动作的治理约束，是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达决策/执行边界，而非普通 token-stream 文本？ | Governance Decay/Ghost in the Context 将 policy-carriage 拆为存在、语义健全和绑定正确；Sleeper Memory Poisoning 显示记忆可成为跨会话延迟攻击通道；现有结果主要是受控/模拟，且固定装配器下未稳定产生越权动作；synthesized | 若受保护 token/pinning + preflight + action guard 在同任务、同 trace、同负载下与外部 control plane 在状态完整性、越权动作、延迟和可用性上等效，或高风险 token-only 生产系统长期无 carriage failure，则削弱独立控制面命题 | clip+compile 四篇一手研究；建立 policy owner—provenance—binding—budget—survival—action-boundary—fail-closed 字段矩阵，并与 EX-005 / CR-004 / CR-002 合并判定边界 |
-| EX-007 | 自我改进 Agent 是否需要独立的变更闸门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | GitHub 一手案例显示普通离线质量门可漏掉 prompt 引起的并行行为回归；SkillTV-Bench 的 disjoint evolution split 与固定开发 gate 说明“候选选择可审计”，但 gate 仍共享 benchmark 的 source-verifier 与任务构造，不能替代外部 oracle；因此仍需区分行为契约门与独立归因/安全门；refined | 若固定 oracle/policy、隐藏任务和独立复评后，内部 gate 的提升稳定复现且回放/安全结果不变，则削弱独立外部门；若 JudgeSkill 只在 source-verifier 上提升、外部 adjudication 或 reference 扰动下不提升，则强化共变风险 | new-source → EX-007；寻找保留测试/行为契约、离线→在线差异、独立复评与生产 rollback 的一手记录，并把 SkillTV 作为“内部 gate 有效但不等于外部有效”的对照 |
+| EX-007 | 自我改进 Agent 的变更晋级是否需要按变更对象分层的不可自证门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | 本地材料显示三类对象不能共用一个 gate：行为组件可能出现结果不变但并行/停止/副作用顺序回归；评估/目标组件可能因 benchmark 内部适配抬高分数；策略/执行组件可能绕过安全边界。固定开发 gate 可审计候选选择，但不等于外部真值或安全保证；refined | 若固定模型/任务后，行为契约能捕获所有行为组件线上残差；若评估/目标共变仍能在冻结外部 oracle、hidden holdout 和独立安全复评上稳定复现；或所有残差最终可由 `EX-004/006` 解释，则削弱或合并 `EX-007` | new-source → EX-007；先补 SkillTV/第二个行为回归案例，再寻找同一变更的 offline→online、独立复评、policy 冻结与 rollback 记录；没有新证据前不再抽象第四类 gate |
 
 ## Source 需求队列
 
@@ -194,14 +194,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T14:32:55+08:00 | 自我改进变更对象与晋级门 | refined | `EX-007` 收窄为变更晋级的归因与不可自改写问题：行为组件需行为契约/线上复评，评估与目标组件需冻结外部 oracle，策略与执行组件需独立安全门；不与 `EX-004/006` 合并，不新增 EX。 |
 | 2026-09-05T13:40:57+08:00 | 判定之后的动作授权与恢复实测 | refined | OpenAI/HF 事件给出事故级的告警→响应→遏制/重建→再次暴露→批量停机链条；受控 HBHC、CommitGuard、ContainmentBench 说明指标可定义但不是部署证据。仍缺 verdict→actuation、撤销/回滚/MTTR 的统一事件字段与分母；收窄 `EX-005`，不新增 EX。 |
 | 2026-09-05T12:32:07+08:00 | MCP 无状态转折 | refined | 2026-07-28 移除的是传输层 protocol session，不是应用状态；状态转为显式 handle、MRTR 和每请求元数据，新的验证对象是绑定、TTL、撤销、replay、幂等和事件谱系；不新增 EX。 |
 | 2026-09-05T11:31:49+08:00 | 证据可见性与检查策略 | refined | SkillTV-Bench 将环境可访问与主动检查策略分开：环境/工具本身不足，JudgeSkill 的 inspection plan/log 可能是中介；但其固定 gate 与 source-verifier 仍属 benchmark 内部闭环，不能替代外部 oracle。收窄 `EX-002/007`，不新增 EX。 |
 | 2026-09-05T10:32:18+08:00 | 验证器三门的可分性 | refined | `2604.07650` 测输出错误相关性，AJ-Bench 测环境证据取得/解释，AgentJudgeBench 与 AcquaBench 测 reference 与成功来源；三者可共用交叉矩阵但不能互相替代，下一步是固定任务与 trace 的三门 factorial 对照。 |
-| 2026-09-05T10:01:20 | Agent Observability 上界随层级变化 | refined | Google DeepMind 定义 coverage/recall/time-to-response 并报告百万任务监控原型，但未给逐案阻断或完整污染覆盖实测；收窄为“指标化控制面可观测性 ≠ 行为覆盖闭包”。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：将 `EX-007` 从抽象独立闸门收窄为“变更对象→失败信号→晋级门”映射；行为组件需行为契约/线上复评，评估与目标组件需冻结外部 oracle，策略与执行组件需独立安全门；不与 `EX-004/006` 合并，不新增 EX
 - [[2026-09-05]] — open explore：核对 [OpenAI/HF 事件技术报告](https://openai.com/index/hugging-face-incident-and-the-road-ahead/)、HF 技术时间线与 HBHC/CommitGuard/ContainmentBench；发现事故级授权/遏制/重建/再次暴露/停机链条，但无统一 verdict→actuation、撤销/回滚/MTTR 分母，收窄 `EX-005`，不新增 EX
 - [[2026-09-05]] — open explore：核对 MCP 2026-07-28 规范/公告与 NSA 安全指导；确认移除的是传输层 protocol session，应用状态转为显式 handle、MRTR 与每请求元数据，收窄为“状态迁移、非状态消失”，不新增 EX
 - [[2026-09-05]] — open explore：核读 SkillTV-Bench 论文与公开仓库；确认环境可访问、task-time skill、inspection plan/log 和 source-verifier gate 是不同变量，但其结果仍是 benchmark 内部闭环，细化 `EX-002/007`，不新增 EX
