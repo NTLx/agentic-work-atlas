@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T11:31:49+08:00
+updated: 2026-09-05T12:32:07+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -108,7 +108,7 @@ related_entities:
 | P0 | Agent 安全 Topic 建设 | 五阶段骨架已起草；下一步以事件级标识对齐 `flag → verdict → authorization → actuation → revoke/recovery → review`，逐格核验 `owner / action-surface`，不把结构地图当作安全效果证据；不由 recompile 执行 |
 | P0 | 验证器危机研究线 | 按独立性四轴、证据覆盖/解释能力与 reference integrity 建立矩阵，再 clip AgentJudgeBench、Anthropic 三案与 Astra 官方材料 |
 | P0 | 劳动经济学实证 | 用已编译 Economic Index 与新增一手数据建立校准骨架 |
-| P1 | MCP 无状态转折 | clip 2026-07-28 规范与 NSA 指南后更新 MCP Entity |
+| P1 | MCP 无状态转折 | 先区分传输层去 session 与应用层状态迁移；核对显式 handle、MRTR、每请求元数据、幂等/撤销/replay 与事件谱系，再更新 MCP Entity |
 | P1 | AI 时代设计方法论对照 | 至少补两份其他实验室设计负责人访谈再判断共识 |
 | P2 | Topic 与复核队列代谢 | 处理无承载 Entity 簇和疑似重复项，不继续制造新定理 |
 
@@ -172,6 +172,7 @@ related_entities:
 | P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
 | P1 | OTel GenAI 正式规范 | 稳定性与语义边界缺官方时间线 | clip/compile → CR-004 |
 | P1 | Google DeepMind AI Control / live monitoring | 官方材料已定位 coverage、recall、响应时间与异步/同步阻断边界，缺逐案阻断或覆盖率实证 | clip/compile → CR-004 |
+| P1 | MCP 2026-07-28 无状态转折 | 传输层移除协议 session，但应用仍可用显式 handle、MRTR、业务 cache 和幂等键保留状态；缺 handle 绑定、TTL、撤销、replay、故障转移与事件谱系的迁移对照 | clip+compile → MCP Entity；new-source → `EX-005/006` / `CR-004` |
 | P1 | Agent 隐私对照 | 微软官方 least-privilege 已定位；新增 arXiv 2607.22611、AWS/KTern.AI 与 [Numezis 匿名 SME 案例](https://advisory.numezis.com/en/work/business-agent-platform-sme)，均待入 raw/source；EDPB Guidelines 02/2026 最终版未发布 | clip/compile → CR-002 |
 | P1 | 专业能力再生反例 | 缺高采纳且训练能力不降的纵向案例 | clip/compile → CR-005 |
 | P2 | 全球南方 AI 生态 | 缺已长期运行且能报告本地制度/评价标准与部署结果的一手材料；现有 NITI Arezzo 仅为试点，BharatGen 尚未公共/机构部署 | new-source → CR-007 |
@@ -193,16 +194,16 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T12:32:07+08:00 | MCP 无状态转折 | refined | 2026-07-28 移除的是传输层 protocol session，不是应用状态；状态转为显式 handle、MRTR 和每请求元数据，新的验证对象是绑定、TTL、撤销、replay、幂等和事件谱系；不新增 EX。 |
 | 2026-09-05T11:31:49+08:00 | 证据可见性与检查策略 | refined | SkillTV-Bench 将环境可访问与主动检查策略分开：环境/工具本身不足，JudgeSkill 的 inspection plan/log 可能是中介；但其固定 gate 与 source-verifier 仍属 benchmark 内部闭环，不能替代外部 oracle。收窄 `EX-002/007`，不新增 EX。 |
 | 2026-09-05T10:32:18+08:00 | 验证器三门的可分性 | refined | `2604.07650` 测输出错误相关性，AJ-Bench 测环境证据取得/解释，AgentJudgeBench 与 AcquaBench 测 reference 与成功来源；三者可共用交叉矩阵但不能互相替代，下一步是固定任务与 trace 的三门 factorial 对照。 |
 | 2026-09-05T10:01:20 | Agent Observability 上界随层级变化 | refined | Google DeepMind 定义 coverage/recall/time-to-response 并报告百万任务监控原型，但未给逐案阻断或完整污染覆盖实测；收窄为“指标化控制面可观测性 ≠ 行为覆盖闭包”。 |
 | 2026-09-05T09:32:09+08:00 | Agent Safety 事件级证据连续性 | refined | 不同来源虽分别覆盖检测、授权、执行或恢复，但不能拼接为同一任务的安全闭环；下一步需用稳定事件标识对齐 `flag→verdict→authorization→actuation→revoke/recovery→review`，不新增 EX。 |
-| 2026-09-05T08:33:05+08:00 | Agent Safety Topic 边界 | refined | 现有安全 Entity/Source 可按“检测→判定→授权→执行→撤销/恢复”形成结构 Topic；五阶段对象、失败信号和候选责任角色可分，但 owner、action-surface、撤销/恢复指标仍未闭合，创建最小 `Agent-Security` 骨架，不新增 EX。 |
-| 2026-09-05T07:31:22+08:00 | Facilitator 升级与接收面 | refined | Google Cloud CCAI 将目标人、队列、等待/连接时长、转接失败和服务等级作为独立升级遥测；Google SecOps 参考架构把结构化汇总、迭代上限与报告回链分开。它们把“人能否接住”扩展为交接包 × 接收面，但仍无固定路由下的人类结果对照，不新增 EX。 |
 | 2026-09-05T07:00:28 | AI 监督 AI 共模误差下界 | no_delta | 定向复核 arXiv 2607.10139v3；shared-error floor 仍限定于特定 consensus/verifier、任务错误结构与 panel 条件，数学近零、GPQA/MMLU-Pro 非零；没有支持外推至所有 AI 监督形态的新边界。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：核对 MCP 2026-07-28 规范/公告与 NSA 安全指导；确认移除的是传输层 protocol session，应用状态转为显式 handle、MRTR 与每请求元数据，收窄为“状态迁移、非状态消失”，不新增 EX
 - [[2026-09-05]] — open explore：核读 SkillTV-Bench 论文与公开仓库；确认环境可访问、task-time skill、inspection plan/log 和 source-verifier gate 是不同变量，但其结果仍是 benchmark 内部闭环，细化 `EX-002/007`，不新增 EX
 - [[2026-09-05]] — open explore：核对 arXiv 2604.07650、AJ-Bench、AgentJudgeBench 与 AcquaBench 的实验对象和控制变量；确认输出错误相关性、环境证据取得/解释、reference integrity 与 success provenance 是耦合但不可替代的三门，`EX-001/002/004` refined，不新增 EX
 - [[2026-09-05]] — recompile CR-004：Google DeepMind AI Control 定义 coverage/recall/time-to-response 并披露百万任务监控原型，但无逐案阻断或完整污染覆盖实测；将“指标化控制面可观测性”与“行为覆盖闭包”分开，refined
