@@ -169,31 +169,7 @@ git status --short
 
 发现新研究问题属于 "explore"。
 
-1.2 可行动条件
-
-Retry 过滤完成后，优先选择同时满足以下条件的 Claim：
-
-- 已经有明确问题或缺口；
-- 当前存在可以执行的下一动作；
-- 有合理可能通过一次小动作改变我们的认识。
-
-跳过：
-
-- 只有“值得继续想想”，但没有明确 Gap；
-- 已明确缺失当前不存在的 source；
-- 最近刚检查，且没有任何新信息；
-- 需要用户价值判断或权威决定才能继续；
-- 本轮需要先完成另一个大型研究问题才能推进。
-
-如果没有可行动 Claim：
-
-本次无可行动 Claim，退出
-
-直接结束。
-
-不创建空日志，不制造 commit。
-
-### 1.3 Retry eligibility hard gate
+1.2 Retry eligibility hard gate
 
 `Status: ready` 只表示 Claim 尚未结束，不表示本轮一定可执行。候选集必须先按
 Retry 过滤，再检查状态与动作可执行性，最后才按 Priority 和 `Last checked` 排序：
@@ -219,14 +195,42 @@ Retry 语义只有以下三类：
 
 - `Retry: now`：立即满足。
 - `Retry: YYYY-MM-DD`：以本轮当前日期判断；当前日期达到或超过该日期时满足。
-- `Retry: new-source:<target>`：只有目标对应的知识状态发生了真实变化才满足，例如目标
-  Source 新增到 `raw/` 或 `wiki/sources/`，或对应 Registry / Source Summary 记录发生了
-  新状态，或出现明确的新版本/新一手材料。重新搜索、重新打开或再次引用同一个 URL
-  不算满足；“Next”中写了 `clip+compile` 也不算已经完成。
+- `Retry: new-source:<target>`：只有相对于该 Claim 的 `Last checked` 或 Retry 设置时已知
+  状态，目标对应的知识状态出现尚未被该 Claim 结算的真实新变化才满足，例如目标 Source
+  新增到 `raw/` 或 `wiki/sources/`，或对应 Registry / Source Summary 记录发生了新状态，
+  或出现明确的新版本/新一手材料。重新搜索、重新打开或再次引用同一个 URL 不算满足；
+  “Next”中写了 `clip+compile` 也不算已经完成。Retry 设置时已经存在的同一证据不能重新
+  满足 Retry。
 
 Retry 未满足的 Claim 在本轮是 `ineligible`，不得先按 Priority 选中再在后续步骤跳过，
 也不应为它创建日志或 `no_delta` commit。`blocked`、没有可执行动作或没有任何
 Retry 满足项时，本次无可行动 Claim，直接退出。
+
+---
+
+1.3 可行动条件
+
+Retry 过滤完成后，优先选择同时满足以下条件的 Claim：
+
+- 已经有明确问题或缺口；
+- 当前存在可以执行的下一动作；
+- 有合理可能通过一次小动作改变我们的认识。
+
+跳过：
+
+- 只有“值得继续想想”，但没有明确 Gap；
+- 已明确缺失当前不存在的 source；
+- 最近刚检查，且没有任何新信息；
+- 需要用户价值判断或权威决定才能继续；
+- 本轮需要先完成另一个大型研究问题才能推进。
+
+如果没有可行动 Claim：
+
+本次无可行动 Claim，退出
+
+直接结束。
+
+不创建空日志，不制造 commit。
 
 ---
 
