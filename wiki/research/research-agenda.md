@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T17:39:01+08:00
+updated: 2026-09-05T18:33:21+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -73,11 +73,11 @@ related_entities:
 - Priority: P0
 - Claim: 组织从 AI 获得局部效率收益的同时，会把专业能力再生成本外部化到整个职业共同体。
 - Gap: Counterexample
-- Evidence: `raw/20260731-tragedy-cognitive-commons-ai-expertise.pdf`、`raw/20260730-lenny-tech-workers-ai-sentiment-noam-segal.md`、`raw/Learning on the Shop floor.md`
-- Evidence goal: 找到第二个"高采纳 + 维持学徒/独立验证"的组织或职业，或验证 Shopify 案例长期性（08-29 两轮定向检索已确认暂无部署级第二反例）
-- Last checked: 2026-08-29T12:00:37 · no_delta
-- Next: 停止主动重查；等待外部触发——第二"高采纳+再生内部化"组织/职业案例披露，或 Shopify/Lehrwerkstatt 纵向（专家补充率长期不降）数据
-- Retry: new-source:apprenticeship-counterexample-disclosures
+- Evidence: `raw/20260731-tragedy-cognitive-commons-ai-expertise.pdf`、`raw/20260730-lenny-tech-workers-ai-sentiment-noam-segal.md`、`raw/Learning on the Shop floor.md`；[Ramp×Revelio Labs](https://www.reveliolabs.com/news/ai-and-work/greater-ai-investment-more-hiring)；[Dallas Fed 招聘分析](https://www.dallasfed.org/research/economics/2026/0901)；[Dallas Fed 2026-05 TBOS](https://www.dallasfed.org/research/surveys/tbos/2026/2605q)
+- Evidence goal: 反例必须同时显示高采纳、培训/晋升/独立验证等专业再生机制持续存在；单纯 headcount 或入门级占比上升不够。Ramp×Revelio 的企业层扩张与 Dallas Fed 的职业/入口层收缩目前构成层级对照，尚不能裁决 Claim。
+- Last checked: 2026-09-05T18:33:21 · refined
+- Next: clip+compile Ramp×Revelio 与 Dallas Fed 一手材料；随后寻找同时报告培训投入、内部晋升、专家补充率或独立验证质量的高采纳纵向案例
+- Retry: new-source:ai-adoption-training-promotion-validation-data
 
 ### CR-006 · 评测逃逸是系统性机制而非孤立 harness 事故
 - Status: blocked
@@ -171,7 +171,7 @@ related_entities:
 | P0 | 自我改进回路的独立变更审计 | 现有 Meta-Harness 只有 train/dev gate，Uber 只有内部 benchmark 与 session 指标；缺冻结外部 oracle、跨版本回放、独立安全策略和变更归因 | new-source → EX-007 |
 | P0 | Harness 行为契约与保留测试区 | GitHub 案例显示离线评测漏掉并行回归，另有官方开发实践把只能由人改动的保留测试作为 contract gate；缺跨版本、跨产品的行为不变量与回滚记录 | new-source → EX-007 |
 | P1 | 生产 Agent fleet 的自修改纵向记录 | 缺 prompt/skill/router/evaluator 变更的 owner、版本、canary、回滚、隐藏 holdout 与质量/安全联合结果 | new-source → EX-007 |
-| P0 | 劳动经济学硬数据 | Ramp 与 Dallas Fed 一手材料未入库 | clip + compile |
+| P0 | 劳动经济学硬数据 | Ramp×Revelio 显示高强度采用企业两年 headcount 约 +10.2%、入门级占比 +1.15pp；Dallas Fed 显示高暴露职业招聘相对下降约 5–8%、年轻入口受压，且 71.4% 企业报告生产率提升但仅 7.4% 报告工资增长；尚未入 raw/source | clip+compile → CR-005；按企业/职业/任务/工资/培训五层对齐 |
 | P1 | OTel GenAI 正式规范 | 已核读官方 agent/framework、GenAI spans 与 Trace API；现行语义仍为 Development，能记录局部 lineage 与 tool payload，但缺 authorization、post-state、revoke/recovery、handoff 和完整 action-surface 分母 | clip+compile → CR-004 |
 | P1 | Google DeepMind AI Control / live monitoring | 官方材料已定位 coverage、recall、响应时间与异步/同步阻断边界，缺逐案阻断或覆盖率实证 | clip/compile → CR-004 |
 | P1 | MCP 2026-07-28 无状态转折 | 传输层移除协议 session，但应用仍可用显式 handle、MRTR、业务 cache 和幂等键保留状态；缺 handle 绑定、TTL、撤销、replay、故障转移与事件谱系的迁移对照 | clip+compile → MCP Entity；new-source → `EX-005/006` / `CR-004` |
@@ -196,14 +196,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T18:33:21+08:00 | CR-005 AI 采纳与专业再生 | refined | Ramp×Revelio 的高强度采用企业扩大 headcount 与入门级占比，不能证明培训/晋升/独立验证再生；Dallas Fed 同时观察到高暴露职业招聘和年轻入口收缩，说明企业扩张、任务需求与能力再生是不同层级，暂不构成反例。 |
 | 2026-09-05T17:39:01+08:00 | CR-004 OTel GenAI 语义边界 | refined | OTel 可枚举 agent/workflow/plan/tool invocation、局部 lineage 和通用 error，但不能独立表达授权、实际 action effect、证据可访问性/解释、human handoff 或安全责任链；结构化 trace 不是 action-surface 闭包，不新增 EX。 |
 | 2026-09-05T16:37:33+08:00 | EX-006 治理状态承载与动作边界 | refined | 四篇一手论文支持 context eviction/weakening/misbinding、compaction decay 和跨会话记忆污染，但不证明 OOB control plane 普遍必要；将 EX-006 收窄为“决策时状态完整性门 + 独立动作边界 enforcement”两门，不新增 EX。 |
 | 2026-09-05T15:32:07+08:00 | 动作授权与恢复的遥测字段 | refined | Microsoft、Google、AWS 形成动作控制面的结构重复；已有 incident/trace/审批/工具/缓解字段骨架，但仍缺 verdict/authorization/revoke/rollback/recovery 与 action-surface 分母，收窄 `EX-005`，不新增 EX。 |
 | 2026-09-05T14:32:55+08:00 | 自我改进变更对象与晋级门 | refined | `EX-007` 收窄为变更晋级的归因与不可自改写问题：行为组件需行为契约/线上复评，评估与目标组件需冻结外部 oracle，策略与执行组件需独立安全门；不与 `EX-004/006` 合并，不新增 EX。 |
-| 2026-09-05T13:40:57+08:00 | 判定之后的动作授权与恢复实测 | refined | OpenAI/HF 事件给出事故级的告警→响应→遏制/重建→再次暴露→批量停机链条；受控 HBHC、CommitGuard、ContainmentBench 说明指标可定义但不是部署证据。仍缺 verdict→actuation、撤销/回滚/MTTR 的统一事件字段与分母；收窄 `EX-005`，不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：对照 Ramp×Revelio 企业层 headcount/入门级占比、Dallas Fed 职业招聘/年轻入口与 TBOS 生产率—工资自报；确认“公司扩张”不等于“专业再生”，收窄 CR-005，不新增 EX
 - [[2026-09-05]] — open explore：核读 OTel GenAI agent/framework、GenAI spans 与 Trace API，并核对 guardrail PR #427；确认标准 trace 可枚举结构与局部 lineage，但不携带授权、实际副作用、恢复或交接语义，收窄 `CR-004`，不新增 EX
 - [[2026-09-05]] — open explore：核读 Ghost in the Context、Governance Decay、Hidden in Memory 与 Security-Recall Divergence；确认治理状态存在装配、压缩、跨会话和抑制性约束衰减，但四篇都没有证明 OOB control plane 普遍必要；将 `EX-006` 收窄为决策时状态完整性门 + 独立动作边界 enforcement，不新增 EX
 - [[2026-09-05]] — open explore：核对 Microsoft Azure SRE Agent 审计/指标文档、Google SRE Gemini CLI 案例、AWS Agentic Incident Response PoC 与 Druva production case；确认权限、审批、执行、验证和审计存在跨厂商结构重复，但缺 verdict/authorization/revoke/rollback/recovery 与 action-surface 分母，收窄 `EX-005`，不新增 EX
