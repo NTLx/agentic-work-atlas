@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T10:32:18+08:00
+updated: 2026-09-05T11:31:49+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -117,12 +117,12 @@ related_entities:
 | ID | 候选问题 | 当前判断 | 证伪方向 | 下一步 |
 |---|---|---|---|---|
 | EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | `2604.07650` 仅在输出错误、任务难度和模型/验证器组合上测相关性；AJ-Bench 的环境访问并未操纵验证器独立性，故两者可共享矩阵但不能互作替代；refined | 固定证据访问、reference 与任务后，跨家族/独立实现的单轴变化仍不能降低共同漏报，或独立性效应完全由证据覆盖/判定质量解释 | clip+compile `2604.07650`，按“错误生成相关性 × 证据状态 × reference 条件”补交叉字段 |
-| EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量，并区分“误读工具输出”和“证据正确但推理错误”；但其工具访问对照未固定独立性与 reference integrity，当前仍是机制支持而非必要性证明；refined | 固定模型/验证器、任务、reference 与访问权限后，静态低覆盖与可交互证据对照不改变漏报，或所有差异都能由模型相关性/真值瑕疵解释 | clip+compile AJ-Bench，建立“证据可见性 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并与 EX-001 对齐 |
+| EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量，并区分“误读工具输出”和“证据正确但推理错误”；SkillTV-Bench 进一步把“环境可访问”与“按检查策略主动取得/解释证据”分开，但其 JudgeSkill、source-verifier 与任务构造仍未独立操纵；refined | 固定模型/验证器、任务、reference 与访问权限后，静态低覆盖、可交互读取和显式检查策略对照不改变漏报，或差异完全由 token budget、模型相关性或真值瑕疵解释 | clip+compile AJ-Bench 与 SkillTV-Bench，建立“物理可见性 × 检查策略 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并与 EX-001 对齐 |
 | EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 选择性委派研究将路由器定义为定位“人类优于 Agent 区域”的 rejector；现有材料支持隐藏特征和 framing 改变升级质量；Google SRE/AWS 明确结构化交接与完整性，Google Cloud 将目标人、队列、等待/转接失败作为独立接收变量；synthesized/refined | 在固定升级触发、专家身份、Agent 输出和接收面可用性后，完整/最小/证据-only/带模型结论的交接包对人类正确率、处置延迟、补问次数和过度依赖均无稳定差异，或差异完全由 CR-004 的可见性、EX-002 的证据覆盖、消息 framing 或接收队列解释；反之若交接包残差持续存在，保留为 EX-003 内部独立子门 | clip+compile Google SRE AI Operator 与 AWS handoff guidance；补查 Google Cloud escalation/transfer telemetry；建立“路由选择 × 交接包 × 消息 framing × 专家负载/队列”矩阵，先固定路由与接收面做 context ablation，再与 CR-004 / EX-002 对照 |
 | EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench 的 C3 显示 judge 可能只锚定 reference block，且其 programmatic reference 与单标注者人类判断在语义等价处有差异；AcquaBench 则操纵正确目标可得性与匹配的错误 source exposure。两者应暂视为耦合但不可替代的两个子门，尚未有交叉因果证据；refined | 固定 trace 随机化无/正确/语义等价/错误 reference，或固定 reference 随机化 CLEAN/GOLD/SHAM；若 judge/score 与 human adjudication 不变，或差异可由 EX-001/EX-002 解释，则收窄或并回 | clip+compile AgentJudgeBench、AcquaBench、ABC、GeneBench、OpenAI coding audit、tau3、ELT-Bench-Verified；审查代码/数据与公式—案例对应关系；先做 `reference condition × information provenance × verifier independence` 交叉表，再寻找真实/可回放第二案例 |
 | EX-005 | 在检测与判定都正确时，动作授权、独立执行点与撤销/恢复时限是否仍构成 Agent 安全的独立必要门？ | FORGE/OAP 两条实现线均把确定性 pre-action reference monitor 与模型判断分开，并在受控任务中降低越权；保证依赖完整拦截面与状态契约，且未覆盖恢复、允许范围内副作用或人审最优性；refined | 在同一 trace、verdict、工具 schema 与负载下随机化 prompt-only、模型 guard、确定性 reference monitor 与 monitor+rollback；若固定 verdict 后无 enforcement 残差，或所有差异由检测/升级解释，则并回 CR-004/EX-003/普通 IAM | clip+compile FORGE/OAP/Janus；寻找独立复现、token TTL、撤销耗时、回滚成功率和完整 incident trace；按风险/可逆性区分同步阻断与异步复核 |
 | EX-006 | 高影响/不可逆动作的治理约束，是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达决策/执行边界，而非普通 token-stream 文本？ | Governance Decay/Ghost in the Context 将 policy-carriage 拆为存在、语义健全和绑定正确；Sleeper Memory Poisoning 显示记忆可成为跨会话延迟攻击通道；现有结果主要是受控/模拟，且固定装配器下未稳定产生越权动作；synthesized | 若受保护 token/pinning + preflight + action guard 在同任务、同 trace、同负载下与外部 control plane 在状态完整性、越权动作、延迟和可用性上等效，或高风险 token-only 生产系统长期无 carriage failure，则削弱独立控制面命题 | clip+compile 四篇一手研究；建立 policy owner—provenance—binding—budget—survival—action-boundary—fail-closed 字段矩阵，并与 EX-005 / CR-004 / CR-002 合并判定边界 |
-| EX-007 | 自我改进 Agent 是否需要独立的变更闸门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | GitHub 一手案例显示普通离线质量门可漏掉 prompt 引起的并行行为回归；因此至少要区分不可改写的行为契约门与独立归因/安全门。后者仍缺跨版本外部 oracle、冻结控制面和 rollback 证据；refined | 若受保护行为契约 + 工作流本地在线复评已能捕获所有行为变化，且在冻结 oracle/policy 后无需额外独立门即可稳定保持质量、安全、跨任务迁移和回放一致性，则收窄；若 evaluator/policy 共变仍能制造内部得分提升而外部指标不升，则保留 | new-source → EX-007；寻找保留测试/行为契约、离线→在线差异、独立复评与生产 rollback 的一手记录，并与 EX-004 / EX-006 合并判定边界 |
+| EX-007 | 自我改进 Agent 是否需要独立的变更闸门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | GitHub 一手案例显示普通离线质量门可漏掉 prompt 引起的并行行为回归；SkillTV-Bench 的 disjoint evolution split 与固定开发 gate 说明“候选选择可审计”，但 gate 仍共享 benchmark 的 source-verifier 与任务构造，不能替代外部 oracle；因此仍需区分行为契约门与独立归因/安全门；refined | 若固定 oracle/policy、隐藏任务和独立复评后，内部 gate 的提升稳定复现且回放/安全结果不变，则削弱独立外部门；若 JudgeSkill 只在 source-verifier 上提升、外部 adjudication 或 reference 扰动下不提升，则强化共变风险 | new-source → EX-007；寻找保留测试/行为契约、离线→在线差异、独立复评与生产 rollback 的一手记录，并把 SkillTV 作为“内部 gate 有效但不等于外部有效”的对照 |
 
 ## Source 需求队列
 
@@ -138,6 +138,7 @@ related_entities:
 | P0 | arXiv 2607.10139《LLMs as a Jury》 | 已联网核读一手预印本，未进入 raw/source；报告跨模型 verifier 的共享错误下界 | clip+compile → CR-003 |
 | P0 | 验证器独立性四轴对照 | `2604.07650` 给出输出层相关性与后续 judge bias 的关联，但未操纵证据访问、reference 有效性或行动执行；需把独立性作为正交因子，而不是把跨模型/跨工具直接当作独立验证 | clip+compile → EX-001；优先寻找同任务、固定证据与 reference 的跨家族/独立实现对照 |
 | P0 | AJ-Bench 环境感知验证基准 | 已核读一手预印本，报告 155 个任务、516 条轨迹、工具交互、四类失败及 FPR/FNR；其 LLM/模型多数投票与人工/脚本混合标注，以及搜索域外部环境，需单独记录 reference provenance 与 access confound | clip+compile → EX-002；提取信息取得、状态/过程验证、证据误读、正确证据错误推理和环境重放字段 |
+| P0 | SkillTV-Bench 证据驱动轨迹验证 | 一手论文与公开仓库提供 681 条可运行案例、task-time skills、可检查 artifacts、隐藏 source-verifier 和 disjoint evolution split；缺 JudgeSkill 各阶段的 inspection coverage、独立外部裁决、reference 条件与模型家族交叉对照 | clip+compile → EX-002/007；先核对数据 provenance、固定 36-case gate、false-accept 变化与环境访问/检查策略的可分性 |
 | P0 | Human-AI Teaming Through the Lens of Calibration | arXiv 2606.10906 已核读但未进入 raw/source；需提取 rejector 定理、人类隐藏特征与不可约 excess risk 条件 | clip+compile → EX-003 |
 | P0 | 选择性预测的校准失效 | PMLR 333（2026）多模态 ICU 研究显示聚合指标会遮蔽按类别误校准；需提取 per-class calibration、deferral 与 expert load 结果及任务边界 | clip+compile → EX-003 |
 | P1 | 人类-路由消息效应 | arXiv 2112.06751 显示 deferral status 与 model prediction 的组合会改变人类准确性；需核对 messaging、human-in-loop 指标与外推边界 | clip+compile → EX-003 |
@@ -192,6 +193,7 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T11:31:49+08:00 | 证据可见性与检查策略 | refined | SkillTV-Bench 将环境可访问与主动检查策略分开：环境/工具本身不足，JudgeSkill 的 inspection plan/log 可能是中介；但其固定 gate 与 source-verifier 仍属 benchmark 内部闭环，不能替代外部 oracle。收窄 `EX-002/007`，不新增 EX。 |
 | 2026-09-05T10:32:18+08:00 | 验证器三门的可分性 | refined | `2604.07650` 测输出错误相关性，AJ-Bench 测环境证据取得/解释，AgentJudgeBench 与 AcquaBench 测 reference 与成功来源；三者可共用交叉矩阵但不能互相替代，下一步是固定任务与 trace 的三门 factorial 对照。 |
 | 2026-09-05T10:01:20 | Agent Observability 上界随层级变化 | refined | Google DeepMind 定义 coverage/recall/time-to-response 并报告百万任务监控原型，但未给逐案阻断或完整污染覆盖实测；收窄为“指标化控制面可观测性 ≠ 行为覆盖闭包”。 |
 | 2026-09-05T09:32:09+08:00 | Agent Safety 事件级证据连续性 | refined | 不同来源虽分别覆盖检测、授权、执行或恢复，但不能拼接为同一任务的安全闭环；下一步需用稳定事件标识对齐 `flag→verdict→authorization→actuation→revoke/recovery→review`，不新增 EX。 |
@@ -201,6 +203,7 @@ related_entities:
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：核读 SkillTV-Bench 论文与公开仓库；确认环境可访问、task-time skill、inspection plan/log 和 source-verifier gate 是不同变量，但其结果仍是 benchmark 内部闭环，细化 `EX-002/007`，不新增 EX
 - [[2026-09-05]] — open explore：核对 arXiv 2604.07650、AJ-Bench、AgentJudgeBench 与 AcquaBench 的实验对象和控制变量；确认输出错误相关性、环境证据取得/解释、reference integrity 与 success provenance 是耦合但不可替代的三门，`EX-001/002/004` refined，不新增 EX
 - [[2026-09-05]] — recompile CR-004：Google DeepMind AI Control 定义 coverage/recall/time-to-response 并披露百万任务监控原型，但无逐案阻断或完整污染覆盖实测；将“指标化控制面可观测性”与“行为覆盖闭包”分开，refined
 - [[2026-09-05]] — open explore：将现有 Agent 安全 Entity/Source 映射为“检测→判定→授权→执行→撤销/恢复”五阶段 Topic 骨架；确认结构边界成立但 owner、action-surface、撤销/恢复仍缺实证，不新增 EX
