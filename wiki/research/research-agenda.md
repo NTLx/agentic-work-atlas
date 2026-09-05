@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-05T10:01:20+08:00
+updated: 2026-09-05T10:32:18+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -116,10 +116,10 @@ related_entities:
 
 | ID | 候选问题 | 当前判断 | 证伪方向 | 下一步 |
 |---|---|---|---|---|
-| EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | 现有材料分别支持四轴，但尚无同一任务上的受控区分；synthesized | 跨家族单轴变化即可稳定消除多类相关漏报，或单轴失效仍能完整保障 | clip+compile arXiv 2604.07650，建立字段矩阵 |
-| EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将信息取得、状态验证、过程验证分开测量；现有四轴模型尚未把“看见关键状态”和“正确使用证据”从独立性中拆出；synthesized | 在同一任务、同一模型与同一访问权限下，跨家族/独立性变化无法稳定改善漏报，或静态低覆盖验证与可交互验证表现相当 | clip+compile AJ-Bench，建立“静态/可交互 × 同族/跨族”矩阵；与 EX-001 合并判定边界 |
-| EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 选择性委派研究把路由器定义为必须定位“人类优于 Agent 的区域”的 rejector；现有材料支持隐藏特征与消息 framing 会改变升级质量；Google SRE/AWS 又把交接包、完整调查历史和交接完整性明确化，Google Cloud 的运行时字段进一步显示接收队列、目标人可用性、等待/转接失败也是独立的接收面变量；synthesized/refined | 在固定升级触发、专家身份、Agent 输出和接收面可用性后，完整/最小/证据-only/带模型结论的交接包对人类正确率、处置延迟、补问次数和过度依赖均无稳定差异，或差异完全由 CR-004 的可见性、EX-002 的证据覆盖、消息 framing 或接收队列解释；反之若交接包残差持续存在，保留为 EX-003 内部独立子门 | clip+compile Google SRE AI Operator 与 AWS handoff guidance；补查 Google Cloud escalation/transfer telemetry；建立“路由选择 × 交接包 × 消息 framing × 专家负载/队列”矩阵，先固定路由与接收面做 context ablation，再与 CR-004 / EX-002 对照 |
-| EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench C3（1 generator/2 judges）仅支持有限 reference-interface/content sensitivity；AcquaBench CLEAN/GOLD/SHAM / D2 支持动态 success provenance；先为同一 oracle/source-lineage 候选，待交叉操纵后判断是否拆分；refined | 固定 trace 随机化无/正确/等价/错误 reference，或固定 reference 随机化 CLEAN/GOLD/SHAM；若 judge/score 与 human adjudication 不变，或差异可由 EX-001/EX-002 解释，则收窄或并回 | clip+compile AgentJudgeBench、AcquaBench、ABC、GeneBench、OpenAI coding audit、tau3、ELT-Bench-Verified；审查代码/数据与公式—案例对应关系；建立 `reference condition × information provenance` 矩阵；寻找真实/可回放第二案例 |
+| EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | `2604.07650` 仅在输出错误、任务难度和模型/验证器组合上测相关性；AJ-Bench 的环境访问并未操纵验证器独立性，故两者可共享矩阵但不能互作替代；refined | 固定证据访问、reference 与任务后，跨家族/独立实现的单轴变化仍不能降低共同漏报，或独立性效应完全由证据覆盖/判定质量解释 | clip+compile `2604.07650`，按“错误生成相关性 × 证据状态 × reference 条件”补交叉字段 |
+| EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量，并区分“误读工具输出”和“证据正确但推理错误”；但其工具访问对照未固定独立性与 reference integrity，当前仍是机制支持而非必要性证明；refined | 固定模型/验证器、任务、reference 与访问权限后，静态低覆盖与可交互证据对照不改变漏报，或所有差异都能由模型相关性/真值瑕疵解释 | clip+compile AJ-Bench，建立“证据可见性 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并与 EX-001 对齐 |
+| EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 选择性委派研究将路由器定义为定位“人类优于 Agent 区域”的 rejector；现有材料支持隐藏特征和 framing 改变升级质量；Google SRE/AWS 明确结构化交接与完整性，Google Cloud 将目标人、队列、等待/转接失败作为独立接收变量；synthesized/refined | 在固定升级触发、专家身份、Agent 输出和接收面可用性后，完整/最小/证据-only/带模型结论的交接包对人类正确率、处置延迟、补问次数和过度依赖均无稳定差异，或差异完全由 CR-004 的可见性、EX-002 的证据覆盖、消息 framing 或接收队列解释；反之若交接包残差持续存在，保留为 EX-003 内部独立子门 | clip+compile Google SRE AI Operator 与 AWS handoff guidance；补查 Google Cloud escalation/transfer telemetry；建立“路由选择 × 交接包 × 消息 framing × 专家负载/队列”矩阵，先固定路由与接收面做 context ablation，再与 CR-004 / EX-002 对照 |
+| EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench 的 C3 显示 judge 可能只锚定 reference block，且其 programmatic reference 与单标注者人类判断在语义等价处有差异；AcquaBench 则操纵正确目标可得性与匹配的错误 source exposure。两者应暂视为耦合但不可替代的两个子门，尚未有交叉因果证据；refined | 固定 trace 随机化无/正确/语义等价/错误 reference，或固定 reference 随机化 CLEAN/GOLD/SHAM；若 judge/score 与 human adjudication 不变，或差异可由 EX-001/EX-002 解释，则收窄或并回 | clip+compile AgentJudgeBench、AcquaBench、ABC、GeneBench、OpenAI coding audit、tau3、ELT-Bench-Verified；审查代码/数据与公式—案例对应关系；先做 `reference condition × information provenance × verifier independence` 交叉表，再寻找真实/可回放第二案例 |
 | EX-005 | 在检测与判定都正确时，动作授权、独立执行点与撤销/恢复时限是否仍构成 Agent 安全的独立必要门？ | FORGE/OAP 两条实现线均把确定性 pre-action reference monitor 与模型判断分开，并在受控任务中降低越权；保证依赖完整拦截面与状态契约，且未覆盖恢复、允许范围内副作用或人审最优性；refined | 在同一 trace、verdict、工具 schema 与负载下随机化 prompt-only、模型 guard、确定性 reference monitor 与 monitor+rollback；若固定 verdict 后无 enforcement 残差，或所有差异由检测/升级解释，则并回 CR-004/EX-003/普通 IAM | clip+compile FORGE/OAP/Janus；寻找独立复现、token TTL、撤销耗时、回滚成功率和完整 incident trace；按风险/可逆性区分同步阻断与异步复核 |
 | EX-006 | 高影响/不可逆动作的治理约束，是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达决策/执行边界，而非普通 token-stream 文本？ | Governance Decay/Ghost in the Context 将 policy-carriage 拆为存在、语义健全和绑定正确；Sleeper Memory Poisoning 显示记忆可成为跨会话延迟攻击通道；现有结果主要是受控/模拟，且固定装配器下未稳定产生越权动作；synthesized | 若受保护 token/pinning + preflight + action guard 在同任务、同 trace、同负载下与外部 control plane 在状态完整性、越权动作、延迟和可用性上等效，或高风险 token-only 生产系统长期无 carriage failure，则削弱独立控制面命题 | clip+compile 四篇一手研究；建立 policy owner—provenance—binding—budget—survival—action-boundary—fail-closed 字段矩阵，并与 EX-005 / CR-004 / CR-002 合并判定边界 |
 | EX-007 | 自我改进 Agent 是否需要独立的变更闸门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | GitHub 一手案例显示普通离线质量门可漏掉 prompt 引起的并行行为回归；因此至少要区分不可改写的行为契约门与独立归因/安全门。后者仍缺跨版本外部 oracle、冻结控制面和 rollback 证据；refined | 若受保护行为契约 + 工作流本地在线复评已能捕获所有行为变化，且在冻结 oracle/policy 后无需额外独立门即可稳定保持质量、安全、跨任务迁移和回放一致性，则收窄；若 evaluator/policy 共变仍能制造内部得分提升而外部指标不升，则保留 | new-source → EX-007；寻找保留测试/行为契约、离线→在线差异、独立复评与生产 rollback 的一手记录，并与 EX-004 / EX-006 合并判定边界 |
@@ -136,14 +136,14 @@ related_entities:
 | P0 | arXiv 2604.07650 行为纠缠框架 | 已定位但未 clip/compile | clip → compile → CR-003 / LLM-as-a-Judge 激励共压 flag |
 | P0 | Apple《Nine Judges, Two Effective Votes》 | 已联网核读一手页面，未进入 raw/source | clip+compile → CR-003 |
 | P0 | arXiv 2607.10139《LLMs as a Jury》 | 已联网核读一手预印本，未进入 raw/source；报告跨模型 verifier 的共享错误下界 | clip+compile → CR-003 |
-| P0 | 验证器独立性四轴对照 | 现有材料分散覆盖目标/证据/执行/时间，缺目标操纵、共同污染和版本新鲜度的同任务对照 | clip+compile → EX-001；优先寻找激励隔离、独立实现和旧版检测率案例 |
-| P0 | AJ-Bench 环境感知验证基准 | 已核读一手预印本，报告 155 个任务、516 条轨迹、工具交互与四类失败；尚未进入 raw/source，需核查其访问、状态/过程验证与 FPR/FNR 字段 | clip+compile → EX-002 |
+| P0 | 验证器独立性四轴对照 | `2604.07650` 给出输出层相关性与后续 judge bias 的关联，但未操纵证据访问、reference 有效性或行动执行；需把独立性作为正交因子，而不是把跨模型/跨工具直接当作独立验证 | clip+compile → EX-001；优先寻找同任务、固定证据与 reference 的跨家族/独立实现对照 |
+| P0 | AJ-Bench 环境感知验证基准 | 已核读一手预印本，报告 155 个任务、516 条轨迹、工具交互、四类失败及 FPR/FNR；其 LLM/模型多数投票与人工/脚本混合标注，以及搜索域外部环境，需单独记录 reference provenance 与 access confound | clip+compile → EX-002；提取信息取得、状态/过程验证、证据误读、正确证据错误推理和环境重放字段 |
 | P0 | Human-AI Teaming Through the Lens of Calibration | arXiv 2606.10906 已核读但未进入 raw/source；需提取 rejector 定理、人类隐藏特征与不可约 excess risk 条件 | clip+compile → EX-003 |
 | P0 | 选择性预测的校准失效 | PMLR 333（2026）多模态 ICU 研究显示聚合指标会遮蔽按类别误校准；需提取 per-class calibration、deferral 与 expert load 结果及任务边界 | clip+compile → EX-003 |
 | P1 | 人类-路由消息效应 | arXiv 2112.06751 显示 deferral status 与 model prediction 的组合会改变人类准确性；需核对 messaging、human-in-loop 指标与外推边界 | clip+compile → EX-003 |
 | P0 | 主动升级的部署级长程案例与交接契约 | Google SRE AI Operator 报告结构化上下文目录、完整调查历史交接、数千起 incident 与 human Golden Data；AWS Agentic AI Lens 明确要求交接延迟、上下文完整性和协作成功率，但两者都缺固定升级触发下的交接包消融、人类决策质量与长期漂移对照 | clip+compile → EX-003；优先入库 Google SRE AI Operator 与 AWS handoff guidance，再寻找独立部署级长程案例 |
 | P1 | 接收面与转接遥测 | Google Cloud CCAI 官方 schema 将升级原因、目标人、等待/连接时长、队列、转接失败、服务等级和 deflection 分开记录；但它是客服转接模型，不等于长程 Agent 的人类处置证据 | clip+compile → EX-003；寻找能同时报告 handoff packet、接收负载/队列和人类结果的部署级案例 |
-| P0 | AgentJudgeBench reference 对照 | v1 PDF scout 已核读；C3 仅一个 generator/两个 judge，需入库单标注者限制、公式—案例不一致、结构/语义等价案例与 programmatic-reference 字段，并审查代码/数据 | clip+compile → EX-004，并与 EX-001/EX-002 共用 `reference condition × information provenance` 字段表 |
+| P0 | AgentJudgeBench reference 对照 | v1 已核读；C3 仅一个 generator/两个 judge，显示 Gemini 可对错误 reference 保持相同 alignment，而 QwQ 接近无 reference；120 条记录仅单标注者，且 programmatic scorer 对 schema-valid extra keys 的严格度与人类不一致 | clip+compile → EX-004，并与 EX-001/EX-002 共用 `reference condition × information provenance × verifier independence` 字段表 |
 | P0 | OpenAI coding evaluation audits | 已联网核读两份官方材料，尚未进入 raw/source；需提取题面、测试、gold patch、低覆盖、独立人审与训练污染的归因字段 | clip+compile → EX-004 |
 | P0 | Agentic Benchmark Checklist | 已核读一手论文，尚未进入 raw/source；需提取 task/outcome validity、ground-truth 审查、语义等价、环境冻结与污染控制字段 | clip+compile → EX-004 |
 | P0 | GeneBench target identifiability | 已核读 OpenAI 一手技术报告，尚未进入 raw/source；需提取可恢复目标、可辨识性审查、prompt-grader mismatch 与 trace audit 字段 | clip+compile → EX-004 |
@@ -154,6 +154,7 @@ related_entities:
 | P0 | ELT-Bench-Verified benchmark audit | 已联网核读一手论文，尚未进入 raw/source；需提取 ground-truth error、脚本误报、人类 agreement 和修正前后排名 | clip+compile → EX-004 |
 | P1 | 真实 Agent trace 的语义等价与 reference 版本 | 缺同一生产任务上“结构不同但结果等价”的 reference、版本变更和独立裁决记录 | new-source → EX-004 |
 | P1 | reference 呈现方式的因果对照 | 缺把正确 reference、错误 reference、只给 rubric 和不展示 reference 随机化的 live-agent judge 研究 | new-source → EX-004 |
+| P0 | 三门交叉操纵 | 缺在同一任务中同时改变 verifier independence、evidence visibility/interpretation 与 reference integrity/success provenance 的受控设计，当前跨论文结果不能支持必要性或交互效应 | new-source → EX-001/002/004；优先寻找带固定 trace、可重放环境和外部/人类 oracle 的 factorial benchmark |
 | P0 | Agent permissions：interface 到 enforcement | 已核读 arXiv 2607.13718，尚未进入 raw/source；需提取权限规格、推导、运行时执行、审批透明度、撤销与 reviewer overhead 字段 | clip+compile → EX-005 |
 | P0 | Deterministic pre-action authorization | 已核读 arXiv 2603.20953 v1；需核查 OAP 威胁模型、单域/非随机 CTF、平台信任、ESCALATE 未实现与 pre-tool-call gate 边界；论文自报结果不作普遍事实 | clip+compile → EX-005 |
 | P0 | FORGE / Formal Policy Enforcement | arXiv 2602.16708 v3 提供多 Agent reference monitor、provenance substrate 与受控任务结果，尚未进入 raw/source；需保留 assume/guarantee、instrumented-surface、并发与 recovery 边界 | clip+compile → EX-005 |
@@ -191,6 +192,7 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-05T10:32:18+08:00 | 验证器三门的可分性 | refined | `2604.07650` 测输出错误相关性，AJ-Bench 测环境证据取得/解释，AgentJudgeBench 与 AcquaBench 测 reference 与成功来源；三者可共用交叉矩阵但不能互相替代，下一步是固定任务与 trace 的三门 factorial 对照。 |
 | 2026-09-05T10:01:20 | Agent Observability 上界随层级变化 | refined | Google DeepMind 定义 coverage/recall/time-to-response 并报告百万任务监控原型，但未给逐案阻断或完整污染覆盖实测；收窄为“指标化控制面可观测性 ≠ 行为覆盖闭包”。 |
 | 2026-09-05T09:32:09+08:00 | Agent Safety 事件级证据连续性 | refined | 不同来源虽分别覆盖检测、授权、执行或恢复，但不能拼接为同一任务的安全闭环；下一步需用稳定事件标识对齐 `flag→verdict→authorization→actuation→revoke/recovery→review`，不新增 EX。 |
 | 2026-09-05T08:33:05+08:00 | Agent Safety Topic 边界 | refined | 现有安全 Entity/Source 可按“检测→判定→授权→执行→撤销/恢复”形成结构 Topic；五阶段对象、失败信号和候选责任角色可分，但 owner、action-surface、撤销/恢复指标仍未闭合，创建最小 `Agent-Security` 骨架，不新增 EX。 |
@@ -199,6 +201,7 @@ related_entities:
 
 ## 思考日志索引
 
+- [[2026-09-05]] — open explore：核对 arXiv 2604.07650、AJ-Bench、AgentJudgeBench 与 AcquaBench 的实验对象和控制变量；确认输出错误相关性、环境证据取得/解释、reference integrity 与 success provenance 是耦合但不可替代的三门，`EX-001/002/004` refined，不新增 EX
 - [[2026-09-05]] — recompile CR-004：Google DeepMind AI Control 定义 coverage/recall/time-to-response 并披露百万任务监控原型，但无逐案阻断或完整污染覆盖实测；将“指标化控制面可观测性”与“行为覆盖闭包”分开，refined
 - [[2026-09-05]] — open explore：将现有 Agent 安全 Entity/Source 映射为“检测→判定→授权→执行→撤销/恢复”五阶段 Topic 骨架；确认结构边界成立但 owner、action-surface、撤销/恢复仍缺实证，不新增 EX
 - [[2026-09-05]] — open explore：Google Cloud CCAI escalation telemetry 与 Google SecOps 架构把接收队列、转接失败、结构化汇总和迭代上限加入 handoff 分析；将 `EX-003` 收窄为“交接包 × 接收面”两层，不新增 EX
