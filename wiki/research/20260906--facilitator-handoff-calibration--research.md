@@ -35,6 +35,7 @@ tags:
 | [Human-AI Teaming Through the Lens of Calibration](https://arxiv.org/html/2606.10906) | 2026-06-09；作者论文 | 形式化 rejector 校准与人类隐藏信息造成的不可约风险 | 定理、模拟与人类预测实验 |
 | [OpenL2D / FiFAR](https://www.nature.com/articles/s41597-025-04664-y) | 2025-04-23；作者 benchmark/data descriptor | 操纵专家工作容量和可用专家，观察分派算法排名变化 | benchmark；专家为合成数据 |
 | [AI, Take the Wheel](https://arxiv.org/html/2605.28255) | 2026-05-27；作者论文 | 把“是否让 AI 自主行动”和“接收建议后是否采纳”分成两个决策 | 受控现场式实验；非 handoff/queue 实验 |
+| [Alibaba Taobao field experiment](https://arxiv.org/pdf/2605.14830) | 2026-05；随机现场实验 | 把升级类型、时机和接管后人类投入与服务结果分开 | 现场因果证据；不操纵交接包 |
 
 # 逐来源证据与限制
 
@@ -80,6 +81,12 @@ tags:
 
 **Limitation：** 这是 trivia 场景、小样本、非队列 handoff；没有操纵交接包、接收者身份或等待状态。它是接收者侧的因果/准因果边界证据，不是三变量 handoff factorial。
 
+## 8. Alibaba：升级类型、时机与接管投入改变结果
+
+**Source evidence：** Wang 等人的 Alibaba Taobao 随机现场实验涉及 647 名客服工作者和 680,676 条服务对话。处理组监督 agent 可自主解决的 AI-eligible 对话，并在算法标记风险或人类判断需要时接管；控制组全程人工处理。AI 部署降低平均对话时长，但 AI-eligible 对话的客户评分下降。技术能力不匹配触发的升级中，人类介入更能保住服务质量；情绪升级通常发生在挫败已经积累后，接管后的消息数、对话轮次占比、主动查找和方案提供都更低；更早的人工介入能部分阻止恶化。[论文 PDF，第 2、7–10 页](https://arxiv.org/pdf/2605.14830)
+
+**Limitation：** 研究使用 worker-level 随机分配和 worker-day 差分设计，能支持部署与升级类型/时机/接管投入之间的效果异质性；但没有把 full transcript、结构化摘要、evidence-only 或带模型结论的交接包作为随机处理变量。因此它不能单独证明哪一种 handoff packet 更好。
+
 # 这如何改变 EX-003
 
 将 EX-003 的内部分析单元从“handoff 是否完整”改为四个可观测门：
@@ -93,15 +100,18 @@ tags:
 
 **更新后的判断：** C、R、A 不是同一变量；H 也不能被 C 的“已发送”状态替代。新的 supervision blind spot 可能出现在两处：路由器不知道接收者的隐藏优势，或接收者看到了摘要却看不到执行证据。现有材料支持把两处写进实验设计，但没有证明哪一处在生产中主导。
 
+本轮新增现场证据后，增加一个横切变量：**handoff timing**。研究应把 `trigger/type → route/receiver → handoff packet → human action/outcome` 作为四段事件链；早/晚升级不能被事后“是否接通”这一单一指标替代。
+
 # 新问题
 
-在固定 escalation trigger、Agent 输出和目标任务后，**交接包的内容效应是否会随接收面可用性和路由目标而改变**？若 C 的差异在固定 A/R 后仍改变人类决策，才可把“交接可接住性”保留为 EX-003 内部独立子门；若差异只在拥塞或错误路由时出现，则应把它并入 A/R 的交互，而不是声称存在一般性的 context effect。
+在固定 escalation trigger、升级时机、Agent 输出、目标专家和 queue state 后，**交接包的内容效应是否仍改变人类正确率、补问、处置延迟和过度依赖？** 若差异只在拥塞、错误路由或情绪负载时出现，则应把它并入 A/R/timing 的交互，而不是声称存在一般性的 context effect。
 
 # 证伪方向
 
 - **证伪 C 的独立性：** 固定 trigger、agent output、recipient 和 queue state 后，完整包、结构化摘要、evidence-only、带模型结论的包在人类准确率、补问、处置延迟和过度依赖上无稳定差异；或差异完全由 framing/证据覆盖解释。
 - **证伪 A 的独立性：** 在 route 和 context 固定后，available/congested/failed queue 不改变有效处置率、等待、放弃和误升级，或所有差异都能由 route target 解释。
 - **证伪 R 的独立性：** 在同一 queue state 与 context 下，facilitator 选路和固定专家目标没有差异，或差异完全由 receiver skill/hidden feature 解释。
+- **证伪 timing 的独立性：** 在固定失败类型与交接包后，早/晚接管不改变人类投入、最终结果或恢复率，或所有差异都由情绪/任务难度解释。
 - **证伪“新监督盲区”：** 让 router、receiver 和 evaluator 都获得同一份可审计执行证据后，跨任务、跨负载仍能稳定校准且不出现工具状态遗漏；反之，若只让接收者看到摘要仍出现系统性漏判，blind spot 假设获得反例支持。
 
 # Source 需求
@@ -110,31 +120,36 @@ tags:
 2. 固定 Agent 输出的 context ablation 研究：至少比较 full transcript、结构化 packet、evidence-only、evidence + model conclusion，并记录接收者实际看到的字段。
 3. 同一任务族中可独立操纵 receiver availability 与 route target 的人类实验或 benchmark；需要 hidden oracle/外部结果，不能只用模型自报成功。
 4. 研究“router 是否知道 receiver 的隐藏特征”和“receiver 是否知道 Agent 的隐藏执行状态”的双向可见性矩阵。
+5. 生产或 benchmark 记录 `handoff_packet_version`、`route_target`、`queue_state`、`handoff_at`、`first_human_action_at`、`clarification_count`、`approval/reject` 和最终结果，以便把 packet effect 与 timing/receiver effect 分离。
 
 # 最小实验
 
-先不操纵“何时升级”：固定触发条件、初始状态和 Agent 输出，构造一个小型配对任务集，在同一任务上做 `C × A × R = 2 × 2 × 2` pilot：
+固定触发条件、初始状态、Agent 输出、专家和队列负载，只随机化四种交接包：
 
-- **C：** 结构化最小包 vs. 结构化包 + 可核验执行证据；保留相同用户目标和路由理由。
-- **A：** 目标接收者/队列有容量 vs. 预先定义的拥塞/不可用并触发 fallback。
-- **R：** 正确领域 specialist vs. generic/escalation queue；接收者能力和可用性在各 cell 内固定。
+1. 完整历史 + 结构化状态 + 原始工具/证据；
+2. 最小摘要 + 结构化状态；
+3. 证据-only，不展示模型结论；
+4. 证据 + 模型结论，并显式标注其来源。
 
-以 human correctness、time-to-correct-action、补问次数、重复工作、override/over-reliance、fallback/abandonment 为结果；同时记录 router-visible、receiver-visible、evaluator-visible 三份视图。先对 C 做 paired context ablation，再引入 trigger policy，避免把“何时升级”与“升级后是否接得住”混在一起。
+再按早/晚两个升级时点分层，记录 human correctness、time-to-correct-action、补问次数、重复工作、override/over-reliance、fallback/abandonment、最终结果和队列等待。关键对照是固定 `route_target` 与 `queue_state` 后的 context ablation，而不是把不同路由的总体成功率直接比较。
 
 # 证据边界
 
-- **已知事实：** 官方文档定义了字段、状态、路由图、队列容量/回退和审批暂停；作者研究给出了隐藏信息、专家可用性和接收后采纳的理论/实验边界。
-- **本轮推理：** C、A、R、H 应作为不同变量进入 EX-003 的实验矩阵；“全量会话转交”不足以证明监督闭包。
-- **仍未知：** 没有找到 2025–2026 一手来源在同一 handoff 实验中同时操纵 context package、receiver availability 和 routing，并测量人类最终正确率/延迟/依赖；因此当前结论是设计边界与局部因果证据的组合，不是生产级因果结论。
+- **已知事实：** 官方文档定义了字段、状态、路由图、队列容量/回退和审批暂停；作者研究给出了隐藏信息、专家可用性、接收后采纳，以及升级类型/时机/接管投入的理论或实验边界。
+- **本轮推理：** C、A、R、H 与 timing 应作为不同变量进入 EX-003 的实验矩阵；“全量会话转交”不足以证明监督闭包。
+- **仍未知：** 没有找到一手来源在同一 handoff 实验中同时操纵 context package、receiver availability、routing 和 timing，并测量人类最终正确率/延迟/依赖；因此当前结论是设计边界与局部因果证据的组合，不是生产级因果结论。
 
 # 来源链接
 
 - [Microsoft Agent Framework Handoff](https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/handoff)
 - [Microsoft Copilot Studio live-agent handoff](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-hand-off)
 - [Google Cloud virtual-agent to human-agent transfers](https://docs.cloud.google.com/contact-center/ccai-platform/docs/virtual-agent-to-human-agent-transfers)
+- [Google Cloud Chat Platform API Guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/chat-platform-api-guide?hl=en)
+- [Google Cloud Transfers dashboards](https://docs.cloud.google.com/contact-center/ccai-platform/docs/dashboards-transfers)
 - [AWS Connect: transfer a chat with context](https://docs.aws.amazon.com/connect/latest/adminguide/transfer-chats.html)
 - [AWS Connect: agent-to-agent transfers](https://docs.aws.amazon.com/connect/latest/adminguide/setup-agent-to-agent-transfers.html)
 - [AWS Connect: queue status and capacity](https://docs.aws.amazon.com/connect/latest/adminguide/queue-to-queue-transfer.html)
 - [Human-AI Teaming Through the Lens of Calibration](https://arxiv.org/html/2606.10906)
 - [A benchmarking framework and dataset for learning to defer](https://www.nature.com/articles/s41597-025-04664-y)
 - [AI, Take the Wheel](https://arxiv.org/html/2605.28255)
+- [Alibaba Taobao field experiment](https://arxiv.org/pdf/2605.14830)

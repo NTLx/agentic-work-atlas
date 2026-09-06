@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-06T15:33:43+08:00
+updated: 2026-09-06T16:38:24+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -119,7 +119,7 @@ related_entities:
 |---|---|---|---|---|
 | EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | `2604.07650` 仅在输出错误、任务难度和模型/验证器组合上测相关性；REDAgentBench 固定 judge backbone，只改变证据视图/证明契约，不能替代独立性操纵；refined | 固定证据访问、reference 与任务后，跨家族/独立实现的单轴变化仍不能降低共同漏报，或独立性效应完全由证据覆盖/判定质量解释 | clip+compile `2604.07650` 与 REDAgentBench，按“错误生成相关性 × 证据状态 × reference 条件”补交叉字段 |
 | EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量；Partial Evidence Bench 固定 oracle、改变授权可见证据；REDAgentBench 在同一 rollout 上改变轨迹/状态/混合视图并观察标签变化；但二者都未与 verifier independence、reference 条件同轨交叉；refined | 固定模型/验证器、任务、reference 与访问权限后，静态低覆盖、可交互读取和显式检查策略对照不改变漏报，或差异完全由 token budget、模型相关性或真值瑕疵解释 | clip+compile AJ-Bench、SkillTV-Bench、Partial Evidence Bench 与 REDAgentBench，建立“物理可见性 × 检查策略 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并与 EX-001 对齐 |
-| EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 选择性委派研究将路由器定义为定位“人类优于 Agent 区域”的 rejector；现有材料支持隐藏特征和 framing 改变升级质量；Google SRE/AWS 明确结构化交接与完整性，Google Cloud 将目标人、队列、等待/转接失败作为独立接收变量；synthesized/refined | 在固定升级触发、专家身份、Agent 输出和接收面可用性后，完整/最小/证据-only/带模型结论的交接包对人类正确率、处置延迟、补问次数和过度依赖均无稳定差异，或差异完全由 CR-004 的可见性、EX-002 的证据覆盖、消息 framing 或接收队列解释；反之若交接包残差持续存在，保留为 EX-003 内部独立子门 | clip+compile Google SRE AI Operator 与 AWS handoff guidance；补查 Google Cloud escalation/transfer telemetry；建立“路由选择 × 交接包 × 消息 framing × 专家负载/队列”矩阵，先固定路由与接收面做 context ablation，再与 CR-004 / EX-002 对照 |
+| EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | Alibaba 2026 随机现场实验显示升级类型、时机与接管后投入改变结果；Google/Microsoft 一手文档把 route、handoff packet、queue/receiver state 与 fallback 分开；但尚无交接包内容的因果 ablation；refined | 固定升级触发、升级时机、专家身份、Agent 输出与队列状态后，完整/最小/证据-only/带模型结论的交接包若无稳定差异，则并入 EX-002；若证据-only 或结构化状态仍改变正确率、延迟、补问或过度依赖，保留 packet/framing 子门 | clip+compile Alibaba 现场实验与 Google/Microsoft handoff 字段；建立 `trigger/type → route/receiver → packet → human action` 矩阵，优先做固定路由/接收面下的 context ablation，并分层早/晚升级 |
 | EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 仍缺同 trace 交叉；REDAgentBench 用冻结 verifier、环境 receipt/最终状态和盲审校准强化了 external outcome/provenance 侧，但没有错误或语义等价 reference 条件；refined | 固定 verifier、evidence 与 trace 后，若 reference/provenance 仍分别改变 false accept/reject、attribution 或排名，保留两层；否则并回 benchmark validity | clip+compile 现有/新材料与 REDAgentBench；寻找含 hidden ledger、visible trace、semantic-equivalent reference 与外部 adjudication 的联合 benchmark |
 | EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence 分开了 checkpoint-restore 与外部副作用；HBHC 支持有界阻断未来调用；Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 显示凭据失效、在途停止、提交状态不确定与效果对账具有不同语义；缺 action-surface 与 post-state 分母；refined | 固定 trace/verdict/工具 schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消接受、进程停止与最终 post-state 可稳定等价，或未知提交完全由既有变量解释，则收窄/并回；反之保留 commit-state uncertainty 子门 | clip+compile ACRFence、HBHC、Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth、AWS Step Functions 材料；寻找带权威 post-state、补偿结果和责任接管的生产 trace |
 | EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | 新核查把问题拆成“决策时状态完整性”与“独立动作边界 enforcement”：ControlCapsule 的强证据是 preflight/fail-closed 的状态层结果；Constraint Pinning 会被 operator-impersonation 部分穿透；SMSR 只能把 unsigned memory write 与 authenticated injection 分层，MemSecBench 提供 Write→Execute→Forget 生命周期单位；仍未证明 OOB control plane 普遍必要 | 若 exact active-policy replay + preflight 与 signed OOB carrier 在固定 action-surface、compaction、memory、authority update、failover 和 recovery 上等效，则 OOB 只是实现选项；若 token-stream authority impersonation 或合法写入路径的恶意 memory 留下 deterministic monitor 无法吸收的 action/post-state 残差，则保留 authority authenticity / provenance binding 子门 | clip+compile 已登记四篇研究与新发现的 SMSR、MemSecBench；建立 `carrier → issuer/principal → binding → survival → verdict → preflight → actuation → post-state → recovery` 矩阵，再做固定 action-surface 的 carrier × enforcement 对照 |
@@ -144,8 +144,8 @@ related_entities:
 | P0 | Human-AI Teaming Through the Lens of Calibration | arXiv 2606.10906 已核读但未进入 raw/source；需提取 rejector 定理、人类隐藏特征与不可约 excess risk 条件 | clip+compile → EX-003 |
 | P0 | 选择性预测的校准失效 | PMLR 333（2026）多模态 ICU 研究显示聚合指标会遮蔽按类别误校准；需提取 per-class calibration、deferral 与 expert load 结果及任务边界 | clip+compile → EX-003 |
 | P1 | 人类-路由消息效应 | arXiv 2112.06751 显示 deferral status 与 model prediction 的组合会改变人类准确性；需核对 messaging、human-in-loop 指标与外推边界 | clip+compile → EX-003 |
-| P0 | 主动升级的部署级长程案例与交接契约 | Google SRE AI Operator 报告结构化上下文目录、完整调查历史交接、数千起 incident 与 human Golden Data；AWS Agentic AI Lens 明确要求交接延迟、上下文完整性和协作成功率，但两者都缺固定升级触发下的交接包消融、人类决策质量与长期漂移对照 | clip+compile → EX-003；优先入库 Google SRE AI Operator 与 AWS handoff guidance，再寻找独立部署级长程案例 |
-| P1 | 接收面与转接遥测 | Google Cloud CCAI 官方 schema 将升级原因、目标人、等待/连接时长、队列、转接失败、服务等级和 deflection 分开记录；但它是客服转接模型，不等于长程 Agent 的人类处置证据 | clip+compile → EX-003；寻找能同时报告 handoff packet、接收负载/队列和人类结果的部署级案例 |
+| P0 | 主动升级的部署级长程案例与交接契约 | Google SRE AI Operator 报告结构化上下文目录、完整调查历史交接、数千起 incident 与 human Golden Data；AWS Agentic AI Lens 明确要求交接延迟、上下文完整性和协作成功率；Alibaba 现场实验补足升级类型/时机/人类投入效果，但三者都缺固定接收面下的交接包消融 | clip+compile → EX-003；优先入库 Alibaba 现场实验、Google SRE AI Operator 与 AWS handoff guidance，补 packet version/专家负载/结果字段 |
+| P1 | 接收面与转接遥测 | Google Cloud CCAI 官方 schema 将升级原因、目标人、等待/连接时长、队列、转接失败、服务等级和 deflection 分开记录；但它是客服转接模型，不等于长程 Agent 的人类处置证据；Alibaba 显示接管时机和失败类型会改变后续投入 | clip+compile → EX-003；寻找能同时报告 handoff packet、接收负载/队列、升级时机和人类结果的部署级案例 |
 | P0 | AgentJudgeBench reference 对照 | v1 已核读；C3 仅一个 generator/两个 judge，显示 Gemini 可对错误 reference 保持相同 alignment，而 QwQ 接近无 reference；120 条记录仅单标注者，且 programmatic scorer 对 schema-valid extra keys 的严格度与人类不一致 | clip+compile → EX-004，并与 EX-001/EX-002 共用 `reference condition × information provenance × verifier independence` 字段表 |
 | P0 | OpenAI coding evaluation audits | 已联网核读两份官方材料，尚未进入 raw/source；需提取题面、测试、gold patch、低覆盖、独立人审与训练污染的归因字段 | clip+compile → EX-004 |
 | P0 | Agentic Benchmark Checklist | 已核读一手论文，尚未进入 raw/source；需提取 task/outcome validity、ground-truth 审查、语义等价、环境冻结与污染控制字段 | clip+compile → EX-004 |
@@ -208,14 +208,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-06T16:38:24+08:00 | EX-003 交接校准 | refined | Alibaba 随机现场实验把升级类型、时机与接管投入的效果异质性钉实；Google/Microsoft 文档把路由、交接包、接收面和 fallback 分开，但没有交接包内容的因果 ablation；将 EX-003 收窄为四段事件链，不新增 EX。 |
 | 2026-09-06T15:33:43+08:00 | 验证器交叉核查 | refined | `trajectory-judge` 用固定 trace、构造故障和外部规则真值比较多种 judge，补强 evidence-view/判定可靠性边界；`BabelJudge` 的受控扰动仍只有单 judge 结果，二者均未提供 reference/provenance × verifier independence 的同 trace 因果交叉。 |
 | 2026-09-06T14:31:59+08:00 | 三轴验证交叉基准 | refined | REDAgentBench 在固定 rollout 上改变轨迹/状态/混合证据视图，报告标签与局部排名变化，并用 receipt/最终状态/盲审校准建立外部结果锚点；Partial Evidence Bench 固定 oracle、改变授权可见证据；两者都未操纵 verifier independence 与 reference/provenance 条件，不新增 EX。 |
 | 2026-09-06T13:31:50+08:00 | EX-006 策略承载完整性与动作边界 | refined | 新核查把 EX-006 分成决策时状态完整性与独立动作边界 enforcement：exact replay+preflight 是强基线但非 action-level 优势证明；Constraint Pinning 的 operator-impersonation 失败、SMSR 的 authenticated injection 与 MemSecBench 的生命周期单位把 OOB/provenance 收窄为待证 authority authenticity 子门，不新增 EX。 |
 | 2026-09-06T11:31:35+08:00 | Agent 威胁面 Topic 承载边界 | refined | 结构审计显示 19 个安全/零信任标签 Entity 中仅 6 个有 Topic 入链；未承载项不是同一簇，其中 `Agent-Traps` 等五/六个概念形成独立威胁面互引簇。`Agent-Security` 应继续承载控制/责任生命周期，`Agent-Attack-Surface` 仅作为 promotion candidate，不新增 EX。 |
-| 2026-09-06T03:40:23+08:00 | EX-004 reference 完整性与成功来源 | refined | 新增 `agent-infra` 的可信侧 reference/版本身份、`agentprov` 的可见 trace/held-out truth 分离和 `tracegym` 的回放/人审校准设计；它们把 EX-004 收窄为 reference trust/control 与 provenance observability 两层，但没有提供三门同 trace 的因果效果证据。 |
 
 ## 思考日志索引
 
+- [[2026-09-06]] — open explore：核对 Alibaba 随机现场实验与 Google/Microsoft handoff 一手文档；确认升级类型/时机/人类投入有现场效果证据，交接包、路由和接收面是不同操作变量，但缺固定接收面下的 packet ablation；将 `EX-003` 收窄为四段事件链，不新增 EX
 - [[2026-09-06]] — open explore：核查 `trajectory-judge`、`BabelJudge` 与 ALE 的固定 trace、构造真值、隐藏 reference 和多 judge 边界；补强 evidence-view/判定可靠性，但未找到 `verifier independence × reference/provenance` 的同 trace 因果交叉，不新增 EX
 - [[2026-09-06]] — open explore：补查 REDAgentBench、Partial Evidence Bench 与 CAFE；确认 evidence view/授权可见性可在固定 rollout 或 oracle 下独立测量，但尚无同时操纵 verifier independence、reference integrity/provenance 的同 trace factorial 证据；收窄 `EX-001/002/004`，不新增 EX
 - [[2026-09-06]] — open explore：核查 Ghost in the Context、Governance Decay、Security-Recall Divergence，并新增 SMSR、MemSecBench；将 `EX-006` 从“是否必须 OOB control plane”收窄为“决策时状态完整性 + 独立动作边界 enforcement”，保留 authority authenticity / provenance binding 为待证子门，不新增 EX
