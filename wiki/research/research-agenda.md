@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-06T11:31:35+08:00
+updated: 2026-09-06T13:31:50+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -122,7 +122,7 @@ related_entities:
 | EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 选择性委派研究将路由器定义为定位“人类优于 Agent 区域”的 rejector；现有材料支持隐藏特征和 framing 改变升级质量；Google SRE/AWS 明确结构化交接与完整性，Google Cloud 将目标人、队列、等待/转接失败作为独立接收变量；synthesized/refined | 在固定升级触发、专家身份、Agent 输出和接收面可用性后，完整/最小/证据-only/带模型结论的交接包对人类正确率、处置延迟、补问次数和过度依赖均无稳定差异，或差异完全由 CR-004 的可见性、EX-002 的证据覆盖、消息 framing 或接收队列解释；反之若交接包残差持续存在，保留为 EX-003 内部独立子门 | clip+compile Google SRE AI Operator 与 AWS handoff guidance；补查 Google Cloud escalation/transfer telemetry；建立“路由选择 × 交接包 × 消息 framing × 专家负载/队列”矩阵，先固定路由与接收面做 context ablation，再与 CR-004 / EX-002 对照 |
 | EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 仍缺同 trace 交叉；新设计把可信 reference 身份/暴露与 hidden-truth trace provenance 分开；refined | 固定 verifier、evidence 与 trace 后，若 reference/provenance 仍分别改变 false accept/reject、attribution 或排名，保留两层；否则并回 benchmark validity | clip+compile 现有/新材料；寻找含 hidden ledger、visible trace、semantic-equivalent reference 与外部 adjudication 的联合 benchmark |
 | EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence 分开了 checkpoint-restore 与外部副作用；HBHC 支持有界阻断未来调用；Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 显示凭据失效、在途停止、提交状态不确定与效果对账具有不同语义；缺 action-surface 与 post-state 分母；refined | 固定 trace/verdict/工具 schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消接受、进程停止与最终 post-state 可稳定等价，或未知提交完全由既有变量解释，则收窄/并回；反之保留 commit-state uncertainty 子门 | clip+compile ACRFence、HBHC、Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth、AWS Step Functions 材料；寻找带权威 post-state、补偿结果和责任接管的生产 trace |
-| EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | 四篇一手论文支持 context eviction/weakening/misbinding、compaction decay 和跨会话记忆污染；但 action-level 结果有限，未证明 OOB control plane 普遍必要；refined | 若 protected policy + deterministic preflight/action guard 与 OOB registry 在固定 verdict、action-surface、延迟和 recovery 上等效，则 OOB 仅是实现选项；若语义约束与 memory recovery 不衰减，则收窄为特定实现风险 | clip+compile 四篇研究；建立 `provenance → binding → budget/survival → verdict → action boundary → recovery` 矩阵，再做固定 verdict 的 carrier × enforcement 对照 |
+| EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | 新核查把问题拆成“决策时状态完整性”与“独立动作边界 enforcement”：ControlCapsule 的强证据是 preflight/fail-closed 的状态层结果；Constraint Pinning 会被 operator-impersonation 部分穿透；SMSR 只能把 unsigned memory write 与 authenticated injection 分层，MemSecBench 提供 Write→Execute→Forget 生命周期单位；仍未证明 OOB control plane 普遍必要 | 若 exact active-policy replay + preflight 与 signed OOB carrier 在固定 action-surface、compaction、memory、authority update、failover 和 recovery 上等效，则 OOB 只是实现选项；若 token-stream authority impersonation 或合法写入路径的恶意 memory 留下 deterministic monitor 无法吸收的 action/post-state 残差，则保留 authority authenticity / provenance binding 子门 | clip+compile 已登记四篇研究与新发现的 SMSR、MemSecBench；建立 `carrier → issuer/principal → binding → survival → verdict → preflight → actuation → post-state → recovery` 矩阵，再做固定 action-surface 的 carrier × enforcement 对照 |
 | EX-007 | 自我改进 Agent 的变更晋级是否需要按变更对象分层的不可自证门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | 材料与 HELIX/Evo-Harness/AAR 显示三类对象不能共用 gate：行为组件有结果不变但并行/停止/副作用顺序回归；评估/目标组件可因 benchmark 适配抬分；策略/执行组件可绕过安全边界。新增边界是控制面与反馈面双重不对称：recipe/trace 解决归因，环境反馈与隐藏 oracle 缓解自证，但不单独构成安全保证；refined | 若固定模型/任务后，行为契约能捕获所有行为组件线上残差；若评估/目标共变仍能在冻结外部 oracle、hidden holdout、不可改写的 feedback provenance 和独立安全复评上稳定复现；或所有残差最终可由 `EX-004/006` 解释，则削弱或合并 `EX-007` | new-source → EX-007；clip+compile HELIX/Evo-Harness 与 Weak-to-Strong Researcher，寻找 offline→online、独立复评、policy 冻结、rollback；暂不抽象第四类 gate |
 
 ## Source 需求队列
@@ -173,6 +173,8 @@ related_entities:
 | P0 | Governance Decay / ConstraintRot | [arXiv 2606.22528](https://arxiv.org/abs/2606.22528) v2 已核读但未进入 raw/source；需核查 compaction、summarizer injection、Constraint Pinning 与 operator-impersonation 的对照，以及 token-stream 外部权威通道这一开放边界 | clip+compile → EX-006 / CR-004 |
 | P0 | Sleeper Memory Poisoning | [arXiv 2605.15338](https://arxiv.org/abs/2605.15338) v2 已核读但未进入 raw/source；需提取 memory write—retrieve—use 三阶段、删除/纠正/用户审查/来源谱系防御缺口，并与 CR-002 区分数据最小化问题 | clip+compile → EX-006 / CR-002 |
 | P1 | Security-Recall Divergence | [arXiv 2604.20911](https://arxiv.org/abs/2604.20911) 已核读但未进入 raw/source；需核查 omission/commission 不对称、Safe Turn Depth 与格式代理限制，不能把代理约束直接外推为真实泄露风险 | clip+compile → EX-006 / CR-004 |
+| P1 | SMSR / runtime memory provenance | [arXiv 2606.12703](https://arxiv.org/abs/2606.12703) 提供 HMAC write boundary、authenticated injection 分支与 certificate/utility trade-off；缺真实 memory backend、外部 action post-state 和 human adjudication | clip+compile → EX-006 / CR-002 |
+| P1 | MemSecBench memory lifecycle | [arXiv 2607.27080](https://arxiv.org/abs/2607.27080) 提供 Write→Execute→Forget 的 linked lifecycle benchmark；缺部署级 trace、合法主体恶意写入和与撤销/恢复链的对照 | clip+compile → EX-006 / CR-002 / EX-005 |
 | P0 | 自我改进回路的独立变更审计 | Meta-Harness 有 train/dev gate，HELIX 增加 recipe/lockfile/trace/verifier 的变更归因，Evo-Harness 显示 feedback provenance/granularity 会改变演化结果，Anthropic AAR 以独立 evaluator、hidden holdout 与代码批准隔离部分自证；仍缺跨版本回放、不可改写 feedback、独立安全策略和 rollback 记录 | clip+compile → EX-007；优先入库 HELIX、Evo-Harness 与 Weak-to-Strong Researcher，并对齐 change owner、component、版本/hash、外部 oracle、feedback provenance、canary、rollback |
 | P0 | Harness 行为契约与保留测试区 | GitHub 案例显示离线评测漏掉并行回归；HELIX 的 Pytest 配对轨迹进一步显示 target tests 通过仍可有 PASS_TO_PASS 回归，干净 patch 也可能在语义边界上失败；缺跨版本、跨产品的行为不变量与回滚记录 | clip+compile → EX-007；提取 HELIX 的 regression-aware sibling labels，与 GitHub 行为契约字段对齐 |
 | P1 | 生产 Agent fleet 的自修改纵向记录 | 缺 prompt/skill/router/evaluator 变更的 owner、版本、canary、回滚、隐藏 holdout 与质量/安全联合结果 | new-source → EX-007 |
@@ -206,14 +208,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-06T13:31:50+08:00 | EX-006 策略承载完整性与动作边界 | refined | 新核查把 EX-006 分成决策时状态完整性与独立动作边界 enforcement：exact replay+preflight 是强基线但非 action-level 优势证明；Constraint Pinning 的 operator-impersonation 失败、SMSR 的 authenticated injection 与 MemSecBench 的生命周期单位把 OOB/provenance 收窄为待证 authority authenticity 子门，不新增 EX。 |
 | 2026-09-06T11:31:35+08:00 | Agent 威胁面 Topic 承载边界 | refined | 结构审计显示 19 个安全/零信任标签 Entity 中仅 6 个有 Topic 入链；未承载项不是同一簇，其中 `Agent-Traps` 等五/六个概念形成独立威胁面互引簇。`Agent-Security` 应继续承载控制/责任生命周期，`Agent-Attack-Surface` 仅作为 promotion candidate，不新增 EX。 |
 | 2026-09-06T03:40:23+08:00 | EX-004 reference 完整性与成功来源 | refined | 新增 `agent-infra` 的可信侧 reference/版本身份、`agentprov` 的可见 trace/held-out truth 分离和 `tracegym` 的回放/人审校准设计；它们把 EX-004 收窄为 reference trust/control 与 provenance observability 两层，但没有提供三门同 trace 的因果效果证据。 |
 | 2026-09-06T02:31:58+08:00 | MCP 2026-07-28 无状态转折 | refined | 去除协议 session 只消除了传输层粘性；显式 handle、Tasks durable state、MRTR 与 cache 重新分配了状态责任。Tasks 的 cancel ack 不保证停工或最终 `cancelled`，且 task 状态不等于下游 effect；暂不新增 EX，先补 handle/task 的绑定、TTL、撤销、replay、故障转移与 effect lineage 证据。 |
 | 2026-09-06T01:33:20+08:00 | EX-007 自我改进 Agent 的变更晋级 | refined | HELIX 支持用 recipe/lockfile/trace/verifier 保留 intervention identity，并用配对轨迹发现“目标通过但回归”和“代码干净但语义错误”；Evo-Harness 显示自生成反馈可低于不演化基线，环境反馈的粒度会改变结果；Anthropic AAR 的 hidden holdout/独立 evaluator 能隔离部分作弊但事后监控仍非完整安全门。EX-007 收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX。 |
-| 2026-09-06T00:39:36+08:00 | EX-005 撤销后的在途动作与效果收敛 | refined | MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 的一手材料显示凭据/任务失效、在途停止、提交状态不确定和效果对账/补偿具有不同对象与时序；新增 `commit-state uncertainty` 子门。控制面终态不证明 post-state 收敛；不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-06]] — open explore：核查 Ghost in the Context、Governance Decay、Security-Recall Divergence，并新增 SMSR、MemSecBench；将 `EX-006` 从“是否必须 OOB control plane”收窄为“决策时状态完整性 + 独立动作边界 enforcement”，保留 authority authenticity / provenance binding 为待证子门，不新增 EX
 - [[2026-09-06]] — open explore：结构审计安全/零信任标签 Entity 的 Topic 承载；确认未承载项分为攻击面/内容陷阱簇与控制/身份簇，前者形成 `Agent-Attack-Surface` promotion candidate，后者优先接入既有 `Agent-Security`，不新增 EX
 - [[2026-09-06]] — open explore：补查 `agent-infra` benchmark contract、`agentprov` provenance attribution 与 `tracegym` replay harness；确认 reference trust/control 需要可信侧 owner、version/digest、hidden grader 与 allowlisted projection，provenance observability 需要 visible trace 与 held-out truth 分离、变换/泄漏检查和 coverage；三者没有提供 EX-001/002/004 同 trace factorial 效果证据，将 `EX-004` 收窄为两层，不新增 EX
 - [[2026-09-06]] — open explore：核对 MCP 2026-07-28 正式规范、Tasks extension、C# SDK stateless 文档与 SEP-2549；确认去除的是协议层 session，状态被转移到显式 handle、Tasks store、MRTR request state、cache 和 per-request metadata，且 Tasks cancel 仍是协作式/最终一致；新增 handle/task 绑定、TTL、撤销、replay、故障转移与 effect lineage 的 Source 需求，不新增 EX
