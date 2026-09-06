@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-06T16:38:24+08:00
+updated: 2026-09-06T17:34:06+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -208,14 +208,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-06T17:34:06+08:00 | 研究代谢审计 | no_delta | `EX-001`–`EX-007` 今日均已有近期 `refined/no_delta` 结果；当前瓶颈是可执行的 P0 evidence debt，不再创建 EX-008，下一步切换到 `clip+compile`。 |
 | 2026-09-06T16:38:24+08:00 | EX-003 交接校准 | refined | Alibaba 随机现场实验把升级类型、时机与接管投入的效果异质性钉实；Google/Microsoft 文档把路由、交接包、接收面和 fallback 分开，但没有交接包内容的因果 ablation；将 EX-003 收窄为四段事件链，不新增 EX。 |
 | 2026-09-06T15:33:43+08:00 | 验证器交叉核查 | refined | `trajectory-judge` 用固定 trace、构造故障和外部规则真值比较多种 judge，补强 evidence-view/判定可靠性边界；`BabelJudge` 的受控扰动仍只有单 judge 结果，二者均未提供 reference/provenance × verifier independence 的同 trace 因果交叉。 |
 | 2026-09-06T14:31:59+08:00 | 三轴验证交叉基准 | refined | REDAgentBench 在固定 rollout 上改变轨迹/状态/混合证据视图，报告标签与局部排名变化，并用 receipt/最终状态/盲审校准建立外部结果锚点；Partial Evidence Bench 固定 oracle、改变授权可见证据；两者都未操纵 verifier independence 与 reference/provenance 条件，不新增 EX。 |
 | 2026-09-06T13:31:50+08:00 | EX-006 策略承载完整性与动作边界 | refined | 新核查把 EX-006 分成决策时状态完整性与独立动作边界 enforcement：exact replay+preflight 是强基线但非 action-level 优势证明；Constraint Pinning 的 operator-impersonation 失败、SMSR 的 authenticated injection 与 MemSecBench 的生命周期单位把 OOB/provenance 收窄为待证 authority authenticity 子门，不新增 EX。 |
-| 2026-09-06T11:31:35+08:00 | Agent 威胁面 Topic 承载边界 | refined | 结构审计显示 19 个安全/零信任标签 Entity 中仅 6 个有 Topic 入链；未承载项不是同一簇，其中 `Agent-Traps` 等五/六个概念形成独立威胁面互引簇。`Agent-Security` 应继续承载控制/责任生命周期，`Agent-Attack-Surface` 仅作为 promotion candidate，不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-06]] — open explore：审计 `EX-001`–`EX-007` 的近期代谢状态；未发现正交的新缺口，确认当前主要瓶颈是既有 P0 evidence debt；不新增 EX-008，下一步优先 `clip+compile`
 - [[2026-09-06]] — open explore：核对 Alibaba 随机现场实验与 Google/Microsoft handoff 一手文档；确认升级类型/时机/人类投入有现场效果证据，交接包、路由和接收面是不同操作变量，但缺固定接收面下的 packet ablation；将 `EX-003` 收窄为四段事件链，不新增 EX
 - [[2026-09-06]] — open explore：核查 `trajectory-judge`、`BabelJudge` 与 ALE 的固定 trace、构造真值、隐藏 reference 和多 judge 边界；补强 evidence-view/判定可靠性，但未找到 `verifier independence × reference/provenance` 的同 trace 因果交叉，不新增 EX
 - [[2026-09-06]] — open explore：补查 REDAgentBench、Partial Evidence Bench 与 CAFE；确认 evidence view/授权可见性可在固定 rollout 或 oracle 下独立测量，但尚无同时操纵 verifier independence、reference integrity/provenance 的同 trace factorial 证据；收窄 `EX-001/002/004`，不新增 EX
