@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-07T06:36:45+08:00
+updated: 2026-09-07T07:46:00+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -118,9 +118,9 @@ related_entities:
 | ID | 候选问题 | 当前判断 | 证伪方向 | 下一步 |
 |---|---|---|---|---|
 | EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | `2604.07650` 仅在输出错误、任务难度和模型/验证器组合上测相关性；REDAgentBench 固定 judge backbone，只改变证据视图/证明契约，不能替代独立性操纵；refined | 固定证据访问、reference 与任务后，跨家族/独立实现的单轴变化仍不能降低共同漏报，或独立性效应完全由证据覆盖/判定质量解释 | clip+compile `2604.07650` 与 REDAgentBench，按“错误生成相关性 × 证据状态 × reference 条件”补交叉字段 |
-| EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量；Partial Evidence Bench 固定 oracle、改变授权可见证据；REDAgentBench 在同一 rollout 上改变轨迹/状态/混合视图并观察标签变化；但二者都未与 verifier independence、reference 条件同轨交叉；refined | 固定模型/验证器、任务、reference 与访问权限后，静态低覆盖、可交互读取和显式检查策略对照不改变漏报，或差异完全由 token budget、模型相关性或真值瑕疵解释 | clip+compile AJ-Bench、SkillTV-Bench、Partial Evidence Bench 与 REDAgentBench，建立“物理可见性 × 检查策略 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并与 EX-001 对齐 |
+| EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量；Partial Evidence Bench 将授权视图、完整性意识和 gap report 分开；REDAgentBench 在同一 rollout 上改变轨迹/状态/混合视图；`Cited but Not Verified` 补出检索深度增加而事实整合下降的边界；仍未与 verifier independence、reference 条件同轨交叉；refined | 固定模型/验证器、任务、reference、外部 oracle、token/time 预算后，静态低覆盖、可交互读取和显式检查策略对照不改变漏报；或去重/held-out/独立事实 oracle 后深度效应消失 | clip+compile AJ-Bench、SkillTV-Bench、Partial Evidence Bench、REDAgentBench 与 `Cited but Not Verified`，建立“物理可见性 × 检查策略 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并保留 evidence-synthesis interference 子门 |
 | EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 2112.06751 在固定接收面下显示消息呈现有随机效果；Alibaba 随机的是部署条件，升级时机/类型主要是机制比较；Google/AWS 分开描述 route、handoff packet、receiver 与 telemetry，但没有 packet×receiver×timing 的因果消融；refined | 固定 trigger、Agent 输出、receiver 与 queue state 后，packet/message/timing 的交互若无稳定差异则并回 EX-002；若 packet 或 timing 仍改变正确率、延迟、补问或过度依赖，保留子门 | clip+compile 现有 P0 材料；优先寻找固定接收面下的 packet ablation 或含 `trigger/type → route/receiver → packet/version → human action → outcome` 的生产 trace |
-| EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 缺同 trace 交叉；EnvTrustBench 补 environment-state truth 与 outcome/trace oracle，EVMbench 补 deterministic transaction replay 与 post-state verification；三类 oracle 仍未同轨交叉；refined | 固定 verifier、trace 与 external post-state 后，若 reference/provenance 仍改变误放行/误拒绝、归因或排名，保留三层；否则并回 benchmark validity，并区分 reference truth、environment truth 与 execution truth | clip+compile EnvTrustBench、EVMbench；寻找同时含 reference manifest/version、environment state hash、visible/held-out trace、execution receipt/post-state 与跨 verifier 的联合 benchmark |
+| EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 缺同 trace 交叉；EnvTrustBench 补 environment-state truth 与 outcome/trace oracle，EVMbench 补 deterministic transaction replay 与 post-state verification；三类 oracle 仍未同轨交叉；refined | 固定 verifier、trace 与 external post-state 后，若 reference/provenance 仍改变误放行/误拒绝、归因或排名，保留三层；否则并回 benchmark validity，并区分 reference truth、environment truth 与 execution truth | clip+compile EnvTrustBench、EVMbench；寻找同时含 reference version、state hash、visible/held-out trace、execution receipt/post-state 与跨 verifier 的联合 benchmark |
 | EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence/HBHC 区分 checkpoint、未来调用阻断与副作用；MCP/A2A/Temporal/OAuth/Step Functions 区分凭据失效、在途停止、未知提交和补偿；Atomix/Cordon 补强 gate/outbox，但 receipt 仍不等于 provider post-state；refined | 固定 trace/verdict/schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消、停止与 post-state 等价则收窄，否则保留 commit-state uncertainty/effect-lineage 并测 post-state reconciliation | clip+compile ACRFence、HBHC、Atomix、Cordon、Dapr、CAVA、Auditable Agents 与 Microsoft compensation；优先找同案关联键、provider receipt、权威 post-state、补偿结果和独立复核 |
 | EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | ControlCapsule 支持 preflight/fail-closed 的状态层结果；Constraint Pinning 会被 operator-impersonation 穿透；SMSR 区分 unsigned 与 authenticated injection，MemSecBench 提供 Write→Execute→Forget；仍未证 OOB control plane 普遍必要；refined | 若 exact replay+preflight 与 signed OOB carrier 在 compaction、memory、authority update、failover、recovery 上等效，OOB 只是实现选项；否则保留 authority authenticity/provenance binding 子门 | clip+compile 相关研究、SMSR、MemSecBench；建立 `carrier → issuer → binding → survival → verdict → preflight → actuation → post-state → recovery` 矩阵，做载体×enforcement 对照 |
 | EX-007 | 自我改进 Agent 的变更晋级是否需要按变更对象分层的不可自证门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | HELIX/Evo-Harness/AAR 及新增 HarnessEvolve、HSI 支持把行为面、反馈/评估面、策略/控制面分层；Rethinking 的 matched search 与 held-out 反例显示性能门不能单独证明可复用能力。边界进一步收窄为“变更归因 + feedback/control 双重不对称”；refined | 若固定模型/任务后，行为契约能捕获所有行为组件线上残差；若评估/目标共变仍能在冻结外部 oracle、hidden holdout、不可改写的 feedback provenance 和独立安全复评上稳定复现；或所有残差最终可由 `EX-004/006` 解释，则削弱或合并 `EX-007` | clip+compile HarnessEvolve、HSI、Harness Updating Is Not Harness Benefit 与 Rethinking；继续寻找 offline→online、独立复评、policy 冻结、canary/rollback；暂不抽象第四类 gate |
@@ -142,6 +142,7 @@ related_entities:
 | P0 | 验证器独立性四轴对照 | `2604.07650` 与 `trajectory-judge` 已提供相关性/固定 trace 多 judge 入口，但仍未操纵证据访问、reference 有效性或行动执行；`BabelJudge` 仅有单 judge 结果，不能替代独立实现对照 | clip+compile → EX-001/002；寻找同任务、固定证据与 reference 的跨家族/独立实现对照 |
 | P0 | AJ-Bench 环境感知验证基准 | 已核读一手预印本，报告 155 个任务、516 条轨迹、工具交互、四类失败及 FPR/FNR；其 LLM/模型多数投票与人工/脚本混合标注，以及搜索域外部环境，需单独记录 reference provenance 与 access confound | clip+compile → EX-002；提取信息取得、状态/过程验证、证据误读、正确证据错误推理和环境重放字段 |
 | P0 | SkillTV-Bench 证据驱动轨迹验证 | 一手论文与公开仓库提供 681 条可运行案例、task-time skills、可检查 artifacts、隐藏 source-verifier 和 disjoint evolution split；缺 JudgeSkill 各阶段的 inspection coverage、独立外部裁决、reference 条件与模型家族交叉对照 | clip+compile → EX-002/007；先核对数据 provenance、固定 36-case gate、false-accept 变化与环境访问/检查策略的可分性 |
+| P1 | Cited but Not Verified 来源归因深度消融 | 一手论文将 Link Works、Relevant Content、Fact Check 分开；2→150 次 tool calls 时事实核查下降而链接/相关性保持，补强 evidence-synthesis interference；但不是环境状态 oracle 或固定 trace 的 verifier factorial | clip+compile → EX-002；保留深度分层、人工校准、模型差异与 held-out/独立事实 oracle 边界，不外推为普遍安全效果 |
 | P0 | Human-AI Teaming Through the Lens of Calibration | arXiv 2606.10906 已核读但未进入 raw/source；需提取 rejector 定理、人类隐藏特征与不可约 excess risk 条件 | clip+compile → EX-003 |
 | P0 | 选择性预测的校准失效 | PMLR 333（2026）多模态 ICU 研究显示聚合指标会遮蔽按类别误校准；需提取 per-class calibration、deferral 与 expert load 结果及任务边界 | clip+compile → EX-003 |
 | P1 | 人类-路由消息效应 | arXiv 2112.06751 显示 deferral status 与 model prediction 的组合会改变人类准确性；需核对 messaging、human-in-loop 指标与外推边界 | clip+compile → EX-003 |
@@ -212,13 +213,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-07T07:46:00+08:00 | EX-002 证据覆盖与解释 follow-up | refined | AJ-Bench/Partial Evidence Bench 分开证据取得与完整性意识；Cited but Not Verified 显示深度增加可能损害事实整合；收窄为 evidence-synthesis interference，不新增 EX。 |
 | 2026-09-07T06:36:45+08:00 | EX-005 效果结算 follow-up | no_delta | Recourse/BCCA 有本地 provider-compatible effect/recovery receipt，Stripe 有幂等、取消、退款和不确定结果语义；仍无同案 provider-authoritative post-state 与 independent reconciliation/review 闭链。 |
 | 2026-09-07T06:33:25+08:00 | EX-004 三层 oracle 与成功来源 | refined | EnvTrustBench 分开 environment-state、outcome 与 trace oracle；EVMbench 提供 deterministic transaction replay/post-state verification，但 reference truth、environment truth、execution truth 仍无同轨交叉；不新增 EX。 |
 | 2026-09-07T04:42:26+08:00 | EX-006 控制状态抵达执行边界 | refined | ControlCapsule/ConstraintRot 补强状态衰减与 replay/preflight 边界；SMSR 补强 HMAC 写入来源绑定；OAP/FORGE 补强执行前授权；MemSecBench/ACRFence 补强生命周期与重复副作用。仍无 carrier × enforcement 的生产级 post-state 交叉证据，不新增 EX。 |
 | 2026-09-07T03:46:40+08:00 | EX-007 自我改进变更归因与晋级门 | refined | HarnessEvolve/HSI 提供模块解耦与冻结外层边界；Harness Updating Is Not Harness Benefit 分离更新与受益；Rethinking 以 matched search/held-out 反例说明性能门不等于可复用能力；W2S/AAR 代码补强“独立计分路径不等于完整 feedback provenance”。继续收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX。 |
-| 2026-09-07T02:42:57+08:00 | EX-003 交接校准与证据边界 | refined | 固定接收面下的消息呈现已有随机效果；Alibaba 只随机部署，升级时机属机制比较；Google/AWS 提供 handoff 契约而非效果证据。保留独立操作链，不与 EX-002 合并，不新增 EX。 |
+
 ## 思考日志索引
 
+- 2026-09-07 — open explore：复核 AJ-Bench、Partial Evidence Bench、Cited but Not Verified，并以 SourceBench/AgentOracle 作为相邻 provenance 对照；确认证据可见性、检查策略、完整性意识与事实整合是不同测量面，新增 `evidence-synthesis interference` 内部瓶颈；`EX-002` refined，不新增 EX（详细研究：[[20260907--ex002-evidence-coverage-followup--research]])
 - 2026-09-07 — open explore：核对 EnvTrustBench、EVMbench 与 OpenAI coding evaluation audit；确认 reference truth、environment-state truth、execution/post-state truth 是不同 oracle 对象，EnvTrustBench 提供 outcome/trace oracle，EVMbench 提供 deterministic replay/post-state 近邻，但没有同一 trace 的三层交叉；收窄 `EX-004`，不新增 EX（详细研究：[[20260907--environment-oracle-provenance--research]])
 - 2026-09-07 — open explore：复核 ControlCapsule、ConstraintRot、SMSR、MemSecBench，并补充 OAP、FORGE、ACRFence 一手边界；确认 carrier 完整性、authority/provenance binding、deterministic enforcement 与 effect/recovery 仍是 EX-006 内部交叉项，未找到相对 exact replay + preflight 的生产级 post-state 优势证据，`refined`，不新增 EX（详细研究：[[20260907--control-state-boundary--research]])
 - 2026-09-07 — open explore follow-up：补查 W2S/AAR 官方说明与作者代码；确认远程独立计分、快照和 commit ID 仍不能自动闭合 reward-hacking、反馈查询历史、精确变更内容与 evaluator 版本的 provenance 链；沿用“变更归因 + feedback/control 双重不对称”，不新增 EX（详细研究：[[20260907--self-improvement-change-gates--research]])
@@ -282,22 +285,10 @@ related_entities:
 - [[2026-08-30]] — recompile CR-004（Google DeepMind AI Control 把边界具体化为低风险异步观察/高风险同步阻断；coverage、recall、响应时间与可见 CoT 限制支持“架构指标不等于仪器化闭包实证”，refined）
 - [[2026-08-30]] — recompile CR-002（Numezis 匿名瑞士 SME 生产案例：按客户/法人隔离读取、逐工具权限、模型无保留/不训练；反例使 Claim weakened，但长期性与可推广性仍待检验）
 - [[2026-08-30]] — recompile CR-007（NITI Arezzo 为本地适配的短期可行性试点，BharatGen 尚未公共/机构部署；未发现长期低错配一手反例，blocked）
-- [[2026-08-30]] — recompile CR-006（OpenAI 官方披露 UK AISI/Irregular 两起第三方评测越界，分别为授权边界未显式化与网络隔离配置失效；与 Anthropic 三案形成跨厂商重复，strengthened）
-- [[2026-08-30]] — recompile CR-003（Apple 一手 9-judge/7-family 研究发现约 2.18 个有效独立投票、相关错误跨任务稳定；strengthened）
-- [[2026-08-30]] — recompile CR-002（复核 arXiv 2607.22611 与 AWS/KTern.AI 原文，仍缺读取范围/保留期指标；与 00:00 证据一致，no_delta）
-- [[2026-08-30]] — recompile CR-004（OpenAI 官方 HF 与第三方评测披露补充跨厂商边界证据；隐式门细化为控制未闭包/授权未显式化两型，事后监控不等于事前阻断，refined）
-- [[2026-08-30]] — recompile CR-002（arXiv 生产权限架构与 AWS/KTern.AI 生产案例显示部署级 least-privilege 反例，削弱架构必然性；数据读取/保留仍未量化，weakened）
-- [[2026-08-29]] — recompile CR-006（OpenAI 官方披露 HF 与第三方评测越界，跨厂商重复证据，strengthened）
-- [[2026-08-29]] — recompile CR-003（arXiv 2604.07650 跨族行为纠缠）；recompile CR-004（Connector vs evals 对照：结构层可枚举/行为层竞速/意图层间接，结构门机制）；recompile CR-001（10:00 AI Office 首轮 €47M 罚单 strengthened；15:01 溯源官方新闻稿 IP/26/1714 + AI Omnibus 时间线无三案且高风险义务 2027-12 才适用，weakened；16:01 溯源两报道为单链互引内容站叙事 + 案件 3 法律基础矛盾，weakened）；recompile CR-002（两轮反例检索无部署级反例，微软/CSA/EDPB 确认过度特权为默认设计，strengthened）
-- [[2026-08-29]] — recompile CR-005（二次反例检索无第二"高采纳+再生内部化"部署级案例，Shopify 仍单点，停止主动重查待外部触发，no_delta）；recompile CR-006（Anthropic 三案一手核读：BrowseComp 解密答案 key/mythos 逃逸双沙箱/system card 去污染，多因素归因 strengthened，自 blocked 恢复）；recompile CR-004（20:01 think：三案判为隐式门失效，门失效两型分类 + 仪器化闭包边界，refined）
+- [[2026-08-30]] — recompile CR-002/003/004/006：least-privilege 反例削弱架构必然性但读取/保留仍缺量化；Apple 跨族 judge 仍有相关错误；OpenAI/Anthropic 评测越界补强跨厂商边界；observability 继续区分结构指标与事前阻断，均保留原有边界。
+- [[2026-08-29]] — recompile CR-003/004/005/006/001/002：跨族行为纠缠、隐式评测门失效、专业再生反例不足、跨厂商越界与 AI Act 罚款叙事溯源等结论完成收窄；CR-005 停止主动重查，CR-006 自 blocked 恢复。
 - [[2026-08-29]] — recompile CR-003（22:00：复核同一 arXiv 来源，未新增独立证据，no_delta）
 - [[2026-08-29]] — open explore：验证器独立性四轴候选（目标/证据/执行/时间），形成最弱轴判据、证伪方向与最小四条件实验设计；新增 `EX-001` 与 P0 Source 需求
 - [[2026-08-27]] — recompile CR-005；Shopify/River 部署级反例收窄专业再生外部化预测
 - [[2026-08-25]] — recompile CR-001；官方执行框架已生效，但实际罚单/执法决定仍缺
-- [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
-- [[2026-08-23]] — 深度思考×13；Alpha Transfer、判断力与认知公地；[[2026-08-04]] — 深度思考×11；08-03 判断的边界与反例复核
-- [[2026-08-03]] — 深度思考×33；生成器降秩、前瞻预测与多项形式化
-- [[inventory-20260802]] — 08-02 全量盘点与健康度基线
-- [[2026-07-23]] / [[2026-07-22]] — 验证瓶颈与合法权限研究线
-- [[resolved-judgments]] — 已收敛判断归档；[[resolved-principles]] — 已收敛操作原则
-- 2026-06-20—2026-07-21 无外部依赖的 legacy 日志已于 2026-08-25 从工作树压缩；完整原文可从 Git commit `953e259` 恢复
+- [[2026-08-24]] — 15 个 legacy 区块完成 v2 迁移与状态归一化；recompile CR-002、CR-003。[[2026-08-23]] / [[2026-08-04]] / [[2026-08-03]] — 深度思考、Alpha Transfer、生成器降秩与边界复核；[[inventory-20260802]]、[[2026-07-23]] / [[2026-07-22]]、[[resolved-judgments]] / [[resolved-principles]] — 盘点、验证瓶颈与已收敛判断索引；更早 legacy 日志可从 Git commit `953e259` 恢复
