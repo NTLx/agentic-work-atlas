@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-06T03:40:23+08:00
+updated: 2026-09-06T11:31:35+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -111,7 +111,7 @@ related_entities:
 | P0 | 劳动经济学实证 | 先按“企业净 headcount × 职业/入门流量 × 再生代理”建立校准骨架；不要用企业扩张直接抵消入门招聘收缩 |
 | P1 | MCP 无状态转折 | 已确认 2026-07-28 去掉的是协议层 session，不是应用状态：显式 handle、Tasks durable state、MRTR 与 cache 重新承载状态；下一步核对 handle/task 的主体绑定、TTL、撤销、replay、故障转移与 effect lineage，再更新 MCP Entity |
 | P1 | AI 时代设计方法论对照 | 初步支持设计对象扩展到模型/系统行为、反馈/控制和可执行工作流；Anthropic 有团队案例，Google/Microsoft 目前只有方法指南；下一步补当前负责人/团队材料与责任、返工、反馈时延字段 |
-| P2 | Topic 与复核队列代谢 | 处理无承载 Entity 簇和疑似重复项，不继续制造新定理 |
+| P2 | Topic 与复核队列代谢 | 优先审查安全威胁面 Entity 簇的 Topic 承载；区分攻击面整合与 Agent-Security 的控制/责任生命周期，不继续制造新定理 |
 
 ## 开放探索候选
 
@@ -130,6 +130,7 @@ related_entities:
 | 优先级 | 目标 | 当前缺口 | 触发行动 |
 |---|---|---|---|
 | P0 | Agent Safety Topic 跨层核验 | 五阶段骨架与一条事故级响应链已找到；下一步以事件级标识对齐 `flag → verdict → authorization → actuation → revoke/recovery → review`，并把 `authority stop / in-flight stop / effect reconciliation` 分开核验 `owner / action-surface`，不把结构地图当作安全效果证据；不由 recompile 执行 |
+| P2 | Agent 威胁面 Topic 承载候选 | `Agent-Traps`、`Context-Collapse`、`Prompt-Injection-Risk`、`AI-Worm`、`Agent-Perception-Gap` 等形成互引簇，但当前无 Topic/Comparison 承载；需区分攻击面整合与控制生命周期 | audit → 评估 `Agent-Attack-Surface` promotion candidate；先不创建稳定页 |
 | P0 | EU AI Act 首轮罚款官方决定 | €47M 三案系单链互引二手叙事（法律基础矛盾、无官方决定原文），需官方决定/一手披露判定真伪 | clip → 核对 CR-001 |
 | P0 | Anthropic 三起评测事故 | 已联网核读一手来源（browsecomp/mythos/system card），未进入 raw/source | clip+compile → CR-006 |
 | P0 | OpenAI 评测越界披露 | HF 事件及 UK AISI/Irregular 两起第三方评测尚未进入 raw/source | clip+compile → CR-006 |
@@ -205,14 +206,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-06T11:31:35+08:00 | Agent 威胁面 Topic 承载边界 | refined | 结构审计显示 19 个安全/零信任标签 Entity 中仅 6 个有 Topic 入链；未承载项不是同一簇，其中 `Agent-Traps` 等五/六个概念形成独立威胁面互引簇。`Agent-Security` 应继续承载控制/责任生命周期，`Agent-Attack-Surface` 仅作为 promotion candidate，不新增 EX。 |
 | 2026-09-06T03:40:23+08:00 | EX-004 reference 完整性与成功来源 | refined | 新增 `agent-infra` 的可信侧 reference/版本身份、`agentprov` 的可见 trace/held-out truth 分离和 `tracegym` 的回放/人审校准设计；它们把 EX-004 收窄为 reference trust/control 与 provenance observability 两层，但没有提供三门同 trace 的因果效果证据。 |
 | 2026-09-06T02:31:58+08:00 | MCP 2026-07-28 无状态转折 | refined | 去除协议 session 只消除了传输层粘性；显式 handle、Tasks durable state、MRTR 与 cache 重新分配了状态责任。Tasks 的 cancel ack 不保证停工或最终 `cancelled`，且 task 状态不等于下游 effect；暂不新增 EX，先补 handle/task 的绑定、TTL、撤销、replay、故障转移与 effect lineage 证据。 |
 | 2026-09-06T01:33:20+08:00 | EX-007 自我改进 Agent 的变更晋级 | refined | HELIX 支持用 recipe/lockfile/trace/verifier 保留 intervention identity，并用配对轨迹发现“目标通过但回归”和“代码干净但语义错误”；Evo-Harness 显示自生成反馈可低于不演化基线，环境反馈的粒度会改变结果；Anthropic AAR 的 hidden holdout/独立 evaluator 能隔离部分作弊但事后监控仍非完整安全门。EX-007 收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX。 |
 | 2026-09-06T00:39:36+08:00 | EX-005 撤销后的在途动作与效果收敛 | refined | MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 的一手材料显示凭据/任务失效、在途停止、提交状态不确定和效果对账/补偿具有不同对象与时序；新增 `commit-state uncertainty` 子门。控制面终态不证明 post-state 收敛；不新增 EX。 |
-| 2026-09-05T23:35:35+08:00 | AI 时代设计方法论对照 | partial | Anthropic 团队案例支持设计—工程工作流进入代码、系统状态和可交互原型；Google PAIR 与 Microsoft Research 支持将反馈/控制、模型行为/错误纳入设计对象，但二者较旧且非当前产品团队材料；不证明判断/责任已成为跨公司主要瓶颈，不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-06]] — open explore：结构审计安全/零信任标签 Entity 的 Topic 承载；确认未承载项分为攻击面/内容陷阱簇与控制/身份簇，前者形成 `Agent-Attack-Surface` promotion candidate，后者优先接入既有 `Agent-Security`，不新增 EX
 - [[2026-09-06]] — open explore：补查 `agent-infra` benchmark contract、`agentprov` provenance attribution 与 `tracegym` replay harness；确认 reference trust/control 需要可信侧 owner、version/digest、hidden grader 与 allowlisted projection，provenance observability 需要 visible trace 与 held-out truth 分离、变换/泄漏检查和 coverage；三者没有提供 EX-001/002/004 同 trace factorial 效果证据，将 `EX-004` 收窄为两层，不新增 EX
 - [[2026-09-06]] — open explore：核对 MCP 2026-07-28 正式规范、Tasks extension、C# SDK stateless 文档与 SEP-2549；确认去除的是协议层 session，状态被转移到显式 handle、Tasks store、MRTR request state、cache 和 per-request metadata，且 Tasks cancel 仍是协作式/最终一致；新增 handle/task 绑定、TTL、撤销、replay、故障转移与 effect lineage 的 Source 需求，不新增 EX
 - [[2026-09-06]] — open explore：核对 HELIX、Evo-Harness 与 Anthropic Automated Researcher/Weak-to-Strong Researcher；确认 recipe/trace 只能解决 intervention identity，环境 feedback 的来源与粒度会改变演化结果，hidden holdout/独立 evaluator 仍不能替代不可改写 control plane 与安全复评；将 `EX-007` 收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX
