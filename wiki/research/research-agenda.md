@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-07T03:46:40+08:00
+updated: 2026-09-07T04:42:26+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -210,13 +210,14 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-07T04:42:26+08:00 | EX-006 控制状态抵达执行边界 | refined | ControlCapsule/ConstraintRot 补强状态衰减与 replay/preflight 边界；SMSR 补强 HMAC 写入来源绑定；OAP/FORGE 补强执行前授权；MemSecBench/ACRFence 补强生命周期与重复副作用。仍无 carrier × enforcement 的生产级 post-state 交叉证据，不新增 EX。 |
 | 2026-09-07T03:46:40+08:00 | EX-007 自我改进变更归因与晋级门 | refined | HarnessEvolve/HSI 提供模块解耦与冻结外层边界；Harness Updating Is Not Harness Benefit 分离更新与受益；Rethinking 以 matched search/held-out 反例说明性能门不等于可复用能力；W2S/AAR 代码补强“独立计分路径不等于完整 feedback provenance”。继续收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX。 |
 | 2026-09-07T02:42:57+08:00 | EX-003 交接校准与证据边界 | refined | 固定接收面下的消息呈现已有随机效果；Alibaba 只随机部署，升级时机属机制比较；Google/AWS 提供 handoff 契约而非效果证据。保留独立操作链，不与 EX-002 合并，不新增 EX。 |
 | 2026-09-07T00:36:21+08:00 | Agent 外部效果结算与权威终态 | refined | Atomix/Cordon 补强 gate、outbox、idempotency 与 partial-receipt recovery；Dapr/CAVA/Auditable Agents 补强 history、action identity 与 evidence integrity；仍不等于 provider post-state、补偿结果与独立对账闭链，收窄 `EX-005`，不新增 EX。 |
 | 2026-09-07T01:33:36+08:00 | Agent Attack Surface 的 Topic 边界 | refined | 最小字段实验把候选拆成 taxonomy、入口、中介、umbrella 与传播形态；`Agent-Perception-Gap`、`Context-Collapse` 与 FORGE 形成不可互换的输入/信任/证据入口，但 Måløy 系列仍是单作者单生态，暂不晋升稳定 Topic。 |
-| 2026-09-06T23:40:25+08:00 | 劳动经济学：采用载体与职业入口 | refined | 纽约联储、丹麦匹配研究、Anthropic/CPS、Stanford/ADP、Census、Dallas Fed 与 Ramp 分别闭合企业、职业、青年流量或培训/能力的局部链条，但没有四层共同估计；采用载体、企业选择与劳动流量需分开，劳动线收窄为 `adoption carrier × firm selection × labor-flow composition`，不新增 EX。 |
 ## 思考日志索引
 
+- 2026-09-07 — open explore：复核 ControlCapsule、ConstraintRot、SMSR、MemSecBench，并补充 OAP、FORGE、ACRFence 一手边界；确认 carrier 完整性、authority/provenance binding、deterministic enforcement 与 effect/recovery 仍是 EX-006 内部交叉项，未找到相对 exact replay + preflight 的生产级 post-state 优势证据，`refined`，不新增 EX（详细研究：[[20260907--control-state-boundary--research]])
 - 2026-09-07 — open explore follow-up：补查 W2S/AAR 官方说明与作者代码；确认远程独立计分、快照和 commit ID 仍不能自动闭合 reward-hacking、反馈查询历史、精确变更内容与 evaluator 版本的 provenance 链；沿用“变更归因 + feedback/control 双重不对称”，不新增 EX（详细研究：[[20260907--self-improvement-change-gates--research]])
 - 2026-09-07 — open explore：核查 EX-003 的交接校准边界；确认 2112.06751 只提供固定接收面的消息呈现效果，Alibaba 只随机部署，Google/AWS 主要是 handoff 契约，尚无 packet×receiver×timing 的联合因果证据；保留 EX-003、收窄其操作链，不新增 EX（详细研究：[[20260907--handoff-calibration-evidence-boundary--research]])
 - 2026-09-07 — open explore：用 `entry / mechanism / phase / action surface / observable-defense / source class` 复核 `Agent-Attack-Surface`；确认候选具备独立 Topic 的结构资格，但五个 Entity 不应平铺，FORGE 作为无指令证据污染边界成员，`Persona-Hyperstition` 暂缓；不新增 EX（详细研究：[[20260907--agent-attack-surface-topic-boundary--research]])
@@ -291,11 +292,9 @@ related_entities:
 - [[2026-08-27]] — recompile CR-005；Shopify/River 部署级反例收窄专业再生外部化预测
 - [[2026-08-25]] — recompile CR-001；官方执行框架已生效，但实际罚单/执法决定仍缺
 - [[2026-08-24]] — 15 个 legacy 区块：12 完成、3 中断；完成 v2 迁移与状态归一化；recompile CR-002、CR-003
-- [[2026-08-23]] — 深度思考×13；Alpha Transfer、判断力与认知公地
-- [[2026-08-04]] — 深度思考×11；08-03 判断的边界与反例复核
+- [[2026-08-23]] — 深度思考×13；Alpha Transfer、判断力与认知公地；[[2026-08-04]] — 深度思考×11；08-03 判断的边界与反例复核
 - [[2026-08-03]] — 深度思考×33；生成器降秩、前瞻预测与多项形式化
 - [[inventory-20260802]] — 08-02 全量盘点与健康度基线
 - [[2026-07-23]] / [[2026-07-22]] — 验证瓶颈与合法权限研究线
-- [[resolved-judgments]] — 已收敛判断归档
-- [[resolved-principles]] — 已收敛操作原则
+- [[resolved-judgments]] — 已收敛判断归档；[[resolved-principles]] — 已收敛操作原则
 - 2026-06-20—2026-07-21 无外部依赖的 legacy 日志已于 2026-08-25 从工作树压缩；完整原文可从 Git commit `953e259` 恢复
