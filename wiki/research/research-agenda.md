@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-06T02:31:58+08:00
+updated: 2026-09-06T03:40:23+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -120,7 +120,7 @@ related_entities:
 | EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | `2604.07650` 仅在输出错误、任务难度和模型/验证器组合上测相关性；AJ-Bench 的环境访问并未操纵验证器独立性，故两者可共享矩阵但不能互作替代；refined | 固定证据访问、reference 与任务后，跨家族/独立实现的单轴变化仍不能降低共同漏报，或独立性效应完全由证据覆盖/判定质量解释 | clip+compile `2604.07650`，按“错误生成相关性 × 证据状态 × reference 条件”补交叉字段 |
 | EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量，并区分“误读工具输出”和“证据正确但推理错误”；SkillTV-Bench 进一步把“环境可访问”与“按检查策略主动取得/解释证据”分开，但其 JudgeSkill、source-verifier 与任务构造仍未独立操纵；refined | 固定模型/验证器、任务、reference 与访问权限后，静态低覆盖、可交互读取和显式检查策略对照不改变漏报，或差异完全由 token budget、模型相关性或真值瑕疵解释 | clip+compile AJ-Bench 与 SkillTV-Bench，建立“物理可见性 × 检查策略 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并与 EX-001 对齐 |
 | EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 选择性委派研究将路由器定义为定位“人类优于 Agent 区域”的 rejector；现有材料支持隐藏特征和 framing 改变升级质量；Google SRE/AWS 明确结构化交接与完整性，Google Cloud 将目标人、队列、等待/转接失败作为独立接收变量；synthesized/refined | 在固定升级触发、专家身份、Agent 输出和接收面可用性后，完整/最小/证据-only/带模型结论的交接包对人类正确率、处置延迟、补问次数和过度依赖均无稳定差异，或差异完全由 CR-004 的可见性、EX-002 的证据覆盖、消息 framing 或接收队列解释；反之若交接包残差持续存在，保留为 EX-003 内部独立子门 | clip+compile Google SRE AI Operator 与 AWS handoff guidance；补查 Google Cloud escalation/transfer telemetry；建立“路由选择 × 交接包 × 消息 framing × 专家负载/队列”矩阵，先固定路由与接收面做 context ablation，再与 CR-004 / EX-002 对照 |
-| EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench 有 standard/without/corrupted-GT；AcquaBench 有同 qid 的 CLEAN/GOLD/SHAM。两门可分别操纵，但尚缺同一 task/trace 上同时控制 verifier independence、evidence visibility 并使用外部 oracle 的交叉证据；refined | 固定 trace 后分别随机化 reference 与 provenance；若 judge/score 与 human adjudication 不变，或差异可由 EX-001/EX-002 解释，则收窄或并回 | clip+compile 两组材料及 ABC、GeneBench、OpenAI audit、tau3、ELT；核对代码/数据与公式—案例对应关系，建立 `reference condition × information provenance × verifier independence` 交叉表 |
+| EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 仍缺同 trace 交叉；新设计把可信 reference 身份/暴露与 hidden-truth trace provenance 分开；refined | 固定 verifier、evidence 与 trace 后，若 reference/provenance 仍分别改变 false accept/reject、attribution 或排名，保留两层；否则并回 benchmark validity | clip+compile 现有/新材料；寻找含 hidden ledger、visible trace、semantic-equivalent reference 与外部 adjudication 的联合 benchmark |
 | EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence 分开了 checkpoint-restore 与外部副作用；HBHC 支持有界阻断未来调用；Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 显示凭据失效、在途停止、提交状态不确定与效果对账具有不同语义；缺 action-surface 与 post-state 分母；refined | 固定 trace/verdict/工具 schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消接受、进程停止与最终 post-state 可稳定等价，或未知提交完全由既有变量解释，则收窄/并回；反之保留 commit-state uncertainty 子门 | clip+compile ACRFence、HBHC、Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth、AWS Step Functions 材料；寻找带权威 post-state、补偿结果和责任接管的生产 trace |
 | EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | 四篇一手论文支持 context eviction/weakening/misbinding、compaction decay 和跨会话记忆污染；但 action-level 结果有限，未证明 OOB control plane 普遍必要；refined | 若 protected policy + deterministic preflight/action guard 与 OOB registry 在固定 verdict、action-surface、延迟和 recovery 上等效，则 OOB 仅是实现选项；若语义约束与 memory recovery 不衰减，则收窄为特定实现风险 | clip+compile 四篇研究；建立 `provenance → binding → budget/survival → verdict → action boundary → recovery` 矩阵，再做固定 verdict 的 carrier × enforcement 对照 |
 | EX-007 | 自我改进 Agent 的变更晋级是否需要按变更对象分层的不可自证门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | 材料与 HELIX/Evo-Harness/AAR 显示三类对象不能共用 gate：行为组件有结果不变但并行/停止/副作用顺序回归；评估/目标组件可因 benchmark 适配抬分；策略/执行组件可绕过安全边界。新增边界是控制面与反馈面双重不对称：recipe/trace 解决归因，环境反馈与隐藏 oracle 缓解自证，但不单独构成安全保证；refined | 若固定模型/任务后，行为契约能捕获所有行为组件线上残差；若评估/目标共变仍能在冻结外部 oracle、hidden holdout、不可改写的 feedback provenance 和独立安全复评上稳定复现；或所有残差最终可由 `EX-004/006` 解释，则削弱或合并 `EX-007` | new-source → EX-007；clip+compile HELIX/Evo-Harness 与 Weak-to-Strong Researcher，寻找 offline→online、独立复评、policy 冻结、rollback；暂不抽象第四类 gate |
@@ -156,7 +156,7 @@ related_entities:
 | P0 | ELT-Bench-Verified benchmark audit | 已联网核读一手论文，尚未进入 raw/source；需提取 ground-truth error、脚本误报、人类 agreement 和修正前后排名 | clip+compile → EX-004 |
 | P1 | 真实 Agent trace 的语义等价与 reference 版本 | 缺同一生产任务上“结构不同但结果等价”的 reference、版本变更和独立裁决记录 | new-source → EX-004 |
 | P1 | reference 呈现方式的因果对照 | 缺把正确 reference、错误 reference、只给 rubric 和不展示 reference 随机化的 live-agent judge 研究 | new-source → EX-004 |
-| P0 | 三门交叉操纵 | 缺在同一任务中同时改变 verifier independence、evidence visibility/interpretation 与 reference integrity/success provenance 的受控设计，当前跨论文结果不能支持必要性或交互效应 | new-source → EX-001/002/004；优先寻找带固定 trace、可重放环境和外部/人类 oracle 的 factorial benchmark |
+| P0 | 三门交叉操纵 | 缺在同一任务中同时改变 verifier independence、evidence visibility/interpretation 与 reference integrity/success provenance 的受控设计；新发现的 hidden ledger / visible trace 设计仍没有给出该交互的效果统计 | new-source → EX-001/002/004；优先寻找带固定 trace、可重放环境、版本化 reference/provenance ledger 和外部/人类 oracle 的 factorial benchmark |
 | P0 | Agent permissions：interface 到 enforcement | 已核读 arXiv 2607.13718，尚未进入 raw/source；需提取权限规格、推导、运行时执行、审批透明度、撤销与 reviewer overhead 字段 | clip+compile → EX-005 |
 | P0 | Deterministic pre-action authorization | 已核读 arXiv 2603.20953 v1；需核查 OAP 威胁模型、单域/非随机 CTF、平台信任、ESCALATE 未实现与 pre-tool-call gate 边界；论文自报结果不作普遍事实 | clip+compile → EX-005 |
 | P0 | FORGE / Formal Policy Enforcement | arXiv 2602.16708 v3 提供多 Agent reference monitor、provenance substrate 与受控任务结果，尚未进入 raw/source；需保留 assume/guarantee、instrumented-surface、并发与 recovery 边界 | clip+compile → EX-005 |
@@ -205,14 +205,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-06T03:40:23+08:00 | EX-004 reference 完整性与成功来源 | refined | 新增 `agent-infra` 的可信侧 reference/版本身份、`agentprov` 的可见 trace/held-out truth 分离和 `tracegym` 的回放/人审校准设计；它们把 EX-004 收窄为 reference trust/control 与 provenance observability 两层，但没有提供三门同 trace 的因果效果证据。 |
 | 2026-09-06T02:31:58+08:00 | MCP 2026-07-28 无状态转折 | refined | 去除协议 session 只消除了传输层粘性；显式 handle、Tasks durable state、MRTR 与 cache 重新分配了状态责任。Tasks 的 cancel ack 不保证停工或最终 `cancelled`，且 task 状态不等于下游 effect；暂不新增 EX，先补 handle/task 的绑定、TTL、撤销、replay、故障转移与 effect lineage 证据。 |
 | 2026-09-06T01:33:20+08:00 | EX-007 自我改进 Agent 的变更晋级 | refined | HELIX 支持用 recipe/lockfile/trace/verifier 保留 intervention identity，并用配对轨迹发现“目标通过但回归”和“代码干净但语义错误”；Evo-Harness 显示自生成反馈可低于不演化基线，环境反馈的粒度会改变结果；Anthropic AAR 的 hidden holdout/独立 evaluator 能隔离部分作弊但事后监控仍非完整安全门。EX-007 收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX。 |
 | 2026-09-06T00:39:36+08:00 | EX-005 撤销后的在途动作与效果收敛 | refined | MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 的一手材料显示凭据/任务失效、在途停止、提交状态不确定和效果对账/补偿具有不同对象与时序；新增 `commit-state uncertainty` 子门。控制面终态不证明 post-state 收敛；不新增 EX。 |
 | 2026-09-05T23:35:35+08:00 | AI 时代设计方法论对照 | partial | Anthropic 团队案例支持设计—工程工作流进入代码、系统状态和可交互原型；Google PAIR 与 Microsoft Research 支持将反馈/控制、模型行为/错误纳入设计对象，但二者较旧且非当前产品团队材料；不证明判断/责任已成为跨公司主要瓶颈，不新增 EX。 |
-| 2026-09-05T22:32:45+08:00 | EX-005 撤销、在途执行与外部效果 | refined | ACRFence 显示 checkpoint-restore 可重放外部副作用，HBHC 仅保证有界阻断未来调用；Google/Microsoft/AWS 材料显示撤销传播、应用 session、既有连接和恢复具有不同时间语义。将 `EX-005` 收窄为 `authority stop`、`in-flight stop`、`effect reconciliation` 三层，不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-06]] — open explore：补查 `agent-infra` benchmark contract、`agentprov` provenance attribution 与 `tracegym` replay harness；确认 reference trust/control 需要可信侧 owner、version/digest、hidden grader 与 allowlisted projection，provenance observability 需要 visible trace 与 held-out truth 分离、变换/泄漏检查和 coverage；三者没有提供 EX-001/002/004 同 trace factorial 效果证据，将 `EX-004` 收窄为两层，不新增 EX
 - [[2026-09-06]] — open explore：核对 MCP 2026-07-28 正式规范、Tasks extension、C# SDK stateless 文档与 SEP-2549；确认去除的是协议层 session，状态被转移到显式 handle、Tasks store、MRTR request state、cache 和 per-request metadata，且 Tasks cancel 仍是协作式/最终一致；新增 handle/task 绑定、TTL、撤销、replay、故障转移与 effect lineage 的 Source 需求，不新增 EX
 - [[2026-09-06]] — open explore：核对 HELIX、Evo-Harness 与 Anthropic Automated Researcher/Weak-to-Strong Researcher；确认 recipe/trace 只能解决 intervention identity，环境 feedback 的来源与粒度会改变演化结果，hidden holdout/独立 evaluator 仍不能替代不可改写 control plane 与安全复评；将 `EX-007` 收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX
 - [[2026-09-06]] — open explore：补查 MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 一手材料；确认凭据/任务失效、在途停止、提交状态不确定与效果对账/补偿具有不同对象和时序，新增 `commit-state uncertainty` 作为 `EX-005` 子门，不新增 EX
