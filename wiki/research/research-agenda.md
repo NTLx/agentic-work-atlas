@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-07T01:33:36+08:00
+updated: 2026-09-07T02:42:57+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -119,7 +119,7 @@ related_entities:
 |---|---|---|---|---|
 | EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | `2604.07650` 仅在输出错误、任务难度和模型/验证器组合上测相关性；REDAgentBench 固定 judge backbone，只改变证据视图/证明契约，不能替代独立性操纵；refined | 固定证据访问、reference 与任务后，跨家族/独立实现的单轴变化仍不能降低共同漏报，或独立性效应完全由证据覆盖/判定质量解释 | clip+compile `2604.07650` 与 REDAgentBench，按“错误生成相关性 × 证据状态 × reference 条件”补交叉字段 |
 | EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量；Partial Evidence Bench 固定 oracle、改变授权可见证据；REDAgentBench 在同一 rollout 上改变轨迹/状态/混合视图并观察标签变化；但二者都未与 verifier independence、reference 条件同轨交叉；refined | 固定模型/验证器、任务、reference 与访问权限后，静态低覆盖、可交互读取和显式检查策略对照不改变漏报，或差异完全由 token budget、模型相关性或真值瑕疵解释 | clip+compile AJ-Bench、SkillTV-Bench、Partial Evidence Bench 与 REDAgentBench，建立“物理可见性 × 检查策略 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并与 EX-001 对齐 |
-| EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | Alibaba 2026 随机现场实验显示升级类型、时机与接管后投入改变结果；Google/Microsoft 一手文档把 route、handoff packet、queue/receiver state 与 fallback 分开；但尚无交接包内容的因果 ablation；refined | 固定升级触发、升级时机、专家身份、Agent 输出与队列状态后，完整/最小/证据-only/带模型结论的交接包若无稳定差异，则并入 EX-002；若证据-only 或结构化状态仍改变正确率、延迟、补问或过度依赖，保留 packet/framing 子门 | clip+compile Alibaba 现场实验与 Google/Microsoft handoff 字段；建立 `trigger/type → route/receiver → packet → human action` 矩阵，优先做固定路由/接收面下的 context ablation，并分层早/晚升级 |
+| EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 2112.06751 在固定接收面下显示消息呈现有随机效果；Alibaba 随机的是部署条件，升级时机/类型主要是机制比较；Google/AWS 分开描述 route、handoff packet、receiver 与 telemetry，但没有 packet×receiver×timing 的因果消融；refined | 固定 trigger、Agent 输出、receiver 与 queue state 后，packet/message/timing 的交互若无稳定差异则并回 EX-002；若 packet 或 timing 仍改变正确率、延迟、补问或过度依赖，保留子门 | clip+compile 现有 P0 材料；优先寻找固定接收面下的 packet ablation 或含 `trigger/type → route/receiver → packet/version → human action → outcome` 的生产 trace |
 | EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 缺同 trace 交叉；REDAgentBench 补 evidence/receipt，ALE 补 hidden grader、隔离、重算与 attestation，但仍无错误/语义等价 reference 或独立 verifier；refined | 固定 verifier、evidence、trace 后，若 reference/provenance 仍改变误放行/误拒绝、归因或排名，保留两层；否则并回 benchmark validity，并区分 anti-leakage 与 truth validity | clip+compile 既有材料；寻找含 hidden ledger、visible trace、语义等价 reference、外部裁决与跨 verifier 的联合 benchmark |
 | EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence/HBHC 区分 checkpoint、未来调用阻断与副作用；MCP/A2A/Temporal/OAuth/Step Functions 区分凭据失效、在途停止、未知提交和补偿；Atomix/Cordon 补强 gate/outbox，但 receipt 仍不等于 provider post-state；refined | 固定 trace/verdict/schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消、停止与 post-state 等价则收窄，否则保留 commit-state uncertainty/effect-lineage 并测 post-state reconciliation | clip+compile ACRFence、HBHC、Atomix、Cordon、Dapr、CAVA、Auditable Agents 与 Microsoft compensation；优先找同案关联键、provider receipt、权威 post-state、补偿结果和独立复核 |
 | EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | ControlCapsule 支持 preflight/fail-closed 的状态层结果；Constraint Pinning 会被 operator-impersonation 穿透；SMSR 区分 unsigned 与 authenticated injection，MemSecBench 提供 Write→Execute→Forget；仍未证 OOB control plane 普遍必要；refined | 若 exact replay+preflight 与 signed OOB carrier 在 compaction、memory、authority update、failover、recovery 上等效，OOB 只是实现选项；否则保留 authority authenticity/provenance binding 子门 | clip+compile 相关研究、SMSR、MemSecBench；建立 `carrier → issuer → binding → survival → verdict → preflight → actuation → post-state → recovery` 矩阵，做载体×enforcement 对照 |
@@ -210,14 +210,14 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-07T02:42:57+08:00 | EX-003 交接校准与证据边界 | refined | 固定接收面下的消息呈现已有随机效果；Alibaba 只随机部署，升级时机属机制比较；Google/AWS 提供 handoff 契约而非效果证据。保留独立操作链，不与 EX-002 合并，不新增 EX。 |
 | 2026-09-07T00:36:21+08:00 | Agent 外部效果结算与权威终态 | refined | Atomix/Cordon 补强 gate、outbox、idempotency 与 partial-receipt recovery；Dapr/CAVA/Auditable Agents 补强 history、action identity 与 evidence integrity；仍不等于 provider post-state、补偿结果与独立对账闭链，收窄 `EX-005`，不新增 EX。 |
 | 2026-09-07T01:33:36+08:00 | Agent Attack Surface 的 Topic 边界 | refined | 最小字段实验把候选拆成 taxonomy、入口、中介、umbrella 与传播形态；`Agent-Perception-Gap`、`Context-Collapse` 与 FORGE 形成不可互换的输入/信任/证据入口，但 Måløy 系列仍是单作者单生态，暂不晋升稳定 Topic。 |
 | 2026-09-06T23:40:25+08:00 | 劳动经济学：采用载体与职业入口 | refined | 纽约联储、丹麦匹配研究、Anthropic/CPS、Stanford/ADP、Census、Dallas Fed 与 Ramp 分别闭合企业、职业、青年流量或培训/能力的局部链条，但没有四层共同估计；采用载体、企业选择与劳动流量需分开，劳动线收窄为 `adoption carrier × firm selection × labor-flow composition`，不新增 EX。 |
 | 2026-09-06T22:14:00+08:00 | ALE Robotics：隐藏参考与验证闭合 | refined | ALE Robotics 把 hidden grader/seed、verify 阶段隔离、engine-native score re-derivation 与 validated/verified attestation 分开；这补强 benchmark anti-leakage/anti-tamper integrity，但同一套 reference/engine 的自洽重算仍不等于 reference truth、语义等价或 verifier independence，进一步收窄 `EX-004`，不新增 EX。 |
-| 2026-09-06T21:32:48+08:00 | AgentCore 跨层效果闭合 | refined | AWS AgentOps/AgentCore 把 telemetry 分成 framework/service/infrastructure/application 四层，并提供 trace context、Gateway policy、版本化 Runtime 与 CloudTrail；AWS DevOps Agent 将生产写操作留给人类，但公开材料仍无同案 `policy_version → effect receipt → revoke/recovery → canonical post-state → independent review`，收窄 `CR-004/EX-005`，不新增 EX。 |
-
 ## 思考日志索引
 
+- 2026-09-07 — open explore：核查 EX-003 的交接校准边界；确认 2112.06751 只提供固定接收面的消息呈现效果，Alibaba 只随机部署，Google/AWS 主要是 handoff 契约，尚无 packet×receiver×timing 的联合因果证据；保留 EX-003、收窄其操作链，不新增 EX（详细研究：[[20260907--handoff-calibration-evidence-boundary--research]])
 - 2026-09-07 — open explore：用 `entry / mechanism / phase / action surface / observable-defense / source class` 复核 `Agent-Attack-Surface`；确认候选具备独立 Topic 的结构资格，但五个 Entity 不应平铺，FORGE 作为无指令证据污染边界成员，`Persona-Hyperstition` 暂缓；不新增 EX（详细研究：[[20260907--agent-attack-surface-topic-boundary--research]])
 - 2026-09-07 — open explore：核对 Atomix、Cordon、Dapr、CAVA、Auditable Agents 与 Microsoft compensation；确认 gate、signed history、action receipt 和 dispatch/compensation 状态不能替代 provider-authoritative post-state 与 independent reconciliation；收窄 `EX-005`，不新增 EX（详细研究：[[20260907--agent-effect-settlement-post-state--research]])
 - [[2026-09-06]] — open explore：交叉核对纽约联储、丹麦匹配研究、Anthropic/CPS、Stanford/ADP、Census、Dallas Fed 与 Ramp；确认 adoption carrier、企业选择、职业/早期流量、培训可得性和独立能力属于不同测量层，当前不能形成四层共同估计，收窄劳动线为 `adoption carrier × firm selection × labor-flow composition`，不新增 EX（详细研究：[[20260906--labor-economics-cross-layer--research]])
