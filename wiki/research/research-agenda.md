@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-06T17:34:06+08:00
+updated: 2026-09-06T19:31:27+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -121,7 +121,7 @@ related_entities:
 | EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量；Partial Evidence Bench 固定 oracle、改变授权可见证据；REDAgentBench 在同一 rollout 上改变轨迹/状态/混合视图并观察标签变化；但二者都未与 verifier independence、reference 条件同轨交叉；refined | 固定模型/验证器、任务、reference 与访问权限后，静态低覆盖、可交互读取和显式检查策略对照不改变漏报，或差异完全由 token budget、模型相关性或真值瑕疵解释 | clip+compile AJ-Bench、SkillTV-Bench、Partial Evidence Bench 与 REDAgentBench，建立“物理可见性 × 检查策略 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并与 EX-001 对齐 |
 | EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | Alibaba 2026 随机现场实验显示升级类型、时机与接管后投入改变结果；Google/Microsoft 一手文档把 route、handoff packet、queue/receiver state 与 fallback 分开；但尚无交接包内容的因果 ablation；refined | 固定升级触发、升级时机、专家身份、Agent 输出与队列状态后，完整/最小/证据-only/带模型结论的交接包若无稳定差异，则并入 EX-002；若证据-only 或结构化状态仍改变正确率、延迟、补问或过度依赖，保留 packet/framing 子门 | clip+compile Alibaba 现场实验与 Google/Microsoft handoff 字段；建立 `trigger/type → route/receiver → packet → human action` 矩阵，优先做固定路由/接收面下的 context ablation，并分层早/晚升级 |
 | EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 仍缺同 trace 交叉；REDAgentBench 用冻结 verifier、环境 receipt/最终状态和盲审校准强化了 external outcome/provenance 侧，但没有错误或语义等价 reference 条件；refined | 固定 verifier、evidence 与 trace 后，若 reference/provenance 仍分别改变 false accept/reject、attribution 或排名，保留两层；否则并回 benchmark validity | clip+compile 现有/新材料与 REDAgentBench；寻找含 hidden ledger、visible trace、semantic-equivalent reference 与外部 adjudication 的联合 benchmark |
-| EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence 分开了 checkpoint-restore 与外部副作用；HBHC 支持有界阻断未来调用；Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 显示凭据失效、在途停止、提交状态不确定与效果对账具有不同语义；缺 action-surface 与 post-state 分母；refined | 固定 trace/verdict/工具 schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消接受、进程停止与最终 post-state 可稳定等价，或未知提交完全由既有变量解释，则收窄/并回；反之保留 commit-state uncertainty 子门 | clip+compile ACRFence、HBHC、Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth、AWS Step Functions 材料；寻找带权威 post-state、补偿结果和责任接管的生产 trace |
+| EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence 分开了 checkpoint-restore 与外部副作用；HBHC 支持有界阻断未来调用；Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 显示凭据失效、在途停止、提交状态不确定与效果对账具有不同语义；最新事故/运营材料显示 `IncidentId/TraceId/CorrelationId/scan_id` 多停留在控制面或扫描面，尚未穿透到 effect receipt、revoke-after-send、canonical post-state 与独立 review；refined | 固定 trace/verdict/工具 schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消接受、进程停止与最终 post-state 可稳定等价，或未知提交完全由既有变量解释，则收窄/并回；反之保留 commit-state uncertainty 与 effect-lineage 子门 | clip+compile ACRFence、HBHC、Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth、AWS Step Functions 材料；优先寻找带同案关联键、权威 post-state、补偿结果和独立复核的脱敏生产 trace，不再重复收集只有 schema 的通用文档 |
 | EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | 新核查把问题拆成“决策时状态完整性”与“独立动作边界 enforcement”：ControlCapsule 的强证据是 preflight/fail-closed 的状态层结果；Constraint Pinning 会被 operator-impersonation 部分穿透；SMSR 只能把 unsigned memory write 与 authenticated injection 分层，MemSecBench 提供 Write→Execute→Forget 生命周期单位；仍未证明 OOB control plane 普遍必要 | 若 exact active-policy replay + preflight 与 signed OOB carrier 在固定 action-surface、compaction、memory、authority update、failover 和 recovery 上等效，则 OOB 只是实现选项；若 token-stream authority impersonation 或合法写入路径的恶意 memory 留下 deterministic monitor 无法吸收的 action/post-state 残差，则保留 authority authenticity / provenance binding 子门 | clip+compile 已登记四篇研究与新发现的 SMSR、MemSecBench；建立 `carrier → issuer/principal → binding → survival → verdict → preflight → actuation → post-state → recovery` 矩阵，再做固定 action-surface 的 carrier × enforcement 对照 |
 | EX-007 | 自我改进 Agent 的变更晋级是否需要按变更对象分层的不可自证门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | 材料与 HELIX/Evo-Harness/AAR 显示三类对象不能共用 gate：行为组件有结果不变但并行/停止/副作用顺序回归；评估/目标组件可因 benchmark 适配抬分；策略/执行组件可绕过安全边界。新增边界是控制面与反馈面双重不对称：recipe/trace 解决归因，环境反馈与隐藏 oracle 缓解自证，但不单独构成安全保证；refined | 若固定模型/任务后，行为契约能捕获所有行为组件线上残差；若评估/目标共变仍能在冻结外部 oracle、hidden holdout、不可改写的 feedback provenance 和独立安全复评上稳定复现；或所有残差最终可由 `EX-004/006` 解释，则削弱或合并 `EX-007` | new-source → EX-007；clip+compile HELIX/Evo-Harness 与 Weak-to-Strong Researcher，寻找 offline→online、独立复评、policy 冻结、rollback；暂不抽象第四类 gate |
 
@@ -168,7 +168,7 @@ related_entities:
 | P0 | HBHC / 有界层级撤销 | 已核读 49-agent 受控结果；需核代码、网络分区/旁路覆盖与 revoked-after-send 条件，不能把未来调用阻断当作回滚 | clip+compile → EX-005 |
 | P1 | 逐动作授权、撤销与恢复实测 | OpenAI/HF 事故材料提供重建、凭据/账户/工作负载遏制和批量停机的事故级锚点；MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 补足任务取消、令牌失效、heartbeat/终态送达、状态查询与补偿语义；仍缺逐动作撤销耗时、提交状态未知率、post-state 对账、回滚成功率和 MTTR | clip+compile → EX-005 |
 | P0 | 跨系统撤销传播与恢复链 | Google IAM 策略变更通常约 2 分钟、可能 7 分钟以上；Entra 应用自有 session 需应用撤销；GitHub 事故显示恢复、豁免、缓存刷新和确认分步完成；缺 Agent action 同链实测 | clip+compile → EX-005 / CR-004 |
-| P1 | Agent incident response actuation trace | OpenAI/HF 材料补足一条从告警到调查、遏制、重建、再次暴露到更广停机的事故级链条；仍缺同一生产任务中带稳定事件标识、明确 verdict/owner 的 `flag→owner→block/rollback→recovery→review` 完整时间线与对照 | clip+compile → EX-005 / Agent-Security Topic |
+| P1 | Agent incident response actuation trace | 新事故与运营材料补足事件 ID、审批/工具事件和局部恢复字段，但仍缺同一事件键连接 `flag→verdict→policy version→action-surface→in-flight→revoke/recovery→canonical post-state→independent review` 的脱敏导出；优先取得同案 effect lineage，不再横向累积 schema 文档 | clip+compile → EX-005 / Agent-Security Topic |
 | P0 | Policy-carriage integrity / ControlCapsule | [arXiv 2605.12535](https://arxiv.org/abs/2605.12535) v3 已核读但未进入 raw/source；需提取 policy 的存在、语义健全、对象绑定、有效预算、preflight 与 action-boundary 指标，并保留其 0/90 action-level negative boundary | clip+compile → EX-006 |
 | P0 | Governance Decay / ConstraintRot | [arXiv 2606.22528](https://arxiv.org/abs/2606.22528) v2 已核读但未进入 raw/source；需核查 compaction、summarizer injection、Constraint Pinning 与 operator-impersonation 的对照，以及 token-stream 外部权威通道这一开放边界 | clip+compile → EX-006 / CR-004 |
 | P0 | Sleeper Memory Poisoning | [arXiv 2605.15338](https://arxiv.org/abs/2605.15338) v2 已核读但未进入 raw/source；需提取 memory write—retrieve—use 三阶段、删除/纠正/用户审查/来源谱系防御缺口，并与 CR-002 区分数据最小化问题 | clip+compile → EX-006 / CR-002 |
@@ -208,14 +208,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-06T19:31:27+08:00 | Agent 安全事件链闭合 | refined | 新事故报告与运营 schema 增加事件键、工具/审批、扫描 verdict 和局部恢复字段，但没有在同一事件身份下闭合外部 effect receipt、撤销后在途结局、canonical post-state 与独立 review；收窄 `EX-005`，不新增 EX。 |
 | 2026-09-06T17:34:06+08:00 | 研究代谢审计 | no_delta | `EX-001`–`EX-007` 今日均已有近期 `refined/no_delta` 结果；当前瓶颈是可执行的 P0 evidence debt，不再创建 EX-008，下一步切换到 `clip+compile`。 |
 | 2026-09-06T16:38:24+08:00 | EX-003 交接校准 | refined | Alibaba 随机现场实验把升级类型、时机与接管投入的效果异质性钉实；Google/Microsoft 文档把路由、交接包、接收面和 fallback 分开，但没有交接包内容的因果 ablation；将 EX-003 收窄为四段事件链，不新增 EX。 |
 | 2026-09-06T15:33:43+08:00 | 验证器交叉核查 | refined | `trajectory-judge` 用固定 trace、构造故障和外部规则真值比较多种 judge，补强 evidence-view/判定可靠性边界；`BabelJudge` 的受控扰动仍只有单 judge 结果，二者均未提供 reference/provenance × verifier independence 的同 trace 因果交叉。 |
 | 2026-09-06T14:31:59+08:00 | 三轴验证交叉基准 | refined | REDAgentBench 在固定 rollout 上改变轨迹/状态/混合证据视图，报告标签与局部排名变化，并用 receipt/最终状态/盲审校准建立外部结果锚点；Partial Evidence Bench 固定 oracle、改变授权可见证据；两者都未操纵 verifier independence 与 reference/provenance 条件，不新增 EX。 |
-| 2026-09-06T13:31:50+08:00 | EX-006 策略承载完整性与动作边界 | refined | 新核查把 EX-006 分成决策时状态完整性与独立动作边界 enforcement：exact replay+preflight 是强基线但非 action-level 优势证明；Constraint Pinning 的 operator-impersonation 失败、SMSR 的 authenticated injection 与 MemSecBench 的生命周期单位把 OOB/provenance 收窄为待证 authority authenticity 子门，不新增 EX。 |
 
 ## 思考日志索引
 
+- [[2026-09-06]] — open explore：核对 Agent 安全事件链 follow-up 的新事故与运营材料；确认事件 ID/关联键仍未穿透到外部效果回执、撤销后在途结局、权威终态和独立复核；收窄 `EX-005`，不新增 EX
 - [[2026-09-06]] — open explore：审计 `EX-001`–`EX-007` 的近期代谢状态；未发现正交的新缺口，确认当前主要瓶颈是既有 P0 evidence debt；不新增 EX-008，下一步优先 `clip+compile`
 - [[2026-09-06]] — open explore：核对 Alibaba 随机现场实验与 Google/Microsoft handoff 一手文档；确认升级类型/时机/人类投入有现场效果证据，交接包、路由和接收面是不同操作变量，但缺固定接收面下的 packet ablation；将 `EX-003` 收窄为四段事件链，不新增 EX
 - [[2026-09-06]] — open explore：核查 `trajectory-judge`、`BabelJudge` 与 ALE 的固定 trace、构造真值、隐藏 reference 和多 judge 边界；补强 evidence-view/判定可靠性，但未找到 `verifier independence × reference/provenance` 的同 trace 因果交叉，不新增 EX
