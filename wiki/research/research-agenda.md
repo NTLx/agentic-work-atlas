@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-06T22:14:00+08:00
+updated: 2026-09-06T23:40:25+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -108,7 +108,7 @@ related_entities:
 |---|---|---|
 | P0 | Agent 安全 Topic 建设 | 五阶段骨架已起草；AWS AgentCore 新增四层 telemetry、trace context、Gateway policy 与 application telemetry 的正向架构边界；下一步仍需以事件级标识对齐 `flag → verdict → authorization → actuation → revoke/recovery → canonical post-state → review`，不把结构地图当作安全效果证据；不由 recompile 执行 |
 | P0 | 验证器危机研究线 | 按独立性四轴、证据覆盖/解释能力与 reference integrity 建立矩阵，再 clip AgentJudgeBench、Anthropic 三案与 Astra 官方材料 |
-| P0 | 劳动经济学实证 | 先按“企业净 headcount × 职业/入门流量 × 再生代理”建立校准骨架；不要用企业扩张直接抵消入门招聘收缩 |
+| P0 | 劳动经济学实证 | 先按“企业净 headcount × 职业/入门流量 × 再生代理”建立校准骨架；新增 adoption carrier 分层：formal/function/worker-task/operational；补共同企业—个人—职业—时期键、培训完成与独立能力；不要用企业扩张直接抵消入门招聘收缩 |
 | P1 | MCP 无状态转折 | `SEP-2663` 已标 Final，但 Tasks 渲染规范仍为 Draft、官方 SDK 支持不齐；`taskId` 同时是 durable state locator 与 HTTP 路由键，cancel 只是最终一致的协作式意图，不证明停止或回滚；下一步核对主体绑定、TTL/撤销、replay/failover 与 effect lineage |
 | P1 | AI 时代设计方法论对照 | 初步支持设计对象扩展到模型/系统行为、反馈/控制和可执行工作流；Anthropic 有团队案例，Google/Microsoft 目前只有方法指南；下一步补当前负责人/团队材料与责任、返工、反馈时延字段 |
 | P2 | Topic 与复核队列代谢 | 优先审查安全威胁面 Entity 簇的 Topic 承载；区分攻击面整合与 Agent-Security 的控制/责任生命周期，不继续制造新定理 |
@@ -180,7 +180,7 @@ related_entities:
 | P0 | 自我改进回路的独立变更审计 | Meta-Harness 有 train/dev gate，HELIX 增加 recipe/lockfile/trace/verifier 的变更归因，Evo-Harness 显示 feedback provenance/granularity 会改变演化结果，Anthropic AAR 以独立 evaluator、hidden holdout 与代码批准隔离部分自证；仍缺跨版本回放、不可改写 feedback、独立安全策略和 rollback 记录 | clip+compile → EX-007；优先入库 HELIX、Evo-Harness 与 Weak-to-Strong Researcher，并对齐 change owner、component、版本/hash、外部 oracle、feedback provenance、canary、rollback |
 | P0 | Harness 行为契约与保留测试区 | GitHub 案例显示离线评测漏掉并行回归；HELIX 的 Pytest 配对轨迹进一步显示 target tests 通过仍可有 PASS_TO_PASS 回归，干净 patch 也可能在语义边界上失败；缺跨版本、跨产品的行为不变量与回滚记录 | clip+compile → EX-007；提取 HELIX 的 regression-aware sibling labels，与 GitHub 行为契约字段对齐 |
 | P1 | 生产 Agent fleet 的自修改纵向记录 | 缺 prompt/skill/router/evaluator 变更的 owner、版本、canary、回滚、隐藏 holdout 与质量/安全联合结果 | new-source → EX-007 |
-| P0 | 劳动经济学企业—职业交叉校准 | Ramp 高强度采用者的 headcount/entry-level 变化，与 Dallas Fed、Census 的职业暴露/早期职业招聘收缩处在不同测量层；缺跨层对齐 | clip+compile Ramp、Dallas Fed 0901、Census CES-26-27；建立 firm × occupation × entry-flow 字段表 |
+| P0 | 劳动经济学企业—职业交叉校准 | Ramp、Dallas Fed、Census、纽约联储和丹麦匹配研究各自只闭合局部层；formal/function/worker-task/operational adoption 不是同一变量，缺共同企业—个人—职业—时期键、培训完成与再生代理 | 先补 S3《Prompting Change》正式稿/方法；clip+compile S1–S7；建立带分母/状态/版本的 evidence long table 与 `firm × person × occupation × period` 字段表 |
 | P0 | 劳动经济学代表性与预期偏差 | Atlanta Fed 近 6,000 家四国企业调查显示过去三年影响有限、未来预期生产率上升而就业下降；缺与实际招聘流量的同窗校准 | clip+compile Atlanta Fed Firm Data on AI；区分 realized / expected / platform-selected evidence |
 | P1 | OTel GenAI 正式规范与开放提案 | 主分支仍为 Development，缺 authorization、post-state、revoke/recovery 和完整 action-surface 分母；PR #483 仅提议 state delta，PR #447 仅提议部分 tool/API transfer，均仍 Open | clip+compile → CR-004；补官方 conformance/实现测试 → CR-004 |
 | P1 | Google DeepMind AI Control / live monitoring | 官方材料已定位 coverage、recall、响应时间与异步/同步阻断边界，缺逐案阻断或覆盖率实证 | clip/compile → CR-004 |
@@ -210,14 +210,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-06T23:40:25+08:00 | 劳动经济学：采用载体与职业入口 | refined | 纽约联储、丹麦匹配研究、Anthropic/CPS、Stanford/ADP、Census、Dallas Fed 与 Ramp 分别闭合企业、职业、青年流量或培训/能力的局部链条，但没有四层共同估计；采用载体、企业选择与劳动流量需分开，劳动线收窄为 `adoption carrier × firm selection × labor-flow composition`，不新增 EX。 |
 | 2026-09-06T22:14:00+08:00 | ALE Robotics：隐藏参考与验证闭合 | refined | ALE Robotics 把 hidden grader/seed、verify 阶段隔离、engine-native score re-derivation 与 validated/verified attestation 分开；这补强 benchmark anti-leakage/anti-tamper integrity，但同一套 reference/engine 的自洽重算仍不等于 reference truth、语义等价或 verifier independence，进一步收窄 `EX-004`，不新增 EX。 |
 | 2026-09-06T21:32:48+08:00 | AgentCore 跨层效果闭合 | refined | AWS AgentOps/AgentCore 把 telemetry 分成 framework/service/infrastructure/application 四层，并提供 trace context、Gateway policy、版本化 Runtime 与 CloudTrail；AWS DevOps Agent 将生产写操作留给人类，但公开材料仍无同案 `policy_version → effect receipt → revoke/recovery → canonical post-state → independent review`，收窄 `CR-004/EX-005`，不新增 EX。 |
 | 2026-09-06T20:32:28+08:00 | MCP Tasks 句柄与效果闭合 | refined | `SEP-2663` 已 Final，但官方 Tasks 页面仍为 Draft、SDK 扩展支持不齐；`taskId` 同时承担状态定位与路由，cancel 只确认意图，不证明停止/回滚；将 MCP 缺口收窄为主体绑定、路由/撤销与外部效果闭合，不新增 EX。 |
 | 2026-09-06T19:31:27+08:00 | Agent 安全事件链闭合 | refined | 新事故报告与运营 schema 增加事件键、工具/审批、扫描 verdict 和局部恢复字段，但没有在同一事件身份下闭合外部 effect receipt、撤销后在途结局、canonical post-state 与独立 review；收窄 `EX-005`，不新增 EX。 |
-| 2026-09-06T17:34:06+08:00 | 研究代谢审计 | no_delta | `EX-001`–`EX-007` 今日均已有近期 `refined/no_delta` 结果；当前瓶颈是可执行的 P0 evidence debt，不再创建 EX-008，下一步切换到 `clip+compile`。 |
 
 ## 思考日志索引
 
+- [[2026-09-06]] — open explore：交叉核对纽约联储、丹麦匹配研究、Anthropic/CPS、Stanford/ADP、Census、Dallas Fed 与 Ramp；确认 adoption carrier、企业选择、职业/早期流量、培训可得性和独立能力属于不同测量层，当前不能形成四层共同估计，收窄劳动线为 `adoption carrier × firm selection × labor-flow composition`，不新增 EX（详细研究：[[20260906--labor-economics-cross-layer--research]])
 - [[2026-09-06]] — open explore：核对 ALE Robotics 官方 benchmark protocol；确认 hidden grader/seed、verify 阶段隔离、engine-native 分数重算和 validated/verified attestation 可分层，但它们不等于 reference truth、语义等价或 verifier independence；收窄 `EX-004`，不新增 EX
 - [[2026-09-06]] — open explore：核对 AWS AgentOps、Bedrock AgentCore Observability 与 AWS DevOps Agent；确认四层 telemetry、trace context、Gateway policy 和 recommendation-only 执行边界已提供结构化观测入口，但无同案外部 effect receipt、revoke-after-send、canonical post-state 与独立 review；收窄 `CR-004/EX-005`，不新增 EX（详细研究：[[20260906--agentcore-cross-layer-effect-lineage--research]]）
 - [[2026-09-06]] — open explore follow-up：核对 MCP 2026-07-28 GA、SEP-2663、Tasks extension 与官方 SDK conformance；确认 `taskId` 同时承担状态定位与路由，cancel 只是最终一致的协作式意图，且规范/实现状态存在版本差异；收窄 MCP 与 `EX-005` 的交界，不新增 EX
