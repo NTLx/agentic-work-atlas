@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-07T04:42:26+08:00
+updated: 2026-09-07T06:36:45+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -120,7 +120,7 @@ related_entities:
 | EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | `2604.07650` 仅在输出错误、任务难度和模型/验证器组合上测相关性；REDAgentBench 固定 judge backbone，只改变证据视图/证明契约，不能替代独立性操纵；refined | 固定证据访问、reference 与任务后，跨家族/独立实现的单轴变化仍不能降低共同漏报，或独立性效应完全由证据覆盖/判定质量解释 | clip+compile `2604.07650` 与 REDAgentBench，按“错误生成相关性 × 证据状态 × reference 条件”补交叉字段 |
 | EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量；Partial Evidence Bench 固定 oracle、改变授权可见证据；REDAgentBench 在同一 rollout 上改变轨迹/状态/混合视图并观察标签变化；但二者都未与 verifier independence、reference 条件同轨交叉；refined | 固定模型/验证器、任务、reference 与访问权限后，静态低覆盖、可交互读取和显式检查策略对照不改变漏报，或差异完全由 token budget、模型相关性或真值瑕疵解释 | clip+compile AJ-Bench、SkillTV-Bench、Partial Evidence Bench 与 REDAgentBench，建立“物理可见性 × 检查策略 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并与 EX-001 对齐 |
 | EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | 2112.06751 在固定接收面下显示消息呈现有随机效果；Alibaba 随机的是部署条件，升级时机/类型主要是机制比较；Google/AWS 分开描述 route、handoff packet、receiver 与 telemetry，但没有 packet×receiver×timing 的因果消融；refined | 固定 trigger、Agent 输出、receiver 与 queue state 后，packet/message/timing 的交互若无稳定差异则并回 EX-002；若 packet 或 timing 仍改变正确率、延迟、补问或过度依赖，保留子门 | clip+compile 现有 P0 材料；优先寻找固定接收面下的 packet ablation 或含 `trigger/type → route/receiver → packet/version → human action → outcome` 的生产 trace |
-| EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 缺同 trace 交叉；REDAgentBench 补 evidence/receipt，ALE 补 hidden grader、隔离、重算与 attestation，但仍无错误/语义等价 reference 或独立 verifier；refined | 固定 verifier、evidence、trace 后，若 reference/provenance 仍改变误放行/误拒绝、归因或排名，保留两层；否则并回 benchmark validity，并区分 anti-leakage 与 truth validity | clip+compile 既有材料；寻找含 hidden ledger、visible trace、语义等价 reference、外部裁决与跨 verifier 的联合 benchmark |
+| EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 缺同 trace 交叉；EnvTrustBench 补 environment-state truth 与 outcome/trace oracle，EVMbench 补 deterministic transaction replay 与 post-state verification；三类 oracle 仍未同轨交叉；refined | 固定 verifier、trace 与 external post-state 后，若 reference/provenance 仍改变误放行/误拒绝、归因或排名，保留三层；否则并回 benchmark validity，并区分 reference truth、environment truth 与 execution truth | clip+compile EnvTrustBench、EVMbench；寻找同时含 reference manifest/version、environment state hash、visible/held-out trace、execution receipt/post-state 与跨 verifier 的联合 benchmark |
 | EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence/HBHC 区分 checkpoint、未来调用阻断与副作用；MCP/A2A/Temporal/OAuth/Step Functions 区分凭据失效、在途停止、未知提交和补偿；Atomix/Cordon 补强 gate/outbox，但 receipt 仍不等于 provider post-state；refined | 固定 trace/verdict/schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消、停止与 post-state 等价则收窄，否则保留 commit-state uncertainty/effect-lineage 并测 post-state reconciliation | clip+compile ACRFence、HBHC、Atomix、Cordon、Dapr、CAVA、Auditable Agents 与 Microsoft compensation；优先找同案关联键、provider receipt、权威 post-state、补偿结果和独立复核 |
 | EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | ControlCapsule 支持 preflight/fail-closed 的状态层结果；Constraint Pinning 会被 operator-impersonation 穿透；SMSR 区分 unsigned 与 authenticated injection，MemSecBench 提供 Write→Execute→Forget；仍未证 OOB control plane 普遍必要；refined | 若 exact replay+preflight 与 signed OOB carrier 在 compaction、memory、authority update、failover、recovery 上等效，OOB 只是实现选项；否则保留 authority authenticity/provenance binding 子门 | clip+compile 相关研究、SMSR、MemSecBench；建立 `carrier → issuer → binding → survival → verdict → preflight → actuation → post-state → recovery` 矩阵，做载体×enforcement 对照 |
 | EX-007 | 自我改进 Agent 的变更晋级是否需要按变更对象分层的不可自证门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | HELIX/Evo-Harness/AAR 及新增 HarnessEvolve、HSI 支持把行为面、反馈/评估面、策略/控制面分层；Rethinking 的 matched search 与 held-out 反例显示性能门不能单独证明可复用能力。边界进一步收窄为“变更归因 + feedback/control 双重不对称”；refined | 若固定模型/任务后，行为契约能捕获所有行为组件线上残差；若评估/目标共变仍能在冻结外部 oracle、hidden holdout、不可改写的 feedback provenance 和独立安全复评上稳定复现；或所有残差最终可由 `EX-004/006` 解释，则削弱或合并 `EX-007` | clip+compile HarnessEvolve、HSI、Harness Updating Is Not Harness Benefit 与 Rethinking；继续寻找 offline→online、独立复评、policy 冻结、canary/rollback；暂不抽象第四类 gate |
@@ -152,6 +152,7 @@ related_entities:
 | P0 | Agentic Benchmark Checklist | 已核读一手论文，尚未进入 raw/source；需提取 task/outcome validity、ground-truth 审查、语义等价、环境冻结与污染控制字段 | clip+compile → EX-004 |
 | P0 | GeneBench target identifiability | 已核读 OpenAI 一手技术报告，尚未进入 raw/source；需提取可恢复目标、可辨识性审查、prompt-grader mismatch 与 trace audit 字段 | clip+compile → EX-004 |
 | P0 | AcquaBench success provenance | 已核读作者版本；需入库 CLEAN/GOLD/SHAM、D0/D2、四种接口非独立复制、冻结配置与 provenance estimand，并与静态 reference integrity 分层 | clip+compile → EX-004 |
+| P0 | EnvTrustBench / EVMbench 三层 oracle | EnvTrustBench 将 true environment state、outcome oracle 与 trace oracle 分开；EVMbench 用交易 replay 与链上验证判定执行结果，但 reference 与 success provenance 未形成同轨交叉 | clip+compile → EX-004；提取 `reference manifest → environment state hash → action/receipt → post-state` 及 accepted denominator、replay 与真值限制 |
 | P0 | tau3 task fixes | 已核读官方修复记录，尚未进入 raw/source；需提取错误 expected action、任务歧义、不可行约束与修复前后 pass^1/pass^4 | clip+compile → EX-004 |
 | P0 | SWE-bench Verified oracle 质量审查 | 已联网核读官方材料，尚未进入 raw/source；需提取规格、测试、环境和三次独立标注如何改变可评估样本 | clip+compile → EX-004 |
 | P0 | PatchDiff 行为等价复核 | 已联网核读 ICSE 2026 一手论文，尚未进入 raw/source；需提取 test-pass、行为差异、人工确认错误与 developer patch 非唯一真值的边界 | clip+compile → EX-004 |
@@ -169,6 +170,7 @@ related_entities:
 | P0 | ACRFence / checkpoint-restore 副作用 | 已核读 10/10 重复提交与 stateless token resurrection；缺 mitigation 实现评估、跨框架复现和真实外部 post-state | clip+compile → EX-005 |
 | P0 | HBHC / 有界层级撤销 | 已核读 49-agent 受控结果；需核代码、网络分区/旁路覆盖与 revoked-after-send 条件，不能把未来调用阻断当作回滚 | clip+compile → EX-005 |
 | P1 | 逐动作授权、撤销与恢复实测 | OpenAI/HF 事故材料提供事故级遏制锚点；MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 补足取消、令牌失效、在途终态、状态查询与补偿语义；Atomix/Cordon/Dapr/CAVA/Auditable Agents 区分 gate、provenance、dispatch receipt 与 provider post-state，但仍缺逐动作撤销耗时、未知提交率、post-state 对账、回滚成功率和 MTTR | clip+compile → EX-005 |
+| P1 | Recourse/BCCA 与 Stripe 效果结算边界 | Recourse/BCCA 提供本地 provider-compatible effect/recovery receipt 与 residual 结果；Stripe 官方文档提供 idempotency、cancel/refund 与 5xx reconciliation 语义，但均缺 revoke-after-send、provider-authoritative post-state 与独立复核的同案证据 | clip+compile → EX-005；提取 `action/intent identity → provider receipt → cancel/recovery → post-state → independent reconciliation` 字段，保留 sandbox 与 provider 自身复核限制 |
 | P0 | 跨系统撤销传播与恢复链 | Google IAM 策略变更通常约 2 分钟、可能 7 分钟以上；Entra 应用自有 session 需应用撤销；GitHub 事故显示恢复、豁免、缓存刷新和确认分步完成；缺 Agent action 同链实测 | clip+compile → EX-005 / CR-004 |
 | P1 | Agent incident response actuation trace | 新事故与运营材料补足事件 ID、审批/工具事件和局部恢复字段，但仍缺同一事件键连接 `flag→verdict→policy version→action-surface→in-flight→revoke/recovery→canonical post-state→independent review` 的脱敏导出；优先取得同案 effect lineage，不再横向累积 schema 文档 | clip+compile → EX-005 / Agent-Security Topic |
 | P0 | Policy-carriage integrity / ControlCapsule | [arXiv 2605.12535](https://arxiv.org/abs/2605.12535) v3 已核读但未进入 raw/source；需提取 policy 的存在、语义健全、对象绑定、有效预算、preflight 与 action-boundary 指标，并保留其 0/90 action-level negative boundary | clip+compile → EX-006 |
@@ -210,13 +212,14 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-07T06:36:45+08:00 | EX-005 效果结算 follow-up | no_delta | Recourse/BCCA 有本地 provider-compatible effect/recovery receipt，Stripe 有幂等、取消、退款和不确定结果语义；仍无同案 provider-authoritative post-state 与 independent reconciliation/review 闭链。 |
+| 2026-09-07T06:33:25+08:00 | EX-004 三层 oracle 与成功来源 | refined | EnvTrustBench 分开 environment-state、outcome 与 trace oracle；EVMbench 提供 deterministic transaction replay/post-state verification，但 reference truth、environment truth、execution truth 仍无同轨交叉；不新增 EX。 |
 | 2026-09-07T04:42:26+08:00 | EX-006 控制状态抵达执行边界 | refined | ControlCapsule/ConstraintRot 补强状态衰减与 replay/preflight 边界；SMSR 补强 HMAC 写入来源绑定；OAP/FORGE 补强执行前授权；MemSecBench/ACRFence 补强生命周期与重复副作用。仍无 carrier × enforcement 的生产级 post-state 交叉证据，不新增 EX。 |
 | 2026-09-07T03:46:40+08:00 | EX-007 自我改进变更归因与晋级门 | refined | HarnessEvolve/HSI 提供模块解耦与冻结外层边界；Harness Updating Is Not Harness Benefit 分离更新与受益；Rethinking 以 matched search/held-out 反例说明性能门不等于可复用能力；W2S/AAR 代码补强“独立计分路径不等于完整 feedback provenance”。继续收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX。 |
 | 2026-09-07T02:42:57+08:00 | EX-003 交接校准与证据边界 | refined | 固定接收面下的消息呈现已有随机效果；Alibaba 只随机部署，升级时机属机制比较；Google/AWS 提供 handoff 契约而非效果证据。保留独立操作链，不与 EX-002 合并，不新增 EX。 |
-| 2026-09-07T00:36:21+08:00 | Agent 外部效果结算与权威终态 | refined | Atomix/Cordon 补强 gate、outbox、idempotency 与 partial-receipt recovery；Dapr/CAVA/Auditable Agents 补强 history、action identity 与 evidence integrity；仍不等于 provider post-state、补偿结果与独立对账闭链，收窄 `EX-005`，不新增 EX。 |
-| 2026-09-07T01:33:36+08:00 | Agent Attack Surface 的 Topic 边界 | refined | 最小字段实验把候选拆成 taxonomy、入口、中介、umbrella 与传播形态；`Agent-Perception-Gap`、`Context-Collapse` 与 FORGE 形成不可互换的输入/信任/证据入口，但 Måløy 系列仍是单作者单生态，暂不晋升稳定 Topic。 |
 ## 思考日志索引
 
+- 2026-09-07 — open explore：核对 EnvTrustBench、EVMbench 与 OpenAI coding evaluation audit；确认 reference truth、environment-state truth、execution/post-state truth 是不同 oracle 对象，EnvTrustBench 提供 outcome/trace oracle，EVMbench 提供 deterministic replay/post-state 近邻，但没有同一 trace 的三层交叉；收窄 `EX-004`，不新增 EX（详细研究：[[20260907--environment-oracle-provenance--research]])
 - 2026-09-07 — open explore：复核 ControlCapsule、ConstraintRot、SMSR、MemSecBench，并补充 OAP、FORGE、ACRFence 一手边界；确认 carrier 完整性、authority/provenance binding、deterministic enforcement 与 effect/recovery 仍是 EX-006 内部交叉项，未找到相对 exact replay + preflight 的生产级 post-state 优势证据，`refined`，不新增 EX（详细研究：[[20260907--control-state-boundary--research]])
 - 2026-09-07 — open explore follow-up：补查 W2S/AAR 官方说明与作者代码；确认远程独立计分、快照和 commit ID 仍不能自动闭合 reward-hacking、反馈查询历史、精确变更内容与 evaluator 版本的 provenance 链；沿用“变更归因 + feedback/control 双重不对称”，不新增 EX（详细研究：[[20260907--self-improvement-change-gates--research]])
 - 2026-09-07 — open explore：核查 EX-003 的交接校准边界；确认 2112.06751 只提供固定接收面的消息呈现效果，Alibaba 只随机部署，Google/AWS 主要是 handoff 契约，尚无 packet×receiver×timing 的联合因果证据；保留 EX-003、收窄其操作链，不新增 EX（详细研究：[[20260907--handoff-calibration-evidence-boundary--research]])
