@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-06T20:32:28+08:00
+updated: 2026-09-06T21:32:48+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -106,7 +106,7 @@ related_entities:
 
 | 优先级 | 焦点 | 下一步最小动作 |
 |---|---|---|
-| P0 | Agent 安全 Topic 建设 | 五阶段骨架已起草；下一步以事件级标识对齐 `flag → verdict → authorization → actuation → revoke/recovery → review`，逐格核验 `owner / action-surface`，不把结构地图当作安全效果证据；不由 recompile 执行 |
+| P0 | Agent 安全 Topic 建设 | 五阶段骨架已起草；AWS AgentCore 新增四层 telemetry、trace context、Gateway policy 与 application telemetry 的正向架构边界；下一步仍需以事件级标识对齐 `flag → verdict → authorization → actuation → revoke/recovery → canonical post-state → review`，不把结构地图当作安全效果证据；不由 recompile 执行 |
 | P0 | 验证器危机研究线 | 按独立性四轴、证据覆盖/解释能力与 reference integrity 建立矩阵，再 clip AgentJudgeBench、Anthropic 三案与 Astra 官方材料 |
 | P0 | 劳动经济学实证 | 先按“企业净 headcount × 职业/入门流量 × 再生代理”建立校准骨架；不要用企业扩张直接抵消入门招聘收缩 |
 | P1 | MCP 无状态转折 | `SEP-2663` 已标 Final，但 Tasks 渲染规范仍为 Draft、官方 SDK 支持不齐；`taskId` 同时是 durable state locator 与 HTTP 路由键，cancel 只是最终一致的协作式意图，不证明停止或回滚；下一步核对主体绑定、TTL/撤销、replay/failover 与 effect lineage |
@@ -129,7 +129,8 @@ related_entities:
 
 | 优先级 | 目标 | 当前缺口 | 触发行动 |
 |---|---|---|---|
-| P0 | Agent Safety Topic 跨层核验 | 五阶段骨架与一条事故级响应链已找到；下一步以事件级标识对齐 `flag → verdict → authorization → actuation → revoke/recovery → review`，并把 `authority stop / in-flight stop / effect reconciliation` 分开核验 `owner / action-surface`，不把结构地图当作安全效果证据；不由 recompile 执行 |
+| P0 | Agent Safety Topic 跨层核验 | 五阶段骨架与一条事故级响应链已找到；下一步以事件级标识对齐 `flag → verdict → authorization → actuation → revoke/recovery → canonical post-state → review`，并把 `authority stop / in-flight stop / effect reconciliation` 分开核验 `owner / action-surface`，不把结构地图当作安全效果证据；不由 recompile 执行 |
+| P1 | AgentCore 跨层效果回执 | AWS AgentOps/AgentCore 一手材料把 framework、service、infrastructure、application telemetry、W3C trace context、Gateway policy、版本化 Runtime 与 CloudTrail 放入同一架构，但没有同案导出连接 `policy_version → action receipt → revoke-after-send → canonical post-state → independent review` | clip+compile → CR-004 / EX-005；优先寻找跨控制面、工具面和目标系统 audit log 的脱敏生产 trace |
 | P2 | Agent 威胁面 Topic 承载候选 | `Agent-Traps`、`Context-Collapse`、`Prompt-Injection-Risk`、`AI-Worm`、`Agent-Perception-Gap` 等形成互引簇，但当前无 Topic/Comparison 承载；需区分攻击面整合与控制生命周期 | audit → 评估 `Agent-Attack-Surface` promotion candidate；先不创建稳定页 |
 | P0 | EU AI Act 首轮罚款官方决定 | €47M 三案系单链互引二手叙事（法律基础矛盾、无官方决定原文），需官方决定/一手披露判定真伪 | clip → 核对 CR-001 |
 | P0 | Anthropic 三起评测事故 | 已联网核读一手来源（browsecomp/mythos/system card），未进入 raw/source | clip+compile → CR-006 |
@@ -208,14 +209,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-06T21:32:48+08:00 | AgentCore 跨层效果闭合 | refined | AWS AgentOps/AgentCore 把 telemetry 分成 framework/service/infrastructure/application 四层，并提供 trace context、Gateway policy、版本化 Runtime 与 CloudTrail；AWS DevOps Agent 将生产写操作留给人类，但公开材料仍无同案 `policy_version → effect receipt → revoke/recovery → canonical post-state → independent review`，收窄 `CR-004/EX-005`，不新增 EX。 |
 | 2026-09-06T20:32:28+08:00 | MCP Tasks 句柄与效果闭合 | refined | `SEP-2663` 已 Final，但官方 Tasks 页面仍为 Draft、SDK 扩展支持不齐；`taskId` 同时承担状态定位与路由，cancel 只确认意图，不证明停止/回滚；将 MCP 缺口收窄为主体绑定、路由/撤销与外部效果闭合，不新增 EX。 |
 | 2026-09-06T19:31:27+08:00 | Agent 安全事件链闭合 | refined | 新事故报告与运营 schema 增加事件键、工具/审批、扫描 verdict 和局部恢复字段，但没有在同一事件身份下闭合外部 effect receipt、撤销后在途结局、canonical post-state 与独立 review；收窄 `EX-005`，不新增 EX。 |
 | 2026-09-06T17:34:06+08:00 | 研究代谢审计 | no_delta | `EX-001`–`EX-007` 今日均已有近期 `refined/no_delta` 结果；当前瓶颈是可执行的 P0 evidence debt，不再创建 EX-008，下一步切换到 `clip+compile`。 |
 | 2026-09-06T16:38:24+08:00 | EX-003 交接校准 | refined | Alibaba 随机现场实验把升级类型、时机与接管投入的效果异质性钉实；Google/Microsoft 文档把路由、交接包、接收面和 fallback 分开，但没有交接包内容的因果 ablation；将 EX-003 收窄为四段事件链，不新增 EX。 |
-| 2026-09-06T15:33:43+08:00 | 验证器交叉核查 | refined | `trajectory-judge` 用固定 trace、构造故障和外部规则真值比较多种 judge，补强 evidence-view/判定可靠性边界；`BabelJudge` 的受控扰动仍只有单 judge 结果，二者均未提供 reference/provenance × verifier independence 的同 trace 因果交叉。 |
 
 ## 思考日志索引
 
+- [[2026-09-06]] — open explore：核对 AWS AgentOps、Bedrock AgentCore Observability 与 AWS DevOps Agent；确认四层 telemetry、trace context、Gateway policy 和 recommendation-only 执行边界已提供结构化观测入口，但无同案外部 effect receipt、revoke-after-send、canonical post-state 与独立 review；收窄 `CR-004/EX-005`，不新增 EX（详细研究：[[20260906--agentcore-cross-layer-effect-lineage--research]]）
 - [[2026-09-06]] — open explore follow-up：核对 MCP 2026-07-28 GA、SEP-2663、Tasks extension 与官方 SDK conformance；确认 `taskId` 同时承担状态定位与路由，cancel 只是最终一致的协作式意图，且规范/实现状态存在版本差异；收窄 MCP 与 `EX-005` 的交界，不新增 EX
 - [[2026-09-06]] — open explore：核对 Agent 安全事件链 follow-up 的新事故与运营材料；确认事件 ID/关联键仍未穿透到外部效果回执、撤销后在途结局、权威终态和独立复核；收窄 `EX-005`，不新增 EX
 - [[2026-09-06]] — open explore：审计 `EX-001`–`EX-007` 的近期代谢状态；未发现正交的新缺口，确认当前主要瓶颈是既有 P0 evidence debt；不新增 EX-008，下一步优先 `clip+compile`
