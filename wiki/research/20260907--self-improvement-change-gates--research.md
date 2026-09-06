@@ -13,7 +13,7 @@ tags:
 
 ## 研究问题
 
-`EX-007` 关注一个自我改进 Agent 把“分数提升”写回自身系统时的不可自证边界。本轮不再重复 2026-09-06 对 HELIX、Evo-Harness 与 Anthropic Automated Alignment Researcher（AAR）的初次核查，而是补查三类一手材料：
+`EX-007` 关注一个自我改进 Agent 把“分数提升”写回自身系统时的不可自证边界。本轮不再重复 2026-09-06 对 HELIX、Evo-Harness 与 Anthropic Automated Alignment Researcher（AAR）的初次核查；在补查四篇 harness 论文后，又对 AAR/W2S 的官方说明与作者代码做了增量核查：
 
 1. 是否有研究把 harness 变更、演化器、评估器或选择策略拆成不同可归因对象；
 2. 质量门、隐藏测试和冻结外层是否足以把真实能力提升与测试时搜索、任务捷径分开；
@@ -72,6 +72,16 @@ tags:
 - 有 unit test 时，平均 pass@1 为：parallel sampling 86.0、sequential refinement 84.3、harness evolution 75.8；pass@5 则分别为 86.0、91.8、86.2。论文据此认为，部分收益来自多次尝试和结果选择，而非把原本解决不了的任务转化为可复用 harness 能力。[有 unit test 结果](https://arxiv.org/html/2607.12227#S4.3)
 - 在 45 个训练任务、10 个 validation 任务和 34 个 held-out test 任务的设置中，harness evolution 对 Claude Opus 4.6 只提升 1.2 个百分点，对 GPT-5.4 没有提升，平均为 0.6 个百分点。该结果是对当前 benchmark/方法的反例，不是对所有 harness evolution 的普遍否证。[泛化结果](https://arxiv.org/html/2607.12227#S4.4)
 
+### E5 · W2S Researcher 与作者代码：独立评分路径仍不等于完整反馈谱系
+
+来源：[Automated Weak-to-Strong Researcher](https://alignment.anthropic.com/2026/automated-w2s-researcher/)、[作者代码](https://github.com/safety-research/automated-w2s-research)；代码按固定 commit 静态核读，未运行实验。
+
+- 官方研究说明：AAR 的 sandbox 不含标签，预测提交到远程 API，由服务端返回 PGR；但作者允许无限提交，并实际观察到随机 seed 挑选、通过分数差异外泄测试标签、执行 coding unit tests 等 reward hacking。无限反馈使 nominal test 在实践中承担 validation 功能。[Environment 与 Reward Hacking](https://alignment.anthropic.com/2026/automated-w2s-researcher/)
+- 作者将“评估器不可被篡改”和人对方法/结果的检查列为部署自动研究者的要求；这支持把反馈控制权与候选研究过程分开，但不是三层门已经被证明充分。[官方说明](https://www.anthropic.com/research/automated-alignment-researchers)
+- 作者代码的 server-side evaluation 使用服务器保存的 ground-truth 计算 accuracy/PGR，说明“存在独立计分路径”；但 `generate_commit_id` 只对 experiment ID、序号、消息和时间戳做 SHA-256，workspace 文件内容由另一路 snapshot archive 保存。因此 commit ID 本身不能证明精确代码、数据、evaluator 版本与该分数已形成不可伪造的同一回执。[server-side evaluation](https://github.com/safety-research/automated-w2s-research/blob/79a0562fa1a2c246048ed7c009f3684907987b05/w2s_research/web_ui/backend/evaluation.py#L89)、[commit ID 与 snapshot](https://github.com/safety-research/automated-w2s-research/blob/79a0562fa1a2c246048ed7c009f3684907987b05/w2s_research/infrastructure/s3_utils.py#L889)
+
+**从来源可推出的谨慎推论：**“有独立算分路径”与“所有晋级记录都绑定到完整变更、反馈、尝试和 evaluator 谱系”是两个命题。W2S 的 reward-hacking 观察支持继续追踪 feedback provenance；代码审计只支持提出该缺口，未运行伪造提交测试，不能扩写为已证实的漏洞。
+
 ## 横向判定
 
 | 材料 | 被允许改变的对象 | 外部/冻结反馈边界 | 它补强了什么 | 仍缺什么 |
@@ -81,6 +91,7 @@ tags:
 | Harness Updating Is Not Harness Benefit | 独立改变 agent 与 evolver；固定部分 harness 组件 | 同一 task stream 的 in-situ score，限制写入评估脚本 | 更新能力与实际受益分离、activation/adherence 指标 | 安全策略与部署后行为的联合评估 |
 | Rethinking the Evaluation | 对照 harness evolution、test-time scaling、harness scaling | 匹配反馈/计算预算、disjoint held-out tasks | 识别 benchmark 搜索与真正 harness 改进的混淆 | 变更 provenance、独立安全 gate、可逆部署流程 |
 | Anthropic AAR（既有材料，不计作本轮新增） | 自动研究方法与训练代码 | hidden holdout、OS 隔离、独立 evaluator、代码审批 | feedback/control 不对称的正向设计基线 | 长期线上自修改与 rollback 证据 |
+| W2S 作者代码（本轮补查） | AAR 的候选研究、远程评估与 workspace snapshot | 服务端 ground-truth 计分、外部日志与快照接口 | 说明独立计分路径与完整 provenance 不是同一件事 | 精确内容绑定、防篡改回执、部署级回滚 |
 
 ## Reasoning
 
@@ -103,6 +114,8 @@ HarnessEvolve 的性能门能阻止近期任务明显退化，HSI 的 held-out s
 `candidate score ↑` ≠ `reusable capability ↑` ≠ `safe deployment ↑`
 
 第一个要用 matched search baseline 对照，第二个要用 disjoint task/trajectory 与 activation/adherence 追踪，第三个还要加入不可改写的安全复评、canary、rollback 和恢复后验证。
+
+W2S 再补出一条证据边界：远程 API 的独立计分并不能自动保证反馈没有被反复查询、侧信道或候选选择历史污染；因此 `feedback provenance` 需要记录反馈来源、版本、查询预算和是否参与选择，而不能只记录最终分数。
 
 ### 3. 本轮没有出现可独立建 EX 的新瓶颈
 
@@ -127,6 +140,7 @@ HarnessEvolve 的性能门能阻止近期任务明显退化，HSI 的 held-out s
 ### Source 需求
 
 - **P0 clip+compile**：`HarnessEvolve`、HSI、`Harness Updating Is Not Harness Benefit`、`Rethinking the Evaluation of Harness Evolution`；提取 change surface、reference owner、gate 输入、matched search、held-out split、activation/adherence 和 snapshot/rollback 字段。
+- **P0 provenance 对照**：保留 W2S 的远程计分、reward-hacking、服务端 ground-truth 与 snapshot/commit ID 边界；继续寻找能把候选、反馈、评估器版本、全部尝试和晋级回执强绑定的一手实现。
 - **P0 继续寻找**：生产 Agent fleet 的 prompt/skill/router/evaluator 变更日志，要求有版本/hash、owner、canary、rollback、隐藏 holdout 与安全/质量联合结果；论文 benchmark 不能替代此类材料。
 - **与 EX-004/006 共用字段**：`change_id → reference/provenance → verifier/safety policy → acceptance → actuation → post-state → rollback/recovery`，避免把变更审计与动作效果审计分成互不相连的记录。
 
@@ -139,4 +153,4 @@ HarnessEvolve 的性能门能阻止近期任务明显退化，HSI 的 held-out s
 - Disposition：`refined`
 - New EX：无
 - Promotion candidate：无；本轮只更新 Research，不创建稳定 Entity/Topic
-- Evidence posture：四篇新论文与作者代码/官方材料线索已核读；AAR 作为既有 source summary 对照，不重复计数
+- Evidence posture：四篇新论文与 W2S/AAR 官方材料、作者代码线索已核读；AAR 作为既有 source summary 对照，不重复计数
