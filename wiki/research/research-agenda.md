@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-07T02:42:57+08:00
+updated: 2026-09-07T03:33:06+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -123,7 +123,7 @@ related_entities:
 | EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 缺同 trace 交叉；REDAgentBench 补 evidence/receipt，ALE 补 hidden grader、隔离、重算与 attestation，但仍无错误/语义等价 reference 或独立 verifier；refined | 固定 verifier、evidence、trace 后，若 reference/provenance 仍改变误放行/误拒绝、归因或排名，保留两层；否则并回 benchmark validity，并区分 anti-leakage 与 truth validity | clip+compile 既有材料；寻找含 hidden ledger、visible trace、语义等价 reference、外部裁决与跨 verifier 的联合 benchmark |
 | EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence/HBHC 区分 checkpoint、未来调用阻断与副作用；MCP/A2A/Temporal/OAuth/Step Functions 区分凭据失效、在途停止、未知提交和补偿；Atomix/Cordon 补强 gate/outbox，但 receipt 仍不等于 provider post-state；refined | 固定 trace/verdict/schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消、停止与 post-state 等价则收窄，否则保留 commit-state uncertainty/effect-lineage 并测 post-state reconciliation | clip+compile ACRFence、HBHC、Atomix、Cordon、Dapr、CAVA、Auditable Agents 与 Microsoft compensation；优先找同案关联键、provider receipt、权威 post-state、补偿结果和独立复核 |
 | EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | ControlCapsule 支持 preflight/fail-closed 的状态层结果；Constraint Pinning 会被 operator-impersonation 穿透；SMSR 区分 unsigned 与 authenticated injection，MemSecBench 提供 Write→Execute→Forget；仍未证 OOB control plane 普遍必要；refined | 若 exact replay+preflight 与 signed OOB carrier 在 compaction、memory、authority update、failover、recovery 上等效，OOB 只是实现选项；否则保留 authority authenticity/provenance binding 子门 | clip+compile 相关研究、SMSR、MemSecBench；建立 `carrier → issuer → binding → survival → verdict → preflight → actuation → post-state → recovery` 矩阵，做载体×enforcement 对照 |
-| EX-007 | 自我改进 Agent 的变更晋级是否需要按变更对象分层的不可自证门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | 材料与 HELIX/Evo-Harness/AAR 显示三类对象不能共用 gate：行为组件有结果不变但并行/停止/副作用顺序回归；评估/目标组件可因 benchmark 适配抬分；策略/执行组件可绕过安全边界。新增边界是控制面与反馈面双重不对称：recipe/trace 解决归因，环境反馈与隐藏 oracle 缓解自证，但不单独构成安全保证；refined | 若固定模型/任务后，行为契约能捕获所有行为组件线上残差；若评估/目标共变仍能在冻结外部 oracle、hidden holdout、不可改写的 feedback provenance 和独立安全复评上稳定复现；或所有残差最终可由 `EX-004/006` 解释，则削弱或合并 `EX-007` | new-source → EX-007；clip+compile HELIX/Evo-Harness 与 Weak-to-Strong Researcher，寻找 offline→online、独立复评、policy 冻结、rollback；暂不抽象第四类 gate |
+| EX-007 | 自我改进 Agent 的变更晋级是否需要按变更对象分层的不可自证门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | HELIX/Evo-Harness/AAR 及新增 HarnessEvolve、HSI 支持把行为面、反馈/评估面、策略/控制面分层；Rethinking 的 matched search 与 held-out 反例显示性能门不能单独证明可复用能力。边界进一步收窄为“变更归因 + feedback/control 双重不对称”；refined | 若固定模型/任务后，行为契约能捕获所有行为组件线上残差；若评估/目标共变仍能在冻结外部 oracle、hidden holdout、不可改写的 feedback provenance 和独立安全复评上稳定复现；或所有残差最终可由 `EX-004/006` 解释，则削弱或合并 `EX-007` | clip+compile HarnessEvolve、HSI、Harness Updating Is Not Harness Benefit 与 Rethinking；继续寻找 offline→online、独立复评、policy 冻结、canary/rollback；暂不抽象第四类 gate |
 
 ## Source 需求队列
 
@@ -177,8 +177,8 @@ related_entities:
 | P1 | Security-Recall Divergence | [arXiv 2604.20911](https://arxiv.org/abs/2604.20911) 已核读但未进入 raw/source；需核查 omission/commission 不对称、Safe Turn Depth 与格式代理限制，不能把代理约束直接外推为真实泄露风险 | clip+compile → EX-006 / CR-004 |
 | P1 | SMSR / runtime memory provenance | [arXiv 2606.12703](https://arxiv.org/abs/2606.12703) 提供 HMAC write boundary、authenticated injection 分支与 certificate/utility trade-off；缺真实 memory backend、外部 action post-state 和 human adjudication | clip+compile → EX-006 / CR-002 |
 | P1 | MemSecBench memory lifecycle | [arXiv 2607.27080](https://arxiv.org/abs/2607.27080) 提供 Write→Execute→Forget 的 linked lifecycle benchmark；缺部署级 trace、合法主体恶意写入和与撤销/恢复链的对照 | clip+compile → EX-006 / CR-002 / EX-005 |
-| P0 | 自我改进回路的独立变更审计 | Meta-Harness 有 train/dev gate，HELIX 增加 recipe/lockfile/trace/verifier 的变更归因，Evo-Harness 显示 feedback provenance/granularity 会改变演化结果，Anthropic AAR 以独立 evaluator、hidden holdout 与代码批准隔离部分自证；仍缺跨版本回放、不可改写 feedback、独立安全策略和 rollback 记录 | clip+compile → EX-007；优先入库 HELIX、Evo-Harness 与 Weak-to-Strong Researcher，并对齐 change owner、component、版本/hash、外部 oracle、feedback provenance、canary、rollback |
-| P0 | Harness 行为契约与保留测试区 | GitHub 案例显示离线评测漏掉并行回归；HELIX 的 Pytest 配对轨迹进一步显示 target tests 通过仍可有 PASS_TO_PASS 回归，干净 patch 也可能在语义边界上失败；缺跨版本、跨产品的行为不变量与回滚记录 | clip+compile → EX-007；提取 HELIX 的 regression-aware sibling labels，与 GitHub 行为契约字段对齐 |
+| P0 | 自我改进回路的独立变更审计 | Meta-Harness、HELIX、Evo-Harness、HarnessEvolve 与 HSI 分别提供 train/dev gate、recipe/trace/verifier 归因、feedback provenance、分层编辑边界与 held-out 选择；Rethinking 提醒匹配 test-time search 后，分数提升仍可能不是 harness benefit；仍缺跨版本回放、不可改写 feedback、独立安全策略、canary 和 rollback 记录 | clip+compile → EX-007；优先入库 HarnessEvolve、HSI、Harness Updating Is Not Harness Benefit 与 Rethinking，并对齐 change owner、component、版本/hash、外部 oracle、feedback provenance、canary、rollback |
+| P0 | Harness 行为契约与保留测试区 | GitHub 案例显示离线评测漏掉并行回归；HELIX 的 Pytest 配对轨迹进一步显示 target tests 通过仍可有 PASS_TO_PASS 回归，干净 patch 也可能在语义边界上失败；Rethinking 还显示同 benchmark 搜索可能掩盖 held-out 退化；缺跨版本、跨产品的行为不变量与回滚记录 | clip+compile → EX-007；提取 HELIX 的 regression-aware sibling labels，与 Rethinking 的 matched search/held-out 字段及 GitHub 行为契约对齐 |
 | P1 | 生产 Agent fleet 的自修改纵向记录 | 缺 prompt/skill/router/evaluator 变更的 owner、版本、canary、回滚、隐藏 holdout 与质量/安全联合结果 | new-source → EX-007 |
 | P0 | 劳动经济学企业—职业交叉校准 | Ramp、Dallas Fed、Census、纽约联储和丹麦匹配研究各自只闭合局部层；formal/function/worker-task/operational adoption 不是同一变量，缺共同企业—个人—职业—时期键、培训完成与再生代理 | 先补 S3《Prompting Change》正式稿/方法；clip+compile S1–S7；建立带分母/状态/版本的 evidence long table 与 `firm × person × occupation × period` 字段表 |
 | P0 | 劳动经济学代表性与预期偏差 | Atlanta Fed 近 6,000 家四国企业调查显示过去三年影响有限、未来预期生产率上升而就业下降；缺与实际招聘流量的同窗校准 | clip+compile Atlanta Fed Firm Data on AI；区分 realized / expected / platform-selected evidence |
@@ -210,13 +210,14 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-07T03:33:06+08:00 | EX-007 自我改进变更归因与晋级门 | refined | HarnessEvolve/HSI 提供模块解耦与冻结外层边界；Harness Updating Is Not Harness Benefit 分离更新与受益；Rethinking 以 matched search/held-out 反例说明性能门不等于可复用能力。收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX。 |
 | 2026-09-07T02:42:57+08:00 | EX-003 交接校准与证据边界 | refined | 固定接收面下的消息呈现已有随机效果；Alibaba 只随机部署，升级时机属机制比较；Google/AWS 提供 handoff 契约而非效果证据。保留独立操作链，不与 EX-002 合并，不新增 EX。 |
 | 2026-09-07T00:36:21+08:00 | Agent 外部效果结算与权威终态 | refined | Atomix/Cordon 补强 gate、outbox、idempotency 与 partial-receipt recovery；Dapr/CAVA/Auditable Agents 补强 history、action identity 与 evidence integrity；仍不等于 provider post-state、补偿结果与独立对账闭链，收窄 `EX-005`，不新增 EX。 |
 | 2026-09-07T01:33:36+08:00 | Agent Attack Surface 的 Topic 边界 | refined | 最小字段实验把候选拆成 taxonomy、入口、中介、umbrella 与传播形态；`Agent-Perception-Gap`、`Context-Collapse` 与 FORGE 形成不可互换的输入/信任/证据入口，但 Måløy 系列仍是单作者单生态，暂不晋升稳定 Topic。 |
 | 2026-09-06T23:40:25+08:00 | 劳动经济学：采用载体与职业入口 | refined | 纽约联储、丹麦匹配研究、Anthropic/CPS、Stanford/ADP、Census、Dallas Fed 与 Ramp 分别闭合企业、职业、青年流量或培训/能力的局部链条，但没有四层共同估计；采用载体、企业选择与劳动流量需分开，劳动线收窄为 `adoption carrier × firm selection × labor-flow composition`，不新增 EX。 |
-| 2026-09-06T22:14:00+08:00 | ALE Robotics：隐藏参考与验证闭合 | refined | ALE Robotics 把 hidden grader/seed、verify 阶段隔离、engine-native score re-derivation 与 validated/verified attestation 分开；这补强 benchmark anti-leakage/anti-tamper integrity，但同一套 reference/engine 的自洽重算仍不等于 reference truth、语义等价或 verifier independence，进一步收窄 `EX-004`，不新增 EX。 |
 ## 思考日志索引
 
+- 2026-09-07 — open explore：核查 EX-007 的自我改进变更归因与晋级边界；新增 HarnessEvolve、HSI、Harness Updating Is Not Harness Benefit 与 Rethinking 的一手材料，确认模块解耦/冻结外层/held-out 不能替代独立安全策略、matched search、线上 canary 与 rollback；收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX（详细研究：[[20260907--self-improvement-change-gates--research]])
 - 2026-09-07 — open explore：核查 EX-003 的交接校准边界；确认 2112.06751 只提供固定接收面的消息呈现效果，Alibaba 只随机部署，Google/AWS 主要是 handoff 契约，尚无 packet×receiver×timing 的联合因果证据；保留 EX-003、收窄其操作链，不新增 EX（详细研究：[[20260907--handoff-calibration-evidence-boundary--research]])
 - 2026-09-07 — open explore：用 `entry / mechanism / phase / action surface / observable-defense / source class` 复核 `Agent-Attack-Surface`；确认候选具备独立 Topic 的结构资格，但五个 Entity 不应平铺，FORGE 作为无指令证据污染边界成员，`Persona-Hyperstition` 暂缓；不新增 EX（详细研究：[[20260907--agent-attack-surface-topic-boundary--research]])
 - 2026-09-07 — open explore：核对 Atomix、Cordon、Dapr、CAVA、Auditable Agents 与 Microsoft compensation；确认 gate、signed history、action receipt 和 dispatch/compensation 状态不能替代 provider-authoritative post-state 与 independent reconciliation；收窄 `EX-005`，不新增 EX（详细研究：[[20260907--agent-effect-settlement-post-state--research]])
