@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-07T00:36:21+08:00
+updated: 2026-09-07T01:33:36+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -120,9 +120,9 @@ related_entities:
 | EX-001 | 验证器独立性是否是目标、证据、执行、时间四轴的最弱轴瓶颈？ | `2604.07650` 仅在输出错误、任务难度和模型/验证器组合上测相关性；REDAgentBench 固定 judge backbone，只改变证据视图/证明契约，不能替代独立性操纵；refined | 固定证据访问、reference 与任务后，跨家族/独立实现的单轴变化仍不能降低共同漏报，或独立性效应完全由证据覆盖/判定质量解释 | clip+compile `2604.07650` 与 REDAgentBench，按“错误生成相关性 × 证据状态 × reference 条件”补交叉字段 |
 | EX-002 | 独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？ | AJ-Bench 将取得信息、状态验证、过程验证分开测量；Partial Evidence Bench 固定 oracle、改变授权可见证据；REDAgentBench 在同一 rollout 上改变轨迹/状态/混合视图并观察标签变化；但二者都未与 verifier independence、reference 条件同轨交叉；refined | 固定模型/验证器、任务、reference 与访问权限后，静态低覆盖、可交互读取和显式检查策略对照不改变漏报，或差异完全由 token budget、模型相关性或真值瑕疵解释 | clip+compile AJ-Bench、SkillTV-Bench、Partial Evidence Bench 与 REDAgentBench，建立“物理可见性 × 检查策略 × 证据解释 × 同族/跨族 × reference 条件”矩阵，并与 EX-001 对齐 |
 | EX-003 | Facilitator agent 能否在缺少人类隐藏信息的条件下校准“何时升级、升级给谁、给什么上下文”，而不制造新的监督盲区？ | Alibaba 2026 随机现场实验显示升级类型、时机与接管后投入改变结果；Google/Microsoft 一手文档把 route、handoff packet、queue/receiver state 与 fallback 分开；但尚无交接包内容的因果 ablation；refined | 固定升级触发、升级时机、专家身份、Agent 输出与队列状态后，完整/最小/证据-only/带模型结论的交接包若无稳定差异，则并入 EX-002；若证据-only 或结构化状态仍改变正确率、延迟、补问或过度依赖，保留 packet/framing 子门 | clip+compile Alibaba 现场实验与 Google/Microsoft handoff 字段；建立 `trigger/type → route/receiver → packet → human action` 矩阵，优先做固定路由/接收面下的 context ablation，并分层早/晚升级 |
-| EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 仍缺同 trace 交叉；REDAgentBench 用冻结 verifier、环境 receipt/最终状态和盲审校准强化了 external outcome/provenance 侧；ALE Robotics 进一步把 hidden grader/seed、阶段隔离、分数重算与 verified attestation 分开，但仍没有错误或语义等价 reference 条件，也没有独立 verifier 对照；refined | 固定 verifier、evidence 与 trace 后，若 reference/provenance 仍分别改变 false accept/reject、attribution 或排名，保留两层；否则并回 benchmark validity；另需区分“防泄漏/防篡改的 benchmark integrity”与“reference 本身正确且语义等价”的 truth validity | clip+compile 现有/新材料与 REDAgentBench；寻找含 hidden ledger、visible trace、semantic-equivalent reference、外部 adjudication 与跨 verifier 对照的联合 benchmark |
-| EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence 分开 checkpoint-restore 与外部副作用；HBHC 支持有界阻断未来调用；Google/Microsoft/AWS、MCP Tasks、A2A、Temporal、OAuth 与 AWS Step Functions 显示凭据失效、在途停止、提交不确定与效果对账具有不同语义；Atomix/Cordon 补强 pre-externalization gate、outbox 与 manual review，但 action fingerprint、signed history、dispatch receipt 仍不等于 provider-authoritative post-state；refined | 固定 trace/verdict/工具 schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消接受、进程停止与最终 post-state 可稳定等价，或未知提交完全由既有变量解释，则收窄/并回；反之保留 commit-state uncertainty 与 effect-lineage 子门，并测量 post-state reconciliation | clip+compile ACRFence、HBHC、Atomix、Cordon、Dapr、CAVA、Auditable Agents 与 Microsoft compensation；优先寻找带同案关联键、provider receipt、权威 post-state、补偿结果和独立复核的生产 trace，不再收集只有 schema 的通用文档 |
-| EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | 新核查把问题拆成“决策时状态完整性”与“独立动作边界 enforcement”：ControlCapsule 的强证据是 preflight/fail-closed 的状态层结果；Constraint Pinning 会被 operator-impersonation 部分穿透；SMSR 只能把 unsigned memory write 与 authenticated injection 分层，MemSecBench 提供 Write→Execute→Forget 生命周期单位；仍未证明 OOB control plane 普遍必要 | 若 exact active-policy replay + preflight 与 signed OOB carrier 在固定 action-surface、compaction、memory、authority update、failover 和 recovery 上等效，则 OOB 只是实现选项；若 token-stream authority impersonation 或合法写入路径的恶意 memory 留下 deterministic monitor 无法吸收的 action/post-state 残差，则保留 authority authenticity / provenance binding 子门 | clip+compile 已登记四篇研究与新发现的 SMSR、MemSecBench；建立 `carrier → issuer/principal → binding → survival → verdict → preflight → actuation → post-state → recovery` 矩阵，再做固定 action-surface 的 carrier × enforcement 对照 |
+| EX-004 | reference integrity 与 success provenance 是否构成独立必要门？ | AgentJudgeBench/AcquaBench 缺同 trace 交叉；REDAgentBench 补 evidence/receipt，ALE 补 hidden grader、隔离、重算与 attestation，但仍无错误/语义等价 reference 或独立 verifier；refined | 固定 verifier、evidence、trace 后，若 reference/provenance 仍改变误放行/误拒绝、归因或排名，保留两层；否则并回 benchmark validity，并区分 anti-leakage 与 truth validity | clip+compile 既有材料；寻找含 hidden ledger、visible trace、语义等价 reference、外部裁决与跨 verifier 的联合 benchmark |
+| EX-005 | 动作授权、独立执行点与撤销/恢复是否是独立必要门？ | ACRFence/HBHC 区分 checkpoint、未来调用阻断与副作用；MCP/A2A/Temporal/OAuth/Step Functions 区分凭据失效、在途停止、未知提交和补偿；Atomix/Cordon 补强 gate/outbox，但 receipt 仍不等于 provider post-state；refined | 固定 trace/verdict/schema，对照 prompt-only、model guard、reference monitor、monitor+rollback；若取消、停止与 post-state 等价则收窄，否则保留 commit-state uncertainty/effect-lineage 并测 post-state reconciliation | clip+compile ACRFence、HBHC、Atomix、Cordon、Dapr、CAVA、Auditable Agents 与 Microsoft compensation；优先找同案关联键、provider receipt、权威 post-state、补偿结果和独立复核 |
+| EX-006 | 高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？ | ControlCapsule 支持 preflight/fail-closed 的状态层结果；Constraint Pinning 会被 operator-impersonation 穿透；SMSR 区分 unsigned 与 authenticated injection，MemSecBench 提供 Write→Execute→Forget；仍未证 OOB control plane 普遍必要；refined | 若 exact replay+preflight 与 signed OOB carrier 在 compaction、memory、authority update、failover、recovery 上等效，OOB 只是实现选项；否则保留 authority authenticity/provenance binding 子门 | clip+compile 相关研究、SMSR、MemSecBench；建立 `carrier → issuer → binding → survival → verdict → preflight → actuation → post-state → recovery` 矩阵，做载体×enforcement 对照 |
 | EX-007 | 自我改进 Agent 的变更晋级是否需要按变更对象分层的不可自证门，防止 harness、评估器、目标与策略共变把“分数提升”伪装成能力/安全提升？ | 材料与 HELIX/Evo-Harness/AAR 显示三类对象不能共用 gate：行为组件有结果不变但并行/停止/副作用顺序回归；评估/目标组件可因 benchmark 适配抬分；策略/执行组件可绕过安全边界。新增边界是控制面与反馈面双重不对称：recipe/trace 解决归因，环境反馈与隐藏 oracle 缓解自证，但不单独构成安全保证；refined | 若固定模型/任务后，行为契约能捕获所有行为组件线上残差；若评估/目标共变仍能在冻结外部 oracle、hidden holdout、不可改写的 feedback provenance 和独立安全复评上稳定复现；或所有残差最终可由 `EX-004/006` 解释，则削弱或合并 `EX-007` | new-source → EX-007；clip+compile HELIX/Evo-Harness 与 Weak-to-Strong Researcher，寻找 offline→online、独立复评、policy 冻结、rollback；暂不抽象第四类 gate |
 
 ## Source 需求队列
@@ -131,7 +131,7 @@ related_entities:
 |---|---|---|---|
 | P0 | Agent Safety Topic 跨层核验 | 五阶段骨架与一条事故级响应链已找到；下一步以事件级标识对齐 `flag → verdict → authorization → actuation → revoke/recovery → canonical post-state → review`，并把 `authority stop / in-flight stop / effect reconciliation` 分开核验 `owner / action-surface`，不把结构地图当作安全效果证据；不由 recompile 执行 |
 | P1 | AgentCore 跨层效果回执 | AWS AgentOps/AgentCore 一手材料把 framework、service、infrastructure、application telemetry、W3C trace context、Gateway policy、版本化 Runtime 与 CloudTrail 放入同一架构，但没有同案导出连接 `policy_version → action receipt → revoke-after-send → canonical post-state → independent review` | clip+compile → CR-004 / EX-005；优先寻找跨控制面、工具面和目标系统 audit log 的脱敏生产 trace |
-| P2 | Agent 威胁面 Topic 承载候选 | `Agent-Traps`、`Context-Collapse`、`Prompt-Injection-Risk`、`AI-Worm`、`Agent-Perception-Gap` 等形成互引簇，但当前无 Topic/Comparison 承载；需区分攻击面整合与控制生命周期 | audit → 评估 `Agent-Attack-Surface` promotion candidate；先不创建稳定页 |
+| P2 | Agent 威胁面 Topic 承载候选 | 最小结构实验确认候选具备 Topic 资格，但五个 Entity 不应平铺：`Agent-Traps` 是 taxonomy anchor，`Agent-Perception-Gap` 是入口，`Context-Collapse` 是信任/状态中介，`Prompt-Injection-Risk` 是 umbrella/bridge，`AI-Worm` 是传播形态；FORGE 可作为无指令证据污染边界成员，`Persona-Hyperstition` 暂缓 | clip+compile `Agent-Traps` 与 FORGE；补跨作者/跨产品的内容→状态/行动案例，再由 compile/audit 验收；先不创建稳定页 |
 | P0 | EU AI Act 首轮罚款官方决定 | €47M 三案系单链互引二手叙事（法律基础矛盾、无官方决定原文），需官方决定/一手披露判定真伪 | clip → 核对 CR-001 |
 | P0 | Anthropic 三起评测事故 | 已联网核读一手来源（browsecomp/mythos/system card），未进入 raw/source | clip+compile → CR-006 |
 | P0 | OpenAI 评测越界披露 | HF 事件及 UK AISI/Irregular 两起第三方评测尚未进入 raw/source | clip+compile → CR-006 |
@@ -211,13 +211,14 @@ related_entities:
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
 | 2026-09-07T00:36:21+08:00 | Agent 外部效果结算与权威终态 | refined | Atomix/Cordon 补强 gate、outbox、idempotency 与 partial-receipt recovery；Dapr/CAVA/Auditable Agents 补强 history、action identity 与 evidence integrity；仍不等于 provider post-state、补偿结果与独立对账闭链，收窄 `EX-005`，不新增 EX。 |
+| 2026-09-07T01:33:36+08:00 | Agent Attack Surface 的 Topic 边界 | refined | 最小字段实验把候选拆成 taxonomy、入口、中介、umbrella 与传播形态；`Agent-Perception-Gap`、`Context-Collapse` 与 FORGE 形成不可互换的输入/信任/证据入口，但 Måløy 系列仍是单作者单生态，暂不晋升稳定 Topic。 |
 | 2026-09-06T23:40:25+08:00 | 劳动经济学：采用载体与职业入口 | refined | 纽约联储、丹麦匹配研究、Anthropic/CPS、Stanford/ADP、Census、Dallas Fed 与 Ramp 分别闭合企业、职业、青年流量或培训/能力的局部链条，但没有四层共同估计；采用载体、企业选择与劳动流量需分开，劳动线收窄为 `adoption carrier × firm selection × labor-flow composition`，不新增 EX。 |
 | 2026-09-06T22:14:00+08:00 | ALE Robotics：隐藏参考与验证闭合 | refined | ALE Robotics 把 hidden grader/seed、verify 阶段隔离、engine-native score re-derivation 与 validated/verified attestation 分开；这补强 benchmark anti-leakage/anti-tamper integrity，但同一套 reference/engine 的自洽重算仍不等于 reference truth、语义等价或 verifier independence，进一步收窄 `EX-004`，不新增 EX。 |
 | 2026-09-06T21:32:48+08:00 | AgentCore 跨层效果闭合 | refined | AWS AgentOps/AgentCore 把 telemetry 分成 framework/service/infrastructure/application 四层，并提供 trace context、Gateway policy、版本化 Runtime 与 CloudTrail；AWS DevOps Agent 将生产写操作留给人类，但公开材料仍无同案 `policy_version → effect receipt → revoke/recovery → canonical post-state → independent review`，收窄 `CR-004/EX-005`，不新增 EX。 |
-| 2026-09-06T20:32:28+08:00 | MCP Tasks 句柄与效果闭合 | refined | `SEP-2663` 已 Final，但官方 Tasks 页面仍为 Draft、SDK 扩展支持不齐；`taskId` 同时承担状态定位与路由，cancel 只确认意图，不证明停止/回滚；将 MCP 缺口收窄为主体绑定、路由/撤销与外部效果闭合，不新增 EX。 |
 
 ## 思考日志索引
 
+- 2026-09-07 — open explore：用 `entry / mechanism / phase / action surface / observable-defense / source class` 复核 `Agent-Attack-Surface`；确认候选具备独立 Topic 的结构资格，但五个 Entity 不应平铺，FORGE 作为无指令证据污染边界成员，`Persona-Hyperstition` 暂缓；不新增 EX（详细研究：[[20260907--agent-attack-surface-topic-boundary--research]])
 - 2026-09-07 — open explore：核对 Atomix、Cordon、Dapr、CAVA、Auditable Agents 与 Microsoft compensation；确认 gate、signed history、action receipt 和 dispatch/compensation 状态不能替代 provider-authoritative post-state 与 independent reconciliation；收窄 `EX-005`，不新增 EX（详细研究：[[20260907--agent-effect-settlement-post-state--research]])
 - [[2026-09-06]] — open explore：交叉核对纽约联储、丹麦匹配研究、Anthropic/CPS、Stanford/ADP、Census、Dallas Fed 与 Ramp；确认 adoption carrier、企业选择、职业/早期流量、培训可得性和独立能力属于不同测量层，当前不能形成四层共同估计，收窄劳动线为 `adoption carrier × firm selection × labor-flow composition`，不新增 EX（详细研究：[[20260906--labor-economics-cross-layer--research]])
 - [[2026-09-06]] — open explore：核对 ALE Robotics 官方 benchmark protocol；确认 hidden grader/seed、verify 阶段隔离、engine-native 分数重算和 validated/verified attestation 可分层，但它们不等于 reference truth、语义等价或 verifier independence；收窄 `EX-004`，不新增 EX
@@ -292,7 +293,6 @@ related_entities:
 - [[2026-08-23]] — 深度思考×13；Alpha Transfer、判断力与认知公地
 - [[2026-08-04]] — 深度思考×11；08-03 判断的边界与反例复核
 - [[2026-08-03]] — 深度思考×33；生成器降秩、前瞻预测与多项形式化
-- [[2026-08-02]] — 深度思考×8；第三轮全量探索与赌注登记
 - [[inventory-20260802]] — 08-02 全量盘点与健康度基线
 - [[2026-07-23]] / [[2026-07-22]] — 验证瓶颈与合法权限研究线
 - [[resolved-judgments]] — 已收敛判断归档
