@@ -7,7 +7,7 @@ aliases:
   - AI 原生工程组织
 definition: "把 AI coding agent 作为默认工作基础设施后，围绕验证、review、安全、产品判断、JIT planning 和 dogfooding 重写的软件工程组织"
 created: 2026-06-05
-updated: 2026-08-13
+updated: 2026-09-07
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -28,6 +28,7 @@ source_raw:
   - "[[20260616-why-is-meta-destroying-its-engineering]]"
   - "[[20260608-become-ai-native-org]]"
   - "[[20260802-lenny-cpo-regrets-product-management-whatnot]]"
+  - "[[20260906-lenny-companies-series-loops]]"
 ---
 
 # AI-Native Engineering Org（AI 原生工程组织）
@@ -83,6 +84,16 @@ Whatnot（2026-08，Tom Verrilli CPO）提供了 AI 原生工程组织的另一�
 - 速度是组织原则本身："Speed is the entire premise. Once it's lost, it never comes back."（750 实验/年，每决定快 3 天 → 卖家 2 年 `$1.1B` 增量收益）。
 
 与 Claude Code 团队样本的关系：后者靠"验证/review/安全/产品判断"成为新瓶颈（能力约束视角）；Whatnot 靠"谁拥有问题 + 谁对结果负责"扁平化（责任结构视角）。两者共同点：角色边界变薄（PM 写代码、CPO vibe code），而责任落到具体问题 owner 上。
+
+## 从编码 Loop 扩展到业务 Loop（2026-09）
+
+Anish Acharya 对“公司是一系列 Loop”的描述，为 AI 原生工程组织补上了跨职能的上层视角。工程的 bug-fix、用户反馈和 feature development 只是最容易验证的 Loop；同样的输入—执行—测量—发布结构可以扩展到 growth、marketing、sales、support 和 legal。跨职能 Loop 的结果还应反馈到业务模型、产品方向或公司战略，而不是各自优化局部指标。
+
+这不是把所有职能都改造成无人值守流水线。工程组织已有测试、PR review 和安全门禁，能把部分 Loop 留给 Agent；销售关系、支持中的异常信号、战略选择和出分布的新想法仍需要人类。人类的职责是定义目标和验收，处理超出当前模型知识或指标空间的情况，并选择下一座需要攀爬的“山”。
+
+**判断**：AI 原生组织的扩展顺序应是“先把可验证的工程循环做稳，再把同一套输入、反馈、owner 与升级机制迁移到其他职能”，而不是先按部门采购 Agent。
+- **证据**：[[20260906-lenny-companies-series-loops]] 在 11:35–20:18 对 coding、growth 与 Kavak agent 教练回路的访谈描述；本页的 Claude Code 与 Whatnot 组织样本。
+- **边界**：跨职能工作常缺少稳定的 success metric，且客户关系、战略和例外的价值可能在循环之外才显现；没有独立验证、权限边界和人类升级路径时，Loop 只会高速优化局部目标。
 
 ## 关键数据点
 
