@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-09-07T07:46:00+08:00
+updated: 2026-09-07T08:33:43+08:00
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -213,14 +213,15 @@ related_entities:
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-09-07T08:33:43+08:00 | EX-005 耐久执行停止与外部效果 | refined | AWS Durable Execution 明确停止 durable execution 不会停止在途 Lambda，checkpoint 前的外部副作用仍生效；Step Functions 将跨服务取消定义为 best-effort。新增 checkpoint/in-flight 窗口作为 effect-lineage 分层，不新增 EX。 |
 | 2026-09-07T07:46:00+08:00 | EX-002 证据覆盖与解释 follow-up | refined | AJ-Bench/Partial Evidence Bench 分开证据取得与完整性意识；Cited but Not Verified 显示深度增加可能损害事实整合；收窄为 evidence-synthesis interference，不新增 EX。 |
 | 2026-09-07T06:36:45+08:00 | EX-005 效果结算 follow-up | no_delta | Recourse/BCCA 有本地 provider-compatible effect/recovery receipt，Stripe 有幂等、取消、退款和不确定结果语义；仍无同案 provider-authoritative post-state 与 independent reconciliation/review 闭链。 |
 | 2026-09-07T06:33:25+08:00 | EX-004 三层 oracle 与成功来源 | refined | EnvTrustBench 分开 environment-state、outcome 与 trace oracle；EVMbench 提供 deterministic transaction replay/post-state verification，但 reference truth、environment truth、execution truth 仍无同轨交叉；不新增 EX。 |
 | 2026-09-07T04:42:26+08:00 | EX-006 控制状态抵达执行边界 | refined | ControlCapsule/ConstraintRot 补强状态衰减与 replay/preflight 边界；SMSR 补强 HMAC 写入来源绑定；OAP/FORGE 补强执行前授权；MemSecBench/ACRFence 补强生命周期与重复副作用。仍无 carrier × enforcement 的生产级 post-state 交叉证据，不新增 EX。 |
-| 2026-09-07T03:46:40+08:00 | EX-007 自我改进变更归因与晋级门 | refined | HarnessEvolve/HSI 提供模块解耦与冻结外层边界；Harness Updating Is Not Harness Benefit 分离更新与受益；Rethinking 以 matched search/held-out 反例说明性能门不等于可复用能力；W2S/AAR 代码补强“独立计分路径不等于完整 feedback provenance”。继续收窄为“变更归因 + feedback/control 双重不对称”，不新增 EX。 |
 
 ## 思考日志索引
 
+- 2026-09-07 — open explore follow-up：核对 AWS Durable Execution、Step Functions `.sync`、MCP Tasks 与 A2A cancellation 语义；确认停止编排、在途 invocation、checkpoint、下游取消和外部 post-state 不是同一状态，新增 checkpoint/in-flight 窗口作为 `EX-005` effect-lineage 分层，`refined`，不新增 EX（详细研究：[[20260907--ex005-durable-stop-semantics--research]])
 - 2026-09-07 — open explore：复核 AJ-Bench、Partial Evidence Bench、Cited but Not Verified，并以 SourceBench/AgentOracle 作为相邻 provenance 对照；确认证据可见性、检查策略、完整性意识与事实整合是不同测量面，新增 `evidence-synthesis interference` 内部瓶颈；`EX-002` refined，不新增 EX（详细研究：[[20260907--ex002-evidence-coverage-followup--research]])
 - 2026-09-07 — open explore：核对 EnvTrustBench、EVMbench 与 OpenAI coding evaluation audit；确认 reference truth、environment-state truth、execution/post-state truth 是不同 oracle 对象，EnvTrustBench 提供 outcome/trace oracle，EVMbench 提供 deterministic replay/post-state 近邻，但没有同一 trace 的三层交叉；收窄 `EX-004`，不新增 EX（详细研究：[[20260907--environment-oracle-provenance--research]])
 - 2026-09-07 — open explore：复核 ControlCapsule、ConstraintRot、SMSR、MemSecBench，并补充 OAP、FORGE、ACRFence 一手边界；确认 carrier 完整性、authority/provenance binding、deterministic enforcement 与 effect/recovery 仍是 EX-006 内部交叉项，未找到相对 exact replay + preflight 的生产级 post-state 优势证据，`refined`，不新增 EX（详细研究：[[20260907--control-state-boundary--research]])
