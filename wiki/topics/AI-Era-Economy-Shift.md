@@ -3,7 +3,7 @@ type: topic
 title: AI Era Economy Shift
 description: "AI 时代经济范式转型：从知识经济到分配经济，效率提升带来需求爆发"
 created: 2026-04-10
-updated: 2026-08-26
+updated: 2026-09-09
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -37,6 +37,7 @@ source_raw:
   - '[[20260619-the-data-black-hole-at-the-center-of-ai]]'
   - "[[20260727-openai-work-at-the-frontier.pdf]]"
   - "[[20260825-dwarkesh-dylan-patel-3]]"
+  - "[[20260908-dwarkesh-pretraining-progress-data]]"
 ---
 
 # AI Era Economy Shift（AI 时代经济转型）
@@ -109,6 +110,15 @@ AI 首先放大的是输入层：代码、PR、内容、diff。真正需要管�
 - **物理极低效**：AI 预训练和特定领域的后训练（RL/SFT）需要数百甚至数千亿 tokens 及极高成本的人类专家轨迹，这被视为“数据黑洞”。
 - **经济极高效**：与无法被跨实体复制的人类知识资产不同，AI 的权重资产可以近乎零边际成本无摩擦分摊到数十亿次用户会话中，形成超高杠杆的摊销收益。
 - **蒸馏赶超**：通过前沿 API，后进者能极速进行数据蒸馏（[[API-Distillation-Catch-Up|API 蒸馏追赶效应]]），这使得开源模型与闭源代差保持在约 4 个月，进一步加速了通用智能资源的平民化与商品化。
+
+### 预训练进步的双侧杠杆：数据工程与模型工程
+
+[[20260908-dwarkesh-pretraining-progress-data]] 为“数据是训练经济中的生产资料”补上了一项小规模实证分解。
+
+**判断**：在 2019–2025 的代表性 recipe/corpus 组合与 1e19 FLOPs 预算下，数据侧 compute-efficiency multiplier（12.0x）高于模型侧（3.7x）；但模型研究的关键价值可能体现在让更大的参数量、更长的上下文和更长的运行时间变得可训练，而不是只体现为单位 FLOP 的效率。
+
+- **证据**：作者还报告数据和模型效应大体可加，在 3.16e18 FLOPs 的组合网格中，线性模型的加性项解释了约 88% 的 OLMES 分数方差。
+- **边界**：这不是 frontier-scale 或整体 AI capability 的完整分解。实验使用相对较小模型、OLMES 选择题评测和有限超参数搜索，未测量合成数据、新增专家数据、RL/post-training、tokenizer 或推理效率。
 
 ---
 

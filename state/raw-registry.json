@@ -2008,6 +2008,18 @@
       "summary_path": "wiki/sources/20260906-lenny-companies-series-loops.md",
       "updated_at": "2026-09-07T13:09:35+08:00"
     },
+    "20260908-dwarkesh-pretraining-progress-data.md": {
+      "body_sha256": "fa27a1ac0db6c5ac3f466ac1ee23cf3b425907bdfc89751732f8285628df20ef",
+      "canonical_url": "https://www.dwarkesh.com/p/pretraining-progress-is-mostly-data",
+      "compiled_at": "2026-09-09T18:27:58+08:00",
+      "indexed_at": "2026-09-09T18:28:43+08:00",
+      "raw_file": "20260908-dwarkesh-pretraining-progress-data.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；公开 canonical URL 可恢复原文，source summary 保留原始正文哈希、实验定位与尺度边界。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260908-dwarkesh-pretraining-progress-data.md",
+      "updated_at": "2026-09-09T18:29:02+08:00"
+    },
     "20260908-openai-research-acceleration-agentic-productivity.md": {
       "body_sha256": "b15895fc10c8d520aad17737005559bec9f9f6e66deb8eaf8f587e42ba9cd7ff",
       "canonical_url": "https://tomtunguz.com/openai-research-acceleration-agentic-productivity",
@@ -2628,6 +2640,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-09T18:25:29+08:00",
+  "updated_at": "2026-09-09T18:29:02+08:00",
   "version": 1
 }
