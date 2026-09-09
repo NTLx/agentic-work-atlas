@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-08-25
+updated: 2026-09-09
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -35,6 +35,7 @@ source_raw:
   - "[[Running an AI-native engineering org]]"
   - "[[20260603-anthropic-self-service-data-analytics]]"
   - "[[20260615-normaltech-ai-hasnt-replaced-software-engineers]]"
+  - "[[20260908-openai-research-acceleration-agentic-productivity]]"
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
@@ -80,6 +81,13 @@ Outcome 更不一定改善
 ### Decide–Execute–Deliver：软件工程样本
 
 [[20260615-normaltech-ai-hasnt-replaced-software-engineers]] 将软件工程拆为 Decide、Execute、Deliver 三层。AI 主要压缩 Execute，即写代码、调试和测试；Decide（决定做什么）与 Deliver（验证、交付和承担责任）仍是主要瓶颈。该文引用的研究显示，AI agents 让代码行数增加约 8 倍，但 releases 只增加约 30%，说明生成量不会自动转化为交付结果。
+
+### OpenAI 研究组织：原始 Agent 工时与交付结果分离
+
+**判断**：当 Agent runtime 快速超过人类工时，组织新增的主要负担可能不是“让 Agent 再多做一点”，而是干预、验证、返工和清理失败产物；因此 agent-workdays 不能单独作为生产力指标。
+
+- **证据**：OpenAI 研究组织在 2026 年 8 月中旬每 8 小时人类工作日使用约 3.1 个 agent-workdays；过去 6 个月中，成功的 4–8 小时任务超过一半仍包含至少一次人类干预。详见 [[20260908-openai-research-acceleration-agentic-productivity]]。
+- **边界**：这是 OpenAI 内部研究组织的运行数据，任务成功率只覆盖能找到 ground-truth outcome 的任务；OpenAI 自己也提示这些指标仍属初步测量，不能直接等同于整体研发进度。Tunguz 基于此推导的约 2 倍交付产出属于作者假设，不是本 topic 的事实结论。
 
 ## Jevons 悖论的劳动版本
 

@@ -2008,6 +2008,18 @@
       "summary_path": "wiki/sources/20260906-lenny-companies-series-loops.md",
       "updated_at": "2026-09-07T13:09:35+08:00"
     },
+    "20260908-openai-research-acceleration-agentic-productivity.md": {
+      "body_sha256": "b15895fc10c8d520aad17737005559bec9f9f6e66deb8eaf8f587e42ba9cd7ff",
+      "canonical_url": "https://tomtunguz.com/openai-research-acceleration-agentic-productivity",
+      "compiled_at": "2026-09-09T18:24:29+08:00",
+      "indexed_at": "2026-09-09T18:25:08+08:00",
+      "raw_file": "20260908-openai-research-acceleration-agentic-productivity.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；公开 canonical URL 可恢复原文，source summary 保留原始正文哈希、OpenAI 一手对照和关键证据定位。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260908-openai-research-acceleration-agentic-productivity.md",
+      "updated_at": "2026-09-09T18:25:29+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -2616,6 +2628,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-07T13:09:35+08:00",
+  "updated_at": "2026-09-09T18:25:29+08:00",
   "version": 1
 }
