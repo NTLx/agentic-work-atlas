@@ -6,9 +6,9 @@ aliases:
   - AI 震撼错位
   - AI 能力震撼
   - CEO AI Psychosis
-definition: "因与 AI 实际工作的'最后一英里'脱节而产生的认知错位——深度用户过度外推高峰体验，CEO 过度相信 AI 能替代人类工作"
+definition: "一个被混用于不同现象的总称：临床语境中的真实精神病性体验，以及 AI 工作语境中由能力外推或产出—价值脱钩造成的现实校准失败"
 created: 2026-04-16
-updated: 2026-07-27
+updated: 2026-09-10
 tags:
   - AI-agent
   - perception-gap
@@ -29,12 +29,31 @@ source_raw:
   - '[[20260529-ceo-ai-psychosis-equity-podcast]]'
   - '[[20260616-why-is-meta-destroying-its-engineering]]'
   - '[[20260718-ai-mania-eviscerating-decision-making]]'
+  - '[[20260901-jeff-clark-defining-ai-psychosis-part-1-true]]'
+  - '[[20260908-jeff-clark-defining-ai-psychosis-part-2-prolific]]'
 ---
 
 # AI Psychosis
 
 > [!definition] 定义
-> 因与 AI 实际工作的"最后一英里"脱节而产生的认知错位。原始含义（Karpathy, 2025）：深度使用前沿 agentic coding 模型的人因亲历能力跃迁而对 AI 进步速度产生强烈紧迫感。扩展含义（Levie, 2026）：CEO 因远离实际工作流程，只看到 AI 的 happy path，却据此做出大规模裁员等组织决策。
+> 一个被混用于不同现象的总称：临床语境中的真实精神病性体验，以及 AI 工作语境中由能力外推或产出—价值脱钩造成的现实校准失败。后者包括深度用户把 coding agent 的高峰体验外推到全领域，也包括 CEO 只看到 AI 的 happy path 就推动组织重组。
+
+## 三种用法：先分层
+
+Jeff Clark, MD 在 2026 年 9 月的系列文章中指出，`AI psychosis` 至少被用于三种不同现象：
+
+| 用法 | 对象 | 核心问题 | 当前证据边界 |
+|------|------|----------|--------------|
+| **True AI Psychosis** | LLM 使用相关的真实精神病性体验 | 是否出现固定、虚假且具有个体化特征的信念，及其对现实判断和生活功能的影响 | 临床概念；不能由网络标签或单次模型对话直接诊断 |
+| **Prolific AI Psychosis** | 过度投入 AI 工具的工作者 | AI 产出数量上升，却没有同步增加真实价值，甚至破坏质量与可维护性 | 非临床修辞；尚无量表、阈值或发生率数据 |
+| **Parasocial AI Psychosis** | 与 LLM 建立失衡单向关系的人 | 把拟人化、迎合性的对话系统当作真实社会关系 | 当前已剪藏材料只完成术语登记，尚未编译其后续机制 |
+
+### 判断
+
+`AI Psychosis` 最有用的用法不是给人贴标签，而是先识别究竟发生了症状、行为模式，还是由 AI 能力错位引发的组织叙事。
+
+- **证据**：[[20260901-jeff-clark-defining-ai-psychosis-part-1-true]]；[[20260908-jeff-clark-defining-ai-psychosis-part-2-prolific]]
+- **边界**：Jeff Clark 的系列文章是单一作者的概念性说明；其中临床因果关系未知，`prolific` 与 `parasocial` 也不是医学诊断。
 
 ## 为什么重要
 
@@ -62,6 +81,8 @@ AI Psychosis 的风险有两面。
 另一面是过度外推。深度用户容易把 coding agent 的高峰体验外推到所有领域，忽略 [[Ghost-Intelligence]] 和 [[Jagged-Intelligence]] 的限制：模型在训练回路、可验证任务和高投入领域极强，但不代表它拥有均匀、稳定、类人的通用判断。
 
 更稳妥的用法是把 AI Psychosis 当作能力评估提示器：当两个人对 AI 的判断差异极大时，不急着争论谁对，而是先比较他们实际使用的模型、任务、工具链和验证条件。
+
+在工作语境中，还要把“生成了多少”与“产生了多少价值”分开。[[Agent-Harness]] 让 AI 可以持续生成、调用工具和循环执行，但也会放大隐藏的维护成本与失败；因此 [[Agent-Verification]]、外部结果和人类判断不能被 token、代码行数或任务数量替代。
 
 ## CEO AI Psychosis（Levie, 2026）
 
@@ -170,11 +191,12 @@ HashiCorp 创始人 Hashimoto 指出核心风险：**MTTR 思维（快速修复�
 
 ## 前提与局限性
 
-- **非临床术语**：这里的 psychosis 是修辞，不应被当作医学诊断。
+- **术语边界**：`True AI Psychosis` 在文章中指临床意义上的精神病性体验；`prolific` 和 `parasocial` 是工作/社会语境中的非临床修辞，三者不能混为一谈。
 - **领域前提**：主要描述 agentic coding、数学、研究等可验证领域的震撼体验，不代表所有知识工作都有同等跃迁。
 - **价格前提**：依赖前沿付费模型、工具权限和真实工作流接入，免费或旧模型体验不同。
 - **时间前提**：能力鸿沟可能随模型普及和界面变化缩小，也可能因新一代模型继续扩大。
 - **外推边界**：震撼感不是证据本身，仍需用任务成功率、测试、审查和生产后果校准。
+- **系列边界**：当前只编译了系列第一、第二篇；第三种拟社会关系的机制与边界不在本次证据范围内。
 
 ## 关联概念
 

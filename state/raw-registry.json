@@ -1930,6 +1930,15 @@
       "summary_path": "wiki/sources/20260901-google-ai-evaluations-trust.md",
       "updated_at": "2026-09-02T09:42:12+08:00"
     },
+    "20260901-jeff-clark-defining-ai-psychosis-part-1-true.md": {
+      "body_sha256": "5dce2c1862ff4c915bf3d15ac70d040f09b78fd4e6becdc4c13d615bdc76f77d",
+      "compiled_at": "2026-09-10T16:59:03+08:00",
+      "raw_file": "20260901-jeff-clark-defining-ai-psychosis-part-1-true.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260901-jeff-clark-defining-ai-psychosis-part-1-true.md",
+      "updated_at": "2026-09-10T16:59:03+08:00"
+    },
     "20260901-openai-ai-native-company-workflows.md": {
       "body_sha256": "c98a4c560940c2139c883d24e15139648395ace6f170ab001827a5e8775296a0",
       "compiled_at": "2026-09-02T09:44:55+08:00",
@@ -2019,6 +2028,15 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260908-dwarkesh-pretraining-progress-data.md",
       "updated_at": "2026-09-09T18:29:02+08:00"
+    },
+    "20260908-jeff-clark-defining-ai-psychosis-part-2-prolific.md": {
+      "body_sha256": "7499ca7db0d3b25ece85d02b1de529279082dc7c286658d2b43092530060481f",
+      "compiled_at": "2026-09-10T16:59:03+08:00",
+      "raw_file": "20260908-jeff-clark-defining-ai-psychosis-part-2-prolific.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260908-jeff-clark-defining-ai-psychosis-part-2-prolific.md",
+      "updated_at": "2026-09-10T16:59:03+08:00"
     },
     "20260908-openai-research-acceleration-agentic-productivity.md": {
       "body_sha256": "b15895fc10c8d520aad17737005559bec9f9f6e66deb8eaf8f587e42ba9cd7ff",
@@ -2640,6 +2658,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-09T18:29:02+08:00",
+  "updated_at": "2026-09-10T17:00:36+08:00",
   "version": 1
 }
