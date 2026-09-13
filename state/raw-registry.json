@@ -2050,6 +2050,27 @@
       "summary_path": "wiki/sources/20260908-openai-research-acceleration-agentic-productivity.md",
       "updated_at": "2026-09-09T18:25:29+08:00"
     },
+    "20260911-dwarkesh-recursive-self-improvement-debate.md": {
+      "body_sha256": "25f8a692089d3267142732d98a012deb0f64a25154ce969e97a1e073f09d125a",
+      "raw_file": "20260911-dwarkesh-recursive-self-improvement-debate.md",
+      "raw_state": "full",
+      "status": "pending",
+      "updated_at": "2026-09-13T17:01:04+08:00"
+    },
+    "20260911-github-marketing-ops-as-code.md": {
+      "body_sha256": "779fd5ab9a020857a2dd4c8f829521fdb34cc2954609a570d43b7b224139dd4d",
+      "raw_file": "20260911-github-marketing-ops-as-code.md",
+      "raw_state": "full",
+      "status": "pending",
+      "updated_at": "2026-09-13T17:01:04+08:00"
+    },
+    "20260911-openai-habitat-storage-scaling.md": {
+      "body_sha256": "3d302fcfaa980a26ae01bb57d48bffbc92d97f77679064b33bf2c4c61171ee75",
+      "raw_file": "20260911-openai-habitat-storage-scaling.md",
+      "raw_state": "full",
+      "status": "pending",
+      "updated_at": "2026-09-13T17:01:04+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -2658,6 +2679,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-10T17:00:36+08:00",
+  "updated_at": "2026-09-13T17:01:04+08:00",
   "version": 1
 }
