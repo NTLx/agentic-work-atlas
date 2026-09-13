@@ -2059,10 +2059,12 @@
     },
     "20260911-github-marketing-ops-as-code.md": {
       "body_sha256": "779fd5ab9a020857a2dd4c8f829521fdb34cc2954609a570d43b7b224139dd4d",
+      "compiled_at": "2026-09-13T17:07:06+08:00",
       "raw_file": "20260911-github-marketing-ops-as-code.md",
       "raw_state": "full",
-      "status": "pending",
-      "updated_at": "2026-09-13T17:01:04+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260911-github-marketing-ops-as-code.md",
+      "updated_at": "2026-09-13T17:07:06+08:00"
     },
     "20260911-openai-habitat-storage-scaling.md": {
       "body_sha256": "3d302fcfaa980a26ae01bb57d48bffbc92d97f77679064b33bf2c4c61171ee75",
@@ -2679,6 +2681,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-13T17:01:04+08:00",
+  "updated_at": "2026-09-13T17:07:06+08:00",
   "version": 1
 }

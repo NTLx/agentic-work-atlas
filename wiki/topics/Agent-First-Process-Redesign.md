@@ -2,7 +2,7 @@
 type: topic
 title: Agent-First Process Redesign
 created: 2026-04-09
-updated: 2026-08-26
+updated: 2026-09-13
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,6 +25,7 @@ source_raw:
   - '[[The layoffs will continue till we learn to use AI]]'
   - "[[20260601-stanford-enterprise-ai-playbook]]"
   - "[[20260825-enterprise-ai-workflow-redesign]]"
+  - "[[20260911-github-marketing-ops-as-code]]"
 ---
 
 # Agent-First Process Redesign（Agent-First 流程重构）
@@ -69,6 +70,18 @@ Stanford 51 个成功部署案例补充了一个重要细节：人类监督不�
 **AI 改写率（override rate）作为人机校准指标**：AI 输出被用户更改/拒绝的百分比——<5% 表示橡皮图章（危险，错误未被审查），>40% 表示 AI 不够有用（不值得流程改变），目标 10–25%（人类判断在同 AI 辅助运作的活跃区间）。
 
 **Deloitte 量化背景**：2026 研究显示 48% 组织部署 AI 未重构工作流、40% 部分重构、仅 12% 规模化重构——部署-采纳鸿沟的行业基线，说明多数组织停留在「把 Agent 插入旧流程」的 Copilot 级（成熟度模型 Level 1），未到达 Agent-First 的 Level 2。
+
+## GitHub APAC：把营销运营写成可审查的执行系统（2026-09）
+
+GitHub APAC marketing team 提供了一个非工程职能的具体样本：把“一个活动”建模为一个 Issue，用 Issue form 收集结构化输入，用 label 触发 Actions，再由 API/CLI 适配器创建落地页、UTM 链接、邀请文档、项目板和会后摘要。Issue 不只是待办清单，还提供状态历史、可见性、审查入口和稳定 URL。
+
+这里的 Agent-First 分工不是让 Copilot 独自操作：团队先把命名、财季、时区和邮件规则写入 `AGENTS.md`，让 Copilot 根据对话起草；人决定是否采用并 sign off。市场差异放入 `SKILL.md`，通过 PR 和 CODEOWNERS 进入组织治理。`DRY_RUN`、测试、代码审查、secret scanning 和数据政策构成护栏，而每日 cron 的失败必须能被发现——文章记录了一次晨间筛选 workflow 静默失败五天的反例。
+
+> **判断（综合判断）**：流程重构的最小可复用单元不是“一个更聪明的 Agent”，而是“结构化状态对象 + 明确事件 + 确定性执行器 + 人类决策点 + 可观测失败”。
+>
+> **证据**：GitHub 案例把 Issue form、label、Actions、runbook、Skills、dry-run 和审批串成一条从计划到跟进的链路（见 [[20260911-github-marketing-ops-as-code]]）。
+>
+> **边界**：该模式依赖可用的 API/CLI 和可写清楚的业务规则；高判断密度、强合规或不可逆流程仍需更深的权限、数据和升级设计。
 
 ## 经济驱动：不要做漂亮试点
 

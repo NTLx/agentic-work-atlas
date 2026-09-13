@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-09-05
+updated: 2026-09-13
 evidence_level: high
 claim_type: mixed
 tags:
@@ -80,6 +80,7 @@ source_raw:
   - "[[20260902-meta-organizational-second-brain]]"
   - "[[20260902-google-harness-engineering]]"
   - "[[20260902-google-ai-agents-challenge-patterns]]"
+  - "[[20260911-github-marketing-ops-as-code]]"
 ---
 
 # Agent Harness
@@ -151,6 +152,18 @@ Anthropic 的 Justin Young 在 Claude Agent SDK 上实验了跨多个 context wi
 - Google 的 harness 实践把 sandbox、失败日志回送、测试节点和 kill switch 组合成可停止的 repair loop；Challenge 案例则展示了双向 MCP、事件并行、统一验证和分层路由等可组合模式。
 
 综合判断：Agent Harness 不只是让模型“能调用工具”，而是规定它能看到哪些证据、能触碰哪些状态、如何从失败中恢复，以及哪些结果才允许离开系统。
+
+## 非工程流程中的 Harness：GitHub Marketing Ops（2026-09）
+
+GitHub APAC 的活动自动化显示，Harness 可以包住一个营销运营流程，而不只包住 LLM 调用：Issue form 定义输入，Issue 保存状态与审计历史，label 提供事件入口，Actions/平台 API 或 CLI 负责确定性执行，`AGENTS.md` 与 `SKILL.md` 提供规则和市场化能力，人负责决定与 sign off。
+
+这组设计把 Copilot 放在“理解对话、起草计划”的位置，把可重复的副作用留在可审查的执行系统中。`DRY_RUN` 是回滚前的演练开关；测试、PR/CODEOWNERS、secret scanning 和数据政策约束变更；定时 workflow 还必须对失败发出可见信号。文章记录的五天静默失败说明：Harness 的 observability 不是附加监控，而是自动化流程的组成部分。
+
+> **判断（综合判断）**：面向组织工作的 Harness，核心边界是“模型提出候选动作，系统控制状态变化与权限，人类承担关键决策”；把确定性约束留在模型外，通常比把整条流程交给模型更容易验证。
+>
+> **证据**：GitHub 案例使用 Issue、label、Actions、runbook、Skills、dry-run 和人工 sign off 串联活动全生命周期（见 [[20260911-github-marketing-ops-as-code]]）。
+>
+> **边界**：这是单一厂商、单一营销团队的案例；其效果和安全性依赖 API/CLI 的能力、权限隔离、数据政策与监控实现，不能仅由“代码化”标签推出。
 
 ## 三层工程
 
