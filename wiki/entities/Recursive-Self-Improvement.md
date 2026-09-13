@@ -8,7 +8,7 @@ aliases:
   - AI 改 AI
 definition: "AI 系统设计、训练或验证其下一代或同代继任者的能力；当这一回路达到某临界点，AI 进步速度由机器而非人类决定"
 created: 2026-06-06
-updated: 2026-08-31
+updated: 2026-09-13
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -32,6 +32,7 @@ source_raw:
   - "[[20260604-anthropic-recursive-self-improvement]]"
   - "[[20260815-autodesign-meta-harness-optimization]]"
   - "[[20260730-jeff-dean-1-rule-building-ai]]"
+  - "[[20260911-dwarkesh-recursive-self-improvement-debate]]"
 ---
 
 # Recursive Self-Improvement（递归自我改进）
@@ -81,6 +82,18 @@ Jeff Dean 将 AlphaChip、AlphaEvolve 和模型改进归结为同一套科学方
 
 - **证据**：[[20260730-jeff-dean-1-rule-building-ai]]
 - **边界**：300,000 倍是访谈中的案例数字，不是本文独立验证的 benchmark；评估器近似误差、分布外可靠性和人工复核成本未披露。
+
+## 从“自动做实验”到“自动决定研究方向”（Dwarkesh 圆桌，2026-09）
+
+Dwarkesh Patel 与 John Schulman、Beren Millidge、Charlie O’Neill 的圆桌把 RSI 的关键断点说得更具体：有清晰目标和验证器的 autoresearch 可以进入自动实验回路，但开放式研究还要求系统判断“什么问题值得做”、选择下一步实验，并在结果看似成功时检查自己。Beren 将持续的 sim-to-real gap、泛化和 continual learning 视为可能的停滞原因；John 则强调较弱的判断和 self-checking 会限制研究/工程生产率，即使模型能写出远多于人的代码。
+
+嘉宾讨论的自动化研究员路径包括把人类研究品味蒸馏进训练、使用多步且可验证的环境、吸收部署轨迹，再用回归 benchmark 判断新模型是否真的进步。这里的验证器不是附属评测，而是把候选改动接入下一轮的入口条件。
+
+> **判断（综合判断）**：RSI 不是单一能力开关，而是“候选生成 → 环境执行 → 验证 → 选择下一目标”的闭环。闭环越接近开放式研究，目标定义、研究品味和现实迁移越成为瓶颈。
+>
+> **证据**：圆桌 00:00:00–00:45:24 讨论失败情景、研究目标、自动化研究员训练、长程 RL 与 sim-to-real（见 [[20260911-dwarkesh-recursive-self-improvement-debate]]）。
+>
+> **边界**：这是对研究者讨论的机制归纳；圆桌没有证明某条训练路线、时间表或能力跃迁必然发生。
 
 ## 前提与局限性
 - **80% ≠ 100%** — 80% 是 commit-level 不是 deploy-level；merge 不等于 production

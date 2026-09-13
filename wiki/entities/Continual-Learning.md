@@ -7,7 +7,7 @@ aliases:
   - 连续学习
 definition: "让 AI 系统在新情境中吸收经验、更新知识和保持旧能力，而不是每次会话都从静态权重和临时上下文重新开始的能力"
 created: 2026-05-08
-updated: 2026-05-30
+updated: 2026-09-13
 tags:
   - AI
   - AGI
@@ -26,6 +26,7 @@ related_entities:
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[20260529-gemini-co-leads-origins]]"
+  - "[[20260911-dwarkesh-recursive-self-improvement-debate]]"
 ---
 
 # Continual Learning（持续学习）
@@ -58,6 +59,18 @@ source_raw:
 | [[Multi-Layer-Memory]] | 跨会话保存经验和规则 | 仍需人工或 harness 设计晋升、清理和验证机制 |
 | [[LLM-Wiki]] | 把原始材料编译为稳定知识层 | 主要是外部知识系统，不是模型权重级学习 |
 | Continual Learning | 系统随经验更新内部能力 | 仍是开放研究问题，可能需要架构突破 |
+
+## 跨代累积学习与部署中的在线学习（Dwarkesh 圆桌，2026-09）
+
+圆桌提供了一个重要拆分：今天所谓“模型从使用中学习”，很多发生在跨代预训练、中期训练、蒸馏和部署轨迹回流，而不是每个线上模型即时更新权重。前者可以把多轮实验和用户反馈汇入下一版模型，后者却要面对非平稳任务、反馈噪声、一次 rollout 的高方差和新旧能力回归。
+
+嘉宾还区分了学习信号：SFT 或蒸馏适合传递行为和明确轨迹，但连续微更新可能造成灾难性遗忘与整体退化；RL 更适合传递能力信号，却不自动把显式知识稳定写入模型。LoRA/cartridge 等模块化方案可以延迟整合、保留可回滚性，但不等于解决长期知识整合。
+
+> **判断（综合判断）**：持续学习的第一工程问题不是“能不能更新权重”，而是“哪类经验、以什么粒度、经过什么验证，才有资格改变长期能力”。跨代累积回路可能先于部署在线回路成熟。
+>
+> **证据**：圆桌 00:45:24–01:18:03 对部署数据、hive mind、非平稳真实任务、样本效率、灾难性遗忘和模块化适配的讨论（见 [[20260911-dwarkesh-recursive-self-improvement-debate]]）。
+>
+> **边界**：嘉宾没有给出统一的在线学习方案或独立 benchmark；外部记忆、蒸馏、模块加载和权重级 continual learning 的效果不能从这场讨论中互相推出。
 
 ## 与 Agent 知识管理的关系
 

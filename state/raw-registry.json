@@ -2052,10 +2052,12 @@
     },
     "20260911-dwarkesh-recursive-self-improvement-debate.md": {
       "body_sha256": "25f8a692089d3267142732d98a012deb0f64a25154ce969e97a1e073f09d125a",
+      "compiled_at": "2026-09-13T17:12:31+08:00",
       "raw_file": "20260911-dwarkesh-recursive-self-improvement-debate.md",
       "raw_state": "full",
-      "status": "pending",
-      "updated_at": "2026-09-13T17:01:04+08:00"
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260911-dwarkesh-recursive-self-improvement-debate.md",
+      "updated_at": "2026-09-13T17:12:31+08:00"
     },
     "20260911-github-marketing-ops-as-code.md": {
       "body_sha256": "779fd5ab9a020857a2dd4c8f829521fdb34cc2954609a570d43b7b224139dd4d",
@@ -2683,6 +2685,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-13T17:09:53+08:00",
+  "updated_at": "2026-09-13T17:12:31+08:00",
   "version": 1
 }
