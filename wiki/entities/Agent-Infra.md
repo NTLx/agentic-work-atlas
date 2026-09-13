@@ -6,7 +6,7 @@ aliases:
   - Agent Infrastructure
 definition: "将硅基执行者接进软件世界的运行时层，包含 Coding Agent 入口、Context/Memory/Tool Use/Sandbox/AgentOps 运行时组件，以及 Agent Builder/Orchestrator/Operator 编排层"
 created: 2026-05-29
-updated: 2026-07-09
+updated: 2026-09-13
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,6 +25,7 @@ source_raw:
   - "[[20260613-aliyun-agent-infra-constraint-infrastructure]]"
   - "[[20260617-huggingface-agentic-resource-discovery]]"
   - "[[20260707-intelligence-is-free-data-systems-for-of-by-agents]]"
+  - "[[20260911-openai-habitat-storage-scaling]]"
 ---
 
 > [!definition] 定义
@@ -63,6 +64,18 @@ Agent Infra 决定 AI 能替谁做事。它是 [[Agent-Harness]] 概念的生态
 
 > [!quote] OpenFang README
 > "Not a chatbot framework. Not a Python wrapper around an LLM. Not a multi-agent orchestrator." → 自我定位为 Agent Operating System。
+
+## 从组件库到平台控制面：Habitat（2026-09）
+
+OpenAI 的 Habitat 提供了 Agent Infra 从“可复用组件”长成“组织级平台”的一个工程样本。它先以 Python client library 隐藏 Cosmos DB 的细节，随着产品和服务数量增加，再迁移为独立 service，把部署、路由、访问控制、审计、数据安全、可观测性和容量管理集中到一个控制点。
+
+Habitat 的受限 NoSQL object/edge API 把在线请求约束为可预测的工作量；复杂查询通过 CDC 输出到各团队隔离的 Rockset 视图，保留扩展出口但不把不可控查询放进共享热路径。服务层还用 loop delay、profiling、连接池实验和 Envoy/Istio 处理尾延迟与网络反馈。Q2 2026 的 Rust 重写说明 Agent 可以降低基础设施迁移的实现成本，但平台边界、验证指标和流量切换仍是人的工程判断。
+
+> **判断（综合判断）**：Agent Infra 的价值不只是提供更多工具，而是把调用者与共享状态之间的危险自由度压缩成可审计、可观测、可隔离的接口；平台通过“默认少做、例外另走”获得规模。
+>
+> **证据**：Habitat 的服务化、受限 API、CDC→Rockset 逃生舱与 Python→Rust 迁移（见 [[20260911-openai-habitat-storage-scaling]]）。
+>
+> **边界**：Habitat 是单一组织的第一方案例；其规模数据、性能收益和服务化选择不能直接外推到所有 Agent 基础设施。
 
 ## 关键数据点
 

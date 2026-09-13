@@ -81,6 +81,7 @@ source_raw:
   - "[[20260902-google-harness-engineering]]"
   - "[[20260902-google-ai-agents-challenge-patterns]]"
   - "[[20260911-github-marketing-ops-as-code]]"
+  - "[[20260911-openai-habitat-storage-scaling]]"
 ---
 
 # Agent Harness
@@ -164,6 +165,18 @@ GitHub APAC 的活动自动化显示，Harness 可以包住一个营销运营流
 > **证据**：GitHub 案例使用 Issue、label、Actions、runbook、Skills、dry-run 和人工 sign off 串联活动全生命周期（见 [[20260911-github-marketing-ops-as-code]]）。
 >
 > **边界**：这是单一厂商、单一营销团队的案例；其效果和安全性依赖 API/CLI 的能力、权限隔离、数据政策与监控实现，不能仅由“代码化”标签推出。
+
+## 平台化 Harness：Habitat 的“少做”与集中控制（2026-09）
+
+OpenAI 的 Habitat 展示了更靠近基础设施的一种 Harness：产品团队不直接管理底层数据库，而是通过服务层获得受限的 object/edge API；服务统一处理路由、访问控制、审计、可观测性、容量和数据安全。复杂查询不扩散到在线热路径，而通过 CDC 流向隔离的 Rockset 视图。
+
+这个系统的关键不是“能力最多”，而是“默认工作量可预测”。OpenAI 通过 loop delay、CPU profiling 和线上实验定位 Statsig 配置抖动、LIFO 连接池反馈回路等尾延迟问题，再用 jitter、FIFO、Envoy/Istio 和受限接口拆除它们。Python 先承担快速交付，Rust 后来承担大部分生产流量，Agent 参与降低了重写成本，但边界、验证、流量切换和回滚仍由工程系统与人决定。
+
+> **判断（综合判断）**：当 Agent 或产品调用者的自由度会把不可控成本传给共享后端时，Harness 应把高风险表达力收窄为少量可审计原语，并为例外能力设置隔离出口；“少做”本身是一种规模化能力。
+>
+> **证据**：Habitat 的受限 NoSQL API、CDC→Rockset 逃生舱、集中安全控制，以及从 Python 到 Rust 的渐进迁移（见 [[20260911-openai-habitat-storage-scaling]]）。
+>
+> **边界**：这是 OpenAI 自述的单个平台案例；接口约束的收益取决于 workload、SLO、数据库能力与组织边界，不能推出所有系统都应服务化或改用 Rust。
 
 ## 三层工程
 
