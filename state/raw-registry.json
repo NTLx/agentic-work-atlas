@@ -2120,6 +2120,15 @@
       "summary_path": "wiki/sources/AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。.md",
       "updated_at": "2026-07-09T13:16:35+08:00"
     },
+    "Agent Memory _ The 5-Layer Playbook.pdf": {
+      "body_sha256": "1ca8859f84d04b349d6bb65eacaf0d01213434a579258c88d70c5f99df155c02",
+      "compiled_at": "2026-09-16T08:29:55+08:00",
+      "raw_file": "Agent Memory _ The 5-Layer Playbook.pdf",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/Agent Memory _ The 5-Layer Playbook.md",
+      "updated_at": "2026-09-16T08:29:55+08:00"
+    },
     "Agent pull requests are everywhere. Here's how to review them..md": {
       "body_sha256": "ae2b7e0c3799c3821135b03b388ca15c6efce5c4cb5835468b36f3e63006dc0b",
       "compiled_at": "2026-07-09T13:16:35+08:00",
@@ -2685,6 +2694,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-13T17:12:31+08:00",
+  "updated_at": "2026-09-16T08:29:55+08:00",
   "version": 1
 }

@@ -5,7 +5,7 @@ aliases:
   - Multi Layer Memory
 definition: "五层记忆系统借鉴人类认知模型，从短期到长期分层管理 Agent 记忆，实现跨会话知识沉淀和自主进化"
 created: 2026-04-09
-updated: 2026-05-29
+updated: 2026-09-16
 tags:
   - AI-Agent
   - OpenClaw
@@ -16,10 +16,12 @@ related_entities:
   - '[[Context-Engineering]]'
   - '[[Agent-Orchestration]]'
   - '[[Three-Layer-Agent-Memory]]'
+  - '[[Memory-Architecture]]'
 source_raw:
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[20260526-obsidian-claude-code-brain]]'
   - '[[20260707-intelligence-is-free-data-systems-for-of-by-agents]]'
+  - '[[Agent Memory _ The 5-Layer Playbook.pdf]]'
 ---
 
 # Multi-Layer Memory
@@ -44,6 +46,23 @@ chatbot 每次对话从零开始，反复犯同样错误是正常的。但 Agent
 | **L3 中期记忆** | memory/YYYY-MM-DD.md + memory.db | 中期 | Harness 自动提取 | Session > 40K tokens 时的精华快照 |
 | **L4 期记忆** | .learnings/ | 短期 | Agent 即时记录 | 错误记录、用户纠正、最佳实践 |
 | **L5 持久化** | Skills + Obsidian + ontology | 持久 | 共享/归档 | 技能库 + 知识归档 + 知识图谱 |
+
+## 认知职能五层：另一种分层方式
+
+一份 2026 年独立编译的 playbook 用另一套轴来划分记忆：它关心的是记忆在 Agent 运行中**回答什么问题**，而不是内容放在哪个文件或保留多久。
+
+| 职能层 | 回答的问题 | 典型存储/检索 | 生命周期 |
+|---|---|---|---|
+| **Working** | 当前正在处理什么？ | context window，始终在场 | 当前调用结束 |
+| **Episodic** | 过去发生了什么？ | 任务日志，按相似任务检索 | 约 30–90 天，重要项可归档 |
+| **Semantic** | 什么事实成立？ | 实体/关系数据库或图谱 | 被更新事实替代，冲突需处理 |
+| **Procedural** | 怎样做才有效？ | 带触发条件和成功标准的 skill | 环境变化时版本化/重新验证 |
+| **Forgetting** | 什么应被删除或降权？ | 定时清理、supersession、冲突队列 | 持续运行 |
+
+**判断**：两套“五层”不是互相竞争的命名，而是两个正交坐标系——本页原有模型主要描述存储与时间尺度；PDF 模型主要描述认知职能与更新语义。工程上可以先按职能定义读写契约，再按项目、权限和风险把它们映射到不同存储层。
+
+- **证据**：[[Agent Memory _ The 5-Layer Playbook.pdf]] 第 1–8 页；完整质疑与外部核验见 [[Agent Memory _ The 5-Layer Playbook]]。
+- **边界**：该五层模型来自独立二手 playbook，不是已验证的唯一标准；其中 forgetting 更适合被实现为跨层生命周期控制器，而不是第五个同类数据库。
 
 ## 记忆自主迭代循环（6 步）
 

@@ -8,7 +8,7 @@ aliases:
   - 记忆系统
 definition: "LLM 应用中长期记忆的工程架构——解决 staleness（过时）/ correctness（错误）/ scalability（亿级用户 × 多年）三大挑战的子系统设计"
 created: 2026-06-06
-updated: 2026-06-15
+updated: 2026-09-16
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,8 +25,10 @@ related_entities:
   - "[[Context-Engineering]]"
   - "[[OpenAI]]"
   - "[[Personal-AI-Assistant]]"
+  - "[[Structured-Agent-Memory]]"
 source_raw:
   - "[[20260604-openai-dreaming-memory]]"
+  - "[[Agent Memory _ The 5-Layer Playbook.pdf]]"
 ---
 
 # Memory Architecture（记忆架构）
@@ -66,6 +68,17 @@ source_raw:
 | 摘要降维 | 巨量记忆通过 summary 暴露给用户 | Memory summary page |
 | 按需加载 | prompt 中只装当前相关记忆 | 所有 LLM 应用 |
 | 时间戳版本化 | 记忆带时间戳 + 自动更新 | Dreaming V3 |
+| 职能分层 | working / episodic / semantic / procedural 分开读写 | CoALA-inspired playbook |
+| 遗忘与冲突治理 | 过期、替代、标记矛盾，而不是无限追加 | memory maintenance |
+
+## 从“存得下”到“能维护”的五层管线
+
+这份 playbook 对现有架构图的增量，不是再增加一个数据库，而是把记忆的行为契约拆开：当前上下文负责工作，episodic 记录经历，semantic 保存可复用事实，procedural 保存经重复验证的方法，forgetting 负责跨层清理和冲突治理。
+
+**判断**：生产记忆系统的关键边界在“写入什么、何时召回、何时晋升、何时失效”，而不在某一种向量库或文件格式。
+
+- **证据**：[[Agent Memory _ The 5-Layer Playbook.pdf]] 第 2–8 页；第 4 页给出技能晋升门槛，第 5–6 页给出 expiration / supersession / contradiction resolution，第 7–8 页把流程串成 agent loop。
+- **边界**：该 PDF 是低证据等级的独立汇编，阈值与效果数字不是通用默认值；高风险领域仍需更长保留、人工复核、权限隔离和可审计 provenance。
 
 ## 前提与局限性
 - **持续 compute cost** — 后台进程算力开销大
@@ -92,4 +105,3 @@ source_raw:
 ## 关键数据点
 
 （关键事实、统计、时间线从原 raw 源沉淀，见 source_raw 字段）
-
