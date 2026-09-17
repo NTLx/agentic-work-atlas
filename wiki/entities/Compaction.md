@@ -7,7 +7,7 @@ aliases:
   - Conversation Compaction
 definition: "Coding agent 在长会话中当上下文逼近窗口上限时，把较老轮次通过一次独立的 LLM 调用序列化为结构化摘要（goal / progress / key decisions），保留最近 N 个消息不变，结果作为新 turn 前缀插入的工程机制；与 prompt cache 存在结构性张力"
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-09-17
 tags:
   - context-engineering
   - coding-agent
@@ -24,6 +24,7 @@ related_entities:
   - "[[AGENTS-md]]"
 source_raw:
   - "[[20260816-earendil-pi-compaction]]"
+  - "[[20260912-context-engineering-inside-the-harness]]"
 ---
 
 # Compaction
@@ -105,6 +106,15 @@ first request after compaction: [system][tools][summary][recent retained turns][
 - **优势**：可用更小/更便宜的模型做摘要；不污染主对话上下文；可在不同模型间共享
 - **代价**：compaction 本身消耗 token；摘要质量受模型能力限制
 - **决策点**：Pi 未披露默认 compaction 模型选择策略（成本 vs 质量权衡）
+
+### 多平台实现与目标保持（2026-09）
+
+MarkTechPost 的横向材料补充了 Pi 之外的实现差异：Deep Agents 用 `session intent`、`artifacts created` 和 `next steps` 作为摘要的固定字段，并把完整 transcript 落盘；Claude Code 在压缩后重读最近修改的文件和匹配规则；OpenAI Responses API 与 Claude Developer Platform 则把 compaction 提升为 API 层的 context-management 能力，允许设置阈值、插入自定义摘要指令或在压缩后暂停注入内容。
+
+**判断**：Compaction 的关键不只是把历史变短，而是把“继续完成任务所需的状态”显式命名，并保留细节恢复路径。摘要结构、恢复动作和触发阈值共同决定 goal loss，而不是摘要长度单独决定。
+
+- **证据**：[[20260912-context-engineering-inside-the-harness]]（raw 第 41–49 行）。
+- **边界**：以上是媒体文章对产品文档和博客的转述；各实现的当前版本、默认阈值、摘要质量和恢复成功率需要回到对应官方文档或评测核查，不能由横向描述推出统一最佳实践。
 
 ## 前提与局限性
 

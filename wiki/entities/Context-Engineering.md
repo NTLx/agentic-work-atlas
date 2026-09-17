@@ -5,7 +5,7 @@ aliases:
   - Context Engineering
 definition: "设计 Agent 每次推理时看到的信息结构，包括项目上下文、技能按需加载、记忆层级和上下文生命周期管理"
 created: 2026-04-09
-updated: 2026-08-31
+updated: 2026-09-17
 evidence_level: high
 claim_type: mixed
 tags:
@@ -42,6 +42,7 @@ source_raw:
   - "[[20260611-openai-harness-engineering]]"
   - "[[20260702-anthropic-context-engineering]]"
   - "[[20260816-earendil-pi-compaction]]"
+  - "[[20260912-context-engineering-inside-the-harness]]"
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260805-how-we-use-ai-cloudflare-os]]"
   - "[[20260730-jeff-dean-1-rule-building-ai]]"
@@ -67,6 +68,22 @@ Anthropic Applied AI 团队（2026-06）给出了 Context Engineering 的系统�
 **"Just in Time" 检索**：Agent 持有轻量标识符（文件路径、查询、链接），运行时动态加载数据，配合 [[Progressive-Disclosure]] 逐层发现。Claude Code 用此模式——写入定向查询，用 `head`/`tail` 分析大数据而不加载完整对象到 context。
 
 **System Prompt 的 "Right Altitude"**：Goldilocks zone——不过度硬编码（脆性），也不过度模糊（无信号）。具体到能有效引导，灵活到能提供强启发式。
+
+### Harness 内的四种上下文机制（MarkTechPost，2026-09）
+
+MarkTechPost 的跨产品综述把长程任务的 Context Engineering 进一步拆成四个时间尺度：
+
+| 机制 | 解决的问题 | 典型动作 |
+|------|------------|----------|
+| 预算与卸载 | 大工具结果挤占窗口 | 超过阈值的结果落盘，只在上下文留下路径和预览 |
+| Compaction | 连续会话逼近窗口上限 | 把旧历史压成带 intent、artifacts、next steps 的摘要 |
+| Todo-state | 每轮之间目标逐渐远离近期注意力 | 重写短 todo 文件，把计划重新放到上下文末端 |
+| 跨会话记忆 | 会话结束后丢失可复用状态 | 从磁盘或 Memory 服务中抽取、召回和复用状态 |
+
+**判断**：这四种机制不是“把更多资料塞进窗口”，而是把任务状态放在合适的存储层，并控制它何时重新进入模型视野。其共同优化目标是信号的新鲜度、状态的可恢复性与 token 成本的平衡。
+
+- **证据**：[[20260912-context-engineering-inside-the-harness]] 的机制拆分与阈值转述（raw 第 33–73 行）。
+- **边界**：文章是二手综合；20,000 tokens、85% 等实现阈值来自不同产品，不应视为跨模型通用默认值。Todo-state 的收益也受任务长度、模型能力和维护成本影响。
 
 ### Pinterest：按需注入工具（Domain-specific MCP）
 [[Pinterest-Engineering]] 通过拆分多个领域特定的 **[[Model-Context-Protocol-MCP|MCP]]** 服务器，实现了上下文的“按需加载”。Agent 在处理 Presto 数据时只加载 Presto 相关的工具，而不是将所有（如 Spark, Airflow）工具全部堆在上下文窗口中。这有效地减少了噪声，提高了 Agent 决策的准确性。
