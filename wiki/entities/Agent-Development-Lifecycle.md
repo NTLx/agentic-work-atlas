@@ -5,9 +5,9 @@ aliases:
   - ADLC
   - Agent Development Lifecycle
   - 代理开发生命周期
-definition: "AI 时代取代 SDLC 的软件生产生命周期范式——当 AI 让 implementation 从最慢最贵变为最快最便宜，SDLC 的线性人本假设崩塌；ADLC 让 agent 覆盖全生命周期，并以 Workflow 取代 CI/CD 作为编排原语"
+definition: "Cloudflare 提出的 Agent Development Lifecycle（ADLC）工程范式：面向 Agent 驱动的软件生产，把 agent 能力扩展到规划、实现、验证、部署与维护，并以可持久化 Workflow 等机制补充传统 SDLC/CI-CD；它是厂商提出的框架，不等于 SDLC 已被普遍取代。"
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-09-18
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -53,7 +53,7 @@ CI/CD pipeline 只是 Workflow 的特例：Workflow 持久化状态、可重试�
 | 维度 | SDLC | ADLC |
 |------|------|------|
 | 假设 | 多人协作写代码 | agent 驱动流水线 |
-| 人的位置 | 管理每一步 | 只留 inspiration/taste/judgement |
+| 人的位置 | 管理大量具体步骤 | 更集中于目标、边界、验证、风险与例外处理 |
 | 编排原语 | CI/CD pipeline（线性步骤） | Workflow（状态机 + 事件触发 + spawn） |
 | 关键约束 | 人工审批 | programmatic / reproducible / atomic / permissioned |
 
@@ -63,7 +63,7 @@ Anthropic（Louis Claxton，2026-08-21，[[20260822-the-ai-native-sdlc-playbook]
 
 - **intent.md**（第一公民 = source of truth）：发起人用自己语言写问题/目标/约束三段式，Design/Build 分别派生 spec.md 与 plan.md；
 - **四大基础设施**：CLAUDE.md（context）/ Skills（机构知识）/ Hooks（build-time 硬门禁）/ Evals（20-50 真实任务 + CI 周期，stage-gate 版 QA）；
-- **瓶颈左移的明确表述**：code 不再是瓶颈后，瓶颈左移到 build 之前（plan / design / review / test），人只留 inspiration / taste / judgement——与 ADLC 对照表的"人的位置"一致。
+- **瓶颈左移的来源主张**：该材料认为 code 不再是主要瓶颈后，瓶颈会左移到 build 之前（plan / design / review / test），并把人的剩余角色概括为 inspiration / taste / judgement；本页将其收窄为目标、边界、验证、风险与例外处理，而非普遍的人机分工事实。
 
 ## 关键数据点
 

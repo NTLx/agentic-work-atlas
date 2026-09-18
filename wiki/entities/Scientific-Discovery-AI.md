@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把巨大组合搜索空间、明确目标函数、数据或模拟器和工具调用结合起来，用 AI 寻找科学突破方案的系统形态"
 created: 2026-05-08
-updated: 2026-08-27
+updated: 2026-09-18
 tags:
   - AI
   - science
@@ -125,7 +125,7 @@ Google 水文框架提供了一个完整转换链：
 - [[Tool-Use-Architecture]] - 通用模型应协调专用科学工具
 - [[Demis-Hassabis]] - AlphaGo / AlphaFold 路线背后的关键人物
 - [[Open-Source-Operational-AI-Framework]] - 把科学模型转成可被本地机构运营和改进的基础设施
-- [[Deterministic-Retrieval]] - 确保科学数据获取 100% 准确的技术
+- [[Deterministic-Retrieval]] - 通过结构化工具与领域规则提高科学数据检索的可重复性和可靠性
 - Biological-Data-Infrastructure - 为 Agent 设计的科研数据底座
 - Laura-Luebbert - 科学智能体基础设施的研究者
 - VirBench - 衡量科学检索准确性的基准

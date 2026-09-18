@@ -4,7 +4,7 @@ title: "Why DoorDash, Instacart, and Uber Eats Integrated LLMs Into Search Three
 source_raw:
   - "[[20260728-bytebytego-llm-search-integration-depth]]"
 created: 2026-07-29
-updated: 2026-07-29
+updated: 2026-09-18
 tags:
   - source-summary
   - enterprise-ai
@@ -40,7 +40,7 @@ claim_type: mixed
 ### 3. 对标
 
 - **Instacart head/tail 切分 = [[Dual-Tier-LLM-Architecture]] 的工业案例**: 该实体既有案例是医疗（OncoAgent 复杂度评分器路由 9B/27B）与制造（MachinaCheck），Instacart 补上第三例，且路由键不同——不是任务复杂度评分而是**流量分布**（头部高频可预计算，尾部冷启动需实时模型）。双层路由的键至少有三种形态：任务复杂度 / 流量分布 / 风险等级（综合判断）
-- **DoorDash "RAG 倒置" ≈ [[Deterministic-Retrieval]] 的生成侧镜像**: 确定性检索约束"取什么"（工具层 100% 可靠），DoorDash 约束"输出什么"（LLM 只能从 top-100 已知概念中选取，RAG 定义整个输出空间）。两者同属"把 LLM 关进无聊可靠的空间"这一设计家族，分别作用在输入端与输出端（综合判断）
+- **DoorDash "RAG 倒置" ≈ [[Deterministic-Retrieval]] 的生成侧镜像**: 确定性检索通过工具层与领域规则约束"取什么"，提高过程的可重复性和可靠性，DoorDash 约束"输出什么"（LLM 只能从 top-100 已知概念中选取，RAG 定义整个输出空间）。两者同属"把 LLM 关进无聊可靠的空间"这一设计家族，分别作用在输入端与输出端（综合判断）
 - **Uber 优化栈 ↔ Token-Supply-Chain 成本路由**: MRL 降维 + int7 量化 + 预过滤 = "同一模型、不同 serving 配置、不同成本质量曲线"，与 [[20260728-openrouter-evaluate-llm-provider-performance]] 的量化隐藏变量命题同构——provider/服务层是独立于模型选择的优化维度
 - **跨域类比: 集成深度 ≈ 电气化史**: 工厂没有用电机直接替换蒸汽机中央驱动——围绕电机特性（小型、可分布式）花了几十年重组生产线（Paul David 的经典研究）。三家外卖公司的故事是同一模式的当代版：集成深度不取决于新动力源多强，而取决于既有机器布局允许它装在哪里（综合判断）
 

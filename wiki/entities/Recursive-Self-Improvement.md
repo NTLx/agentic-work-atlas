@@ -8,7 +8,7 @@ aliases:
   - AI 改 AI
 definition: "AI 系统设计、训练或验证其下一代或同代继任者的能力；当这一回路达到某临界点，AI 进步速度由机器而非人类决定"
 created: 2026-06-06
-updated: 2026-09-13
+updated: 2026-09-18
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -105,7 +105,7 @@ Dwarkesh Patel 与 John Schulman、Beren Millidge、Charlie O’Neill 的圆桌�
 ## 关联概念
 | 本库主题 | RSI 的连接 |
 |---------|------------|
-| [[Task-Horizon]] | 4 分钟 → 12 小时是 RSI 的最可信度量 |
+| [[Task-Horizon]] | 4 分钟 → 12 小时可作为长程执行能力变化的一项外显指标 |
 | [[Verifiability]] | "verifiable pause" 是 RSI 时代的协调机制提议 |
 | [[AI-Capability-Gap]] | 80% / 8x / parity 数据校准能力感知 |
 | [[AI-Psychosis]] | 一手数据可校准深度用户与外行的认知鸿沟 |

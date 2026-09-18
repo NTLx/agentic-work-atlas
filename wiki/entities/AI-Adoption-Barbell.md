@@ -5,9 +5,11 @@ aliases:
   - AI Adoption Barbell
   - 采纳杠铃分布
   - 组织 AI 分层
-definition: "组织内 AI 使用恒呈分层常态（5-10% power users、20% 用得差、70% 几乎不用），且即使完美 rollout 也如此；adoption 指标把技能连续谱折叠成二元 yes/no，造成'高采纳率、无业务影响'的度量错位"
+definition: "一种组织 AI 使用分层的观察框架：少数高强度 power users 与大量低频或低熟练用户并存；5-10%/20%/70% 是特定来源的经验分布，不是普遍常数。该框架用于提醒 adoption 二元指标可能掩盖实际使用深度与业务影响差异。"
 created: 2026-08-13
-updated: 2026-08-26
+updated: 2026-09-18
+evidence_level: medium
+claim_type: mixed
 tags:
   - ai-adoption
   - ai-deployment
@@ -29,7 +31,7 @@ source_raw:
 # AI-Adoption-Barbell（采纳杠铃分布）
 
 > [!definition] 定义
-> **AI-Adoption-Barbell** 是组织内 AI 使用呈杠铃状分层的常态：5-10% 的 power users 天天用、会用（skill、连接器、workflow），20% 每天用但用得差，70% 几乎不用。核心断言是**这层分布不因 rollout 质量而消失**——adoption 指标因二元性无法捕获技能连续谱，于是出现"88% 组织在用 AI、但只有 6% 的 EBIT 受影响"（McKinsey 2025）式度量错位。
+> **AI-Adoption-Barbell** 是描述组织内 AI 使用深度分层的一种观察框架：少数高强度 power users 与大量低频或低熟练用户并存。5-10% / 20% / 70% 来自特定实施者的经验观察（N≈2），不是稳定的组织常数；更可靠的核心判断是：二元 adoption 指标可能掩盖技能连续谱与业务影响差异。
 
 ## 为什么重要
 
@@ -37,11 +39,11 @@ source_raw:
 
 1. **技能是连续谱、指标是二分**：adoption 记录的是"登录了吗、每周够 5 个 prompt 吗"，而决定业务结果的"用得好不好"是连续谱上很少有人到达的部分。被度量的问题与业务相关的问题脱钩。
 2. **用 AI 和用好是两门手艺**：把粗用转精（slop-cannon → refined power user）和让不用的人上手一样难；"至少一半组织永远到不了第二种版本"。
-3. **完美 rollout 不改变分布**：某 exec 签 8 位数 license 后，约 10% 的人烧 90% 的 token；若其余 90% 按 top decile 用法消费，花费约 10x——`$10M` 承诺变 `$100M`。
+3. **同源观察：高质量 rollout 后仍可能高度集中**：来源作者举例称，某 exec 签 8 位数 license 后约 10% 的人消耗 90% token；若其余 90% 按 top decile 用法消费，花费约 10x——这是案例推演，不是跨组织统计规律。
 
 ## 关键数据点
 
-- 典型分布：5-10% power users / 20% 用得差 / 70% 几乎不用（N≈2 经验观察，非系统统计）
+- 来源观察的示例分布：5-10% power users / 20% 用得差 / 70% 几乎不用（N≈2 经验观察，非系统统计）
 - 违反直觉：即使完美 rollout，仍约 10% 用户消耗 90% token
 - McKinsey 2025：88% 组织在至少一个业务职能用 AI，仅 6% 的 EBIT >5% 来自 AI
 - MIT NANDA GenAI Divide：5% 的集成试点榨出数百万价值，其余 95% 无 P&L 影响

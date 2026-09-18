@@ -4,9 +4,9 @@ title: Deterministic Retrieval
 aliases:
   - 确定性检索
   - deterministic retrieval
-definition: "在 Agent 工作流中，通过引入专门设计的工具层（而非直接由 LLM 驱动界面），确保数据获取过程 100% 准确、可重复且符合领域规范的技术。"
+definition: "在 Agent 工作流中，通过专门设计的工具层、结构化查询和领域规则约束数据获取路径，以提高检索的可重复性、可验证性和领域一致性；确定性机制本身不保证数据或查询结果 100% 正确。"
 created: 2026-06-10
-updated: 2026-09-05
+updated: 2026-09-18
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -39,6 +39,7 @@ ByteByteGo 对 embedding RAG 的分析提供了本实体的反面边界：向量
 ## 前提与局限性
 - **前提**: 需要深度理解目标领域的业务规则（如 virology 中的过滤习惯）。
 - **局限**: 构建成本高，需要为不同的垂直领域数据库定制专属工具隧道。
+- **确定性不等于绝对正确**: 工具调用路径可以更确定，但上游数据、查询逻辑、版本和领域规则仍可能错误或过时；99.7% 是特定病毒序列检索实验结果，不应外推为 100% 保证。
 
 ## 关联概念
 - [[Agent-Harness]]

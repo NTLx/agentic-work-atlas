@@ -4,9 +4,9 @@ title: AI Washing
 aliases:
   - AI Washing
   - AI 洗白
-definition: "企业将裁员或其他组织变革归因于 AI 生产力提升，但实际驱动力是预算压力或其他商业因素"
+definition: "企业在缺乏充分因果证据时，将裁员或其他组织变革主要归因于 AI 生产力提升、并以此包装决策的叙事现象；具体案例的真实驱动力可能包括 AI、预算压力或其他商业因素，需要逐案核验。"
 created: 2026-05-30
-updated: 2026-07-27
+updated: 2026-09-18
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -23,7 +23,7 @@ source_raw:
 # AI Washing
 
 > [!definition] 定义
-> 企业将裁员或其他组织变革归因于 AI 生产力提升，但实际驱动力是预算压力或其他商业因素。这个术语类比"漂绿"（greenwashing），指用 AI 叙事包装决策。
+> **AI Washing** 指企业在缺乏充分因果证据时，将裁员或其他组织变革主要归因于 AI 生产力提升，并以 AI 叙事包装决策。这个术语类比"漂绿"（greenwashing）；它描述的是证据与叙事之间的错位，不等于已知企业的真实动机。
 
 ## 为什么重要
 

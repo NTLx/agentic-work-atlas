@@ -4,7 +4,7 @@ title: Software-Factory
 aliases:
   - Software Factory
   - 软件工厂
-definition: "Agent 驱动的自动化软件生产系统——接受生产错误、bug 报告或 feature 想法作为输入，由 agent 链自主完成 build、improve、deploy、manage 全流程，人类只保留灵感、品味与判断（inspiration/taste/judgment）"
+definition: "Agent 驱动的软件生产系统：把可程序化、可验证的软件任务组织为可持续运行的 Agent 流水线，覆盖从问题输入到构建、测试、部署与维护的多个环节；人类角色从逐步操作转向目标定义、验证、风险决策与例外处理。"
 created: 2026-08-13
 updated: 2026-09-18
 evidence_level: medium
@@ -32,7 +32,7 @@ source_raw:
 # Software-Factory（软件工厂）
 
 > [!definition] 定义
-> **Software Factory** 是 agent 驱动的软件生产系统：输入一个生产错误、客户 bug report 或新 feature 想法，委托给 agent 链自主完成 build、improve、deploy、manage，人类只在需要 inspiration、taste、judgement 的地方介入。与 [[Agent-Development-Lifecycle|ADLC]] 互为表里——ADLC 是生命周期范式，Software Factory 是建立在该范式之上的生产架构。
+> **Software Factory** 是 agent 驱动的软件生产系统：把可程序化、可验证的软件任务组织成持续运行的流水线，可覆盖从问题输入到构建、测试、部署与维护的多个环节。人类通常从逐步操作迁移到目标与边界定义、验证、风险决策和例外处理；实际自动化范围取决于任务可复现性、验证能力与组织基础设施。与 [[Agent-Development-Lifecycle|ADLC]] 互为表里——ADLC 是生命周期范式，Software Factory 是建立在该范式之上的生产架构。
 
 ## 关键机制
 
