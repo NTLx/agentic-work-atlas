@@ -8,7 +8,7 @@ aliases:
   - Agentic SDLC
 definition: "Anthropic 官方提出的六阶段 AI 时代软件开发生命周期范式（Plan/Design/Build/Test/Deploy/Maintain），以 intent.md / spec.md / plan.md 为阶段契约，以 CLAUDE.md / Skills / Hooks / Evals 为四大基础设施；把线性 pipeline 重构为非线性的 loop，治理手段从「人 review」转为「deterministic hooks + 多层 agentic review + 人工 review 保留给受监管代码」"
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-09-18
 evidence_level: high
 claim_type: mixed
 tags:
@@ -31,6 +31,8 @@ related_entities:
 source_raw:
   - "[[20260822-the-ai-native-sdlc-playbook]]"
   - "[[20260822-claude-code-guide-for-startups]]"
+  - "[[20260914-anthropic-test-impact-analysis-ci]]"
+  - "[[20260915-openai-software-factory]]"
 ---
 
 # AI-Native SDLC（AI 原生 SDLC）
@@ -142,6 +144,13 @@ Skills 是「explicit、版本化、广泛使用、集中更新」的机构知�
 - **「Hooks 作为硬门禁」只能解决 syntactic concerns**——语义级约束（架构原则、领域模型）仍需多层 agentic review + 人工 review
 - **「Continuous evals」依赖真实任务的样本代表性**——20-50 任务的采样方法、时间窗口、多样性保证如果不严谨，evals 会成为 Goodhart target
 - **「Maintain → 写回 intent.md」的 loop 触发条件未明示**——什么样的事件触发回到 Plan？事故、模型升级、用户反馈、季度 review？
+
+## 验证基础设施成为一等产物（2026-09）
+
+**判断**：AI-native SDLC 的 Test、Deploy、Maintain 不能沿用按人类 PR 速率设计的单点服务；要把状态新鲜度、风险分层、per-change 观测和回滚信号纳入生命周期骨架。
+
+- **证据**：[[20260914-anthropic-test-impact-analysis-ci]]、[[20260915-openai-software-factory]]。
+- **边界**：两篇材料分别是 Anthropic 内部工程实践与付费报告的部分外部报道；它们支持瓶颈迁移的机制假设，不足以证明一套普适的实施顺序。
 
 ## 关联概念
 

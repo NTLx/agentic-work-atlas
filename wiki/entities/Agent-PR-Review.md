@@ -6,7 +6,7 @@ aliases:
   - Agent Pull Request Review
 definition: "审查 Agent 生成的 Pull Request 的系统性策略——关注 CI 游戏化、代码重用盲点、幻觉正确性、Agent 幽灵、工作流安全等 5 个关键检查点"
 created: 2026-05-09
-updated: 2026-08-20
+updated: 2026-09-18
 tags:
   - Agentic-Engineering
   - code-review
@@ -25,6 +25,9 @@ source_raw:
   - "[[The PR you would have opened yourself]]"
   - "[[20260812-github-ai-first-contributors]]"
   - "[[20260804-stacked-prs-giant-ai-generated]]"
+  - "[[20260915-intelligent-artifact-code-review-model-routing]]"
+  - "[[20260915-trail-of-bits-1password-ai-patching-benchmark]]"
+  - "[[20260915-openai-software-factory]]"
 ---
 
 # Agent-PR-Review（Agent PR 审查）
@@ -163,6 +166,13 @@ CI Agent 中的提示注入是真实且被低估的：
 - **Signal 丰富度**: Agent 辅助 PR 应比中位数人工 PR 提供更多数据（生成示例、数值比较、逐层对比）
 
 > 核心洞察："The bottleneck in open source is not typing speed: it's understanding the codebase to change it without breaking the implicit and explicit contracts with users."
+
+## 模型路由与验证边界（2026-09）
+
+**判断**：Agent PR 审查不能把低价模型的平均命中率当作通用替代；应按风险、上下文和后续验证路由模型与人工。
+
+- **证据**：[[20260915-intelligent-artifact-code-review-model-routing]]、[[20260915-trail-of-bits-1password-ai-patching-benchmark]]、[[20260915-openai-software-factory]]。
+- **边界**：Intelligent Artifact 是厂商基准（50 个植入缺陷的 PR）；Trail of Bits 是立场明确的安全基准复盘；OpenAI 材料为付费报告且只可见部分为自报数据，三者的命中率不可直接横比。
 
 ## 关联概念
 

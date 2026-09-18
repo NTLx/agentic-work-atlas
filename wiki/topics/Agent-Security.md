@@ -3,7 +3,7 @@ type: topic
 title: Agent Security
 description: "Agent 在不可信组件和跨信任域环境中行动时，从检测、判定、授权、执行到撤销与恢复的责任闭环"
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-18
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -29,6 +29,9 @@ source_raw:
   - "[[20260727-hf-agent-intrusion-technical-timeline]]"
   - "[[20260801-tailscale-hugging-face-ai-agent-intrusion]]"
   - "[[20260819-anthropic-claude-tag-oncall]]"
+  - "[[20260914-microsoft-ai-code-of-conduct]]"
+  - "[[20260915-google-zero-trust-intent-governance]]"
+  - "[[20260915-trail-of-bits-1password-ai-patching-benchmark]]"
 ---
 
 # Agent Security（Agent 安全）
@@ -96,6 +99,12 @@ source_raw:
 - 事前授权已经覆盖所有工具、网络、消息、stdio、并发和合法权限内的副作用。
 - 有独立身份就必然有可执行的撤销权；身份、权限、执行点和撤销通道仍可能属于不同 owner。
 - 告警、SITREP 或结构化摘要被生成，就等于人类收到了足够上下文并完成了正确处置。
+
+## 新增证据：语义治理与验证器校准（2026-09）
+
+- **判断**：检测、判定和执行必须分离；“理解意图”不能替代独立执行边界；安全基准和评分器本身也要校准。
+- **证据**：[[20260915-google-zero-trust-intent-governance]]、[[20260914-microsoft-ai-code-of-conduct]]、[[20260915-trail-of-bits-1password-ai-patching-benchmark]]。
+- **边界**：Google 是厂商架构与示例指标；Microsoft 是面向未来模型的咨询草案；Trail of Bits 是立场明确的项目方复盘，均需独立部署证据补强。
 
 ## 当前证据缺口
 

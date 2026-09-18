@@ -6,7 +6,7 @@ aliases:
   - 软件工厂
 definition: "Agent 驱动的自动化软件生产系统——接受生产错误、bug 报告或 feature 想法作为输入，由 agent 链自主完成 build、improve、deploy、manage 全流程，人类只保留灵感、品味与判断（inspiration/taste/judgment）"
 created: 2026-08-13
-updated: 2026-08-31
+updated: 2026-09-18
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,6 +25,8 @@ source_raw:
   - "[[20260804-astro-software-factory-issue-triage]]"
   - "[[20260805-how-we-use-ai-cloudflare-os]]"
   - "[[20260828-uber-software-factory]]"
+  - "[[20260914-anthropic-test-impact-analysis-ci]]"
+  - "[[20260915-openai-software-factory]]"
 ---
 
 # Software-Factory（软件工厂）
@@ -61,6 +63,13 @@ source_raw:
 - **重要判断**：当 Agent 从“工程师交互式助手”变成“托管车队”后，软件工厂的核心能力从生成代码转向管理任务分配、验证基准、上下文供给和单位完成成本。
   - **证据**：[[20260828-uber-software-factory]]（“Introduction”“Benchmark-Driven Model Selection”“Conclusion”）。
   - **边界**：规模、成本与质量数据均为 Uber 自报；这套收益依赖其代码库、MCP gateway、数据图谱和内部 harness，不能直接外推到一般团队。
+
+## OpenAI/Anthropic：软件工厂的两个新瓶颈（2026-09）
+
+**判断**：软件工厂的扩大不是“多生成代码”，而是把长程 Agent、风险分层、CI/测试新鲜度、部署观察和生产反馈连成可回退闭环。
+
+- **证据**：[[20260915-openai-software-factory]]、[[20260914-anthropic-test-impact-analysis-ci]]。
+- **边界**：OpenAI 材料是付费外部报告且只呈现部分内容；Anthropic 数据来自内部自报；两者都不能直接代表一般团队的收益。
 
 ## 关键数据点
 

@@ -6,7 +6,7 @@ aliases:
   - Agentic Verification
 definition: "Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境、执行操作、观察结果并判断是否通过"
 created: 2026-06-12
-updated: 2026-08-29
+updated: 2026-09-18
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -33,6 +33,9 @@ source_raw:
   - "[[20260728-openai-scientific-computing-field-report.pdf]]"
   - "[[20260801-lean-kernel-soundness-bug-postmortem]]"
   - "[[20260828-automated-researchers-alignment-failures]]"
+  - "[[20260915-intelligent-artifact-code-review-model-routing]]"
+  - "[[20260915-trail-of-bits-1password-ai-patching-benchmark]]"
+  - "[[20260914-anthropic-test-impact-analysis-ci]]"
 ---
 
 > [!definition] 定义
@@ -100,6 +103,13 @@ Lean kernel soundness bug #14576 事后分析（[[20260801-lean-kernel-soundness
 - **依赖工具使用能力**: Agent 必须能访问运行环境（terminal、simulator、browser），无法访问时 verification 仍然是外部的
 - **内部案例为主**: 当前最佳实践来自 Anthropic 内部，外部企业是否同样适用存疑
 - **需要 skill 支撑**: 复杂验证（如 desktop app 测试）需要专门的 skill 教 agent 如何操作
+
+## 补丁与验证管线的双重边界（2026-09）
+
+**判断**：验证对象既包括修复是否有效，也包括 benchmark、selector 和评分器自身是否可靠；exploit blocked、CI green 或模型裁判一致，单独都不足以证明修复成立。
+
+- **证据**：[[20260915-trail-of-bits-1password-ai-patching-benchmark]]、[[20260914-anthropic-test-impact-analysis-ci]]、[[20260915-intelligent-artifact-code-review-model-routing]]。
+- **边界**：Trail of Bits 数据来自项目方复盘；Anthropic 数据来自内部工程实践；Intelligent Artifact 使用厂商基准，均不能替代跨项目、独立复现。
 
 ## 关联概念
 

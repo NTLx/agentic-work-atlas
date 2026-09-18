@@ -8,7 +8,7 @@ aliases:
   - Agent 治理策略即代码
 definition: "把 Agent 权限、披露、合规规则和人工升级路径写成可执行策略，在运行时约束模型行动的治理方法"
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-09-18
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -23,6 +23,8 @@ related_entities:
   - "[[Verifiable-Agent-Engineering]]"
 source_raw:
   - "[[20260602-ibm-agent-logic-scalable-ai-adoption]]"
+  - "[[20260914-microsoft-ai-code-of-conduct]]"
+  - "[[20260915-google-zero-trust-intent-governance]]"
 ---
 
 # Policy-as-Code for Agent Governance
@@ -92,3 +94,10 @@ Policy-as-Code 处于 Agent 委派治理**三层保证模型**的 L5（表达保
 与权限棘轮闭合（07-16）：L5 的策略 + L2（临时权限）+ L0（独立撤销）= 权限棘轮破解条件。策略定义了"什么算越权"→ L2 限制了时间窗口→ L0 独立执行撤销。
 
 详见：07-17 深度思考（roundtable 4人3轮+think 7层到底）
+
+## 运行时语义治理的增量（2026-09）
+
+**判断**：Policy-as-Code 从静态表达进入工具执行点后，需区分“规则被写清楚”与“每个 action surface 都被拦截、记录、撤销”。
+
+- **证据**：[[20260914-microsoft-ai-code-of-conduct]]、[[20260915-google-zero-trust-intent-governance]]。
+- **边界**：Google 的语义策略是厂商架构与示例指标；Microsoft 文档是面向未来模型的公开咨询草案；两者都不能单独证明独立执行已经覆盖生产中的全部行动面。

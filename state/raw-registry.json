@@ -2086,6 +2086,69 @@
       "summary_path": "wiki/sources/20260912-context-engineering-inside-the-harness.md",
       "updated_at": "2026-09-17T17:48:06+08:00"
     },
+    "20260914-anthropic-test-impact-analysis-ci.md": {
+      "body_sha256": "a7d9b31a4fc72b03be711b3aa41d55e82e434ac7c22bec16819440d2eef59f31",
+      "compiled_at": "2026-09-18T09:37:32+08:00",
+      "raw_file": "20260914-anthropic-test-impact-analysis-ci.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260914-anthropic-test-impact-analysis-ci.md",
+      "updated_at": "2026-09-18T09:37:32+08:00"
+    },
+    "20260914-microsoft-ai-code-of-conduct.md": {
+      "body_sha256": "07b9feba25b261504229ad3529e5b78b189917f98e6fd90df031224fb4f0c44b",
+      "compiled_at": "2026-09-18T09:37:31+08:00",
+      "raw_file": "20260914-microsoft-ai-code-of-conduct.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260914-microsoft-ai-code-of-conduct.md",
+      "updated_at": "2026-09-18T09:37:31+08:00"
+    },
+    "20260915-claude-small-business-workflows.md": {
+      "body_sha256": "91093917a4daa2174c6053e274cf79a7f32300aca4c1bec5d2f714027d74f61d",
+      "compiled_at": "2026-09-18T09:37:32+08:00",
+      "raw_file": "20260915-claude-small-business-workflows.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260915-claude-small-business-workflows.md",
+      "updated_at": "2026-09-18T09:37:32+08:00"
+    },
+    "20260915-google-zero-trust-intent-governance.md": {
+      "body_sha256": "7eb2a136506a59b064ed2f2448c884e2f9cbcd8cd75edf30c35e02331a8a6371",
+      "compiled_at": "2026-09-18T09:37:32+08:00",
+      "raw_file": "20260915-google-zero-trust-intent-governance.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260915-google-zero-trust-intent-governance.md",
+      "updated_at": "2026-09-18T09:37:32+08:00"
+    },
+    "20260915-intelligent-artifact-code-review-model-routing.md": {
+      "body_sha256": "45f8362779c63b04ba8d09ebe56264b7e2997682ecc2f42eaf71a0fce433baac",
+      "compiled_at": "2026-09-18T09:37:31+08:00",
+      "raw_file": "20260915-intelligent-artifact-code-review-model-routing.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260915-intelligent-artifact-code-review-model-routing.md",
+      "updated_at": "2026-09-18T09:37:31+08:00"
+    },
+    "20260915-openai-software-factory.md": {
+      "body_sha256": "db0add971a8e126f061fb9e175b25412198eb338ee6ba1513ff0fa38ba48db9d",
+      "compiled_at": "2026-09-18T09:37:32+08:00",
+      "raw_file": "20260915-openai-software-factory.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260915-openai-software-factory.md",
+      "updated_at": "2026-09-18T09:37:32+08:00"
+    },
+    "20260915-trail-of-bits-1password-ai-patching-benchmark.md": {
+      "body_sha256": "224f20434b0469befe128329ca1aae5be02db8b7108acdce46c36fa43645078c",
+      "compiled_at": "2026-09-18T09:37:32+08:00",
+      "raw_file": "20260915-trail-of-bits-1password-ai-patching-benchmark.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260915-trail-of-bits-1password-ai-patching-benchmark.md",
+      "updated_at": "2026-09-18T09:37:32+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -2703,6 +2766,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-17T17:48:06+08:00",
+  "updated_at": "2026-09-18T09:37:32+08:00",
   "version": 1
 }
