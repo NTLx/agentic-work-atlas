@@ -8,7 +8,6 @@ updated: 2026-08-20
 tags:
   - source-summary
   - anthropic
-  - slack
   - human-agent-teams
   - organization
   - knowledge-management

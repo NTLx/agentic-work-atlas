@@ -6,7 +6,6 @@ tags:
   - research-log
   - labor-economics
   - ai-adoption
-  - measurement
 ---
 
 # 研究问题

@@ -10,8 +10,6 @@ updated: 2026-09-18
 tags:
   - source-summary
   - ai-deployment
-  - agent-workflows
-  - small-business
   - FDE
 evidence_level: low
 claim_type: mixed

@@ -14,8 +14,6 @@ tags:
   - AI-Agent
   - harness-engineering
   - self-improving-system
-  - long-horizon-agent
-  - recursive-improvement
 evidence_level: medium
 claim_type: mixed
 related_entities:

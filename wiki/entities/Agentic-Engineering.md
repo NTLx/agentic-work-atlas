@@ -7,7 +7,7 @@ aliases:
   - 代理式工程
 definition: "用 coding agents 辅助开发软件的工程实践；Simon Willison 系统化了 code execution、测试和反模式等实践，Karpathy 则将其与 Vibe Coding 区分为保持专业质量上限的严肃工程纪律"
 created: 2026-04-09
-updated: 2026-06-22
+updated: 2026-09-20
 evidence_level: high
 claim_type: mixed
 tags:
@@ -61,6 +61,7 @@ source_raw:
   - "[[20260613-qoder-human-bottleneck]]"
   - "[[20260613-coding-agent-organizational-engineering]]"
   - "[[20260620-l8-principal-agentic-workflow]]"
+  - "[[20260916-github-copilot-runtime-rust-migration]]"
 ---
 
 ## 核心范式演进
@@ -150,6 +151,17 @@ Claude Code 团队的经验可以概括为四个迁移：
 - PR cycle time 和 AI-assisted commits 只是中间指标，最终仍要看质量、可靠性和产品问题是否被解决。
 
 这使 [[AI-Native-Engineering-Org]] 成为 Agentic Engineering 的组织化形态：个人 agent loop 要升级为团队验证、计划、权限和责任系统。
+
+## 大规模行为保持型迁移：Agent 放大的是监督吞吐（2026-09）
+
+GitHub Copilot runtime 的 Rust 迁移把这一范式压力测试到 80 万行级生产系统：128 个迁移 PR 采用 component-by-component 的原位替换，主分支始终可发布；旧 E2E 测试被保留为跨实现行为 oracle，compiler/static analysis、Agent review、人类 review 与真实 rollout 分层承担不同的验证职责。
+
+该案例最重要的不是“Agent 写了大部分代码”，而是**一名资深工程师可以监督更大的变更面，同时不把架构选择、行为契约和最终 merge 责任交给 Agent**。作者报告约 136.3B token、约 `$120,000` token 支出，并粗略估计本人约 3 周投入；因此成本从“人工逐行实现”迁移到 token、验证基础设施和高级判断，而不是消失。
+
+**判断**：对行为保持型重写，Agentic Engineering 的可扩展单元不是“生成多少代码”，而是“多少小步变更能够被独立 oracle 快速判定并保持主线可发布”。
+
+- **证据**：[[20260916-github-copilot-runtime-rust-migration]]
+- **边界**：这是单一生产迁移案例，没有平行人工团队 counterfactual；开放式产品探索、弱 oracle 或高外部副作用任务不能直接外推同等自治程度。
 
 ### 船长模型（Kun Chen, 2026）
 

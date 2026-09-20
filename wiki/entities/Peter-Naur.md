@@ -13,7 +13,6 @@ updated: "2026-08-19"
 tags:
   - author
   - software-philosophy
-  - classical-theory
 related_entities:
   - "[[Joshua-Barretto]]"
   - "[[Horn]]"

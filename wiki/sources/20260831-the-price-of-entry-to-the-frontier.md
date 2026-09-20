@@ -15,9 +15,7 @@ updated: 2026-09-01
 tags:
   - source-summary
   - enterprise-AI
-  - model-sourcing
   - model-economics
-  - AI-sovereignty
 evidence_level: medium
 claim_type: mixed
 ---

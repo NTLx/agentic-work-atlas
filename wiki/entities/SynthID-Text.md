@@ -10,7 +10,6 @@ updated: 2026-08-16
 tags:
   - content-provenance
   - watermark
-  - google-deepmind
   - ai-safety
 evidence_level: high
 claim_type: extracted

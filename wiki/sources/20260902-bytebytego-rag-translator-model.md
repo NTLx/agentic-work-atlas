@@ -12,7 +12,6 @@ tags:
   - source-summary
   - retrieval
   - RAG
-  - embedding
 evidence_level: medium
 claim_type: mixed
 ---

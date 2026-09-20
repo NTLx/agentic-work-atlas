@@ -2,7 +2,9 @@
 type: topic
 title: "技能退化与知识债务"
 created: 2026-07-09
-updated: 2026-08-02
+updated: 2026-09-19
+evidence_level: medium
+claim_type: mixed
 tags:
   - topic
   - skill-atrophy
@@ -16,13 +18,25 @@ related_entities:
   - "[[Augmentation-Trap]]"
   - "[[Knowledge-Work-Redefinition]]"
   - "[[AI-Identity-Bifurcation]]"
+source_raw:
+  - "[[20260709-agents-that-teach-knowledge-debt]]"
+  - "[[20260731-tragedy-cognitive-commons-ai-expertise]]"
+  - "[[20260730-lenny-tech-workers-ai-sentiment-noam-segal]]"
+  - "[[Learning on the Shop floor]]"
+  - "[[20260528-ai-model-simulation]]"
+  - "[[20260305-anthropic-labor-market-impacts-ai]]"
+  - "[[20260812-stanford-canaries-coal-mine-ai-employment]]"
+  - "[[20260624-prompting-change-denmark-ai-adoption]]"
+  - "[[20260901-nyfed-businesses-ai-transform-work-not-cut-jobs]]"
+  - "[[20260414-nyfed-genai-training-access]]"
+  - "[[20260201-how-ai-impacts-skill-formation]]"
 ---
 
 # 技能退化与知识债务
 
 ## 主题概述
 
-当人类将认知任务卸载给工具时，底层能力不会保持休眠——它们会退化。这一模式在 GPS/空间记忆、拼写检查/拼写能力、自动驾驶/驾驶技能等领域已被广泛记录。AI coding agent 正在重复这一轨迹：开发者获得了生产力，但失去了通过费力解决问题获得的 [[Incidental-Learning|附带学习]]，导致 [[Knowledge-Debt|知识债务]] 的沉默积累。
+当人类持续把认知任务卸载给工具时，部分底层技能可能因练习减少而退化；GPS、自动化与临床辅助等领域已有相关证据。AI coding agent 是否会以相同强度造成长期技能退化仍取决于任务替代程度、主动参与、训练制度与独立验证机会。[[Knowledge-Debt|知识债务]] 用来描述“短期产出提高、长期理解与独立能力可能不足”的风险，而不是宣称所有 AI 辅助都会必然去技能化。
 
 本主题整合认知卸载、技能退化和知识债务三个交叉概念，追踪其跨领域表现和可能的干预路径。
 
@@ -117,6 +131,84 @@ related_entities:
 
 **AI 师傅悖论**（开放）：用 AI 重建师徒制自我取消——从不犯错（且错误不可目击）的师傅教不出判断力；师徒共源则抓错能力 η=0（同 AI 监督 AI 失效）。可能出路：AI 当"现实代理师傅"（高保真模拟器）或异质疫苗设计（多源出题），待验证。
 
+## 2026 劳动证据：入口、培训与独立能力必须拆开
+
+第一批劳动经济学来源给本 Topic 增加了一个重要边界：**“年轻人更难进入某些高暴露职业”“企业提供培训”“AI 辅助后无 AI 能力下降”是三种不同证据，不能自动串成一条已经证实的代际退化链。**
+
+### 1. 青年入口是上游风险，不是技能结果
+
+[[20260305-anthropic-labor-market-impacts-ai]] 与 [[20260812-stanford-canaries-coal-mine-ai-employment]] 都看到高 AI 暴露职业的 22–25 岁群体相对走弱；[[20260624-prompting-change-denmark-ai-adoption]] 又在企业采用与行政记录的连接中报告 <30 岁调整更集中、主要经少招。
+
+这些证据支持：
+
+> **专业能力再生的组织入口可能受到压力。**
+
+但它们没有直接测量：
+
+- 入职者是否获得导师训练；
+- 独立完成任务的能力是否下降；
+- 晋升速度是否变慢；
+- 30/90 日无 AI 能力是否退化。
+
+因此，青年流量只能作为**再生机会的上游代理**。
+
+### 2. 培训供给不是能力再生
+
+[[20260901-nyfed-businesses-ai-transform-work-not-cut-jobs]] 中，部分 AI 使用企业报告“再培训”；[[20260414-nyfed-genai-training-access]] 中，15.9% 的就业受访者报告雇主提供 AI 培训。
+
+但训练链至少应拆成：
+
+~~~text
+training offered
+  → participation
+  → completion
+  → mentored / independent practice
+  → unaided capability
+  → delayed retention / transfer
+~~~
+
+当前企业/员工调查主要覆盖第一段，不能证明后续已经发生。
+
+### 3. Skill Formation 实验提供“无 AI 独立能力”的直接锚点
+
+[[20260201-how-ai-impacts-skill-formation]] 是本 Topic 当前最直接的短期独立能力实验：
+
+- 主样本 52 人，随机分组；
+- AI-assisted coding 后，双方都在无 AI 条件下做理解测验；
+- AI 组低 4.15 分；
+- d=0.738，p=0.010；
+- 平均完成时间差异不显著。
+
+这比自报“感觉自己学得少”更接近能力结果。
+
+但它仍只能支持：
+
+> 在特定 Python/Trio 学习任务中，AI assistance 可能削弱短期独立理解形成。
+
+它不能直接推出：
+
+- 所有 AI coding 都导致长期 deskilling；
+- entry-level worker 一定受同样影响；
+- 一个职业的年际专业再生率下降了多少。
+
+### 4. 当前可检验的能力再生链
+
+把 [[Labor-AI-Empirical-Calibration]] 的劳动流量与本 Topic 的技能结果连接后，更可靠的研究对象是：
+
+~~~text
+entry opportunity
+  → training offered
+  → training completed
+  → independent practice
+  → unaided capability
+  → delayed retention / transfer
+  → promotion / qualification
+~~~
+
+只有同一队列能把这些阶段连起来，才能真正判断“AI 采纳是否把专业能力再生成本外部化”。
+
+因此，本 Topic 不再把“入门岗位减少”“培训比例上升”或“短期无 AI 测验下降”任何单一指标当作完整的代际 deskilling 证据。
+
 ## 未解决的问题
 
 1. **普遍性**：Knowledge Debt 对所有开发者同等严重，还是只影响特定群体？
@@ -133,3 +225,4 @@ related_entities:
 - [[Agent-Harness]] — SHIELD 是一种服务于人的认知发展的 harness
 - [[Context-Advantage]] — Knowledge Debt 的反面
 - [[Agentic-Engineering]] — 技能退化是人-agent 协作设计的核心关切
+- [[Labor-AI-Empirical-Calibration]] — 区分企业、职业、青年流量、培训与独立能力的证据层

@@ -10,8 +10,6 @@ created: 2026-08-16
 updated: 2026-08-25
 tags:
   - source-summary
-  - meta-harness
-  - harness-optimization
   - self-improving-system
   - agentic-engineering
 evidence_level: medium

@@ -13,8 +13,6 @@ tags:
   - source-summary
   - economics
   - knowledge-work
-  - superlinear-returns
-  - paul-graham
 evidence_level: medium
 claim_type: synthesized
 ---

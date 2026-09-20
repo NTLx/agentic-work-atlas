@@ -10,7 +10,6 @@ updated: 2026-09-02
 tags:
   - source-summary
   - AI-adoption
-  - workflows
   - agentic-engineering
   - organizational-design
 evidence_level: medium

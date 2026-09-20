@@ -7,8 +7,6 @@ created: 2026-08-13
 updated: 2026-08-13
 tags:
   - source-summary
-  - stacked-prs
-  - reviewability
   - agent-generated-prs
 evidence_level: medium
 claim_type: mixed

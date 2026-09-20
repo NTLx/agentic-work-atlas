@@ -9,7 +9,6 @@ tags:
   - source-summary
   - software-history
   - program-management
-  - agentic-orchestration
   - reinvention
 evidence_level: medium
 claim_type: mixed

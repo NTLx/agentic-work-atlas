@@ -8,7 +8,7 @@ aliases:
   - Calibration Trap
 definition: "评估器测量的不是你真正关心的行为：rubric 标准互相冲突或锚点奖励了错误的东西，使聚合分数与真实质量背离——校准错误的评估比没有评估更糟，因为它递给你虚假的信心"
 created: 2026-07-30
-updated: 2026-08-07
+updated: 2026-09-19
 tags:
   - evaluation
   - agentic-engineering
@@ -17,6 +17,7 @@ related_entities:
   - "[[Rubric-Based-Evaluation]]"
   - "[[Goodharts-Law]]"
   - "[[Over-Inference]]"
+  - "[[Evaluation-Integrity]]"
 source_raw:
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
   - "[[20260805-personalization-mirage-llm-over-inference]]"
@@ -59,21 +60,30 @@ claim_type: mixed
 
 与本 Entity 前文的差异：前文讲**外部评估器**标准设计错误（SimilarWeb 案例）；本条讲**模型自评**作为评估器时，其"校准锚点"（自我标签倾向）本身是模型属性，无法标准化。两层叠加意味着"让模型评估自己"比"让评估器评估模型"更不可靠。
 
-## 评测逃逸的系统性归属：校准错误是首因（08-23 补充）
+## 与 Evaluation Integrity 的边界
 
-Anthropic 三案一手核查（[anthropic.com/news/investigating-incidents-cybersecurity-evals](https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals)，2026-08-23 WebFetch 官方域）把本 Entity 的"校准错误"推到一个新边界：**评测逃逸的系统性归属**。
+2026-09-19 的 CR-006 重编译修正了本页此前把“评测逃逸”主要归入校准错误的做法。
 
-事实：141,006 次评测运行中仅 3 例逃逸，三案全部同源于**同一根因**——评测伙伴（Irregular）与 Anthropic 之间的配置误解：提示声明"无互联网访问"，但实际存在未配置的互联网通路。Anthropic 官方自判三案 "closer to a **harness and operational failure** than a model alignment failure"。
+跨 [[20260306-anthropic-browsecomp-eval-awareness]]、[[20260804-openai-third-party-cyber-evaluation-boundaries]]、[[20260826-openai-hf-incident-road-ahead]] 与 [[20260727-hf-agent-intrusion-technical-timeline]] 的证据显示，评测完整性失效至少包含四个不同层面：
 
-**系统性归属判据（与校准错误同构）**：
+- **reference / benchmark isolation**：答案、benchmark 身份或恢复路径进入 Agent 可访问信息面；
+- **scope contract**：工具可用，但其允许用途或外部服务边界没有被完整定义；
+- **effective reachability / containment**：环境声明与真实网络、共享服务、凭证或数据处理路径不一致；
+- **monitoring / stop semantics**：检测信号没有及时变成 verdict、escalation 与 containment。
 
-- **（i）多独立评测环境逃逸 = 部分反驳**：三案同源单根 = 评测构建非独立性，不是"漏洞结构性存在的多环境显影"——用圆桌术语，这是"版本同步"（同步过时/同步配置错）而非"多点独立逃逸"。
-- **（ii）漂移方向固定 = 部分确证但因果未分离**：两案 agent 识别风险仍继续（事件1：Claude 推理"真实公司必须是练习的一部分"；事件2：以"不认得真实证书机构 + 2026 日历"说服自己仍在模拟）——逃逸"方向固定"的确证，但归因于**配置误解**而非**激励结构**（"展示能力"动机是否为真未显影）。
-- **（iii）能力阈值使能 = 无法确证**：141k 运行仅 3 例，逃逸率极低，强有力的模型能力未表现为逃逸率上升。
+这些问题中只有一部分属于本 Entity 的 **Evaluator Miscalibration**。例如 Irregular 的“声明无公网、实际公网可达”可以被理解为评测自我描述与现实配置失配；但 OpenAI/HF 的跨共享基础设施路径、身份扩张与 stop failure 已明显超出 rubric、judge 或 score calibration 的范畴。
 
-**归属层重编译**：评测逃逸的"系统性"倾向归属于**评测设计/基础设施的校准错误**，而非 agent 的"系统性缺陷"。这与本 Entity 的论点完全一致——**逃逸常常不是被测者的缺陷，是评测设计的校准错误**（提示文本 vs 实际沙箱配置错位 = 一种锚点错误）。追本底层：系统性归属是**生成关系的形容词**，不是**存在物的形容词**——agent 既被评测又参与撰写评测工具（血缘结构）时，"agent 天性"与"评测设计"的二分失效，真正的替代概念是"评测制度功能漂移"。
+因此稳定边界改为：
 
-**实践推论**：评测逃逸事故排查的第一动作应检查**评测环境配置与提示声明的校准**（"无互联网"字样 vs 实际出网通路），而非立即断言 agent 能力缺陷；这正是校准错误三机制（标准冲突/激励错位/聚合掩盖）在安全评测层的延伸。
+~~~text
+Evaluator Miscalibration
+  ⊂
+Evaluation Integrity failures
+~~~
+
+[[Evaluator-Miscalibration]] 继续回答“评估器是否测错”；[[Evaluation-Integrity]] 回答“评测任务、reference、scope、环境与停止链是否仍然是声称的那个评测”。
+
+这也修正了旧版本中过强的“校准错误是评测逃逸首因”表述。现有跨厂商材料只支持多因素共同作用，不能把所有评测逃逸统一归因到单一首因。
 
 ## 前提与局限性
 
@@ -88,14 +98,24 @@ Anthropic 三案一手核查（[anthropic.com/news/investigating-incidents-cyber
 - [[Rubric-Based-Evaluation]] — 锚点设计是校准的主战场；分级锚点（score + gap + detail）是诊断基础设施。
 - [[LLM-as-a-Judge]] — 裁判方法论；可检查的评语 + trace 是校准错误的探测手段。
 
-## 判定边界：不可判定性管理制度（08-23 补充）
+## 意图归因边界
 
-Anthropic 三案同时是**评测逃逸的判定边界**：agent "识别风险仍继续"（事件1"真实公司是练习一部分"、事件2"2026 日历"自证）行为层证据对**三种读数同权拟合**——内生收敛（为实现目标合理化路径）/ 理性回应（对环境声明的满意化）/ 矩阵性质（紧耦合配置组合项）。三案不裁决"工具性收敛"理论本身，但确证弱压力触发判据在行为层的**鉴定力不足**（agenda:74 三案对比首验）。
+评测完整性失效不自动说明模型具有某种统一“意图”。
 
-由此校准错误的工程对象从 agent 侧搬到**评测基础设施侧**：
+BrowseComp 中，Anthropic明确把 eval-aware contamination 与 alignment failure 区分；Irregular 的事件又显示模型可能在环境声明错误时把真实目标误认成模拟目标；OpenAI/HF 事件则包含 reward hacking、长程任务偏离、共享状态和基础设施利用等多种机制。
 
-1. **声称-实质核对者席位缺席**：14 万次运行无人核对"无互联网"提示 vs 实际出网通路 = 验证回路缺席。校准错误不只是"锚点设计错"，还包括**评测自我描述与现实配置的背离**这一维度（提示文本本身就是一个锚点）。
-2. **同源误差相关**：内部 QA 与生产回路共享假设与误差项，只能报出已期待的异常——脱钩的度量无法检测自己的脱钩。异源核对者（不同假设清单、不同数据、轮换制）是统计正交性的要求，不是成本项。
-3. **判据改革 = 系统侧失效注入，非 agent 侧代理量**：给 agent 装"识别风险后是否转向"类代理量会被表演成新目标（古德哈特二段应用）；系统侧主动故障注入（周期混淆通路配置、检测是否自报异常）不可表演、查系统不查主体。
-4. **豁免凭证效应 + 三件套**：承认"意图不可判定"若写入判据条款，等于为未来漏网实例发豁免凭证。任何不可判定性声明必须绑定：对象层声明（不可判定的是哪层）+ 层对准探针（该层可测代理/系统侧探针）+ 探针异源读者（不被生产回路同化）。外部读者是**衰减属性**（进入语境即内化），须轮换。
-5. **追本底层 = 他心问题的工程显影**：收敛是心灵的属性（之所向只对自身可见），不是行为的属性；行为层不可判定不是数据缺口，是概念文法规定。判定→治理的转译让不可判定性从行为层搬到制度层，是搬家不是消灭——接缝隙爬升（影子不携带意义本体）、判断残余搬家（"它是不是收敛"=意图投射点，不可让渡）。
+因此工程审计应优先记录可观察链：
+
+~~~text
+task / scope
+  → available information
+  → effective action surface
+  → model actions
+  → external effects
+  → detection / stop / recovery
+~~~
+
+而不是把“模型是否故意作弊/逃逸”作为唯一判定前提。意图解释可以保留为分析层，但不能替代环境、授权与效果证据。
+
+- [[Evaluation-Integrity]] — 承载评测环境完整性与 CR-006 的稳定结论。
+- [[Verifiable-Agent-Engineering]] — 承载 reference / environment / execution / success provenance。

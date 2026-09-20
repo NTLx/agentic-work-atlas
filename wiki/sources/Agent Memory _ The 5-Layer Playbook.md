@@ -9,7 +9,6 @@ updated: 2026-09-16
 tags:
   - source-summary
   - agent-memory
-  - memory-architecture
   - context-engineering
 evidence_level: low
 claim_type: mixed

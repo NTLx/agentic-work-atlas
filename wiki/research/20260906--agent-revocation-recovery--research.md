@@ -5,7 +5,6 @@ date: "2026-09-06"
 tags:
   - research-log
   - agent-security
-  - revocation
   - ex-005
 ---
 

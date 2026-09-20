@@ -11,10 +11,8 @@ created: 2026-08-20
 updated: 2026-08-20
 tags:
   - verification
-  - testing
   - agentic-engineering
   - agent-verification
-  - red-green-tdd
 evidence_level: medium
 claim_type: extracted
 related_entities:

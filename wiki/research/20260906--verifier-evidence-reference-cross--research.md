@@ -6,7 +6,6 @@ tags:
   - research-log
   - agent-evaluation
   - verification
-  - replay
 ---
 
 # 2026-09-06：验证器独立性 × 证据 × 参考完整性 × 成功来源

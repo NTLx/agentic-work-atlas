@@ -5,7 +5,7 @@ aliases:
   - Coding Agents
 definition: "能够自主完成编程任务的 AI Agent——理解需求、编写代码、运行测试、修复 bug、提交 PR，形成完整开发循环"
 created: 2026-04-10
-updated: 2026-06-13
+updated: 2026-09-19
 evidence_level: high
 claim_type: mixed
 tags:
@@ -33,6 +33,7 @@ source_raw:
   - '[[20260613-qoder-human-bottleneck]]'
   - "[[20260617-anthropic-claude-code-expertise]]"
   - "[[20260615-normaltech-ai-hasnt-replaced-software-engineers]]"
+  - "[[20260816-earendil-pi-compaction]]"
 ---
 
 # Coding Agents（编码智能体）
@@ -72,7 +73,7 @@ source_raw:
 
 ### 能力边界
 
-Coding Agent 擅长**边界清晰、可验证、有据可查**的任务。
+Coding Agent 擅长**边界清晰、可验证、有据可查**的任务。随着任务变成长程，能力边界越来越由 Harness 决定：上下文是否能压缩、工具是否稳定、测试是否可执行、失败状态是否能保留并继续。Pi 的 compaction 机制提供了一个具体例子——长会话需要把旧上下文压缩为结构化摘要并保留近期消息，否则上下文窗口本身会成为执行瓶颈。
 
 **不适用场景**：
 - 需要创造性探索的需求（"做一个有趣的数据可视化"）
@@ -97,7 +98,8 @@ Coding Agent 擅长**边界清晰、可验证、有据可查**的任务。
 - **前提**: 任务边界清晰、可验证、有据可查时效率最高
 - **局限**: 创造性探索需求（无明确成功标准）效率急剧下降
 - **局限**: 复杂遗留代码和隐性知识（无文档的生产 bug）处理能力不足
-- **局限**: 人类审查质量直接决定产出质量——缺乏 Taste/Judgment 的审查者无法有效把关
+- **局限**: 人类审查质量仍是重要边界，但并非唯一质量门；自动测试、静态分析、权限边界、独立 verifier 与可回放 trace 可以把部分质量责任从人的即时注意力中移出。
+- **长程局限**: context window、compaction、prompt cache 和持久状态会影响任务连续性；因此“同一个模型”在不同 Harness 中可能表现出明显不同的长期能力。
 
 ## 关联概念
 

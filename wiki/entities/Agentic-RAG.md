@@ -12,7 +12,6 @@ updated: 2026-08-20
 tags:
   - retrieval
   - agentic-engineering
-  - routing
   - rag
 evidence_level: medium
 claim_type: mixed

@@ -4,7 +4,6 @@ title: "人类与 Agent 交接：校准、交接包与接收面的证据边界"
 date: "2026-09-07"
 tags:
   - research-log
-  - human-agent-collaboration
   - calibration
   - handoff
 ---

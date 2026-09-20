@@ -12,7 +12,6 @@ updated: 2026-08-25
 tags:
   - source-summary
   - talent
-  - ai-era-org
 evidence_level: medium
 claim_type: mixed
 ---

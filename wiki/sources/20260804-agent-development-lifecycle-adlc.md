@@ -9,7 +9,6 @@ tags:
   - source-summary
   - adlc
   - software-factory
-  - agent-orchestration
 evidence_level: medium
 claim_type: mixed
 ---

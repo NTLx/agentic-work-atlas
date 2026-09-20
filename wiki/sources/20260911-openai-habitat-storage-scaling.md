@@ -15,9 +15,6 @@ updated: "2026-09-13"
 tags:
   - source-summary
   - agentic-engineering
-  - agent-infrastructure
-  - platform-engineering
-  - distributed-systems
 evidence_level: high
 claim_type: mixed
 ---

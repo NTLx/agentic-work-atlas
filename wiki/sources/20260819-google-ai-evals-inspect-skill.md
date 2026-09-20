@@ -9,7 +9,6 @@ tags:
   - source-summary
   - evals
   - verification
-  - inspect-ai
   - agent-skills
 evidence_level: medium
 claim_type: mixed

@@ -10,7 +10,6 @@ definition: "David Chalmers 1997 提出的意识三层分类——C0（purely au
 created: 2026-08-20
 updated: 2026-08-20
 tags:
-  - consciousness
   - framework
   - cognitive-science
   - safety

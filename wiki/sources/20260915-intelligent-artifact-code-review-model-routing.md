@@ -12,7 +12,6 @@ tags:
   - code-review
   - verification
   - agentic-engineering
-  - model-routing
 evidence_level: low
 claim_type: mixed
 ---

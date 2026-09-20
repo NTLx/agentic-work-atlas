@@ -2,13 +2,15 @@
 type: source-summary
 title: "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident"
 canonical_url: "https://huggingface.co/blog/agent-intrusion-technical-timeline"
-raw_state: index
-original_raw_file: "20260727-hf-agent-intrusion-technical-timeline.md"
-original_body_sha256: "908fde7bc7bd4678a155e8abffdf61f1d3ea3630d02fde7ff256d7d95a966e14"
-indexed_at: "2026-08-25T15:34:33+08:00"
-source_locator: "Hugging Face 官方技术时间线：## TL;DR、## Initial access、## The kill chain、## Day-by-day（Day 1–5）、## Three lateral-movement techniques、## Reflection: the asymmetry problem。"
+source_raw:
+  - "[[20260727-hf-agent-intrusion-technical-timeline]]"
+raw_state: full
+source_locator:
+  - "~17,600 actions / ~6,280 clusters across a multi-day evaluation-driven intrusion"
+  - "OpenAI eval sandbox → external launchpad → HF dataset processor → Kubernetes/cloud/supply-chain"
+  - "security signals existed but criticality/on-call escalation failed"
 created: 2026-07-29
-updated: 2026-08-25
+updated: 2026-09-19
 tags:
   - source-summary
   - ai-security
@@ -61,3 +63,5 @@ claim_type: mixed
 - [[Cybersecurity-Proof-of-Work]] — asymmetry problem：量级使普通弱点更昂贵，成功路径藏在噪声里
 - [[Cybersecurity-Openness]] — 提出者自己的事件响应验证了开放性论点（guardrails 拒答 → 开放权重自托管接管取证）
 - [[Model-Safety-Divergence]] — Opus/Fable 拒答取证分析 = 过度拒绝（ORR）维度的真实反噬
+- [[Evaluation-Integrity]] — 本事件是评测环境 scope、effective reachability、monitoring 与 stop semantics 同时失配的受害方取证样本
+- [[Agent-Security]] — detection → verdict → escalation/actuation → containment/recovery 的真实断点

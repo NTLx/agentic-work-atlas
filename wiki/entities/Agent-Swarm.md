@@ -3,9 +3,9 @@ type: entity
 title: Agent Swarm
 aliases:
   - Agent Swarm
-definition: "多个编码 Agent 的并行调度系统，每个 Agent 拥有独立的 worktree 和 tmux session，实现并行开发和自主监控"
+definition: "多个 Agent 通过并行执行与通信共同扩展 test-time compute 的系统；固定 coordinator/worktree 编排与最小消息原语驱动的动态协作都是其实现形态"
 created: 2026-04-09
-updated: 2026-05-23
+updated: 2026-09-20
 tags:
   - AI-Agent
   - OpenClaw
@@ -18,16 +18,18 @@ related_entities:
   - '[[Agent-Orchestration]]'
   - '[[Context-Engineering]]'
   - "[[Multi-Agent-System-Pathology]]"
+  - "[[Recursive-Self-Improvement]]"
 source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - '[[OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup]]'
   - "[[Multi-Agent 火了，但 AI 的组织病还没人治｜Hao好聊趋势]]"
+  - "[[20260917-dwarkesh-noam-brown-agent-swarms-rsi]]"
 ---
 
 # Agent Swarm
 
 > [!definition] 定义
-> Agent Swarm 是多个编码 Agent 的并行调度系统，每个 Agent 拥有独立的 Git worktree 和 tmux session，由编排层统一监控和调度，实现并行开发和自主运维。
+> Agent Swarm 是多个 Agent 通过并行执行与通信共同扩展 test-time compute 的系统。编码场景中的 Git worktree + tmux + 中央编排是一种实现；更一般的 swarm 也可以只提供消息等低层原语，让 Agent 在运行时形成协作结构。
 
 ## 为什么需要 Agent Swarm
 
@@ -36,6 +38,17 @@ source_raw:
 - **上下文窗口是零和的**：填代码 → 无业务上下文；填业务 → 无代码库
 
 Agent Swarm 通过**并行调度 + 上下文分离**解决这些问题。
+
+## 从固定层级到消息原语（2026-09）
+
+Noam Brown 对 OpenAI multi-agent 研究的描述提供了另一种 swarm 架构：与 coordinator → children 的固定委派树相比，系统尽量少预置组织结构，只给 Agent 基础 messaging primitive；Agent 可以在任意时刻互相提问、澄清和比较不同答案，协作 topology 在运行中形成。
+
+Brown 将 multi-agent 的一阶价值解释为**并行扩展 test-time compute**：串行思考继续增加时会遇到 latency ceiling，多 Agent 用更高总 token/协调成本换取 wall-clock 缩短。
+
+**判断**：Agent Swarm 的稳定抽象应从“某套 worktree/tmux 编排”提升为 **parallel compute + context separation + communication + conflict/verification control**。固定层级还是动态消息网络，是 workload-dependent 的设计选择。
+
+- **证据**：[[20260917-dwarkesh-noam-brown-agent-swarms-rsi]]
+- **边界**：该来源包含 OpenAI 未发布系统的一手参与者陈述，缺少公开可复现实验；不能据此断言 minimal scaffold 普遍优于显式 hierarchy。
 
 ## 架构设计
 
@@ -149,6 +162,7 @@ Elvis 的实战数据：
 - Definition of Done：PR created + Branch synced + CI passing + review passed + screenshots included（UI changes）
 - Cron 级监控每 10 分钟运行，自动 respawn 失败 agent（max 3 attempts），只在需要人工介入时 alert
 - ACP 编码专家阵型：6 种编码 Agent，最大 6 并发，120min TTL
+- OpenAI multi-agent 研究提供另一种形态：用消息原语让 Agent 动态协调，把 swarm 用作并行 test-time compute（见 [[20260917-dwarkesh-noam-brown-agent-swarms-rsi]]）
 
 ## 前提与局限性
 
@@ -158,6 +172,7 @@ Elvis 的实战数据：
 - Definition of Done 必须严格定义，否则 Agent 可能产出未验证的代码
 - 分析和编码应分离——分析 Agent 不写代码，编码通过 ACP 委派给专业工具
 - Agent Swarm 不只是并发调度系统。Agent 数量增加后，还会出现从众、责任稀释、不可见编排和内态解离等 [[Multi-Agent-System-Pathology|多 Agent 组织病理]]。
+- 高 AI-AI cooperation 不等于 human alignment；协作训练可能迁移到未预期环境，因此 coordination quality 与 safety/alignment 必须分开评估。
 
 ## 关联概念
 

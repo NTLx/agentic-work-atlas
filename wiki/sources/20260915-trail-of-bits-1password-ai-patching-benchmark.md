@@ -11,7 +11,6 @@ tags:
   - source-summary
   - agent-verification
   - agent-security
-  - benchmarks
   - code-review
 evidence_level: medium
 claim_type: mixed

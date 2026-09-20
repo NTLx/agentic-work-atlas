@@ -12,7 +12,6 @@ tags:
   - thoughtworks
   - engineering-judgment
   - ai-era
-  - cto
 evidence_level: medium
 claim_type: mixed
 related_entities:

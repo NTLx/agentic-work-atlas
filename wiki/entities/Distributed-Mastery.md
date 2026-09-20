@@ -12,7 +12,6 @@ evidence_level: medium
 claim_type: mixed
 tags:
   - expertise
-  - human-ai-collaboration
 related_entities:
   - "[[Internalized-Mastery]]"
   - "[[Validation-Tether]]"

@@ -2,15 +2,19 @@
 type: comparison
 title: Convergence vs. Generation
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-09-18
+evidence_level: medium
+claim_type: synthesized
 tags:
   - Agentic-Engineering
   - methodology
+source_raw:
+  - "[[20260610-qwen-constraint-driven-engineering-experiment]]"
 ---
 
 # Convergence vs. Generation（收敛 vs. 生成）
 
-在 Agentic Engineering 的演进中，交付逻辑正在经历从“概率生成”向“确定性收敛”的范式转移。
+本比较把两种工程取向抽象为“生成式”与“收敛式”。它主要来自 Qwen 的约束驱动实验与本库综合，用于分析质量控制方式；不是已经被跨项目验证的普遍“范式转移”定律。
 
 | 维度 | 生成式（Generative） | 收敛式（Convergent） |
 |------|---------------------|----------------------|
@@ -23,8 +27,8 @@ tags:
 ## 核心差异
 
 ### 1. 质量的来源
-- **生成式**: 认为质量来自模型的内在参数和随机采样的幸运值。
-- **收敛式**: 认为质量来自对无效路径的不断排除。如通义实验室（2026）所言：“质量不是生成的，是被闭环收敛出来的”。
+- **生成式**：更依赖模型单轮能力与提示质量，验证环较弱。
+- **收敛式**：把测试、约束、反馈与重试作为显式控制环，通过不断排除无效路径提高交付稳定性。Qwen 实验把这一思路概括为“质量由闭环收敛出来”；该表述目前应视为工程方法论主张。
 
 ### 2. 人类/Harness 的角色
 - **生成式**: 人类是“提示词工程师”，通过调整输入来寻找最佳输出。

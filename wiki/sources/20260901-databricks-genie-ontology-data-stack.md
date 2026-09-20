@@ -11,7 +11,6 @@ tags:
   - source-summary
   - ontology
   - enterprise-AI
-  - data-governance
   - evaluation
 evidence_level: medium
 claim_type: mixed

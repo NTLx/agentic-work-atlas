@@ -12,7 +12,6 @@ tags:
   - source-summary
   - agentic-engineering
   - developer-productivity
-  - inference-economics
 evidence_level: medium
 claim_type: mixed
 ---

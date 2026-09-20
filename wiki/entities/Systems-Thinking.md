@@ -12,7 +12,6 @@ tags:
   - entity
   - systems-thinking
   - ai-era
-  - skill
 related_entities:
   - "[[Harness-Engineering]]"
   - "[[Just-Do-Less]]"

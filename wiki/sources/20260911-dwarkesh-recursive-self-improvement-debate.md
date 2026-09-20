@@ -14,9 +14,6 @@ created: "2026-09-13"
 updated: "2026-09-13"
 tags:
   - source-summary
-  - dwarkesh-podcast
-  - recursive-self-improvement
-  - continual-learning
   - agentic-engineering
 evidence_level: medium
 claim_type: mixed

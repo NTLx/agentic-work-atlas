@@ -3,9 +3,9 @@ type: entity
 title: Thin-Harness-Fat-Skills
 aliases:
   - Thin Harness Fat Skills
-definition: "Agent 架构哲学——Harness 做薄、主要精力放在丰富 Skills 上，让功能通过 Skill 实现而非在 Harness 层堆砌逻辑"
+definition: "一种 Agent 架构取向：把领域知识和可复用工作方法尽量封装为 Skills，同时让 Harness 聚焦跨任务的上下文、权限、工具、验证与运行时控制；‘薄/厚’是复杂度放置的权衡，不是普遍定律。"
 created: 2026-05-13
-updated: 2026-05-26
+updated: 2026-09-19
 tags:
   - AI
   - agent
@@ -23,19 +23,23 @@ related_entities:
 source_raw:
   - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
   - "[[The Anatomy of an Agent Harness]]"
+  - "[[20260803-google-agent-skills-build-test-scale]]"
+  - "[[2608.19880-envharness-agent-learning]]"
 ---
 
 # Thin-Harness-Fat-Skills
 
 > [!definition] 定义
-> **Thin Harness, Fat Skills（薄 Harness 厚 Skill）** 是一种 Agent 架构哲学：Harness（Agent 基础设施层）只做最少必要的事——调度、路由、基础安全，复杂逻辑和领域知识封装在 Skill 中。这与主流将重点放在 Harness Engineering 上的路径形成对照。
+> **Thin Harness, Fat Skills（薄 Harness 厚 Skill）** 是一种复杂度放置策略：领域知识、流程经验和可复用方法尽量封装为 Skill；Harness 保留跨任务都需要的上下文管理、工具接入、权限、安全、验证和运行时控制。这里的“薄”是避免把领域逻辑硬编码进平台层，而不是把 Harness 缩到只剩调度器。
 
 ## 关键数据点
 
 - **核心理念**: Harness 只做最少必要的事（调度、路由、基础安全），复杂逻辑和领域知识封装在 Skill 中
 - **与主流的对比**: 主流 Agent 框架（如 OpenClaw、Claude Code）将大量工程精力投入 Harness Engineering（Context 管理、多 Agent 编排、工具调度），GBrain 反其道而行
 - **实现方式**: 通过 "Skillify" 将非结构化知识转化为可被 Agent 高效调用的结构化资产——万物皆可为 Skill，处处皆可存记忆
-- **设计动机**: 避免 Harness 层过度膨胀导致维护成本激增，同时让知识/Skill 层独立演化
+- **设计动机**: 避免 Harness 层因领域逻辑不断膨胀，同时让知识/Skill 层独立演化。
+- **2026-08 新证据**: Google Agent Skills 的公开实践显示，“Fat Skills”本身需要 OWNERS、EVAL、lint、link check、on-submit/weekly regression 等治理；把复杂度移到 Skill 并不会消除工程成本，只是改变维护边界。
+- **环境侧补充**: EnvHarness 表明 Harness 还可以通过 Stage/Contract 等包装层改变 Agent 与环境的交互条件，同时保持原 verifier；这说明“Harness 应尽量薄”必须让位于可验证的跨任务控制需求。
 
 ## 前提与局限性
 
@@ -63,7 +67,7 @@ GBrain 选择 Thin Harness 的核心原因是：知识密集型 Agent 的能力�
 
 Thin Harness 的底层逻辑与 [[Latent-Space-vs-Deterministic|潜在空间与确定性分工]] 一致：Harness 层处理的是确定性任务（路由、调度、安全校验），这些任务的输入输出可预测，适合用规则实现；Skill 层处理的是需要语义理解的任务（知识检索、内容生成、推理），这些任务需要 LLM 的潜在空间能力。
 
-薄 Harness 的本质是把确定性任务留给确定性系统，把语义任务留给语义系统。如果 Harness 层开始承担语义判断（比如"这个 Skill 是否适用于当前任务"），它就从薄变厚了——同时承担了它不该承担的判断风险。
+更稳妥的边界是：**跨任务且需要一致执行的保证留在 Harness，领域特定且可独立维护的知识留在 Skill。** Skill 路由本身可以包含语义判断，但高影响权限、预算、schema、验证和失败关闭不应仅由 Skill 自己决定。
 
 ## 关联概念
 

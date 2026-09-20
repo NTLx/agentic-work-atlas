@@ -12,8 +12,6 @@ updated: 2026-08-20
 tags:
   - knowledge-management
   - organization
-  - slack
-  - workplace-conversation
 evidence_level: medium
 claim_type: mixed
 related_entities:

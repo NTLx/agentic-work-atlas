@@ -19,7 +19,6 @@ tags:
   - source-summary
   - lennys-podcast
   - agent-loops
-  - consumer-ai
   - product-strategy
 evidence_level: medium
 claim_type: mixed

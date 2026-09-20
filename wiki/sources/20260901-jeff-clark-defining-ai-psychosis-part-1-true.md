@@ -10,7 +10,6 @@ updated: "2026-09-10"
 tags:
   - source-summary
   - ai-psychosis
-  - mental-health
   - agentic-ai
 evidence_level: medium
 claim_type: mixed

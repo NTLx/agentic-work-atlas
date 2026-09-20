@@ -7,10 +7,8 @@ created: 2026-08-20
 updated: 2026-08-20
 tags:
   - source-summary
-  - graphrag
   - knowledge-graph
   - retrieval
-  - agentic-rag
 evidence_level: medium
 claim_type: mixed
 ---

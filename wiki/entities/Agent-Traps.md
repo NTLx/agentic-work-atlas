@@ -8,7 +8,7 @@ aliases:
   - 网页陷阱
 definition: "嵌入在网页、邮件、文档等数字资源中，专门针对 AI Agent 的解析逻辑设计、用以操纵或利用其行为的恶意内容分类框架——按 Agent 运行周期的六个环节（感知→推理→记忆→行动→多Agent→人类）系统化"
 created: 2026-07-07
-updated: 2026-07-30
+updated: 2026-09-18
 tags:
   - agent-security
   - adversarial-attack
@@ -51,11 +51,11 @@ source_raw:
 
 ## 框架的核心洞察
 
-1. **感知差是所有陷阱的入口**：Agent 解析 HTML 源码树、像素数组、元数据标签——和人类消费渲染后的视觉页面是完全不同的路径。这个不可消除的差异是 Content Injection 的基础。
+1. **感知差是 Content Injection 的重要入口**：Agent 解析 HTML 源码树、像素数组、元数据标签时，可能消费人类界面未直接呈现的信息层。这个差异为隐藏内容攻击提供了条件，但 Semantic Manipulation、Cognitive State 等其他陷阱并不都依赖感知差。
 
 2. **六环可以连锁**：攻击者可以在感知层埋指令 → 推理层把它合理化 → 记忆层固化 → 行动层执行 → 多 Agent 层放大 → 人类监督者批准。防住一环不等于安全。
 
-3. **对齐解决不了环境攻击**：模型层面的对齐训练对语义操纵、记忆投毒、多 Agent 级联几乎无效——因为这些攻击不直接对模型"下命令"。
+3. **模型对齐不能单独覆盖环境攻击**：语义操纵、记忆投毒、多 Agent 级联和证据污染涉及输入来源、状态写入与系统权限等模型外因素，因此仅依赖模型层对齐无法构成完整防御。
 
 ## 关键数据点
 
@@ -71,13 +71,13 @@ source_raw:
 ## 前提与局限性
 
 - **分类互斥性不足**：论文自认实践中陷阱可能重叠——同一攻击可能同时属于多个类别；分类的实用价值（能否引导差异化防御）尚未被实证检验
-- **Systemic 和 HITL 类别的实证缺口**：目前主要是理论威胁模型，缺乏真实攻击案例
+- **Systemic 和 HITL 的跨产品实证仍有限**：原 taxonomy 中这两类证据较弱；Context Collapse / AI Worm 已补充真实产品中的传播与人类审查失效案例，但尚不足以代表所有 Agent 部署。
 - **防御策略是方向性的**：论文提出的缓解路径（训练加固、内容扫描、生态信任协议）没有给出具体技术方案或基准
 - **前提**：论文假设六类分类对防御策略设计有意义——这个假设需要后续研究来验证
 
 ## 关联概念
 
-- [[Prompt-Injection-Risk]] — Agent Traps 是 Prompt Injection 的超级；注入只是六类中的两种（Content Injection + Behavioural Control）的核心机制
+- [[Prompt-Injection-Risk]] — Prompt Injection 是 Agent Traps 更广攻击面中的一种重要机制；六类 taxonomy 还覆盖语义操纵、状态污染、多 Agent 与 HITL 风险
 - [[Multi-Agent-System-Pathology]] — Systemic Traps 是从攻击者视角看多 Agent 脆弱性，与多 Agent 病理学互补
 - [[Agent-Containment]] — Containment 是主要的防御架构；Agent Traps 告诉你 Containment 要防"什么"
 - [[Persona-Hyperstition]] — 六类中最新颖的子概念，独立成 Entity

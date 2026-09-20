@@ -11,8 +11,6 @@ tags:
   - source-summary
   - ai-policy
   - agent-security
-  - human-control
-  - model-governance
 evidence_level: medium
 claim_type: extracted
 ---

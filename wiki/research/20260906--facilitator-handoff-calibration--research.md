@@ -4,9 +4,7 @@ title: "研究日志 2026-09-06：Facilitator handoff calibration"
 date: "2026-09-06"
 tags:
   - research-log
-  - ex-003
   - handoff
-  - escalation
   - calibration
 ---
 

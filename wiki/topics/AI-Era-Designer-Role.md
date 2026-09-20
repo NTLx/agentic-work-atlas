@@ -2,7 +2,9 @@
 type: topic
 title: AI 时代设计师角色演化
 created: "2026-08-17"
-updated: "2026-08-17"
+updated: "2026-09-19"
+evidence_level: medium
+claim_type: mixed
 tags:
   - topic
   - design
@@ -14,16 +16,24 @@ related_entities:
   - "[[Capability-Overhang]]"
   - "[[OpenAI-Design-Team]]"
   - "[[Lenny-Rachitsky]]"
+source_raw:
+  - "[[20260816-openai-head-of-design-best-time]]"
+  - "[[20250724-anthropic-product-design-claude-code]]"
+  - "[[20260301-jenny-wen-design-process-dead]]"
+  - "[[20260820-joel-lewenstein-crafting-last-mile-delight]]"
+  - "[[20260528-microsoft-copilot-new-design]]"
+  - "[[20260831-microsoft-coreai-product-simplicity]]"
+  - "[[20260919-google-gemini-visual-design]]"
 ---
 
 # AI 时代设计师角色演化
 
 > [!topic] Topic 定位
-> 围绕"AI 如何重写产品设计师的角色、流程、方法论与招聘标准"的主线，整合 OpenAI、Anthropic、Claude 等一线 AI 公司设计负责人的论述。
+> 围绕“AI 如何重写产品设计师的角色、流程、方法论与招聘标准”的主线进行综合。当前已有 OpenAI、Anthropic、Microsoft 与 Google Gemini 的可回溯一手材料；但各家披露层级不同——Anthropic/Microsoft 有团队运行与部分结果数据，Google 当前主要覆盖 design-object / trust / legibility——因此整体结论继续按 `medium` 处理。
 
 ## 核心命题（一句话）
 
-**AI 时代设计的瓶颈从"产出"迁移到"判断"——设计师的天花板在判断力（用户理解、新事物发明、point of view）而非产出速度；方法论从"重设计"转向"Just do less + Systems thinking + 复用 primitives"；招聘从"专业深度"转向"T 型 + 高 curiosity + prototyping + systems thinking"。**
+**AI 正在压缩设计执行层，把更多工作重心推向“做什么、为什么做、如何验证、何时接受粗糙版本、谁承担最终决策责任”。但 judgment / taste 不能再写成永久的人类专属能力；当前更稳定的结论是 execution 可迁移，decision authority、quality allocation 与 accountability 仍需要明确 owner。**
 
 ## 三条核心张力（生成器）
 
@@ -38,13 +48,9 @@ related_entities:
 
 ### 张力 2：人类剩余价值 vs AI 能力
 
-人类在三个"训练数据之外"的维度上仍有护城河：
+OpenAI / Ian Silber 强调用户理解、novelty 与 point of view；但 Anthropic / Jenny Wen 明确认为模型在 taste / judgment / design 上还会继续进步。因此这些更适合作为**当前差异化能力**，而不是永久的人类护城河。
 
-1. **用户理解**：truly understanding what people need（依赖 human feedback loop）
-2. **新事物发明**：doing something new（iPhone 多点触控、Instagram 移动优先、Snapchat 反直觉交互）
-3. **Point of view**：独特观点与品味——AI 时代最难被复制的判别力
-
-与 [[Taste]] 直接相关——Taste 是 point of view 在创意领域的具体化。
+目前更稳定的人类侧边界是组织责任：谁决定什么值得做、何时上线、哪一处值得投入最后一公里 craft，以及谁对结果负责。与 [[Taste]] 的关系应因此拆成“能力差异”与“责任归属”两个问题。
 
 ### 张力 3：极简默认 vs Broad Spectrum User
 
@@ -56,7 +62,7 @@ related_entities:
 
 | 约束类型 | 具体约束 |
 |----------|----------|
-| **硬约束** | 设计领域存在 novelty（人类对新交互范式的探索需求不会被 AI 替代）；设计过程包含 judgment loop（设计本质） |
+| **硬约束** | 设计工作需要对目标、风险、反馈与结果做选择；但这些选择不应被预设为永久只能由人类完成，真正硬约束是 decision authority / accountability 必须可归属 |
 | **软约束** | 产品 stability 决定 "Just do less" 是否适用；用户分层决定 capability overhang 是否关键 |
 | **自设约束** | "设计师仍要保持 classical training"——Ian 想打破但确实存在的行业惯性 |
 
@@ -69,10 +75,50 @@ related_entities:
 - Well-rounded team（generalists + visual + brand + prototypers + product thinkers）
 - 两档 effort：sweat the details（关键 feature）vs ship in 4 hours（边缘 feature）
 
-### Anthropic / Claude 视角（参考 Jenny Wen）
+### Anthropic / Claude 视角（Product Design / Jenny Wen / Joel Lewenstein）
 
-- "Design process is dead"——prototype/mock/test/iterate 流程压缩
-- 角色转向 "big picture planning + steering people"
+- [[20250724-anthropic-product-design-claude-code]]：设计师直接改前端与 state-management、把 mock 变成交互原型，并在设计阶段处理 error / logic / system status；内部自报部分执行 2–3x 加速。
+- [[20260301-jenny-wen-design-process-dead]]：mock/prototype 在其经验中的工作占比由约 60–70% 降至 30–40%；长期 vision 收缩到 3–6 个月方向性原型；同时明确“最终仍有人决定什么值得做并承担责任”。
+- [[20260820-joel-lewenstein-crafting-last-mile-delight]]：中间 flow/basic-components 层大量被 Claude 吸收，团队转向 code-first / prototype-first；“intentional craft”决定何处必须极致、何处可以粗糙换学习速度；多个 agent/PR 同时完成又制造新的 review / attention bottleneck。
+
+**稳定边界**：Anthropic 直接材料支持“设计对象与工作流扩展、execution compression、attention/review bottleneck、显式 quality allocation”；不支持“judgment 永久不可自动化”。
+
+### Microsoft 视角（Copilot / CoreAI, 2026）
+
+- [[20260528-microsoft-copilot-new-design]]：Jon Friedman 把 Microsoft 365 Copilot 的设计对象明确扩展到 output quality，包括 tone、structure、readability、usefulness 与 trustworthiness；新 interaction model 从 prompt box 转向 task-aware workspace 与 app 内 agentic mode。
+- 同一来源给出真实 rollout 指标：load time 降低超过 50%，complex-prompt p95 first-token latency 约改善 10%，Word / Excel / PowerPoint / Outlook 的 Copilot usage 在短期 rollout 窗口分别上升 27% / 33% / 43% / 30%。
+- [[20260831-microsoft-coreai-product-simplicity]]：当前 CoreAI 设计团队中，一部分设计师已经通过 VS Code / GitHub Copilot CLI 直接贡献 production code；AI 加速后，新问题变成跨 portal / workflow / navigation 的 consistency 与 coherence。
+- CoreAI 把 product simplicity 拆为 Decision Making / Engineering Craft / Coherence Making / Product Craft，说明设计治理已经横跨决策、工程、一致性与体验，而非单一视觉层。
+
+**稳定边界**：Microsoft 比其他来源更强地支持“execution speed → coherence/governance bottleneck”，并且给出 rollout telemetry；但仍未公开 model-behavior RACI、launch review ownership 或 incident accountability。
+
+### Google Gemini 视角（current design team）
+
+- [[20260919-google-gemini-visual-design]]：Gemini 当前设计团队把一个持续变化、不可完全预测的 AI assistant 当作 relational system，而不是固定工具。
+- thinking、listening、synthesis、directional progress 等系统状态通过 motion / gradient / responsive container 被转译成用户可理解的 process cue。
+- 设计目标显式包含 trust、discoverability、familiarity、error forgiveness 与 exploration safety。
+- 团队把 designer 描述为持续重绘“变化中的地图”的 cartographer，而不是一次性定义固定界面。
+
+**稳定边界**：Google 当前材料强支持“model/process legibility 本身是设计对象”，但尚不能支持 code-first workflow、RACI、rollout result 或 incident ownership，因此 Google 这一支仍低一档。
+
+### 跨公司收敛
+
+当前四家公司材料共同支持的最小模型是：
+
+~~~text
+AI execution friction ↓
+        ↓
+design object expands
+(UI → output / behavior / system state / workflow)
+        ↓
+new bottleneck shifts
+(review / coherence / quality allocation / attention)
+        ↓
+decision authority + accountability
+must remain explicit
+~~~
+
+其中，最后一行是组织治理命题，不是“人类 judgment 永远优于模型”的能力定理。
 
 ### Lenny Survey 数据（2026）
 
@@ -113,8 +159,8 @@ T 型（深度 + 协作）               T 型 + AI literacy + 跨产品形态�
 ## 待解问题
 
 1. ~~「Just do less」在 stable enterprise 产品上是否适用？~~ **08-23 操作化裁决**：判别标准 = 验证环能否放回短延迟介质——一个 feature 的验证环能回短延迟（原型/金丝雀/红队）→ 做；只能靠长期观测才知对错 → 砍。（衍生判据：可委托度 = f(观测延迟 × 反馈闭合媒介)；短延迟[代码/语法本体]可委托 AI 人只审边界，长延迟[行为/对话]前置化拆子环。）
-2. ~~「Point of view」是否真是 AI 时代的护城河，还是 Ian 对自己角色的辩护？~~ **08-23 裁决**：是护城河但需细分——「可被叙述化的判断」（理解、立场、方法论）会被 AI 收编；护城河只在「不可言说」（Victor：不存在于可提取介质的、过程性的手感）+「长期理解」（Norman：需要生活史反馈的"人为什么这样做"）的接缝。结论仍需 Jenny Wen / Joel Lewenstein 对照访谈 clip 确认。
-3. 设计流程压缩是否会让设计师变成"产品决策者"而非"产品工匠"？——**08-23 部分回答**：AI 压缩 prototype/mock 后，判断环节从隐形到礼形毕露（判断税集中暴露）；"卖产出"→"卖在场判断"迁移中。未闭合。
+2. ~~「Point of view」是否真是 AI 时代的护城河？~~ **09-19 对照后收窄**：不能再写成能力本体上的永久护城河。Jenny Wen 明确预期模型继续改善 taste/judgment/design；Joel Lewenstein 也把当前优势写成方向选择与 last-mile craft，而不是不可跨越能力。保留的稳定命题是：当前组织仍需有人承担方向、质量阈值与责任。
+3. ~~设计流程压缩是否会让设计师变成"产品决策者"而非"产品工匠"？~~ **09-19 部分闭合**：不是二选一。Jenny/Joel 的材料显示执行层被压缩，但方向决策、quality allocation、last-mile craft 与 accountability 同时保留；更准确是“工匠执行减少 + 决策/审查/最后一公里 craft 权重上升”。
 4. capability overhang 在窄用户产品（Notion、Cursor）上是否仍是关键设计挑战？——开放。
 5. ~~workforce survey 中设计师最不幸福——是角色本身问题，还是过渡期阵痛？~~ **08-23 裁决：经济基础位移（裂层）**——"最佳时代"与"最不幸福"同为真，是同一职业裂层两侧（定价权卖产出→卖在场判断）；驳 Ian "unclear what is expected" 归因。理由：设计师不幸福 = 可胜任区间（prototype/mock）被压缩 + 判断区间分量被放大，AI 同时喂强鉴赏力、养钝手感。
 
@@ -162,9 +208,10 @@ T 型（深度 + 协作）               T 型 + AI literacy + 跨产品形态�
 ## Source
 
 - [[20260816-openai-head-of-design-best-time]] — Ian Silber x Lenny Rachitsky (2026-08-16)
-- 期待对照 source：
-  - Jenny Wen (Claude head of design) — "The design process is dead"
-  - Joel Lewenstein (Anthropic head of design)
-  - Mike Krieger (Anthropic CPO)
-  - Kevin Weil (OpenAI former CPO)
-  - Andrew Ambrosino (OpenAI Codex lead)
+- [[20250724-anthropic-product-design-claude-code]] — Anthropic Product Design team case study
+- [[20260301-jenny-wen-design-process-dead]] — Jenny Wen x Lenny Rachitsky (2026-03-01)
+- [[20260820-joel-lewenstein-crafting-last-mile-delight]] — Joel Lewenstein x IDEO (2026-08-20)
+- [[20260528-microsoft-copilot-new-design]] — Jon Friedman / Microsoft 365 Copilot redesign
+- [[20260831-microsoft-coreai-product-simplicity]] — Jenny Lanier Wolski / Microsoft CoreAI
+- [[20260919-google-gemini-visual-design]] — current Gemini design-team retrospective
+- 后续跨公司对照仍缺：Google Gemini/DeepMind 与 Microsoft 的实际 RACI / launch review / incident ownership，以及各家可比的 feedback latency、返工率和质量结果。

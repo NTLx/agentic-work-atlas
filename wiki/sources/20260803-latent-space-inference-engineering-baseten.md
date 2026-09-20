@@ -13,8 +13,6 @@ tags:
   - source-summary
   - inference-engineering
   - ai-infra
-  - speculative-decoding
-  - kv-cache
 evidence_level: medium
 claim_type: extracted
 ---

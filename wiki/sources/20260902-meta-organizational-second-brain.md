@@ -11,7 +11,6 @@ updated: 2026-09-05
 tags:
   - source-summary
   - knowledge-management
-  - organizational-ai
   - agentic-engineering
 evidence_level: medium
 claim_type: mixed

@@ -7,7 +7,7 @@ aliases:
   - 职业边界跨界
 definition: "历史上与某职业关联的任务大量出现在其他职业从业者的 AI 使用中——AI 不仅改变工作如何做，更改变谁来做，职业分工边界先于职位描述与职衔变化而松动"
 created: 2026-07-28
-updated: 2026-07-28
+updated: 2026-09-20
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -20,6 +20,7 @@ related_entities:
   - "[[Knowledge-Work-Redefinition]]"
 source_raw:
   - "[[20260727-openai-work-at-the-frontier.pdf]]"
+  - "[[202609-openai-work-at-the-frontier-task-recurrence]]"
 ---
 
 # Task Crossover（任务跨界）
@@ -55,6 +56,19 @@ source_raw:
 - **流动最远的任务**：财务计算（7/7 非财务职业的前三高频财务任务）、计算机故障排查（7/7 非工程职业）、制作促销材料（非营销用户营销类消息的 25%）
 - **小职场效应**：中位消息量用户中，2-5 人工作区跨界 18.9% vs 101+ 人工作区 16.3%；重度用户（top quartile）中该模式消失
 
+## 从“尝试”到“复用”：2026-09 纵向补证
+
+OpenAI 第二份 Work at the Frontier 报告将观察窗扩到 2026-04 至 07、超过 150 万条工作相关消息，直接追踪同一 cross-occupation task 是否在下月再次出现：
+
+- 某月使用过该跨界任务的工人，下月再次使用同一任务为 **23.6%**；匹配对照为 **8.4%**，差 **15.2 个百分点**。
+- 同事扩散更弱：同 workspace 有人使用后，其他未使用者下月出现同一任务为 **3.1%**，对照 workspace 为 **2.5%**。
+- “粘性”高度不均匀：客户沟通约 54.1%、广告/促销写作 44.2%、营销材料 37.3%；财务信息解释 15.0%、商业信息呈现 14.9%、法律研究 9.9%。
+
+**判断**：Task Crossover 已不再只有一次性“尝试”证据；至少部分任务会在消息级 AI 使用中形成月际复用。但这仍只证明**AI 辅助任务复现**，不等于岗位职责已经正式改变，更不等于专家被替代。
+
+- **证据**：[[202609-openai-work-at-the-frontier-task-recurrence]]
+- **边界**：观察研究基于抽样 ChatGPT 消息和特定美国 Business-linked 用户；复用不是随机干预，也没有直接观测产出质量、正式 job scope 或工资/就业结果。
+
 ## 理论谱系
 
 任务跨界位于劳动经济学 task-based framework 的延长线上：
@@ -75,7 +89,7 @@ source_raw:
 - 分析单位是**消息**，不是工时、项目或工作成果；未观测产出采用率、质量或节省时间
 - 样本为 ChatGPT Business 用户的个人账号、仅限美国、职业自报告；不可推广到 Enterprise 用户或全体劳动力
 - Generic/Within/Cross 分类本身决定跨界率；O*NET 历史基线预设边界固定，而边界正在变化（循环性风险）
-- 跨界是"试探性尝试"还是"持久角色重组"尚无纵向证据——这是本概念成立与否的核心开放问题
+- 2026-09 已出现 4 个月消息级 recurrence 证据，说明部分跨界任务会持续复用；但“复用 AI 完成同类任务”到“正式岗位职责持久重组”之间仍缺更长期、因果和组织层证据
 - 证据来自模型厂商研究自家产品影响，叙事方向（扩展而非替代）与厂商监管利益一致；局限性声明诚实且开放了独立研究者数据通道，部分对冲立场问题
 
 ## 关联概念
@@ -88,3 +102,4 @@ source_raw:
 ## 来源
 
 - [[20260727-openai-work-at-the-frontier.pdf]]
+- [[202609-openai-work-at-the-frontier-task-recurrence]]

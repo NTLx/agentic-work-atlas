@@ -8,7 +8,6 @@ updated: 2026-08-13
 tags:
   - source-summary
   - ai-adoption
-  - agent-rollout
 evidence_level: medium
 claim_type: mixed
 ---

@@ -11,9 +11,7 @@ updated: 2026-08-21
 tags:
   - agent
   - agent-infra
-  - personal-agent
   - open-source
-  - local-first
 related_entities:
   - "[[Agent-Harness]]"
   - "[[Harness-Engineering]]"

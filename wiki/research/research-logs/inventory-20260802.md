@@ -4,7 +4,6 @@ title: "盘点 2026-08-02"
 date: "2026-08-02"
 tags:
   - research-log
-  - inventory
 ---
 
 # 盘点 2026-08-02（第三轮全量盘点）

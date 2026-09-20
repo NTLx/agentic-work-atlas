@@ -3,7 +3,7 @@ type: topic
 title: Agent Security
 description: "Agent 在不可信组件和跨信任域环境中行动时，从检测、判定、授权、执行到撤销与恢复的责任闭环"
 created: 2026-09-05
-updated: 2026-09-18
+updated: 2026-09-19
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -32,6 +32,13 @@ source_raw:
   - "[[20260914-microsoft-ai-code-of-conduct]]"
   - "[[20260915-google-zero-trust-intent-governance]]"
   - "[[20260915-trail-of-bits-1password-ai-patching-benchmark]]"
+  - "[[20260321-acrfence-semantic-rollback]]"
+  - "[[20260520-hbhc-cryptographic-revocation]]"
+  - "[[20260919-microsoft-saga-compensation]]"
+  - "[[20260502-ghost-in-context-policy-carriage-integrity]]"
+  - "[[20260621-governance-decay-constraintrot]]"
+  - "[[20260610-smsr-runtime-memory-provenance]]"
+  - "[[20260729-memsecbench-memory-lifecycle]]"
 ---
 
 # Agent Security（Agent 安全）
@@ -105,6 +112,57 @@ source_raw:
 - **判断**：检测、判定和执行必须分离；“理解意图”不能替代独立执行边界；安全基准和评分器本身也要校准。
 - **证据**：[[20260915-google-zero-trust-intent-governance]]、[[20260914-microsoft-ai-code-of-conduct]]、[[20260915-trail-of-bits-1password-ai-patching-benchmark]]。
 - **边界**：Google 是厂商架构与示例指标；Microsoft 是面向未来模型的咨询草案；Trail of Bits 是立场明确的项目方复盘，均需独立部署证据补强。
+
+## EX-005：停止、撤销与恢复不是一个动作
+
+[[20260321-acrfence-semantic-rollback]]、[[20260520-hbhc-cryptographic-revocation]] 与 [[20260919-microsoft-saga-compensation]] 让“撤销 / 恢复”可以进一步拆成三种不同语义：
+
+~~~text
+permission stop
+  ↓
+in-flight actuation stop
+  ↓
+committed-effect settlement / compensation
+  ↓
+provider-authoritative post-state reconciliation
+~~~
+
+- **permission stop**：HBHC 证明未来凭据使用可以被绑定到模型外的 freshness 条件，并在受控 49-agent 层级中实现有界级联失效；这解决“还能不能继续调用”。
+- **in-flight stop**：凭据已经失效，不代表已发送、正在处理或已经进入目标系统事务的请求会自动消失；这一层仍需要执行系统自己的取消/状态机语义。
+- **committed-effect settlement**：ACRFence 的 10/10 duplicate-commit 试验直接说明，本地 checkpoint restore 无法撤销已经提交到外部系统的 effect；Microsoft Saga 则提供成熟的分布式系统基线——已提交本地事务需要显式 compensation。
+- **post-state reconciliation**：compensation 被发出仍不等于世界已经恢复。最终必须回到 provider-authoritative state 验证实际结果，尤其是付款、通知、删除、凭据泄露等不能简单反演的 effect。
+
+**判断（综合）**：cancelled、revoked、rolled_back、compensated 不能作为同义状态。Agent 安全闭环必须明确记录“阻止未来权限”“停止在途执行”“补偿既有副作用”“核对最终权威状态”分别是否完成。
+
+- **证据**：[[20260321-acrfence-semantic-rollback]]；[[20260520-hbhc-cryptographic-revocation]]；[[20260919-microsoft-saga-compensation]]
+- **边界**：HBHC 是 credential-layer 受控研究；ACRFence 当前验证了攻击而非其 mitigation；Saga 是分布式系统参考架构而非 Agent 安全实验。当前仍缺同一 Agent 生产 incident 中的 revoke latency、unknown-commit rate、compensation success 与最终 post-state reconciliation 联合实测。
+
+## EX-006：控制状态必须完整抵达动作边界，但 OOB 仍是实现选项
+
+[[20260502-ghost-in-context-policy-carriage-integrity]]、[[20260621-governance-decay-constraintrot]]、[[20260610-smsr-runtime-memory-provenance]] 与 [[20260729-memsecbench-memory-lifecycle]] 支持把控制状态链拆成：
+
+~~~text
+carrier
+  → issuer / provenance
+  → survival
+  → subject / object binding
+  → decision-state preflight
+  → deterministic action-boundary enforcement
+  → external effect
+  → recovery / reconciliation
+~~~
+
+这条链上的环节不能互相替代：
+
+- **survival ≠ authenticity**：Constraint Pinning 能防止 compaction 丢掉政策，但“被保留的控制文本”仍可能来自错误或伪造 authority。
+- **authenticity ≠ semantic correctness**：SMSR 的 HMAC 能证明 memory write 的来源，却不能证明被授权写入的内容本身正确；authenticated adversary 仍需要额外 robustness。
+- **carriage ≠ enforcement**：Ghost in the Context 明确把 policy presence/soundness/binding 与 action-boundary enforcement 分开；其 0/90 behavioral negative boundary 也说明 state failure 不能直接等同于 unsafe external action。
+- **state repair ≠ effect repair**：MemSecBench 的 Write→Execute→Forget 说明恶意 memory 可以跨生命周期进入动作并被选择性修复，但 Forget 成功不能自动撤销已传播到外部系统的后果。
+
+**判断（综合）**：高影响动作真正需要的是“决策时控制状态完整性 + authority/provenance binding + 独立动作边界 enforcement”。当前证据仍不足以证明这些状态必须通过某一种 out-of-band control plane 承载；若 exact active-policy replay + preflight + deterministic enforcement 能提供相同的 binding、fail-closed、recovery 与 audit 属性，OOB 更接近实现选择而非普遍必要条件。
+
+- **证据**：[[20260502-ghost-in-context-policy-carriage-integrity]]；[[20260621-governance-decay-constraintrot]]；[[20260610-smsr-runtime-memory-provenance]]；[[20260729-memsecbench-memory-lifecycle]]
+- **边界**：当前仍缺 carrier × enforcement × provider post-state 的同轨生产级对照；不能从 compaction、memory provenance 或 benchmark repair 单独推出完整控制面安全。
 
 ## 当前证据缺口
 

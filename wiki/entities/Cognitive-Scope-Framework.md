@@ -9,9 +9,7 @@ definition: "Wang et al. 2026 提出的 agentic AI 认知能力分类——physi
 created: 2026-08-20
 updated: 2026-08-20
 tags:
-  - cognitive-framework
   - agentic-engineering
-  - classification
   - safety
 evidence_level: medium
 claim_type: extracted

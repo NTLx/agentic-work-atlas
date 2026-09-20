@@ -8,7 +8,7 @@ aliases:
   - AI 改 AI
 definition: "AI 系统设计、训练或验证其下一代或同代继任者的能力；当这一回路达到某临界点，AI 进步速度由机器而非人类决定"
 created: 2026-06-06
-updated: 2026-09-18
+updated: 2026-09-20
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -28,11 +28,17 @@ related_entities:
   - "[[Meta-Harness-Optimization]]"
   - "[[Context-Engineering]]"
   - "[[Agent-Verification]]"
+  - "[[Verifiable-Agent-Engineering]]"
 source_raw:
   - "[[20260604-anthropic-recursive-self-improvement]]"
   - "[[20260815-autodesign-meta-harness-optimization]]"
   - "[[20260730-jeff-dean-1-rule-building-ai]]"
   - "[[20260911-dwarkesh-recursive-self-improvement-debate]]"
+  - "[[20260901-harnessevolve-reference-trajectories]]"
+  - "[[20260809-hsi-hierarchical-self-improvement]]"
+  - "[[20260528-harness-updating-not-harness-benefit]]"
+  - "[[20260827-rethinking-harness-evolution-evaluation]]"
+  - "[[20260917-dwarkesh-noam-brown-agent-swarms-rsi]]"
 ---
 
 # Recursive Self-Improvement（递归自我改进）
@@ -94,6 +100,77 @@ Dwarkesh Patel 与 John Schulman、Beren Millidge、Charlie O’Neill 的圆桌�
 > **证据**：圆桌 00:00:00–00:45:24 讨论失败情景、研究目标、自动化研究员训练、长程 RL 与 sim-to-real（见 [[20260911-dwarkesh-recursive-self-improvement-debate]]）。
 >
 > **边界**：这是对研究者讨论的机制归纳；圆桌没有证明某条训练路线、时间表或能力跃迁必然发生。
+
+## 并行 test-time compute 与评估 horizon 的新约束（2026-09-17）
+
+Noam Brown 的后续访谈补了两条与 RSI 闭环直接相关、但方向相反的约束：
+
+1. **并行化可以加速候选搜索**：multi-agent 把原本串行的 test-time compute 分散到大量 Agent 上，以更高总 token/协调成本换取更短 wall-clock。对可分解的研究问题，这会加速“生成候选”这一段。
+2. **任务 horizon 变长会拖慢可信评估**：如果 Agent 能可靠执行数周乃至数月任务，而模型发布/训练周期仍以月计，完整 horizon 的 safety/product evaluation 可能来不及在下一代系统到来前结束。
+
+这意味着 RSI 速度不能只看 capability loop：
+
+~~~text
+candidate generation speed ↑
+        ×
+experiment / compute throughput
+        ×
+verification horizon
+        ×
+alignment / deployment gate
+~~~
+
+**判断**：并行 Agent 可能让“做更多实验”更快，却同时扩大“我们是否有足够时间观察完整行为”的验证债务。越接近长程自治，evaluation horizon 本身越可能成为 RSI 的限制变量。
+
+- **证据**：[[20260917-dwarkesh-noam-brown-agent-swarms-rsi]]
+- **边界**：关于未来月级任务 horizon 与发布节奏的部分是 Brown 的前瞻讨论，不是已实现生产数据；应作为风险模型而非时间预测。
+
+## Harness 层 RSI：变更晋级不能由自身得分自证
+
+2026 年的 harness-evolution 研究让“AI 改 AI”出现一个比模型权重更新更容易观察的中间层：模型参数保持冻结，但 prompts、skills、tools、memory、execution logic 以及负责修改这些对象的 evolver 可以持续变化。[[20260901-harnessevolve-reference-trajectories]]、[[20260809-hsi-hierarchical-self-improvement]]、[[20260528-harness-updating-not-harness-benefit]] 与 [[20260827-rethinking-harness-evolution-evaluation]] 共同说明，**“系统能写出下一版”不能直接证明“下一版拥有更高、可复用且可安全部署的能力”。**
+
+### 两个不可互相替代的晋级边界
+
+1. **变更归因**
+   - 必须区分 change producer、被修改 artifact、实际 runtime activation、adherence 与最终 outcome。
+   - HarnessEvolve 将 execution / evaluation / optimization / gating 拆开；HSI 将 task harness / evolver strategy / frozen outer anchor 分层；Harness Updating Is Not Harness Benefit 则直接证明“会产生有用更新”与“执行 Agent 能从更新获益”是两个不同能力。
+   - 因此版本存在不等于版本被实际使用，版本被加载也不等于 Agent 持续遵循。
+
+2. **反馈与控制不对称**
+   - 被改对象不能同时自由定义自己的 reference、reward、selector 和安全通过条件。
+   - Rethinking the Evaluation 在 matched feedback / inference budget 下加入 parallel sampling、sequential refinement 等搜索基线，并使用 disjoint held-out tasks；其结果表明，部分 benchmark 提升可以由额外搜索和同 benchmark 选择解释，而不是持久 harness 能力。
+   - HarnessEvolve 的质量门、近期 batch 回归门和 validation snapshot，HSI 的 frozen outer anchor 与 held-out split 都提高了归因质量，但仍不是不可改写的独立安全控制面。
+
+### 三个结果必须分开
+
+~~~text
+candidate score ↑
+      ≠
+reusable capability ↑
+      ≠
+safe deployment ↑
+~~~
+
+- **candidate score**：首先要排除额外 search budget / 多次采样 / benchmark reuse 的贡献。
+- **reusable capability**：需要 disjoint held-out tasks，并追踪 artifact activation / adherence，而不是只看最终分数。
+- **safe deployment**：还需要独立安全复评、policy freeze、canary、rollback 与 rollback 后行为验证；当前四篇研究都没有闭合这一生产级链条。
+
+因此 EX-007 当前最小审计链可写成：
+
+~~~text
+change hash / owner
+  → feedback provenance
+  → independent acceptance
+  → matched-search delta
+  → held-out behavior
+  → safety canary
+  → rollback / recovery result
+~~~
+
+**判断（综合）**：harness 层 RSI 的关键不是“是否允许系统自改”，而是每次自改能否在**不让被测对象同时控制反馈和晋级标准**的条件下，被归因、复验、部署和撤回。这里的“不对称”是工程治理条件，不是新的独立安全定理。
+
+- **证据**：[[20260901-harnessevolve-reference-trajectories]]；[[20260809-hsi-hierarchical-self-improvement]]；[[20260528-harness-updating-not-harness-benefit]]；[[20260827-rethinking-harness-evolution-evaluation]]
+- **边界**：上述来源主要是 benchmark / experimental self-evolution。当前仍缺生产 Agent fleet 上将 change hash、evaluator version、全部反馈查询、canary、线上行为、rollback 与 post-rollback verification 绑定到同一版本的纵向证据。
 
 ## 前提与局限性
 - **80% ≠ 100%** — 80% 是 commit-level 不是 deploy-level；merge 不等于 production

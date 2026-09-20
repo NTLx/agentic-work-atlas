@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-08-02
+updated: 2026-09-20
 evidence_level: high
 claim_type: mixed
 tags:
@@ -72,6 +72,25 @@ source_raw:
   - "[[Nemotron 3.5 Content Safety: Customizable Multimodal Safety for Global Enterprise AI]]"
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
   - "[[20260801-lean-kernel-soundness-bug-postmortem]]"
+  - "[[20260408-arxiv-2604.07650-llm-judge-behavioral-entanglement]]"
+  - "[[20260420-aj-bench-agent-as-judge]]"
+  - "[[20260506-partial-evidence-bench]]"
+  - "[[20260811-redagentbench-executable-red-teaming]]"
+  - "[[20260507-envtrustbench-evidence-grounding]]"
+  - "[[20260218-openai-evmbench]]"
+  - "[[20260806-skilltv-bench]]"
+  - "[[20260507-cited-but-not-verified]]"
+  - "[[20260827-agentjudgebench]]"
+  - "[[20260727-acquabench-success-provenance]]"
+  - "[[20260528-apple-nine-judges-two-effective-votes]]"
+  - "[[20260711-llms-as-a-jury-shared-error-floor]]"
+  - "[[20260223-openai-swe-bench-verified-audit]]"
+  - "[[20260708-openai-swe-bench-pro-audit]]"
+  - "[[20250703-agentic-benchmark-checklist]]"
+  - "[[20260423-openai-genebench-target-identifiability]]"
+  - "[[202602-tau3-task-fixes]]"
+  - "[[20250319-patchdiff-swe-bench-correctness]]"
+  - "[[20260331-elt-bench-verified]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
@@ -241,6 +260,247 @@ Lean kernel soundness bug #14576 事后分析（[[20260801-lean-kernel-soundness
 - **独立性有效，但以新鲜度为前提**：攻破独立检查需要两个独立实现各有一个不同 bug，机制本身成立；但 nanoda 的 bug 早一周已修复，持有旧版本等于没有独立检查。异构验证必须配套版本跟踪基础设施（comparator.live 每日同步）。
 - **信任边界原则**："健全性不能依赖不可信组件拒绝构造坏项；kernel 必须在自己的进程内独立拒绝"——与"containment 不能依赖模型自我克制、护栏必须由 harness 独立执行"是同一条原则（详见 [[Agent-Verification]] 形式验证镜像节）。
 - **攻防两端同时加速**：AI 既生产 exploit，又审计验证器（OpenAI 安全 AI 找出更多 kernel 错误）——可验证边界不是静态建设，而是 [[Cybersecurity-Proof-of-Work|proof-of-work 式]]的持续投入竞争。
+
+## 验证可靠性的三道不可替代门
+
+2026-09-19 对 EX-001 / EX-002 / EX-004 的第一批一手证据编译后，可以把“可验证”进一步拆成三个相互耦合、但不能互相替代的门：
+
+| 门 | 核心问题 | 当前主要证据 | 不能被什么替代 |
+|---|---|---|---|
+| **验证器独立性** | 多个 verdict 是否共享同一错误结构或行为偏差？ | [[20260408-arxiv-2604.07650-llm-judge-behavioral-entanglement]]、[[20260528-apple-nine-judges-two-effective-votes]]、[[20260711-llms-as-a-jury-shared-error-floor]] | verifier 数量、模型品牌/家族或简单多数投票 |
+| **证据取得与完整性** | judge 是否能看到、主动检查、意识到缺口并正确解释必要证据？ | [[20260420-aj-bench-agent-as-judge]]、[[20260506-partial-evidence-bench]]、[[20260811-redagentbench-executable-red-teaming]] | 更独立的 judge；独立但看不到关键状态仍会漏判 |
+| **真值与成功 provenance** | reference 是否正确、环境权威状态是什么、动作是否真的形成目标 post-state？ | [[20260507-envtrustbench-evidence-grounding]]、[[20260218-openai-evmbench]]、[[20260811-redagentbench-executable-red-teaming]] | 更完整的 trace；trace 完整也不能自动证明 reference 或最终状态正确 |
+
+**判断（综合）**：生产级验证器不能只追求“再找一个模型来评”，也不能只追求“给 judge 更多上下文”。更可靠的验证链至少要同时回答三件事：**判断信号是否足够独立、必要证据是否真正可取得且被检查、最终判定是否锚定到可信 reference / environment truth / execution post-state**。任一门缺失，都可能得到高一致性但错误的结论。
+
+- **证据**：[[20260408-arxiv-2604.07650-llm-judge-behavioral-entanglement]]；[[20260420-aj-bench-agent-as-judge]]；[[20260506-partial-evidence-bench]]；[[20260811-redagentbench-executable-red-teaming]]；[[20260507-envtrustbench-evidence-grounding]]；[[20260218-openai-evmbench]]
+- **边界**：这是跨来源形成的工程模型，不是已证明的必要/充分定理。当前这组研究中仍没有一个 benchmark 在固定任务、reference、预算和执行环境后，同时交叉操纵 verifier independence、evidence condition 与 provenance condition，因此三门之间的因果效应大小仍需联合实验。
+
+这个模型还给出三个反例式提醒：
+
+1. **多模型投票不等于独立验证**：若模型存在行为纠缠或 item-level correlated errors，多数票可能只是重复同一失败模式。Apple 的 9-judge / 7-family 面板只有约 2.18 个有效独立投票；而 LLM-Jury 又显示 shared-error floor 在不同任务域从接近 0 到明显非零不等，因此独立性必须按 error covariance / effective sample size / task-conditioned floor 实测，而不是按模型数量或家族数推断。
+2. **更多证据不等于更可靠的 verdict**：若关键状态没有被主动检查、授权视图本身不完整，或 judge 把非权威 observation 当成 truth，额外上下文只会扩大可误读材料。
+3. **确定性 replay 不等于 reference 正确**：EVMbench 的执行 replay 可以非常强，但 OpenZeppelin 对部分漏洞 reference 的争议说明，execution truth 与 reference truth 必须分开审计。
+
+## 第二批证据对三道门的细化
+
+第二批来源没有迫使模型增加“第四道门”，而是把后两道门内部的机制拆得更清楚：
+
+- **证据门不只是 access**：[[20260806-skilltv-bench]] 显示，judge 即使拥有 trajectory、artifact 和可检查环境，也仍需要 procedural verification knowledge 来决定检查对象、顺序和失败条件；[[20260507-cited-but-not-verified]] 则显示，检索深度增加后事实归因可能恶化，因此 evidence coverage 与 synthesis capacity 不能合并。
+- **reference 不是静态常量**：[[20260827-agentjudgebench]] 的 paired with/without-ground-truth 条件说明，reference availability 会直接改变 judge 行为，而且更完整的 reference 不一定单调提高 alignment；对部分 judge 还会出现 over-anchoring。
+- **success 也需要 provenance**：[[20260727-acquabench-success-provenance]] 用 CLEAN/GOLD/SHAM matched intervention 区分“按授权信息完成”与“因为获得目标值而成功”。这说明正确 post-state 仍不足以解释成功路径是否合法或是否具有可归因性。
+
+因此三道门可进一步写成：
+
+```
+verifier independence
+        ×
+evidence access → inspection procedure → completeness awareness → synthesis
+        ×
+reference truth → environment truth → execution truth → success provenance
+```
+
+**判断（综合）**：验证系统的目标不应是最大化单一 judge score，而应降低“同源判断 + 不完整/误解释证据 + 错误 reference 或不可解释 success”同时发生的机会。
+
+- **证据**：[[20260806-skilltv-bench]]；[[20260507-cited-but-not-verified]]；[[20260827-agentjudgebench]]；[[20260727-acquabench-success-provenance]]
+- **边界**：第二批仍然没有给出把 verifier independence、inspection procedure、reference condition、environment state 与 success provenance 全部放进一个 factorial design 的联合实验。当前模型适合作为工程检查框架，不应用作已证明的因果分解。
+
+## 第三批证据：reference 必须是版本化的可识别契约
+
+EX-004 第二批没有增加“第四道门”，而是把第三道门最容易被忽略的一段——reference truth——拆成一条更严格的 reference contract chain。
+
+~~~text
+task / specification validity
+  → target identifiability
+  → semantic-equivalent solution space
+  → versioned reference / evaluator contract
+  → run-level environment / execution truth
+  → success provenance
+~~~
+
+### 1. Gold patch、hidden tests 或 expected actions 都不能天然充当真值
+
+[[20260223-openai-swe-bench-verified-audit]] 与 [[20260708-openai-swe-bench-pro-audit]] 直接显示，coding benchmark 中剩余失败可以来自：
+
+- 题面欠规格；
+- 测试过严，把某一实现细节当成唯一正确解；
+- 测试覆盖不足，让不完整修复通过；
+- prompt 与测试目标互相误导；
+- gold patch / benchmark content 污染。
+
+因此：
+
+~~~text
+model failed benchmark
+        ≠
+model lacked the target capability
+~~~
+
+前提是测量装置本身先通过 specification / test / contamination audit。
+
+### 2. Reference truth 先要求“目标可由授权证据识别”
+
+[[20260423-openai-genebench-target-identifiability]] 把这一点做得最明确：评分 target 应是能从 agent-visible staged data 恢复的 realized-data quantity，而不是隐藏数据生成过程里的不可恢复参数。
+
+所以在 reference 之前还有一层：
+
+~~~text
+allowed evidence
+  → identifiable target
+  → reference value / tolerance
+~~~
+
+如果目标本身不可识别，grader 再精确也只是在精确比较一个不可由任务证据恢复的量。
+
+### 3. Semantic equivalence 是 reference contract 的一部分
+
+[[20250703-agentic-benchmark-checklist]] 把 task validity、outcome validity 与 benchmark reporting 分开，并明确要求检查：
+
+- ground-truth correctness / isolation；
+- semantic equivalence；
+- Oracle solver；
+- judge-human agreement；
+- environment / contamination；
+- flaw impact。
+
+这意味着 reference 不能把某个 developer patch、某条 tool sequence 或某种字符串表达直接升级为唯一真值，除非任务契约确实要求它。
+
+### 4. Reference 必须版本化，因为 benchmark 修复本身会改变能力读数
+
+[[202602-tau3-task-fixes]] 对 airline 27 个、retail 26 个任务同时修复错误 expected action、歧义、不可行约束、fallback 与 loophole。修复后 airline pass^1 按模型提高 14–20 个百分点，部分 pass^4 变化更大。
+
+这并不是固定 trace 下只替换 reference 的单变量实验，但它足以证明：
+
+> benchmark task / policy / expected-action / evaluator 的版本变化可以在模型不变时显著改变测得能力。
+
+因此一次可审计的 benchmark result 至少应绑定：
+
+~~~text
+benchmark / task version
+  + specification / policy version
+  + reference / expected-action version
+  + evaluator version
+  + environment identity
+  + model / trial identity
+~~~
+
+### 5. Human audit 是 benchmark-construction control，不是逐 run external oracle
+
+OpenAI 两次 coding audit 与 GeneBench 都使用了独立人审或构造期复核，但这些证据的稳定边界相同：
+
+- 它们能验证 task/reference/evaluator 的质量；
+- 不能据此声称每个 agent trajectory 都获得了独立外部真值裁决；
+- 更不能替代 EX-001 的 verifier-independence 测量。
+
+这也是为什么当前三道门仍保持分离：
+
+~~~text
+verifier independence
+        ×
+evidence acquisition / inspection
+        ×
+reference contract / environment / execution / success provenance
+~~~
+
+### 6. EX-004 的稳定工程字段
+
+对 benchmark / verifier 结果进行生产级复核时，第三道门现在至少需要记录：
+
+- task/spec owner；
+- task/spec version or hash；
+- target/estimand definition；
+- identifiability basis；
+- semantic-equivalence rule；
+- reference owner/version；
+- evaluator/test version；
+- environment version/state；
+- contamination/exposure status；
+- external adjudication scope；
+- result/provenance identity。
+
+### 7. Test pass 与 developer patch 都不是最终语义真值
+
+[[20250319-patchdiff-swe-bench-correctness]] 把 coding benchmark 的 reference chain 再往前推进一步。
+
+SWE-bench 的有限测试集可能把一个 patch 判为通过，但 PatchDiff 仍能发现其行为和 developer patch 不一致：
+
+~~~text
+benchmark test pass
+        ≠
+behavioral equivalence
+~~~
+
+但另一边也不能直接写成：
+
+~~~text
+behavior differs from developer patch
+        ⇒
+generated patch is wrong
+~~~
+
+因为 developer patch 也只是一个实现，而不是所有合法语义的枚举。
+
+因此 coding-task 的更稳妥验证链是：
+
+~~~text
+test pass
+  → differential behavior check
+  → discrepancy
+  → semantic / manual adjudication
+  → final verdict
+~~~
+
+PatchDiff 报告 29.6% 的 plausible patches 与 developer patch 有行为差异，而其中人工检查确认 28.6% 的 divergent patches 确实错误。这个差距本身就是重要证据：**behavioral difference 是审计信号，不是天然 verdict。**
+
+### 8. Reference/evaluator correction 可以在 agent 不变时改写 measured capability
+
+[[20260331-elt-bench-verified]] 提供了另一种更强的 benchmark-side correction 证据。
+
+在同一 SWE-Agent + Claude Sonnet 4.5 设置下：
+
+~~~text
+原 evaluator / GT
+transformation success = 22.66%
+
+修正 evaluator semantics
++ 移除无法可靠确定的 GT columns
+        ↓
+transformation success = 32.51%
+~~~
+
+这里变化来自 measurement instrument，而不是 agent/model 升级。
+
+更关键的是，30 个疑似 ground-truth calculation error columns 经三位独立 data engineers 重算后，平均 pairwise exact-match agreement 只有 57.8%。因此维护者没有以多数票制造“新真值”，而是删除这些无法可靠修正的 columns。
+
+这给 reference contract 增加两个明确规则：
+
+1. **semantic-equivalence rule 必须进入 evaluator version**，例如 boolean、float tolerance、format、NULL、order 等；
+2. **不可稳定识别的 reference 应移除或降级，而不是强行补一个 authoritative answer。**
+
+因此：
+
+~~~text
+agent output fixed
+  + evaluator/reference version changed
+        →
+measured capability changed
+~~~
+
+这不是模型能力变化，而是测量装置变化。
+
+### 9. EX-004 第二阶段收敛边界
+
+PatchDiff 与 ELT-Bench-Verified 补齐了此前仍缺的两个工程字段：
+
+- **behavioral-equivalence audit**：test-pass 后仍需检查有限测试之外的行为；
+- **corrected-measurement delta**：reference/evaluator 修正本身能改变测得能力。
+
+它们没有改变三道门结构，也没有证明第三道门是普遍必要/充分条件。
+
+**判断（综合）**：reference 不是“答案文件”，而是被版本化、可识别、允许语义等价、可追溯到 task/spec 与 environment 的评测契约。只有这个契约先可信，execution truth 与 success provenance 才有可解释的锚点。
+
+- **证据**：[[20260223-openai-swe-bench-verified-audit]]；[[20260708-openai-swe-bench-pro-audit]]；[[20250703-agentic-benchmark-checklist]]；[[20260423-openai-genebench-target-identifiability]]；[[202602-tau3-task-fixes]]；[[20250319-patchdiff-swe-bench-correctness]]；[[20260331-elt-bench-verified]]；[[20260827-agentjudgebench]]；[[20260727-acquabench-success-provenance]]
+- **边界**：这些材料仍没有在同一 task/trace 上同时随机化 reference quality、evidence visibility、verifier independence 与 success provenance；因此它们支持工程契约与机制分离，不构成三门必要/充分性的 factorial proof。
 
 ## 与现有 Topic 的关系
 

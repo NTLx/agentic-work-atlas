@@ -8,7 +8,6 @@ updated: 2026-08-13
 tags:
   - source-summary
   - agent-generated-prs
-  - contributor-governance
   - open-source-maintenance
 evidence_level: medium
 claim_type: mixed

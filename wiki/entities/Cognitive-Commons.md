@@ -12,7 +12,6 @@ evidence_level: medium
 claim_type: mixed
 tags:
   - expertise
-  - collective-action
   - human-resource-development
   - labor-market
 related_entities:

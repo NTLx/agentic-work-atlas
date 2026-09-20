@@ -4,10 +4,6 @@ title: "Explore：环境真值、执行真值与成功来源"
 date: "2026-09-07"
 tags:
   - research-log
-  - verifier
-  - reference-integrity
-  - success-provenance
-  - ex-004
 ---
 
 # Explore：环境真值、执行真值与成功来源

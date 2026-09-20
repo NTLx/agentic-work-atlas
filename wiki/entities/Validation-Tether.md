@@ -12,7 +12,6 @@ evidence_level: medium
 claim_type: mixed
 tags:
   - expertise
-  - ai-oversight
   - judgment
 related_entities:
   - "[[Internalized-Mastery]]"

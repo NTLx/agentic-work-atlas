@@ -6,7 +6,6 @@ tags:
   - research-log
   - open-explore
   - verification
-  - evidence
 ---
 
 # Explore：EX-002 证据覆盖、检查策略与证据解释 follow-up

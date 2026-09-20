@@ -14,7 +14,6 @@ tags:
   - author
   - podcast
   - product-management
-  - workforce-research
 related_entities:
   - "[[Ian-Silber]]"
 source_raw:

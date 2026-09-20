@@ -13,7 +13,6 @@ tags:
   - on-call
   - mcp
   - claude-tag
-  - product-page
 evidence_level: medium
 claim_type: mixed
 related_entities:

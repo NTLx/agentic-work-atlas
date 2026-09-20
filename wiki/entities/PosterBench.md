@@ -10,10 +10,7 @@ created: 2026-08-16
 updated: 2026-08-16
 tags:
   - benchmark
-  - multimodal-evaluation
-  - paper-to-poster
   - agent-evaluation
-  - rubric-evaluation
 evidence_level: medium
 claim_type: extracted
 related_entities:

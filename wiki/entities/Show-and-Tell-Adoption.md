@@ -11,9 +11,7 @@ created: 2026-08-20
 updated: 2026-08-20
 tags:
   - organization
-  - adoption
   - culture
-  - change-management
 evidence_level: medium
 claim_type: mixed
 related_entities:

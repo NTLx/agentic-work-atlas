@@ -3,9 +3,9 @@ type: entity
 title: Agent-First Enterprise
 aliases:
   - Agent First Enterprise
-definition: "让 AI Agent 运营流程、人类负责目标约束和例外判断的组织模式"
+definition: "一种以可执行工作流为单位部署 Agent 的组织模式：Agent 在明确目标、权限、工具、验收和停止条件内承担实质流程工作，人类保留 owner、政策、例外处理与高影响决策。"
 created: 2026-04-09
-updated: 2026-05-26
+updated: 2026-09-19
 tags:
   - AI-Agent
   - Enterprise-Architecture
@@ -20,12 +20,13 @@ related_entities:
   - '[[Organizational-Self-Awareness]]'
 source_raw:
   - '[[Enabling agent-first process redesign]]'
+  - '[[20260901-openai-ai-native-company-workflows]]'
 ---
 
 # Agent-First Enterprise
 
 > [!definition] 定义
-> Agent-First Enterprise 是一种组织模式，其中 AI 系统运营流程，而人类设定目标、定义政策约束并处理例外情况。这种模式要求企业围绕 Agent 重新设计流程，而非将 Agent 简单附加到碎片化的遗留工作流上。
+> Agent-First Enterprise 是一种以**可执行工作流**而不是“部署一个聊天机器人”为基本单元的组织模式。Agent 可以在明确目标、权限、工具、验收标准和停止条件内承担实质工作；人类仍负责 owner、政策约束、例外处理和高影响决策。核心不是让 Agent 无边界自治，而是把可重复工作重构成可委托、可观察、可验收的运行单元。
 
 ## 核心要点
 
@@ -34,26 +35,25 @@ source_raw:
 - **Agent-First 模式**: AI Agent 作为流程运营者，人类作为治理者
 
 ### 与传统自动化的区别
-- 传统自动化基于静态规则，只能处理预定义场景
-- AI Agent 可以学习、适应、动态优化流程
-- Agent 能够实时与数据、系统、人员和其他 Agent 交互
+- 传统自动化通常把流程和分支显式编码在规则或工作流引擎中；
+- Agent 工作流把部分解释、规划与工具选择交给模型，因此能处理更开放的输入，但也引入概率性和更复杂的验证需求；
+- 两者不是替代关系：高影响边界、权限、停止条件和确定性检查仍适合由传统控制机制承担。
 
 ### 实施要求
-- 机器可读的流程定义
-- 明确的政策约束
-- 结构化的数据流
+- 可触发、可执行、可验收的流程定义；
+- 明确的 owner、KPI、baseline 与 done 条件；
+- 结构化的数据、工具权限和证据来源；
+- guardrails、review points、停止/升级条件；
+- 把成功工作流沉淀为可复用 skill / workspace / operating pattern。
 
-### 预期收益
-- 非线性绩效提升（超越传统自动化的增量改进）
-- 员工转向高价值、创造性、战略性工作
-- 更快的决策速度和更强的协作
+### 价值必须通过结果验证
+Agent-first 不自动等于生产率提升。OpenAI 2026-09 的案例更支持一种收敛路径：先选 consequential value surface，定义 outcome 与责任，再用评测和人工 review 验证，最后复制经过验证的工作模式。Token 用量、Agent 数量或“自动化率”只能作为活动指标，不能替代业务结果。
 
 ## 关键数据点
 
-- AI 技术预算预计未来两年增长超过 70%
-- AI agents 可以实时与数据、系统、人员和其他 Agent 交互，自主执行整个工作流
-- 传统静态自动化只能产生增量收益，Agent-first 可产生非线性飞跃
-- 真正的风险不是 AI 不工作，而是竞争对手在重新设计运营模式时你还在试点
+- OpenAI 2026-09 的企业案例把规模化拆为：选择 value surface → 定义 outcome/owner/KPI/baseline → 写清 Agent job description → 配置权限与证据 → 建立 human review/stop points → 把已验证模式复制到下一工作面。
+- 该文引用的 Enterprise Signals 中，frontier firms 的每活跃用户 output tokens 高于 typical firms，但原文也不足以把 token volume 直接解释为 ROI 或生产率。
+- Basis、Clay、Exa 三个案例都保留了人工例外处理、review 或决策节点，说明“Agent-first”并不等于 human-out-of-the-loop。
 
 ## 前提与局限性
 

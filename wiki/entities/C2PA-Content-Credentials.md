@@ -11,8 +11,6 @@ created: 2026-08-16
 updated: 2026-08-16
 tags:
   - content-provenance
-  - file-metadata
-  - open-standard
   - ai-safety
 evidence_level: high
 claim_type: extracted

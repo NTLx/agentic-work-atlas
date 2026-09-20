@@ -11,10 +11,7 @@ created: 2026-08-19
 updated: 2026-08-19
 tags:
   - evals
-  - skill-evaluation
   - agent-skills
-  - mental-models
-  - diagnostics
 evidence_level: medium
 claim_type: mixed
 related_entities:

@@ -10,9 +10,6 @@ created: "2026-09-09"
 updated: "2026-09-09"
 tags:
   - source-summary
-  - ai-scaling
-  - pretraining
-  - data-engineering
 evidence_level: medium
 claim_type: mixed
 ---

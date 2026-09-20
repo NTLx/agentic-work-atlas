@@ -7,7 +7,6 @@ created: 2026-08-13
 updated: 2026-08-13
 tags:
   - source-summary
-  - google-research
   - factuality
   - llm-memory
   - recall

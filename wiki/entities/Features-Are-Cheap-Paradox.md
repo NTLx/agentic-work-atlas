@@ -12,8 +12,6 @@ updated: 2026-08-20
 tags:
   - product-strategy
   - agentic-engineering
-  - prioritization
-  - jevons-paradox
 evidence_level: medium
 claim_type: mixed
 related_entities:

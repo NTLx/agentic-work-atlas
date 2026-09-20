@@ -10,8 +10,6 @@ created: 2026-08-26
 updated: 2026-08-26
 tags:
   - source-summary
-  - ai-economy
-  - compute-centralization
   - labor-market
 evidence_level: medium
 claim_type: mixed

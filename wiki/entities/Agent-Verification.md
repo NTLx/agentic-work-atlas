@@ -6,7 +6,7 @@ aliases:
   - Agentic Verification
 definition: "Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境、执行操作、观察结果并判断是否通过"
 created: 2026-06-12
-updated: 2026-09-18
+updated: 2026-09-20
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -36,6 +36,7 @@ source_raw:
   - "[[20260915-intelligent-artifact-code-review-model-routing]]"
   - "[[20260915-trail-of-bits-1password-ai-patching-benchmark]]"
   - "[[20260914-anthropic-test-impact-analysis-ci]]"
+  - "[[20260916-github-copilot-runtime-rust-migration]]"
 ---
 
 > [!definition] 定义
@@ -47,6 +48,31 @@ source_raw:
 - Desktop development skill: Claude 启动本地 desktop app → 用 computer use 点击测试 UX → 测试 edge cases → 修复并重新检查
 - 验证循环示例: iOS simulator / Android simulator / desktop computer use
 - 从 Opus 4 开始实现 self-testing，到今天已成常态
+
+## 保护 Oracle：验证基线不能被同一变更者静默改写（09-20 编译新增）
+
+GitHub Copilot runtime 的 Rust 迁移给“独立验证”提供了一个生产级软件案例：迁移 Agent 可以重写实现，但旧 E2E 行为测试被当作受保护 oracle；删除或修改这些测试本身就是 red flag。测试、静态分析、Agent review 与人类架构 review 被刻意分层，而最终 merge 仍由理解系统的人类负责。
+
+这把“同一个 Agent 既写实现又写测试只证明一致性”的抽象风险落到了可执行规则：
+
+~~~text
+implementation mutation
+        ≠
+oracle mutation
+
+agent may change implementation
+        ↓
+protected behavioral oracle
+        ↓
+independent review / CI / rollout
+        ↓
+human release judgment
+~~~
+
+**判断**：验证器独立性不仅是“换一个模型评审”，还包括**让 correctness contract 在权限和所有权上独立于被修改实现**。如果 Agent 能在失败时顺手弱化测试、更新 snapshot、抬高兼容基线，就失去了 oracle。
+
+- **证据**：[[20260916-github-copilot-runtime-rust-migration]]
+- **边界**：E2E 只保护已编码的行为契约；缺失覆盖、错误 oracle 和未知外部状态仍需要真实 rollout、人工审查与其他验证层补足。
 
 ## 自动化对齐研究循环：验证研究过程（08-28 编译新增）
 

@@ -10,9 +10,7 @@ created: 2026-08-26
 updated: 2026-08-27
 tags:
   - source-summary
-  - self-improving-agent
   - agent-skills
-  - feedback-loop
   - agentic-engineering
 evidence_level: medium
 claim_type: mixed

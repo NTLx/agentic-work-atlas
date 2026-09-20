@@ -2,12 +2,16 @@
 type: topic
 title: "Pro-Worker AI 与劳动政策"
 created: 2026-07-09
-updated: 2026-07-09
+updated: 2026-09-18
+evidence_level: high
+claim_type: mixed
 tags:
   - topic
   - pro-worker-ai
   - ai-policy
   - labor-economics
+source_raw:
+  - "[[20260226-pro-worker-ai-hamilton-project]]"
 ---
 
 # Pro-Worker AI 与劳动政策
@@ -16,7 +20,7 @@ tags:
 
 本主题整合 [[Pro-Worker-AI]] 的政策维度：当市场自发方向偏向自动化和劳动替代时，哪些政策工具可以改变技术方向，使之走向新任务创建而非劳动置换？
 
-核心论点来自 Acemoglu/Autor/Johnson 三位 MIT 经济学家在 Hamilton Project 的论述：市场不是不能产生 Pro-Worker AI，而是被自动化范式锁定——商业模式、AGI 愿景和行业结构共同导致投资不足。政策干预的目标不是减缓技术，而是改变方向。
+核心论点来自 Acemoglu / Autor / Johnson 在 Hamilton Project 的公开论述。这里应区分两层：其政策工具与历史案例属于来源直接主张；“自动化范式锁定导致 Pro-Worker AI 投资不足”属于三位作者的经济学解释框架，不应被写成无争议事实。政策目标则是把技术激励从单纯替代劳动转向创造提高人类专业价值的新任务。
 
 ## 四维政策工具箱
 

@@ -11,7 +11,6 @@ tags:
   - source-summary
   - ai-psychosis
   - agentic-engineering
-  - human-judgment
 evidence_level: medium
 claim_type: mixed
 ---

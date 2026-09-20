@@ -12,7 +12,6 @@ updated: 2026-08-25
 tags:
   - source-summary
   - agentic-engineering
-  - simon-willison
   - podcast
   - verification
   - evaluation

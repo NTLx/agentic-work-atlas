@@ -10,7 +10,6 @@ tags:
   - ai-skepticism
   - labor-politics
   - software-philosophy
-  - evidence-gap
 evidence_level: medium
 claim_type: mixed
 ---

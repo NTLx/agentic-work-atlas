@@ -12,7 +12,6 @@ tags:
   - design
   - ai-era
   - openai
-  - product-philosophy
 related_entities:
   - "[[Ian-Silber]]"
   - "[[OpenAI-Design-Team]]"

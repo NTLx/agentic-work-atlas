@@ -13,7 +13,6 @@ tags:
   - verification
   - agentic-engineering
   - code-review
-  - evaluation-criteria
 evidence_level: medium
 claim_type: extracted
 related_entities:

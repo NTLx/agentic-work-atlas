@@ -10,10 +10,6 @@ created: 2026-08-27
 updated: 2026-08-27
 tags:
   - source-summary
-  - physical-world-models
-  - neural-operators
-  - weather-modeling
-  - latent-space
 evidence_level: high
 claim_type: extracted
 ---

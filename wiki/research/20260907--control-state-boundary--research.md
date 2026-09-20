@@ -5,9 +5,6 @@ date: 2026-09-07
 tags:
   - research
   - explore
-  - EX-006
-  - control-state
-  - provenance
 ---
 
 # EX-006 控制状态抵达执行边界：公开证据复核

@@ -6,9 +6,9 @@ aliases:
   - 分层 AI 来源策略
   - 分层 AI 能力采购
   - 混合 AI 部署策略
-definition: "按工作流敏感度、调用频率、成本曲线、任务分布和前沿能力需求，把 AI 能力分配给 on-prem、专门化小模型、cloud API、FDE 或内部团队的采购与部署策略"
+definition: "按任务分布、敏感度、调用频率、成本、能力需求、供应商可得性与退出约束，把 AI 工作负载分配给本地/开放模型、专门化小模型、cloud API、FDE 或内部团队的采购与部署策略。"
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-09-19
 tags:
   - AI-deployment
   - enterprise
@@ -26,6 +26,7 @@ related_entities:
 source_raw:
   - "[[The Return of the Deployment Company]]"
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
+  - "[[20260831-the-price-of-entry-to-the-frontier]]"
 ---
 
 # Layered AI Sourcing（分层 AI 来源策略）
@@ -37,10 +38,11 @@ source_raw:
 
 - 文章反对把企业 AI 决策简化成“FDE vs on-prem”，认为正确问题是：哪些能力应该本地化，哪些能力可以外部采购。
 - 推荐分层：核心、高频、高敏感应用优先 on-prem；低频但需要前沿能力的应用可用 FDE 或 cloud API；过渡期可以用 FDE 加速学习，同时建设内部能力。
-- 文章判断 2026 年开源模型、企业 GPU、本地推理框架、RAG 工具和 UI 工具已经让多数企业任务的 on-prem 门槛下降。
+- 早期来源判断 2026 年开源模型、企业 GPU、本地推理框架、RAG 工具和 UI 工具正在降低部分企业任务的 on-prem 门槛；这是一种产业判断，不应外推成“多数任务都适合本地化”。
 - 分层策略的关键资产是评测集和内部 AI operations 能力。没有可迁移评测集，企业无法比较不同模型或供应商；没有内部团队，企业无法接管。
 - DharmaOCR 案例补充了模型层的分层变量：在巴西葡萄牙语 OCR benchmark 中，专门化 3B 模型同时领先被测试的商业 API，并以约 52 倍更低的每百万页推理成本运行。
-- 因此分层采购不只是在 on-prem、cloud API 和 FDE 之间选择，也要区分通用 frontier model、开源通用模型、领域模型和业务域专门模型。
+- 因此分层采购不只是在 on-prem、cloud API 和 FDE 之间选择，也要区分通用 frontier model、开放权重模型、领域模型和业务域专门模型。
+- 2026-08 的新边界是**可得性与退出权**：即使某个 frontier API 当前质量最好，也要评估地区/组织访问限制、默认供应商绑定、数据驻留、替代路径与迁移能力。
 
 ## 前提与局限性
 

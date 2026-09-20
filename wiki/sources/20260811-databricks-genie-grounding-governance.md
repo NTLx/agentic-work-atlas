@@ -7,8 +7,6 @@ created: 2026-08-13
 updated: 2026-08-13
 tags:
   - source-summary
-  - agent-governance
-  - grounding
   - enterprise-ai
   - identity
 evidence_level: low

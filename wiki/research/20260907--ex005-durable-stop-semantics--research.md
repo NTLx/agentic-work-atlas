@@ -6,8 +6,6 @@ tags:
   - research-log
   - ex-005
   - effect-lineage
-  - cancellation
-  - post-state
 ---
 
 # EX-005：耐久执行停止、取消与外部效果

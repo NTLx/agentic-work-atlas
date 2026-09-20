@@ -12,7 +12,6 @@ tags:
   - knowledge-management
   - mathematical-research
   - canonicalization
-  - slow-science
 evidence_level: high
 claim_type: extracted
 related_entities:

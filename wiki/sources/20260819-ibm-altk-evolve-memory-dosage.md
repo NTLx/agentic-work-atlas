@@ -10,7 +10,6 @@ tags:
   - agentic-memory
   - context-engineering
   - ibm-research
-  - research-methodology
 evidence_level: high
 claim_type: extracted
 ---

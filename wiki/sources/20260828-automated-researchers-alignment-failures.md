@@ -13,7 +13,6 @@ tags:
   - source-summary
   - ai-safety
   - alignment
-  - automated-researchers
 evidence_level: medium
 claim_type: mixed
 ---

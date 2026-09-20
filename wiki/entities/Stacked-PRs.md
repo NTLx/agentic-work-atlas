@@ -12,7 +12,6 @@ evidence_level: medium
 claim_type: mixed
 tags:
   - code-review
-  - git
   - agentic-engineering
 related_entities:
   - "[[Git-Fluent-Agents]]"

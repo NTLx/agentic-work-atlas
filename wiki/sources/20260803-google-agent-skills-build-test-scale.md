@@ -8,7 +8,6 @@ updated: 2026-08-13
 tags:
   - source-summary
   - agent-skills
-  - skill-governance
   - eval
 evidence_level: medium
 claim_type: mixed

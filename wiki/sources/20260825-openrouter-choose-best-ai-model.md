@@ -11,7 +11,6 @@ updated: 2026-08-26
 tags:
   - source-summary
   - model-selection
-  - cost-per-task
   - enterprise-ai
 evidence_level: medium
 claim_type: mixed

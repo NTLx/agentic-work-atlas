@@ -8,7 +8,6 @@ updated: 2026-08-22
 tags:
   - source-summary
   - claude-code
-  - ai-native-startup
   - anthropic-official
 evidence_level: high
 claim_type: extracted

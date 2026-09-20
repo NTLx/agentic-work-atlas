@@ -8,7 +8,6 @@ claim_type: mixed
 tags:
   - comparison
   - token-economics
-  - cost-vs-input
 related_entities:
   - "[[Token-Maxing]]"
   - "[[Agentic-Workflow-Token-Efficiency]]"

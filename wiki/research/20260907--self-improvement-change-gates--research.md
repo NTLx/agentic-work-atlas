@@ -6,7 +6,6 @@ tags:
   - research-log
   - self-improvement
   - agent-harness
-  - ex-007
 ---
 
 # Explore：自我改进 Agent 的变更归因与晋级门

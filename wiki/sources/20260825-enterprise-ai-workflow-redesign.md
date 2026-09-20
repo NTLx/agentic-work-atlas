@@ -10,9 +10,7 @@ created: 2026-08-25
 updated: 2026-08-26
 tags:
   - source-summary
-  - workflow-redesign
   - ai-adoption
-  - human-ai-handoff
 evidence_level: medium
 claim_type: mixed
 ---

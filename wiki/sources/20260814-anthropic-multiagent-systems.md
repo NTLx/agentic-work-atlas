@@ -11,10 +11,6 @@ created: 2026-08-14
 updated: 2026-08-25
 tags:
   - source-summary
-  - multiagent-systems
-  - multiagent-coordination
-  - agent-collusion
-  - agent-alignment
 evidence_level: high
 claim_type: extracted
 ---

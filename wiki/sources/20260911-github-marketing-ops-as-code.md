@@ -15,7 +15,6 @@ updated: "2026-09-13"
 tags:
   - source-summary
   - agentic-engineering
-  - machine-readable-processes
   - agent-harness
   - ai-ready-organization
 evidence_level: medium

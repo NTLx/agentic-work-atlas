@@ -152,6 +152,16 @@ Skill 只提供局部认知或执行方法，不拥有 Wiki 生命周期控制�
 
 ---
 
+## Python 项目级环境
+
+本仓库的 Python 工具使用项目级 `uv` 环境运行：
+
+- Python 版本由 `.python-version` 指定，项目依赖声明在 `pyproject.toml`，锁定信息在 `uv.lock`。
+- 运行仓库中的 Python 脚本统一使用 `uv run python ...`，由 `uv` 选择项目解释器并加载项目依赖；例如 `uv run python tools/wiki-lint.py --write-report`。
+- 新增或调整依赖时同步更新 `pyproject.toml` 与 `uv.lock`，保持本地与 CI 使用同一依赖集合。
+
+---
+
 ## 环节完成门：提交并推送
 
 四大环节完成后必须执行：
@@ -174,7 +184,7 @@ Skill 只提供局部认知或执行方法，不拥有 Wiki 生命周期控制�
 |------|------|
 | `compile` / `compile <文件名>` | 编译 raw（按当前认知缺口动态选择能力） |
 | `lint` | `uv run python tools/wiki-lint.py --fix-index --write-report` |
-| `audit-entities` | `python3 tools/entity-audit.py --write-report` |
+| `audit-entities` | `uv run python tools/entity-audit.py --write-report` |
 | `audit-skills` | `uv run python tools/skill-audit.py`（只读供应链与安装状态审计） |
 | `fix-lint` | 按 lint 报告逐项修复 |
 | `recompile` | 按 `tools/daily-thinking-agent-prompt.md` 检查一个队列 Claim |

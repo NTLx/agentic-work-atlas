@@ -11,7 +11,6 @@ tags:
   - source-summary
   - agent-security
   - zero-trust
-  - runtime-governance
   - agentic-engineering
 evidence_level: medium
 claim_type: mixed

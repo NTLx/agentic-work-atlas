@@ -8,9 +8,7 @@ updated: 2026-08-21
 tags:
   - source-summary
   - token-economics
-  - valley101
   - agent-infra
-  - singularity
 evidence_level: medium
 claim_type: mixed
 ---

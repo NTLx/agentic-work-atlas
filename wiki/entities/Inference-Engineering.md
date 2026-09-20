@@ -9,7 +9,6 @@ created: 2026-08-13
 updated: 2026-08-13
 tags:
   - ai-infra
-  - inference
 related_entities:
   - "[[Token-Supply-Chain]]"
   - "[[Generation-Verification-Asymmetry]]"

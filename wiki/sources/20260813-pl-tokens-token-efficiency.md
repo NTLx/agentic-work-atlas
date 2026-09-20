@@ -11,7 +11,6 @@ created: 2026-08-13
 updated: 2026-08-25
 tags:
   - source-summary
-  - dan-luu
   - token-efficiency
   - evals
   - coding-agents

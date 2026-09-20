@@ -20,7 +20,6 @@ updated: 2026-08-31
 tags:
   - source-summary
   - lennys-podcast
-  - persistent-ai-coworker
   - product-management
   - knowledge-work
 evidence_level: medium

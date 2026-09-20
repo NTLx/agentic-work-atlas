@@ -10,8 +10,6 @@ created: 2026-08-26
 updated: 2026-08-26
 tags:
   - source-summary
-  - agent-lifecycle
-  - context-rot
   - agent-security
 evidence_level: medium
 claim_type: mixed

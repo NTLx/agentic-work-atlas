@@ -11,8 +11,6 @@ updated: 2026-08-20
 tags:
   - content-quality
   - software-engineering
-  - slopocalypse
-  - metrics-anti-pattern
 evidence_level: medium
 claim_type: extracted
 related_entities:

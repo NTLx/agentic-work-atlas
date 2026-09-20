@@ -14,8 +14,6 @@ updated: "2026-08-19"
 tags:
   - entity
   - software-engineering
-  - classic
-  - communication-overhead
 related_entities:
   - "[[Horn]]"
   - "[[Harness-Engineering]]"

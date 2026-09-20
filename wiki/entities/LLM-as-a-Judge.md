@@ -6,9 +6,9 @@ aliases:
   - LLM 裁判
   - LLM 评审
   - 同质性监督失效
-definition: "使用 LLM 评估另一个系统（通常是另一个 AI）输出质量的方法论——裁判根据预定义 rubric 对生成内容进行打分、排名或分类；当裁判与被裁判对象共享价值观基底（同源训练/同 Constitution）时，监督会系统性失效"
+definition: "使用 LLM 评估另一个系统输出的方法论；其可靠性取决于 rubric、证据与验证器错误结构。多模型或跨家族面板可以降低部分误差，但名义多样性不等于统计独立，某些任务仍存在 shared-error floor。"
 created: 2026-06-26
-updated: 2026-07-30
+updated: 2026-09-19
 tags:
   - ai-evaluation
   - methodology
@@ -28,6 +28,8 @@ source_raw:
   - "[[20260713-agentic-misalignment-summer-2026]]"
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
   - "[[20260819-google-ai-evals-inspect-skill]]"
+  - "[[20260528-apple-nine-judges-two-effective-votes]]"
+  - "[[20260711-llms-as-a-jury-shared-error-floor]]"
 ---
 
 # LLM-as-a-Judge
@@ -176,3 +178,74 @@ judge 故意误标保护 refusal，与 agent 给训练注入零向量，形式�
 - [[Agent-Observability]] — 同质性监督失效是有穷性约束在监督域的投射，与 Observability 五重"理解"的校准硬墙（Ashby）同源
 - [[Recursive-Self-Improvement]] — AI 监督 AI 是 RSI 的监督回路；当 judge 与 agent 同源，RSI 的验证链路被同质性失效侵蚀
 - [[Agent-Verification]] — 同质性失效是 verification 的形式上限在"监督者与被监督者同源"特例下的显现
+
+## CR-003 实证校正：相关错误，不是“跨家族也必然失效”
+
+2026-09-19 对 [[20260528-apple-nine-judges-two-effective-votes]] 与 [[20260711-llms-as-a-jury-shared-error-floor]] 的正式编译，对本页此前“同质性监督失效”的强表述增加了两个重要约束。
+
+### 1. 名义异构不等于统计独立
+
+Apple 的 9-judge / 7-family 面板只有约 2.18 个有效独立投票。实际 panel accuracy 比独立投票理想基线低 8–22 个百分点，而更复杂的 aggregation 最多只弥合很小一部分缺口。
+
+因此工程上不能再使用：
+
+~~~text
+different model names / families
+        ⇒
+independent verifier signals
+~~~
+
+更准确的是：
+
+~~~text
+nominal diversity
+  → measure error covariance
+  → estimate effective independent votes
+  → decide whether ensemble adds information
+~~~
+
+**跨家族仍然有价值，但独立性必须实测。**
+
+### 2. shared-error floor 是条件量，不是普遍正下界
+
+[[20260711-llms-as-a-jury-shared-error-floor]] 给出更直接的反例：
+
+- AIME-2024 / AIME-2025 的经验 shared-error floor 为 0；
+- MATH-500 为 0.004；
+- GPQA 为 0.030；
+- MMLU-Pro 为 0.143。
+
+这说明“即使跨模型也存在不可消除的正共模误差下界”的强版本并不成立。更稳定的表述是：
+
+> **在特定 task × answer space × panel composition × evidence condition 下，agreement-based verifier 可能存在可测的 shared-error floor；其大小由错误相关结构决定。**
+
+数学任务中错误答案更分散，floor 可以接近零；科学、多选等任务中多个模型可能落入同一个 plausible wrong attractor，floor 明显上升。
+
+### 3. “同源激励/共压”仍是 synthesized 假设
+
+本页此前“失效根=共压，非同质”“三墙合一”等内容可以继续保留为理论/解释框架，但不能再与 CR-003 的实证结果混写成已证明结论。
+
+当前一手证据直接支持的是：
+
+- error correlation；
+- effective sample size；
+- shared wrong attractor；
+- task/panel-conditioned floor；
+- model-family diversity 不足以保证 independence。
+
+它**没有直接测量**组织激励共压、Constitution 同源或所有监督者的递归自指极限。
+
+### 4. 对工程实践的稳定改写
+
+LLM jury 的设计目标不应是“尽可能多模型”，而是：
+
+1. 测 panel 的 pairwise / item-level error correlation；
+2. 估计 effective independent votes；
+3. 在不同任务域分别测 shared-error floor；
+4. 对高 floor 的任务引入不同类型的 verifier——如 executable checker、environment oracle、external evidence 或 human adjudication；
+5. 不把 consensus 当成 truth provenance。
+
+这与 [[Verifiable-Agent-Engineering]] 的三门模型一致：**verifier independence 只能解决错误相关性的一部分，不能替代 evidence completeness 或 reference/environment truth。**
+
+- **证据**：[[20260528-apple-nine-judges-two-effective-votes]]；[[20260711-llms-as-a-jury-shared-error-floor]]；[[20260408-arxiv-2604.07650-llm-judge-behavioral-entanglement]]
+- **边界**：当前两项研究主要是静态 judgement / reasoning selection。它们没有证明 live Agent、外部工具 checker、人类 adjudicator 或 provider-authoritative post-state 也受到同一个数值 floor。

@@ -10,8 +10,6 @@ created: 2026-08-26
 updated: 2026-08-26
 tags:
   - source-summary
-  - llm-recommender
-  - geo-pollution
   - trust-boundary
   - verification
 evidence_level: high
