@@ -4,7 +4,8 @@ title: "Migrating the GitHub Copilot runtime to Rust, using Copilot"
 canonical_url: "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/"
 raw_state: index
 original_raw_file: "20260916-github-copilot-runtime-rust-migration.md"
-indexed_at: "2026-09-20T10:26:00+08:00"
+original_body_sha256: "f57c0f63ecf4fb9497b9a1314150e232c8e79fd50ec9e6610978d64ad72f5ea7"
+indexed_at: "2026-09-20T11:14:02+08:00"
 created: "2026-09-20"
 updated: "2026-09-20"
 tags:
@@ -20,7 +21,7 @@ claim_type: mixed
 
 > GitHub 官方工程复盘，Stephen Toub，2026-09-16。它记录 Copilot agent runtime 从 TypeScript/Node.js 迁移到 Rust 的真实生产项目：128 个迁移 PR、约 83.2 万行生产 Rust，并把 Agent 使用、验证、成本与回归一并量化。证据是一手工程记录，但仍是单项目、单团队的自报案例，不能直接外推为一般软件工程生产率。
 
-> 生命周期说明：canonical source 可稳定恢复；本次运行环境只有 ServerFS 文件接口，没有服务器 shell/下载能力，因此没有伪造 raw 正文哈希。Registry 的 body_sha256 与最终 lifecycle gate 需由可执行服务器命令的上下文补齐。
+> 生命周期说明：canonical source 可稳定恢复；Raw 已按 index 结算——捕获正文哈希以 original_body_sha256 记录于本页与 Registry，工作树不保留原文。
 
 ## 编译摘要
 

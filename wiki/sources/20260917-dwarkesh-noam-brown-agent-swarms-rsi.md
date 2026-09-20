@@ -4,13 +4,13 @@ title: "Noam Brown – Agent swarms, alignment, & recursive self-improvement"
 canonical_url: "https://www.dwarkesh.com/p/noam-brown"
 raw_state: index
 original_raw_file: "20260917-dwarkesh-noam-brown-agent-swarms-rsi.md"
-indexed_at: "2026-09-20T10:26:00+08:00"
+original_body_sha256: "68a23fc39fa0ac04eade792aa5b747b83d1d0cd15b59860f84c991e1c2f53791"
+indexed_at: "2026-09-20T11:14:02+08:00"
 created: "2026-09-20"
 updated: "2026-09-20"
 tags:
   - source-summary
   - multi-agent
-  - recursive-self-improvement
   - alignment
 evidence_level: medium
 claim_type: mixed
@@ -20,7 +20,7 @@ claim_type: mixed
 
 > Dwarkesh Patel 对 OpenAI 研究员 Noam Brown 的访谈，2026-09-17。访谈同时覆盖大规模 multi-agent、数学能力、RSI、Hugging Face 事件与 alignment evaluation。它是一手参与者陈述，但包含未发布系统、内部判断和前瞻观点，因此事实与推断必须分开使用。
 
-> 生命周期说明：canonical transcript 可稳定恢复；当前 ServerFS connector 没有服务器下载/命令执行能力，因此没有伪造 raw body hash。Registry 的 body_sha256 与最终 lifecycle gate 需由可执行服务器命令的上下文补齐。
+> 生命周期说明：canonical transcript 可稳定恢复；Raw 已按 index 结算——捕获正文哈希以 original_body_sha256 记录于本页与 Registry，工作树不保留原文。
 
 ## 编译摘要
 

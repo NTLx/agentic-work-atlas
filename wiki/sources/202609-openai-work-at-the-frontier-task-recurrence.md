@@ -4,13 +4,13 @@ title: "Work at the Frontier: How workers are unlocking new ways of working"
 canonical_url: "https://cdn.openai.com/pdf/work-at-the-frontier-report-202609.pdf"
 raw_state: index
 original_raw_file: "202609-openai-work-at-the-frontier-task-recurrence.pdf"
-indexed_at: "2026-09-20T10:26:00+08:00"
+original_body_sha256: "5f6730510fa9361a39143e5d1277f8c08e0796470c89d42d1f6652f1f3e807f4"
+indexed_at: "2026-09-20T11:14:02+08:00"
 created: "2026-09-20"
 updated: "2026-09-20"
 tags:
   - source-summary
   - ai-labor
-  - task-crossover
   - organization
 evidence_level: medium
 claim_type: mixed
@@ -20,7 +20,7 @@ claim_type: mixed
 
 > OpenAI Economic Research（Alex Martin Richmond、Caroline Chin，2026-09）。这是 2026-07 [[20260727-openai-work-at-the-frontier|首份 Work at the Frontier]] 的纵向续篇：第一篇问“人是否开始跨职业边界做任务”，本篇问“这些跨界尝试如何完成、会不会继续成为日常工作”。
 
-> 生命周期说明：canonical PDF 可稳定恢复；当前 ServerFS connector 不能在服务器下载二进制 PDF，因此未伪造 raw PDF 哈希。Registry 的 body_sha256 与最终 lifecycle gate 需由可执行服务器命令的上下文补齐。
+> 生命周期说明：canonical PDF 可稳定恢复；Raw 已按 index 结算——PDF 字节哈希以 original_body_sha256 记录于本页与 Registry，工作树不保留原文。
 
 ## 编译摘要
 

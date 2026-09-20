@@ -4,14 +4,14 @@ title: "Our framework for reporting model misalignment"
 canonical_url: "https://openai.com/index/model-misalignment-reporting-framework/"
 raw_state: index
 original_raw_file: "20260916-openai-model-misalignment-reporting-framework.md"
-indexed_at: "2026-09-20T10:26:00+08:00"
+original_body_sha256: "f06b773db67b24ac2d0c254fda0e17611a054d27d35a8fe4c2ca3b0064e829c3"
+indexed_at: "2026-09-20T11:14:02+08:00"
 created: "2026-09-20"
 updated: "2026-09-20"
 tags:
   - source-summary
   - ai-safety
   - alignment
-  - incident-reporting
 evidence_level: medium
 claim_type: mixed
 ---
@@ -20,7 +20,7 @@ claim_type: mixed
 
 > OpenAI 官方发布，2026-09-16。该页面把此前较零散的 model misalignment 披露改成一个显式的“发现 → 技术调查 → 分流 → 披露/升级”流程，并同时发布六个过去半年内的具体案例。它是组织流程的一手规范来源，但由被审计组织自行定义与执行，不能等同于独立监督。
 
-> 生命周期说明：canonical source 可稳定恢复；当前 ServerFS connector 没有服务器下载/命令执行能力，因此没有伪造 raw body hash。Registry 的 body_sha256 与最终 lifecycle gate 需由可执行服务器命令的上下文补齐。
+> 生命周期说明：canonical source 可稳定恢复；Raw 已按 index 结算——捕获正文哈希以 original_body_sha256 记录于本页与 Registry，工作树不保留原文。
 
 ## 编译摘要
 
