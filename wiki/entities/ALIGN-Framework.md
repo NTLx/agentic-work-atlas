@@ -9,7 +9,9 @@ aliases:
   - ALIGN-generated interface
 definition: "清华 NLP (THUNLP-MT) 提出的自动生成 agent-environment 对齐接口的框架。由 Analyzer（从失败轨迹诊断错位）与 Optimizer（合成 Python 函数形式的接口）迭代协作，输出 INFERRULES（前置暴露静态规则）+ WRAPSTEP（动态增强观察）两个模块的 Python wrapper，**不改 agent 逻辑或环境代码**。在 4 个 benchmark（ALFWorld / ScienceWorld / WebShop / M3ToolEval）上一致提升 6-46%，接口 plug-and-play 跨 5 种 agent 架构和多种 LLM backbone。"
 created: 2026-08-01
-updated: 2026-08-01
+updated: 2026-09-20
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - harness
@@ -149,7 +151,7 @@ Optimizer 生成新接口 Φ^{(i)}
 | Llama3.1-8B-Instruct | +5.97 | +10.27 | +0.33 | +0.83 |
 | Llama3.3-70B-Instruct | +5.82 | +3.99 | +5.68 | +1.67 |
 
-**结论**：ALIGN 捕获的是**真实的环境约束**，不是针对特定 agent 的过拟合。
+**证据边界**：这些结果支持 ALIGN 生成接口在论文测试范围内可跨若干 agent 架构与 LLM backbone 复用；它降低了“只对单一 agent 过拟合”的解释可能性，但不能证明跨任意环境/模态都捕获同一类真实约束。
 
 ## 组件消融（Table 4）
 

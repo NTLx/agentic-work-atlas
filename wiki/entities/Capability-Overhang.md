@@ -5,9 +5,11 @@ aliases:
   - Capability Overhang
   - capability overhang
   - Capability overhang
-definition: "OpenAI 设计团队观察到的现象——模型能力远超大多数用户的实际使用，多数人只用到模型能力的一小部分（vast majority getting a sliver of the true value）；为这一 overhang 设计意味着默认体验要极简，把 cutting edge 留给 care 的用户"
+definition: "Ian Silber 在 OpenAI 设计语境中提出的产品观察：模型可提供的能力远超许多用户实际使用的范围；由此产生的分层默认体验与能力暴露策略，是访谈中的方法论主张，不是跨产品使用率定律"
 created: "2026-08-17"
 updated: "2026-08-17"
+evidence_level: medium
+claim_type: mixed
 tags:
   - design
   - ai-era
@@ -24,7 +26,10 @@ source_raw:
 # Capability Overhang（能力悬垂）
 
 > [!definition] 定义
-> **Capability Overhang** 是 OpenAI Head of Design Ian Silber 描述的产品现象——AI 模型的实际能力远超典型用户的实际使用，多数人只用到模型能力的一小部分（a sliver of the true value）。产品设计需要承认这个 overhang：默认体验保持极简，把 cutting edge 留给"care"的用户；让 capability 增长到被自动发现，而非强迫用户面对。
+> **Capability Overhang** 是 Ian Silber 在 OpenAI 设计访谈中描述的产品现象：许多用户只使用模型可提供能力的一小部分。它支持“默认体验保持极简、把 cutting edge 分层暴露”的设计讨论，但访谈没有给出跨产品的使用率测量，因此不能把它写成普遍分布规律。
+
+> [!note] 证据身份
+> 本页只有一份 Ian Silber 访谈来源。引文与 OpenAI 产品策略属于来源事实/主张；Excel、AutoCAD、iPhone、Vibe-Coding 等是本库类比，不是该访谈独立验证的同一现象。
 
 ## 核心命题
 
@@ -48,10 +53,8 @@ source_raw:
 
 ## 跨域同构
 
-- **Excel 95% 用户只用 5% 功能** —— 同样的 capability overhang 现象
-- **AutoCAD 多数项目只用基础建模** —— 同上
-- **Vibe-Coding 中的 vibe coder** —— 用 5% 框架完成 80% 工作（[[Vibe-Coding]]）
-- **iPhone 早期 vs 后期** —— 早期能力被开发给开发者，后期能力被 distill 给大众
+- **Excel / AutoCAD / iPhone** —— 本库用于帮助理解“能力与使用之间的落差”的类比，不是本页来源提供的统一测量
+- **Vibe-Coding 中的 vibe coder** —— 可作待验证的结构类比，不等于已测得相同的能力/使用分布（[[Vibe-Coding]]）
 
 ## 与 Broad Spectrum User 的关系
 

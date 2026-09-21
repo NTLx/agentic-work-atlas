@@ -8,9 +8,11 @@ aliases:
   - 智能体环境错位
   - Agent Environment Misalignment
   - Misalignment
-definition: "LLM Agent 对动作影响的内部预期（s^expected_{t+1}）与环境的实际状态转换（s^actual_{t+1} = T(sₜ, aₜ)）之间的差异，源自隐式规则和欠规范观察从未被显式化。它不是 agent 推理失败，而是接口信号不充分的结构性瓶颈——简单改写反馈就能让 Qwen2.5-7B 在 ALFWorld 从 13.4% 升到 31.3%。"
+definition: "ALIGN 论文定义的一类 agent-environment interface failure：Agent 对动作后果的内部预期与环境实际状态转换不一致；论文在四个文本 benchmark 中显示，暴露隐式规则和增强观察可显著改善表现，但这不能排除模型推理错误等其他失败来源。"
 created: 2026-08-01
-updated: 2026-08-01
+updated: 2026-09-20
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - harness
@@ -31,7 +33,7 @@ source_raw:
 # Agent-Environment Misalignment
 
 > [!definition] 定义
-> **Agent-Environment Misalignment** 是 LLM Agent 对动作影响的"内部预期"与环境的"实际状态转换"之间的差异。它不是 agent 推理失败，而是**接口信号不充分**——环境的隐式规则（前置条件、动作顺序）和欠规范观察（"Nothing happens"）从未被显式化，导致 agent 错把"环境约束"误读为"任务已完成"或"目标不存在"。
+> **Agent-Environment Misalignment** 是 ALIGN 论文用于描述的一类接口错位：LLM Agent 对动作影响的“内部预期”与环境的“实际状态转换”不一致。论文显示，**接口信号不充分**可以独立造成大量失败；但该结果不能推出失败“不是 agent 推理问题”，两类原因可以同时存在。
 
 ## 形式化定义（Liu et al., 2025）
 
@@ -97,13 +99,13 @@ agent: concludes "task done" or "no such object"
 
 ALIGN 可以视为 **ACI 的工业化、自动化版本**——把"精心设计的接口"从人类责任转移到 LLM 自主探索。
 
-## 错位为什么是"普遍存在"的瓶颈
+## 跨四个文本 benchmark 的一致性证据
 
 论文给出三个证据：
 
 1. **跨 benchmark 一致**：ALFWorld（embodied）/ ScienceWorld（科学实验）/ WebShop（电商）/ M3ToolEval（工具使用）四个领域都观察到了 ALIGN 提升。
 2. **跨 agent 一致**：Vanilla / ReAct / Self-Consistency / Self-Refine / Planning 五种 agent 方法全部受益。
-3. **接口 plug-and-play**：用 Vanilla 生成的接口应用到其他四种 agent 上仍有效——说明错位是**真实的环境约束**，不是针对特定 agent 的过拟合。
+3. **接口 plug-and-play**：用 Vanilla 生成的接口应用到其他四种 agent 上仍有效——支持该接口效应在论文测试范围内不局限于单一 agent 方法；不能据此证明所有环境中的错位都是同一种“真实约束”。
 
 ## 关键数据点
 

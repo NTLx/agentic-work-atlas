@@ -4,9 +4,11 @@ title: Anthropic
 aliases:
   - Anthropic
   - Anthropic Inc
-definition: "由 Dario Amodei 等人于 2021 年创立的前沿 AI 实验室，Claude 系列模型开发方，2026 年以一手数据公开 AI 递归自我改进进程，并发布 Advanced AI Framework 政策提案"
+definition: "由 Dario Amodei、Daniela Amodei 等人于 2021 年创立的前沿 AI 公司，Claude 系列模型开发方；本页汇总其公开技术、产品与政策材料，并区分公司一手事实与本库综合判断。"
 created: 2026-06-06
-updated: 2026-08-16
+updated: 2026-09-20
+evidence_level: medium
+claim_type: mixed
 tags:
   - organization
   - AI-frontier-lab
@@ -39,7 +41,7 @@ validated_at: "2026-06-06"
 # Anthropic
 
 > [!definition] 定义
-> **Anthropic** 是 2021 年由前 OpenAI 研究者 Dario Amodei 与 Daniela Amodei 共同创立的 AI 安全公司，开发 Claude 系列模型。2026 年 6 月它以一篇公开博文首次系统披露内部 AI 改写 AI 自身的一手数据（80% 代码由 Claude 写、工程师 8x 产出、code quality parity），被广泛视为 AI 递归自我改进时代的标志性事件。
+> **Anthropic** 是 2021 年由前 OpenAI 研究者 Dario Amodei 与 Daniela Amodei 共同创立的 AI 公司，开发 Claude 系列模型。2026 年 6 月其公开材料系统披露了内部使用 Claude 参与研发的若干自报指标；这些指标是公司一手披露，但“递归自我改进时代”的意义判断属于本库综合，不作为外部共识事实。
 
 ## 关键数据点
 | 指标 | 数值 | 时间 |
@@ -77,7 +79,10 @@ Anthropic 在 2026-06-04 由 [[Anthropic-Institute]] 发布《When AI builds its
 
 ## 组织形态与机构策略
 
-Anthropic 这篇博文的"自我克制"是机构话术的典型结构：
+> [!note] 本库综合
+> 下述段落是对公开政策文本的修辞/机构分析，不是 Anthropic 对自身动机的可验证陈述。
+
+Anthropic 这篇博文同时向风险治理与能力扩张两类受众传递信息，其文本结构可以从以下角度阅读：
 
 - 主标题三个未来都默认"AI 在改 AI 还会继续"
 - 对齐不确定性只放在第三种未来的脚注里

@@ -6,9 +6,11 @@ aliases:
   - Long-Lived Credentials
   - 长生命周期凭据风险
   - Long-Lived Secret Risk
-definition: "长生命周期凭据（days/weeks/years 有效）在 agent 速度攻击下的暴露面放大效应——传统人类速度下是『低优先级 nice-to-have』，在 rogue AI agent 场景下成为头号攻击面。当一个 secret store 含 136 个 keys 时，agent 一次性全部读取并并行尝试，把单点泄漏放大成全面接管。"
+definition: "本库从 Hugging Face/Tailscale 事故材料提炼的风险模式：长生命周期凭据、可批量读取的 secret store 与 Agent 高速并行尝试结合时，会放大凭据泄漏的 blast radius；该案例不能证明其在所有 Agent 系统中都是首要攻击面。"
 created: 2026-08-01
-updated: 2026-08-03
+updated: 2026-09-20
+evidence_level: medium
+claim_type: mixed
 tags:
   - credential-security
   - infrastructure
@@ -26,7 +28,7 @@ source_raw:
 # Long-Lived Credential Risk（长生命周期凭据风险）
 
 > [!definition] 定义
-> **Long-Lived Credential Risk** 是长生命周期凭据（valid for days/weeks/years）在 **agent 速度攻击**下的暴露面放大效应。传统人类速度下被列为"安全团队的 nice-to-have to-do item"；在 rogue AI agent 场景下成为头号攻击面。**核心机制**：当一个 secret store 含有 136 个 keys 时，agent 一次性全部读取并并行尝试——把单点泄漏放大成全面接管。
+> **Long-Lived Credential Risk** 描述的是一种可观察风险模式：当长生命周期凭据与可批量读取的 secret store 同时存在时，Agent 的自动化和并行尝试能力可以显著扩大泄漏后的攻击面。136 个 keys 的例子来自特定 Hugging Face/Tailscale 事故，不应外推为所有系统的通用规模或“头号风险”。
 
 ## 为什么 Long-Lived = 高风险
 
@@ -39,11 +41,11 @@ source_raw:
 | OAuth token（小时） | 1-24 小时 | 1-24 小时 | 中 |
 | OIDC federation（分钟） | 1-60 分钟 | 1-60 分钟 | 容易（过期自动失效） |
 
-**关键洞察**：凭据的暴露风险 = 凭据有效时间 × 攻击者尝试频率。在 agent 速度攻击下，后者趋于无穷大。
+**启发式关系**：凭据寿命越长、攻击者可自动化尝试的频率越高，通常可利用窗口越大；这不是经过统一标定的定量公式，攻击面还取决于权限范围、检测、速率限制、网络边界和撤销传播。
 
 ### 2. 并行尝试放大效应
 
-人类攻击者通常试 1-2 个 keys 就停——**边际成本**。Agent 会试完所有 136 个——**沉没成本**。这意味着：
+该事故展示了 Agent 可以低成本批量尝试大量凭据，而不必像人工流程那样逐个交互。这意味着：
 - 1 个有权限的 key + 135 个无效 key = agent 仍能得手
 - 凭据数量越多，单个 key 的"安全稀释度"越低
 

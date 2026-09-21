@@ -1,5 +1,122 @@
 {
   "items": {
+    "20250319-patchdiff-swe-bench-correctness.md": {
+      "body_sha256": "170107ad81853842d334aa7ff279e9d12efc4174fc3975173863c60250119836",
+      "compiled_at": "2026-09-20T23:35:00+08:00",
+      "raw_file": "20250319-patchdiff-swe-bench-correctness.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20250319-patchdiff-swe-bench-correctness.md",
+      "updated_at": "2026-09-20T23:35:00+08:00"
+    },
+    "20260331-elt-bench-verified.md": {
+      "body_sha256": "27ad0356cc18bb9ac52a7aa6ac5ae34607351023dd32faae3b9162d7c1f8768b",
+      "compiled_at": "2026-09-20T23:35:00+08:00",
+      "raw_file": "20260331-elt-bench-verified.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260331-elt-bench-verified.md",
+      "updated_at": "2026-09-20T23:35:00+08:00"
+    },
+    "20260422-security-recall-divergence.md": {
+      "body_sha256": "670c3390a5f517a1c546f4d7bc9f896cbaf4e5f7354e1037b08f97389fbfce1a",
+      "compiled_at": "2026-09-20T15:26:00+08:00",
+      "raw_file": "20260422-security-recall-divergence.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260422-security-recall-divergence.md",
+      "updated_at": "2026-09-20T15:26:00+08:00"
+    },
+    "20260514-sleeper-memory-poisoning.md": {
+      "body_sha256": "3a7787baecfdd9d0dc5a3049ae412b6fbc1665c9d066df628978e23a4dffe442",
+      "compiled_at": "2026-09-20T15:26:00+08:00",
+      "raw_file": "20260514-sleeper-memory-poisoning.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260514-sleeper-memory-poisoning.md",
+      "updated_at": "2026-09-20T15:26:00+08:00"
+    },
+    "20260327-azure-sre-agent-audit-mitigation-metrics.md": {
+      "body_sha256": "7afb6a042e2c04a9c47e4ed7bd1196e7b0114020ca2c528345c9bbed3ea6221f",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260327-azure-sre-agent-audit-mitigation-metrics.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260327-azure-sre-agent-audit-mitigation-metrics.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
+    },
+    "20260920-google-iam-access-change-propagation.md": {
+      "body_sha256": "8b7f893eb5e30c8aa9fa21d74c7500e7a3c78affb1357193135bbd453f125e59",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260920-google-iam-access-change-propagation.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260920-google-iam-access-change-propagation.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
+    },
+    "20260619-microsoft-entra-emergency-access-revocation.md": {
+      "body_sha256": "1ab6ecc43d7d186c68330d4dd0d42cd98a2a5c77eb4d3ba906119bd5bb218fa5",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260619-microsoft-entra-emergency-access-revocation.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260619-microsoft-entra-emergency-access-revocation.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
+    },
+    "20260611-github-may-2026-recovery-cache-propagation.md": {
+      "body_sha256": "dc21cc89ec372f526760a5532c9698a70a46de4abb0b6f9d40707b315c08eaeb",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260611-github-may-2026-recovery-cache-propagation.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260611-github-may-2026-recovery-cache-propagation.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
+    },
+    "20260218-forge-formal-policy-enforcement.md": {
+      "body_sha256": "d84e058a5678c4e704d89daecfb371b8805b8589403b6e5d2c8701a5d9a20ab7",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260218-forge-formal-policy-enforcement.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260218-forge-formal-policy-enforcement.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
+    },
+    "20260321-oap-pre-action-authorization.md": {
+      "body_sha256": "3c89fa3cb0522fccc4ccd394713ce27026435891ecb367505815b6d6840221bf",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260321-oap-pre-action-authorization.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260321-oap-pre-action-authorization.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
+    },
+    "20260715-agent-user-permissions-interface-enforcement.md": {
+      "body_sha256": "357f585a59b1a942a051bbc2281368ef766fe7b5d4981727847c39699f565917",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260715-agent-user-permissions-interface-enforcement.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260715-agent-user-permissions-interface-enforcement.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
+    },
+    "20250319-patchdiff-swe-bench-correctness.md": {
+      "body_sha256": "170107ad81853842d334aa7ff279e9d12efc4174fc3975173863c60250119836",
+      "compiled_at": "2026-09-20T13:32:00+08:00",
+      "raw_file": "20250319-patchdiff-swe-bench-correctness.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20250319-patchdiff-swe-bench-correctness.md",
+      "updated_at": "2026-09-20T13:32:00+08:00"
+    },
+    "20260331-elt-bench-verified.md": {
+      "body_sha256": "27ad0356cc18bb9ac52a7aa6ac5ae34607351023dd32faae3b9162d7c1f8768b",
+      "compiled_at": "2026-09-20T13:32:00+08:00",
+      "raw_file": "20260331-elt-bench-verified.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260331-elt-bench-verified.md",
+      "updated_at": "2026-09-20T13:32:00+08:00"
+    },
     "(14) Jevons Paradox for Knowledge Work.md": {
       "body_sha256": "a6b800af825830f4a36a0785e1436059b170bb3a591aa80dce550e22365760b7",
       "compiled_at": "2026-07-09T13:16:19+08:00",
@@ -1185,11 +1302,13 @@
     },
     "20260630-building-headless-automation-claude-code.md": {
       "body_sha256": "2fd0036a8995f9c0bb2cd4135b5f21ff1a51e938e31bf1aee45dee9b44256d3c",
+      "canonical_url": "https://www.youtube.com/watch?v=dRsjO-88nBs",
       "compiled_at": "2026-07-09T13:16:32+08:00",
       "raw_file": "20260630-building-headless-automation-claude-code.md",
+      "raw_state": "full",
       "status": "compiled",
       "summary_path": "wiki/sources/20260630-building-headless-automation-claude-code.md",
-      "updated_at": "2026-07-09T13:16:32+08:00"
+      "updated_at": "2026-09-20T15:26:00+08:00"
     },
     "20260630-loop-engineering-andrew-ng.md": {
       "body_sha256": "a78e5c8e811b0814c906120592f1242f5105fd8892cdc9bfc1673f9486d7b9db",
@@ -2861,9 +2980,11 @@
       "body_sha256": "c32096867b2992db0defc758d46f2328e95c8fc0e4d93150c7839131f3188671",
       "compiled_at": "2026-07-09T13:16:36+08:00",
       "raw_file": "Building headless automation with Claude Code — Code w Claude.md",
+      "raw_state": "removed",
+      "retire_reason": "与 20260630-building-headless-automation-claude-code.md 为同一 YouTube URL / 同一 Code w/ Claude 演示的重复剪藏，无独特证据；保留规范化 canonical Raw/Source",
+      "retired_at": "2026-09-20T15:26:00+08:00",
       "status": "compiled",
-      "summary_path": "wiki/sources/Building headless automation with Claude Code — Code w Claude.md",
-      "updated_at": "2026-07-09T13:16:36+08:00"
+      "updated_at": "2026-09-20T15:26:00+08:00"
     },
     "Choosing to Stay Human.md": {
       "body_sha256": "86c16b59473a144155f7bdaeb0dc52f6239b5f26dee492ebb2e849db553bbb6d",
@@ -3370,6 +3491,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-20T11:14:04+08:00",
+  "updated_at": "2026-09-20T23:35:00+08:00",
   "version": 1
 }

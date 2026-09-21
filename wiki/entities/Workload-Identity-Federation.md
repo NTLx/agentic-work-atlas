@@ -7,9 +7,11 @@ aliases:
   - 工作负载身份联邦
   - OIDC Federation
   - Ambient Authority
-definition: "基于云 provider 的 ambient authority（VM/container metadata endpoint）为 workload 自动签发 short-lived OIDC tokens 的凭据方案——'no credential to leak, no way to use this credential anywhere but in CI'。代表性实现：AWS IAM Roles Anywhere / GCP Workload Identity / Azure Managed Identity / GitHub Actions OIDC。"
+definition: "利用云或 CI provider 的 workload identity 为工作负载签发短生命周期 OIDC token、再换取受限凭据的方案；在信任链、受众和工作负载隔离配置正确时，可减少长期可复制凭据的暴露。"
 created: 2026-08-01
 updated: 2026-08-01
+evidence_level: medium
+claim_type: mixed
 tags:
   - credential-security
   - infrastructure
@@ -127,10 +129,9 @@ Tailscale 收购 Border0 后，提供 `workload identity federation` 机制：
 
 ## 关键数据点
 
-- AWS IAM Roles Anywhere、GCP Workload Identity、Azure Managed Identity 是三大云标准方案
-- GitHub Actions OIDC token 自 2022 年开始支持
-- Tailscale workload identity federation 基于 Border0 收购整合
-- Hugging Face 入侵 2026 案例直接驱动 Tailscale 反思 "We should have done more"
+- AWS IAM Roles Anywhere、GCP Workload Identity、Azure Managed Identity 和 GitHub Actions OIDC 是原文列举的代表性实现，不据此断言它们构成完整的“标准方案”清单。
+- Tailscale 原文称其 workload identity federation 使用云端 ambient authority；具体 issuer、audience、签名验证和权限映射仍须按部署配置核实。
+- Hugging Face 入侵是 Tailscale 反思的案例背景；它支持“可复制长期凭据扩大暴露面”的案例判断，不证明 workload identity federation 能阻止所有同类入侵。
 
 ## 关联概念
 

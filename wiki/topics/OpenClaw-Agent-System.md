@@ -2,7 +2,7 @@
 type: topic
 title: OpenClaw Agent System
 created: 2026-04-09
-updated: 2026-06-16
+updated: 2026-09-20
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -10,6 +10,7 @@ tags:
   - AI-Agent
   - Multi-Agent-System
 related_entities:
+  - '[[OpenClaw]]'
   - '[[Agent-Orchestration]]'
   - '[[Agent-Swarm]]'
   - '[[Context-Engineering]]'

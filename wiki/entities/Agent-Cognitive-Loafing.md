@@ -7,7 +7,9 @@ aliases:
   - "多 Agent 旁观者效应"
 definition: "多 Agent 协作中单个 Agent 因群体在场而降低独立推理投入并默认他者会补位的责任稀释现象"
 created: 2026-05-23
-updated: 2026-05-26
+updated: 2026-09-20
+evidence_level: medium
+claim_type: mixed
 tags:
   - AI-Agent
   - multi-agent
@@ -45,7 +47,7 @@ source_raw:
 
 ## 在失败因果链中的位置
 
-Cognitive Loafing 是 [[Agent-Failure-Causal-Chain|Agent 失败因果链]] 的**认知层**节点——位于协调层（Invisible Orchestrator）之下、行动层（Bias-to-Action）之上。SLOTH 论文（ACL ARR 2026）通过 16,544 条执行轨迹的实证研究发现：(1) 71.1% 的成功轨迹和 83.6% 的失败轨迹包含至少一种懒惰行为；(2) 模型规模扩大后，懒惰从认知偷懒（cognitive shortcuts）向社交和执行层遗漏（social and execution-level omissions）转移——这验证了因果链中的"层间转移"机制：认知条件改变后，失败形式向社交（协调）和执行（行动）层迁移。
+本库暂把 Cognitive Loafing 放在 [[Agent-Failure-Causal-Chain|Agent 失败因果链]] 的**认知层**，作为“责任稀释可能先表现为独立推理投入下降”的结构化假设。当前 source_raw 仍只有一篇二手综述，因此这个因果位置是本库综合，不是已被独立实验直接证明的层级关系。
 
 ## 治理方式
 
@@ -57,7 +59,8 @@ Cognitive Loafing 是 [[Agent-Failure-Causal-Chain|Agent 失败因果链]] 的**
 
 ## 前提与局限性
 
-- 该概念来自研究型实验和文章转述，仍需更多生产系统证据。
+- 当前直接入库证据是一篇二手综述，虽引用多项 multi-agent 研究，但原始论文尚未逐一进入本库 Evidence lifecycle；因此本页只按 medium/mixed 使用。
+- 后续曾引用 SLOTH 的 16,544 条轨迹等量化结果；该一手论文目前尚未 clip+compile，本轮不再把这些数字作为稳定证据。
 - 认知偷懒不意味着多 Agent 一定比单 Agent 差；它提示系统必须明确责任边界、独立判断要求和验证机制。
 - 仅靠增加 reviewer 或 critic 角色可能无效，因为如果所有角色都默认别人会兜底，责任仍会被稀释。
 - 过度强调个人责任也可能降低协作收益。关键不是取消群体，而是设计结构化协作。

@@ -6,6 +6,8 @@ aliases:
 definition: "为开发者提供编程接口和工具集，以便将AI能力集成到自有应用中的设计模式"
 created: 2026-06-30
 updated: 2026-06-30
+evidence_level: medium
+claim_type: mixed
 tags:
   - sdk
 related_entities:
@@ -19,13 +21,13 @@ source_raw:
 
 ## 定义
 
-为开发者提供编程接口和工具集，以便将AI能力集成到自有应用中的设计模式。包括命令行工具、结构化输出、会话管理等功能。
+为开发者提供编程接口和工具集，以便将 AI 能力集成到自有应用中的设计模式。本页的具体能力来自单一 Claude Code SDK 演示，不能当作所有 SDK 的共同规格；示例包括命令行调用、结构化输出、会话管理和权限提示。
 
 ## 关键数据点
 
-- Claude Code SDK支持Python和TypeScript绑定
-- 提供结构化输出（JSON和流式JSON）模式
-- 支持会话状态恢复和权限提示工具
+- Claude Code SDK 演示支持 Python 和 TypeScript 绑定。
+- 演示提供结构化输出（JSON 和流式 JSON）模式。
+- 演示支持会话状态恢复和权限提示工具；权限范围仍需由集成方配置和审查。
 
 ## 前提与局限性
 

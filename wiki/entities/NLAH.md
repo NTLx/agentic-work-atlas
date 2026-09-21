@@ -8,6 +8,8 @@ aliases:
 definition: "将 Agent 驾驭策略从代码中外置为可执行的自然语言文档，由智能驾驭运行时（IHR）解释执行，使驾驭模式可检视、可移植、可消融"
 created: 2026-06-13
 updated: 2026-06-13
+evidence_level: medium
+claim_type: extracted
 tags:
   - agent-harness
   - research

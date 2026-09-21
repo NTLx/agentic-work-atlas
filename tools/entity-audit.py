@@ -78,6 +78,9 @@ class Entity:
     reasons: list[str]
     score: int
     bucket: str
+    evidence_level: str = ""
+    claim_type: str = ""
+    identity_page: bool = False
 
 
 @dataclass(frozen=True)
@@ -259,6 +262,27 @@ def classify(data: dict, body_len: int, graph_in: int, topic_in: int, comparison
     return score, bucket, reasons
 
 
+def is_identity_page(data: dict) -> bool:
+    """Return whether provenance is supplied by actor identity metadata.
+
+    Person/author pages retain the established identity exception. For named
+    non-person actors, require both validation fields and an actor tag, and do
+    not exempt a page that already makes an explicit evidence/claim-type
+    declaration; that keeps substantive organization pages auditable.
+    """
+    tags = {str(tag).lower() for tag in as_list(data.get("tags"))}
+    if tags & {"person", "author"}:
+        return True
+    actor_tags = {"organization", "company", "project", "product", "tool"}
+    has_validation = bool(data.get("validated_source")) and bool(data.get("validated_at"))
+    has_provenance = bool(data.get("evidence_level")) or bool(data.get("claim_type"))
+    return has_validation and bool(tags & actor_tags) and not has_provenance
+
+
+def is_identity_row(row: Entity) -> bool:
+    return row.identity_page or bool({tag.lower() for tag in row.tags} & {"person", "author"})
+
+
 def audit_entities() -> list[Entity]:
     paths = sorted(ENTITY_DIR.glob("*.md"))
     stems = {p.stem for p in paths}
@@ -294,6 +318,9 @@ def audit_entities() -> list[Entity]:
                 reasons=reasons,
                 score=score,
                 bucket=bucket,
+                evidence_level=str(data.get("evidence_level") or ""),
+                claim_type=str(data.get("claim_type") or ""),
+                identity_page=is_identity_page(data),
             )
         )
     return rows
@@ -325,6 +352,57 @@ def render_report(rows: list[Entity]) -> str:
     ]
     for bucket in ("keep", "keep-actor", "strengthen", "review", "merge-or-demote"):
         lines.append(f"| {BUCKET_LABELS[bucket]} | {len(buckets[bucket])} | {BUCKET_MEANINGS[bucket]} |")
+
+    lines.extend(
+        [
+            "",
+            "## 增强队列",
+            "",
+            "这些页面已具备留存价值，但仍需要补来源、Topic/Comparison 承载或图谱连接；优先处理可由现有证据直接补齐的条目。",
+            "",
+            "| Entity | 分数 | 来源数 | 图谱入链 | Topic 入链 | Comparison 入链 | 原因 |",
+            "|--------|-------|---------|----------|----------|---------------|--------|",
+        ]
+    )
+    for row in sorted(buckets["strengthen"], key=lambda r: (r.score, r.stem)):
+        lines.append(
+            f"| [[{row.stem}]] | {row.score} | {row.source_count} | {row.graph_in} | {row.topic_in} | {row.comparison_in} | {', '.join(row.reasons)} |"
+        )
+
+    provenance_rows: list[tuple[Entity, list[str]]] = []
+    for row in rows:
+        if is_identity_row(row):
+            continue
+        issues: list[str] = []
+        if not row.evidence_level:
+            issues.append("缺 evidence_level")
+        elif row.evidence_level not in {"high", "medium", "low"}:
+            issues.append(f"非法 evidence_level={row.evidence_level}")
+        if not row.claim_type:
+            issues.append("缺 claim_type")
+        elif row.claim_type not in {"extracted", "synthesized", "mixed"}:
+            issues.append(f"非法 claim_type={row.claim_type}")
+        if issues:
+            provenance_rows.append((row, issues))
+
+    lines.extend(
+        [
+            "",
+            "## Legacy provenance 队列",
+            "",
+            "该队列是 advisory，不改变 Entity 价值分类，也不作为 wiki-lint blocking。概念 Entity 用 evidence_level / claim_type 标记当前证据身份；已由 validated_source / validated_at 证明身份的 Person/Actor Entity 不进入本表。",
+            "",
+            "| Entity | 分数 | 来源数 | 图谱入链 | Topic 入链 | Provenance 问题 |",
+            "|--------|-------|---------|----------|----------|-----------------|",
+        ]
+    )
+    for row, issues in sorted(
+        provenance_rows,
+        key=lambda item: (-item[0].topic_in, -item[0].comparison_in, -item[0].graph_in, -item[0].score, item[0].stem),
+    ):
+        lines.append(
+            f"| [[{row.stem}]] | {row.score} | {row.source_count} | {row.graph_in} | {row.topic_in} | {', '.join(issues)} |"
+        )
 
     lines.extend(
         [
@@ -409,6 +487,18 @@ def render_summary(rows: list[Entity]) -> str:
     for bucket in ("keep", "keep-actor", "strengthen", "review", "merge-or-demote"):
         lines.append(f"{BUCKET_LABELS[bucket]}: {len(buckets[bucket])}")
     lines.append(f"疑似重复: {len(duplicates)}")
+    provenance_count = sum(
+        1
+        for row in rows
+        if not is_identity_row(row)
+        and (
+            not row.evidence_level
+            or row.evidence_level not in {"high", "medium", "low"}
+            or not row.claim_type
+            or row.claim_type not in {"extracted", "synthesized", "mixed"}
+        )
+    )
+    lines.append(f"Legacy provenance 待复核: {provenance_count}")
 
     lines.append("")
     lines.append("合并或降级候选:")

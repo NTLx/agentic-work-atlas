@@ -8,6 +8,7 @@ definition: "将 10x 工程师之间的协调成本按可自动化程度分解�
 created: 2026-07-01
 updated: 2026-07-01
 evidence_level: medium
+claim_type: mixed
 tags:
   - agentic-engineering
   - organization

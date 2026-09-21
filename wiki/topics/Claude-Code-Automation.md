@@ -2,7 +2,7 @@
 type: topic
 title: Claude Code Automation
 created: 2026-04-09
-updated: 2026-06-15
+updated: 2026-09-20
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -10,6 +10,7 @@ tags:
   - Automation
   - OpenClaw
 related_entities:
+  - '[[Headless-Automation]]'
   - '[[Agent-Orchestration]]'
   - '[[Claude-Code-CLI]]'
   - '[[OpenClaw-Agent-System]]'
@@ -59,7 +60,7 @@ source_raw:
 
 这种分工避免把业务记忆和代码细节塞进同一窗口。编排层保持高层策略，Claude Code 保持代码焦点。
 
-### 2. tmux 比一次性 headless 更适合长任务
+### 2. tmux 比一次性 [[Headless-Automation|headless]] 更适合长任务
 
 Elvis 早期用过 `claude -p` 和 `codex exec`，后来转向 tmux。理由不是 headless 不能用，而是长任务需要中途重定向：
 

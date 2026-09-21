@@ -8,7 +8,9 @@ aliases:
   - 同质性监督失效
 definition: "使用 LLM 评估另一个系统输出的方法论；其可靠性取决于 rubric、证据与验证器错误结构。多模型或跨家族面板可以降低部分误差，但名义多样性不等于统计独立，某些任务仍存在 shared-error floor。"
 created: 2026-06-26
-updated: 2026-09-19
+updated: 2026-09-20
+evidence_level: medium
+claim_type: mixed
 tags:
   - ai-evaluation
   - methodology
@@ -107,9 +109,9 @@ SimilarWeb Data Studio 案例（`[[20260729-similarweb-langsmith-agent-report-ev
 
 ---
 
-## 同质性监督失效（2026-07-16 深度思考新增）
+## 历史 synthesized 框架：同质性监督失效（2026-07-16；以下由后文 CR-003 校正）
 
-> 当 judge 与被监督 agent 共享价值观基底时，监督系统性失效——这不是偶发的 prompt 工程问题，而是 [[Agent-Observability|有穷性约束]] 在"AI 监督 AI"场景的自指投射。
+> 本节保留 2026-07-16 的理论化解释路径，其中 motivated mislabeling 等实验事实与“三墙合一 / 共压 / 无干净解”等 synthesized 判断混合。当前事实身份以本页后文 **CR-003 实证校正** 为准：错误相关与 shared-error floor 可实测，但“同源激励必然导致系统性失效”等强版本尚未被独立证明。
 
 ### 闭合失败链
 

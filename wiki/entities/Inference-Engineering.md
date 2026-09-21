@@ -6,7 +6,9 @@ aliases:
   - 推理工程
 definition: "把训练好的模型权重变成快、可靠、可负担、能规模化服务产品的工程学科——独立于训练，关注 KV cache、prefill/decode 分离、speculative decoding、量化、结构化输出等推理层优化"
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-09-21
+evidence_level: medium
+claim_type: mixed
 tags:
   - ai-infra
 related_entities:
@@ -21,8 +23,11 @@ source_raw:
 
 # Inference-Engineering（推理工程）
 
+> [!warning] 证据身份与边界
+> 直接来源是一场由 Baseten 员工参与的 Latent Space 专家对话。KV cache、prefill/decode 分离、speculative decoding、量化与结构化输出是机制性提取；“独立学科”“核心品类”及增益数字带有厂商叙事和场景依赖，不能视为已由独立基准普遍验证。
+
 > [!definition] 定义
-> 推理工程（Inference Engineering）：把训练好的权重变成快、可靠、可负担、能规模化服务产品的工程学科，独立于模型训练。来源：Philip Kiely《Inference Engineering》（Baseten，2026）。三年前几乎不存在，如今是 AI Infra 的核心品类（Baseten 以此成为 `$13B` decacorn）。
+> 推理工程（Inference Engineering）是围绕训练后模型服务化的工程问题集合：如何在具体硬件、模型和 workload 约束下改善延迟、可靠性、成本与规模化服务。来源将其叙述为独立学科和 AI Infra 核心品类，但这些是参与者的行业判断，不是本库已独立验证的市场结论。
 
 ## 核心技术栈
 
@@ -48,9 +53,9 @@ source_raw:
 
 ## 关键数据点
 
-- Baseten 以推理工程完成 `$13B` Series F，成为 AI Infra decacorn
-- GLM-5.2 实验：量化更多反而保住 benchmark 质量 + 吞吐 +20%（层间误差抵消）
-- 推理优化增益范围 20%/100%/200%，目标让前沿模型提速至 10×
+- 来源声称 Baseten 完成 `$13B` Series F；这是来源中的公司信息，不单独证明推理工程市场地位。
+- 来源描述 GLM-5.2 的单一实验：更激进量化仍保住 benchmark 质量，吞吐提升约 20%；不能外推到所有模型。
+- 来源提出 20%/100%/200% 增益与 10× 加速目标；这些数字高度依赖模型、硬件与 workload，不能当作一般性能承诺。
 
 ## 前提与局限性
 

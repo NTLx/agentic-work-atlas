@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-09-09
+updated: 2026-09-20
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -23,6 +23,7 @@ related_entities:
   - "[[Forward-Deployed-Engineer]]"
   - "[[AI-Native-Engineering-Org]]"
   - "[[Agentic-Analytics]]"
+  - "[[AI-Washing]]"
 source_raw:
   - "[[The layoffs will continue till we learn to use AI]]"
   - "[[The Knowledge Economy Is Over. Welcome to the Allocation Economy.]]"
@@ -36,6 +37,8 @@ source_raw:
   - "[[20260603-anthropic-self-service-data-analytics]]"
   - "[[20260615-normaltech-ai-hasnt-replaced-software-engineers]]"
   - "[[20260908-openai-research-acceleration-agentic-productivity]]"
+  - "[[20260529-ceo-ai-psychosis-equity-podcast]]"
+  - "[[20260601-octopus-energy-ai-customer-service]]"
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
@@ -136,6 +139,8 @@ OpenAI 的官方职位页甚至把成功标准直接写成 `production adoption`
 **反例 3：劳动收入分配问题**。Jevons 悖论说明总需求可能扩张，但不能直接推出每个岗位、每类技能或每个地区都会受益。需求扩张和劳动收入分配之间还有组织结构、市场权力、技能迁移和教育滞后等中间变量。AI 时代可能出现”总工作量增加但劳动份额下降”的情况——更多任务被执行，但执行者获得的报酬占比更低。
 
 **反例 4：管理升值但不能替代领域能力**。[[Management as AI superpower]] 指出管理能力（委托、验收、边界设定）正在升值，但没有领域知识的人也许能写出漂亮 brief，却无法判断输出中隐藏的事实错误、边界条件和执行风险。管理能力是必要条件，但不是充分条件——它必须和领域能力结合才能产生价值。
+
+**归因边界：AI 叙事不等于 AI 因果效应**。[[AI-Washing]] 提醒我们，企业把裁员、采用率或组织变化归因于 AI 时，需要把公开叙事与真实流程、产出和人力变化证据分开核验。Octopus Energy 的客服案例提供一个直接反例：较高的 AI 处理比例可以与人工检查和“不因 AI 裁员”的组织选择同时存在。因此，本 Topic 讨论的“瓶颈迁移”不能从裁员公告或 adoption 指标本身推出。
 
 ## 跨来源综合：瓶颈迁移的历史模式
 

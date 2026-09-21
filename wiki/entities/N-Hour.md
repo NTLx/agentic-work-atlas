@@ -5,9 +5,11 @@ aliases:
   - N-Hour
   - N 小时
   - N-Hour Paradigm
-definition: "补丁发布后数小时内即被 AI 构建利用代码的新网络安全现实，取代传统 N-Day 概念"
+definition: "Anthropic 一项 Mythos Preview 研究提出的风险框架：补丁发布后数小时内即可完成部分漏洞分析与利用构建；N-Hour 是对该时间尺度的命名，不是所有模型或真实攻击链的普遍替代指标"
 created: 2026-06-12
 updated: 2026-06-12
+evidence_level: medium
+claim_type: mixed
 tags:
   - cybersecurity
   - AI-capability
@@ -23,7 +25,10 @@ source_raw:
 # N-Hour
 
 > [!definition] 定义
-> Anthropic (2026) 提出的概念：随着 AI 模型能在数小时内从安全补丁构建完整利用代码，传统衡量补丁与利用之间时间差的"N-Day"术语已过时，"N-Hour"更准确描述新现实。
+> Anthropic (2026) 在 Mythos Preview 研究中提出 **N-Hour** 这一命名：部分漏洞从补丁到崩溃证明或完整利用的时间可能压缩到小时级。它是该研究对风险窗口的框架化表达，不能据此宣布 N-Day 对所有模型、漏洞或真实攻击已经失效。
+
+> [!note] 证据身份
+> 本页只有一篇 Anthropic 研究、一个受限访问模型和特定漏洞样本。下列数字主要是该研究的 extracted 结果；“补丁窗口普遍进入小时级”以及对防御体系的推论属于有限外推，真实攻击还需要侦察、投递、持久化和规避检测等环节。
 
 ## 关键数据点
 
@@ -32,7 +37,7 @@ source_raw:
 - **成本**: 平均每个利用 `$2,000`，8 个利用链总成本 `$15,700`
 - **Microsoft 评级失效**: 14/21 漏洞被评为"不太可能被利用"，Mythos Preview 破解了其中 13 个
 - **补丁窗口期**: Windows Autopatch 需 7 天覆盖 90% 设备，所有利用在自动更新前已完成
-- **对比基准**: Mandiant 2020 年分析显示 25 个漏洞中 16 个需一个月或更长时间被利用
+- **对比基准**: Source Summary 引用的 Mandiant 2020 分析显示，25 个漏洞中 16 个需一个月或更长时间被利用；这是历史对照，不是与 Mythos 样本完全同设计的实验
 
 ## 前提与局限性
 

@@ -114,3 +114,69 @@ def test_render_summary_counts_duplicate_candidates():
     summary = entity_audit.render_summary(rows)
 
     assert "疑似重复: 1" in summary
+
+
+def test_render_report_lists_strengthen_entities():
+    entity_audit = load_entity_audit()
+    row = make_entity(entity_audit, "Needs-Strengthening", "Needs Strengthening", [])
+    row.bucket = "strengthen"
+    row.score = 42
+    row.source_count = 2
+    row.graph_in = 3
+    row.topic_in = 1
+    row.comparison_in = 0
+    row.reasons = ["来源较少"]
+
+    report = entity_audit.render_report([row])
+
+    assert "## 增强队列" in report
+    assert "| [[Needs-Strengthening]] | 42 | 2 | 3 | 1 | 0 | 来源较少 |" in report
+
+
+def test_render_report_lists_legacy_provenance_gaps_but_skips_people():
+    entity_audit = load_entity_audit()
+    concept = make_entity(entity_audit, "Legacy-Concept", "Legacy Concept", [])
+    concept.score = 36
+    concept.graph_in = 7
+    concept.topic_in = 1
+
+    person = make_entity(entity_audit, "Example-Person", "Example Person", [])
+    person.tags = ["person"]
+
+    report = entity_audit.render_report([concept, person])
+
+    assert "## Legacy provenance 队列" in report
+    assert "| [[Legacy-Concept]] | 36 | 1 | 7 | 1 | 缺 evidence_level, 缺 claim_type |" in report
+    assert "[[Example-Person]]" not in report.split("## Legacy provenance 队列", 1)[1].split("## 复核队列", 1)[0]
+
+
+def test_render_report_accepts_valid_entity_provenance():
+    entity_audit = load_entity_audit()
+    row = make_entity(entity_audit, "Provenanced-Concept", "Provenanced Concept", [])
+    row.evidence_level = "medium"
+    row.claim_type = "mixed"
+
+    report = entity_audit.render_report([row])
+    provenance_section = report.split("## Legacy provenance 队列", 1)[1].split("## 复核队列", 1)[0]
+
+    assert "[[Provenanced-Concept]]" not in provenance_section
+
+
+def test_identity_page_detection_is_conservative_for_actor_entities():
+    entity_audit = load_entity_audit()
+
+    person = {"tags": ["author"], "validated_source": "https://example.com", "validated_at": "2026-01-01"}
+    organization = {
+        "tags": ["organization"],
+        "validated_source": "https://example.com/about",
+        "validated_at": "2026-01-01",
+    }
+    substantive_organization = {
+        **organization,
+        "evidence_level": "medium",
+        "claim_type": "mixed",
+    }
+
+    assert entity_audit.is_identity_page(person)
+    assert entity_audit.is_identity_page(organization)
+    assert not entity_audit.is_identity_page(substantive_organization)

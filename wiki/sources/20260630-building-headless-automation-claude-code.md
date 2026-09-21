@@ -3,6 +3,7 @@ type: source-summary
 title: "Building headless automation with Claude Code | Code w/ Claude"
 source_raw:
   - "[[20260630-building-headless-automation-claude-code]]"
+canonical_url: "https://www.youtube.com/watch?v=dRsjO-88nBs"
 created: 2026-06-30
 updated: 2026-06-30
 tags:
@@ -19,7 +20,7 @@ claim_type: extracted
 
 ### 1. 浓缩
 - **核心结论1**: Claude Code SDK 提供了一种新的编程原语，允许以无头模式访问 Claude Code 代理的能力，可以像 Unix 工具一样使用，集成到管道和 CI 中。
-  - 关键证据: SDK 支持 `claude -b` 命令行调用，可以管道输入输出，支持 JSON 结构化输出。
+  - 关键证据: 现场演示使用 `claude -p` 进行 headless 调用，可以管道输入输出，并支持 JSON 结构化输出。
 - **核心结论2**: GitHub Action 构建在 SDK 之上，能够从 GitHub issue 创建 PR、添加提交、审查代码等，无需管理基础设施。
   - 关键证据: 演示中通过评论 issue 触发 Claude 实现功能并创建 PR，使用现有 GitHub runners。
 - **核心结论3**: SDK 支持结构化输出（JSON）、会话状态恢复、权限提示工具等高级功能，为构建交互式应用提供基础。

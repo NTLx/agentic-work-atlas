@@ -7,7 +7,9 @@ aliases:
   - Do Less
 definition: "OpenAI 设计负责人 Ian Silber 提出的反直觉 AI 产品设计原则：在 AI 时代优先复用现有 system 组件、扩展已有功能，而非发明新功能或新组件；背后假设是产品快速变化 → 减少重设计风险"
 created: "2026-08-17"
-updated: "2026-08-17"
+updated: "2026-09-20"
+evidence_level: medium
+claim_type: mixed
 tags:
   - design
   - ai-era
@@ -28,6 +30,10 @@ source_raw:
 > **Just Do Less** 是 OpenAI Head of Design Ian Silber 在 AI 产品设计中的反直觉原则——面对模型快速演化、产品形态每天都在变的环境，主动克制"发明新组件/新功能"的冲动，优先复用现有 system primitives 或扩展已有功能。这与 [[Build-First-Business-Ontology]] 中"ontology 优先于 UI"的论证同构。
 
 ## 核心命题
+
+> [!note] 证据身份
+> 这是 Ian Silber 在 OpenAI 设计语境中的一手工作原则；本页对其适用范围、与其他本库概念的映射属于综合判断，不应外推为通用产品设计定律。
+
 
 ```
 如果产品每 30 天都在变：

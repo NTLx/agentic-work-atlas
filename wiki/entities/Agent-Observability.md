@@ -4,9 +4,11 @@ title: Agent-Observability
 aliases:
   - Agent 可观测性
   - AI Agent Observability
-definition: "Agent Observability = 有穷观察者（人类/制度）在开放行为空间中校准对 AI Agent 行为预期的持续能力——不等同于传统 APM observability，因为观察者耦合在被观测系统中且跨越信任域边界。"
+definition: "本库对 Agent Observability 的综合定义：持续获得足以校准 Agent 行为预期、响应风险并核对外部效果的证据能力；其中 instrumentation、behavior assurance、effect reconciliation 与 intent inference 必须分层，不等同于传统 APM trace completeness。"
 created: 2026-07-15
 updated: 2026-09-20
+evidence_level: medium
+claim_type: mixed
 tags:
   - agentic-engineering
   - observability
@@ -35,7 +37,7 @@ source_raw:
 
 # Agent Observability（Agent 可观测性）
 
-> 有穷者观测有穷者在开放行为空间中——"理解"不是消除有穷性，是在有穷性约束下最大化行动校准度。
+> 本页包含两层内容：OpenTelemetry / Google DeepMind / OpenAI 等来源提供的可观测、监控和披露事实，以及本库据此形成的“有穷观察者 / 四层 observability”综合框架。后者属于 synthesized model，不是这些来源共同证明的形式定理。
 
 ## 定义层：Observability 的三重关系
 

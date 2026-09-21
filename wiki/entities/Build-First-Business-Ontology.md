@@ -5,9 +5,11 @@ aliases:
   - Build First Business Ontology
   - Business Ontology
   - 业务本体
-definition: "在构建 AI 系统前先建立业务本体的方法论——区分 TBox（概念框架：类、关系、约束）与 ABox（事实数据：具体实例）；让推理机自动推导业务结论，避免硬编码规则"
+definition: "本库从两个同源文章系列综合出的企业 AI 建模方法：在构建 Agent 前区分 TBox（概念框架）与 ABox（事实数据），再用本体/推理机表达和检查业务语义；其工程收益取决于场景、数据质量与推理部署"
 created: "2026-08-17"
 updated: "2026-08-17"
+evidence_level: low
+claim_type: synthesized
 tags:
   - entity
   - ontology
@@ -27,7 +29,10 @@ source_raw:
 # Build First Business Ontology（先建业务本体）
 
 > [!definition] 定义
-> **Build First Business Ontology** 是在构建 AI 系统前先建立业务本体的方法论——区分 TBox（概念框架：类、关系、约束，类似数据库 schema）与 ABox（事实数据：具体实例，类似表数据）；推理机在两者结合处运行，自动推导业务结论（如"订单可加急"）。
+> **Build First Business Ontology** 是本库对两组同源文章的综合命名：在构建 Agent 前先把业务概念/约束（TBox）与具体事实（ABox）分开，再让本体工具和推理机参与语义判断。订单可加急等结果是教学示例，不是跨企业部署效果的实证。
+
+> [!warning] 证据边界
+> 五个 `source_raw` 并不代表五个独立研究：2026-04 的三篇来自同一发布方的连续系列，2026-06 的两篇来自同一作者的本体论系列。它们共同支持概念解释、工具示例和方法论主张，但没有独立企业对照来证明 Agent 准确率、成本或交付效果普遍改善。
 
 ## 核心要点（跨源综合）
 
@@ -74,7 +79,7 @@ source_raw:
 - TBox = 类层级 + 属性 + 约束（schema 维度）；ABox = 具体实例（data 维度）；推理发生在两者结合处
 - 工具链分工：RDF 适合 ABox、OWL 适合 TBox、reasoner（HermiT/Pellet）自动推导、GraphDB/Jena 适合 RDF/OWL/SPARQL、Neo4j 适合显式关系分析
 - Owlready2 示例：本体可运行时加载、注入事实、调用推理机、返回结论——业务规则从自然语言改写为可推理模型
-- 5 个一手 raw 支撑该方法论（20260420 × 3 + 20260613 × 2）
+- 5 个 raw 条目支撑该方法论，但实际是两个同源文章系列（20260420 × 3 + 20260613 × 2），不能按 5 个独立证据族计数
 
 ## 前提与局限性
 
