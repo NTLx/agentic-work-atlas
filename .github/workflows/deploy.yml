@@ -84,6 +84,7 @@ jobs:
             public/tools \
             public/.agents \
             public/.claude \
+            public/evals \
             public/wiki/research/research-logs
           do
             if [ -e "$path" ]; then

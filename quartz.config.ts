@@ -52,6 +52,7 @@ const config: QuartzConfig = {
       ".trae",
       ".ruff_cache",
       ".playwright-mcp",
+      "evals",
       "skills",
       "tools",
       "quartz-overrides",
