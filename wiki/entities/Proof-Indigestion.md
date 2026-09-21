@@ -8,7 +8,7 @@ aliases:
   - 证明消化不良
 definition: "Tao 在 ICM 2026 提出的相变概念——AI 时代从 proof scarcity（生成是瓶颈）转向 proof abundance（消化是瓶颈）；5-stage pipeline（solve/verify/communicate/digest/canonicalize）各阶段速度失配导致结果无法被 community 内化"
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-09-21
 tags:
   - knowledge-management
   - ai-capability
@@ -26,6 +26,7 @@ related_entities:
   - "[[Knowledge-Compilation]]"
 source_raw:
   - "[[20260820-arxiv-2608.16753-mathematics-ai.pdf]]"
+  - "[[20260918-terence-tao-if-math-more-than-proof]]"
 ---
 
 # Proof Indigestion（证明消化不良）
@@ -75,6 +76,15 @@ Tao 列出 pipeline 各阶段的失配症状：
 - **类比**：食物吃太多无法消化（胃胀），不是好事；结果太多无法消化（社区认知过载），也不是好事
 - **解药**：不是减少 generation，而是**增强 digestion 能力**
 
+## 从“消化”到“有动机的解释”
+
+- **判断**：Proof indigestion 的一个具体症状，不只是 proof 数量超过评审容量，还包括“技术上已证明但共同体尚未真正理解”的 exposition backlog。
+  - **证据**：Grant Sanderson 将 AI-generated proof 称为未解决的 open exposition problem，并以 Erdős Problem 1196 区分“有 proof”与后来对关键想法的解释、清理和推广（[[20260918-terence-tao-if-math-more-than-proof]]）。
+  - **边界**：这是对 proof indigestion 的工作层细化，不等于证明所有 AI proof 都缺乏解释，也不等于解释质量已经有与形式验证同等可靠的度量。
+- **判断**：消化能力需要被拆成“动机化解释”和“canonicalization”两个不同接口：前者回答“为什么这样想、为什么值得问”，后者回答“如何进入自然一般性、邻近理论和标准工具箱”。
+  - **证据**：本篇定义 motivated explanation 的范围；[[Mathematical-Canonicalization]] 已定义后续的 restate/connect/absorb 阶段。
+  - **边界**：两者在真实研究中会反复交织，不能据此假设存在严格线性流水线。
+
 ## 与相关 concept 的关系
 
 - **[[Slopocalypse]]**：Slopocalypse 是 noise flooding；Proof Indigestion 是 structure flooding——两者都是 AI 生成量超载的不同形态
@@ -115,3 +125,4 @@ Tao 列出 pipeline 各阶段的失配症状：
 - Theorem Economy Fall（forward reference，未建 entity） — shift from generation to digestion
 - Validation Pipeline（参考 wiki 中已有 [[Validation-Pipeline]]，fix link） — stage 1-2 工程化
 - [[Knowledge-Compilation]] — canonicalization 的知识生产域对应
+- [[20260918-terence-tao-if-math-more-than-proof]] — Grant Sanderson 提出 motivated explanation 与 open exposition problem
