@@ -3501,8 +3501,20 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260920-lenny-peter-sellis-product-advice.md",
       "updated_at": "2026-09-21T13:47:19+08:00"
+    },
+    "20260914-ieee-jalapeno-llm-chip-design.md": {
+      "body_sha256": "c461563d4fa68dca05800e5fa33c62cc603f9b74ac7828518ede1a20015b0b1e",
+      "canonical_url": "https://spectrum.ieee.org/llms-for-chip-design",
+      "compiled_at": "2026-09-21T17:53:46+08:00",
+      "indexed_at": "2026-09-21",
+      "raw_file": "20260914-ieee-jalapeno-llm-chip-design.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；canonical IEEE Spectrum 页面可恢复原文，Source Summary 保留关键证据定位与原始正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260914-ieee-jalapeno-llm-chip-design.md",
+      "updated_at": "2026-09-21T17:54:19+08:00"
     }
   },
-  "updated_at": "2026-09-20T23:35:00+08:00",
+  "updated_at": "2026-09-21T17:54:19+08:00",
   "version": 1
 }
