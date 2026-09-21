@@ -3489,6 +3489,18 @@
       "status": "compiled",
       "summary_path": "wiki/sources/用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
       "updated_at": "2026-07-09T13:16:44+08:00"
+    },
+    "20260920-lenny-peter-sellis-product-advice.md": {
+      "body_sha256": "cedc0c2572cd173316f84383e91c0b6fb7282d23f2612f53358a02f4b5d03710",
+      "canonical_url": "https://www.lennysnewsletter.com/p/90-minutes-of-unfiltered-product?showTranscript=true",
+      "compiled_at": "2026-09-21T13:47:19+08:00",
+      "indexed_at": "2026-09-21T13:47:19+08:00",
+      "raw_file": "20260920-lenny-peter-sellis-product-advice.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；canonical 页面与公开 showTranscript transcript 可恢复，Source Summary 保留关键时间戳、speaker map 与正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260920-lenny-peter-sellis-product-advice.md",
+      "updated_at": "2026-09-21T13:47:19+08:00"
     }
   },
   "updated_at": "2026-09-20T23:35:00+08:00",

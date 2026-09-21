@@ -6,7 +6,7 @@ aliases:
   - AI 时代的产品经理
 definition: "AI 时代 PM 从路线图对齐者转变为高速公路设计者——系统性消除从想法到用户手中的每一步摩擦"
 created: 2026-05-08
-updated: 2026-08-31
+updated: 2026-09-21
 tags:
   - product-management
   - AI-era
@@ -25,6 +25,7 @@ source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - "[[20260802-lenny-cpo-regrets-product-management-whatnot]]"
   - "[[20260830-lenny-ai-third-era-persistent-ai-coworkers]]"
+  - "[[20260920-lenny-peter-sellis-product-advice]]"
 evidence_level: medium
 claim_type: mixed
 ---
@@ -87,6 +88,14 @@ Tara Seshan 对 OpenAI 产品工作的描述，把本页的"高速公路设计"�
 
 - **证据**：[[20260830-lenny-ai-third-era-persistent-ai-coworkers]]（07:33–13:04、20:42–26:02、42:48–44:06、53:13–60:13）。
 - **边界**：这是前沿 AI 产品负责人的组织实践与自我描述；高度依赖模型快速进步、研究—产品紧耦合、数据可访问和组织允许快速试错，不能直接外推到高合规或反馈周期很长的行业。
+
+### 构建供给增加后的第二次迁移：雄心与拒绝
+
+Peter Sellis 从消费产品管理者视角补充了另一条路径：当 AI 让构建和添加功能更便宜，PM 的稀缺工作不只是设计学习回路，还包括把团队从局部最优推向足够大的目标，并对“应该删掉什么”负责。
+
+**判断**：AI 提高构建供给后，PM 的价值会同时向“提升问题雄心”和“限制无效产出”两端迁移；速度本身不是结果，取舍标准和停止能力决定速度是否转化为产品价值。
+- **证据**：Peter Sellis 认为 AI 时代 PM 要抵抗模型和团队不断向产品添加内容，并把拒绝更好想法视为品味训练（[[20260920-lenny-peter-sellis-product-advice]]，35:24–38:30）；他还将 PM 的新职责连接到把团队推离局部最优（同源，67:04–70:05）。
+- **边界**：这是单一产品领导者的经验判断，不是跨公司实证；删除与雄心必须由用户反馈、可逆性、责任边界和领域风险校准，不能简化成“少做”或“做大”。
 
 ## 关联概念
 

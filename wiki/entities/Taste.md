@@ -5,7 +5,7 @@ aliases:
   - Taste
 definition: "在不确定条件下做出独特判断的能力，表现为能注意到什么、拒绝什么，以及精确解释哪里感觉不对的能力"
 created: 2026-04-09
-updated: 2026-08-13
+updated: 2026-09-21
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -32,6 +32,7 @@ source_raw:
   - '[[Taste for Makers]]'
   - '[[If You Want Taste, You''re Gonna Have to Eat]]'
   - '[[20260810-the-playbook-for-building-high-talent]]'
+  - '[[20260920-lenny-peter-sellis-product-advice]]'
 ---
 
 # Taste（品味）
@@ -91,6 +92,14 @@ Taste 的美在于它的不可言说性。就像一个调酒师闭着眼睛知�
 - **局限**：Taste 是滞后指标，环境剧变时短期失效，需要重新校准
 - ~~**局限**：Taste 的主观感知属性使得跨文化/跨领域判别标准可能不一致~~（跨文化研究显示品味有"局部客观性"，刺激物>文化，Nature 2025）
 - **局限**：Taste 训练需要时间和大量对比经验，无法速成
+
+### 产品中的负向品味：知道什么不该加入
+
+Peter Sellis 提供了一个与“生成好方案”互补的产品例子：他把拒绝高质量想法、让产品保持未被全部填满，视为产品领导者可以练习的品味动作；Lenny 随后指出 AI 更容易添加而不是删除，因而 PM 和设计师需要主动承担删减责任（[[20260920-lenny-peter-sellis-product-advice]]，35:24–38:30）。
+
+**判断**：在 AI 使新增功能变便宜的环境里，品味的可操作表现不只是识别什么值得做，也包括证明什么不值得进入产品。
+- **证据**：[[20260920-lenny-peter-sellis-product-advice]]（35:24–37:00、36:57–38:30）。
+- **边界**：该来源是产品领导者的经验访谈；“AI 总是添加”不是已验证的模型普遍性质，删减判断仍需用户数据、产品目标与可逆性约束。
 
 ## 三重不可替代性结构（2026-06-25 思考产出）
 
