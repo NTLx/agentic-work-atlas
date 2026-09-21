@@ -2,7 +2,7 @@
 type: topic
 title: "技能退化与知识债务"
 created: 2026-07-09
-updated: 2026-09-19
+updated: 2026-09-21
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -27,6 +27,7 @@ source_raw:
   - "[[20260305-anthropic-labor-market-impacts-ai]]"
   - "[[20260812-stanford-canaries-coal-mine-ai-employment]]"
   - "[[20260624-prompting-change-denmark-ai-adoption]]"
+  - "[[20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive]]"
   - "[[20260901-nyfed-businesses-ai-transform-work-not-cut-jobs]]"
   - "[[20260414-nyfed-genai-training-access]]"
   - "[[20260201-how-ai-impacts-skill-formation]]"
@@ -41,6 +42,14 @@ source_raw:
 本主题整合认知卸载、技能退化和知识债务三个交叉概念，追踪其跨领域表现和可能的干预路径。
 
 ## 核心概念
+
+### 写作外包与认知参与的边界
+
+**判断**：[[20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive|Grunewald]] 提供了一个需要与“技能退化”区分的近端机制：AI 代写实质性文本首先可能让人跳过形成、检验和修正判断的过程；这构成认知参与减少的风险，但单篇文章不能证明长期能力已经退化。
+
+**证据**：原文〈The Writing Process Is the Thinking Process〉把从提纲到句子的过程描述为暴露论证漏洞的校准环节；〈AI Writing Is Vague and Wrong in Hard-to-Notice Ways〉则指出，通读并点头接受近似措辞，不等于主动生成时对词语和论证做同等努力的判断（[[20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive|source summary]]）。
+
+**边界**：文章没有测量学习结果、技能变化或职业表现，也承认低风险协调邮件、翻译及人工审阅的编辑可能适用。因此，本来源可支持“认知卸载的机制假设”和“保留无辅助写作练习的设计问题”，不能单独升级为技能退化的实证结论。
 
 ### 认知卸载（Cognitive Offloading）
 

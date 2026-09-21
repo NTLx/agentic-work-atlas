@@ -2,7 +2,7 @@
 type: topic
 title: AI 时代的品味与判断力
 created: 2026-04-09
-updated: 2026-06-15
+updated: 2026-09-21
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -23,6 +23,7 @@ source_raw:
   - '[[Good Taste the Only Real Moat Left]]'
   - '[[Taste for Makers]]'
   - '[[Why I Don’t Vibe Code]]'
+  - '[[20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive]]'
 ---
 
 # AI 时代的品味与判断力
@@ -109,6 +110,14 @@ AI 可以在几分钟内生成：
 ---
 
 ## 实践建议
+
+### 写作是判断力的训练场
+
+[[20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive|Grunewald 的文章]]提供了一个更窄但更硬的例子：**判断**：对实质性文本，写作不是把想法包装成句子，而是暴露证据缺口、矛盾和不愿承认的限定条件；把首稿交给 AI 可能同时外包了这项校准。
+
+**证据**：文章在〈The Writing Process Is the Thinking Process〉中引用写作过程中发现新论点、修正段落关系和承认反方的经验；在〈AI Writing Is Vague and Wrong in Hard-to-Notice Ways〉中逐项拆解模型输出的模糊与机制错位（[[20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive|source summary]]）。
+
+**边界**：这不是“所有 AI 辅助写作都损害判断”的结论。作者允许转录、分析、检索、头脑风暴、反馈、人工逐项采纳的编辑、翻译，以及主要承担协调功能的公式化短邮件；文章也承认未来模型可能足够可靠。综合判断是：是否保留人类起草，取决于写作过程是否本身承载问题定义、论证校准和责任表达。
 
 ### 品味训练循环
 

@@ -3513,8 +3513,20 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260914-ieee-jalapeno-llm-chip-design.md",
       "updated_at": "2026-09-21T17:54:19+08:00"
+    },
+    "20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive.md": {
+      "body_sha256": "8b64cba998eba7de7555262a4d8bcab272b52911c5f2ebd970ac47af0107692c",
+      "canonical_url": "https://erichgrunewald.substack.com/p/why-you-should-almost-never-use-ai",
+      "compiled_at": "2026-09-21T18:02:47+08:00",
+      "indexed_at": "2026-09-21T18:02:47+08:00",
+      "raw_file": "20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；canonical Substack 页面可恢复原文，Source Summary 保留三步编译、章节定位与原始正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive.md",
+      "updated_at": "2026-09-21T18:03:11+08:00"
     }
   },
-  "updated_at": "2026-09-21T17:54:19+08:00",
+  "updated_at": "2026-09-21T18:03:30+08:00",
   "version": 1
 }
