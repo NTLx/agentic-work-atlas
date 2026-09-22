@@ -8,7 +8,7 @@ aliases:
   - AI 改 AI
 definition: "AI 系统设计、训练或验证其下一代或同代继任者的能力；当这一回路达到某临界点，AI 进步速度由机器而非人类决定"
 created: 2026-06-06
-updated: 2026-09-20
+updated: 2026-09-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -39,6 +39,7 @@ source_raw:
   - "[[20260528-harness-updating-not-harness-benefit]]"
   - "[[20260827-rethinking-harness-evolution-evaluation]]"
   - "[[20260917-dwarkesh-noam-brown-agent-swarms-rsi]]"
+  - "[[20260922-anthropic-pace-ai-development]]"
 ---
 
 # Recursive Self-Improvement（递归自我改进）
@@ -171,6 +172,14 @@ change hash / owner
 
 - **证据**：[[20260901-harnessevolve-reference-trajectories]]；[[20260809-hsi-hierarchical-self-improvement]]；[[20260528-harness-updating-not-harness-benefit]]；[[20260827-rethinking-harness-evolution-evaluation]]
 - **边界**：上述来源主要是 benchmark / experimental self-evolution。当前仍缺生产 Agent fleet 上将 change hash、evaluator version、全部反馈查询、canary、线上行为、rollback 与 post-rollback verification 绑定到同一版本的纵向证据。
+
+## 把 RSI 速度改写成生产过程指数
+
+Anthropic 的 R&D Automation Index 为“AI 改 AI 已经进行到哪一步”提供了比代码占比更细的生产过程测量：截至 2026-08，Claude 在其测量的 AI R&D 工作中没有任何子集达到 AL5 fully autonomous，约 26% 达到 AL4 “leads”，超过 90% 达到 AL3 “collaborates”或更高。
+
+**判断**：RSI 的现实进度应同时跟踪任务结构与自动化等级，而不是只用代码生成比例或 task horizon 作为单一代理；“大量参与研发”与“自主构建继任者”之间仍存在可测量的层级差。
+- **证据**：[[20260922-anthropic-pace-ai-development]]；Anthropic 从约 15,000 个 granular R&D tasks 构造 542-node frozen task tree，并按 AL0–AL5 评级。
+- **边界**：任务篮子、权重与等级依赖内部数据和模型裁判；model-human exact agreement 为 59%，human-human 为 35%，97% 在一个等级以内。Frozen basket 也可能低估自动化后出现的新工作，因此该指数适合跟踪一套明确工作篮子的自动化，不是 RSI 的完整标量。
 
 ## 前提与局限性
 - **80% ≠ 100%** — 80% 是 commit-level 不是 deploy-level；merge 不等于 production

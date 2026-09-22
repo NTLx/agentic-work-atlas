@@ -34,6 +34,7 @@ source_raw:
   - "[[20260622-google-deepmind-ai-control-roadmap]]"
   - "[[20260916-openai-model-misalignment-reporting-framework]]"
   - "[[20260917-tessl-ai-agent-evaluation-evidence]]"
+  - "[[20260922-anthropic-pace-ai-development]]"
 ---
 
 # Agent Observability（Agent 可观测性）
@@ -265,6 +266,14 @@ Tessl 的 S3-compatible storage 实践给出了 observability 的一个直接工
 **判断**：Agent observability 的有效单位不是“日志条数”，而是能否把失败转换成可复现、可比较的 evidence packet；如果关键内部状态没有被暴露，测试面本身就受限。
 - **证据**：[[20260917-tessl-ai-agent-evaluation-evidence]]；作者明确把 trace、reproduction、management/reporting interfaces 与测试信心连接起来。
 - **边界**：trace 仍只是被 instrument 的投影；它不能自动覆盖未埋点状态，也不能替代安全、架构或语义正确性的独立判断。
+
+## 生产 Agent fleet 的监督指标
+
+Anthropic 把内部 Agent 监督拆成三个可运营指标：monitoring coverage、review latency 与 escalation rate；同时使用 persistent agent identity 和 open communication，把动作、消息与 transcript 绑定到具体 Agent。
+
+**判断**：当 Agent fleet 进入数万规模，Observability 需要同时记录“多少活动被看见、多久被处理、多少被阻断/升级”，单一 trace completeness 已不足以描述治理能力。
+- **证据**：[[20260922-anthropic-pace-ai-development]]；2026-08 其最常用 research/engineering Agent 平台任一时刻约 30,000 个 Agent，平台动作 100% 经过 online monitor 且被 offline monitor ingest；超过十亿次决策中约 0.002% 被 online monitor 阻断，offline 流程每周约 50 个最高优先级 flag 升级人工。
+- **边界**：100% 指 instrumented platform 内的覆盖，不等于 monitor recall、低 false-negative 或公司全部 Agent 活动覆盖；这些数据来自 Anthropic 自报告。
 
 ## 与已有框架的连接
 
