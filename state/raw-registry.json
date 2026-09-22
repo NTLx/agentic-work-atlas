@@ -2839,6 +2839,18 @@
       "summary_path": "wiki/sources/20260917-tessl-ai-agent-evaluation-evidence.md",
       "updated_at": "2026-09-22T17:39:11+08:00"
     },
+    "20260918-oneusefulthing-the-overhang.md": {
+      "body_sha256": "641cc29e725effa2880ed3dcdd915f5f1fb4c0656a0a5e2cfe657e06a13105f1",
+      "canonical_url": "https://www.oneusefulthing.org/p/the-overhang",
+      "compiled_at": "2026-09-22T17:00:29+08:00",
+      "indexed_at": "2026-09-22T17:39:11+08:00",
+      "raw_file": "20260918-oneusefulthing-the-overhang.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；公开 canonical URL 可恢复，Source Summary 保留关键 evidence locator 与正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260918-oneusefulthing-the-overhang.md",
+      "updated_at": "2026-09-22T17:39:11+08:00"
+    },
     "20260918-trailofbits-auditing-good-enough-ai.md": {
       "body_sha256": "d404a8d7010ae5ab760b7e5de56763632771aec557a2352d5aeccfce5c455781",
       "canonical_url": "https://blog.trailofbits.com/2026/09/18/auditing-in-the-age-of-good-enough-ai/",

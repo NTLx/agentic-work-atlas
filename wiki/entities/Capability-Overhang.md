@@ -7,7 +7,7 @@ aliases:
   - Capability overhang
 definition: "Ian Silber 在 OpenAI 设计语境中提出的产品观察：模型可提供的能力远超许多用户实际使用的范围；由此产生的分层默认体验与能力暴露策略，是访谈中的方法论主张，不是跨产品使用率定律"
 created: "2026-08-17"
-updated: "2026-08-17"
+updated: "2026-09-22"
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -21,6 +21,7 @@ related_entities:
   - "[[Just-Do-Less]]"
 source_raw:
   - "[[20260816-openai-head-of-design-best-time]]"
+  - "[[20260918-oneusefulthing-the-overhang]]"
 ---
 
 # Capability Overhang（能力悬垂）
@@ -29,7 +30,7 @@ source_raw:
 > **Capability Overhang** 是 Ian Silber 在 OpenAI 设计访谈中描述的产品现象：许多用户只使用模型可提供能力的一小部分。它支持“默认体验保持极简、把 cutting edge 分层暴露”的设计讨论，但访谈没有给出跨产品的使用率测量，因此不能把它写成普遍分布规律。
 
 > [!note] 证据身份
-> 本页只有一份 Ian Silber 访谈来源。引文与 OpenAI 产品策略属于来源事实/主张；Excel、AutoCAD、iPhone、Vibe-Coding 等是本库类比，不是该访谈独立验证的同一现象。
+> 本页现有两类独立来源：Ian Silber 从产品设计角度描述“模型能力远大于典型用户使用”，Ethan Mollick 从个人与工作采用角度描述“现有模型能力远未被实际工作吸收”。二者支持同一结构性落差，但都没有给出跨产品、跨行业的统一使用率测量。
 
 ## 核心命题
 
@@ -72,6 +73,14 @@ Capability overhang（能力远大于使用）
 - **Adaptive interface**：根据用户上下文（novice / power user）给不同 affordances
 - **Layered exposure**：desktop app / Codex / ChatGPT Work 是 cutting edge 入口
 - **Distill 方向**：overhang 最终要被 distill 到主体验，不留 mode 切换
+
+## 从产品 overhang 到工作 overhang
+
+Ethan Mollick 把 capability overhang 从界面暴露问题扩展到工作系统：模型可能已经拥有可用能力，但个人和组织缺少领域知识、跨域知识、品味或主动探索，因此潜在能力没有转化为实际生产力。
+
+**判断**：Capability Overhang 可以分成两个相关但不同的层次：**产品 overhang** 是能力没有被界面/工作流承载，**采用 overhang** 是能力已经可达但没有被人的知识与组织实践吸收。前者主要是产品设计债务，后者更接近组织学习债务。
+- **证据**：[[20260918-oneusefulthing-the-overhang]]；Mollick 以 Zork 3D、Eco library reconstruction 与 Blender/video 制作为案例，并明确提出 deep knowledge、wide knowledge、taste、agency 是把当前能力转成结果的四种杠杆。
+- **边界**：这些是作者主动探索得到的展示性案例，没有随机任务样本或典型用户采用率；因此支持 overhang 的存在与机制，不量化其总体规模。
 
 ## 前提与局限性
 

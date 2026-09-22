@@ -5,7 +5,7 @@ aliases:
   - Taste
 definition: "在不确定条件下做出独特判断的能力，表现为能注意到什么、拒绝什么，以及精确解释哪里感觉不对的能力"
 created: 2026-04-09
-updated: 2026-09-21
+updated: 2026-09-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -33,6 +33,7 @@ source_raw:
   - '[[If You Want Taste, You''re Gonna Have to Eat]]'
   - '[[20260810-the-playbook-for-building-high-talent]]'
   - '[[20260920-lenny-peter-sellis-product-advice]]'
+  - '[[20260918-oneusefulthing-the-overhang]]'
 ---
 
 # Taste（品味）
@@ -100,6 +101,14 @@ Peter Sellis 提供了一个与“生成好方案”互补的产品例子：他�
 **判断**：在 AI 使新增功能变便宜的环境里，品味的可操作表现不只是识别什么值得做，也包括证明什么不值得进入产品。
 - **证据**：[[20260920-lenny-peter-sellis-product-advice]]（35:24–37:00、36:57–38:30）。
 - **边界**：该来源是产品领导者的经验访谈；“AI 总是添加”不是已验证的模型普遍性质，删减判断仍需用户数据、产品目标与可逆性约束。
+
+### 生成供给过剩后的选择函数
+
+Ethan Mollick 从 capability overhang 的工作实践给 Taste 补了一个更直接的操作定义：当生成速度和数量不再稀缺，人类价值从“多生成一个候选”迁移到保留、拒绝、要求重做，以及把已有输出重新组合成模型不会主动生成的方向。
+
+**判断**：在生成供给充足的场景中，Taste 更接近一个持续的**选择函数**，而不是作品末端的审美评价；它决定哪些候选获得后续资源、哪些被丢弃，以及何时要求探索另一条路径。
+- **证据**：[[20260918-oneusefulthing-the-overhang]]；Mollick 在视频制作案例中拒绝第一版 joke、要求更 cinematic 的版本，并明确将 Taste 描述为“知道哪些 AI outputs 保留、丢弃或作为新作品原料”。
+- **边界**：这是作者的工作框架与个人案例，不证明 Taste 永久属于人类，也没有证明这种选择机制在所有任务上都优于模型自选；其价值仍依赖领域知识、目标和真实反馈。
 
 ## 三重不可替代性结构（2026-06-25 思考产出）
 
