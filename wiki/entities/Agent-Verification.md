@@ -6,7 +6,7 @@ aliases:
   - Agentic Verification
 definition: "Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境、执行操作、观察结果并判断是否通过"
 created: 2026-06-12
-updated: 2026-09-20
+updated: 2026-09-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -37,6 +37,7 @@ source_raw:
   - "[[20260915-trail-of-bits-1password-ai-patching-benchmark]]"
   - "[[20260914-anthropic-test-impact-analysis-ci]]"
   - "[[20260916-github-copilot-runtime-rust-migration]]"
+  - "[[20260918-trailofbits-auditing-good-enough-ai]]"
 ---
 
 > [!definition] 定义
@@ -136,6 +137,14 @@ Lean kernel soundness bug #14576 事后分析（[[20260801-lean-kernel-soundness
 
 - **证据**：[[20260915-trail-of-bits-1password-ai-patching-benchmark]]、[[20260914-anthropic-test-impact-analysis-ci]]、[[20260915-intelligent-artifact-code-review-model-routing]]。
 - **边界**：Trail of Bits 数据来自项目方复盘；Anthropic 数据来自内部工程实践；Intelligent Artifact 使用厂商基准，均不能替代跨项目、独立复现。
+
+## Agent 构建 verifier：把“够用的生成”关进独立验证轨道
+
+Trail of Bits 的 Miden 审计把 Agent Verification 往前推进了一层：Agent 不只接受 verifier 检查，也可以帮助构建 LSP、decompiler、静态分析器和 Lean 模型，把原本隐式、难审计的语义转换成可执行的验证对象。
+
+**判断**：Agent 构建 verifier 可以扩大可验证边界，但前提是 correctness contract 最终由独立于生成器的确定性语义、回归 oracle 或 proof kernel 承担；“Agent 写了验证器且验证器通过”本身仍不足以自证正确。
+- **证据**：[[20260918-trailofbits-auditing-good-enough-ai]]；decompiler 用随机 procedure 做回归，静态分析基于中间表示与抽象解释，Lean kernel 检查 Agent 生成的 95 个 correctness proofs。
+- **边界**：这是 Miden zkVM 的单一高保证案例；Agent 生成的分析器、翻译器与 theorem statement 仍需人工或独立机制审查，不能把 proof kernel 的可靠性外推到整个工具链。
 
 ## 关联概念
 

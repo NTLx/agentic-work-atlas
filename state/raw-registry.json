@@ -2827,6 +2827,18 @@
       "summary_path": "wiki/sources/20260917-dwarkesh-noam-brown-agent-swarms-rsi.md",
       "updated_at": "2026-09-20T11:14:04+08:00"
     },
+    "20260918-trailofbits-auditing-good-enough-ai.md": {
+      "body_sha256": "d404a8d7010ae5ab760b7e5de56763632771aec557a2352d5aeccfce5c455781",
+      "canonical_url": "https://blog.trailofbits.com/2026/09/18/auditing-in-the-age-of-good-enough-ai/",
+      "compiled_at": "2026-09-22T17:00:29+08:00",
+      "indexed_at": "2026-09-22T17:39:11+08:00",
+      "raw_file": "20260918-trailofbits-auditing-good-enough-ai.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；公开 canonical URL 可恢复，Source Summary 保留关键 evidence locator 与正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260918-trailofbits-auditing-good-enough-ai.md",
+      "updated_at": "2026-09-22T17:39:11+08:00"
+    },
     "20260919-google-gemini-visual-design.md": {
       "body_sha256": "846606bb634c497691071e09d78cf1bc6323229863fba086c619ddfba7708a93",
       "compiled_at": "2026-09-19T23:00:00+08:00",

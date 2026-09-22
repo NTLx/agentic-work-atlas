@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-09-20
+updated: 2026-09-22
 evidence_level: high
 claim_type: mixed
 tags:
@@ -91,6 +91,7 @@ source_raw:
   - "[[202602-tau3-task-fixes]]"
   - "[[20250319-patchdiff-swe-bench-correctness]]"
   - "[[20260331-elt-bench-verified]]"
+  - "[[20260918-trailofbits-auditing-good-enough-ai]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
@@ -501,6 +502,14 @@ PatchDiff 与 ELT-Bench-Verified 补齐了此前仍缺的两个工程字段：
 
 - **证据**：[[20260223-openai-swe-bench-verified-audit]]；[[20260708-openai-swe-bench-pro-audit]]；[[20250703-agentic-benchmark-checklist]]；[[20260423-openai-genebench-target-identifiability]]；[[202602-tau3-task-fixes]]；[[20250319-patchdiff-swe-bench-correctness]]；[[20260331-elt-bench-verified]]；[[20260827-agentjudgebench]]；[[20260727-acquabench-success-provenance]]
 - **边界**：这些材料仍没有在同一 task/trace 上同时随机化 reference quality、evidence visibility、verifier independence 与 success provenance；因此它们支持工程契约与机制分离，不构成三门必要/充分性的 factorial proof。
+
+## 先自动化认知基础设施，再自动化任务
+
+Trail of Bits 的 Miden zkVM 审计提供了一个明确的工程路径：当领域缺少 LSP、decompiler、静态分析和形式模型时，Agent 的高杠杆用途不是直接扩大审计自主性，而是先把隐式语义转换成 IR、数据流分析、回归测试与可检查 theorem。
+
+**判断**：Agentic Engineering 的可验证边界可以通过“自动化认知基础设施”被主动扩张；模型能力不必先达到专家级，只要生成结果能够被确定性工具和形式化边界筛选，“good enough” 就可能产生高价值工程杠杆。
+- **证据**：[[20260918-trailofbits-auditing-good-enough-ai]]；Miden 项目用 Agent 构建工具链，并由 regression、abstract interpretation 与 Lean kernel 承担关键验证。
+- **边界**：这种收益依赖问题能被编码为稳定语义和检查器；对缺乏 oracle、形式规范或可观察状态的开放任务，增加工具并不会自动产生同等可验证性。
 
 ## 与现有 Topic 的关系
 
