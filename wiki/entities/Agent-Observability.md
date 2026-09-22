@@ -6,7 +6,7 @@ aliases:
   - AI Agent Observability
 definition: "本库对 Agent Observability 的综合定义：持续获得足以校准 Agent 行为预期、响应风险并核对外部效果的证据能力；其中 instrumentation、behavior assurance、effect reconciliation 与 intent inference 必须分层，不等同于传统 APM trace completeness。"
 created: 2026-07-15
-updated: 2026-09-20
+updated: 2026-09-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -33,6 +33,7 @@ source_raw:
   - "[[20260618-google-deepmind-ai-control-live-monitoring]]"
   - "[[20260622-google-deepmind-ai-control-roadmap]]"
   - "[[20260916-openai-model-misalignment-reporting-framework]]"
+  - "[[20260917-tessl-ai-agent-evaluation-evidence]]"
 ---
 
 # Agent Observability（Agent 可观测性）
@@ -256,6 +257,14 @@ instrumented structure
 
 - **证据**：[[20260919-otel-genai-agent-observability-main]]；[[20260919-otel-genai-open-governance-proposals]]；[[20260618-google-deepmind-ai-control-live-monitoring]]；[[20260622-google-deepmind-ai-control-roadmap]]
 - **边界**：当前仍缺公开部署级数据把 action-surface denominator、monitor recall、synchronous block rate、provider post-state 与 recovery result 放进同一事件链，因此不能宣称任何现有 observability stack 已形成 instrumentation closure。
+
+## 从 trace 到证据：可观测性必须服务于复现
+
+Tessl 的 S3-compatible storage 实践给出了 observability 的一个直接工程用途：rare bug 没有 reproduction 时，Agent 容易猜修复；拿到 overnight trace 后，Agent 可以复现同一条件、比较行为并缩小真实原因。
+
+**判断**：Agent observability 的有效单位不是“日志条数”，而是能否把失败转换成可复现、可比较的 evidence packet；如果关键内部状态没有被暴露，测试面本身就受限。
+- **证据**：[[20260917-tessl-ai-agent-evaluation-evidence]]；作者明确把 trace、reproduction、management/reporting interfaces 与测试信心连接起来。
+- **边界**：trace 仍只是被 instrument 的投影；它不能自动覆盖未埋点状态，也不能替代安全、架构或语义正确性的独立判断。
 
 ## 与已有框架的连接
 

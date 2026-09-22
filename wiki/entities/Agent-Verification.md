@@ -38,6 +38,7 @@ source_raw:
   - "[[20260914-anthropic-test-impact-analysis-ci]]"
   - "[[20260916-github-copilot-runtime-rust-migration]]"
   - "[[20260918-trailofbits-auditing-good-enough-ai]]"
+  - "[[20260917-tessl-ai-agent-evaluation-evidence]]"
 ---
 
 > [!definition] 定义
@@ -145,6 +146,14 @@ Trail of Bits 的 Miden 审计把 Agent Verification 往前推进了一层：Age
 **判断**：Agent 构建 verifier 可以扩大可验证边界，但前提是 correctness contract 最终由独立于生成器的确定性语义、回归 oracle 或 proof kernel 承担；“Agent 写了验证器且验证器通过”本身仍不足以自证正确。
 - **证据**：[[20260918-trailofbits-auditing-good-enough-ai]]；decompiler 用随机 procedure 做回归，静态分析基于中间表示与抽象解释，Lean kernel 检查 Agent 生成的 95 个 correctness proofs。
 - **边界**：这是 Miden zkVM 的单一高保证案例；Agent 生成的分析器、翻译器与 theorem statement 仍需人工或独立机制审查，不能把 proof kernel 的可靠性外推到整个工具链。
+
+## 多信号证据环：coverage 不是 confidence
+
+Tessl 的 S3-compatible storage 实践说明，测试只有在 oracle、风险选择和可观测性可信时才构成证据。追求 100% statement coverage 时，Agent 会生成能抬高数字却不增加信心的 trivial tests；相反，真实 S3 behavior、edge cases、flaky-test discipline、trace、security review 与 type constraints 共同缩小错误空间。
+
+**判断**：生产级 Agent verification 应优化“证据组合的判别力”，而不是最大化某个容易被优化的代理指标。
+- **证据**：[[20260917-tessl-ai-agent-evaluation-evidence]]；约 1,500 个 S3 behavior tests、约 5,000 tests/2 分钟，以及作者对 coverage gaming、rare-bug reproduction 和 type-enforced authorization 的复盘。
+- **边界**：S3 复制任务天然拥有外部 reference behavior；原创产品、开放研究和不可观测状态没有同等强的 oracle，不能直接照搬这一验证结构。
 
 ## 关联概念
 
