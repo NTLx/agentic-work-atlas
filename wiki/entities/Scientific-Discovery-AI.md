@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把巨大组合搜索空间、明确目标函数、数据或模拟器和工具调用结合起来，用 AI 寻找科学突破方案的系统形态"
 created: 2026-05-08
-updated: 2026-09-23
+updated: 2026-09-24
 tags:
   - AI
   - science
@@ -26,6 +26,7 @@ source_raw:
   - "[[20260608-paving-the-way-for-agents-in-biology]]"
   - "[[20260826-latent-space-anima-physical-world-models]]"
   - "[[20260922-latentspace-john-platt]]"
+  - "[[20260923-latentspace-eric-biosecurity]]"
 ---
 
 # Scientific Discovery AI（科学发现 AI）
@@ -101,6 +102,22 @@ John Platt 对 Google ERA（Empirical Research Assistance）的描述补出第�
 **判断**：ERA 目前证明的是“计算研究环节可以被高吞吐 Agent 化”，而不是端到端 autonomous science；真实实验、传感与数据采集仍是闭环中的外部硬边界。
 - **证据**：[[20260922-latentspace-john-platt]]（02:00:21–02:00:49）。Platt 把最想消除的瓶颈描述为一个可接收 JSON 并自动执行任意实验的 “everything lab”，并强调当前 ERA “it's all computational”。
 - **边界**：不同科学领域的实验成本差异极大；纯计算数学、仿真或已有数据集任务可以更接近闭环，而湿实验、材料、机器人和大科学装置仍受物理执行层限制。
+
+## Domain-native Foundation Model：直接学习科学对象
+
+[[20260923-latentspace-eric-biosecurity]] 补充了一个与外层 Agent orchestration 不同的层次：Genome Language Model 直接把 biological sequence 当作基础建模对象。公开材料把 Evo 系模型的进展与超长序列建模联系起来，并进一步讨论 DNA、RNA、protein、structure / epigenetic 等跨 modality 表征。
+
+**判断**：Scientific Discovery AI 需要区分两层能力：一层是“通用 Agent 如何调用科学工具”，另一层是“domain-native model 是否直接学会科学对象的表示与生成规律”。在生物域，后者会让模型从检索/分析工具进一步变成科学搜索空间本身的一部分。
+- **证据**：[[20260923-latentspace-eric-biosecurity]]；公开页与其链接的 StripedHyena/Evo 资料共同支持 long-context biological foundation model 的存在，以及 biological sequence length 对架构的直接约束。
+- **边界**：单一来源和厂商叙事不能证明 general biological intelligence；模型能生成或外推 biological sequences，也不能自动证明它拥有可解释的机制理解。
+
+### Capability 与 Defense 的耦合
+
+同一来源还暴露出 Scientific Discovery AI 在高风险领域特有的双重用途：更强的 biological representation 可以提升设计能力，也可能提升检测和防御能力。
+
+**判断**：当同一 model frontier 同时服务 discovery 与 defense 时，“提升能力”和“降低风险”不再是可独立优化的两个轴；治理必须把模型能力、访问权、检测、验证与物理执行层分别控制。
+- **证据**：[[20260923-latentspace-eric-biosecurity]]；来源明确把 biological capability 与 defensive detection 描述为共演化关系。
+- **边界**：该“arms race”是受访公司提出的战略框架，尚缺独立跨模型 benchmark 和长期 field evidence；不能直接推出“更强生成模型必然带来更安全结果”。
 
 ## 从科学突破到运营基础设施
 
