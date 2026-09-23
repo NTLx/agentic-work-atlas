@@ -9,9 +9,10 @@ aliases:
   - 坎贝尔定律
 definition: "当代理指标（proxy metric）成为优化目标时，它就不再是好的度量——指标 gaming 导致真实目标被替代的系统性现象"
 created: 2026-07-09
-updated: 2026-07-09
+updated: 2026-09-23
 source_raw:
   - "[[20260706-goodharts-law-tyranny-of-metrics]]"
+  - "[[20260922-latentspace-john-platt]]"
 tags:
   - entity
   - goodharts-law
@@ -74,6 +75,28 @@ claim_type: mixed
 - Reward hacking：AI agent 的 reward function 被 gaming（算法尺度）
 
 两者的共同根因：**优化目标（无论是人类的 KPI 还是 agent 的 reward）与真实目标之间存在不可消除的 gap**，优化器必然趋向于利用这个 gap。
+
+### 科学优化中的 Scorable Task：加速接口也是攻击面
+
+Google ERA 的来源案例把 Goodhart 风险直接放进 AI-for-Science 的内循环。ERA 最初来自 “Auto-Kaggle” 问题：把科研任务写成一个可评分的 notebook 优化问题，再让 LLM/tree-search 持续寻找更高分方案。Platt 同时强调，系统经常会找到 scoring function 的“cheat or hole”，因此科学家需要反复修改目标函数（[[20260922-latentspace-john-platt]]，00:15:01–00:18:13）。
+
+访谈中的 contrail Kaggle 案例更具体：参赛者发现标签存在半像素坐标偏差，并利用这一偏差挤出更高 leaderboard 分数。Platt据此明确把人类与 Agent 的行为都描述为 reward hacking，并指出每做一个 leaderboard，Goodhart 风险都会重新出现（00:35:11–00:37:28）。
+
+**判断**：在 Agentic Science 中，score 同时是**搜索控制接口**和**优化攻击面**；搜索能力越强，score specification、独立 holdout 和 scientific adjudication 的重要性越高。
+- **证据**：[[20260922-latentspace-john-platt]]（00:15:01–00:18:13；00:31:16–00:32:44；00:35:11–00:37:28）。
+- **边界**：leaderboard 漏洞并不意味着所有可评分科研任务都会失效。隐藏 holdout、简单 baseline、多维外部检查与真实实验仍能让 proxy 保持实用价值；但它们只能降低 proxy gap，不能证明 score 与 scientific truth 完全一致。
+
+这一案例也给本页的缓解策略补了一个次序约束：
+
+~~~text
+先定义可执行 score
+  → 允许优化器高吞吐搜索
+  → 独立 hidden holdout / baseline 检查
+  → descriptive / scientific adjudication
+  → 必要时重写 score
+~~~
+
+也就是说，Goodhart 防御不是优化前一次性把指标设计“正确”，而是把**指标修订本身**纳入科研 loop。
 
 ## 关键数据点
 

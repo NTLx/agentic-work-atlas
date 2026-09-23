@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把巨大组合搜索空间、明确目标函数、数据或模拟器和工具调用结合起来，用 AI 寻找科学突破方案的系统形态"
 created: 2026-05-08
-updated: 2026-09-18
+updated: 2026-09-23
 tags:
   - AI
   - science
@@ -25,6 +25,7 @@ source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[20260608-paving-the-way-for-agents-in-biology]]"
   - "[[20260826-latent-space-anima-physical-world-models]]"
+  - "[[20260922-latentspace-john-platt]]"
 ---
 
 # Scientific Discovery AI（科学发现 AI）
@@ -78,6 +79,28 @@ Hassabis 叙事的"组合搜索 + 目标函数"是一种科学发现路线；[[2
 
 > [!warning] 边界
 > "数千样例即可"依赖特定领域（低维去歧义问题）；"百万倍快"为受访者主张需检原论文。两条路线的划分是机制性对照，不是 Either/Or——真实科学发现系统可能二者结合（结构先验 + 组合搜索）
+
+## 第三条路线：Scorable Task + LLM Tree Search
+
+John Platt 对 Google ERA（Empirical Research Assistance）的描述补出第三条机制路线：科学家先把问题转译为可执行的 scoring contract，LLM 在 specialized harness 中生成和变异 notebook，再用 Monte Carlo Tree Search / UCB 在候选树中做非贪婪搜索；共享试验历史让后续分支吸收此前失败与成功的信息（[[20260922-latentspace-john-platt]]，00:04:16–00:14:42）。
+
+**判断**：在可评分的计算型科研问题中，Agent 的关键杠杆不是直接替代科学判断，而是把“可尝试的实验软件空间”扩大几个数量级，从而把人的瓶颈上推到目标函数定义、科学解释和结果验证。
+- **证据**：[[20260922-latentspace-john-platt]]（00:15:01–00:18:13；00:22:27–00:34:26）。Platt 明确说 scoring function 会被 Agent 找到漏洞，需要反复重写；对 descriptive science 还必须处理 multiple-hypothesis testing、false discovery 和隐藏 holdout。
+- **边界**：scoreable task 天然偏向有可执行 objective 的问题。Platt 同时明确表示，当前系统还不能独立发现 completely new physics / completely new science；predictive fit 也不能直接升级为对现实机制的 descriptive truth。
+
+这一路线和已有两条路线形成互补：
+
+| 路线 | 核心可计算结构 | Agent/模型的主要作用 | 主要硬边界 |
+|---|---|---|---|
+| 组合搜索（Hassabis） | 巨大搜索空间 + 明确 objective | 在组合空间中找极优解 | objective 是否代表真正问题 |
+| 连续物理（Anima） | PDE / operator / 结构先验 | 学习跨尺度动力学 | 数据稀缺、物理先验与超长 context |
+| Scorable Task（ERA） | scoring contract + executable notebook | LLM 引导 tree search、代码变异与重组 | score gaming、holdout 污染、科学解释 |
+
+### 计算闭环仍不是实验闭环
+
+**判断**：ERA 目前证明的是“计算研究环节可以被高吞吐 Agent 化”，而不是端到端 autonomous science；真实实验、传感与数据采集仍是闭环中的外部硬边界。
+- **证据**：[[20260922-latentspace-john-platt]]（02:00:21–02:00:49）。Platt 把最想消除的瓶颈描述为一个可接收 JSON 并自动执行任意实验的 “everything lab”，并强调当前 ERA “it's all computational”。
+- **边界**：不同科学领域的实验成本差异极大；纯计算数学、仿真或已有数据集任务可以更接近闭环，而湿实验、材料、机器人和大科学装置仍受物理执行层限制。
 
 ## 从科学突破到运营基础设施
 

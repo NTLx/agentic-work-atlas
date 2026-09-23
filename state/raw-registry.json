@@ -1,122 +1,5 @@
 {
   "items": {
-    "20250319-patchdiff-swe-bench-correctness.md": {
-      "body_sha256": "170107ad81853842d334aa7ff279e9d12efc4174fc3975173863c60250119836",
-      "compiled_at": "2026-09-20T23:35:00+08:00",
-      "raw_file": "20250319-patchdiff-swe-bench-correctness.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20250319-patchdiff-swe-bench-correctness.md",
-      "updated_at": "2026-09-20T23:35:00+08:00"
-    },
-    "20260331-elt-bench-verified.md": {
-      "body_sha256": "27ad0356cc18bb9ac52a7aa6ac5ae34607351023dd32faae3b9162d7c1f8768b",
-      "compiled_at": "2026-09-20T23:35:00+08:00",
-      "raw_file": "20260331-elt-bench-verified.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260331-elt-bench-verified.md",
-      "updated_at": "2026-09-20T23:35:00+08:00"
-    },
-    "20260422-security-recall-divergence.md": {
-      "body_sha256": "670c3390a5f517a1c546f4d7bc9f896cbaf4e5f7354e1037b08f97389fbfce1a",
-      "compiled_at": "2026-09-20T15:26:00+08:00",
-      "raw_file": "20260422-security-recall-divergence.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260422-security-recall-divergence.md",
-      "updated_at": "2026-09-20T15:26:00+08:00"
-    },
-    "20260514-sleeper-memory-poisoning.md": {
-      "body_sha256": "3a7787baecfdd9d0dc5a3049ae412b6fbc1665c9d066df628978e23a4dffe442",
-      "compiled_at": "2026-09-20T15:26:00+08:00",
-      "raw_file": "20260514-sleeper-memory-poisoning.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260514-sleeper-memory-poisoning.md",
-      "updated_at": "2026-09-20T15:26:00+08:00"
-    },
-    "20260327-azure-sre-agent-audit-mitigation-metrics.md": {
-      "body_sha256": "7afb6a042e2c04a9c47e4ed7bd1196e7b0114020ca2c528345c9bbed3ea6221f",
-      "compiled_at": "2026-09-20T14:12:00+08:00",
-      "raw_file": "20260327-azure-sre-agent-audit-mitigation-metrics.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260327-azure-sre-agent-audit-mitigation-metrics.md",
-      "updated_at": "2026-09-20T14:12:00+08:00"
-    },
-    "20260920-google-iam-access-change-propagation.md": {
-      "body_sha256": "8b7f893eb5e30c8aa9fa21d74c7500e7a3c78affb1357193135bbd453f125e59",
-      "compiled_at": "2026-09-20T14:12:00+08:00",
-      "raw_file": "20260920-google-iam-access-change-propagation.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260920-google-iam-access-change-propagation.md",
-      "updated_at": "2026-09-20T14:12:00+08:00"
-    },
-    "20260619-microsoft-entra-emergency-access-revocation.md": {
-      "body_sha256": "1ab6ecc43d7d186c68330d4dd0d42cd98a2a5c77eb4d3ba906119bd5bb218fa5",
-      "compiled_at": "2026-09-20T14:12:00+08:00",
-      "raw_file": "20260619-microsoft-entra-emergency-access-revocation.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260619-microsoft-entra-emergency-access-revocation.md",
-      "updated_at": "2026-09-20T14:12:00+08:00"
-    },
-    "20260611-github-may-2026-recovery-cache-propagation.md": {
-      "body_sha256": "dc21cc89ec372f526760a5532c9698a70a46de4abb0b6f9d40707b315c08eaeb",
-      "compiled_at": "2026-09-20T14:12:00+08:00",
-      "raw_file": "20260611-github-may-2026-recovery-cache-propagation.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260611-github-may-2026-recovery-cache-propagation.md",
-      "updated_at": "2026-09-20T14:12:00+08:00"
-    },
-    "20260218-forge-formal-policy-enforcement.md": {
-      "body_sha256": "d84e058a5678c4e704d89daecfb371b8805b8589403b6e5d2c8701a5d9a20ab7",
-      "compiled_at": "2026-09-20T14:12:00+08:00",
-      "raw_file": "20260218-forge-formal-policy-enforcement.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260218-forge-formal-policy-enforcement.md",
-      "updated_at": "2026-09-20T14:12:00+08:00"
-    },
-    "20260321-oap-pre-action-authorization.md": {
-      "body_sha256": "3c89fa3cb0522fccc4ccd394713ce27026435891ecb367505815b6d6840221bf",
-      "compiled_at": "2026-09-20T14:12:00+08:00",
-      "raw_file": "20260321-oap-pre-action-authorization.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260321-oap-pre-action-authorization.md",
-      "updated_at": "2026-09-20T14:12:00+08:00"
-    },
-    "20260715-agent-user-permissions-interface-enforcement.md": {
-      "body_sha256": "357f585a59b1a942a051bbc2281368ef766fe7b5d4981727847c39699f565917",
-      "compiled_at": "2026-09-20T14:12:00+08:00",
-      "raw_file": "20260715-agent-user-permissions-interface-enforcement.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260715-agent-user-permissions-interface-enforcement.md",
-      "updated_at": "2026-09-20T14:12:00+08:00"
-    },
-    "20250319-patchdiff-swe-bench-correctness.md": {
-      "body_sha256": "170107ad81853842d334aa7ff279e9d12efc4174fc3975173863c60250119836",
-      "compiled_at": "2026-09-20T13:32:00+08:00",
-      "raw_file": "20250319-patchdiff-swe-bench-correctness.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20250319-patchdiff-swe-bench-correctness.md",
-      "updated_at": "2026-09-20T13:32:00+08:00"
-    },
-    "20260331-elt-bench-verified.md": {
-      "body_sha256": "27ad0356cc18bb9ac52a7aa6ac5ae34607351023dd32faae3b9162d7c1f8768b",
-      "compiled_at": "2026-09-20T13:32:00+08:00",
-      "raw_file": "20260331-elt-bench-verified.md",
-      "raw_state": "full",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260331-elt-bench-verified.md",
-      "updated_at": "2026-09-20T13:32:00+08:00"
-    },
     "(14) Jevons Paradox for Knowledge Work.md": {
       "body_sha256": "a6b800af825830f4a36a0785e1436059b170bb3a591aa80dce550e22365760b7",
       "compiled_at": "2026-07-09T13:16:19+08:00",
@@ -242,6 +125,15 @@
       "summary_path": "wiki/sources/20260215-recall-bottleneck-parametric-factuality.md",
       "updated_at": "2026-08-25T01:13:07+08:00"
     },
+    "20260218-forge-formal-policy-enforcement.md": {
+      "body_sha256": "d84e058a5678c4e704d89daecfb371b8805b8589403b6e5d2c8701a5d9a20ab7",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260218-forge-formal-policy-enforcement.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260218-forge-formal-policy-enforcement.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
+    },
     "20260218-openai-evmbench.md": {
       "body_sha256": "f1e91c707bcd3c2b9e5a1ce830a7d49b211ce0574b75d1c4baa4086bea24b779",
       "compiled_at": "2026-09-19T15:53:41+08:00",
@@ -304,6 +196,15 @@
       "summary_path": "wiki/sources/20260321-acrfence-semantic-rollback.md",
       "updated_at": "2026-09-19T16:39:00+08:00"
     },
+    "20260321-oap-pre-action-authorization.md": {
+      "body_sha256": "3c89fa3cb0522fccc4ccd394713ce27026435891ecb367505815b6d6840221bf",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260321-oap-pre-action-authorization.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260321-oap-pre-action-authorization.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
+    },
     "20260324-atlanta-fed-firm-data-on-ai.md": {
       "body_sha256": "bb9c69b48988bba428787384b1002a9c7567765297ecdbb8e1dae76c7513c7e6",
       "compiled_at": "2026-09-19T21:12:00+08:00",
@@ -312,6 +213,15 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260324-atlanta-fed-firm-data-on-ai.md",
       "updated_at": "2026-09-19T21:12:00+08:00"
+    },
+    "20260327-azure-sre-agent-audit-mitigation-metrics.md": {
+      "body_sha256": "7afb6a042e2c04a9c47e4ed7bd1196e7b0114020ca2c528345c9bbed3ea6221f",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260327-azure-sre-agent-audit-mitigation-metrics.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260327-azure-sre-agent-audit-mitigation-metrics.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
     },
     "20260330-reward-hacking-equilibrium-finite-evaluation.md": {
       "body_sha256": "29e634429b7f76d06b1c00ec13fe04eae81f47630b586e531bc9265e15f3ffb9",
@@ -461,6 +371,15 @@
       "summary_path": "wiki/sources/20260420-ontology-meets-agent-case-study.md",
       "updated_at": "2026-07-09T13:16:22+08:00"
     },
+    "20260422-security-recall-divergence.md": {
+      "body_sha256": "670c3390a5f517a1c546f4d7bc9f896cbaf4e5f7354e1037b08f97389fbfce1a",
+      "compiled_at": "2026-09-20T15:26:00+08:00",
+      "raw_file": "20260422-security-recall-divergence.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260422-security-recall-divergence.md",
+      "updated_at": "2026-09-20T15:26:00+08:00"
+    },
     "20260423-openai-genebench-target-identifiability.md": {
       "body_sha256": "110888126fb25430de8adf3d4254b165cc7cf8d1559bfe5019c92eb40a1afebc",
       "compiled_at": "2026-09-20T09:48:00+08:00",
@@ -550,6 +469,15 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260514-alibaba-agentic-ai-hitl-field-experiment.md",
       "updated_at": "2026-09-19T17:44:00+08:00"
+    },
+    "20260514-sleeper-memory-poisoning.md": {
+      "body_sha256": "3a7787baecfdd9d0dc5a3049ae412b6fbc1665c9d066df628978e23a4dffe442",
+      "compiled_at": "2026-09-20T15:26:00+08:00",
+      "raw_file": "20260514-sleeper-memory-poisoning.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260514-sleeper-memory-poisoning.md",
+      "updated_at": "2026-09-20T15:26:00+08:00"
     },
     "20260518-zero-trust-for-ai-agents.md": {
       "body_sha256": "b71bdda59e6a98b3a466344cca251bb102f272e88df1efac84a6051dd78cb836",
@@ -946,6 +874,15 @@
       "summary_path": "wiki/sources/20260610-smsr-runtime-memory-provenance.md",
       "updated_at": "2026-09-19T16:39:00+08:00"
     },
+    "20260611-github-may-2026-recovery-cache-propagation.md": {
+      "body_sha256": "dc21cc89ec372f526760a5532c9698a70a46de4abb0b6f9d40707b315c08eaeb",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260611-github-may-2026-recovery-cache-propagation.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260611-github-may-2026-recovery-cache-propagation.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
+    },
     "20260611-loss-function-development.md": {
       "body_sha256": "3dcc0a0d4c5c63bcd92204da173cb9ab20b595f9a46eb980c967ed06cb38a210",
       "compiled_at": "2026-07-09T13:16:28+08:00",
@@ -1175,6 +1112,15 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260618-openai-rare-disease-diagnosis.md",
       "updated_at": "2026-07-09T13:16:31+08:00"
+    },
+    "20260619-microsoft-entra-emergency-access-revocation.md": {
+      "body_sha256": "1ab6ecc43d7d186c68330d4dd0d42cd98a2a5c77eb4d3ba906119bd5bb218fa5",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260619-microsoft-entra-emergency-access-revocation.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260619-microsoft-entra-emergency-access-revocation.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
     },
     "20260619-the-data-black-hole-at-the-center-of-ai.md": {
       "body_sha256": "bc8e7d7ee23a6241df7fbdeae7bd9e1d48f1a4c3ff9e6dbf676b15297abc8959",
@@ -1559,6 +1505,15 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260714-context-collapse-2-when-emails-instruct.md",
       "updated_at": "2026-07-30T10:24:40+08:00"
+    },
+    "20260715-agent-user-permissions-interface-enforcement.md": {
+      "body_sha256": "357f585a59b1a942a051bbc2281368ef766fe7b5d4981727847c39699f565917",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260715-agent-user-permissions-interface-enforcement.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260715-agent-user-permissions-interface-enforcement.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
     },
     "20260715-anthropic-talent-strategy-2026.pdf": {
       "body_sha256": "0dd1976e6fd422b7771c646940f6be71eb443ebddb0f0b899456ccbf5b15bbbd",
@@ -2025,6 +1980,18 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260806-skilltv-bench.md",
       "updated_at": "2026-09-19T16:23:35+08:00"
+    },
+    "20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive.md": {
+      "body_sha256": "8b64cba998eba7de7555262a4d8bcab272b52911c5f2ebd970ac47af0107692c",
+      "canonical_url": "https://erichgrunewald.substack.com/p/why-you-should-almost-never-use-ai",
+      "compiled_at": "2026-09-21T18:02:47+08:00",
+      "indexed_at": "2026-09-21T18:02:47+08:00",
+      "raw_file": "20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；canonical Substack 页面可恢复原文，Source Summary 保留三步编译、章节定位与原始正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive.md",
+      "updated_at": "2026-09-21T18:03:11+08:00"
     },
     "20260809-hsi-hierarchical-self-improvement.md": {
       "body_sha256": "f8b3e704d9337d2fe1ba0f756e69334f87f4ec66aca3fc3d6b46f3dfe3c6d0a4",
@@ -2737,6 +2704,18 @@
       "summary_path": "wiki/sources/20260914-anthropic-test-impact-analysis-ci.md",
       "updated_at": "2026-09-18T09:37:32+08:00"
     },
+    "20260914-ieee-jalapeno-llm-chip-design.md": {
+      "body_sha256": "c461563d4fa68dca05800e5fa33c62cc603f9b74ac7828518ede1a20015b0b1e",
+      "canonical_url": "https://spectrum.ieee.org/llms-for-chip-design",
+      "compiled_at": "2026-09-21T17:53:46+08:00",
+      "indexed_at": "2026-09-21",
+      "raw_file": "20260914-ieee-jalapeno-llm-chip-design.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；canonical IEEE Spectrum 页面可恢复原文，Source Summary 保留关键证据定位与原始正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260914-ieee-jalapeno-llm-chip-design.md",
+      "updated_at": "2026-09-21T17:54:19+08:00"
+    },
     "20260914-microsoft-ai-code-of-conduct.md": {
       "body_sha256": "07b9feba25b261504229ad3529e5b78b189917f98e6fd90df031224fb4f0c44b",
       "compiled_at": "2026-09-18T09:37:31+08:00",
@@ -2851,6 +2830,17 @@
       "summary_path": "wiki/sources/20260918-oneusefulthing-the-overhang.md",
       "updated_at": "2026-09-22T17:39:11+08:00"
     },
+    "20260918-terence-tao-if-math-more-than-proof.md": {
+      "body_sha256": "14c6abffad42cbe794edde8f62b2da910218301d09556c566f188a5cc8957dbe",
+      "canonical_url": "https://terrytao.wordpress.com/2026/09/18/if-math-is-more-than-proof-we-need-to-better-celebrate-the-rest-of-it/",
+      "compiled_at": "2026-09-21T18:09:17+08:00",
+      "indexed_at": "2026-09-21T18:09:17+08:00",
+      "raw_file": "20260918-terence-tao-if-math-more-than-proof.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260918-terence-tao-if-math-more-than-proof.md",
+      "updated_at": "2026-09-21T18:09:49+08:00"
+    },
     "20260918-trailofbits-auditing-good-enough-ai.md": {
       "body_sha256": "d404a8d7010ae5ab760b7e5de56763632771aec557a2352d5aeccfce5c455781",
       "canonical_url": "https://blog.trailofbits.com/2026/09/18/auditing-in-the-age-of-good-enough-ai/",
@@ -2908,6 +2898,27 @@
       "summary_path": "wiki/sources/20260919-otel-genai-open-governance-proposals.md",
       "updated_at": "2026-09-19T20:39:00+08:00"
     },
+    "20260920-google-iam-access-change-propagation.md": {
+      "body_sha256": "8b7f893eb5e30c8aa9fa21d74c7500e7a3c78affb1357193135bbd453f125e59",
+      "compiled_at": "2026-09-20T14:12:00+08:00",
+      "raw_file": "20260920-google-iam-access-change-propagation.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260920-google-iam-access-change-propagation.md",
+      "updated_at": "2026-09-20T14:12:00+08:00"
+    },
+    "20260920-lenny-peter-sellis-product-advice.md": {
+      "body_sha256": "cedc0c2572cd173316f84383e91c0b6fb7282d23f2612f53358a02f4b5d03710",
+      "canonical_url": "https://www.lennysnewsletter.com/p/90-minutes-of-unfiltered-product?showTranscript=true",
+      "compiled_at": "2026-09-21T13:47:19+08:00",
+      "indexed_at": "2026-09-21T13:47:19+08:00",
+      "raw_file": "20260920-lenny-peter-sellis-product-advice.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；canonical 页面与公开 showTranscript transcript 可恢复，Source Summary 保留关键时间戳、speaker map 与正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260920-lenny-peter-sellis-product-advice.md",
+      "updated_at": "2026-09-21T13:47:19+08:00"
+    },
     "20260922-anthropic-pace-ai-development.md": {
       "body_sha256": "ba0f61fc8f9e47a68674eee66afbfbc79a33b19f7d17e389ad48ff3f3e7a56f6",
       "canonical_url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
@@ -2919,6 +2930,18 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260922-anthropic-pace-ai-development.md",
       "updated_at": "2026-09-22T17:39:11+08:00"
+    },
+    "20260922-latentspace-john-platt.md": {
+      "body_sha256": "8f21491a314e38c132df378260014169513076e7ecc4d13185fa1e7516501f46",
+      "canonical_url": "https://www.latent.space/p/john-platt",
+      "compiled_at": "2026-09-23T11:41:49+08:00",
+      "indexed_at": "2026-09-23T11:43:35+08:00",
+      "raw_file": "20260922-latentspace-john-platt.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；公开 canonical 页面与 transcript 可恢复，Source Summary 保留时间戳、speaker map、evidence locator 与正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260922-latentspace-john-platt.md",
+      "updated_at": "2026-09-23T11:43:36+08:00"
     },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
@@ -3537,55 +3560,8 @@
       "status": "compiled",
       "summary_path": "wiki/sources/用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
       "updated_at": "2026-07-09T13:16:44+08:00"
-    },
-    "20260920-lenny-peter-sellis-product-advice.md": {
-      "body_sha256": "cedc0c2572cd173316f84383e91c0b6fb7282d23f2612f53358a02f4b5d03710",
-      "canonical_url": "https://www.lennysnewsletter.com/p/90-minutes-of-unfiltered-product?showTranscript=true",
-      "compiled_at": "2026-09-21T13:47:19+08:00",
-      "indexed_at": "2026-09-21T13:47:19+08:00",
-      "raw_file": "20260920-lenny-peter-sellis-product-advice.md",
-      "raw_state": "index",
-      "retention_note": "已完成编译；canonical 页面与公开 showTranscript transcript 可恢复，Source Summary 保留关键时间戳、speaker map 与正文哈希。",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260920-lenny-peter-sellis-product-advice.md",
-      "updated_at": "2026-09-21T13:47:19+08:00"
-    },
-    "20260914-ieee-jalapeno-llm-chip-design.md": {
-      "body_sha256": "c461563d4fa68dca05800e5fa33c62cc603f9b74ac7828518ede1a20015b0b1e",
-      "canonical_url": "https://spectrum.ieee.org/llms-for-chip-design",
-      "compiled_at": "2026-09-21T17:53:46+08:00",
-      "indexed_at": "2026-09-21",
-      "raw_file": "20260914-ieee-jalapeno-llm-chip-design.md",
-      "raw_state": "index",
-      "retention_note": "已完成编译；canonical IEEE Spectrum 页面可恢复原文，Source Summary 保留关键证据定位与原始正文哈希。",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260914-ieee-jalapeno-llm-chip-design.md",
-      "updated_at": "2026-09-21T17:54:19+08:00"
-    },
-    "20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive.md": {
-      "body_sha256": "8b64cba998eba7de7555262a4d8bcab272b52911c5f2ebd970ac47af0107692c",
-      "canonical_url": "https://erichgrunewald.substack.com/p/why-you-should-almost-never-use-ai",
-      "compiled_at": "2026-09-21T18:02:47+08:00",
-      "indexed_at": "2026-09-21T18:02:47+08:00",
-      "raw_file": "20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive.md",
-      "raw_state": "index",
-      "retention_note": "已完成编译；canonical Substack 页面可恢复原文，Source Summary 保留三步编译、章节定位与原始正文哈希。",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260806-why-you-should-almost-never-use-ai-to-write-anything-substantive.md",
-      "updated_at": "2026-09-21T18:03:11+08:00"
-    },
-    "20260918-terence-tao-if-math-more-than-proof.md": {
-      "body_sha256": "14c6abffad42cbe794edde8f62b2da910218301d09556c566f188a5cc8957dbe",
-      "canonical_url": "https://terrytao.wordpress.com/2026/09/18/if-math-is-more-than-proof-we-need-to-better-celebrate-the-rest-of-it/",
-      "compiled_at": "2026-09-21T18:09:17+08:00",
-      "indexed_at": "2026-09-21T18:09:17+08:00",
-      "raw_file": "20260918-terence-tao-if-math-more-than-proof.md",
-      "raw_state": "index",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260918-terence-tao-if-math-more-than-proof.md",
-      "updated_at": "2026-09-21T18:09:49+08:00"
     }
   },
-  "updated_at": "2026-09-21T18:09:49+08:00",
+  "updated_at": "2026-09-23T11:43:36+08:00",
   "version": 1
 }
