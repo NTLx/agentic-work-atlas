@@ -40,15 +40,16 @@ source_raw:
 
 ## 跨域边界：Biosecurity 共享“攻防共演化”，但不共享全部开放性结论
 
-[[20260923-latentspace-eric-biosecurity]] 把类似结构扩展到 biological AI：生成能力提升会抬高检测与防御门槛，而更强的 biological model representation 也可能服务防御。
+[[20260923-latentspace-eric-biosecurity]] 的完整 transcript 明确把 biological AI 与 cybersecurity 放在同一个 arms-race 框架中：design side 会继续提升，defense side 也必须提高到足够接近前沿的能力；受访者同时主张从已知 sequence matching 走向能利用 learned representation 的 function-aware defense（Transcript L506-L586、L594-L598）。
 
-**判断**：Cybersecurity-Openness 中最可迁移到 biosecurity 的不是“开放必然更安全”，而是**防御能力必须跟上进攻能力的速度与表征前沿**。这一结构可以跨域复用，但开放权重、能力扩散和部署策略必须按领域重新评估。
-- **证据**：[[20260923-latentspace-eric-biosecurity]]；来源明确提出同一类 biological models 同时增加设计能力与防御潜力，并批评只依赖已知模式匹配的防御思路难以覆盖真正新颖的生成物。
-- **边界**：网络安全主要发生在可复制、可回滚的数字环境；生物模型可能连接现实实验与物理执行，潜在外部性与不可逆性更强。因此 HF 事件支持的“开放工具提升防守韧性”不能直接升级为 biological model openness 的政策结论。
+**判断**：Cybersecurity-Openness 中最可迁移到 biosecurity 的不是“开放必然更安全”，而是**防御能力必须跟上进攻能力的速度与表征前沿**。这一能力对称性可以跨域复用，但分发、开放权重和执行权限必须按领域重新评估。
+- **证据**：[[20260923-latentspace-eric-biosecurity]]（Transcript L506-L586、L594-L598）。Nguyen 明确说 generation 与 discrimination 可以依赖同一类 biological models，并把 defense lag 描述为需要持续弥补的能力缺口。
+- **边界**：原访谈自己给出了 cyber 类比的反例。主持人在 L600-L606 指出：软件漏洞原则上可以 patch，而生物体不能按相同方式“打补丁”；同时真实 biological misuse 还受物理执行门槛约束。因此不能把网络安全中的 openness 结论直接迁移成 biological model openness 的政策主张。
 
-这一区分把原页面的开放性命题拆成两层：
+这一区分把跨域类比拆成三层：
 1. **能力对称层**：防守者需要足够接近前沿的模型能力——跨域较稳健。
-2. **分发治理层**：这些能力是否应开放、如何开放、开放到什么粒度——高度领域依赖。
+2. **验证/执行层**：Bio 还需要 sequence-level checking、物理执行接口与环境级检测，风险边界不止于数字系统。
+3. **分发治理层**：能力是否开放、开放到什么粒度、谁能接触执行链——高度领域依赖。
 
 ## 前提与局限性
 

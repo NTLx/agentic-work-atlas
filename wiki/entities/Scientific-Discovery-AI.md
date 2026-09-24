@@ -105,19 +105,40 @@ John Platt 对 Google ERA（Empirical Research Assistance）的描述补出第�
 
 ## Domain-native Foundation Model：直接学习科学对象
 
-[[20260923-latentspace-eric-biosecurity]] 补充了一个与外层 Agent orchestration 不同的层次：Genome Language Model 直接把 biological sequence 当作基础建模对象。公开材料把 Evo 系模型的进展与超长序列建模联系起来，并进一步讨论 DNA、RNA、protein、structure / epigenetic 等跨 modality 表征。
+[[20260923-latentspace-eric-biosecurity]] 用完整访谈补出一个与外层 Agent orchestration 不同的 scientific AI 层次：Genome Language Model 直接把 biological sequence 当作基础建模对象。HyenaDNA 的出发点是 biological sequence 的极长 context；Evo 把能力从 read 推到 write；Omni 则进一步把 base model 通过 task structure、mid/post-training 和 supervised alignment 映射到科学家真正使用的预测与设计任务（Transcript L34-L58、L96-L144、L196-L230）。
 
-**判断**：Scientific Discovery AI 需要区分两层能力：一层是“通用 Agent 如何调用科学工具”，另一层是“domain-native model 是否直接学会科学对象的表示与生成规律”。在生物域，后者会让模型从检索/分析工具进一步变成科学搜索空间本身的一部分。
-- **证据**：[[20260923-latentspace-eric-biosecurity]]；公开页与其链接的 StripedHyena/Evo 资料共同支持 long-context biological foundation model 的存在，以及 biological sequence length 对架构的直接约束。
-- **边界**：单一来源和厂商叙事不能证明 general biological intelligence；模型能生成或外推 biological sequences，也不能自动证明它拥有可解释的机制理解。
+**判断**：Scientific Discovery AI 至少需要区分三层能力：
+1. **domain representation**：模型是否直接学习科学对象的原生表示；
+2. **task alignment**：是否能把 base representation 映射到实际科学问题和输出格式；
+3. **agent orchestration**：是否能在更高层规划、调用工具和闭环验证。
+
+在生物域，domain-native model 不只是被 Agent 调用的“一个工具”，它本身会成为可搜索、可条件化和可生成的科学空间。
+- **证据**：[[20260923-latentspace-eric-biosecurity]]（Transcript L34-L58、L96-L144、L196-L230）。
+- **边界**：Omni 的 benchmark、alignment recipe 和 generalization 主要来自厂商自述；长 context 和统一模型并不自动等价于 general biological intelligence。
+
+### Score-conditioned generation 不是已证明的 biological CoT
+
+访谈把一项实验称为 biological “chain-of-thought”：给模型一系列按 fitness score 递增的 biological sequences，隐藏表现最好的部分，再让模型继续这一 progression。模型在 in-silico 结果中能够恢复部分更高分候选（Transcript L248-L270）。
+
+**判断**：当前更稳妥的抽象是 **score-conditioned in-context optimization / extrapolation**，而不是已证实与自然语言 CoT 同构的内部推理链。
+- **证据**：[[20260923-latentspace-eric-biosecurity]]（Transcript L248-L270）。
+- **边界**：Nguyen 明确说 wet-lab validation 当时仍在进行；因此该结果只能证明计算层行为，不能把 in-silico score 直接升级为真实 biological function。
+
+### 验证链从 benchmark 延伸到真实世界
+
+全文还把 scientific AI 的验证边界拆成三层：训练/benchmark 层防 data leakage（Transcript L232-L238）、representation 层用 mechanistic interpretability 检查 embeddings/activations 中是否出现可解释 biological structure（L450-L490）、最终 design claim 回到 wet-lab / real-world measurement（L266-L270）。
+
+**判断**：domain-native model 越接近真实科学对象，verification 越不能停在 benchmark；可信链需要从数据划分一直延伸到独立物理反馈。
+- **证据**：[[20260923-latentspace-eric-biosecurity]]（Transcript L232-L238、L266-L270、L450-L490）。
+- **边界**：访谈中的 leakage QC 与 mech-interp 仍是团队自述，未提供足够细节用于独立复现。
 
 ### Capability 与 Defense 的耦合
 
-同一来源还暴露出 Scientific Discovery AI 在高风险领域特有的双重用途：更强的 biological representation 可以提升设计能力，也可能提升检测和防御能力。
+同一 biological model frontier 同时推动 design 与 defense。Nguyen 明确提出“dual mandate”：生成能力更强的模型也可以用于 discrimination / risk prediction，并把 design/defense 描述成持续的 arms race（Transcript L506-L516、L594-L620）。
 
-**判断**：当同一 model frontier 同时服务 discovery 与 defense 时，“提升能力”和“降低风险”不再是可独立优化的两个轴；治理必须把模型能力、访问权、检测、验证与物理执行层分别控制。
-- **证据**：[[20260923-latentspace-eric-biosecurity]]；来源明确把 biological capability 与 defensive detection 描述为共演化关系。
-- **边界**：该“arms race”是受访公司提出的战略框架，尚缺独立跨模型 benchmark 和长期 field evidence；不能直接推出“更强生成模型必然带来更安全结果”。
+**判断**：当同一 model frontier 同时服务 discovery 与 defense 时，“提升能力”和“降低风险”不再是可独立优化的两个轴；治理必须把模型能力、访问权、domain-level checking、物理执行接口与环境级检测分层控制。
+- **证据**：[[20260923-latentspace-eric-biosecurity]]（Transcript L506-L586、L594-L620）。
+- **边界**：这是 Radical Numerics 的战略框架，尚缺独立跨模型 benchmark 与长期 field evidence；不能直接推出“更强生成模型必然带来更安全结果”。
 
 ## 从科学突破到运营基础设施
 
