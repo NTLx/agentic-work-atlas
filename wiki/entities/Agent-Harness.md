@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-09-13
+updated: 2026-09-25
 evidence_level: high
 claim_type: mixed
 tags:
@@ -82,6 +82,7 @@ source_raw:
   - "[[20260902-google-ai-agents-challenge-patterns]]"
   - "[[20260911-github-marketing-ops-as-code]]"
   - "[[20260911-openai-habitat-storage-scaling]]"
+  - "[[20260925-latentspace-runway-world-models]]"
 ---
 
 # Agent Harness
@@ -153,6 +154,28 @@ Anthropic 的 Justin Young 在 Claude Agent SDK 上实验了跨多个 context wi
 - Google 的 harness 实践把 sandbox、失败日志回送、测试节点和 kill switch 组合成可停止的 repair loop；Challenge 案例则展示了双向 MCP、事件并行、统一验证和分层路由等可组合模式。
 
 综合判断：Agent Harness 不只是让模型“能调用工具”，而是规定它能看到哪些证据、能触碰哪些状态、如何从失败中恢复，以及哪些结果才允许离开系统。
+
+## Harness 作为能力孵化层：边界会向模型内部移动（2026-09）
+
+Runway 的 video agent 提供了软件 coding agent 之外的一条独立证据：当前系统仍由 LLM 在外部 orchestrate image/video models 与工作流工具，但 Anastasis Germanidis 预期部分规划、剪辑和生成流程会逐渐进入 omni model，并把这一现象概括为“能力先由 harness 做出来，随后成为模型的一部分”（[[20260925-latentspace-runway-world-models]]，01:11:41–01:23:12）。
+
+**判断**：Harness 不只是固定的运行时外壳，也可以是**能力原型层 / curriculum discovery layer**。当外部 orchestration 反复证明某种任务结构有效，它就可能成为后续训练、post-training 或统一模型吸收的候选；模型能力增强后，Harness 的价值不会归零，而是继续上移到新的边界。
+- **证据**：[[20260925-latentspace-runway-world-models]]；访谈以 reasoning chain 与 multi-shot video workflow 为例，描述显式 scaffold/orchestration 先出现、随后部分行为被模型原生学习的演化路径。
+- **边界**：**可内化的是能力模式，不是所有系统责任。** 权限、审计、工具访问、确定性验证、状态持久化、成本控制和安全边界具有外部系统语义，即使模型更强也不能仅靠训练“吸收”后删除。
+
+这给 Harness Engineering 增加了一个时间维度：
+
+~~~text
+外部 harness 发现/验证任务结构
+        ↓
+高频稳定模式进入训练或 post-training
+        ↓
+部分能力成为模型原生行为
+        ↓
+harness 上移，负责新的工具、状态、验证和治理边界
+~~~
+
+因此，判断一个 harness 组件是否“技术债”，不能只问模型以后会不会更强，还要问：**它承担的是可学习的认知模式，还是必须独立存在的系统约束？**
 
 ## 非工程流程中的 Harness：GitHub Marketing Ops（2026-09）
 

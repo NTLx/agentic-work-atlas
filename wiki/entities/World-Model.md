@@ -6,7 +6,7 @@ aliases:
   - 世界模型
 definition: "AI 系统对环境状态、因果结构和行动后果的内部表示，使 Agent 能在长期任务中预测、规划并随经验修正策略"
 created: 2026-05-18
-updated: 2026-07-27
+updated: 2026-09-25
 tags:
   - AI
   - AGI
@@ -26,6 +26,7 @@ source_raw:
   - "[[20260623-qwen-agentworld-language-world-models]]"
   - "[[20260606-fei-fei-world-model-taxonomy]]"
   - "[[20260717-schema-harness-arc-agi]]"
+  - "[[20260925-latentspace-runway-world-models]]"
 ---
 
 # World Model（世界模型）
@@ -62,6 +63,22 @@ Fei-Fei Li 的分类让“世界模型”从一个过载热词变成可分析结
 这组分类的价值在于，它把“会生成视频”“会模拟物理”“会规划动作”切回同一个 perception-action loop 中。不同系统可能共享底层知识，但对外暴露的契约并不相同。
 
 其中最重要的判断是：**simulator 是三者的桥**。如果语言是对世界的抽象、像素是对世界的投影，那么几何、物理和动力学更接近世界的结构骨架。render 和 plan 最终都要依赖这层骨架。
+
+## Runway：从视觉真实到反事实真实（2026-09）
+
+Runway 联合创始人 Anastasis Germanidis 把 video model 与 world model 的边界进一步推到 **counterfactual fidelity**：漂亮、连贯的视频仍可能通过训练分布捷径“cheat”；用于行动和机器人策略的 world model 必须在 action 改变时给出正确后果，尤其要能真实模拟失败，而不是总把轨迹补成最常见的成功结果（[[20260925-latentspace-runway-world-models]]，00:23:02–00:39:39；01:07:47–01:11:41）。
+
+**判断**：World Model 的最低可信标准应从“观察像真”升级为三层一致性：**observation realism + state-transition consistency + counterfactual failure fidelity**。其中第三项决定模型是否真的能承担 simulator / policy-evaluation 角色，而不是高质量 renderer。
+- **证据**：[[20260925-latentspace-runway-world-models]]；访谈明确区分视觉上可信的视频与能对机器人失败、低概率动作后果做正确 rollout 的 world model，并提出 Lucid Dream Test 作为远期直觉测试。
+- **边界**：这是 Runway 的研究框架而非行业统一定义。访谈同时承认 JEPA、显式 3D、VLA、world-action model、teleoperation 与 internet-video-heavy 等路线仍在竞争；direct pixel prediction 是否足够仍是开放问题。
+
+### 实时性是 simulator 的系统门槛
+
+同一来源把 real-time generation 从产品体验问题提升为架构条件：Interface World Model 需要实时消费 click / drag / scroll 等 action，robotics world model 需要连续 rollout，面向 Agent 的环境还要支持高吞吐交互与强化学习。
+
+**判断**：对交互式 world model 而言，latency 不是附属指标。模型只有从离线生成器压缩到可交互时延，才真正进入 software environment、agent training environment 和 embodied simulator 的角色。
+- **证据**：[[20260925-latentspace-runway-world-models]]（00:39:39–01:07:47）；Runway 描述了 causal/autoregressive generation、step distillation、Interface World Model 与 GWM robotics 路线。
+- **边界**：实时化通常要付出质量或算力成本；Interface World Model 当前也远比传统 HTML/CSS UI 昂贵。低延迟本身不能证明物理正确性。
 
 ## 与相邻概念的边界
 
