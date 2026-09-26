@@ -165,23 +165,23 @@ OpenRouter（2026-07）给出网关/代理层的工业方法论：**同一 model
 [[20260926-latentspace-openrouter]] 的完整访谈把 OpenRouter 从“provider router”进一步描述成一个多边市场与治理节点。模型实验室提供 capability，serving provider 提供计算供给，开发者带来 workload；统一接口只是入口，真正的复利来自供给竞争、需求观测、实时路由和风险治理。
 
 **判断**：成熟的 token gateway 会从流量代理演化为四层基础设施：**market making → distribution → observability → trust & safety**。原因不是产品堆叠，而是中间层天然同时看到模型、provider、应用和消费行为之间的连接。
-- **证据**：[[20260926-latentspace-openrouter]]（00:17:43–00:23:03；00:43:40–00:45:08；01:08:26–01:10:41）。来源分别描述 model lab 的 distribution/plumbing 缺口、多 provider 价格竞争、leaderboard 作为市场变化视图，以及盗刷、转售、账号入侵与 runaway-agent spend 等平台级异常。
+- **证据**：[[20260926-latentspace-openrouter]]；Transcript 可用 “checkpoint is done / crickets”“neutral layer”“OpenClaw”“blocked 10x as much dollar volume” 等短语回查。来源分别描述 model lab 的 distribution/plumbing 缺口、多 provider 价格竞争、leaderboard / app 变化，以及盗刷、转售、账号入侵与 runaway-agent spend 等平台级异常。
 - **边界**：这些平台规模、增长和 fraud 数据主要来自 OpenRouter 参与者自述；“中立市场”也是公司的产品定位，不能据此假定排序和商业利益永远中立。
 
 ### Token fraud 不只等于被盗 API Key
 
-既有灰色中转材料主要把风险放在被盗/池化 key、违约转售与 denial-of-wallet。新访谈补出一个重要类别：**合法凭据 + 错误自主行为**。Agent 可以在没有攻击者的情况下进入 runaway loop，持续产生企业不希望承担的推理消费（01:10:10–01:10:24）。
+既有灰色中转材料主要把风险放在被盗/池化 key、违约转售与 denial-of-wallet。新访谈补出一个重要类别：**合法凭据 + 错误自主行为**。Agent 可以在没有攻击者的情况下进入 runaway loop，持续产生企业不希望承担的推理消费（Transcript 搜索锚点：“accidental runaway agent”）。
 
 **判断**：Token 供应链的风险模型应把“恶意滥用”和“失控消费”并列。治理对象不是只验证 caller 身份，而是持续判断“这段消费是否仍然符合 principal 的意图和预算”。
-- **证据**：[[20260926-latentspace-openrouter]]（01:09:19–01:10:41）。
+- **证据**：[[20260926-latentspace-openrouter]]；Transcript 搜索锚点：“accidental runaway agent”。
 - **边界**：访谈没有给出 runaway agent 的发生率、损失分布或检测效果，因此这里只能确认风险类型存在，不能量化其总体占比。
 
 ### 跨供应链视野形成安全信息优势
 
-访谈把 token 类比为互联网中不断流动的价值单元，并将 Stripe/OpenRouter 的结合解释为支付反欺诈与 token anti-abuse 的相邻问题（01:14:00–01:18:32）。
+访谈把 token 类比为互联网中不断流动的价值单元，并将 Stripe/OpenRouter 的结合解释为支付反欺诈与 token anti-abuse 的相邻问题（Transcript 搜索锚点：“new type of unit of value”“bad agents”）。
 
 **判断**：当异常模式跨 model lab、provider、application 迁移时，单一上游模型实验室只能看到局部；跨供应链中间层更有条件做 account recovery、abuse correlation 和行为异常检测。这是网关层相对单一 provider 的一种信息优势。
-- **证据**：[[20260926-latentspace-openrouter]]（01:14:00–01:18:32）。
+- **证据**：[[20260926-latentspace-openrouter]]；Transcript 搜索锚点：“new type of unit of value”“bad agents”。
 - **边界**：来源进一步预测 agentic fraud 将大规模扩张，这是前瞻判断而非当前规模证据；“跨平台可见性更适合防守”也受隐私政策约束——同一访谈明确说 prompts/completions 默认不可见，需 opt-in。
 
 ## 关联概念

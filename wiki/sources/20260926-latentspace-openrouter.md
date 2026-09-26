@@ -4,8 +4,8 @@ title: "OpenRouter: from Seed to Stripe — with OpenRouter’s Alex Atallah & A
 canonical_url: "https://www.latent.space/p/openrouter"
 raw_state: index
 original_raw_file: "20260926-latentspace-openrouter.md"
-original_body_sha256: "e343b03e0d3bd3ea47acfb63f6a657e59695391e214087074e05f37f41c7ba39"
-indexed_at: "2026-09-26T16:43:00+08:00"
+original_body_sha256: "633833b1ddc5ac60b8bcf012ed253431d63471af46708903bac2d3225c616d06"
+indexed_at: "2026-09-26T16:54:32+08:00"
 created: 2026-09-26
 updated: 2026-09-26
 tags:
@@ -18,12 +18,13 @@ tags:
 evidence_level: high
 claim_type: mixed
 source_locator:
-  - "00:00:49–00:14:28：PubSub/marketplace thesis、model diversity、enterprise control-plane motivation"
-  - "00:15:00–00:26:09：big-model-wins objection、model-lab distribution gap、neutral discovery/distribution layer"
-  - "00:40:52–00:51:28：developer governance、provider marketplace、human routing、privacy/data-policy boundary、Arena comparison"
-  - "00:59:40–01:02:40：Mixture of Models / Fusion 的失败、重启与适用条件"
-  - "01:03:51–01:09:02：model-launch/app flywheel、coding agents、OpenClaw heartbeats、leaderboards as market observability"
-  - "01:09:09–01:20:36：token fraud、runaway agents、trust & safety、Stripe、agentic fraud speculation"
+  - "搜索锚点 “PubSub piece” / “Alpaca” / “home base for LLMs”：marketplace thesis、model diversity"
+  - "搜索锚点 “content moderation” / “we need access to the weights” / “custom eval”：guardrail mismatch、enterprise control-plane motivation"
+  - "搜索锚点 “checkpoint is done” / “there'd be crickets” / “neutral layer looking at this market”：model-lab distribution gap、neutral discovery layer"
+  - "搜索锚点 “You need governance” / “Open Router can't see your prompts or completions” / “humans as router”：governance、privacy、runtime routing"
+  - "搜索锚点 “MOM, mixture of models” / “fused result was” ：Fusion 的失败、重启与适用条件"
+  - "搜索锚点 “OpenClaw” / “heartbeats”：Agent workload 改变路由经济"
+  - "搜索锚点 “blocked 10x as much dollar volume” / “accidental runaway agent” / “bad agents”：token fraud、trust & safety、agentic fraud speculation"
 ---
 
 # OpenRouter: from Seed to Stripe
@@ -68,8 +69,8 @@ source_locator:
 
 ## 证据边界
 
-- 本页基于公开完整 Transcript，Raw 覆盖 00:00:03.199 至 01:20:36.828。
-- Transcript 的 speaker_map 为空，因此 Raw 保留逐段时间戳与原文，但未人为补造逐句 speaker 标签；人物归属以对话上下文和页面 guest/host 元数据解释。
+- 本页基于用户在当前会话直接提供的完整 Transcript；Raw 保留其正文，不再依赖网页抓取结果作为主要证据。
+- 用户提供的 Transcript 未保留逐句 speaker 标签与时间戳；人物归属仅依据对话上下文和页面标题中的明确嘉宾信息，关键证据以可在 canonical Transcript 中搜索的短语锚点定位。
 - OpenRouter 的增长、用户规模、fraud 数据、产品历史及内部数据策略主要来自 Alex Atallah / Anjney Midha 的参与者叙述，属于高价值一手证据，但非第三方审计。
 - 关于 Stripe/OpenRouter 的战略意义、agentic fraud 和未来定价形态包含明确的前瞻性判断。
 - canonical 页面和公开 transcript 数据可恢复全文；编译完成后 Raw 适合按 Schema 结算为 index。

@@ -61,13 +61,13 @@ source_raw:
 
 ### 退出权必须落实为运行时 Control Plane
 
-[[20260926-latentspace-openrouter]] 把“退出权”从采购条款推进到实际运行时。Midha 回忆 Discord 用闭源模型做社区定制 moderation 时，provider 的 guardrail / post-training policy 会直接拒绝本来属于业务需求的输入；不同社区又有自己的规则，因此“供应商允许什么”与“企业实际需要什么”并不天然一致（00:09:28–00:14:28）。
+[[20260926-latentspace-openrouter]] 把“退出权”从采购条款推进到实际运行时。Midha 回忆 Discord 用闭源模型做社区定制 moderation 时，provider 的 guardrail / post-training policy 会直接拒绝本来属于业务需求的输入；不同社区又有自己的规则，因此“供应商允许什么”与“企业实际需要什么”并不天然一致（Transcript 搜索锚点：“content moderation”“we need access to the weights”“custom eval”）。
 
 **判断**：企业拥有模型退出权，不能只靠合同写“可更换供应商”。真正的退出权需要一个可执行 control plane，使工作流能在 provider policy、价格、可用性或任务适配发生变化时切换模型，并保持自己的 eval、数据策略和治理边界。
-- **证据**：[[20260926-latentspace-openrouter]]（00:09:28–00:14:28；00:40:52–00:41:31）。来源同时指出 code-based LLM integration 最终需要管理模型访问、数据 policy 和团队权限。
+- **证据**：[[20260926-latentspace-openrouter]]；Transcript 搜索锚点：“content moderation”“You need governance”。来源同时指出 code-based LLM integration 最终需要管理模型访问、数据 policy 和团队权限。
 - **边界**：这是 Discord/OpenRouter 参与者的一手经历，不能推出所有闭源 provider 都会与企业政策冲突，也不能推出所有企业都值得维护多模型 control plane；复杂度应与真实 switching need 匹配。
 
-同一来源还提供了一个采购层面的实现约束：OpenRouter 称默认不读取 prompts/completions，组织需要 opt-in 才记录（00:48:07–00:48:48）。这意味着中间层本身也必须被当作数据处理方审查；“多模型自由”不应以默认汇聚业务内容为代价。
+同一来源还提供了一个采购层面的实现约束：OpenRouter 称默认不读取 prompts/completions，组织需要 opt-in 才记录（Transcript 搜索锚点：“Open Router can't see your prompts or completions”）。这意味着中间层本身也必须被当作数据处理方审查；“多模型自由”不应以默认汇聚业务内容为代价。
 
 ## 五个采购变量
 
@@ -149,10 +149,10 @@ cost per task = (input tokens × input price + output tokens × output price) ×
 
 ### 从 Humans-as-Router 到 Workload Routing
 
-[[20260926-latentspace-openrouter]] 给这个采购方法增加了运行时视角：用户很早就会“先问更快/便宜的模型，不够好再升级强模型”，即 humans as router（00:45:47–00:46:58）。Agent 时代把这个问题进一步结构化：OpenClaw 的 heartbeat 与真正任务调用价值密度不同，高频 heartbeat 没必要默认购买最高价 frontier intelligence（01:06:24–01:07:17）。
+[[20260926-latentspace-openrouter]] 给这个采购方法增加了运行时视角：用户很早就会“先问更快/便宜的模型，不够好再升级强模型”，即 humans as router（Transcript 搜索锚点：“humans as router”）。Agent 时代把这个问题进一步结构化：OpenClaw 的 heartbeat 与真正任务调用价值密度不同，高频 heartbeat 没必要默认购买最高价 frontier intelligence（搜索锚点：“OpenClaw”“heartbeats”）。
 
 **判断**：成熟模型采购不应只产生一张“批准模型列表”，还应产出 **workload → minimum sufficient model capability** 的运行时策略。采购与路由因此是同一个问题的离线/在线两面：采购决定可用供给，router 决定每个动作实际消费哪一层供给。
-- **证据**：[[20260926-latentspace-openrouter]]（00:45:47–00:46:58；01:06:24–01:07:17）；[[20260825-openrouter-choose-best-ai-model]]。
+- **证据**：[[20260926-latentspace-openrouter]]（搜索锚点：“humans as router”“OpenClaw”“heartbeats”）；[[20260825-openrouter-choose-best-ai-model]]。
 - **边界**：路由器需要可靠的 workload classification、fallback 和 eval；错误降级会把成本优化变成质量损失。低 QPS 或单一稳定工作流也可能没有足够收益抵消多模型复杂度。
 
 ## 最小采购判断矩阵

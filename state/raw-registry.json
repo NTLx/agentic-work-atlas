@@ -2967,16 +2967,16 @@
       "updated_at": "2026-09-25T18:57:54+08:00"
     },
     "20260926-latentspace-openrouter.md": {
-      "body_sha256": "e343b03e0d3bd3ea47acfb63f6a657e59695391e214087074e05f37f41c7ba39",
+      "body_sha256": "633833b1ddc5ac60b8bcf012ed253431d63471af46708903bac2d3225c616d06",
       "canonical_url": "https://www.latent.space/p/openrouter",
-      "compiled_at": "2026-09-26T16:42:05+08:00",
-      "indexed_at": "2026-09-26T16:43:00+08:00",
+      "compiled_at": "2026-09-26T16:54:32+08:00",
+      "indexed_at": "2026-09-26T16:54:32+08:00",
       "raw_file": "20260926-latentspace-openrouter.md",
       "raw_state": "index",
-      "retention_note": "已完整抓取并编译公开 Transcript；canonical 页面及 transcription JSON 可恢复全文，Source Summary 保留时间戳证据定位与正文哈希。",
+      "retention_note": "已用用户提供的完整 Transcript 重新编译；canonical 页面可恢复全文，Source Summary 保留 Raw 行号证据定位与正文哈希。",
       "status": "compiled",
       "summary_path": "wiki/sources/20260926-latentspace-openrouter.md",
-      "updated_at": "2026-09-26T16:43:23+08:00"
+      "updated_at": "2026-09-26T16:54:32+08:00"
     },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
@@ -3597,6 +3597,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-26T16:43:23+08:00",
+  "updated_at": "2026-09-26T16:54:32+08:00",
   "version": 1
 }
