@@ -6,7 +6,7 @@ aliases:
   - token 供应链管理
 definition: "将 token 像电力、物流和数据库一样编排的生产基础设施层，覆盖推理调度、KV cache 管理、成本路由、可观测性和治理，使 token 从聊天消耗品变成可控生产资料"
 created: 2026-05-29
-updated: 2026-07-29
+updated: 2026-09-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -27,6 +27,7 @@ source_raw:
   - "[[20260606-the-minimill-of-ai]]"
   - "[[20260727-vectoral-token-relay-market]]"
   - "[[20260728-openrouter-evaluate-llm-provider-performance]]"
+  - "[[20260926-latentspace-openrouter]]"
 ---
 
 > [!definition] 定义
@@ -158,6 +159,30 @@ OpenRouter（2026-07）给出网关/代理层的工业方法论：**同一 model
 **评估 → 路由策略**：benchmark 排行榜只做候选短名单（六问：TTFT/输出速度是否分开报告、尾部还是均值、是否标明端点与 serving 设置、是否考虑量化、是否反映当前性能、是否匹配自己的 prompts）；最终用自己的 prompts 测量，结果固化为路由设置（sort / 百分位阈值 / quantizations 过滤 / ignore / fallbacks），而非硬编码 provider 名字。
 
 **与本节既有命题的拼合**："多模型定价透明性"（07-18）记录 tokenizer 差异 → `$/token × token 数` 双变量偏差（**计数侧**隐藏变量）；本扩展补上**质量侧**——同一模型、不同精度/基础设施 = 不同行为。两侧合起来构成模型消费的完整隐藏变量表。学术成本路由（RouteLLM/IPR）与工业路由手册互补覆盖同一命题。厂商定位提示：原文结论"用路由层别硬编码 provider"恰是 OpenRouter 产品目录，方法论可独立提取，结论参照激励结构审视（详见 [[20260728-openrouter-evaluate-llm-provider-performance]] 质疑节）。
+
+## 网关层升级：Market + Observability + Trust/Safety（09-26）
+
+[[20260926-latentspace-openrouter]] 的完整访谈把 OpenRouter 从“provider router”进一步描述成一个多边市场与治理节点。模型实验室提供 capability，serving provider 提供计算供给，开发者带来 workload；统一接口只是入口，真正的复利来自供给竞争、需求观测、实时路由和风险治理。
+
+**判断**：成熟的 token gateway 会从流量代理演化为四层基础设施：**market making → distribution → observability → trust & safety**。原因不是产品堆叠，而是中间层天然同时看到模型、provider、应用和消费行为之间的连接。
+- **证据**：[[20260926-latentspace-openrouter]]（00:17:43–00:23:03；00:43:40–00:45:08；01:08:26–01:10:41）。来源分别描述 model lab 的 distribution/plumbing 缺口、多 provider 价格竞争、leaderboard 作为市场变化视图，以及盗刷、转售、账号入侵与 runaway-agent spend 等平台级异常。
+- **边界**：这些平台规模、增长和 fraud 数据主要来自 OpenRouter 参与者自述；“中立市场”也是公司的产品定位，不能据此假定排序和商业利益永远中立。
+
+### Token fraud 不只等于被盗 API Key
+
+既有灰色中转材料主要把风险放在被盗/池化 key、违约转售与 denial-of-wallet。新访谈补出一个重要类别：**合法凭据 + 错误自主行为**。Agent 可以在没有攻击者的情况下进入 runaway loop，持续产生企业不希望承担的推理消费（01:10:10–01:10:24）。
+
+**判断**：Token 供应链的风险模型应把“恶意滥用”和“失控消费”并列。治理对象不是只验证 caller 身份，而是持续判断“这段消费是否仍然符合 principal 的意图和预算”。
+- **证据**：[[20260926-latentspace-openrouter]]（01:09:19–01:10:41）。
+- **边界**：访谈没有给出 runaway agent 的发生率、损失分布或检测效果，因此这里只能确认风险类型存在，不能量化其总体占比。
+
+### 跨供应链视野形成安全信息优势
+
+访谈把 token 类比为互联网中不断流动的价值单元，并将 Stripe/OpenRouter 的结合解释为支付反欺诈与 token anti-abuse 的相邻问题（01:14:00–01:18:32）。
+
+**判断**：当异常模式跨 model lab、provider、application 迁移时，单一上游模型实验室只能看到局部；跨供应链中间层更有条件做 account recovery、abuse correlation 和行为异常检测。这是网关层相对单一 provider 的一种信息优势。
+- **证据**：[[20260926-latentspace-openrouter]]（01:14:00–01:18:32）。
+- **边界**：来源进一步预测 agentic fraud 将大规模扩张，这是前瞻判断而非当前规模证据；“跨平台可见性更适合防守”也受隐私政策约束——同一访谈明确说 prompts/completions 默认不可见，需 opt-in。
 
 ## 关联概念
 
