@@ -5,7 +5,7 @@ aliases:
   - Allocation Economy
 definition: "从知识经济转型而来的新经济形态，价值从'你知道什么'转向'如何分配和管理 AI 资源完成任务'"
 created: 2026-04-10
-updated: 2026-05-26
+updated: 2026-09-28
 tags:
   - AI-Agent
   - economy
@@ -23,6 +23,7 @@ related_entities:
   - '[[Decision-Quality]]'
 source_raw:
   - '[[The Knowledge Economy Is Over. Welcome to the Allocation Economy.]]'
+  - '[[20260927-lenny-molly-graham-ai-legos]]'
 ---
 
 # Allocation Economy（分配经济）
@@ -77,6 +78,21 @@ source summary 对“知识经济终结”也给出限制：更准确地说，�
 ```
 
 这条链条解释了为什么 [[Input-Output-Outcome]] 仍然重要。AI 可以放大 input，但如果目标选择、质量检查和结果归因没有跟上，更多输出不会自然变成更好的 outcome。
+
+## AI Delegation 的管理跨度税（2026-09）
+
+[[20260927-lenny-molly-graham-ai-legos]] 对“人人成为 Model Manager”补上了一个此前容易被忽略的成本：**把任务委托给 Agent，并不等于把责任真正交出去。** Graham 区分了 human handoff 与 robot delegation——前者可以把项目连同脑内占用一起转移给可靠同事；后者通常仍要求原使用者持续监督、纠偏、整合并为最终结果负责，因此“mental tax stays with you”。
+
+**判断**：Allocation Economy 需要区分两种容量：
+- **delegation capacity**：一个人理论上能启动多少模型/Agent 工作；
+- **responsibility capacity**：一个人实际能持续理解、监督、验收并承担多少并行工作。
+
+当 delegation capacity 上升得比 responsibility capacity 更快时，就会出现 **management span / oversight tax**：Agent 越多，不一定释放越多时间，反而可能增加中断、上下文切换、返工和心理负担。
+
+- **证据**：[[20260927-lenny-molly-graham-ai-legos]]；Transcript 搜索锚点：“mental tax stays with you”“everyone in the world is a manager now”“pretty junior employees”。Graham 明确说 robot delegation 保留 oversight 和 final-product responsibility，并把 Agent context / correction / coaching 与管理 junior employee 类比。
+- **边界**：Agent 与人类员工只在“目标—上下文—反馈—验收”结构上部分同构。Agent 不需要职业发展、情绪支持、组织政治等人类管理工作，因此“人人都是 manager”是工作结构隐喻，不是职业等同。
+
+这也修正了“AI 让 maker 变 manager”的乐观版本：**管理能力不是无限资源。** 如果组织只扩大每个人可调用的 Agent 数，却不降低监督成本、改进可验证性或减少并行责任对象，分配经济会把执行瓶颈转化为协调瓶颈。
 
 ## 经济影响
 

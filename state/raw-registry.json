@@ -2978,6 +2978,18 @@
       "summary_path": "wiki/sources/20260926-latentspace-openrouter.md",
       "updated_at": "2026-09-26T16:54:32+08:00"
     },
+    "20260927-lenny-molly-graham-ai-legos.md": {
+      "body_sha256": "e9bd308d6d095010eb03cde9b25472a2598d904d1bf1c1bdd2f4d80d7bb9f1e1",
+      "canonical_url": "https://www.lennysnewsletter.com/p/the-grief-loneliness-and-burnout",
+      "compiled_at": "2026-09-28T10:28:39+08:00",
+      "indexed_at": "2026-09-28T10:28:39+08:00",
+      "raw_file": "20260927-lenny-molly-graham-ai-legos.md",
+      "raw_state": "index",
+      "retention_note": "用户提供完整 Transcript 并完成编译；canonical 页面可恢复原文，Source Summary 保留可搜索证据锚点与正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260927-lenny-molly-graham-ai-legos.md",
+      "updated_at": "2026-09-28T10:28:39+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -3597,6 +3609,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-09-26T16:54:32+08:00",
+  "updated_at": "2026-09-28T10:28:39+08:00",
   "version": 1
 }
