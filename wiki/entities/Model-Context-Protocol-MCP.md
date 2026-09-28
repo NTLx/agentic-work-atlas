@@ -6,7 +6,7 @@ aliases:
   - Model Context Protocol
 definition: "让 AI client 通过统一客户端-服务器协议连接工具和数据源的开放标准，用来替代模型与工具之间的一对一硬编码集成"
 created: 2026-05-13
-updated: 2026-08-06
+updated: 2026-09-28
 tags:
   - AI-Agent
   - tool-use
@@ -22,6 +22,7 @@ source_raw:
   - "[[Building an MCP Ecosystem at Pinterest]]"
   - "[[20260718-bytebytego-mcp-vs-a2a-vs-acp]]"
   - "[[20260805-how-we-use-ai-cloudflare-os]]"
+  - "[[20260925-databricks-spglobal-genie-mcp]]"
 ---
 
 # Model Context Protocol (MCP)
@@ -57,6 +58,23 @@ Cloudflare Cloudflare OS（CIO Sam Rhea, 2026-08-05，来源 [[20260805-how-we-u
 3. **与 Pinterest 的互补**：Pinterest 强调中心化 [[MCP-Registry]]（哪些 server 被批准、谁能访问）；Cloudflare 强调"自建 MCP server 加权限控制层"——在连接层就落地最小权限，而非依赖单个系统记录的原生实现。
 
 **可迁移内核**：企业 MCP 治理的两个维度缺一不可——注册表（管"能用什么"）与自建控制层（管"用什么权限、以什么速率"）。原生 MCP server 往往缺少角色/地区限流能力，自建是补权限边界而非重复造轮子。
+
+## MCP 作为组合层：窄语义服务，宽业务入口（2026-09）
+
+S&P Global Energy 的 Databricks/Genie 架构（[[20260925-databricks-spglobal-genie-mcp]]）给 MCP 增加了一个此前 Pinterest / Cloudflare 案例较弱的角色：**composition contract**。
+
+底层不是一个巨型 MCP server，而是多个 dataset-group 级 Genie Agent，每个 Agent 保持窄业务语义；上层 FastMCP proxy 用 namespace 把多个 server 组合成 commodity 或跨 commodity endpoint。消费者只需要连接较少的复合入口，而 LLM 在工具层做 route / fan-out。
+
+**判断**：MCP 的企业价值可以分成三层：
+
+1. **连接标准**：client 不必为每个数据服务重新实现协议；
+2. **治理投射**：MCP endpoint 继承已有 auth / permission / audit；
+3. **组合边界**：在不合并底层语义模型的前提下，把多个窄服务组成更宽业务能力。
+
+第三层尤其重要：**协议组合可以扩大可达面，而不要求先把所有 domain ontology 合并成一个大 Agent。** 这与 Pinterest 的 domain-specific server 原则形成互证。
+
+- **证据**：[[20260925-databricks-spglobal-genie-mcp]]；每个 Genie Agent 暴露为 managed MCP server，上层 FastMCP proxy 组合 namespaced tools。
+- **边界**：组合降低客户端配置复杂度，但不会自动解决跨域 routing error、语义冲突和 tool explosion；这些仍需 eval 与 observability。
 
 ## 核心组件
 

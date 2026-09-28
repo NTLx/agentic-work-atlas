@@ -7,7 +7,7 @@ aliases:
   - 代理式数据分析
 definition: "用 LLM/Agent 承担自助数据分析入口，但可靠性来自 canonical datasets、semantic layer、domain skills、评测、provenance 和 correction harvesting 的系统"
 created: 2026-06-05
-updated: 2026-07-29
+updated: 2026-09-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,6 +25,7 @@ related_entities:
 source_raw:
   - "[[20260603-anthropic-self-service-data-analytics]]"
   - "[[20260727-langchain-agent-data-stack]]"
+  - "[[20260925-databricks-spglobal-genie-mcp]]"
 ---
 
 # Agentic Analytics（代理式数据分析）
@@ -88,6 +89,27 @@ LangChain 数据团队的 agent-first 数据栈（2026-07，[[20260727-langchain
 **新数据点**：data agent 承接 **40 倍于 3 人数据团队**的请求量；过去 30 天近 100% provisioned 用户（公司三分之一）使用，人均 23 次对话/月；**endorsement 稀缺性纪律——"if everything is endorsed, the signal stops being useful"**（只有数据团队可标记 + 变更需评审）；数据团队角色从"回答每个问题"转为"改进系统"，到达的问题变得"more complex and higher leverage"（[[Captain-Mindset]] 的数据域版本）。
 
 **警示**：40x 是对话量 vs 团队可处理人力之比（含被抑制需求的释放），无准确率指标，样本为技术素养高的 AI 公司员工。但组件框架的**跨组织稳定性**（两家公司独立收敛于同一架构）本身是强信号——比任何单一数字更值得信任。
+
+## S&P Global Energy：SME 从 Requester 变 Publisher（2026-09）
+
+[[20260925-databricks-spglobal-genie-mcp]] 提供了 Anthropic / LangChain 之外的第三个独立企业案例，而且把组织 ownership 推得更进一步：领域专家不是只维护 semantic docs，而是直接按 dataset group 创建和维护窄范围 Genie Agent；Agent 一经发布就自动拥有受治理的 MCP endpoint。
+
+**判断**：可靠 Agentic Analytics 的组织边界正在收敛为：
+
+| 层 | 最合适 owner | 责任 |
+|---|---|---|
+| 业务语义 | SME / analyst | metric 定义、table context、trusted examples |
+| 数据治理 | data platform | auth、permission、audit、federation |
+| Agent 接入合同 | MCP | 稳定 tool surface |
+| 跨域组合 | thin proxy / orchestrator | namespace、route、fan-out |
+| 质量闭环 | SME + eval | benchmark、verified answer、regression |
+
+关键不是“让业务人员自己写 Agent”，而是把**语义发布权**交给最接近业务含义的人，同时让工程团队只维护可复用的组合和治理层。
+
+S&P 的另一个重要经验是**窄 semantic agent、宽 protocol composition**：不要用一个巨型 Agent 吞下整个 commodity；在 dataset group 保持局部准确性，在 MCP proxy 层组合跨域访问。
+
+- **证据**：[[20260925-databricks-spglobal-genie-mcp]]，“Layer 1”“Layer 2”“Layer 3”“What changed for the business”“Lessons learned and best practices”。
+- **边界**：time-to-market 和质量收益均为 vendor/customer 自报；Unity Catalog 继承治理的前提是底层权限本身已经正确。
 
 ## 前提与局限性
 
