@@ -3607,6 +3607,18 @@
       "status": "compiled",
       "summary_path": "wiki/sources/用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
       "updated_at": "2026-07-09T13:16:44+08:00"
+    },
+    "20260924-claude-opus-5-5-context-cost.md": {
+      "body_sha256": "c1b2657689fdc0b1cdaff1cc56ae7bc49a66429a402069ace4c737da5d9d4939",
+      "canonical_url": "https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context",
+      "compiled_at": "2026-09-28T16:34:38+08:00",
+      "indexed_at": "2026-09-28T16:34:38+08:00",
+      "raw_file": "20260924-claude-opus-5-5-context-cost.md",
+      "raw_state": "index",
+      "retention_note": "公开 canonical 页面可恢复；Source Summary 保留章节证据定位与规范正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260924-claude-opus-5-5-context-cost.md",
+      "updated_at": "2026-09-28T16:34:38+08:00"
     }
   },
   "updated_at": "2026-09-28T10:28:39+08:00",

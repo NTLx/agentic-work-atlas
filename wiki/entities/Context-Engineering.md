@@ -5,7 +5,7 @@ aliases:
   - Context Engineering
 definition: "设计 Agent 每次推理时看到的信息结构，包括项目上下文、技能按需加载、记忆层级和上下文生命周期管理"
 created: 2026-04-09
-updated: 2026-09-17
+updated: 2026-09-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -46,6 +46,7 @@ source_raw:
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260805-how-we-use-ai-cloudflare-os]]"
   - "[[20260730-jeff-dean-1-rule-building-ai]]"
+  - "[[20260924-claude-opus-5-5-context-cost]]"
 ---
 
 # Context Engineering
@@ -114,6 +115,21 @@ Jeff Dean 在 Root Access 访谈中把模型明确放回更大的系统：模型
 
 - **证据**：[[20260730-jeff-dean-1-rule-building-ai]]
 - **边界**：访谈中关于 Agent 可运行数天或数周的描述，以及内部 benchmark skill 的效果，属于案例与前瞻判断；它们没有公开任务完成率、人工介入频次或跨组织复现实验。
+
+## Context 的经济生命周期：高信号还不够，还要可复用（2026-09）
+
+[[20260924-claude-opus-5-5-context-cost]] 给 Context Engineering 增加了一个直接的生产经济约束：Claude Code 在 6 个月内 context/request 约增长 2.6×，而 prompts/session 并未同步增加。长任务的成本越来越由**重复读取已有上下文**决定。
+
+**判断**：Context Engineering 不能只优化“哪些 token 值得进入窗口”，还必须优化这些 token 的**生命周期与可复用性**：
+
+- 高信号 context 如果每轮都按新输入重读，仍然可能很贵；
+- 稳定 prefix、按需工具加载和 subagent cache inheritance 能把“信息成本”转化为“廉价重复读取”；
+- compaction、切模型、改变 instructions 等动作既是认知决策，也是 cache invalidation 决策。
+
+这与 [[Compaction]] 的张力构成一个新的 Pareto 前沿：**窗口健康度 / 语义新鲜度 / cache hit rate / task success** 不能只优化其中一个。
+
+- **证据**：[[20260924-claude-opus-5-5-context-cost]]；文章报告 context/request 2.6×、uncached input 降低 >50%，并把一小时 TTL、工具按需加载和 parent-cache fork 作为 harness 改进。
+- **边界**：这是 Claude Code 的第一方 workload；其他 Agent Harness 的 cache protocol 和价格模型不同。
 
 ## 核心问题：Agent 系统的热力学第二定律
 

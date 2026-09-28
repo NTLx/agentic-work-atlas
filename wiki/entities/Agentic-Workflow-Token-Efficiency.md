@@ -6,7 +6,7 @@ aliases:
   - Token Efficiency
 definition: "通过 API 代理记录、自动化审计、MCP 工具裁剪、CLI 替代等手段，系统性优化 Agentic Workflows 的 token 成本"
 created: 2026-05-09
-updated: 2026-09-05
+updated: 2026-09-28
 tags:
   - Agentic-Engineering
   - cost-optimization
@@ -35,6 +35,7 @@ source_raw:
   - "[[202605-code-cleanliness-coding-agents-minimal-pair.pdf]]"
   - "[[20260813-pl-tokens-token-efficiency]]"
   - "[[20260828-uber-software-factory]]"
+  - "[[20260924-claude-opus-5-5-context-cost]]"
 ---
 
 # Agentic-Workflow-Token-Efficiency（Agentic Workflow Token 效率）
@@ -122,6 +123,21 @@ Uber 的一手实践把 token 优化从单个工作流的技巧提升为托管 A
 
 - **证据**：[[20260828-uber-software-factory]]（“The Cost Equation”至“Session Analysis Dashboard”）。
 - **边界**：上述幅度均为 Uber 内部测量；图谱、gateway、统一 harness 和 session trace 基础设施的建设成本未披露，不能把单项数字直接当作普适基准。
+
+## 长程 Coding Agent：重复上下文读取成为主成本项（2026-09）
+
+Anthropic 的 Claude Code 聚合数据（2026-03→09，[[20260924-claude-opus-5-5-context-cost]]）显示：prompts/session 基本稳定，但 context/request 约增长 **2.6×**，input:output token ratio 从 **189:1 → 324:1**；同时每 prompt 的 model calls 增长 >40%，中断减少 68%。
+
+**判断**：长程 coding agent 的成本结构正在从“生成多少 token”转向“同一任务需要反复读取多少上下文”。因此，Prompt Cache 不再只是 API 层优化，而是 Agent Harness 的成本架构。
+
+这带来三个实践约束：
+
+1. **以完成任务成本而非单 token 价格选模型**：强模型如果能减少错误路径和 turns，在开放任务上可能更便宜；短机械任务则未必。
+2. **把 cache locality 当成设计目标**：tool loading、instructions 变化、effort 切换、subagent fork、TTL 与 compaction 都会影响有效成本。
+3. **把新输入和重复读取分开测量**：同样的总 input tokens，如果大部分来自廉价 cached read，其成本结构完全不同。
+
+- **证据**：[[20260924-claude-opus-5-5-context-cost]]，“Claude Code trends”“Cache is cheap”“Claude Code is better at using the cache”“The same task, but with fewer turns”。
+- **边界**：数据来自 Anthropic 自身产品 telemetry；价格、模型质量与 harness 改动同时变化，不能把成本改善单独归因于 Opus 5.5。
 
 ## 模型经济学：成本异质性
 
