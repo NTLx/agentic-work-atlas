@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-09-25
+updated: 2026-09-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -83,6 +83,7 @@ source_raw:
   - "[[20260911-github-marketing-ops-as-code]]"
   - "[[20260911-openai-habitat-storage-scaling]]"
   - "[[20260925-latentspace-runway-world-models]]"
+  - "[[20260924-github-security-lab-ai-fuzzing-taskflow]]"
 ---
 
 # Agent Harness
@@ -176,6 +177,29 @@ harness 上移，负责新的工具、状态、验证和治理边界
 ~~~
 
 因此，判断一个 harness 组件是否“技术债”，不能只问模型以后会不会更强，还要问：**它承担的是可学习的认知模式，还是必须独立存在的系统约束？**
+
+## 安全自动化中的 Harness：判断与执行分离（2026-09）
+
+GitHub Security Lab 的 Fuzzing Taskflow（[[20260924-github-security-lab-ai-fuzzing-taskflow]]）提供了一个高风险技术域的 Harness 实例：LLM 负责选择 fuzz target、设计 harness、判断 coverage gap 的下一步；MCP tools 负责运行 fuzzer、编译、读取 coverage 与保存 crash；跨阶段状态落在 SQLite，而不是只存在模型上下文里。
+
+**判断**：高自治 Harness 的关键不是让模型拥有更多原始执行自由，而是把系统拆成：
+
+```text
+LLM judgment
+    ↓
+窄的可审计执行 primitives
+    ↓
+外部持久状态
+    ↓
+客观反馈 / stop condition
+    ↓
+高语义风险结果再交人类复核
+```
+
+这个结构同时降低了上下文依赖和执行面的不可见性。文章中的 coverage plateau 是外部停止条件；漏洞 verdict / patch 标记为 review required，则把不可可靠自动判定的语义边界留给人。
+
+- **证据**：[[20260924-github-security-lab-ai-fuzzing-taskflow]]，“The architecture in one minute”“The coverage-feedback loop”“Triage and vulnerability reports”。
+- **边界**：当前实现仍可能运行由模型选择的 host build/fuzzing command；作者因此要求 disposable environment。**工具封装不等于 containment**，仍需 sandbox / least privilege。
 
 ## 非工程流程中的 Harness：GitHub Marketing Ops（2026-09）
 

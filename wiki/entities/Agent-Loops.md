@@ -7,7 +7,7 @@ aliases:
   - 时间驱动 Agent
 definition: "让 Agent 按时间或事件持续运行、检查状态、修复问题和汇总反馈的自动化编排模式"
 created: 2026-05-08
-updated: 2026-09-07
+updated: 2026-09-28
 tags:
   - AI-agent
   - claude-code
@@ -37,6 +37,7 @@ source_raw:
   - "[[20260708-agent-loop-bytebytego]]"
   - "[[20260708-vercel-agent]]"
   - "[[20260906-lenny-companies-series-loops]]"
+  - "[[20260924-github-security-lab-ai-fuzzing-taskflow]]"
 ---
 
 # Agent Loops（Agent 循环调度）
@@ -101,6 +102,21 @@ Anthropic Claude Code 团队（delba_oliveira）按**触发机制和停止条件
 - **编码异常为系统改进**：当单个结果不达标时，不只修复单个问题，而是编码为系统改进，惠及所有未来迭代
 
 **与 Andrew Ng 三层模型的关系**：Ng 按角色和时间尺度划分（coding / developer feedback / external feedback），ClaudeDevs 按操作原语划分。Turn-based 和 Goal-based 对应 Ng 的 Agentic Coding Loop，Time-based 对应 Developer Feedback Loop 的自动化版本，Proactive 对应 External Feedback Loop 的持续运行版本。
+
+## Coverage-Driven Loop：把停止条件放到模型外（2026-09）
+
+GitHub Security Lab 的 fuzzing Taskflow 是 Agent Loop 的一个很硬的工程实例。Loop 不是简单反复调用模型，而是：
+
+**运行 fuzzing → 测量真实 coverage → 识别 gap → 修改 harness/input → 再运行**。
+
+其中最值得迁移的是终止语义：系统不让模型凭主观感觉宣布“完成”，而是用 coverage plateau 检测 diminishing returns；当连续迭代收益低于阈值时退出该目标。
+
+**判断**：Loop 的自治程度取决于反馈信号是否客观、廉价且外部于模型。越接近编译、测试、coverage 这类机器可测信号，越适合让 Agent 长时间自动 hill-climb；越接近 exploitability / architecture intent 等语义判断，越需要升级给人。
+
+这为本页“外部终止定理”增加了一条直接生产案例：**外部 stop predicate 不只是安全兜底，也是计算预算控制器。**
+
+- **证据**：[[20260924-github-security-lab-ai-fuzzing-taskflow]]，“The coverage-feedback loop”；文章还把持久 corpus 跨 iteration/campaign 保存，使每轮反馈能累积而不是重复探索。
+- **边界**：coverage 上升不等于漏洞价值上升；最终安全 verdict 仍需人类复核。
 
 ## 控制论视角：Loop Engineering 即 Cybernetics（2026-06）
 
