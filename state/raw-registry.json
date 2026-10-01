@@ -2954,6 +2954,42 @@
       "summary_path": "wiki/sources/20260923-latentspace-eric-biosecurity.md",
       "updated_at": "2026-09-24T08:59:24+08:00"
     },
+    "20260924-claude-opus-5-5-context-cost.md": {
+      "body_sha256": "c1b2657689fdc0b1cdaff1cc56ae7bc49a66429a402069ace4c737da5d9d4939",
+      "canonical_url": "https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context",
+      "compiled_at": "2026-09-28T16:34:38+08:00",
+      "indexed_at": "2026-09-28T16:34:38+08:00",
+      "raw_file": "20260924-claude-opus-5-5-context-cost.md",
+      "raw_state": "index",
+      "retention_note": "公开 canonical 页面可恢复；Source Summary 保留章节证据定位与规范正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260924-claude-opus-5-5-context-cost.md",
+      "updated_at": "2026-09-28T16:34:38+08:00"
+    },
+    "20260924-github-security-lab-ai-fuzzing-taskflow.md": {
+      "body_sha256": "377a3a413b4a7ef6003ec5d8cd442d2356f1c5bcf55016571ac3e146a98c0772",
+      "canonical_url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent/",
+      "compiled_at": "2026-09-28T16:34:38+08:00",
+      "indexed_at": "2026-09-28T16:34:38+08:00",
+      "raw_file": "20260924-github-security-lab-ai-fuzzing-taskflow.md",
+      "raw_state": "index",
+      "retention_note": "公开 canonical 页面可恢复；Source Summary 保留架构/coverage-loop 章节定位与规范正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260924-github-security-lab-ai-fuzzing-taskflow.md",
+      "updated_at": "2026-09-28T16:34:38+08:00"
+    },
+    "20260925-databricks-spglobal-genie-mcp.md": {
+      "body_sha256": "1097ae46d403d1aa54452c52fef255b28b42dc3eb34cf2c1d5679a48719ca751",
+      "canonical_url": "https://www.databricks.com/blog/data-dialogue-how-sp-global-energy-made-its-structured-data-estate-conversational-databricks",
+      "compiled_at": "2026-09-28T16:34:39+08:00",
+      "indexed_at": "2026-09-28T16:34:39+08:00",
+      "raw_file": "20260925-databricks-spglobal-genie-mcp.md",
+      "raw_state": "index",
+      "retention_note": "公开 canonical 页面可恢复；Source Summary 保留三层架构、SME ownership、MCP composition 章节定位与规范正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260925-databricks-spglobal-genie-mcp.md",
+      "updated_at": "2026-09-28T16:34:39+08:00"
+    },
     "20260925-latentspace-runway-world-models.md": {
       "body_sha256": "89f535fa9ea63ec01736e22d3fdf11da11f30eff93b684b0b5e7203cc603e78f",
       "canonical_url": "https://www.latent.space/p/runway",
@@ -2989,6 +3025,18 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20260927-lenny-molly-graham-ai-legos.md",
       "updated_at": "2026-09-28T10:28:39+08:00"
+    },
+    "20260930-latentspace-devday-2026.md": {
+      "body_sha256": "c4c123093cb6e32516b2c73a0cbdc42ff0f11aa896762b75714bed095610e3d0",
+      "canonical_url": "https://www.latent.space/p/devday-2026",
+      "compiled_at": "2026-10-01T21:58:51+08:00",
+      "indexed_at": "2026-10-01T21:58:51+08:00",
+      "raw_file": "20260930-latentspace-devday-2026.md",
+      "raw_state": "index",
+      "retention_note": "公开 canonical 页面可恢复完整时间戳 Transcript；Source Summary 保留时间戳证据定位与规范正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260930-latentspace-devday-2026.md",
+      "updated_at": "2026-10-01T21:58:51+08:00"
     },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
@@ -3607,44 +3655,8 @@
       "status": "compiled",
       "summary_path": "wiki/sources/用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践.md",
       "updated_at": "2026-07-09T13:16:44+08:00"
-    },
-    "20260924-claude-opus-5-5-context-cost.md": {
-      "body_sha256": "c1b2657689fdc0b1cdaff1cc56ae7bc49a66429a402069ace4c737da5d9d4939",
-      "canonical_url": "https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context",
-      "compiled_at": "2026-09-28T16:34:38+08:00",
-      "indexed_at": "2026-09-28T16:34:38+08:00",
-      "raw_file": "20260924-claude-opus-5-5-context-cost.md",
-      "raw_state": "index",
-      "retention_note": "公开 canonical 页面可恢复；Source Summary 保留章节证据定位与规范正文哈希。",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260924-claude-opus-5-5-context-cost.md",
-      "updated_at": "2026-09-28T16:34:38+08:00"
-    },
-    "20260924-github-security-lab-ai-fuzzing-taskflow.md": {
-      "body_sha256": "377a3a413b4a7ef6003ec5d8cd442d2356f1c5bcf55016571ac3e146a98c0772",
-      "canonical_url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent/",
-      "compiled_at": "2026-09-28T16:34:38+08:00",
-      "indexed_at": "2026-09-28T16:34:38+08:00",
-      "raw_file": "20260924-github-security-lab-ai-fuzzing-taskflow.md",
-      "raw_state": "index",
-      "retention_note": "公开 canonical 页面可恢复；Source Summary 保留架构/coverage-loop 章节定位与规范正文哈希。",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260924-github-security-lab-ai-fuzzing-taskflow.md",
-      "updated_at": "2026-09-28T16:34:38+08:00"
-    },
-    "20260925-databricks-spglobal-genie-mcp.md": {
-      "body_sha256": "1097ae46d403d1aa54452c52fef255b28b42dc3eb34cf2c1d5679a48719ca751",
-      "canonical_url": "https://www.databricks.com/blog/data-dialogue-how-sp-global-energy-made-its-structured-data-estate-conversational-databricks",
-      "compiled_at": "2026-09-28T16:34:39+08:00",
-      "indexed_at": "2026-09-28T16:34:39+08:00",
-      "raw_file": "20260925-databricks-spglobal-genie-mcp.md",
-      "raw_state": "index",
-      "retention_note": "公开 canonical 页面可恢复；Source Summary 保留三层架构、SME ownership、MCP composition 章节定位与规范正文哈希。",
-      "status": "compiled",
-      "summary_path": "wiki/sources/20260925-databricks-spglobal-genie-mcp.md",
-      "updated_at": "2026-09-28T16:34:39+08:00"
     }
   },
-  "updated_at": "2026-09-28T16:34:39+08:00",
+  "updated_at": "2026-10-01T21:58:51+08:00",
   "version": 1
 }

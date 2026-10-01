@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-09-28
+updated: 2026-10-01
 evidence_level: high
 claim_type: mixed
 tags:
@@ -84,6 +84,7 @@ source_raw:
   - "[[20260911-openai-habitat-storage-scaling]]"
   - "[[20260925-latentspace-runway-world-models]]"
   - "[[20260924-github-security-lab-ai-fuzzing-taskflow]]"
+  - "[[20260930-latentspace-devday-2026]]"
 ---
 
 # Agent Harness
@@ -200,6 +201,21 @@ LLM judgment
 
 - **证据**：[[20260924-github-security-lab-ai-fuzzing-taskflow]]，“The architecture in one minute”“The coverage-feedback loop”“Triage and vulnerability reports”。
 - **边界**：当前实现仍可能运行由模型选择的 host build/fuzzing command；作者因此要求 disposable environment。**工具封装不等于 containment**，仍需 sandbox / least privilege。
+
+## Model × Harness 协同与事件驱动 Runtime（2026-09）
+
+OpenAI DevDay 后的 Computer Use / API 访谈（[[20260930-latentspace-devday-2026]]）把 Harness 的作用推进到两个更硬的层面。
+
+第一，Ari Weinstein 明确表示 OpenAI 的 Computer Use 模型会在其发行中的 harness 上训练，因此 model 与 harness 不是完全可交换的两层；特定 representation、tool surface、action substrate 和 recovery loop 可能直接进入训练分布。Computer Use 的近期进步也同时来自模型更会重试/调试，以及 harness 引入 accessibility、DOM、Playwright 与生成代码等多种执行路径。
+
+第二，API runtime 正从同步 turn loop 走向异步、双向、事件驱动：async function calling 允许模型在工具运行时继续工作，mid-turn steering 允许工具结果或新指令在 reasoning 中途进入，WebSockets 则承担持续双向通道。与此同时，长寿命 thread 需要 cache pre-warming、长 cache window 与 compaction 共同维持状态和成本。
+
+**判断**：生产 Agent Harness 的竞争力越来越来自 **model-training interface × runtime scheduling × context lifecycle** 的协同设计，而不是单独堆更多工具。Harness 既是模型能力的使用环境，也可能成为能力训练分布的一部分。
+
+- **证据**：[[20260930-latentspace-devday-2026]]（00:05:20–00:12:02；00:16:03–00:23:21；00:32:35–00:38:56）。
+- **边界**：官方 harness 的协同优势来自 OpenAI 一手陈述，来源没有提供同模型在第三方 harness 上的系统对照；平台化也可能提高切换成本，因此不能推出“官方 harness 总是更优”。
+
+Decisions API 又展示了另一类 Harness primitive：高频局部判断可以用受约束、并行、低 time-to-first-decision 的 serving path 处理，而把长程 reasoning 留给更强模型。初版仍使用 Luna 权重，因此这里更准确的稳定抽象是 **decision-serving primitive**，而不是断言出现了新的 foundation-model 范式。
 
 ## 非工程流程中的 Harness：GitHub Marketing Ops（2026-09）
 

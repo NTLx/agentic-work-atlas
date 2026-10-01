@@ -5,7 +5,7 @@ aliases:
   - ACI Agent Computer Interface
 definition: "Agent 与计算机交互的接口设计，类比 HCI 但针对 AI Agent 优化"
 created: 2026-04-10
-updated: 2026-06-15
+updated: 2026-10-01
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -19,6 +19,7 @@ related_entities:
 source_raw:
   - '[[building-effective-agents-complete]]'
   - '[[20260801-align-agent-environment-interface.pdf]]'
+  - '[[20260930-latentspace-devday-2026]]'
 ---
 
 # ACI (Agent-Computer Interface)
@@ -79,6 +80,25 @@ source_raw:
 > 
 > 发现问题：Agent 移出根目录后，相对路径工具出错。
 > 解决方案：工具改为始终要求绝对路径 → Agent 完美使用。
+
+## Computer Use：从 GUI 模仿到多表示接口（2026-09）
+
+OpenAI Computer Use 的一手访谈（[[20260930-latentspace-devday-2026]]）提供了 ACI 演化的生产案例：Agent 不再只看 screenshot 再逐个点击，而是可以同时使用 screenshot、accessibility representation、DOM、Playwright，并在合适时生成 JavaScript 一次执行多步动作。App Shots 也不是普通截图，而是把可访问性文本和结构化元数据一起交给模型。
+
+**判断**：成熟 ACI 不应强迫 Agent 模仿人类唯一的视觉—点击通道，而应提供多层表示与动作接口，让模型按任务选择最经济、信息最完整的路径：
+
+| 层 | 作用 |
+|---|---|
+| Pixels / screenshot | 视觉状态、布局、真实渲染 |
+| Accessibility tree | 文本、控件语义、可操作结构 |
+| DOM / structured state | 全页状态、链接目标、隐藏于截图之外的信息 |
+| Programmatic action | 批量动作、减少逐步 GUI 操作 |
+| Event signal | 在真实状态变化后触发下一步，减少固定等待 |
+
+这使 ACI 的优化目标从“让工具描述更清楚”扩展到 **representation selection + action granularity + timing**。当模型本身越来越快，页面加载和外部服务响应会成为新的瓶颈，ACI 也必须考虑 event-driven 调度而不只是输入格式。
+
+- **证据**：[[20260930-latentspace-devday-2026]]（00:05:20–00:15:17）。
+- **边界**：这些机制来自 OpenAI Computer Use 的具体实现；不同桌面、移动端和受限企业环境可获得的 DOM/accessibility/programmatic surface 并不相同。
 
 ## 与 HCI 的对比
 
