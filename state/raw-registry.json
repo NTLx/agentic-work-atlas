@@ -3038,6 +3038,17 @@
       "summary_path": "wiki/sources/20260930-latentspace-devday-2026.md",
       "updated_at": "2026-10-01T21:58:51+08:00"
     },
+    "20261002-latentspace-rlm-alex-zhang.md": {
+      "body_sha256": "6f36c1d515c4fbd5964ce3b10a94177a0ef3def617f3340021e71b5f88367fa6",
+      "canonical_url": "https://www.latent.space/p/rlm",
+      "compiled_at": "2026-10-03T07:19:49+08:00",
+      "indexed_at": "2026-10-03T07:22:26+08:00",
+      "raw_file": "20261002-latentspace-rlm-alex-zhang.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261002-latentspace-rlm-alex-zhang.md",
+      "updated_at": "2026-10-03T07:22:40+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -3657,6 +3668,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-01T21:58:51+08:00",
+  "updated_at": "2026-10-03T07:22:40+08:00",
   "version": 1
 }

@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-10-01
+updated: 2026-10-03
 evidence_level: high
 claim_type: mixed
 tags:
@@ -47,6 +47,7 @@ related_entities:
   - "[[Rogue-AI-Agent]]"
   - "[[Long-Lived-Credential-Risk]]"
   - "[[Meta-Harness-Optimization]]"
+  - "[[Recursive-Language-Model]]"
 source_raw:
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260713-martin-fowler-fragments-july-2026]]"
@@ -85,6 +86,7 @@ source_raw:
   - "[[20260925-latentspace-runway-world-models]]"
   - "[[20260924-github-security-lab-ai-fuzzing-taskflow]]"
   - "[[20260930-latentspace-devday-2026]]"
+  - "[[20261002-latentspace-rlm-alex-zhang]]"
 ---
 
 # Agent Harness
@@ -216,6 +218,20 @@ OpenAI DevDay 后的 Computer Use / API 访谈（[[20260930-latentspace-devday-2
 - **边界**：官方 harness 的协同优势来自 OpenAI 一手陈述，来源没有提供同模型在第三方 harness 上的系统对照；平台化也可能提高切换成本，因此不能推出“官方 harness 总是更优”。
 
 Decisions API 又展示了另一类 Harness primitive：高频局部判断可以用受约束、并行、低 time-to-first-decision 的 serving path 处理，而把长程 reasoning 留给更强模型。初版仍使用 Luna 权重，因此这里更准确的稳定抽象是 **decision-serving primitive**，而不是断言出现了新的 foundation-model 范式。
+
+## Harness 作为组合泛化器：RLM 的计算归纳偏置（2026-10）
+
+Alex Zhang 对 [[Recursive-Language-Model|Recursive Language Model（RLM）]] 的定义补充了 Harness 的另一条设计轴。主流 coding-agent harness 常把完整工具轨迹持续追加到主模型上下文，即 **trajectory as a prompt**；RLM 则把原始上下文外置为可寻址状态，让模型以代码作为主要控制语言，程序化切分问题、调用 subagent、聚合结果，必要时递归调用自身（[[20261002-latentspace-rlm-alex-zhang]]，raw L254-L372）。
+
+访谈中最值得沉淀的不是“递归”这个动作，而是 **Harness 可以规定模型采用什么计算结构**。Zhang 报告，在若干训练任务中，检索、聚合、数学和写作等表面不同的问题会收敛为相似的高层程序；在短任务学到的策略还可以迁移到更长任务。RLM 将这种目标描述为 **locally in-distribution**：整个问题可以是 OOD，但每个局部模型调用尽量保持在模型熟悉的分布内。
+
+> **判断（综合判断）**：Harness 不只是模型外的运行时，也可以成为一种 **计算归纳偏置（computational inductive bias）**。真正有结构差异的 Harness，可能通过 state representation、decomposition language、subagent topology 和 aggregation program 改变模型可学习、可泛化的任务形态。
+>
+> **证据**：[[20261002-latentspace-rlm-alex-zhang]]（raw L274-L308；L320-L372）；第一作者对 RLM 训练现象、trajectory-as-a-prompt 与 locally in-distribution 的说明。
+>
+> **边界**：访谈没有给出完整 benchmark、方差和失败分布；“8–30× 更长任务”等数字应视为作者报告的特定实验结果。局部调用处于训练分布内也不保证 decomposition、共享状态和最终 aggregation 正确。
+
+这一视角还把 Model / Harness 边界变成可研究对象：如果某些高层程序长期稳定，它们可能被 post-training 吸收为模型原生能力；但权限、审计、真实工具执行、持久状态、成本控制和确定性验证仍具有外部系统语义，不应因为模型更强就默认内化。
 
 ## 非工程流程中的 Harness：GitHub Marketing Ops（2026-09）
 
