@@ -18,12 +18,12 @@ tags:
 evidence_level: medium
 claim_type: mixed
 source_locator:
-  - "raw L50-L100：GPU kernel 自动化、verification、领域专家作为强 verifier、计算效率"
-  - "raw L126-L190：学术研究的高风险押注、Jev 与非 text-to-text 模型空间、RLM 的模型/系统边界"
-  - "raw L254-L372：Harness 作为任务程序、trajectory-as-a-prompt、RLM 定义、组合泛化与 locally in-distribution"
-  - "raw L374-L470：RLM 训练方向、PrimeAgent、persistent subagents、swarm / scaffold 与模型边界"
-  - "raw L472-L598：大规模 agent swarm、协调瓶颈、搜索浪费与收敛问题"
-  - "raw L640-L736：jagged intelligence、capability overhang、continual learning、语言/表示对推理的约束"
+  - "Transcript 00:00:49–00:13:19：GPU kernel 自动化、verification、领域专家作为强 verifier、计算效率（GPU Mode / KernelBench；Human Expertise vs. Brute-Force AI Search）"
+  - "Transcript 00:13:20–00:29:02：学术研究的高风险押注、Jev 与非 text-to-text 模型空间、RLM 的模型/系统边界（Research Taste and Taking Big Bets；GEV and Rethinking the Language Model）"
+  - "Transcript 00:31:01–00:52:00：Harness 作为任务程序、trajectory-as-a-prompt、RLM 定义、组合泛化与 locally in-distribution（Harnesses as Compositional Generalizers；RLMs Explained；Long Context, Composition, and Locally In-Distribution Tasks）"
+  - "Transcript 00:49:16–01:07:25：RLM 训练方向、PrimeAgent、persistent subagents、swarm / scaffold 与模型边界（Training RLMs and Smarter Harnesses；Prime Agent and Persistent Subagents；RLMs in the Wild；OpenAI Swarms）"
+  - "Transcript 01:00:30–01:20:05：大规模 agent swarm、协调瓶颈、搜索浪费与收敛问题（OpenAI Swarms; Swarm Architectures, Coordination, and Token Efficiency; Kimi vs. OpenAI Agent Swarms）"
+  - "Transcript 01:20:06–01:41:19：jagged intelligence、capability overhang、continual learning、语言/表示对推理的约束（Capability Overhang; Continual Learning and General Problem Solving; Neuralese, Programming Languages, and Diffusion Thinking）"
 ---
 
 # Academia is for Ambition — Alex Zhang, MIT
@@ -35,18 +35,18 @@ source_locator:
 ### 1. 浓缩
 
 - **核心结论 1：RLM 的关键不是“递归调用模型”本身，而是把 Harness 重写成一种程序化计算结构：上下文外置、代码作为主要控制面、子 Agent 可递归调用。**
-  - 关键证据：在 raw L340-L360，Zhang 将 RLM 定义为一种 harness design：唯一核心工具是代码，代码可以程序化调用 subagent，甚至调用自身；原始上下文可以外置到文件系统或 REPL 中，并在 compaction 后继续被访问。
-  - PrimeAgent 是这一抽象的工程化实例：基于 Pi Mono，把 IPython 作为唯一显式工具，其余能力以 Python module / Bash script 形式进入；同时加入 persistent subagents 和 agent-to-agent communication（raw L408-L423）。
+  - 关键证据：在 transcript 00:44:24–00:45:58（“RLMs Explained”），Zhang 将 RLM 定义为一种 harness design：唯一核心工具是代码，代码可以程序化调用 subagent，甚至调用自身；原始上下文可以外置到文件系统或 REPL 中，并在 compaction 后继续被访问。
+  - PrimeAgent 是这一抽象的工程化实例：基于 Pi Mono，把 IPython 作为唯一显式工具，其余能力以 Python module / Bash script 形式进入；同时加入 persistent subagents 和 agent-to-agent communication（transcript 00:52:01–00:57:40，“Prime Agent and Persistent Subagents”）。
   - **判断**：RLM 改变的首先是 Agent 的“动作语言”——从逐 turn 调工具，变成让模型写一个可组合程序去读取、切分、调用和聚合外部上下文。
 
 - **核心结论 2：Harness 可以承担“计算归纳偏置（inductive bias）”，让模型学习可跨长度、跨任务迁移的高层程序，而不只是提供工具和上下文。**
-  - 关键证据：raw L274-L308 中，Zhang 描述了 RLM 训练时的观察：检索、聚合、数学、写作等表面不同任务，在 RLM 下可能收敛为相同的高层策略——切分问题、生成候选、调用 subagent、循环验证；模型在短任务上学到的策略可直接迁移到更长任务，他在访谈中举出“8–30× 更长”的例子（raw L288-L292）。
-  - 他把现有 Claude Code / Codex / Pi 一类 harness 概括为 “trajectory as a prompt”：完整轨迹不断追加到主模型上下文；而 RLM 尝试让每次局部调用都只看到更小、更接近训练分布的问题（raw L320-L372）。
+  - 关键证据：transcript 00:36:42–00:44:23（“Harnesses as Compositional Generalizers”）中，Zhang 描述了 RLM 训练时的观察：检索、聚合、数学、写作等表面不同任务，在 RLM 下可能收敛为相同的高层策略——切分问题、生成候选、调用 subagent、循环验证；模型在短任务上学到的策略可直接迁移到更长任务，他在访谈中举出“8–30× 更长”的例子（transcript 00:36:38–00:37:05）。
+  - 他把现有 Claude Code / Codex / Pi 一类 harness 概括为 “trajectory as a prompt”：完整轨迹不断追加到主模型上下文（transcript 00:31:01–00:36:41，“Why Claude Code, Codex, and Pi Are So Similar”）；而 RLM 尝试让每次局部调用都只看到更小、更接近训练分布的问题（transcript 00:44:24–00:49:15，“RLMs Explained”与“Long Context, Composition, and Locally In-Distribution Tasks”）。
   - **判断**：如果一个 Harness 能把全局 OOD 问题分解成一组局部 in-distribution 调用，它的价值不只是“更好地使用模型”，还可能改变 post-training 的样本效率和泛化结构。
 
 - **核心结论 3：大规模 Agent 系统的核心瓶颈不是“能不能并行”，而是怎样组合搜索、共享信息、验证结果并控制无效 token；领域知识和好的 Harness 可以显著减少暴力搜索。**
-  - 关键证据：raw L50-L78 中，Zhang 用 GPU kernel optimization 说明：AI 已能生成很多高排名方案，但真正稳定的方案仍高度依赖懂问题的人作为 verifier；他明确指出，一个懂领域的人给出的方向可能消掉原本需要数千亿到万亿 token 才能探索出来的搜索空间。
-  - raw L450-L498 中，他认为前沿 swarm 可以通过极长搜索解决困难问题，但大量分支可能完全无用；真正的问题是“什么设计适合什么任务”，以及 Agent 能否自己决定何时使用 swarm、何时使用更结构化的分解。
+  - 关键证据：transcript 00:05:36–00:08:48（“AI-Written Kernels and the Verification Gap”；“Human Expertise vs. Brute-Force AI Search”）中，Zhang 用 GPU kernel optimization 说明：AI 已能生成很多高排名方案，但真正稳定的方案仍高度依赖懂问题的人作为 verifier；他明确指出，一个懂领域的人给出的方向可能消掉原本需要数千亿到万亿 token 才能探索出来的搜索空间。
+  - transcript 01:00:30–01:07:25（“OpenAI Swarms and the Future of Language Models”；“Swarm Architectures, Coordination, and Token Efficiency”）中，他认为前沿 swarm 可以通过极长搜索解决困难问题，但大量分支可能完全无用；真正的问题是“什么设计适合什么任务”，以及 Agent 能否自己决定何时使用 swarm、何时使用更结构化的分解。
   - **判断**：test-time compute 的有效扩展需要 **search + communication + verifier + stopping rule**。没有这些结构，更多 Agent 只是把算力转成更大的搜索噪声。
 
 ### 2. 质疑
@@ -66,7 +66,7 @@ source_locator:
 - **与软件系统中的中间表示对标**：代码在 RLM 中类似一种 IR（intermediate representation）：它把高层意图压成可执行、可组合、可循环的结构，再由模型或 subagent 填充局部计算。此类 IR 的价值来自可验证性与复用，而不只是表达力。
 - **硬约束**：RLM 仍需要强代码生成模型、可执行环境、状态隔离、错误处理和可验证的子任务；递归调用会带来显著 latency / token 成本。
 - **研究边界**：把 RLM 行为进一步“编译进模型 forward pass”、获得更好的 post-training scaling law，当前在访谈中仍是研究方向，不是已经建立的工程结论。
-- **组织层旁逸**：Zhang 对 PhD 的核心判断是“资源劣势要用探索自由来换”——学术研究的比较优势不是复制 frontier lab 的当前路线，而是押注那些今天看起来太简单、太怪或尚无规模回报的问题（raw L134-L160）。这与 Agent 系统设计中的同一原则相呼应：当算力无法竞争时，应该改变问题表示与搜索空间，而不是在同一轴上硬拼规模。
+- **组织层旁逸**：Zhang 对 PhD 的核心判断是“资源劣势要用探索自由来换”——学术研究的比较优势不是复制 frontier lab 的当前路线，而是押注那些今天看起来太简单、太怪或尚无规模回报的问题（transcript 00:13:20–00:19:27，“Research Taste and Taking Big Bets”）。这与 Agent 系统设计中的同一原则相呼应：当算力无法竞争时，应该改变问题表示与搜索空间，而不是在同一轴上硬拼规模。
 
 ## 证据边界
 

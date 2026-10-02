@@ -38,7 +38,7 @@ RLM 可以压缩为四个相互依赖的设计选择：
 3. **Recursive subagent calling**：模型可以把局部问题交给另一个模型调用，必要时递归展开。
 4. **Shared addressable state**：主 Agent 与子 Agent 围绕同一个外部上下文工作，而不是只依赖不断增长的聊天轨迹。
 
-PrimeAgent 是这一思路的工程化实现之一：它建立在 Pi Mono 上，把 IPython 设为唯一显式工具，其余能力通过 Python module 或 Bash script 暴露；同时加入 persistent subagents 与 agent-to-agent communication（[[20261002-latentspace-rlm-alex-zhang]]，raw L408-L423）。
+PrimeAgent 是这一思路的工程化实现之一：它建立在 Pi Mono 上，把 IPython 设为唯一显式工具，其余能力通过 Python module 或 Bash script 暴露；同时加入 persistent subagents 与 agent-to-agent communication（[[20261002-latentspace-rlm-alex-zhang]]，transcript 00:52:01–00:57:40，“Prime Agent and Persistent Subagents”）。
 
 ## 从长上下文到组合泛化
 
@@ -60,7 +60,7 @@ RLM 最初针对长上下文问题，但 Alex Zhang 在后续工作中把它的�
 继续迭代或结束
 ~~~
 
-Zhang 报告，在部分实验中，模型在短任务上学到的策略可以迁移到 **8–30× 更长**的任务；数学、写作、检索和聚合等不同任务之间，也可能因为共享相同 meta-strategy 而出现迁移（[[20261002-latentspace-rlm-alex-zhang]]，raw L274-L308）。
+Zhang 报告，在部分实验中，模型在短任务上学到的策略可以迁移到 **8–30× 更长**的任务；数学、写作、检索和聚合等不同任务之间，也可能因为共享相同 meta-strategy 而出现迁移（[[20261002-latentspace-rlm-alex-zhang]]，transcript 00:36:38–00:44:23，“Harnesses as Compositional Generalizers”）。
 
 > **判断**：RLM 的稳定价值不应概括成“让 LLM 自己调用自己”，而应理解为：**用代码和外部状态为模型提供一种可组合的计算中间表示，使重复出现的任务结构能够被学习和复用。**
 >
@@ -81,7 +81,7 @@ Zhang 用 **locally in-distribution** 描述 RLM 希望获得的性质：
 
 > **判断**：Harness 可以成为一种 **计算归纳偏置（inductive bias）**。好的 Harness 不只是给模型更多工具，而是约束它采用更容易训练、验证和迁移的计算结构。
 >
-> **证据**：[[20261002-latentspace-rlm-alex-zhang]]，raw L364-L372。
+> **证据**：[[20261002-latentspace-rlm-alex-zhang]]，transcript 00:47:46–00:49:15，“Long Context, Composition, and Locally In-Distribution Tasks”。
 >
 > **边界**：局部调用处于训练分布内，并不保证 decomposition、共享状态和最终 aggregation 正确；局部正确仍可能组合成全局错误。
 

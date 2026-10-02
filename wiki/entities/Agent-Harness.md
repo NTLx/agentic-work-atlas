@@ -221,13 +221,13 @@ Decisions API 又展示了另一类 Harness primitive：高频局部判断可以
 
 ## Harness 作为组合泛化器：RLM 的计算归纳偏置（2026-10）
 
-Alex Zhang 对 [[Recursive-Language-Model|Recursive Language Model（RLM）]] 的定义补充了 Harness 的另一条设计轴。主流 coding-agent harness 常把完整工具轨迹持续追加到主模型上下文，即 **trajectory as a prompt**；RLM 则把原始上下文外置为可寻址状态，让模型以代码作为主要控制语言，程序化切分问题、调用 subagent、聚合结果，必要时递归调用自身（[[20261002-latentspace-rlm-alex-zhang]]，raw L254-L372）。
+Alex Zhang 对 [[Recursive-Language-Model|Recursive Language Model（RLM）]] 的定义补充了 Harness 的另一条设计轴。主流 coding-agent harness 常把完整工具轨迹持续追加到主模型上下文，即 **trajectory as a prompt**；RLM 则把原始上下文外置为可寻址状态，让模型以代码作为主要控制语言，程序化切分问题、调用 subagent、聚合结果，必要时递归调用自身（[[20261002-latentspace-rlm-alex-zhang]]，transcript 00:31:01–00:49:15，“Why Claude Code, Codex, and Pi Are So Similar”至“Long Context, Composition, and Locally In-Distribution Tasks”）。
 
 访谈中最值得沉淀的不是“递归”这个动作，而是 **Harness 可以规定模型采用什么计算结构**。Zhang 报告，在若干训练任务中，检索、聚合、数学和写作等表面不同的问题会收敛为相似的高层程序；在短任务学到的策略还可以迁移到更长任务。RLM 将这种目标描述为 **locally in-distribution**：整个问题可以是 OOD，但每个局部模型调用尽量保持在模型熟悉的分布内。
 
 > **判断（综合判断）**：Harness 不只是模型外的运行时，也可以成为一种 **计算归纳偏置（computational inductive bias）**。真正有结构差异的 Harness，可能通过 state representation、decomposition language、subagent topology 和 aggregation program 改变模型可学习、可泛化的任务形态。
 >
-> **证据**：[[20261002-latentspace-rlm-alex-zhang]]（raw L274-L308；L320-L372）；第一作者对 RLM 训练现象、trajectory-as-a-prompt 与 locally in-distribution 的说明。
+> **证据**：[[20261002-latentspace-rlm-alex-zhang]]（transcript 00:36:42–00:44:23，“Harnesses as Compositional Generalizers”；00:31:01–00:36:41，“Why Claude Code, Codex, and Pi Are So Similar”；00:44:24–00:49:15，RLM 定义与 locally in-distribution 讨论）；第一作者对 RLM 训练现象、trajectory-as-a-prompt 与 locally in-distribution 的说明。
 >
 > **边界**：访谈没有给出完整 benchmark、方差和失败分布；“8–30× 更长任务”等数字应视为作者报告的特定实验结果。局部调用处于训练分布内也不保证 decomposition、共享状态和最终 aggregation 正确。
 
