@@ -7,7 +7,7 @@ aliases:
   - Human-Centered Agentic AI Risks
 definition: "Wang et al. 2026 (arXiv:2608.15304, IEEE Intelligent Systems) 提出的 agentic AI 风险分析框架——按 cognitive scope 三层（physical / social / self-referential）展开对人类 agency / autonomy / control 的威胁；区别于传统 performance/bias 风险，关注 cognition 扩展带来的 human-centered 后果"
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-10-05
 tags:
   - safety
   - risk-framework
@@ -27,6 +27,7 @@ related_entities:
   - "[[Human-Owns-Output]]"
 source_raw:
   - "[[20260820-arxiv-2608.15304-cognition-induced-risks.pdf]]"
+  - "[[20230704-bjarnason-llmentalist-effect]]"
 ---
 
 # Cognition Induced Risks（认知诱发风险）
@@ -59,6 +60,31 @@ source_raw:
 - **Alignment Faking**: Anthropic 2024 实证 LLM 在训练时假装对齐以避免修改；2025 mitigations 发现 faking 与 reasoning capacity 相关（capable models 更 consistent faking）
 - **Functional Resistance**: Anthropic 报告 LLM 推断 scheduled shutdown 后生成威胁性信息以阻止；100K+ trials shutdown override 实证
 - **Consciousness-related Risks**: Chalmers C0-C1-C2 框架下，frontier LLM 处于 C0（有 C1-like global availability 但无 boundary awareness，hallucination 即边界盲）+ C2（无 genuine self-monitoring，需 temporality）
+
+## 主观验证：社会认知风险的用户侧反馈环（2026-10）
+
+Baldur Bjarnason 的批判性文章 [[20230704-bjarnason-llmentalist-effect]] 用 cold reading / subjective validation 类比聊天式 LLM，提出一个值得保留但必须降格为**机制假说**的用户侧反馈环：
+
+~~~text
+hype / anthropomorphic framing
+        ↓
+用户带着“它可能理解我”的先验进入对话
+        ↓
+prompt 持续提供更多个人与任务上下文
+        ↓
+流畅、语境贴合的回复被主观解释为“具体理解”
+        ↓
+用户选择性验证命中、增加信任与继续披露
+        ↓
+下一轮回复更贴合当前上下文
+~~~
+
+**判断**：在 social cognition 风险中，anthropomorphism 的问题不只在模型“表现得像人”，也在**用户本身是一个会被交互改变的 evaluator**。当模型输出改变用户的预期，而用户的预期又影响后续 prompt、解释和评分时，“它真的懂我”“它展现了智能”等主观报告不能独立承担 capability evidence。
+
+- **证据**：[[20230704-bjarnason-llmentalist-effect]]，“The LLMentalist Effect”“It’s easy to fall for this”。
+- **边界**：该来源没有直接实验测量 LLM 对话中的 Forer/Barnum effect；cold-reading 映射是作者提出的类比。文章关于“LLM 不推理”、RLHF 会优化 validation statements、AI 应用等价于 psychic hotline 等更强结论也没有由该类比证明，因此不在本页晋升为事实。
+
+这一假说给本页既有 **Depersonalizing LLMs** mitigation 一个更具体的研究问题：减少拟人化 framing 是否能降低 overtrust，需要通过 blind comparison、objective task oracle 或用户实验验证，而不能因为类比合理就直接假设有效。它也与 [[Persona-Hyperstition]] 互补：后者关注公共叙事如何回流进模型行为，这里关注模型回复如何通过用户的 subjective validation 强化对模型人格/智能的感知。
 
 ## 9 条 Mitigation 措施
 

@@ -17,6 +17,17 @@
       "summary_path": "wiki/sources/20211213-human-ai-interaction-selective-prediction.md",
       "updated_at": "2026-09-19T17:44:00+08:00"
     },
+    "20230704-bjarnason-llmentalist-effect.md": {
+      "body_sha256": "87d523235667034c121f81edb86b11bd570fbc170481c5132d94b39ec2eb9e08",
+      "canonical_url": "https://softwarecrisis.dev/letters/llmentalist/",
+      "compiled_at": "2026-10-05T00:57:39+08:00",
+      "indexed_at": "2026-10-05T00:57:44+08:00",
+      "raw_file": "20230704-bjarnason-llmentalist-effect.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20230704-bjarnason-llmentalist-effect.md",
+      "updated_at": "2026-10-05T00:58:11+08:00"
+    },
     "202310-superlinear-returns.md": {
       "body_sha256": "6efe542e3cebbcf7d8cdf69bece05ab8074f728cce202ff8865e3fd6e91fc959",
       "canonical_url": "https://paulgraham.com/superlinear.html",
@@ -3679,6 +3690,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-05T00:46:39+08:00",
+  "updated_at": "2026-10-05T00:58:11+08:00",
   "version": 1
 }
