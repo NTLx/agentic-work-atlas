@@ -2952,6 +2952,17 @@
       "summary_path": "wiki/sources/20260921-ai-news-multi-agent-supply-chain-execution.md",
       "updated_at": "2026-10-05T04:15:38+08:00"
     },
+    "20260921-linear-ci-bottleneck-reworked.md": {
+      "body_sha256": "0f532a197c75bcc4a5131652aa5bae91fbbadb865c7f3d10be3cab789020297b",
+      "canonical_url": "https://linear.app/now/ci-bottleneck-reworked",
+      "compiled_at": "2026-10-05T04:21:25+08:00",
+      "indexed_at": "2026-10-05T04:21:30+08:00",
+      "raw_file": "20260921-linear-ci-bottleneck-reworked.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260921-linear-ci-bottleneck-reworked.md",
+      "updated_at": "2026-10-05T04:21:30+08:00"
+    },
     "20260922-anthropic-pace-ai-development.md": {
       "body_sha256": "ba0f61fc8f9e47a68674eee66afbfbc79a33b19f7d17e389ad48ff3f3e7a56f6",
       "canonical_url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
@@ -3701,6 +3712,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-05T04:15:38+08:00",
+  "updated_at": "2026-10-05T04:21:30+08:00",
   "version": 1
 }

@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-09-22
+updated: 2026-10-05
 evidence_level: high
 claim_type: mixed
 tags:
@@ -92,6 +92,7 @@ source_raw:
   - "[[20250319-patchdiff-swe-bench-correctness]]"
   - "[[20260331-elt-bench-verified]]"
   - "[[20260918-trailofbits-auditing-good-enough-ai]]"
+  - "[[20260921-linear-ci-bottleneck-reworked]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
@@ -224,6 +225,25 @@ Birgitta Böckeler 对这个 Topic 的补充在于：Agent 的可验证性不应
 这篇文章把传感器明确铺成三层：会话内即时反馈、CI 复验、周期性漂移审查。type checker、ESLint、Semgrep、dependency-cruiser、测试覆盖、增量 mutation testing 和 GitLeaks 负责在开发过程中不断收缩错误空间；安全审查、数据处理审查、依赖新鲜度和模块耦合审查则负责发现慢变量上的退化。这样被验证的不只是输出结果，还包括结构、依赖和安全约束。
 
 更关键的是，传感器不是纯报警器。作者把 lint message 改写成带工程判断的自我纠正提示，让 agent 学会什么时候该补类型、什么时候只压制 warning、什么时候阈值调整只能作为例外。这说明生产级 verification loop 不只是“有检查”，还要把检查包装成 agent 可消费的修正语言；否则反馈很快会退化成噪声，甚至把系统推向过度重构。
+
+## Verifier throughput：验证系统也需要性能预算（2026-10）
+
+Linear 的 [[20260921-linear-ci-bottleneck-reworked]] 补上一条生产约束：即使 correctness checks 本身设计合理，如果它们的反馈速度和运行成本跟不上 Agent 生成吞吐，验证层也会成为系统的 binding constraint。Linear 把 CI 当作一张依赖图来优化，而不是只寻找“最慢测试”：先压缩 change-detection / checkout 等 critical-path gate，再消除每个 job/shard 重复的 setup，最后才扩大 sharding。
+
+**判断**：可验证 Agent 工程除了回答“能不能判对”，还必须回答 **verifier 能否以足够低的 latency / cost / tail risk 持续判定**。一个过慢、过贵或经常 stall 的 verifier 会把高 Agent 并发重新串行化，迫使团队在“少验证”与“低吞吐”之间做错误选择。
+
+- **证据**：[[20260921-linear-ci-bottleneck-reworked]]；Linear 报告 change-detection median 约 26→8 秒、7 个短 checks 合并成 2 个 job 后按当时使用量估算每月节省约 87,000 runner-minutes，以及 4→8 shards 只有在 setup cost 先降低后才变得划算。
+- **边界**：这些数字是 Linear 内部一手数据，不是通用基准。更重要的是，性能优化不能改坏 oracle：其 `isolate:false` module sharing 被作者明确视为 correctness risk 最高的优化之一，因此采用逐文件 opt-in、teardown，并把不安全测试继续留在隔离项目。
+
+这给 verifier engineering 增加一个双目标：
+
+~~~text
+verification power / independence
+        ×
+feedback latency / cost / availability
+~~~
+
+两侧不能相互替代。为了速度弱化隔离、跳过 gate 或减少判别力，会破坏 verification power；反过来，无限制增加验证层也会让 feedback loop 无法支撑 Agent 时代的提交频率。Linear 还把新的 test-performance 约束写回 coding-agent skills，使基础设施经验成为生成时默认规则，说明 verifier 优化最终需要回流到 Agent harness，而不是只留在 CI 平台团队脑中。
 
 ## 成本可观测性也是验证边界
 

@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-09-20
+updated: 2026-10-05
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -39,6 +39,7 @@ source_raw:
   - "[[20260908-openai-research-acceleration-agentic-productivity]]"
   - "[[20260529-ceo-ai-psychosis-equity-podcast]]"
   - "[[20260601-octopus-energy-ai-customer-service]]"
+  - "[[20260921-linear-ci-bottleneck-reworked]]"
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
@@ -91,6 +92,17 @@ Outcome 更不一定改善
 
 - **证据**：OpenAI 研究组织在 2026 年 8 月中旬每 8 小时人类工作日使用约 3.1 个 agent-workdays；过去 6 个月中，成功的 4–8 小时任务超过一半仍包含至少一次人类干预。详见 [[20260908-openai-research-acceleration-agentic-productivity]]。
 - **边界**：这是 OpenAI 内部研究组织的运行数据，任务成功率只覆盖能找到 ground-truth outcome 的任务；OpenAI 自己也提示这些指标仍属初步测量，不能直接等同于整体研发进度。Tunguz 基于此推导的约 2 倍交付产出属于作者假设，不是本 topic 的事实结论。
+
+### Linear：验证基础设施本身成为 binding constraint（2026-10）
+
+[[20260921-linear-ci-bottleneck-reworked]] 给“verification 成为新瓶颈”补了一层此前较少量化的机器基础设施证据。Linear 报告 coding agents 提高开发吞吐后，测试套件自年初接近四倍增长；团队通过 runner/toolchain、关键路径、setup 去重和 test scheduling 优化，把 PR CI 等待从 6 分钟以上压到约 5 分钟，并把单测试 runner time 约减半。
+
+**判断**：AI 让 Execute 变便宜后，瓶颈不会只迁到人的 review/judgment；**自动验证基础设施也可能先饱和**。CI runner、critical-path latency、固定 setup、shard straggler 和网络 tail 都会成为新的稀缺资源，因此“AI 原生工程组织”的容量规划必须同时扩 generation throughput 与 verification throughput。
+
+- **证据**：[[20260921-linear-ci-bottleneck-reworked]]；文章还报告其当前约每周新增 2,000 个 tests，并估计若没有本轮优化，当前 suite 约需 11 分钟，接近实际等待时间的两倍。
+- **边界**：这是 Linear 单一 TypeScript monorepo 的一手内部复盘，多项优化并行发生；不能把全部压力严格归因于 Agent，也不能把具体百分比或 runner-minutes 外推成通用 CI 目标。
+
+这个案例进一步精确化本 Topic 的“瓶颈迁移”：生成速度提高后，组织可能依次撞上 **human attention ceiling** 和 **machine validation ceiling**。二者都会限制最终 delivery，且后者并非简单买更多 runner 就能解决——Linear 最大收益来自 critical path、重复 setup 与测试语义的系统重构。
 
 ## Jevons 悖论的劳动版本
 
