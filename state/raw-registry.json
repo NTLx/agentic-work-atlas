@@ -2716,6 +2716,17 @@
       "summary_path": "wiki/sources/20260914-ieee-jalapeno-llm-chip-design.md",
       "updated_at": "2026-09-21T17:54:19+08:00"
     },
+    "20260914-iouri-khramtsov-ai-code-quality.md": {
+      "body_sha256": "cd4f41bbedfee337f2b838c77c0bddba964dfbd52a62f974414a14460e957348",
+      "canonical_url": "https://www.i-kh.net/p/if-ai-coding-is-lowering-your-code",
+      "compiled_at": "2026-10-05T00:46:06+08:00",
+      "indexed_at": "2026-10-05T00:46:12+08:00",
+      "raw_file": "20260914-iouri-khramtsov-ai-code-quality.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260914-iouri-khramtsov-ai-code-quality.md",
+      "updated_at": "2026-10-05T00:46:39+08:00"
+    },
     "20260914-microsoft-ai-code-of-conduct.md": {
       "body_sha256": "07b9feba25b261504229ad3529e5b78b189917f98e6fd90df031224fb4f0c44b",
       "compiled_at": "2026-09-18T09:37:31+08:00",
@@ -3668,6 +3679,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-03T07:22:40+08:00",
+  "updated_at": "2026-10-05T00:46:39+08:00",
   "version": 1
 }

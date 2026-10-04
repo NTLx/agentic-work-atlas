@@ -6,7 +6,7 @@ aliases:
   - Agentic Verification
 definition: "Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境、执行操作、观察结果并判断是否通过"
 created: 2026-06-12
-updated: 2026-09-22
+updated: 2026-10-05
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -39,6 +39,7 @@ source_raw:
   - "[[20260916-github-copilot-runtime-rust-migration]]"
   - "[[20260918-trailofbits-auditing-good-enough-ai]]"
   - "[[20260917-tessl-ai-agent-evaluation-evidence]]"
+  - "[[20260914-iouri-khramtsov-ai-code-quality]]"
 ---
 
 > [!definition] 定义
@@ -154,6 +155,17 @@ Tessl 的 S3-compatible storage 实践说明，测试只有在 oracle、风险�
 **判断**：生产级 Agent verification 应优化“证据组合的判别力”，而不是最大化某个容易被优化的代理指标。
 - **证据**：[[20260917-tessl-ai-agent-evaluation-evidence]]；约 1,500 个 S3 behavior tests、约 5,000 tests/2 分钟，以及作者对 coverage gaming、rare-bug reproduction 和 type-enforced authorization 的复盘。
 - **边界**：S3 复制任务天然拥有外部 reference behavior；原创产品、开放研究和不可观测状态没有同等强的 oracle，不能直接照搬这一验证结构。
+
+## Verification 是证据组合，不是单一测试层（2026-10）
+
+Iouri Khramtsov 的七层 AI coding 质量实践（[[20260914-iouri-khramtsov-ai-code-quality]]）提供了一个轻量但完整的工程视角：requirements review、unit tests、manual testing、E2E、专项 AI review、PR review 和 production monitoring 分别覆盖不同错误空间。
+
+**判断**：当 Agent 生成成本下降时，verification 的正确扩展方向不是把某个 proxy（例如 coverage 或 reviewer 数量）推到极致，而是增加**异质证据层**，让同一个错误更难同时逃逸。
+
+- **证据**：[[20260914-iouri-khramtsov-ai-code-quality]]；作者把质量防线从实现前的 requirements review 一直延伸到部署后的 monitoring / diagnosis。
+- **边界**：流程层数不等于独立性。若 requirements、tests、implementation 和 review 全由同一错误假设驱动，它们仍可能共源失败；>95% coverage 也不能替代 risk-directed tests、manual exploration 与生产证据。
+
+这与本页既有“保护 Oracle”“多信号证据环”形成同一结论：**coverage、CI green、AI review、人类 review、真实运行信号的价值来自互补，而不是数量本身**。对于简单且后果有限的变更，人类 review 可以按风险降级；对于权限、安全、数据、计费等高后果边界，即使 diff 很小也不能用“其他自动层都通过”替代责任判断。
 
 ## 关联概念
 

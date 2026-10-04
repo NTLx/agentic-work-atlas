@@ -7,7 +7,7 @@ aliases:
   - No Mistakes Pipeline
 definition: "将 Agent 产出的 first-pass code 自动推进到 clean PR 的端到端管线——包含意图理解、隔离 worktree、对抗性审查、e2e 验证、证据生成、文档更新和 PR babysitting。核心理念：人类不审 diff，而是通过管线生成的高质量证据做判断。"
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-10-05
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -22,6 +22,7 @@ related_entities:
   - "[[Adversarial-Distillation]]"
 source_raw:
   - "[[20260620-l8-principal-agentic-workflow]]"
+  - "[[20260914-iouri-khramtsov-ai-code-quality]]"
 ---
 
 > [!definition] 定义
@@ -46,6 +47,35 @@ source_raw:
 - 低风险变更不看 diff——经验证后管线已覆盖人类能发现的问题
 - 管线生成 PR 摘要包含：原始意图、变更内容、测试方式、管线发现的问题及修复
 - 风险评估（risk assessment）指导人类决定审查深度：低风险 → 不看 diff；高风险 → 详细审查
+
+## 从 PR 验证扩展到全生命周期质量防线（2026-10）
+
+Iouri Khramtsov 的实践（[[20260914-iouri-khramtsov-ai-code-quality]]）把 Validation Pipeline 的边界从“first-pass code → clean PR”向两端扩展：
+
+~~~text
+requirements / tech design review
+        ↓
+requirements-derived test cases
+        ↓
+implementation + unit tests
+        ↓
+manual exploration + E2E
+        ↓
+specialized AI quality passes
+        ↓
+risk-based human / AI PR review
+        ↓
+production monitoring
+        ↓
+diagnosis / repair PR
+~~~
+
+**判断**：高吞吐 AI coding 的质量控制更像 **defense-in-depth 的生命周期管线**，而不是 merge 前的一道 gate。左移到 requirements 的价值是提前形成部分 correctness contract；右移到 production telemetry 的价值是把未知 edge case 和真实运行环境重新接回修复循环。
+
+- **证据**：[[20260914-iouri-khramtsov-ai-code-quality]]；作者按七层列出需求审查、unit test、manual test、E2E、AI quality pass、PR review 与 monitoring。
+- **边界**：这是单一团队实践，没有独立 bug-rate / change-failure-rate 对照；>95% coverage、简单变更免人工 review 等阈值不能机械复用。若测试、review 与实现由同一 Agent/同一错误需求共同生成，多层形式仍可能产生 correlated failure。
+
+这也改变了“验证瓶颈”的位置：代码生成速度提高后，manual testing、复杂变更的语义审查和生产诊断更容易成为新瓶颈。Pipeline 的设计目标因此不是最大化自动化比例，而是把人工注意力保留给**低可判定、高后果**的错误空间。
 
 ## 前提与局限性
 
