@@ -7,7 +7,7 @@ aliases:
   - 例外升级式监督
 definition: "AI 自主处理常规路径，人类审查例外、边界和高风险决策的人机监督模式"
 created: 2026-06-01
-updated: 2026-09-19
+updated: 2026-10-05
 tags:
   - enterprise-ai
   - governance
@@ -26,6 +26,7 @@ source_raw:
   - "[[20260514-alibaba-agentic-ai-hitl-field-experiment]]"
   - "[[20260919-google-sre-ai-operator-handoff]]"
   - "[[20260610-aws-agentic-handoff-contract]]"
+  - "[[20260921-ai-news-multi-agent-supply-chain-execution]]"
 evidence_level: medium
 claim_type: mixed
 ---
@@ -126,6 +127,21 @@ Google SRE 的 [[20260919-google-sre-ai-operator-handoff]] 提供生产设计锚
 Alibaba 的现场材料提示更早介入与更高 post-escalation effort 相关，但 timing 本身没有被独立随机化，因此不能把“早升级更好”写成普遍因果定律。
 
 工程上更稳妥的写法是：**同一个 trigger、同一个 packet，在不同 queue state、receiver availability 和 intervention timing 下，可能产生不同的人类行为。** AWS 将 handoff latency、context-transfer completeness 和 collaboration success 设为一等指标，正是为了把这类运行时状态显式化。
+
+## 供应链动作包络：从 confidence escalation 到 transaction escalation（2026-10）
+
+[[20260921-ai-news-multi-agent-supply-chain-execution]] 提供了一个不同于“模型不确定就交给人”的企业运行样本：供应链 Agent 的升级条件直接绑定**业务动作本身**。
+
+- 货运改道只在成本上限与 SLA 偏差范围内自动执行；
+- 库存调整超过金额或数量比例时暂停并要求人工授权；
+- 未验证供应商账户保持 draft-only，直到满足既定交互基准。
+
+**判断**：当 Agent 能写入 ERP/WMS、库存或供应商通信系统时，升级触发器不应只来自模型 confidence，而应至少包含 `action × financial exposure × service impact × counterparty trust`。这把 Human Oversight 从“判断模型是否自信”推进到“判断动作是否越过授权包络”。
+
+- **证据**：[[20260921-ai-news-multi-agent-supply-chain-execution]]，“Operational guardrails govern multi-tier agent actions”。
+- **边界**：来源是行业媒体对厂商/试点案例的二手汇编，没有公开 false-escalation、queue latency、rollback 或策略绕过数据；因此它支持 trigger design 的生产形态，不证明这些阈值已经被最优校准。
+
+这也补充了本页既有 handoff chain：对 transaction agent，`trigger/type` 之前还需要一个明确的 **action envelope**。只有动作首先被外部策略层分类为“允许 / 需升级 / 禁止”，后续 receiver、packet 与 human action 才有稳定语义。
 
 ## 当前稳定判断
 

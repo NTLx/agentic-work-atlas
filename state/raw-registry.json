@@ -2941,6 +2941,17 @@
       "summary_path": "wiki/sources/20260920-lenny-peter-sellis-product-advice.md",
       "updated_at": "2026-09-21T13:47:19+08:00"
     },
+    "20260921-ai-news-multi-agent-supply-chain-execution.md": {
+      "body_sha256": "f19b1b4a2be3812e8b0460078538a16a6a4dfe308bce5a395d2689cffcc6c5d5",
+      "canonical_url": "https://www.artificialintelligence-news.com/news/multi-agent-ai-systems-supply-chain-execution/",
+      "compiled_at": "2026-10-05T04:15:34+08:00",
+      "indexed_at": "2026-10-05T04:15:27+08:00",
+      "raw_file": "20260921-ai-news-multi-agent-supply-chain-execution.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260921-ai-news-multi-agent-supply-chain-execution.md",
+      "updated_at": "2026-10-05T04:15:38+08:00"
+    },
     "20260922-anthropic-pace-ai-development.md": {
       "body_sha256": "ba0f61fc8f9e47a68674eee66afbfbc79a33b19f7d17e389ad48ff3f3e7a56f6",
       "canonical_url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
@@ -3690,6 +3701,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-05T00:58:11+08:00",
+  "updated_at": "2026-10-05T04:15:38+08:00",
   "version": 1
 }

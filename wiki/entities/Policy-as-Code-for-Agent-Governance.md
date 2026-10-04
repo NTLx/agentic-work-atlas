@@ -8,7 +8,7 @@ aliases:
   - Agent 治理策略即代码
 definition: "把 Agent 权限、披露、合规规则和人工升级路径写成可执行策略，在运行时约束模型行动的治理方法"
 created: 2026-06-02
-updated: 2026-09-18
+updated: 2026-10-05
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,6 +25,7 @@ source_raw:
   - "[[20260602-ibm-agent-logic-scalable-ai-adoption]]"
   - "[[20260914-microsoft-ai-code-of-conduct]]"
   - "[[20260915-google-zero-trust-intent-governance]]"
+  - "[[20260921-ai-news-multi-agent-supply-chain-execution]]"
 ---
 
 # Policy-as-Code for Agent Governance
@@ -94,6 +95,17 @@ Policy-as-Code 处于 Agent 委派治理**三层保证模型**的 L5（表达保
 与权限棘轮闭合（07-16）：L5 的策略 + L2（临时权限）+ L0（独立撤销）= 权限棘轮破解条件。策略定义了"什么算越权"→ L2 限制了时间窗口→ L0 独立执行撤销。
 
 详见：07-17 深度思考（roundtable 4人3轮+think 7层到底）
+
+## 供应链 transaction policy：把业务授权包络写进执行层（2026-10）
+
+[[20260921-ai-news-multi-agent-supply-chain-execution]] 把 policy-as-code 从抽象权限规则落到具体 transaction constraint：运输改道的成本/SLA 边界、库存变动的金额/数量阈值，以及供应商账户的 draft-only 信任级别，都可以被表达为 tool call 前的可执行规则。
+
+**判断**：面向真实企业交易的 Agent policy 至少应同时约束 **who/what can act、how far it may act、when it must stop、who must authorize the exception**。这类规则的价值在于把“谨慎一点”从 prompt 语言变成确定性的 action envelope。
+
+- **证据**：[[20260921-ai-news-multi-agent-supply-chain-execution]]，供应链 guardrail 段落列出 cost ceiling、SLA delta、inventory threshold 与 draft-only supplier communication。
+- **边界**：报道没有证明这些规则由独立 policy engine 实施，也没有给出 bypass、rollback 或 enforcement coverage 数据；因此这里吸收的是规则形状，不把其执行强度外推为已验证的 L0 机制保证。
+
+这一案例也进一步说明 **Policy-as-Code 与 Escalation 是同一执行链的两侧**：policy 先判断动作是否处于包络内，越界后再由 [[Escalation-Based-Human-Oversight]] 决定接收者、上下文包和人工动作。只有二者闭合，multi-agent 的“自主执行”才不是把审批隐性地塞回 prompt。
 
 ## 运行时语义治理的增量（2026-09）
 
