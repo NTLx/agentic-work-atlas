@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-10-05
+updated: 2026-10-08
 evidence_level: high
 claim_type: mixed
 tags:
@@ -93,6 +93,7 @@ source_raw:
   - "[[20260331-elt-bench-verified]]"
   - "[[20260918-trailofbits-auditing-good-enough-ai]]"
   - "[[20260921-linear-ci-bottleneck-reworked]]"
+  - "[[20260923-anthropic-ai-code-modernization-preparation]]"
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
@@ -163,6 +164,25 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 | 行为验证 | 系统是否在该停止时停止 | 高风险模式转人工、安全拒绝 |
 
 真正的 Agent harness 是这四层的组合，而不是一个更长的 prompt。
+
+## Certificate：先定义可验证正确性，再扩大 Agent 吞吐（2026-10）
+
+Anthropic 的代码现代化 field guide（[[20260923-anthropic-ai-code-modernization-preparation]]）把“可验证边界”落成一个很具体的项目对象：**certificate**。它不是单一测试门，而是一组每个 modernization change 都必须满足、尽量能无人工判断自动检查的累积证据条件；Agent 可以围绕 certificate 自迭代，无法满足时再进入 human review。
+
+不同 modernization type 的 reference/oracle 并不相同：
+
+| 类型 | 主要 reference / oracle | 验证难点 |
+|---|---|---|
+| Uplift | 原代码库 + 原测试 | 版本变化但行为应保持 |
+| Transform | 原系统行为 + production replay / differential / prod-parallel | 跨语言/栈后旧测试常不能直接运行 |
+| Reimagine | 新 behavioral spec + 测试 + adversarial review + 可保留的 differential checks | 目标行为本身改变，reference 更主观 |
+
+**判断**：Agentic engineering 的验证系统应在大规模生成之前明确 **target → reference → certificate → promotion policy**。目标越难被外部 reference 锚定，certificate 越依赖模型判断，自动化自治上限就越低。
+
+- **证据**：[[20260923-anthropic-ai-code-modernization-preparation]]；其 certificate 示例同时包含原/新测试、performance bound、fresh-context adversarial review、computer use、old/new differential outputs、state/wire-format round trip、staging telemetry、static/security analysis、build/type checks。
+- **边界**：Claude-authored tests + Claude adversarial reviews 即使使用 fresh context，也不等于真正 verifier independence；共享模型家族、错误 spec 或同一旧系统 reference 仍可能形成 correlated failure，因此生产 replay、静态分析、领域 SME 与其他异质证据不能被“多次 Claude review”替代。
+
+文章还有一个重要的系统性修复原则：当 pilot 中同类 flag 反复出现，应修改 **workflow / certificate**，而不是让 reviewer 持续逐 change 清偿。这意味着 scalable verification 不只是 post-hoc checking，也是一条把失败模式回写进 harness 的学习回路。
 
 ## 从相关性验证推进到充分性验证
 

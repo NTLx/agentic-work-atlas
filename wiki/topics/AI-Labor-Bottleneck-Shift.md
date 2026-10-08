@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-10-05
+updated: 2026-10-08
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -40,6 +40,7 @@ source_raw:
   - "[[20260529-ceo-ai-psychosis-equity-podcast]]"
   - "[[20260601-octopus-energy-ai-customer-service]]"
   - "[[20260921-linear-ci-bottleneck-reworked]]"
+  - "[[20260923-anthropic-ai-code-modernization-preparation]]"
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
@@ -103,6 +104,17 @@ Outcome 更不一定改善
 - **边界**：这是 Linear 单一 TypeScript monorepo 的一手内部复盘，多项优化并行发生；不能把全部压力严格归因于 Agent，也不能把具体百分比或 runner-minutes 外推成通用 CI 目标。
 
 这个案例进一步精确化本 Topic 的“瓶颈迁移”：生成速度提高后，组织可能依次撞上 **human attention ceiling** 和 **machine validation ceiling**。二者都会限制最终 delivery，且后者并非简单买更多 runner 就能解决——Linear 最大收益来自 critical path、重复 setup 与测试语义的系统重构。
+
+### Anthropic：代码现代化的瓶颈从写变更迁到组织吸收能力（2026-10）
+
+[[20260923-anthropic-ai-code-modernization-preparation]] 给出另一种尺度更大的瓶颈迁移：在关键/受监管系统的 modernization 中，Agent 可以显著压缩变更生成时间，但既有 change management、review、approval、test capacity、security/compliance 和 production promotion 并不会自动同比提速。Anthropic 因此把 Agent workflow 放到六步流程的第五步；前四步先定义 target、machine-checkable certificate、risk-tiered promotion policy 与组织/基础设施 prerequisites。
+
+**判断**：当 Agent 把 coding throughput 拉高后，企业软件现代化的 binding constraint 会从“能不能写完改动”迁到 **组织能否定义正确性、提供足够验证容量，并以匹配吞吐的治理路径吸收 certified changes**。
+
+- **证据**：[[20260923-anthropic-ai-code-modernization-preparation]]；文章明确指出 bottleneck 从 producing changes 转向 mobilizing the organization，并把 review capacity、CI/CD、approval、跨团队参与和 security/compliance 作为启动前 prerequisites。
+- **边界**：这是 Anthropic FDE 的供应商第一方经验框架，没有项目级对照数据；“多年缩到月/周”的速度说法来自相关案例而非本篇独立实验，不能据此推出普遍生产率倍数。
+
+这进一步把“AI Labor Bottleneck Shift”从个人/团队层推进到组织层：**生成能力扩容只是局部供给扩容；如果 verification、risk ownership 与 promotion capacity 不同步扩容，更多 Agent 只会制造更多等待被证明、被批准、被上线的变更库存。**
 
 ## Jevons 悖论的劳动版本
 

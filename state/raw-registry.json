@@ -2987,6 +2987,17 @@
       "summary_path": "wiki/sources/20260922-latentspace-john-platt.md",
       "updated_at": "2026-09-23T11:43:36+08:00"
     },
+    "20260923-anthropic-ai-code-modernization-preparation.md": {
+      "body_sha256": "74af78546ff51243cf4a749844fd9b95cc50b2a79c044e0eb4195b0417ff4e40",
+      "canonical_url": "https://claude.com/resources/articles/how-to-prepare-for-ai-driven-code-modernization-projects",
+      "compiled_at": "2026-10-08T10:22:15+08:00",
+      "indexed_at": "2026-10-08T10:22:18+08:00",
+      "raw_file": "20260923-anthropic-ai-code-modernization-preparation.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260923-anthropic-ai-code-modernization-preparation.md",
+      "updated_at": "2026-10-08T10:22:21+08:00"
+    },
     "20260923-latentspace-eric-biosecurity.md": {
       "body_sha256": "486d62f2e2bd8e52c5fb27a6d3a168cd812f997c4e07ea99e332f126356d3bbb",
       "canonical_url": "https://www.latent.space/p/bio-security-is-an-ai-arms-race-eric",
@@ -3712,6 +3723,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-05T04:21:30+08:00",
+  "updated_at": "2026-10-08T10:22:21+08:00",
   "version": 1
 }
