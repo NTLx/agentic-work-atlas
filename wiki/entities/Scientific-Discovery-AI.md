@@ -4,9 +4,9 @@ title: Scientific Discovery AI
 aliases:
   - Scientific Discovery AI
   - 科学发现 AI
-definition: "把巨大组合搜索空间、明确目标函数、数据或模拟器和工具调用结合起来，用 AI 寻找科学突破方案的系统形态"
+definition: "把模型、科学表示、搜索/模拟/工具与可验证实验反馈结合起来，用 AI 提出、执行和筛选科学假设，并把结果回流到后续决策的系统形态"
 created: 2026-05-08
-updated: 2026-09-24
+updated: 2026-10-09
 tags:
   - AI
   - science
@@ -27,12 +27,13 @@ source_raw:
   - "[[20260826-latent-space-anima-physical-world-models]]"
   - "[[20260922-latentspace-john-platt]]"
   - "[[20260923-latentspace-eric-biosecurity]]"
+  - "[[20261009-latentspace-periodic-synthesis-superintelligence]]"
 ---
 
 # Scientific Discovery AI（科学发现 AI）
 
 > [!definition] 定义
-> **Scientific Discovery AI** 是用 AI 在科学问题空间中寻找突破的系统形态。它通常需要四个条件：巨大组合搜索空间、明确目标函数、足够数据或模拟器，以及能通过工具调用和实验反馈不断校验假设。
+> **Scientific Discovery AI** 是把模型、科学表示、搜索/模拟/工具与可验证实验反馈组织成闭环，让 AI 能提出、执行和筛选科学假设，并把结果回流到后续决策。组合搜索与明确 objective 是其中一种强形态，但不是所有物理科学任务都具备干净、确定的 reward。
 
 ## 为什么重要
 
@@ -102,6 +103,35 @@ John Platt 对 Google ERA（Empirical Research Assistance）的描述补出第�
 **判断**：ERA 目前证明的是“计算研究环节可以被高吞吐 Agent 化”，而不是端到端 autonomous science；真实实验、传感与数据采集仍是闭环中的外部硬边界。
 - **证据**：[[20260922-latentspace-john-platt]]（02:00:21–02:00:49）。Platt 把最想消除的瓶颈描述为一个可接收 JSON 并自动执行任意实验的 “everything lab”，并强调当前 ERA “it's all computational”。
 - **边界**：不同科学领域的实验成本差异极大；纯计算数学、仿真或已有数据集任务可以更接近闭环，而湿实验、材料、机器人和大科学装置仍受物理执行层限制。
+
+## 第四条路线：实验现实成为训练环境（Periodic Labs，2026-10）
+
+[[20261009-latentspace-periodic-synthesis-superintelligence]] 给“everything lab”补出一个更具体的现实方向。Periodic 把材料 discovery loop 写成：
+
+~~~text
+hypothesis / candidate
+  → simulation / physical priors
+  → synthesis
+  → characterization
+  → multimodal evidence + uncertainty
+  → next experiment
+~~~
+
+与代码、数学或 ERA 的计算任务不同，这里的 environment 本身是物理实验室：观测昂贵、延迟高、部分可见且带随机噪声；材料出炉后不会自带正确标签，设备漂移、温差、振动、XRD 多解和 telemetry 缺口都会污染 observation。因此不能把“最终有没有做出目标材料”直接当成一个可大量 rollout 的干净 RL reward。Periodic 的做法是先围绕 characterization、phase identification、experiment choice 等局部环节构造训练任务，再让真实实验把这些局部能力重新闭合。
+
+**判断**：对物理世界的 Scientific Discovery AI，实验室不只是模型执行完之后的 actuator，而是**产生新知识、校准模拟、构造训练环境和制造未见数据的一等 epistemic infrastructure**。这把科学 Agent 的验证边界从“对已有 reference 打分”推进到“主动生成新的 reality evidence”。
+
+- **证据**：[[20261009-latentspace-periodic-synthesis-superintelligence]]（00:02:49–00:13:28；00:30:22–01:06:06）。访谈明确把实验称为 ultimate truth，同时强调 uncertainty、sample efficiency、timestamped evidence、null results 与完整 campaign lineage。
+- **边界**：这是 Periodic 创始团队的一手系统描述，不是独立 benchmark。更重要的是，“实验是真值”不等于 measurement 无噪声：现实反馈仍需 replicate、多模态 characterization、物理先验和 instrument calibration 才能成为可靠 evidence。
+
+### 科学过程数据比成功终点更稀缺
+
+Periodic 还把训练数据单位从“论文中的最终成功结果”扩大到完整 scientific process：scientist conversations / intuitions、实验条件、computations、代码、失败/negative results、仪器状态和从多次失败走到成功的 campaign trace。团队还提出按时间冻结某一刻的 evidence state，要求模型只用当时可见信息做下一步决策，以降低模型靠后来公开答案“fake work”的风险。
+
+**判断**：物理科学中的高价值 proprietary data 可能不是更多成功样本，而是**带时间、动作、条件和失败 provenance 的 process lineage**。这类数据同时服务训练、验证和因果式复盘；只保留论文式成功结果会系统性丢掉搜索空间中最有价值的负证据。
+
+- **证据**：[[20261009-latentspace-periodic-synthesis-superintelligence]]（00:53:16–01:06:06）。
+- **边界**：negative result 不能直接解释为“不可实现”；失败可能来自 synthesis method、设备或技能。timestamped state 也只能降低 contamination，不能在未知预训练数据条件下证明 reasoning 完全无泄漏。
 
 ## Domain-native Foundation Model：直接学习科学对象
 

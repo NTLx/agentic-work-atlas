@@ -7,7 +7,7 @@ aliases:
   - 连续学习
 definition: "让 AI 系统在新情境中吸收经验、更新知识和保持旧能力，而不是每次会话都从静态权重和临时上下文重新开始的能力"
 created: 2026-05-08
-updated: 2026-09-13
+updated: 2026-10-09
 tags:
   - AI
   - AGI
@@ -27,6 +27,7 @@ source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[20260529-gemini-co-leads-origins]]"
   - "[[20260911-dwarkesh-recursive-self-improvement-debate]]"
+  - "[[20261009-latentspace-periodic-synthesis-superintelligence]]"
 ---
 
 # Continual Learning（持续学习）
@@ -71,6 +72,17 @@ source_raw:
 > **证据**：圆桌 00:45:24–01:18:03 对部署数据、hive mind、非平稳真实任务、样本效率、灾难性遗忘和模块化适配的讨论（见 [[20260911-dwarkesh-recursive-self-improvement-debate]]）。
 >
 > **边界**：嘉宾没有给出统一的在线学习方案或独立 benchmark；外部记忆、蒸馏、模块加载和权重级 continual learning 的效果不能从这场讨论中互相推出。
+
+## 科学过程 lineage：持续学习的 experience substrate（2026-10）
+
+[[20261009-latentspace-periodic-synthesis-superintelligence]] 提供了一个很具体的“什么经验值得长期学”的物理科学案例。Periodic 不只保存最终实验结果，而是把 conversations、scientist intuitions、实验执行、computations、代码、negative/null results、instrument context 与多轮 campaign 轨迹连成 lineage；同时按时间冻结某一时刻的 evidence state，用这些状态构造后续 RL / training tasks。
+
+**判断**：持续学习之前还有一个更基础的工程层——**experience 必须先成为可版本化、可追溯、带当时信息边界的训练资产**。对开放世界任务，只保存最终 outcome 会丢失“当时知道什么、做了什么、为什么失败、什么变化导致后来成功”这些真正能迁移的结构。
+
+- **证据**：[[20261009-latentspace-periodic-synthesis-superintelligence]]（00:53:16–01:06:06）。Fedus/Çubuk 明确强调训练目标应从 final output of science 转向 process of doing science，并讨论 timestamped experimental evidence、negative results 与 campaign-level reasoning traces。
+- **边界**：这仍不是部署中的 online continual learning。访谈没有展示模型每做完一个实验就安全更新权重；这里证明的是高质量 experience substrate / offline training pipeline 的设计价值。negative result 也必须绑定具体实验条件，因为一次 synthesis 失败不等于目标永远不可实现。
+
+这进一步细化了本页前述判断：长期能力更新的关键不只是 replay “成功轨迹”，而是决定**哪些状态—行动—证据—失败序列有资格进入学习回路**，并保留足够 provenance 让未来模型知道当时可见的信息边界。
 
 ## 与 Agent 知识管理的关系
 

@@ -3104,6 +3104,17 @@
       "summary_path": "wiki/sources/20261002-latentspace-rlm-alex-zhang.md",
       "updated_at": "2026-10-03T07:22:40+08:00"
     },
+    "20261009-latentspace-periodic-synthesis-superintelligence.md": {
+      "body_sha256": "fa307a1b9014513f56ec7ac940b934c4d4c04379de9c9e91f1a266a25c74a7f4",
+      "canonical_url": "https://www.latent.space/p/periodic",
+      "compiled_at": "2026-10-09T08:30:38+08:00",
+      "indexed_at": "2026-10-09T08:30:43+08:00",
+      "raw_file": "20261009-latentspace-periodic-synthesis-superintelligence.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261009-latentspace-periodic-synthesis-superintelligence.md",
+      "updated_at": "2026-10-09T08:30:48+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -3723,6 +3734,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-08T10:22:21+08:00",
+  "updated_at": "2026-10-09T08:30:48+08:00",
   "version": 1
 }
