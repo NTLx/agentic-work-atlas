@@ -8,7 +8,7 @@ aliases:
   - Persistent Assistant
 definition: "拥有持续记忆、长期上下文、关系型交互的 LLM 应用；区别于'用完即走'的工具——用户从'按需调用'变成'持续委托'"
 created: 2026-06-06
-updated: 2026-06-16
+updated: 2026-10-09
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -27,6 +27,7 @@ related_entities:
   - "[[Exit-Sovereignty]]"
 source_raw:
   - "[[20260604-openai-dreaming-memory]]"
+  - "[[20261004-lenny-openai-head-chatgpt-new-era]]"
 ---
 
 # Personal AI Assistant（个人 AI 助理）
@@ -62,6 +63,23 @@ source_raw:
 - **关系深度** — 积累用户偏好、风格、忌讳
 - **跨设备同步** — 多端状态一致
 - **用户主权** — 可审可改可删
+
+## 从 Persistent Assistant 到 Permanent Active Intelligence（2026-10）
+
+[[20261004-lenny-openai-head-chatgpt-new-era]] 把这个 Entity 从“有长期记忆的聊天助理”再推进一步。Tibo Sottiaux 描述的目标形态不是要求用户不断选择模型、模式或 Agent topology，而是一份**持续存在的 intelligence**：理解用户目标与偏好、从反馈学习、可长期在后台工作，并能在会议、邮件、短信、屏幕和不同设备之间保持连续性。
+
+**判断**：Personal AI Assistant 更稳定的产品抽象不是某个聊天窗口，而是一个连续的状态对象：
+
+```text
+identity + memory + goals + agency + availability + guardrails
+```
+
+客户端、模型选择、reasoning effort、单 Agent / 多 Agent 和具体 harness 都应尽量下沉为系统实现细节。这样，“持续助理”的价值才从“记得过去聊过什么”扩展到“在跨时间、跨界面和跨任务中持续替用户推进目标”。
+
+这也解释了为什么配置复杂度可能与产品成熟度负相关：当用户必须理解 model picker、不同工作模式或手工 loops 才能获得稳定结果时，系统仍把内部架构成本暴露给用户。更成熟的助理应自动路由这些复杂性，只在权限、风险或目标冲突等真正需要人类判断的地方请求介入。
+
+> [!warning] 边界
+> 访谈发生在 Dots 刚发布阶段。24/7、跨设备控制、长期 memory coherence 和“app 几乎消失”主要是 OpenAI 产品负责人描述的产品方向，不等于这些能力已经在大规模真实使用中被独立验证。持续 agency 同时会放大隐私、权限、误操作、prompt injection 和退出权问题，因此“更主动”不能脱离 guardrails 与用户控制单独优化。
 
 ## 关键挑战
 

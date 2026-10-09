@@ -3104,6 +3104,17 @@
       "summary_path": "wiki/sources/20261002-latentspace-rlm-alex-zhang.md",
       "updated_at": "2026-10-03T07:22:40+08:00"
     },
+    "20261004-lenny-openai-head-chatgpt-new-era.md": {
+      "body_sha256": "c4b8df771d1cdcd4ffe86253c31b3c88e285331229a666d78309b34729d6aee7",
+      "canonical_url": "https://www.lennysnewsletter.com/p/openais-head-of-chatgpt-were-entering",
+      "compiled_at": "2026-10-09T08:40:55+08:00",
+      "indexed_at": "2026-10-09T08:40:58+08:00",
+      "raw_file": "20261004-lenny-openai-head-chatgpt-new-era.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261004-lenny-openai-head-chatgpt-new-era.md",
+      "updated_at": "2026-10-09T08:41:15+08:00"
+    },
     "20261009-latentspace-periodic-synthesis-superintelligence.md": {
       "body_sha256": "fa307a1b9014513f56ec7ac940b934c4d4c04379de9c9e91f1a266a25c74a7f4",
       "canonical_url": "https://www.latent.space/p/periodic",
@@ -3734,6 +3745,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-09T08:30:48+08:00",
+  "updated_at": "2026-10-09T08:41:15+08:00",
   "version": 1
 }
