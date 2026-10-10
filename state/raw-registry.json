@@ -3126,6 +3126,17 @@
       "summary_path": "wiki/sources/20261009-latentspace-periodic-synthesis-superintelligence.md",
       "updated_at": "2026-10-09T08:30:48+08:00"
     },
+    "20261010-latentspace-biohub-deepmind-protein-folding.md": {
+      "body_sha256": "e670ed95a95f08ef79312510327f744ed52b182bdd7369cb3c570000abea3483",
+      "canonical_url": "https://www.latent.space/p/biohub-deepmind",
+      "compiled_at": "2026-10-10T09:04:48+08:00",
+      "indexed_at": "2026-10-10T09:04:36+08:00",
+      "raw_file": "20261010-latentspace-biohub-deepmind-protein-folding.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261010-latentspace-biohub-deepmind-protein-folding.md",
+      "updated_at": "2026-10-10T09:04:54+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -3745,6 +3756,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-09T08:41:15+08:00",
+  "updated_at": "2026-10-10T09:04:54+08:00",
   "version": 1
 }

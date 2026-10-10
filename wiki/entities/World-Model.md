@@ -6,7 +6,7 @@ aliases:
   - 世界模型
 definition: "AI 系统对环境状态、因果结构和行动后果的内部表示，使 Agent 能在长期任务中预测、规划并随经验修正策略"
 created: 2026-05-18
-updated: 2026-09-25
+updated: 2026-10-10
 tags:
   - AI
   - AGI
@@ -27,6 +27,7 @@ source_raw:
   - "[[20260606-fei-fei-world-model-taxonomy]]"
   - "[[20260717-schema-harness-arc-agi]]"
   - "[[20260925-latentspace-runway-world-models]]"
+  - "[[20261010-latentspace-biohub-deepmind-protein-folding]]"
 ---
 
 # World Model（世界模型）
@@ -49,6 +50,27 @@ source_raw:
 - 对 coding agent 来说，世界模型包括代码库结构、测试反馈、用户目标、部署环境和长期约束。
 - 对科学发现 Agent 来说，世界模型包括实验结果、假设空间、目标函数、模拟器状态和工具可靠性。
 - 世界模型必须与 [[Tool-Use-Architecture|工具使用架构]]结合：模型通过工具获得观测、执行实验、校验预测，而不是只在文本里想象。
+
+## 科学 World Model 的最低可信合同：行为边界与不确定性校准（2026-10）
+
+[[20261010-latentspace-biohub-deepmind-protein-folding]] 把“模型内部是否形成科学表示”和“研究者能否安全使用它”区分开来。Sal Candido 提到 protein language models 的内部表示里可以发现 structure、function、motion 等信息；但 Pushmeet Kohli 强调，即使模型整体预测精度很高，如果 uncertainty score 完全失准，用户仍可能把高置信错误当真并投入大量实验成本。
+
+AlphaFold 的 pLDDT 因此提供了一个重要例子：对科学模型而言，**知道模型在哪些地方值得信任，本身就是能力的一部分**。用户未必需要理解每一层神经网络“为什么”产生结果，但必须知道它在什么输入分布、任务和置信区间内可靠，以及典型失败是什么。
+
+**判断**：科学 world model / predictor 对外成为可行动工具前，最低合同至少包括：
+
+~~~text
+capability boundary
++ calibrated uncertainty
++ known failure modes
++ reference / measurement provenance
++ external validation path
+~~~
+
+这与 mechanistic interpretability 是不同问题。后者试图解释内部机制；前者是 operational trust contract。Mechanistic understanding 有价值，但不能替代 behavioral characterization；同样，confidence 字段存在也不等于已经校准。
+
+- **证据**：[[20261010-latentspace-biohub-deepmind-protein-folding]]（Transcript L148-L190）。Kohli 明确用“高结构精度但 pLDDT 完全失准”的反事实说明 uncertainty calibration 的必要性，并区分“人能否解释内部机制”与“用户是否理解模型 strengths / limitations”。
+- **边界**：本访谈没有提供 pLDDT calibration curve 或跨版本定量比较；“未来更大的模型可能解释较小模型”只是开放猜想，不能作为已验证的 interpretability 方法。
 
 ## 功能分类：renderer / simulator / planner
 

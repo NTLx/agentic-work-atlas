@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把模型、科学表示、搜索/模拟/工具与可验证实验反馈结合起来，用 AI 提出、执行和筛选科学假设，并把结果回流到后续决策的系统形态"
 created: 2026-05-08
-updated: 2026-10-09
+updated: 2026-10-10
 tags:
   - AI
   - science
@@ -28,6 +28,7 @@ source_raw:
   - "[[20260922-latentspace-john-platt]]"
   - "[[20260923-latentspace-eric-biosecurity]]"
   - "[[20261009-latentspace-periodic-synthesis-superintelligence]]"
+  - "[[20261010-latentspace-biohub-deepmind-protein-folding]]"
 ---
 
 # Scientific Discovery AI（科学发现 AI）
@@ -39,7 +40,7 @@ source_raw:
 
 科学发现是检验 AI 是否能超越文本生成的重要场景。它要求系统不只是复述论文或给出方案，而是在庞大搜索空间中找到人类难以穷举的结构，并把结果变成可验证的理论、实验或工具。
 
-Hassabis 从 AlphaGo 和 AlphaFold 总结出一个模式：当问题可以被描述为海量组合搜索，并且有可优化目标函数时，AI 能找到 needle in a haystack 式的解。围棋中的惊人落子和蛋白质折叠中的结构预测，都是这个模式的不同实例。
+Hassabis 从 AlphaGo 和 AlphaFold 总结出一个模式：当问题可以被描述为海量组合搜索，并且有可优化目标函数时，AI 能找到 needle in a haystack 式的解。围棋中的惊人落子和蛋白质结构预测，都是这个模式的不同实例。后续 DeepMind/Biohub 对谈进一步提醒：AlphaFold 的成功目标主要对应 PDB-like structure prediction，不能直接扩写成 protein dynamics、function 或完整 folding distribution 都已解决。
 
 ## 关键数据点
 
@@ -55,10 +56,37 @@ Hassabis 从 AlphaGo 和 AlphaFold 总结出一个模式：当问题可以被描
 
 | 层级 | 任务 | 代表问题 |
 |------|------|----------|
-| 搜索型发现 | 在已有规则和目标函数下找到极优解 | 围棋走法、蛋白质折叠、候选分子搜索 |
+| 搜索型发现 | 在已有规则和目标函数下找到极优解 | 围棋走法、蛋白质结构预测、候选分子搜索 |
 | 框架型发现 | 提出新的问题、理论或解释结构 | [[Einstein-Test|Einstein Test]] 所关心的新理论生成 |
 
 当前方法在第一层更有把握。第二层需要更强的类比推理、世界模型、持续学习和对“什么问题重要”的判断。
+
+## Problem-first scaling：先找对可扩展问题，再谈规模（2026-10）
+
+[[20261010-latentspace-biohub-deepmind-protein-folding]] 给 Scientific Discovery AI 补上一个更上游的设计原则：**scaling law 不是默认存在的自然法则，而是需要研究者找到的可扩展问题结构。** Sal Candido 强调，只有数据真正包含解决目标问题所需的 information statistics，增加 data / compute 才会稳定产生能力；Pushmeet Kohli 则把方法论概括为 problem-first——先确定科学目标，再判断瓶颈究竟在 modeling、compute、data generation 还是 domain expertise。
+
+这同时修正了“craft vs scale”的假二分。小数据条件下，biophysics / biochemistry 等科学先验可以显著提高 sample efficiency；数据规模扩大后，错误 inductive bias 又可能限制模型发现未知结构。数据策展本身也不是机械堆量：重复相同信息不会自动扩大有效 information coverage。
+
+**判断**：科学 AI 的资源分配顺序更接近：
+
+~~~text
+problem / desired outcome
+  → required information
+  → measurement / data coverage
+  → valid scientific priors
+  → architecture / compute
+  → calibrated uncertainty + external validation
+~~~
+
+Scale 是这条链条成立后的放大器，而不是替代问题定义的万能策略。
+
+### AlphaFold 的成功边界：benchmark contract ≠ 整个科学问题
+
+Kohli 对 AlphaFold 的回顾提供了一个重要的 scope correction：团队实际面对的是“给定研究者获得并存入 PDB 的结构，模型能否预测与其一致的结构”，而不是已经知道并恢复蛋白在真实环境中的完整 ground-state distribution。蛋白可能 disorder、随上下文改变构象；function、dynamics 和 design 也仍是独立开放问题。
+
+**判断**：Scientific Discovery AI 的成功声明必须绑定 `measurement target / reference distribution / operating scope`。当一个清晰代理任务被做得极好时，最大的认知风险之一就是把 proxy victory 写成原始科学问题已整体解决。
+- **证据**：[[20261010-latentspace-biohub-deepmind-protein-folding]]（Transcript L108-L146）。
+- **边界**：这不是对 AlphaFold 科学价值的否定；它是对传播层“protein folding solved”口号的边界校准。AlphaFold 对结构预测的突破仍然成立，只是不能外推到 dynamics / function / complete folding distribution。
 
 ## 第二条路线：连续物理系统的结构先验（08-27 补充）
 
