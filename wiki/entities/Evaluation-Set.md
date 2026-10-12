@@ -30,6 +30,7 @@ source_raw:
   - "[[20260901-google-ai-evaluations-trust]]"
   - "[[20260901-databricks-genie-ontology-data-stack]]"
   - "[[20260930-openrouter-golden-eval-production-traffic]]"
+  - "[[20260930-openrouter-agent-regression-testing]]"
 ---
 
 # Evaluation Set（评测集）
@@ -110,6 +111,36 @@ Eval Result
 
 - **证据**：[[20260930-openrouter-golden-eval-production-traffic]]，production sampling、dedup/cluster、expected outputs、first evaluation、Git/CI 与 cross-model benchmarking 段落。
 - **边界**：来源是平台教程；20–50、100–1000 等样本规模和刷新周期是经验建议，不是普适阈值。生产流量也会继承历史偏差和既有盲区，真实分布不等于完整分布。
+
+## Locked case set：可比性本身是一等资产（2026-10）
+
+[[20260930-openrouter-agent-regression-testing]] 把评测集的版本治理进一步精确化：**评测集可以长期演化，但在一次 regression comparison 内必须被冻结。** 如果测试过程中顺便重写 case，candidate 与 baseline 的 measurement condition 已经不同，历史结果不再可比。
+
+```text
+长期生命周期：
+production drift
+  → refresh / add cases
+  → new eval-set version
+
+单次实验：
+exact eval-set version
+  → freeze
+  → baseline run
+  → candidate run
+  → compare
+```
+
+**判断**：case-set edit 应视为 experiment/schema boundary，而不是无害的测试维护。只有在新版本明确建立新 baseline 后，才能继续做纵向回归比较。
+
+这条规则与上一节 Golden Set 的 refresh 要求构成两个时间尺度：
+
+- **between epochs**：根据生产分布、新失败和产品行为更新 Evaluation Set；
+- **within an epoch/comparison**：冻结 case、rubric 与 execution envelope，避免 treatment 与 measurement 同时变化。
+
+来源还补充一个重要的 evaluation provenance 边界：Agent 的 execution fixture 不只包含题目本身，也包含 concrete model、tool schema/results、retrieval/context、judge、inference parameters，以及 `AGENTS.md` / `CLAUDE.md` / skills 等隐式 instruction source。若这些变量未记录，所谓“同一评测集”也未必是在测试同一个系统条件。
+
+- **证据**：[[20260930-openrouter-agent-regression-testing]]，locked case set、three kinds of change、model-swap 与 hermetic run 讨论。
+- **边界**：structural path 不应因为容易断言就被写进所有 case；只有路径本身属于业务契约时才应成为 oracle，否则会把实现细节误写成产品要求。
 
 ## 前提与局限性
 

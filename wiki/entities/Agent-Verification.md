@@ -42,6 +42,7 @@ source_raw:
   - "[[20260914-iouri-khramtsov-ai-code-quality]]"
   - "[[20260928-github-android-ai-security-agent]]"
   - "[[20260929-pragmatic-shopify-native-mobile]]"
+  - "[[20260930-openrouter-agent-regression-testing]]"
 ---
 
 > [!definition] 定义
@@ -189,6 +190,61 @@ release gate
 
 - **证据**：[[20260929-pragmatic-shopify-native-mobile]]，公开第 3 节 “Shared codebases more trivial with AI”；Shopify 第一方工程文章亦描述 shared specifications/tests/review checkpoints 与 agent-friendly headless business logic。
 - **边界**：共享 tests 只验证已编码的语义，无法自动覆盖 accessibility、visual behavior、platform integration、performance 或未知 edge cases；同一套错误 specification 仍可能让两份实现一起“正确地错”。因此 shared oracle 是 parity foundation，不是完整质量证明。
+
+## Agent 回归测试：锁定 behavioral contract，而不是字符串输出（2026-10）
+
+OpenRouter 的 Agent regression 教程（[[20260930-openrouter-agent-regression-testing]]）把 verification 从“检查输出是否通过”推进到**控制一个 Agent behavior experiment**。Agent 的被测系统不是 prompt 一项，而是完整 execution envelope：
+
+```text
+Behavior
+= f(prompt,
+    concrete model/provider,
+    tool schema + tool results,
+    retrieval/context,
+    harness + implicit instructions,
+    inference parameters)
+```
+
+因此 prompt、model、tool definition、retrieval setting、conversation history 或 workspace instruction 任一变化，都可能使旧 pass 过期。
+
+生产级回归证据的最小实验包更接近：
+
+```text
+locked cases
++ pinned prompt
++ concrete model/provider
++ fixed tools/schema/results
++ fixed retrieval/context
++ fixed judge
++ explicit inference params
++ disclosed implicit instructions
+→ baseline vs candidate
+```
+
+### Baseline-before-candidate：验证器也要先做 health check
+
+来源强调先在当前 harness 中 replay baseline，再评价 candidate。若 baseline 与 candidate 同时在同一个 case 失败，优先调查 case、judge、harness 或 environment，而不是自动归因给候选版本。教程自己的运行甚至没有找到候选模型问题，却暴露了 harness 问题。
+
+**判断**：baseline replay 是 verifier 的廉价 self-test。它不能证明 verifier 绝对正确，但可以识别“测试系统自身刚坏了”这一类常见假回归。
+
+### Structural assertion、outcome 与 hard invariant 必须分层
+
+Agent 输出通常不能做字符串 diff。来源主张检查 tool call、arguments 和 policy boundaries；结合 [[Evaluation-Set]] 既有原则，更稳妥的 contract 是：
+
+- **outcome/rubric**：最终任务结果是否满足目标；
+- **structural assertion**：只有当 tool/path/order 本身属于需求时才锁定执行路径；
+- **hard invariant**：退款上限、必须升级人工等绝不能突破的边界。
+
+**判断**：hard invariant 不应被 aggregate pass rate 稀释。soft judge drift 可以 threshold / rerun / investigate；candidate-only invariant break 则应是零容忍 release defect。
+
+### Hermeticity 还包括隐式 instruction sources
+
+`AGENTS.md`、`CLAUDE.md`、skills 与 workspace instructions 都可能进入上下文，因此回归环境即使 API 参数完全相同，也可能因为运行目录变化而漂移。
+
+**判断**：Agent test hermeticity 的对象必须包含隐式上下文来源。凡是能改变模型可见信息、工具定义或决策边界的东西，都属于 test fixture，而不是“环境杂音”。
+
+- **证据**：[[20260930-openrouter-agent-regression-testing]]，locked case set、three kinds of change、model-swap、noise/invariant 与 conclusion 段落。
+- **边界**：来源是 OpenRouter/Ori Eval 教程；具体模型和价格是时间敏感示例。baseline 通过只是 sanity check，无法发现 baseline 与 verifier 的共源错误；高风险系统仍需独立 oracle 与人工审查。
 
 ## 安全研究：finding confidence ≠ severity confidence（2026-10）
 

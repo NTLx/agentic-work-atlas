@@ -3136,6 +3136,17 @@
       "summary_path": "wiki/sources/20260930-latentspace-devday-2026.md",
       "updated_at": "2026-10-01T21:58:51+08:00"
     },
+    "20260930-openrouter-agent-regression-testing.md": {
+      "body_sha256": "eacf60758af4502d6b321467a6d886d746977bbcc508d0ae72cedee940958d05",
+      "canonical_url": "https://openrouter.ai/blog/tutorials/ai-agent-regression-testing-after-a-prompt-or-model-change/",
+      "compiled_at": "2026-10-12T17:28:40+08:00",
+      "indexed_at": "2026-10-12T00:00:00+08:00",
+      "raw_file": "20260930-openrouter-agent-regression-testing.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260930-openrouter-agent-regression-testing.md",
+      "updated_at": "2026-10-12T17:28:41+08:00"
+    },
     "20260930-openrouter-golden-eval-production-traffic.md": {
       "body_sha256": "6cb2aed46d3bccf7bc251d85c389b77d610587ab20c81a37c82519cbf285c7d6",
       "canonical_url": "https://openrouter.ai/blog/tutorials/building-a-golden-eval-dataset-from-production-traffic/",
@@ -3822,6 +3833,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-12T17:24:38+08:00",
+  "updated_at": "2026-10-12T17:28:41+08:00",
   "version": 1
 }
