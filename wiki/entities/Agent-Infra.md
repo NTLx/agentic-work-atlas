@@ -6,7 +6,7 @@ aliases:
   - Agent Infrastructure
 definition: "将硅基执行者接进软件世界的运行时层，包含 Coding Agent 入口、Context/Memory/Tool Use/Sandbox/AgentOps 运行时组件，以及 Agent Builder/Orchestrator/Operator 编排层"
 created: 2026-05-29
-updated: 2026-09-13
+updated: 2026-10-12
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -26,6 +26,7 @@ source_raw:
   - "[[20260617-huggingface-agentic-resource-discovery]]"
   - "[[20260707-intelligence-is-free-data-systems-for-of-by-agents]]"
   - "[[20260911-openai-habitat-storage-scaling]]"
+  - "[[20260930-databricks-agentic-apps-ai-sprawl]]"
 ---
 
 > [!definition] 定义
@@ -76,6 +77,38 @@ Habitat 的受限 NoSQL object/edge API 把在线请求约束为可预测的工�
 > **证据**：Habitat 的服务化、受限 API、CDC→Rockset 逃生舱与 Python→Rust 迁移（见 [[20260911-openai-habitat-storage-scaling]]）。
 >
 > **边界**：Habitat 是单一组织的第一方案例；其规模数据、性能收益和服务化选择不能直接外推到所有 Agent 基础设施。
+
+## 从 Agent proliferation 到 AI sprawl：统一周边，不统一模型（2026-10）
+
+Databricks 的企业 Agent 架构文章（[[20260930-databricks-agentic-apps-ai-sprawl]]）补充了 Agent Infra 在 fleet 规模下的一个关键分层：**Agent 多不是问题，每新增一个 Agent 都复制一套 context / integration / policy / telemetry 才是 sprawl。**
+
+来源将平台需求概括为 choice、context、control。综合其 observability/evaluation 段落，可以进一步拆为四个 operating planes：
+
+```text
+volatile capability layer
+  model / harness / tool / agent implementation
+                ↓
+shared operating planes
+  Choice    — 统一接入，不强制单一模型/框架
+  Context   — 共享业务语义、数据、文档、memory
+  Control   — identity、policy、sandbox、budget、rate limit
+  Evidence  — trace、eval、cost、tool activity
+```
+
+**判断**：企业 Agent 平台的标准化对象应从“统一一个 framework”转向 **统一 surrounding contract**。模型与 harness 可以快速替换；业务语义、权限、审计、评测和成本控制则应尽量由新 Agent 继承，而不是每个应用重新实现。
+
+这也给“平台化是否值得”提供了一个更好的度量：
+
+```text
+marginal infra copies per new agent
+```
+
+如果第 N 个 Agent 仍要重新接客户定义、身份、policy、日志和 eval，那么组织只是拥有很多 Agent 项目，并没有形成 Agent Infra。
+
+文章还把 shared context 从“共享检索”推进到“共享语义”：sales agent 与 support agent 对 active customer、product ownership、account hierarchy 应使用同一业务定义。**同一个向量库并不等于同一个 context plane；真正的复用对象是 authoritative meaning + governed access。**
+
+- **证据**：[[20260930-databricks-agentic-apps-ai-sprawl]]，`Context should be shared, not rebuilt`、`Choice should not create fragmentation`、`Shared infrastructure makes composition easier`。
+- **边界**：来源是 Databricks 第一方产品架构，未提供不同平台方案的对照；集中 control/context plane 也会引入共享故障域与 vendor lock-in，不能只计算去重收益。
 
 ## 关键数据点
 

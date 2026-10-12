@@ -8,7 +8,7 @@ aliases:
   - Agent 治理策略即代码
 definition: "把 Agent 权限、披露、合规规则和人工升级路径写成可执行策略，在运行时约束模型行动的治理方法"
 created: 2026-06-02
-updated: 2026-10-05
+updated: 2026-10-12
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -26,6 +26,7 @@ source_raw:
   - "[[20260914-microsoft-ai-code-of-conduct]]"
   - "[[20260915-google-zero-trust-intent-governance]]"
   - "[[20260921-ai-news-multi-agent-supply-chain-execution]]"
+  - "[[20260930-databricks-agentic-apps-ai-sprawl]]"
 ---
 
 # Policy-as-Code for Agent Governance
@@ -80,6 +81,32 @@ Policy-as-code 也不能替代人工责任。它适合拦截、记录、升级�
 - [[Least-Agency]] — 策略执行的核心原则。
 - [[Escalation-Based-Human-Oversight]] — 策略中必须显式表达的人工接管路径。
 - [[Agent-Containment]] — 工具与环境层隔离提供确定性边界。
+
+## Delegation-time down-scoping：调用者权限 ≠ Agent 权限（2026-10）
+
+Databricks 的 refund 示例（[[20260930-databricks-agentic-apps-ai-sprawl]]）补充了 policy-as-code 的一个关键授权语义：发起请求的员工可以拥有广泛客户账户权限，但执行单笔退款的 Agent 只需要该订单、相关 policy，以及完成当前交易的有限 action authority。
+
+因此生产 Agent 的有效权限更接近：
+
+```text
+agent authority
+= principal authority
+∩ current task scope
+∩ policy action envelope
+```
+
+而不是：
+
+```text
+agent authority = principal authority
+```
+
+**判断**：least privilege 对 Agent 不能只在账号创建时静态设置，而要在**每次 delegation 时重新 down-scope**。任务上下文本身应参与权限计算：本次需要哪些数据、哪几个工具、什么金额/次数边界、何时必须升级。
+
+这也要求 control plane 同时保留执行证据。一个最终答案“看起来正确”不足以证明治理生效；至少需要记录 identity/context、retrieval、concrete model/harness、tool/action trajectory、policy decision 与结果。否则发生异常时无法区分模型错误、检索错误、工具错误和 policy enforcement 缺口。
+
+- **证据**：[[20260930-databricks-agentic-apps-ai-sprawl]]，`Control has to follow every action` 与 `Control also requires visibility into what happened`。
+- **边界**：来源描述的是 Databricks 平台设计。centralized traces 证明可见性，不自动证明所有 action surface 都被强制拦截；**observability ≠ enforcement coverage**。
 
 ## 治理三层模型中的位置（07-17 深度思考）
 

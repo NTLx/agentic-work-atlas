@@ -3113,6 +3113,17 @@
       "summary_path": "wiki/sources/20260929-pragmatic-shopify-native-mobile.md",
       "updated_at": "2026-10-12T15:22:30+08:00"
     },
+    "20260930-databricks-agentic-apps-ai-sprawl.md": {
+      "body_sha256": "7a65ad52c54f236d6cf554c5eb90b6dbb9d4145ce15dedc49f368507372ef856",
+      "canonical_url": "https://www.databricks.com/blog/how-scale-agentic-applications-without-creating-ai-sprawl",
+      "compiled_at": "2026-10-12T17:18:11+08:00",
+      "indexed_at": "2026-10-12T17:18:03+08:00",
+      "raw_file": "20260930-databricks-agentic-apps-ai-sprawl.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260930-databricks-agentic-apps-ai-sprawl.md",
+      "updated_at": "2026-10-12T17:18:15+08:00"
+    },
     "20260930-latentspace-devday-2026.md": {
       "body_sha256": "c4c123093cb6e32516b2c73a0cbdc42ff0f11aa896762b75714bed095610e3d0",
       "canonical_url": "https://www.latent.space/p/devday-2026",
@@ -3799,6 +3810,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-12T17:14:26+08:00",
+  "updated_at": "2026-10-12T17:18:15+08:00",
   "version": 1
 }
