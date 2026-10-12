@@ -2013,6 +2013,17 @@
       "summary_path": "wiki/sources/20260809-hsi-hierarchical-self-improvement.md",
       "updated_at": "2026-09-19T16:39:00+08:00"
     },
+    "20260810-railcode-vibe-coded-website.md": {
+      "body_sha256": "2f554e5181ca5d9d483d87abe3faadb8eb3bfa6eb0964a6c580d9180059a6985",
+      "canonical_url": "https://railcode.dev/blog/vibe-coded-website",
+      "compiled_at": "2026-10-12T17:14:16+08:00",
+      "indexed_at": "2026-10-12T17:14:24+08:00",
+      "raw_file": "20260810-railcode-vibe-coded-website.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260810-railcode-vibe-coded-website.md",
+      "updated_at": "2026-10-12T17:14:26+08:00"
+    },
     "20260810-the-playbook-for-building-high-talent.md": {
       "body_sha256": "6be6670bab466d6f60ebed5c50334cafd44687d0cbaea4c10dda14f371518bf2",
       "canonical_url": "https://www.lennysnewsletter.com/p/the-playbook-for-building-high-talent",
@@ -3788,6 +3799,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-12T15:22:30+08:00",
+  "updated_at": "2026-10-12T17:14:26+08:00",
   "version": 1
 }

@@ -5,7 +5,7 @@ aliases:
   - Vibe Coding
 definition: "Andrej Karpathy 提出的编程概念，提升所有人的编程能力底线，让任何人通过自然语言和 agent 交互生成软件，原型质量是其特征"
 created: 2026-04-10
-updated: 2026-07-17
+updated: 2026-10-12
 evidence_level: high
 claim_type: mixed
 tags:
@@ -38,6 +38,7 @@ source_raw:
   - "[[Why I Don’t Vibe Code]]"
   - "[[20260530-ceo-knee-deep-building-ai]]"
   - "[[vibe-coding成瘾之后重建AI与生活的边界]]"
+  - "[[20260810-railcode-vibe-coded-website]]"
 ---
 
 # Vibe Coding（氛围编程）
@@ -184,6 +185,32 @@ Vibe Coding 和 Spec-Driven Development 不是线性演化关系——它们永�
 **联网实证**：GitClear 211M 行代码研究（重构 ↓60%，复制 ↑48%，复制行首次超重构行）→ vibe coding 无 spec 的技术债务实证。Augment Code（2026-03）"structured exploration with living specs" + RedMonk 确认 Kiro（AWS）Vibe Mode + Spec Mode 双模式 → 行业正在采纳"spec 作为对话副产品"模型。
 
 来源：07-10 深度思考 + 07-17 深度思考（roundtable+think+qa+联网）
+
+## 创意 Vibe 的结构化搜索：fork、compare、playground（2026-10）
+
+Railcode 创始人 Yakko Majuri 对官网设计的复盘（[[20260810-railcode-vibe-coded-website]]）提供了一个有价值的正向边界：**Vibe Coding 作为直觉导航模式，不必等于一次性 prompt、没有历史、无法比较的 sloppy process。**
+
+他把设计探索做成了一个显式分支搜索：先围绕一个 seed 生成多个不同 intensity 的候选，部分要求 agent “go wild”；大多数候选被丢弃，但异常分支可能触发新的概念。之后保留 forks、并排比较，只修改少量变量；对于颜色等高频视觉参数，则让 agent 先生成 playground，再由人直接操作参数而不是继续用自然语言串行微调。
+
+```text
+seed / inspiration
+  → broad generation
+  → fork / preserve lineage
+  → side-by-side comparison
+  → human reject / select / recombine
+  → direct-manipulation playground
+  → local refinement
+```
+
+**判断**：Vibe Coding 在品质层真正需要保护的不是“无结构”，而是**允许方向通过交互浮现**。生成过程可以很自由，但工作流仍可以拥有 provenance、branching 和比较工具。这样做不会把 taste 形式化为 spec，却能避免最新一次生成覆盖此前所有判断路径。
+
+另一个重要点是：作者不是让 agent 替代品味，而是用 agent 扩大候选供给。最终 coherent design 来自大量拒绝、整体语境判断和局部不一致的持续修正。这里的能力分工更接近：
+
+- Agent：扩大 option space、快速实现候选、生成比较工具；
+- 人：判断哪个方向值得继续、什么虽漂亮但放错语境、何时回退或重组。
+
+- **证据**：[[20260810-railcode-vibe-coded-website]]，尤其 `A whole lotta rollercoasters`、`Forks on forks`、`Inspiration` 与结尾 process summary。
+- **边界**：这是单一 founder 的设计过程报告；不能推出该流程优于专业设计实践，也不能把作者的模型偏好升级为普遍模型能力排名。
 
 ## 关联概念
 

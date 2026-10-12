@@ -5,7 +5,7 @@ aliases:
   - Taste
 definition: "在不确定条件下做出独特判断的能力，表现为能注意到什么、拒绝什么，以及精确解释哪里感觉不对的能力"
 created: 2026-04-09
-updated: 2026-09-22
+updated: 2026-10-12
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -34,6 +34,7 @@ source_raw:
   - '[[20260810-the-playbook-for-building-high-talent]]'
   - '[[20260920-lenny-peter-sellis-product-advice]]'
   - '[[20260918-oneusefulthing-the-overhang]]'
+  - '[[20260810-railcode-vibe-coded-website]]'
 ---
 
 # Taste（品味）
@@ -109,6 +110,28 @@ Ethan Mollick 从 capability overhang 的工作实践给 Taste 补了一个更�
 **判断**：在生成供给充足的场景中，Taste 更接近一个持续的**选择函数**，而不是作品末端的审美评价；它决定哪些候选获得后续资源、哪些被丢弃，以及何时要求探索另一条路径。
 - **证据**：[[20260918-oneusefulthing-the-overhang]]；Mollick 在视频制作案例中拒绝第一版 joke、要求更 cinematic 的版本，并明确将 Taste 描述为“知道哪些 AI outputs 保留、丢弃或作为新作品原料”。
 - **边界**：这是作者的工作框架与个人案例，不证明 Taste 永久属于人类，也没有证明这种选择机制在所有任务上都优于模型自选；其价值仍依赖领域知识、目标和真实反馈。
+
+### Fork lineage：把品味训练从模糊记忆变成显式比较（2026-10）
+
+Railcode 官网设计复盘（[[20260810-railcode-vibe-coded-website]]）把“生成供给过剩后的选择函数”再推进了一步。作者会保存设计 forks、不删除失败分支、并排比较只改变少数变量的版本；还会让 agent 构建颜色/字体/位置 playground，让自己直接操纵参数并实时观察结果。
+
+**判断**：如果 Taste 依赖 exposure + attention + comparison，那么 branch lineage 本身就是一种 **taste-training infrastructure**。它把“我记得前一版好像更好”变成可直接比较的对象，并保留被拒绝方案中可能在后续重新有价值的 motif。
+
+可以把这一过程写成：
+
+```text
+大量候选暴露
+  → 保留 lineage
+  → 局部变量对照
+  → 人类感知差异
+  → reject / keep / recombine
+  → 判断规则逐渐内化
+```
+
+这也补充了 Taste 的一个操作维度：**rejection bandwidth**。当 agent 可以廉价生成 4–10 个甚至更多候选时，人的稀缺资源不再是“能不能想出一个方案”，而是能否稳定地快速否掉平庸分支，同时对少数不完整但有潜力的分支保持注意力。
+
+- **证据**：[[20260810-railcode-vibe-coded-website]]，`Forks on forks`、`Inspiration` 及结尾 process summary。
+- **边界**：候选越多不必然越好；大量分支同样会制造注意力成本。来源没有测量生成数量、比较负担与最终质量的最优关系。
 
 ## 三重不可替代性结构（2026-06-25 思考产出）
 
