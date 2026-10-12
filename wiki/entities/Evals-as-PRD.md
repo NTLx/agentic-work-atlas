@@ -7,7 +7,7 @@ aliases:
   - 评测即需求文档
 definition: "以评测集取代传统 PRD 承担需求定义功能的产品开发命题：用户反馈经失败轨迹归因凝结为可运行 evals，产品质量改进变成可度量、可防回归的工程循环"
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-10-12
 tags:
   - product-management
   - ai-evaluation
@@ -25,6 +25,7 @@ topics:
 source_raw:
   - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
   - "[[20260730-palantir-responsible-ai-evals-prototype-to-production]]"
+  - "[[20260930-openrouter-golden-eval-production-traffic]]"
 ---
 
 # Evals-as-PRD（评测即需求文档）
@@ -51,6 +52,34 @@ Eval set（prompt + response + golden answer）
 - **"you don't need hundreds, just 10 great evals"**——eval 质量重于数量，关键是覆盖真实失败分布（含"不应失败"的正例）。
 - **sweat the tokens as much as you sweat the pixels**——PM 读对话 transcripts 定位失败轨迹，取代部分用户访谈功能。
 - **缩短到可行动性的距离**——eval 的价值在于把"Claude hallucinated"这类不可行动抱怨，转译为研究者可行动的失败分类（tool use 失败 / search synthesis 失败 / alignment 问题）。
+
+## 从用户反馈到 production-derived executable spec（2026-10）
+
+[[20260930-openrouter-golden-eval-production-traffic]] 把“evals are the new PRDs”从一次性失败归因推进成持续运行的产品规格维护机制。Dianne Penn 的案例从用户抱怨追踪到具体失败样例；OpenRouter 的流程则从生产日志持续抽取真实分布、聚类去重、补风险尾部、由专家定义 expected behavior，再进入 CI。
+
+```text
+production logs
+  → privacy scrub + provenance
+  → dedup / cluster
+  → frequency + risk weighting
+  → expert expected behavior / rubric
+  → evaluator QA
+  → CI regression
+  → new production failures
+  → next eval epoch
+```
+
+**判断**：当产品已经进入生产，executable spec 不应只由 PM 主动“写出来”，还应被现实流量持续修正。用户实际怎么使用产品、出现了哪些新失败、哪些低频错误代价很高，都应该进入下一版 eval contract。
+
+这使 eval 同时承担两种不同但互补的职责：
+
+1. **需求表达**：什么行为算正确、哪些约束不能破；
+2. **分布监测**：当前 production reality 是否已经偏离旧需求假设。
+
+需要保持一个重要边界：golden set 可以跨产品阶段演化，但每次比较候选版本时必须冻结 dataset、rubric 与 baseline。否则“需求变了”和“系统回归了”会混在同一个分数变化里。
+
+- **证据**：[[20260930-openrouter-golden-eval-production-traffic]]；production sampling、rubric calibration、Git/CI 与 refresh 流程。
+- **边界**：生产流量本身不是完整 PRD；它倾向反映已有用户与已有产品形态，无法替代前沿能力探索、战略方向、品牌体验和尚未出现的用户需求。
 
 ## PRD 的剩余功能
 

@@ -3136,6 +3136,18 @@
       "summary_path": "wiki/sources/20260930-latentspace-devday-2026.md",
       "updated_at": "2026-10-01T21:58:51+08:00"
     },
+    "20260930-openrouter-golden-eval-production-traffic.md": {
+      "body_sha256": "6cb2aed46d3bccf7bc251d85c389b77d610587ab20c81a37c82519cbf285c7d6",
+      "canonical_url": "https://openrouter.ai/blog/tutorials/building-a-golden-eval-dataset-from-production-traffic/",
+      "compiled_at": "2026-10-12T17:23:38+08:00",
+      "indexed_at": "2026-10-12T17:23:38+08:00",
+      "raw_file": "20260930-openrouter-golden-eval-production-traffic.md",
+      "raw_state": "index",
+      "retention_note": "Canonical 教程公开可恢复；同名 Source Summary 保留结构化证据定位与原始正文哈希。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260930-openrouter-golden-eval-production-traffic.md",
+      "updated_at": "2026-10-12T17:24:38+08:00"
+    },
     "20261002-latentspace-rlm-alex-zhang.md": {
       "body_sha256": "6f36c1d515c4fbd5964ce3b10a94177a0ef3def617f3340021e71b5f88367fa6",
       "canonical_url": "https://www.latent.space/p/rlm",
@@ -3810,6 +3822,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-12T17:18:15+08:00",
+  "updated_at": "2026-10-12T17:24:38+08:00",
   "version": 1
 }

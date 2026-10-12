@@ -7,7 +7,7 @@ aliases:
   - AI 评测集
 definition: "把真实业务判断、边界案例和验收规则显式化为可复用测试样本，用来评估、迭代和迁移 AI 系统行为的关键资产"
 created: 2026-05-23
-updated: 2026-09-02
+updated: 2026-10-12
 tags:
   - AI-evaluation
   - AI-deployment
@@ -29,6 +29,7 @@ source_raw:
   - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
   - "[[20260901-google-ai-evaluations-trust]]"
   - "[[20260901-databricks-genie-ontology-data-stack]]"
+  - "[[20260930-openrouter-golden-eval-production-traffic]]"
 ---
 
 # Evaluation Set（评测集）
@@ -74,6 +75,41 @@ Databricks Genie Ontology（2026-09）把评测集推进到业务语义治理：
 **判断**：评测集不仅定义题目测什么，还要定义在什么业务语义、权限上下文和权威来源下算对。
 - **证据**：[[20260901-databricks-genie-ontology-data-stack]]
 - **边界**：Databricks 的闭环来自厂商产品材料，没有独立证明每个治理动作在不同企业中的因果效果；同一问题因权限不同而有不同答案时，评测集需记录权限上下文。
+
+## Golden Set：把生产分布变成版本化回归契约（2026-10）
+
+OpenRouter 的 production-derived golden eval 教程（[[20260930-openrouter-golden-eval-production-traffic]]）补上了评测集从“业务资产”变成“可复现部署契约”的完整构造路径。关键不是随机抽一批线上请求，而是同时保存**真实分布**与**高风险尾部**：
+
+```text
+Golden eval contract
+= production-distribution sample
++ risk-weighted tail
++ reviewed expected behavior
++ rubric / evaluator
++ provenance metadata
++ frozen baseline
+```
+
+生产流量给出真实用户频率与失败模式，但纯频率采样会让低频、高损失 case 被 head traffic 淹没。因此评测集既要忠实表示 observed distribution，又要主动 overweight critical tail；synthetic case 更适合作为有 provenance 的补洞层，而不是静默混入真实流量。
+
+**第一轮 eval 也在验证 oracle 本身。** 来源要求 domain expert 标注 expected behavior，并用 reviewer disagreement 暴露 rubric ambiguity；baseline 失败应继续区分真实系统失败、错误/含糊的 expected answer、以及 evaluator defect。也就是说，评测文件并不会因为被命名为 golden 就自动成为 ground truth。
+
+另一个重要增量是版本治理：
+
+```text
+Eval Result
+= f(dataset version,
+    rubric/evaluator version,
+    baseline version,
+    system configuration)
+```
+
+**判断**：dataset、rubric 与 baseline 应被视为同一个 provenance unit。若三者在不同时间静默漂移，分数变化就无法归因。真实流量进入评测集时的 PII scrub、截断、重写等 transformation 也应记录，因为它们可能改变 case 难度与语义。
+
+最后要区分两个时间尺度：**跨 product epoch 要 refresh golden set；单次 candidate comparison 内必须冻结 set/rubric/baseline。** 前者适应分布漂移，后者保证实验可比性，并不矛盾。
+
+- **证据**：[[20260930-openrouter-golden-eval-production-traffic]]，production sampling、dedup/cluster、expected outputs、first evaluation、Git/CI 与 cross-model benchmarking 段落。
+- **边界**：来源是平台教程；20–50、100–1000 等样本规模和刷新周期是经验建议，不是普适阈值。生产流量也会继承历史偏差和既有盲区，真实分布不等于完整分布。
 
 ## 前提与局限性
 
