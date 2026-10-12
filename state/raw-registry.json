@@ -3081,6 +3081,18 @@
       "summary_path": "wiki/sources/20260927-lenny-molly-graham-ai-legos.md",
       "updated_at": "2026-09-28T10:28:39+08:00"
     },
+    "20260928-github-android-ai-security-agent.md": {
+      "body_sha256": "8a928036a410016320449d0dbb953bee13de16f12bcaa1b664643c51c03f8417",
+      "canonical_url": "https://github.blog/security/how-we-found-24-android-vulnerabilities-using-our-open-source-ai-security-agent/",
+      "compiled_at": "2026-10-12T15:17:05+08:00",
+      "indexed_at": "2026-10-12T15:17:05+08:00",
+      "raw_file": "20260928-github-android-ai-security-agent.md",
+      "raw_state": "index",
+      "retention_note": "已完成编译；GitHub Blog 官方文章公开完整可恢复，source summary 保留关键证据定位与原始正文 SHA-256。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260928-github-android-ai-security-agent.md",
+      "updated_at": "2026-10-12T15:17:05+08:00"
+    },
     "20260930-latentspace-devday-2026.md": {
       "body_sha256": "c4c123093cb6e32516b2c73a0cbdc42ff0f11aa896762b75714bed095610e3d0",
       "canonical_url": "https://www.latent.space/p/devday-2026",
@@ -3767,6 +3779,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-12T08:39:02+08:00",
+  "updated_at": "2026-10-12T15:17:05+08:00",
   "version": 1
 }

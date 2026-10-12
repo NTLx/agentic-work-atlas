@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-10-03
+updated: 2026-10-12
 evidence_level: high
 claim_type: mixed
 tags:
@@ -85,6 +85,7 @@ source_raw:
   - "[[20260911-openai-habitat-storage-scaling]]"
   - "[[20260925-latentspace-runway-world-models]]"
   - "[[20260924-github-security-lab-ai-fuzzing-taskflow]]"
+  - "[[20260928-github-android-ai-security-agent]]"
   - "[[20260930-latentspace-devday-2026]]"
   - "[[20261002-latentspace-rlm-alex-zhang]]"
 ---
@@ -203,6 +204,29 @@ LLM judgment
 
 - **证据**：[[20260924-github-security-lab-ai-fuzzing-taskflow]]，“The architecture in one minute”“The coverage-feedback loop”“Triage and vulnerability reports”。
 - **边界**：当前实现仍可能运行由模型选择的 host build/fuzzing command；作者因此要求 disposable environment。**工具封装不等于 containment**，仍需 sandbox / least privilege。
+
+### Domain threat model 也可以成为 Harness（2026-10 补充）
+
+后续 Android 审计实践（[[20260928-github-android-ai-security-agent]]）把同一 Taskflow Agent 从 coverage loop 推到逻辑漏洞搜索：先枚举并分类 mobile entry points，再把 Android 特有的 vulnerability classes 与组件上下文喂给后续阶段；同时组合 strict checklist-style prompt、broad exploratory prompt 与 repeated runs。
+
+**判断**：Agent Harness 不只规定模型“能调用什么工具”，还可以把专家的 **attack-surface decomposition、domain taxonomy 与 search policy** 编译成可执行结构。对高专业度探索任务，一个有价值的 harness 形态是：
+
+~~~text
+raw code / repository
+    ↓
+domain-specific entry-point inventory
+    ↓
+known-class coverage + open-ended search
+    ↓
+candidate findings
+    ↓
+evidence escalation / expert adjudication
+~~~
+
+这里 strict 与 broad 两条路径不是互相替代：前者减少已知类别漏检，后者保留跨组件发现空间；多次运行则用搜索冗余对冲模型非确定性。**系统可以允许 discovery path 多样化，但要让最终 evidence gate 更严格。**
+
+- **证据**：[[20260928-github-android-ai-security-agent]]，“Creating targeted audit taskflows for Android apps”。
+- **边界**：来源没有报告 strict/broad branch 的独立贡献、run 数的边际收益或 false-negative denominator；因此只能支持这种 harness 结构具有实际产出，不能量化它相对单 prompt 或人工审计的增益。
 
 ## Model × Harness 协同与事件驱动 Runtime（2026-09）
 

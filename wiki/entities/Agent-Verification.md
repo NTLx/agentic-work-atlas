@@ -6,7 +6,7 @@ aliases:
   - Agentic Verification
 definition: "Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境、执行操作、观察结果并判断是否通过"
 created: 2026-06-12
-updated: 2026-10-05
+updated: 2026-10-12
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -40,6 +40,7 @@ source_raw:
   - "[[20260918-trailofbits-auditing-good-enough-ai]]"
   - "[[20260917-tessl-ai-agent-evaluation-evidence]]"
   - "[[20260914-iouri-khramtsov-ai-code-quality]]"
+  - "[[20260928-github-android-ai-security-agent]]"
 ---
 
 > [!definition] 定义
@@ -166,6 +167,31 @@ Iouri Khramtsov 的七层 AI coding 质量实践（[[20260914-iouri-khramtsov-ai
 - **边界**：流程层数不等于独立性。若 requirements、tests、implementation 和 review 全由同一错误假设驱动，它们仍可能共源失败；>95% coverage 也不能替代 risk-directed tests、manual exploration 与生产证据。
 
 这与本页既有“保护 Oracle”“多信号证据环”形成同一结论：**coverage、CI green、AI review、人类 review、真实运行信号的价值来自互补，而不是数量本身**。对于简单且后果有限的变更，人类 review 可以按风险降级；对于权限、安全、数据、计费等高后果边界，即使 diff 很小也不能用“其他自动层都通过”替代责任判断。
+
+## 安全研究：finding confidence ≠ severity confidence（2026-10）
+
+GitHub Security Lab 的 Android Taskflow 实践（[[20260928-github-android-ai-security-agent]]）给 verification 增加了一个很清晰的分层反例：模型能找到真实代码弱点，甚至能组合出高影响逻辑漏洞，但它对实际 severity 的判断经常不可靠。决定漏洞是否真正成立的，可能是静态代码之外的 runtime state、storage precedence、mitigation、调用链和受影响资产。
+
+因此安全 finding 的验证链不能压成一个“vulnerable / not vulnerable”标签：
+
+~~~text
+candidate code pattern
+    ↓
+reachable behavior
+    ↓
+working PoC / runtime evidence
+    ↓
+real-world impact
+    ↓
+severity adjudication
+~~~
+
+**判断**：生成器对前一层有较高置信度，不应自动把置信度传递给后一层。尤其是 severity，本质上是系统级 impact claim；如果只根据代码 pattern 评分，很容易把“看起来可控”误判成“现实中可利用”。
+
+作者的补救方法是显式要求模型构造 PoC，必要时给 debugger 去运行 PoC 与原始代码，再由熟悉 mobile security 的研究者复核。这里 PoC 的作用可以抽象成 **evidence escalation primitive**：把文本推断推进到可执行反证环境。
+
+- **证据**：[[20260928-github-android-ai-security-agent]]，“LLMs are good at finding vulnerabilities but struggle at estimating severity”。
+- **边界**：PoC 仍只覆盖特定路径，测试环境也可能与真实设备/部署状态不同；成功 exploitability 证据不自动给出完整 CVSS 或业务影响。因此 human review 在这里不是礼仪性 approval，而是补足环境状态与 impact semantics 的最后 oracle。
 
 ## 关联概念
 
