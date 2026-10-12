@@ -6,7 +6,7 @@ aliases:
   - 产品能力溢出
 definition: "AI 模型已具备但现有产品界面尚未释放的能力差距，产品策略从识别需求变为识别隐藏能力"
 created: 2026-05-08
-updated: 2026-05-26
+updated: 2026-10-12
 tags:
   - AI
   - claude-code
@@ -24,6 +24,7 @@ related_entities:
 source_raw:
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
+  - "[[20261011-lenny-google-labs-frontier-team]]"
 ---
 
 # Product Overhang（产品能力溢出）
@@ -51,6 +52,31 @@ Product Overhang 的核心难题不是"利用已知能力"，而是"发现未被
 Boris Cherny 描述的判断过程不是"市场调研发现用户需要"，而是"团队在内部使用中发现模型已经能做到某些事，但用户界面和工作流还没有跟上"。这种发现方式与传统产品经理的技能要求完全不同：传统 PM 擅长从用户需求倒推功能，Product Overhang 时代的 PM 需要同时理解模型能力边界和用户痛点，并在两者之间找到交叉点。
 
 Cat Wu 在 Anthropic 产品团队的实践也印证了这一点：产品团队需要"降低发布承诺"，用 [[Research-Preview|Research Preview]] 和 [[AI-Native-Shipping|AI 原生发布]] 机制，让不完美的能力更早接触真实用户，通过反馈判断哪些 overhang 值得被产品化。
+
+## 从静态 Overhang 到 “Almost Possible” Watchlist（2026-10）
+
+[[20261011-lenny-google-labs-frontier-team]] 把 Product Overhang 的发现机制往前推进了一步。Google Labs 不只问“模型今天已经会什么”，还维护一张 **what's almost possible** 列表：哪些体验还差一点、依赖哪些 latency / modality / language / capability 条件；当某个条件跨过阈值时，再迅速组织小团队验证它是否能和真实用户问题结合。
+
+这把 Product Overhang 从“偶然发现已经存在的隐藏能力”扩成一个可运营的期权池：
+
+```text
+future hypothesis
+  → almost-possible experience
+  → missing capability / threshold
+  → capability phase shift
+  → prototype
+  → user problem + willingness to use/pay
+  → productize / pivot / kill
+```
+
+**判断**：模型发布对产品团队最重要的意义不是“追最新 benchmark”，而是触发一次 **option re-scan**。一个过去不可行的产品假设，可能因为 latency、成本、模态、可靠性或工具能力中的某一项变化而突然进入可实验区。成熟团队因此应记录的不只是 backlog，还包括“当前为什么不可行”以及“什么变化会让它值得重试”。
+
+Woodward 还描述团队维护 82 个以 `we believe / we predict` 开头的未来假设，并明确承认大多数会错。这里的价值不是 forecast accuracy，而是提前暴露假设和依赖，从而在能力变化时更快识别相变。
+
+- **证据**：[[20261011-lenny-google-labs-frontier-team]]（Transcript L156-L218、L598-L615）。
+- **边界**：`phase shift` 是产品团队的定性判断，不是统一能力阈值；demo 刚刚可行不代表 production 可行。进入正式产品仍必须验证成本、可靠性、安全、权限、留存和真实付费意愿。六个月 roadmap、50–100 天 milestone 也是 Google Labs 的局部经验，而非 Product Overhang 的普遍定律。
+
+这使 Product Overhang 的管理单位从“feature idea”转向“**能力条件化的产品假设**”：产品团队不需要押中未来模型具体长什么样，但应知道哪些用户体验在等待哪一个技术约束被解除。
 
 ## 与传统产品策略的根本区别
 

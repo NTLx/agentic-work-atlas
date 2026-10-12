@@ -6,7 +6,7 @@ aliases:
   - AI 就绪组织
 definition: "能清晰描述自身目标、流程、策略，从而让 AI 有效执行的组织状态——AI 的瓶颈不在技术，而在企业自身的混乱"
 created: 2026-05-09
-updated: 2026-09-02
+updated: 2026-10-12
 evidence_level: high
 claim_type: mixed
 tags:
@@ -31,6 +31,7 @@ source_raw:
   - "[[20260625-ford-ai-quality-jd-power]]"
   - "[[20260811-vasuman-ai-adoption-is-a-myth]]"
   - "[[20260901-openai-ai-native-company-workflows]]"
+  - "[[20261011-lenny-google-labs-frontier-team]]"
 ---
 
 # AI-Ready Organization（AI 就绪组织）
@@ -100,6 +101,32 @@ AI-ready 是 [[Agent-First-Enterprise]] 的入口状态，不是终点。
 ```
 
 如果跳过 AI-ready 直接做 Agent-first，结果通常是把旧流程的模糊性自动化。Agent 会更快地产出，但组织仍然不知道哪些产出有效、谁负责、何时停止。
+
+## AI-ready 的探索面：Frontier Team 作为能力感知单元（2026-10）
+
+[[20261011-lenny-google-labs-frontier-team]] 给 AI-ready 增加了一个此前较弱的维度：**组织不仅要能清楚执行今天已知的工作，还要有一块受保护的探索面，持续判断底层 AI 能力边界是否已经变化。** Josh Woodward 把这类团队描述为长期待在 frontier、持续试用最新模型与产品的人；与此同时，大部分核心组织不必被每周的新能力打断。
+
+可以把 AI-ready 从单一执行系统扩成双 operating plane：
+
+```text
+Execution plane
+  目标 / 流程 / owner / KPI / 可靠交付
+          ↑ graduation / adoption bridge ↓
+Exploration plane
+  frontier sensing / almost-possible watchlist / prototype / falsification
+```
+
+**判断**：AI-ready 不等于把全公司都改造成实验室。更稳妥的组织设计是把“能力感知与期权生成”设为明确职能，同时给探索单元足够独立性，又保留进入核心业务的 graduation contract。否则有两种对称失败：
+
+- **只有执行、没有探索**：组织对旧能力边界非常清晰，却在模型 capability phase shift 后继续高效执行过时方案；
+- **只有探索、没有桥接**：实验室持续产出 demo 和“未来”，但核心业务无法吸收，最终退化成孤立 R&D。
+
+Woodward 对 Google Labs 的描述还提供了阶段化治理：0→1 看早期 qualitative pull 和问题强度；1→10 / 10→100 再切换到 funnel、conversion、CPA、retention 等规模指标。探索团队本身也需要节奏：multi-year vision 可以稳定，而 roadmap 更适合 rolling ~6 months；50–100 天形成 meaningful milestone；模型发布或能力跨阈值时允许临时重排优先级。
+
+- **证据**：[[20261011-lenny-google-labs-frontier-team]]（Transcript L156-L218、L564-L682）。
+- **边界**：这是 Google Labs 负责人的一手方法论与经验判断，不是跨行业组织实验。startup 本身往往已承担 lab 功能；监管、硬件、临床等长周期行业也不能机械套用六个月窗口。Josh 关于“大公司 lab 常在 3–4 年失效”的说法在访谈中没有可审计样本与比较组。
+
+这也把本页原有“清晰不等于僵化”具体化：**稳定的是目标、责任与验证纪律；可变的是对技术可行性和实现路径的判断。** 在高变化技术环境里，能快速推翻旧假设本身就是 AI-ready 的一部分。
 
 ## 新证据：工作流成为可复制的运营能力
 

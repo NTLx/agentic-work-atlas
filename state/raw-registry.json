@@ -3137,6 +3137,17 @@
       "summary_path": "wiki/sources/20261010-latentspace-biohub-deepmind-protein-folding.md",
       "updated_at": "2026-10-10T09:04:54+08:00"
     },
+    "20261011-lenny-google-labs-frontier-team.md": {
+      "body_sha256": "1c2fcc4046f7931e1413fbd5d9984bbf2885c89a787fa3a18bf6859ed9a6fe59",
+      "canonical_url": "https://www.lennysnewsletter.com/p/why-every-company-now-needs-to-think",
+      "compiled_at": "2026-10-12T08:38:55+08:00",
+      "indexed_at": "2026-10-12T08:38:51+08:00",
+      "raw_file": "20261011-lenny-google-labs-frontier-team.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261011-lenny-google-labs-frontier-team.md",
+      "updated_at": "2026-10-12T08:39:02+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -3756,6 +3767,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-10T09:04:54+08:00",
+  "updated_at": "2026-10-12T08:39:02+08:00",
   "version": 1
 }
