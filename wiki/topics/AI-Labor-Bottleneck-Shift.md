@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-10-08
+updated: 2026-10-12
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -41,6 +41,7 @@ source_raw:
   - "[[20260601-octopus-energy-ai-customer-service]]"
   - "[[20260921-linear-ci-bottleneck-reworked]]"
   - "[[20260923-anthropic-ai-code-modernization-preparation]]"
+  - "[[20260929-pragmatic-shopify-native-mobile]]"
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
@@ -115,6 +116,30 @@ Outcome 更不一定改善
 - **边界**：这是 Anthropic FDE 的供应商第一方经验框架，没有项目级对照数据；“多年缩到月/周”的速度说法来自相关案例而非本篇独立实验，不能据此推出普遍生产率倍数。
 
 这进一步把“AI Labor Bottleneck Shift”从个人/团队层推进到组织层：**生成能力扩容只是局部供给扩容；如果 verification、risk ownership 与 promotion capacity 不同步扩容，更多 Agent 只会制造更多等待被证明、被批准、被上线的变更库存。**
+
+### Shopify：Agent 改变 abstraction economics（2026-10）
+
+[[20260929-pragmatic-shopify-native-mobile]] 的公开部分提供了一个更细粒度的架构级瓶颈迁移。Shopify 2020 年选择 React Native 的核心经济理由之一，是避免同一 feature 在 iOS/Android 重写两次，并降低 feature parity 与跨栈人才成本；到 2025 年团队仍认为这一选择成功。2026 年转回 Swift/Kotlin native，不是因为这些收益从未存在，而是 coding agents 压低了 implementation、translation、testing 和 review 的重复劳动成本。
+
+**判断**：AI 会改变的不只是任务吞吐，还包括**软件抽象本身的成本函数**。一个为节省重复人工而建立的 abstraction，在 duplicated labor 显著变便宜之后，需要重新与它自己的 framework、dependency、debugging、performance 与平台能力成本比较。
+
+~~~text
+旧经济：
+重复实现成本高
+  → shared implementation 值得承担 abstraction tax
+
+Agent 之后：
+重复实现 / translation 成本下降
+  → abstraction tax 相对变贵
+  → shared semantics / tests 可能取代 shared implementation
+~~~
+
+公开部分同时说明，Shopify 并没有把双实现的一致性寄托给模型：Swift/Kotlin business logic 共享同一套 headless tests，feature 必须在两个平台通过同一 contract。于是瓶颈从 **duplicated implementation labor** 迁到 **specification + parity verification + platform quality**。
+
+- **证据**：[[20260929-pragmatic-shopify-native-mobile]]，公开第 3 节 “Why ditch React Native now?” 及 “One engineer, two platforms with AI” / “Shared codebases more trivial with AI”；核心事实可由 Shopify 2026-09-10 第一方工程复盘交叉核验。
+- **边界**：Pragmatic Engineer 当前公开页在第 4 节前进入付费墙；本判断只使用公开第 1–3 节。Shopify 是具备成熟 mobile expertise、既有 RN reference implementation 与内部 AI tooling 的右尾案例，不能推出“AI 时代 cross-platform framework 普遍失去价值”，也不能把 12 周 Shop rewrite 外推为通用迁移工期。
+
+这个案例把本 Topic 的“Execute 变便宜”再推进一步：**当 AI 改变某项重复劳动的边际成本时，过去为优化那项劳动而设计的组织边界和技术抽象都可能重新洗牌。**
 
 ## Jevons 悖论的劳动版本
 

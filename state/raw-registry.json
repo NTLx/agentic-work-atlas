@@ -3093,6 +3093,15 @@
       "summary_path": "wiki/sources/20260928-github-android-ai-security-agent.md",
       "updated_at": "2026-10-12T15:17:05+08:00"
     },
+    "20260929-pragmatic-shopify-native-mobile.md": {
+      "body_sha256": "3952c3451cb5d8a56b9b06069dcdb5ecb67590585882317f7932102a15053ca8",
+      "compiled_at": "2026-10-12T15:22:30+08:00",
+      "raw_file": "20260929-pragmatic-shopify-native-mobile.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260929-pragmatic-shopify-native-mobile.md",
+      "updated_at": "2026-10-12T15:22:30+08:00"
+    },
     "20260930-latentspace-devday-2026.md": {
       "body_sha256": "c4c123093cb6e32516b2c73a0cbdc42ff0f11aa896762b75714bed095610e3d0",
       "canonical_url": "https://www.latent.space/p/devday-2026",
@@ -3779,6 +3788,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-12T15:17:05+08:00",
+  "updated_at": "2026-10-12T15:22:30+08:00",
   "version": 1
 }

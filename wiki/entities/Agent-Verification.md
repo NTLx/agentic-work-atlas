@@ -41,6 +41,7 @@ source_raw:
   - "[[20260917-tessl-ai-agent-evaluation-evidence]]"
   - "[[20260914-iouri-khramtsov-ai-code-quality]]"
   - "[[20260928-github-android-ai-security-agent]]"
+  - "[[20260929-pragmatic-shopify-native-mobile]]"
 ---
 
 > [!definition] 定义
@@ -167,6 +168,27 @@ Iouri Khramtsov 的七层 AI coding 质量实践（[[20260914-iouri-khramtsov-ai
 - **边界**：流程层数不等于独立性。若 requirements、tests、implementation 和 review 全由同一错误假设驱动，它们仍可能共源失败；>95% coverage 也不能替代 risk-directed tests、manual exploration 与生产证据。
 
 这与本页既有“保护 Oracle”“多信号证据环”形成同一结论：**coverage、CI green、AI review、人类 review、真实运行信号的价值来自互补，而不是数量本身**。对于简单且后果有限的变更，人类 review 可以按风险降级；对于权限、安全、数据、计费等高后果边界，即使 diff 很小也不能用“其他自动层都通过”替代责任判断。
+
+## 双实现、共享 Oracle：把 shared code 迁成 shared contract（2026-10）
+
+Shopify 从 React Native 转回 Swift/Kotlin 的公开案例（[[20260929-pragmatic-shopify-native-mobile]]）给“保护 Oracle”增加了一个架构层实例：Agent 可以把 feature 从 iOS port 到 Android、反向 port，也可以持续比较两套实现；但 Shopify 同时建立一套 shared test suite，让 Swift 与 Kotlin 的 business logic 必须通过同一个 behavioral contract，而且测试可 headless 在 desktop 快速运行。
+
+~~~text
+shared behavioral contract
+       ↙       ↘
+Swift impl     Kotlin impl
+       ↘       ↙
+ same headless tests
+        ↓
+release gate
+~~~
+
+**判断**：Agent 降低 duplicated implementation cost 后，系统未必还需要共享生产代码，但更需要共享、受保护的 correctness contract。换句话说，**AI 可以把 reuse boundary 从 implementation reuse 推向 specification / oracle reuse**。
+
+这也是一种更强的异构验证：两份平台实现不是逐行相同，也不应要求相同；真正需要保持的是 externally observable business semantics。只要 oracle 独立于某一实现，Agent 就可以自由利用 Swift/Kotlin 各自的平台能力，而不把 parity 退化为人工 diff。
+
+- **证据**：[[20260929-pragmatic-shopify-native-mobile]]，公开第 3 节 “Shared codebases more trivial with AI”；Shopify 第一方工程文章亦描述 shared specifications/tests/review checkpoints 与 agent-friendly headless business logic。
+- **边界**：共享 tests 只验证已编码的语义，无法自动覆盖 accessibility、visual behavior、platform integration、performance 或未知 edge cases；同一套错误 specification 仍可能让两份实现一起“正确地错”。因此 shared oracle 是 parity foundation，不是完整质量证明。
 
 ## 安全研究：finding confidence ≠ severity confidence（2026-10）
 
