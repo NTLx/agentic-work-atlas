@@ -6,7 +6,7 @@ aliases:
   - 世界模型
 definition: "AI 系统对环境状态、因果结构和行动后果的内部表示，使 Agent 能在长期任务中预测、规划并随经验修正策略"
 created: 2026-05-18
-updated: 2026-10-10
+updated: 2026-10-14
 tags:
   - AI
   - AGI
@@ -28,6 +28,7 @@ source_raw:
   - "[[20260717-schema-harness-arc-agi]]"
   - "[[20260925-latentspace-runway-world-models]]"
   - "[[20261010-latentspace-biohub-deepmind-protein-folding]]"
+  - "[[20261014-latentspace-dyna-world-action-model]]"
 ---
 
 # World Model（世界模型）
@@ -101,6 +102,29 @@ Runway 联合创始人 Anastasis Germanidis 把 video model 与 world model 的�
 **判断**：对交互式 world model 而言，latency 不是附属指标。模型只有从离线生成器压缩到可交互时延，才真正进入 software environment、agent training environment 和 embodied simulator 的角色。
 - **证据**：[[20260925-latentspace-runway-world-models]]（00:39:39–01:07:47）；Runway 描述了 causal/autoregressive generation、step distillation、Interface World Model 与 GWM robotics 路线。
 - **边界**：实时化通常要付出质量或算力成本；Interface World Model 当前也远比传统 HTML/CSS UI 昂贵。低延迟本身不能证明物理正确性。
+
+## World Action Model：把 future prediction 与 action policy 耦合（2026-10）
+
+Dyna Robotics 的 Dyna-2 访谈（[[20261014-latentspace-dyna-world-action-model]]）给 renderer / simulator / planner 分类增加了一个更紧耦合的实例：World Action Model 同时接收过去视觉、机器人 proprioception / joint state 与语言指令，并同时产生未来视频（或其表示）与可执行动作。Jason Ma 把未来生成类比为“视觉/物理空间中的 chain of thought”，但更稳妥的工程表述是：**action-conditioned future prediction 可以成为 policy 的中间计算，而不必把 simulator 与 planner 完全拆成两个模型。**
+
+~~~text
+past observations + proprioception + goal
+                 ↓
+      predict possible future
+                 ↓
+          action trajectory
+                 ↓
+          physical feedback
+~~~
+
+这进一步修正“raw prediction”这一说法。Dyna 同时明确承认：纯视觉 world model 可能缺失 touch、audio、infrared 等关键物理变量；如果传感器没有把状态暴露给模型，扩大视觉数据和参数规模也无法恢复缺失信息。因此 physical world model 的上限不仅取决于模型容量，还取决于 **observation surface × action surface**：传感器定义模型能观察的世界，执行器定义模型能干预的世界。
+
+**判断**：对 embodied agent，world model 不是脱离身体的抽象世界知识，而是被 embodiment 约束的预测接口。Dyna 的 human-egocentric pretraining + 少量 robot/task data 路线也说明，数据迁移效率与机器人形态、自由度和 actuator dynamics 紧密相关；硬件设计本身会改变模型所面对的数据分布。
+
+这一案例还强化了实时性门槛：机器人控制不能容忍任意网络延迟，因此能力可以先在大模型上训练，再蒸馏/优化到本地可服务模型；物理闭环中的 latency 不是 UX 指标，而是稳定控制条件。
+
+- **证据**：[[20261014-latentspace-dyna-world-action-model]]（Transcript L18-L38、L80-L120、L152-L188、L484-L520）。
+- **边界**：Dyna-2 的“超过 100 万小时”、泛化能力和部署表现均为公司一手陈述；访谈没有 WAM vs VLA 的独立 head-to-head benchmark。“visual chain of thought”是架构类比，不等于可解释的显式推理链。
 
 ## 与相邻概念的边界
 

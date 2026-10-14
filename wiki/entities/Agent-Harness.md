@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-10-12
+updated: 2026-10-14
 evidence_level: high
 claim_type: mixed
 tags:
@@ -88,6 +88,7 @@ source_raw:
   - "[[20260928-github-android-ai-security-agent]]"
   - "[[20260930-latentspace-devday-2026]]"
   - "[[20261002-latentspace-rlm-alex-zhang]]"
+  - "[[20261014-latentspace-dyna-world-action-model]]"
 ---
 
 # Agent Harness
@@ -256,6 +257,31 @@ Alex Zhang 对 [[Recursive-Language-Model|Recursive Language Model（RLM）]] �
 > **边界**：访谈没有给出完整 benchmark、方差和失败分布；“8–30× 更长任务”等数字应视为作者报告的特定实验结果。局部调用处于训练分布内也不保证 decomposition、共享状态和最终 aggregation 正确。
 
 这一视角还把 Model / Harness 边界变成可研究对象：如果某些高层程序长期稳定，它们可能被 post-training 吸收为模型原生能力；但权限、审计、真实工具执行、持久状态、成本控制和确定性验证仍具有外部系统语义，不应因为模型更强就默认内化。
+
+## Physical Agent Harness：把小时级 workflow 与毫秒级控制分层（2026-10）
+
+Dyna Robotics 的 Dyna-2 访谈（[[20261014-latentspace-dyna-world-action-model]]）把 Harness 从软件工具编排推进到物理世界的**时间尺度分层**。World Action Model 负责连续、高频、低层的动作轨迹；但完整洗衣流程还需要判断“哪一步完成了”“设备正在等待什么”“等待期间是否应去做别的任务”“何时恢复某个流程”。Dyna 因此在低层模型外放置高层 agentic harness，用它组合技能和管理长时程状态。
+
+~~~text
+hour-scale goal / workflow state
+          ↓
+planner / agent harness
+          ↓ select & sequence skills
+World Action Model
+          ↓ continuous trajectory
+physical environment
+          ↓ observation / completion / failure
+replan / continue
+~~~
+
+**判断**：Physical Agent 的 Harness 可以被理解为 **temporal abstraction layer**。它把小时级决策从 10–20 Hz 量级的连续控制中剥离，让不同时间尺度各自由更适合的组件承担。把所有 long-horizon cognition 都训练进低层 policy，在当前系统中既样本低效，也难以调试与验证。
+
+这也给“长时程自治”增加了一个重要边界：hour-long autonomy 不是 foundation model 单项能力，而是 **model + harness + sensors + hardware + execution feedback + recovery** 的系统属性。真实环境不会像软件工具一样稳定等待；硬件过热、执行器漂移、传感器缺失和物理时延都会直接进入 Agent loop。
+
+Dyna 的任务适配流程进一步显示 physical harness 与 verification 是同一闭环：收集少量机器人示范 → fine-tune → 真机 rollout → 观察失败 → 定向补数据 → 再运行。此时真实硬件既是执行环境也是最终 oracle，而硬件吞吐反过来限制研究吞吐。
+
+- **证据**：[[20261014-latentspace-dyna-world-action-model]]（Transcript L260-L316、L400-L440）。访谈明确区分低层连续轨迹与高层 workflow reasoning，并以洗衣机等待/切换步骤说明高层 harness 的必要性。
+- **边界**：这是 Dyna 的系统设计与一手部署经验，不证明所有 robotics stack 都应采用同样的层级边界；未来更强的 end-to-end policy 可能吸收部分 sequencing，但安全、状态、恢复和真实硬件约束仍具有外部系统语义。
 
 ## 非工程流程中的 Harness：GitHub Marketing Ops（2026-09）
 
