@@ -3,7 +3,7 @@ type: topic
 title: Building Effective Agents
 description: "Anthropic 的 Agent 构建指南：从简单模式到自主 Agent 的架构设计"
 created: 2026-04-10
-updated: 2026-06-16
+updated: 2026-10-15
 evidence_level: high
 claim_type: mixed
 tags:
@@ -195,6 +195,12 @@ Evaluator-Optimizer 是最接近生产价值的模式，因为它把模型输出
 
 同时要防 [[Bias-to-Action-LLM|行动偏差]]。生产 Agent 不只是会做事，也要会在信息不足、高风险或不可验证时停止。
 
+### Multi-agent 不是复杂度升级的默认方向
+
+Parallelization 与 Orchestrator-Workers 只是可选模式，不意味着“更多 Agent = 更强系统”。如果一个任务可以由单 Agent、确定性 workflow 或一次有界并行完成，应优先选择最小充分 topology。增加 Agent 数量只有在独立子问题、多视角验证或动态分工的收益足以覆盖协调、成本、延迟和验证负担时才合理。
+
+[[Multi-Agent-Pathology-and-Governance]]记录了更复杂 topology 的反面：同质化失败、从众、责任稀释、合谋以及模型代际非单调协调。它与本页共同给出一个边界：**先证明为什么需要第二个 Agent，再设计第二个 Agent。**
+
 ---
 
 ## Agent 应用场景
@@ -217,6 +223,8 @@ Evaluator-Optimizer 是最接近生产价值的模式，因为它把模型输出
 
 - [[Agent-Workflow-Patterns]] - 详细模式说明
 - [[Agentic-Engineering-Patterns]] - Simon Willison 的工程视角
+- [[Multi-Agent-Pathology-and-Governance]] - 增加 Agent 数量后的协调、群体认知与治理边界
+- [[Verifiable-Agent-Engineering]] - 结果、路径、上下文和行为的验证边界
 - [[ACI-Agent-Computer-Interface]] - 接口设计详解
 - [[Verifiable-Agent-Engineering]] - 验证边界与拒绝机制
 - [[Agent-Harness]] - 生产级 Agent 运行时结构

@@ -1,9 +1,9 @@
 ---
 type: topic
 title: Evaluation Integrity
-description: "评测完整性：评测的 reference、scope contract、实际可达攻击面、监控与停止语义必须共同保持可信，否则模型得分或行为记录可能不再测量原本声明的对象"
+description: "评测完整性：任务完成率或 benchmark 得分不能单独证明系统可靠；reference、scope contract、实际可达面、监控与停止语义必须共同可信，否则评测可能不再测量原本声明的对象"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-10-15
 evidence_level: high
 claim_type: mixed
 tags:
@@ -28,6 +28,8 @@ source_raw:
 
 > [!summary] Topic 定位
 > 本 Topic 回答的是：**一次评测如何保证模型实际经历的任务、信息、权限与外部效果仍然对应评测声称要测的对象？**
+>
+> 因而，**任务完成率高、benchmark 得分高或一次行为记录“成功”都不能单独证明 Agent 可靠**。[[Verifiable-Agent-Engineering]]检查结果、路径、上下文与行为是否可验证；本 Topic继续检查“用来证明这些东西的测量装置本身是否可信”。
 >
 > 它不同于 [[Evaluator-Miscalibration]]：后者关心 grader / rubric / score 是否测错；本 Topic 还覆盖 benchmark reference 泄漏、scope contract 歧义、sandbox 实际可达面、跨边界动作、monitoring 与 safe stop。
 

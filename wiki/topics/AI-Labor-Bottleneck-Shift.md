@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-10-12
+updated: 2026-10-15
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -204,8 +204,35 @@ OpenAI 的官方职位页甚至把成功标准直接写成 `production adoption`
 
 每次效率提升都暴露了新的瓶颈，而不是消除了瓶颈。AI 时代的特殊性在于：它同时替代认知劳动、改变任务组织、影响雇佣结构——这是资本品成本下降（云计算）和认知劳动自动化（AI）的叠加，历史类比有启发性但不能简单外推。
 
+## 从模型能力到企业生产率：四层因果链
+
+“模型更强”只改善局部生成能力，不能直接推出企业生产率。当前 Wiki 已有材料可以把中间链条重编译成四层：
+
+```text
+模型 / Agent 能力增强
+  ↓
+Execute / generation 成本下降
+  ↓
+[[Agent-First-Process-Redesign|流程层]]：真实工作是否被重新设计成机器可读、可升级、可度量？
+  ↓
+[[Organization-as-Agent-Harness|组织层]]：目标、权限、owner、学习回路是否能承接更高吞吐？
+  ↓
+[[Verifiable-Agent-Engineering|验证层]]：结果、路径、上下文和行为是否有足够 verification capacity？
+  ↓
+业务 Output / Outcome 才可能改善
+```
+
+这条链解释了为什么能力进步可以与“企业没有明显生产率”同时存在：上游 generation 变便宜后，binding constraint 会迁移到流程重构、组织吸收与验证容量。任何一层不扩容，都可能把更强模型转化成更多等待、返工、试点或未经证明的产出，而不是结果。
+
+这里的因果边界也必须保留：四层是 Wiki 对多组来源的结构化综合，不是已经由同一个企业实验随机验证的统一模型。具体项目仍要看任务类型、工作流成熟度、集成条件与结果指标，不能从“用了更强模型”或“Agent 使用量增加”直接推出生产率变化。
+
+**重编译边界（2026-10-15）**：本节把本页已有 bottleneck-shift 证据与三个既有 Topic 的职责显式串联，没有增加新的外部 Evidence。
+
 ## 与现有 Topic 的关系
 
+- [[Agent-First-Process-Redesign]]讲生成变便宜后，具体旧流程怎样重构成机器可读、可升级的执行系统。
+- [[Organization-as-Agent-Harness]]讲组织怎样提供目标、权限、owner 与学习回路，吸收 Agent 提高后的执行吞吐。
+- [[Verifiable-Agent-Engineering]]讲 verification capacity 为什么会成为生成能力之后的新瓶颈。
 - [[AI-Era-Economy-Shift]]讲从知识经济到分配经济。
 - [[Wisdom-Work-Evolution]]讲人类能力从知识工作转向智慧工作。
 - [[AI-Apprenticeship-and-Lehrwerkstatt]]讲组织如何让瓶颈迁移中的新能力（判断力、委托能力）被看见和学习。

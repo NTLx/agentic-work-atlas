@@ -4,7 +4,7 @@ title: "Successful AI Deployment vs GenAI Divide"
 entity_a: "[[AI-Deployment-Valley-of-Death]]"
 entity_b: "[[The-GenAI-Divide]]"
 created: 2026-06-01
-updated: 2026-07-30
+updated: 2026-10-15
 evidence_level: high
 claim_type: mixed
 tags:
@@ -58,6 +58,18 @@ source_raw:
 - 人类是否从执行节点上移到治理、例外和清障节点。
 - 部署经验是否回流为模板、评测集、流程规范和组织记忆。
 
+## 为什么“模型更强”仍可能没有企业生产率
+
+这组部署证据与 [[AI-Labor-Bottleneck-Shift]] 可以连成一个更明确的因果链：模型能力提升首先降低的是 generation / Execute 成本，但企业结果还要依次穿过三类约束。
+
+1. **流程层 — [[Agent-First-Process-Redesign]]**：真实工作流是否被重构成机器可读、可升级、可度量的执行系统；否则 Agent 只是插在旧流程上。
+2. **组织层 — [[Organization-as-Agent-Harness]]**：目标、owner、权限、业务采纳与反馈学习能否承接更高执行吞吐；否则个人提效无法稳定转成组织结果。
+3. **验证层 — [[Verifiable-Agent-Engineering]]**：结果、关键路径、上下文充分性和拒绝/升级行为是否有足够 verification capacity；否则更多产出只是更多待审查库存。
+
+因此更强模型是供给侧能力，不是生产率本身。只有流程、组织和验证三层同时吸收新增能力，generation throughput 才更可能转成业务 Output / Outcome。[[AI-Labor-Bottleneck-Shift]] 把这件事概括为：AI 降低一个局部动作成本后，binding constraint 会迁移到对齐、集成、判断和结果度量。
+
+**重编译边界（2026-10-15）**：本节把本页已有成功/失败部署证据与四个稳定 Topic 显式连接，没有增加新的外部 Evidence，也不声称三层是经过统一随机实验验证的充分条件。
+
 ## 对 FDE / 标准产品问题的含义
 
 这组材料能校正一个过度简化判断：标准 AI 产品可以快速带来 adoption，但核心工作流改造不一定能靠 license 下发自然完成。
@@ -94,6 +106,10 @@ RWJBarnabas 的 EDI 案例是这条判断最干净的脚注：工具本身是 Ep
 
 ## 相关概念
 
+- [[AI-Labor-Bottleneck-Shift]] — 解释模型能力增强后瓶颈为什么迁移到流程、组织与验证。
+- [[Agent-First-Process-Redesign]] — 流程层：把旧工作流改造成 Agent 可稳定运行的系统。
+- [[Organization-as-Agent-Harness]] — 组织层：目标、权限、owner 与学习回路如何承接 Agent。
+- [[Verifiable-Agent-Engineering]] — 验证层：generation throughput 如何被 verification capacity 约束。
 - [[The-GenAI-Divide]] — 高采用、低业务转化的断裂。
 - [[Enterprise-AI-Learning-Gap]] — 系统不能随流程学习的核心缺口。
 - [[AI-Deployment-Valley-of-Death]] — 从部署到 ROI 的断层。

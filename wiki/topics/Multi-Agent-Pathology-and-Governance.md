@@ -1,9 +1,9 @@
 ---
 type: topic
 title: Multi-Agent Pathology and Governance
-description: "多 Agent 系统病理：当 Agent 从单体工具变成组织系统后，问题会从并发和协议下沉到群体认知、责任稀释和内态断裂"
+description: "多 Agent 非默认优越解：当 Agent 从单体工具变成组织系统后，收益必须覆盖协调、从众、同质化、责任稀释与治理成本"
 created: 2026-05-23
-updated: 2026-08-14
+updated: 2026-10-15
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -46,6 +46,23 @@ source_raw:
 | 内态解离病 | 公开表达和私下独白断裂、表演式合规、隐身权力压制分歧 | 可审计编排、内态指标、reason-based alignment、co-training |
 
 这三层不是互斥，而是逐层下沉。第一层不解决，系统不能跑；第一层解决后，第二层和第三层才会显形。
+
+## 多 Agent 不是默认优越解
+
+当前 Wiki **没有充分证据支持“多 Agent 一定优于单 Agent”**。是否增加 Agent 数量，应先从任务结构出发，而不是把并行或组织形态本身当作能力提升。[[Building-Effective-Agents]] 的默认原则是最小充分架构：可预测、可分解的工作优先确定性 workflow；只有动态分解、独立并行或多视角验证确有收益时，才值得引入更复杂的 Agent topology。
+
+多 Agent 至少会新增四类系统成本：
+
+- **coordination cost**：状态、锁、任务边界与合并成本；
+- **cognitive coupling**：从众、共享错误、hidden-profile 信息无法拼合；
+- **homogeneity risk**：同模型、同 scaffold、同上下文可能形成相关失败，而不是独立验证；
+- **responsibility dilution**：多人/多 Agent 参与不自动产生 accountable owner。
+
+因此判断多 Agent 是否值得，至少应比较：**最终结果质量、成本与延迟、可验证性，以及新增治理负担**。只有收益超过这些新增成本，multi-agent 才是工程上的改进。
+
+这里也要保留一个重要边界：不同模型代际的协调表现并不单调；某些模型通过减少共享与协作来降低冲突，表面上更稳定，却可能牺牲真正的协同。因此“冲突更少”本身也不能证明 multi-agent coordination 更好。
+
+**重编译边界（2026-10-15）**：本节重新组织本页已有 Anthropic 实验、群体病理与 [[Building-Effective-Agents]] 的最小复杂度原则，没有新增外部 Evidence。
 
 ## 代际实证：Anthropic 多智能体实验（2026-08-13）
 
@@ -149,8 +166,10 @@ Multi-agent 治理的重点不是让 Agent 多说话，而是让组织结构保�
 
 ## 与现有 Topic 的关系
 
+- [[Building-Effective-Agents]]提供采用 Agent / workflow / parallelization 的最小充分架构基线；本 Topic 负责说明增加 Agent 数量后新增的系统成本与失败模式。
 - [[OpenClaw-Agent-System]] 强调多 Agent 协作首先是协议问题，不是群聊问题。
 - [[Organization-as-Agent-Harness]] 强调组织本身要变成 Agent 的运行时。
+- [[Verifiable-Agent-Engineering]]要求 multi-agent 的收益与失败同样进入可验证边界，不能只看最终输出。
 - 本 Topic 补上反面：当机器组织跑起来后，组织结构本身也会制造新的病理。
 
 ## 评测框架（2026-06-22 更新）

@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-10-08
+updated: 2026-10-15
 evidence_level: high
 claim_type: mixed
 tags:
@@ -551,10 +551,32 @@ Trail of Bits 的 Miden zkVM 审计提供了一个明确的工程路径：当领
 - **证据**：[[20260918-trailofbits-auditing-good-enough-ai]]；Miden 项目用 Agent 构建工具链，并由 regression、abstract interpretation 与 Lean kernel 承担关键验证。
 - **边界**：这种收益依赖问题能被编码为稳定语义和检查器；对缺乏 oracle、形式规范或可观察状态的开放任务，增加工具并不会自动产生同等可验证性。
 
+## 任务完成率为什么不是可靠性
+
+任务完成率只观察终点，不能单独回答“为什么成功、是否可重复、是否越界、评测本身是否可信”。本 Topic 的四层验证对象——输出、路径、上下文、行为——解决的是 Agent 运行过程是否可检查；[[Evaluation-Integrity]]再向外补一层，检查 **reference、scope、实际可达面与 monitoring / stop semantics 是否仍与评测声称的对象一致**。
+
+因此至少要区分三件事：
+
+```text
+Task success
+  ≠ verified execution
+  ≠ trustworthy evaluation
+```
+
+- `task success`：这一次最终结果看起来完成了任务。
+- `verified execution`：结果、关键路径、上下文充分性和停止/升级行为有可检查证据。
+- `trustworthy evaluation`：用于证明前两者的 reference、环境边界和评测流程本身没有泄漏、漂移或越界。
+
+一个 Agent 可以“任务做成了”但路径越权；也可以通过一个已污染或边界失真的 benchmark。反过来，评测环境完整也不代表生产动作已经被正确授权和可恢复；这一层由 [[Agent-Security]] 继续约束。
+
+**重编译边界（2026-10-15）**：这是对本页既有验证结构、[[Evaluation-Integrity]] 与 [[Agent-Security]] 的关系重组，没有增加新的外部 Evidence。它用于避免把“成功率高”直接偷换成“系统可靠”。
+
 ## 与现有 Topic 的关系
 
 - [[Agentic-Engineering-Patterns]]回答“如何用 Agent 做软件工程”。
-- [[Building-Effective-Agents]]回答“Agent 工作流有哪些架构模式”。
+- [[Building-Effective-Agents]]回答“Agent 工作流有哪些架构模式，以及何时应优先使用确定性 workflow”。
+- [[Evaluation-Integrity]]回答“用于证明 Agent 成功的 benchmark、reference、scope 与运行环境本身是否可信”。
+- [[Agent-Security]]回答“当 Agent 能产生外部动作时，授权、执行、撤销与恢复是否闭环”。
 - [[Agentic-Workflow-Token-Efficiency]]回答“生产级 Agent 工作流怎样控制可观测成本”。
 - [[Agent-Logic]]回答“企业工作流中的确定性结构怎样进入 Agent harness”。
 - 本 Topic 回答“这些模式怎样跨过 demo 与生产之间的断层”。
