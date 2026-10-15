@@ -1,0 +1,172 @@
+version: 1
+purpose: "固定真实问题集，用于评估 LLM Wiki 的 Find / Synthesize 能力；Reuse 由实际 Output 窗口观察。"
+external_web: forbidden
+cases:
+  - id: find-agentic-engineering-boundary
+    dimension: find
+    query: "Agentic Engineering 与传统 workflow automation 的边界是什么？"
+    reference_anchors:
+      - wiki/topics/Agentic-Engineering-Patterns.md
+      - wiki/topics/Building-Effective-Agents.md
+    success_condition: "找到现有 Agentic Engineering 结构，并说明何时应使用确定性 workflow、何时才需要 Agent。"
+
+  - id: find-verification-over-task-success
+    dimension: find
+    query: "为什么 Agent 的可靠性不能只看任务完成率，而要强调 verification 和 evidence？"
+    reference_anchors:
+      - wiki/topics/Verifiable-Agent-Engineering.md
+      - wiki/topics/Evaluation-Integrity.md
+    success_condition: "区分任务表面成功与输出、路径、上下文、行为及评测环境可验证性。"
+
+  - id: find-enterprise-model-sourcing
+    dimension: find
+    query: "企业选择大模型供应方式时，闭源 API、自托管和本地模型应该如何权衡？"
+    reference_anchors:
+      - wiki/topics/Enterprise-AI-Model-Sourcing.md
+    success_condition: "找到模型 sourcing 的现有框架，并保留成本、能力、数据、安全和运维边界。"
+
+  - id: find-fde-vs-consulting
+    dimension: find
+    query: "FDE 的价值到底是什么，它与普通咨询、实施和外包有什么区别？"
+    reference_anchors:
+      - wiki/topics/Forward-Deployed-AI-Enablement.md
+    success_condition: "指出嵌入现场、产品发现和产物回流，以及缺失这些环节后分别退化成什么。"
+
+  - id: find-organization-as-harness
+    dimension: find
+    query: "为什么组织本身可以被视为 Agent harness？"
+    reference_anchors:
+      - wiki/topics/Organization-as-Agent-Harness.md
+    success_condition: "找到目标、流程、权限、学习四层，并说明组织混乱如何被 Agent 放大。"
+
+  - id: find-data-minimization
+    dimension: find
+    query: "Agent 系统应该怎样做数据最小化，而不是只依赖模型自己判断什么数据能看？"
+    reference_anchors:
+      - wiki/topics/Agent-Data-Minimization.md
+      - wiki/topics/Agent-Security.md
+    success_condition: "回答数据边界、权限与模型外 enforcement，不能只给 prompt 层建议。"
+
+  - id: find-skill-atrophy
+    dimension: find
+    query: "长期使用 AI 为什么可能造成技能退化或 Knowledge Debt？"
+    reference_anchors:
+      - wiki/topics/Skill-Atrophy-and-Knowledge-Debt.md
+    success_condition: "找到技能退化与知识债务的机制、边界和已有反例/限制。"
+
+  - id: find-designer-role
+    dimension: find
+    query: "AI 时代设计师的核心角色发生了什么变化？"
+    reference_anchors:
+      - wiki/topics/AI-Era-Designer-Role.md
+      - wiki/topics/AI-Era-Taste-and-Judgment.md
+    success_condition: "从执行迁移到判断、品味、问题定义等稳定结构，而不是泛泛说 AI 提效。"
+
+  - id: find-git-coding-agents
+    dimension: find
+    query: "Git 与 coding agents 协作时，哪些工作方式和边界最重要？"
+    reference_anchors:
+      - wiki/topics/Git-with-Coding-Agents.md
+      - wiki/topics/Verifiable-Agent-Engineering.md
+    success_condition: "找到版本控制、隔离、review、证据与可恢复性相关模式。"
+
+  - id: find-multi-agent-universal-superiority
+    dimension: find
+    query: "当前 Wiki 是否有充分证据证明多 Agent 一定优于单 Agent？"
+    reference_anchors:
+      - wiki/topics/Multi-Agent-Pathology-and-Governance.md
+      - wiki/topics/Building-Effective-Agents.md
+    success_condition: "明确拒绝普遍优越性结论，并指出协调、同质化、责任与环境约束等反证边界。"
+
+  - id: synthesize-productivity-bottleneck
+    dimension: synthesize
+    query: "当模型能力持续增强后，为什么企业 AI 仍可能不产生生产率？把流程、组织和验证三个层面串起来。"
+    reference_anchors:
+      - wiki/topics/AI-Labor-Bottleneck-Shift.md
+      - wiki/topics/Agent-First-Process-Redesign.md
+      - wiki/topics/Organization-as-Agent-Harness.md
+      - wiki/topics/Verifiable-Agent-Engineering.md
+    success_condition: "形成从生成成本下降到流程重构、组织 harness、verification capacity 的因果链，而非四篇摘要并列。"
+
+  - id: synthesize-fde-ai-factory
+    dimension: synthesize
+    query: "Enterprise AI Factory 与 FDE 是互补还是替代？什么条件下各自更重要？"
+    reference_anchors:
+      - wiki/topics/Enterprise-AI-Factory.md
+      - wiki/topics/Forward-Deployed-AI-Enablement.md
+    success_condition: "区分平台化复用能力与现场穿越集成之墙，并给出互补/替代的条件边界。"
+
+  - id: synthesize-human-residual-value
+    dimension: synthesize
+    query: "AI 时代人的不可外包价值，为什么会从执行迁移到判断、品味和责任？"
+    reference_anchors:
+      - wiki/topics/AI-Era-Taste-and-Judgment.md
+      - wiki/topics/Wisdom-Work-Evolution.md
+      - wiki/topics/AI-Era-Career-Skills.md
+      - wiki/topics/AI-Labor-Bottleneck-Shift.md
+    success_condition: "把生成变便宜与判断、责任、品味变稀缺连成机制，而不是价值宣言。"
+
+  - id: synthesize-agent-knowledge-management
+    dimension: synthesize
+    query: "面向 Agent 的知识管理为什么不能只做文档搜索，ontology、context 和 evidence 分别解决什么？"
+    reference_anchors:
+      - wiki/topics/Agent-Knowledge-Management.md
+      - wiki/topics/Enterprise-Ontology-Application.md
+      - wiki/topics/Code-as-Conceptual-Infrastructure.md
+    success_condition: "说明语义结构、任务上下文和证据边界的不同职责，并形成可操作关系。"
+
+  - id: synthesize-security-responsibility-loop
+    dimension: synthesize
+    query: "Agent 安全为什么既是攻击面问题，也是责任闭环和可验证工程问题？"
+    reference_anchors:
+      - wiki/topics/Agent-Attack-Surface.md
+      - wiki/topics/Agent-Security.md
+      - wiki/topics/Verifiable-Agent-Engineering.md
+    success_condition: "把入口/信任边界、授权执行恢复、验证骨架连接成一条完整链，且不把三者混为一谈。"
+
+  - id: synthesize-eval-vs-reliability
+    dimension: synthesize
+    query: "怎样区分‘评测做得好’和‘系统真的可靠’？"
+    reference_anchors:
+      - wiki/topics/Evaluation-Integrity.md
+      - wiki/topics/Verifiable-Agent-Engineering.md
+      - wiki/topics/Agent-Security.md
+    success_condition: "同时检查 reference、scope、有效可达面、stop semantics 与生产动作边界。"
+
+  - id: synthesize-multi-agent-coordination
+    dimension: synthesize
+    query: "多 Agent 系统为什么可能因为 coordination、conformity 或责任稀释反而变差？组织治理能提供什么启发？"
+    reference_anchors:
+      - wiki/topics/Multi-Agent-Pathology-and-Governance.md
+      - wiki/topics/Organization-as-Agent-Harness.md
+    success_condition: "把群体认知病理与组织中的目标、权限、责任、学习层对应起来，并保留模型代际非单调边界。"
+
+  - id: synthesize-process-and-organization
+    dimension: synthesize
+    query: "Agent-first 流程重构与 AI-mediated organization 的关系是什么？"
+    reference_anchors:
+      - wiki/topics/Agent-First-Process-Redesign.md
+      - wiki/topics/AI-Mediated-Organization.md
+      - wiki/topics/Organization-as-Agent-Harness.md
+    success_condition: "区分具体流程改造、组织关系重布线与组织运行时三种层次。"
+
+  - id: synthesize-sourcing-security-governance
+    dimension: synthesize
+    query: "企业模型 sourcing 如何影响数据最小化、Agent 安全和组织治理？"
+    reference_anchors:
+      - wiki/topics/Enterprise-AI-Model-Sourcing.md
+      - wiki/topics/Agent-Data-Minimization.md
+      - wiki/topics/Agent-Security.md
+      - wiki/topics/AI-Policy-Framework.md
+    success_condition: "把供应方式与数据边界、身份权限、治理责任连接起来，并指出不能由模型能力替代的控制。"
+
+  - id: synthesize-demo-to-production-check
+    dimension: synthesize
+    query: "如果要判断一个 AI 项目是不是只是‘演示很好看’，Wiki 里有哪些机制可以组合成一套检查框架？"
+    reference_anchors:
+      - wiki/topics/Evaluation-Integrity.md
+      - wiki/topics/Verifiable-Agent-Engineering.md
+      - wiki/topics/Forward-Deployed-AI-Enablement.md
+      - wiki/topics/Agent-First-Process-Redesign.md
+      - wiki/topics/Enterprise-AI-Factory.md
+    success_condition: "组合真实流程、集成约束、reference/certificate、production adoption 与可复用回流，形成从 demo 到 production 的检查链。"

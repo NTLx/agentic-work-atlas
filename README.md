@@ -27,6 +27,15 @@
 
 `recompile(claim)` 是 `explore` 的受限维护子流程：只检查 agenda 队列中的一个既有 Claim，以 Research 沉淀为主；仅在协议规定的 extracted 事实例外下补 1 个已有稳定页。
 
+### Control Plane 与 Value Plane
+
+仓库质量分成两个不能互相替代的平面：
+
+- **Control Plane**：lint、schema、registry、provenance、Raw lifecycle 等机制回答“仓库有没有坏”。
+- **Value Plane**：Knowledge Utility Eval 回答“已有知识是否真的更容易被找到、综合和复用”。
+
+`lint = 0` 不等于知识有效。Value Plane 也不是第五个 lifecycle，不进入日常 clip / compile 的 blocking gate。固定真实问题集位于 `evals/knowledge-utility/cases.yaml`，运行与记录规则见 `schema/knowledge-utility-eval.md`。
+
 ### 用户意图推断：剪藏信号
 
 当用户**仅提供**以下输入而未附加明确指令时，默认推断为**剪藏（clip）**意图：
@@ -232,6 +241,12 @@ Skill 只提供局部认知或执行方法，不拥有 Wiki 生命周期控制�
 | 创建/评估 entity | `schema/entity-spec.md` |
 | 碎片化度量 / 图谱健康度 | `schema/fragmentation-metrics.md` |
 
+### 价值验证
+
+| 操作 | 子文档 |
+|------|--------|
+| 评估 Wiki 的 Find / Synthesize / Reuse | `schema/knowledge-utility-eval.md` |
+
 ### 写入 wiki 文件
 
 | 操作 | 子文档 |
@@ -269,6 +284,8 @@ Skill 只提供局部认知或执行方法，不拥有 Wiki 生命周期控制�
 | `tools/wiki-lint.py` | Wiki 维护门禁脚本 |
 | `tools/entity-audit.py` | Entity 价值审计脚本 |
 | `tools/skill-audit.py` | Agent Skills 安装、lock 与兼容入口漂移审计（只读） |
+| `evals/knowledge-utility/cases.yaml` | 固定真实问题集（Value Plane） |
+| `state/knowledge-utility/` | Knowledge Utility Eval 的版本化运行记录 |
 | `schema/*.md` | 按需加载的规范子文档 |
 
 **Compile 注意事项**：先判题后编译（按主题宪法判断是否属于主线）；不修改 raw 正文；raw 元数据修复最小化。
