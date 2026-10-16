@@ -3159,6 +3159,30 @@
       "summary_path": "wiki/sources/20260930-openrouter-golden-eval-production-traffic.md",
       "updated_at": "2026-10-12T17:24:38+08:00"
     },
+    "20261001-anthropic-claude-shaped-science.md": {
+      "body_sha256": "90316b4330e15e508d175e14bbf55be041e49e747f78c4b2135fda7d9df7984f",
+      "canonical_url": "https://www.anthropic.com/research/claude-shaped-science",
+      "compiled_at": "2026-10-16T08:31:38+08:00",
+      "indexed_at": "2026-10-16T08:31:38+08:00",
+      "raw_file": "20261001-anthropic-claude-shaped-science.md",
+      "raw_state": "index",
+      "retention_note": "direct external index compile; full text not retained in repo",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261001-anthropic-claude-shaped-science.md",
+      "updated_at": "2026-10-16T08:31:38+08:00"
+    },
+    "20261001-mollick-dot-and-the-swarm.md": {
+      "body_sha256": "1ad7713a4289aa236a94bdf24eae5d1039e9aeec9e2b47826b4fb7fcaf80bbe2",
+      "canonical_url": "https://www.oneusefulthing.org/p/the-dot-and-the-swarm",
+      "compiled_at": "2026-10-16T08:31:38+08:00",
+      "indexed_at": "2026-10-16T08:31:38+08:00",
+      "raw_file": "20261001-mollick-dot-and-the-swarm.md",
+      "raw_state": "index",
+      "retention_note": "direct external index compile; full text not retained in repo",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261001-mollick-dot-and-the-swarm.md",
+      "updated_at": "2026-10-16T08:31:38+08:00"
+    },
     "20261002-latentspace-rlm-alex-zhang.md": {
       "body_sha256": "6f36c1d515c4fbd5964ce3b10a94177a0ef3def617f3340021e71b5f88367fa6",
       "canonical_url": "https://www.latent.space/p/rlm",
@@ -3844,6 +3868,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-14T08:53:51+08:00",
+  "updated_at": "2026-10-16T08:32:22+08:00",
   "version": 1
 }
