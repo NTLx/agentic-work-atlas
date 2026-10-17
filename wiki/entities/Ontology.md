@@ -31,6 +31,7 @@ source_raw:
   - '[[20260730-palantir-industry-ai-unified-namespace]]'
   - '[[20260730-palantir-responsible-ai-hallucinations-ontology]]'
   - '[[20260901-databricks-genie-ontology-data-stack]]'
+  - '[[20261002-databricks-buy-side-nav-finance]]'
 ---
 
 # Ontology（本体）
@@ -56,6 +57,8 @@ source_raw:
 ## Genie Ontology：从权威语义到推断上下文
 
 Databricks（2026-09）提供了企业数据栈中的一个具体实现：semantic model 负责刻意定义的业务概念、关系和指标，Genie Ontology 在此基础上从 governed tables、queries、dashboards、notebooks 和 Agent assets 推断更广的上下文，并按 authority、relevance 和 permissions 在回答时取用。其核心做法是 **model the head, infer the tail**：关键定义先由人硬化，长尾知识再从受治理资产中学习。
+
+Databricks（2026-10）又以买方资管财务说明了这一语义层的目标场景：基金、策略、份额类别、估值和费用安排的含义会随业务变化；后台 Agent 先摄取托管人文件、对照市场价格并生成初步 NAV，再让财务人员复核，并为数字保留来源线索。该文属于产品介绍，没有提供客户部署数据或独立效果评估；它补充的是厂商所描述的工作流形态，不是已验证的效果证据（[[20261002-databricks-buy-side-nav-finance]]）。
 
 这条路径把 Ontology 的落地条件具体化为六层渐进建设：物理数据基础与 golden records、元数据、语义层、context-rich 资产、治理、持续评估。Metric Views、Pages 和 Domains 让指标、术语、权威资产和业务范围可被 Agent 查询；权限决定可检索上下文，因此同一问题可以因用户授权不同而产生不同答案。
 
