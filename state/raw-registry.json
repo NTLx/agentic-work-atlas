@@ -3195,6 +3195,18 @@
       "summary_path": "wiki/sources/20261002-databricks-buy-side-nav-finance.md",
       "updated_at": "2026-10-17T15:17:26+08:00"
     },
+    "20261002-google-provably-private-federated-learning.md": {
+      "body_sha256": "2d0b0cbb8a0a12fc1313ee0426a29145b47cf02513fd549ffa9fab981d190100",
+      "canonical_url": "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
+      "compiled_at": "2026-10-17T15:16:25+08:00",
+      "indexed_at": "2026-10-17T15:17:21+08:00",
+      "raw_file": "20261002-google-provably-private-federated-learning.md",
+      "raw_state": "index",
+      "retention_note": "已编译为 external index；canonical 页面可恢复，正文哈希与证据定位保存在 source summary。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261002-google-provably-private-federated-learning.md",
+      "updated_at": "2026-10-17T15:17:26+08:00"
+    },
     "20261002-latentspace-rlm-alex-zhang.md": {
       "body_sha256": "6f36c1d515c4fbd5964ce3b10a94177a0ef3def617f3340021e71b5f88367fa6",
       "canonical_url": "https://www.latent.space/p/rlm",
