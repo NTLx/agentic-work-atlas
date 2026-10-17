@@ -3194,6 +3194,18 @@
       "summary_path": "wiki/sources/20261002-latentspace-rlm-alex-zhang.md",
       "updated_at": "2026-10-03T07:22:40+08:00"
     },
+    "20261002-openrouter-langchain-crewai-routing.md": {
+      "body_sha256": "53197cd88a9a48472b9cd18c4306165113484c79fc3b605062a16f14da4eae2b",
+      "canonical_url": "https://openrouter.ai/blog/insights/langchain-vs-crewai-orchestration-compared-to-openrouter-native-routing/",
+      "compiled_at": "2026-10-17T15:16:24+08:00",
+      "indexed_at": "2026-10-17T15:17:21+08:00",
+      "raw_file": "20261002-openrouter-langchain-crewai-routing.md",
+      "raw_state": "index",
+      "retention_note": "已编译为 external index；canonical 页面可恢复，正文哈希与证据定位保存在 source summary。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261002-openrouter-langchain-crewai-routing.md",
+      "updated_at": "2026-10-17T15:17:26+08:00"
+    },
     "20261004-lenny-openai-head-chatgpt-new-era.md": {
       "body_sha256": "c4b8df771d1cdcd4ffe86253c31b3c88e285331229a666d78309b34729d6aee7",
       "canonical_url": "https://www.lennysnewsletter.com/p/openais-head-of-chatgpt-were-entering",
@@ -3868,6 +3880,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-16T08:32:22+08:00",
+  "updated_at": "2026-10-17T15:17:26+08:00",
   "version": 1
 }

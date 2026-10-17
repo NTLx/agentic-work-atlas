@@ -29,6 +29,7 @@ source_raw:
   - "[[20260620-l8-principal-agentic-workflow]]"
   - "[[20260728-fowler-orchestrator-tax]]"
   - "[[20260819-anthropic-claude-tag-oncall]]"
+  - "[[20261002-openrouter-langchain-crewai-routing]]"
 ---
 
 # Agent Orchestration
@@ -115,6 +116,8 @@ Elvis 的 Agent Swarm 系统：
 4. **自主进化**：编排者从失败中学习，写更好的 prompts
 5. **可审计编排**：编排者可以隐藏实现细节，但不应隐藏影响链条；谁改写输入、谁压制分歧、谁拥有最终写入权，都应能追踪。
 6. **保护编排者工作记忆**（[[Orchestrators-Tax]]）：subagent 的真正价值不是并行省时，而是把噪声推理挡在 orchestrator 上下文之外——token 花一次就完，context 污染此后每轮收租。任务按 cognitive locality（所需知识）切分而非按任务列表切分；文件所有权重叠是合并信号，不是 spawn 信号。
+
+OpenRouter（2026-10）把多模型系统拆成三个需分别设计的层：工作流编排负责计划、状态、记忆与委派；模型路由负责选择调用模型和错误回退；provider 路由负责选择模型的服务端点。模型或 provider 路由本身不提供任务编排；反过来，LangGraph/CrewAI 这类工作流编排也可与独立模型网关组合。详见 [[20261002-openrouter-langchain-crewai-routing]]。
 
 ## 关键数据点
 
