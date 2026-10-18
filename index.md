@@ -17,11 +17,11 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 425 个 |
+| Entity 页面 | 426 个 |
 | Topic 页面 | 38 个 |
 | Comparison 页面 | 21 个 |
-| Raw 文章 | 336 个 |
-| Source Summary | 429 个 |
+| Raw 文章 | 337 个 |
+| Source Summary | 430 个 |
 | Output 作品 | 11 个 |
 | Research 日志 | 24 个 |
 

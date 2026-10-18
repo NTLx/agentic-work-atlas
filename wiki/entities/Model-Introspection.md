@@ -4,9 +4,9 @@ title: Model Introspection
 aliases:
   - Model Introspection
   - 模型自省
-definition: "让模型分析自己为什么会犯某个错误，从其推理链路中提取人类独立分析难以获得的洞察"
+definition: "让模型生成对自身错误或行为的解释，用于提出调试假设与归纳行为模式；其自述不等同于对真实内部机制的直接读取"
 created: 2026-05-08
-updated: 2026-07-30
+updated: 2026-10-18
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -18,17 +18,19 @@ related_entities:
   - "[[Product-Overhang]]"
   - "[[Research-Preview]]"
   - "[[Competent-Output]]"
+  - "[[Mechanistic-Interpretability]]"
 source_raw:
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - "[[20260617-huggingface-agentic-resource-discovery]]"
   - "[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]"
+  - "[[20261018-lenny-emmanuel-ameisen-interpretability]]"
 ---
 
 # Model Introspection（模型自省）
 
 > [!definition] 定义
-> **Model Introspection（模型自省）** 是一种 AI 使用技能：当模型犯错时，不只修复错误，而是追问模型"分析你刚才为什么犯这个错"。模型对自身错误的分析能产生远超人类独立分析的洞察，因为它能访问推理链路中隐含的模式和假设。
+> **Model Introspection（模型自省）** 是一种 AI 使用技能：当模型犯错时，不只修复错误，而是追问模型“分析你刚才为什么犯这个错”。这类自述可用于提出调试假设、归纳失败模式和补充评测集，但它仍是模型生成的解释，**不能视为对真实内部计算的直接访问**。
 
 ## 关键数据点
 
@@ -56,6 +58,29 @@ Cat Wu 在 Anthropic 产品团队将模型自省从 debugging 技巧升级为产
 
 Dianne Penn（Anthropic Head of Product, AI Research & Labs，2026-07）补充了第四层——**用户反馈归因**：PM 团队读失败对话 transcripts，把模糊抱怨（"Claude hallucinated"）分解为可行动的失败分类：该调用 tool 时没调用（tool use 失败）/ 检索了正确文档但取错事实（search synthesis 失败）/ 对齐问题。这一归因过程缩短了"用户反馈 → 研究者可行动项"的距离，是 evals-as-PRD 工作流（[[Evals-as-PRD]]）的前置步骤。⚠️ 与 Palantir 可解释性文的张力：自省揭示的是 harness 层错误（prompt 误导、编排失败），不保证揭示模型内部真实原因——自省用于修 harness，[[Transparent-Tool-Handoff|工具层检查]]用于修任务执行，两者互补。
 
+## 与 Mechanistic Interpretability 的边界（2026-10）
+
+Emmanuel Ameisen 对 Anthropic interpretability 工作的说明给本实体增加了一条必须长期保留的证据边界：**模型自省和机制可解释性不是同一种证据。**
+
+[[Mechanistic-Interpretability|Mechanistic Interpretability]] 直接记录模型的 intermediate activations，寻找稳定 representation / circuit 候选，并可通过修改内部激活验证行为是否按预测变化；Model Introspection 则让模型用自然语言解释自己为什么这么做。
+
+~~~text
+Model Introspection
+= generated self-explanation
+→ cheap hypothesis / debugging signal
+
+Mechanistic Interpretability
+= internal measurement + intervention
+→ mechanism evidence
+~~~
+
+**判断**：Model Introspection 的合理定位是 **hypothesis generator**，而不是 ground truth debugger。自省可以告诉我们“接下来值得检查什么”，但不能单独证明“内部真正发生了什么”。
+
+- **证据**：[[20261018-lenny-emmanuel-ameisen-interpretability]]；访谈明确区分可 verbalize 的输出与只存在于 intermediate states 中的内部表征，并说明 interpretability 通过测量与干预这些状态建立解释。
+- **边界**：Mechanistic Interpretability 本身也不完整；两者都不能单独替代外部行为验证、可执行 oracle 或真实环境证据。
+
+这进一步收紧了本页既有的 `自省 → 评测 → 训练` 工作流：自省发现的 failure hypothesis 应进入 eval / trace / tool evidence / mechanistic study 中验证，而不是直接升级为原因结论。
+
 ## 与人类 debugging 的结构对比
 
 | 维度 | Rubber Duck Debugging | Model Introspection |
@@ -73,4 +98,5 @@ Dianne Penn（Anthropic Head of Product, AI Research & Labs，2026-07）补充�
 - [[Taste]] — 判断模型自省的质量需要品味——区分真洞察和合理美化。
 - [[Judgment]] — 辨别模型自省中的信号与噪音。
 - [[Product-Overhang]] — 模型自省帮助产品团队发现模型已具备但尚未产品化的能力。
-- [[Competent-Output]] — 自省是判断输出是否合格的辅助手段：模型能解释自己的输出为什么合格，比"看起来合格"更可靠。
+- [[Competent-Output]] — 自省只能作为判断输出是否合格的辅助信号，仍需外部证据验证。
+- [[Mechanistic-Interpretability]] — 直接研究内部 activation / representation / circuit，与自然语言自省属于不同证据层。

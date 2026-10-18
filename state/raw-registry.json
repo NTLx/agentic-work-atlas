@@ -3285,6 +3285,15 @@
       "summary_path": "wiki/sources/20261014-latentspace-dyna-world-action-model.md",
       "updated_at": "2026-10-14T08:53:51+08:00"
     },
+    "20261018-lenny-emmanuel-ameisen-interpretability.md": {
+      "body_sha256": "d4f92c92c1043e8b2acae2d48b06595789cd7ba7d11be79738998d141e449dd0",
+      "compiled_at": "2026-10-18T22:56:06+08:00",
+      "raw_file": "20261018-lenny-emmanuel-ameisen-interpretability.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261018-lenny-emmanuel-ameisen-interpretability.md",
+      "updated_at": "2026-10-18T22:56:06+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -3904,6 +3913,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-17T15:17:26+08:00",
+  "updated_at": "2026-10-18T22:56:06+08:00",
   "version": 1
 }
