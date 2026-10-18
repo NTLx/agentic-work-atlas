@@ -3285,6 +3285,17 @@
       "summary_path": "wiki/sources/20261014-latentspace-dyna-world-action-model.md",
       "updated_at": "2026-10-14T08:53:51+08:00"
     },
+    "20261014-latentspace-leash-bio-lab-in-the-loop.md": {
+      "body_sha256": "2547e957825403ca538160f0140de91e5d9bf211040c0b485f9dc5c78bcb4867",
+      "canonical_url": "https://www.latent.space/p/lab-in-the-loop-at-compute-speed",
+      "compiled_at": "2026-10-18T23:05:18+08:00",
+      "indexed_at": "2026-10-18T23:05:23+08:00",
+      "raw_file": "20261014-latentspace-leash-bio-lab-in-the-loop.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261014-latentspace-leash-bio-lab-in-the-loop.md",
+      "updated_at": "2026-10-18T23:06:03+08:00"
+    },
     "20261018-lenny-emmanuel-ameisen-interpretability.md": {
       "body_sha256": "d4f92c92c1043e8b2acae2d48b06595789cd7ba7d11be79738998d141e449dd0",
       "compiled_at": "2026-10-18T22:56:06+08:00",
@@ -3913,6 +3924,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-18T22:56:06+08:00",
+  "updated_at": "2026-10-18T23:06:03+08:00",
   "version": 1
 }

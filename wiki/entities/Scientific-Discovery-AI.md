@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把模型、科学表示、搜索/模拟/工具与可验证实验反馈结合起来，用 AI 提出、执行和筛选科学假设，并把结果回流到后续决策的系统形态"
 created: 2026-05-08
-updated: 2026-10-10
+updated: 2026-10-18
 tags:
   - AI
   - science
@@ -21,6 +21,7 @@ related_entities:
   - "[[Tool-Use-Architecture]]"
   - "[[Open-Source-Operational-AI-Framework]]"
   - "[[Deterministic-Retrieval]]"
+  - "[[Lab-in-the-Loop]]"
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[20260608-paving-the-way-for-agents-in-biology]]"
@@ -29,6 +30,7 @@ source_raw:
   - "[[20260923-latentspace-eric-biosecurity]]"
   - "[[20261009-latentspace-periodic-synthesis-superintelligence]]"
   - "[[20261010-latentspace-biohub-deepmind-protein-folding]]"
+  - "[[20261014-latentspace-leash-bio-lab-in-the-loop]]"
 ---
 
 # Scientific Discovery AI（科学发现 AI）
@@ -161,6 +163,42 @@ Periodic 还把训练数据单位从“论文中的最终成功结果”扩大�
 - **证据**：[[20261009-latentspace-periodic-synthesis-superintelligence]]（00:53:16–01:06:06）。
 - **边界**：negative result 不能直接解释为“不可实现”；失败可能来自 synthesis method、设备或技能。timestamped state 也只能降低 contamination，不能在未知预训练数据条件下证明 reasoning 完全无泄漏。
 
+## 第五条路线：把 Reality Cost 预支付成可重放的科学环境（Leash Bio，2026-10）
+
+[[20261014-latentspace-leash-bio-lab-in-the-loop]] 补出了介于纯计算 sandbox 与 live autonomous lab 之间的第五种形态：**先用高吞吐真实实验生成大规模可追溯 measurement landscape，再把这些 measurements 包装成 Agent 可近实时反复调用的 sequential environment。**
+
+Leash 的 reasoning Agent 不是每做一个决定就等待新的湿实验。团队先通过 DEL 等 pooled assay 真实测量大量 protein × molecule interaction；Agent 获得少量 binder / non-binder 作为起点后，可以从数百万候选中主动选择下一批“实验”，环境直接查询已测量结果并即时返回，Agent 再更新 SAR hypothesis 并继续选择。受访者描述的一个任务是给 Agent 100 个 molecule budget，让它从约 650 万候选中通过多轮实验选择寻找最强 binder（Transcript L784-L852）。
+
+~~~text
+physical experiments at scale
+        ↓
+replayable measured environment
+        ↓
+agent hypothesis
+        ↓
+experiment choice
+        ↓
+instant lookup of real outcome
+        ↓
+belief update / next choice
+        ↺
+~~~
+
+这与 Periodic 的 live physical loop 形成互补：Periodic 每轮重新支付 synthesis / characterization 的 reality cost，因此速度慢但可以探索真正未知区域；Leash 把 reality cost 预先批量支付，因此 rollout 接近软件速度，但只能在已经测过的 landscape 内探索。二者可以自然组合成 `replay → identify uncertainty → live experiment → expand replay corpus` 的两级闭环。
+
+**判断**：物理科学中的 scaling unit 不一定是“每轮都自动做更多实验”，也可以是**把已经发生过的高质量实验变成可大量重放的决策经验**。这使科学 Agent 能在不牺牲现实 grounding 的前提下获得接近 RL sandbox 的 rollout throughput。
+
+- **证据**：[[20261014-latentspace-leash-bio-lab-in-the-loop]]（Transcript L592-L852）；[[20261009-latentspace-periodic-synthesis-superintelligence]]。
+- **边界**：replayable environment 继承原始 assay 的 chemical-space coverage、measurement artifact 与 batch bias；数据库查询不会产生未测量的新自然事实。真正扩张 scientific frontier 仍必须回到 live physical experiment。详见 [[Lab-in-the-Loop]]。
+
+### 科学环境必须主动制造“反事实密度”
+
+同一来源还说明，现实数据本身并不会自动成为好的训练环境。Leash 会主动设计 activity cliffs、binding-pocket mutations、competitive assays 和跨 chemical-library holdout，用“输入极相似但行为显著改变”的 controlled contrasts 破坏模型的 shortcut。其 Hermes 模型曾通过 protein 中非保守片段形成类似“nickname”的识别策略；团队发现后加入大量 pocket mutations，让这种廉价记忆不再可靠（Transcript L592-L764）。
+
+**判断**：Scientific Discovery AI 的数据价值不能只用 sample count 衡量。对 sequential reasoning / RL，更关键的是环境是否包含足够多能区分相邻 hypothesis 的 counterfactual evidence，以及 eval 是否真的切断了 building-block、creator identity、dataset lineage 等捷径。
+
+- **边界**：attention map 只能提示 shortcut hypothesis，不是机制证明；实验 mutation 与 OOD holdout 提供更强外部证据，但仍不能保证模型已经学到完整 molecular physics。
+
 ## Domain-native Foundation Model：直接学习科学对象
 
 [[20260923-latentspace-eric-biosecurity]] 用完整访谈补出一个与外层 Agent orchestration 不同的 scientific AI 层次：Genome Language Model 直接把 biological sequence 当作基础建模对象。HyenaDNA 的出发点是 biological sequence 的极长 context；Evo 把能力从 read 推到 write；Omni 则进一步把 base model 通过 task structure、mid/post-training 和 supervised alignment 映射到科学家真正使用的预测与设计任务（Transcript L34-L58、L96-L144、L196-L230）。
@@ -245,6 +283,7 @@ Google 水文框架提供了一个完整转换链：
 - [[Demis-Hassabis]] - AlphaGo / AlphaFold 路线背后的关键人物
 - [[Open-Source-Operational-AI-Framework]] - 把科学模型转成可被本地机构运营和改进的基础设施
 - [[Deterministic-Retrieval]] - 通过结构化工具与领域规则提高科学数据检索的可重复性和可靠性
+- [[Lab-in-the-Loop]] - 把现实实验或可重放物理经验组织成 Agent 可序贯探索的科学环境
 - Biological-Data-Infrastructure - 为 Agent 设计的科研数据底座
 - Laura-Luebbert - 科学智能体基础设施的研究者
 - VirBench - 衡量科学检索准确性的基准
