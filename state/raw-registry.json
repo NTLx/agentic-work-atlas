@@ -3218,6 +3218,17 @@
       "summary_path": "wiki/sources/20261002-latentspace-rlm-alex-zhang.md",
       "updated_at": "2026-10-03T07:22:40+08:00"
     },
+    "20261002-meta-solving-open-research-problems-together.md": {
+      "body_sha256": "75a7d38cf76837ef8952d08cf26911c564ab628298eefe072721ee083a0f1e7b",
+      "canonical_url": "https://research.meta.ai/blog/solving-open-research-problems-together",
+      "compiled_at": "2026-10-20T23:48:16+08:00",
+      "indexed_at": "2026-10-20T23:48:34+08:00",
+      "raw_file": "20261002-meta-solving-open-research-problems-together.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261002-meta-solving-open-research-problems-together.md",
+      "updated_at": "2026-10-20T23:49:07+08:00"
+    },
     "20261002-openrouter-langchain-crewai-routing.md": {
       "body_sha256": "53197cd88a9a48472b9cd18c4306165113484c79fc3b605062a16f14da4eae2b",
       "canonical_url": "https://openrouter.ai/blog/insights/langchain-vs-crewai-orchestration-compared-to-openrouter-native-routing/",
@@ -3924,6 +3935,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-18T23:06:03+08:00",
+  "updated_at": "2026-10-20T23:49:07+08:00",
   "version": 1
 }

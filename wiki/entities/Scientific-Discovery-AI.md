@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把模型、科学表示、搜索/模拟/工具与可验证实验反馈结合起来，用 AI 提出、执行和筛选科学假设，并把结果回流到后续决策的系统形态"
 created: 2026-05-08
-updated: 2026-10-18
+updated: 2026-10-20
 tags:
   - AI
   - science
@@ -22,6 +22,7 @@ related_entities:
   - "[[Open-Source-Operational-AI-Framework]]"
   - "[[Deterministic-Retrieval]]"
   - "[[Lab-in-the-Loop]]"
+  - "[[AI-in-Mathematics]]"
 source_raw:
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[20260608-paving-the-way-for-agents-in-biology]]"
@@ -31,6 +32,7 @@ source_raw:
   - "[[20261009-latentspace-periodic-synthesis-superintelligence]]"
   - "[[20261010-latentspace-biohub-deepmind-protein-folding]]"
   - "[[20261014-latentspace-leash-bio-lab-in-the-loop]]"
+  - "[[20261002-meta-solving-open-research-problems-together]]"
 ---
 
 # Scientific Discovery AI（科学发现 AI）
@@ -198,6 +200,35 @@ belief update / next choice
 **判断**：Scientific Discovery AI 的数据价值不能只用 sample count 衡量。对 sequential reasoning / RL，更关键的是环境是否包含足够多能区分相邻 hypothesis 的 counterfactual evidence，以及 eval 是否真的切断了 building-block、creator identity、dataset lineage 等捷径。
 
 - **边界**：attention map 只能提示 shortcut hypothesis，不是机制证明；实验 mutation 与 OOD holdout 提供更强外部证据，但仍不能保证模型已经学到完整 molecular physics。
+
+## 第六条路线：开放数学研究的人机共同生产（Meta Muse Spark，2026-10）
+
+[[20261002-meta-solving-open-research-problems-together]] 补出一种不依赖物理实验室、也不完全等同于固定 benchmark / scorable task 的 scientific discovery 形态：**专家在没有 answer key 的开放研究问题上持续与 reasoning model 协作，把搜索、推导、代码、反例、proof drafting 与人工验证组织成可审计的研究生产过程。**
+
+Meta 报告六篇合作论文，称其中五篇回答此前开放的研究问题；具体 AI contribution 横跨 proof revision、计算、GAP program synthesis、counterexample search、probabilistic reframing、cross-domain connection、candidate proof 和 technical drafting。统一 protocol 则要求数学家主导研究、第二组数学家复核、论文标注 AI / human 主要起草段落，并明确 prior work 与 concurrent independent solutions。
+
+~~~text
+open research question
+      ↓
+human framing / mathematical judgment
+      ↓
+model exploration
+  ├─ derivation / proof candidate
+  ├─ code / counterexample search
+  ├─ reframing / connection
+  └─ technical drafting
+      ↓
+human correction + independent review
+      ↓
+research artifact + provenance
+~~~
+
+**判断**：开放研究中的 Scientific Discovery AI 不一定首先表现为“autonomous scientist”。在数学这类 verification cost 相对低、symbolic artifact 可反复检查的领域，一个更现实的 scaling unit 是 **human-AI research system 的 search bandwidth × verification discipline × provenance quality**。模型扩大可探索的推导和搜索空间，而研究共同体仍通过 proof checking、expert review、priority attribution 与 exposition 把候选结果转成可接受知识。
+
+- **证据**：[[20261002-meta-solving-open-research-problems-together]]；六个案例给出不同 AI contribution，并统一说明 human guidance、second-group review、draft attribution 与 prior-work acknowledgment。
+- **边界**：Meta 没有公开失败问题 denominator、human-only baseline、研究者工时、interaction/compute cost，也不是独立 correctness review。数学的低物理反馈成本也使这条路线不能直接外推到需要昂贵 wet-lab / field measurement 的科学领域。
+
+这条路线与 [[20260918-terence-tao-if-math-more-than-proof]] 形成重要约束：**research artifact 的生成速度可以提升，但 mathematical understanding / exposition / canonicalization 仍可能成为后续瓶颈。** 因此“开放问题被解决”与“新知识已被共同体理解和吸收”应作为不同阶段衡量。
 
 ## Domain-native Foundation Model：直接学习科学对象
 
