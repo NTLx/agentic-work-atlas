@@ -3276,10 +3276,15 @@
     },
     "20261005-databricks-genie-ontology-product-development.md": {
       "body_sha256": "8f112a1e40e1241f21118e131f16ace15c4758f05773dd22293a26118efc6761",
+      "canonical_url": "https://www.databricks.com/blog/how-genie-ontology-powers-product-development-databricks",
+      "compiled_at": "2026-10-21T12:39:58+08:00",
+      "indexed_at": "2026-10-21T12:40:02+08:00",
       "raw_file": "20261005-databricks-genie-ontology-product-development.md",
-      "raw_state": "full",
-      "status": "pending",
-      "updated_at": "2026-10-21T12:33:54+08:00"
+      "raw_state": "index",
+      "retention_note": "已编译；Databricks 官方 canonical 页面可恢复，摘要保留原文哈希与证据定位。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261005-databricks-genie-ontology-product-development.md",
+      "updated_at": "2026-10-21T12:40:08+08:00"
     },
     "20261005-openai-eu-text-provenance.md": {
       "body_sha256": "0435ba9ea4ca5a80d6979e0d3dd3908f634f070857eba04e9f797d8e75a48ee2",
@@ -3971,6 +3976,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-21T12:38:00+08:00",
+  "updated_at": "2026-10-21T12:40:08+08:00",
   "version": 1
 }

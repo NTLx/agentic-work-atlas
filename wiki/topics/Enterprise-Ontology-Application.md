@@ -28,6 +28,7 @@ source_raw:
   - '[[20260730-palantir-ontology-connecting-agents-to-decisions]]'
   - '[[20260730-palantir-industry-ai-unified-namespace]]'
   - '[[20260730-palantir-responsible-ai-hallucinations-ontology]]'
+  - '[[20261005-databricks-genie-ontology-product-development]]'
 ---
 
 # 企业级本体应用（Enterprise Ontology Application）
@@ -206,6 +207,22 @@ Palantir 2026 架构文把本体应用推进到"决策中心"定位（⚠️ ven
 - **UNS 作为制造业前置层**：Unified Namespace（ISA-95 层级 + Sparkplug B 命名 + OPC-UA/MQTT/Kafka 流式 + CDC/polling/virtualization 批式）提供纯数据层的统一命名，本体在其上叠加 logic + action。UNS 与 [[UModel]] 是同一"先统一命名实体，再跑 agent"结构在不同领域（工厂 vs IT 运维）的实例。
 - **系统级可解释性**：本体的 logic binding 工具化使 [[Transparent-Tool-Handoff|透明工具交接]] 成为可能——agent 的确定性步骤交给可解释工具，本体层同时提供执行日志的治理（marking/purpose/role 动态策略）。
 - **反幻觉 grounding（Responsible AI #1）**：本 Topic "核心问题"列出的第一大困境"幻觉风险"在此获得具体机制回答——LLM 经 search-query 间接访问 Ontology 的 OAG（Ontology-Augmented Generation）模式修复*私有数据缺失型*幻觉，tool handoff 修复*计算型*幻觉，human-in-the-loop queue 兜底剩余幻觉。三层防御一一对应本体的 data/logic/action 三要素（详见 [[20260730-palantir-responsible-ai-hallucinations-ontology|source summary]]）；但 human 层存在橡皮图章化退化风险，vendor 未讨论。
+
+## Databricks 视角：本体进入 PM 日常工作流
+
+Databricks 产品经理用 Genie One 准备 Genie 使用情况周报，并在同一交互中追问趋势、预测、安排定时运行和分享 Agent。此案例补充的是 Ontology 如何参与实际工作流和产品体验，不重复前述语义基础与成熟度路径。
+
+- **判断**：企业 Agent 的上下文可以由“少量人工治理的核心语义”与“从组织日常工件中学习的长尾上下文”共同构成；按认证、使用和作者等权威信号排序，并优先采用认证资产，可把治理语义带入实际检索。
+  - **证据**：Databricks 描述 Genie Ontology 同时使用 Unity Catalog 中人工治理/认证的概念，以及从 dashboards、documents、queries、notebooks 和连接应用学习的知识；OntoRank 使用 certification、usage、authorship 等信号。产品示例称先找相关数据资产、curated Pages，再检查 ontology snippets，并使用 certified weekly active users metric view（[[20261005-databricks-genie-ontology-product-development]]）。
+  - **边界**：这是厂商对机制和内部产品用例的描述；文中没有 snippets 准确性、排序质量或跨组织效果的独立评测。认证优先不代表所有学习上下文都可靠。
+- **判断**：将回答引用与 ontology snippet 的定义、来源、作者和 authority score 暴露给用户，并遵循用户权限，使来源核查成为产品交互的一部分；同一交互还可桥接实时文档/工单搜索与 SQL 数据分析。
+  - **证据**：示例先经 MCP 搜索 Google Drive 与 Jira，再对 usage tables 执行 SQL；用户可展开引用检查 metric views、Pages 和 snippets 的定义、出处、作者及 authority score，文章并称上下文 permission-aware（[[20261005-databricks-genie-ontology-product-development]]）。
+  - **边界**：来源可见性不证明来源正确，也没有独立的权限审计或 provenance 完整性数据；MCP、连接器与 SQL 的可用范围受配置和访问权限约束。
+- **判断**：产品交互可以继续转成定时任务与可分享 Agent，让一次性分析成为可重复调用的团队工作流。
+  - **证据**：文章演示为 adoption review 设置 schedule，并从对话创建供团队和领导使用的 Genie Agent（[[20261005-databricks-genie-ontology-product-development]]）。
+  - **边界**：该案例没有量化复用率、节省时间或持续维护成本，不能外推为所有工作流都适合自动化。
+
+Databricks 将通用 Agent 缺少业务语义描述为可能需要更多 schema 探索、表采样、文档阅读和重复查询，进而增加时间与 token 消耗。这是厂商解释，本文没有独立 benchmark 或对照实验，因此应视为待验证机制主张，不能写成已证明的性能因果结论（[[20261005-databricks-genie-ontology-product-development]]）。
 
 ## 关联 Entity
 - [[Knowledge-Graph]]
