@@ -7,7 +7,7 @@ aliases:
   - Text Watermark
 definition: "Anthropic 为 Claude 输出嵌入的 SynthID-Text 变体文本水印——通过将 token 选择的随机性源从通用 PRNG 替换为\"key + 前文\"，使第三方可在事后用 key 验证文本是否由带水印的 Claude 生成；2026-08 由 EU AI Act 合规驱动全球启用"
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-10-21
 tags:
   - content-provenance
   - ai-policy
@@ -16,6 +16,7 @@ tags:
 evidence_level: high
 claim_type: extracted
 related_entities:
+  - "[[Text-Watermarking]]"
   - "[[SynthID-Text]]"
   - "[[C2PA-Content-Credentials]]"
   - "[[Anthropic]]"

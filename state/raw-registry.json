@@ -3288,10 +3288,14 @@
     },
     "20261005-openai-eu-text-provenance.md": {
       "body_sha256": "0435ba9ea4ca5a80d6979e0d3dd3908f634f070857eba04e9f797d8e75a48ee2",
+      "canonical_url": "https://openai.com/index/eu-text-provenance/",
+      "compiled_at": "2026-10-21T12:42:54+08:00",
+      "indexed_at": "2026-10-21T12:43:24+08:00",
       "raw_file": "20261005-openai-eu-text-provenance.md",
-      "raw_state": "full",
-      "status": "pending",
-      "updated_at": "2026-10-21T12:33:54+08:00"
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261005-openai-eu-text-provenance.md",
+      "updated_at": "2026-10-21T12:43:28+08:00"
     },
     "20261009-latentspace-periodic-synthesis-superintelligence.md": {
       "body_sha256": "fa307a1b9014513f56ec7ac940b934c4d4c04379de9c9e91f1a266a25c74a7f4",
@@ -3976,6 +3980,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-21T12:40:08+08:00",
+  "updated_at": "2026-10-21T12:43:28+08:00",
   "version": 1
 }

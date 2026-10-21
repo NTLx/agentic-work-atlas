@@ -6,7 +6,7 @@ aliases:
   - SynthID Text
 definition: "Google DeepMind 于 2024 年发表于 Nature 的 LLM 文本水印算法——通过在 token 选择阶段用\"key + 前文\"替换通用 PRNG 的随机性源，使第三方可用 key 事后检测文本是否由带水印的 LLM 生成；Anthropic Claude 等当前主流 LLM 文本水印的算法祖先"
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-10-21
 tags:
   - content-provenance
   - watermark
@@ -14,6 +14,7 @@ tags:
 evidence_level: high
 claim_type: extracted
 related_entities:
+  - "[[Text-Watermarking]]"
   - "[[Claude-Text-Watermark]]"
   - "[[C2PA-Content-Credentials]]"
   - "[[Anthropic]]"
