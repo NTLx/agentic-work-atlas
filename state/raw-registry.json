@@ -3261,10 +3261,14 @@
     },
     "20261005-claude-cresta-agent-builder.md": {
       "body_sha256": "56f0eeef882abc414a549fda914f161ceac20f6036b0e08b4df70d4f0f38bf61",
+      "canonical_url": "https://claude.com/resources/articles/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk",
+      "compiled_at": "2026-10-21T12:36:06+08:00",
+      "indexed_at": "2026-10-21T12:36:09+08:00",
       "raw_file": "20261005-claude-cresta-agent-builder.md",
-      "raw_state": "full",
-      "status": "pending",
-      "updated_at": "2026-10-21T12:33:54+08:00"
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261005-claude-cresta-agent-builder.md",
+      "updated_at": "2026-10-21T12:36:14+08:00"
     },
     "20261005-databricks-genie-ontology-product-development.md": {
       "body_sha256": "8f112a1e40e1241f21118e131f16ace15c4758f05773dd22293a26118efc6761",
@@ -3963,6 +3967,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-21T12:34:46+08:00",
+  "updated_at": "2026-10-21T12:36:14+08:00",
   "version": 1
 }

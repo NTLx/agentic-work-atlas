@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-10-14
+updated: 2026-10-21
 evidence_level: high
 claim_type: mixed
 tags:
@@ -257,6 +257,14 @@ Alex Zhang 对 [[Recursive-Language-Model|Recursive Language Model（RLM）]] �
 > **边界**：访谈没有给出完整 benchmark、方差和失败分布；“8–30× 更长任务”等数字应视为作者报告的特定实验结果。局部调用处于训练分布内也不保证 decomposition、共享状态和最终 aggregation 正确。
 
 这一视角还把 Model / Harness 边界变成可研究对象：如果某些高层程序长期稳定，它们可能被 post-training 吸收为模型原生能力；但权限、审计、真实工具执行、持久状态、成本控制和确定性验证仍具有外部系统语义，不应因为模型更强就默认内化。
+
+## 通用执行 Harness 与领域控制层的产品分工（2026-10）
+
+Cresta 的 Conductor 展示了一种垂直 Agent builder 的分层实践（[[20261005-claude-cresta-agent-builder]]）：Claude Agent SDK 作为通用执行 Harness，承担上下文收集、工具调用及代码编写/运行；CX-specific control plane 则将对话数据、领域规则、工作流、evals、runtime、可观测性和反馈接到其上。
+
+**判断（综合判断）**：当底层通用 Harness 已能可靠执行多步开发任务时，垂直产品可把差异化投资集中在领域证据、业务规则、风险边界和迭代评估。历史对话能帮助提出“何处需确定性、何处可灵活”的候选边界，但不能单独证明规则完备；固定任务回归还应检查结果、执行路径、产物质量与资源使用，并在模型或框架更新时复跑。
+- **证据**：[[20261005-claude-cresta-agent-builder]]， “Building Conductor on the Claude Agent SDK”“Making the important decisions easier”“How Cresta evaluates Conductor”。
+- **边界**：这是 Anthropic 发布的单一厂商案例，没有独立对照或评估数据；Cresta 所称早期用例初始部署时间约减半是自报结果，不能当作普遍效果。文中虽列出资源评估维度，却没有给出成本数值。
 
 ## Physical Agent Harness：把小时级 workflow 与毫秒级控制分层（2026-10）
 
