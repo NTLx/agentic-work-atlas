@@ -1,7 +1,7 @@
 ---
 type: index
 title: 智能体时代工作图谱索引
-updated: 2026-10-20
+updated: 2026-10-21
 tags:
 ---
 
@@ -22,8 +22,8 @@ tags:
 | Comparison 页面 | 21 个 |
 | Raw 文章 | 337 个 |
 | Source Summary | 432 个 |
-| Output 作品 | 11 个 |
-| Research 日志 | 24 个 |
+| Output 作品 | 12 个 |
+| Research 日志 | 26 个 |
 
 详细图谱健康状态由 `tools/entity-audit.py` 与 `tools/wiki-lint.py` 实测产生；本地运行 `uv run python tools/wiki-lint.py --fix-index --write-report` 可生成 `wiki/lint-report.md` 审计报告（派生审计产物，不进入版本控制）。
 
