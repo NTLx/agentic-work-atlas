@@ -2322,6 +2322,13 @@
       "summary_path": "wiki/sources/20260824-how-long-should-an-agent-live.md",
       "updated_at": "2026-08-26T11:51:11+08:00"
     },
+    "20260825-apple-ontological-boundary-negotiation.md": {
+      "body_sha256": "971246650e127128c5092149473dbbef4319dae2895830f9ab26fc236a67c64d",
+      "raw_file": "20260825-apple-ontological-boundary-negotiation.md",
+      "raw_state": "full",
+      "status": "pending",
+      "updated_at": "2026-10-21T12:34:46+08:00"
+    },
     "20260825-dwarkesh-dylan-patel-3.md": {
       "body_sha256": "9e2f973cf7b5f014ec5f31cfbdf09c9630e9278b8657b9e9dbe2615c3983bdaa",
       "canonical_url": "https://www.dwarkesh.com/p/dylan-patel-3",
@@ -3252,6 +3259,27 @@
       "summary_path": "wiki/sources/20261004-lenny-openai-head-chatgpt-new-era.md",
       "updated_at": "2026-10-09T08:41:15+08:00"
     },
+    "20261005-claude-cresta-agent-builder.md": {
+      "body_sha256": "56f0eeef882abc414a549fda914f161ceac20f6036b0e08b4df70d4f0f38bf61",
+      "raw_file": "20261005-claude-cresta-agent-builder.md",
+      "raw_state": "full",
+      "status": "pending",
+      "updated_at": "2026-10-21T12:33:54+08:00"
+    },
+    "20261005-databricks-genie-ontology-product-development.md": {
+      "body_sha256": "8f112a1e40e1241f21118e131f16ace15c4758f05773dd22293a26118efc6761",
+      "raw_file": "20261005-databricks-genie-ontology-product-development.md",
+      "raw_state": "full",
+      "status": "pending",
+      "updated_at": "2026-10-21T12:33:54+08:00"
+    },
+    "20261005-openai-eu-text-provenance.md": {
+      "body_sha256": "0435ba9ea4ca5a80d6979e0d3dd3908f634f070857eba04e9f797d8e75a48ee2",
+      "raw_file": "20261005-openai-eu-text-provenance.md",
+      "raw_state": "full",
+      "status": "pending",
+      "updated_at": "2026-10-21T12:33:54+08:00"
+    },
     "20261009-latentspace-periodic-synthesis-superintelligence.md": {
       "body_sha256": "fa307a1b9014513f56ec7ac940b934c4d4c04379de9c9e91f1a266a25c74a7f4",
       "canonical_url": "https://www.latent.space/p/periodic",
@@ -3935,6 +3963,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-20T23:49:07+08:00",
+  "updated_at": "2026-10-21T12:34:46+08:00",
   "version": 1
 }
