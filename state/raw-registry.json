@@ -2324,10 +2324,14 @@
     },
     "20260825-apple-ontological-boundary-negotiation.md": {
       "body_sha256": "971246650e127128c5092149473dbbef4319dae2895830f9ab26fc236a67c64d",
+      "canonical_url": "https://machinelearning.apple.com/research/ontological-boundary-negotiation",
+      "compiled_at": "2026-10-21T12:37:52+08:00",
+      "indexed_at": "2026-10-21T12:37:56+08:00",
       "raw_file": "20260825-apple-ontological-boundary-negotiation.md",
-      "raw_state": "full",
-      "status": "pending",
-      "updated_at": "2026-10-21T12:34:46+08:00"
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20260825-apple-ontological-boundary-negotiation.md",
+      "updated_at": "2026-10-21T12:38:00+08:00"
     },
     "20260825-dwarkesh-dylan-patel-3.md": {
       "body_sha256": "9e2f973cf7b5f014ec5f31cfbdf09c9630e9278b8657b9e9dbe2615c3983bdaa",
@@ -3967,6 +3971,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-21T12:36:14+08:00",
+  "updated_at": "2026-10-21T12:38:00+08:00",
   "version": 1
 }
