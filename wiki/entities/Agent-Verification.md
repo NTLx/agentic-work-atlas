@@ -6,7 +6,7 @@ aliases:
   - Agentic Verification
 definition: "Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境、执行操作、观察结果并判断是否通过"
 created: 2026-06-12
-updated: 2026-10-12
+updated: 2026-10-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -43,6 +43,7 @@ source_raw:
   - "[[20260928-github-android-ai-security-agent]]"
   - "[[20260929-pragmatic-shopify-native-mobile]]"
   - "[[20260930-openrouter-agent-regression-testing]]"
+  - "[[20261014-google-deep-review]]"
 ---
 
 > [!definition] 定义
@@ -270,6 +271,31 @@ severity adjudication
 
 - **证据**：[[20260928-github-android-ai-security-agent]]，“LLMs are good at finding vulnerabilities but struggle at estimating severity”。
 - **边界**：PoC 仍只覆盖特定路径，测试环境也可能与真实设备/部署状态不同；成功 exploitability 证据不自动给出完整 CVSS 或业务影响。因此 human review 在这里不是礼仪性 approval，而是补足环境状态与 impact semantics 的最后 oracle。
+
+## 长文档验证：把 review 本身做成分层 Agent pipeline（2026-10）
+
+Google Deep Review（[[20261014-google-deep-review]]）把 Agent Verification 从软件 artifact 扩展到 knowledge artifact。它明确针对一个同构问题：生成技术内容的吞吐提高，而专家 verification capacity 没有同比增长，因此 review 成为独立的 **validation bottleneck**。
+
+Deep Review 没有把整篇长文档交给一次 single-prompt judge，而是把验证拆成四层：
+
+~~~text
+document segmentation
+      ↓
+adaptive reasoning budget
+      ↓
+parallel section verification
+      ↓
+global synthesis + grounding
+~~~
+
+其中每个 specialised reviewer 聚焦一个 target segment，但仍能访问 full-document context 来处理 cross-reference；最后 synthesis agent 重新检查跨段一致性，并调用外部工具做 grounding。
+
+**判断**：长上下文验证的核心扩展策略不是“让一个 reviewer 看更多”，而是**把验证预算显式调度到不同风险区域，同时保留全局一致性恢复层**。这与测试分片/异构证据的思路同构，但对象从 executable behavior 变成 claims、proofs、citations 和 document-level consistency。
+
+Google 同时把 automation boundary 说得很清楚：系统承担 logical consistency、mathematical checking、fact grounding、prior-work comparison 等高认知成本检查，而 higher-level judgement 留给人类。换言之，**扩大 verification coverage 不等于转移 decision authority**。
+
+- **证据**：[[20261014-google-deep-review]]；16,000+ opt-in pre-submission manuscripts、四阶段 pipeline、design/legal/finance 扩展与 higher-level judgement 边界。
+- **边界**：16,000+ 是部署覆盖而非 correctness benchmark；PAT feedback 与正式 conference review 明确解耦。产品方没有在本文给出跨领域误报/漏报曲线，因此不能把“可规模运行”直接等同于“可独立裁决”。
 
 ## 关联概念
 

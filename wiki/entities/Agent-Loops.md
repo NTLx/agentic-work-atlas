@@ -7,7 +7,7 @@ aliases:
   - 时间驱动 Agent
 definition: "让 Agent 按时间或事件持续运行、检查状态、修复问题和汇总反馈的自动化编排模式"
 created: 2026-05-08
-updated: 2026-09-28
+updated: 2026-10-22
 tags:
   - AI-agent
   - claude-code
@@ -38,6 +38,7 @@ source_raw:
   - "[[20260708-vercel-agent]]"
   - "[[20260906-lenny-companies-series-loops]]"
   - "[[20260924-github-security-lab-ai-fuzzing-taskflow]]"
+  - "[[20261014-lovable-growth-tools]]"
 ---
 
 # Agent Loops（Agent 循环调度）
@@ -248,6 +249,33 @@ Anish Acharya 把 Loop 从个人自动化模式推进到组织设计假设：公
 **教练式升级是学习回路**。Kavak 的案例是：Agent 卡住时调用人类，人类补上缺失的知识或数据；Agent 保存这次交互的 traces，下一次减少同类求助。这个模式只有在 traces 可审查、可归因、可回归时才会产生组织学习，否则只是把一次人工救火误称为“模型变聪明”。
 
 这把 [[Agent-Unit-of-Work|Agent 工作单元]] 与组织层的 [[Organization-as-Agent-Harness|组织 Harness]] 接起来：组织要做的不是给每个 Loop 无限权限，而是为每个 Loop 定义目标、可测量空间、预算、停止条件、owner 和向上升级路径。
+
+### Lovable：从生成应用到经营 Growth Loop（2026-10）
+
+[[20261014-lovable-growth-tools]] 把本页已有的 growth loop 从组织抽象落成一个端到端产品实例。用户先给 business outcome（如 first 100 signups / more bookings），Lovable 复用 app、audience、traffic 与 brand context 生成计划，再执行 SEO、landing page、Google/Meta Ads、creative assets 与 analytics；campaign 运行后，结果重新进入 chat，用户可以要求 pause、改 budget、换 audience 或 copy。
+
+~~~text
+app context + goal
+      ↓
+growth plan
+      ↓
+SEO / ads / content / distribution
+      ↓
+conversion telemetry
+      ↓
+analysis + suggested adjustment
+      ↓
+human approval / instruction
+      ↓
+next action
+~~~
+
+这里最重要的不是“AI 也会做营销”，而是 **build 与 grow 被接成同一条 context-preserving loop**：构建阶段积累的产品语义不必在每个下游 SaaS 中重新解释，而可以继续驱动增长动作。
+
+同时，这个案例保留了很清楚的控制边界：广告花钱前必须确认 budget、地域、语言、goal 与 tracking；系统不会自行启动或修改 campaign；站外帖子也由用户自己的账号发布。因此它更准确地属于 **approval-gated execution loop**，而不是完全自治的 growth agent。
+
+- **证据**：[[20261014-lovable-growth-tools]]；目标→计划、Google/Meta 广告、Analytics 回流、approval-before-spend 与 SEO/creative sections。
+- **边界**：来源是 Lovable 产品公告，没有 CAC、conversion uplift、retention 或对照实验，支持的是 loop 结构与权限边界，不支持“增长效果已经改善”的结论。
 
 ## 前提与局限性
 

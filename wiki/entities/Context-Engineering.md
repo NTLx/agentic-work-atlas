@@ -5,7 +5,7 @@ aliases:
   - Context Engineering
 definition: "设计 Agent 每次推理时看到的信息结构，包括项目上下文、技能按需加载、记忆层级和上下文生命周期管理"
 created: 2026-04-09
-updated: 2026-09-28
+updated: 2026-10-22
 evidence_level: high
 claim_type: mixed
 tags:
@@ -47,6 +47,7 @@ source_raw:
   - "[[20260805-how-we-use-ai-cloudflare-os]]"
   - "[[20260730-jeff-dean-1-rule-building-ai]]"
   - "[[20260924-claude-opus-5-5-context-cost]]"
+  - "[[20261014-langchain-deep-agents-context-memory]]"
 ---
 
 # Context Engineering
@@ -85,6 +86,33 @@ MarkTechPost 的跨产品综述把长程任务的 Context Engineering 进一步�
 
 - **证据**：[[20260912-context-engineering-inside-the-harness]] 的机制拆分与阈值转述（raw 第 33–73 行）。
 - **边界**：文章是二手综合；20,000 tokens、85% 等实现阈值来自不同产品，不应视为跨模型通用默认值。Todo-state 的收益也受任务长度、模型能力和维护成本影响。
+
+### LangChain Deep Agents：Context Window 不是 Source of Truth（2026-10）
+
+[[20261014-langchain-deep-agents-context-memory]] 给上述四类机制补上了一份第一方 harness 实现。Deep Agents 把 context rot 拆成两个不同治理问题：**阻止不必要信息进入 active window**，以及**管理已经进入窗口的历史**。对应五种机制：offloading、summarization、skills、subagents、long-term memory。
+
+这里最重要的架构原则不是当前默认阈值，而是：
+
+> **active context 应是 working set，而不是 source of truth。**
+
+Deep Agents 的大 tool result 会先写入文件，只把 preview + path 交给模型；summarization 会把旧消息移出 active window，但原始 conversation history 仍保存在可重新读取的文件；subagent 则把高噪声探索隔离到独立 context，主 Agent 只接收 contract 化结果。
+
+这使 Context Engineering 可以更明确地分成三层：
+
+~~~text
+canonical / recoverable store
+        ↓ selective load
+active working context
+        ↓ isolation / offload / compaction
+recoverable references + summaries
+~~~
+
+**判断**：高质量 context management 不是“删除直到能塞进窗口”，而是**把信息从热层迁移到冷层，同时保留稳定地址和恢复路径**。因此 truncation 与 recoverable offloading 在工程语义上不是一回事。
+
+LangChain 当前实现给出约 20K tool-result、50K human-message、85% summarization 等默认阈值，但这些只是产品参数，不应升格为通用原则。真正可迁移的原则是 `offload > truncate`、`compaction must be recoverable`、`noisy work should be isolated`、`memory should be system-owned`。
+
+- **证据**：[[20261014-langchain-deep-agents-context-memory]]，Key Takeaways、offloading、summarization、skills、subagents、long-term memory 与 strategy checklist。
+- **边界**：来源没有独立 benchmark 拆分五种 middleware 的单独因果收益；文件式 memory 也可能随着长期积累再次膨胀，因此外置存储不等于无需 retrieval / curation。
 
 ### Pinterest：按需注入工具（Domain-specific MCP）
 [[Pinterest-Engineering]] 通过拆分多个领域特定的 **[[Model-Context-Protocol-MCP|MCP]]** 服务器，实现了上下文的“按需加载”。Agent 在处理 Presto 数据时只加载 Presto 相关的工具，而不是将所有（如 Spark, Airflow）工具全部堆在上下文窗口中。这有效地减少了噪声，提高了 Agent 决策的准确性。

@@ -3330,6 +3330,28 @@
       "summary_path": "wiki/sources/20261011-lenny-google-labs-frontier-team.md",
       "updated_at": "2026-10-12T08:39:02+08:00"
     },
+    "20261014-google-deep-review.md": {
+      "body_sha256": "9a3a68175cf8c97491b49badf19fd14df0df5ce0940e20fd011240906042bb03",
+      "canonical_url": "https://research.google/blog/analyzing-technical-documents-with-deep-review/",
+      "compiled_at": "2026-10-22T16:51:40+08:00",
+      "indexed_at": "2026-10-22T16:52:33+08:00",
+      "raw_file": "20261014-google-deep-review.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261014-google-deep-review.md",
+      "updated_at": "2026-10-22T16:52:33+08:00"
+    },
+    "20261014-langchain-deep-agents-context-memory.md": {
+      "body_sha256": "9929e63b6fc79d7c2ba898cdb051db7a7626f6bf9a5e947a8dcbb6a87bc6d879",
+      "canonical_url": "https://www.langchain.com/blog/context-engineering-deep-agents-remember",
+      "compiled_at": "2026-10-22T16:51:40+08:00",
+      "indexed_at": "2026-10-22T16:52:33+08:00",
+      "raw_file": "20261014-langchain-deep-agents-context-memory.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261014-langchain-deep-agents-context-memory.md",
+      "updated_at": "2026-10-22T16:52:33+08:00"
+    },
     "20261014-latentspace-dyna-world-action-model.md": {
       "body_sha256": "1dc6608bf8a47ed998cf12e8565f5f9aa6edde500874568b72e4b6dbc35551c4",
       "canonical_url": "https://www.latent.space/p/dyna",
@@ -3351,6 +3373,17 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20261014-latentspace-leash-bio-lab-in-the-loop.md",
       "updated_at": "2026-10-18T23:06:03+08:00"
+    },
+    "20261014-lovable-growth-tools.md": {
+      "body_sha256": "4a82d1da8003b5fd672a129d10ce636b62b740a080e2d9591839e27e28574df0",
+      "canonical_url": "https://lovable.dev/blog/introducing-growth-tools",
+      "compiled_at": "2026-10-22T16:51:40+08:00",
+      "indexed_at": "2026-10-22T16:52:33+08:00",
+      "raw_file": "20261014-lovable-growth-tools.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261014-lovable-growth-tools.md",
+      "updated_at": "2026-10-22T16:52:33+08:00"
     },
     "20261018-lenny-emmanuel-ameisen-interpretability.md": {
       "body_sha256": "d4f92c92c1043e8b2acae2d48b06595789cd7ba7d11be79738998d141e449dd0",
@@ -4035,6 +4068,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-22T09:55:25+08:00",
+  "updated_at": "2026-10-22T16:52:33+08:00",
   "version": 1
 }

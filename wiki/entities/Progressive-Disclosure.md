@@ -6,7 +6,7 @@ aliases:
   - Skillify
 definition: "根据任务语境分层加载知识的策略，让 Agent 先读高价值摘要，再按需展开证据和细节"
 created: 2026-05-13
-updated: 2026-06-22
+updated: 2026-10-22
 tags:
   - knowledge-management
   - AI
@@ -26,6 +26,7 @@ source_raw:
   - '[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]'
   - "[[20260611-openai-harness-engineering]]"
   - "[[20260620-l8-principal-agentic-workflow]]"
+  - "[[20261014-langchain-deep-agents-context-memory]]"
 ---
 
 # Progressive-Disclosure（渐进式披露）
@@ -56,6 +57,27 @@ source_raw:
 代码库里，Agent 不应每次读完整仓库，而应先读 AGENTS.md、CLAUDE.md、目录边界和测试，再按任务进入具体文件。Wiki 中，Agent 不应每次回到 raw，而应先读 entity、topic、comparison 和 source summary。
 
 这让 [[Context-Engineering]] 从"塞更多上下文"转向"控制知识展开顺序"。好的知识结构不是更多文本，而是让 Agent 知道下一步该读什么、不该读什么。
+
+## Deep Agents：Skills 把渐进式披露做成 Harness 执行协议（2026-10）
+
+LangChain Deep Agents（[[20261014-langchain-deep-agents-context-memory]]）给本页增加了直接的一手实现：Agent 启动时只扫描 skills 目录并读取每个 `SKILL.md` 的 header / description，把这些短描述作为“菜单”加入 system context；只有当模型判断某个 skill 与当前任务相关时，才通过 `read_file` 加载完整 instructions。
+
+~~~text
+skill catalog / short descriptions
+          ↓ relevance decision
+      selected skill
+          ↓ read_file
+full instructions + references
+          ↓
+       execution
+~~~
+
+这让 Progressive Disclosure 不只是知识库 UI 原则，而成为 **executable context protocol**。其收益有两部分：一是减少不相关 instructions 的 token 成本；二是减少多个规则同时竞争注意力造成的干扰。
+
+**判断**：Agent Skills 的规模化上限很大程度取决于是否能把“可发现性”和“完整指令载荷”分离。Skill 数量增加时，应该增长的是可检索目录，而不是常驻 prompt。
+
+- **证据**：[[20261014-langchain-deep-agents-context-memory]]；Skills section 明确描述先读 header、每次 model call 暴露 names/descriptions、按需读取完整 skill，并将其称为 progressive disclosure。
+- **边界**：目录摘要若写得过弱，Agent 会漏召回；写得过宽又会让多个 Skill 同时竞争。文章没有给出 skill 数量 × task success 的独立扩展曲线，因此“十个 skills 只付十个 one-liner context”是上下文载荷描述，不等于成功率不受规模影响。
 
 ## 前提与局限性
 

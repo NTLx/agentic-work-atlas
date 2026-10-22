@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-10-15
+updated: 2026-10-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -42,6 +42,7 @@ source_raw:
   - "[[20260921-linear-ci-bottleneck-reworked]]"
   - "[[20260923-anthropic-ai-code-modernization-preparation]]"
   - "[[20260929-pragmatic-shopify-native-mobile]]"
+  - "[[20261014-google-deep-review]]"
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
@@ -105,6 +106,17 @@ Outcome 更不一定改善
 - **边界**：这是 Linear 单一 TypeScript monorepo 的一手内部复盘，多项优化并行发生；不能把全部压力严格归因于 Agent，也不能把具体百分比或 runner-minutes 外推成通用 CI 目标。
 
 这个案例进一步精确化本 Topic 的“瓶颈迁移”：生成速度提高后，组织可能依次撞上 **human attention ceiling** 和 **machine validation ceiling**。二者都会限制最终 delivery，且后者并非简单买更多 runner 就能解决——Linear 最大收益来自 critical path、重复 setup 与测试语义的系统重构。
+
+### Google Deep Review：knowledge work 也开始撞上 verification capacity ceiling（2026-10）
+
+[[20261014-google-deep-review]] 把同一瓶颈迁移从软件工程扩展到知识生产。Google 的 framing 是：AI 已经加速论文、技术文档、代码、实验设计和 proposal 的生成，但专业 verification 仍受专家时间与领域知识约束，于是形成 **validation bottleneck**。作为量级背景，ICLR、NeurIPS、ICML 三会 2026 年投稿超过 74,000，来源给出的历史口径约为 2025 年 45,000、2024 年 32,000、2023 年 23,000。
+
+Deep Review 的响应不是简单增加一个 AI reviewer，而是把 review capacity 工程化：document segmentation → adaptive compute budgeting → parallel specialised verification → global synthesis / grounding。其前身 PAT 已在四个旗舰会议的 opt-in pre-submission 场景覆盖 16,000+ manuscripts。
+
+**判断**：当 generation throughput 变便宜，知识工作也会出现与 CI 同构的“验证基础设施化”过程。稀缺资源从“谁能写出草稿”迁到 **谁能提供足够、可调度、可追溯的 review capacity，同时保留高层判断责任**。
+
+- **证据**：[[20261014-google-deep-review]]；投稿规模、16,000+ PAT 覆盖、四阶段 pipeline 与 higher-level judgement 留给人类的产品边界。
+- **边界**：投稿增长并不能全部归因于生成式 AI；16,000+ 是部署覆盖，不是验证准确率。Deep Review 扩容的是 review mechanics，不能证明 expert judgement 已被自动化。
 
 ### Anthropic：代码现代化的瓶颈从写变更迁到组织吸收能力（2026-10）
 
