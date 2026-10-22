@@ -43,6 +43,7 @@ source_raw:
   - "[[20260923-anthropic-ai-code-modernization-preparation]]"
   - "[[20260929-pragmatic-shopify-native-mobile]]"
   - "[[20261014-google-deep-review]]"
+  - "[[20261022-latentspace-moshi]]"
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
@@ -117,6 +118,27 @@ Deep Review 的响应不是简单增加一个 AI reviewer，而是把 review cap
 
 - **证据**：[[20261014-google-deep-review]]；投稿规模、16,000+ PAT 覆盖、四阶段 pipeline 与 higher-level judgement 留给人类的产品边界。
 - **边界**：投稿增长并不能全部归因于生成式 AI；16,000+ 是部署覆盖，不是验证准确率。Deep Review 扩容的是 review mechanics，不能证明 expert judgement 已被自动化。
+
+### “You are the team”：执行杠杆上升，责任面也同步膨胀（2026-10）
+
+[[20261022-latentspace-moshi]] 记录了 AIE 会后一个值得保留的现场信号：部分 AI engineers 描述管理层开始用“we don’t need a team, you are the team”来表达预期，即过去可能需要约 10 人协作完成的系统，现在要求一个工程师依靠 AI 搭起来。工程师随即面对的并不是单纯 coding 问题，而是：是否需要 agent swarm、系统出故障怎么办、怎样完成 integration、以及为什么用户明明说有痛点却仍不使用已经交付的系统。
+
+**判断**：AI 对个人执行能力的放大可能产生一种新的 bottleneck shift：
+
+~~~text
+implementation labor ↓
+      ↓
+role compression ↑
+      ↓
+architecture / integration / reliability / adoption responsibility ↑
+      ↓
+individual coordination burden ↑
+~~~
+
+这不是“一个人真的等于十个人”的证明，而是说明 **execution leverage 与 responsibility surface 可能同时增长**。如果组织只压缩 headcount / team boundary，却没有同步提供更好的 harness、verification、product ownership 与 escalation path，就会把原来的团队协作成本转移给单个 AI engineer。
+
+- **证据**：[[20261022-latentspace-moshi]]，Transcript 0:00、18:28–20:32。
+- **边界**：这是 AIE 会后 inbound 人群的创始人口述，存在明显 selection bias；“10 人系统”也是受访者的定性表达，不能当成行业 staffing ratio 或生产率倍数。
 
 ### Anthropic：代码现代化的瓶颈从写变更迁到组织吸收能力（2026-10）
 

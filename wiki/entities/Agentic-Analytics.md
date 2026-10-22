@@ -7,7 +7,7 @@ aliases:
   - 代理式数据分析
 definition: "用 LLM/Agent 承担自助数据分析入口，但可靠性来自 canonical datasets、semantic layer、domain skills、评测、provenance 和 correction harvesting 的系统"
 created: 2026-06-05
-updated: 2026-09-28
+updated: 2026-10-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -26,6 +26,7 @@ source_raw:
   - "[[20260603-anthropic-self-service-data-analytics]]"
   - "[[20260727-langchain-agent-data-stack]]"
   - "[[20260925-databricks-spglobal-genie-mcp]]"
+  - "[[20261022-latentspace-moshi]]"
 ---
 
 # Agentic Analytics（代理式数据分析）
@@ -110,6 +111,33 @@ S&P 的另一个重要经验是**窄 semantic agent、宽 protocol composition**
 
 - **证据**：[[20260925-databricks-spglobal-genie-mcp]]，“Layer 1”“Layer 2”“Layer 3”“What changed for the business”“Lessons learned and best practices”。
 - **边界**：time-to-market 和质量收益均为 vendor/customer 自报；Unity Catalog 继承治理的前提是底层权限本身已经正确。
+
+## Moshi：从“回答分析问题”到“实时路由注意力”（2026-10）
+
+[[20261022-latentspace-moshi]] 提供了一个金融/交易场景的实时样本。Moshi 不把系统描述成单纯的 chat-over-data，而是把 futures、technical indicators、commodity fundamentals、news、X/audio/alternative data，以及用户自己的 trusted analysts、subscriptions 和 internal data 一起经过 cleaning、transformation、ML tagging、ontology 与 graph 组织，再以 push + pull 两种方式交付给交易员。
+
+其 recommendation system 的目标不是一般内容推荐，而是根据当前 portfolio / attention 主动寻找 second- / third-order relevant information：
+
+~~~text
+public market data
++ private user context
++ live events
++ ontology / graph
+      ↓
+rank what matters now
+      ↓
+push next decision context
+~~~
+
+**判断**：在高吞吐 analytics 场景里，Agentic Analytics 还需要一个 **attention routing layer**。当输入量远超人类可读范围时，系统不仅要“回答得对”，还要决定什么信息此刻值得进入用户注意力。
+
+来源还补充了两条设计边界：
+
+1. **不确定性结构应被保留**：不同媒体/行业来源的 divergence 有时本身就是信息，因此 confidence / agreement structure 比强行压成单一结论更重要。
+2. **UI 与 recommendation 共同决定 adoption**：Anekha 认为一个人自己做的 Claude dashboard 往往只是“自己的脑子做成界面”；让别人真正使用时，问题会转向 push surface、interaction cost 与 workflow fit。
+
+- **证据**：[[20261022-latentspace-moshi]]，Transcript 5:06–17:24。
+- **边界**：Moshi 的“4 秒学 300 个新东西”、graph/VLM 架构与产品效果均为创始人自述，没有公开 benchmark；市场来源分歧也可能来自错误或时间差，并不自动构成交易信号。
 
 ## 前提与局限性
 

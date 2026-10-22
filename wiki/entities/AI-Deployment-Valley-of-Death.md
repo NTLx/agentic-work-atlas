@@ -7,7 +7,7 @@ aliases:
   - 部署到 ROI 死亡谷
 definition: "AI 项目从试点或部署到可衡量 ROI 之间的断层，常由流程重构、组织阻力、数据质量和治理边界造成"
 created: 2026-06-01
-updated: 2026-07-30
+updated: 2026-10-22
 tags:
   - enterprise-ai
   - ai-deployment
@@ -25,6 +25,7 @@ source_raw:
   - "[[20260702-ai-layoffs-reversed]]"
   - "[[20260719-if-ai-is-so-great-why-isnt-it-working]]"
   - "[[20260729-nejm-ai-triggered-rapid-response-mortality]]"
+  - "[[20261022-latentspace-moshi]]"
 ---
 
 # AI Deployment Valley of Death（AI 部署死亡谷）
@@ -60,6 +61,29 @@ demo
 - 将部署经验回流为评测集、模板、数据接入规范和运维 playbook。
 - 避免只把 adoption 当成功，必须追踪工作流是否改变、成本是否下降、速度是否提升。
 - 以 [[Alert-Closed-Loop]] 为交付单元：RWJBarnabas（NEJM AI, 2026）把“模型 + 通知 + 责任人 + 流程 + 监控”作为整体交付并持续数年打磨，院内死亡率下降 4.5 个百分点——交付一个模型不等于交付一条产生结局的责任链。
+
+## “系统已交付，但没人点”：采用本身是独立工程问题（Moshi / AIE，2026-10）
+
+[[20261022-latentspace-moshi]] 记录了 AIE 会后 AI engineers 向 Moshi 创始人反馈的一类失败：团队/管理层认为存在真实痛点，工程师也已经把系统做出来并放进用户邮箱，但用户仍然**不点击、不进入工作流**。
+
+同一访谈中，Anekha 对“人人都能做自己的 Claude dashboard”的观察提供了原因框架：一个界面可以很好地表达构建者自己的思维方式，但这不等于其他人会自然采用。她因此把 UI 与 recommendation system 连在一起——优秀产品不是只等待用户提出 query，而要在正确时机把高相关信息推到现有工作流表面。
+
+这给本页的 `production → workflow adoption` 增加了一个极简但有代表性的中间链：
+
+~~~text
+problem stated
+  → system built
+  → system delivered
+  → user notices it
+  → user trusts it
+  → user changes workflow
+  → measurable outcome
+~~~
+
+**判断**：AI 显著降低前两三个节点的成本之后，后半段反而更容易暴露为 bottleneck。`delivery` 不是 `adoption`，`adoption` 也不是 `outcome`。
+
+- **证据**：[[20261022-latentspace-moshi]]，Transcript 12:15、18:28–20:32。
+- **边界**：这是 AIE 现场来访者的 selection-biased anecdotal evidence，不是企业 adoption 调查；它只能支持“这种失败模式存在”，不能估计发生频率。
 
 ## 前提与局限性
 
