@@ -6,7 +6,7 @@ aliases:
   - 数学AI
 definition: "AI在数学领域的应用与进展，包括自动定理证明、问题求解、概念发现等，被认为是AI能力的前沿指标"
 created: 2026-07-01
-updated: 2026-10-20
+updated: 2026-10-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -22,6 +22,7 @@ source_raw:
   - '[[20260701-grant-sanderson-ai-math-future]]'
   - '[[20260801-lean-kernel-soundness-bug-postmortem]]'
   - '[[20261002-meta-solving-open-research-problems-together]]'
+  - '[[20261021-microsoft-kls-human-ai-math]]'
 ---
 
 # AI in Mathematics
@@ -82,6 +83,23 @@ Grant Sanderson认为，数学是观察超级智能的第一个领域。AI在数
 - **边界**：这是 Meta 对自身合作项目的官方总结，没有公开失败项目 denominator、human-only baseline、interaction/compute cost，也不是六篇论文的独立 correctness audit。它支持“AI 已在专家主导的开放数学研究中产生论文级贡献”，不足以证明自主数学研究已解决。
 
 这也与 [[20260918-terence-tao-if-math-more-than-proof]] 的边界一致：**生成 proof artifact 与产生可被共同体理解、检查和继续构建的数学知识不是同一件事。** Meta 明确把目标写成帮助研究者发展他人可以理解和 build on 的 insight，并保留复核、起草 attribution 和 prior-work provenance；这些治理动作本身就是从 demo 进入 science 的组成部分。
+
+## Human-directed search 的反事实证据：KLS 猜想（Microsoft，2026-10）
+
+[[20261021-microsoft-kls-human-ai-math]] 给“专家主导的人机开放研究”增加了一个比案例叙述更强的对照。Xinzhi Zhang 等人在 KLS 猜想证明过程中，让多个 Agent 并行探索 100+ candidate approaches；研究者持续查看中间结果、剪枝、重定向，并把最有希望的局部结果带入下一轮。AI 主要承担高阶 tensor 计算、详细推导、候选搜索、manuscript preparation 和 internal proof checks；最终 recursive refinement、反复应用以及 error accumulation 的关键证明由研究者完成。
+
+同一项目还做了一个重要 counterfactual：使用多个领先模型反复进行 unguided solve attempts，并投入与主流程大致相同的总 token budget，但未完成目标。
+
+**判断**：在前沿数学研究中，更多 token 并不自动等于更强 discovery。当前高价值的人类输入更像 **search-policy control**：决定哪条 branch 值得继续、什么时候把局部 criterion 连接到既有方法、什么时候回退。AI 放大探索宽度，人类 judgment 决定搜索树的有效形状。
+
+- **证据**：[[20261021-microsoft-kls-human-ai-math]]，“Technical details”与“Human-AI guidance”。
+- **边界**：这是 Microsoft 对自家研究的官方总结；“roughly same token budget”不是严格随机对照，也不能单独量化 AI 对最终关键思想的贡献比例。
+
+### 验证链：独立证明 + Lean formalization
+
+完整证明发布同日出现另一组专家的独立完整证明，第三个证明也使用 closely related idea；随后又出现基于关键 criterion 的 Lean 4 formalization。这里的价值不只是“多一个 verifier”，而是引入不同 failure mode 的 oracle：独立数学推导降低单一 reasoning chain 的脆弱性，形式化则检查可机器表达的逻辑链。
+
+这与 Meta Muse Spark 案例共同说明：AI 数学的可信单位正在从“模型给出答案”扩展为 **provenance + independent replication + formal verification + community digestion**。
 
 ## 前提与局限性
 

@@ -3361,6 +3361,61 @@
       "summary_path": "wiki/sources/20261018-lenny-emmanuel-ameisen-interpretability.md",
       "updated_at": "2026-10-18T22:56:06+08:00"
     },
+    "20261020-anthropic-attack-surface-reduction.md": {
+      "body_sha256": "1c09284d2fb077e89ec49118b50d6c482860311b67957dd864c29b57c43d6947",
+      "canonical_url": "https://www.anthropic.com/research/attack-surface-reduction",
+      "compiled_at": "2026-10-22T09:54:45+08:00",
+      "indexed_at": "2026-10-22T09:55:17+08:00",
+      "raw_file": "20261020-anthropic-attack-surface-reduction.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261020-anthropic-attack-surface-reduction.md",
+      "updated_at": "2026-10-22T09:55:24+08:00"
+    },
+    "20261021-latentspace-tenex-ai-native-sdlc.md": {
+      "body_sha256": "952cecd1160fc673a863ee3485b76448de1eeb0ce7b0b9b2a9362416657235e0",
+      "canonical_url": "https://www.latent.space/p/tenex?showTranscript=true",
+      "compiled_at": "2026-10-22T09:54:46+08:00",
+      "indexed_at": "2026-10-22T09:55:17+08:00",
+      "raw_file": "20261021-latentspace-tenex-ai-native-sdlc.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261021-latentspace-tenex-ai-native-sdlc.md",
+      "updated_at": "2026-10-22T09:55:25+08:00"
+    },
+    "20261021-microsoft-kls-human-ai-math.md": {
+      "body_sha256": "5c8f9e96063bb1bfc3f1a0a8b3810c3922e5e2f1195545bf06c2f3fb7b10440d",
+      "canonical_url": "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/",
+      "compiled_at": "2026-10-22T09:54:45+08:00",
+      "indexed_at": "2026-10-22T09:55:17+08:00",
+      "raw_file": "20261021-microsoft-kls-human-ai-math.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261021-microsoft-kls-human-ai-math.md",
+      "updated_at": "2026-10-22T09:55:25+08:00"
+    },
+    "20261021-openai-distributed-biological-reasoning.md": {
+      "body_sha256": "6eff462b111764b243b62728c1812b02252281e2152a14b2e1a889c8314155f5",
+      "canonical_url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data/",
+      "compiled_at": "2026-10-22T09:54:45+08:00",
+      "indexed_at": "2026-10-22T09:55:17+08:00",
+      "raw_file": "20261021-openai-distributed-biological-reasoning.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261021-openai-distributed-biological-reasoning.md",
+      "updated_at": "2026-10-22T09:55:25+08:00"
+    },
+    "20261021-tessl-coding-agent-chaperones.md": {
+      "body_sha256": "11765ef9c642863850e6486416eca1afda5a62099bbcafb817e8bfcbad9aa554",
+      "canonical_url": "https://tessl.io/blog/there-arent-enough-chaperones-for-all-your-coding-agents",
+      "compiled_at": "2026-10-22T09:54:45+08:00",
+      "indexed_at": "2026-10-22T09:55:17+08:00",
+      "raw_file": "20261021-tessl-coding-agent-chaperones.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261021-tessl-coding-agent-chaperones.md",
+      "updated_at": "2026-10-22T09:55:24+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -3980,6 +4035,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-21T12:43:28+08:00",
+  "updated_at": "2026-10-22T09:55:25+08:00",
   "version": 1
 }

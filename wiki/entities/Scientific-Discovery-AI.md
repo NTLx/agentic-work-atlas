@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把模型、科学表示、搜索/模拟/工具与可验证实验反馈结合起来，用 AI 提出、执行和筛选科学假设，并把结果回流到后续决策的系统形态"
 created: 2026-05-08
-updated: 2026-10-20
+updated: 2026-10-22
 tags:
   - AI
   - science
@@ -33,6 +33,7 @@ source_raw:
   - "[[20261010-latentspace-biohub-deepmind-protein-folding]]"
   - "[[20261014-latentspace-leash-bio-lab-in-the-loop]]"
   - "[[20261002-meta-solving-open-research-problems-together]]"
+  - "[[20261021-openai-distributed-biological-reasoning]]"
 ---
 
 # Scientific Discovery AI（科学发现 AI）
@@ -229,6 +230,19 @@ research artifact + provenance
 - **边界**：Meta 没有公开失败问题 denominator、human-only baseline、研究者工时、interaction/compute cost，也不是独立 correctness review。数学的低物理反馈成本也使这条路线不能直接外推到需要昂贵 wet-lab / field measurement 的科学领域。
 
 这条路线与 [[20260918-terence-tao-if-math-more-than-proof]] 形成重要约束：**research artifact 的生成速度可以提升，但 mathematical understanding / exposition / canonicalization 仍可能成为后续瓶颈。** 因此“开放问题被解决”与“新知识已被共同体理解和吸收”应作为不同阶段衡量。
+
+## 第六条路线：把大型实验的解释空间横向并行化（OpenAI / PerturbAI / Scripps，2026-10）
+
+[[20261021-openai-distributed-biological-reasoning]] 补出一种不同于 live lab、replayable lab 和 domain-native model 的 scaling 形态：**实验已经完成，真正的稀缺资源是人类无法逐一解释海量 perturbation。** 团队把 whole-brain CRISPR atlas 按基因扰动拆给数千个 GPT‑Rosalind Agent，每个 Agent 分析 cellular response、检索文献并提出机制解释，最后聚合成 reasoning atlas。
+
+文中最有价值的对照不是“数千 Agent 很快”，而是单 Agent 在 workload 变大时出现 search/attention collapse：在模型和资源固定的比较中，最大 workload 下单 Agent 只引用 11 篇文献，而 distributed agents 超过 700 篇；盲评中人类专家有 75% 的比较偏好 distributed-agent report。
+
+**判断**：Scientific Discovery AI 的 scaling unit 不只可以是更大模型、更多实验或更长 context，也可以是 **epistemic coverage**——把自然可分解的科学对象分配给大量相对独立的 Agent，让每个 Agent 保持局部问题的高检索密度，再在上层合并证据与假设。
+
+- **证据**：[[20261021-openai-distributed-biological-reasoning]]。
+- **边界**：引用数量不是正确性指标；75% blind preference 也不是 wet-lab confirmation。该工作主要从已有 atlas 与已有文献提出 hypothesis，真正的 biological claim 仍需回到实验验证。
+
+这个模式与 [[Lab-in-the-Loop]] 形成前后级关系：distributed reasoning 先从已经生成的大型数据中找出“下一项值得做的实验”，live/replay lab 再负责产生或返回现实反馈。若 perturbation 之间存在强耦合、无法局部分解，one-agent-per-perturbation 也可能遗漏系统级机制。
 
 ## Domain-native Foundation Model：直接学习科学对象
 

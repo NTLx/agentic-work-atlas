@@ -7,7 +7,7 @@ aliases:
   - AI 原生工程组织
 definition: "把 AI coding agent 作为默认工作基础设施后，围绕验证、review、安全、产品判断、JIT planning 和 dogfooding 重写的软件工程组织"
 created: 2026-06-05
-updated: 2026-09-07
+updated: 2026-10-22
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -29,6 +29,8 @@ source_raw:
   - "[[20260608-become-ai-native-org]]"
   - "[[20260802-lenny-cpo-regrets-product-management-whatnot]]"
   - "[[20260906-lenny-companies-series-loops]]"
+  - "[[20261021-tessl-coding-agent-chaperones]]"
+  - "[[20261021-latentspace-tenex-ai-native-sdlc]]"
 ---
 
 # AI-Native Engineering Org（AI 原生工程组织）
@@ -94,6 +96,35 @@ Anish Acharya 对“公司是一系列 Loop”的描述，为 AI 原生工程组
 **判断**：AI 原生组织的扩展顺序应是“先把可验证的工程循环做稳，再把同一套输入、反馈、owner 与升级机制迁移到其他职能”，而不是先按部门采购 Agent。
 - **证据**：[[20260906-lenny-companies-series-loops]] 在 11:35–20:18 对 coding、growth 与 Kavak agent 教练回路的访谈描述；本页的 Claude Code 与 Whatnot 组织样本。
 - **边界**：跨职能工作常缺少稳定的 success metric，且客户关系、战略和例外的价值可能在循环之外才显现；没有独立验证、权限边界和人类升级路径时，Loop 只会高速优化局部目标。
+
+## 生成吞吐已经开始撞上验证吞吐（Jellyfish / Tessl，2026-10）
+
+[[20261021-tessl-coding-agent-chaperones]] 给“review 成为新瓶颈”补了一组生产环境数据锚点。Jellyfish 称其可见约 30 万工程师、1,300 家公司和 1 亿+ PR：中位公司约 22% 的 merged PR 已由 autonomous agent 参与作者工作，90 分位达到 53%；但真正由 Agent review 并在无人工 review 情况下 merge 的 PR，中位数只有约 0.6%，前 10% 公司约 9%。
+
+同一来源还报告，2026 年 PR 数约增长 2×，而 features shipped 等产品输出只增长约 40–50%；agent-authored PR abandon rate 约 40%，人类 PR 约 20%，成功 merge 的 agent PR 所需 human reviews 在一年内增加到两倍以上。
+
+**判断**：AI 原生工程组织的扩容问题已经从“有没有 coding agent”变成 **production throughput 是否能同步扩展 verification throughput**。如果每增加一份 Agent 产出都线性增加高级工程师 review，组织只是把 bottleneck 从键盘迁到了人类注意力。
+
+- **证据**：[[20261021-tessl-coding-agent-chaperones]]。
+- **边界**：Jellyfish 数据来自其客户/观测样本，指标归因方法未完整公开；PR 数、abandon rate 与 product output 之间是观察性关系，不应直接解释为 Agent 造成了产品效率损失。
+
+因此，提升 autonomy 的正确顺序不是先删除 human gate，而是先扩大可自动验证的低风险区域：risk routing、sandbox/staging、自动化测试和 staged deployment。这个证据与 [[Software-Development-Autonomy-Levels]] 的 Level I → Level II 边界直接对齐：代码自治扩散得快，流水线自治仍被 trust 与 oracle coverage 卡住。
+
+## MetaHarness：AI-native SDLC 的 durable context layer（Tenex，2026-10）
+
+[[20261021-latentspace-tenex-ai-native-sdlc]] 提供了另一种组织答案：除了提高验证自动化，还要让 Agent 能稳定读取“为什么这样做”。Tenex 的 MetaHarness 把共享 skills、plan、decision log、visualization/readout 和 CLI 放在 repo 内，并与代码一起进入 Git。CJ Hess 明确区分了 code-as-memory 与 project-memory：代码能告诉 Agent what，无法完整告诉它 why。
+
+同一访谈还暴露两个组织约束：
+
+1. **不能自动化不存在的流程**：当同一职能由 40 个人以 40 种方式完成，就很难定义 Agent 的 success metric 和 eval；Tenex 的建议往往是先标准化流程，再把可测步骤交给后台 Agent。
+2. **权限债会在 Agent 化时集中暴露**：随着员工都拥有通用 LLM / coding agent，RBAC、数据读取边界和统一 gateway 变成 CIO/CISO 的高频问题。
+
+**判断**：AI-native SDLC 的持久资产正在从“代码仓库”扩展为 **code + rationale + acceptance criteria + permission model + eval contract**。当执行越来越便宜，真正昂贵的是让下一轮 Agent 能读懂前一轮决策并在同一责任边界内继续工作。
+
+- **证据**：[[20261021-latentspace-tenex-ai-native-sdlc]]（Transcript 3:17–11:19、19:29–24:35）。
+- **边界**：Tenex 的 2× engineer output、企业 adoption 百分比和 story-point 经济学均为公司自述；其客户样本也偏向正在寻求 AI transformation 的组织。MetaHarness 的治理成本对小团队/短项目可能过高。
+
+Tenex 还说明 outcome-based compensation 本身需要重新设计：模型越强，直接编码占工程价值的比例越低，客户理解、架构、context packaging 和问题定义越重要。若仍只奖励可计数 ticket，就会把真正稀缺的人类判断排除在 incentive system 之外。
 
 ## 关键数据点
 
