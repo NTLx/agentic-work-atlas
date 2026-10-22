@@ -133,6 +133,21 @@ Skill 只提供局部认知或执行方法，不拥有 Wiki 生命周期控制�
   自有 Skill 维护，但不得借此修改第三方 Skill 内容。
 - `recompile` 等无人值守操作仍受各自 bounded autonomy 协议约束。
 
+### AIHOT 项目级维护
+
+AIHOT 是外部管理 Skill。本仓库只保留 `.agents/skills/aihot/` 这一份；Claude Code
+通过 `.claude/skills/aihot` 相对软链接 `../../.agents/skills/aihot` 发现同一份内容。
+更新和维护范围限定在当前仓库。
+
+- 更新前读取 [AIHOT 官方安装说明](https://aihot.news/aihot-skill/README.md)，审阅当前
+  安装器后使用 `--dir "$PWD/.agents/skills/aihot"` 更新。常规更新省略 `--actor`，让安装器
+  保留本地 `.aihot-actor-id`；只有用户明确提供新值时才传入 `--actor <uuid>`。
+- 使用官方安装器维护 Skill 包，不通过 `npx skills` 安装、更新或移除，也不安装到用户级目录。
+  将上游包视为只读内容，不手动修改、fork 或 patch。
+- 安装后确认 Claude Code 软链接仍指向 `.agents/skills/aihot`；若缺失，重建相对软链接，避免复制第二份。
+- 更新后手工维护 `skills-lock.json` 中的 aihot 来源、版本、路径和 `computedHash`，哈希算法复用 `tools/skill-audit.py` 的 `compute_skill_folder_hash`。该条目只用于溯源与漂移审计，不代表由 `npx skills` 管理。保留 `.aihot-actor-id` 的本地忽略状态，不把其内容写入版本化文件。
+- 完成前运行 `uv run python tools/skill-audit.py`，确认 aihot 锁定与哈希无告警、Claude 入口有效，且 Actor 文件仍被忽略。
+
 ### Agent orchestration boundary
 
 本仓库区分 Control Plane 与 Execution Plane，但不规定具体 Runtime topology。

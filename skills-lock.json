@@ -2,10 +2,11 @@
   "version": 1,
   "skills": {
     "aihot": {
-      "source": "KKKKhazix/khazix-skills",
-      "sourceType": "github",
-      "skillPath": "aihot/SKILL.md",
-      "computedHash": "8815464e1b204157a6943a3bae8b4cd4587bf612ced9de8563d7d89046fef47e"
+      "source": "https://aihot.news/aihot-skill/install.sh",
+      "ref": "2.0.0",
+      "sourceType": "manual",
+      "skillPath": ".agents/skills/aihot/SKILL.md",
+      "computedHash": "3a921d850c521e92901e5807f19bec8324964c9ffeac233cdf684d67d3e30ac1"
     },
     "json-canvas": {
       "source": "kepano/obsidian-skills",
