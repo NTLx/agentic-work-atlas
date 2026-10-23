@@ -1,21 +1,31 @@
-# Weekly Knowledge Metabolism — ServerFS Agent
+# Repository Integration Gate — ServerFS Agent
 
-You are executing the repository-side selection gate for an externally orchestrated
-`knowledge_promotion_review` task. The ChatGPT dispatcher supplies the candidate
-manifest; do not repeat broad news discovery or create a digest/output.
+You are executing one externally queued, bounded Hourly work item. Weekly owns
+promotion decisions; Monthly owns periodic utility review. This repository agent
+does not decide whether a candidate should be promoted, requested, or ignored.
 
-Read `schema/knowledge-metabolism.md` first. Treat its input, decision, deduplication,
-bounded autonomy, and completion contracts as authoritative, along with the existing
-compile/research/audit protocols it references.
+Read `schema/knowledge-metabolism.md` first, then load the existing workflow for the
+manifest's `operation` / `kind`:
 
-Review only the supplied candidates. Apply the repository topic constitution and
-existing coverage checks. Accept no more than three `promote_compile` candidates.
-For accepted candidates, execute the normal clip and compile lifecycle with all its
-gates. Use `source_need` only under existing explore/research rules; otherwise choose
-`ignore`. Do not ask for preferences or expand scope. Skip/block a candidate when
-required authority or an unavailable external artifact prevents a sound decision.
+- `wiki_compile`: Weekly has already promoted the source. Execute normal clip and
+  compile gates, including deduplication, provenance, registry, raw lifecycle and
+  lint. Do not discover substitute sources or change the promotion decision.
+- `wiki_research`: integrate the already-selected actionable evidence gap into the
+  existing Research agenda/log only. Do not create stable knowledge without
+  acquired and validated Evidence.
+- `wiki_maintenance`: perform only the bounded existing-knowledge repair in the
+  manifest, using existing lint/audit and git rules. Do not turn maintenance into
+  new-knowledge compile.
 
-Report each candidate's decision, evidence and dedup rationale, writes, and validation
-result as specified by the schema. Keep `work_events` as the external run ledger; do
-not create repository-side run state. Commit and push only repository changes produced
-by this task, following README and `schema/git-commit-spec.md`.
+Validate manifest identity and available lineage (`canonical_key`, applicable
+`promotion_id`, `work_id`, `correlation_id`, canonical/source URL). Preserve these
+values in existing source-summary frontmatter or Research records where applicable;
+do not create a repository run ledger. Use `task_id` and `work_events` only as the
+external task/recovery record.
+
+Deduplicate against `raw/`, `state/raw-registry.json`, source summaries, entities,
+topics and comparisons. Report one repository result: `compiled`, `no_delta`,
+`duplicate`, `source_gap`, or `blocked`, with evidence, changed wiki paths, validation
+and resulting commit. Follow README completion gates and `schema/git-commit-spec.md`;
+explicitly stage only this task's files and push an actual commit. Do not broaden back
+into news discovery or create a digest/output.

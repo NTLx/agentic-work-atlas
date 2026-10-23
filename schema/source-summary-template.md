@@ -16,6 +16,11 @@ title: "{原文标题}"
 source_raw:
   - "[[{raw 文件名}]]"
 canonical_url: "https://一手来源"
+# 以下可选 lineage 字段仅在外部 manifest 提供时取消注释并填写；不得保留占位符
+# canonical_key: "{Daily canonical object key}"
+# promotion_id: "{Weekly promotion id}"
+# work_id: "{Hourly work id}"
+# correlation_id: "{cross-layer correlation id}"
 raw_state: full
 created: YYYY-MM-DD
 updated: YYYY-MM-DD

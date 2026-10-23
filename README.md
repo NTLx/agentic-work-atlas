@@ -25,7 +25,7 @@
 
 日常四大环节：**剪藏 clip → 编译 compile → 输出 produce → 探索 explore**。`audit` 是贯穿全程的质量门。
 
-每周知识代谢（knowledge metabolism）是进入现有 `clip → compile` 的**选择门**，不是第五个 lifecycle。Daily intelligence 是发现与分析平面；Wiki promotion 是耐久知识保留平面。它只接收 ChatGPT 已从 `NTLx/daily-artifacts` 等处理结果中整理的候选清单，不重做广泛资讯发现；协议见 `schema/knowledge-metabolism.md`。
+每周知识代谢（knowledge metabolism）是进入现有 `clip → compile` 的**唯一晋升门**，不是第五个 lifecycle。Daily 执行情报发现、验证与 canonicalization；Weekly 选择耐久保留并创建有界 Hourly work；ServerFS/本仓库集成已选择的 compile、research 或 maintenance manifest；Monthly 复核知识效用与长期质量。外部链路与 lineage 规则见 `schema/knowledge-metabolism.md`。本仓库不复制 queue、task recovery 或 `work_events` 状态。
 
 `recompile(claim)` 是 `explore` 的受限维护子流程：只检查 agenda 队列中的一个既有 Claim，以 Research 沉淀为主；仅在协议规定的 extracted 事实例外下补 1 个已有稳定页。
 
@@ -252,7 +252,7 @@ AIHOT 是外部管理 Skill。本仓库只保留 `.agents/skills/aihot/` 这一�
 
 ### 每周知识代谢
 
-| 每周候选筛选与晋升 | `schema/knowledge-metabolism.md` |
+| 每周晋升门、Hourly manifest 集成与 lineage | `schema/knowledge-metabolism.md` |
 
 ### 审计
 
@@ -285,6 +285,12 @@ AIHOT 是外部管理 Skill。本仓库只保留 `.agents/skills/aihot/` 这一�
 | git commit + push | `schema/git-commit-spec.md` |
 | 联网查询 | `schema/web-tools.md` |
 | Quartz 部署 | `schema/quartz-deploy.md` |
+
+### 外部 Worker 入口
+
+| Work kind | ServerFS prompt | 规范 |
+|-----------|-----------------|------|
+| `wiki_compile` / `wiki_research` / `wiki_maintenance` | `tools/knowledge-metabolism-agent-prompt.md` | `schema/knowledge-metabolism.md` 及各自既有工作流 |
 
 ### 遇到问题
 

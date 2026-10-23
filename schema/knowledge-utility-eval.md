@@ -44,6 +44,8 @@ LLM Wiki 需要同时回答两个不同问题：
 
 Reuse 不以“链接数量”充当价值本身。评估一个时间窗口内的实际 Output / 持久化产物：
 
+Monthly 可从近期 Weekly promotion 的外部 `work_events`/work records 抽样：沿 `canonical_key`、`promotion_id`、`work_id` / `correlation_id` 定位来源、Hourly work、resulting commit 与 wiki paths，再检查后续固定问题回答或持久化 Output 是否找到、综合或实际复用了这些稳定页。仓库仅提供既有 source summary / Research provenance 和 Git history；不为抽样建立第二份登记或复用账本。外部 lineage 缺失时标记样本追踪限制，不推断为未复用。
+
 - `0`：已有相关稳定知识却基本没有被使用，重复研究或重复造页明显。
 - `1`：存在实际复用，但追踪不完整，或复用主要停留在引用层，尚未明显减少重复研究、提高综合质量。
 - `2`：多数抽样产物能复用已有稳定页，且复用对检索范围、综合质量或新增知识判断产生了可观察影响。
