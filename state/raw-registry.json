@@ -3449,6 +3449,17 @@
       "summary_path": "wiki/sources/20261021-tessl-coding-agent-chaperones.md",
       "updated_at": "2026-10-22T09:55:24+08:00"
     },
+    "20261022-latentspace-modal-d.md": {
+      "body_sha256": "73131d31855fcf6138f5f510ca67ee28ebffc251f9c19853aee8f32d9576c4f7",
+      "canonical_url": "https://www.latent.space/p/modal-d",
+      "compiled_at": "2026-10-23T11:12:35+08:00",
+      "indexed_at": "2026-10-23T11:12:57+08:00",
+      "raw_file": "20261022-latentspace-modal-d.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261022-latentspace-modal-d.md",
+      "updated_at": "2026-10-23T11:12:57+08:00"
+    },
     "20261022-latentspace-moshi.md": {
       "body_sha256": "61dd6ee3067454a1945f9b28335f297e91688efaf76c4c7957e4e760ae413a13",
       "canonical_url": "https://www.latent.space/p/moshi",
@@ -4079,6 +4090,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-22T23:29:53+08:00",
+  "updated_at": "2026-10-23T11:12:57+08:00",
   "version": 1
 }

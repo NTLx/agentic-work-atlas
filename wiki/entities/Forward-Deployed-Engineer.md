@@ -7,7 +7,7 @@ aliases:
   - 前线部署工程师
 definition: "嵌入客户真实环境，把前沿 AI 能力与数据、工具和业务流程连接成可运行生产系统，并将现场发现回流为平台能力或组织能力的工程师"
 created: 2026-05-18
-updated: 2026-08-26
+updated: 2026-10-23
 tags:
   - career
   - AI-industry
@@ -39,6 +39,7 @@ source_raw:
   - "[[20260730-palantir-ontology-connecting-agents-to-decisions]]"
   - "[[20260810-the-playbook-for-building-high-talent]]"
   - "[[20260825-emerge-enterprise-ai-adoption]]"
+  - "[[20261022-latentspace-modal-d]]"
 ---
 
 # Forward-Deployed-Engineer
@@ -73,6 +74,29 @@ Cursor 招聘负责人 Adam Ward 给 FDE 补充了人才供给侧剖面（此前
 - **招聘爆炸**：FDE 职位发布 2025 年 1–9 月增长超过 800%（Indeed / FT）。
 - **结构性成因**：企业自己无法挖掘自身流程知识（"收入不到小国 GDP 就养不起严格维护的 BPMN/DMN"），FDE 是执行"流程考古"并把发现转成可复用资产的人。
 - **产品与部署边界模糊**：SaaS 公司正在变成"定制化 + 现场交付"的服务混合体（表 stakes），FDE 从"寻找定制化"走向产品回流（与 [[Deployment-Product-Flywheel]] 一致）。
+
+## Modal：FDE 是 performance lab，也是产品发现层（2026-10）
+
+[[20261022-latentspace-modal-d]] 给 FDE 增加了一个基础设施厂商样本。Erik Bernhardsson 称 Modal 年初约 4 名 FDE，访谈时约 24 名；他们会与客户一起处理 LLM / GPU performance tuning，包括训练 draft model、调整 vLLM / SGLang 参数、排查性能问题，并与 research / platform 团队协作。
+
+这个案例最有价值的不是团队人数，而是 Bernhardsson 对终态的约束：**不能让每次模型优化都永久依赖人工陪跑。** FDE 和 research 在早期深入客户环境是必要的，但重复出现的 tuning pattern 必须被编译成 internal tooling，再进一步变成 self-serve product。
+
+```text
+customer-specific performance problem
+        ↓ FDE + research
+manual diagnosis / tuning
+        ↓ pattern extraction
+internal tool
+        ↓ productization
+self-serve platform primitive
+```
+
+**判断**：对 infrastructure vendor，FDE 的一项关键产出不是“交付项目”，而是发现哪部分专家工作已经足够重复，可以被平台吸收。FDE 因而同时承担 **deployment surface scanner**：在客户现场寻找产品 API 尚未覆盖的高频摩擦。
+
+这也给 [[Deployment-Product-Flywheel]] 一个更严格的可验证判据：如果 FDE headcount 和客户数一起线性增长，而每个新客户仍需要相同的人肉 tuning，平台并没有真正学习；只有 manual effort per recurring workload 下降，才算现场知识回流了产品。
+
+- **证据**：[[20261022-latentspace-modal-d]]，Transcript 57:00–61:30；FDE 团队规模、客户 performance tuning、research 协作及“长期必须 turn into products”的表述。
+- **边界**：团队人数和工作成效均来自 CEO 自报；高性能 LLM serving 天然需要一定专家介入，不能假设所有 tuning 都能完全 self-serve。不同客户模型、硬件和 latency/cost objective 也可能保留不可产品化的长尾。
 
 ## 前提与局限性
 

@@ -6,7 +6,7 @@ aliases:
   - token 供应链管理
 definition: "将 token 像电力、物流和数据库一样编排的生产基础设施层，覆盖推理调度、KV cache 管理、成本路由、可观测性和治理，使 token 从聊天消耗品变成可控生产资料"
 created: 2026-05-29
-updated: 2026-09-26
+updated: 2026-10-23
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -28,6 +28,7 @@ source_raw:
   - "[[20260727-vectoral-token-relay-market]]"
   - "[[20260728-openrouter-evaluate-llm-provider-performance]]"
   - "[[20260926-latentspace-openrouter]]"
+  - "[[20261022-latentspace-modal-d]]"
 ---
 
 > [!definition] 定义
@@ -183,6 +184,31 @@ OpenRouter（2026-07）给出网关/代理层的工业方法论：**同一 model
 **判断**：当异常模式跨 model lab、provider、application 迁移时，单一上游模型实验室只能看到局部；跨供应链中间层更有条件做 account recovery、abuse correlation 和行为异常检测。这是网关层相对单一 provider 的一种信息优势。
 - **证据**：[[20260926-latentspace-openrouter]]；Transcript 搜索锚点：“new type of unit of value”“bad agents”。
 - **边界**：来源进一步预测 agentic fraud 将大规模扩张，这是前瞻判断而非当前规模证据；“跨平台可见性更适合防守”也受隐私政策约束——同一访谈明确说 prompts/completions 默认不可见，需 opt-in。
+
+## 物理供给层：Token 背后还有 Capacity Shape 与营运资本（Modal，2026-10）
+
+[[20261022-latentspace-modal-d]] 把本页从 request/provider routing 继续下沉到 GPU capacity supply。Erik Bernhardsson 的核心观察是：上游 GPU 容量经常以长周期固定块出售，而下游 inference / agent workload 是波动和突发的。Modal 通过跨地域 capacity pool 和大量客户需求聚合，把上游“矩形”供给重新切成按需 workload。
+
+因此 token 供应链可以再加一层：
+
+```text
+GPU / accelerator financing + long-term commitments
+                    ↓
+capacity aggregator / scheduler
+                    ↓
+inference provider / model-serving layer
+                    ↓
+gateway / router
+                    ↓
+agent / application workload
+```
+
+**判断**：Token 单价只是最末端的可见价格。更底层的成本函数还包含 **capacity commitment、utilization、model churn、prepayment / working capital 与 burst elasticity**。当上游必须预付或长期锁定 GPU，而客户按秒或按请求消费时，中间基础设施商实际上承担了期限转换与利用率风险。
+
+访谈还提出一个独立 inference provider 的结构性理由：单个模型的需求会随着新模型发布剧烈迁移，但跨模型汇总后的总需求更平滑；中立 serving provider 可以在模型之间重新分配资源。这个逻辑与本页 OpenRouter 的 provider routing 相邻但不同：前者重分配**物理 compute capacity**，后者重分配**请求流量**。
+
+- **证据**：[[20261022-latentspace-modal-d]]，Transcript 31:30–33:00、1:09:00–1:10:30、1:18:00–1:24:00；来源描述 global pool、capacity prepayment、“three-year rectangle”与模型需求迁移。
+- **边界**：这是 Modal CEO 的供应商视角；合同期限、融资结构和利用率因 provider / accelerator / region 而异。独立 inference provider 的长期位置还会受 model lab 垂直整合、自建芯片和 hyperscaler 定价影响。
 
 ## 关联概念
 

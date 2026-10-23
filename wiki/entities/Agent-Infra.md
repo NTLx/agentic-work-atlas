@@ -6,7 +6,7 @@ aliases:
   - Agent Infrastructure
 definition: "将硅基执行者接进软件世界的运行时层，包含 Coding Agent 入口、Context/Memory/Tool Use/Sandbox/AgentOps 运行时组件，以及 Agent Builder/Orchestrator/Operator 编排层"
 created: 2026-05-29
-updated: 2026-10-12
+updated: 2026-10-23
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -27,6 +27,7 @@ source_raw:
   - "[[20260707-intelligence-is-free-data-systems-for-of-by-agents]]"
   - "[[20260911-openai-habitat-storage-scaling]]"
   - "[[20260930-databricks-agentic-apps-ai-sprawl]]"
+  - "[[20261022-latentspace-modal-d]]"
 ---
 
 > [!definition] 定义
@@ -109,6 +110,27 @@ marginal infra copies per new agent
 
 - **证据**：[[20260930-databricks-agentic-apps-ai-sprawl]]，`Context should be shared, not rebuilt`、`Choice should not create fragmentation`、`Shared infrastructure makes composition easier`。
 - **边界**：来源是 Databricks 第一方产品架构，未提供不同平台方案的对照；集中 control/context plane 也会引入共享故障域与 vendor lock-in，不能只计算去重收益。
+
+## Agent workload 的物理层：把矩形容量变成短命、突发、可复制的执行单元（Modal，2026-10）
+
+[[20261022-latentspace-modal-d]] 给 Agent Infra 补上了此前相对薄弱的**物理计算供给层**。Erik Bernhardsson 把 GPU 采购市场的问题描述成 `capacity-shape mismatch`：上游常按未来起租、持续数年的固定“rectangle”出售容量，而真实 inference / agent / batch / training workload 会日内波动、随产品增长变化，并出现很高的 burst。
+
+Modal 的设计是把跨云、跨地域容量视为一个 global pool，再用大量客户的非同步需求平滑 aggregate demand。于是基础设施商承担的不是简单转售 GPU，而是：
+
+```text
+long-lived rectangular commitments
+          ↓ pooling / scheduling
+   shared global capacity
+          ↓ temporal multiplexing
+bursty short-lived workloads
+```
+
+对 Agent 而言，进一步的关键原语是 **ephemeral sandbox + snapshot/fork**。访谈描述一个 Agent 控制多个 sandbox、snapshot 后快速 clone、甚至“一条 command 一个短命 sandbox”的方向；CI/test 也可以先完成一次昂贵 setup，再把状态复制到大量 sandbox 并行执行。
+
+**判断**：Agent sandbox 不应只按“安全隔离容器”理解。随着启动/复制/销毁成本下降，它正在成为一种 **stateful-but-disposable compute primitive**：状态可复制，执行体可替换，并行度按任务瞬时扩张。Agent Infra 的容量规划因此要同时优化 containment、state portability、startup overhead 与 burst elasticity。
+
+- **证据**：[[20261022-latentspace-modal-d]]，Transcript 12:00–13:30、31:30–34:30、40:30–48:00、1:18:00–1:24:00；Modal CEO 还称 sandboxes 已约占公司收入三分之一。
+- **边界**：收入结构、可靠性和市场规模均为公司自报；“三年 rectangle”是对当前 GPU 合同结构的概括，不代表所有 provider。低 sandbox overhead 能扩大可并行空间，但不会消除依赖图、共享数据库、rate limit 与不可并行 critical path。
 
 ## 关键数据点
 

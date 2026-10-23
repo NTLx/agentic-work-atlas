@@ -7,7 +7,7 @@ aliases:
   - AI 原生工程组织
 definition: "把 AI coding agent 作为默认工作基础设施后，围绕验证、review、安全、产品判断、JIT planning 和 dogfooding 重写的软件工程组织"
 created: 2026-06-05
-updated: 2026-10-22
+updated: 2026-10-23
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -31,6 +31,7 @@ source_raw:
   - "[[20260906-lenny-companies-series-loops]]"
   - "[[20261021-tessl-coding-agent-chaperones]]"
   - "[[20261021-latentspace-tenex-ai-native-sdlc]]"
+  - "[[20261022-latentspace-modal-d]]"
 ---
 
 # AI-Native Engineering Org（AI 原生工程组织）
@@ -125,6 +126,34 @@ Anish Acharya 对“公司是一系列 Loop”的描述，为 AI 原生工程组
 - **边界**：Tenex 的 2× engineer output、企业 adoption 百分比和 story-point 经济学均为公司自述；其客户样本也偏向正在寻求 AI transformation 的组织。MetaHarness 的治理成本对小团队/短项目可能过高。
 
 Tenex 还说明 outcome-based compensation 本身需要重新设计：模型越强，直接编码占工程价值的比例越低，客户理解、架构、context packaging 和问题定义越重要。若仍只奖励可计数 ticket，就会把真正稀缺的人类判断排除在 incentive system 之外。
+
+## Modal：降低 coordination gate，但把 accountability 压回 owner 与 CI（2026-10）
+
+[[20261022-latentspace-modal-d]] 提供了另一种 AI-native engineering org 样本。Erik Bernhardsson 描述 Modal 尽量让 manager / IC 在 prestige 上对等，很多 former managers 回到 IC；包括 CEO 在内的技术人员持续写代码，一些非技术角色也开始提交代码。这里的组织变化与 AI 带来的 coding-cost 下降相互强化：角色边界继续变薄，manager 不再天然等于“晋升后的工程师”。
+
+更有争议但也更值得记录的是 code review。Bernhardsson 认为 review 在一些组织里会变成分散 merge accountability 的机制，因此 Modal 把 code review 视为可按情况使用，而更强调 CI/CD、测试与明确 owner。
+
+**判断**：这不是“AI 时代不需要 review”，而是给 [[20261021-tessl-coding-agent-chaperones]] 的 review bottleneck 提出另一种响应：
+
+```text
+更多 Agent / 更多代码
+        ↓
+不要默认线性增加人工 gate
+        ↓
+扩大 machine-checkable correctness surface
++ 明确 merge owner
++ 对高风险变更保留独立审查
+```
+
+也就是说，AI-native 组织需要区分两类 review：
+
+- **可编码验证**：tests、type/static checks、security scans、deployment checks，应尽量机器化并前移；
+- **不可完全编码判断**：architecture、security boundary、product semantics、cross-team contracts，仍需要独立人类判断。
+
+Modal 的案例与 Jellyfish 数据并不矛盾：Jellyfish 说明当前 industry 仍高度依赖 human review；Modal 则展示一种试图通过更强 CI/CD 和 owner accountability 降低低风险 review burden 的组织策略。
+
+- **证据**：[[20261022-latentspace-modal-d]]，Transcript 61:30–66:00；manager/IC、人人写代码、code review 与 CI/CD 的访谈段落。
+- **边界**：这是 Modal CEO 的组织观点，来源没有提供 defect rate、change-failure-rate 或事故对照；Modal 是基础设施公司，高技术密度与自动化能力可能显著高于普通组织。不能把该实践外推为取消 review 的一般建议。
 
 ## 关键数据点
 
