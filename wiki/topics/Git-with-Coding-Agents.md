@@ -2,7 +2,7 @@
 type: topic
 title: Git with Coding Agents
 created: 2026-04-09
-updated: 2026-06-15
+updated: 2026-10-24
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -14,6 +14,7 @@ related_entities:
   - '[[History-Rewriting]]'
   - '[[Agentic-Engineering]]'
 source_raw:
+  - "[[20261013-anthropic-redesigning-source-control.md]]"
   - '[[Using Git with coding agents - Agentic Engineering Patterns]]'
   - "[[Agent pull requests are everywhere. Here's how to review them.]]"
 ---
@@ -201,3 +202,8 @@ Use git bisect to find when this bug was introduced:...
 
 [[Agent pull requests are everywhere. Here's how to review them.]] 从 Agent PR 审查角度补充了本主题：当 Agent 能自主发起 PR 时，Git 工作流的重心从"如何执行操作"转向"如何审查和治理"。文章指出 Agent-generated code 的核心风险不是"代码看起来糟"，而是"代码看起来太容易被批准"——这与 [[History-Rewriting]] 的核心主张形成张力：历史可以是可编辑的叙事，但审查纪律必须更严格。GitHub Copilot code review 已处理超过 6000 万次 review，且一年内增长 10 倍，说明 Agent 正在重塑 Git 工作流的每一个环节。
 
+---
+
+Anthropic 的 Scion 案例把 Agent 与 Git 的关系从“Agent 如何执行 Git 操作”推进到“高频在线 Agent 是否需要不同的 source control 底座”。作者报告其 monorepo 每日合并量在 2026 年 5 月约 2,500 次、9 月超过 30,000 次，并以服务端权威、稀疏/虚拟 checkout、内容寻址缓存和 API 化查询替代大量完整克隆。该案例来自极端规模的内部生产环境，不能推出一般团队应替换 Git；它说明当 Agent/CI checkout 与元数据查询成为瓶颈时，版本控制架构本身也可能成为 Agentic Engineering 的设计对象。
+
+来源：[[20261013-anthropic-redesigning-source-control]]。
