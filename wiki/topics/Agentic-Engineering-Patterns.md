@@ -39,6 +39,7 @@ related_entities:
   - "[[ALIGN-Framework]]"
   - "[[Agent-Environment-Misalignment]]"
 source_raw:
+  - "[[20261013-pydantic-the-code-is-the-graph.md]]"
   - "[[20261013-google-gemini-4-argon-adk-python-optimization.md]]"
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'
@@ -285,3 +286,11 @@ Agentic Engineering 不能把生成成本下降变成 review 成本转嫁。[[Ag
 Google 描述 Gemini 4 Argon 对约 205,000 行 ADK Python 代码库运行 11 小时：加入仓库 skills 与持续目标后，Agent 阅读 12 份规则、运行基准并提出六项优化；维护者最终合并两项、拒绝四项。报告的长会话 session preparation 开销下降约 40%，冷导入快 21%，但外部 session store 不适用部分优化，首个模型请求时间基本不变。此案例支持“Agent 扩大候选方案空间，维护者按公开 API、边缘情形、可读性和独立基准做减法”，而不是把长时无人值守运行等同于无人审查。
 
 来源：[[20261013-google-gemini-4-argon-adk-python-optimization]]。
+
+---
+
+### 动态 Agent 工作流与普通代码表达
+
+Pydantic 的观点文章主张以普通 Python 控制流表达 Agent 编排：函数、循环、异常和 `asyncio.gather` 能表示分支、重试与并发，避免 graph runtime 维护第二套状态表示。它指出并行分支若共同修改可快照状态，需要语义合并，而类型系统无法证明 reducer 的不变量。该论证是框架作者的设计立场，所谓“typed/snapshotted/parallel 三选二”是类比而非形式化定理；外部 durability engine、确定性回放与副作用边界仍不可省略。固定流程、显式状态机或审计要求更强的任务仍可能适合 graph runtime。
+
+来源：[[20261013-pydantic-the-code-is-the-graph]]。
