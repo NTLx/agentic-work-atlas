@@ -39,6 +39,7 @@ related_entities:
   - "[[ALIGN-Framework]]"
   - "[[Agent-Environment-Misalignment]]"
 source_raw:
+  - "[[20261013-oreilly-when-architecture-decisions-actually-apply.md]]"
   - "[[20261013-pydantic-the-code-is-the-graph.md]]"
   - "[[20261013-google-gemini-4-argon-adk-python-optimization.md]]"
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
@@ -294,3 +295,11 @@ Google 描述 Gemini 4 Argon 对约 205,000 行 ADK Python 代码库运行 11 �
 Pydantic 的观点文章主张以普通 Python 控制流表达 Agent 编排：函数、循环、异常和 `asyncio.gather` 能表示分支、重试与并发，避免 graph runtime 维护第二套状态表示。它指出并行分支若共同修改可快照状态，需要语义合并，而类型系统无法证明 reducer 的不变量。该论证是框架作者的设计立场，所谓“typed/snapshotted/parallel 三选二”是类比而非形式化定理；外部 durability engine、确定性回放与副作用边界仍不可省略。固定流程、显式状态机或审计要求更强的任务仍可能适合 graph runtime。
 
 来源：[[20261013-pydantic-the-code-is-the-graph]]。
+
+---
+
+### 架构决策：相关性、适用性与执行强度
+
+O’Reilly 文章区分了“检索到相关 ADR”与“该决定对当前 artifact 有权威性”，并把适用范围、生命周期和优先级视为判断条件。作者报告的小型实验中，架构敏感任务的首次合规从 15 次运行中的 6 次升至 10 次，但任务完成率基本不变；样本很小，宜作为机制线索。即使决定适用，也只有可由可观察证据稳定判断的禁令适合确定性阻断；更宽泛的正向架构方向应作为指导。阻断还需给出适用决策、scope 和触发证据，且不得将决策上下文误作扩大任务范围的授权。
+
+来源：[[20261013-oreilly-when-architecture-decisions-actually-apply]]。

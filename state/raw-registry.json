@@ -3354,6 +3354,18 @@
       "summary_path": "wiki/sources/20261013-google-gemini-4-argon-adk-python-optimization.md",
       "updated_at": "2026-10-24T23:52:43+08:00"
     },
+    "20261013-oreilly-when-architecture-decisions-actually-apply.md": {
+      "body_sha256": "54148e36ca321878effe740e78c42abbe397bc7fca24a6fc11b5426575965501",
+      "canonical_url": "https://www.oreilly.com/radar/when-architecture-decisions-actually-apply/",
+      "compiled_at": "2026-10-24T23:52:26+08:00",
+      "indexed_at": "2026-10-24T23:52:29+08:00",
+      "raw_file": "20261013-oreilly-when-architecture-decisions-actually-apply.md",
+      "raw_state": "index",
+      "retention_note": "已编译；保留来源摘要、正文哈希、定位和稳定一手 URL。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261013-oreilly-when-architecture-decisions-actually-apply.md",
+      "updated_at": "2026-10-24T23:52:43+08:00"
+    },
     "20261013-pydantic-the-code-is-the-graph.md": {
       "body_sha256": "15b34a121bb842c311a1e2ce64e32c2fb62ce1380360746c70c8d73d7f46df4e",
       "canonical_url": "https://pydantic.dev/articles/the-code-is-the-graph",
