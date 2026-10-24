@@ -3366,6 +3366,18 @@
       "summary_path": "wiki/sources/20261013-pydantic-the-code-is-the-graph.md",
       "updated_at": "2026-10-24T23:52:43+08:00"
     },
+    "20261013-tessl-how-open-is-your-software-factory.md": {
+      "body_sha256": "76bd1d9a8f73acd248746685c9acb94f27bdcfbf81220aaab89d127ef2d04e95",
+      "canonical_url": "https://tessl.io/blog/how-open-is-your-software-factory",
+      "compiled_at": "2026-10-24T23:52:26+08:00",
+      "indexed_at": "2026-10-24T23:52:29+08:00",
+      "raw_file": "20261013-tessl-how-open-is-your-software-factory.md",
+      "raw_state": "index",
+      "retention_note": "已编译；保留来源摘要、正文哈希、定位和稳定一手 URL。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261013-tessl-how-open-is-your-software-factory.md",
+      "updated_at": "2026-10-24T23:52:43+08:00"
+    },
     "20261014-google-deep-review.md": {
       "body_sha256": "9a3a68175cf8c97491b49badf19fd14df0df5ce0940e20fd011240906042bb03",
       "canonical_url": "https://research.google/blog/analyzing-technical-documents-with-deep-review/",

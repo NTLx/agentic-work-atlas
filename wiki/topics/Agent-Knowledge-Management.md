@@ -2,7 +2,7 @@
 type: topic
 title: "Agent 知识管理与自进化"
 created: 2026-05-13
-updated: 2026-09-05
+updated: 2026-10-24
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -28,6 +28,7 @@ related_entities:
   - "[[Shortification-of-Learning]]"
   - "[[Agentic-Analytics]]"
 source_raw:
+  - "[[20261013-tessl-how-open-is-your-software-factory.md]]"
   - "[[20260413-llm-wiki]]"
   - "[[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]]"
   - "[[深度解析LLM Wiki  Obsidian-Wiki  GBrain：Agent时代知识的“自组织”与“自进化”]]"
@@ -173,3 +174,11 @@ Demis Hassabis 的 AGI 访谈从另一个方向支持了这个 Topic：当前模
 Agent 知识管理的第一性原理是：让知识从一次性上下文，变成可版本化、可链接、可审查、可复用的中间层。
 
 RAG 解决“这次怎么答”。LLM Wiki 解决“以后如何不用从头理解”。
+
+---
+
+### 软件工厂的知识迁移性
+
+Tessl 将软件工厂的长期产出扩展到代码之外：架构决定、review 纠错、事故约束、skills 与 evals 会积累为组织 know-how。多模型或开放接口不自动等于开放；更有力的检验是把一项维护过的 skill、决策与评测带到另一 Agent/harness，验证其能否重用并通过检查。可迁移仍需适配权限、工具和记忆语义，并承担持续维护成本；作者也提醒，临时 workaround 不能未经审核升格为政策。该框架来自供应商文章，应视为评估问题，而非产品能力的独立验证。
+
+来源：[[20261013-tessl-how-open-is-your-software-factory]]。
