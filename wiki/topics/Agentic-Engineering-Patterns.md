@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-06-15
+updated: 2026-10-24
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -39,6 +39,7 @@ related_entities:
   - "[[ALIGN-Framework]]"
   - "[[Agent-Environment-Misalignment]]"
 source_raw:
+  - "[[20261013-google-gemini-4-argon-adk-python-optimization.md]]"
   - '[[What is agentic engineering? - Agentic Engineering Patterns]]'
   - '[[20260410-code-is-cheap]]'
   - '[[20260410-hoard-things-you-know]]'
@@ -276,3 +277,11 @@ Agentic Engineering 不能把生成成本下降变成 review 成本转嫁。[[Ag
 > **来源**：Simon Willison, [Agentic Engineering Patterns Guide](https://simonwillison.net/guides/agentic-engineering-patterns/)
 >
 > **案例来源**：Peter Pang (CREAO CTO), [Why Your "AI-First" Strategy Is Probably Wrong](https://x.com/intuitiveml/status/2043545596699750791), 2026-04-13
+
+---
+
+### 长时 Agent 改造现有代码库：探索与筛选
+
+Google 描述 Gemini 4 Argon 对约 205,000 行 ADK Python 代码库运行 11 小时：加入仓库 skills 与持续目标后，Agent 阅读 12 份规则、运行基准并提出六项优化；维护者最终合并两项、拒绝四项。报告的长会话 session preparation 开销下降约 40%，冷导入快 21%，但外部 session store 不适用部分优化，首个模型请求时间基本不变。此案例支持“Agent 扩大候选方案空间，维护者按公开 API、边缘情形、可读性和独立基准做减法”，而不是把长时无人值守运行等同于无人审查。
+
+来源：[[20261013-google-gemini-4-argon-adk-python-optimization]]。
