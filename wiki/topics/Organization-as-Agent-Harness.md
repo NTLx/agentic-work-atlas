@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-09-05
+updated: 2026-10-25
 evidence_level: high
 claim_type: mixed
 tags:
@@ -36,6 +36,7 @@ related_entities:
   - "[[Business-Embedded-AI-Organization]]"
   - "[[AI-Native-Engineering-Org]]"
   - "[[Agentic-Analytics]]"
+  - "[[20261008-block-claude-fable-orchestration]]"
   - "[[Alert-Closed-Loop]]"
   - "[[Human-Owns-Output]]"
 source_raw:
@@ -95,6 +96,17 @@ Meta 的 Organizational Second Brain 把组织 Harness 的学习层具体化：�
 [[Agentic-Analytics]] 展示了数据组织的同一逻辑：canonical datasets、semantic layer、domain skills、evals、provenance footer 和 correction harvesting 是 analytics agent 的真实运行时。缺少这些层，Claude 能访问 warehouse 也会制造“精确错觉”。
 
 这两个样本说明，组织 harness 不是抽象隐喻，而是具体文件、PR、评测、权限、owner 和反馈回路。
+
+### Block：跨仓库迁移与周期性维护编排（客户自报，2026-10）
+
+Block AI capabilities 负责人 Bradley Axen 描述的迁移流程由人类工程师 steering，Claude Fable 负责高层数据模型、API 规格和算法设计，再调度最多数十个较小模型处理文件修改与测试。受访者称，迁移跨多个仓库、涉及数百至数千个 PR 和数百万行代码；Block 会在 Buzz 的共享频道与线程中观察进度，个别迁移约合并一千个由 Fable 编排的 PR。这个案例把 harness 的设计层与机械执行层分开，并把协作界面纳入运行时。
+
+Block 也称，其 Agent 会每日或每周扫描约百万行代码的仓库，寻找技术债、清理与合并机会；模型选择器则试图按任务匹配模型，并按每个模型的 effort level 评测组合。受访者称早期编排把更多 token 用在较小模型上而没有降低质量，但访谈未披露质量指标、成本、返工率或对照组。
+
+**判断（综合）**：大规模 Agent 软件工作流的组织边界不止是任务分发；它还需要持续巡检、模型与 effort 路由、共享进度可见性，以及明确的人类权限门。Block 案例中，人仍负责 steering、合并主干和生产部署，生产部署需双人批准。
+
+- **证据**：[[20261008-block-claude-fable-orchestration]]；迁移规模与分层编排见访谈 “As frontier intelligence evolves…”；周期巡检见 “What’s the hardest problem…”；模型/effort selector 与人工部署边界见相应问答段。
+- **边界**：规模、效率与质量均为 Block 受访者自报；文章来源由 Anthropic 发布，属于客户案例与厂商平台叙事，不是独立审计或可复现评测。Buzz、模型能力、内部工具与人工投入的贡献无法从访谈中分离。
 
 ## 医疗组织作为算法的 harness
 

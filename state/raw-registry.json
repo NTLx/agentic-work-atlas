@@ -3297,6 +3297,18 @@
       "summary_path": "wiki/sources/20261005-openai-eu-text-provenance.md",
       "updated_at": "2026-10-21T12:43:28+08:00"
     },
+    "20261008-block-claude-fable-orchestration.md": {
+      "body_sha256": "3db9f23897afa722d29d692cb530350487b1eff85e2a7281a9dee169c67fc889",
+      "canonical_url": "https://claude.com/resources/articles/how-block-orchestrates-claude-fable-across-thousands-of-pull-requests",
+      "compiled_at": "2026-10-25T20:44:51+08:00",
+      "indexed_at": "2026-10-25T20:44:51+08:00",
+      "raw_file": "20261008-block-claude-fable-orchestration.md",
+      "raw_state": "index",
+      "retention_note": "已编译；canonical URL 可恢复原文，source summary 保留原始正文 SHA256 与访谈段落级证据定位。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261008-block-claude-fable-orchestration.md",
+      "updated_at": "2026-10-25T20:44:56+08:00"
+    },
     "20261009-epoch-ai-automate-ai-rd.md": {
       "body_sha256": "59fe510cdc86446ca6d24286756bd4a4d1918045a7c686e1a98fa4a34ca09daf",
       "canonical_url": "https://epochai.substack.com/p/can-ai-automate-ai-r-and-d-yet",
@@ -4184,6 +4196,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-25T20:43:33+08:00",
+  "updated_at": "2026-10-25T20:44:56+08:00",
   "version": 1
 }
