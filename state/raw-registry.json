@@ -3297,6 +3297,18 @@
       "summary_path": "wiki/sources/20261005-openai-eu-text-provenance.md",
       "updated_at": "2026-10-21T12:43:28+08:00"
     },
+    "20261009-epoch-ai-automate-ai-rd.md": {
+      "body_sha256": "59fe510cdc86446ca6d24286756bd4a4d1918045a7c686e1a98fa4a34ca09daf",
+      "canonical_url": "https://epochai.substack.com/p/can-ai-automate-ai-r-and-d-yet",
+      "compiled_at": "2026-10-25T20:43:22+08:00",
+      "indexed_at": "2026-10-25T20:43:28+08:00",
+      "raw_file": "20261009-epoch-ai-automate-ai-rd.md",
+      "raw_state": "index",
+      "retention_note": "已编译；canonical URL 可恢复原文，source summary 保留原始正文 SHA256 与章节级证据定位。",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261009-epoch-ai-automate-ai-rd.md",
+      "updated_at": "2026-10-25T20:43:33+08:00"
+    },
     "20261009-latentspace-periodic-synthesis-superintelligence.md": {
       "body_sha256": "fa307a1b9014513f56ec7ac940b934c4d4c04379de9c9e91f1a266a25c74a7f4",
       "canonical_url": "https://www.latent.space/p/periodic",
@@ -4172,6 +4184,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-25T15:00:31+08:00",
+  "updated_at": "2026-10-25T20:43:33+08:00",
   "version": 1
 }

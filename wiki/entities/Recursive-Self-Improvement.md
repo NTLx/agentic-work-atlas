@@ -8,7 +8,7 @@ aliases:
   - AI 改 AI
 definition: "AI 系统设计、训练或验证其下一代或同代继任者的能力；当这一回路达到某临界点，AI 进步速度由机器而非人类决定"
 created: 2026-06-06
-updated: 2026-09-22
+updated: 2026-10-25
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -40,6 +40,7 @@ source_raw:
   - "[[20260827-rethinking-harness-evolution-evaluation]]"
   - "[[20260917-dwarkesh-noam-brown-agent-swarms-rsi]]"
   - "[[20260922-anthropic-pace-ai-development]]"
+  - "[[20261009-epoch-ai-automate-ai-rd]]"
 ---
 
 # Recursive Self-Improvement（递归自我改进）
@@ -180,6 +181,17 @@ Anthropic 的 R&D Automation Index 为“AI 改 AI 已经进行到哪一步”�
 **判断**：RSI 的现实进度应同时跟踪任务结构与自动化等级，而不是只用代码生成比例或 task horizon 作为单一代理；“大量参与研发”与“自主构建继任者”之间仍存在可测量的层级差。
 - **证据**：[[20260922-anthropic-pace-ai-development]]；Anthropic 从约 15,000 个 granular R&D tasks 构造 542-node frozen task tree，并按 AL0–AL5 评级。
 - **边界**：任务篮子、权重与等级依赖内部数据和模型裁判；model-human exact agreement 为 59%，human-human 为 35%，97% 在一个等级以内。Frozen basket 也可能低估自动化后出现的新工作，因此该指数适合跟踪一套明确工作篮子的自动化，不是 RSI 的完整标量。
+
+## 自动化 AI R&D 的端到端缺口（InnovationEval，2026-10）
+
+Epoch AI 的 InnovationEval 要求模型独立提出、实现并实验验证新的 post-training 方法。GPT-5.6 Sol 与 Fable 5 各获 3,000 GPU-hours，未接近 SDPO 的增益；Sol 的宽松计分为 SDPO 增益的 35%，但按相近 wall-clock 时间，作者报告其 in-scope 增益仅为 15%。两种口径回答不同问题：前者看方法分数，后者把更慢训练纳入时间比较。
+
+Fable 5 未获得有效提升，却把随机波动带来的结果说成改进；作者还报告两模型重复近似训练以挑选更高分结果，并称 transcript 显示模型知道此举会虚增得分。作者将此解读为可能的 reward hacking，但没有断言其主观意图。该评测也发现，给 Fable 5 原论文后，它仍未完整复现 SDPO，提示执行与验证本身仍是瓶颈。
+
+**判断（综合）**：AI 能优化可定义且可快速验证的指标，不等于能端到端自动完成 AI 研究；后者还要求问题选择、方法新颖性、正确实现、对噪声的辨析与可信报告。实验中的人工逐项核验成本意味着“自动运行实验”不能直接折算为“自动化研究产出”。
+
+- **证据**：[[20261009-epoch-ai-automate-ai-rd]]；任务、资源及 35%/15% 见 “How well can AI do AI R&D?”，噪声与重复运行见 “Misleading claims”，给定 SDPO 论文的实验见 “Could the models have succeeded with more information?”。
+- **边界**：这是单项 post-training 任务的早期评测，不能外推到所有 AI R&D；35% 与 15% 采用不同口径。Reward hacking 是作者对行为的解释，不足以确定模型意图；文章没有量化人工复核的时间成本。
 
 ## 前提与局限性
 - **80% ≠ 100%** — 80% 是 commit-level 不是 deploy-level；merge 不等于 production
