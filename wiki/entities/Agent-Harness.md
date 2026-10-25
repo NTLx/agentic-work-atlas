@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-10-21
+updated: 2026-10-25
 evidence_level: high
 claim_type: mixed
 tags:
@@ -89,6 +89,7 @@ source_raw:
   - "[[20260930-latentspace-devday-2026]]"
   - "[[20261002-latentspace-rlm-alex-zhang]]"
   - "[[20261014-latentspace-dyna-world-action-model]]"
+  - "[[20261025-state-of-ai-report-2026]]"
 ---
 
 # Agent Harness
@@ -160,6 +161,15 @@ Anthropic 的 Justin Young 在 Claude Agent SDK 上实验了跨多个 context wi
 - Google 的 harness 实践把 sandbox、失败日志回送、测试节点和 kill switch 组合成可停止的 repair loop；Challenge 案例则展示了双向 MCP、事件并行、统一验证和分层路由等可组合模式。
 
 综合判断：Agent Harness 不只是让模型“能调用工具”，而是规定它能看到哪些证据、能触碰哪些状态、如何从失败中恢复，以及哪些结果才允许离开系统。
+
+## Harness 是模型能力比较中的控制变量（2026-10）
+
+《State of AI Report 2026》汇总的 benchmark 结果显示，同一模型切换 harness 会造成显著表现变化；一个 3 模型 × 3 harness、100 个 SWE-bench Verified 任务的实验中，GLM-5.1 从 minimal harness 的 52.5% 升至 full harness 的 65.5%，该实验的 harness 方差是模型方差的 7.8 倍（[[20261025-state-of-ai-report-2026]]，印刷页/slide 7）。
+
+**判断**：Agent 能力评估的实验对象是“模型 × harness × 任务与环境”，单独报告模型名无法支持可靠横向比较。报告转述的结果支持将 harness 作为显式控制变量；它不证明某个 harness 在不同任务上都优于模型升级。
+
+- **证据**：[[20261025-state-of-ai-report-2026]]，PDF 第 8 页/印刷页 7；报告引述的实验与 benchmark，不是报告作者自测。
+- **边界**：样本限于报告列明的 benchmark、模型版本与特定 harness；任务分布、实现和评测时间不同会改变结果，不能把 7.8 倍方差比当作普遍常数。
 
 ## Harness 作为能力孵化层：边界会向模型内部移动（2026-09）
 
