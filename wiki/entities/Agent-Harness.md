@@ -90,6 +90,7 @@ source_raw:
   - "[[20261002-latentspace-rlm-alex-zhang]]"
   - "[[20261014-latentspace-dyna-world-action-model]]"
   - "[[20261025-state-of-ai-report-2026]]"
+  - "[[20261025-prime-agent-rust-rewrite]]"
 ---
 
 # Agent Harness
@@ -567,3 +568,12 @@ LangChain（Vivek Trivedy）提出的四层模型是 Agent Harness 的分析框�
 - 配置级差异导致 23.8 分的性能差距
 - 可观测性是关键因素
 - 简单循环 + 良好提示可能就够了（Simon Willison 视角）
+
+## 大规模 Agent 重写中的 Harness 结构（2026-10）
+
+Prime Agent 将迁移任务编排成有限状态机：Planner 固化 feature 规格、旧版 TypeScript 行为和 parity verifier；Implementer 在专属 worktree 并行实现；独立 Reviewer 对 PR 做对抗检查；Verifier 在 fresh sandbox 编译并运行 parity/tests。root agent 负责任务拓扑、调度与合并，不写产品代码。性能优化则把 baseline 与候选变更放到同一 sandbox 交替测量，并以 parity 为合并条件（[[20261025-prime-agent-rust-rewrite]]，“Orchestration of Finite State Machines”“Hillclimbing performance”）。
+
+**判断**：当实现可以大规模并行生成时，Harness 的关键价值是把任务规格、依赖、状态转换、独立验证器与失败返工路径显式化；并行吞吐必须受这些契约约束。
+
+- **证据**：[[20261025-prime-agent-rust-rewrite]]；厂商披露的 Prime Agent Rust 迁移流程。
+- **边界**：该流程依赖可执行的旧实现作为 ground truth；作者也报告 parity 覆盖外的问题由 dogfood 和内部日常使用发现，后续仍有数周人工定向、审查和修复。厂商案例不证明同一并发规模适用于缺少行为 oracle 的任务。

@@ -3531,6 +3531,17 @@
       "summary_path": "wiki/sources/20261022-latentspace-moshi.md",
       "updated_at": "2026-10-22T23:29:53+08:00"
     },
+    "20261025-prime-agent-rust-rewrite.md": {
+      "body_sha256": "51377fc8f2cf7e8844c3e3da48653c41ac9a9b733bb0c19da031108f7704decf",
+      "canonical_url": "https://www.primeintellect.ai/blog/prime-agent-rust",
+      "compiled_at": "2026-10-25T15:00:28+08:00",
+      "indexed_at": "2026-10-25T15:00:28+08:00",
+      "raw_file": "20261025-prime-agent-rust-rewrite.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261025-prime-agent-rust-rewrite.md",
+      "updated_at": "2026-10-25T15:00:31+08:00"
+    },
     "20261025-state-of-ai-report-2026.pdf": {
       "body_sha256": "93f9a0202726d90446ac4954339ba529e446a88de40e338aeb68db0a0298c739",
       "canonical_url": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
@@ -4161,6 +4172,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-25T14:58:22+08:00",
+  "updated_at": "2026-10-25T15:00:31+08:00",
   "version": 1
 }

@@ -6,7 +6,7 @@ aliases:
   - Agentic Verification
 definition: "Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境、执行操作、观察结果并判断是否通过"
 created: 2026-06-12
-updated: 2026-10-22
+updated: 2026-10-25
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -44,6 +44,7 @@ source_raw:
   - "[[20260929-pragmatic-shopify-native-mobile]]"
   - "[[20260930-openrouter-agent-regression-testing]]"
   - "[[20261014-google-deep-review]]"
+  - "[[20261025-prime-agent-rust-rewrite]]"
 ---
 
 > [!definition] 定义
@@ -296,6 +297,15 @@ Google 同时把 automation boundary 说得很清楚：系统承担 logical cons
 
 - **证据**：[[20261014-google-deep-review]]；16,000+ opt-in pre-submission manuscripts、四阶段 pipeline、design/legal/finance 扩展与 higher-level judgement 边界。
 - **边界**：16,000+ 是部署覆盖而非 correctness benchmark；PAT feedback 与正式 conference review 明确解耦。产品方没有在本文给出跨领域误报/漏报曲线，因此不能把“可规模运行”直接等同于“可独立裁决”。
+
+## 迁移任务的独立验证状态机（2026-10）
+
+Prime Agent 的每个迁移任务由 Planner 先写出旧版 TypeScript 行为规格和 parity check，再由 Implementer 在独立 worktree 编码；不同模型、不同上下文中的 Reviewer 对抗审查，最后 Verifier 在新 Prime Sandbox 编译并运行 parity/tests。审查或验证失败会把结果送回 Implementer，两个门都通过才合并（[[20261025-prime-agent-rust-rewrite]]，“Orchestration of Finite State Machines”）。
+
+**判断**：生成与验证分离必须落实到目标、上下文和执行环境，而不只是把同一个 Agent 的工作命名为两个阶段；同时，最终可信度仍取决于 ground truth 和 parity contract 是否正确。
+
+- **证据**：[[20261025-prime-agent-rust-rewrite]]；文章说明 reviewer 使用不同模型与独立上下文，verifier 使用新 sandbox。
+- **边界**：差分 parity 只能覆盖脚本化行为；作者称内部 dogfood 发现了未覆盖的行为差异，发布前还有后续修复和人类 review。不同模型 reviewer 降低部分共源偏差，但不构成独立正确性证明。
 
 ## 关联概念
 
