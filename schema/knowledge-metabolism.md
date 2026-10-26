@@ -11,19 +11,19 @@ type: schema-subdoc
 
 ## 角色与执行边界
 
-固定编排链为：`n8n → ai_work_queue(worker=weekly, kind=knowledge_promotion_review) → ChatGPT Weekly Promotion Gate → ai_work_queue(worker=hourly, kind=wiki_compile | wiki_research | wiki_maintenance) → VPS ServerFS Agent → 本仓库`。
+固定编排链为：`n8n → ai_work_queue(worker=weekly, kind=knowledge_promotion_review) → ChatGPT Weekly Promotion Gate → ai_work_queue(worker=hourly, kind=wiki_compile | wiki_research | wiki_maintenance) → ChatGPT Hourly → VPS ServerFS MCP（直接仓库操作） → 本仓库`。
 
 - **Daily** 执行 intelligence discovery、verification 与 canonicalization，输出候选和证据缺口；不直接决定耐久知识保留。
 - **Weekly** 是唯一 Promotion Gate：审阅 canonicalized 候选，决定晋升、转成可行动 evidence gap、或不保留，并为已选工作创建有界 Hourly work。Weekly 不执行跨运行的长任务。
-- **Hourly** 是可恢复执行 worker，负责一个有界 work item，并以外部 `task_id` 恢复执行或 commit。Weekly / Monthly 不持有跨运行执行状态。
-- **ServerFS / 本仓库** 是 repository-local Integration Gate：接收已晋升、已选择的 research gap 或 maintenance manifest，验证契约、去重、保留溯源并执行相应现有仓库工作流。它不重做晋升选择。
+- **Hourly** 是可恢复执行 worker，负责一个有界 work item。剪藏、研究、编译、知识维护、lint 与必要 Git 操作由 ChatGPT 本身完成；跨运行恢复依赖 `work_id` / `correlation_id`、队列状态、仓库当前状态与已有 commit，而不是服务器侧 Agent task。Weekly / Monthly 不持有跨运行执行状态。
+- **ServerFS MCP / 本仓库** 是 repository-local Integration Gate 的直接工具通道：ChatGPT 使用 ServerFS MCP 当前直接暴露的文件与其他确定性能力读取、创建、修改仓库内容。ServerFS 不作为二次 AI Agent 编排层，也不替 ChatGPT 再调用服务器上的 AI Agent；如果某个必要步骤没有直接暴露的非 Agent 能力，应显式返回 `blocked` 或保留待完成步骤，而不是把任务静默委派给服务器 AI Agent。
 - **Monthly** 执行知识效用与长期质量复核；可提出 `wiki_maintenance` 或 evidence-gap manifest，由 Weekly/外部调度转交 Hourly 执行。Monthly 不拥有跨运行长任务。
 
-`work_events`、queue 与 task recovery 是外部运行状态。本仓库不复制其状态，不新增运行表、注册表或周度运行账本。Daily 仅向本流程提供已验证、已 canonicalize 的候选清单；ServerFS 不开展广泛新闻发现。
+`work_events`、queue 与 work recovery 是外部运行状态。本仓库不复制其状态，不新增运行表、注册表或周度运行账本。Daily 仅向本流程提供已验证、已 canonicalize 的候选清单；ServerFS MCP 只提供 ChatGPT 当前可直接调用的仓库操作能力，不开展广泛新闻发现，也不自动启动服务器 AI Agent。
 
 ## 外部 work manifest
 
-每个 manifest 应携带可用的 lineage 字段：`canonical_key`（Daily canonical object 的稳定标识）、`promotion_id`（Weekly 晋升时）、`work_id`、`correlation_id`、canonical/source URL、`operation` / `kind`，以及已有的来源事实和目标。Hourly work 的 `task_id` 由外部队列维护。`wiki_compile` manifest 表示 Weekly 已决定晋升；`wiki_research` 表示 Weekly 已选择一个 actionable evidence gap；`wiki_maintenance` 表示 Monthly/审计已提出有界的既有知识修复。缺少足以识别 work 或来源的字段时返回 `blocked`，不自行扩大输入。
+每个 manifest 应携带可用的 lineage 字段：`canonical_key`（Daily canonical object 的稳定标识）、`promotion_id`（Weekly 晋升时）、`work_id`、`correlation_id`、canonical/source URL、`operation` / `kind`，以及已有的来源事实和目标。Hourly work 的恢复身份由 `work_id` / `correlation_id` 与队列状态维护，不依赖 ServerFS Agent `task_id`。`wiki_compile` manifest 表示 Weekly 已决定晋升；`wiki_research` 表示 Weekly 已选择一个 actionable evidence gap；`wiki_maintenance` 表示 Monthly/审计已提出有界的既有知识修复。缺少足以识别 work 或来源的字段时返回 `blocked`，不自行扩大输入。
 
 ## Integration Gate 与结果
 
@@ -60,7 +60,7 @@ Hourly 对 manifest 指定范围执行有界的既有知识修复，可处理合
 | `canonical_key` | Daily canonical object、Weekly manifest 与 work item | 编译来源的 source summary frontmatter；若没有 source summary，则写入现有 Research log 对应任务记录 |
 | `promotion_id` | Weekly 决策及后续 work manifest | 有晋升来源的 source summary frontmatter；仅适用时记录 |
 | `work_id`, `correlation_id` | queue / `work_events` / Hourly task | source summary frontmatter 或对应 Research log，便于从提交文件回查；不写入单独账本 |
-| `task_id` | queue / `work_events`，含恢复状态 | 不要求复制；仅在现有任务记录对恢复/审计确有必要时引用 |
+| `result_ref` | queue / `work_events`，用于记录 commit、PR 或确有必要的外部执行标识 | 不要求复制为仓库状态；仓库以 Git commit 与实际路径为权威结果 |
 | canonical/source URL | Daily canonical object 与 work manifest | Raw 的 `source`、source summary 的 `canonical_url`、Research 中的 source need；保留原始来源身份 |
 | operation/kind | queue / work manifest | 通过既有工作产物与结构化 commit type/scope 表达；不增加独立状态字段 |
 | resulting commit / wiki paths | Hourly 回报及外部 `work_events` | Git commit 与实际文件路径本身为权威记录；外部记录回填其 commit SHA / paths |
