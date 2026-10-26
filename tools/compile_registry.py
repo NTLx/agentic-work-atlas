@@ -7,6 +7,8 @@ import json
 from datetime import datetime
 from pathlib import Path
 
+import yaml
+
 
 ROOT = Path(__file__).resolve().parents[1]
 VALID_STATUS = {"pending", "compiled", "skipped"}
@@ -385,6 +387,51 @@ def raw_path_for(root: Path, raw_file: str) -> Path:
     return root / "raw" / raw_file
 
 
+def raw_file_from_summary(root: Path, summary_path: str) -> str:
+    relative = Path(summary_path)
+    if relative.is_absolute() or ".." in relative.parts or relative.parts[:2] != ("wiki", "sources"):
+        raise ValueError(f"summary path must be under wiki/sources: {summary_path}")
+
+    summary = root / relative
+    if not summary.is_file():
+        raise ValueError(f"summary file not found: {summary_path}")
+
+    lines = summary.read_text(encoding="utf-8").splitlines()
+    if not lines or lines[0] != "---":
+        raise ValueError(f"summary frontmatter missing: {summary_path}")
+    try:
+        end = lines.index("---", 1)
+    except ValueError as exc:
+        raise ValueError(f"summary frontmatter is not closed: {summary_path}") from exc
+
+    metadata = yaml.safe_load("\n".join(lines[1:end])) or {}
+    source_raw = metadata.get("source_raw") if isinstance(metadata, dict) else None
+    if not isinstance(source_raw, list) or len(source_raw) != 1 or not isinstance(source_raw[0], str):
+        raise ValueError(f"summary must declare exactly one source_raw: {summary_path}")
+
+    reference = source_raw[0].strip()
+    if reference.startswith("[[") and reference.endswith("]]"):
+        reference = reference[2:-2].strip()
+    if (
+        not reference
+        or "/" in reference
+        or "\\" in reference
+        or "|" in reference
+        or "#" in reference
+    ):
+        raise ValueError(f"invalid source_raw reference: {source_raw[0]}")
+
+    candidates = (
+        [reference]
+        if Path(reference).suffix.lower() in {".md", ".pdf"}
+        else [f"{reference}.md", f"{reference}.pdf"]
+    )
+    matches = [name for name in candidates if raw_path_for(root, name).is_file()]
+    if len(matches) != 1:
+        raise ValueError(f"source_raw must resolve to exactly one raw file: {source_raw[0]}")
+    return matches[0]
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Manage raw compile registry")
     parser.add_argument("--root", type=Path, default=ROOT, help="Repository root")
@@ -399,6 +446,12 @@ def build_parser() -> argparse.ArgumentParser:
     mark_compiled_parser = subparsers.add_parser("mark-compiled", help="Persist a compiled raw entry")
     mark_compiled_parser.add_argument("raw_file")
     mark_compiled_parser.add_argument("--summary-path", required=True)
+
+    mark_compiled_summary_parser = subparsers.add_parser(
+        "mark-compiled-summary",
+        help="Persist a compiled entry using one source-summary path",
+    )
+    mark_compiled_summary_parser.add_argument("summary_path")
 
     mark_skipped_parser = subparsers.add_parser("mark-skipped", help="Persist a skipped raw entry")
     mark_skipped_parser.add_argument("raw_file")
@@ -448,6 +501,20 @@ def main(argv: list[str] | None = None) -> int:
         )
         save_registry(args.root, registry)
         print(f"compiled {args.raw_file}")
+        return 0
+
+    if args.command == "mark-compiled-summary":
+        raw_file = raw_file_from_summary(args.root, args.summary_path)
+        raw_path = raw_path_for(args.root, raw_file)
+        mark_compiled(
+            registry,
+            raw_file=raw_file,
+            summary_path=Path(args.summary_path).as_posix(),
+            body_sha256=compute_body_sha256(raw_path),
+            now=now_iso(),
+        )
+        save_registry(args.root, registry)
+        print(f"compiled {raw_file}")
         return 0
 
     if args.command == "mark-skipped":

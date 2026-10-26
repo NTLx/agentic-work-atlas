@@ -112,6 +112,70 @@ def test_mark_compiled_and_mark_skipped_update_registry_entries():
     assert compile_registry.list_pending(registry) == []
 
 
+def test_raw_file_from_summary_resolves_one_existing_raw(tmp_path):
+    compile_registry = load_compile_registry()
+    write_raw(tmp_path, "example.md", "type: raw\n", "body\n")
+    summary = write_summary(tmp_path, "example.md")
+
+    assert compile_registry.raw_file_from_summary(
+        tmp_path, summary.relative_to(tmp_path).as_posix()
+    ) == "example.md"
+
+
+def test_raw_file_from_summary_rejects_missing_or_ambiguous_source(tmp_path):
+    compile_registry = load_compile_registry()
+    summary = tmp_path / "wiki" / "sources" / "example.md"
+    summary.parent.mkdir(parents=True, exist_ok=True)
+    summary.write_text(
+        "---\ntype: source-summary\ntitle: Example\nsource_raw: []\n---\n",
+        encoding="utf-8",
+    )
+
+    try:
+        compile_registry.raw_file_from_summary(tmp_path, "wiki/sources/example.md")
+    except ValueError as exc:
+        assert "exactly one source_raw" in str(exc)
+    else:
+        raise AssertionError("expected missing source_raw to be rejected")
+
+    write_raw(tmp_path, "example.md", "type: raw\n", "markdown\n")
+    pdf = tmp_path / "raw" / "example.pdf"
+    pdf.write_bytes(b"pdf")
+    summary.write_text(
+        "---\ntype: source-summary\ntitle: Example\nsource_raw:\n  - \"[[example]]\"\n---\n",
+        encoding="utf-8",
+    )
+    try:
+        compile_registry.raw_file_from_summary(tmp_path, "wiki/sources/example.md")
+    except ValueError as exc:
+        assert "exactly one raw file" in str(exc)
+    else:
+        raise AssertionError("expected ambiguous source_raw to be rejected")
+
+
+def test_mark_compiled_summary_cli_updates_registry(tmp_path):
+    compile_registry = load_compile_registry()
+    write_raw(tmp_path, "example.md", "type: raw\n", "body\n")
+    summary = write_summary(tmp_path, "example.md")
+    registry = compile_registry.empty_registry("2026-06-28T10:30:00+08:00")
+    compile_registry.save_registry(tmp_path, registry)
+
+    result = compile_registry.main(
+        [
+            "--root",
+            str(tmp_path),
+            "mark-compiled-summary",
+            summary.relative_to(tmp_path).as_posix(),
+        ]
+    )
+
+    assert result == 0
+    entry = compile_registry.load_registry(tmp_path)["items"]["example.md"]
+    assert entry["status"] == "compiled"
+    assert entry["summary_path"] == "wiki/sources/example.md"
+    assert entry["body_sha256"] == body_sha256("body\n")
+
+
 def test_save_and_load_registry_round_trip(tmp_path):
     compile_registry = load_compile_registry()
     registry = {
