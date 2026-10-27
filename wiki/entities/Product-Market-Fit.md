@@ -7,7 +7,7 @@ aliases:
   - 产品-市场契合
 definition: “产品价值超越创始人推力、进入市场自发拉动的状态，表现为真实用户的留存、付费与口碑推荐”
 created: 2026-05-13
-updated: 2026-05-26
+updated: 2026-10-27
 tags:
   - Startup-Methodology
 related_entities:
@@ -19,6 +19,7 @@ related_entities:
 source_raw:
   - "[[The-Founders-Playbook-05062026_v3]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
+  - "[[20261025-lenny-86-minute-guide-finding-pmf]]"
 evidence_level: medium
 claim_type: mixed
 ---
@@ -52,6 +53,8 @@ PMF 的本质不是”产品够好了”，而是产品与市场的关系发生�
 - **基础设施压力方向反转**：PMF 前担心没人用，PMF 后担心服务跟不上。
 
 在 AI 时代，这个相变可能被 [[Product-Overhang|产品能力溢出]] 提前或延迟。Boris Cherny 在构建 Claude Code 时明确表示，前 6 个月没有 PMF——他自己只用 Claude Code 写 10% 的代码。团队的 deliberate 选择是”为下一代模型构建”，而不是为当前模型寻找 PMF。这说明在 AI 产品中，PMF 的时间窗口可能被模型能力进步曲线重新定义。
+
+Rob Snyder 的 PULL 框架补充了需求发现层面的个人视角：PMF pull 属于有具体待办项目的个人，而非抽象的公司；需要同时识别当前必须完成的 Project、Unavoidable 的原因、考虑过的 List of options，以及这些选项的 Limitations。受访者的赞美或免费使用不等同于购买拉力；应观察其是否尝试购买，并验证相似个人是否重复出现同一需求。此为单一实践者提出的销售/发现框架，不是独立实证定律。证据与边界：[[20261025-lenny-86-minute-guide-finding-pmf]]（7:35–9:36、23:15–25:22）；完整分析见来源摘要。
 
 ## 警惕 AI 时代的伪 PMF (False PMF)
 
