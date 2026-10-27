@@ -8,7 +8,7 @@ aliases:
   - Replayable Physical Experience
 definition: "把真实实验或实验派生的可验证证据组织成 Agent 可连续提出假设、选择实验、接收反馈并修正策略的科学环境；既包括实时自动实验，也包括由预先测量数据构成的可重放物理经验。"
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-27
 evidence_level: high
 claim_type: mixed
 tags:
@@ -22,6 +22,7 @@ related_entities:
   - "[[Continual-Learning]]"
 source_raw:
   - "[[20261014-latentspace-leash-bio-lab-in-the-loop]]"
+  - "[[20261026-latent-space-minos-ai-scientist-eval]]"
   - "[[20261009-latentspace-periodic-synthesis-superintelligence]]"
 ---
 
@@ -92,7 +93,18 @@ state
 
 这使同一批现实数据可以训练实验选择、信息增益、hypothesis revision 和预算约束下的探索策略，而不只是单次预测。
 
-### 4. Replay 不能替代 Frontier Expansion
+### 4. 完整 measured landscape 同时可以成为 trajectory-aware eval
+
+Minos 的后续访谈补出 replayable loop 的第二个用途：如果实验 world 被预先高密度测量，环境不仅能快速返回 Agent 主动选择的结果，也知道 Agent **没有选择**的候选结果。这样评测器就拥有一个局部 answer key，可以在固定实验预算下诊断 Agent 的决策 policy，而不只看最终命中的 molecule。
+
+可观察行为包括：是否过早停止、是否重复测试、hypothesis 与 observation 冲突后是否改变策略、explore / exploit 的预算分配，以及何时离开低质量 neighborhood。Leash 报告不同模型在这些行为上存在分离，但目前没有机制解释，也没有系统的人类同预算基线。
+
+**判断**：Replayable Lab-in-the-Loop 可以同时承担两种角色：一是 scientific-agent 的训练/探索 environment，二是对 `state → action → evidence → next action` 轨迹的评测器。后者的价值来自 counterfactual outcomes 已被提前测量，而不是来自 learned judge。
+
+- **证据**：[[20261026-latent-space-minos-ai-scientist-eval]]（00:01:16–00:05:31；00:11:55–00:13:33）。
+- **边界**：answer key 只覆盖已测 action space；它不能证明未测区域没有更优实验，也不能自动证明 policy 能迁移到新 biology。
+
+### 5. Replay 不能替代 Frontier Expansion
 
 预计算环境再大，也只覆盖已经测过的区域。Leash 的 DEL 数据受 chemical library geometry、building-block availability、DNA conjugation 与 protein panel 限制；Periodic 的 live lab 则受材料、设备和物理时间限制。
 

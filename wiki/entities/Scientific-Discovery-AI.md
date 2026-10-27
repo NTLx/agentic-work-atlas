@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把模型、科学表示、搜索/模拟/工具与可验证实验反馈结合起来，用 AI 提出、执行和筛选科学假设，并把结果回流到后续决策的系统形态"
 created: 2026-05-08
-updated: 2026-10-22
+updated: 2026-10-27
 tags:
   - AI
   - science
@@ -32,6 +32,7 @@ source_raw:
   - "[[20261009-latentspace-periodic-synthesis-superintelligence]]"
   - "[[20261010-latentspace-biohub-deepmind-protein-folding]]"
   - "[[20261014-latentspace-leash-bio-lab-in-the-loop]]"
+  - "[[20261026-latent-space-minos-ai-scientist-eval]]"
   - "[[20261002-meta-solving-open-research-problems-together]]"
   - "[[20261021-openai-distributed-biological-reasoning]]"
 ---
@@ -193,6 +194,17 @@ belief update / next choice
 
 - **证据**：[[20261014-latentspace-leash-bio-lab-in-the-loop]]（Transcript L592-L852）；[[20261009-latentspace-periodic-synthesis-superintelligence]]。
 - **边界**：replayable environment 继承原始 assay 的 chemical-space coverage、measurement artifact 与 batch bias；数据库查询不会产生未测量的新自然事实。真正扩张 scientific frontier 仍必须回到 live physical experiment。详见 [[Lab-in-the-Loop]]。
+
+### 完整 measured world 可以把“AI Scientist”评测推进到决策策略层
+
+[[20261026-latent-space-minos-ai-scientist-eval]] 是同一 Leash 路线的后续证据。Minos 不只把预先测量的 protein × molecule landscape 当作高速实验环境，还利用**整个环境的真实结果都已知**这一点形成 answer key：Agent 在 100-molecule 等固定预算下提出 SAR hypothesis、选择下一轮实验并更新策略，而评测器可以同时看到 Agent 没有选择的 counterfactual outcomes。
+
+因此可观察的不再只是最终 binder 分数，还包括：是否过早放弃、是否在 hypothesis 冲突后调整、是否在有限预算里重复无信息实验、何时 explore / exploit，以及是否能及时离开低质量 neighborhood。Quigley 报告较强模型更快放弃不 productive 的局部区域，而较弱模型更容易围绕低质量候选继续做细小变体；他同时明确表示团队尚不知道这种差异的机制原因。
+
+**判断**：Scientific Discovery AI 的 evaluation unit 可以从“单次科学答案是否正确”扩展为 **budgeted information-acquisition policy**：在现实反馈和有限资源下，系统如何决定下一条 evidence 值不值得获取，以及 evidence 是否真正改变后续行动。
+
+- **证据**：[[20261026-latent-space-minos-ai-scientist-eval]]（00:01:16–00:05:31；00:11:55–00:16:01）。
+- **边界**：Minos 的 answer key 只对已测量 world 完整，不代表现实 chemical space 的全局最优；本篇仍是 Leash 团队访谈，约 90,000 rollouts、模型表现与环境扩张速度均非独立审计结果。最关键的开放问题——这种决策能力能否通过 RL 迁移到新的 biology——受访者明确表示尚未知。
 
 ### 科学环境必须主动制造“反事实密度”
 
