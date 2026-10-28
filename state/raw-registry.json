@@ -3533,6 +3533,15 @@
       "summary_path": "wiki/sources/20261021-tessl-coding-agent-chaperones.md",
       "updated_at": "2026-10-22T09:55:24+08:00"
     },
+    "20261022-hf-thinkingbox-db-grading-rl.md": {
+      "body_sha256": "1c15eb5b0036963dce60f3213e6235e521052def10a1b9ad7648b2b87711a4c2",
+      "compiled_at": "2026-10-28T10:14:07+08:00",
+      "raw_file": "20261022-hf-thinkingbox-db-grading-rl.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261022-hf-thinkingbox-db-grading-rl.md",
+      "updated_at": "2026-10-28T10:14:07+08:00"
+    },
     "20261022-latentspace-modal-d.md": {
       "body_sha256": "73131d31855fcf6138f5f510ca67ee28ebffc251f9c19853aee8f32d9576c4f7",
       "canonical_url": "https://www.latent.space/p/modal-d",
@@ -3554,6 +3563,24 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20261022-latentspace-moshi.md",
       "updated_at": "2026-10-22T23:29:53+08:00"
+    },
+    "20261023-vercel-agent-production-safe-access.md": {
+      "body_sha256": "2f04e2c3394df3ac4ea8947ef6848f92689d4e90029787dfa0bddf1890d32256",
+      "compiled_at": "2026-10-28T10:14:11+08:00",
+      "raw_file": "20261023-vercel-agent-production-safe-access.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261023-vercel-agent-production-safe-access.md",
+      "updated_at": "2026-10-28T10:14:11+08:00"
+    },
+    "20261024-langchain-company-harness.md": {
+      "body_sha256": "8cb83f6987a5415608ae8e34e5ce0178bcdbb5c9ecdd8bfb6239839b2850f444",
+      "compiled_at": "2026-10-28T10:14:15+08:00",
+      "raw_file": "20261024-langchain-company-harness.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261024-langchain-company-harness.md",
+      "updated_at": "2026-10-28T10:14:15+08:00"
     },
     "20261025-lenny-86-minute-guide-finding-pmf.md": {
       "body_sha256": "582332e641c71d6df96d36e69e15caf4f9c39cdbc1851bd2d47bf7d1816397d2",
@@ -4217,6 +4244,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-10-27T09:32:11+08:00",
+  "updated_at": "2026-10-28T10:14:15+08:00",
   "version": 1
 }

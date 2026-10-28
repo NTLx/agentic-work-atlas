@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-10-15
+updated: 2026-10-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -164,6 +164,24 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 | 行为验证 | 系统是否在该停止时停止 | 高风险模式转人工、安全拒绝 |
 
 真正的 Agent harness 是这四层的组合，而不是一个更长的 prompt。
+
+### 业务终态 oracle：从验证器复用到训练 reward（ThinkingBox，2026-10）
+
+[[20261022-hf-thinkingbox-db-grading-rl]] 把“行为验证”进一步落到可执行业务终态：Agent 完成工具调用后，不由模型自述是否成功，而是检查数据库最终状态是否满足预期业务不变量。ThinkingBox 随后把同类 executable final-state checker 用作 benchmark 外训练任务的二值 reward。
+
+这条证据补充了一个可复用结构：
+
+```text
+业务意图 / invariant
+  → 可执行 terminal-state oracle
+  → eval / regression verdict
+  → （条件允许时）post-training reward
+```
+
+**判断**：当任务存在高质量、模型外、可执行的业务终态 oracle 时，同一验证资产可以跨越 eval、回归和训练闭环，降低“模型自己判断自己是否做对”的比例；但 oracle 一旦成为 reward，checker completeness 也会从评测质量问题升级为训练目标问题。
+
+- **证据**：ThinkingBox 对 Qwen3.8-27B 的 50-step GRPO 实验中，pass@1 从 51.70% 升至 60.78%，20/20 全成功任务从 38 增至 107；同时 pass@20 从 453 降至 446，说明 repeatability 与 coverage 可以分化。
+- **边界**：这是单一 benchmark / model / training setup 的项目方一手结果，不能推出数据库 checker 或 GRPO 的普遍收益；若业务 invariant 编码不完整，Agent 仍可能“满足 checker 但违背真实意图”。该问题与 [[Evaluation-Integrity]] 直接相连。
 
 ## Certificate：先定义可验证正确性，再扩大 Agent 吞吐（2026-10）
 

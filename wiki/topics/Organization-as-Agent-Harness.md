@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-10-25
+updated: 2026-10-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -82,6 +82,24 @@ source_raw:
 | 学习层 | 经验如何沉淀 | 公开交互、复盘、可复用指令和知识 |
 
 这四层不是管理学装饰。它们就是 Agent 的上下文窗口之外的真实上下文。
+
+### 从组织四层到 company-harness runtime primitives（LangChain，2026-10）
+
+[[20261024-langchain-company-harness]] 给这四层补了一个更贴近运行时的视角。LangChain 从 GTM Agent、OpenSWE 与 Content Studio 三类内部系统归纳出五个 recurring primitive：Agent 进入员工已有工作界面；显式处理 on-behalf-of 与 fixed identity；区分 global/user memory；在 sandbox 中执行代码并经受控通道访问 authenticated services；大量运行来自 schedule/event 而不是同步对话。
+
+这与本页“四层”不是竞争框架，而是两个抽象层：
+
+| 组织 Harness | Runtime primitive 的典型实现 |
+|---|---|
+| 目标层 | background/scheduled work 仍需明确任务、触发条件和结果去向 |
+| 流程层 | Slack/专用 UI、event/schedule、sandbox execution 把工作流变成可运行 surface |
+| 权限层 | OBO / fixed identity、context-dependent tool availability、secret/service access mediation |
+| 学习层 | global/user memory 与可被后续运行复用的上下文 |
+
+**判断**：公司级 Agent harness 最好同时建模“组织要解决什么”和“Agent runtime 靠什么长期运行”。只谈目标/流程会漏掉 identity、memory、sandbox、background execution；只谈 runtime primitives 又会漏掉 owner、责任、价值和学习闭环。
+
+- **证据**：[[20261024-langchain-company-harness]]；本页已有 Cloudflare、Pinterest、Block、Meta 等跨案例证据。
+- **边界**：LangChain 的五项来自其自身内部系统经验，不是所有企业的必要/充分条件。尤其 memory 仍被作者描述为探索较少的区域；scheduled/ambient work 也会扩大 stale context、权限生命周期、预算与观测问题，不能只作为“更自动”的能力项。
 
 ## 专家知识的第二大脑：从隐性经验到可回归资产
 

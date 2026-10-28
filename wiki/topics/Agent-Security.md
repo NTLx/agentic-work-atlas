@@ -3,7 +3,7 @@ type: topic
 title: Agent Security
 description: "Agent 在不可信组件和跨信任域环境中行动时，从检测、判定、授权、执行到撤销与恢复的责任闭环"
 created: 2026-09-05
-updated: 2026-09-20
+updated: 2026-10-28
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -103,6 +103,13 @@ source_raw:
 ### 3. 授权与执行必须分开看
 
 [[Distinct-Principal-Identity|独立主体身份]]解决归因、权限上限和凭证生命周期，[[Least-Agency|最小代理权]]进一步限制工具能力、操作次数和作用域；[[Agent-Containment|Agent 隔离]]把最坏情况限制在环境边界内。它们共同支持一个结构判断：**模型提出动作，不等于系统必须放行动作**。
+
+Vercel 2026-10 的生产 Agent 架构（[[20261023-vercel-agent-production-safe-access]]）提供了一个具体的 plan-scoped authorization 样本：先用只读能力调查，随后把 `intent → proposed work → requested scope` 组织成用户可审查 plan；批准后才换取短生命周期、特定 scope 的 credential，并由下游 API 执行 scope enforcement。批准本身也受 invoking user 已有权限上限约束。
+
+**判断**：高影响 Agent 的权限设计可以把“用户批准什么”从单个 tool call 或整个 session，收敛到**有语义边界的一组计划工作**；但真正的安全边界仍在模型外的 authority ceiling、credential lifetime、scope mapping 与 API enforcement。
+
+- **证据**：[[20261023-vercel-agent-production-safe-access]]。
+- **边界**：Vercel 材料是厂商一手架构说明，不是独立安全评测；read-only 仍可能泄露敏感信息，短生命周期 token 也不能撤销已提交的外部副作用。该模式不能替代后文的 stop / revoke / compensation / reconciliation。
 
 ### 4. 恢复是闭环的一部分，不是事后附录
 
