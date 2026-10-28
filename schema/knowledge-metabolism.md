@@ -11,19 +11,19 @@ type: schema-subdoc
 
 ## 角色与执行边界
 
-固定编排链为：`n8n → ai_work_queue(worker=weekly, kind=knowledge_promotion_review) → ChatGPT Weekly Promotion Gate → ai_work_queue(worker=hourly, kind=wiki_compile | wiki_research | wiki_maintenance) → ChatGPT Hourly → VPS ServerFS MCP（直接仓库操作） → 本仓库`。
+固定编排链为：`Daily Evidence Discovery → work_events(canonical candidate lineage) → ai_work_queue(worker=weekly, kind=knowledge_promotion_review) → ChatGPT Weekly Promotion / Research Decision → work_events(promotion manifest) + ai_work_queue(worker=hourly, kind=wiki_compile) → ChatGPT Hourly Integration → VPS ServerFS MCP（直接仓库操作） → 本仓库稳定知识 → ChatGPT Monthly Knowledge Governance`。
 
-- **Daily** 执行 intelligence discovery、verification 与 canonicalization，输出候选和证据缺口；不直接决定耐久知识保留。
-- **Weekly** 是唯一 Promotion Gate：审阅 canonicalized 候选，决定晋升、转成可行动 evidence gap、或不保留，并为已选工作创建有界 Hourly work。Weekly 不执行跨运行的长任务。
-- **Hourly** 是可恢复执行 worker，负责一个有界 work item。剪藏、研究、编译、知识维护、lint 与必要 Git 操作由 ChatGPT 本身完成；跨运行恢复依赖 `work_id` / `correlation_id`、队列状态、仓库当前状态与已有 commit，而不是服务器侧 Agent task。Weekly / Monthly 不持有跨运行执行状态。
-- **ServerFS MCP / 本仓库** 是 repository-local Integration Gate 的直接工具通道：ChatGPT 使用 ServerFS MCP 当前直接暴露的文件与其他确定性能力读取、创建、修改仓库内容。ServerFS 不作为二次 AI Agent 编排层，也不替 ChatGPT 再调用服务器上的 AI Agent；如果某个必要步骤没有直接暴露的非 Agent 能力，应显式返回 `blocked` 或保留待完成步骤，而不是把任务静默委派给服务器 AI Agent。
-- **Monthly** 执行知识效用与长期质量复核；可提出 `wiki_maintenance` 或 evidence-gap manifest，由 Weekly/外部调度转交 Hourly 执行。Monthly 不拥有跨运行长任务。
+- **Daily** 执行 intelligence discovery、verification 与 canonicalization；完整报告以 Markdown 交付，机器可消费的候选语义与 lineage 通过 `work_events` 的 canonical candidate Event 持久化。Daily 不直接决定耐久知识保留，也不生成 sidecar / Daily GitHub artifact 作为知识代谢接口。
+- **Weekly** 是唯一 Promotion Gate 与 Promotion 前 evidence-gap resolution 层：审阅 canonicalized 候选、检查现有 Wiki coverage、由当前 ChatGPT 直接完成必要的有界补研，最终决定 `promote`、`research_needed` 或 `ignore`。只有 `promote` 才创建 `worker=hourly, kind=wiki_compile`；完整 promotion manifest 持久化为 `work_events` Event，并由 queue 的 `source_event_id` 引用。Weekly 不创建 `wiki_research` 或 `wiki_maintenance`。
+- **Hourly** 是可恢复 Integration Gate，正常只执行 Weekly 已批准且边界冻结的 `wiki_compile`。clip、compile、lint、registry 与必要 Git 操作由 ChatGPT 本身通过直接非 Agent 工具完成；跨运行恢复依赖 `work_id` / `correlation_id`、`source_event_id` 指向的 promotion manifest、队列状态、仓库当前状态与已有 commit，而不是服务器侧 Agent task。Hourly 不承担 Promotion、开放式研究或既有知识治理。
+- **ServerFS MCP / 本仓库** 是 repository-local Integration / Governance 的直接工具通道：ChatGPT 使用 ServerFS MCP 当前直接暴露的文件、Repo Actions 与核心 repository/Git 能力读取、创建、修改仓库内容。ServerFS 不作为二次 AI Agent 编排层，也不替 ChatGPT 再调用服务器上的 AI Agent；如果某个必要步骤没有直接暴露的非 Agent 能力，应显式返回 `blocked` 或保留待完成步骤，而不是把任务静默委派给服务器 AI Agent。
+- **Monthly** 是 Knowledge Governance Layer：直接评估并治理已经存在于本仓库的稳定知识，包括 utility、merge、supersede、stale/orphan、alias、relationship/structure、provenance continuity 与 knowledge debt。Monthly 不把 `wiki_maintenance` 派给 Hourly；若治理暴露出新的来源、事实或稳定知识命题，则创建窄范围 `worker=weekly` evidence / promotion work，重新进入 Weekly Gate。
 
-`work_events`、queue 与 work recovery 是外部运行状态。本仓库不复制其状态，不新增运行表、注册表或周度运行账本。Daily 仅向本流程提供已验证、已 canonicalize 的候选清单；ServerFS MCP 只提供 ChatGPT 当前可直接调用的仓库操作能力，不开展广泛新闻发现，也不自动启动服务器 AI Agent。
+`work_events`、queue 与 work recovery 是外部运行状态。本仓库不复制其状态，不新增运行表、注册表或周度运行账本。Daily 通过 `work_events` 提供已验证、已 canonicalize 的候选语义；Weekly 通过 `work_events` 提供 promotion decision 与完整 integration manifest；`ai_work_queue` 只承载 worker 路由和运行状态。ServerFS MCP 只提供 ChatGPT 当前可直接调用的仓库操作能力，不开展广泛新闻发现，也不自动启动服务器 AI Agent。
 
 ## 外部 work manifest
 
-每个 manifest 应携带可用的 lineage 字段：`canonical_key`（Daily canonical object 的稳定标识）、`promotion_id`（Weekly 晋升时）、`work_id`、`correlation_id`、canonical/source URL、`operation` / `kind`，以及已有的来源事实和目标。Hourly work 的恢复身份由 `work_id` / `correlation_id` 与队列状态维护，不依赖 ServerFS Agent `task_id`。`wiki_compile` manifest 表示 Weekly 已决定晋升；`wiki_research` 表示 Weekly 已选择一个 actionable evidence gap；`wiki_maintenance` 表示 Monthly/审计已提出有界的既有知识修复。缺少足以识别 work 或来源的字段时返回 `blocked`，不自行扩大输入。
+Hourly `wiki_compile` manifest 应由 Weekly 在 `work_events.metadata_object` 中持久化，并由 queue 的 `source_event_id` 引用。至少携带 `canonical_key`、`promotion_id`、parent `work_id` / `correlation_id`、canonical/source URLs、`decision=promote`、evidence summary/strength、accepted scope、expected knowledge delta、existing Wiki coverage、相关既有 Wiki paths（如有）、provenance / lineage、success criteria 与 `execution_policy=chatgpt_direct_only`。Hourly work 的恢复身份由 `work_id` / `correlation_id`、`source_event_id`、队列状态与仓库事实维护，不依赖 ServerFS Agent `task_id`。关键 manifest 缺失到无法可靠执行 Integration Gate 时返回 `blocked(manifest_incomplete)`，不自行重新 Promotion 或扩大研究输入。
 
 ## Integration Gate 与结果
 
@@ -43,13 +43,13 @@ Integration Gate 先校验 manifest 的 operation、目标和 lineage，再检�
 
 Hourly 执行 Weekly 已晋升的材料。将 canonical/source URL 作为既定输入，按 `schema/compile-operations.md`、`schema/compile-workflow.md`、`schema/three-step-method.md`、source-summary、frontmatter 与 provenance 规则完成现有 `clip → compile`。继续检查 raw、Registry、source summaries、entities、topics、comparisons 覆盖；重复且无增量返回 `duplicate`，确有证据增量才编译。每次输入无法执行时返回 `blocked` 或 `source_gap`，不得改判 promotion 或转而发现其他候选。
 
-## `wiki_research`
+## Weekly evidence-gap resolution
 
-Hourly 将外部已选择的 actionable evidence gap 转为现有 `wiki/research/research-agenda.md` 条目，必要时按 `schema/research-module.md` 写入 research log。合并到最接近的既有 CR/EX 或 Source 需求；只在现有 Research 规则允许时创建条目。记录可执行的 source goal、Evidence gap、canonical/source URL 和 lineage。Research 是未验证问题的操作层：没有取得并验证 Evidence 前，不创建或更新稳定 Entity、Topic、Comparison 或 Source Summary。已有 Evidence 需编译时应另建/排入 `wiki_compile` 工作，不在 research work 中暗中编译。
+`research_needed` 是 Weekly Promotion Gate 的结论状态，不是 Hourly operation。候选证据初步不足时，Weekly ChatGPT 在当前运行内按有界问题直接检索、核验与比较可靠来源，并重新判断 `promote` / `research_needed` / `ignore`。本轮合理补研后仍缺关键 Evidence 时，将 missing evidence、checked sources、uncertainty、future trigger 与 lineage 记录在外部 `work_events`；不得创建 `wiki_research` work，也不得借研究状态写入稳定 Entity、Topic、Comparison 或 Source Summary。若后续取得并验证 Evidence，需要稳定知识增量时重新进入 Weekly Promotion，再由 `wiki_compile` 集成。
 
-## `wiki_maintenance`
+## Monthly Knowledge Governance
 
-Hourly 对 manifest 指定范围执行有界的既有知识修复，可处理合并/取代重复页、stale 或 orphan 页面、aliases、关系与结构问题。按 `schema/lint-workflow.md`、`schema/entity-spec.md`、`schema/fragmentation-metrics.md` 及 git 规范审查；使用现有 lint、entity-audit、Research、provenance 与稳定页规则。不得借维护任务引入新来源、新主张或扩展成 compile；发现证据缺口时只写入既有 Research agenda/log，并报告 `source_gap`。维护范围必须来自 manifest 或本地审计发现，按其边界最小修复。
+Monthly 直接对既有稳定知识执行有界治理，可处理 utility review、合并/取代重复页、stale 或 orphan 页面、aliases、关系与 bounded structure、provenance continuity 与 knowledge debt。按 `schema/lint-workflow.md`、`schema/entity-spec.md`、`schema/fragmentation-metrics.md`、`schema/knowledge-utility-eval.md` 及 git 规范审查；治理对象、问题、证据、成功标准和影响范围必须明确。不得借治理引入未经过 Weekly Promotion 的新来源或新稳定主张；若发现新的 evidence / source / knowledge claim，创建窄范围 `worker=weekly` work 或记录 research gap，由 Weekly 重新进入 Promotion Gate。Monthly 不创建或派发 `wiki_maintenance` 给 Hourly。
 
 ## Lineage 传播
 
@@ -62,11 +62,11 @@ Hourly 对 manifest 指定范围执行有界的既有知识修复，可处理合
 | `work_id`, `correlation_id` | queue / `work_events` / Hourly task | source summary frontmatter 或对应 Research log，便于从提交文件回查；不写入单独账本 |
 | `result_ref` | queue / `work_events`，用于记录 commit、PR 或确有必要的外部执行标识 | 不要求复制为仓库状态；仓库以 Git commit 与实际路径为权威结果 |
 | canonical/source URL | Daily canonical object 与 work manifest | Raw 的 `source`、source summary 的 `canonical_url`、Research 中的 source need；保留原始来源身份 |
-| operation/kind | queue / work manifest | 通过既有工作产物与结构化 commit type/scope 表达；不增加独立状态字段 |
+| operation/kind | queue / `work_events` manifest | Hourly 稳定集成只使用 `wiki_compile`；Weekly research 状态与 Monthly governance action 保留在各自 Event / work lineage 中，不增加仓库运行状态字段 |
 | resulting commit / wiki paths | Hourly 回报及外部 `work_events` | Git commit 与实际文件路径本身为权威记录；外部记录回填其 commit SHA / paths |
 
 Source summary 可选记录以下可追溯 frontmatter 字段：`canonical_key`、`promotion_id`、`work_id`、`correlation_id`。它们是 provenance 元数据，不是新状态字段；缺少 lineage 值时不猜造。Research task 在既有 agenda/log 中以紧凑文本记录适用字段。稳定页继续通过 `source_raw` / wikilink 回到 source summary 或 Research 依据，不复制整套运行元数据。后续 Monthly Reuse 可从外部 promotion/work 记录和 Git commit 定位最近样本，并检查稳定页是否进入后续回答或持久化 Output。
 
 ## 完成契约
 
-逐项回报 `work_id`、operation/kind、适用的 canonical/promotion/correlation 标识、结果、去重/证据依据、实际 wiki paths、resulting commit（如已提交）与验证结果。`compiled` 必须通过现有 compile 门与 wiki lint；Research 与 maintenance 按各自 lint/audit/git 门验证。只有实际仓库变更才按 README 和 `schema/git-commit-spec.md` 显式暂存、提交、推送。`no_delta` / `duplicate` 不制造空知识提交；`source_gap` / `blocked` 说明缺口与恢复条件。不要生成 digest、文章或额外运行报告，不新增仓库内运行账本。
+Hourly `wiki_compile` 逐项回报 `work_id`、canonical/promotion/correlation 标识、`source_event_id`、结果、去重/证据依据、实际 wiki paths、resulting commit（如已提交）与验证结果。`compiled` 必须通过现有 compile 门与 wiki lint。Monthly Governance 变更按其适用 lint/audit/utility/git 门验证，并在外部 Event 中记录治理 action 与 before/after evidence。只有实际仓库变更才按 README 和 `schema/git-commit-spec.md` 显式暂存、提交、推送。`no_delta` / `duplicate` 不制造空知识提交；`source_gap` / `blocked` 说明缺口与恢复条件。不要生成 digest、文章或额外运行报告，不新增仓库内运行账本。

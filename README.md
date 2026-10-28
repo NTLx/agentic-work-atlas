@@ -25,7 +25,7 @@
 
 日常四大环节：**剪藏 clip → 编译 compile → 输出 produce → 探索 explore**。`audit` 是贯穿全程的质量门。
 
-每周知识代谢（knowledge metabolism）是进入现有 `clip → compile` 的**唯一晋升门**，不是第五个 lifecycle。Daily 执行情报发现、验证与 canonicalization；Weekly 选择耐久保留并创建有界 Hourly work；ServerFS/本仓库集成已选择的 compile、research 或 maintenance manifest；Monthly 复核知识效用与长期质量。外部链路与 lineage 规则见 `schema/knowledge-metabolism.md`。本仓库不复制 queue、task recovery 或 `work_events` 状态。
+每周知识代谢（knowledge metabolism）是进入现有 `clip → compile` 的**唯一晋升门**，不是第五个 lifecycle。Daily 执行情报发现、验证与 canonicalization，并把机器可消费候选语义写入外部 `work_events`；Weekly 是唯一 Promotion Gate，并在本轮直接完成必要的有界补研，只有 `promote` 才创建 Hourly `wiki_compile`；Hourly 只负责已批准知识的 repository Integration；Monthly 直接治理已经存在的稳定知识。外部链路与 lineage 规则见 `schema/knowledge-metabolism.md`。本仓库不复制 queue、task recovery 或 `work_events` 状态，也不把 Daily sidecar / GitHub artifact 当作知识代谢接口。
 
 `recompile(claim)` 是 `explore` 的受限维护子流程：只检查 agenda 队列中的一个既有 Claim，以 Research 沉淀为主；仅在协议规定的 extracted 事实例外下补 1 个已有稳定页。
 
@@ -290,7 +290,7 @@ AIHOT 是外部管理 Skill。本仓库只保留 `.agents/skills/aihot/` 这一�
 
 | Work kind | ServerFS prompt | 规范 |
 |-----------|-----------------|------|
-| `wiki_compile` / `wiki_research` / `wiki_maintenance` | `tools/knowledge-metabolism-agent-prompt.md` | `schema/knowledge-metabolism.md` 及各自既有工作流 |
+| `wiki_compile` | `tools/knowledge-metabolism-agent-prompt.md` | `schema/knowledge-metabolism.md` + 既有 clip/compile/provenance/registry/lint/git 工作流 |
 
 ### 遇到问题
 
