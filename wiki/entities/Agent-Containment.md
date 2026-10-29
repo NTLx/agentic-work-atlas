@@ -8,7 +8,7 @@ aliases:
   - Blast Radius Control
 definition: "通过环境层隔离限制 Agent 可操作范围，使概率性防御（模型层）失效时仍有确定性边界兜底的安全架构"
 created: 2026-05-27
-updated: 2026-06-23
+updated: 2026-10-29
 tags:
   - agent-security
   - architecture
@@ -34,6 +34,7 @@ source_raw:
   - "[[20260518-zero-trust-for-ai-agents]]"
   - "[[Using LLMs to secure source code]]"
   - "[[20260528-ai-model-simulation]]"
+  - "[[20261027-latent-space-anthropic-brain-hands]]"
 ---
 
 # Agent Containment（Agent 隔离与遏制）
@@ -110,6 +111,26 @@ Agent 安全风险分三类，防御对应三个组件：
 | **持久记忆投毒** | 注入落入 CLAUDE.md、产品记忆、定时 Agent 状态目录 → 每次启动重新加载 | 需要会话启动分类器 |
 | **多 Agent 信任升级** | 子 Agent 输出被当作"自己人的输出"而非原始工具结果 → 新的注入路径 | 需在信任层级分配和注入风险间权衡 |
 | **Agent 身份** | Agent 应拥有独立身份还是继承用户权限？Claude Cowork 使用 per-session scoped token | 跨平台标准尚未形成 |
+
+## Brain / Hands 分离：不要让 sandbox 同时持有 Agent、状态和 secret（2026-10）
+
+Anthropic 在 managed agents 中采用了更细的 containment topology：durable harness/state 与临时 execution sandbox 分离；第三方 credential 不进入 sandbox，而由独立 vault 保存，Agent 只得到 placeholder，真正 secret 在 egress proxy 处按授权注入。sandbox 层再叠加 domain allowlist 或 deny-network（[[20261027-latent-space-anthropic-brain-hands]]，1:03:28–1:07:50）。
+
+这比“把 Agent 关进一个更强的沙箱”多了一层关键思想：**权限也要隔离**。即使 execution sandbox 被 prompt injection、恶意代码或模型误行为控制，攻击者仍不应自动得到 reusable credential 或任意网络出口。
+
+**判断**：高权限 Agent 的 containment 应至少分解为四个独立边界：
+
+1. reasoning / durable state；
+2. untrusted execution；
+3. credential / identity authority；
+4. network egress authority。
+
+只有 sandbox 隔离而 secret、长期 token 与 unrestricted egress 仍在同一 trust domain 时，blast radius 依然过大。
+
+- **证据**：[[20261027-latent-space-anthropic-brain-hands]]（1:03:28–1:07:50）。
+- **边界**：credential injection proxy 不是银弹；proxy、vault、authorization mapping 和 allowlist 都需要自身的最小权限、审计与故障隔离。既有案例也说明“允许某域名”本身是一项 capability grant，而非数据外泄安全证明。
+
+同一访谈还要求区分训练环境与生产环境。训练时可能故意把模型放进高压 sandbox 并激励其寻找逃逸路径；生产 managed runtime 则额外存在 online safeguards、harness 和权限边界（06:26–07:31；1:08:50–1:10:55）。因此安全报告应同时记录 **模型尝试了什么** 与 **环境实际上允许它做到什么**，不能只凭行为 transcript 推断 production blast radius。
 
 ## 前提与局限性
 

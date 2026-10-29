@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-10-25
+updated: 2026-10-29
 evidence_level: high
 claim_type: mixed
 tags:
@@ -91,6 +91,7 @@ source_raw:
   - "[[20261014-latentspace-dyna-world-action-model]]"
   - "[[20261025-state-of-ai-report-2026]]"
   - "[[20261025-prime-agent-rust-rewrite]]"
+  - "[[20261027-latent-space-anthropic-brain-hands]]"
 ---
 
 # Agent Harness
@@ -171,6 +172,30 @@ Anthropic 的 Justin Young 在 Claude Agent SDK 上实验了跨多个 context wi
 
 - **证据**：[[20261025-state-of-ai-report-2026]]，PDF 第 8 页/印刷页 7；报告引述的实验与 benchmark，不是报告作者自测。
 - **边界**：样本限于报告列明的 benchmark、模型版本与特定 harness；任务分布、实现和评测时间不同会改变结果，不能把 7.8 倍方差比当作普遍常数。
+
+## Harness 作为生产安全控制平面：Brain / Hands 分离（Anthropic，2026-10）
+
+[[20261027-latent-space-anthropic-brain-hands]] 给出了 Harness 边界的一个生产级安全实例：**Agent 的 reasoning/state loop（brain）与代码执行环境（hands）不必共置在同一个 sandbox。** Anthropic 嘉宾描述其 managed-agent harness 运行在 durable server，sandbox/container 只在需要执行时按需创建；Agent state 也独立保存。最初这一结构主要解决启动延迟与 sandbox 失效导致整个 Agent 一起死亡的问题，但随后显现出更强的安全价值（Transcript 1:03:28–1:05:15）。
+
+更关键的是权限并不跟着模型一起进入 execution environment：长期 credential 存在独立 vault，Agent 只看到 placeholder；真正 secret 在请求 egress 时由 proxy 注入。sandbox 还能配置 domain allowlist 或完全禁网（1:05:15–1:07:50）。
+
+~~~text
+model + durable harness/state    <- control plane
+             |
+             v
+      ephemeral sandbox          <- execution plane
+             |
+             v
+   egress / auth proxy ---------- secret vault
+             |
+             v
+      approved external target
+~~~
+
+**判断**：Harness 的系统责任不仅是“让模型调用工具”，还包括把 **reasoning、execution、credentials、network authority** 放进不同信任域。模型能力越强，越不能把这些外部安全语义简单训练进模型后删除；它们属于可审计、可撤回的 deterministic control plane。
+
+- **证据**：[[20261027-latent-space-anthropic-brain-hands]]（1:03:28–1:07:50；19:45–22:01）。
+- **边界**：这是 Anthropic 自身 managed-agent 架构的一手描述，并非独立安全审计；proxy、vault、授权传播和 allowlist 配置本身仍是高价值攻击面。详见 [[Agent-Containment]] 与 [[Long-Lived-Credential-Risk]]。
 
 ## Harness 作为能力孵化层：边界会向模型内部移动（2026-09）
 
