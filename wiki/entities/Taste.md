@@ -5,7 +5,7 @@ aliases:
   - Taste
 definition: "在不确定条件下做出独特判断的能力，表现为能注意到什么、拒绝什么，以及精确解释哪里感觉不对的能力"
 created: 2026-04-09
-updated: 2026-10-12
+updated: 2026-11-02
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -35,6 +35,7 @@ source_raw:
   - '[[20260920-lenny-peter-sellis-product-advice]]'
   - '[[20260918-oneusefulthing-the-overhang]]'
   - '[[20260810-railcode-vibe-coded-website]]'
+  - '[[20261101-lenny-hector-serrano-wispr-flow-growth]]'
 ---
 
 # Taste（品味）
@@ -110,6 +111,15 @@ Ethan Mollick 从 capability overhang 的工作实践给 Taste 补了一个更�
 **判断**：在生成供给充足的场景中，Taste 更接近一个持续的**选择函数**，而不是作品末端的审美评价；它决定哪些候选获得后续资源、哪些被丢弃，以及何时要求探索另一条路径。
 - **证据**：[[20260918-oneusefulthing-the-overhang]]；Mollick 在视频制作案例中拒绝第一版 joke、要求更 cinematic 的版本，并明确将 Taste 描述为“知道哪些 AI outputs 保留、丢弃或作为新作品原料”。
 - **边界**：这是作者的工作框架与个人案例，不证明 Taste 永久属于人类，也没有证明这种选择机制在所有任务上都优于模型自选；其价值仍依赖领域知识、目标和真实反馈。
+
+### Marketing 中的反自动化判断：知道哪一层不该追求 throughput（2026-11）
+
+[[20261101-lenny-hector-serrano-wispr-flow-growth]] 给“生成供给过剩后的选择函数”补了一个 customer-facing creative 案例。Wispr Flow 的 Hector Serrano 用“best marketers are allergic to AI”做了强修辞，但完整语境更精确：内部研究与流程可以自动化；他反对的是在当前阶段为了提高产量，让最终公开的 video、design、editing、post-production 失去 human endpoint。理由包括 AI slop 的品牌反噬风险，以及 AI 已经让各渠道内容供给快速上升，因此单纯“更多”越来越难形成差异化（1:03:53–1:06:38）。
+
+**判断**：Taste 的一个可操作表现是 **automation boundary judgment**——不是只在 AI 生成之后挑最好的一版，而是在流程设计时判断哪些环节可以追求吞吐，哪些环节一旦自动化会稀释客户可感知质量、真实性或品牌责任。换言之，Taste 也包括“拒绝错误的效率优化”。
+
+- **证据**：[[20261101-lenny-hector-serrano-wispr-flow-growth]]（0:41–0:55；1:03:53–1:06:38）。
+- **边界**：这是单一营销操作者在 2026-11 的经验判断，不是 AI 生成 creative 的技术上限。模型、验证和品牌工作流进步后，human endpoint 可以移动；真正稳定的原则是保留明确的质量 owner，而不是永久禁止 AI 参与最终输出。
 
 ### Fork lineage：把品味训练从模糊记忆变成显式比较（2026-10）
 
