@@ -2,7 +2,7 @@
 type: topic
 title: "Agent 知识管理与自进化"
 created: 2026-05-13
-updated: 2026-10-24
+updated: 2026-11-02
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -148,6 +148,15 @@ Demis Hassabis 的 AGI 访谈从另一个方向支持了这个 Topic：当前模
 [[World-Model|世界模型]]是持续学习要更新的对象之一。没有世界模型，Agent 保存再多历史，也只是保存了原始记录；有了世界模型，系统才可能把经验压缩成对环境、因果关系和行动后果有预测力的结构。
 
 [[Scientific-Discovery-AI|科学发现 AI]]把这个问题推到高压场景：一个科学 Agent 需要多轮实验、工具调用、假设修正和失败积累。[[Einstein-Test|Einstein Test]]则进一步要求系统不只是解已有问题，而是提出后来才出现的深层问题或理论。这个链条说明，Agent 知识管理的终点不是“存得多”，而是“学得准、忘得对、能迁移、能提出新问题”。
+
+## 科学数据的 AI-ready 不是“公开可下载”
+
+Hugging Face 与多家研究机构在 2026-10-29 启动 Project ProtoStar，明确把公开科学成果的“可访问”与“可复用”区分开：数据、模型和代码即使已经公开，如果仍散落在不兼容系统、静态/遗留格式中，或缺少文档、metadata、licensing 与 provenance，研究者和 AI 系统仍难以发现、解释、组合和复用。ProtoStar 因此把 machine-actionable formats、开放基础设施和 publishing guidance 作为基础设施层，并用公开 challenge 去观察真实 reuse、interoperability 和 documentation gap。
+
+**判断**：面向生物信息学和 AI for Science 的知识/数据基础设施，应把“AI-ready scientific artifact”定义为一组可验证的复用条件，而不是“文件已经公开”：至少需要机器可操作格式、足够 metadata、许可边界、provenance、长期可恢复性，以及真实下游复用对 interoperability 的压力测试。公开访问是必要条件之一，但不是可复用性的证明。
+
+- **证据**：Hugging Face 官方《Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready》（2026-10-29）：https://huggingface.co/blog/announcing-project-protostar ；Project ProtoStar：https://huggingface.co/project-protostar 。文章同时给出 NIH/NCBI、NASA 等已有公开资源的下载与文档化背景，并说明 open challenges 的目标之一是形成关于 reuse barriers 的实践证据。
+- **边界**：ProtoStar 当前仍处于 initiative launch / challenge 启动阶段；它能支持基础设施设计与问题定义，不能证明该计划已经提高跨机构复用率、科学产出或 AI discovery 质量。后续 adoption/outcome 应作为新的 evidence，而不是从启动声明外推。
 
 ## 人类角色的转变
 

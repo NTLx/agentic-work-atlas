@@ -139,6 +139,15 @@ Anthropic 的 Claude Code 聚合数据（2026-03→09，[[20260924-claude-opus-5
 - **证据**：[[20260924-claude-opus-5-5-context-cost]]，“Claude Code trends”“Cache is cheap”“Claude Code is better at using the cache”“The same task, but with fewer turns”。
 - **边界**：数据来自 Anthropic 自身产品 telemetry；价格、模型质量与 harness 改动同时变化，不能把成本改善单独归因于 Opus 5.5。
 
+## 上下文经济学：保持可缓存前缀比单纯压缩输出更重要（Vercel Agent，2026-10）
+
+Vercel 在 2026-10-27 的 Agent 更新中把 session 平均成本下降 67% 归因于一组 harness 级改动：增量式 context management、提高跨 turn 的 prompt-cache 复用、workflow-based CLI skills，以及更高效的 planning/coding guidance；同时明确 billing rate 本身没有变化。这个案例与上面的 Anthropic/Uber 证据共同指向：Agent 单位经济性不仅由模型单价决定，也由 harness 是否反复重传、重写或破坏可缓存上下文决定。
+
+**判断**：长寿命 Agent 应把“稳定、可缓存的 prompt prefix + 只追加必要增量”视为一等运行时设计目标；工具发现、workflow guidance 和确定性 orchestration 如果能减少重复上下文或不必要 model call，也属于 context economics，而不是外围工程细节。
+
+- **证据**：Vercel 官方 changelog《Vercel Agent sessions now cost 67% less》（2026-10-27）：https://vercel.com/changelog/vercel-agent-sessions-now-cost-67-percent-less 。
+- **边界**：67% 是 Vercel 自报的平均 session 成本结果，且多个机制同时变化，不能拆分为单一机制的因果收益，也不能外推为其他 harness 的普遍降幅；可迁移的是“增量上下文 + cache locality + workflow/tool orchestration 共同决定成本”的机制。
+
 ## 模型经济学：成本异质性
 
 Cursor 2026 春季报告对 7 个模型族的基准测试揭示了 token 效率的宏观背景：

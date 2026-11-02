@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-10-28
+updated: 2026-11-02
 evidence_level: high
 claim_type: mixed
 tags:
@@ -151,6 +151,15 @@ Cloudflare OS（CIO Sam Rhea, 2026-08-05，来源 [[20260805-how-we-use-ai-cloud
 **与工程/数据/医疗样本的差异**：Cloudflare OS 强调 **ephemeral 云环境的安全模型**——agent 只访问用户引入会话的数据，而非本机全部凭据；安全团队有审计可见性与网络控制权。这把"Agent 能碰到什么"从个人本机边界变成组织可审计的云边界。
 
 **可迁移内核**：① 魔法邮箱是反向筛选 JTBD 的低门槛机制（员工不愿交创意、愿交苦活）——context/skill 资产从真实需求反向长出；② champion 扩散证明"不设专职 AI 团队"也能规模化——用组织内部网络而非新部门推动采纳；③ 权限边界（gatekeeper 共享即重新认证）与 [[Human-Owns-Output]]（责任随岗位继承）协同，才是完整的组织 harness 权限+责任闭环。
+
+## 模型 ID 也可以成为组织治理的 policy object
+
+Vercel AI Gateway 在 2026-10-28 发布的 Virtual Models 提供了一个具体的控制面样本：应用或 Agent 不直接绑定 provider model ID，而调用稳定的 task-level virtual model ID；平台团队可以在不改调用代码、不重新部署的情况下，集中替换底层模型，并把 provider fallback、priority、Zero Data Retention 和 spend tags 与该 ID 绑定。Vercel 还明确说明，virtual model 上的相关设置可以覆盖 caller request 中的同类设置。
+
+**判断**：企业 LLM gateway 可以把“任务级模型 ID”设计成 policy object，而不只是 routing alias。这样，应用代码只表达“这是 coding-agent / ticket-triage / contract-review”，模型版本、provider、合规约束和成本归属则由控制面独立演进；这把模型治理从部署时配置提升为可集中审计和变更的运行时策略。
+
+- **证据**：Vercel 官方《Introducing Virtual Models on AI Gateway》（2026-10-28）：https://vercel.com/blog/ai-gateway-virtual-models ；同日 changelog：https://vercel.com/changelog/virtual-models-now-available-on-ai-gateway 。
+- **边界**：这是 Vercel 的具体实现语义，不意味着所有 gateway 都支持 caller override precedence、ZDR 或 tag replacement。与 [[20261002-openrouter-langchain-crewai-routing]] 的三层分类结合时，应继续区分 workflow orchestration、model routing 与 provider routing；virtual model 是横跨后两者并承载治理策略的一种控制面抽象，不是新的 workflow orchestrator。
 
 ## 工具接入也需要治理层
 
