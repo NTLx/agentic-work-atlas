@@ -7,7 +7,7 @@ aliases:
   - AI 评测集
 definition: "把真实业务判断、边界案例和验收规则显式化为可复用测试样本，用来评估、迭代和迁移 AI 系统行为的关键资产"
 created: 2026-05-23
-updated: 2026-10-12
+updated: 2026-11-03
 tags:
   - AI-evaluation
   - AI-deployment
@@ -31,6 +31,7 @@ source_raw:
   - "[[20260901-databricks-genie-ontology-data-stack]]"
   - "[[20260930-openrouter-golden-eval-production-traffic]]"
   - "[[20260930-openrouter-agent-regression-testing]]"
+  - "[[20261102-latent-space-legora-legal-agents]]"
 ---
 
 # Evaluation Set（评测集）
@@ -141,6 +142,31 @@ exact eval-set version
 
 - **证据**：[[20260930-openrouter-agent-regression-testing]]，locked case set、three kinds of change、model-swap 与 hermetic run 讨论。
 - **边界**：structural path 不应因为容易断言就被写进所有 case；只有路径本身属于业务契约时才应成为 oracle，否则会把实现细节误写成产品要求。
+
+## Trace-blind regime：当生产轨迹原则上不可见（2026-11）
+
+[[20261102-latent-space-legora-legal-agents]] 给 production-derived golden set 补了一个重要退化场景：在高度机密的法律工作中，Agent 供应商可能原则上不能查看客户的真实 traces。Legora CTO Jacob Lauritzen 表示，律所处理的数据经常属于律所客户而非律所自身，因此供应商基本看不到真实任务内容和完整执行轨迹（26:45–27:31）。这意味着“从 production traffic 采样 → scrub → golden set”并不是所有企业 Agent 都能采用的默认路径。
+
+Legora 的替代方案是组合多种弱信号：
+
+```text
+expert-authored project worlds
++ practice-area × task heat map
++ task / failure-mode coarse labels
++ cheap online LLM metric
++ feature-flag comparison
+→ approximate production distribution
+→ regression signal
+```
+
+离线部分把法律工作建模成完整 project world，例如 10,000-file data room 的 due diligence，并分别评估 red-flag discovery、analysis、draft quality 等子任务；评价团队由 engineers、lawyers 与 legal engineers 混合组成（8:44–10:55）。在线部分不保存完整客户轨迹，而用低成本 LLM 形成粗粒度指标，在 rollout 时通过 feature flags 比较是否改善或显著退化（26:45–26:57）。对于真实任务，团队更倾向只保留 task type、practice area、已知 failure class 等压缩标签；仅删除姓名的“synthetic trace”仍可能泄露语义，因此他们主动选择更安全但信息量更低的表示（27:39–28:34）。
+
+**判断**：Evaluation Set 存在一条 **distribution fidelity ↔ privacy exposure** frontier。真实 production trace 最接近部署分布，但也是最敏感的学习资产；当 trace 不可见时，评测集必须依赖领域专家构造和低带宽线上信号，因而需要显式承认 coverage debt，而不是把 synthetic world 当成天然等价的 production distribution。
+
+这也补充了一个新的 provenance 维度：评测结果不仅要记录 dataset/rubric/system version，还应记录 case 的来源级别，例如 `real trace / transformed trace / coarse telemetry / expert-authored / synthetic`。不同来源对应不同的分布可信度和隐私风险，不能静默混为同一种 ground truth。
+
+- **证据**：[[20261102-latent-space-legora-legal-agents]]（8:44–10:55；26:25–28:34）。
+- **边界**：来源是 Legora CTO 的一手访谈，未披露 online LLM evaluator 的 calibration、律师一致性指标或 expert-authored worlds 对真实生产分布的覆盖率；这些机制说明可行架构，不证明其评测已无偏。
 
 ## 前提与局限性
 

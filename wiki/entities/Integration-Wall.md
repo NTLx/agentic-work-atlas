@@ -7,7 +7,7 @@ aliases:
   - AI 集成之墙
 definition: "AI 项目从 demo 到生产落地时遇到的遗留系统、权限、SSO、数据驻留、合规、流程改造和组织采纳约束"
 created: 2026-05-22
-updated: 2026-07-30
+updated: 2026-11-03
 evidence_level: high
 claim_type: mixed
 tags:
@@ -29,6 +29,7 @@ source_raw:
   - "[[The Return of the Deployment Company]]"
   - "[[Open and closed models are on different exponentials]]"
   - "[[20260729-nejm-ai-triggered-rapid-response-mortality]]"
+  - "[[20261102-latent-space-legora-legal-agents]]"
 ---
 
 # Integration Wall（集成之墙）
@@ -45,6 +46,31 @@ source_raw:
 - Caffein Chen 文章把集成之墙扩展到治理层：FDE 进入客户现场后，数据、提示、评测集、员工经验和业务规则都会重新划定边界，传统 DLP 和审计流程未必能覆盖。
 - Google Research 的水文框架说明，开源也不会自动越过集成之墙。真正让模型进入运营的是 CHMI 开发 Delft-FEWS 适配器，使模型能在水文机构的标准工作流中运行。
 - NEJM AI（2026）临床案例给出集成之墙的时间尺度：RWJBarnabas 先在一家学术医疗中心把 Epic Deterioration Index 集成进 EHR，打磨告警送达、自动通知和培训数年，评估后才快速铺向其余 10 家医院——穿墙是持续工程，不是一次性切换；墙后真正运转的是 [[Alert-Closed-Loop]] 而非模型本身。
+
+## 受监管行业的 Vendor Graph：每个新 API 都是一条新的数据处理路径（2026-11）
+
+[[20261102-latent-space-legora-legal-agents]] 把 Integration Wall 的“合规”进一步落到供应商拓扑。Legora CTO Jacob Lauritzen 回顾，早期律所已经完成 Microsoft 365 的安全与供应商审查，因此 Azure 是容易被接受的既有 trust boundary；当时新增 AWS/Google 等云边界会遇到更大阻力。这个具体偏好后来发生变化，但机制没有消失：企业采购不是在真空中选择技术，而是在既有 approved-vendor graph 上增加或减少数据处理路径（28:42–29:36）。
+
+DPA 约束更直接。访谈称 Legora 刻意让 data processing agreement 中的 vendors 保持很少；某个专用模型或语音 API 即使单项能力更强，也会新增数据处理方、合同和治理面。相反，已批准的大型平台如果能覆盖多个任务，即使不是每项都绝对 SOTA，也可能在整体系统上更优（31:15–32:24）。
+
+可以把企业 Agent 的集成成本扩展为：
+
+```text
+Integration Cost
+= system/API integration
++ identity & permission mapping
++ data residency / retention
++ vendor review & DPA
++ audit / revocation path
++ operational fragmentation
+```
+
+**判断**：受监管 Agent 的架构优化目标不是简单的 `best model per task`，而是**在能力增益与 vendor graph 扩张之间做多目标优化**。每引入一个新的模型、MCP server、语音服务或数据处理器，都应视为新增 trust edge；它带来的能力收益要覆盖额外的 DPA、安全审查、数据流向、撤销和故障责任成本。
+
+这也解释了为什么“mostly good enough but already governed”的平台能力有时会战胜 best-of-breed point solution。它不是模型能力判断，而是 Integration Wall 在组织/合规层对技术 Pareto frontier 的重新排序。
+
+- **证据**：[[20261102-latent-space-legora-legal-agents]]（28:42–32:24）。
+- **边界**：Azure/Microsoft 的客户接受度来自 Legora 的客户经验，不代表所有律所或司法辖区；减少 vendors 也会提高 concentration risk、平台锁定和共享故障域，本来源没有系统比较这些反作用。
 
 ## 前提与局限性
 
