@@ -3,7 +3,7 @@ type: topic
 title: Code as Conceptual Infrastructure
 description: "代码作为概念基础设施：AI 让指令生成变便宜后，软件的核心资产上移为词汇、边界、模型和语义约束"
 created: 2026-05-18
-updated: 2026-08-19
+updated: 2026-11-05
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -28,6 +28,7 @@ related_entities:
   - "[[Peter-Naur]]"
   - "[[Joshua-Barretto]]"
 source_raw:
+  - "[[20261028-latent-space-supabase-agents]]"
   - "[[What Is Code?]]"
   - "[[20260420-ontology-enterprise-ai-agent]]"
   - "[[20260814-i-remain-a-skeptic]]"
@@ -43,6 +44,14 @@ source_raw:
 
 > [!summary] 核心洞察
 > AI 让“写出指令”变便宜，但没有让“建立正确概念”变便宜。软件的核心资产正在从代码量转向词汇、边界、模型和语义约束。
+
+## Agent-ready 数据库：声明式结构本身就是概念接口（2026-10）
+
+[[20261028-latent-space-supabase-agents]] 中，Supabase 创始人解释了为何把 Postgres 当前目标 schema（表、策略、注释）表示为 Git 管理的声明式文件，并发布 pgdelta：Agent 不必遍历上千份 migration 或先恢复数据库，便能直接理解实际数据模型与安全边界。访谈同时将与数据库同私网运行的长任务 Compute、可观察日志/检查列为 Agent 的运行条件。
+
+- **判断**：数据库 schema-as-code 的价值不是省掉历史迁移，而是把“当前状态、约束和可审核 diff”提供给人和 Agent 共用；历史 migration、权限审查与上线回滚仍承担不同职责。
+- **证据**：[[20261028-latent-space-supabase-agents]]（00:00:27–00:04:24；00:58:20–01:01:45）。
+- **边界**：Supabase 的产品发布/性能/兼容性均为访谈时公司自报；声明式设计不能替代事务迁移、RLS 校验或生产数据库操作审批。
 
 ## 代码不只是给机器执行
 

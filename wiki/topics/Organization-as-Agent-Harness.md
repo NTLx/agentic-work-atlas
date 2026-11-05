@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-11-02
+updated: 2026-11-05
 evidence_level: high
 claim_type: mixed
 tags:
@@ -40,6 +40,7 @@ related_entities:
   - "[[Alert-Closed-Loop]]"
   - "[[Human-Owns-Output]]"
 source_raw:
+  - "[[20261031-latent-space-arca-agent-harness]]"
   - "[[Building an MCP Ecosystem at Pinterest]]"
   - '[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]'
   - "[[20260502-most-companies-arent-ready-for-ai]]"
@@ -61,6 +62,14 @@ source_raw:
 
 > [!summary] 核心洞察
 > 企业不是“使用 AI 的人群”，而是 AI 运行时环境。组织越混乱，AI 越会把混乱放大；组织越能把目标、流程、权限和反馈显性化，AI 越像可扩展的执行层。
+
+## Arca：长期客户任务需要业务状态、能力边界与主动人类协作（2026-10）
+
+[[20261031-latent-space-arca-agent-harness]] 提供了受监管财富管理场景的公司自述：Agent 不直接代替顾问，而是从邮件、电话、客户计划等信号中持续维护事项，持久化客户状态、责任人和近期/远期待办，跨十天的税款筹措流程按需召回专家；资金划转、资产清算与客户沟通仍受确定性护栏和人工审批限制。另一个闭环是将人类纠正与运行 trace 配对，由夜间 meta-agent 提出改进，工程师审阅后才发布 prompt 变更。
+
+- **判断**：Organization as Harness 不只需要流程文件，还需要事件唤醒、业务状态的跨执行连续性、明确的人类动作边界、审计/纠正进入知识更新的通道。
+- **证据**：[[20261031-latent-space-arca-agent-harness]]（00:05:45–00:09:22；00:09:22–00:13:45；00:20:32–00:23:40）。
+- **边界**：单家公司访谈，无公开错误率、成本效益或独立审计；金融交易本身不是自主执行，模型验证也不能代替确定性授权。
 
 ## 从工具问题转向运行时问题
 

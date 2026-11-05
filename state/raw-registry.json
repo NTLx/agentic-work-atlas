@@ -3636,6 +3636,24 @@
       "summary_path": "wiki/sources/20261027-latent-space-anthropic-brain-hands.md",
       "updated_at": "2026-10-29T22:36:45+08:00"
     },
+    "20261028-latent-space-supabase-agents.md": {
+      "body_sha256": "3b020c42185a582020f2fcd9cf53dede2d0ecf0621cea405685a4bd7d83bbb64",
+      "compiled_at": "2026-11-05T16:03:38+08:00",
+      "raw_file": "20261028-latent-space-supabase-agents.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261028-latent-space-supabase-agents.md",
+      "updated_at": "2026-11-05T16:03:38+08:00"
+    },
+    "20261031-latent-space-arca-agent-harness.md": {
+      "body_sha256": "fa9079ba338bfb563e59913a2d06f768f74b6114495659896d4ef5c4c52ed7a8",
+      "compiled_at": "2026-11-05T16:03:36+08:00",
+      "raw_file": "20261031-latent-space-arca-agent-harness.md",
+      "raw_state": "full",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261031-latent-space-arca-agent-harness.md",
+      "updated_at": "2026-11-05T16:03:36+08:00"
+    },
     "20261101-lenny-hector-serrano-wispr-flow-growth.md": {
       "body_sha256": "74d1330a6b66a4dfe2668faa91a9e826b999ff0d8ce30f6f1122efd7d2398bb0",
       "compiled_at": "2026-11-02T09:16:16+08:00",
@@ -4275,6 +4293,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-03T12:36:28+08:00",
+  "updated_at": "2026-11-05T16:03:38+08:00",
   "version": 1
 }
