@@ -44,11 +44,25 @@ RSS `rss_intelligence_items` 中的 `status=processing` 和 `digest_id` 是 n8n 
 - 重试先按 exact `event_id` 回读已持久化检查结果；只有真的复核才更新其 `checked_at` / disposition。禁止重复制造来源，也禁止把旧 `source_gap` 仅凭时间改成 `verified`。
 - 即使已有 `verified` 条目，同一 digest 仍存在 `source_gap` 或没有可信终态记录时，仍保留整批 `processing`，按 `rss.digest.recovery_pending:YYYY-MM-DD` 记录缺口。已有 Discord A 消息不重发；新补证只追加带 lineage 的补充 Event/必要通知。
 
-逐条 Receipt 是**处理进度可观测性**，不是仅凭字段值自动证明模型确实阅读了原文。当前 n8n Complete 工作流仍主要验证持久化 Discord A 回执与批次数量，尚未强制检查每条 Receipt；在该确定性门禁单独完成测试并上线前，Daily 必须自行逐条核验后才可调用 Complete。不得以此文档声称 n8n 已具备逐条强制验收。
+逐条 Receipt 是**处理进度可观测性**，不是仅凭字段值自动证明模型确实阅读了原文。n8n `Complete RSS intelligence digest` 已在生产版本 `469de385-cd88-473a-ae2c-f14474088027` 强制核对归属 Item 与逐条 Evidence Receipt：校验 event ID、Digest/Item 身份、来源 URL、终态、`source_locator`（verified）或具体排除理由（excluded），缺失、`source_gap`、跨 Digest 混用均不得封账；成功更新后检查原始与更新的 Item ID 集合。**此门禁只能确定性核验持久化证据合同，不能替代 ChatGPT 实际阅读原文或人工抽查。**
+
+**仍未解决的事务边界**：n8n Data Table 的批量更新与后续完成 Event 并非经验证的单一原子事务。并发领取同一 Digest、更新一部分行后失败、更新已持久化但 Event 写入失败，仍可能留下部分 `processed` 且未封账的历史；计数与 ID 校验能发现，却不能自动回滚。恢复前必须按原 Digest 对齐全部真实行与证据；禁止将此类情况简单归类为“已完成”或重新领取旧行。
 
 ## 外部 work manifest
 
 Hourly `wiki_compile` manifest 应由 Weekly 在 `work_events.metadata_object` 中持久化，并由 queue 的 `source_event_id` 引用。至少携带 `canonical_key`、`promotion_id`、parent `work_id` / `correlation_id`、canonical/source URLs、`decision=promote`、evidence summary/strength、accepted scope、expected knowledge delta、existing Wiki coverage、相关既有 Wiki paths（如有）、provenance / lineage、success criteria 与 `execution_policy=chatgpt_direct_only`。Hourly work 的恢复身份由 `work_id` / `correlation_id`、`source_event_id`、队列状态与仓库事实维护，不依赖 ServerFS Agent `task_id`。关键 manifest 缺失到无法可靠执行 Integration Gate 时返回 `blocked(manifest_incomplete)`，不自行重新 Promotion 或扩大研究输入。
+
+## n8n Wiki Claim / Complete 证据门（第一阶段增量合同）
+
+已发布的 `Mutate AI work state` 生产版本 `471029ad-035a-499a-b2e3-d34d2b18b27d` 将 `wiki_compile` 的真实性校验延伸至队列状态边界，不再仅依赖 Worker 提示词：
+
+- **Claim 前准入**：`wiki_compile` 必须由 `source_event_id` 指向一条实际存在、`approved`、`decision=promote`、project/correlation 一致且包含 `canonical_key`、`promotion_id`、`accepted_scope`、`success_criteria` 与现阶段 `execution_policy=chatgpt_direct_only` 的 Promotion Manifest。缺失或不一致时拒绝 Claim，不能开始仓库写入，也不能在未取得 Claim 所有权时擅自 Block 队列。
+- **Complete 前验收**：必须匹配本条 `wiki_compile` 的 queue、原 Promotion Manifest 和 Integration Result Event。Result Event 必须提供同一 `work_id`、`source_event_id`、`canonical_key`、`promotion_id` 与 correlation，且由 Result 内容决定合法状态：
+  - `compiled`：接受现行 `knowledge.integration.result`（`status=compiled`）以及已有 `knowledge.integration.completed` recovery（`status=completed`）；Result 需含实际 Git commit、`push_verified=true`、`lint_blocking=0`（历史可为 `wiki_lint_blocking=0`）及非空 `wiki_paths`；queue Complete 的 `result_ref` 必须是匹配的 `git:<40hexSHA>`。
+  - `no_delta` 或 `duplicate`：必须写独立 `knowledge.integration.result` Event，`status` 与 result 一致，metadata 中 `no_repository_write=true`，具体 `decision_basis` 与非空 `checked_wiki_paths`（指向真实核查的 `wiki/...md` 页面）；queue Complete 的 `result_ref=work_events:<实际Event ID>`。不得创造空 Git commit 或将旧提交伪装为新结果。
+  - `source_gap`、`blocked` 不可冒充以上成功结果，应走真实 Block/Defer 及证据缺口处理。
+- **终态与所有权**：以上为原状态机前置质量门，原有 `claimed_by`、`attempt_count`、`lease_until` 的 CAS 与 terminal 不可重开规则继续生效；招聘监控专有结果门以及其他 work kind 的原完成路径不变。
+- **事实界限**：n8n 能校验 Integration Event 的结构与身份，不能仅凭其中 `push_verified=true` 的声明证明实际 Git 已推送或 Wiki 页面符合审批范围。ChatGPT 必须继续直接检查 Git、Wiki 文件、lint、已有覆盖与 accepted scope；这仍需要独立、可复现的真实执行验收。
 
 ## Integration Gate 与结果
 

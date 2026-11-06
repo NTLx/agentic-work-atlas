@@ -31,21 +31,25 @@
 - [x] 首批真实 RSS Item 的 stable Event ID、verified/excluded 两种 Receipt 已写入 `work_events` 并按 exact ID 回读；verified 均有一手原文与 source_locator，excluded 只依据元数据按相关性排除、不伪称已读正文
 - [ ] 验证真实 `source_gap` 增量恢复、重复 Upsert 幂等性与跨运行回读的一致性
 - [x] n8n `Complete RSS intelligence digest`（ID `bSFpuTgbGCGVJTku`）已发布逐条 Receipt 强制门：在状态更新前核对 Digest/Item/Event 身份、终态、来源 URL、读取状态、证据定位或排除理由；缺失、冲突、source_gap 均拒绝封账；更新后校验精确 Item ID 集合
-- [ ] 完成全场景验收：本轮已验证模拟合法 verified、合法 excluded、无 Receipt、source_gap、无 source_locator；生产历史 digest 的零/部分 Receipt 检查后未产生虚假完成。仍待验证旧 digest 重试、并发、跨 Digest 混用、部分更新、全量真实合法封账
+- [x] 追加 n8n 固定输入回归：重复 Receipt (25064)、跨 Digest (25067)、部分更新后拒绝完成 (25068)、申报数不符 (25069)、空 processing 重试 (25070)、同数量但更新 Item ID 不符 (25073)、合法 verified + excluded (25072)。这些仅验证拒绝/放行分支，**部分数据更新后不能原子回滚**
+- [ ] 仍待端到端验收：实际重复 Upsert、并发 Claim/Complete、部分持久化后的补偿恢复、真实合法整批封账。生产历史 digest 的零/部分 Receipt 检查后未产生虚假完成；不能将此等同于全部并发路径已验证
 - [ ] 对历史未封账批次按原 digest 补证并据真实证据逐项结算；不可直接批量将 processing 改为 processed
 
 **2026-11-06 审计时的现场事实**：`rss-digest:2026-11-05` 15 个 processing，`rss-digest:2026-11-06` 23 个 processing；两天 A 模块均有 Discord delivered Receipt，但缺少对应 `rss.digest.completed`。这仅是当时快照，不代表后续状态；恢复前必须回读 n8n。
 
 **2026-11-06 第一批执行结果**：原 `Complete RSS intelligence digest` 已在隔离节点验证与测试后发布新增证据门（active version `469de385-cd88-473a-ae2c-f14474088027`）；模拟 Data Table 写入节点已显式 pin，不涉及真实行更新。真实 Event 已记录 4 条（2 verified、2 excluded），分布于 2026-11-05 / 11-06 两批，每批 2 条。两批共 38 条 RSS 仍保持 `processing`，且无对应完成 Event；后续需按当时真实状态重新核验。
 
-**剩余限制**：n8n 能确定性验证 Receipt 结构、关联与终态，不能仅靠这些字段证明 LLM 真正阅读原文；原文证据真实性仍由 ChatGPT 实际读取和人工可抽查 locator 保证。生产完整合法封账与网络/并发异常仍需进一步验收。日志保存策略已恢复（`saveManualExecutions=false`、`saveDataSuccessExecution=none`）。
+**剩余限制**：n8n 能确定性验证 Receipt 结构、关联与终态，不能仅靠这些字段证明 LLM 真正阅读原文；原文证据真实性仍由 ChatGPT 实际读取和人工可抽查 locator 保证。**生产 Data Table 批量状态变更不是已证明的跨行事务**：如果一部分行先变为 `processed` 而事件最终未写入，现有门禁只能阻止虚假完成，不能自动回滚。需要专门的恢复/补偿协议及并发竞态验收，不能贸然扩大批量更新。日志保存策略已恢复（`saveManualExecutions=false`、`saveDataSuccessExecution=none`）。
 
-### P1-C · Promotion/Integration 结果契约回归（正常成功路径已抽样核实）
+### P1-C · Promotion/Integration 结果契约回归（Claim/Complete 服务端质量门已发布，真实故障恢复仍待验收）
 
 - [x] 抽样核对 candidate Event → per-promotion Manifest → queue source_event_id → git wiki paths/commit → integration result Event：2026-11-02 一批 3 条 Promotion、共 4 个实际 Candidate IDs，3 个 completed queue/Integration Result；均对应实际 Git commit `83a4d1d1661084119aa057a6b850ba786d31e7cd`，实际提交变更文件与结果 Event 的 `wiki_paths` 三项一一对应，仓库对应文件仍存在
-- [ ] 对 Manifest 缺失、证据变更、已覆盖/重复、变更不符合接受范围的情况证明不会盲写 Wiki
-- [ ] 验证同一晋升运行重试不会重复生成稳定页、伪造提交或重开 terminal work
-- [ ] 形成复用现有工具/测试基建的回归检查，不创建额外长期运行账本
+- [x] `Mutate AI work state`（ID `WgqmfMMeWpddtv4l`）增加 `wiki_compile` Claim Manifest 准入门：approved Promotion Manifest、scope、成功标准、execution policy、correlation 等都需匹配；缺失/未批准拒绝领取。n8n 隔离测试 25093–25098 覆盖合法、缺失、未批准、非 Wiki 不受影响、terminal 重领
+- [x] 同一状态机增加 Complete Result 证据门：关联 queue、原 Manifest、Integration Event，核对 Git SHA、push_verified、Wiki 路径和 lint；兼容历史 recovery 和 2026-11-02 Event；节点级隔离测试 25082–25089 均符合预期
+- [x] 修正新门禁兼容性：`compiled` 必须 `git:<sha>`；`no_delta/duplicate` 必须独立 Result Event、具体已检查页面、no_repository_write 和 `work_events:<event_id>`，不得虚构空 Git 提交。测试 25102–25106 覆盖正例和伪造结果拒绝。生产发布版本 `471029ad-035a-499a-b2e3-d34d2b18b27d`
+- [x] Hourly Prompt 与 `schema/knowledge-metabolism.md` 已同步本次 Claim/Complete 合同；保留原有 Worker 责任、CAS 和恢复原则
+- [ ] 仍待真实执行验收：Manifest 在 Claim 后发生变化、已有 Wiki 重复/覆盖与 accepted scope 变化时不盲写；重复 Promotion/Enqueue 的竞态；同一晋升运行重复重试不重复生成稳定页、伪造提交或重开 terminal work
+- [ ] 将本轮固定输入回归转为可复用、版本化测试；当前测试证明 n8n 草稿分支行为，但生产运行级端到端测试、Git 事实核验和并发恢复仍需单独证明，不创建额外长期运行账本
 
 ### P1-D · 健康度、知识效用与稳定性验收（待实施）
 
