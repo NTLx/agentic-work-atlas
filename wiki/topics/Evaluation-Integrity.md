@@ -3,7 +3,7 @@ type: topic
 title: Evaluation Integrity
 description: "评测完整性：任务完成率或 benchmark 得分不能单独证明系统可靠；reference、scope contract、实际可达面、监控与停止语义必须共同可信，否则评测可能不再测量原本声明的对象"
 created: 2026-09-19
-updated: 2026-10-15
+updated: 2026-11-06
 evidence_level: high
 claim_type: mixed
 tags:
@@ -18,6 +18,8 @@ related_entities:
   - "[[Agent-Attack-Surface]]"
   - "[[Reward-Hacking]]"
 source_raw:
+  - "[[20261015-anthropic-independent-evaluators]]"
+  - "[[20261015-google-agent-evaluation-beyond-vibe-check]]"
   - "[[20260306-anthropic-browsecomp-eval-awareness]]"
   - "[[20260804-openai-third-party-cyber-evaluation-boundaries]]"
   - "[[20260826-openai-hf-incident-road-ahead]]"
@@ -25,6 +27,24 @@ source_raw:
 ---
 
 # Evaluation Integrity（评测完整性）
+
+## 独立评估机构：可见性、独立性与发表权是评测完整性的组成部分（2026-10）
+
+[[20261015-anthropic-independent-evaluators]] 公布了与 METR 的“employee-like access”安排：据 Anthropic 描述，六位 METR 人员可用公司设备、办公空间和内部工具，在客户数据、法律特权材料、模型架构等预定义例外之外接触内部风险信息。METR 拥有报告风险、事故与实践的发表权；Anthropic 不能直接否决发表，但可要求在规定类别删改信息，且对类别适用性保留最终判定权。METR 可描述自身实际获得的信息及访问限制。
+
+- **判断（综合）**：从独立 evaluator 到可信风险结论，至少需要四个可核验的控制：评估者利益与方法独立、足够的证据可达性、明确的保密例外/删改权、实际可行的公开报告与争议声明。
+- **证据**：[[20261015-anthropic-independent-evaluators]]（Why we work with independent evaluators / employee-like access / tier 1–3 / Footnote 2）。Tier 1 仍须 Anthropic 批准发表，Tier 2/3 发表权增强，但不意味着所有限制消失。
+- **边界**：这是被评公司对合作制度的自述，**不是 METR 已完成独立检查的结果**；第三方驻场不等于法律监管，也不自动消除访问许可和保密协议造成的依赖。
+
+## 黄金测试集完整性：不能在调参时移动考卷（2026-10）
+
+[[20261015-google-agent-evaluation-beyond-vibe-check]] 要求在比较同一变更的效果时冻结 golden dataset，避免通过删除困难场景、随意改样例造成通过率虚假上升；同时用人工标注 Trace 校准 LLM Judge，并要求核心能力零回归。生产流量出现新失败后可扩展测试集，但应通过**可追踪的评测集版本迁移**而不是直接改写基线。
+
+- **判断（综合）**：`reference integrity` 同时包含答案/规则不泄露、不被被测 Agent 篡改，以及样本、权重和判定器的版本可追溯。否则分数变化的因果归因不成立。
+- **证据**：[[20261015-google-agent-evaluation-beyond-vibe-check]]（Four common traps / Day 0–2）；与本 Topic 既有 BrowseComp benchmark contamination 和 scope 边界相互补足。
+- **边界**：冻结测试集也可能诱发对固定样本的过拟合，必须同时保留独立的 held-out 与生产异常回归样本；原文没有给出这一治理设计的量化效果。
+
+
 
 > [!summary] Topic 定位
 > 本 Topic 回答的是：**一次评测如何保证模型实际经历的任务、信息、权限与外部效果仍然对应评测声称要测的对象？**

@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-10-28
+updated: 2026-11-06
 evidence_level: high
 claim_type: mixed
 tags:
@@ -48,6 +48,8 @@ related_entities:
   - "[[Rubric-Based-Evaluation]]"
   - "[[Evaluator-Miscalibration]]"
 source_raw:
+  - "[[20261015-google-agent-evaluation-beyond-vibe-check]]"
+  - "[[20261015-tessl-repo-verifiers]]"
   - "[[The PR you would have opened yourself]]"
   - "[[用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践]]"
   - "[[20260414-cybersecurity-proof-of-work]]"
@@ -97,6 +99,24 @@ source_raw:
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
+
+## 评测要从体验判断提升到可保护的契约（2026-10）
+
+[[20261015-google-agent-evaluation-beyond-vibe-check]] 给出渐进式评测工作流：从 Critical User Journey（CUJ）抽出业务约束与可观测成功条件；Day 0 用人工红笔检查 5–20 条原始 Trace；Day 1 固定黄金样本并校准确定性断言和布尔式 Judge；Day 2 将核心指标零回归、通过率和成本/时延预算设置为 CI 门禁。标准化 OpenTelemetry/OpenInference Trace，可将评测与单一 Agent 编排框架解耦。
+
+- **判断**：可验证性的最小单元不是最终回答的一项评分，而是由**业务成功 Oracle、状态转换与工具副作用、资源开销、测试集版本**组成的可复测契约。
+- **证据**：[[20261015-google-agent-evaluation-beyond-vibe-check]]（CUJ / Four common traps / Day 0–2）；可与 [[20261008-google-aqua-production-agent-quality]] 的生产外环发现/回灌连接。
+- **边界**：布尔式 LLM-as-a-Judge 不等于确定性；例如 95% 通过率在原文只是示意门槛，而非通用上线标准。人工基准也会受样本偏差与 oracle 误差影响。
+
+## 仓库语义规则：Verifier 要求可检查，但 Oracle 不可由实现者自我放宽（2026-10）
+
+[[20261015-tessl-repo-verifiers]] 描述 repo 内 JSON verifier 与 `tessl.json` 分离：前者定义明确 yes/no 规则，后者绑定文件作用域、`info/warn/error` 严重度；默认按变更文件执行、可全量运行，适合作为 PR 审查与普通 lint 之间的项目语义检查。
+
+- **判断**：规则表达、适用范围、判定证据、结果可信度和执行门禁应当分离。能用程序性检查的先用程序；只有清晰且语义性的检查才交给可校准的 LLM Judge。受保护的规则/测试 Oracle 不能随被检验的 Agent 实现被顺手削弱。
+- **证据**：[[20261015-tessl-repo-verifiers]]（How they work / When to use one / Where to run them）；与 [[Agent-Verification]] 的独立 Oracle 议题呼应。
+- **边界**：同一 verifier 每次运行，并不证明 LLM 评分确定性，也不证明跨文件架构规则与运行时授权已经覆盖；厂商 GA 状态不构成可靠性实证。
+
+
 
 > [!summary] 核心洞察
 > Agent 的能力上限不由“模型愿意做多少事”决定，而由“系统能验证多少事”决定。真正可规模化的 Agent 工程，不是放大自主性，而是扩大可验证边界。
