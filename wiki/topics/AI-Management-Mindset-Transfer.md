@@ -3,9 +3,9 @@ type: topic
 title: AI 时代的管理思维迁移
 description: "管理学框架如何迁移到 AI 交互——能力-委派匹配、德鲁克元思考与人类在 AI 时代的不可替代性"
 created: 2026-06-22
-updated: 2026-08-19
+updated: 2026-11-06
 evidence_level: medium
-claim_type: extracted
+claim_type: mixed
 tags:
   - management
   - human-value
@@ -20,11 +20,22 @@ related_entities:
   - "[[Mythical-Man-Month]]"
   - "[[Horn]]"
 source_raw:
+  - "[[20261007-stanford-hai-job-enrichment-adoption]]"
   - "[[AI用得好不好，跟你会不会管人，我觉得越来越是同一件事。]]"
   - "[[20260815-engineers-history-reinvention]]"
 ---
 
 # AI 时代的管理思维迁移
+
+## 管理者如何定义 AI 用途，会改变员工愿不愿意探索（2026-10）
+
+Stanford HAI 的 [[20261007-stanford-hai-job-enrichment-adoption]] 报道研究者在三家公司访谈 184 位员工，并在律所对两个相近团队进行长期观察。强调效率与缩短周转的引导更容易使员工把 AI 用于旧任务；强调移除重复工作、拓展专业职责并配套培训、导师和探索时间的团队，报道中工具使用率高 58%、探索率高 70%。
+
+- **判断**：AI 推广的绩效不应只按使用量、Token 或处理件数计，而应衡量工作范围、能力增长与有价值任务的转移，并提供资源兑现承诺。
+- **证据**：[[20261007-stanford-hai-job-enrichment-adoption]]（Making Work More Meaningful、Measuring Value, Not Volume）。
+- **边界**：管理 framing 与培训、授权等支持措施同时变化，不是单因素随机实验；不能把 58% / 70% 归因于话术本身。
+
+
 
 > [!summary] 核心论点
 > 管理学中"根据能力层级调整委派颗粒度"的原则，可以直接迁移到 AI 交互。不同能力层级的 AI 模型需要不同管理方式，错配是 AI 使用效果差的根源。AI 进步将人推向更高管理层级，最终指向德鲁克式元思考——"思考应该思考什么"。

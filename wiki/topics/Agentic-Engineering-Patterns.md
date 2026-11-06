@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-10-24
+updated: 2026-11-06
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -39,6 +39,8 @@ related_entities:
   - "[[ALIGN-Framework]]"
   - "[[Agent-Environment-Misalignment]]"
 source_raw:
+  - "[[20261008-claude-effective-agent-automations]]"
+  - "[[20261008-google-aqua-production-agent-quality]]"
   - "[[20261013-oreilly-when-architecture-decisions-actually-apply.md]]"
   - "[[20261013-pydantic-the-code-is-the-graph.md]]"
   - "[[20261013-google-gemini-4-argon-adk-python-optimization.md]]"
@@ -65,6 +67,24 @@ source_raw:
 ---
 
 # Agentic Engineering Patterns
+
+## 定时执行内环：游标、显式读源失败和发送确认（2026-10）
+
+[[20261008-claude-effective-agent-automations]] 用 Claude Managed Agents 的 Daily Brief 参考实现总结六个可靠性原则：每来源 bookmark 而不是固定窗口；上游失败保留游标并通知；发送前复核最新事实；目标端 ACK 后才推进 ledger/bookmark；每轮重新读取只读偏好；最小凭证和执行预算。
+
+- **判断**：可靠定时 Agent 需要把读取进度、交付确认与可恢复状态分别记录，不允许因一次工具调用“已启动”而提前宣告成功。
+- **证据**：[[20261008-claude-effective-agent-automations]]（Read from where you left off、Don't mistake a failed read for a quiet day、Confirm the post landed、Memory/Guardrails）。
+- **边界**：是 Anthropic 托管平台的参考实现，并不自动证明跨工具幂等或能够原样用于 ChatGPT/n8n。
+
+## 生产质量外环：故障簇必须回指原 Trace 和部署版本（2026-10）
+
+[[20261008-google-aqua-production-agent-quality]] 中的 AQuA 设计在请求路径外抽样、评估、按失败机制聚类、验证原始 Trace、追踪持久化缺陷，并用对应 revision 的源码定位根因。Google 的 32-session 旅行 Agent 演示从 42 条 finding 得到 6 个经核验的问题簇，修改两处提示后在回放集将通过数从 5 提高到 13；未修复的工具契约问题继续保留。
+
+- **判断**：生产 Agent 的外环应监控业务不变量和多轮约束保持，而不仅是 HTTP/工具调用成功；任何修复结论必须具备 source revision、证据轨迹、前后测试与失败保留。
+- **证据**：[[20261008-google-aqua-production-agent-quality]]（Sweep and verify、Diagnose against deployed code、Revision 2、Findings you can trust）。
+- **边界**：这是有限规模示例和静态 replay，不可代替动态外部状态下的故障恢复、随机生产样本与专家校准。
+
+
 
 > **作者**：Simon Willison
 > **定位**：识别能产生实际结果、且不会因工具进步而过时的模式

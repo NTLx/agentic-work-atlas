@@ -2,7 +2,7 @@
 type: topic
 title: "Agent 知识管理与自进化"
 created: 2026-05-13
-updated: 2026-11-02
+updated: 2026-11-06
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -28,6 +28,7 @@ related_entities:
   - "[[Shortification-of-Learning]]"
   - "[[Agentic-Analytics]]"
 source_raw:
+  - "[[20261020-tessl-claim-based-agent-memory]]"
   - "[[20261013-tessl-how-open-is-your-software-factory.md]]"
   - "[[20260413-llm-wiki]]"
   - "[[一篇文章卖了20万，开源CC+Obsidian打造的LLM Wiki 内容创作3.0系统]]"
@@ -40,6 +41,16 @@ source_raw:
 ---
 
 # Agent 知识管理与自进化
+
+## 从 Chunk 记忆到具备时间、来源与权限的 Claim（2026-10）
+
+[[20261020-tessl-claim-based-agent-memory]] 讨论团队记忆与个人检索的区别：从观察中抽取带说话人、时间区间和原始证据 span 的 Claim；不覆盖旧事实，而以 supersedes 显式衔接；对“没有答案”标记已查无证据与超出知识范围。作者还把主体授权移动到模型前的检索层，避免让生成模型判断哪些信息该隐去。
+
+- **判断**：知识记忆的关键治理对象是可追溯且有权限的命题，而非文件数量或 embedding 命中；来源有效性、时间与用户身份须先于生成。
+- **证据**：[[20261020-tessl-claim-based-agent-memory]]（Store claims not chunks、Make time and absence explicit、Decide permissions before the model runs）。
+- **边界**：基准数据为系统作者自报，Claim 蒸馏可能丢失反证或语境；对 LLM WiKi 的全文去留仍须遵守现行 Raw lifecycle 而不是无条件丢弃原文。
+
+
 
 > [!summary] 主题概述
 > Agent 知识管理正从 RAG 的"每次查询从头检索"向 LLM Wiki 的"编译一次、持续更新"范式转变。LLM Wiki、Obsidian-Wiki、GBrain 代表了三种知识自组织与自进化的技术路径——从极简的纯 Markdown 方案到工程化的混合检索架构。

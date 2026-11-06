@@ -3,7 +3,7 @@ type: topic
 title: Agent Security
 description: "Agent 在不可信组件和跨信任域环境中行动时，从检测、判定、授权、执行到撤销与恢复的责任闭环"
 created: 2026-09-05
-updated: 2026-10-28
+updated: 2026-11-06
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -23,6 +23,7 @@ related_entities:
   - "[[Operational-Responsibility]]"
   - "[[Human-Governor-Agent-Operator]]"
 source_raw:
+  - "[[20261008-langchain-stripe-link-agent-payments]]"
   - "[[How we contain Claude across products]]"
   - "[[20260518-zero-trust-for-ai-agents]]"
   - "[[20260713-agentic-misalignment-summer-2026]]"
@@ -51,6 +52,16 @@ source_raw:
 ---
 
 # Agent Security（Agent 安全）
+
+## Agent 支付：授权不能由模型的工具调用自我批准（2026-10）
+
+[[20261008-langchain-stripe-link-agent-payments]] 的 Restock 示例将商品发现与购物车准备留给 Agent，把可花费上限、用户审核、钱包支付同意、凭证保管及商家回执交给模型之外的系统。MPP 的 HTTP 402 返回待支付要求；Slack 购物车审批和 Stripe Link 的支付同意是两个不同的用户动作；最后以订单接口的 `order_placed` 而不是模型消息确认成交。
+
+- **判断**：对外部不可逆副作用，预算限制、操作对象绑定、身份授权、凭证作用域和最终执行回执必须分别是可验证的控制点。
+- **证据**：[[20261008-langchain-stripe-link-agent-payments]]（Choosing how to pay、Keeping credentials out of the model、Reviewing the purchase in Slack、Paying with Link、Confirming the order）。
+- **边界**：这是美国、美元、单办公室的演示性真实购买案例，不保证覆盖退款争议、幂等失败、支付欺诈或所有商家。
+
+
 
 > [!summary] 当前边界
 > Agent 安全研究的主问题不是“模型是否输出了正确答案”，而是：在 Agent 能调用工具、跨越信任域并产生外部后果时，谁能看见状态、谁能判定风险、谁能授权动作、哪一层能确定性执行，以及出事后谁能撤销、恢复并承担责任。

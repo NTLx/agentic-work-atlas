@@ -2,7 +2,7 @@
 type: topic
 title: "技能退化与知识债务"
 created: 2026-07-09
-updated: 2026-09-21
+updated: 2026-11-06
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -19,6 +19,7 @@ related_entities:
   - "[[Knowledge-Work-Redefinition]]"
   - "[[AI-Identity-Bifurcation]]"
 source_raw:
+  - "[[20261007-google-patent-lawyer-skill-formation]]"
   - "[[20260709-agents-that-teach-knowledge-debt]]"
   - "[[20260731-tragedy-cognitive-commons-ai-expertise]]"
   - "[[20260730-lenny-tech-workers-ai-sentiment-noam-segal]]"
@@ -34,6 +35,16 @@ source_raw:
 ---
 
 # 技能退化与知识债务
+
+## 三个月律师随机试验：工具提升作品，不必然改善独立判断（2026-10）
+
+[[20261007-google-patent-lawyer-skill-formation]] 报告 11 家律所 133 位专利律师的 90 天 AI 工具访问随机实验。AI 起草任务质量在第 10/90 天分别提高约 0.34/0.38 标准差；但第 90 天**不允许使用 AI**的专利批注/修改任务中，明显进步主要来自资深律师（约 0.45 SD），初级律师平均没有明显增益且得分分布两极分化。
+
+- **判断**：组织应分别测量 `assisted output quality`、`unassisted judgment` 和人员学习路径；不能用 AI 提速证明职业技能正在积累。
+- **证据**：[[20261007-google-patent-lawyer-skill-formation]]（Better work with AI、When AI is removed、Further directions）。
+- **边界**：本文不能证明初级律师整体技能下降，观察窗口仅 90 天、领域是专利法且参与律所数量有限；需要继续研究训练机制。
+
+
 
 ## 主题概述
 

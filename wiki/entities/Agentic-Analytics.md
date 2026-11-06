@@ -7,7 +7,7 @@ aliases:
   - 代理式数据分析
 definition: "用 LLM/Agent 承担自助数据分析入口，但可靠性来自 canonical datasets、semantic layer、domain skills、评测、provenance 和 correction harvesting 的系统"
 created: 2026-06-05
-updated: 2026-10-22
+updated: 2026-11-06
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -23,6 +23,7 @@ related_entities:
   - "[[Captain-Mindset]]"
   - "[[Company-Brain]]"
 source_raw:
+  - "[[20261008-nvidia-kdd-data-agent-harness]]"
   - "[[20260603-anthropic-self-service-data-analytics]]"
   - "[[20260727-langchain-agent-data-stack]]"
   - "[[20260925-databricks-spglobal-genie-mcp]]"
@@ -30,6 +31,16 @@ source_raw:
 ---
 
 # Agentic Analytics（代理式数据分析）
+
+## KDD Cup：受限 Harness 比扩大 Agent 动作空间更可靠（2026-10）
+
+[[20261008-nvidia-kdd-data-agent-harness]] 是 NVIDIA KGMON 团队的竞赛复盘。固定小模型下，将异构结构化数据归并到单一 SQL 查询面，先做只读 schema scouting（字段、联结、粒度、单位、缺失值），再只暴露少数工具；文本规则用按需 `prose_helper`，结果由单一写入助手原子发布，并通过 traces 与 held-out 评测改进流程。
+
+- **判断**：分析 Agent 的主要收益可能来自减少错误选择与信息噪声，而不是增加工具数量；schema 预检、数据口径和受限结果写入比单纯增强模型更容易验证。
+- **证据**：[[20261008-nvidia-kdd-data-agent-harness]]（章节 1–4、6–9）。
+- **边界**：KDD Cup 的排名与方法属于受约束竞赛，临时 SQLite 是数据归一化表面，不能外推为生产仓库选型或完备可靠性证明。
+
+
 
 > [!definition] 定义
 > **Agentic Analytics** 是用 LLM/Agent 承担自助数据分析入口的工作系统。它的可靠性不来自“会写 SQL”，而来自 canonical datasets、semantic layer、domain skills、评测、provenance、telemetry 和 correction harvesting 共同组成的分析 harness。
