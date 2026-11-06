@@ -40,9 +40,9 @@
 
 **剩余限制**：n8n 能确定性验证 Receipt 结构、关联与终态，不能仅靠这些字段证明 LLM 真正阅读原文；原文证据真实性仍由 ChatGPT 实际读取和人工可抽查 locator 保证。生产完整合法封账与网络/并发异常仍需进一步验收。日志保存策略已恢复（`saveManualExecutions=false`、`saveDataSuccessExecution=none`）。
 
-### P1-C · Promotion/Integration 结果契约回归（待实施）
+### P1-C · Promotion/Integration 结果契约回归（正常成功路径已抽样核实）
 
-- [ ] 抽样核对 candidate Event → per-promotion Manifest → queue source_event_id → git wiki paths/commit → integration result Event
+- [x] 抽样核对 candidate Event → per-promotion Manifest → queue source_event_id → git wiki paths/commit → integration result Event：2026-11-02 一批 3 条 Promotion、共 4 个实际 Candidate IDs，3 个 completed queue/Integration Result；均对应实际 Git commit `83a4d1d1661084119aa057a6b850ba786d31e7cd`，实际提交变更文件与结果 Event 的 `wiki_paths` 三项一一对应，仓库对应文件仍存在
 - [ ] 对 Manifest 缺失、证据变更、已覆盖/重复、变更不符合接受范围的情况证明不会盲写 Wiki
 - [ ] 验证同一晋升运行重试不会重复生成稳定页、伪造提交或重开 terminal work
 - [ ] 形成复用现有工具/测试基建的回归检查，不创建额外长期运行账本
