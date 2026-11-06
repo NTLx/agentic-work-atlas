@@ -21,6 +21,31 @@ type: schema-subdoc
 
 `work_events`、queue 与 work recovery 是外部运行状态。本仓库不复制其状态，不新增运行表、注册表或周度运行账本。Daily 通过 `work_events` 提供已验证、已 canonicalize 的候选语义；Weekly 通过 `work_events` 提供 promotion decision 与完整 integration manifest；`ai_work_queue` 只承载 worker 路由和运行状态。ServerFS MCP 只提供 ChatGPT 当前可直接调用的仓库操作能力，不开展广泛新闻发现，也不自动启动服务器 AI Agent。
 
+## 来源身份与候选归并（第一阶段增量契约）
+
+`canonical_key` 表示“待判断的知识候选/命题”的语义身份，不等于来源 URL 身份；`evidence_version` 表示该候选的证据版本。为了避免同一来源跨日产生不同 `canonical_key` 而被误认成独立证据，新的 Daily candidate Event 在现有字段之外可写 `source_identity`，Weekly 必须兼容无此字段的历史 Event：
+
+- GitHub 官方仓库统一为 `github:<owner>/<repo>`（owner/repo 小写，以实际确认的官方仓库身份为准），例如 `github:nvidia/auto-ontology`。
+- 普通网页优先用实际验证的一手 `canonical_url` 作为身份依据；移除 fragment、已证实无语义的追踪参数，保留可能改变资源/版本的查询参数。不得只凭标题相似、域名相同或推测重定向合并来源。
+- 同一个 `source_identity` + 同一个核心事实/技术命题跨日再出现：先查已有 candidate Event，复用先前 `canonical_key`，以新的 `evidence_version` 记录真正增量；没有增量则不生成重复候选。若同一来源确实支持**不同的独立命题**，可以拥有不同 `canonical_key`，但必须在 Event 中说明 `claim_scope` 与差异。
+- Weekly 归并时至少交叉核验 `source_identity`（有则用）、canonical/source URL、原始仓库或论文身份、命题范围、现有 Wiki 覆盖。历史 `canonical_key` 不一致不是两份独立 Evidence；合并时保留所有原 Event ID 与旧 key 的 lineage，不能删除或重写历史事件。
+
+本阶段只增加向后兼容的元数据及归并规则，不批量改写历史 Event、Raw Registry 或 Stable Wiki 页面，也不将新的字段设为全库 lint 阻断项。现有 n8n `Record work event` 仍按 `event_id` 幂等，而非按 `canonical_key` 或 URL 全局唯一；因此 Weekly 的跨 Event 归并目前仍是必要的语义质量门。
+
+## RSS 逐条证据记录与可恢复结算（第一阶段增量契约）
+
+RSS `rss_intelligence_items` 中的 `status=processing` 和 `digest_id` 是 n8n 运行层的权威状态。Delivery Receipt 只证明报告送达；`rss.digest.completed` 只在处理完成后产生。**不能因为已发送 Discord、时间已过或有部分 verified 文章就封账整批。**
+
+为避免历史 `processing` 每日重复从零核验而缺少逐条进度，Daily 在实际复核某条已认领 Item 后，通过现有 `Record work event` 写入或更新一条 `work_events`：
+
+- `event_id = rss.article.evidence_checked:<digest_id>:<item_key>`，其中 `digest_id` 和 `item_key` 均原样取自实际 n8n 行；不要生成新的 Item ID。
+- `category = rss.article.evidence_checked`；`project = tech-intelligence`；`correlation_id = <digest_id>`；`url = <该 Item 的原始 URL>`；`source = chatgpt:daily`（现行执行器标识）；`occurred_at` 为本次实际检查时间。
+- `metadata` 至少包含 `digest_id`、`item_key`、`source_url`、`disposition`（`verified` / `excluded` / `source_gap`）、`source_read_status`（`verified` / `partial` / `blocked` / `not_applicable`）、`checked_at`、`evidence_summary`；对 `verified` 还需原文可定位片段/章节或等效 `source_locator`；对 `excluded` 必须有具体 `reason`（表示不进入正式知识候选，不冒充已读正文）；对 `source_gap` 记录缺失证据/受限原因。
+- 重试先按 exact `event_id` 回读已持久化检查结果；只有真的复核才更新其 `checked_at` / disposition。禁止重复制造来源，也禁止把旧 `source_gap` 仅凭时间改成 `verified`。
+- 即使已有 `verified` 条目，同一 digest 仍存在 `source_gap` 或没有可信终态记录时，仍保留整批 `processing`，按 `rss.digest.recovery_pending:YYYY-MM-DD` 记录缺口。已有 Discord A 消息不重发；新补证只追加带 lineage 的补充 Event/必要通知。
+
+逐条 Receipt 是**处理进度可观测性**，不是仅凭字段值自动证明模型确实阅读了原文。当前 n8n Complete 工作流仍主要验证持久化 Discord A 回执与批次数量，尚未强制检查每条 Receipt；在该确定性门禁单独完成测试并上线前，Daily 必须自行逐条核验后才可调用 Complete。不得以此文档声称 n8n 已具备逐条强制验收。
+
 ## 外部 work manifest
 
 Hourly `wiki_compile` manifest 应由 Weekly 在 `work_events.metadata_object` 中持久化，并由 queue 的 `source_event_id` 引用。至少携带 `canonical_key`、`promotion_id`、parent `work_id` / `correlation_id`、canonical/source URLs、`decision=promote`、evidence summary/strength、accepted scope、expected knowledge delta、existing Wiki coverage、相关既有 Wiki paths（如有）、provenance / lineage、success criteria 与 `execution_policy=chatgpt_direct_only`。Hourly work 的恢复身份由 `work_id` / `correlation_id`、`source_event_id`、队列状态与仓库事实维护，不依赖 ServerFS Agent `task_id`。关键 manifest 缺失到无法可靠执行 Integration Gate 时返回 `blocked(manifest_incomplete)`，不自行重新 Promotion 或扩大研究输入。
