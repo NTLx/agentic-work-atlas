@@ -24,18 +24,21 @@
 
 **已发现真实案例**：`https://github.com/NVIDIA/auto-ontology` 对应 `github:NVIDIA/auto-ontology`、`nvidia-auto-ontology` 两个既有 canonical_key；不得重写历史记录来“修正”身份。
 
-### P1-B · RSS 逐条 Evidence Receipt 与安全恢复（实施中）
+### P1-B · RSS 逐条 Evidence Receipt 与安全恢复（确定性门禁已上线，历史恢复中）
 
 - [x] 确定增量 Receipt 合同：`rss.article.evidence_checked:<digest_id>:<item_key>`，复用原 `work_events`，不增加独立运行表
 - [x] Daily 增加逐条证据核验、Record work event、Exact readback、历史 Digest 增量恢复约束
-- [ ] 核验首次真实 RSS Item Receipt 的结构/稳定 ID、幂等回读与 verified/excluded/source_gap 分类的证据真实性
-- [ ] 在隔离的代表性案例通过测试后，扩展 n8n `Complete RSS intelligence digest`：逐条核对归属 Item 与终态 Receipt；缺失、冲突或 source_gap 必须拒绝封账。不得仅依靠模型侧 Prompt
-- [ ] 完成正反例验收：交付成功但证据缺失、旧 digest 重试、部分验证、重复 event、count mismatch、跨 digest 混用、合法封账
+- [x] 首批真实 RSS Item 的 stable Event ID、verified/excluded 两种 Receipt 已写入 `work_events` 并按 exact ID 回读；verified 均有一手原文与 source_locator，excluded 只依据元数据按相关性排除、不伪称已读正文
+- [ ] 验证真实 `source_gap` 增量恢复、重复 Upsert 幂等性与跨运行回读的一致性
+- [x] n8n `Complete RSS intelligence digest`（ID `bSFpuTgbGCGVJTku`）已发布逐条 Receipt 强制门：在状态更新前核对 Digest/Item/Event 身份、终态、来源 URL、读取状态、证据定位或排除理由；缺失、冲突、source_gap 均拒绝封账；更新后校验精确 Item ID 集合
+- [ ] 完成全场景验收：本轮已验证模拟合法 verified、合法 excluded、无 Receipt、source_gap、无 source_locator；生产历史 digest 的零/部分 Receipt 检查后未产生虚假完成。仍待验证旧 digest 重试、并发、跨 Digest 混用、部分更新、全量真实合法封账
 - [ ] 对历史未封账批次按原 digest 补证并据真实证据逐项结算；不可直接批量将 processing 改为 processed
 
 **2026-11-06 审计时的现场事实**：`rss-digest:2026-11-05` 15 个 processing，`rss-digest:2026-11-06` 23 个 processing；两天 A 模块均有 Discord delivered Receipt，但缺少对应 `rss.digest.completed`。这仅是当时快照，不代表后续状态；恢复前必须回读 n8n。
 
-**重要限制**：当前 n8n Complete 仍按 Discord A 回执与批次数量检查，尚未上线逐条 Evidence Receipt 强制门。严禁把 Prompt 层约束视为外部确定性校验。
+**2026-11-06 第一批执行结果**：原 `Complete RSS intelligence digest` 已在隔离节点验证与测试后发布新增证据门（active version `469de385-cd88-473a-ae2c-f14474088027`）；模拟 Data Table 写入节点已显式 pin，不涉及真实行更新。真实 Event 已记录 4 条（2 verified、2 excluded），分布于 2026-11-05 / 11-06 两批，每批 2 条。两批共 38 条 RSS 仍保持 `processing`，且无对应完成 Event；后续需按当时真实状态重新核验。
+
+**剩余限制**：n8n 能确定性验证 Receipt 结构、关联与终态，不能仅靠这些字段证明 LLM 真正阅读原文；原文证据真实性仍由 ChatGPT 实际读取和人工可抽查 locator 保证。生产完整合法封账与网络/并发异常仍需进一步验收。日志保存策略已恢复（`saveManualExecutions=false`、`saveDataSuccessExecution=none`）。
 
 ### P1-C · Promotion/Integration 结果契约回归（待实施）
 
