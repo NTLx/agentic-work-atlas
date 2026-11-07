@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-11-06
+updated: 2026-11-07
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -39,6 +39,7 @@ related_entities:
   - "[[ALIGN-Framework]]"
   - "[[Agent-Environment-Misalignment]]"
 source_raw:
+  - "[[20261015-meta-forum-ai-native-engineering]]"
   - "[[20261008-claude-effective-agent-automations]]"
   - "[[20261008-google-aqua-production-agent-quality]]"
   - "[[20261013-oreilly-when-architecture-decisions-actually-apply.md]]"
@@ -67,6 +68,17 @@ source_raw:
 ---
 
 # Agentic Engineering Patterns
+
+## Meta Forum：让 Agent 能看环境，并用独立验证收敛循环（2026-10）
+
+[[20261015-meta-forum-ai-native-engineering]] 给出两项不同于“只改 Prompt”的工程模式。其一，用模拟器 live view hierarchy、目标 view 路径和直接查询真实状态的工具替代对 UI 的猜测；其二，使用共享代码库的独立 sandbox build flavor，通过插件/socket 架构使原型代码被生产构建**彻底排除**，而非只通过 feature flag 隐藏。
+
+- **判断（跨来源综合）**：可靠的 coding agent Harness 至少应有实际状态感知、可重复运行的行为检查、与生产隔离的试验面，以及人类的终态审查。把“写完/编译通过”当完成会把瓶颈转移到人工返工。
+- **证据**：[[20261015-meta-forum-ai-native-engineering]]（「Adapting the Environment to the Models」「Finding Real Bugs With AI Stress Testing」）。团队用滚动、媒体加载和频繁导航的可复现场景发现并验证内存问题，生产反馈调查仍由工程师区分 bug 与有意取舍。
+- **与规则验证对照**：[[20261015-tessl-repo-verifiers]] 提供 diff 范围内的 repo 语义规则检查；Meta 的 UI navigation、构建隔离、压力测试和生产反馈调查属于更宽的运行/行为验证。两者互补，**不是两个独立的 Meta 成效证据**。
+- **边界**：Meta 的案例不证明所有平台都能采用该插件/socket 架构；sandbox build isolation 不涵盖所有身份和网络权限。其性能改善是团队自报，未提供可复现的公开样本。
+
+
 
 ## 定时执行内环：游标、显式读源失败和发送确认（2026-10）
 

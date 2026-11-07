@@ -3565,6 +3565,18 @@
       "summary_path": "wiki/sources/20261015-google-agent-evaluation-beyond-vibe-check.md",
       "updated_at": "2026-11-06T16:57:44+08:00"
     },
+    "20261015-meta-forum-ai-native-engineering.md": {
+      "body_sha256": "68e6b3710c5c5521c1d55d44479e6e654426715a614acd9bb96a2729aca2d412",
+      "canonical_url": "https://engineering.fb.com/2026/10/15/ml-applications/how-meta-built-forum-ai-native-engineering/",
+      "compiled_at": "2026-11-07T09:23:32+08:00",
+      "indexed_at": "2026-11-07T09:24:21+08:00",
+      "raw_file": "20261015-meta-forum-ai-native-engineering.md",
+      "raw_state": "index",
+      "retention_note": "Canonical official URL is recoverable with section-level locators in source summary. Temporary Raw was a source-reference record rather than copyrighted full article text; body_sha256 is the record hash, NOT a webpage body hash.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261015-meta-forum-ai-native-engineering.md",
+      "updated_at": "2026-11-07T09:23:32+08:00"
+    },
     "20261015-tessl-repo-verifiers.md": {
       "body_sha256": "88e71e3bb806c4200281f9759b627ad03cd5f3252743debbe68ffcc6f8112725",
       "canonical_url": "https://tessl.io/blog/verifiers-enforce-your-repos-rules-on-every-agent-change",
@@ -4413,6 +4425,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-06T16:57:54+08:00",
+  "updated_at": "2026-11-07T09:23:32+08:00",
   "version": 1
 }

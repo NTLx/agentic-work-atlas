@@ -7,7 +7,7 @@ aliases:
   - AI 原生工程组织
 definition: "把 AI coding agent 作为默认工作基础设施后，围绕验证、review、安全、产品判断、JIT planning 和 dogfooding 重写的软件工程组织"
 created: 2026-06-05
-updated: 2026-10-23
+updated: 2026-11-07
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -24,6 +24,7 @@ related_entities:
   - "[[Skill-Chains]]"
   - "[[Captain-Mindset]]"
 source_raw:
+  - "[[20261015-meta-forum-ai-native-engineering]]"
   - "[[Running an AI-native engineering org]]"
   - "[[20260616-why-is-meta-destroying-its-engineering]]"
   - "[[20260608-become-ai-native-org]]"
@@ -35,6 +36,16 @@ source_raw:
 ---
 
 # AI-Native Engineering Org（AI 原生工程组织）
+
+## Meta Forum：从写代码的 AI 工具迁移到拥有验证闭环的工程组织（2026-10）
+
+[[20261015-meta-forum-ai-native-engineering]] 是 Meta 的独立 Facebook Groups 应用 Forum 案例。团队把 AI Agent 视为工程流程参与者，让其规划、实现、编译、测试、修复和复测，工程师负责指定目标、监督偏离、决定架构，并在上线前签核。Meta **明确表示 human-on-the-loop 是演进方向而非所有阶段均已自治的现状**。
+
+- **判断（跨来源综合）**：AI-native 工程组织应按可审核的生产成果（通过测试和视觉检查、附验证记录并由工程师签核）而不是生成代码量计产出；组织学习应将重复出错沉淀成 Rules、Skills、自动检查 Agents、Commands 和 Hooks。
+- **证据**：[[20261015-meta-forum-ai-native-engineering]] 的「From Human-In-The-Loop to Human-On-The-Loop」「The Operating Model」「Did It Work?」。Meta 自报八周达到核心功能对齐，并通过自动压力测试使某次内存增长与 page faults 约减半。
+- **边界**：这是单一产品团队经验，尚无对照组、工程总成本或独立统计评估；八周的产品里程碑不是 AI 加速因果效应。产品与架构判断、外部副作用和真实责任仍由人承担。
+
+
 
 > [!definition] 定义
 > **AI-Native Engineering Org** 是把 AI coding agent 作为默认工作基础设施后重写的软件工程组织。它不是“每个人都用 AI 写更多代码”，而是承认生成瓶颈下降后，组织重心迁移到验证、review、安全、产品判断、JIT planning、dogfooding 和责任边界。
