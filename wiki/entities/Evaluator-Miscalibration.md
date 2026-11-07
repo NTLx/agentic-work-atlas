@@ -19,6 +19,7 @@ related_entities:
   - "[[Over-Inference]]"
   - "[[Evaluation-Integrity]]"
 source_raw:
+  - "[[20261106-latentspace-fabian-theis-controlling-biology]]"
   - "[[20261019-langchain-numan-eval-first-health-coach]]"
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
   - "[[20260805-personalization-mirage-llm-over-inference]]"
@@ -27,6 +28,16 @@ claim_type: mixed
 ---
 
 # Evaluator Miscalibration（评估器校准错误）
+
+## Virtual Cell：平均预测领先可来自评测目标失准（2026-11）
+
+[[20261106-latentspace-fabian-theis-controlling-biology]]（25:54–30:53）重访 Arc Virtual Cell Challenge 的指标争论：简单均值、线性模型在某些 perturbation prediction 测试上比大模型更强，**并不能孤立证明生物基础模型没有信息**。当绝大多数基因表达变化微弱时，选错效应评分可以奖励不输出有价值变化的预测；同时较复杂模型在噪声稀疏的 knockout 条件下确实可能过拟合。二者需要通过更有生物意义的指标、难任务、对照实验与 holdout 来分辨。
+
+- **判断（综合）**：以“是否能识别干预后真正变化的细胞/基因/邻域”而非“接近全局平均状态”定义成功，对比 mean/linear 与非线性/flow 模型时固定数据、metric、holdout；不能通过只更换指标来宣告胜利。
+- **证据**：[[20261106-latentspace-fabian-theis-controlling-biology]]（Transcript 20:00–30:53；主持人还提及 Nature Biotechnology 指标再校准论文），与本 Entity 已有 aggregate score / Goodhart 机制相呼应。
+- **边界**：这是受访者对不同实验与竞赛的一手解释，并非本轮重跑公开 benchmark；深度学习在哪些数据切分胜出需回到具体论文、模型版本和指标。
+
+
 
 ## Numan Nu：把合理的多轮行为误判为失败，是 Rubric 错误而非 Agent 错误（2026-10）
 

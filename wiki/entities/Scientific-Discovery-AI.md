@@ -6,7 +6,7 @@ aliases:
   - 科学发现 AI
 definition: "把模型、科学表示、搜索/模拟/工具与可验证实验反馈结合起来，用 AI 提出、执行和筛选科学假设，并把结果回流到后续决策的系统形态"
 created: 2026-05-08
-updated: 2026-10-27
+updated: 2026-11-07
 tags:
   - AI
   - science
@@ -24,6 +24,7 @@ related_entities:
   - "[[Lab-in-the-Loop]]"
   - "[[AI-in-Mathematics]]"
 source_raw:
+  - "[[20261106-latentspace-fabian-theis-controlling-biology]]"
   - "[[Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough]]"
   - "[[20260608-paving-the-way-for-agents-in-biology]]"
   - "[[20260826-latent-space-anima-physical-world-models]]"
@@ -38,6 +39,16 @@ source_raw:
 ---
 
 # Scientific Discovery AI（科学发现 AI）
+
+## Virtual Cell：问题从细胞状态预测转向多尺度干预和可控性（2026-11）
+
+[[20261106-latentspace-fabian-theis-controlling-biology]] 的完整 50 分钟访谈（Fabian Theis，03:58–30:53）把虚拟细胞的核心挑战重新界定为**状态 × 扰动 × 时空微环境 → 下一状态或细胞群分布**，而不是只在 RNA-only 表达矩阵上做固定评测。早期 scGen 类潜空间线性偏移对简单扰动预测已足够强，但复杂细胞间交流、空间邻域、类器官、跨组织及多物种的任务要求更丰富的测量覆盖和动态预测器。访谈将 representation learning 与行动条件下的 flow matching / state push-forward 明确分开。
+
+- **判断（综合）**：数据规模的收益取决于问题是否需要相应信息；模型复杂度必须同时通过强 baseline、符合生物效应的 metric、OOD holdout 与随数据规模变化的 learning curve 证明，而不能从“Foundation Model”名号推出生物推理能力。
+- **证据**：[[20261106-latentspace-fabian-theis-controlling-biology]]（Transcript 16:04–30:53），与既有 [[20261010-latentspace-biohub-deepmind-protein-folding]] 的 problem-first scaling 相互补充。
+- **边界**：scConcert/scConcept、CellFlow 及 NicheFormer 的各项研究数据为访谈口述，仍需核对论文和实验；“350M cells/16 species”的表征规模不等于在全部扰动或真实临床任务上取得验证。
+
+
 
 > [!definition] 定义
 > **Scientific Discovery AI** 是把模型、科学表示、搜索/模拟/工具与可验证实验反馈组织成闭环，让 AI 能提出、执行和筛选科学假设，并把结果回流到后续决策。组合搜索与明确 objective 是其中一种强形态，但不是所有物理科学任务都具备干净、确定的 reward。

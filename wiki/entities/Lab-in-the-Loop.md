@@ -8,7 +8,7 @@ aliases:
   - Replayable Physical Experience
 definition: "把真实实验或实验派生的可验证证据组织成 Agent 可连续提出假设、选择实验、接收反馈并修正策略的科学环境；既包括实时自动实验，也包括由预先测量数据构成的可重放物理经验。"
 created: 2026-10-18
-updated: 2026-10-27
+updated: 2026-11-07
 evidence_level: high
 claim_type: mixed
 tags:
@@ -21,12 +21,23 @@ related_entities:
   - "[[Agent-Verification]]"
   - "[[Continual-Learning]]"
 source_raw:
+  - "[[20261106-latentspace-fabian-theis-controlling-biology]]"
   - "[[20261014-latentspace-leash-bio-lab-in-the-loop]]"
   - "[[20261026-latent-space-minos-ai-scientist-eval]]"
   - "[[20261009-latentspace-periodic-synthesis-superintelligence]]"
 ---
 
 # Lab-in-the-Loop（实验室闭环）
+
+## 从 Forward World Model 到 Inverse Intervention：Fabian Theis 的 Lab Compass（2026-11）
+
+[[20261106-latentspace-fabian-theis-controlling-biology]]（46:56–50:02）把科学实验建模从 **mapping → prediction → steering** 扩展到选择下一次实验：研究者先利用已有实验估计细胞在给定干预后的状态变化，再尝试解逆问题——为了获得目标细胞状态应采取什么可执行干预；现实实验反馈之后才修订模型。Theis 口述 Lab Compass 为逆向生成模型，并称与 Cambridge 造血研究团队已完成三到四轮迭代。
+
+- **判断（综合）**：这里的 Agent 智能瓶颈不仅是设计下一个 action，还包括**候选动作可行性、实验承担者批准、真实 assay QC、延迟/成本、阴性反馈和状态更新**。真正闭环的最低标准是新实验结果改变下一轮选择，而非仅在模型预测上优化。
+- **证据**：[[20261106-latentspace-fabian-theis-controlling-biology]]（Transcript 46:08–50:36），与 [[20261014-latentspace-leash-bio-lab-in-the-loop]] 的预测量 replay 环境形成 live/replay 两级对照。
+- **边界**：Lab Compass 的公开发布及量化效果尚未在本轮单独查证；口述“3–4 轮”不构成一般化实验自动化证据。受访者明确指出当前更像 active learning，端到端 RL/机器人湿实验仍是愿景且受 assay 周期与人类协作约束。
+
+
 
 > [!definition] 定义
 > **Lab-in-the-Loop** 是把科学 Agent 的决策与现实实验反馈闭成循环：模型提出 hypothesis 或下一步实验，环境返回可验证 observation，模型据此更新判断并继续行动。这个概念不要求每一次 rollout 都即时驱动机器人；只要反馈来自可追溯的真实实验，并能保持 action → evidence 的对应关系，预先采集的数据也可以被包装成可重放的物理经验环境。
