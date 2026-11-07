@@ -32,9 +32,17 @@ type: schema-subdoc
 
 本阶段只增加向后兼容的元数据及归并规则，不批量改写历史 Event、Raw Registry 或 Stable Wiki 页面，也不将新的字段设为全库 lint 阻断项。现有 n8n `Record work event` 仍按 `event_id` 幂等，而非按 `canonical_key` 或 URL 全局唯一；因此 Weekly 的跨 Event 归并目前仍是必要的语义质量门。
 
+### Evidence 时间戳与历史连续性
+
+`occurred_at` 是本轮实际发生/核验事实的时间，`checked_at` 是该 RSS 或岗位核验真实完成时间，`source_read_at` 是本次实际读到原文/一手材料的时间；不得填计划运行时刻、推测时刻或未来整分钟。原始文献 `published_at`、发现 `first_seen` 和当前 `createdAt` 各有不同语义，禁止混用。现行共享 `Record work event` 对 `job_watch.checked`、`rss.article.evidence_checked`、`intelligence.candidate.canonicalized` 检查可解析且不超过服务端当前时间 30 秒的关键证据时间；不将此限制强制扩展到其他具有不同事件时间语义的历史类别。
+
+新 Event 应先实际读到原文并形成可定位的证据，再写带真实时间的 Receipt/Candidate，回读时核对时间与持久化事实。旧 Event 如果含有超前时间或误读声明，不改写其历史证据；只能通过具有原 Event ID 的独立校正说明记录事实差异。Entry 的结构验证不能替代实际源阅读；`verified` 的原文机制必须可从一手材料独立复查。
+
 ## RSS 逐条证据记录与可恢复结算（第一阶段增量契约）
 
 RSS `rss_intelligence_items` 中的 `status=processing` 和 `digest_id` 是 n8n 运行层的权威状态。Delivery Receipt 只证明报告送达；`rss.digest.completed` 只在处理完成后产生。**不能因为已发送 Discord、时间已过或有部分 verified 文章就封账整批。**
+
+RSS Claim 必须服从真实消费能力：Daily 先核查全量 `new` 和 `processing`、按最早未完成 digest 优先复用既有 Receipt，再以本轮能完成实际原文/类别检查与逐条 Event 落库的剩余容量有界 Claim。不能先无差别领取整批、后仅依据少量正式报告就宣称 Item 已处理，也不能只统计 `processing` 而把积压推入 `new` 隐藏。当前 Daily 进行小批次容量试点；具体上限属于 Worker 运行策略，不在 Schema 固化永久数字。独立源采集与语义消费频率解耦不变，RSS 不进入 `ai_work_queue`，不新建处理 Worker 或交给 ServerFS Agent。
 
 为避免历史 `processing` 每日重复从零核验而缺少逐条进度，Daily 在实际复核某条已认领 Item 后，通过现有 `Record work event` 写入或更新一条 `work_events`：
 
