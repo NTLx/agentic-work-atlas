@@ -3622,6 +3622,18 @@
       "summary_path": "wiki/sources/20261019-meta-thin-orchestrator-data-agents.md",
       "updated_at": "2026-11-07T09:47:49+08:00"
     },
+    "20261019-stanford-medical-ai-actual-workflows.md": {
+      "body_sha256": "e4a9bd1f06e4fa4135ec77e1f850e1acf42a871dc7484abf719afe95e9903d24",
+      "canonical_url": "https://hai.stanford.edu/news/measuring-what-medical-ai-can-actually-do",
+      "compiled_at": "2026-11-07T23:58:23+08:00",
+      "indexed_at": "2026-11-08T00:00:00+08:00",
+      "raw_file": "20261019-stanford-medical-ai-actual-workflows.md",
+      "raw_state": "index",
+      "retention_note": "Canonical original article remains publicly recoverable with section locators in Source Summary. Temporary Raw was only a registration reference record, not full copyrighted article; body_sha256 is the reference record hash, NOT the original web article body hash.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261019-stanford-medical-ai-actual-workflows.md",
+      "updated_at": "2026-11-07T23:58:23+08:00"
+    },
     "20261020-anthropic-attack-surface-reduction.md": {
       "body_sha256": "1c09284d2fb077e89ec49118b50d6c482860311b67957dd864c29b57c43d6947",
       "canonical_url": "https://www.anthropic.com/research/attack-surface-reduction",
@@ -3644,6 +3656,18 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20261020-tessl-claim-based-agent-memory.md",
       "updated_at": "2026-11-06T08:56:14+08:00"
+    },
+    "20261020-tessl-verifying-intent-not-code.md": {
+      "body_sha256": "13a71c2e50933aafa7e20b8bf4e0f281742d7dffe427d0e94d5c7674f2e1ba5c",
+      "canonical_url": "https://tessl.io/blog/we-stopped-reviewing-code-and-started-verifying-intent",
+      "compiled_at": "2026-11-07T23:58:20+08:00",
+      "indexed_at": "2026-11-08T00:00:00+08:00",
+      "raw_file": "20261020-tessl-verifying-intent-not-code.md",
+      "raw_state": "index",
+      "retention_note": "Canonical original article remains publicly recoverable with section locators in Source Summary. Temporary Raw was only a registration reference record, not full copyrighted article; body_sha256 is the reference record hash, NOT the original web article body hash.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261020-tessl-verifying-intent-not-code.md",
+      "updated_at": "2026-11-07T23:58:20+08:00"
     },
     "20261021-latentspace-tenex-ai-native-sdlc.md": {
       "body_sha256": "952cecd1160fc673a863ee3485b76448de1eeb0ce7b0b9b2a9362416657235e0",
@@ -4461,6 +4485,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-07T16:17:26+08:00",
+  "updated_at": "2026-11-07T23:58:23+08:00",
   "version": 1
 }

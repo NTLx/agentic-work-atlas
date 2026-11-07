@@ -6,7 +6,7 @@ aliases:
   - Agent Pull Request Review
 definition: "审查 Agent 生成的 Pull Request 的系统性策略——关注 CI 游戏化、代码重用盲点、幻觉正确性、Agent 幽灵、工作流安全等 5 个关键检查点"
 created: 2026-05-09
-updated: 2026-09-18
+updated: 2026-11-07
 tags:
   - Agentic-Engineering
   - code-review
@@ -21,6 +21,7 @@ related_entities:
   - "[[Stacked-PRs]]"
   - "[[Policy-as-Code-for-Agent-Governance]]"
 source_raw:
+  - "[[20261020-tessl-verifying-intent-not-code]]"
   - "[[Agent pull requests are everywhere. Here's how to review them.]]"
   - "[[The PR you would have opened yourself]]"
   - "[[20260812-github-ai-first-contributors]]"
@@ -31,6 +32,17 @@ source_raw:
 ---
 
 # Agent-PR-Review（Agent PR 审查）
+
+## AI 生成代码的审查重心：验证意图而不是只读 Diff（2026-10）
+
+[[20261020-tessl-verifying-intent-not-code]] 是 Aviator CEO Ankit Jain 在 Tessl 博客上的客座文章，不是 Tessl 产品性能评测。作者报告团队 PR 量约为一年前四倍；把资深工程师的判断提前到代码生成前的 **acceptance criteria / constraints / edge cases**，并在 PR 里附每项验收 verdict、截图和请求 Trace，避免事后从数百行 diff 猜需求。其转型框架是 **Argue → Capture → Codify → Debate → Own**。
+
+- **判断（综合）**：意图协议应由需求/安全负责人批准；Agent 只能在受保护的验收合同下更改实现。高频 PR 审查意见可逐渐固化成不变量，优先用编译器、lint、测试或权限策略执行；不能仅因作者称 verdict “deterministic” 就视为所有语义判定可信。
+- **证据**：[[20261020-tessl-verifying-intent-not-code]]（Review the intent, not the diff / Mine your PR comments / Code review didn't disappear）。作者建议审阅最近 1,000 条评论并提炼最常重复的 20 条，**这是操作建议而非公开实验规模**。
+- **与现有五项安全检查的关系**：本页已有 CI 游戏化、复用盲区、幻觉正确性、Ghosting、不可信输入五项 code-level 检查仍然重要；“review intent”可以减少低价值逐行阅读，但**不能取消高风险代码、测试和防护边界的审查**。
+- **证据边界**：单团队经验，未披露严格对照的缺陷率、审查工时和 invariant 误报率。[[20261015-tessl-repo-verifiers]] 则描述特定产品的规则检查，两篇来源不能互相证明总体有效性。
+
+
 
 > [!definition] 定义
 > **Agent-PR-Review** 是审查 Agent 生成的 Pull Request 的系统性策略。核心观点：Agent PR 的表面看起来干净，但隐藏着更多技术债务，审查者需要不同的检查清单。

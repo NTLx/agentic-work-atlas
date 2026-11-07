@@ -3,7 +3,7 @@ type: topic
 title: Evaluation Integrity
 description: "评测完整性：任务完成率或 benchmark 得分不能单独证明系统可靠；reference、scope contract、实际可达面、监控与停止语义必须共同可信，否则评测可能不再测量原本声明的对象"
 created: 2026-09-19
-updated: 2026-11-06
+updated: 2026-11-07
 evidence_level: high
 claim_type: mixed
 tags:
@@ -18,6 +18,7 @@ related_entities:
   - "[[Agent-Attack-Surface]]"
   - "[[Reward-Hacking]]"
 source_raw:
+  - "[[20261019-stanford-medical-ai-actual-workflows]]"
   - "[[20261015-anthropic-independent-evaluators]]"
   - "[[20261015-google-agent-evaluation-beyond-vibe-check]]"
   - "[[20260306-anthropic-browsecomp-eval-awareness]]"
@@ -27,6 +28,17 @@ source_raw:
 ---
 
 # Evaluation Integrity（评测完整性）
+
+## 医疗 Agent：可检查环境终态，才能跨过「知识问答 → 真实动作」鸿沟（2026-10）
+
+[[20261019-stanford-medical-ai-actual-workflows]] 把医学 AI 评估分为三层：MedHELM 定义 **5 大类/22 子类/121 个医疗任务**，以 37 个数据集评价文本回答；PhysicianBench 让 Agent 完成 **100 个多步骤临床任务**；HealthAdminBench 则要求电脑操作 Agent 在 EHR、两家支付方门户和传真等四个仿真系统中完成 **135 个行政流程**。后两者强调在环境中**实际查找、交互、提交并核对最后状态**，不把计划或病历中的行动描述算作已执行。
+
+- **判断（综合）**：评测完整性必须同时保护 **task fidelity、execution-grounded oracle、subtask-to-workflow aggregation、multi-run consistency、跨系统状态/回执**。在一个任务依赖多个步骤时，较高子任务通过率不能替代整体成功率；在高风险任务中应分层计量错误严重性和恢复成本。
+- **证据**：[[20261019-stanford-medical-ai-actual-workflows]]（MedHELM / Tasks Are Workflows / PhysicianBench / HealthAdminBench），以及所链接论文摘要 [PhysicianBench](https://arxiv.org/abs/2605.02240)、[HealthAdminBench](https://arxiv.org/abs/2604.09937)。
+- **来源冲突**：HAI 文章称 PhysicianBench 测试 **12 models** 且使用 **synthetically reconstructed records**；其 arXiv 摘要称 **13 agents** 和 **real patient records**。尚未审核全文确认是否为版本或计数口径差异，**不能擅自合并**。
+- **边界**：HAI 已明确说明 PhysicianBench 46% 与 HealthAdminBench 36.3% 不可直接数值比较；任务仿真成功不等于真实临床安全性/有效性，亦不构成医疗器械合规结论。
+
+
 
 ## 独立评估机构：可见性、独立性与发表权是评测完整性的组成部分（2026-10）
 

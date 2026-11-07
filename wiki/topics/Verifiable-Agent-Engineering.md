@@ -48,6 +48,8 @@ related_entities:
   - "[[Rubric-Based-Evaluation]]"
   - "[[Evaluator-Miscalibration]]"
 source_raw:
+  - "[[20261020-tessl-verifying-intent-not-code]]"
+  - "[[20261019-stanford-medical-ai-actual-workflows]]"
   - "[[20261019-langchain-numan-eval-first-health-coach]]"
   - "[[20261019-meta-thin-orchestrator-data-agents]]"
   - "[[20261015-google-agent-evaluation-beyond-vibe-check]]"
@@ -101,6 +103,25 @@ source_raw:
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
+
+## Intent contract 不是 Diff review 的替代，而是受保护的验收 Oracle（2026-10）
+
+[[20261020-tessl-verifying-intent-not-code]] 的 Argue / Capture / Codify / Debate / Own 流程把意图及验收条件提前，并让 PR 附可查的截图和运行 Trace；与 [[20261015-tessl-repo-verifiers]] 的仓库级语义不变量一起，将重复审查意见转换成可执行的检查。
+
+- **判断（综合）**：强制门禁至少区分 **需求是否正确、验证规则是否受保护、执行结果是否真实、批准人是否拥有责任**。规约写错、同一 Agent 能降低测试或检查器含糊不可靠时，所有 verdict 为 pass 也不证明实现符合真实目标。
+- **证据**：[[20261020-tessl-verifying-intent-not-code]]（Review the intent / Mine your PR comments / Code review didn't disappear）；本 Topic 原有 Oracle independence 与 [[Agent-Verification]] 相补。
+- **边界**：该文由 Aviator 负责人投稿 Tessl，四倍 PR 量和审查瓶颈解决是团队自述；其“deterministic verdict”缺公开实现与独立复验，不能取代安全代码审计。
+
+## 医疗执行基准：写下正确计划与完成 EHR 动作必须分别验收（2026-10）
+
+[[20261019-stanford-medical-ai-actual-workflows]] 对 MedHELM、PhysicianBench、HealthAdminBench 三层基准进行梳理。PhysicianBench 的 **100 个长期任务**平均 **27 次工具调用**、含 **670 checkpoints**：Stanford HAI 文称最佳模型仅 **46% 单次整项完成**，三次运行均完成仅 **28%**。HealthAdminBench 在 **135 个行政任务**中以 **1,177 个确定性 + 521 个 LLM checks** 验证，最佳端到端成功 **36.3%**；另一模型尽管子任务通过 **82.8%**，整项仍仅 **26.7%**。
+
+- **判断（综合）**：`textual_plan_correct`、`action_authorized`、`tool_called`、`state_persisted`、`workflow_completed`、`repeated_success` 是不同证据层。最终环境状态必须通过独立脚本或目标系统回读验证，不能把 Agent 声称已执行当作执行。
+- **关键失败**：HAI 称在**动作执行失败子集**，两款模型分别有 62% / 73% 只是把正确动作写进病历而没有真正下医嘱；这不是全部任务失败率。
+- **证据**：[[20261019-stanford-medical-ai-actual-workflows]]（PhysicianBench / HealthAdminBench / Reading the Benches Together）。
+- **边界**：46% 与 36.3% 属不同系统、模型和判定机制，不可横向排名；基准在模拟/重建环境运行，不能据此证明真实临床自主部署安全。
+
+
 
 ## Numan：测试的必须是实际要交付的生产系统（2026-10）
 
