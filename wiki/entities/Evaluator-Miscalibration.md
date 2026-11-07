@@ -8,7 +8,7 @@ aliases:
   - Calibration Trap
 definition: "评估器测量的不是你真正关心的行为：rubric 标准互相冲突或锚点奖励了错误的东西，使聚合分数与真实质量背离——校准错误的评估比没有评估更糟，因为它递给你虚假的信心"
 created: 2026-07-30
-updated: 2026-09-19
+updated: 2026-11-07
 tags:
   - evaluation
   - agentic-engineering
@@ -19,6 +19,7 @@ related_entities:
   - "[[Over-Inference]]"
   - "[[Evaluation-Integrity]]"
 source_raw:
+  - "[[20261019-langchain-numan-eval-first-health-coach]]"
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
   - "[[20260805-personalization-mirage-llm-over-inference]]"
 evidence_level: medium
@@ -26,6 +27,16 @@ claim_type: mixed
 ---
 
 # Evaluator Miscalibration（评估器校准错误）
+
+## Numan Nu：把合理的多轮行为误判为失败，是 Rubric 错误而非 Agent 错误（2026-10）
+
+[[20261019-langchain-numan-eval-first-health-coach]] 描述两个明确的评测校准失败：早期两轮固定 fixture 要求同一轮完成共情、问题探询和建议，把真实健康教练的合理节奏错误打低分；预设第二轮患者话语的 scripted multi-turn 不再针对 Agent 第一轮实际回答，因而测量的是没有发生的对话。总体平均又使少数严重医疗范围越界被其它好分数稀释。
+
+- **判断**：评分标准必须尊重可观察信息的范围；单轮任务只评单轮可观察项，多轮行为应使用**根据 Agent 响应动态继续的用户模拟**和全段 Trace；风险分类不得被整体均分稀释。
+- **证据**：[[20261019-langchain-numan-eval-first-health-coach]]（Where standard eval approaches fell short / The eval framework / Simulating conversations）。
+- **边界**：自适应模拟仍为原型，作者明确说明工程师制定的该层标准未经临床人员批准，**不得用于安全发布门禁或安全声明**。一组漏服药场景中“完全拒答转医生”与“提供药品说明书通用事实”相互冲突，证明 Rubric 的专业裁决权不能让模型或工程师自行代替。
+
+
 
 > [!definition] 定义
 > **Evaluator Miscalibration（评估器校准错误）** 是评估器与真实质量脱节的状态：rubric 标准之间互相冲突，或锚点设计奖励了错误的东西，使聚合分数背离团队实际关心的行为。其危险性不在于"分数不准"，而在于**虚假信心**——团队会信任数字、压倒自己的阅读，于是校准错误的评估比没有评估更糟。

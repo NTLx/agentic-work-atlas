@@ -5,7 +5,7 @@ aliases:
   - Agent Orchestration
 definition: "管理多个 AI Agent 协作的核心架构，负责任务拆解、进度监控、错误处理和结果汇总"
 created: 2026-04-09
-updated: 2026-07-29
+updated: 2026-11-07
 tags:
   - AI-Agent
   - OpenClaw
@@ -22,6 +22,7 @@ related_entities:
   - "[[Captain-Mindset]]"
   - "[[Kun-Chen]]"
 source_raw:
+  - "[[20261019-meta-thin-orchestrator-data-agents]]"
   - '[[OpenClaw + 6 个 Agent 运转半个月，从聊天到干活的完整工程实践]]'
   - '[[OpenClaw + CodexClaudeCode Agent Swarm The One-Person Dev Team Full Setup]]'
   - "[[MachinaCheck Building a Multi-Agent CNC Manufacturability System on AMD MI300X]]"
@@ -33,6 +34,17 @@ source_raw:
 ---
 
 # Agent Orchestration
+
+## Meta 的 Thin Orchestrator：把控制平面从领域推理中剥离（2026-10）
+
+[[20261019-meta-thin-orchestrator-data-agents]] 记录了一条可核验的工程分层：Meta 面向推荐系统数据列入库搭建约 1,300 行 thin orchestrator，复用 14 个隔离专业 Agent 和 20 多个工作流。中央的七步协议包括加载专家说明、重复检查、必填字段、自动发现、可靠性门禁、专业委派和结果确认；作者称只有专业委派涉及领域 LLM 推理。通过三类 workflow template 组合同一组专家、按运行时加载 25 个以上知识文件，避免把数据源专有知识全部塞进中央上下文。
+
+- **判断（综合）**：编排层应稳定承担 **路由/依赖/状态/幂等/失败恢复/确认**，领域执行层承担局部专业判断；知识版本需可追溯。薄并不等于忽略跨 Agent 业务一致性，仍需跨阶段契约和最终核验。
+- **证据**：[[20261019-meta-thin-orchestrator-data-agents]]（The Approach / What We Built / Why This Works）。
+- **边界**：3–4 天人工、约一天早期自动化和不到一小时新架构的数字是 Meta 自报不同流程基线；缺少同条件配对，不能据此宣布普适倍数。作者未来的自动改知识反馈循环尚未实现。
+- **对当前系统的适配约束**：不因该案例复制新 n8n 编排器或把 ChatGPT 工作推给外部 Agent；先测现有 Workers 与状态机是否满足可验证 Claim、ACK、ownership 与失败语义，再决定改造。
+
+
 
 > [!definition] 定义
 > Agent 编排层（Orchestration Layer）是管理多个 AI Agent 协作的核心架构。OpenClaw 作为编排者，负责任务拆解、进度监控、错误处理和结果汇总，将业务上下文转化为精确的编码任务指令。

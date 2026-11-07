@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-11-06
+updated: 2026-11-07
 evidence_level: high
 claim_type: mixed
 tags:
@@ -48,6 +48,8 @@ related_entities:
   - "[[Rubric-Based-Evaluation]]"
   - "[[Evaluator-Miscalibration]]"
 source_raw:
+  - "[[20261019-langchain-numan-eval-first-health-coach]]"
+  - "[[20261019-meta-thin-orchestrator-data-agents]]"
   - "[[20261015-google-agent-evaluation-beyond-vibe-check]]"
   - "[[20261015-tessl-repo-verifiers]]"
   - "[[The PR you would have opened yourself]]"
@@ -99,6 +101,24 @@ source_raw:
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
+
+## Numan：测试的必须是实际要交付的生产系统（2026-10）
+
+[[20261019-langchain-numan-eval-first-health-coach]] 将 Nu 的单轮分类数据集和多轮模拟直接运行在同一 LangGraph 图上，而不复制 prompt 建立容易漂移的测试替身。针对既有的医学范围边界，出站安全 guard 检查每条回答，失败时要求重生成，仍失败时输出安全 fallback；相应安全分类回归作为发布阻断门。LangSmith 存生产/模拟 Trace、实验与人工批注，专家教练每天审阅真实案例。
+
+- **判断（综合）**：变更验收既要保护**被测试对象与实际交付对象的同一性**，也要保护有适当资质的人员对业务/临床风险 rubric 的所有权。规则可执行不代表规则正确。
+- **证据**：[[20261019-langchain-numan-eval-first-health-coach]]（The thing we ship is the thing we test / Behavioural tests / The stack / Simulating conversations）。
+- **边界**：动态患者模拟评测虽可以用于探查越界，但原文明确表示其临床规则尚未批准，**当前不做安全 gate**。产品声明为 wellness 不证明监管分类；未来在线持续自动评分仍属于规划。
+
+## Meta Thin Orchestrator：确定性控制和局部 LLM 推理的可验证接缝（2026-10）
+
+[[20261019-meta-thin-orchestrator-data-agents]] 为多 Agent 验证新增一种分层约束：中央顺序执行七个检查/委派/验收步骤，领域上下文只交给对应专家，工作流模板定义各阶段次序；多种专业执行使用同一套受控任务输入、可观察输出与失败处理路径。
+
+- **判断**：可验证性不仅来自更多 Agent 自测试，还来自控制平面能独立核实 schema 重复、必要输入、审阅门、阶段依赖及终态状态；局部 Agent 没有完整全局上下文时，必须以端到端契约补回跨域一致性。
+- **证据**：[[20261019-meta-thin-orchestrator-data-agents]]（The Approach / What We Built / Results）。
+- **边界**：它的模型/组件隔离并不保证自然语言意图归类一定无错，也不提供跨系统事务或权限隔离的完整证明；效果数字仅为公司自报。
+
+
 
 ## 评测要从体验判断提升到可保护的契约（2026-10）
 

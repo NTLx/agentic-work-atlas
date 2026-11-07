@@ -3598,6 +3598,30 @@
       "summary_path": "wiki/sources/20261018-lenny-emmanuel-ameisen-interpretability.md",
       "updated_at": "2026-10-18T22:56:06+08:00"
     },
+    "20261019-langchain-numan-eval-first-health-coach.md": {
+      "body_sha256": "ed2341f4c234cb0a3b892fe5eb518da367fbc9dae15b7b3181d5414ee51cc8d0",
+      "canonical_url": "https://www.langchain.com/blog/how-numan-built-an-eval-first-ai-health-coach-with-langgraph-and-langsmith",
+      "compiled_at": "2026-11-07T09:47:46+08:00",
+      "indexed_at": "2026-11-07T09:48:40+08:00",
+      "raw_file": "20261019-langchain-numan-eval-first-health-coach.md",
+      "raw_state": "index",
+      "retention_note": "Official article remains recoverable at canonical URL with section locators in Source Summary. Temporary Raw was a source-reference record, not full article content; body_sha256 is the reference record hash, NOT the web article text hash.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261019-langchain-numan-eval-first-health-coach.md",
+      "updated_at": "2026-11-07T09:47:46+08:00"
+    },
+    "20261019-meta-thin-orchestrator-data-agents.md": {
+      "body_sha256": "b4d84448ae2644f36dc39001e0179c534b449b530558af8398ecf47ebcdabd7d",
+      "canonical_url": "https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/",
+      "compiled_at": "2026-11-07T09:47:49+08:00",
+      "indexed_at": "2026-11-07T09:48:40+08:00",
+      "raw_file": "20261019-meta-thin-orchestrator-data-agents.md",
+      "raw_state": "index",
+      "retention_note": "Official article remains recoverable at canonical URL with section locators in Source Summary. Temporary Raw was a source-reference record, not full article content; body_sha256 is the reference record hash, NOT the web article text hash.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261019-meta-thin-orchestrator-data-agents.md",
+      "updated_at": "2026-11-07T09:47:49+08:00"
+    },
     "20261020-anthropic-attack-surface-reduction.md": {
       "body_sha256": "1c09284d2fb077e89ec49118b50d6c482860311b67957dd864c29b57c43d6947",
       "canonical_url": "https://www.anthropic.com/research/attack-surface-reduction",
@@ -4425,6 +4449,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-07T09:23:32+08:00",
+  "updated_at": "2026-11-07T09:47:49+08:00",
   "version": 1
 }
