@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-10-29
+updated: 2026-11-09
 evidence_level: high
 claim_type: mixed
 tags:
@@ -49,6 +49,7 @@ related_entities:
   - "[[Meta-Harness-Optimization]]"
   - "[[Recursive-Language-Model]]"
 source_raw:
+  - "[[20261108-lenny-tulsee-doshi-frontier-model-pm]]"
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260713-martin-fowler-fragments-july-2026]]"
   - "[[The Anatomy of an Agent Harness]]"
@@ -95,6 +96,16 @@ source_raw:
 ---
 
 # Agent Harness
+
+## 新模型能力可能使旧 Harness 成为限制，但治理不变量不能被一并撤销（2026-11）
+
+[[20261108-lenny-tulsee-doshi-frontier-model-pm]]（用户原始 Transcript L510–L540）中，Tulsee Doshi 将 Harness 定义为围绕模型的 system instructions、tools、skills 和 context，并建议随着模型能力升级**持续重新测试**原有优化结构。她提出的风险是：为旧模型弱点建立的复杂外层脚手架可能对更强模型产生不必要的约束；这是一项待以真实基准验证的工程假说，而非“能力越强就越不用 Harness”的定律。
+
+- **可执行的检验（跨来源综合）**：固定任务集、模型版本、工具权限及成本预算，比较 `base model + minimal harness` 与 `base model + existing harness` 的任务成功、长轨迹、延迟、token、错误回退；只有在完整业务质量和授权约束均不降级时，才删除确实冗余的非必要 Prompt/Skills。
+- **保留边界**：Claim/Complete 真实性、最小权限、审计、来源证据、发布 ACK、跨系统状态回读及受保护的 test oracle 是系统职责，不会因为模型变强就自动无用。
+- **证据**：[[20261108-lenny-tulsee-doshi-frontier-model-pm]]（L510–L540）结合本页既有 [[Agent-Orchestration]]、[[Policy-as-Code-for-Agent-Governance]] 和 [[Agent-Verification]] 的原则；原文只支持“持续重测”，不直接证明移除后的效果。
+
+
 
 > [!definition] 定义
 > **Agent Harness** 是包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。

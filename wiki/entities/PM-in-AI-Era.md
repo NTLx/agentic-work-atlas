@@ -6,7 +6,7 @@ aliases:
   - AI 时代的产品经理
 definition: "AI 时代 PM 从路线图对齐者转变为高速公路设计者——系统性消除从想法到用户手中的每一步摩擦"
 created: 2026-05-08
-updated: 2026-09-21
+updated: 2026-11-09
 tags:
   - product-management
   - AI-era
@@ -21,6 +21,7 @@ related_entities:
   - "[[Boris-Cherny]]"
   - "[[Human-Agent-Teams]]"
 source_raw:
+  - "[[20261108-lenny-tulsee-doshi-frontier-model-pm]]"
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - "[[20260802-lenny-cpo-regrets-product-management-whatnot]]"
@@ -31,6 +32,17 @@ claim_type: mixed
 ---
 
 # PM in AI Era（AI 时代的产品经理）
+
+## Frontier Model PM：识别能力、设计评测和持有产品判断（2026-11）
+
+[[20261108-lenny-tulsee-doshi-frontier-model-pm]] 是 Google frontier models 产品负责人 Tulsee Doshi 与 Lenny Rachitsky 的完整访谈（用户原始 Transcript L80–L110、L258–L340、L466–L512、L704–L742）。与本页“产品 Taste 与降低交付摩擦”的既有思路互补：在模型训练结果无法完全事前预测时，PM 不仅设定能力目标，还必须**亲自使用模型发现意外强项**，把用户体验的透明度、追问方式和行为期望编译为 `spec → rubric → 训练数据 → reward modeling`。PM 不再只递交 PRD，而应携带实际原型、eval 和数据证据参与决策。
+
+- **判断（综合）**：当实现相对便宜，PM 的稀缺价值是问题选择、评测标准所有权、从噪声识别信号、让团队协同行动，以及对真正产品结果负责；AI 提供报告所需数据，人应形成洞察和判断。
+- **产品期权机制**：Doshi 的 **60/20/20** 建议大致分为今天可用、接近可用、尚不成熟但值得探索的模型能力；她本人承认比例可变，无法精确预测三个月后表现。它是**不同成熟度产品机会的启发式**，不是固定预算或失败容忍比例。
+- **证据**：[[20261108-lenny-tulsee-doshi-frontier-model-pm]]（附件原始行号 L286–L340、L466–L512、L704–L742）。
+- **边界**：这是受访者本人观点及公司实践自述；无法单凭该访谈证明 PM 就业市场和组织绩效普遍提高，或“60/20/20”有可复验的优越性。采访中关于 burnout 的改善也尚无已完成的解决方案。
+
+
 
 > [!definition] 定义
 > **PM in AI Era（AI 时代的产品经理）** 是新一代产品经理角色：从"对齐多团队路线图"转向"设计并维护一条高速公路"——框架清晰到工程师能自我导航、跨职能资源即时就位、每一项摩擦被系统性消除。

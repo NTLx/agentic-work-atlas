@@ -8,7 +8,7 @@ aliases:
   - Calibration Trap
 definition: "评估器测量的不是你真正关心的行为：rubric 标准互相冲突或锚点奖励了错误的东西，使聚合分数与真实质量背离——校准错误的评估比没有评估更糟，因为它递给你虚假的信心"
 created: 2026-07-30
-updated: 2026-11-07
+updated: 2026-11-09
 tags:
   - evaluation
   - agentic-engineering
@@ -19,6 +19,7 @@ related_entities:
   - "[[Over-Inference]]"
   - "[[Evaluation-Integrity]]"
 source_raw:
+  - "[[20261108-lenny-tulsee-doshi-frontier-model-pm]]"
   - "[[20261106-latentspace-fabian-theis-controlling-biology]]"
   - "[[20261019-langchain-numan-eval-first-health-coach]]"
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
@@ -28,6 +29,18 @@ claim_type: mixed
 ---
 
 # Evaluator Miscalibration（评估器校准错误）
+
+## 指标测错对象：从 Fitzpatrick 到 Monk，以及 Vibe 与 Eval 的分工（2026-11）
+
+[[20261108-lenny-tulsee-doshi-frontier-model-pm]]（用户原始 Transcript L312–L410）记录 Doshi 的一手回顾：早期图像产品将本用于其他医疗目的的 Fitzpatrick 六档肤色尺度用于评价全球肤色表现，造成**测量目标与真实人群表征不符**；团队改用十档 Monk Skin Tone Scale 并调整评价方式。由此可得的结论不是“十档总比六档准”，而是**Rubric/label 的语义适用性比表面分辨率更重要**。
+
+她同时建议 PM 在熟悉的实际使用场景中先做 5 个 prompt，逐步形成约 20 个对比任务，由人直接读样本/长轨迹发现“好”的含义；然后才把观察固化为扩展评测。对于视频、音频、对话等模型，还须检验真实 serving、过滤器和 Judge 本身，不得用裸模型评分替代端到端体验。
+
+- **判断（综合）**：`测量对象 → 代表性样本 → Rubric → Judge 校准 → 部署后用户实际看到的结果`。主观 Vibe 负责发现未知需求，固定 eval 用于可比回归；两者要相互校正，不能彼此代替。
+- **证据**：[[20261108-lenny-tulsee-doshi-frontier-model-pm]]（L328–L410）。
+- **边界**：5–20 prompts 仅为探索性起点，不构成临床、安全、偏见、公平或上线的充分门禁；访谈未公开 Monk 改造的定量效果或独立试验结果。
+
+
 
 ## Virtual Cell：平均预测领先可来自评测目标失准（2026-11）
 
