@@ -3866,6 +3866,18 @@
       "summary_path": "wiki/sources/20261106-latentspace-fabian-theis-controlling-biology.md",
       "updated_at": "2026-11-07T16:17:26+08:00"
     },
+    "20261108-latentspace-stanford-ai-native-engineering-mihail-eric.md": {
+      "body_sha256": "39473441f59b5074b913b4258dbc4841e048f5883e64ae7355e9392021d6f656",
+      "canonical_url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/one_million_ai_engineer_special_how_stanford_teaches_ai-native_engineering_mihail_eric_monaco",
+      "indexed_at": "2026-11-09T13:35:18+08:00",
+      "compiled_at": "2026-11-09T13:34:47+08:00",
+      "raw_file": "20261108-latentspace-stanford-ai-native-engineering-mihail-eric.md",
+      "raw_state": "index",
+      "retention_note": "Public full transcript remains readable at canonical URL and https://latent.space/p/cs146s/ with timestamps; registered Raw was a temporary provenance record removed after compilation. body_sha256 hashes that temporary record, NOT original transcript. Independent normalized transcript-text SHA-256: 63da36c03da72c4f76f44f78bdf427181d7615c3654c0379b3e8224c60615bf5.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261108-latentspace-stanford-ai-native-engineering-mihail-eric.md",
+      "updated_at": "2026-11-09T13:34:47+08:00"
+    },
     "20261108-lenny-tulsee-doshi-frontier-model-pm.md": {
       "body_sha256": "54d780f06aa7365274b29fa14703029eba504ae419586952bd3f6002d52a761e",
       "compiled_at": "2026-11-09T13:21:11+08:00",
@@ -4494,6 +4506,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-09T13:21:11+08:00",
+  "updated_at": "2026-11-09T13:34:47+08:00",
   "version": 1
 }

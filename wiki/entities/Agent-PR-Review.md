@@ -6,7 +6,7 @@ aliases:
   - Agent Pull Request Review
 definition: "审查 Agent 生成的 Pull Request 的系统性策略——关注 CI 游戏化、代码重用盲点、幻觉正确性、Agent 幽灵、工作流安全等 5 个关键检查点"
 created: 2026-05-09
-updated: 2026-11-07
+updated: 2026-11-09
 tags:
   - Agentic-Engineering
   - code-review
@@ -21,6 +21,7 @@ related_entities:
   - "[[Stacked-PRs]]"
   - "[[Policy-as-Code-for-Agent-Governance]]"
 source_raw:
+  - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
   - "[[20261020-tessl-verifying-intent-not-code]]"
   - "[[Agent pull requests are everywhere. Here's how to review them.]]"
   - "[[The PR you would have opened yourself]]"
@@ -32,6 +33,16 @@ source_raw:
 ---
 
 # Agent-PR-Review（Agent PR 审查）
+
+## PR 的理解门槛：解释变更、测验与真实维护者的意图审核（2026-11）
+
+[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]（**10:02–15:04、38:15–40:33、1:12:37–1:20:37**）强调：当 Coding Agent 能快速生成大量 PR，review 才是瓶颈。Stanford CS146S 用真实 OSS Maintainer 审查学生改动，取代能一次性完成的演示作业；嘉宾讨论 Geoffrey Litt `/explain-diff` 的可视化解释与理解测验。Litt 的[原文](https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck.html)将理解的目标区分为 **verify** 和 **participate**——掌握系统才能继续提出有意义的下一次迭代。
+
+- **判断（综合）**：`generated → explained → independently tested → intention accepted → reviewed → merged` 是不同状态。可自动化代码风格、测试和不变量，但代码理解 Quiz 不是安全扫描，审阅者也不能仅凭 Agent 文字说明就确认外部状态。
+- **证据**：[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]；Geoffrey Litt 一手文章。与 [[20261020-tessl-verifying-intent-not-code]] 的意图契约互补，而非抹去代码审查。
+- **边界**：受访时课程尚未给出全部 OSS PR 的真实合并率；98% PR 数量与 91% 审查耗时的 show-notes 统计源于另一个 Faros 研究，本文未独立验证其因果或分母。
+
+
 
 ## AI 生成代码的审查重心：验证意图而不是只读 Diff（2026-10）
 

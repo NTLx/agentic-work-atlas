@@ -49,6 +49,7 @@ related_entities:
   - "[[Meta-Harness-Optimization]]"
   - "[[Recursive-Language-Model]]"
 source_raw:
+  - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
   - "[[20261108-lenny-tulsee-doshi-frontier-model-pm]]"
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260713-martin-fowler-fragments-july-2026]]"
@@ -96,6 +97,16 @@ source_raw:
 ---
 
 # Agent Harness
+
+## 生产级 Harness 的核心不是 Loop 代码行数，而是系统上下文与可靠执行（2026-11）
+
+[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]（**24:04–38:15、1:05:24–1:12:37**）以 Stanford 的简化编码 Agent（约 200 行可演示核心调用循环）区分教学与生产环境。大型仓库需要 `research → alternatives → plan` 的上下文流、对子 Agent 的定向信息供给、清晰的真实运行环境；旧聊天意见不得被当成长期的架构决策。Mihail 对企业运行时的提醒是：CI/CD、依赖、构建、服务拓扑、旧文档和真实数据平面不可靠时，额外增加 Agent 只会扩大问题。
+
+- **判断（综合）**：`Agent loop` 是基本交互原语；Harness 的工程价值由受保护的配置、可复查历史意图、最小权限、数据隔离、测试/回执与回滚共同决定。与同页 Tulsee Doshi 对旧 Skill/Harness 重测的建议相容：精简冗余 Prompt，不取消治理基础设施。
+- **证据**：[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]（上述时间段）；Monaco [工作区一手工程说明](https://www.monaco.com/blog/agent-developer-workspaces)。
+- **边界**：200 行是原理教学，不是生产 Agent 的充分实现。各组织的 Context 与 Harness 取舍需固定任务做真实对照，不能从单一公司的架构外推最优性。
+
+
 
 ## 新模型能力可能使旧 Harness 成为限制，但治理不变量不能被一并撤销（2026-11）
 

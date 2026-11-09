@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-11-07
+updated: 2026-11-09
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -39,6 +39,7 @@ related_entities:
   - "[[ALIGN-Framework]]"
   - "[[Agent-Environment-Misalignment]]"
 source_raw:
+  - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
   - "[[20261015-meta-forum-ai-native-engineering]]"
   - "[[20261008-claude-effective-agent-automations]]"
   - "[[20261008-google-aqua-production-agent-quality]]"
@@ -68,6 +69,16 @@ source_raw:
 ---
 
 # Agentic Engineering Patterns
+
+## Stanford CS146S：从 Coding Agent 演示迈向真实工程能力（2026-11）
+
+[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]（访谈 **00:51–24:04、32:18–46:42、1:41:22–2:00:37**）对比 Stanford CS146S 的 2025/2026 两次课程：早期练习已可被 Agent 一次性完成，2026 年改为从真实开源仓库中发现任务、提出变更，由实际维护者反馈是否值得合并；课程继续教授 Agent loop、Context Engineering、Skills、Spec、CI/CodeReview、安全、背景 Agent 和 Software Factory。其前提是传统编程/算法基础，**不是 AI 替代计算机科学教育**。
+
+- **判断（综合）**：AI-Native 工程能力的强信号是需求意图、架构研究、备选方案、受控实现、独立验证、维护者批准与长周期可维护性，而不是生成代码行数。长代码库推荐 `research → alternatives → human decision → plan/spec → implementation → verification`。
+- **证据**：[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]；[CS146S 官网](https://themodernsoftware.dev/) 确认课程方向及先修条件。
+- **边界**：2026 课程当时刚开始，尚无充分学期成果和学生工作表现统计；“初级工程师需接近高级工程师水平”是受访者观点，而非可观测劳动力市场基准。软件工厂趋于自主也是方向预测，未实证普适。
+
+
 
 ## Meta Forum：让 Agent 能看环境，并用独立验证收敛循环（2026-10）
 

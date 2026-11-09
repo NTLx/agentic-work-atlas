@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-11-07
+updated: 2026-11-09
 evidence_level: high
 claim_type: mixed
 tags:
@@ -48,6 +48,7 @@ related_entities:
   - "[[Rubric-Based-Evaluation]]"
   - "[[Evaluator-Miscalibration]]"
 source_raw:
+  - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
   - "[[20261020-tessl-verifying-intent-not-code]]"
   - "[[20261019-stanford-medical-ai-actual-workflows]]"
   - "[[20261019-langchain-numan-eval-first-health-coach]]"
@@ -103,6 +104,16 @@ source_raw:
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
+
+## 软件工厂要守住意图、权限、真实测试与外部回执（2026-11）
+
+[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]（**1:12:37–1:30:13、1:41:22–1:45:24**）指出代码生成提速后审查压力、供应链和依赖安全并未消失。访问数据库、身份权限、账单、敏感数据和不可逆操作时，不能把 Agent 自述、绿灯 CI 或自动化评论当作充分安全证明；主持人与嘉宾也未证明“自动生成软件天然更加安全”。软件工厂发展仍需要被明确定义的 **intent ownership** 与 **review/acceptance**。
+
+- **判断（综合）**：将 `intent → protected oracle → isolated implementation → deterministic tests → security/authorization gate → durable state/deploy receipt` 分开证明。低风险小改动与高风险权限、迁移、付款和数据处置必须分级，不能以同一自动 approve 阈值处理。
+- **证据**：[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]（1:12:37–1:30:13、1:41:22–1:45:24）；与本 Topic 已有 [[20261020-tessl-verifying-intent-not-code]] 的意图契约、[[20261019-stanford-medical-ai-actual-workflows]] 的环境终态评估相互参照。
+- **边界**：不同来源的共同观点不是独立因果证明；本文给出的是工程风险与设计方向，没有可直接部署的 universal review threshold 或已测出的自动工厂安全指标。
+
+
 
 ## Intent contract 不是 Diff review 的替代，而是受保护的验收 Oracle（2026-10）
 

@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-11-05
+updated: 2026-11-09
 evidence_level: high
 claim_type: mixed
 tags:
@@ -40,6 +40,7 @@ related_entities:
   - "[[Alert-Closed-Loop]]"
   - "[[Human-Owns-Output]]"
 source_raw:
+  - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
   - "[[20261031-latent-space-arca-agent-harness]]"
   - "[[Building an MCP Ecosystem at Pinterest]]"
   - '[[工程师抗拒被"蒸馏"，企业的Skills从何而来？五大招破局]]'
@@ -59,6 +60,16 @@ source_raw:
 ---
 
 # Organization as Agent Harness（组织作为 Agent Harness）
+
+## Monaco：为背景 Agent 提供真实执行环境，按长期内核决定 Build vs Buy（2026-11）
+
+[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]（**59:21–1:12:37、1:30:13–1:41:22**）提供了 Monaco 团队的自述：代码审查试用后采用 Devin；为背景 Agent 自建 Monacoder 工作区、为开发者/销售人员提供不同输出的 Hal。购买可快速检验第三方工具成熟度，自建适用于与自身云、数据平面、权限和业务运行时深度绑定的组件。受访者口号是 **Buy to learn, build to keep**，不是“所有工具都自建”。
+
+- **独立交叉来源**：[Monaco 2026-07-09 工程博客](https://www.monaco.com/blog/agent-developer-workspaces) 具体介绍 Coder 之上的 1 app/VM、版本化 AMI、隔离 DB 克隆、VPC/VPN、只读 Datadog、CI/PR 评论自动修复。自报约一名平台工程师两周搭建、多个并行 workspace，但未提供可外推的严格性能评测。
+- **判断（综合）**：组织 Harness 的最小闭环是 `任务意图 → 受限身份 → 可运行环境/数据 → 验证与 PR → 人类/系统授权 → 部署回执与学习`；真正的基础问题如 CI、权限、服务依赖和故障恢复必须先于扩容 Agent 解决。
+- **边界**：Monaco 的成本与选型依赖其已有 AWS/Kubernetes、Coder 和服务生态；播客关于 MCP Portal 和 LLM Gateway 合流是趋势讨论，不构成必须合并既有生产控制面的依据。
+
+
 
 > [!summary] 核心洞察
 > 企业不是“使用 AI 的人群”，而是 AI 运行时环境。组织越混乱，AI 越会把混乱放大；组织越能把目标、流程、权限和反馈显性化，AI 越像可扩展的执行层。
