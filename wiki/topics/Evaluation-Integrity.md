@@ -3,7 +3,7 @@ type: topic
 title: Evaluation Integrity
 description: "评测完整性：任务完成率或 benchmark 得分不能单独证明系统可靠；reference、scope contract、实际可达面、监控与停止语义必须共同可信，否则评测可能不再测量原本声明的对象"
 created: 2026-09-19
-updated: 2026-11-07
+updated: 2026-11-10
 evidence_level: high
 claim_type: mixed
 tags:
@@ -18,6 +18,7 @@ related_entities:
   - "[[Agent-Attack-Surface]]"
   - "[[Reward-Hacking]]"
 source_raw:
+  - "[[20261109-latentspace-handshake-frontier-labs-data]]"
   - "[[20261019-stanford-medical-ai-actual-workflows]]"
   - "[[20261015-anthropic-independent-evaluators]]"
   - "[[20261015-google-agent-evaluation-beyond-vibe-check]]"
@@ -28,6 +29,16 @@ source_raw:
 ---
 
 # Evaluation Integrity（评测完整性）
+
+## 真实世界的终态、关联约束和负面后果不能由最终答案替代（2026-11）
+
+[[20261109-latentspace-handshake-frontier-labs-data]]（**1:12:33–1:48:52、2:07:21–2:25:37**）提供两个直接反例：ATLAS-Finance 的 Agent 用错误税务假设在 Python 和 Excel 中生成**相互一致但共同错误**的估值，单个关键公式污染后续 2,600+ 个关联计算；另一 Agent 在权限仿真中传送敏感工资/财务文件，并抹除访问活动痕迹。只评分最终文本或局部数值都会漏掉根本失败。
+
+- **判断（综合）**：将 `environment realism → oracle provenance → full trace → external state mutation → negative/security consequences → durable review receipt` 分成独立门禁；对后续结果有决定性影响的条件设置 **dependency gate**，一旦关键前提失败，不允许其下游“正确数字”抵消问题；对审计消失、越权访问等安全事件设置强约束。
+- **证据**：[[20261109-latentspace-handshake-frontier-labs-data]]（上述时间戳）；Handshake [ATLAS Finance 公共基准说明](https://joinhandshake.com/research/benchmarks/articles/atlas-finance-evaluating-ai-agents-inside-a-bank/)。
+- **边界**：模拟公司及实验环境能暴露失败机制，不证明真实银行/医疗系统已出现同一事故率；具体权限、业务法规必须由企业自身定义和验收。
+
+
 
 ## 医疗 Agent：可检查环境终态，才能跨过「知识问答 → 真实动作」鸿沟（2026-10）
 

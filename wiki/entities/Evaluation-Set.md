@@ -7,7 +7,7 @@ aliases:
   - AI 评测集
 definition: "把真实业务判断、边界案例和验收规则显式化为可复用测试样本，用来评估、迭代和迁移 AI 系统行为的关键资产"
 created: 2026-05-23
-updated: 2026-11-03
+updated: 2026-11-10
 tags:
   - AI-evaluation
   - AI-deployment
@@ -23,6 +23,7 @@ related_entities:
   - "[[Specialized-Small-Models]]"
   - "[[Transparent-Tool-Handoff]]"
 source_raw:
+  - "[[20261109-latentspace-handshake-frontier-labs-data]]"
   - "[[The Return of the Deployment Company]]"
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
   - "[[20260730-palantir-responsible-ai-evals-prototype-to-production]]"
@@ -35,6 +36,16 @@ source_raw:
 ---
 
 # Evaluation Set（评测集）
+
+## 前沿实验室购买的并非孤立标签，而是可回放的专业任务世界（2026-11）
+
+[[20261109-latentspace-handshake-frontier-labs-data]]（**01:35–31:30、2:28:36–2:43:42**）展示 Handshake AI 的数据供给从 RLHF/简单标签演变成 `work tools + consistent seeded data + expert-created task + environment rollout + rubric + QA/heldout` 的可执行组合。现实银行数据常难以直接获取/去标识，专家必须参与合成资料的跨文件一致性校验；简单生成形似可信的电子表格并不足够。
+
+- **判断（综合）**：对企业来说，最有价值的资产是**自有、覆盖长程业务任务与禁止行为的私有 Benchmark**，而不是一批只适合某模型 Prompt 的 Golden Q&A。先定义业务 task 和正负验收，再比较闭源 Agent、开源模型/微调及 Harness 迭代。训练数据需经过真实模型 `pilot/ablation + holdout` 验证，否则只是“专家觉得好”的数据。
+- **证据**：[[20261109-latentspace-handshake-frontier-labs-data]]；[ATLAS-Finance 公共任务/环境](https://huggingface.co/datasets/handshake-ai-research/ATLAS-Finance) 和[执行代码](https://github.com/Handshake-AI-Research/ATLAS-Finance)提供可检查的特定设计实例。
+- **边界**：访谈中的部分采购方训练只用不足 10% 的采购数据属于供应商转述，**不是全行业复用率**；企业自有 Benchmark 不意味着每家企业都需自训基础模型。
+
+
 
 > [!definition] 定义
 > **Evaluation Set（评测集）** 是把真实业务判断、边界案例和验收规则显式化为可复用测试样本的资产。它不只是模型评分工具，也是企业工作流知识的载体：谁有权访问、导出和复用评测集，谁就掌握了 AI 系统持续迭代的关键控制点。

@@ -7,7 +7,7 @@ aliases:
   - Agent Optimizer
 definition: "用具体行为检查项（rubric）取代泛化指标（groundedness/coherence）来评估生产 Agent 的方法。每个 rubric 是针对特定用例的 yes/no 检查，由拥有该 Agent 的团队编写。Microsoft 的 Agent Optimizer 可基于 rubric 失败自动生成候选修复。"
 created: 2026-07-14
-updated: 2026-09-02
+updated: 2026-11-10
 evidence_level: high
 claim_type: mixed
 tags:
@@ -21,6 +21,7 @@ related_entities:
   - "[[Evaluator-Miscalibration]]"
   - "[[Goodharts-Law]]"
 source_raw:
+  - "[[20261109-latentspace-handshake-frontier-labs-data]]"
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
   - "[[20260729-similarweb-langsmith-agent-report-evaluation]]"
   - "[[20260819-google-ai-evals-inspect-skill]]"
@@ -28,6 +29,16 @@ source_raw:
 ---
 
 # Rubric-Based Evaluation
+
+## 分数与现实价值的断裂：专业依赖门禁及专家偏好（2026-11）
+
+[[20261109-latentspace-handshake-frontier-labs-data]]（**10:03–11:37、27:38–31:30、1:31:18–1:48:52**）描述长期专业任务的评分逻辑：对数值结果采用确定性检查，辅以结构、交付和业务推理标准；遇到错误的税务前提、关键路径或违规行为，设置 **dependency gate / penalty trap** 避免在其后续污染的 100 多项子指标仍得分。对无法充分写成标准的专业 `taste`，在环境内增加专家 preference ranking。ATLAS 访谈口述平均约 146 项标准，而[官方 Benchmark 页面](https://joinhandshake.com/research/benchmarks/atlas-finance/)报告中位数 124.5；统计量不同，不能混用。
+
+- **判断（综合）**：判据分成 `hard prohibitions`、`critical dependency gates`、`verifiable checks`、`professional preference` 和 `delivery quality`；对可辩护的两种行业假设，必须在任务输入明确指定适用原则，不能由 rubric 事后偷偷加条件。
+- **证据**：[[20261109-latentspace-handshake-frontier-labs-data]]；[ATLAS-Finance 开源数据与环境](https://huggingface.co/datasets/handshake-ai-research/ATLAS-Finance)。
+- **边界**：某个公司的分数权重及 grader 不构成跨金融/生信通用的阈值。专家偏好可能彼此冲突，需要多专家一致性校准。
+
+
 
 > [!definition] 定义
 > **Rubric-Based Evaluation** 是用具体行为检查项（rubric）取代泛化指标来评估生产 Agent 的方法。每个 rubric 是针对特定用例的 yes/no 检查，反映 Agent **实际应该做什么**。"Generic metrics tell you whether the agent works. They don't tell you whether the agent works right."（Marco Casalaina）

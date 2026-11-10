@@ -3887,6 +3887,18 @@
       "summary_path": "wiki/sources/20261108-lenny-tulsee-doshi-frontier-model-pm.md",
       "updated_at": "2026-11-09T13:21:11+08:00"
     },
+    "20261109-latentspace-handshake-frontier-labs-data.md": {
+      "body_sha256": "1dd4575b2735cd63d1ed805f49e020d43876cd10daada5383c7fb63df5af8391",
+      "canonical_url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/what_frontier_labs_buy_a_data_deep_dive_with_handshake_ai_garrett_lord_team",
+      "indexed_at": "2026-11-10T08:49:07+08:00",
+      "compiled_at": "2026-11-10T08:49:07+08:00",
+      "raw_file": "20261109-latentspace-handshake-frontier-labs-data.md",
+      "raw_state": "index",
+      "retention_note": "Official full 974-segment timestamped Transcript is available at canonical URL and https://lspace.beehiiv.com/p/handshake ; temporary Raw was a provenance locator deleted after compile. body_sha256 hashes temporary locator NOT transcript. SHA-256 of extracted normalized 182293-byte timestamped transcript: b9b5a808619706836aa4bc72e1a235d59418924db63272b820fadf4435ad3230.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261109-latentspace-handshake-frontier-labs-data.md",
+      "updated_at": "2026-11-10T08:49:07+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -4506,6 +4518,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-09T13:34:47+08:00",
+  "updated_at": "2026-11-10T08:49:07+08:00",
   "version": 1
 }

@@ -8,7 +8,7 @@ aliases:
   - Replayable Physical Experience
 definition: "把真实实验或实验派生的可验证证据组织成 Agent 可连续提出假设、选择实验、接收反馈并修正策略的科学环境；既包括实时自动实验，也包括由预先测量数据构成的可重放物理经验。"
 created: 2026-10-18
-updated: 2026-11-07
+updated: 2026-11-10
 evidence_level: high
 claim_type: mixed
 tags:
@@ -21,6 +21,7 @@ related_entities:
   - "[[Agent-Verification]]"
   - "[[Continual-Learning]]"
 source_raw:
+  - "[[20261109-latentspace-handshake-frontier-labs-data]]"
   - "[[20261106-latentspace-fabian-theis-controlling-biology]]"
   - "[[20261014-latentspace-leash-bio-lab-in-the-loop]]"
   - "[[20261026-latent-space-minos-ai-scientist-eval]]"
@@ -28,6 +29,16 @@ source_raw:
 ---
 
 # Lab-in-the-Loop（实验室闭环）
+
+## VIALS：实验图像理解是科学 Agent 自治前的独立门禁（2026-11）
+
+[[20261109-latentspace-handshake-frontier-labs-data]]（**31:30–1:12:33**）讨论 Handshake AI 的 `ATLAS - Visual Life Sciences (VIALS)`：凝胶电泳、组织切片、分子结构等日常 assay visual artifacts。示例中，专家在凝胶图判定 **1 μg** lane 先满足条件，所演示模型选 **5 μg**；组织病理示例专家选择 **H、I**，模型多选 **G**。嘉宾称加入 SciPy/OpenCV 等图像工具虽提升表现，测试配置准确率仍不足 60%；这些只是特定数据和环境下的观察。
+
+- **判断（综合）**：`assay image → calibrated visual interpretation → hypothesis/action → actual wet-lab measurement → QC → update` 的第一个阶段不能由通用文本推理分数代替。对测序 QC 图、显微图、gel、染色图等应提供专家标注、模糊/边界判据、强基线与工具增强评测，之后才判断能否进入真实实验闭环。
+- **证据**：[[20261109-latentspace-handshake-frontier-labs-data]]（47:17–56:33）；Handshake [官方 VIALS Benchmark 目录](https://joinhandshake.com/research/benchmarks/)。
+- **边界**：VIALS 的 assay interpretation 是必要但不充分的能力，并不评价临床真实世界的诊断效果；模型自报置信度不校准亦不等于所有外部校准器必失败。供应商对“纯合成困难科学数据往往不物理真实”的结论属于其数据实验经验，值得复核物理知识与原始 assay 来源。
+
+
 
 ## 从 Forward World Model 到 Inverse Intervention：Fabian Theis 的 Lab Compass（2026-11）
 

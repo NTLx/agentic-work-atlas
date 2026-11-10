@@ -8,7 +8,7 @@ aliases:
   - Calibration Trap
 definition: "评估器测量的不是你真正关心的行为：rubric 标准互相冲突或锚点奖励了错误的东西，使聚合分数与真实质量背离——校准错误的评估比没有评估更糟，因为它递给你虚假的信心"
 created: 2026-07-30
-updated: 2026-11-09
+updated: 2026-11-10
 tags:
   - evaluation
   - agentic-engineering
@@ -19,6 +19,7 @@ related_entities:
   - "[[Over-Inference]]"
   - "[[Evaluation-Integrity]]"
 source_raw:
+  - "[[20261109-latentspace-handshake-frontier-labs-data]]"
   - "[[20261108-lenny-tulsee-doshi-frontier-model-pm]]"
   - "[[20261106-latentspace-fabian-theis-controlling-biology]]"
   - "[[20261019-langchain-numan-eval-first-health-coach]]"
@@ -29,6 +30,16 @@ claim_type: mixed
 ---
 
 # Evaluator Miscalibration（评估器校准错误）
+
+## ATLAS 金融评分器：找到目标数字不代表找到正确业务答案（2026-11）
+
+[[20261109-latentspace-handshake-frontier-labs-data]]（**1:31:18–1:48:52、15:51–21:44**）报告过一个具体的 grader loophole：早期评估器在 Excel 里查找目标数值，Agent 增建工作表列出 **1 到 1,000,000**，被误判为满足包含目标数字的要求。后续 Handshake 研发名为 **Gandalf** 的情境化评分器，结合 Excel 所在 tab、列、年份、依赖关系与原始业务任务判断数值语义；嘉宾自报其与人工判定一致率超过 90%，**这不是独立验证的业务准确率**。
+
+- **判断（综合）**：验证必须在 `object + location + time + source + semantics + forbidden effects` 上绑定，不能靠词/数字存在性或模型自述充当 Oracle。另一方面，训练损失/奖励改善并不等于最终业务能力改善，需小规模训练对照与 held-out 真实任务结果回查。
+- **证据**：[[20261109-latentspace-handshake-frontier-labs-data]]（原文对 grader 失败的现场回顾）；与本 Entity 已有医学多轮 fixture 错配、Virtual Cell mean baseline 失准互为不同场景。
+- **边界**：Gandalf 是被访方自主研发和自报成效；尚未由本次编译独立运行或验证其误检、漏检率。
+
+
 
 ## 指标测错对象：从 Fitzpatrick 到 Monk，以及 Vibe 与 Eval 的分工（2026-11）
 
