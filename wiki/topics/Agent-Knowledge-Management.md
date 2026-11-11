@@ -2,7 +2,7 @@
 type: topic
 title: "Agent 知识管理与自进化"
 created: 2026-05-13
-updated: 2026-11-06
+updated: 2026-11-11
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -28,6 +28,7 @@ related_entities:
   - "[[Shortification-of-Learning]]"
   - "[[Agentic-Analytics]]"
 source_raw:
+  - "[[20261110-latentspace-resend-designing-for-agents]]"
   - "[[20261020-tessl-claim-based-agent-memory]]"
   - "[[20261013-tessl-how-open-is-your-software-factory.md]]"
   - "[[20260413-llm-wiki]]"
@@ -41,6 +42,16 @@ source_raw:
 ---
 
 # Agent 知识管理与自进化
+
+## Resend 客服知识沉淀：把高频支持转成可复用产品约束（2026-11）
+
+[[20261110-latentspace-resend-designing-for-agents]]（**17:05–20:11、58:28–1:03:07**）展示两级知识代谢：Resend 曾要求客服在回复重复问题前先写成文档并分享链接，避免专业答复只存在支持会话；进一步将最常见的 DNS 错误、邮件模版和投递约束编入产品校验，减少后续支持需求。另一个方向则是把计费等事实输出为机器可读 Markdown，修复 Agent 读不懂 JavaScript 滑块导致的错误报价。
+
+- **判断（综合）**：知识代谢不能止于“文档条数增多”：**重复失败/工单 → 来源确认 → 可版本化知识/规则 → 产品内自助验证 → 真实任务复测 → 弃用过时内容**。HTML/Markdown/API 最好共用事实源，并定期校对模型是否仍给正确答案。
+- **证据**：[[20261110-latentspace-resend-designing-for-agents]]，18:33–19:06 和 1:01:19–1:02:58。
+- **边界**：这些是受访者的产品实践，不能直接推导“所有支持工单都值得单独成篇”；组织知识的隐私/权限边界和解决问题的成本仍需判断。
+
+
 
 ## 从 Chunk 记忆到具备时间、来源与权限的 Claim（2026-10）
 

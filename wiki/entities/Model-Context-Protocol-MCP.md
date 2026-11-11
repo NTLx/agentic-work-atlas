@@ -6,7 +6,7 @@ aliases:
   - Model Context Protocol
 definition: "让 AI client 通过统一客户端-服务器协议连接工具和数据源的开放标准，用来替代模型与工具之间的一对一硬编码集成"
 created: 2026-05-13
-updated: 2026-09-28
+updated: 2026-11-11
 tags:
   - AI-Agent
   - tool-use
@@ -19,6 +19,7 @@ related_entities:
   - "[[Context-Engineering]]"
   - "[[Tool-Use-Architecture]]"
 source_raw:
+  - "[[20261110-latentspace-resend-designing-for-agents]]"
   - "[[Building an MCP Ecosystem at Pinterest]]"
   - "[[20260718-bytebytego-mcp-vs-a2a-vs-acp]]"
   - "[[20260805-how-we-use-ai-cloudflare-os]]"
@@ -26,6 +27,16 @@ source_raw:
 ---
 
 # Model Context Protocol (MCP)
+
+## Resend Remote MCP：工具列表规模背后的 API、OAuth/RBAC 与产品责任（2026-11）
+
+[[20261110-latentspace-resend-designing-for-agents]]（**37:55–46:29**）记录 Resend 从投资者相关人员构建的本地开源 MCP，演进为官方 Remote MCP 的实际前提：为所有资源补齐 OAuth、RBAC、授权、审计可观测，并争取客户端官方入口。Resend 曾让 Dashboard 的私有 API 与公开 API 分叉维护，访谈认为共享 headless backend 是长期较好的结构；访谈时 80+ 命名工具试图覆盖 usage、billing、invite、provision 等长尾行为，但 Contacts 结果过大暴露了独立于工具数量的上下文问题。主持人与 Cloudflare Code Mode 的少量 search/execute 工具作对比，**不是性能测评**。
+
+- **判断（综合）**：MCP 是产品 API 和用户权限的投影层；先定义唯一业务契约和不同用户的真实资源权限，再提供 CLI/UI/MCP。可操作性与可授权性必须分开：删除、账单、管理员动作另设角色/确认和持久审计。工具数量、schema 成本、返回负载、成功率与模型版本在任务级测试中联合衡量。
+- **证据**：[[20261110-latentspace-resend-designing-for-agents]]（40:11–46:29）。
+- **边界**：访谈强调官方供应商维护更可信，但不意味着所有第三方 MCP 都不可信；80+ tools 有增长也不证明其比 Code Mode 设计更高效。
+
+
 
 > **核心洞察**：MCP 是 AI 时代的“USB 接口”，它标准化了工具与模型之间的连接方式。
 

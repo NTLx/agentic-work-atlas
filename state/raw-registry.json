@@ -3899,6 +3899,18 @@
       "summary_path": "wiki/sources/20261109-latentspace-handshake-frontier-labs-data.md",
       "updated_at": "2026-11-10T08:49:07+08:00"
     },
+    "20261110-latentspace-resend-designing-for-agents.md": {
+      "body_sha256": "a2a233bf63328bf372a34dad471186fd9927beae158d9dc18f1638ae25c38bcb",
+      "canonical_url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/designing_for_agents_zeno_rocha_resend",
+      "indexed_at": "2026-11-11T08:28:19+08:00",
+      "compiled_at": "2026-11-11T08:28:19+08:00",
+      "raw_file": "20261110-latentspace-resend-designing-for-agents.md",
+      "raw_state": "index",
+      "retention_note": "Full original 501-segment timestamped public Transcript recoverable at canonical URL and https://latent.space/p/resend/. Raw file was a temporary provenance locator, not full copyrighted transcript. Registry body_sha256 hashes locator only. Normalized timestamped extracted transcript SHA-256: be78f90023a2194ab4afff8e16760be9f89ae91da8683204ce4a194742e5dbcf (95430 bytes).",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261110-latentspace-resend-designing-for-agents.md",
+      "updated_at": "2026-11-11T08:28:19+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -4518,6 +4530,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-10T08:49:07+08:00",
+  "updated_at": "2026-11-11T08:28:19+08:00",
   "version": 1
 }

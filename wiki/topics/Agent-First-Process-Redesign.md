@@ -2,7 +2,7 @@
 type: topic
 title: Agent-First Process Redesign
 created: 2026-04-09
-updated: 2026-09-13
+updated: 2026-11-11
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -20,6 +20,7 @@ related_entities:
   - "[[Escalation-Based-Human-Oversight]]"
   - "[[AI-Deployment-Valley-of-Death]]"
 source_raw:
+  - "[[20261110-latentspace-resend-designing-for-agents]]"
   - '[[Enabling agent-first process redesign]]'
   - '[[20260502-most-companies-arent-ready-for-ai]]'
   - '[[The layoffs will continue till we learn to use AI]]'
@@ -29,6 +30,16 @@ source_raw:
 ---
 
 # Agent-First Process Redesign（Agent-First 流程重构）
+
+## Resend：别将「接口成功」误认为业务交付成功（2026-11）
+
+[[20261110-latentspace-resend-designing-for-agents]]（**06:54–23:55、50:29–57:26**）以邮件送达为反例：提交发送请求后仍有队列、Gmail 等收件方限流、IP/域名信誉、退信投诉、共享 tracking 域的恶意邻居污染，最终是否进入收件箱/真正被阅读更是不同层级的状态。Resend 通过 Domain Connect 降低 DNS 配置门槛，支持工程团队的 Git 模板和市场团队的协作编辑器，说明 **面向 Agent 的自动化入口与人类协作/审批入口可共享同一业务规则而非互相取代**。
+
+- **判断（综合）**：企业工作流至少区分 `command submitted → provider accepted → queued → external acknowledgment → completed/failed → reconciled`，为不同层级记录回执、重试、事故与补偿；减少用户/Agent 需要手工掌握的低层操作，但对 DNS/身份/账单等状态变更保留权限校验。
+- **证据**：[[20261110-latentspace-resend-designing-for-agents]]。
+- **边界**：送达外部邮箱并不保证真人读信；邮件域名信誉与数据/权限隔离经验不能直接转成其它行业的性能数值。
+
+
 
 > [!summary] 核心洞察
 > Agent-First 不是把 Agent 接到旧流程上，而是重新设计流程，让机器能读取目标、执行常规路径、暴露异常，并让人类从流程节点上移到治理节点。

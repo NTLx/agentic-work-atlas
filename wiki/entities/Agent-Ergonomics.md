@@ -7,7 +7,7 @@ aliases:
   - AXI
 definition: "将 Agent 视为工具的第一公民（first-class citizen），通过 token-efficient 输出格式、低延迟接口和结构化交互设计优化工具对 Agent 的效率。Kun Chen (2026) 提出 AXI 十原则，benchmark 显示 AXI 标准工具比传统 MCP server 节省 3x token 成本。"
 created: 2026-06-22
-updated: 2026-10-23
+updated: 2026-11-11
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -19,11 +19,22 @@ related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Agentic-Workflow-Token-Efficiency]]"
 source_raw:
+  - "[[20261110-latentspace-resend-designing-for-agents]]"
   - "[[20260620-l8-principal-agentic-workflow]]"
   - "[[20261022-latentspace-modal-d]]"
 ---
 
 > [!definition] 定义
+
+## Resend 的 Agent Experience：可发现性、准确理解与实际完成是三种不同质量（2026-11）
+
+[[20261110-latentspace-resend-designing-for-agents]]（**05:02–06:54、37:55–49:53、58:28–1:12:14**）展示 Agent-first developer product 的几类独立障碍：coding agent 即使面对已有 Cloudflare Email 配置，也可能推荐新服务；Resend 的 JS 定价滑块让 Agent 错误计算 120 万封邮件价格，换成机器可读 Markdown 表后几天复测得到正确值；MCP 中 Contacts 单次返回太大造成上下文容量问题。团队同时保持 API、CLI、SDK、UI 和 Remote MCP 等不同的消费表面。
+
+- **判断（综合）**：Agent Ergonomics 不止要求 token-efficient，还需要 **准确发现/选择、机器可读事实、明确权限、任务级完成与可核验终态**。HTML 与 Markdown 价格不应双维护，应从同一事实源生成；应在相同任务下比较 80+ 命名 MCP tools 和 Code Mode 2-tool 方案的成功率、总 tokens、轮次和响应体积。
+- **证据**：[[20261110-latentspace-resend-designing-for-agents]]；与 [[20261022-latentspace-modal-d]] 的 Agent benchmark/API 兼容债、[[20261028-latent-space-supabase-agents]] 的文件化状态相互补充。
+- **边界**：Resend 受访者自报 MCP 增长、定价修复是单个前后对比，不能因增长或一次答对断言 llms.txt/.md 必然改变所有模型的推荐；80+ 和 2-tool 未做对照测评。
+
+
 > Agent Ergonomics 是一种工具设计哲学：不为人类优化界面，而为 Agent 优化接口。核心指标是 Agent 完成同一任务所需的 token 数、turns 数和成功率。
 
 ## 核心原则（AXI 十原则摘要）
