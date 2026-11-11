@@ -3755,12 +3755,15 @@
     },
     "20261024-langchain-company-harness.md": {
       "body_sha256": "8cb83f6987a5415608ae8e34e5ce0178bcdbb5c9ecdd8bfb6239839b2850f444",
+      "canonical_url": "https://www.langchain.com/blog/components-building-company-harness",
+      "indexed_at": "2026-11-11T14:18:00.656+08:00",
       "compiled_at": "2026-10-28T10:14:15+08:00",
       "raw_file": "20261024-langchain-company-harness.md",
-      "raw_state": "full",
+      "raw_state": "index",
+      "retention_note": "LangChain public original article remains recoverable at canonical URL by section headings; prior Raw was only a 2458-byte bounded evidence excerpt, not the copyrighted full article. body_sha256 is the original bounded Raw excerpt hash, not the source webpage full-text hash. Source summary preserves five-component evidence map, identity cases, caveats and source locators.",
       "status": "compiled",
       "summary_path": "wiki/sources/20261024-langchain-company-harness.md",
-      "updated_at": "2026-10-28T10:14:15+08:00"
+      "updated_at": "2026-11-11T14:18:00.656+08:00"
     },
     "20261025-lenny-86-minute-guide-finding-pmf.md": {
       "body_sha256": "582332e641c71d6df96d36e69e15caf4f9c39cdbc1851bd2d47bf7d1816397d2",
