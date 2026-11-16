@@ -3,7 +3,7 @@ type: topic
 title: Agent Data Minimization
 description: "Agent 数据最小化：把授权范围、实际读取范围、模型/上下文暴露与保留删除生命周期分开治理，避免用 least privilege 或 zero unauthorized writes 替代真实的数据最小化证据"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-16
 evidence_level: high
 claim_type: mixed
 tags:
@@ -18,6 +18,7 @@ related_entities:
   - "[[Agent-Security]]"
   - "[[Zero-PHI-Policy]]"
 source_raw:
+  - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[20260618-mosaicleaks-privacy-agent]]"
   - "[[20260905-numezis-governed-business-agent-sme]]"
   - "[[20260614-decentralized-granular-access-control-agentic-ai]]"
@@ -25,6 +26,16 @@ source_raw:
 ---
 
 # Agent Data Minimization（Agent 数据最小化）
+
+## 单人助理与多 Agent 群聊的主体边界不能自动合并（Muse，2026-11）
+
+[[20261115-lenny-meta-muse-mona-sarantakos]]（**02:14–06:01、57:04–1:01:54**）给出一个可执行的隐私边界反例：原型中的两位 Muse 在群聊时，一名 Agent 分享了其用户看医生的个人信息，另一方并无当然的知情授权。这个错误不是“是否允许 Agent 读取邮件/日历”能独立回答的；它同时涉及 **who owns the source / what can the agent read / what can it disclose / to which principal / how long context persists**。
+
+- **判断（综合）**：按 `original data principal → contextual use → permitted recipient → disclosure gate → durable audit/retention` 独立检验，而不是把“用户允许 Agent 自己读取”当成“允许两个 Agent 群聊共享”。长期主线程与 side chats 都应保留来源、接收人、有效期、撤销和跨会话投射的控制。
+- **证据**：[[20261115-lenny-meta-muse-mona-sarantakos]]（57:04–1:01:54）。
+- **边界**：受访者所说的是未发布内部实验的失败，不得推导真实线上发生频率或外部个人受害情况。具体隐私技术实现未知。
+
+
 
 > [!summary] Topic 定位
 > Agent 的隐私治理不能只问“有没有权限”或“有没有未经授权写入”。真正的数据最小化需要分别测量：**允许访问什么、任务实际读取什么、哪些数据进入模型/上下文、这些数据被保留多久以及如何删除。**

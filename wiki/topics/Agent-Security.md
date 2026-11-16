@@ -3,7 +3,7 @@ type: topic
 title: Agent Security
 description: "Agent 在不可信组件和跨信任域环境中行动时，从检测、判定、授权、执行到撤销与恢复的责任闭环"
 created: 2026-09-05
-updated: 2026-11-06
+updated: 2026-11-16
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -23,6 +23,7 @@ related_entities:
   - "[[Operational-Responsibility]]"
   - "[[Human-Governor-Agent-Operator]]"
 source_raw:
+  - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[20261008-langchain-stripe-link-agent-payments]]"
   - "[[How we contain Claude across products]]"
   - "[[20260518-zero-trust-for-ai-agents]]"
@@ -52,6 +53,16 @@ source_raw:
 ---
 
 # Agent Security（Agent 安全）
+
+## Muse：从单用户 Agent 到多用户共享时，旧安全证明必须失效重审（2026-11）
+
+[[20261115-lenny-meta-muse-mona-sarantakos]]（**09:08–23:37、57:04–1:01:54**）记录 Meta Muse 团队的信任原则 **Trust is a must**：春季已可端到端工作，但 Browser 等新工具扩大攻击面后反复红队、安全测试与扩大 dogfood/alpha。Mona 还提到 Nat Friedman 参与独立于主 Agent 的 Sentinel 设计（技术细节未公开）。在多人 Muse 群聊原型中，两个 Agent 曾把一方看医生的私人信息透露给另一方，随后还发生争论，团队认为尚未准备好将这种多 Agent 体验交付消费者。
+
+- **判断（综合）**：`new tool / permission / channel / actor → threat model revision → protected authorization → boundary tests → launch gate`。外置 Sentinel 是可讨论的系统防护，不自动证明实施了可信隔离；群聊涉及跨主体数据传播，必须基于实际授权和数据所有者同意，而非拟人化互动或 Agent 自述确认。
+- **证据**：[[20261115-lenny-meta-muse-mona-sarantakos]]（09:08–14:07、19:00–23:37、57:04–1:01:54）。
+- **边界**：这是内部原型问题，不意味着公开 Muse 已发生相同事故；没有公开 Sentinel 的安全效果、漏洞率或具体修复。OpenClaw 周末实验的广泛私人服务接入是个人轶事，不是生产安全部署推荐。
+
+
 
 ## Agent 支付：授权不能由模型的工具调用自我批准（2026-10）
 

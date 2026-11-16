@@ -3914,6 +3914,18 @@
       "summary_path": "wiki/sources/20261110-latentspace-resend-designing-for-agents.md",
       "updated_at": "2026-11-11T08:28:19+08:00"
     },
+    "20261115-lenny-meta-muse-mona-sarantakos.md": {
+      "body_sha256": "8fd78c608657163fd982ccad8972e66caa0a7c3f48ac68bb6b6f38bbddadc188",
+      "canonical_url": "https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most",
+      "compiled_at": "2026-11-16T09:03:55+08:00",
+      "indexed_at": "2026-11-16T09:03:55+08:00",
+      "raw_file": "20261115-lenny-meta-muse-mona-sarantakos.md",
+      "raw_state": "index",
+      "retention_note": "Original source is a subscriber-gated official Substack podcast page. Full same-episode audio transcript independently auto-transcribed at https://usecaddie.app/s/metas-muse-how-we-launched-the-most, with 154 timed paragraphs, 2779 subsegments, 94316 UTF-8 bytes, normalized text SHA-256 495f843e782a08f8de11c2696112154d52e9ffe4530005d0db7aee50ae5351ac. Source contains a 2053-byte temporary provenance clipping deleted after compilation: body_sha256 hashes that clipping only, NOT original transcript. Official podcast title, date and chapter descriptions were cross-checked.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261115-lenny-meta-muse-mona-sarantakos.md",
+      "updated_at": "2026-11-16T09:03:55+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -4533,6 +4545,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-11T08:28:19+08:00",
+  "updated_at": "2026-11-16T09:03:55+08:00",
   "version": 1
 }

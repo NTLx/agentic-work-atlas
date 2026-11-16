@@ -6,7 +6,7 @@ aliases:
   - AI 时代的产品经理
 definition: "AI 时代 PM 从路线图对齐者转变为高速公路设计者——系统性消除从想法到用户手中的每一步摩擦"
 created: 2026-05-08
-updated: 2026-11-09
+updated: 2026-11-16
 tags:
   - product-management
   - AI-era
@@ -21,6 +21,7 @@ related_entities:
   - "[[Boris-Cherny]]"
   - "[[Human-Agent-Teams]]"
 source_raw:
+  - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[20261108-lenny-tulsee-doshi-frontier-model-pm]]"
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
@@ -32,6 +33,16 @@ claim_type: mixed
 ---
 
 # PM in AI Era（AI 时代的产品经理）
+
+## Meta Muse：原型容易后，PM 稀缺的是产品 Taste、用户同理心与发布判断（2026-11）
+
+[[20261115-lenny-meta-muse-mona-sarantakos]]（**57:04–1:20:55**）提供另一位消费 Agent 产品负责人 Mona Sarantakos 的实例：工程师和设计师可以独立“Let them cook”，几天内产生真实模型支持的可交互原型；约四名 PM 覆盖核心产品，很多 0→1 方案先由 Builder 主导，到了需要整合、对外发布和风险取舍时 PM 才更深介入。Mona 将 **product taste + empathy + high bar** 视为今天 PM 的关键能力——能够替不同背景用户说“这虽然能做，但并不适合他们”，防止生产容易变成低质量功能泛滥。
+
+- **判断（综合）**：PM 的价值不只是 PRD 效率，而是从真实 prototype、数据、用户行为中识别问题，拥有用户目标、behavior spec、取舍与验收标准；与本页 Tulsee Doshi 的“模型行为 spec 与 eval 设计”互为独立受访者案例。
+- **证据**：[[20261115-lenny-meta-muse-mona-sarantakos]]（1:01:54–1:09:05、1:12:00–1:20:55）。
+- **边界**：Meta 团队规模和访谈中的“最重视 Taste”是特定角色自述，不能推导适用于所有组织的 PM 编制、招聘阈值或人员市场变化；快速原型并不降低独立安全门禁的重要性。
+
+
 
 ## Frontier Model PM：识别能力、设计评测和持有产品判断（2026-11）
 

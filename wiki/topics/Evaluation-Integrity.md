@@ -3,7 +3,7 @@ type: topic
 title: Evaluation Integrity
 description: "评测完整性：任务完成率或 benchmark 得分不能单独证明系统可靠；reference、scope contract、实际可达面、监控与停止语义必须共同可信，否则评测可能不再测量原本声明的对象"
 created: 2026-09-19
-updated: 2026-11-10
+updated: 2026-11-16
 evidence_level: high
 claim_type: mixed
 tags:
@@ -18,6 +18,7 @@ related_entities:
   - "[[Agent-Attack-Surface]]"
   - "[[Reward-Hacking]]"
 source_raw:
+  - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[20261109-latentspace-handshake-frontier-labs-data]]"
   - "[[20261019-stanford-medical-ai-actual-workflows]]"
   - "[[20261015-anthropic-independent-evaluators]]"
@@ -29,6 +30,16 @@ source_raw:
 ---
 
 # Evaluation Integrity（评测完整性）
+
+## Meta Muse 的四层 Eval：真实需求改变时重写任务集，安全仍有独立阻断门（2026-11）
+
+[[20261115-lenny-meta-muse-mona-sarantakos]]（**29:53–46:37**）描述 Meta Muse 将评测分为 **safety / capability / behavior / use cases**，部分高优先级层级不允许其它指标抵消。受访者称 PM、工程与研究共同设计样本，Agent 可辅助生成 synthetic long-horizon/multi-turn 任务与整理会话，但 system prompt/behavior spec 仍由人类撰写并审核。最初未预料 shopping 成为高频用例，因而也同步改变优先产品评测。
+
+- **判断（综合）**：真实任务分布变化应更新 `priority eval`，但不能覆盖 `holdout regression` 和独立 `safety gate`；聚合的 swarm 发现要经最小必要原始 trace、采样分母与专业人员复核。安全事件特别是跨主体泄露不能用完成率和用户评分相互冲抵。
+- **证据**：[[20261115-lenny-meta-muse-mona-sarantakos]]（38:03–46:37、57:04–1:01:54）。
+- **边界**：四层结构、资料合成与安全审查均为受访者自述，缺少对外发布的评分标准、holdout 设计或验收量化，不能等同独立安全认证。
+
+
 
 ## 真实世界的终态、关联约束和负面后果不能由最终答案替代（2026-11）
 

@@ -3,7 +3,7 @@ type: topic
 title: AI Native Product Operating System
 description: "AI 原生产品操作系统：当模型能力先于产品界面出现，产品组织必须重写从能力发现、发布试探、反馈闭环到市场验证的整套工作方式"
 created: 2026-05-22
-updated: 2026-06-16
+updated: 2026-11-16
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -23,12 +23,23 @@ related_entities:
   - "[[Taste]]"
   - "[[Judgment]]"
 source_raw:
+  - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
   - "[[The-Founders-Playbook-05062026_v3]]"
 ---
 
 # AI Native Product Operating System（AI 原生产品操作系统）
+
+## Muse：用户真正尝试的任务，必须反向重排产品假设与评测（2026-11）
+
+[[20261115-lenny-meta-muse-mona-sarantakos]]（**29:53–51:09、51:09–57:04**）讲述了从内部“生产力/健康/财务/智能家居”预设，转向发现 shopping 在外部使用中出乎意料地重要，继而改变任务优先级与 eval。激活过程也分为两个问题：用户不知道个人 Agent 和普通聊天机器人究竟有何区别，需要熟人讲述真实用例；用户面对空白 Chat 又不知从何开始，需要 Ideas/Starter Tasks。团队采用像 Messenger 一样的 chat bubble，既为长期主会话保留连续上下文，也因对话隔离需求增加 side chats。
+
+- **判断（综合）**：按 `hypothesis → actual user task → observed failure → updated eval → onboarding experiment` 改变产品操作系统；测量“**首次真正有价值且已验证的任务**”而非注册、首条问句或下载数。User research 的样本结构和真实业务目标必须显式记录。
+- **证据**：[[20261115-lenny-meta-muse-mona-sarantakos]]（29:53–38:03、46:37–57:04）。
+- **边界**：购物受欢迎和口碑推荐主要是团队经验，没有公布代表性样本与漏斗统计；Jolly/主聊天等设计适于研究心理模型，不能被当成所有 agent 的最佳界面。
+
+
 
 > [!summary] 核心洞察
 > AI 原生产品系统不是“更快写功能”，而是把产品工作重构为一套操作系统：识别模型能力溢出，降低发布承诺，压缩反馈闭环，重组 PM/工程/设计边界，并用验证纪律防止伪 PMF 和范围蔓延。
