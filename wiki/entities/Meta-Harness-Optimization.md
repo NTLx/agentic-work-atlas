@@ -9,7 +9,7 @@ aliases:
   - Harness-as-Optimization-Target
 definition: "把包裹模型的 harness 本身作为优化目标、由 Meta-Harness Optimizer 在外层反馈环中根据 rollout 证据递归改写 harness 代码的范式——模型参数 θ 在整个过程中保持固定。这是相对 [[Recursive-Self-Improvement|模型层 RSI]] 的镜像层：前者优化模型，后者优化系统"
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-11-17
 tags:
   - AI-Agent
   - harness-engineering
@@ -25,10 +25,21 @@ related_entities:
   - "[[Coding-Agents]]"
   - "[[Agentic-Engineering]]"
 source_raw:
+  - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20260815-autodesign-meta-harness-optimization]]"
 ---
 
 # Meta-Harness Optimization
+
+## O’Reilly 与 ModularRSI：别把任何错都当 Prompt 错（2026-11）
+
+[[20261113-oreilly-what-makes-agent-self-evolving]]（「Harness modules」）把错误归因置于演化之前：**用户预算根本没有进入模型**是 Context Pipeline 问题，追加“注意预算”的 Prompt 并不能修复。作者引用 [ModularRSI（2609.14857）](https://arxiv.org/abs/2609.14857)，按 **Context Management / Agent Loop / Tool Use / Observation Management / Task Completion Detection** 五模块局部修改、测得有效后再做整合回归。
+
+- **判断（综合）**：候选更改记录 `failure evidence → responsible module → change diff → evaluator/holdout version → candidate vs incumbent → adoption/rollback`。开发集上的收益必须通过独立新任务和历史任务回归检验，系统中任一安全/授权不变量失败时禁止采纳。
+- **与既有 AutoDesign 关系**：本页已有 AutoDesign 的外层优化与受保护的 Ddev admission gate；ModularRSI 补充“如何避免整块 Harness 改动引发归因混淆”。不能混淆两者的 benchmark、实验规模与结果。
+- **边界**：ModularRSI 有论文层的 benchmark 研究，但未证明任何生产系统改进都能转移；O’Reilly 的餐厅示例是教学说明，非后者实证数据。
+
+
 
 > [!definition] 定义
 > **Meta-Harness Optimization** 是把包裹模型的 harness H 本身作为优化目标、由 Meta-Harness Optimizer P 在外层反馈环中根据 rollout 证据递归改写 harness 代码的范式——模型参数 π_θ 在整个过程中保持固定。AutoDesign (Luo et al., 2026) 是这一范式的首个工业级实例：用 224 subagent 调用 + ≥123 递归迭代 + 54 harness updates，在 7 天内演化出 paper-to-poster 的 DesignHarness。

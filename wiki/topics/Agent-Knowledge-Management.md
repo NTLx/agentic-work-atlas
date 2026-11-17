@@ -28,6 +28,7 @@ related_entities:
   - "[[Shortification-of-Learning]]"
   - "[[Agentic-Analytics]]"
 source_raw:
+  - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261110-latentspace-resend-designing-for-agents]]"
   - "[[20261020-tessl-claim-based-agent-memory]]"
@@ -43,6 +44,16 @@ source_raw:
 ---
 
 # Agent 知识管理与自进化
+
+## Reflective Memory / Dreaming：保存可迁移经验，而不是把局部用户事实写成通用指令（2026-11）
+
+[[20261113-oreilly-what-makes-agent-self-evolving]]（「Harness modules: What can evolve?」）区分可泛化的经验（例如先核对全体用餐者预算和饮食限制）与单个用户/某次聚餐的事实（这次预算 25 美元）。Reflective Memory 可将过去错误转成下次使用的策略；Dreaming 则在会话间整理、合并与清除重复记忆，遇到冲突需要返回原始证据核对。作者明确指出：**整理得更整洁不等于对新任务更有帮助**，应使用旧记忆与新记忆的独立任务对比测量效果。
+
+- **判断（综合）**：Wiki 的知识提炼目标是 `evidence-linked reusable lesson`，不是把用户私有偏好、过期单次参数和 n8n 队列状态混入公共知识。记忆修订要留来源、适用范围、版本和原有事实；索引/检索策略改进也需要可复验的真正任务成功增益。
+- **证据**：[[20261113-oreilly-what-makes-agent-self-evolving]]（Reflective Memory、Dreaming）；与 [[20261113-anthropic-building-always-on-agents]] 的 Memory 四分类和“别复制别的权威事实源”原则互补。
+- **边界**：这不是推荐 Dreaming 自动覆盖所有旧知识。没有独立评测、冲突审计或回滚时，不应自主写入治理规则。
+
+
 
 ## Anthropic 长期 Memory 的四种内容与「能查到的存指针」原则（2026-11）
 

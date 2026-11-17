@@ -3,7 +3,7 @@ type: topic
 title: Evaluation Integrity
 description: "评测完整性：任务完成率或 benchmark 得分不能单独证明系统可靠；reference、scope contract、实际可达面、监控与停止语义必须共同可信，否则评测可能不再测量原本声明的对象"
 created: 2026-09-19
-updated: 2026-11-16
+updated: 2026-11-17
 evidence_level: high
 claim_type: mixed
 tags:
@@ -18,6 +18,7 @@ related_entities:
   - "[[Agent-Attack-Surface]]"
   - "[[Reward-Hacking]]"
 source_raw:
+  - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[20261109-latentspace-handshake-frontier-labs-data]]"
   - "[[20261019-stanford-medical-ai-actual-workflows]]"
@@ -30,6 +31,16 @@ source_raw:
 ---
 
 # Evaluation Integrity（评测完整性）
+
+## 自进化系统最大的失败风险：评测器将“正确答案”判错并推动错误更新（2026-11）
+
+[[20261113-oreilly-what-makes-agent-self-evolving]]（「Evaluation: What counts as improvement?」）中的虚构晚餐规划实验显示：符合所有人预算、饮食和时间约束的另一个可行餐厅，因为不匹配作者写的样例答案文字而被标为失败。若自动改进器把这个假阴性当作训练信号，可能主动“修坏”原本正确的行为。要求真实预订时，不能只看 Agent 声称已订位，必须检查预订确实存在。
+
+- **判断（综合）**：改进门禁至少区分 `reference validity → actual task constraints → externally verified effect → existing-task regression → fresh holdout generalization`。任何自动变更评估都必须冻结/审计 evaluator 版本和独立 test set，且与执行模型修改权限相隔离，防止以评分器偏差“证明”性能改进。
+- **证据**：[[20261113-oreilly-what-makes-agent-self-evolving]]；作者提供[教学代码](https://github.com/cuppibla/loop-lab-table)，其有效性不自动升级为大规模生产验证。
+- **边界**：该例为**虚构的人与餐厅**，说明测试设计缺陷，不构成真实世界餐厅 Agent 的错误率样本。
+
+
 
 ## Meta Muse 的四层 Eval：真实需求改变时重写任务集，安全仍有独立阻断门（2026-11）
 

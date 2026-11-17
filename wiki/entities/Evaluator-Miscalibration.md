@@ -8,7 +8,7 @@ aliases:
   - Calibration Trap
 definition: "评估器测量的不是你真正关心的行为：rubric 标准互相冲突或锚点奖励了错误的东西，使聚合分数与真实质量背离——校准错误的评估比没有评估更糟，因为它递给你虚假的信心"
 created: 2026-07-30
-updated: 2026-11-10
+updated: 2026-11-17
 tags:
   - evaluation
   - agentic-engineering
@@ -19,6 +19,7 @@ related_entities:
   - "[[Over-Inference]]"
   - "[[Evaluation-Integrity]]"
 source_raw:
+  - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20261109-latentspace-handshake-frontier-labs-data]]"
   - "[[20261108-lenny-tulsee-doshi-frontier-model-pm]]"
   - "[[20261106-latentspace-fabian-theis-controlling-biology]]"
@@ -30,6 +31,16 @@ claim_type: mixed
 ---
 
 # Evaluator Miscalibration（评估器校准错误）
+
+## O’Reilly 教学反例：有效的替代方案被 Exact Match 排除（2026-11）
+
+[[20261113-oreilly-what-makes-agent-self-evolving]]（「Evaluation」）中，一个 Agent 推荐满足预算/饮食/时间要求的餐厅，却因与参考答案**措辞/地点不同**被打错分；真正有意义的评测应按约束执行（如 25 美元预算不能接受 28 美元菜品），必要时由人/模型评价透明的权衡说明，并在执行预订的场景核对环境中的真实订位状态。
+
+- **判断（综合）**：**Evaluation failure 的根因也可能是 Oracle**，不是 Agent。将失败报告定位到 `constraint violated / value mismatched / action missing / evaluator invalid` 四种不同类型；避免把不可证实的「失败原因」传给自动改进器。当候选更改生成后，独立 heldout 和历史 regression 同时通过才值得采纳。
+- **证据**：[[20261113-oreilly-what-makes-agent-self-evolving]]；不同于本页 ATLAS-Finance「错误数字仍获高分」的**假阳性**，这是「正确替代答案被错判」的**假阴性**，两种机制都能破坏自进化选择。
+- **边界**：不证明所有 Exact Match 均不适用。对唯一键、schema 和可枚举规则，精确比较仍可构成强 Oracle。
+
+
 
 ## ATLAS 金融评分器：找到目标数字不代表找到正确业务答案（2026-11）
 

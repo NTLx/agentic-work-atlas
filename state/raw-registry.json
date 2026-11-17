@@ -3926,6 +3926,18 @@
       "summary_path": "wiki/sources/20261113-anthropic-building-always-on-agents.md",
       "updated_at": "2026-11-17T15:07:25+08:00"
     },
+    "20261113-oreilly-what-makes-agent-self-evolving.md": {
+      "body_sha256": "67bd91fa6f54dc138e13a28d4b8dfb12f95eb9948d8c0164628a802a8bcdc549",
+      "canonical_url": "https://www.oreilly.com/radar/what-makes-an-agent-self-evolving/",
+      "compiled_at": "2026-11-17T15:16:26+08:00",
+      "indexed_at": "2026-11-17T15:16:26+08:00",
+      "raw_file": "20261113-oreilly-what-makes-agent-self-evolving.md",
+      "raw_state": "index",
+      "retention_note": "O'Reilly Radar primary public article remains available at canonical_url and named sections: Evaluation, Autonomous improvement, Harness modules. Temporary Raw was a 1794-byte source-provenance note deleted after compilation, NOT full article. body_sha256 records that note hash, not original HTML/full-text hash. Source Summary preserves heading locators, evaluation limitations and verified links to Harness-RSI and ModularRSI.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261113-oreilly-what-makes-agent-self-evolving.md",
+      "updated_at": "2026-11-17T15:16:26+08:00"
+    },
     "20261115-lenny-meta-muse-mona-sarantakos.md": {
       "body_sha256": "8fd78c608657163fd982ccad8972e66caa0a7c3f48ac68bb6b6f38bbddadc188",
       "canonical_url": "https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most",
@@ -4557,6 +4569,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-17T15:07:25+08:00",
+  "updated_at": "2026-11-17T15:16:26+08:00",
   "version": 1
 }

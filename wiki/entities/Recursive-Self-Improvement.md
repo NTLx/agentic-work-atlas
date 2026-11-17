@@ -8,7 +8,7 @@ aliases:
   - AI 改 AI
 definition: "AI 系统设计、训练或验证其下一代或同代继任者的能力；当这一回路达到某临界点，AI 进步速度由机器而非人类决定"
 created: 2026-06-06
-updated: 2026-10-25
+updated: 2026-11-17
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -30,6 +30,7 @@ related_entities:
   - "[[Agent-Verification]]"
   - "[[Verifiable-Agent-Engineering]]"
 source_raw:
+  - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20260604-anthropic-recursive-self-improvement]]"
   - "[[20260815-autodesign-meta-harness-optimization]]"
   - "[[20260730-jeff-dean-1-rule-building-ai]]"
@@ -44,6 +45,16 @@ source_raw:
 ---
 
 # Recursive Self-Improvement（递归自我改进）
+
+## O’Reilly：任务自主、跨任务自改进与递归改进是三个层级（2026-11）
+
+[[20261113-oreilly-what-makes-agent-self-evolving]]（「Autonomous improvement」「Harness modules」）区分 **Task loop**（单任务内选工具/采取动作）与 **Improvement loop**（跨任务分析错误、修改 Harness、独立验证并保留）。**递归**则更严格：上一轮保留的改进机制用于下一轮改进问题发现/检索/测试本身，使改进过程的能力也成为变化对象。单次反思和自我修复不能自动视为递归自进化。
+
+- **判断（综合）**：分层记录 `task_execution → candidate change → independent admission → persisted harness version → subsequent-task generalization → improver-quality change`；每一级都有不同 Oracle。允许分析和提案自动化，不等于允许自动更改发布策略或生产权限。改进必须留存版本/回滚能力。
+- **证据**：[[20261113-oreilly-what-makes-agent-self-evolving]]；跨文献 [Harness-RSI（2610.18813）](https://arxiv.org/abs/2610.18813) 仅在明确假设下提出理论边界。
+- **边界**：递归不保证单调改进；若后续检索策略变差，反而会扩大错误识别和改写。论文与文章没有复现实测当前 n8n 或 Wiki 生产场景。
+
+
 
 > [!definition] 定义
 > **递归自我改进 (Recursive Self-Improvement, RSI)** 指 AI 系统设计、训练或验证其下一代或同代继任者的能力。当这一回路达到某临界点，AI 进步速度由机器而非人类决定，Anthropic 在 2026-06 用 frontier 实验室一手数据公开宣告这一进程"已经发生"。

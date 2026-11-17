@@ -49,6 +49,7 @@ related_entities:
   - "[[Meta-Harness-Optimization]]"
   - "[[Recursive-Language-Model]]"
 source_raw:
+  - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
   - "[[20261108-lenny-tulsee-doshi-frontier-model-pm]]"
@@ -98,6 +99,16 @@ source_raw:
 ---
 
 # Agent Harness
+
+## Harness 是可进化对象，但数据遗漏与行为错误应分开诊断（2026-11）
+
+[[20261113-oreilly-what-makes-agent-self-evolving]]（「Evaluation」「Harness modules」）指出自进化 Agent 在模型权重不变时仍可改进**指令、记忆、工具和外部运行逻辑**。作者以餐厅预算为例：如果预算没进入上下文，优化指令无效；如果 Agent 已得到预算但反复忘记筛选，才可能需要修改策略或 Tool Use；如果成功预约却误报告失败，则问题可能落在 Completion Detection。
+
+- **判断（综合）**：`input/context correctness → decision/action correctness → observation correctness → completion proof` 应分别找证据并定位模块。与前文 Anthropic 的 Event Inbox/Timers/Memory/Permissions/Outbox 是两种**正交划分**：前者是可修改的任务能力模块，后者是跨 Run 的运行时可靠性和权限原语。
+- **证据**：[[20261113-oreilly-what-makes-agent-self-evolving]] 的五模块解释；[ModularRSI](https://arxiv.org/abs/2609.14857)。
+- **边界**：可以改 Prompt/Memory 不意味着 Agent 具有自行改写权限、审计/发布规则的权力；每个受控更改仍需独立回归和人工/策略准入。
+
+
 
 ## Anthropic Always-on Agent：Model Loop 之外的五个持久运行时原语（2026-11）
 
