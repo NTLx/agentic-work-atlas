@@ -2,7 +2,7 @@
 type: topic
 title: "Agent 知识管理与自进化"
 created: 2026-05-13
-updated: 2026-11-11
+updated: 2026-11-17
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -28,6 +28,7 @@ related_entities:
   - "[[Shortification-of-Learning]]"
   - "[[Agentic-Analytics]]"
 source_raw:
+  - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261110-latentspace-resend-designing-for-agents]]"
   - "[[20261020-tessl-claim-based-agent-memory]]"
   - "[[20261013-tessl-how-open-is-your-software-factory.md]]"
@@ -42,6 +43,16 @@ source_raw:
 ---
 
 # Agent 知识管理与自进化
+
+## Anthropic 长期 Memory 的四种内容与「能查到的存指针」原则（2026-11）
+
+[[20261113-anthropic-building-always-on-agents]]（原文「Memory / Inside the context window」）将跨 Run Memory 分成 **user instructions / user notes / past messages / task progress**，推荐持久目录与按需读取索引，并明确**其它系统已有权威数据时，只存指针而非重复拷贝**。长 Session compaction 或新建 Session 都会丢细节，因此长任务执行中须及时将关键进度写入持久存储；可选 dreaming 对历史 session 做主动整理和去旧，但不是必要的可靠性机制。
+
+- **判断（综合）**：`LLM context ≠ durable memory ≠ authoritative operational state`。LLM WiKi 适合保留来源、Claim、结构化洞察和引用；n8n 任务队列的占有权、租约、终态与回执仍应由 Broker 保有，Agent 仅引用权威状态，避免“双真相源”。
+- **边界**：文件式记忆不自动解决跨用户隐私、错误学习、TTL、更新审查和权限撤销；Dreaming 的总结也应拥有来源和可恢复性，不应直接篡改审计事实。
+- **证据**：[[20261113-anthropic-building-always-on-agents]]（Memory、Inside the context window）。
+
+
 
 ## Resend 客服知识沉淀：把高频支持转成可复用产品约束（2026-11）
 

@@ -5,7 +5,7 @@ aliases:
   - Agent Workflow Patterns
 definition: "构建 Agentic 系统的模式集合，从简单组合到自主 Agent 的渐进式架构"
 created: 2026-04-10
-updated: 2026-09-05
+updated: 2026-11-17
 tags:
   - AI-Agent
   - architecture
@@ -15,11 +15,22 @@ related_entities:
   - '[[Coding-Agents]]'
   - '[[ACI-Agent-Computer-Interface]]'
 source_raw:
+  - "[[20261113-anthropic-building-always-on-agents]]"
   - '[[building-effective-agents-complete]]'
   - '[[20260902-google-ai-agents-challenge-patterns]]'
 ---
 
 # Agent Workflow Patterns（Agent 工作流模式）
+
+## Always-on 的事件循环是一种组合型工作流，而不是持续运行的模型（2026-11）
+
+Anthropic [[20261113-anthropic-building-always-on-agents]]（「The cycle behind the always-on agent」「How everything fits together」）提出：来源消息/webhook/background job 写入 durable inbox；worker 在新或恢复的 session 完成 brief run；timer 只负责到期再投事件；memory 保留必需进度；permission gate 可将工具调用暂停到用户答复；outbox 负责可能存在也可能不需要的用户通知。
+
+- **判断（综合）**：该结构与现有 Routing/Chaining/Orchestrator Patterns 正交：**触发层、模型推理层、跨 run 状态层、授权层、通知层**需分别描述和验证。对频繁进来的消息可由 Worker 合并一次 run，对中途事件则可延后/纳入/中断重启，具体行为应由任务类别与副作用风险决定。
+- **边界**：Inbox 的 at-least-once 重放与外部副作用 Exactly-once 不等价；原文未提供全套事务设计，应由业务 idempotency key/回执承担。
+- **证据**：[[20261113-anthropic-building-always-on-agents]]（Event inbox、Timers、Permissions）。
+
+
 
 > **核心理念**：从简单开始，只在需要时增加复杂性
 

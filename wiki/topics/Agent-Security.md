@@ -3,7 +3,7 @@ type: topic
 title: Agent Security
 description: "Agent 在不可信组件和跨信任域环境中行动时，从检测、判定、授权、执行到撤销与恢复的责任闭环"
 created: 2026-09-05
-updated: 2026-11-16
+updated: 2026-11-17
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -23,6 +23,7 @@ related_entities:
   - "[[Operational-Responsibility]]"
   - "[[Human-Governor-Agent-Operator]]"
 source_raw:
+  - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[20261008-langchain-stripe-link-agent-payments]]"
   - "[[How we contain Claude across products]]"
@@ -53,6 +54,16 @@ source_raw:
 ---
 
 # Agent Security（Agent 安全）
+
+## Deferred tool call：把人工批准实现为可持久化暂停/恢复，而非聊天承诺（2026-11）
+
+[[20261113-anthropic-building-always-on-agents]]（原文「Permissions」）将高权限 Agent 的工具动作划分为自动执行、阻止、请求人工批准。作者建议**在 Agent 运行环境外通过凭据 Proxy 注入 Secrets**；风险分类器可拦截部分危险动作，但重要决定仍需人类批准。延期工具调用会先保存 **mid-call session checkpoint** 并结束 run，授权请求发给用户；用户答复作为 Inbox event 触发新 run，恢复原 session。等待审批时 Worker 可以处理其它事件。
+
+- **判断（综合）**：将 `requested action + principal/scope + approval/expiry + checkpoint + resume event + recheck + effect receipt` 绑定为一个独立授权状态机。对超时、拒绝、重复点击、资源状态变化与凭据撤销都要测试，防止授权消费两次或执行时权限已经失效。
+- **边界**：使用 classifier 或 proxy 不等于经证实的权限安全，仍需受保护的 policy enforcement、真实工具调用审计和独立安全测试；原文没有提供具体分类器错误率。
+- **证据**：[[20261113-anthropic-building-always-on-agents]]（Permissions / Deferred tool calls）。
+
+
 
 ## Muse：从单用户 Agent 到多用户共享时，旧安全证明必须失效重审（2026-11）
 

@@ -3914,6 +3914,18 @@
       "summary_path": "wiki/sources/20261110-latentspace-resend-designing-for-agents.md",
       "updated_at": "2026-11-11T08:28:19+08:00"
     },
+    "20261113-anthropic-building-always-on-agents.md": {
+      "body_sha256": "7333a0811230bddb01b46029f1e8b741221dafedec874486d5ad4503fe13b3ba",
+      "canonical_url": "https://claude.com/resources/articles/building-always-on-agents",
+      "compiled_at": "2026-11-17T15:07:25+08:00",
+      "indexed_at": "2026-11-17T15:07:25+08:00",
+      "raw_file": "20261113-anthropic-building-always-on-agents.md",
+      "raw_state": "index",
+      "retention_note": "Anthropic primary public article is recoverable at canonical_url by stable named headings. Only a temporary 1831-byte provenance note was staged as Raw and deleted after compilation. body_sha256 hashes that provenance note, NOT the copyrighted article full text. Source Summary contains source section locators, implementation boundaries, synthesized findings and evidence classifications.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261113-anthropic-building-always-on-agents.md",
+      "updated_at": "2026-11-17T15:07:25+08:00"
+    },
     "20261115-lenny-meta-muse-mona-sarantakos.md": {
       "body_sha256": "8fd78c608657163fd982ccad8972e66caa0a7c3f48ac68bb6b6f38bbddadc188",
       "canonical_url": "https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most",
@@ -4545,6 +4557,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-16T09:03:55+08:00",
+  "updated_at": "2026-11-17T15:07:25+08:00",
   "version": 1
 }

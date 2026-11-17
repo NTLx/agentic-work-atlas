@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-11-09
+updated: 2026-11-17
 evidence_level: high
 claim_type: mixed
 tags:
@@ -40,6 +40,7 @@ related_entities:
   - "[[Alert-Closed-Loop]]"
   - "[[Human-Owns-Output]]"
 source_raw:
+  - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
   - "[[20261031-latent-space-arca-agent-harness]]"
   - "[[Building an MCP Ecosystem at Pinterest]]"
@@ -60,6 +61,16 @@ source_raw:
 ---
 
 # Organization as Agent Harness（组织作为 Agent Harness）
+
+## 长期自治不是长线程，而是事件、定时、授权及消息的受控运营循环（2026-11）
+
+Anthropic 工程文章 [[20261113-anthropic-building-always-on-agents]] 将常驻体验归结为五个分离的 durable primitive：Event Inbox 负责持久事件与快速接收；Timer 负责未来唤醒；Memory 负责跨执行的用户指令、笔记、已汇报内容与任务进度；Permissions 负责代理凭据和可暂停工具调用；Outbox 负责通知与节流。它是 [[20261024-langchain-company-harness]] 的公司级 Agent primitives 在**跨 Run 和用户注意力治理**方面的补充。
+
+- **判断（综合）**：组织治理中的 `who may act`（授权主体）、`what work exists`（持久任务事实）、`when to wake`（计划）、`what is known`（记忆）和 `whom to notify`（出站）各有责任人和失效机制，不能由一份 Prompt、一个聊天 Session 或同一张混合状态表隐式承担。
+- **边界**：原文是 Anthropic 对工程实践的设计建议，不代表它已经实证证明上述五原语为所有企业 Agent 的充要条件，也没有提出统一的中央平台要求。
+- **证据**：[[20261113-anthropic-building-always-on-agents]]（「How everything fits together」）。
+
+
 
 ## Monaco：为背景 Agent 提供真实执行环境，按长期内核决定 Build vs Buy（2026-11）
 

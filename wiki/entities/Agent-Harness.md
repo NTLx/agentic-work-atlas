@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-11-09
+updated: 2026-11-17
 evidence_level: high
 claim_type: mixed
 tags:
@@ -49,6 +49,7 @@ related_entities:
   - "[[Meta-Harness-Optimization]]"
   - "[[Recursive-Language-Model]]"
 source_raw:
+  - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
   - "[[20261108-lenny-tulsee-doshi-frontier-model-pm]]"
   - "[[20260713-microsoft-ships-ai-agents-enterprise-scale]]"
@@ -97,6 +98,16 @@ source_raw:
 ---
 
 # Agent Harness
+
+## Anthropic Always-on Agent：Model Loop 之外的五个持久运行时原语（2026-11）
+
+[[20261113-anthropic-building-always-on-agents]]（原文「The cycle behind the always-on agent / The core primitives」）指出 Always-on 不代表模型进程持续推理，而是 **event → brief run/session → durable writeback → sleep** 的重复循环，外围含 **Event Inbox、Timers、Memory、Permissions、Outbox**。只有 Agent loop 不足以支撑跨 run 状态、通知、授权和崩溃恢复。
+
+- **判断（综合）**：把 `event`、`run`、`session` 和 `memory` 分成不同对象；Inbox 是待处理输入的事实源，Timer 记录尚未到期的意图，Memory 只留无法重查的任务进度/用户规则，Permissions 负责延期批准，Outbox 负责必要的通知与发送失败恢复。这是运行时职责划分，**不要求部署五个新微服务**。
+- **工程边界**：原文强调同一 inbox 同时一个 active worker，属于 **partition-level mutual exclusion**，不是整个平台禁止多 Worker。文章未提供跨表事务、Exactly-once 外部副作用、生产级可靠性指标；这些仍需要 CAS/幂等/失效注入。
+- **证据**：[[20261113-anthropic-building-always-on-agents]]（Event inbox、Timers、Memory、Permissions、Outbox、How everything fits together）。
+
+
 
 ## 生产级 Harness 的核心不是 Loop 代码行数，而是系统上下文与可靠执行（2026-11）
 

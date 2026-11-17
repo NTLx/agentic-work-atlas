@@ -2,7 +2,7 @@
 type: topic
 title: Agent-First Process Redesign
 created: 2026-04-09
-updated: 2026-11-11
+updated: 2026-11-17
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -20,6 +20,7 @@ related_entities:
   - "[[Escalation-Based-Human-Oversight]]"
   - "[[AI-Deployment-Valley-of-Death]]"
 source_raw:
+  - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261110-latentspace-resend-designing-for-agents]]"
   - '[[Enabling agent-first process redesign]]'
   - '[[20260502-most-companies-arent-ready-for-ai]]'
@@ -30,6 +31,17 @@ source_raw:
 ---
 
 # Agent-First Process Redesign（Agent-First 流程重构）
+
+## Inbox 不接收未来定时，Outbox 也不是业务终态（2026-11）
+
+[[20261113-anthropic-building-always-on-agents]]（「Event inbox / Timers / Outbox」）将三个容易混淆的工作流分离：未来提醒/周期计划位于独立 Timer store；到期后 scheduler 创建 Inbox event；worker 处理事件，完成 run 后可以发消息、**静默结束**或以 deferred tool call 暂停等待批准。发送回执由 dispatcher 管理，与实际工作成功状态分离。
+
+- **判断（综合）**：`source_event → durable inbox → claimed work/run → completion receipt` 与 `schedule/follow-up → due occurrence → inbox`、`notification intent → outbox → provider ack` 应是独立状态机。Inbox 的快速 ACK 不代表外部副作用已经成功，worker 在 crash 后可重试也不代表已天然 Exactly-once。
+- **对现有 n8n Broker 的候选检验**：检验原本的 Claim/CAS/lease 在同一任务重复入队和多个 Worker 竞争时是否只允许一次业务动作；对 timer fire/写事件的故障边界、通知失败及幂等回执作独立试验，而不引入第二套调度/队列系统。
+- **边界**：作者建议每用户 inbox 同时一个 active worker，并非要求整个调度系统只有一个消费者；静默通知是用户体验策略，不能吞掉任务结算/必须通知的业务要求。
+- **证据**：[[20261113-anthropic-building-always-on-agents]]（Event inbox、Timers、Outbox）。
+
+
 
 ## Resend：别将「接口成功」误认为业务交付成功（2026-11）
 
