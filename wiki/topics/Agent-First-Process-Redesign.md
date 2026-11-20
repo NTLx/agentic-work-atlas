@@ -2,7 +2,7 @@
 type: topic
 title: Agent-First Process Redesign
 created: 2026-04-09
-updated: 2026-11-17
+updated: 2026-11-20
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -20,6 +20,7 @@ related_entities:
   - "[[Escalation-Based-Human-Oversight]]"
   - "[[AI-Deployment-Valley-of-Death]]"
 source_raw:
+  - "[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]"
   - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261110-latentspace-resend-designing-for-agents]]"
   - '[[Enabling agent-first process redesign]]'
@@ -31,6 +32,16 @@ source_raw:
 ---
 
 # Agent-First Process Redesign（Agent-First 流程重构）
+
+## Linear：Agent 创建 Issue 的指标不应替代实际完成结果（2026-11）
+
+[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]（**20:00–23:39、36:14–42:23**）与本页原有「流程终态不能由文本声明替代」观点直接互证。Linear 披露 Agent 创建的 Issue 比例从约一年前的 3% 升至超过 50%，但该指标只说明**入站工作登记**发生变化，并不描述处理、审查、合并、上线、客户受益。对于外部客服，Linear 仍让 AI 生成答复草稿，**由真人审核和发送**，没有把自动生成消息等同于真正履约。
+
+- **综合判断**：工作流 KPI 明确分开 `created → triaged → claimed → acted → verified → accepted/released`；客户沟通则分开 `drafted → approved → sent → delivered → resolved`。将自动化覆盖率与准确性/用户受益、人工监督成本和异常回滚一起观察。
+- **证据**：[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]（20:00–23:39、36:14–42:23）；[Linear CEO 2026-08-26 公告](https://linear.app/now/sharing-growth-with-the-people-building-linear)。
+- **边界**：Linear 原始指标中的 Agent Issue 创建量不能直接与 n8n Broker 的任务完成数类比；必须先对齐采样窗口、分母与任务定义。
+
+
 
 ## Inbox 不接收未来定时，Outbox 也不是业务终态（2026-11）
 

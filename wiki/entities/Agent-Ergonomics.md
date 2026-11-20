@@ -7,7 +7,7 @@ aliases:
   - AXI
 definition: "将 Agent 视为工具的第一公民（first-class citizen），通过 token-efficient 输出格式、低延迟接口和结构化交互设计优化工具对 Agent 的效率。Kun Chen (2026) 提出 AXI 十原则，benchmark 显示 AXI 标准工具比传统 MCP server 节省 3x token 成本。"
 created: 2026-06-22
-updated: 2026-11-11
+updated: 2026-11-20
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -19,6 +19,7 @@ related_entities:
   - "[[Agentic-Engineering]]"
   - "[[Agentic-Workflow-Token-Efficiency]]"
 source_raw:
+  - "[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]"
   - "[[20261110-latentspace-resend-designing-for-agents]]"
   - "[[20260620-l8-principal-agentic-workflow]]"
   - "[[20261022-latentspace-modal-d]]"
@@ -27,6 +28,16 @@ source_raw:
 > [!definition] 定义
 
 ## Resend 的 Agent Experience：可发现性、准确理解与实际完成是三种不同质量（2026-11）
+
+## Linear：MCP 接入是 Agent 可操作性入口，不一定就是产品护城河（2026-11）
+
+[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]（**20:00–34:40**）从 SaaS 产品经营角度提供 AX 的上层条件：MCP Server 让 Agent 更方便读写 Issue，但若产品内 Agent 工作流和人类协作界面没有额外价值，SaaS 会被商品化为第三方 Agent 的外部数据库。Linear 主张把 Agent 带进现有反馈、计划、身份、状态及代码协作流程，观察 Agent 活动与真人回到 App 的参与趋势。
+
+- **综合判断**：API/MCP 的工具成功率、响应体积、延迟之外，需要额外衡量 **用户复核效率、上下文关联完整性、执行后业务结果、外部 Agent 与内部 Agent 的一致性**。这与 Resend 的 Agent Experience 不同：Resend 优先减少 Agent 对 API/价格/认证的理解障碍，Linear 进一步讨论 Agent 使用后产品自身为何仍有存在价值。
+- **证据**：[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]；[Linear MCP 2025-05 发布](https://linear.app/changelog/2025-05-01-mcp)。
+- **边界**：这是产品经理/运营者观点，未验证内建 Agent 相对全部外部 Agent 集成的任务成功、成本或安全优势；不能仅由 UI 回访率推导用户经济价值。
+
+
 
 [[20261110-latentspace-resend-designing-for-agents]]（**05:02–06:54、37:55–49:53、58:28–1:12:14**）展示 Agent-first developer product 的几类独立障碍：coding agent 即使面对已有 Cloudflare Email 配置，也可能推荐新服务；Resend 的 JS 定价滑块让 Agent 错误计算 120 万封邮件价格，换成机器可读 Markdown 表后几天复测得到正确值；MCP 中 Contacts 单次返回太大造成上下文容量问题。团队同时保持 API、CLI、SDK、UI 和 Remote MCP 等不同的消费表面。
 

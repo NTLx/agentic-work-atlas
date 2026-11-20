@@ -3950,6 +3950,18 @@
       "summary_path": "wiki/sources/20261115-lenny-meta-muse-mona-sarantakos.md",
       "updated_at": "2026-11-16T09:03:55+08:00"
     },
+    "20261119-latentspace-linear-cristina-cordova-gtm-100m-arr.md": {
+      "body_sha256": "6206736e857b30fce30e3c3ac86c0f722b7ee78243247da23b5e3b4cbfb051c2",
+      "canonical_url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/scaling_linear_s_gtm_to_100m_arr_cristina_cordova_coo",
+      "compiled_at": "2026-11-20T11:09:39+08:00",
+      "indexed_at": "2026-11-20T11:09:39+08:00",
+      "raw_file": "20261119-latentspace-linear-cristina-cordova-gtm-100m-arr.md",
+      "raw_state": "index",
+      "retention_note": "Latent Space official full 522-segment timestamped transcript remains available at canonical_url and https://latent.space/p/linear-scaling/ . Temporary Raw was a 2105-byte provenance record deleted after compilation, not full transcript. body_sha256 hashes that record, NOT original transcript. Sandbox-extracted normalized timestamped transcript: 96367 UTF-8 bytes, 17582 words; SHA-256 3df2682fe4a8a11c02268ba21b0f2a9bfdd6a3648593e1c6cffef4bc275824bd. Company metrics were cross-checked against Linear's CEO August 26, 2026 post; this is corporate self-report, not independent audited financial results.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261119-latentspace-linear-cristina-cordova-gtm-100m-arr.md",
+      "updated_at": "2026-11-20T11:09:39+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -4569,6 +4581,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-17T15:16:26+08:00",
+  "updated_at": "2026-11-20T11:09:39+08:00",
   "version": 1
 }

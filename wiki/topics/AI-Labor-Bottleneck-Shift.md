@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-10-22
+updated: 2026-11-20
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,6 +25,7 @@ related_entities:
   - "[[Agentic-Analytics]]"
   - "[[AI-Washing]]"
 source_raw:
+  - "[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]"
   - "[[The layoffs will continue till we learn to use AI]]"
   - "[[The Knowledge Economy Is Over. Welcome to the Allocation Economy.]]"
   - "[[(14) Jevons Paradox for Knowledge Work]]"
@@ -47,6 +48,16 @@ source_raw:
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
+
+## Linear：自动创建工单是 Input 扩张，而非 Outcome 的直接增长（2026-11）
+
+[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]（**20:00–23:39、57:07–1:05:54**）提供 Input/Output/Outcome 区分的具体产品案例：超过一半 Linear Issue 由 Agent 创建，Linear 公司 2026-08-26 另称由员工关联的 PR Issue 在 2026 年以来增长约七倍；但工作登记、PR 关联和可验收上线功能的分母各异。客户仍需在人类工作界面上协调、处理争议与确认真实结果。
+
+- **综合判断**：将 `agent-created work item` 当作产能投入/入口代理指标，`independently reviewed and shipped change` 视为输出指标，`customer value / incident / retention` 视为 Outcome；三者必须分层追踪，避免由更多 Issue/PR 推导必然更多高质量交付。
+- **证据**：[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]；Linear [2026-08-26 官方增长披露](https://linear.app/now/sharing-growth-with-the-people-building-linear)。
+- **边界**：公司披露的增长数据没有提供对照组/角色分布，可能包含重复工作、任务拆分变动和客户组合变化，不能全部归因于 Coding Agent。
+
+
 
 > [!summary] 核心洞察
 > AI 没有简单地消灭劳动，而是把瓶颈从“生产内容”迁移到“分配注意、对齐目标、集成系统、度量结果”。越便宜的生成，越昂贵的判断。

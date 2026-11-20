@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-11-17
+updated: 2026-11-20
 evidence_level: high
 claim_type: mixed
 tags:
@@ -40,6 +40,7 @@ related_entities:
   - "[[Alert-Closed-Loop]]"
   - "[[Human-Owns-Output]]"
 source_raw:
+  - "[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]"
   - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
   - "[[20261031-latent-space-arca-agent-harness]]"
@@ -61,6 +62,16 @@ source_raw:
 ---
 
 # Organization as Agent Harness（组织作为 Agent Harness）
+
+## Linear：销售与工程的高信任配合，比复制人数配置更可迁移（2026-11）
+
+[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]（**34:40–47:53、1:05:54–1:15:30**）记录 Linear 约 170 人团队的自述：没有 SDR，AE 直接做有针对性的潜客外联；Solutions Engineer 在企业复杂集成/迁移中与销售共同提供快速 Demo，但不将工程师长期派进客户系统做 FDE。Stripe 历史曾有工程、产品、设计和数据人员至少约 40% 的比例启发式，Cordova 明确说 **Linear 没有固定 40% 硬规则**，仅持续监控组织职能平衡。其 COO 招聘时的实战 work trial 是直接编写实际 GTM 计划。
+
+- **综合判断**：可迁移的不是“零 SDR、零 FDE、170 人、40%”配方，而是**标准化服务边界、信任组织、真实工作评价、以客户问题驱动工程反馈**的闭环。对于需要强定制/数据驻留的 Agent 产品，长期现场赋能仍可能划算。
+- **证据**：[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]；与本 Topic 关于组织成为 Agent Harness 的既有 [[Forward-Deployed-AI-Enablement]] 研究对照。
+- **边界**：其经营和组织质量均为受访者自报，没有经过统一财务、人员外包与跨 SaaS 样本比较的调整。
+
+
 
 ## 长期自治不是长线程，而是事件、定时、授权及消息的受控运营循环（2026-11）
 

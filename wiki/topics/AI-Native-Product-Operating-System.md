@@ -3,7 +3,7 @@ type: topic
 title: AI Native Product Operating System
 description: "AI 原生产品操作系统：当模型能力先于产品界面出现，产品组织必须重写从能力发现、发布试探、反馈闭环到市场验证的整套工作方式"
 created: 2026-05-22
-updated: 2026-11-16
+updated: 2026-11-20
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -23,6 +23,7 @@ related_entities:
   - "[[Taste]]"
   - "[[Judgment]]"
 source_raw:
+  - "[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]"
   - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
   - "[[Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next]]"
@@ -30,6 +31,16 @@ source_raw:
 ---
 
 # AI Native Product Operating System（AI 原生产品操作系统）
+
+## Linear：从 Issue Tracking 转为 Context-to-Execution 的 Agent 原生产品系统（2026-11）
+
+[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]（**20:00–34:40、57:07–1:05:54**）记录 Linear COO 对品类自我重塑的判断：创始人宣布“Issue tracking is dead”后，用户直接追问既有购买价值，团队把定位改为**围绕反馈、Spec、决策、工作、Agent 和代码结果的 Product Development System**，而不是仅靠 MCP Server 给外部 Coding Agent 提供一个 Issue 数据库。2025 年原定 Enterprise roadmap 的部分治理能力被 Agent 平台、MCP/集成和 Coding Sessions 取代，虽有未交付内容，企业客户仍开始主动评估。公司将 roadmap 缩短到约六个月，认为设计不必预言遥远的模型能力。
+
+- **综合判断**：`context captured → human/agent action → review/coordination → verified outcome` 才是 SaaS Agent 化的产品闭环。产品应同时观察 **agent activity 和 human return-to-app usage**，但两条曲线同时上升并不证明核心用户价值或抗商品化能力。
+- **证据**：[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]；Linear [2026-03-24 产品方向](https://linear.app/next)、[2026-08-26 业务公告](https://linear.app/now/sharing-growth-with-the-people-building-linear)。
+- **边界**：超过半数 Issue 由 Agent 创建并非半数工作完成；Agent 采用率与 ARR 增长不构成因果证据，企业功能改道的取舍不能作为通用 SaaS 最优解。
+
+
 
 ## Muse：用户真正尝试的任务，必须反向重排产品假设与评测（2026-11）
 

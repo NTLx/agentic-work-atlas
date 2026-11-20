@@ -3,7 +3,7 @@ type: topic
 title: Forward Deployed AI Enablement
 description: "FDE 式 AI 赋能：通过嵌入真实组织现场，发现黄金用例、穿越集成之墙，并把一次性部署沉淀为可复用的平台能力和组织能力"
 created: 2026-05-22
-updated: 2026-08-26
+updated: 2026-11-20
 evidence_level: high
 claim_type: mixed
 tags:
@@ -32,6 +32,7 @@ related_entities:
   - "[[Transparent-Tool-Handoff]]"
   - "[[Secure-Paved-Path]]"
 source_raw:
+  - "[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]"
   - "[[Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？]]"
   - "[[当我们谈论 FDE 时，我们在谈论什么？]]"
   - "[[Forward deployed engineering at OpenAI]]"
@@ -54,6 +55,16 @@ source_raw:
 ---
 
 # Forward Deployed AI Enablement（FDE 式 AI 赋能）
+
+## 反例边界：Linear 在无长期 FDE 下获得企业客户（2026-11）
+
+[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]（**34:40–47:53、57:07–1:03:28**）补充了本 Topic 必需的反例：Linear COO 明确称公司**不采用在客户生产系统中嵌入工程师的 FDE 交付模式**，尽量让产品 API、标准工作流与迁移易用性承担集成任务；但保留 Solutions Engineers 同 AE 解答复杂技术疑问，必要时快速演示 ServiceNow 等集成，且仍依赖真人支持。她将“统一、带约束的工作项类型”视为让 Agent 更易理解的产品特性。
+
+- **综合判断**：FDE 的适用性取决于`客户专有业务逻辑/数据隔离/跨系统集成深度/可产品化复用率`。标准化、Opinionated、API-first 产品可以减少 FDE 需求，但高合规、高定制的运营型 Agent 仍可能需要深度现场工作。将「FDE 是所有 SaaS 的 Table Stakes」视为有待分段验证的市场推断。
+- **证据**：[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]（42:23–47:53）；与本 Topic 的 [[20260825-forward-deployed-table-stakes-saas]] 形成反例对照。
+- **边界**：无 FDE 不等于没有售前工程或实施工作，更不说明客户获得价值所需的总集成成本为零。不同公司对 FDE 与 Solutions Engineering 的岗位定义可能不同。
+
+
 
 > [!summary] 核心洞察
 > FDE 的价值不在“派工程师去客户现场写代码”，而在把 AI 能力穿过真实组织的流程、权限、系统和人际约束，找到能永久改变工作流的黄金用例，并把一次性部署沉淀为可复用的平台能力或组织能力。
