@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-11-20
+updated: 2026-11-23
 evidence_level: high
 claim_type: mixed
 tags:
@@ -40,6 +40,7 @@ related_entities:
   - "[[Alert-Closed-Loop]]"
   - "[[Human-Owns-Output]]"
 source_raw:
+  - "[[20261122-lenny-sherif-mansour-first-principles-pm]]"
   - "[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]"
   - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
@@ -62,6 +63,16 @@ source_raw:
 ---
 
 # Organization as Agent Harness（组织作为 Agent Harness）
+
+## Atlassian：共享判断与双向人才学习是组织能力，而非人数配方（2026-11）
+
+[[20261122-lenny-sherif-mansour-first-principles-pm]]（02:14–11:25、32:44–38:07）将跨人和 Agent 的客户、产品市场、商业上下文共享视为决策赋能，并提出初级员工带来新工具/工作法、资深员工补足领域知识与审查。Atlassian [Teamwork Lab 2026-04-29](https://www.atlassian.com/blog/ai-at-work/new-grads-ai-skills-hiring-strategy) 报告基于 560+ 行业问卷、2,200+ 新聘工程人员的使用记录、10 名应届人员访谈；内部应届工程师较其他新工程雇员的 superuser 可能性高 19%，实验至少一小时/天的可能性为 1.8 倍。外部年龄群与内部经验群不可混用。
+
+- **综合判断**：新人探索、专家验证、知识沉淀、组织复用是可检验的双向学习回路；共享上下文应有 provenance、访问边界与结果反馈。
+- **证据**：[[20261122-lenny-sherif-mansour-first-principles-pm]]；Mansour [Juniors 文章](https://sherifmansour.medium.com/on-hiring-juniors-in-the-world-of-ai-b1d05843f167) 明确限定其招聘结构建议适用于需改造旧工作法的组织。
+- **边界**：采用不等于任务成果；不以年龄/资历作能力代理，不以跳过中间层作组织规则，须验证实际技能、指导投入、质量和安全。
+
+
 
 ## Linear：销售与工程的高信任配合，比复制人数配置更可迁移（2026-11）
 

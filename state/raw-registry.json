@@ -3962,6 +3962,18 @@
       "summary_path": "wiki/sources/20261119-latentspace-linear-cristina-cordova-gtm-100m-arr.md",
       "updated_at": "2026-11-20T11:09:39+08:00"
     },
+    "20261122-lenny-sherif-mansour-first-principles-pm.md": {
+      "body_sha256": "5c4f216643eca4d35a3b9bd800522253c8f5dbd1cce8824972ae1a9481dd68e5",
+      "canonical_url": "https://www.lennysnewsletter.com/p/first-principles-what-it-takes-to",
+      "compiled_at": "2026-11-23T09:05:33+08:00",
+      "indexed_at": "2026-11-23T09:05:33+08:00",
+      "raw_file": "20261122-lenny-sherif-mansour-first-principles-pm.md",
+      "raw_state": "index",
+      "retention_note": "Official podcast Transcript Archive published in episode show notes: https://www.dropbox.com/scl/fo/yxi4s2w998p1gvtpu4193/AMdNPR8AOw0lMklwtnC0TrQ?dl=0&rlkey=j06x0nipoti519e0xgm23zsn9&st=ahz0fj11 ; exact member Sherif Mansour.txt (91226 bytes, 278 timestamped blocks), original file SHA-256 6a3493940098ad353160472af0845005091a84c19da7f95d0cedff88829168eb. Canonical Substack page is subscriber-gated in anonymous sessions; official publicly shared archive was retrieved successfully. Temporary 1440-byte Raw was a provenance record removed after compile, NOT transcript; body_sha256 hashes that record only.",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261122-lenny-sherif-mansour-first-principles-pm.md",
+      "updated_at": "2026-11-23T09:05:33+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -4581,6 +4593,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-20T11:09:39+08:00",
+  "updated_at": "2026-11-23T09:05:33+08:00",
   "version": 1
 }

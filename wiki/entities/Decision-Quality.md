@@ -5,7 +5,7 @@ aliases:
   - Decision Quality
 definition: "在任务目标、验证成本、失败代价和组织约束之间做出高质量取舍，并决定何时让 AI 执行、何时由人承担的能力"
 created: 2026-04-09
-updated: 2026-06-07
+updated: 2026-11-23
 tags:
   - AI-Agent
   - Decision-Making
@@ -20,12 +20,23 @@ related_entities:
   - '[[AI-First]]'
   - '[[Allocation-Economy]]'
 source_raw:
+  - "[[20261122-lenny-sherif-mansour-first-principles-pm]]"
   - '[[Management as AI superpower]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
   - '[[Knowledge Work Is Dying—Here’s What Comes Next]]'
 ---
 
 # Decision Quality
+
+## 决策速度与决策权不是一回事（Mansour，2026-11）
+
+[[20261122-lenny-sherif-mansour-first-principles-pm]]（02:14–07:10、01:04:05–01:11:37）指出，PM 应帮助团队获得共同背景，避免所有细小决策都等待 PM；与强愿景 stakeholder 不同时，先理解信息差，再明确意见、决策归属与执行承诺。意见强度标签和复述确认有助于澄清意图。
+
+- **综合判断**：分开记录 decision latency、decision quality、authority 与 downstream outcome；向 Agent 暴露共享上下文不等同于扩大其权限，建议/拟议/批准/执行应有独立语义。
+- **证据**：[[20261122-lenny-sherif-mansour-first-principles-pm]]；[作者 2019 年 decision velocity 原文](https://sherifmansour.medium.com/product-managers-make-all-the-decisions-right-87ea80beb37a)。
+- **边界**：决策速度非质量的充分条件；共享上下文也可能传播共同偏差，需要证据、异议机制、回滚与独立验证。
+
+
 
 > [!definition] 定义
 > Decision Quality 是 AI 时代的人类核心能力之一：在不确定条件下，为人类或 AI 选择更优执行路径，明确边界、设置验收标准，并承担后果。

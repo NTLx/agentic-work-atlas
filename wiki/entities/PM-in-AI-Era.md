@@ -6,7 +6,7 @@ aliases:
   - AI 时代的产品经理
 definition: "AI 时代 PM 从路线图对齐者转变为高速公路设计者——系统性消除从想法到用户手中的每一步摩擦"
 created: 2026-05-08
-updated: 2026-11-16
+updated: 2026-11-23
 tags:
   - product-management
   - AI-era
@@ -21,6 +21,7 @@ related_entities:
   - "[[Boris-Cherny]]"
   - "[[Human-Agent-Teams]]"
 source_raw:
+  - "[[20261122-lenny-sherif-mansour-first-principles-pm]]"
   - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[20261108-lenny-tulsee-doshi-frontier-model-pm]]"
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
@@ -33,6 +34,16 @@ claim_type: mixed
 ---
 
 # PM in AI Era（AI 时代的产品经理）
+
+## Atlassian：PM 的责任是决策速度与共享上下文，不是垄断决策（2026-11）
+
+[[20261122-lenny-sherif-mansour-first-principles-pm]]（02:14–28:48）指出，在已有大量工程产能的中大型团队，PM 应填补客户、产品/市场、商业三类上下文缺口，使工程师、设计师与 Agent 能承担更多日常判断。Atlassian 的 AI builder 小队试验在约一月后回归传统职责，说明当时被报告的约束是方向而非吞吐。Joff Redfern 的 PM Craft Triangle（GM、Scientist、Artist）用于发现项目需求与人才优势，不是固定职业分类。
+
+- **综合判断**：PM 的独特责任包含决策质量、共享判断的形成及结果验收；用决策等待时间、返工和真实用户结果而非原型数或 PR 数来衡量。招聘时通过真实任务辨别商业、实验与体验判断的互补能力。
+- **证据**：[[20261122-lenny-sherif-mansour-first-principles-pm]]；Mansour [Decision velocity 原文](https://sherifmansour.medium.com/product-managers-make-all-the-decisions-right-87ea80beb37a) 与 [PM Craft Triangle 指南](https://sherifmansour.medium.com/how-to-use-the-product-management-craft-triangle-a6048b1c9bc9)。
+- **边界**：角色分工取决于组织规模和约束；单个内部口述案例未否定小型自主团队的通用 builder 价值，亦不证明所有 PM 应停止编码。
+
+
 
 ## Meta Muse：原型容易后，PM 稀缺的是产品 Taste、用户同理心与发布判断（2026-11）
 

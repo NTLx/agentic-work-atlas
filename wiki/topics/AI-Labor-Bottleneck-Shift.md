@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-11-20
+updated: 2026-11-23
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,6 +25,7 @@ related_entities:
   - "[[Agentic-Analytics]]"
   - "[[AI-Washing]]"
 source_raw:
+  - "[[20261122-lenny-sherif-mansour-first-principles-pm]]"
   - "[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]"
   - "[[The layoffs will continue till we learn to use AI]]"
   - "[[The Knowledge Economy Is Over. Welcome to the Allocation Economy.]]"
@@ -48,6 +49,16 @@ source_raw:
 ---
 
 # AI Labor Bottleneck Shift（AI 劳动瓶颈迁移）
+
+## Atlassian：人人成为 Builder 后，方向可能成为更紧的约束（2026-11）
+
+[[20261122-lenny-sherif-mansour-first-principles-pm]]（23:42–32:44）转述一项内部团队实践：PM 与设计师改为通用 AI builders，最初感觉产出更快，约一个月后回到原角色。Mansour 将原因归结为执行已相对便宜，而方向、用户上下文和专业决策仍稀缺；其 [Direct the ship](https://sherifmansour.medium.com/direct-the-ship-dont-row-it-28785929626f) 进一步区分小型自主团队与中大型多依赖组织。
+
+- **综合判断**：角色能力扩大不意味着专业判断收敛；先识别 throughput、direction、alignment、verification 中谁是 binding constraint，再选择工作分配。
+- **证据**：[[20261122-lenny-sherif-mansour-first-principles-pm]]，24:48–25:36。
+- **边界**：无受控测量、样本规模和结果质量数据；不能据此证明通用 builder 模式必然失败，或 PM 职位增长由 AI 单独造成。
+
+
 
 ## Linear：自动创建工单是 Input 扩张，而非 Outcome 的直接增长（2026-11）
 

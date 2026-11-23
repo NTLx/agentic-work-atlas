@@ -3,7 +3,7 @@ type: topic
 title: AI Native Product Operating System
 description: "AI 原生产品操作系统：当模型能力先于产品界面出现，产品组织必须重写从能力发现、发布试探、反馈闭环到市场验证的整套工作方式"
 created: 2026-05-22
-updated: 2026-11-20
+updated: 2026-11-23
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -23,6 +23,7 @@ related_entities:
   - "[[Taste]]"
   - "[[Judgment]]"
 source_raw:
+  - "[[20261122-lenny-sherif-mansour-first-principles-pm]]"
   - "[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]"
   - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[How Anthropic’s product team moves faster than anyone else - Cat Wu (Head of Product, Claude Code)]]"
@@ -31,6 +32,16 @@ source_raw:
 ---
 
 # AI Native Product Operating System（AI 原生产品操作系统）
+
+## Atlassian：从开放解空间发现重复任务，再决定产品化（2026-11）
+
+[[20261122-lenny-sherif-mansour-first-principles-pm]]（46:05–56:01）补充了产品发现的反向路径：给客户开放 AI 能力，观察 Confluence whiteboards 便签归类、Jira 循环中的 Agent 等实际行为，识别适合原生化的高频任务（如 AI triage）。对于用户已依赖的大量历史业务流程，先在既有触点嵌入 AI 也可能降低迁移成本；同时仍要探索流程整体重构。
+
+- **综合判断**：Solution-first 可作为需求发现方式，而非免于证明问题价值。对重复真实任务先形成候选、验证结果与覆盖、再决定保留通用入口或固化功能。渐进改造需明确长期目标和旧路径的退出标准。
+- **证据**：[[20261122-lenny-sherif-mansour-first-principles-pm]]（46:05–56:01）。
+- **边界**：该案例来自拥有大量成熟客户及工作流资产的 Atlassian；不是支持任意外挂、保留低效审批或证明所有原生 Agent 产品需要传统 UI。
+
+
 
 ## Linear：从 Issue Tracking 转为 Context-to-Execution 的 Agent 原生产品系统（2026-11）
 
