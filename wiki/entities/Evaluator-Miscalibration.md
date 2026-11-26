@@ -8,7 +8,7 @@ aliases:
   - Calibration Trap
 definition: "评估器测量的不是你真正关心的行为：rubric 标准互相冲突或锚点奖励了错误的东西，使聚合分数与真实质量背离——校准错误的评估比没有评估更糟，因为它递给你虚假的信心"
 created: 2026-07-30
-updated: 2026-11-17
+updated: 2026-11-26
 tags:
   - evaluation
   - agentic-engineering
@@ -19,6 +19,7 @@ related_entities:
   - "[[Over-Inference]]"
   - "[[Evaluation-Integrity]]"
 source_raw:
+  - "[[20261027-ai2-novelty-bench]]"
   - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20261109-latentspace-handshake-frontier-labs-data]]"
   - "[[20261108-lenny-tulsee-doshi-frontier-model-pm]]"
@@ -176,3 +177,7 @@ task / scope
 
 - [[Evaluation-Integrity]] — 承载评测环境完整性与 CR-006 的稳定结论。
 - [[Verifiable-Agent-Engineering]] — 承载 reference / environment / execution / success provenance。
+
+### 科学新颖性评测中的提示依赖（2026-11）
+
+[[20261027-ai2-novelty-bench]]：GPT-5.4 在 Human+Generated 配对任务中因评测提示提供不同先验，准确率从 93.5% 变为 40.9%；弱标签限制了绝对准确率解释，但同输入判决翻转仍是稳定性问题。**综合判断**：先检查标签、任务定义、提示信息泄露及文献覆盖，再比较 judge 配置。novelty 不等同于 correctness、feasibility 或 impact。搜索与更高推理预算需要证明实际增益；不能仅因 judge 更复杂而提高信任等级。

@@ -3808,6 +3808,42 @@
       "summary_path": "wiki/sources/20261026-latent-space-minos-ai-scientist-eval.md",
       "updated_at": "2026-10-27T09:32:11+08:00"
     },
+    "20261027-a16z-databricks-future-of-firm.md": {
+      "body_sha256": "61385594619b086404b8559104ad8d4fdb0cf34fde688e6e282784218029819e",
+      "canonical_url": "https://www.a16z.news/p/databricks-and-the-future-of-the",
+      "compiled_at": "2026-11-26T12:31:46+08:00",
+      "indexed_at": "2026-11-26T12:31:43+08:00",
+      "raw_file": "20261027-a16z-databricks-future-of-firm.md",
+      "raw_state": "index",
+      "retention_note": "body_sha256 hashes the temporary non-full source registration excerpt, not the source webpage body",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261027-a16z-databricks-future-of-firm.md",
+      "updated_at": "2026-11-26T12:31:46+08:00"
+    },
+    "20261027-ai2-novelty-bench.md": {
+      "body_sha256": "beb83ab9d78e20f41f8c6f3d18d298d889071c1312124dda52f4cac4a8c6d3b5",
+      "canonical_url": "https://allenai.org/blog/novelty-bench",
+      "compiled_at": "2026-11-26T12:31:45+08:00",
+      "indexed_at": "2026-11-26T12:31:43+08:00",
+      "raw_file": "20261027-ai2-novelty-bench.md",
+      "raw_state": "index",
+      "retention_note": "body_sha256 hashes the temporary non-full source registration excerpt, not the source webpage body",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261027-ai2-novelty-bench.md",
+      "updated_at": "2026-11-26T12:31:45+08:00"
+    },
+    "20261027-anthropic-agents-judgment-calls.md": {
+      "body_sha256": "0e9cee8f6a1fa6f1bd18eb672b748f1588c8bf3eb94f74f323d9a7e5dd346409",
+      "canonical_url": "https://www.anthropic.com/research/agents-judgment-calls",
+      "compiled_at": "2026-11-26T12:31:44+08:00",
+      "indexed_at": "2026-11-26T12:31:43+08:00",
+      "raw_file": "20261027-anthropic-agents-judgment-calls.md",
+      "raw_state": "index",
+      "retention_note": "body_sha256 hashes the temporary non-full source registration excerpt, not the source webpage body",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261027-anthropic-agents-judgment-calls.md",
+      "updated_at": "2026-11-26T12:31:44+08:00"
+    },
     "20261027-latent-space-anthropic-brain-hands.md": {
       "body_sha256": "203527f8fd384d53efb26138f64c579be77daaf897f59d04340ec7a536296092",
       "canonical_url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/how_anthropic_ships_the_1_llm_in_the_world_safely_separating_the_brain_from_the_hands",
@@ -3818,6 +3854,30 @@
       "status": "compiled",
       "summary_path": "wiki/sources/20261027-latent-space-anthropic-brain-hands.md",
       "updated_at": "2026-10-29T22:36:45+08:00"
+    },
+    "20261027-replit-cloud-agents-company-codebase.md": {
+      "body_sha256": "180ecc7b2b3b53bcdb8233f403810a7281d63abd86678c90df1510322c8ecb7e",
+      "canonical_url": "https://replit.com/blog/anyone-can-bring-ideas-to-company-codebase",
+      "compiled_at": "2026-11-26T12:31:45+08:00",
+      "indexed_at": "2026-11-26T12:31:43+08:00",
+      "raw_file": "20261027-replit-cloud-agents-company-codebase.md",
+      "raw_state": "index",
+      "retention_note": "body_sha256 hashes the temporary non-full source registration excerpt, not the source webpage body",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261027-replit-cloud-agents-company-codebase.md",
+      "updated_at": "2026-11-26T12:31:45+08:00"
+    },
+    "20261027-verge-anthropic-ipo-safety-governance.md": {
+      "body_sha256": "773bb8c331b84e99c39c38eb4c3da48efffa964d0f9537011d54a5f2c24eb8a5",
+      "canonical_url": "https://www.theverge.com/ai-artificial-intelligence/1019470/anthropic-ipo-resist-investor-pressure-cut-corners-safety",
+      "compiled_at": "2026-11-26T12:31:44+08:00",
+      "indexed_at": "2026-11-26T12:31:43+08:00",
+      "raw_file": "20261027-verge-anthropic-ipo-safety-governance.md",
+      "raw_state": "index",
+      "retention_note": "body_sha256 hashes the temporary non-full source registration excerpt, not the source webpage body",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261027-verge-anthropic-ipo-safety-governance.md",
+      "updated_at": "2026-11-26T12:31:44+08:00"
     },
     "20261028-latent-space-supabase-agents.md": {
       "body_sha256": "3b020c42185a582020f2fcd9cf53dede2d0ecf0621cea405685a4bd7d83bbb64",
@@ -4593,6 +4653,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-23T09:05:33+08:00",
+  "updated_at": "2026-11-26T12:31:46+08:00",
   "version": 1
 }

@@ -2,7 +2,7 @@
 type: topic
 title: "Agent 知识管理与自进化"
 created: 2026-05-13
-updated: 2026-11-17
+updated: 2026-11-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -28,6 +28,9 @@ related_entities:
   - "[[Shortification-of-Learning]]"
   - "[[Agentic-Analytics]]"
 source_raw:
+  - "[[20261027-a16z-databricks-future-of-firm]]"
+  - "[[20261027-ai2-novelty-bench]]"
+  - "[[20261027-replit-cloud-agents-company-codebase]]"
   - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261110-latentspace-resend-designing-for-agents]]"
@@ -235,3 +238,7 @@ RAG 解决“这次怎么答”。LLM Wiki 解决“以后如何不用从头理�
 Tessl 将软件工厂的长期产出扩展到代码之外：架构决定、review 纠错、事故约束、skills 与 evals 会积累为组织 know-how。多模型或开放接口不自动等于开放；更有力的检验是把一项维护过的 skill、决策与评测带到另一 Agent/harness，验证其能否重用并通过检查。可迁移仍需适配权限、工具和记忆语义，并承担持续维护成本；作者也提醒，临时 workaround 不能未经审核升格为政策。该框架来自供应商文章，应视为评估问题，而非产品能力的独立验证。
 
 来源：[[20261013-tessl-how-open-is-your-software-factory]]。
+
+### 从审查反馈到跨模型组织资产，而非无门槛记忆增长（2026-11）
+
+[[20261027-replit-cloud-agents-company-codebase]] 将评审意见变成待工程师批准的团队 Skills（early access）；[[20261027-a16z-databricks-future-of-firm]] 主张保存定义、权限、人工覆盖、结果与例外，使知识跨模型保留；[[20261027-ai2-novelty-bench]] 提醒新颖性 judge 存在不稳定性。**综合判断**：反馈只生成候选；经来源、去重、适用范围、独立评测、批准和回归后才能成为长期知识。业务系统保持权威状态，Wiki 保存可回查知识与指针。厂商自报效率和投资者护城河论点不能证明收益普适。

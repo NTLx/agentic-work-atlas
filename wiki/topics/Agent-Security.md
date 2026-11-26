@@ -3,7 +3,7 @@ type: topic
 title: Agent Security
 description: "Agent 在不可信组件和跨信任域环境中行动时，从检测、判定、授权、执行到撤销与恢复的责任闭环"
 created: 2026-09-05
-updated: 2026-11-17
+updated: 2026-11-26
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -23,6 +23,8 @@ related_entities:
   - "[[Operational-Responsibility]]"
   - "[[Human-Governor-Agent-Operator]]"
 source_raw:
+  - "[[20261027-replit-cloud-agents-company-codebase]]"
+  - "[[20261027-verge-anthropic-ipo-safety-governance]]"
   - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[20261008-langchain-stripe-link-agent-payments]]"
@@ -250,3 +252,7 @@ carrier
 ## 研究状态
 
 这是一个由现有安全 Entity 和 Source summary 支持的最小 Topic 骨架。结构边界暂定为“安全责任闭环”，而不是把 [[Verifiable-Agent-Engineering|可验证 Agent 工程]]的安全章节复制一遍。`owner`、`action-surface`、`revoke` 和 `recovery` 仍标记为未闭合，后续需用一手材料逐格核验。
+
+### 防止授权和验收规则受执行目标单方面支配（2026-11）
+
+[[20261027-verge-anthropic-ipo-safety-governance]] 报道拟议 PBC / LTBT / Founder LLC 权力安排及其市场压力、成员退出风险；不是已生效制度的独立法律核验。[[20261027-replit-cloud-agents-company-codebase]] 则在产品层保留工程师合并决策，使用沙箱和凭据代理。**综合判断**：安全规则、凭据发放、例外批准与执行者分离；对治理主体离任、代理失效、权限撤销和审批服务故障做回归测试。形式上的独立性不能代替实际权限和隔离证据。

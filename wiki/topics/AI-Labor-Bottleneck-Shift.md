@@ -3,7 +3,7 @@ type: topic
 title: AI Labor Bottleneck Shift
 description: "AI 劳动瓶颈迁移：当生成变便宜，价值瓶颈从生产转向分配、对齐、集成和结果度量"
 created: 2026-05-18
-updated: 2026-11-23
+updated: 2026-11-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,6 +25,9 @@ related_entities:
   - "[[Agentic-Analytics]]"
   - "[[AI-Washing]]"
 source_raw:
+  - "[[20261027-a16z-databricks-future-of-firm]]"
+  - "[[20261027-anthropic-agents-judgment-calls]]"
+  - "[[20261027-replit-cloud-agents-company-codebase]]"
   - "[[20261122-lenny-sherif-mansour-first-principles-pm]]"
   - "[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]"
   - "[[The layoffs will continue till we learn to use AI]]"
@@ -299,3 +302,7 @@ Execute / generation 成本下降
 AI 时代最危险的误判，是把生成速度当作价值速度。
 
 真正的价值速度取决于四件事：分配是否准确，对齐是否清楚，集成是否落地，结果是否可见。
+
+### 执行民主化后，应关注判断与审查是否仍独立（2026-11）
+
+[[20261027-replit-cloud-agents-company-codebase]] 描述业务人员直接提案和测试变更；[[20261027-a16z-databricks-future-of-firm]] 推测更多岗位转为定义、委托与审查；[[20261027-anthropic-agents-judgment-calls]] 则表明专家审查的独立性不可假定。**综合判断**：产出降低边际成本不证明价值实现同步提高。分别测输入、审查质量、返工、业务终态与学习效果；保留专业判断能力和决定责任，不以管理层数或 Agent 活动作为成效替代。

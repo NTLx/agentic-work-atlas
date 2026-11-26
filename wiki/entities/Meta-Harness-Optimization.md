@@ -9,7 +9,7 @@ aliases:
   - Harness-as-Optimization-Target
 definition: "把包裹模型的 harness 本身作为优化目标、由 Meta-Harness Optimizer 在外层反馈环中根据 rollout 证据递归改写 harness 代码的范式——模型参数 θ 在整个过程中保持固定。这是相对 [[Recursive-Self-Improvement|模型层 RSI]] 的镜像层：前者优化模型，后者优化系统"
 created: 2026-08-16
-updated: 2026-11-17
+updated: 2026-11-26
 tags:
   - AI-Agent
   - harness-engineering
@@ -25,6 +25,7 @@ related_entities:
   - "[[Coding-Agents]]"
   - "[[Agentic-Engineering]]"
 source_raw:
+  - "[[20261027-ai2-novelty-bench]]"
   - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20260815-autodesign-meta-harness-optimization]]"
 ---
@@ -167,3 +168,7 @@ GPT-5.5/Claude 4.8 仅 +5 分看似不显著，但**绝对分数**仍在榜首�
 - **同期** — HarnessX (Chen et al., arXiv:2606.14249), Self-Harness (Zhang et al., arXiv:2606.09498), Adaptive Auto-Harness (Liu et al., arXiv:2606.01770), Meta-Harness (Lee et al., 2026b) 等平行工作集中出现，"harness 层 RSI"形成概念簇
 - **2025-10** — Huxley-Gödel Machine（Wang et al., arXiv:2510.21614）提出"近似最优自改进机器"，是 Meta-Harness 思想的概念先驱
 - **2026-07** — Survey: Self-improvements in modern agentic systems（Ren et al., arXiv:2607.13104）建立 model-versus-scaffold 区分的理论框架
+
+### 优化外环的候选评分不能依赖未经校准的 novelty judge（2026-11）
+
+[[20261027-ai2-novelty-bench]] 对提示、检索和推理配置的消融发现，更复杂的方案不必然提升评测；弱标签之外，同一输入判决翻转本身可作为告警。**综合判断**：受保护的 admission gate 使用版本化评价器与独立样本；改进者不得通过同时修改评价器来证明自己更优。先保留简单基线，逐项消融，再验证跨任务泛化。

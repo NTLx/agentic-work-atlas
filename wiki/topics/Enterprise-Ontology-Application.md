@@ -3,7 +3,7 @@ type: topic
 title: Enterprise-Ontology-Application
 definition: "企业级本体应用系列：用本体为 AI Agent 提供统一的业务语义层，解决企业 AI 的幻觉、语义不一致、不可解释等问题。"
 created: 2026-04-20
-updated: 2026-08-02
+updated: 2026-11-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -20,6 +20,7 @@ related_entities:
   - '[[Agent-Harness]]'
   - '[[Decision-Centric-Architecture]]'
 source_raw:
+  - "[[20261027-a16z-databricks-future-of-firm]]"
   - '[[20260420-ontology-enterprise-ai-agent]]'
   - '[[20260420-build-first-business-ontology]]'
   - '[[20260420-ontology-meets-agent-case-study]]'
@@ -229,3 +230,7 @@ Databricks 将通用 Agent 缺少业务语义描述为可能需要更多 schema 
 - [[UModel]]
 - [[Agent-Harness]]
 - [[Decision-Centric-Architecture]]
+
+### Ontology 与 System of Record 的不同职责（2026-11）
+
+[[20261027-a16z-databricks-future-of-firm]] 将企业对象语义、权威来源、权限、评价及例外视为 Agent 运行的重要条件。**综合判断**：Ontology 解决对象含义、关系和冲突裁决依据；业务系统管理真实状态，权限系统控制动作，评测和反馈记录成败。统一语义不要求把所有系统合并为单一数据库；隔离分支不能替代跨系统副作用控制。本文是投资机构的架构论述，未独立验证产品能力。

@@ -7,7 +7,7 @@ aliases:
   - AI 原生工程组织
 definition: "把 AI coding agent 作为默认工作基础设施后，围绕验证、review、安全、产品判断、JIT planning 和 dogfooding 重写的软件工程组织"
 created: 2026-06-05
-updated: 2026-11-07
+updated: 2026-11-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -24,6 +24,7 @@ related_entities:
   - "[[Skill-Chains]]"
   - "[[Captain-Mindset]]"
 source_raw:
+  - "[[20261027-replit-cloud-agents-company-codebase]]"
   - "[[20261015-meta-forum-ai-native-engineering]]"
   - "[[Running an AI-native engineering org]]"
   - "[[20260616-why-is-meta-destroying-its-engineering]]"
@@ -206,3 +207,7 @@ Meta（2026-05/06）的工程文化解构提供了 AI-native 转型的**反面�
 - [[Organization-as-Agent-Harness]] — 组织流程本身成为 agent 能否稳定工作的 harness。
 - [[PM-in-AI-Era]] — PM 从协调路线图转向设计高速反馈系统。
 - [[Human-Signal]] — 高吞吐 Agent 系统中，人类信号决定方向和质量上限。
+
+### 业务专家可以提交可测试变更，工程审查仍是独立职责（2026-11）
+
+[[20261027-replit-cloud-agents-company-codebase]] 以共享环境、自然语言请求、运行预览、测试证据和 PR/MR 连接非工程人员与既有代码库。工程师仍决定发布；反馈转技能由工程师批准，相关特性为 early access。**综合判断**：让最接近问题的人提供可检验的变更，而不自动授予主分支、生产凭据或部署权。测需求至验收的时间、工程返工、缺陷和审查投入，而非仅 PR 数量。

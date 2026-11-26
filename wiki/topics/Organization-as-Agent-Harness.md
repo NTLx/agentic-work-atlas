@@ -3,7 +3,7 @@ type: topic
 title: Organization as Agent Harness
 description: "组织作为 Agent Harness：AI 时代的企业竞争力来自目标、流程、权限、学习回路能否被机器读取和持续改进"
 created: 2026-05-18
-updated: 2026-11-23
+updated: 2026-11-26
 evidence_level: high
 claim_type: mixed
 tags:
@@ -40,6 +40,9 @@ related_entities:
   - "[[Alert-Closed-Loop]]"
   - "[[Human-Owns-Output]]"
 source_raw:
+  - "[[20261027-a16z-databricks-future-of-firm]]"
+  - "[[20261027-anthropic-agents-judgment-calls]]"
+  - "[[20261027-verge-anthropic-ipo-safety-governance]]"
   - "[[20261122-lenny-sherif-mansour-first-principles-pm]]"
   - "[[20261119-latentspace-linear-cristina-cordova-gtm-100m-arr]]"
   - "[[20261113-anthropic-building-always-on-agents]]"
@@ -293,3 +296,7 @@ Hao 好聊趋势关于 multi-agent 组织病的文章补上了本 Topic 的反�
 AI 不会自动让组织变聪明。它只会让组织的真实结构更快显形。
 
 真正 AI-ready 的企业，不是最会用工具的企业，而是最能把自己写成可运行系统的企业。
+
+### 共享事实、分散行动、独立判断（2026-11）
+
+[[20261027-a16z-databricks-future-of-firm]] 以 Coase/Simon 解释共享记录如何降低协调成本，并倡议企业拥有可跨模型迁移的语义、权限和反馈；[[20261027-anthropic-agents-judgment-calls]] 则提醒共同 Agent 先验可能让原本独立的判断失去独立性。[[20261027-verge-anthropic-ipo-safety-governance]] 强调权力结构与市场约束的区别。**综合判断**：组织 Harness 需同时拥有权威业务状态、最小授权、独立评价和反馈，避免把共享信息误解成集中所有决策或统一所有价值判断。a16z 是利益相关投资方，组织效率及治理效果有待实测。

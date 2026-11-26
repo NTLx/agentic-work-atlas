@@ -3,7 +3,7 @@ type: topic
 title: Evaluation Integrity
 description: "评测完整性：任务完成率或 benchmark 得分不能单独证明系统可靠；reference、scope contract、实际可达面、监控与停止语义必须共同可信，否则评测可能不再测量原本声明的对象"
 created: 2026-09-19
-updated: 2026-11-17
+updated: 2026-11-26
 evidence_level: high
 claim_type: mixed
 tags:
@@ -18,6 +18,9 @@ related_entities:
   - "[[Agent-Attack-Surface]]"
   - "[[Reward-Hacking]]"
 source_raw:
+  - "[[20261027-ai2-novelty-bench]]"
+  - "[[20261027-anthropic-agents-judgment-calls]]"
+  - "[[20261027-replit-cloud-agents-company-codebase]]"
   - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20261115-lenny-meta-muse-mona-sarantakos]]"
   - "[[20261109-latentspace-handshake-frontier-labs-data]]"
@@ -295,3 +298,7 @@ OpenAI 8 月后的强化措施——更强 workload/network isolation、continuo
 - [[Agent-Attack-Surface]] — effective reachability 与跨 trust boundary 路径。
 - [[Evaluator-Miscalibration]] — 评估器/度量本身的校准问题。
 - [[Escalation-Based-Human-Oversight]] — detection 到 human actuation 的 handoff 闭环。
+
+### 评审者与评估器也需要反事实、稳定性测试（2026-11）
+
+[[20261027-anthropic-agents-judgment-calls]] 说明有多种合理选择时，专家的结论可能受 Agent 先验影响；[[20261027-ai2-novelty-bench]] 说明同一组科研构想的模型判决对提示先验高度敏感。**综合判断**：分别验证 evaluator 的目标有效性、判决稳定性、来源独立性及外部终态；可通过反转倾向、独立审查、盲化、重复与跨模型对照检测偏差。[[20261027-replit-cloud-agents-company-codebase]] 的测试视频可作为 PR 证据，但不是全面回归的替代。三篇来源的研究、产品证据层级不同，不合并为单一因果结论。

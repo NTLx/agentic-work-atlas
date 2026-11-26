@@ -5,7 +5,7 @@ aliases:
   - Decision Quality
 definition: "在任务目标、验证成本、失败代价和组织约束之间做出高质量取舍，并决定何时让 AI 执行、何时由人承担的能力"
 created: 2026-04-09
-updated: 2026-11-23
+updated: 2026-11-26
 tags:
   - AI-Agent
   - Decision-Making
@@ -20,6 +20,8 @@ related_entities:
   - '[[AI-First]]'
   - '[[Allocation-Economy]]'
 source_raw:
+  - "[[20261027-anthropic-agents-judgment-calls]]"
+  - "[[20261027-verge-anthropic-ipo-safety-governance]]"
   - "[[20261122-lenny-sherif-mansour-first-principles-pm]]"
   - '[[Management as AI superpower]]'
   - '[[20260413-why-ai-first-strategy-wrong]]'
@@ -107,3 +109,7 @@ source_raw:
 - [[Management as AI superpower]]
 - [[20260413-why-ai-first-strategy-wrong]]
 - [[Knowledge Work Is Dying—Here’s What Comes Next]]
+
+### 独立判断与签字应分别验证（2026-11）
+
+[[20261027-anthropic-agents-judgment-calls]] 的随机倾向干预中，50 名使用 Agent 的分析师在四项分析选择上的倾向匹配率为 86%；48 名事后调查对象中 77% 复述至少一次 Agent 论证，仅 15% 注明来源。原先已表达偏好者面对反对时切换明显更多。实验强化了 Agent 倾向，并非自然使用依赖率。**综合判断**：对高影响的价值取舍，先保留独立的人类选择或评价标准，再查看 Agent 的正反论证及证据敏感性。审批应记录决策依据、分歧、责任、授权与执行，不将人类签字自动计为独立验证。与 [[20261027-verge-anthropic-ipo-safety-governance]] 对控制权与外部压力的分析互补：形式独立仍需实际行为和资源支持。
