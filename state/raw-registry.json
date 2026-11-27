@@ -4034,6 +4034,17 @@
       "summary_path": "wiki/sources/20261122-lenny-sherif-mansour-first-principles-pm.md",
       "updated_at": "2026-11-23T09:05:33+08:00"
     },
+    "20261125-oneill-weekend-machine-mathematics.md": {
+      "body_sha256": "64e0b8636042b753fef8e5b108662694194e3ad27a0b1ad174d9a9f7b4fe30c3",
+      "canonical_url": "https://charlesponeill.com/posts/a-weekend-of-machine-mathematics/",
+      "compiled_at": "2026-11-26T12:42:03+08:00",
+      "indexed_at": "2026-11-26T12:42:03+08:00",
+      "raw_file": "20261125-oneill-weekend-machine-mathematics.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261125-oneill-weekend-machine-mathematics.md",
+      "updated_at": "2026-11-26T12:42:13+08:00"
+    },
     "2608.19880-envharness-agent-learning.md": {
       "body_sha256": "bfa9d0e8b761a79148466139d5bab2a8f7703e5565a69afb715317a4ac6fc4b4",
       "compiled_at": "2026-08-22T14:01:13+08:00",
@@ -4653,6 +4664,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-26T12:31:46+08:00",
+  "updated_at": "2026-11-26T12:42:13+08:00",
   "version": 1
 }

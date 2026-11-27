@@ -6,7 +6,7 @@ aliases:
   - 数学AI
 definition: "AI在数学领域的应用与进展，包括自动定理证明、问题求解、概念发现等，被认为是AI能力的前沿指标"
 created: 2026-07-01
-updated: 2026-10-22
+updated: 2026-11-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -19,6 +19,7 @@ related_entities:
   - '[[Scientific-Discovery-AI]]'
   - '[[Human-Curation]]'
 source_raw:
+  - "[[20261125-oneill-weekend-machine-mathematics]]"
   - '[[20260701-grant-sanderson-ai-math-future]]'
   - '[[20260801-lean-kernel-soundness-bug-postmortem]]'
   - '[[20261002-meta-solving-open-research-problems-together]]'
@@ -26,6 +27,13 @@ source_raw:
 ---
 
 # AI in Mathematics
+
+## O’Neill 周末机器数学实践：边界改善与独立发现必须分开（2026-11）
+
+[[20261125-oneill-weekend-machine-mathematics]] 报告六项数学进展，包括 ζ 函数六阶矩下界、二次 L 函数非零比例、素数间隔及七循环强积。作者并未宣称解决所有原始猜想，并承认自身理解有限。部分结果声称使用 Lean，另有大规模计算证书；开放权重模型的重推导包含部分提示。
+
+- **综合判断**：评价 AI 数学研究应分别记录原问题、实际改善命题、适用范围、先验提示、计算资源、形式验证及独立专家复核。不能由有证书的局部改进推导原猜想已解决，也不能由提示下重推导推导独立原创。
+- **证据边界**：个人实践自述；本轮未取得六项成果的 PDF、代码及证书，未复跑 checker。
 
 > [!definition] 定义
 > **AI in Mathematics** 指AI在数学领域的应用与进展，包括自动定理证明、问题求解、概念发现、证明验证等。数学被认为是AI能力的前沿指标，因为其高度可验证性和结构化特性。

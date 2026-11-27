@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-11-09
+updated: 2026-11-26
 evidence_level: high
 claim_type: mixed
 tags:
@@ -48,6 +48,7 @@ related_entities:
   - "[[Rubric-Based-Evaluation]]"
   - "[[Evaluator-Miscalibration]]"
 source_raw:
+  - "[[20261125-oneill-weekend-machine-mathematics]]"
   - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
   - "[[20261020-tessl-verifying-intent-not-code]]"
   - "[[20261019-stanford-medical-ai-actual-workflows]]"
@@ -104,6 +105,13 @@ source_raw:
 ---
 
 # Verifiable Agent Engineering（可验证 Agent 工程）
+
+## 机器数学：证书的存在不能替代对验收语义的复核（2026-11）
+
+[[20261125-oneill-weekend-machine-mathematics]] 区分作者报告的有限区间计算、解析论证和 Lean 形式化成果。文章另引用 [RH/GRH 社区形式化仓库](https://github.com/leanprover-community/riemann-hypothesis)，其 README 公开说明目标陈述、允许的公理、comparator 与 Lean/nanoda 检查设计。
+
+- **综合判断**：对 Agent 生成的数学或科学结果分开审计目标语义、依赖与公理、checker 独立性、计算覆盖与证书重放、文献新颖性及专家理解。巨量计算证书不是完整性证明；形式检查也不替代研究价值判断。与已有 Lean kernel soundness 事件保持一致：验证基础设施自身也需验证。
+- **证据边界**：本轮仅核对文章和背景仓库 README，未取得作者成果附件或实际运行检查器，不把六项成果升级为独立确认。
 
 ## 软件工厂要守住意图、权限、真实测试与外部回执（2026-11）
 

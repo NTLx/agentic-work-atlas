@@ -6,7 +6,7 @@ aliases:
   - 可磨性vs可验证性
 definition: "AI成功的关键因素区分：可磨性（问题可容器化、并行化、自动化）比可验证性（问题有明确正确答案）更重要"
 created: 2026-07-01
-updated: 2026-07-29
+updated: 2026-11-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -18,12 +18,20 @@ related_entities:
   - '[[Coding-Agents]]'
   - '[[Sample-Efficiency]]'
 source_raw:
+  - "[[20261125-oneill-weekend-machine-mathematics]]"
   - '[[20260701-grant-sanderson-ai-math-future]]'
   - '[[20260719-if-ai-is-so-great-why-isnt-it-working]]'
   - '[[20260728-openai-scientific-computing-field-report.pdf]]'
 ---
 
 # Grindability vs Verifiability
+
+## 可磨性还有路线可达域的约束（O’Neill，2026-11）
+
+[[20261125-oneill-weekend-machine-mathematics]] 的六阶矩实践发现，沿当前技术框架反复收紧参数仍存在低于研究目标的上限。作者观察到模型更容易持续优化固定路线，需要切换到重新评估方法的模式；建议使用目标和 checker 而非频繁人工打断。
+
+- **综合判断**：可磨性决定固定路线上的搜索速度，可验证性约束自动采纳，**方法可达域**则决定继续搜索是否有意义。应记录路线理论上限、边际收益与停止条件，在预算内对照继续搜索和换路线；不能把运行时长视为进展。
+- **边界**：一次自报实践，不是两种模式的控制实验；目标循环是作者事后提出的建议。
 
 > [!definition] 定义
 > **Grindability vs Verifiability** 是指AI成功的关键因素区分：**可磨性**（问题可容器化、并行化、自动化）比**可验证性**（问题有明确正确答案）更重要。

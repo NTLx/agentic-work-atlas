@@ -7,7 +7,7 @@ aliases:
   - 研究判断
 definition: "在不确定的研究方向中识别'哪个问题最值得追'的能力——AI 时代人类剩余比较优势之一；Anthropic Mythos 2026-04 在研究判断上 64% 胜率意味着此领域开始被部分反超"
 created: 2026-06-06
-updated: 2026-06-16
+updated: 2026-11-26
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -19,10 +19,18 @@ related_entities:
   - "[[Recursive-Self-Improvement]]"
   - "[[Anthropic]]"
 source_raw:
+  - "[[20261125-oneill-weekend-machine-mathematics]]"
   - "[[20260604-anthropic-recursive-self-improvement]]"
 ---
 
 # Research Taste（研究品味）
+
+## 研究判断包含识别未消除的障碍与适时换路（2026-11）
+
+[[20261125-oneill-weekend-machine-mathematics]] 记录作者依据 RH/GRH 的新突破选题，但高估其对其他未解决问题的影响；随后发现局部求解框架仍有上限。作者认为人为干预在从深入优化切换到全局审视时可能更有价值，而非不断催促执行。
+
+- **综合判断**：Research Taste 不止于选题，还包括判断新前提究竟改变哪些依赖、识别方法上限、何时停止与重新分配搜索预算。以可检查的路线分析及后续成果验证这些判断，不以人类或模型身份预先授予正确性。
+- **边界**：作者自述缺少对照与完整失败分母；不能据此证明人类研究判断总优于模型。
 
 > [!definition] 定义
 > **Research Taste** 是在不确定的研究方向中识别"哪个问题最值得追"的能力——AI 时代人类剩余比较优势之一。Anthropic 数据显示 Mythos 在 2026-04 研究判断上 64% 胜率，意味着此领域开始被部分反超。
