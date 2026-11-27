@@ -9,7 +9,7 @@ aliases:
   - Harness-as-Optimization-Target
 definition: "把包裹模型的 harness 本身作为优化目标、由 Meta-Harness Optimizer 在外层反馈环中根据 rollout 证据递归改写 harness 代码的范式——模型参数 θ 在整个过程中保持固定。这是相对 [[Recursive-Self-Improvement|模型层 RSI]] 的镜像层：前者优化模型，后者优化系统"
 created: 2026-08-16
-updated: 2026-11-26
+updated: 2026-11-27
 tags:
   - AI-Agent
   - harness-engineering
@@ -25,12 +25,21 @@ related_entities:
   - "[[Coding-Agents]]"
   - "[[Agentic-Engineering]]"
 source_raw:
+  - "[[20261126-latentspace-clay-jeff-barg-gtm-agents]]"
   - "[[20261027-ai2-novelty-bench]]"
   - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20260815-autodesign-meta-harness-optimization]]"
 ---
 
 # Meta-Harness Optimization
+
+## Clay 的反例：Agent 自己定位 trace 根因仍不足以闭环自进化（2026-11）
+
+[[20261126-latentspace-clay-jeff-barg-gtm-agents]]（1:07:01–1:11:16）报告生产观察：模型可能重复相同失败 CLI 输入，分析长轨迹时又将合理耗时误判为错误。Clay 尝试让 Agent 从坏 trace 诊断问题并直接改善自身表现，但 Barg 认为端到端闭环尚不可靠，许多 Skills 仍由人编写。
+
+- **综合判断**：先从 trace 得到**候选失败假说**，独立复现并确认根因，再修改对应模块。验收同时检查真实产物、权限、独立新任务与既有回归；不以自评、轨迹长度或生成候选数量证明改进。对重复相同失败设定外部限次与升级机制。
+- **证据**：[[20261126-latentspace-clay-jeff-barg-gtm-agents]]（23:24–24:45、37:52–40:09、1:07:01–1:11:16）；与 [[20261113-oreilly-what-makes-agent-self-evolving]] 的独立评测、模块化归因框架对照。
+- **边界**：单家公司工程经验，没有诊断准确率或自动诊断与专家的对照实验；不能宣称自动修复永远不可行。公开 GTM benchmark 是访谈建议，非已发布成果。
 
 ## O’Reilly 与 ModularRSI：别把任何错都当 Prompt 错（2026-11）
 

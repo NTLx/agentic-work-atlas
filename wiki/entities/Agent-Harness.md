@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-11-17
+updated: 2026-11-27
 evidence_level: high
 claim_type: mixed
 tags:
@@ -49,6 +49,7 @@ related_entities:
   - "[[Meta-Harness-Optimization]]"
   - "[[Recursive-Language-Model]]"
 source_raw:
+  - "[[20261126-latentspace-clay-jeff-barg-gtm-agents]]"
   - "[[20261113-oreilly-what-makes-agent-self-evolving]]"
   - "[[20261113-anthropic-building-always-on-agents]]"
   - "[[20261108-latentspace-stanford-ai-native-engineering-mihail-eric]]"
@@ -109,6 +110,14 @@ source_raw:
 - **边界**：可以改 Prompt/Memory 不意味着 Agent 具有自行改写权限、审计/发布规则的权力；每个受控更改仍需独立回归和人工/策略准入。
 
 
+
+## Clay：工作流生成与任务执行分层，内外 Harness 共享领域原语（2026-11）
+
+[[20261126-latentspace-clay-jeff-barg-gtm-agents]]（17:34–27:43、42:17–54:28）记录 Clay 从单元格 Claygents 与早期 Sculptor 工具循环，转向基于 Pi、云沙箱、CLI 的编码式 Harness。Claygents 处理单个任务，Sculptor 生成并协调工作流；Audiences 供给第一方领域上下文，BullMQ 等运行基础设施承担部分持久执行。作者希望外部 Claude Code 与自家 Agent 使用 Clay 能得到近似结果，访谈时称两类入口的使用比例比预期更接近 50/50，但未公开分母。
+
+- **综合判断**：将语义规划、可组合领域接口与确定性任务执行分层；共享授权、状态与回执，不让原生和外部 Harness 重复建设业务能力。常规分类与复杂编排按实际质量、成本、权限分层路由；任务并发受租户公平、限流和恢复约束。
+- **证据**：[[20261126-latentspace-clay-jeff-barg-gtm-agents]]（24:54–27:43、32:40–36:59、42:17–54:28）。
+- **边界**：相近使用比例不等于质量平权；编码式 Harness 的表达力不证明 CLI 总优于 MCP，也不能替代授权、幂等和资源隔离。部分新架构仍待广泛上线。
 
 ## Anthropic Always-on Agent：Model Loop 之外的五个持久运行时原语（2026-11）
 
