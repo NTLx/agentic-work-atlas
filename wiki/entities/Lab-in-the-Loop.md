@@ -8,8 +8,8 @@ aliases:
   - Replayable Physical Experience
 definition: "把真实实验或实验派生的可验证证据组织成 Agent 可连续提出假设、选择实验、接收反馈并修正策略的科学环境；既包括实时自动实验，也包括由预先测量数据构成的可重放物理经验。"
 created: 2026-10-18
-updated: 2026-11-10
-evidence_level: high
+updated: 2026-11-28
+evidence_level: medium
 claim_type: mixed
 tags:
   - ai-for-science
@@ -93,7 +93,7 @@ expand the corpus
 
 纯 learned simulator 可以高吞吐，但它会继承自身 model error。Lab-in-the-Loop 的核心价值是让 reward / observation 能追溯到现实测量：实验数据、仪器读数、物理 assay 或经过校准的 characterization。
 
-这不意味着实验天然正确。真实实验仍可能受到 batch effect、仪器漂移、蛋白错误折叠、样本污染和观测不完备影响。因此现实反馈需要 QC 与 provenance 才能成为 oracle。
+这不意味着实验天然正确。真实实验仍可能受到 batch effect、仪器漂移、蛋白错误折叠、样本污染和观测不完备影响。现实反馈须经过QC、重复及独立参照才可作为条件性评价依据；QC/provenance也不保证无偏或机制真值。
 
 ### 2. Counterfactual Density 决定 Agent 能学到什么
 
@@ -121,7 +121,7 @@ Minos 的后续访谈补出 replayable loop 的第二个用途：如果实验 wo
 
 可观察行为包括：是否过早停止、是否重复测试、hypothesis 与 observation 冲突后是否改变策略、explore / exploit 的预算分配，以及何时离开低质量 neighborhood。Leash 报告不同模型在这些行为上存在分离，但目前没有机制解释，也没有系统的人类同预算基线。
 
-**判断**：Replayable Lab-in-the-Loop 可以同时承担两种角色：一是 scientific-agent 的训练/探索 environment，二是对 `state → action → evidence → next action` 轨迹的评测器。后者的价值来自 counterfactual outcomes 已被提前测量，而不是来自 learned judge。
+**判断**：Replayable Lab-in-the-Loop 可以同时承担两种角色：一是 scientific-agent 的训练/探索 environment，二是对 `state → action → evidence → next action` 轨迹的评测器。后者的价值来自未选择动作在已测空间中的历史读数，不是learned judge；这些不是任意现实干预的因果反事实，且可能有批次、噪声与覆盖偏差。
 
 - **证据**：[[20261026-latent-space-minos-ai-scientist-eval]]（00:01:16–00:05:31；00:11:55–00:13:33）。
 - **边界**：answer key 只覆盖已测 action space；它不能证明未测区域没有更优实验，也不能自动证明 policy 能迁移到新 biology。
@@ -130,7 +130,7 @@ Minos 的后续访谈补出 replayable loop 的第二个用途：如果实验 wo
 
 预计算环境再大，也只覆盖已经测过的区域。Leash 的 DEL 数据受 chemical library geometry、building-block availability、DNA conjugation 与 protein panel 限制；Periodic 的 live lab 则受材料、设备和物理时间限制。
 
-因此更完整的系统需要在 replay 与 live experiment 之间切换：先在已知现实数据上便宜探索，再把最有价值、最不确定的候选送回真实实验，扩张 measurement frontier。
+若目标是扩展未测物理空间，系统可在replay与live experiment间切换；仅验证已测空间策略时未必需要新实验：先在已知现实数据上便宜探索，再把最有价值、最不确定的候选送回真实实验，扩张 measurement frontier。
 
 ## 与 Scientific Discovery AI 的关系
 
@@ -146,6 +146,10 @@ Minos 的后续访谈补出 replayable loop 的第二个用途：如果实验 wo
 - Lab-in-the-Loop：**让系统学会探索**，追求信息增益与策略改进。
 
 同一现实 measurement corpus 可以同时支持两者，但必须划清 held-out eval 与 agent 可探索训练环境，避免 measurement contamination。
+
+## 2026-11-28 发布方证据校准
+
+[Leash 官方原文](https://leashbio.substack.com/p/making-reality-replayable)（2026-10-14）Fig1–4：约630万成员库；旗舰任务33靶点×约600万分子，100分子预算/20轮、每轮最多5、无起点，图3每靶点10次试验均值的95% CI。作者报告约10万SAR轨迹/六周，后续10-26访谈约9万rollouts，不知统计口径是否相同，勿相加或称增长。两者同发布方，非独立复现；作者明确只测结合富集、不含ADMET。实验室闭环中的“best binder”仅为该历史assay/candidate set的优值；不证明亲和力、功能或临床价值，需独立正交实测。发布方称释放少量Harbor环境与数千轨迹，本轮未下载、运行预印本或访问受限数据。2环境/日为自报、20为目标。训练与独立评测需隔离靶点、化学库、条件及数据时间；随机/朴素/非语言策略与同预算专家是候选对照。独立评估跨未见任务和新物理实验，记录失败、成本、实验所有者批准及QC。详见 [[20261026-latent-space-minos-ai-scientist-eval]]。
 
 ## 前提与局限性
 

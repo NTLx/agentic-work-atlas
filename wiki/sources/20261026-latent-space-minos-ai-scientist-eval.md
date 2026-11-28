@@ -6,7 +6,7 @@ source_raw:
 canonical_url: "https://www.youtube.com/watch?v=vhPCo-8K78U"
 raw_state: full
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-11-28
 tags:
   - source-summary
   - ai-for-science
@@ -31,6 +31,8 @@ source_locator:
 > Latent Space 对 Leash Bio 联合创始人 Ian Quigley 的后续访谈。用户提供了视频元数据与完整自动生成英文 Transcript；本次以附件 Transcript 为主证据。原始附件文件 SHA256 为 `78dcf5998562998203b114356156d2dc635d0cb28339524cf602074bac2288b5`，时间轴结束于 00:16:35。由于是自动字幕，个别模型名、数字和专有名词可能误听；Leash 的规模、性能与路线图也主要属于公司一方陈述，因此按 `medium / mixed` 处理。
 
 ## 编译摘要
+
+2026-11-28 补核发布方[Making reality replayable](https://leashbio.substack.com/p/making-reality-replayable)（2026-10-14，Fig1–4）：约630万成员库、旗舰33靶点×约600万、100分子/20轮、每轮最多5、无起点，图3每靶点10次试验的均值95% CI；作者称约10万轨迹/六周，与后续访谈约9万的统计口径未统一，不相加。目标为结合富集，不含ADMET；有限已测空间的最佳值不等同亲和力、功能、药物或临床效果。原文称发布少量Harbor环境与数千轨迹；未下载或运行预印本及数据，非独立复现。保留公司自报证据等级和跨新biology未知，不把已测未选读数当任意现实干预的因果反事实。
 
 ### 1. 浓缩
 

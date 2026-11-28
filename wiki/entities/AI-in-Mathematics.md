@@ -6,7 +6,7 @@ aliases:
   - 数学AI
 definition: "AI在数学领域的应用与进展，包括自动定理证明、问题求解、概念发现等，被认为是AI能力的前沿指标"
 created: 2026-07-01
-updated: 2026-11-26
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -42,19 +42,19 @@ source_raw:
 
 ### AI在数学中的进展速度
 
-数学是AI进展最快的领域之一。Grant Sanderson指出，AI在数学中的进展是其他领域的预演——数学中的成功模式将预示AI在其他领域的发展。
+访谈提出数学是观察部分推理进展的场景；不同领域任务、反馈、风险与成本不同，不以数学成绩预测整体经济自动化。
 
 ### AI擅长的数学领域
 
-- **几何**：AI可以在19秒内解决IMO几何问题（AlphaGeometry）
+- **几何**：AlphaGeometry 2在2024 IMO接收已形式化P4后19秒求解，非端到端；见[官方报告](https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/)。
 - **数论**：AI可以找到Erdős问题的反例
 - **代数**：AI可以处理多项式求解问题
 
 ### AI在数学中的局限
 
-- **组合数学**：需要更多创造性思维，AI仍面临挑战
-- **概念突破**：AI难以产生需要跨领域连接的"闪电般的想法"
-- **可磨性依赖**：AI在数学中的成功依赖于问题的可磨性（可并行化、可容器化）
+- **组合数学**：2024两题未解仅为该次观察；不能据此划定领域长期能力或创造力。
+- **概念突破**：须检验新概念、已有思想重组及开放问题原创性，不能假设自回归不能跨领域连接。
+- **搜索与验证**：并行、重置、路线可达性、独立验证及计算预算影响不同任务的表现。
 
 ### 数学作为AI能力的试金石
 
@@ -65,9 +65,8 @@ Grant Sanderson认为，数学是观察超级智能的第一个领域。AI在数
 
 ## 关键数据点
 
-- AlphaGeometry在2024年IMO中解决几何问题仅需19秒
-- AI在2024年IMO中差点获得金牌（因组合数学问题失分）
-- OpenAI模型找到了单位距离问题猜想的反例
+- 2024 AlphaProof+AlphaGeometry 2共28/42、银牌水平；2025高级Gemini Deep Think自然语言4.5小时内35/42、金牌水平，见[[AI-Mathematics-Future]]。协议不同。
+- OpenAI内部模型2026-05反证Erdős单位距离渐近上界猜想，外部数学家检查；代数数论跨域连接真实案例，不是确定精确渐近阶。后续Huang公开模型8次已知反证目标重推导，不算8次盲态原创。
 - Montgomery-Dyson在IAS的午餐对话揭示了随机矩阵理论与Riemann假设的联系
 - **AI 双重角色：exploit 生产者 × 验证器审计者**（2026-08 Lean kernel 事后分析）：AI 辅助产出的 Collatz "反证"精准利用了 Lean kernel 与 nanoda 检查器各自的实现缺陷（两个不相关 bug 对齐），同时骗过两端——AI 生成的验证级产物开始压力测试*验证基础设施本身*；同一事件中 OpenAI 的 cybersecurity 专用 AI 又反向找出 Lean kernel 的更多编程错误。数学前沿的攻防两端同时加速（[[20260801-lean-kernel-soundness-bug-postmortem]]，验证独立性分析见 [[Agent-Verification]] 形式验证镜像节）。
 
@@ -112,16 +111,16 @@ Grant Sanderson认为，数学是观察超级智能的第一个领域。AI在数
 ## 前提与局限性
 
 - **前提**：数学的可验证性使其成为AI进展的理想测试场
-- **前提**：AI在数学中的成功依赖于问题的可磨性（可并行化）
-- **局限**：概念突破的验证循环可能长达一个世纪（如Galois理论）
-- **局限**：自回归生成方式难以产生跨领域的"闪电般连接"
+- **条件**：可磨性影响搜索成本，验证与方法可达性另行评价。
+- **局限**：证明有效性与概念传播、解释力及长期影响不同；历史个案非统一验证期。
+- **局限**：生成方式不能直接推出跨领域能力上限；需任务对照。
 
 ## 关联概念
 
 - [[Conceptual-Breakthroughs]] — AI在数学中的核心挑战是产生概念突破
-- [[Grindability-vs-Verifiability]] — AI在数学中的成功依赖于可磨性而非可验证性
+- [[Grindability-vs-Verifiability]] — 搜索成本与可靠验收互补
 - [[Autoregressive-Generation]] — 自回归方式的局限性影响AI的数学能力
-- [[Scientific-Discovery-AI]] — 数学中的AI进展预示科学发现领域的AI应用
+- [[Scientific-Discovery-AI]] — 数学是科学AI的一类验证场景，非整体代理指标
 
 ## 来源
 
