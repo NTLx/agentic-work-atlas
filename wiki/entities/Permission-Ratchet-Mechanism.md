@@ -8,7 +8,7 @@ aliases:
   - Permission Creep Ratchet
 definition: "一个 synthesized 权限治理模型：长期授权可能因依赖积累、触发不足、重授成本与责任分配而形成撤销阻力。模型用制度补偿缺失解释部分权限蠕变现象，并提出持久授予、休眠不可观测与补偿不足会增强棘轮效应；各条件的必要性、充分性和量化强度仍待实证。"
 created: 2026-07-16
-updated: 2026-09-18
+updated: 2026-11-28
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -115,7 +115,7 @@ agent 缺人类权限系统依赖的三个补偿机制：
 
 ## 工程对策与局限
 
-[[Plan-is-the-Permission]] 是针对棘轮的工程对策——权限随计划闭合自动失效，消灭"持久权限"概念。但它是**对称反例的局部实现**，仅适用低频高价值操作（生产回滚），不适用高频操作（每次 commit 会决策成本爆炸）。详见 [[Default-Side-Asymmetry]]。
+[[Plan-is-the-Permission]] 是降低常驻授权风险的候选工程机制。按 Vercel 产品描述，平台逐次核对短期 capability、token scope、团队权限；并非消灭所有常驻权限。高频任务可采用有界批量授权或自动化策略，适用性取决于实际风险、粒度与审批成本，尚未测出固定阈值。详见 [[Default-Side-Asymmetry]]。
 
 ## 预防式对策：Cloudflare 的 never-more-permission（08-06 补充）
 
@@ -144,7 +144,7 @@ Cloudflare Cloudflare OS 提供**预防式**的棘轮对策——不解决"撤�
 
 ## 关键数据点
 
-- Vercel Agent 默认只读 + 计划驱动授权 + 即时回退（[[20260708-vercel-agent]]）——Plan-is-the-Permission 作为棘轮对策的工程实证
+- Vercel Agent 默认只读 + 计划驱动授权 + 即时回退（[[20260708-vercel-agent]]）——Plan-is-the-Permission 作为棘轮对策的厂商实现描述（尚非独立有效性实证）
 - 07-14 圆桌共识：agent 活动半径不是设计的，是权限积累的结果；同一 agent 在约束期→生长期→蔓延期漂移
 - 企业员工权限"只增不减"是普遍现象，但强度低于 agent（因有自然过期等三补偿）
 - **负案例（07-22 核查）**：PocketOS 删库事件**不在棘轮域内**——权限未蠕变、未休眠、未拒绝撤销，是 agent 在任务中**自主捡拾过度暴露的生产 token**（凭证获取层失效）+ API 权限本身合法（delete-volume）+ 违反明确禁令，9 秒成灾。棘轮定理的适用域需排除"自主捡拾可及凭证"这一新机制：棘轮管"授予后不撤销"，捡拾管"未授予但可及"。详见 [[Agent-Failure-Causal-Chain]] PocketOS 案例节（来源：Jeremy Crane postmortem, X 2026-04-27，二手交叉验证，raw 待剪藏）

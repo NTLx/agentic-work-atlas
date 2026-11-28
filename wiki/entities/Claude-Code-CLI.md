@@ -5,7 +5,7 @@ aliases:
   - Claude Code CLI
 definition: "Anthropic 出品的终端原生 AI 编程助手，代理式编码环境，可读取文件、执行命令、编辑代码、运行测试并自主解决问题"
 created: 2026-04-09
-updated: 2026-08-22
+updated: 2026-11-28
 tags:
   - AI-Agent
   - Claude-Code
@@ -39,9 +39,9 @@ source_raw:
 ## 核心特征
 
 - **终端原生**：运行在终端中，理解整个代码库的文件结构、依赖关系和 Git 历史
-- **强大推理**：使用 Claude Opus 4.6（最强推理）或 Claude Sonnet 4.6（快速高效）
+- **模型选择**：按任务、实际支持的模型和运行配置选择；旧模型代际排序不作当前推荐。
 - **Agentic Loop**：拥有专有的代理循环：收集上下文 → 执行操作 → 验证结果，循环进行
-- **200K Context**：200K token 上下文窗口，可将整个项目保持在记忆中
+- **上下文管理**：窗口依模型与配置而异，不能保证全项目始终进入有效上下文；需要选择性读取、压缩及外部状态。
 - **多界面支持**：支持 VS Code、JetBrains、桌面应用、Web 界面等多种使用方式
 
 ## 核心能力
@@ -57,34 +57,33 @@ source_raw:
 
 ## 权限模式
 
-Claude Code 有五种权限模式，操控时需选择合适的模式：
+按 [官方权限文档](https://code.claude.com/docs/en/permissions)（2026-11-28 核验），权限模式控制调用审批，不等于 OS 沙箱或所有工具的可用集合：
 
 | 模式 | 行为 | 适用场景 |
 |------|------|----------|
-| **Normal** | 每个危险操作都要确认 | 生产环境、敏感操作 |
-| **Auto-Accept Edits** | 自动批准文件编辑，其他操作仍需确认 | 快速原型迭代 |
-| **Plan Mode** | 只读模式，不做任何修改 | 代码探索、方案规划 |
-| **Don't Ask** | 除了预先批准的工具外，自动拒绝所有 | 受限自动化 |
-| **Bypass Permissions** | 自动批准所有操作（危险） | 仅限隔离容器/CI |
+| **default / Manual** | 多数编辑、命令及网络请求需批准，存在内置及配置例外 | 交互式审批 |
+| **acceptEdits** | 自动批准部分文件编辑与常见文件系统命令 | 受限工作区内的编辑 |
+| **plan** | 探索与规划，不编辑源文件；可用 auto classifier 等配置影响实际命令行为 | 规划，不是独立只读沙箱 |
+| **auto** | 由后台分类器检查部分动作，减少常规审批 | 需校准风险与权限边界 |
+| **dontAsk** | 默认拒绝原本需要提示且未获批准的调用；本来无需批准的动作仍可运行，注意扩展机制与例外 | 无人值守的显式策略 |
+| **bypassPermissions** | 跳过大部分权限提示，仍有例外；危险 | 仅在独立验证的低权限隔离环境中考虑，CI 本身不等于隔离 |
 
 ## 与 OpenClaw 的关系
 
-当 OpenClaw 需要进行编码任务时，Claude Code 是其首选的编码执行者。OpenClaw 通过 PTY 模式调用 Claude Code 的 Headless 模式，实现自动化编程流程。
+既有 OpenClaw 剪藏介绍个别使用 Claude Code 作为编码执行者的案例，PTY、非交互接口与 ACP 是不同接入方式，不代表官方默认或必选架构。参见 [[Headless-Mode]]、[[Claude-Code-Automation]]。
 
 ## 关键数据点
 
-- Claude Code 使用 Claude Opus 4.6（最强推理）或 Claude Sonnet 4.6（快速高效）
-- 200K token 上下文窗口，可将整个项目保持在记忆中
-- 五种权限模式：Normal、Auto-Accept Edits、Plan Mode、Don't Ask、Bypass Permissions
+- 模型、上下文与权限行为按实际安装版本和配置核验，不把历史产品规格当当前保证。
 - 在 OpenClaw 系统中，通过 ACP 协议委派，最大 6 并发实例、120min TTL
 - OpenClaw 系统架构：1 个编排者 + 5 个专业 Agent + 6 类 ACP 编码专家（含 Claude Code）
 - OpenClaw 每天几千次 LLM 调用、52 个 cron 定时任务、118 个 Skills
 
 ## 前提与局限性
 
-- **前提**: Claude Code 需要 Anthropic API key 和有效的订阅
-- **边界条件**: 自动批准所有操作（Bypass Permissions 模式）仅限隔离容器/CI 环境使用
-- **局限性**: 200K context window 并非无限，超大代码库可能需要选择性加载
+- **前提**：使用支持的认证与模型访问方式，不要求所有方式同时具备 API key 与订阅。
+- **边界条件**：跳过审批不是沙箱；隔离必须限制真实资源、凭证、文件与网络。
+- **局限性**：上下文预算有限，项目理解与测试覆盖需要实际检查。
 - **局限性**: 作为 agentic coding environment，其代码生成质量依赖模型能力，复杂架构设计仍需人类参与
 - **局限性**: 在 OpenClaw 系统中，Claude Code 只是 6 种编码专家之一，不同任务需要选择不同的编码 Agent
 

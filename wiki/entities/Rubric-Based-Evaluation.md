@@ -5,9 +5,9 @@ aliases:
   - rubric-based evaluation
   - rubric evaluation
   - Agent Optimizer
-definition: "用具体行为检查项（rubric）取代泛化指标（groundedness/coherence）来评估生产 Agent 的方法。每个 rubric 是针对特定用例的 yes/no 检查，由拥有该 Agent 的团队编写。Microsoft 的 Agent Optimizer 可基于 rubric 失败自动生成候选修复。"
+definition: "用具体行为检查项（rubric）取代泛化指标（groundedness/coherence）来评估生产 Agent 的方法。rubric 可由二元、分级或其他判据组成，需与实际用例需求、参考标准及测量目标对齐。Microsoft 的 Agent Optimizer 可基于 rubric 失败自动生成候选修复。"
 created: 2026-07-14
-updated: 2026-11-10
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -41,7 +41,7 @@ source_raw:
 
 
 > [!definition] 定义
-> **Rubric-Based Evaluation** 是用具体行为检查项（rubric）取代泛化指标来评估生产 Agent 的方法。每个 rubric 是针对特定用例的 yes/no 检查，反映 Agent **实际应该做什么**。"Generic metrics tell you whether the agent works. They don't tell you whether the agent works right."（Marco Casalaina）
+> **Rubric-Based Evaluation** 是用具体行为检查项（rubric）取代泛化指标来评估生产 Agent 的方法。rubric 是一组针对特定用例的评价标准；Microsoft 案例采用 yes/no 检查，但二元形式不是定义的必要条件。"Generic metrics tell you whether the agent works. They don't tell you whether the agent works right."（Marco Casalaina）
 
 ## 泛化指标的天花板
 
@@ -53,7 +53,7 @@ source_raw:
 
 ## Rubric 设计
 
-Rubric 是针对特定用例的 yes/no 行为检查：
+以下是 Microsoft 案例中的 yes/no 行为检查示例：
 
 - 当用户给出部分请求时，Agent 是否询问缺失信息？
 - 在声称预订可用前，Agent 是否验证了系统可用性？
@@ -89,7 +89,7 @@ Microsoft 的 Agent Optimizer 将 rubric 评估与自动改进结合：
 2. 对每个 rubric 评分
 3. 当 rubric 失败时，自动生成多个候选修复（改写 system prompt、调整工具使用、切换模型、调优 skills）
 4. 并行评分各候选
-5. 提升最优版本为新 Agent 版本
+5. 选择候选版本，是否晋升还需独立回归、真实终态及安全门禁；高分不自动证明实际改进
 
 **同一循环既度量 Agent 也改进 Agent。**
 
@@ -103,7 +103,7 @@ Foundry 还可以从 Agent 配置和生产 traces 自动草拟 rubric——从�
 | Rubric-Based Evaluation | 行为是否正确？ | 测试交互集 |
 | Agent Optimizer | 如何自动修复？ | rubric 失败时 |
 
-三者构成完整的生产评估管线：continuous 发现漂移 → rubric 定位问题 → optimizer 生成修复。
+三者构成一种生产评估与候选改进流程，而非完整充分的发布安全保证。还需保护 reference/holdout，校准评估器并核对实际外部效果。
 
 ## 前提与局限性
 
@@ -111,6 +111,7 @@ Foundry 还可以从 Agent 配置和生产 traces 自动草拟 rubric——从�
 - 自动草拟的 rubric 仍需人工审核
 - Optimizer 自动改写 prompt 有失控风险——如果 rubric 有缺陷，可能收敛到错误行为
 - 主要来源是 Microsoft Foundry 的产品叙事，独立验证有限
+- [[20260819-google-ai-evals-inspect-skill]] 的代码核验表明确定性 reducer 仍聚合可能误判的 LLM 二元结果。保留逐项错误、总体效果与成本；对关键禁止行为采用非补偿门禁，不能以平均分抵消。
 - **锚点即激励**：rubric 锚点写错会被 game（模糊引用刷广度分），且标准间冲突会被聚合分数掩盖——校准错误的评估比没有评估更糟（[[Evaluator-Miscalibration]]）；rubric 需要像代码一样接受迭代验证
 
 ## 关联概念

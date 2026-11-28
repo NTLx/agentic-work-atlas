@@ -5,7 +5,7 @@ aliases:
   - 无头自动化
 definition: "通过编程方式访问AI代理能力，无需图形用户界面的自动化模式"
 created: 2026-06-30
-updated: 2026-09-20
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -34,10 +34,11 @@ source_raw:
 
 - 当前直接证据来自 Claude Code 的单一官方演示；“Headless Automation”作为跨产品通用模式是本库抽象，不能把 Claude Code 的具体参数或能力直接外推到其他 Agent runtime。
 - 需要开发者理解命令行和编程概念。
-- 权限管理需要仔细配置，避免安全风险。
+- 非交互不等于无权限确认或安全隔离；工具暴露、免确认规则、拒绝规则、身份、进程权限及外部验收是不同层面。Claude Code 具体语义见 [[Headless-Mode]]。
 - 输出解析需要额外开发工作。
 
 ## 关联概念
 
 - [[Claude-Code-CLI]]：无头自动化的命令行接口
-- [[SDK-Design]]：软件开发工具包设计模式
+- [[Headless-Mode]]：Claude Code 具体 CLI 实现与当前参数边界
+- [[SDK-Design]]：SDK 集成接口的案例，与非交互执行方式不同

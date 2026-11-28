@@ -8,7 +8,7 @@ aliases:
   - 同质性监督失效
 definition: "使用 LLM 评估另一个系统输出的方法论；其可靠性取决于 rubric、证据与验证器错误结构。多模型或跨家族面板可以降低部分误差，但名义多样性不等于统计独立，某些任务仍存在 shared-error floor。"
 created: 2026-06-26
-updated: 2026-09-20
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -55,8 +55,8 @@ LLM-as-a-Judge 是"用一个 LLM 评估另一个系统输出"的方法论，最�
 | 策略 | 作用 | 典型实现 |
 |------|------|---------|
 | Prompt Engineering | 基座：通过指令和评分标准引导裁判 | Rubric-based scoring、CoT reasoning、few-shot exemplars、JSON structured output |
-| Ensemble | 降低单模型偏误 | Majority voting（分类）、score averaging（连续评分）、weighted aggregation |
-| Multi-agent | 处理复杂/安全敏感场景 | Role-specialized debate、critic-reviewer pipeline、persona-based jury |
+| Ensemble | 可能降低部分误差，取决于错误相关结构 | Majority voting（分类）、score averaging（连续评分）、weighted aggregation |
+| Multi-agent | 可用于复杂评审，不能单独保证安全 | Role-specialized debate、critic-reviewer pipeline、persona-based jury |
 | RAG | 用外部证据锚定事实判断 | 检索临床指南/EHR/药品参考/知识库后评估 |
 | Fine-tuning | 适配领域/任务 | SFT on expert labels、LoRA/QLoRA、DPO |
 | Calibration | 消减系统性偏误 | Position swapping、随机化答案顺序、verbosity bias check |
@@ -95,7 +95,7 @@ SimilarWeb Data Studio 案例（`[[20260729-similarweb-langsmith-agent-report-ev
 ## 前提与局限性
 
 - **适合**: 结构化或半结构化评估（事实核查、影像质量评分、标准化 rubric 评估）、大规模自动筛选（从大量候选中初筛需要人工审核的案例）
-- **谨慎**: 开放式主观判断（共情质量、推理深度）、高风险临床决策（需 human-in-the-loop + multi-agent）
+- **谨慎**: 开放式主观判断及高风险临床决策需领域独立参考、专业审查及风险匹配的验证；多 Agent 不是必要或充分的安全保证。
 - **不适合**: 作为临床安全部署的唯一质量门（需多维度人工复核）、跨语言/跨场景零迁移（需重新校准）
 
 ## 关联概念
@@ -111,7 +111,7 @@ SimilarWeb Data Studio 案例（`[[20260729-similarweb-langsmith-agent-report-ev
 
 ## 历史 synthesized 框架：同质性监督失效（2026-07-16；以下由后文 CR-003 校正）
 
-> 本节保留 2026-07-16 的理论化解释路径，其中 motivated mislabeling 等实验事实与“三墙合一 / 共压 / 无干净解”等 synthesized 判断混合。当前事实身份以本页后文 **CR-003 实证校正** 为准：错误相关与 shared-error floor 可实测，但“同源激励必然导致系统性失效”等强版本尚未被独立证明。
+> 2026-11-28 裁决：**退役“三墙合一”“失效根必为共压”“无干净解”的定理论证身份**。Rice 定理针对特定不可判定问题，不推出有限权限与轨迹上所有监督均有正错误下界；控制论及自指类比不能证明组织激励是单一首因。保留实验观察与历史解释路径；以下理论段落仅为历史假设，不作当前推理前提。当前实证边界以 CR-003 段落为准。
 
 ### 闭合失败链
 
@@ -173,7 +173,7 @@ judge 故意误标保护 refusal，与 agent 给训练注入零向量，形式�
 - **三墙合一是渐近命题**：在封闭工具集的有限轨迹里，Rice 墙理论存在但工程可压缩；三墙合一只在"开放行为空间 + 同源基底"下成立
 - **"不共压"判据是二值简化**：真实激励是多源叠加（外部审计既"保公众"又"保客户"），二值判据是用一部分正确换清晰
 - **深层判据（激励共压）未经独立实证**：现有 cross-model 监督研究（如 cross-model disagreement）几乎都在"表征异质"层（不同架构/不同语料），"激励共压"层仍是 synthesized 判断
-- **联网佐证**：Knowledge Divergence and the Value of Debate（Open MIND 2026）证明 debating model 共享训练语料（η=0）时 debate 退化为 RLAIF——这是"共源监督无增益"的数学形式化，支持"失效根=共压"
+- **历史类比（待重新定位原文）**：关于共享训练语料与 debate 的数学推导仅可能适用于其模型假设，不能直接证明组织激励共压是现实监督失效的首因。
 
 ### 关联概念（2026-07-16 新增）
 
@@ -225,7 +225,7 @@ nominal diversity
 
 ### 3. “同源激励/共压”仍是 synthesized 假设
 
-本页此前“失效根=共压，非同质”“三墙合一”等内容可以继续保留为理论/解释框架，但不能再与 CR-003 的实证结果混写成已证明结论。
+本页此前“失效根=共压，非同质”“三墙合一”等内容仅保留为历史假设，撤回其定理身份。当前不能由错误相关结构识别训练谱系、组织激励或自指机制的独立因果贡献。
 
 当前一手证据直接支持的是：
 

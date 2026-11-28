@@ -5,7 +5,7 @@ aliases:
   - 软件开发工具包设计
 definition: "为开发者提供编程接口和工具集，以便将AI能力集成到自有应用中的设计模式"
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -38,4 +38,4 @@ source_raw:
 ## 关联概念
 
 - [[Headless-Automation]]：无头自动化的实现基础
-- [[Claude-Code-CLI]]：SDK的命令行接口实现
+- [[Claude-Code-CLI]]：该案例的命令行入口；SDK 是程序化集成接口，不等于 CLI 或非交互运行本身。

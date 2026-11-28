@@ -5,7 +5,7 @@ aliases:
   - Headless Mode
 definition: "Claude Code 的非交互模式，通过 -p 参数实现单次执行并输出到 stdout，适合自动化和 CI/CD 场景"
 created: 2026-04-09
-updated: 2026-06-16
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -41,11 +41,13 @@ claude -p "总结项目" --output-format stream-json  # 实时流式 JSON
 
 | Flag | 用途 | 示例 |
 |-----|------|------|
-| `--allowedTools` | 限制工具权限（安全关键） | `--allowedTools "Read,Grep,Glob"` |
+| `--allowedTools` | 匹配的工具调用免交互确认，不等于排除其他工具 | `--allowedTools "Read,Grep,Glob"` |
+| `--tools` / `--disallowedTools` | 前者限制内置工具集合，后者设置拒绝规则；仍需核对 MCP、配置与 OS 边界 | `--tools "Read,Grep,Glob"` |
 | `--max-turns` | 限制执行轮次（防止无限循环） | `--max-turns 5` |
 | `--model` | 选择模型 | `--model opus` / `--model sonnet` |
 | `--permission-mode` | 设置权限模式 | `--permission-mode plan` |
-| `--session-id` | 保持多轮对话上下文 | `--session-id my-review-001` |
+| `--session-id` | 指定有效 UUID，不是恢复命令 | `--session-id 550e8400-e29b-41d4-a716-446655440000` |
+| `--resume` / `--continue` | 恢复指定会话或最近会话 | `--resume <session-id>` |
 | `--output-format` | 输出格式 | `text` / `json` / `stream-json` |
 
 ## OpenClaw 调用模式
@@ -63,10 +65,10 @@ claude -p "实现用户认证功能，运行测试，总结变更" \
 cat error.log | claude -p "分析错误日志，找到根本原因"
 git diff HEAD~1 | claude -p "审查这个 diff，列出潜在问题"
 
-# 模式三：多轮会话
-claude -p "分析 src/ 目录的代码" --session-id review-001
-claude -p "刚才发现了什么 bug？" --session-id review-001
-claude -p "修复最严重的那个 bug" --session-id review-001
+# 模式三：使用首次运行返回的 session_id 恢复会话
+claude -p "分析 src/ 目录的代码" --output-format json
+# 将 SESSION_ID 替换为实际返回的 session_id
+claude -p "刚才发现了什么 bug？" --resume "$SESSION_ID" --output-format json
 ```
 
 ## JSON 输出格式
@@ -96,7 +98,9 @@ claude -p "修复最严重的那个 bug" --session-id review-001
     ANTHROPIC_API_KEY: `${{ secrets.ANTHROPIC_API_KEY }}`
   run: |
     claude -p "Review the code changes for security issues" \
+      --tools Read,Grep,Glob \
       --allowedTools Read,Grep,Glob \
+      --permission-mode dontAsk \
       --max-turns 3 \
       --output-format json > review.json
 ```
@@ -108,7 +112,7 @@ claude -p "修复最严重的那个 bug" --session-id review-001
 | 启动方式 | `claude` | `claude -p "..."` |
 | 适用场景 | 人工操作、实时调试 | 自动化、CI/CD、编排 |
 | 输出方式 | 终端交互 | stdout（可捕获） |
-| 权限处理 | 实时确认 | 预配置或跳过 |
+| 权限处理 | 依实际权限模式/配置 | 预配置规则、权限回调或拒绝无法批准的请求 |
 
 ## 关键数据点
 
@@ -121,11 +125,11 @@ claude -p "修复最严重的那个 bug" --session-id review-001
 
 ## 前提与局限性
 
-- **前提**: 需要 Anthropic API key 配置在环境变量中
+- **前提**：使用该运行环境支持的认证与模型访问方式；API key 并非所有使用方式的必要条件。
 - **边界条件**: Headless 模式适合单次任务和自动化流程，不适合需要频繁交互的探索性开发
-- **局限性**: `--output-format json` 的结构是固定的，自定义输出格式需要后处理
-- **局限性**: 在 CI/CD 中使用时，权限模式需要预先配置，无法实时确认危险操作
+- **局限性**：JSON 消息封装及业务结构不同；当前官方支持 `--json-schema` 约束结构化结果，仍应解析、检查实际错误与终态。示例字段仅作示意。
+- **局限性**：无人值守应有明确拒绝策略；SDK/权限提示 host 可提供交互式审批，不能笼统说 headless 无法实时授权。
 - **局限性**: `--max-turns` 限制可能导致复杂任务未完成就被截断，需要合理设置
-- **局限性**: 多轮会话（--session-id）的上下文有 token 上限，长期会话仍需要手动清理
+- **局限性**：会话恢复不等于持久任务状态或成功恢复外部副作用，仍需检查点及幂等策略。以上 CLI 语义据 [官方 CLI reference](https://code.claude.com/docs/en/cli-reference) 与 [headless 文档](https://code.claude.com/docs/en/headless)（2026-11-28 核验），旧版本须核对实际帮助，未在本机执行。
 
 ## 关联概念

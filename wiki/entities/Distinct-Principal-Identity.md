@@ -8,7 +8,7 @@ aliases:
   - Agent Principal
 definition: "AI Agent 使用独立身份而非继承用户凭证，实现清晰归因、受限权限和组织级审计追踪。从技术安全模式（service account）到企业组织集成（目录条目、角色分配、邮箱）的完整光谱。"
 created: 2026-07-13
-updated: 2026-07-14
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -34,8 +34,8 @@ source_raw:
 
 ## 技术安全层：核心机制
 
-- **归因清晰**: Agent 的所有操作在审计日志中以独立身份记录，不会与人类用户的操作混淆
-- **权限隔离**: Agent 身份的权限上限由平台策略决定，即使触发 Agent 的用户拥有更高权限，Agent 也无法越权
+- **归因基础**：独立身份允许区分主体；需验证每次调用及其委托、审批、实际效果均可关联，不能由身份名称保证审计完整
+- **权限隔离**：必须在真实资源侧执行最小权限和授权交集；身份独立不自动排除过宽授权、委托绕过或凭证复用
 - **凭证独立管理**: Agent 的凭证可独立吊销、轮换，不影响用户凭证
 
 ## 企业组织集成层：Microsoft 实现
@@ -86,7 +86,7 @@ Agent 比聊天机器人有更多防御面：不仅读取用户 prompt 和模型
 
 - [[Agent-Containment]] — Identity 是 containment 的访问控制层实现
 - [[Agent-Harness]] — Identity 是生产 harness 五层架构的第四层
-- [[Plan-is-the-Permission]] — 动态权限控制与身份结合形成完整安全体系
+- [[Plan-is-the-Permission]] — 短期动态授权与独立身份互补；仍需执行层检查、真实可达面、审计、撤销和终态验证
 - [[Policy-as-Code-for-Agent-Governance]] — Identity 与 policy 结合形成治理体系
 - [[Forward-Deployed-AI-Enablement]] — Agent-as-employee 与 FDE 的对照
 
