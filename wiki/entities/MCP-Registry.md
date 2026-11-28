@@ -4,9 +4,9 @@ title: MCP Registry (MCP 注册表)
 aliases:
   - MCP 注册表
   - MCP Registry
-definition: "MCP 生态中的中心治理组件，负责批准 server、暴露工具目录、校验权限、记录安全姿态和支撑生产级工具发现"
+definition: "MCP server 元数据的注册与发现服务；公共目录、下游聚合及企业内部准入可采用不同治理策略，注册或发布者身份验证不等于运行时工具授权或安全证明。"
 created: 2026-05-13
-updated: 2026-07-22
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -25,60 +25,54 @@ source_raw:
 
 # MCP Registry
 
-> **核心洞察**：没有治理的工具集只是乱堆的积木，注册表是 Agent 工具生态的“交通指挥中心”。
-
 > [!definition] 定义
-> MCP Registry 是 MCP 生态中的中心治理组件，负责批准 server、暴露工具目录、校验权限、记录安全姿态和支撑生产级工具发现。
+> 注册表负责 MCP server 元数据的登记、发现和分发。企业可以在其上增加准入、权限查询、运营和审查机制；这些不是所有 MCP Registry 自动具备的能力。
 
-## 为什么重要
+## 三种对象，不混用信任边界
 
-没有 registry，MCP 生态很容易退化成“每个团队都暴露一点工具”的碎片化集成。Agent 看见的工具越多，误用、越权、上下文拥挤和责任不清的风险越高。Registry 把工具生态从个人效率工具升级为组织治理系统。
+| 对象 | 职责 | 不代表 |
+|---|---|---|
+| 官方公共 Registry | 发布者命名空间验证、server.json 元数据及发现 API | 代码经过完整安全审查，或企业批准使用 |
+| 下游目录 / 企业 Registry | 聚合、筛选、组织准入、owner、状态与策略元数据（按实现） | 所有请求经过中介，或每次动作已获得授权 |
+| Runtime 授权与执行点 | 认证主体、资源/工具范围、实际策略判定与效果记录 | 注册成功或工具发现成功即可授权 |
 
-在 Pinterest 案例中，registry 同时服务人和 AI client：人类通过 Web UI 查看 server owner、support channel、安全姿态、在线状态和可见工具；AI client 通过 API 发现、验证和连接 server；内部服务还能询问某个用户是否允许使用某个 server。
+2026-11-28 实际回核 [官方 Registry About](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/about.mdx)、[2025-09-08 发布公告](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/) 和 [Registry Authorization](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/api/registry-authorization.md)：官方服务承载公共元数据，支持下游及私有兼容目录；实际 server 代码的安全扫描主要由包仓库与下游承担。Registry read/write scope 约束目录资源访问/修改，不授权 server 工具调用。官方公共目录可公开读取，发布使用独立认证机制。主分支文档仍有 preview 表述，本轮未验证部署版本或 API conformance，不据此断言所有实现的成熟度。以上 URL 为既有概念纠错依据，未作为新 Source 晋升。
 
-## 核心功能
+## Pinterest 内部 Registry：组织治理案例
 
-1. **服务发现 (Discovery)**：展示或返回 MCP server、owner、support channel、live status 和可见 tools。
-2. **安全与准入 (Governance)**：只有进入 registry 的 server 才被视为 production approved；非实验 server 需要 owning team 和 Security、Legal/Privacy、GenAI review。
-3. **权限校验 (AuthZ)**：在 Agent 调用工具前，确认当前用户、业务组或服务身份是否允许使用该 server 和具体 tool。
-4. **上下文控制**：让 client 按需选择领域特定 server，避免把所有工具一次性塞进上下文窗口。
-5. **运营可观测**：记录 server 数、tool 数、调用量、异常和 owner 元数据，为平台演进和价值评估提供依据。
+原始文章 [[Building an MCP Ecosystem at Pinterest]] 记录其内部云托管 MCP、多个领域 server、中心注册表及统一部署管线。
 
-## Pinterest 的双层鉴权模型
+- 注册表 Web UI / API 提供 server、owner、support channel、安全姿态、在线状态与可见 tools。
+- 生产使用的非实验 server 绑定 owning team，经 Security、Legal/Privacy 及适用时 GenAI review。内部服务可查询用户是否允许使用指定 server。
+- 实际运行时由 Envoy 验证 end-user JWT 和粗粒度策略，server 内 policy decorator 处理工具细粒度权限；敏感数据还有业务组限制。低风险无人在场的只读路径可使用 SPIFFE mesh identity；身份验证不等于资源授权。
+- 敏感或高成本操作由其工作流要求人工确认。批准入库与具体动作授权、执行和事后验证不同。
 
-1. **JWT 令牌 (End-user JWTs)**：在 Web Chat、IDE、内部聊天机器人等前端捕获用户身份，确保 Agent 操作具有用户归属和可审计性。
-2. **网格身份 (Mesh Identities / SPIFFE)**：对于低风险、只读、无人在场的服务间场景，基于服务网格身份进行机器间验证。
+这些是 Pinterest 自报的组织级治理设计，而非 MCP 公共 Registry 的必备行为，也未证明无旁路或所有调用安全。文章报告的调用数及节省时间为历史统计和 owner 估算，不是独立的生产力因果评估。
 
-这套模型的关键不是“登录一次”，而是让 Agent 的工具能力继承真实组织权限。即使 Presto MCP server 技术上可从广泛 surface 触达，只有被批准的业务组才能建立 session 并调用高权限工具。
+## 发现与动态搜索
 
----
+[[20260617-huggingface-agentic-resource-discovery]] 描述 ARD draft（当时版本）通过静态 manifest 和动态搜索发现 skills、MCP servers 与 agents。发现与执行分离；排序结果、发布者 metadata、运行状态不能代替风险评审和实际授权。采用程度及最新规范未本轮复核。
+
+## 治理与可替换性
+
+2026-07-22 历史推演中的“宪法级权力”收窄为条件性分析：若客户端或组织默认依赖单一目录，准入、排名、元数据更新、撤下规则及迁移成本可能影响选择。公开规范和兼容目录为替代设计提供可能，但不证明迁移成本为零；也不能断言 fork 信任锚不可行、退出威胁必然不可信或控制者可单方修改全部生态规则。
+
+实际评估：目录切换时逐项验证元数据兼容性、私有 server 可见性、主体/权限映射、策略与审计连续性、缓存失效及业务恢复。若固定任务和授权后，多个目录或静态配置能实现等价发现和治理，不强制引入中心目录。
 
 ## 关键数据点
 
-- 注册表是所有非一次性实验的 MCP 服务器必须注册的地方。
-- 通过注册表，Pinterest 实现了基于**业务组（Business Group）**的权限隔离，例如只有财务组能访问包含敏感收入指标的 Presto 服务器。
-- Registry 同时面向人类 Web UI 和 AI client API，因此它既是目录，也是运行时授权和生产准入门。
-- Registry 把 MCP server 的安全 review、live status、visible tools、support channel 和 owner 统一到一个可查询表面。
-
-## Registry = 宪法级权力（07-22 圆桌）
-
-Registry 的治理地位被低估了（synthesized/medium，来源：[[2026-07-22]] 研究日志）：
-
-- **定义"合法 server" = 宪法条款**：谁能上架、谁为谁担保、什么算合法 server——这不是治理的一个环节，是治理本身（Lessig "Code is Law"：架构即法律）。Registry 是 agent 生态"圈外资源"入口的边境检查站：守门人不只控制进出，还**定义异质能以什么形态存在**。
-- **信任锚 = 谢林点**：registry 的网络效应是协调均衡而非质量胜出——"每个人预期每个人信任既有锚，所以每个人信任它"。默认侧拥有举证特权（继续信任既有锚不需理由，切换信任锚需证明），举证成本本身加固默认侧。
-- **fork registry 不可行 = 可信威胁缺失**：fork 规范容易，fork 信任锚的网络效应不可行（新锚冷启动无历史信任可压缩——信任=压缩过的过去，不可伪造）。因此对 registry 治理者的纪律机制（"退出可能性"）经验性地不可兑现——这是 MCP 治理比规范治理更脆弱的结构性原因。
-- ** Pinterest 双层鉴权是操作层雏形**：身份/权限验证属制度堆栈的操作层；缺失的是集体选择层（分级责任）与宪法层（可插拔信任模型的不可单方修改性）。
+- Pinterest 文章报告截至 2025 年 1 月约 66,000 次月调用、844 月活用户，以及按 owner 单次节省估计计算的约 7,000 小时/月；三个数字均为该企业历史披露，不外推至官方公共目录。
+- 官方公共目录、企业准入目录、执行授权三种对象的接口职责见上表；没有跨实现安全效果或迁移成本的可比量化数据。
 
 ## 前提与局限性
 
-- **前提**：所有 Agent 客户端必须集成了对注册表的 API 调用流程。
-- **局限性**：注册表本身成为单点故障风险（SPOF），需要高可用的架构保障。
-- **局限性**：Registry 只能记录和执行治理规则，不能替代工具设计质量；错误的 tool schema、模糊描述和不稳定后端仍会让 Agent 误用。
-- **组织风险**：Registry 也可能成为审批瓶颈。随着 server 数量增长，需要清晰 owner、审查 SLA、废弃机制和质量评分。
+- evidence_level: medium；企业案例为自报，ARD 为历史草案，公共 Registry 文档说明设计职责而非部署效果。
+- 目录是可选架构组件，不能以其存在推断完整中介。若依赖中心服务，评估可用性、缓存一致性和审批瓶颈；可采用多目录、直接配置等适合场景的方案。
+- 注册、发布者身份、代码完整性、组织准入、运行时权限、真实效果是不同检查对象。安全检查由合适的执行点落实，不能把目录发现等同信任或授权。
 
 ## 关联概念
 
-- [[Model-Context-Protocol-MCP]] - 协议基础
-- [[Pinterest-Engineering]] - 生产级 MCP registry 的案例来源
-- [[Harness-Engineering]] - 注册表是驾驭系统的关键治理组件
-- [[Context-Engineering]] - 决定 Agent 看到哪些工具
+- [[Model-Context-Protocol-MCP]] — 协议与发现/治理边界
+- [[Pinterest-Engineering]] — 企业内部 Registry 案例
+- [[Harness-Engineering]] — 运行时策略与验收
+- [[Context-Engineering]] — 按任务发现工具与上下文预算

@@ -6,7 +6,7 @@ aliases:
   - Model Context Protocol
 definition: "让 AI client 通过统一客户端-服务器协议连接工具和数据源的开放标准，用来替代模型与工具之间的一对一硬编码集成"
 created: 2026-05-13
-updated: 2026-11-11
+updated: 2026-11-28
 tags:
   - AI-Agent
   - tool-use
@@ -47,7 +47,7 @@ source_raw:
 
 MCP 的核心价值不是“多一个 API 标准”，而是把 agent tool use 从临时集成变成可治理基础设施。没有标准协议，每个模型、IDE、chat surface 和内部系统都要写一套连接逻辑；有了 MCP，工具提供方可以通过 server 暴露能力，消费方可以通过 client 发现、连接和调用。
 
-但 Pinterest 案例也说明，协议只解决连接问题，不自动解决生产问题。真正进入企业后，MCP 必须和 [[MCP-Registry]]、身份系统、安全 review、human-in-the-loop、observability 和领域特定 server 设计一起出现。
+但 Pinterest 案例也说明，协议只解决连接问题，不自动解决生产问题。进入企业后，应按风险落实身份、授权、安全审查与可观测性；[[MCP-Registry]]、人工确认和领域特定 server 是可选的实现路径，不是协议或所有部署的必要条件。
 
 ## Pinterest 的实践模式
 
@@ -68,7 +68,7 @@ Cloudflare Cloudflare OS（CIO Sam Rhea, 2026-08-05，来源 [[20260805-how-we-u
 2. **MCP Portal 做会话权限映射**：MCP 标准只定义"连接"，权限语义由 Portal 落地——用户会话在 Cloudflare OS 的访问 scoped 到其在系统记录里的既有权限集（follow our rule around permissions）。
 3. **与 Pinterest 的互补**：Pinterest 强调中心化 [[MCP-Registry]]（哪些 server 被批准、谁能访问）；Cloudflare 强调"自建 MCP server 加权限控制层"——在连接层就落地最小权限，而非依赖单个系统记录的原生实现。
 
-**可迁移内核**：企业 MCP 治理的两个维度缺一不可——注册表（管"能用什么"）与自建控制层（管"用什么权限、以什么速率"）。原生 MCP server 往往缺少角色/地区限流能力，自建是补权限边界而非重复造轮子。
+**可迁移内核**：区分能力发现与实际授权/执行。注册表及自建控制层是两家企业选择的实现方式；若原生服务或网关已满足同等权限、限流与审计要求，不必重复自建。
 
 ## MCP 作为组合层：窄语义服务，宽业务入口（2026-09）
 
@@ -91,9 +91,9 @@ S&P Global Energy 的 Databricks/Genie 架构（[[20260925-databricks-spglobal-g
 
 - **MCP Client**：集成 LLM 的应用（如 Pinterest 内部的 AI 聊天平台）。
 - **MCP Server**：暴露具体工具能力的后端服务（如 Presto 查询、日志读取）。
-- **MCP Registry**：中心化的注册表，负责发现和治理。
-- **AuthN / AuthZ 层**：通过 end-user JWT、mesh identity、Envoy 和 policy decorator 把真实用户或服务身份传递到工具调用。
-- **Human-in-the-loop 层**：对敏感或高成本动作要求人类确认，避免 agent 自动扩大操作半径。
+- **MCP Registry（可选）**：元数据发现目录；企业可增加治理和准入能力，不替代运行时授权。
+- **AuthN / AuthZ 层**：身份与资源权限的执行机制；JWT、mesh identity、Envoy 和 policy decorator 是 Pinterest 案例中的选择。
+- **Human-in-the-loop（按风险配置）**：必要时确认敏感或高成本动作；确认不替代执行权限与效果验证。
 
 ---
 
@@ -101,7 +101,7 @@ S&P Global Energy 的 Databricks/Genie 架构（[[20260925-databricks-spglobal-g
 
 - Pinterest 在 2025 年 1 月时已达到每月 **66,000 次** MCP 调用。
 - 覆盖了 844 名月活用户。
-- 估算每月为工程师节省约 **7,000 小时** 的工作时间。
+- 作者按工具 owner 提供的单次节省时间乘调用数估算每月约 **7,000 小时**，不是独立实测净生产力。
 - Pinterest 以多个领域特定 MCP server 替代单一巨型 server，以降低权限耦合和上下文噪声。
 - 非实验 server 需要 owning team、registry entry 和 Security、Legal/Privacy、GenAI review。
 
@@ -113,19 +113,15 @@ S&P Global Energy 的 Databricks/Genie 架构（[[20260925-databricks-spglobal-g
 - **上下文风险**：工具太多会污染模型上下文。MCP server 设计必须考虑工具描述长度、领域边界和按需加载策略。
 - **治理风险**：协议本身不定义企业内谁能批准 server、谁承担 owner、如何审计调用、如何废弃低质量工具；这些必须由组织 harness 补齐。
 
-## 治理结构与锁定（07-22 圆桌 + 联网校准）
+## 治理结构与可替换性（07-22 历史推演，2026-11-28 复核）
 
-**控制三分解**（synthesized/medium，来源：[[2026-07-22]] 研究日志）：MCP 的"被控制"须分解为三种架构性权力——
+可按协议规范、注册与发现、客户端默认配置、运行时授权四个对象分析控制权。它们可能由不同参与方掌握，不是一个必然集中或单方控制的治理层。
 
-| 权力 | 现状 | 性质 |
-|------|------|------|
-| 规范制定权 | 开放（spec 公开） | 宪法文本存在 |
-| 注册表/信任权（什么算"合法 server"） | 事实集中于 Anthropic 参考实现 | **宪法级权力**：定义合法 server 的形态 = 定义整个生态异质接触的形态（[[MCP-Registry]]） |
-| 客户端默认值 | Claude Desktop/Claude Code 预置 | 默认侧权力（改默认需显性决策） |
+官方公共 Registry 提供元数据目录与命名空间认证；下游聚合及企业私有目录可增加准入、审查和过滤。官方 [About](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/about.mdx) 与 [2025-09-08 发布公告](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/) 明确支持兼容目录，且实际 server 代码安全扫描主要由包仓库及下游承担。[[MCP-Registry]] 中 Pinterest 的内部准入机制不是协议必备组件。目录身份与运行时资源授权不可互替。
 
-**终判**：MCP 有宪法文本（开放规范）无宪法执行（无制度能阻止事实治理者单方修改规则）= 停在表达保证层——接 [[Agent治理的三层保证-从表达层到机制层]] 的 L0 机制层缺位。答案不是"中性 vs 厂商 curation"（假两难），而是制度堆栈完备性：操作层（身份/签名/来源基础设施）→ 集体选择层（分级责任：恶意严格/过失过错/无过错保险）→ 宪法层（可 fork 架构、可插拔信任模型），宪法层必须先行。安全根在责任配置非 curation 强度：协议安全是负外部性（带毒 server 污染全网），分布式可追溯责任（签名/来源/精确起诉投毒者）> 集中注意义务（App Store 俘获轨迹）。
+历史“宪法级权力”“Anthropic 单方控制”“标准战争已结束”“分层垄断不可退出”“W3C 最后窗口”等判断未有充分比较、市场份额或规则控制证据；撤回稳定结论身份，保留 [[2026-07-22]] 推演原文。MCP 与 A2A 的主要接口对象不同，互补关系不证明二者永久不会竞争或替代。协议客户端-服务器形态也不等于所有部署集中于单一中心。
 
-**生态现状校准**（extracted/medium，07-22 联网多源）：标准战争基本结束（Sam Altman 2025-03-26 宣布 OpenAI 支持 MCP；Salesforce/SAP/IBM/Microsoft/AWS 均同时支持 MCP+A2A）。但 **MCP 与 A2A 互补非竞争**——MCP = 上下文/工具接入层（hub-and-spoke 集中式 = "central point of risk"），A2A = agent 间动态交互层（去中心化）。**互补协议的存在 ≠ 退出选项**：A2A 不构成 MCP 工具接入层的替代退出，控制固化于层级而非消失。治理阶段 = "standard war decided in principle, governance undetermined" = W3C 1994 而非 1998——宪法执行层制度化的窗口期。
+可验证方向：固定业务能力与权限，比较静态配置、兼容目录和聚合层切换后的发现质量、接口兼容、迁移成本、授权、审计及恢复；存在等价实现则不以目录或自建服务作为必要条件。未重新核验 MCP 当前传输版本、SDK、市场份额或 A2A 实现，不能使用本节历史资料直接指导当前接口迁移。
 
 ## 关联概念
 
