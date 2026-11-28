@@ -7,7 +7,7 @@ original_raw_file: "20260728-openai-scientific-computing-field-report.pdf"
 original_body_sha256: "195870578f3cdc21128252d2ab0dcdafeb70f6783c086e8c96f24d035adee127"
 indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-07-29
-updated: 2026-08-25
+updated: 2026-11-28
 tags:
   - source-summary
   - agentic-engineering
@@ -18,7 +18,7 @@ claim_type: mixed
 
 # Scientific computing in the age of agentic AI: an exploratory field report（完整版）
 
-> Raw 生命周期：本地 PDF 已降级为可恢复索引；八个项目案例与性能数据的精确引用从 canonical URL 回到 OpenAI 原始报告核验。
+> Raw 生命周期：本地 PDF 已降级为可恢复索引；canonical_url 为官网发布入口，实际报告 [PDF](https://cdn.openai.com/pdf/scientific-computing-in-the-age-of-agentic-ai-an-exploratory-field-report.pdf)（55页，本轮核官网链接及报告首页）。与网页摘要共享同一研究身份，保留本页独特案例、验证和经济学证据地图，不计两份独立研究。未复核历史 PDF 哈希或所有案例数字。
 
 > 完整版 field report（55 页，Jeremy Li & Andrew Ho (OpenAI) 等 21 人，2026-07-28），含八个项目团队一手案例：MHCflurry（TF→PyTorch）、rustar-aligner（STAR C/C++→Rust 20k+ 行）、RustQC（186M reads 14分54秒 vs 15小时34分）、hifiasm、HelixForge（GPU-native）、cyvcf2、bayesm、HI.SIM。摘要版命题见 [[20260728-openai-scientific-computing-agentic-ai]]，本页承载增量：案例实证谱系、验证机制细节、stewardship 论证与经济学估算。证据等级：medium（一手案例厚实且由工具原作者参与撰写，但 retrospective 窄样本 + 定性判断 + 无对照；OpenAI/Codex 推广立场）。
 
@@ -58,8 +58,8 @@ claim_type: mixed
 
 ### 3. 对标
 
-- **[[AI-Assisted-Port]] 的多案例验证**: 该实体此前只有 Bun 单案例（Zig→Rust，11 天/`$165K`）且明示"缺乏多案例验证"。本报告补上五例语言迁移/重写（MHCflurry ~10k 行、rustar-aligner 20k+ 行、RustQC、FastQC、cyvcf2），且引入 Bun 案例缺失的维度——**stewardship**（Bun 有明确商业 owner，不存在治理问题；科学工具重写的所有权是开放问题）。Bun 验证"范式可行"，本报告验证"范式普适且治理是新的绑定约束"
-- **[[Grindability-vs-Verifiability]] 的边界修正**: 该实体命题"可磨性 > 可验证性"（Grant Sanderson 数学域）。科学计算域给出边界条件：当微妙的数值正确性攸关科学结论时，**可验证性成为绑定约束**——"the current bottleneck remains verification and validation"；且可验证性直接决定可达到的自主程度（HI.SIM 字节级一致 → 几乎无人介入；bayesm 新统计功能 → 密集人类诊断）。两个域共同划定：可磨性决定速度上限，可验证性决定自主上限（综合判断）
+- **[[AI-Assisted-Port]] 的多案例验证**: 该实体此前只有 Bun 单案例（Zig→Rust，11 天/`$165K`）且明示"缺乏多案例验证"。本报告补上五例语言迁移/重写（MHCflurry ~10k 行、rustar-aligner 20k+ 行、RustQC、FastQC、cyvcf2），且引入 Bun 案例缺失的维度——**stewardship**（Bun 有明确商业 owner，不存在治理问题；科学工具重写的所有权是开放问题）。Bun 验证"范式可行"，本报告扩展了案例范围并提示治理约束，不验证范式普适性
+- **[[Grindability-vs-Verifiability]] 的边界修正**: 该实体命题"可磨性 > 可验证性"（Grant Sanderson 数学域）。科学计算域给出边界条件：当微妙的数值正确性攸关科学结论时，**可验证性成为绑定约束**——"the current bottleneck remains verification and validation"；且可验证性直接决定可达到的自主程度（HI.SIM 字节级一致 → 几乎无人介入；bayesm 新统计功能 → 密集人类诊断）。两个域共同划定：可磨性和可验证性都可能影响速度与自主范围；还需考察风险、权限、资源和接管（综合判断）
 - **[[Agent-Verification]] 的科学域实例**: 四个细化命题（plausible≠correct / harness 自身出错 / 真实数据不可替代 / 概念正确性）是 agent 验证命题在最严格正确性要求下的压力测试；"agent 出错时照样自信"与库内过度自信命题互证
 - **跨域类比: 基础设施的公地治理**: 重写泛滥悖论 ≈ Elinor Ostrom 的公地治理问题——实现成本降低把科学软件变成"易于开辟新牧场"的公地，而验证注意力是稀缺公共资源；三路径（并入/双轨/社区接管）≈ 公地治理的制度化方案（明确边界、责任归属、集体选择）。报告未用此框架，但结构同构（综合判断）
 

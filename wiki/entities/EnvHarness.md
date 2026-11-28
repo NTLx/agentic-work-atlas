@@ -7,8 +7,8 @@ aliases:
   - 环境 harness
 definition: "包裹静态环境的可编程层——通过标准 reset/step 接口以三类 plug-in 组件（Stage 改 initial state / Contract 改 interaction 契约 / Chain 组合多环境）reshape 环境行为，不修改环境实现本身也不动 verifier；与 Agent Harness 在 agent-environment loop 的另一侧形成对称"
 created: 2026-08-22
-updated: 2026-08-22
-evidence_level: high
+updated: 2026-11-28
+evidence_level: medium
 claim_type: mixed
 tags:
   - agent-harness
@@ -41,9 +41,9 @@ source_raw:
 - **作者团队**：Chengsong Huang（Washington University in St. Louis）+ Zifeng Wang, Rujun Han, Chen-Yu Lee 等 16 位（Google Cloud AI Research）
 - **官方资源**：https://github.com/google-research/envharness · https://www.envharness.com
 - **核心结果**：5 个 benchmark / 4 个领域（ALFWorld、WebArena、SWE-bench Verified、OfficeQA、SpreadsheetBench）
-  - SL（skill-based learning）：held-out 平均 +9.0 分提升，9.8% 更少执行步
-  - RL（reinforcement learning）：+6.5 分提升
-  - SWE-bench Verified：49.88→52.58 SR + 53.58→49.61 steps（同时提正确率 + 减步数）
+  - SL（skill-based learning）：Table 2 ALFWorld OOD 最大 +9.0 pp（61.4→70.4），ALFWorld 平均 +5.9 pp；Table 3 SWE-bench 相对 Original Envs −9.8% steps
+  - RL Table 4：ALFWorld in-dist +6.5 pp，OOD −0.8 pp，均值 +2.9 pp；WebShop SR +1.4 pp
+  - SWE-bench Verified：49.88→52.58 SR + 55.01→49.61 steps（Original Envs 对照；53.58 属 No Skills）（同时提正确率 + 减步数）
 - **三类组件**：Stage / Contract / Chain——嵌套不交换（`w₁ ∘ w₂ ≠ w₂ ∘ w₁`）
 - **关键性质**：所有 intervention 在接口层，不动 simulator 后端 + 不动 verifier
 
@@ -88,7 +88,7 @@ source_raw:
 
 > **核心观点**（论文）：「An agent harness provides LLMs with external memory, tools, and skills... EnvHarness extends this concept to environments, equipping a static environment with modular, plug-in components.」
 
-两个 harness 一起构成 agent-environment loop 的完整工程化。
+两侧 wrapper 是一种架构类比，不能替代任务合同、真实外部效果及独立验收。
 
 ## 与现有方法对照
 
@@ -101,17 +101,17 @@ source_raw:
 ## 与既有知识库概念的连接
 
 - **[[Agent-Harness]]** — 直接对称概念，harness 哲学的双向延伸
-- **[[Thin-Harness-Fat-Skills]]** — Thin Harness 原则在环境侧需要同时成立
+- **[[Thin-Harness-Fat-Skills]]** — 是否精简环境侧 wrapper 取决于实际控制合同与任务，不是论文证明的必要条件
 - **[[HaaS-Harness-as-a-Service]]** — HaaS 范式可考虑扩展为 Environment-as-a-Service
 - **[[Meta-Harness-Optimization]]** — Meta-Harness 优化对象可考虑包括 EnvHarness
 
 ## 前提与局限性
 
-- **依赖 deterministic reset**——stochastic 环境下 Stage 组件可重现性未验证
+- **依赖可恢复的 reset/step 接口**——Appendix H 排除无法回滚的真实服务操作；随机环境的复现性需要单独验证。
 - **Chain 组件需人工设计**——削弱「fully automated」宣称
 - **「不动 verifier」是设计原则非形式化保证**——Contract 中 f_T 可能间接影响 reward signal
 - **Diagnose 阶段依赖强 LLM 推理**——对弱 LLM policy 的诊断质量未量化
-- **跨 5 benchmark 实证的「平均」掩盖领域差异**——ALFWorld OOD +9.0 对应 std 2.3，统计显著性需 t-test
+- **结果异质性与成本**——9.0 为单子组差值，2.3 为该方法条件 SD，不足以证明显著性；Table 11 有 token 预算对照，不能从任务分数推出净收益。见 [原论文 v1](https://arxiv.org/html/2608.19880v1) Tables 2–4、11、Appendix H。
 
 ## 关联概念
 

@@ -700,11 +700,15 @@
     },
     "20260603-lessons-from-building-claude-code-how-we-use-skills.md": {
       "body_sha256": "fd42e8e2d96875f54c045014a12bb2328074b66cba658f4d9da496f595245eaf",
+      "canonical_url": "https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills",
       "compiled_at": "2026-07-09T13:16:25+08:00",
       "raw_file": "20260603-lessons-from-building-claude-code-how-we-use-skills.md",
+      "raw_state": "removed",
+      "retire_reason": "同一作者、发布日期与 canonical URL；6月短摘录全部有效事实由7月较完整 Raw 与 Source Summary 承载，无独立证据增量。保留历史 hash、编译时间与原摘要路径（仅历史定位），规范来源为 20260703-anthropic-skill-engineering-practices.md。",
+      "retired_at": "2026-11-28T16:49:23+08:00",
       "status": "compiled",
       "summary_path": "wiki/sources/20260603-lessons-from-building-claude-code-how-we-use-skills.md",
-      "updated_at": "2026-07-09T13:16:25+08:00"
+      "updated_at": "2026-11-28T16:49:23+08:00"
     },
     "20260604-anthropic-recursive-self-improvement.md": {
       "body_sha256": "c4039b920f643e54575581670739af1bbdd03e63d6949685e8bc287b46d13f65",
@@ -4696,6 +4700,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-28T16:35:57+08:00",
+  "updated_at": "2026-11-28T16:49:23+08:00",
   "version": 1
 }

@@ -6,8 +6,8 @@ aliases:
   - Environment Rigger
 definition: "EnvHarness 的自动化 customization 流程——四阶段循环（Observe / Diagnose / Write / Validate），把目标 policy 当 black box，从 trajectory 诊断行为弱点，迭代合成并验证 EnvHarness components；接受自然语言 user-defined constraints 把领域知识直接注入训练信号"
 created: 2026-08-22
-updated: 2026-08-22
-evidence_level: high
+updated: 2026-11-28
+evidence_level: medium
 claim_type: mixed
 tags:
   - agent-harness
@@ -38,7 +38,7 @@ source_raw:
 - **任务设定**：给定 base 环境 `E` + 目标 policy `π`，自动生成 modified 环境 `E' = H(E, t; π)` 适配特定 task `t`，暴露 `π` 弱点促进改进
 - **policy-agnostic 约束**：单个 EnvHarness component 可应用到任何 policy；但选择 + 参数化组件必须 condition on 任务和 policy 行为
 - **核心 map**：`H(E, t; π) = (w_k ∘ ... ∘ w_1)(E)`——多组件嵌套，每个针对诊断出的特定弱点
-- **user-defined 约束**：自然语言（如「阻止未跑测试的 patch」）可注入 → 自动生成 Contract 强制 policy 验证 fix
+- **user-defined 约束**：自然语言（如「阻止未跑测试的 patch」）可注入 → 示例可生成 Contract 限制某些提交路径；不证明生成的规则完整正确或实际修复已验证
 
 ## 四阶段流程
 
@@ -76,20 +76,20 @@ Observe → Diagnose → Write → Validate (Write-and-Validate loop)
 | **Reject** | 不可解或无挑战 | 直接丢弃 |
 | **Refine** | 信号尺度不当 | 携 trajectory + 反馈回到 Write 阶段 |
 
-**重复 EnvRigger loop** → agent 与环境**持续共同进化**（co-evolution），性能 compounding gains 随定制任务数 scaling。
+**重复 EnvRigger loop** → agent 与环境**持续共同进化**（co-evolution），论文在特定任务与预算下观察到改善随定制环境数量增长，不保证长期复利或跨域同向。
 
 ## 与知识库既有概念的对接
 
 - **[[Lessons-MD-Self-Improvement]]** — 同构机制：两者都从 trajectory 反推改进信号。Lessons-MD 沉淀为 markdown（agent 侧），EnvRigger 沉淀为 EnvHarness components（环境侧）
 - **Self-Evolving-Agent** — 本文是 environment 维度 self-evolution 的具体化（待建 entity）。Fang 2025 综述列出 self-evolution 的多个分支：prompt / skill library / memory / weights / harness，**本文是 environment**
 - **[[Agent-Loops]]** — Observe/Diagnose/Write/Validate 是经典 loop engineering
-- **[[Agent-Verification]]** — Validate 阶段用 fresh rollouts 验证，与「独立验证」原则同构
+- **[[Agent-Verification]]** — Validate 用 fresh rollouts 检查候选，仍由同一设计循环选择；不等于独立盲评或最终业务正确性验证
 
 ## 关键设计原则
 
 1. **Black-box policy treatment**：不 inspect 模型权重，只看 outputs → 跨模型家族/强度可用
 2. **Standard interface (reset/step)**：跨 benchmark 同一方法
-3. **Verifiability preserved**：所有 EnvHarness intervention 在接口层，verifier 不动
+3. **Verifiability preserved**：设计不修改原 verifier，但环境分布与可达状态改变，不能由此保证评分合同有效
 4. **Iterative Write-and-Validate**：失败候选自动 refine，不靠人工调参
 5. **User-defined constraint injection**：自然语言 → 代码级 Contract
 
@@ -97,9 +97,9 @@ Observe → Diagnose → Write → Validate (Write-and-Validate loop)
 
 - **Chain 组件被显式排除在自动化 pipeline 外**（"difficult for EnvRigger to observe internal states of joined environments"）
 - **Diagnose 阶段依赖强 LLM 推理**——对弱 LLM policy 的诊断质量未量化
-- **依赖 deterministic reset**——Stochastic 环境下 Stage 组件可重现性未验证
+- **依赖可 reset 的接口**——不可回滚的实际外部动作不在论文适用范围；随机状态隔离另验
 - **「policy-agnostic 组件」与「policy-conditioned 选择」的张力**——同一组件对不同 policy 效果可能差异大，需要持续 re-diagnose
-- **compute 开销**未量化——四阶段循环 + fresh rollouts 的总成本 vs 收益
+- **compute 开销**：Appendix E.3 每任务基线及每候选各 5 rollouts、最多 5 次修订；Table 11 报告 ALFWorld 228.0M vs GenEnv 64.2M token（真实与模拟 rollouts 不同），WebArena 137.3M vs VeriEnv 137.8M。设计成本与可复用收益须独立核算；未复现实验。
 
 ## 关联概念
 

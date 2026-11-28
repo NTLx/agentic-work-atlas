@@ -9,7 +9,7 @@ original_raw_file: "20260801-align-agent-environment-interface.pdf"
 original_body_sha256: "33fd5fb97d3b0fa3083139bddf0a43a8c459f77c902efc94701ee78bd906ddd5"
 indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-08-01
-updated: 2026-08-25
+updated: 2026-11-28
 tags:
   - source-summary
   - agentic-engineering
@@ -22,7 +22,7 @@ claim_type: extracted
 
 # Agent-Environment Alignment via Automated Interface Generation（ALIGN 论文）
 
-> Raw 生命周期：论文 PDF 已降级为可恢复索引；关键结果定位见下文 Table 1–5 与 Algorithm 1，精确引用从 canonical URL 回到 arXiv 原文核验。
+> Raw 生命周期：论文 PDF 已降级为可恢复索引；保留 2026-07-31 OpenBMB 推文历史剪藏作为作者传播与发现记录，不是第二份独立实验。论文版本须区分：本摘要历史于 2026-08 编译，arXiv 当前 [v3（2026-10-22）](https://arxiv.org/abs/2505.21055v3) 已有 Appendix D/E 补充分析及成本核算；以下旧结果不自动归为 v3。v3 全面差分待正式版本治理，未重跑实验。
 
 > TsinghuaNLP (THUNLP-MT) / OpenBMB 论文（2025-05-27, arXiv:2505.21055）。首个**自动生成** agent-environment 对齐接口的框架。
 >
@@ -46,7 +46,7 @@ claim_type: extracted
 - **关于"misalignment 是失败根源"的质疑**：论文展示"接口改进 → 性能大幅提升"，但**没有反向证据**：如果没有对齐接口，最强模型（Llama3.3-70B）vs 较弱模型（Qwen2.5-7B）之间的差距来源是什么？论文用 ALIGN 让 Qwen2.5-7B 从 13.4% 升到 60% 以上，**接近抹平了模型差距**。这暗示大量已发表的"模型对比"研究可能高估了模型本身的差异。
 - **关于"自动生成"边界的质疑**：实验集中在四个文本环境，没有覆盖视觉/多模态环境（WebShop 是文本 HTML）。OSWorld、GAIA 等多模态环境的接口错位是否同构未知。论文消融显示无实验验证时准确率崩塌到 0%（Table 5）——这是 LLM-as-Optimizer 的真实脆弱性。
 - **关于数据可靠性的质疑**：Table 1 的数值变化幅度大（如 Self-Consistency 在 ALFWorld +57.46%），但**没有报告方差或置信区间**。ALFWorld 任务样本量未明确，5-7 个百分点的小幅提升（如 WebShop）在统计上可能不显著。Self-Refine 整体提升最低（ALFWorld 仅 +36.57%），可能因为 self-critique 本身就是接口错位的另一种形式。
-- **关于"incremental cost"的质疑**：自动生成接口需要 GPT-4.1 + Gemini 2.5 Pro 多轮调用，迭代直到无新失败轨迹。论文没有报告接口生成成本 vs 性能提升的 trade-off。对于一次性评估场景，生成接口的开销可能不值得。**生产部署成本 vs 离线评估收益**未分析。
+- **关于"incremental cost"的质疑**：自动生成接口需要 GPT-4.1 + Gemini 2.5 Pro 多轮调用，迭代直到无新失败轨迹。早期摘要的成本缺口需按版本解释：v3 Appendix E 已报告每迭代 token 与部分成本核算，需在正式版本复审时对照原条件；仍不等于真实生产总成本。对于一次性评估场景，生成接口的开销可能不值得。**生产部署成本 vs 离线评估收益**未分析。
 - **关于"显式规则暴露"的边界**：INFERRULES 把隐式规则"翻译"成文本提示，但有些环境规则是**真正的隐式**（如模拟器物理约束），LLM-as-Analyzer 不一定能识别。论文承认存在 hallucination，需要实验验证对抗——但这本质上是把"识别困难"的瓶颈从 agent 转移到 Analyzer-Optimizer 循环。
 
 ### 3. 对标与旁逸
