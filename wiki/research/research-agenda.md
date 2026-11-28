@@ -87,7 +87,7 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 | P0 | 专业能力再生（CR-005） | 寻找采纳、练习、反馈、独立能力与延迟迁移的共同纵向队列。 |
 | P0 | Agent 安全外部效果闭环（EX-005，含原 CR-004 observability 字段） | 寻找同一 incident 的 action-surface/coverage、receipt、post-state 与 recovery 联合证据。 |
 | P1 | 验证三门联合实验（EX-001/002/004 + CR-003） | 只找同任务、同证据条件下跨门或跨监督形态的联合对照。 |
-| P1 | 科学 AI 闭环定向探索（未编号） | 对已入库来源做 evidence matrix；有共同变量与可比较结果后再评估编号。 |
+| P1 | 科学 AI 闭环定向探索（未编号） | 已完成四路线 evidence matrix（见 [[2026-11-28]] 第三十轮）；等待同任务、同预算的反馈质量/时延/对照覆盖操纵与独立结果复验，再评估编号。 |
 
 ## 开放探索候选
 
@@ -109,7 +109,7 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 | P0 | CR-006 加固后反例 | 缺 post-hardening 部署级纵向逃逸率、复发与 stop latency。 | 仅在独立纵向记录出现时恢复。 |
 | P0 | CR-005 劳动×能力再生共同纵向队列 | 缺同一组织/个人/职业/时期的采纳、练习、反馈、能力与晋升链。 | 寻找共同队列或强反例并评估可比性。 |
 | P1 | 验证三门联合实验 | 缺同任务下 verifier、evidence 与 reference/provenance 联合操纵。 | 找固定 trace、oracle 与预算的 factorial/matched study。 |
-| P1 | 科学 AI 闭环定向对照 | 缺测量/实验反馈与可比较研究结果之间的证据。 | 先对 Leash Bio、Meta open research、Claude-shaped science（可加 Periodic）做 evidence matrix。 |
+| P1 | 科学 AI 闭环定向对照 | 四路线已有机制矩阵，但任务、oracle、成本和终点不同，未识别共同效应。 | 寻找同任务/预算内反馈质量、时延或对照覆盖的受控比较；未见空间迁移需独立新实验。 |
 
 ## 定向探索候选（未编号）
 
@@ -118,8 +118,9 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 - 不能并入现有 CR/EX：CR-005 研究人的现实校准能力再生；EX-001/002/004 研究 Agent 验证门；EX-007 研究 Agent 自我改进变更治理。本候选关注科学工作流中的测量/实验反馈机制。
 - 证伪方向：若控制模型、数据与团队差异后，测量质量、反事实/难例设计和反馈时延与结果无稳定关系，或差异可由其他因素解释，则撤销或并回既有主题。
 - Source 需求：一手或可比较材料，报告可审计测量、实验反馈、失败样本利用、成本与可复现结果。
-- 最小实验：先对 Leash Bio、Meta open research、Claude-shaped science，并可加入 Periodic，做 evidence matrix；只有出现共同变量与可比较结果才考虑新 EX。
-- Status: 未验证假设；不得作为已成立结论。
+- 最小动作已完成（2026-11-28）：Leash/Minos、Periodic、Meta、BootLoops 四路线 evidence matrix，见 [[2026-11-28]] 第三十轮。区分历史物理读数、实时测量、计算/证明、专家反馈；不存在可直接合并的发现效率分母。Minos 具有固定任务内可设计对照的机会，但发布方访谈未做同预算 Bayesian/非语言策略基线，且未证跨新 biology；不把 replay 与 live 的架构互补假说当成已实现联合闭环。
+- 下一触发证据：同靶点/任务族、冻结测量与候选空间、模型/工具/预算/随机种子可比的反馈时延、QC 或受控对照覆盖单轴实验，记录未见靶点/条件的独立复验、完整成本与失败分母。若仅有跨机构自报数量或异质终点，不再扩展研究编号。
+- Status: matrix 完成 / 未验证假设 / 触发式等待；不新建 EX，不进入稳定知识。
 
 ## 最近思考结论摘要
 

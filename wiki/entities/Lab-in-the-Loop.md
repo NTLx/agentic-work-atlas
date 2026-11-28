@@ -69,7 +69,7 @@ source_raw:
 
 Periodic Labs 更接近第一种：现实实验本身就是训练环境。Leash Bio 则展示第二种：如果一个实验技术能一次性生成极高密度的组合 measurement landscape，就可以把物理经验“缓存”为 Agent 可大量重放的 sequential environment。
 
-**判断**：两者不是竞争方案，而是可以组合的两级结构：
+**判断（待验证设计）**：两者可能互补，也可能在同一预算下竞争资源。以下为候选两级结构，非 Leash 与 Periodic 已实现的联合系统：
 
 ~~~text
 large replayable physical corpus
@@ -95,9 +95,9 @@ expand the corpus
 
 这不意味着实验天然正确。真实实验仍可能受到 batch effect、仪器漂移、蛋白错误折叠、样本污染和观测不完备影响。现实反馈须经过QC、重复及独立参照才可作为条件性评价依据；QC/provenance也不保证无偏或机制真值。
 
-### 2. Counterfactual Density 决定 Agent 能学到什么
+### 2. 受控对照的覆盖与信息价值
 
-只保存“成功实验”会让环境缺少 decision boundary。Leash 的 activity cliffs、binding-pocket mutations、competitive assay，以及 Periodic 强调的 negative/null results，都在增加同一局部邻域中的反事实密度：输入只发生很小变化，但 observation 大幅改变。
+只保存成功实验可能产生选择偏差。Leash 描述的 activity cliffs、binding-pocket mutations、competitive assay 可提供针对相邻假设的受控对照；Periodic 的 negative/null results 还包括工艺失败、噪声与意外结构，并非每条负结果都构成配对反事实。须区分已测未选读数、受控干预与一般失败轨迹。
 
 **判断**：对 scientific RL，最有价值的数据未必是更多 IID samples，而是更多能区分相邻 hypothesis 的 controlled contrasts。
 
@@ -113,7 +113,7 @@ state
 → choose next experiment
 ~~~
 
-这使同一批现实数据可以训练实验选择、信息增益、hypothesis revision 和预算约束下的探索策略，而不只是单次预测。
+这些轨迹可用于研究实验选择、信息增益、假设修订和预算约束下的探索策略；在上下文中利用反馈不等于权重更新，是否经训练形成可迁移策略需独立评测。
 
 ### 4. 完整 measured landscape 同时可以成为 trajectory-aware eval
 
@@ -143,7 +143,7 @@ Minos 的后续访谈补出 replayable loop 的第二个用途：如果实验 wo
 [[Evaluation-Set]] 冻结 case 来比较系统版本；Lab-in-the-Loop 则允许 Agent 主动选择下一条 evidence。两者都依赖独立、可信的 oracle，但用途不同：
 
 - Evaluation Set：**测系统**，追求可比性；
-- Lab-in-the-Loop：**让系统学会探索**，追求信息增益与策略改进。
+- Lab-in-the-Loop：提供序贯探索环境，可用于执行、训练或评测；能否学会探索取决于实际学习机制及新任务验证。
 
 同一现实 measurement corpus 可以同时支持两者，但必须划清 held-out eval 与 agent 可探索训练环境，避免 measurement contamination。
 

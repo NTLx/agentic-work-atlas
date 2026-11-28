@@ -199,16 +199,16 @@ belief update / next choice
         ↺
 ~~~
 
-这与 Periodic 的 live physical loop 形成互补：Periodic 每轮重新支付 synthesis / characterization 的 reality cost，因此速度慢但可以探索真正未知区域；Leash 把 reality cost 预先批量支付，因此 rollout 接近软件速度，但只能在已经测过的 landscape 内探索。二者可以自然组合成 `replay → identify uncertainty → live experiment → expand replay corpus` 的两级闭环。
+这与 Periodic 的 live physical loop 形成互补：Periodic 每轮重新支付 synthesis / characterization 的 reality cost，因此速度慢但可以探索真正未知区域；Leash 把 reality cost 预先批量支付，因此 rollout 接近软件速度，但只能在已经测过的 landscape 内探索。可提出 `replay → identify uncertainty → live experiment → expand replay corpus` 的两级闭环作为待验证设计；两团队的任务、预算及结果不相同，未报告此组合的联合实验。
 
-**判断**：物理科学中的 scaling unit 不一定是“每轮都自动做更多实验”，也可以是**把已经发生过的高质量实验变成可大量重放的决策经验**。这使科学 Agent 能在不牺牲现实 grounding 的前提下获得接近 RL sandbox 的 rollout throughput。
+**判断**：物理科学中的 scaling unit 不一定是“每轮都自动做更多实验”，也可以是**把已经发生过的高质量实验变成可大量重放的决策经验**。在已测量且读数有效的范围内，查询历史结果可降低新增实验等待；反馈真实性、测量覆盖、批次及条件变化仍需检查，不能认为现实 grounding 完全无损，也未量化整个流程的净成本。
 
 - **证据**：[[20261014-latentspace-leash-bio-lab-in-the-loop]]（Transcript L592-L852）；[[20261009-latentspace-periodic-synthesis-superintelligence]]。
 - **边界**：replayable environment 继承原始 assay 的 chemical-space coverage、measurement artifact 与 batch bias；数据库查询不会产生未测量的新自然事实。真正扩张 scientific frontier 仍必须回到 live physical experiment。详见 [[Lab-in-the-Loop]]。
 
 ### 完整 measured world 可以把“AI Scientist”评测推进到决策策略层
 
-[[20261026-latent-space-minos-ai-scientist-eval]] 是同一 Leash 路线的后续证据。Minos 不只把预先测量的 protein × molecule landscape 当作高速实验环境，还利用**整个环境的真实结果都已知**这一点形成 answer key：Agent 在 100-molecule 等固定预算下提出 SAR hypothesis、选择下一轮实验并更新策略，而评测器可以同时看到 Agent 没有选择的 counterfactual outcomes。
+[[20261026-latent-space-minos-ai-scientist-eval]] 是同一 Leash 路线的后续证据。Minos 不只把预先测量的 protein × molecule landscape 当作高速实验环境，还利用**整个环境的真实结果都已知**这一点形成 answer key：Agent 在 100-molecule 等固定预算下提出 SAR hypothesis、选择下一轮实验并更新策略，而评测器可查阅已测候选中 Agent 未选择的历史读数；这些是固定环境内的未选结果，并非任意现实干预的因果反事实。
 
 因此可观察的不再只是最终 binder 分数，还包括：是否过早放弃、是否在 hypothesis 冲突后调整、是否在有限预算里重复无信息实验、何时 explore / exploit，以及是否能及时离开低质量 neighborhood。Quigley 报告较强模型更快放弃不 productive 的局部区域，而较弱模型更容易围绕低质量候选继续做细小变体；他同时明确表示团队尚不知道这种差异的机制原因。
 
@@ -217,11 +217,11 @@ belief update / next choice
 - **证据**：[[20261026-latent-space-minos-ai-scientist-eval]]（00:01:16–00:05:31；00:11:55–00:16:01）。
 - **边界**：Minos 的 answer key 只对已测量 world 完整，不代表现实 chemical space 的全局最优；本篇仍是 Leash 团队访谈，约 90,000 rollouts、模型表现与环境扩张速度均非独立审计结果。最关键的开放问题——这种决策能力能否通过 RL 迁移到新的 biology——受访者明确表示尚未知。
 
-### 科学环境必须主动制造“反事实密度”
+### 科学环境可设计区分假设的对照
 
 同一来源还说明，现实数据本身并不会自动成为好的训练环境。Leash 会主动设计 activity cliffs、binding-pocket mutations、competitive assays 和跨 chemical-library holdout，用“输入极相似但行为显著改变”的 controlled contrasts 破坏模型的 shortcut。其 Hermes 模型曾通过 protein 中非保守片段形成类似“nickname”的识别策略；团队发现后加入大量 pocket mutations，让这种廉价记忆不再可靠（Transcript L592-L764）。
 
-**判断**：Scientific Discovery AI 的数据价值不能只用 sample count 衡量。对 sequential reasoning / RL，更关键的是环境是否包含足够多能区分相邻 hypothesis 的 counterfactual evidence，以及 eval 是否真的切断了 building-block、creator identity、dataset lineage 等捷径。
+**判断**：Scientific Discovery AI 的数据价值不能只用 sample count 衡量。对 sequential reasoning / RL，候选设计是增加能区分相邻 hypothesis 的受控对照，并以 building-block、creator identity、dataset lineage 等 split 检查捷径；尚未证实对照密度相较样本规模的独立因果收益。
 
 - **边界**：attention map 只能提示 shortcut hypothesis，不是机制证明；实验 mutation 与 OOD holdout 提供更强外部证据，但仍不能保证模型已经学到完整 molecular physics。
 
@@ -247,7 +247,7 @@ human correction + independent review
 research artifact + provenance
 ~~~
 
-**判断**：开放研究中的 Scientific Discovery AI 不一定首先表现为“autonomous scientist”。在数学这类 verification cost 相对低、symbolic artifact 可反复检查的领域，一个更现实的 scaling unit 是 **human-AI research system 的 search bandwidth × verification discipline × provenance quality**。模型扩大可探索的推导和搜索空间，而研究共同体仍通过 proof checking、expert review、priority attribution 与 exposition 把候选结果转成可接受知识。
+**判断**：开放研究中的 Scientific Discovery AI 不一定首先表现为“autonomous scientist”。在数学这类 verification cost 相对低、symbolic artifact 可反复检查的领域，可分别评估 human-AI research system 的搜索覆盖、验证质量与来源/贡献可追溯性；三者不是已验证的乘法 scaling law。模型扩大可探索的推导和搜索空间，而研究共同体仍通过 proof checking、expert review、priority attribution 与 exposition 把候选结果转成可接受知识。
 
 - **证据**：[[20261002-meta-solving-open-research-problems-together]]；六个案例给出不同 AI contribution，并统一说明 human guidance、second-group review、draft attribution 与 prior-work acknowledgment。
 - **边界**：Meta 没有公开失败问题 denominator、human-only baseline、研究者工时、interaction/compute cost，也不是独立 correctness review。数学的低物理反馈成本也使这条路线不能直接外推到需要昂贵 wet-lab / field measurement 的科学领域。

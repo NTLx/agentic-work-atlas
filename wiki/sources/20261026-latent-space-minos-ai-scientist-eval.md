@@ -48,7 +48,7 @@ Leash 将此前的 replayable physical loop 进一步形式化为 Minos：先构
 
 Quigley 报告更强模型更快离开低质量 neighborhood，而较弱模型会围绕低分 molecule 做大量细小变化、持续投入预算（00:04:17–00:05:31）。这不是关于“更聪明模型为何如此”的机制解释——他明确说团队还不知道原因——而是一个可由轨迹和完整环境共同观察到的行为差异。
 
-**判断**：对科学 Agent，真正有价值的 eval 不只问“最后找到的答案多好”，还应测量**预算如何被花掉、何时 abandon、何时 exploit、是否重复无信息实验，以及新 evidence 是否真正改变 policy**。这比静态 benchmark 更接近实验设计能力本身。
+**判断**：对科学 Agent，真正有价值的 eval 不只问“最后找到的答案多好”，还应测量**预算如何被花掉、何时 abandon、何时 exploit、是否重复无信息实验，以及新 evidence 是否真正改变 policy**。这可补充静态预测任务，但仍须检查已测动作空间约束、噪声及迁移，不能单独代表现实实验设计能力。
 
 #### 核心结论 3：Minos 将现实实验成本“摊销”为低延迟 rollout，但它仍不是实时实验室
 
@@ -67,14 +67,14 @@ Quigley 把这一形态称为 “lab in the loop with amortized latency”：真
 - **这是公司一手访谈，不是独立 benchmark audit。** 约 90,000 rollouts、模型间 separation、当前环境生成速度和未来 20/day 目标均来自 Quigley 的陈述；附件描述虽指向 preprint、blog、data/transcripts，但本次编译没有把这些外部材料当作额外独立证据。
 - **“answer key” 只覆盖已测量世界。** Minos 可以知道 measured landscape 内的最佳/较优选择，却不能回答未测 chemical space 中是否存在更好的 molecule；因此 global optimum 是环境内 optimum，不是现实世界完整最优。
 - **模型排行不宜固化。** Transcript 在 00:07:14–00:09:02 给出若干 frontier/open model 的当时表现，但自动字幕对模型名存在明显误听，而且访谈自己强调 frontier model 迭代很快。稳定知识应保留“模型族存在可分离行为差异”这一点，而不是把具体冠军作为长期结论。
-- **人类 medicinal chemist 仅做有限 plausibility 检查。** 受访者称少量 chemist 看过 hypothesis，认为推理在药化上“plausible”，但没有系统的人类基准、同预算 head-to-head 或统计比较（00:05:31–00:07:15）。不能据此断言 Agent 已达到或超过专业药化师。
+- **人类 medicinal chemist 仅做有限 plausibility 检查。** 受访者称少量 chemist 看过 hypothesis，认为推理在药化上“plausible”，但没有系统的人类基准、同预算 head-to-head 或统计比较（00:05:31–00:07:15）。不能据此断言 Agent 已达到或超过专业药化师。访谈00:11:20–00:11:44还直接询问 Bayesian hyperparameter/非语言策略基线，受访者称未做、认为地形高维且尖峰多；这是未验证的判断，不是该基线已失败。后续论文可能增加对照，本轮未取得PDF正文，不能断言全部公开研究无该基线。
 - **高吞吐 replay 不等于跨域 generalization。** Quigley 明确说团队尚不知道能否把这些环境中的 reinforcement-learning progress 迁移到新的 biology（00:14:52–00:15:32）。这是核心研究问题，而不是已证实结果。
 - **当前任务只覆盖 binding 优化。** 访谈明确说本轮 SAR eval 暂不覆盖 metabolism 等其他 drug-like properties（00:02:00–00:02:20）；因此不能把结果外推为完整 medicinal chemistry 或 drug discovery 能力。
 
 ### 3. 对标与约束
 
 - **与 [[20261014-latentspace-leash-bio-lab-in-the-loop]]：从环境架构推进到 evaluation contract。** 前一篇主要建立“预支付 reality cost → replayable physical experience”的机制；本篇新增的是如何利用完整 measured world 作为 answer key，诊断 Agent 的实验预算分配、exploration/exploitation、重复测试和 abandon behavior。
-- **与 [[Evaluation-Set]]：从固定 case scoring 扩展为 trajectory-aware evaluation。** 普通 eval 只观察最终回答；Minos 同时记录 action sequence 和每步现实反馈，并知道环境中未被 Agent 选择的 counterfactual outcomes，因此可以评价决策过程而不只评价终点。
+- **与 [[Evaluation-Set]]：从固定 case scoring 扩展为 trajectory-aware evaluation。** 仅按终点评分的 eval 无法定位过程失败，但常规评测也可记录轨迹。Minos 记录选择及历史测量反馈，还可查询已测未选候选的读数，因此可评价固定环境内的决策过程。
 - **与 [[Lab-in-the-Loop]]：amortized latency 是 replayable loop 的时间经济学。** 真实实验一次性构造世界后，可以进行大量低延迟 rollout；代价是 action space 被历史 measurement coverage 限定。更完整系统仍需要 replay 与 live experiment 之间的 frontier-expansion 回路。
 - **与 [[Scientific-Discovery-AI]]：scientific-agent capability 的单位可从“知识问答正确率”转向“有限预算下的信息获取与决策质量”。** 这为 AI scientist 提供了更接近真实科研资源约束的 eval 方向，但跨任务/跨 biology 的 transfer 尚未证明。
 

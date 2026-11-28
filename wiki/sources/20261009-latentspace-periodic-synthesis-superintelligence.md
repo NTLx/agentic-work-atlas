@@ -7,7 +7,7 @@ original_raw_file: "20261009-latentspace-periodic-synthesis-superintelligence.md
 original_body_sha256: "fa307a1b9014513f56ec7ac940b934c4d4c04379de9c9e91f1a266a25c74a7f4"
 indexed_at: "2026-10-09T08:30:43+08:00"
 created: 2026-10-09
-updated: 2026-10-09
+updated: 2026-11-28
 tags:
   - source-summary
   - ai-for-science
@@ -52,7 +52,7 @@ source_locator:
 
 - **核心结论 5：“Synthesis Superintelligence”把科学发现瓶颈定位在把候选想法真正变成物质，并可靠判断做出了什么，而不只是生成更多候选。**
   - Periodic 的长期愿景是把 AI、simulation、high-throughput experiment、custom hardware 和 characterization 闭成一个 materials loop；他们认为超导等问题并不缺方向，真正困难的是 synthesis 与 characterization。自动化的价值之一是把原本跨多年/职业生涯的大量试错压缩，扩大“surface area for luck”（01:20:57–结束）。
-  - 这使“AI scientist”与纯计算 search agent 的边界更清楚：没有物理实验，新知识只能在既有数据/模拟器边界内重组；现实实验负责产生模型从未见过的 observation。
+  - 这使“AI scientist”与纯计算 search agent 的边界更清楚：对于需扩展未观测物理空间的经验命题，新实验可提供新增 observation；已有数据与数学/计算推导也可能产生新的科学知识，不能把新物理测量视为所有科学发现的必要条件。
 
 - **核心结论 6：Periodic 把内部科学栈通过 FDE 带到半导体等行业，说明科学 Agent 的最后一公里仍高度依赖现场数据、基础设施和领域适配。**
   - 其 Forward Deployment Engineers/Researchers 需要进入高安全客户环境，进行本地 inference，并用客户数据训练/适配系统；岗位同时要求 ML infrastructure 与 physics/materials expertise（01:10:45–01:20:57）。
@@ -77,7 +77,7 @@ source_locator:
 
 ## 当前稳定判断
 
-**判断**：物理世界的 Scientific Discovery AI 需要把“现实实验”视为一等 epistemic infrastructure，而不是模型之外的最后执行步骤。真正可扩展的闭环至少同时需要：可计算先验/模拟、可训练的局部 scientific tasks、可追溯实验执行、characterization、多模态 evidence fusion、negative-result retention，以及把这些过程数据回流到下一轮决策和训练。
+**判断**：物理世界的 Scientific Discovery AI 需要把“现实实验”视为一等 epistemic infrastructure，而不是模型之外的最后执行步骤。该访谈支持以下候选设计要素，尚未验证其全部为必要条件：可计算先验/模拟、可训练的局部 scientific tasks、可追溯实验执行、characterization、多模态 evidence fusion、negative-result retention，以及把这些过程数据回流到下一轮决策和训练。
 
 - **证据**：本访谈 00:02:49–01:06:06；尤其是 physical-lab-derived RL environment、timestamped evidence state、negative/null results、full process lineage、full autonomy non-goal 与 intelligent-instrument 讨论。
 - **边界**：这是 Periodic Labs 创始团队对自身系统的一手机制描述，不是独立验证的端到端科学发现 benchmark；现实实验仍包含噪声和模型外隐藏变量，因此“physical ground truth”必须通过可校准的 evidence chain 获得。
