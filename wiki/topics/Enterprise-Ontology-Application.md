@@ -1,9 +1,9 @@
 ---
 type: topic
 title: Enterprise-Ontology-Application
-definition: "企业级本体应用系列：用本体为 AI Agent 提供统一的业务语义层，解决企业 AI 的幻觉、语义不一致、不可解释等问题。"
+definition: "企业级本体应用：以可治理的业务概念、关系及规则辅助 Agent 理解与推理；需独立验证事实、业务约束、权限和外部结果。"
 created: 2026-04-20
-updated: 2026-11-26
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -35,7 +35,7 @@ source_raw:
 # 企业级本体应用（Enterprise Ontology Application）
 
 > [!definition] 定义
-> 用本体为 AI Agent 提供统一的业务语义层，解决企业 AI 的幻觉、语义不一致、不可解释等问题。
+> 本体可提供共享业务语义，缓解特定概念混淆、推理及解释问题，不保证消除幻觉或动作风险。
 
 ## 核心问题
 
@@ -47,7 +47,7 @@ source_raw:
 - **决策难以解释**：输出难以追溯原因
 - **Agent 协作困难**：缺乏共享业务知识结构
 
-现有工程手段（Skills/RAG、Workflow）只能局部"止痛"：
+Skills、RAG、Workflow、规则代码与本体解决不同问题，可组合：
 - Skills 是"提示"，不是语义与约束
 - Workflow 仍依赖 LLM 判断或陷入"规则爆炸"
 
@@ -64,7 +64,7 @@ source_raw:
 
 | 维度 | 本体（Ontology） | 知识图谱（Knowledge Graph） |
 |------|-----------------|---------------------------|
-| 内容 | 语义与规则（TBox） | 事实与数据（ABox） |
+| 内容 | 概念、关系公理及可含实例断言 | 实体关系、属性及可含 schema 与语义 |
 | 特性 | 相对稳定 | 持续增长 |
 | 示例 | Order 可以 hasAllocation | Order_A1024 — hasAllocation — Alloc_01 |
 
@@ -76,7 +76,7 @@ source_raw:
 | Individual（实例） | 具体业务事实 | 数据库行 / OOP Object |
 | Object Property（关系） | 概念之间的链接 | 外键 / OOP 引用 |
 | Data Property（属性） | 业务特征 | 数据库列 / 成员变量 |
-| Axiom（约束） | 业务规则 | CHECK 约束 / 不变式 |
+| Axiom（公理） | 逻辑知识陈述 | 不等于数据库 CHECK；开放世界下缺失不是违规 |
 | Reasoning（推理） | 推导结论 | 视图 / 规则引擎 |
 
 ## 技术栈
@@ -104,7 +104,7 @@ source_raw:
 1. OWL 定义等价类（ReadyToShipOrder、ExpediteEligibleOrder）
 2. 注入订单事实数据（ABox）
 3. 推理机自动分类
-4. 结论可追溯到具体规则
+4. 记录分类依据、事实来源与规则版本；OWL 的开放世界假设下未推出类别不等于推出其否定。缺少质检证据时，应按业务策略补证或拒绝放行；完整性可用 SHACL 或业务校验，实际提交前再核对权限、事务状态及效果。参见 [[Ontology]]。
 
 ### 案例二：多维归类
 
@@ -116,7 +116,7 @@ source_raw:
 
 1. **本体不是数据库**：承载语义与规则，不是海量数据
 2. **推理机 ≠ LLM**：规则驱动的确定性推理
-3. **声明式规则**：改模型文件即可，Agent 代码不动
+3. **声明式规则**：部分规则变化可独立于 Agent 代码；接口、事实映射、权限和回归测试仍可能需要调整
 4. **本体是企业级概念基础设施**：它把 [[Code-as-Conceptual-Infrastructure|代码作为概念基础设施]] 的原则扩展到组织尺度，让业务词汇、规则和实例被人、系统、Agent 共同读取。
 
 ## 与 Agent 的分工
@@ -143,7 +143,7 @@ source_raw:
 
 这个架构的关键不是技术栈齐全，而是职责边界清楚。数据库负责事实，TBox 负责规则，ABox 负责运行时事实快照，推理机负责确定性判断，LLM 负责语言交互和工具编排。
 
-以"订单能否加急"为例，Agent 不应直接读一堆系统字段后自行判断。更稳的路径是：先从数据库取订单、客户、库存和质检事实；把必要事实注入 ABox；由 OWL 规则和推理机判断订单是否属于 `ExpediteEligibleOrder`；最后由 Agent 把结论解释给用户，并给出可执行下一步。
+以"订单能否加急"为例，Agent 不应直接读一堆系统字段后自行判断。更稳的路径是：先从数据库取订单、客户、库存和质检事实；把必要事实注入 ABox；由 OWL 规则和推理机判断订单是否属于 `ExpediteEligibleOrder`；最后由 Agent 解释结论；实际发货须经过受控业务动作、事务内状态检查与权威结果回读。
 
 ## 治理要点
 
@@ -159,7 +159,7 @@ source_raw:
 
 ## Ontology 与 Token 效率（Tokenmaxxing 困局）
 
-Agentic 编程的 Token 消耗问题正在成为企业 AI 落地的核心挑战。Uber 向约 5000 名工程师推广 Claude Code 四个月后，使用量烧光了全年 AI 编程预算。三方数据源（arXiv:2604.22750、Vantage.sh、Reddit 1 亿 token 追踪）的共识是：Agent 的 Token 消耗 85-99% 来自 Input Token，本质是"读太多而非写太多"。
+Agentic 编程的 Token 消耗问题正在成为企业 AI 落地的核心挑战。Uber 向约 5000 名工程师推广 Claude Code 四个月后，使用量烧光了全年 AI 编程预算。原来源汇集论文、厂商和个人追踪的异质输入占比，不是共同样本或普遍共识。Token 数量不等于货币成本；缓存、计费、失败与质量需单独测量。
 
 ### Input Token 五大消耗源
 
@@ -171,9 +171,9 @@ Agentic 编程的 Token 消耗问题正在成为企业 AI 落地的核心挑战�
 | C4 生成迭代 | 低 | 代码生成和修改循环 |
 | C5 工具试错 | 低 | 工具参数猜测和错误重试 |
 
-C2（依赖探索）是最具结构性、最适合架构手段干预的消耗源。
+依赖探索可能适合结构化查询；五类及其等级是作者分析框架，不是经独立消融确定的排序。
 
-### 依赖探索的三代范式
+### 依赖探索的可组合方法
 
 | 范式 | 做法 | 优势 | 瓶颈 |
 |------|------|------|------|
@@ -187,14 +187,11 @@ C2（依赖探索）是最具结构性、最适合架构手段干预的消耗源
 
 - **UModel**：以实体为中心的统一建模框架，推动可观测体系从"面向数据"转向"面向对象"。告警时直接定位实体、沿关系链聚合关联数据
 - **STAROps**：基于 UModel + 大模型的 AIOps Agent，实现实体感知 → 自动编排多源查询 → 深度调查 → 因果链确认 → 处置建议的完整故障诊断流程
-- **代码知识图谱**：Codebase-Memory（arXiv:2603.27277）在 31 个代码仓库上验证，有图谱时 token 消耗压缩 10 倍、工具调用减少 2.1 倍
+- **代码知识图谱**：[Codebase-Memory](https://arxiv.org/html/2603.27277v1) §4.1 表6、§5.4：31 仓库，每语言一个，单 Claude Opus 4.6；约1000 vs 10000 tokens/题、2.3 vs 4.8 tool calls/题，同时质量评分0.83 vs 0.92。首作者人工打分，静态结构不能覆盖宏、动态行为等；不是完整编码任务或 OWL 本体因果对照。
 
 ### 模型变强后 Ontology 是否仍必要？
 
-取决于领域。代码场景的 Ontology 价值可能被模型内化，但运维等企业级领域因三个结构性原因，Ontology 价值不会被模型吃掉：
-1. 企业实体和关系永远不在通用模型预训练语料中
-2. 运维的本质是关系推理（告警在 A，根因在 B，中间三层依赖）
-3. 严肃场景对准确率容忍度极低——"83% 准确率"不可接受
+退役“企业本体永久不可替代”的强命题。私有动态数据、跨系统关系及可审计约束确有工程需求，但可由不同知识结构和工具承载。拓扑关系不是根因证明；可接受错误率须结合任务、损失及独立验收，不能将代码探索0.83平均评分转成生产运维准确率。
 
 ---
 
@@ -207,7 +204,7 @@ Palantir 2026 架构文把本体应用推进到"决策中心"定位（⚠️ ven
 - **[[Decision-Centric-Architecture|决策中心架构]]**：本体不只建模"什么是什么"（名词），还建模"做了什么决策、将执行什么行动"（动词）：actions 可被 stage 为沙盒化 scenarios 供人类 review，commit 后写回业务系统；end-to-end decision lineage 自动记录决策上下文，成为 agentic memory 与 fine-tuning 的燃料。这把本 Topic 原有的"本体 + 推理机 + Agent 接口"三层架构扩展为 data/logic/action/security 四要素系统。
 - **UNS 作为制造业前置层**：Unified Namespace（ISA-95 层级 + Sparkplug B 命名 + OPC-UA/MQTT/Kafka 流式 + CDC/polling/virtualization 批式）提供纯数据层的统一命名，本体在其上叠加 logic + action。UNS 与 [[UModel]] 是同一"先统一命名实体，再跑 agent"结构在不同领域（工厂 vs IT 运维）的实例。
 - **系统级可解释性**：本体的 logic binding 工具化使 [[Transparent-Tool-Handoff|透明工具交接]] 成为可能——agent 的确定性步骤交给可解释工具，本体层同时提供执行日志的治理（marking/purpose/role 动态策略）。
-- **反幻觉 grounding（Responsible AI #1）**：本 Topic "核心问题"列出的第一大困境"幻觉风险"在此获得具体机制回答——LLM 经 search-query 间接访问 Ontology 的 OAG（Ontology-Augmented Generation）模式修复*私有数据缺失型*幻觉，tool handoff 修复*计算型*幻觉，human-in-the-loop queue 兜底剩余幻觉。三层防御一一对应本体的 data/logic/action 三要素（详见 [[20260730-palantir-responsible-ai-hallucinations-ontology|source summary]]）；但 human 层存在橡皮图章化退化风险，vendor 未讨论。
+- **反幻觉 grounding（Responsible AI #1）**：本 Topic "核心问题"列出的第一大困境"幻觉风险"在此获得具体机制回答——LLM 经 search-query 间接访问 Ontology 的 OAG（Ontology-Augmented Generation）可缓解私有事实缺失风险，tool handoff 可减少特定计算错误，human review 是独立检查候选；各自可能失效，不能宣称修复全部对应类别。三层防御一一对应本体的 data/logic/action 三要素（详见 [[20260730-palantir-responsible-ai-hallucinations-ontology|source summary]]）；但 human 层存在橡皮图章化退化风险，vendor 未讨论。
 
 ## Databricks 视角：本体进入 PM 日常工作流
 

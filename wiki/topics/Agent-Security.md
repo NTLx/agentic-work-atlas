@@ -3,7 +3,7 @@ type: topic
 title: Agent Security
 description: "Agent 在不可信组件和跨信任域环境中行动时，从检测、判定、授权、执行到撤销与恢复的责任闭环"
 created: 2026-09-05
-updated: 2026-11-26
+updated: 2026-11-28
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -119,7 +119,7 @@ source_raw:
 
 | 研究线 | 在五阶段中的位置 | 不应偷换成什么 |
 |---|---|---|
-| `CR-004` Agent observability | 检测，以及判定的证据输入 | 不能由日志存在推出完整覆盖或正确理解 |
+| `EX-005`（吸收原 `CR-004` observability） | 检测，以及判定的证据输入 | 不能由日志存在推出完整覆盖或正确理解 |
 | `EX-004` reference integrity / success provenance | 判定的真值、来源和成功归因条件 | 不能由 reference 可用推出动作安全 |
 | `EX-005` authorization / actuation | 授权到执行的确定性边界 | 不能由 Allow/Deny 结果推出撤销和恢复已解决 |
 | `EX-006` policy carriage / control-plane integrity | 策略从 owner 到决策和执行边界的承载 | 不能由上下文中出现 policy 文本推出其稳定绑定和失败关闭 |
@@ -228,6 +228,8 @@ carrier
 - **边界**：当前仍缺 carrier × enforcement × provider post-state 的同轨生产级对照；不能从 compaction、memory provenance 或 benchmark repair 单独推出完整控制面安全。
 
 ## 当前证据缺口
+
+2026-11-28 边界复核：[NIST SP 800-207](https://csrc.nist.gov/pubs/sp/800/207/final) 说明网络位置或资产归属本身不授予隐含信任；语义分类同样不是身份认证或访问授权的替代。[Palantir Action permissions](https://www.palantir.com/docs/foundry/action-types/permissions) 是既有本体动作机制的具体文档补证：对象编辑可能成功但通知失败。单一动作成功与多个外部效果同时完成不能等同。该文档不是 EX-005 所需的同一生产 incident 联合 trace，继续保留缺口；见 [[Decision-Centric-Architecture]]。
 
 下一步优先补四类可回溯材料：
 

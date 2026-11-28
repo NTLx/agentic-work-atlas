@@ -3,7 +3,7 @@ type: topic
 title: Agent Attack Surface
 description: "Agent 攻击面：不可信内容如何经感知、检索、上下文、记忆、工具与协作链进入 Agent，并从单次输入污染扩展到状态与行动后果"
 created: 2026-09-18
-updated: 2026-09-18
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -26,6 +26,7 @@ source_raw:
   - "[[20260622-context-collapse-1-poisoning-copilot-memory]]"
   - "[[20260714-context-collapse-2-when-emails-instruct]]"
   - "[[20260728-context-collapse-3-ai-worming-through-word]]"
+  - "[[20261020-anthropic-attack-surface-reduction]]"
 ---
 
 # Agent Attack Surface（Agent 攻击面）
@@ -165,6 +166,10 @@ FORGE 基准补上了 prompt injection 之外的独立攻击面：攻击者只�
 3. **模型判断不能是唯一 enforcement**：高影响动作需要模型外的权限、schema、policy 或 runtime gate；
 4. **provenance 必须跟随产物传播**：尤其是 Agent 生成并继续被其他 Agent 消费的文档、摘要、memory 与 tool result；
 5. **防御评测要覆盖“无指令污染”**：只测试显式 prompt injection 会漏掉 FORGE 这类证据污染。
+
+## 从攻击面识别到可达面缩减（ASR）
+
+攻击面缩减（Attack Surface Reduction）是成熟安全工程方法，不是 LLM 独有能力。[[20261020-anthropic-attack-surface-reduction]] 的案例将部署可达性审查分为默认配置、配置交互与过早可达三类，并使用动态证据确认、合法行为回归及非默认行为裁决验证候选修复。[OWASP Attack Surface Analysis](https://cheatsheetseries.owasp.org/cheatsheets/Attack_Surface_Analysis_Cheat_Sheet.html) 也强调实际部署面、关闭不需要的功能及随变更复查。对 Agent 系统，区分攻击者可达的程序路径与 [[Least-Agency]] 所限制的 Agent 行动范围；两者互补而非同义。减少可达路径不证明漏洞已消失或剩余路径安全，需与漏洞修复、权限执行及真实外部效果验证组合。原单源 ASR 独立页的具体实验数字与方法在该 Source Summary 承载，不重复创建概念页。
 
 ## 不能从现有证据推出什么
 

@@ -7,7 +7,7 @@ aliases:
   - Decision-Centric Ontology
 definition: "把企业的'决策'（而非仅数据）作为建模对象的软件架构：数据、逻辑、行动、安全四要素统一进单一语义系统，使 agent 与人类在同一套原语上探索、暂存、提交并审计决策"
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-11-28
 tags:
   - enterprise-ai
   - ontology
@@ -32,7 +32,7 @@ source_raw:
 # Decision-Centric-Architecture（决策中心架构）
 
 > [!definition] 定义
-> **决策中心架构**主张传统数据架构只描述数据、不描述"决策"——不记录决策的上下文、候选选项与下游影响——因此无法承载需要学习与写回的操作型 AI。它要求把决策的四要素（data / logic / action / security）整合进单一语义系统，使 agent 与人类共用同一套决策原语。
+> **决策中心架构**主张传统数据架构只描述数据、不描述"决策"——不记录决策的上下文、候选选项与下游影响——因此可能遗漏操作型 AI 所需的决策信息，但传统事务系统、事件日志及规则引擎也能承载。该厂商框架建议把决策的四要素（data / logic / action / security）整合进单一语义系统，使 agent 与人类共用同一套决策原语。
 
 ## 与数据中心架构的区别
 
@@ -55,7 +55,7 @@ source_raw:
 
 - **Scenario staging ≈ 操作数据的 Git 化**：explore/stage/commit 与 branch/PR/merge 同构——企业操作数据正在经历代码世界十年前的版本化革命（Palantir 的 Global Branching 即此隐喻的字面化）。
 - **AI 闭环范围是可调刻度**：每个 agent 被视为"新员工"，默认只能 stage、须人工 review；凭 granular logging 选择哪些 trusted 流程可自动闭环，授权范围可外科手术式扩大/收缩。制造业版本将同一思想表述为五级自治标尺（manual → assisted → semi-automated → highly automated → fully autonomous）。
-- **Decision lineage 数据飞轮**：全部决策事后可作 fine-tuning 数据与 agent prompting 原则——这是 [[Deployment-Product-Flywheel|部署-产品飞轮]] 在数据层的形态：FDE 回流的不仅是平台功能，还有决策语料。
+- **Decision lineage 数据飞轮**：决策日志可生成训练/提示候选，但必须审查结果正确性、授权、敏感性、用途、保留期限与独立评测；不能无条件训练全部决策——这是 [[Deployment-Product-Flywheel|部署-产品飞轮]] 在数据层的形态：FDE 回流的不仅是平台功能，还有决策语料。
 
 ## 关键数据点
 
@@ -65,8 +65,10 @@ source_raw:
 
 ## 前提与局限性
 
+- **动作边界（2026-11-28 官方文档复核）**：[Palantir Action permissions](https://www.palantir.com/docs/foundry/action-types/permissions) 与 [submission criteria](https://www.palantir.com/docs/foundry/action-types/submission-criteria) 显示动作授权、对象可见性、提交条件、写回与 side effects 分别受配置；通知发送失败时对象编辑仍可能成功。stage/commit 是有价值的机制类比，非跨业务系统原子性或可逆性的保证；需实际 receipt、幂等与 post-state 验证。
+
 - **厂商立场**：该架构由 Palantir 提出并与其 AIP/Ontology 产品绑定，"必须单一系统整合四要素"含架构偏好；多系统联邦方案未必更差。
-- **lineage 的双刃性**：decision lineage 既是学习资产也是最大的专有知识泄露面——与 [[Reverse-Information-Paradox|反向信息悖论]] 直接冲突，供应商托管的 lineage 等于制度化的 [[Alpha-Transfer|alpha 转移]]通道。
+- **lineage 的双刃性**：decision lineage 既是学习资产也是最大的专有知识泄露面——与 [[Reverse-Information-Paradox|反向信息悖论]] 直接冲突，供应商托管 lineage 可能形成专有信息暴露风险，实际取决于访问、隔离、合同、用途与训练条款。
 - **治理成本未定价**：action schema 治理、lineage 埋点与存储、动态安全策略的计算开销，在原始论述中均被略过。
 - **适用域**：最适合高风险写回、强审计、多系统联动的操作型场景；纯分析型工作负载不需要决策中心架构。
 

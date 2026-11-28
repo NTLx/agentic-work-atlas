@@ -10,7 +10,7 @@ source_locator:
   - "policy change typically ≈2 min, potentially 7+ min"
   - "group membership changes can take minutes to hours or longer"
 created: 2026-09-20
-updated: 2026-09-20
+updated: 2026-11-28
 tags:
   - source-summary
   - agent-security
@@ -42,7 +42,7 @@ claim_type: extracted
 
 - 对 EX-005：提供 authority-stop propagation 的生产平台边界，强化 revoke_requested_at → deny_effective_at 必须分开记录。
 - 对 [[Agent-Security]]：权限撤销指标需要带 surface/type，而不能把 role/policy/group/session 混成一个状态。
-- 对 CR-004：应同时记录策略更新时间与真实 deny-effective observation，避免只凭配置写入时间推断生效。
+- 对 EX-005（吸收原 CR-004）：应同时记录策略更新时间与真实 deny-effective observation，避免只凭配置写入时间推断生效。
 
 ## 关联概念
 

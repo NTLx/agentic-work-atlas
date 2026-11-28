@@ -7,7 +7,7 @@ original_raw_file: "20261020-anthropic-attack-surface-reduction.md"
 original_body_sha256: "1c09284d2fb077e89ec49118b50d6c482860311b67957dd864c29b57c43d6947"
 indexed_at: "2026-10-22T09:55:17+08:00"
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-11-28
 tags:
   - source-summary
   - cybersecurity
@@ -41,11 +41,12 @@ source_locator: "正文：Methods for reducing codebases’ attack surface；Cla
 - **与漏洞发现的区别**：vulnerability finding 试图定位具体缺陷；ASR 先问“哪些复杂代码根本不需要对当前威胁主体可达”。二者是互补关系，而不是替代关系。
 - **与 [[Agent-Verification]] 的连接**：dynamic trace、baseline regression、black-box suite 和 human adjudication 共同形成 evidence escalation chain，说明安全 Agent 的输出不能停在静态文本 finding。
 - **与 [[Constraint-Driven-Engineering]] 的连接**：把 parser / protocol path 移到 authentication、allow-list 或显式 opt-in 之后，本质上是在运行时边界增加机器可检查约束，而不是要求模型更准确地“理解所有漏洞”。
+- **与 [[Least-Agency]] 的区别**：ASR 缩减攻击者可达的软件路径，最小代理权限缩减 Agent 可执行的动作；不是同一个控制对象。动态 trace 只确认被观察到的路径，不能证明 inventory 完整。
 - **硬边界**：ASR 的收益依赖真实 deployment/configuration；如果 inventory、dynamic trace 或 threat boundary 与线上环境不一致，得到的 reachability map 也会失真。
 
 ## 关联概念
 
-- [[Attack-Surface-Reduction]]
+- [[Agent-Attack-Surface]] — 攻击面缩减（Attack Surface Reduction / ASR）的可复用方法与 Agent 可达面边界已合入该 Topic；本摘要保留原实验、方法及适用条件。
 - [[Agent-Verification]]
 - [[Constraint-Driven-Engineering]]
 - [[Agentic-Engineering]]

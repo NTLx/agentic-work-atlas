@@ -4,7 +4,7 @@ title: "Ontology vs Knowledge Graph"
 entity_a: "[[Ontology]]"
 entity_b: "[[Knowledge-Graph]]"
 created: 2026-05-24
-updated: 2026-05-24
+updated: 2026-11-28
 tags:
   - comparison
   - knowledge-system
@@ -23,7 +23,7 @@ source_raw:
 # Ontology vs Knowledge Graph
 
 > [!summary] 对比概述
-> Knowledge Graph 是事实关系网络，主要回答“有哪些对象以及它们如何连接”；Ontology 是概念、规则和约束层，主要回答“这些对象按什么类型、边界和规则被理解”。企业 Agent 需要的不只是图谱事实，还需要本体提供稳定语义。
+> Knowledge Graph 是事实关系网络，主要回答“有哪些对象以及它们如何连接”；Ontology 是概念、规则和约束层，主要回答“这些对象按什么类型、边界和规则被理解”。企业 Agent 需要可解释、可核验的事实及语义；本体是候选实现，不是所有任务的必要前提。
 
 ## 核心维度对比
 
@@ -56,10 +56,10 @@ Ontology 更接近**语义层**。它定义什么叫客户、订单、风险、�
 
 | 层 | 作用 | 更接近 |
 |----|------|--------|
-| TBox | 定义类、关系、约束和规则 | Ontology |
-| ABox | 存储具体实例和事实 | Knowledge Graph |
+| TBox | 描述概念及相关公理 | 可作为本体组成 |
+| ABox | 描述个体及事实断言 | 可作为本体组成或图谱中的实例知识 |
 
-这个区分能避免一个常见误解：Ontology 不是 Knowledge Graph 的高级叫法。更准确地说，Ontology 提供概念骨架，Knowledge Graph 承载事实网络。企业 Agent 真正需要的是二者组合。
+这个区分能避免一个常见误解：Ontology 不是 Knowledge Graph 的高级叫法。更准确地说，两者的关注点不同且可重叠；OWL 本体可含实例断言，知识图谱可含 schema、概念、规则及 provenance。TBox/ABox 不是两个产品的严格边界。可按实际任务选择关系数据库、图、规则代码或组合。
 
 ## 对企业 Agent 的影响
 
@@ -72,7 +72,7 @@ Agent 进入企业后遇到的很多问题不是模型不聪明，而是业务�
 - 销售能看到的客户字段，客服是否也能看到？
 - 风险等级是事实字段，还是由多个规则推理出来的状态？
 
-Knowledge Graph 可以把相关事实接出来，但 Ontology 才能定义这些事实的解释边界。没有本体，Agent 往往只能临时猜业务规则；有了本体，Agent 才能被业务概念约束。
+知识图谱可组织相关事实；语义可由本体、数据字典、契约或规则代码定义。OWL 的开放世界蕴含不等同于数据库约束，也不保证授权。实际业务动作须检查数据完整性、时效、规则和主体权限；参见 [[Ontology]] 与 [[Agent-Security]]。
 
 ## 反模式
 
@@ -99,11 +99,11 @@ Knowledge Graph 可以把相关事实接出来，但 Ontology 才能定义这些
 优先建设 Ontology，当：
 
 - 多个系统对同一业务概念定义不一致。
-- Agent 需要执行规则判断、权限判断或合规解释。
+- Agent 需要共享可复用的概念与推理规则；权限判断仍须独立执行策略。
 - 组织希望把隐性业务规则转成可维护语义层。
 - AI 幻觉主要来自概念混淆，而不是事实缺失。
 
-成熟企业 AI 系统通常需要两者配合：Ontology 约束语义，Knowledge Graph 承载事实。
+两者可配合，但不应预设必须采用独立图数据库或 OWL；按真实查询、治理和维护成本选择最小充分方案。
 
 ## 相关概念
 
