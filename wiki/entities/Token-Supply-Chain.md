@@ -6,7 +6,7 @@ aliases:
   - token 供应链管理
 definition: "将 token 像电力、物流和数据库一样编排的生产基础设施层，覆盖推理调度、KV cache 管理、成本路由、可观测性和治理，使 token 从聊天消耗品变成可控生产资料"
 created: 2026-05-29
-updated: 2026-10-23
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -51,9 +51,9 @@ Token 供应链是 [[Agent-Infra]] 和 Model 层之间的中间基础设施层�
 
 - SGLang issue #21846 路线图命名为 "Distributed KVCache System For Agentic Workload"，明确写入 agentic workloads 导致 KV cache storage 与 transfer volumes 快速增长
 - Dynamo issue #5506 的 H1'26 roadmap 聚焦请求调度、KV cache 复用、worker 扩缩容和多节点高可用
-- LiteLLM 仓库中 cost/budget/spend 相关 issue/PR 合计 154 条（cost based routing 23、lowest cost 18、budget routing 37、spend tracking 76）
-- RouteLLM（ICLR 2025）实现接近强模型质量时超过 2 倍成本节省
-- IPR（EMNLP Industry 2025）在 Claude 系列间做 prompt routing，成本降低 43.9%
+- 原报告2026-05-22 LiteLLM四组关键词命中23/18/37/76，合计154次命中，不是已去重的唯一issue/PR数。
+- [RouteLLM](https://arxiv.org/abs/2406.18665) 原论文摘要报告特定基准上路由可降低成本并接近强模型表现；未重跑完整实验，非通用节省倍数。
+- [IPR（EMNLP Industry 2025）](https://aclanthology.org/2025.emnlp-industry.170/) 作者摘要报告特定部署/质量工作点成本降低43.9%，与最强Claude质量相当；未核全文和独立复现，不等同任意Agent任务或全成本节省。
 
 ## 关键洞察
 
@@ -81,42 +81,11 @@ Model Infra 正在走云计算早期的路径：从"能不能把服务跑起来"
 - 成本路由（RouteLLM、IPR）依赖问题难度判断的准确性；误判会导致质量下降
 - 文章数据来自蚂蚁 OpenDigger 体系，可能存在分类偏差
 
-## Token FinOps 演化路径（07-17 扩展）
+## Token FinOps 与计价透明性（2026-11-28校准）
 
-Token 供应链的 FinOps 层面临品类分化（roundtable 4人×2轮）：
+原7-17/18圆桌提出平台内建、独立路由及标准化计价等情景。撤回2027收编、2028–2030独立时间表、A轮估值同比下降及“中国单模型必然导致独立品类TAM不足”的未经核验判断。产品组合、采购、组织治理、业务规模与监管变化需分别观测；不推定特定供应商是标准化障碍。
 
-### 品类分化
-
-| 子类 | 功能 | 演化路径 | 时间 |
-|------|------|---------|------|
-| **Token 优化** | 成本可见性、用量追踪、预算告警 | → 被平台收编（模型厂商/可观测/云） | ≈2027 |
-| **Token 智能** | 跨平台路由、模型选择、prompt 优化、安全合规 | → 可能独立（需创造独立入口） | ≈2028-2030 |
-
-### 独立窗口关闭三信号
-
-1. 模型厂商内建：Anthropic Console/OpenAI dashboard 已有基础 token 用量
-2. 可观测扩展：Datadog 2026 Q1 LLM Observability beta
-3. 融资下降：Token FinOps 工具 A 轮估值 2026 < 2025
-
-### 买家优先级
-
-- 模型厂商（Anthropic/OpenAI/Google）：最可能——token 在其基础设施上跑，能提供隐私安全的分析
-- 可观测性（Datadog/New Relic）：已在加 token 维度——一维 token vs 多维关联
-- 云厂商（AWS/Azure/GCP）：如果企业 AI 入口 = Bedrock 式托管
-
-### 中国差异
-
-中国企业 AI 部署单模型为主（无多模型策略需求）+ 监管压制消费级 Agent → TAM 不足以支撑独立 Token FinOps 品类。缺失 = 结构性非临时性。
-
-## 多模型定价透明性（07-18 扩展）
-
-Tokenizer 差异导致隐性成本偏差 20-40%/prompt（roundtable 4人×2轮）。GPT(tiktoken)、Claude(自定义BPE)、Gemini(SentencePiece)的 token 定义不同→双重变量(`$/token × token`数)同时变化→模型间成本比较=苹果比橙子。
-
-**解决路径**：标准化"每单位工作成本"非"每token成本"。MLPerf for LLM Pricing——10标准任务，每任务token消耗+延迟+质量分数。
-
-**行业联盟路径**（O'Reilly+Thompson）：MLCommons模式→12-18月出v1.0→企业采购RFP纳入→事实标准→成熟后转正。关键障碍=Google（Gemini tokenizer效率较低→暴露隐性高成本）。
-
-**Tokenizer非竞争差异化**（Willison）：差异=历史偶然（GPT-2→tiktoken，Claude=BPE，Gemini=T5传统→SentencePiece）。标准化不压缩有意义竞争维度。
+不同tokenizer、上下文、输出长度、缓存、计费及重试可产生同任务费用差；旧20–40%隐性成本、特定tokenizer实现及12–18月行业联盟时间表没有共同版本与测量，退役稳定身份。保留同任务、同质量门与实际账单的比较方法。FinOps [Unit Economics](https://www.finops.org/framework/capabilities/unit-economics/) 也强调从token走向业务结果单位；见 [[Enterprise-AI-Model-Sourcing]]：实际全部成本/验收成功任务、质量、SLO及风险分别报告。标准任务有助短名单，不代替本地业务评测。
 
 ## 灰色形态：中转产业链与滥用经济（07-27 扩展）
 
@@ -155,7 +124,7 @@ OpenRouter（2026-07）给出网关/代理层的工业方法论：**同一 model
 **两条读法纪律**：
 
 - **读尾部不读均值**：p50 可以很强而 p99 很弱——均值隐藏尾部停顿，用户记住的是卡住的那次请求。chat 界面看 p90/p99 延迟，批量任务看持续输出速度
-- **查 serving 路径再怪模型**：量化是隐藏的质量变量——同一 slug 可被两家 provider 以不同精度 serving，风险梯度 fp16/bf16（低）→ fp8/int8（中）→ fp4/int4（更高）；tool-calling agent / 推理 / 代码编辑对静默质量损失容忍度低。这是 [[Mechanical-Sympathy-for-LLMs|机械同理心]] 的 serving 层操作化
+- **查 serving 路径再怪模型**：量化是隐藏的质量变量——同一 slug 可被两家 provider 以不同精度 serving，精度只是候选变量；量化算法、校准、权重/激活/KV、硬件和任务均影响结果，不存在通用精度风险排序；tool-calling agent / 推理 / 代码编辑对静默质量损失容忍度低。这是 [[Mechanical-Sympathy-for-LLMs|机械同理心]] 的 serving 层操作化
 
 **评估 → 路由策略**：benchmark 排行榜只做候选短名单（六问：TTFT/输出速度是否分开报告、尾部还是均值、是否标明端点与 serving 设置、是否考虑量化、是否反映当前性能、是否匹配自己的 prompts）；最终用自己的 prompts 测量，结果固化为路由设置（sort / 百分位阈值 / quantizations 过滤 / ignore / fallbacks），而非硬编码 provider 名字。
 
@@ -165,7 +134,7 @@ OpenRouter（2026-07）给出网关/代理层的工业方法论：**同一 model
 
 [[20260926-latentspace-openrouter]] 的完整访谈把 OpenRouter 从“provider router”进一步描述成一个多边市场与治理节点。模型实验室提供 capability，serving provider 提供计算供给，开发者带来 workload；统一接口只是入口，真正的复利来自供给竞争、需求观测、实时路由和风险治理。
 
-**判断**：成熟的 token gateway 会从流量代理演化为四层基础设施：**market making → distribution → observability → trust & safety**。原因不是产品堆叠，而是中间层天然同时看到模型、provider、应用和消费行为之间的连接。
+**判断**：market making、distribution、observability、trust & safety 是候选网关职责，不是所有网关必须经历的演进顺序。原因不是产品堆叠，而是中间层天然同时看到模型、provider、应用和消费行为之间的连接。
 - **证据**：[[20260926-latentspace-openrouter]]；Transcript 可用 “checkpoint is done / crickets”“neutral layer”“OpenClaw”“blocked 10x as much dollar volume” 等短语回查。来源分别描述 model lab 的 distribution/plumbing 缺口、多 provider 价格竞争、leaderboard / app 变化，以及盗刷、转售、账号入侵与 runaway-agent spend 等平台级异常。
 - **边界**：这些平台规模、增长和 fraud 数据主要来自 OpenRouter 参与者自述；“中立市场”也是公司的产品定位，不能据此假定排序和商业利益永远中立。
 
@@ -183,7 +152,7 @@ OpenRouter（2026-07）给出网关/代理层的工业方法论：**同一 model
 
 **判断**：当异常模式跨 model lab、provider、application 迁移时，单一上游模型实验室只能看到局部；跨供应链中间层更有条件做 account recovery、abuse correlation 和行为异常检测。这是网关层相对单一 provider 的一种信息优势。
 - **证据**：[[20260926-latentspace-openrouter]]；Transcript 搜索锚点：“new type of unit of value”“bad agents”。
-- **边界**：来源进一步预测 agentic fraud 将大规模扩张，这是前瞻判断而非当前规模证据；“跨平台可见性更适合防守”也受隐私政策约束——同一访谈明确说 prompts/completions 默认不可见，需 opt-in。
+- **边界**：来源进一步预测 agentic fraud 将大规模扩张，这是前瞻判断而非当前规模证据；“跨平台可见性更适合防守”也受隐私政策约束——访谈描述默认日志策略，非技术上不可见。2026-11-28复核[[Enterprise-AI-Model-Sourcing]]所列OpenRouter端点日志、ZDR/Safety Retention、缓存及第三方工具边界；需按实际链路、合法目的与配置验证。
 
 ## 物理供给层：Token 背后还有 Capacity Shape 与营运资本（Modal，2026-10）
 

@@ -1,9 +1,9 @@
 ---
 type: topic
 title: "Agentic AI 生态结构"
-description: "从 LLM 工具链到 Agentic AI 三层执行栈的生态演化——Agent Infra / Model Infra / Model 三层互相倒逼，token 从消耗品变成生产资料，开发者从执行层移动到定义层"
+description: "2026年5月生态报告的Agent Infra/Model Infra/Model三层视角，及软件接口、推理供给与任务分工的候选变化"
 created: 2026-05-29
-updated: 2026-06-15
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -27,7 +27,7 @@ source_raw:
 
 ## 核心论点
 
-2025 年的 Agentic AI 生态还围绕 LLM SDK、RAG、Agent Framework、应用平台、推理基础设施分层。到 2026 年中，生态结构已重排为 **三层执行栈**：
+2025 年的 Agentic AI 生态还围绕 LLM SDK、RAG、Agent Framework、应用平台、推理基础设施分层。2026年5月原作者提出**三层执行栈**的分析视角（非唯一行业标准或已验证的固定迁移）：
 
 ```
 ┌─────────────────────────────────────┐
@@ -47,7 +47,7 @@ source_raw:
 
 过去软件默认使用者是人（UI、按钮、表单）。Agent 时代，软件多了一个新使用者——它不需要漂亮界面，但需要稳定 API、工具协议、权限边界、可读状态、可执行命令、可验证结果、可回滚操作。
 
-[[Agent-Infra]] 做的事，就是把"硅基执行者"接进软件世界。GitHub 数据佐证：bot/app actor 从 2017 年的 112 个增长到 2026 年的 17,285 个，十年 154 倍。
+[[Agent-Infra]] 做的事，就是把"硅基执行者"接进软件世界。原报告OpenDigger同期前四月活跃bot/app actor为112（2017）→17,285（2026），约154倍，含CI/依赖更新等传统自动化，不是AI Agent人数、任务量或生产率。
 
 ### 2. Token 从消耗品变成生产资料
 
@@ -57,9 +57,11 @@ SGLang 路线图明确命名 "Distributed KVCache System For Agentic Workload"�
 
 ### 3. 碳基定义、硅基执行
 
-开发者从"亲自完成每个动作"迁移到"定义目标、约束行动、验证结果、承担责任"。[[Carbon-Silicon-Division]] 是这个分工范式的核心表达。
+部分开发工作可以增加定义、委托、验证及责任治理；不代表全体开发者固定角色迁移或执行技能消失。[[Carbon-Silicon-Division]] 是这个分工范式的核心表达。
 
-## 生态信号数据
+## 生态信号数据（历史快照，非当前实时统计）
+
+2025 Octoverse官方确认180M+及过去一年新增36M+；[2026 Octoverse](https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/) 是后续同平台披露，不能将新增账号、活动、提交或PR等同人类就业或质量。原226项目是作者选定的landscape，LLM多标签分类可重叠；参与者可能含机器人及跨项目重复。Top100是OpenRank筛选，配置/忽略项痕迹并非实际调用或持续使用。未重跑OpenDigger。
 
 | 指标 | 数据 | 来源 |
 |------|------|------|
@@ -70,12 +72,12 @@ SGLang 路线图明确命名 "Distributed KVCache System For Agentic Workload"�
 | Agentic AI landscape 项目数 | 226 | 蚂蚁 InclusionAI |
 | Coding Agent 项目 / 参与者 | 78 / 14,019 | 蚂蚁 OpenDigger |
 | MCP 项目 / 参与者 | 59 / 6,651 | 蚂蚁 OpenDigger |
-| Top 100 项目使用 coding agent 比例 | 92% | 蚂蚁 OpenDigger |
-| 平均每个项目使用 coding agent 种类 | 2.8 | 蚂蚁 OpenDigger |
+| OpenRank Top100项目出现coding agent相关配置痕迹 | 92/100 | 蚂蚁文件树扫描，非实际使用率 |
+| Top100每项目平均相关配置/标记种类 | 2.8 | 原报告，非运行测量 |
 
 ## 项目自述迁移路径（description 变化）
 
-226 个项目中 96 个改过 description，沿七条路径向 Agent 执行栈靠拢：
+原报告226个项目中96个修改description，作者归纳七条路径；自述变化不证明功能完成、真实用户需求或行业整体转型：
 
 1. Workflow Builder → Agent Orchestrator
 2. RAG / Data / Vector DB → Context / Memory Infra
@@ -88,7 +90,7 @@ SGLang 路线图明确命名 "Distributed KVCache System For Agentic Workload"�
 ## 关键问题
 
 - **模型会不会吞噬软件和开源？** 答案更像重分工。模型接管搜索、填写、整理等动作，但吃不掉软件背后的秩序。越让模型接近真实工作，越需要软件定义边界、保存状态、连接系统。
-- **开源在 AGI 时代的位置？** 开源不会自动胜利，但仍有不可替代的位置：开发者参与、项目可审计、标准共同制定、工具可本地部署、知识可共享。
+- **开源在 AGI 时代的位置？** 开源可在特定许可、治理及部署条件下提供价值：开发者参与、项目可审计、标准共同制定、工具可本地部署、知识可共享。
 
 ## 相关 Topic
 

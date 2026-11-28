@@ -3,7 +3,7 @@ type: topic
 title: Enterprise AI Model Sourcing
 description: "企业 AI 模型采购不应默认等于买最大 frontier API，而应按任务分布、评测证据、成本曲线、部署约束和组织能力分层选择"
 created: 2026-05-24
-updated: 2026-09-26
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -38,9 +38,9 @@ source_raw:
 
 ## 为什么这是模型采购问题
 
-过去三年，企业默认选择最大 frontier model 是合理的：通用 benchmark、供应商能力和风险规避都支持这个选择。
+最大模型是候选而非默认；任务质量、价格、风险、可用性与运维均需比较。
 
-[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]] 提供了一个反例边界：在巴西葡萄牙语 OCR 这个具体企业域里，专门化 3B 模型在质量、成本和稳定性上同时胜出。它不证明“规模不重要”，但证明“规模不是唯一应该优先测试的变量”。
+[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]] 提供了一个反例边界：在巴西葡萄牙语 OCR 这个具体企业域里，专门化 3B 模型在质量、成本和稳定性上同时胜出。它提供专门化可能更优的窄域供应商样本，不证明规模不重要；本轮未重新取得独立DharmaOCR对照与全成本。
 
 这让模型采购从品牌排序变成系统设计问题。
 
@@ -67,7 +67,7 @@ source_raw:
 - **证据**：[[20260926-latentspace-openrouter]]；Transcript 搜索锚点：“content moderation”“You need governance”。来源同时指出 code-based LLM integration 最终需要管理模型访问、数据 policy 和团队权限。
 - **边界**：这是 Discord/OpenRouter 参与者的一手经历，不能推出所有闭源 provider 都会与企业政策冲突，也不能推出所有企业都值得维护多模型 control plane；复杂度应与真实 switching need 匹配。
 
-同一来源还提供了一个采购层面的实现约束：OpenRouter 称默认不读取 prompts/completions，组织需要 opt-in 才记录（Transcript 搜索锚点：“Open Router can't see your prompts or completions”）。这意味着中间层本身也必须被当作数据处理方审查；“多模型自由”不应以默认汇聚业务内容为代价。
+访谈的默认不读取/不记录不可解释为技术上无法接触或零保留。2026-11-28复核[Provider Logging](https://openrouter.ai/docs/guides/privacy/provider-logging)、[ZDR](https://openrouter.ai/docs/guides/features/zdr)及[ZDR说明](https://openrouter.ai/blog/insights/zero-data-retention/)：网关仍处理请求；端点日志、Safety Retention、内存KV缓存、响应缓存、应用日志及观测出口不同；账号级ZDR与请求provider.zdr的响应缓存行为不同。需按实际端点、产品配置、合同和数据链验证，不把路由标签当提供商履约证明。
 
 ## 五个采购变量
 
@@ -113,12 +113,12 @@ source_raw:
 
 ## 开闭源模型不是同一条曲线
 
-[[Open and closed models are on different exponentials]] 给采购框架补了一个经济维度：闭源前沿模型与开放模型经济不是同一条性能曲线上的先后关系，而是两种复利机制。
+[[Open and closed models are on different exponentials]] 提出两种可能的经济机制，不是实测的不同指数曲线。开放权重与开源许可、API与自部署、任务能力和盈利模式应分别评价。
 
 - 闭源前沿模型通过模型、harness、工具、serving infra 和产品分发的垂直集成，在复杂知识工作中捕获 [[Intelligence-Premium|智能溢价]]。
 - 开放模型经济通过低成本、可控性、本地部署、专门化和多供应商竞争，在达到质量阈值后的任务中扩散。
 
-因此企业采购应把任务分成两类：仍然需要边际智能的任务，以及已经达到足够好阈值、应优化成本和控制权的任务。
+可先确定质量与风险门，再比较通过门的方案的完整成本、延迟、数据及退出；不同任务的边际收益可能连续变化，不固定成两类。
 
 ## 内部微调能力也是采购变量
 
@@ -129,23 +129,16 @@ source_raw:
 - 外部能力：frontier API、FDE、系统集成商能带来什么短期能力。
 - 内部能力：评测集、训练数据、微调管线、本地推理和运维团队能否沉淀为长期能力。
 
-没有内部微调与评测能力，专门化只是供应商给出的卖点。有了这些能力，专门化才会变成企业自己的模型组合策略。
+可以采购已验证的专门模型而不自行微调；企业仍需具备与风险匹配的验收、运行和退出能力。微调本身也不保证收益。
 
-## 成本判据：成本/完成任务，而非成本/token（08-26 补充）
+## 成本判据：成本/验收成功任务，而非成本/token（2026-11-28校准）
 
-[[20260825-openrouter-choose-best-ai-model|OpenRouter（2026-08）]]把"成本曲线"变量操作化为明确公式：
+[[20260825-openrouter-choose-best-ai-model]] 的方法值得保留，但需修复统计口径和公式适用条件。
 
-```
-cost per task = (input tokens × input price + output tokens × output price) × expected attempts
-```
-
-核心洞察：**低单价模型在重试、长输出、需要更强模型兜底时更贵**。经济单位是"完成一次任务的总成本"，不是 API 标价。Chen et al.(2026)《The Price Reversal Phenomenon》：32% 的模型对中低标价模型总成本反而更高，极端 28× 反转；同一 query 两个模型的思考 token 消耗差 900%，重复运行单查询波动最高 9.7×。
-
-这修正了采购讨论的一个常见误区：
-- 按 token 比价（\$0.75 vs \$2.00/M input）只反映单位价，漏掉 `expected attempts` 项——而该项通常决定结果
-- 实测判据：GPT-5.4 mini 标价约为 Claude Sonnet 5 的 1/2.4，但若 Sonnet 5 首试成功 95%，mini 必须首试成功 ≥40% 才真正更便宜；低于 40% 时"更便宜的 token 更昂贵的完成任务"
-
-采购流程含义：benchmark 只做短名单过滤器（滤到几个候选），决策用**你自己 prompts** 在真实工作负载上测量，终点是成本/1,000 完成任务而非模型品牌排序。对无法构造真实评测集的团队，该流程无法启动——评测集基础设施是成本判据的前提条件。
+- [Chen et al., arXiv:2603.23971v1](https://arxiv.org/html/2603.23971v1) §2–5：8模型×9任务，28模型对×9=252次比较，55/252（21.8%）发生较低标价反而总API费用更高；任务内10.7%–32.1%，最高反转28倍。OpenRouter二手文32%不是全样本值；思考token跨模型差900%和同题重复最高9.7倍为样本观察，非所有调用规律。论文比较请求实际费用，不是通过验收的任务费用、重试或整个Agent的TCO。
+- 历史OpenRouter例（2026-07-27标价，2,000输入/800输出）：Sonnet 5每次0.012美元，GPT-5.4 mini每次0.0051美元；假设每次独立同分布、每次同成本、无限重试至成功，期望费用c/p，强模型p=.95时弱模型保本p=.40375（约40.4%）。95%是假设，非实测模型成功率；价格也非当前报价。不能将该示例当实际采购排序。
+- **主指标**：在同一任务样本、验收门与预算下，所有任务的请求、工具、人工审查、返工、升级、失败和本期归属的容量/固定运维费用合计 ÷ 验收成功任务数；零成功不报有限单位成本。另报成功率、尾延迟、错误严重性及覆盖；价格缓存/计费单位按实际账单。自部署需分摊硬件或租赁、功耗、容量闲置、维护与升级，勿重复计费。
+- 有限重试、相关错误、难度选择及fallback会改变成功率和总成本；按真实策略测量，不直接套c/p。先独立验证质量、权限与SLO，再比较成本；简单直连与单模型也是有效基线。
 
 ### 从 Humans-as-Router 到 Workload Routing
 
@@ -170,13 +163,13 @@ cost per task = (input tokens × input price + output tokens × output price) ×
 
 ## 数据主权条款也是采购变量
 
-五个采购变量之外，Palantir 的 AI 主权 playbook（2026-07-27）补上了第六个维度：选择托管路径之后，适用什么数据处理条款。核心概念是 [[Alpha-Transfer]]——企业的 prompts、responses 与使用模式承载的独特机构知识，可能经条款许可的通道转移给提供商并被转售。严格 ZDR（不落盘、不人审、不训练、仅内存暂存）是必要不充分条件：beta 服务、安全分类器触发、图像输入、prompt 缓存、超链接条款单方变更等至少八条例外路径可以稀释它。
+五个采购变量之外，Palantir 的 AI 主权 playbook（2026-07-27）补上了第六个维度：选择托管路径之后，适用什么数据处理条款。核心概念是 [[Alpha-Transfer]]——企业的 prompts、responses 与使用模式承载的独特机构知识，可能经条款许可的通道转移给提供商并被转售。原作者定义的严格ZDR是特定高敏感需求下的候选约束，不是所有业务的必要条件或通用合同定义。beta、审查、缓存、条款等为待逐服务核验的风险清单；ZDR是保留策略，不等于不处理或不泄露；不训练承诺亦需独立核对合同及端点政策。
 
 这把模型采购从"选哪个模型"扩展到"选哪种数据关系"：
 
-- frontier API 路线必须附带条款工程（ZDR + 唯一许可用途 + 变更锁定 + 迁移缓冲），否则采购的是"带泄露通道的能力"。
+- 按数据类别与风险确定保留、用途、变更、通知、迁移等合同约束；未验证的通道不直接认定为实际泄露。
 - 条款需要技术门来执行：allow-list、beta header 阻断、区域路由 fail-safe——法务条款若无运行时执行，等于超链接条款（[[Policy-as-Code-for-Agent-Governance]] 的采购层镜像）。
-- 彻底路径仍是 [[Hardware-Sovereignty]]：neocloud + 开源自托管把数据留在自己控制的栈内——playbook 自身也承认，额外主权控制往往意味着自托管开源模型。
+- [[Hardware-Sovereignty]] 可提供更多运行控制，但自托管仍有管理员、遥测、网络、备份、供应链与工具调用等边界，不能视为彻底消除风险。
 
 注意该来源为 vendor 立场（Palantir 销售主权 AI），机制清单可作检查表，论点强度需打折。
 

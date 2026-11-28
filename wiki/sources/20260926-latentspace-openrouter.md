@@ -7,7 +7,7 @@ original_raw_file: "20260926-latentspace-openrouter.md"
 original_body_sha256: "633833b1ddc5ac60b8bcf012ed253431d63471af46708903bac2d3225c616d06"
 indexed_at: "2026-09-26T16:54:32+08:00"
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-11-28
 tags:
   - source-summary
   - openrouter
@@ -52,7 +52,7 @@ source_locator:
 ### 2. 质疑
 
 - **“neutral layer” 与平台归属的张力**：00:21:42–00:23:03 强调中立第三方身份对模型发现与市场包装的重要性；访谈结尾又讨论 OpenRouter 与 Stripe 的结合，并称品牌、产品和 roadmap 近期保持不变。短期产品连续性不等于长期利益中立性，后续仍需观察 provider 排序、数据使用和商业条款是否改变。
-- **数据网络效应并非无限**：00:48:07–00:48:48 明确说 OpenRouter 默认不读取 prompts/completions，组织需要 opt-in 才能记录。这强化隐私边界，却也意味着它的市场观测优势主要来自 usage / model / provider / performance 等元数据，而不是天然拥有完整 prompt 内容。
+- **数据网络效应并非无限**：00:48:07–00:48:48 描述历史默认日志与opt-in策略，不证明技术上不可接触请求。2026-11-28 [ZDR](https://openrouter.ai/docs/guides/features/zdr)、[Provider Logging](https://openrouter.ai/docs/guides/privacy/provider-logging) 已区分端点保留、Safety Retention、内存缓存及第三方工具。ZDR页还载有2026-10-27计划更新提示（安全筛查的法定保留例外），当前生效与具体合同需核验；不推定默认全部记录或零处理。实际配置、元数据及可见性须审计。
 - **Fusion 的证据边界**：早期 MOM 的失败是有价值的负证据；但 2026 年重启 Fusion 的起点包含创始人的个人 spot check，并让模型评价融合答案是否优于各自答案（01:02:03–01:02:38）。这不足以证明 ensemble 优势，必须靠独立 eval / human preference / task success 验证。
 - **平台规模与增长数字是第一方自述**：例如 “over 10 million” 开发者、约 9% week-on-week token growth、超过 10T tokens/day、单月阻断金额环比 10× 等，均来自访谈参与者，适合作为公司自述快照，不应当作独立审计事实。
 - **“更快让人觉得更聪明”不是 capability 测量**：00:45:47–00:46:35 讨论 Mixtral 的速度可能提高人类主观智能感知。这说明 latency 会污染 preference，但不能推出快模型在客观任务上更强。

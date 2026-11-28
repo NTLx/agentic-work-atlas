@@ -7,7 +7,7 @@ original_raw_file: "20260825-openrouter-choose-best-ai-model.md"
 original_body_sha256: "f08e905b9e932f3d9e561aa724e1283f85a9c03c54e2f2323cac16d7069d214c"
 indexed_at: "2026-08-26T11:51:11+08:00"
 created: 2026-08-26
-updated: 2026-08-26
+updated: 2026-11-28
 tags:
   - source-summary
   - model-selection
@@ -33,13 +33,13 @@ claim_type: mixed
   - 关键证据: benchmark 分数有噪声、热门基准被 tuning、哪个都没跑过你的 prompts；用第三方分数（Artificial Analysis/Design Arena）+ 实时流量数据（29 类任务市场占比）双通道构建短名单
   - 关键证据: 用 send-message 跑自己真实工作负载（真实 tickets/documents/schemas），用 get-generation 读回精确成本、token、provider、延迟
 - **核心结论3**: 选型的经济单位是"成本/完成任务"而非"成本/token"——低单价模型在重试、长输出、需要更强模型兜底时更贵
-  - 关键证据: Chen et al.(2026)《The Price Reversal Phenomenon》：32% 的模型对中低标价模型总成本反而更高，极端 28× 反转；同一 query 两个模型思考 token 消耗差 900%，重复运行单查询波动最高 9.7×
-  - 关键证据: 实测例子（2026-07-27 价格）：GPT-5.4 mini 标价 0.75/4.50 \$M，Claude Sonnet 5 标价 2.00/10.00 高约 2.4×——但 Sonnet 5 若首试成功 95%，则 mini 须首试成功 ≥40% 才更划算；低于 40% 时"更便宜 token"的更贵完成任务
-  - 关键证据: 公式 cost per task = (in×pin + out×pout) × expected attempts——大多数对比漏掉 expected attempts 项
+  - 关键证据: Chen et al.(2026)《The Price Reversal Phenomenon》：[原论文v1 §3](https://arxiv.org/html/2603.23971v1)：55/252（21.8%），8模型×9任务的模型对比较，单任务10.7–32.1%、极端28倍；二手32%不对应全体。900%跨模型思考token差与9.7倍同题重复波动为样本观察；非验收后任务TCO
+  - 关键证据: 假设算例（2026-07-27历史价格，成功率为扫参非实测）：GPT-5.4 mini 标价 0.75/4.50 \$M，Claude Sonnet 5 标价 2.00/10.00 高约 2.4×——但 Sonnet 5 若首试成功 95%，则 mini 须首试成功 ≥40% 才更划算；低于 40% 时"更便宜 token"的更贵完成任务
+  - 关键证据: 简化公式c/p需同成本、独立同分布重试直至成功；有限预算、相关错误及升级路径需实测。历史算例精确阈值40.375%；完整口径为所有执行、失败、人工及分摊成本/验收成功数；见 [[Enterprise-AI-Model-Sourcing]]
 
 ### 2. 质疑
 
-- **关于激励结构的质疑**: 方法论每步落点都是"that's what our MCP server / auto-router handles"——"别硬编码一家 provider、用路由层"恰是 OpenRouter 的产品目录。与库内 [[20260728-openrouter-evaluate-llm-provider-performance|上一篇 OpenRouter 教程]]、langchain/ai-mania 等构成**激励结构同构**：都批评直连/硬编码、都出售中介层。**方法论本身独立有效，可提取复用；结论方向需参照激励审视**（成本/任务公式不含 vendor 锁定成本）
+- **关于激励结构的质疑**: 方法论每步落点都是"that's what our MCP server / auto-router handles"——"别硬编码一家 provider、用路由层"恰是 OpenRouter 的产品目录。与库内 [[20260728-openrouter-evaluate-llm-provider-performance|上一篇 OpenRouter 教程]]、langchain/ai-mania 等构成**激励结构同构**：都批评直连/硬编码、都出售中介层。**方法论本身独立有效，可提取复用；结论方向需参照激励审视**（成本/任务公式不含供应商锁定、人工复核及失败成本；不能把路由产品当必要条件）
 - **关于数据时效的质疑**: 所有价格是 2026-07-27/08-25 快照，"30 天新增 ~40 模型"——任何具体结论下一月即过期；文章正确的部分是"把选型变成可重复运行的流程"而非任何具体的 winner
 - **关于适用场景的质疑**: 六步框架假设你可以构造真实评测集（Ori Eval / 真实靠打）；对没有 eval 基础设施的团队，"自测"是循环建议（前置条件未满足时框架无法启动）；低 QPS 长尾 workload 的 p99 无统计意义
 - **关于比较工具的读者偏差**: 全文反复强调"一个模型什么都干不划算"——这对多数需组合策略的企业成立，但也隐含"你不会只用单一 provider"的产品预设
