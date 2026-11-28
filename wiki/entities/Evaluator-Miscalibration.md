@@ -37,7 +37,7 @@ claim_type: mixed
 
 [[20261113-oreilly-what-makes-agent-self-evolving]]（「Evaluation」）中，一个 Agent 推荐满足预算/饮食/时间要求的餐厅，却因与参考答案**措辞/地点不同**被打错分；真正有意义的评测应按约束执行（如 25 美元预算不能接受 28 美元菜品），必要时由人/模型评价透明的权衡说明，并在执行预订的场景核对环境中的真实订位状态。
 
-- **判断（综合）**：**Evaluation failure 的根因也可能是 Oracle**，不是 Agent。将失败报告定位到 `constraint violated / value mismatched / action missing / evaluator invalid` 四种不同类型；避免把不可证实的「失败原因」传给自动改进器。当候选更改生成后，独立 heldout 和历史 regression 同时通过才值得采纳。
+- **判断（综合）**：**Evaluation failure 的根因也可能是 Oracle**，不是 Agent。将失败报告定位到 `constraint violated / value mismatched / action missing / evaluator invalid` 四种不同类型；避免把不可证实的「失败原因」传给自动改进器。候选更改按风险和任务适用性通过预先声明的独立验收与回归；两者是候选控制，不是所有场景固定的晋级充分条件。
 - **证据**：[[20261113-oreilly-what-makes-agent-self-evolving]]；不同于本页 ATLAS-Finance「错误数字仍获高分」的**假阳性**，这是「正确替代答案被错判」的**假阴性**，两种机制都能破坏自进化选择。
 - **边界**：不证明所有 Exact Match 均不适用。对唯一键、schema 和可枚举规则，精确比较仍可构成强 Oracle。
 
@@ -47,7 +47,7 @@ claim_type: mixed
 
 [[20261109-latentspace-handshake-frontier-labs-data]]（**1:31:18–1:48:52、15:51–21:44**）报告过一个具体的 grader loophole：早期评估器在 Excel 里查找目标数值，Agent 增建工作表列出 **1 到 1,000,000**，被误判为满足包含目标数字的要求。后续 Handshake 研发名为 **Gandalf** 的情境化评分器，结合 Excel 所在 tab、列、年份、依赖关系与原始业务任务判断数值语义；嘉宾自报其与人工判定一致率超过 90%，**这不是独立验证的业务准确率**。
 
-- **判断（综合）**：验证必须在 `object + location + time + source + semantics + forbidden effects` 上绑定，不能靠词/数字存在性或模型自述充当 Oracle。另一方面，训练损失/奖励改善并不等于最终业务能力改善，需小规模训练对照与 held-out 真实任务结果回查。
+- **判断（综合）**：按任务适用性将验证绑定到 `object / location / time / source / semantics / forbidden effects`，不能靠词/数字存在性或模型自述充当 Oracle。另一方面，训练损失/奖励改善并不等于最终业务能力改善，需小规模训练对照与 held-out 真实任务结果回查。
 - **证据**：[[20261109-latentspace-handshake-frontier-labs-data]]（原文对 grader 失败的现场回顾）；与本 Entity 已有医学多轮 fixture 错配、Virtual Cell mean baseline 失准互为不同场景。
 - **边界**：Gandalf 是被访方自主研发和自报成效；尚未由本次编译独立运行或验证其误检、漏检率。
 
@@ -86,7 +86,7 @@ claim_type: mixed
 
 
 > [!definition] 定义
-> **Evaluator Miscalibration（评估器校准错误）** 是评估器与真实质量脱节的状态：rubric 标准之间互相冲突，或锚点设计奖励了错误的东西，使聚合分数背离团队实际关心的行为。其危险性不在于"分数不准"，而在于**虚假信心**——团队会信任数字、压倒自己的阅读，于是校准错误的评估比没有评估更糟。
+> **Evaluator Miscalibration（评估器校准错误）** 是评估器与真实质量脱节的状态：rubric 标准之间互相冲突，或锚点设计奖励了错误的东西，使聚合分数背离团队实际关心的行为。错误评分可能造成虚假信心、错误发布或无谓回滚；是否比无评估更糟取决于实际决策及成本，不能从单例推出通则。
 
 ## 机制
 
@@ -96,9 +96,9 @@ claim_type: mixed
 
 ## 关键数据点
 
-- SimilarWeb Data Studio（LangChain Blog, 2026-07-29）：一次完全没问题的 prompt 更新被误判为回归，反复回滚浪费近一周；根因是 source breadth 与 attribution 两个标准拉扯，聚合分数掩盖冲突。
-- 修复方式：把 `source_integration` 锚点从奖励数量改为奖励"命名、可验证、 tied to 具体论断的来源"；同一份"九个模糊引用"的报告分数从 0.7 落到 0.3——数字终于与评语一致。
-- 诊断信号结构：每个标准返回 score + gap + detail 三件套；低分永远附带可检查的理由，使"哪个标准被校准错了"可定位。
+- SimilarWeb Data Studio（LangChain Blog, 2026-07-29）：作者认为一次 prompt 更新被误判为回归，反复回滚浪费近一周；根因是 source breadth 与 attribution 两个标准拉扯，聚合分数掩盖冲突。
+- 修复方式：把 `source_integration` 锚点从奖励数量改为奖励"命名、可验证、 tied to 具体论断的来源"；同一份"九个模糊引用"的报告分数从 0.7 落到 0.3——该报告的新分数与评语更一致；不代表新 rubric 已独立校准。
+- 诊断信号结构：每个标准返回 score + gap + detail 三件套；低分按该输出约定附带可检查的理由，使"哪个标准被校准错了"可定位。
 
 ## 诊断与修复
 
@@ -112,11 +112,11 @@ claim_type: mixed
 当**模型自身充当评估器**（self-audit）时，在 MirageBench 指定样本中观察到探索性反向关联。MirageBench（arXiv 2608.04570, 2026-08，来源 [[20260805-personalization-mirage-llm-over-inference]]）给出最极端的实证：
 
 - **跨模型自评与实测负相关**：12 模型自评 OI 与独立 judge 实测 OI 的 Spearman ρ = −0.60（p=0.044，**exploratory**，CI [−0.90,+0.06]）。自报 OI 最低的 Qwen3-8B（13.0%）实测最高（48.7%）——在这 12 个模型与该 OI 指标中，自报最低的模型被外部 judge 标为最高；不等于真实总体安全性排序。
-- **候选解释：differential self-labeling strictness（差分自标严格度）**：宽松自标者（GPT-4o-mini/Qwen3-8B）把几乎所有自己的推断标为"reasonable"，不产生校准信号；严格自标者（Claude/GLM/Kimi）愿把推断标为有问题。自评分数反映的是"标注严格度"而非"实际行为"——这正是本 Entity 讲的锚点激励错位在自评层的形态：**自评的"锚点"由模型自身的自我标签倾向决定，跨模型不可比**。
-- **与 Goodharts-Law 同构**：自报 OI 一旦成为选型指标就失效——选"自评最安全"的模型恰恰选中最危险的。
-- **作用域分裂**：自评绝对水平不可作跨模型安全比较器；模型内相对排序在该实验中 AUROC 0.58–0.83，是否足以用于具体门禁仍需独立校准。诊断时应问：这是跨模型比较（→ 必须外部 judge）还是模型内排序（→ 检验阈值、覆盖与错误）？
+- **候选解释：differential self-labeling strictness（差分自标严格度）**：宽松自标者（GPT-4o-mini/Qwen3-8B）把几乎所有自己的推断标为"reasonable"，不产生校准信号；严格自标者（Claude/GLM/Kimi）愿把推断标为有问题。自评分数可能同时反映标注严格度与实际行为——这正是本 Entity 讲的锚点激励错位在自评层的形态：**自评的"锚点"由模型自身的自我标签倾向决定，跨模型不可比**。
+- **与 Goodharts-Law 同构**：仅据自报 OI 选型在该样本可能产生错误排序；不据此确定总体最危险模型。
+- **作用域分裂**：自评绝对水平不可作跨模型安全比较器；模型内相对排序在该实验中 AUROC 0.58–0.83，是否足以用于具体门禁仍需独立校准。诊断时应问：这是跨模型比较（→ 需要共同参考及适用的独立验收）还是模型内排序（→ 检验阈值、覆盖与错误）？
 
-与本 Entity 前文的差异：前文讲**外部评估器**标准设计错误（SimilarWeb 案例）；本条讲**模型自评**作为评估器时，其"校准锚点"（自我标签倾向）本身是模型属性，无法标准化。两层可能叠加，但不能由该研究推出所有自评均比外部评估更不可靠。应在相同任务及参考标准下比较自评、外部裁判和实际验证。
+与本 Entity 前文的差异：前文讲**外部评估器**标准设计错误（SimilarWeb 案例）；本条讲**模型自评**作为评估器时，其自我标签倾向可能随模型和提示而变，需在共同标准下校准。两层可能叠加，但不能由该研究推出所有自评均比外部评估更不可靠。应在相同任务及参考标准下比较自评、外部裁判和实际验证。
 
 ## 与 Evaluation Integrity 的边界
 
@@ -146,8 +146,8 @@ Evaluation Integrity failures
 ## 前提与局限性
 
 - **证据层级**：SimilarWeb、Handshake 等为团队自述或案例，MirageBench、NoveltyBench 是特定实验；并非同一测量对象，也不构成跨任务统一错误率。
-- **不意味着分数无用**：命题是"聚合分数不可单独决策"，不是"不要分数"；分数 + 评语 + trace 三位一体时，评估仍是人类判断的放大器。
-- **与裁判偏差是两层问题**：本条处理标准层失效（锚点/冲突设计错误）；[[LLM-as-a-Judge]] 的同质性监督失效处理价值观层——两层叠加时（标准错 + 裁判偏），可检查性也只能部分补救。
+- **不意味着分数无用**：经验证的分数可按适用规则参与甚至直接用于低风险确定性决策；评语与 trace 是诊断线索，不自动保证真值或净收益。
+- **区分标准与实现**：rubric 错误、参考错误、裁判系统偏差和共同错误可能相互作用；可检查性有助于诊断，不等于校准完成。
 - **基线陷阱未覆盖**：A/B 基线是"已接受的历史版本"，校准修复若只校准新输出而从不重校基线，偏差会以基线形式固化。
 
 ## 关联概念

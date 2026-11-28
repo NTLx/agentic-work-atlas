@@ -5,14 +5,14 @@ aliases:
   - Compaction
   - Context Compaction
   - Conversation Compaction
-definition: "Coding agent 在长会话中当上下文逼近窗口上限时，把较老轮次通过一次独立的 LLM 调用序列化为结构化摘要（goal / progress / key decisions），保留最近 N 个消息不变，结果作为新 turn 前缀插入的工程机制；与 prompt cache 存在结构性张力"
+definition: "通过压缩或替换部分历史输入，在有限上下文容量中保留任务延续所需信息的工程机制；具体摘要方式、触发、保留窗口、缓存及恢复合同由实现决定。"
 created: 2026-08-16
-updated: 2026-09-17
+updated: 2026-11-28
 tags:
   - context-engineering
   - coding-agent
   - memory
-evidence_level: high
+evidence_level: medium
 claim_type: mixed
 related_entities:
   - "[[Context-Engineering]]"
@@ -30,7 +30,7 @@ source_raw:
 # Compaction
 
 > [!definition] 定义
-> **Compaction** 是 coding agent 在长会话中当上下文逼近窗口上限时，把较老轮次通过一次独立的 LLM 调用序列化为结构化摘要（goal / progress / key decisions），保留最近 N 个消息不变，结果作为新 turn 前缀插入的工程机制。由 Pi coding agent 团队在 2026-08 工程博客中详细描述，被 Claude Code、Codex 等同类 agent 普遍采用。
+> **Compaction** 压缩或替换部分历史输入以延续任务。Pi 历史博客描述独立摘要调用、保留近期消息与新前缀；并非所有实现均需这种结构或独立模型调用。下文是归档实现及工程权衡，不代表当前 API/版本合同。
 
 ## 关键数据点
 
@@ -70,7 +70,7 @@ first request after compaction: [system][tools][summary][recent retained turns][
                               <-- reusable -->^ | 重新计算起点
 ```
 
-- compaction 一次 = 一次 cache miss 链重置
+- 若使用精确前缀缓存，变化位置之后的旧缓存可能无法复用；变化之前的共同前缀仍可能命中，实际费用按服务计量
 - 之后请求重新建立 cache 链（warm-up 成本）
 - **trigger 阈值选择** = cache 利用 vs overflow 风险的权衡
 
@@ -78,7 +78,7 @@ first request after compaction: [system][tools][summary][recent retained turns][
 
 - summary 存为 plain text（非结构化嵌入）
 - 切换 LLM 模型时 summary 仍可读（session portability）
-- **tradeoff**：portability 优于 structured embedding，但 loss of programmatic queryability
+- **tradeoff**：文本可读性与结构化查询可并存；嵌入、文本和结构化状态不是互斥选项，实际可移植性需测试
 
 ## 关键命题
 
@@ -88,20 +88,20 @@ first request after compaction: [system][tools][summary][recent retained turns][
 
 ### 命题 2：Compaction 对抗 [[Context-Rot]]
 
-[[Context-Rot]] 主张"上下文填充越多，模型推理下降"——这是一个观察性现象。Compaction 提供**工程手段对抗**——通过定期压缩保持 high-signal token 比例。但**触发阈值 / 摘要质量上限决定对抗效果**
+[[Context-Rot]] 是特定任务、模型及输入条件下的退化现象。Compaction 可减少干扰，也可能遗漏关键事实；比较原文、摘要及可恢复状态下的质量、约束保持、延迟和全成本。
 
 ### 命题 3：Compaction 与 [[Ralph-Loops]] 是同一问题的两种解
 
 | 机制 | Ralph-Loops | Compaction |
 |------|-------------|------------|
 | 对抗问题 | context 衰减 | context 衰减 |
-| 路径 | 同一上下文无限循环 | 上下文定期压缩重置 |
-| cache 利用 | 高（无 compaction 触发）| 中（每次 compaction 后 warm-up）|
-| 信息保留 | 完整 | 摘要（信息有损）|
+| 路径 | 可用新会话迭代并从外部状态恢复 | 历史输入压缩或替换 |
+| cache 利用 | 取决于前缀及服务实现 | 取决于变化前缀及服务实现 |
+| 信息保留 | 取决于外部状态及恢复机制 | 摘要可能有损，可配合原文定位 |
 
-→ 适用场景不同：Ralph-Loops 适合结构化短任务；Compaction 适合长会话多任务
+→ 两种机制可组合，按任务连续性、可复位性、资源和停止合同选型；不保证保留全部状态。
 
-### 命题 4：独立 LLM 调用是核心设计选择
+### 命题 4：独立 LLM 调用是一种设计选择
 
 - **优势**：可用更小/更便宜的模型做摘要；不污染主对话上下文；可在不同模型间共享
 - **代价**：compaction 本身消耗 token；摘要质量受模型能力限制
@@ -124,7 +124,7 @@ MarkTechPost 的横向材料补充了 Pi 之外的实现差异：Deep Agents 用
 - **摘要结构固定为三段式**——未必适用所有任务类型（数据探索 / 写作 / 调试需要不同模板）
 - **compaction 成本未量化**——cache miss + LLM 调用合计开销
 - **plain text 存储 vs structured embedding 的 tradeoff**——portability 优于 programmatic queryability
-- **任务感知的摘要模板缺失**——Pi 没实现"任务类型感知 compaction"
+- **任务感知的摘要模板**：旧材料未披露该能力，不推断当前 Pi 不支持。关键授权、外部效果、未完成事项与版本需另有可核验状态，不依赖摘要作为权限或终态证明。本轮未重查 Pi/Codex 当前文档、默认值或缓存计费。
 
 ## 时间线
 

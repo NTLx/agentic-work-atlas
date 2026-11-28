@@ -4,9 +4,9 @@ title: Agent Verification
 aliases:
   - Agent 自主验证
   - Agentic Verification
-definition: "Agent 能自主运行验证循环的能力——不是 lint/type check，而是 agent 能自己启动测试环境、执行操作、观察结果并判断是否通过"
+definition: "Agent 执行或参与验证循环：根据任务合同获取证据、运行适用的检查并判断结果、处理失败；包括确定性检查与模型评审，验证能力不等于正确性或执行授权。"
 created: 2026-06-12
-updated: 2026-10-25
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -48,14 +48,14 @@ source_raw:
 ---
 
 > [!definition] 定义
-> Agent 验证不是传统意义上的自动化测试（lint、type check、unit test），而是 agent 能**自主运行验证循环**——自己启动测试环境、执行操作、观察结果、判断是否通过，并在失败时自行修复。
+> Agent 验证可以组织传统自动化测试（lint、type check、unit test）、环境操作、证据观察与结果判定，也可在许可范围内修复再检。自主编排不要求每次使用模型裁判，不等于验证器本身可靠或已获发布授权。
 
 ## 关键数据点
 
 - Claude Code 的 verification 路径: agent 打开 CLI → 测试自己写的 feature → 观察结果 → 修复
 - Desktop development skill: Claude 启动本地 desktop app → 用 computer use 点击测试 UX → 测试 edge cases → 修复并重新检查
 - 验证循环示例: iOS simulator / Android simulator / desktop computer use
-- 从 Opus 4 开始实现 self-testing，到今天已成常态
+- 早期 Claude Code 实践描述了 self-testing；本轮未核当前产品普及率或版本起点。
 
 ## 保护 Oracle：验证基线不能被同一变更者静默改写（09-20 编译新增）
 
@@ -77,7 +77,7 @@ independent review / CI / rollout
 human release judgment
 ~~~
 
-**判断**：验证器独立性不仅是“换一个模型评审”，还包括**让 correctness contract 在权限和所有权上独立于被修改实现**。如果 Agent 能在失败时顺手弱化测试、更新 snapshot、抬高兼容基线，就失去了 oracle。
+**判断**：验证器独立性不仅是“换一个模型评审”，还包括**让 correctness contract 在权限和所有权上独立于被修改实现**。如果 Agent 可在失败时未受审查地改弱测试或变更基线，原合同的通过证据就失去可比性。合法修订错误测试或基线应有明确变更理由、适用版本及独立复评。
 
 - **证据**：[[20260916-github-copilot-runtime-rust-migration]]
 - **边界**：E2E 只保护已编码的行为契约；缺失覆盖、错误 oracle 和未知外部状态仍需要真实 rollout、人工审查与其他验证层补足。
@@ -95,15 +95,15 @@ Anthropic 将 Agent 验证从“检查一次输出”推进到**检查研究循�
 
 两篇同窗口来源（GitHub 2026-07-27 / Berkeley RDI 2026-07-26）从实践和理论两侧扩展了验证命题：
 
-**实践侧：Rubber Duck 跨模型评审**（GitHub Copilot 机制）：请求**不同模型家族**审查实现——用 GPT 5.6 Terra 写的代码请 Sonnet 审查。原理：不同训练数据 → 不同盲点，单模型自审是盲点自洽。可与 Autopilot 组合成循环，直到双方同意只剩边际收益。这是异构验证的轻量工业形态。
+**实践侧：Rubber Duck 跨模型评审**（GitHub Copilot 机制）：请求**不同模型家族**审查实现——用 GPT 5.6 Terra 写的代码请 Sonnet 审查。这是尝试引入不同评审信号的设计，模型家族不能代理训练数据独立性或共同错误率，单模型自审亦可能发现部分错误。可与 Autopilot 组合成循环，直到双方同意只剩边际收益。这是异构验证的轻量工业形态。
 
 **理论侧：保障对象从产物转移到 agent**（Berkeley position paper）：
 
-> **CORE RISK**：当同一个 agent 既写实现又写测试，通过测试只证明**一致性**，不证明**正确性**。
+> **CORE RISK**：同一 agent 编写实现与测试时，测试通过仍可提供限定行为的证据，但共享误解可能同时污染实现和判据；不能仅凭通过证明完整正确性。
 
-自治 agent 会同时生成实现、测试、文档和理由——创造跨越所有"互相验证的产物"的**关联失败**。因此验证软件产物不再足够，还必须审计产出它的 agent（规格、技能、记忆、决策溯源、执行轨迹）。独立验证者 agent 只有在具备**真正独立的目标**、可信的评估机制、有原则的分歧解决协议时才有效。
+自治 agent 会同时生成实现、测试、文档和理由——创造跨越所有"互相验证的产物"的**关联失败**。因此验证软件产物不再足够，还必须审计产出它的 agent（规格、技能、记忆、决策溯源、执行轨迹）。验证者需要可信判据与适用的分歧解决机制；正确性目标可共享，变更权限、证据来源、奖励及错误相关性分别评估，不要求目标必然不同。
 
-**两侧配对的关键张力**：跨模型家族评审只是**训练数据级独立**——完整论文给出两个具体失败机制：verifier 与 generator 可能 **talk past each other**（互不理解、无法收敛），或 **co-adapt**（共同适应，直到测试仅仅背书实现的 bug）。这正是"不同模型家族不同盲点"不够的原因：Berkeley 要求的是**目标级独立**。Rubber duck 降低了自洽盲区风险，但未满足完全独立验证的条件——自治程度越高（[[Software-Development-Autonomy-Levels|Level II/III]]），这一缺口越致命。
+**两侧配对的关键张力**：跨模型评审是候选方式；Berkeley position paper 讨论 verifier 与 generator 互不理解或共同适应等风险，不证明训练数据/目标独立的必要充分条件。共享正确性合同与独立评估权可以共存；参照 [[LLM-as-a-Judge]] 的错误相关性证据与 [[research-agenda]] 的 EX-001/002/004。
 
 ## 科学域验证：四个细化命题（07-29 编译新增）
 
@@ -111,26 +111,26 @@ OpenAI 科学计算 field report（[[20260728-openai-scientific-computing-field-
 
 1. **plausible ≠ correct**：编译通过 + "看起来合理"的输出只是极弱证据。实际观察到的微妙错误：被改的数值默认值、不当的内存分配/流式行为、静默跳过的 case——"输出貌似合理但微妙错误"
 2. **验证 harness 自身是错误来源**：HelixForge 中，下采样导致的假阳性 strand-balance 审计让 agent 去修改本来正确的 GPU 实现——人类审查需同时在两层：重写本身 + 验证 harness（后者常由 agent 辅助设计）
-3. **真实数据不可替代**：RustQC 边缘 case 只在真实公开测序数据的真实规模显现（最小数据集不够）；hifiasm 在真实人类 reads 上的加速小于合成 benchmark——性能增益随数据集衰减
-4. **技术正确性 vs 概念正确性**：agent 能提出并评估优化假设，但"下一步把优化压力投向哪里、尝试哪个高层策略"仍需人类反复决定——人类判断同时保证 technical correctness 与 conceptual correctness
+3. **真实规模与代表性数据的重要性**：RustQC 边缘 case 只在真实公开测序数据的真实规模显现（最小数据集不够）；hifiasm 在真实人类 reads 上的加速小于合成 benchmark——性能增益随数据集衰减
+4. **技术正确性 vs 概念正确性**：报告中的专家参与选择优化方向并审查技术与科学意义；不能据此断言人类判断保证正确性或所有高层策略必须人工决定。
 
-佐证：agent "出错时照样表达自信"（七案贡献者均为成功的主要裁决者）；HI.SIM 是唯一近自主案例，恰因其验收目标是字节级一致（可验证性极强）——自主程度由可验证性决定，见 [[Grindability-vs-Verifiability]] 域边界节。
+佐证：agent "出错时照样表达自信"（七案贡献者均为成功的主要裁决者）；HI.SIM 被描述为近自主案例、具有明确一致性验收；案例选择与任务差异未控制，不能据此识别自治程度的单因果决定因素，见 [[Grindability-vs-Verifiability]]。
 
 ## 形式验证镜像：验证器独立性与新鲜度（08-01 编译）
 
-Lean kernel soundness bug #14576 事后分析（[[20260801-lean-kernel-soundness-bug-postmortem]]）在正确性保证最强的领域（数学证明检查，字节级判定）压力测试了验证命题，并把上文的独立性框架精确化：
+Lean kernel soundness bug #14576 事后分析（[[20260801-lean-kernel-soundness-bug-postmortem]]）展示形式证明检查器的实际实现与版本边界，数学证明检查不是字节级相等判定。
 
-| 独立性层级 | Agent 域实例 | 形式验证域对应 |
-|-----------|-------------|---------------|
-| 训练数据级 | 跨模型家族 rubber duck 评审 | —（同一实现的不同视角，独立性最弱） |
-| 实现级 | — | Lean kernel vs nanoda（不同语言、不同团队的独立实现） |
-| 目标级 | 具备真正独立目标的验证者 agent | lean4lean（kernel 实现其类型理论的**形式化证明**） |
+| 检查维度 | 实例 | 边界 |
+|---|---|---|
+| 模型及证据 | 跨模型评审 | 家族不同不证明统计独立 |
+| 实现及版本 | Lean kernel 与 nanoda | 不同缺陷不证明独立概率或攻击成本 |
+| 规格及证明 | lean4lean | 一致性验证当时未覆盖归纳类型；不等于已完成证明或独立目标 |
 
 三个新命题：
 
-1. **独立性是结构属性，新鲜度是运维属性，缺一不可**：exploit 同时骗过 Lean kernel 与 nanoda，因为两个不相关 bug 恰好对齐——独立检查*机制*依然成立（攻破需两个独立实现各有一个不同 bug），但 nanoda 的 bug 早一周已修复，**持有旧版本的独立检查等于没有独立检查**。"users who rely on it need current versions of both"——异构验证必须配套版本跟踪（comparator.live 每日同步 nanoda 上游）。
-2. **bug 独立性可能被信息渠道侵蚀**：无法排除 AI 模型见过 nanoda 的公开 bug 报告后定向构造 exploit。若攻击方能系统性 harvest 多个检查器的公开缺陷，独立性假设退化为"未公开 bug 的独立性"——这与 co-adapt 机制（verifier 与 generator 共同适应）在结构上同源。
-3. **enforcement point 必须独立于不可信组件**："健全性不能依赖不可信组件拒绝构造坏项，kernel 必须在自己的进程内独立拒绝 ill-typed 声明"——与 agent 域"containment 不能依赖模型自我克制、护栏必须由 [[Agent-Harness]] 独立执行"是同一条信任边界原则。"移除 metaprogramming 防攻击"等同于"靠 prompt 约束模型"——把安全寄托在不可信组件的自我克制上。
+1. **实现及版本分别检查**：该反例通过两处不同实现缺陷；nanoda 相关缺陷早已修复。旧检查器仍可能提供部分有效检查，但不能据此保证发现目标缺陷；新版本也不天然无错。版本跟踪与独立性是不同验收对象。
+2. **bug 独立性可能被信息渠道侵蚀**：无法排除 AI 模型见过 nanoda 的公开 bug 报告后定向构造 exploit。这是作者保留的可能性，不证明模型实际利用报告或共同适应机制。
+3. **enforcement point 必须独立于不可信组件**："健全性不能依赖不可信组件拒绝构造坏项，kernel 必须在自己的进程内独立拒绝 ill-typed 声明"——与 agent 域"containment 不能依赖模型自我克制、护栏必须由 [[Agent-Harness]] 独立执行"是同一条信任边界原则。应按可信基、实际实现及可达旁路验证该约束；不同领域的信任边界只是设计类比。
 
 ## 前提与局限性
 
@@ -302,7 +302,7 @@ Google 同时把 automation boundary 说得很清楚：系统承担 logical cons
 
 Prime Agent 的每个迁移任务由 Planner 先写出旧版 TypeScript 行为规格和 parity check，再由 Implementer 在独立 worktree 编码；不同模型、不同上下文中的 Reviewer 对抗审查，最后 Verifier 在新 Prime Sandbox 编译并运行 parity/tests。审查或验证失败会把结果送回 Implementer，两个门都通过才合并（[[20261025-prime-agent-rust-rewrite]]，“Orchestration of Finite State Machines”）。
 
-**判断**：生成与验证分离必须落实到目标、上下文和执行环境，而不只是把同一个 Agent 的工作命名为两个阶段；同时，最终可信度仍取决于 ground truth 和 parity contract 是否正确。
+**判断**：生成与验证分离可落实到判据所有权、证据、上下文及运行环境，按风险选择，不能仅靠角色命名保证独立性；可信度仍取决于 ground truth、parity contract 及实际覆盖。
 
 - **证据**：[[20261025-prime-agent-rust-rewrite]]；文章说明 reviewer 使用不同模型与独立上下文，verifier 使用新 sandbox。
 - **边界**：差分 parity 只能覆盖脚本化行为；作者称内部 dogfood 发现了未覆盖的行为差异，发布前还有后续修复和人类 review。不同模型 reviewer 降低部分共源偏差，但不构成独立正确性证明。
@@ -311,7 +311,7 @@ Prime Agent 的每个迁移任务由 Planner 先写出旧版 TypeScript 行为�
 
 - [[Claude-Code-CLI]] — Agent verification 的主要载体
 - [[Agent-Loops]] — Verification 是 loop 的核心环节
-- [[Auto-Mode]] — Auto mode 让 verification 循环可以无人值守运行
+- [[Auto-Mode]] — 部分产品的审批分类策略，不能替代实际权限边界。
 - [[Validation-Pipeline]] — 系统化验证管线：对抗审查 + e2e 测试 + 证据生成 + PR babysitting
 - [[Captain-Mindset]] — 验证能力的组织意义：人类从审 diff 转向看证据
 - [[Software-Development-Autonomy-Levels]] — 自治级别越高，保障对象越从产物转向 agent（CORE RISK：一致性 ≠ 正确性）
