@@ -3,7 +3,7 @@ type: topic
 title: Agent Data Minimization
 description: "Agent 数据最小化：把授权范围、实际读取范围、模型/上下文暴露与保留删除生命周期分开治理，避免用 least privilege 或 zero unauthorized writes 替代真实的数据最小化证据"
 created: 2026-09-19
-updated: 2026-11-16
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -97,7 +97,7 @@ retention / deletion
 - MCP connector 按 tool 单独授权；
 - 每次 read、proposal、decision 都进入 audit log。
 
-这证明任务 Agent 可以避免“默认全库可见”。
+这是厂商披露的资源隔离设计，表明可避免默认全库授权；实际执行覆盖及读取量仍需独立验证。
 
 但该案例仍没有提供：
 
@@ -112,11 +112,7 @@ retention / deletion
 
 [[MosaicLeaks]] 提醒了另一个独立层面：即使数据是合法读取的，Agent 为完成任务而构造外部 query 或模型上下文时，仍可能泄漏不必要的私密信息。
 
-MosaicLeaks 的受控结果显示：
-
-- 基线 Answer/Full-Information 泄漏率 34.0%；
-- 只强化任务成功后升至 51.7%；
-- [[PA-DR]] 把泄漏降到 9.9%，同时任务成功率保持接近 task-only 训练。
+MosaicLeaks 原博客结果已由同研究线 [v2（2026-11-19）](https://arxiv.org/html/2605.30727v2) 更新。表11 Qwen3-4B 基线 Privacy Leakage 34.0%、task-only 51.8%、[[PA-DR]] 6.5%，严格链成功率分别48.7%、59.3%、58.1%。指标按 rollout 的 full/partial match，非实际泄露事件率。表14 的独立模型评估在同100链上趋势相同、绝对量不同；Gemma 的 PA-DR 仍高于自身基线。训练、提示词和过滤是候选缓解机制，不等于披露授权。详见 [[MosaicLeaks]]。
 
 因此：
 
@@ -145,7 +141,7 @@ authorized disclosure
 
 它证明的是：
 
-> **least privilege 与 minimum retention 是正交问题。**
+> **least privilege 与 minimum retention 是不同治理维度。** 可相互影响，但不能由其中一项推出另一项。
 
 权限可以很窄，而保留可以很长；保留可以很短，而单次读取仍可能过宽。
 
@@ -181,7 +177,7 @@ agent system no-retention
 - business source system；
 - backup / observability pipeline。
 
-因此每个 retention claim 都必须带上 **retention surface**。
+因此每个 retention claim 都必须带上 **retention surface**。适用 GDPR 时，[Article 5(1)(c)/(e)、17、19](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng/) 分别涉及目的相关必要性、存储限制、删除及向接收方通知；删除存在法定例外和传播条件，不是所有副本都必须即时删除。企业商业秘密与个人数据也不是同一法律对象。
 
 ## CR-002 的稳定收窄
 
@@ -191,7 +187,7 @@ agent system no-retention
 
 > **Agentic workflow 对广权限、广检索、上下文累积和长期记忆存在结构性压力；但这些风险不是 Agent 架构不可避免的属性。通过外部身份授权、按资源/客户隔离、tool-level permissions、provider no-retention、human approval 和审计，可以显著收窄边界。真正仍缺的是对 actual read volume 与 retention/deletion 生命周期的长期量化。**
 
-生产反例已经足以否定：
+生产架构描述支持反对无条件必然性，但尚无独立实际读取/长期保留实测；不能由设计直接证明生产数据最小化：
 
 ~~~text
 agentic architecture

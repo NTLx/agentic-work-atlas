@@ -5,9 +5,9 @@ aliases:
   - Frontier Developer Obligations
   - 前沿开发者义务
   - Frontier AI Developer Obligations
-definition: "Anthropic 提出的前沿 AI 开发者必须承担的监管义务：测试、透明度、独立评估、安全和执法"
+definition: "Anthropic 2026年6月政策提案建议的前沿 AI 开发者监管义务：测试、透明度、独立评估、安全和执法"
 created: 2026-06-12
-updated: 2026-06-15
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -27,11 +27,13 @@ source_raw:
 # Frontier Developer Obligations
 
 > [!definition] 定义
-> Anthropic (2026) Advanced AI Framework 中提出的前沿 AI 开发者义务体系：对训练计算量超过 10²⁵ FLOP、AI 相关收入超过 `$5` 亿或 AI R&D 支出超过 `$10` 亿的开发者，要求执行测试、透明度报告、独立评估、安全保障和执法问责。
+> Anthropic (2026) Advanced AI Framework 中提出的前沿 AI 开发者义务体系：建议适用于训练计算量超过10²⁵ FLOP 且（AI 年收入超过5亿美元或 AI 年研发支出超过10亿美元）的开发者；这些是拟议义务，不是已生效的通用法律。
 
 ## 关键数据点
 
-### 适用范围
+### 适用范围（提案）
+
+[Advanced AI Framework 原文](https://www-cdn.anthropic.com/files/4zrzovbb/website/0a58d567024a8b448ff15158ebc3625328dfcc1f.pdf) p.3 明确要求两组条件同时满足，收入门槛按通胀调整。以下报告期限、审查及执法安排均是提案。
 - **模型阈值**: 训练 FLOP > 10²⁵
 - **公司阈值**: AI 相关年收入 > `$5` 亿 或 AI 年 R&D 支出 > `$10` 亿
 - **四类风险**: 生物武器、进攻性网络操作、AI 失控、自动化研发

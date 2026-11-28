@@ -30,8 +30,8 @@ Legacy provenance 维护线已完成并冻结；详情见 research-logs 与 Git 
 - Gap: Evidence
 - Evidence: `raw/2026-eu-ai-act-compliance-autonomous-agents.md`；官方执行框架与现有溯源记录见 [[2026-09-05]]。
 - Evidence goal: 官方 AI Office/委员会处罚决定文本或独立一手披露，确认或证伪具体处罚实例。
-- Last checked: 2026-09-05 · refined
-- Next: 触发式复查，不主动追踪 €47M 二手叙事。
+- Last checked: 2026-11-28 · refined/blocked
+- Next: 已回查官方执法FAQ与Article101，未核实具体处罚决定；触发式复查，不主动追踪 €47M 二手叙事。
 - Retry: new-source:eu-ai-act-official-penalty-decision
 
 ### CR-002 · Agent 数据最小化是独立治理轴
@@ -41,8 +41,8 @@ Legacy provenance 维护线已完成并冻结；详情见 research-logs 与 Git 
 - Gap: Boundary
 - Evidence: [[Agent-Data-Minimization]] 及其关联来源。
 - Evidence goal: 生产级 longitudinal actual-read、context exposure、retention/deletion、纠正传播及 permission/retention creep 数据，或最终规范。
-- Last checked: 2026-09-19 · refined
-- Next: 等待 actual-read / retention-deletion longitudinal evidence 或最终规范。
+- Last checked: 2026-11-28 · refined/blocked
+- Next: MosaicLeaks v2 仅补查询泄露，仍等待 actual-read / retention-deletion longitudinal evidence 或适用最终规范。
 - Retry: new-source:agent-data-minimization-longitudinal
 
 ### CR-003 · AI 监督 AI 的共模误差下界是条件量
@@ -125,7 +125,7 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
-| 2026-11-28 | 全库消化与退役 | retired/refined | D02 核心初审，D04 知识系统/本体、D03 安全初审；撤回 GBrain 旧评分与本体必然性，合并 ASR 单源页；EX-005 联合证据仍缺；见 [[2026-11-28]]。 |
+| 2026-11-28 | 全库消化与退役 | retired/refined | D03/04 核心初审，MosaicLeaks v2 与法规纠偏，撤回旧监管动机定理；CR-001/002 与 EX-005 仍缺目标证据；见 [[2026-11-28]]。 |
 | 2026-10-21 | Candidate research audit | merged/retired/refined | CR-004 并入 EX-005、CR-007 retire；CR-001/005 收窄；提出未编号科学 AI 定向探索；压缩 agenda 操作层。 |
 | 2026-10-20T23:53:00+08:00 | CR-005 专业能力再生与独立校准 | refined-reasoning | 从保存无 AI 技能收窄为再生不与主生成路径共模的现实校准能力；无新 Evidence，保持 blocked。 |
 | 2026-09-07T08:33:43+08:00 | EX-005 耐久执行停止与外部效果 | refined | 区分 durable execution 停止、在途 invocation 与已发生副作用；加入 checkpoint/in-flight 窗口。 |
