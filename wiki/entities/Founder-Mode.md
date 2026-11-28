@@ -4,9 +4,9 @@ title: Founder Mode
 aliases:
   - Founder Mode
   - 创始人模式
-definition: "Paul Graham 2024 年提出的管理哲学，主张创始人应保持技术参与度和产品直觉，而非完全委托给职业经理人"
+definition: "Paul Graham 2024年提出的创始人深度参与管理的观点，质疑CEO只能通过直接下属了解公司；不是经验证的统一管理模式。"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-11-28
 tags:
   - management
   - entrepreneurship
@@ -25,11 +25,11 @@ claim_type: mixed
 # Founder Mode（创始人模式）
 
 > [!definition] 定义
-> **Founder Mode** 是 Paul Graham 于 2024 年提出的管理哲学，主张创始人应保持技术参与度和产品直觉，而非完全委托给职业经理人。在 AI 时代，这一概念被扩展为"CEO 必须亲手使用 AI 构建东西"。
+> **Founder Mode** 是 Paul Graham 于 2024 年提出的管理哲学，主张创始人应保持技术参与度和产品直觉，而非完全委托给职业经理人。2026年Graham的AI实践观点可与之类比，不由原理论推出CEO必须亲自编码。
 
 ## 起源
 
-Graham 在 2024 年 9 月发表的文章中提出 Founder Mode，批评传统的"hire good people and give them room to do their job"管理建议。他认为这种建议几乎杀死了 Airbnb，Brian Chesky 通过保持深度参与才挽救了公司。
+Graham 在 2024 年 9 月发表的文章中提出 Founder Mode，批评传统的"hire good people and give them room to do their job"管理建议。[原文](https://paulgraham.com/foundermode.html) 转述Chesky经验，明确尚不清楚Founder Mode具体形态；非独立因果检验。
 
 ## AI 时代的 Founder Mode（2026）
 
@@ -46,7 +46,7 @@ Graham 在 2024 年 9 月发表的文章中提出 Founder Mode，批评传统的
 1. **技术参与度**: CEO 应保持对技术细节的理解，而非完全依赖二手报告
 2. **产品直觉**: 通过亲手使用工具（包括 AI）来维持对用户体验的感知
 3. **决策质量**: 基于直接经验而非抽象分析做出战略决策
-4. **团队士气**: CEO 的参与可以提高工程团队的士气和信任度
+4. **团队影响**: 参与可能促进理解，也可能造成干扰；实际士气、质量和机会成本需测量。
 
 ## 与 Vibe Coding 的张力
 
@@ -55,9 +55,9 @@ Founder Mode 在 AI 时代面临一个核心张力：CEO 应该亲手使用 AI�
 | 立场 | 代表 | 态度 |
 |------|------|------|
 | **CEO 必须亲手用 AI** | Paul Graham, Guillermo Rauch | 不参与比过度参与更危险 |
-| **CEO 应该停止 vibe coding** | Paul Ford | 高管的周末 demo 可能成为工程师的噩梦 |
+| **警惕高管原型转成隐性指令** | Rich Ziade | 原型不应跳过团队验收 |
 
-Paul Ford 在 "Dear Vibe-Coding CEO: Please Stop"（2026-05-20）中批评：
+[Rich Ziade](https://aboard.com/dear-vibe-coding-ceo-please-stop/)（2026-05-20，原Wiki误署Paul Ford）批评高管原型增加后续团队负担；并非反对所有高管AI实践：
 
 > "The boss built a thing and he wants you to take a look... vibe-coded demo is the ultimate executive memo... Your interactive C-suite demo memo is not going to get you any results."
 
@@ -71,7 +71,7 @@ Paul Ford 在 "Dear Vibe-Coding CEO: Please Stop"（2026-05-20）中批评：
 ## 前提与局限性
 
 - 依赖前提：创始人具备足够的技术能力和判断力
-- 适用边界：对技术出身的创始人更适用，对非技术背景的职业经理人可能需要更多支持
+- 适用边界：参与方式应随任务、组织规模、职责及资源调整；未测技术创始人与职业经理人的比较效果
 - 局限性：过度参与可能导致微观管理（micromanagement），需要找到合适的参与深度
 - 质量标准：CEO 亲手 vibe coding 的产出需要组织层面的质量门控，避免低质量 demo 进入产品 backlog
 

@@ -8,7 +8,7 @@ aliases:
   - CEO AI Psychosis
 definition: "一个被混用于不同现象的总称：临床语境中的真实精神病性体验，以及 AI 工作语境中由能力外推或产出—价值脱钩造成的现实校准失败"
 created: 2026-04-16
-updated: 2026-09-10
+updated: 2026-11-28
 tags:
   - AI-agent
   - perception-gap
@@ -57,7 +57,7 @@ Jeff Clark, MD 在 2026 年 9 月的系列文章中指出，`AI psychosis` 至�
 
 ## 为什么重要
 
-AI Psychosis 不是临床心理学概念，而是 Karpathy 用来描述一种能力感知错位：一部分人长期使用 Claude Code、Codex 等前沿 agentic coding 模型，让模型读代码、改代码、跑测试、查漏洞；另一部分人仍以免费聊天机器人、语音助手或普通问答体验评估 AI。
+在Karpathy的非临床修辞中，AI Psychosis描述能力感知错位：一部分人长期使用 Claude Code、Codex 等前沿 agentic coding 模型，让模型读代码、改代码、跑测试、查漏洞；另一部分人仍以免费聊天机器人、语音助手或普通问答体验评估 AI。
 
 这两边看到的现实都可能是真的。普通用户会遇到幻觉和低级错误，专业用户也确实可能看到模型在代码、数学、科研等可验证领域完成原本需要数天的任务。认知鸿沟来自任务域、模型代际、付费层级、工具接入和验证机制的差异。
 
@@ -70,7 +70,7 @@ AI Psychosis 不是临床心理学概念，而是 Karpathy 用来描述一种能
 - 免费助手用户、旧模型用户、付费专业用户和顶尖 AI researcher 看到的是不同产品形态。
 - OpenAI 与 NBER 相关研究中，编程在 ChatGPT 查询中占比不高，而非工作类查询占比较高，这会让大众体验低估 coding agent 的冲击。
 - [[Jagged-Intelligence]] 解释了为什么模型能在某些技术任务上很强，同时在普通常识上犯错。
-- **Meta 案例（2026-06）**：30-50% 核心团队工程师被强制调去做数据标注（ADO 组约 6500 人）；所有工程师键盘/鼠标点击被追踪用于 AI 训练（无 opt-out）；30 天使用 60.2 万亿 tokens（价值约 `$900M`）；Instagram 安全漏洞（零认证密码重置）由 AI 生成 + AI 审查代码导致；CISO 在事件次日辞职（[[20260616-why-is-meta-destroying-its-engineering]]）
+- **Meta案例（2026-06）**：来源[[20260616-why-is-meta-destroying-its-engineering]]为媒体报道及作者评论，人员、监控、Token价值和事件归因尚待逐项独立核验，不作为已证实公司内情或因果链。
 
 ## 风险与用法
 
@@ -86,7 +86,7 @@ AI Psychosis 的风险有两面。
 
 ## CEO AI Psychosis（Levie, 2026）
 
-2026 年 5 月，Box CEO Aaron-Levie 在 X 上提出了 AI Psychosis 的组织层扩展：CEO 群体因结构性地远离"最后一英里"工作，成为 AI 认知错位的高发人群。
+2026 年 5 月，Box CEO Aaron-Levie 在 X 上提出了 AI Psychosis 的组织层扩展：Levie认为高管可能远离末端工作而产生能力外推；没有按职级测量的发生率或诊断证据。
 
 ### 机制
 
@@ -95,12 +95,12 @@ CEO 看到 AI 的 happy path（生成原型、起草合同），但不需要：
 - 在公司特有的合同条款上训练 AI 模型
 - 花数天时间逐行审查合同中的隐藏条款
 
-这种信息不对称导致 CEO 做出"agents 已经能做这些工作"的跳跃推断，进而推动大规模裁员。
+信息不对称可能造成能力外推及不当用工决策；尚未识别裁员的独立因果贡献。
 
 ### 关键数据
 
 - 2026 年前 5 个月科技行业裁员 115,430 人，接近 2025 全年的 124,636 人（[[20260529-ceo-ai-psychosis-equity-podcast]]）
-- ClickUp 裁掉 22% 员工（约 3,000 人），用 3,000 AI agents 替代，CEO Zeb Evans 称之为"100x org"
+- [TechCrunch 2026-05-25](https://techcrunch.com/2026/05/25/what-clickups-mass-layoff-tells-us-about-the-future-of-work/) 转述ClickUp CEO宣布裁员22%，另报道称约3,000个内部AI agents；原Wiki误将Agent数写成裁员人数，未核实具体裁员人数或一对一替代关系。
 - Gartner 调查（350 位全球高管）：80% 试点 AI 的企业报告了裁员，但**不论技术是否真正产生回报都裁了**
 - CMR 元分析（2025.10）：**无稳健证据**表明 AI 采纳与总体生产力提升有关
 - NBER（2026.3）：发现"生产力悖论"——感知收益大于实际测量收益
@@ -144,7 +144,7 @@ CEO 看到 AI 的 happy path（生成原型、起草合同），但不需要：
 
 ## Meta 案例：AI Psychosis 的企业级实证（2026-06）
 
-Pragmatic Engineer 深度报道（Gergely Orosz, 2026-06-16）揭示了 Meta 工程文化在数周内被系统性摧毁的过程，为 AI Psychosis 提供了最极端的企业级实证。
+Pragmatic Engineer 2026-06-16报道提供了待复核的组织案例。以下为原历史编译的媒体叙述和推演，内部数据、实际支出、事件归因及文化结果未经本轮独立确认；不作临床或企业因果实证。
 
 ### 执行机制
 

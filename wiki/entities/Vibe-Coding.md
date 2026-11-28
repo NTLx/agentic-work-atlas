@@ -5,7 +5,7 @@ aliases:
   - Vibe Coding
 definition: "Andrej Karpathy 提出的编程概念，提升所有人的编程能力底线，让任何人通过自然语言和 agent 交互生成软件，原型质量是其特征"
 created: 2026-04-10
-updated: 2026-10-12
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -223,23 +223,23 @@ seed / inspiration
 
 ## CEO Vibe Coding 争议（2026）
 
-2026 年 5 月，Paul Graham 和 Guillermo Rauch 主张 CEO 必须亲手使用 AI 构建软件（[[Founder-Mode]] 的 AI 时代延伸），但 Paul Ford 在 "Dear Vibe-Coding CEO: Please Stop" 中警告 CEO vibe coding 的组织风险：
+2026年5月Graham和Rauch倡导CEO直接实践AI；[Rich Ziade原文](https://aboard.com/dear-vibe-coding-ceo-please-stop/)（非原Wiki误署的Paul Ford）讨论高管原型转成隐性指令的风险。这些均为管理观点及轶事：
 
 - **高管的周末 demo 是终极 executive memo**："The boss built a thing and he wants you to take a look" 在全球走廊里回响，工程师、设计师、产品经理被迫跟进 CEO 用 Claude 周末 hack 出来的东西
 - **AI 赋能对 CEO 是梦想，对员工是噩梦**：现代 CEO 想展示自己仍有技能，但 vibe-coded demo 的质量不达生产标准
 - **品质仍然来自深度思考**："AI can produce outputs all day long, but it can't guarantee quality. Quality software is borne out of creative problem-solving and lots of little, tiny moves, not one-shot magic prompts."
 
-**核心张力**：CEO 亲手 vibe coding 可以提高对 AI 能力边界的理解（Graham 的 "knee-deep" 主张），但产出质量可能不达生产标准（Ford 的 "cut it out" 警告）。解法是组织层面的质量门控——CEO 的 demo 不自动进入产品 backlog，而是作为探索性实验。
+**核心张力**：CEO 亲手 vibe coding 可以提高对 AI 能力边界的理解（Graham 的 "knee-deep" 主张），但产出质量可能不达生产标准（Ziade的警告，非所有高管原型必然失败）。解法是组织层面的质量门控——CEO 的 demo 不自动进入产品 backlog，而是作为探索性实验。
 
-## Vibe Coding 成瘾机制（2026-07-16 编译新增）
+## Vibe Coding 过度投入的个人观察（2026-07-16 编译，2026-11-28校准）
 
-一手体验报告 `[[vibe-coding成瘾之后重建AI与生活的边界]]` 揭示了 Vibe Coding 作为**成瘾性技术**的面向，补充了上述工程治理视角缺失的认知-主体性维度：
+个人体验报告 [[vibe-coding成瘾之后重建AI与生活的边界]] 描述过度投入、时间边界及恢复实践；非成瘾诊断或神经机制实验。
 
-- **奖励回路与短视频同构**：vibe coding 是"高频、低门槛、强刺激"的奖励系统，区别在于奖励形式是"主动生成结果"而非"被动消费内容"。输入 prompt → AI thinking → 生成代码 → demo，全程无阻力且每步即反馈，通过多巴胺强化"行为-回报"路径。
-- **比刷短视频更难觉察**：披着"创造/学习/效率"外衣，关联创造欲、成就感、价值感与自我扩张想象——主体性让渡发生在"自觉在做正经事"的伪装下。这正是 07-15 深度思考判断的"创造型成瘾 > 消费型成瘾"的一手实证。
-- **慢反馈耐受力下降**：大脑适应高强度短周期刺激后，对需长期投入、低刺激之事的耐受力下降——与 Lembke《多巴胺国度》的高多巴胺基线上调框架吻合。
-- **感知钝化与记忆模糊**：密集决策导致"决策疲劳"→ 判断力下降 + 感知钝化 + offline time 被挤占 → 短期记忆难巩固。觉察迟滞（书桌上的发财树长新叶而不自知）。
+- **反馈与投入**：作者观察快速生成及反馈使其持续投入；未测多巴胺、神经回路或与短视频的机制等价。
+- **比刷短视频更难觉察**：披着"创造/学习/效率"外衣，关联创造欲、成就感、价值感与自我扩张想象——主体性让渡发生在"自觉在做正经事"的伪装下。这是单一自述，非成瘾诊断或两类活动的比较实验。
+- **慢反馈活动**：作者观察到其他活动被挤占；撤回未经测量的多巴胺基线及神经机制归因。
+- **主观感知与记忆**：作者报告觉察迟滞等体验；未测客观认知能力或因果链。
 
-**对抗（个人层，与 [[SHIELD]] 互证）**：定时记录（日记/手帐）作为"硬信号"让生活重新可见，把觉察窗口从"月"压缩到"天"；时间切割 + 工作流沉淀为 skill 的"复利工程" + 允许停下来。作者红线："绝对不会在社交平台上发表 AI 生成的观点"——主体性边界的人格化。
+**个人实践候选（与 [[SHIELD]] 对照，非独立效果验证）**：定时记录（日记/手帐）作为"硬信号"让生活重新可见，把觉察窗口从"月"压缩到"天"；时间切割 + 工作流沉淀为 skill 的"复利工程" + 允许停下来。作者红线："绝对不会在社交平台上发表 AI 生成的观点"——主体性边界的人格化。
 
-> 此面向与 [[AI-Psychosis]]、[[Friction-as-Design-Signal]]、07-15 增强陷阱热力学修正形成闭合：vibe coding 的"即时闭环 + 创造欲绑定"使其成瘾性结构性高于消费型 AI 使用。详见 [[vibe-coding成瘾之后重建AI与生活的边界]] source summary。
+> 与 [[AI-Psychosis]]、[[Friction-as-Design-Signal]] 的工作体验问题相关：即时反馈可能影响投入时间；撤回比消费型AI使用结构性更成瘾的稳定判断，未取得临床或对照证据。详见 [[vibe-coding成瘾之后重建AI与生活的边界]] source summary。

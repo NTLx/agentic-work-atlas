@@ -7,7 +7,7 @@ aliases:
   - Sailor to Captain
 definition: "Agentic Engineering 中人的角色转型——从写代码的水手（sailor）转变为指挥 Agent 团队的船长（captain）。核心转变：时间从实现层移到规划层（开头）和质量层（结尾），中间执行完全交给 Agent。瓶颈从代码产出速度转移到需求理解和战略判断。"
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -94,11 +94,11 @@ Kun Chen 将 Captain Mindset 类比为 Engineering Director。Theo Taba (LCA, 20
 - **L2 精准介入**：只在方向需要质疑时出现（No Mistakes 的 escalate 决策）
 - **L3 守住**：定义"什么是好"和承担后果——这是船长不可替代的核心
 
-核心洞察：Sam Altman 的功能等价论证在 L1 正确，Dario Amodei/Arendt 的存在论论证在 L2-L3 正确——分歧不是"谁对谁错"而是"瞄准不同层"。
+2026-11-28 校准：上表保留为历史哲学推演，不作为现行能力分界。撤回L1全部放手、L2只在方向质疑时介入及L3永久独占的普适结论。按风险、验收与责任确定实际介入，见 [[AI-Management-Mindset-Transfer]]。
 
 ## 关联概念
 
-- [[AI-Capability-Management-Alignment]] — AI 管理与人的管理同构，Captain Mindset 是这个同构的具体实践
+- [[AI-Capability-Management-Alignment]] — 委派粒度的有限类比，非同构职级；Captain实践须按任务验收
 - [[Role-Merging]] — AI 让角色边界模糊，Captain 是工程师角色的向上迁移
 - [[Validation-Pipeline]] — 船长模式的技术支撑
 - [[Agent-Orchestration]] — 多 Agent 编排是船长的执行层

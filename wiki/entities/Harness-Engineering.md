@@ -6,7 +6,7 @@ aliases:
   - Agent Harness Engineering
 definition: "工程团队的首要工作不再是编写代码，而是构建让 AI Agent 能有效工作的系统——设计 SOP、测试基础设施、集成系统、分诊系统，使 Agent 可检查、可验证、可修改。Addy Osmani (2026) 强调：**Agent = Model + Harness**，失效通常不是模型问题，而是配置（Harness）问题。"
 created: 2026-04-16
-updated: 2026-09-05
+updated: 2026-11-28
 tags:
   - AI-Agent
   - Software-Engineering
@@ -149,7 +149,7 @@ Vibe Coding（打开 Cursor，提示直到跑通，提交）只能产出原型�
 
 ## 管理能力层级视角
 
-[[Digital-Life-Kazke|数字生命卡兹克]]（2026）从管理学角度提出：Harness Engineering 对应**策略层目标**的管理范式——给 AI 目标和约束，而非逐步指令。这一范式位于 Prompt Engineering（执行层）和自主 Agent（愿景层）之间，适用于"高级员工"级别的模型。管理方式与模型能力的错配是 AI 使用效果差的核心原因（详见 [[AI-Capability-Management-Alignment]]）。
+[[Digital-Life-Kazke|数字生命卡兹克]]（2026）用人类管理粒度类比AI交互。2026-11-28回读Raw纠正：Fable 5半天是反事实设想，非同任务对照。Prompt、Harness和自主执行可组合，不按固定拟人职级排列；根据任务、权限、风险和结果实测选择，详见 [[AI-Capability-Management-Alignment]]。
 
 ## 术语演化速度（2026-07 补充）
 

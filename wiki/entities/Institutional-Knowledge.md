@@ -1,14 +1,13 @@
 ---
 title: "Institutional Knowledge"
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-11-28
 tags:
 
 aliases:
   - 制度性知识
   - 组织知识
-  - Tacit Knowledge
-definition: "Organizational knowledge accumulated over long-term operations, embedded in people's experience and team processes—difficult to document, difficult to automate, and lost when personnel leave."
+definition: "组织长期运营积累的显性与隐性知识，存在于人员、流程、文档、数据与制度中；人员变动可能造成损失，取决于转移及保留机制。"
 source_raw:
   - "[[20260625-ford-ai-quality-jd-power]]"
 evidence_level: medium
@@ -17,44 +16,34 @@ claim_type: mixed
 
 # Institutional Knowledge
 
-组织在长期运营中积累的、嵌入人员和流程中的隐性知识——难以文档化、难以自动化、人员流失即知识流失。
+组织知识包括显性记录和隐性经验，人员流失可能造成知识损失；不等同Tacit Knowledge或不可编码知识。
 
 ## 核心特征
 
-1. **嵌入性**: 知识存在于工程师的经验判断、团队的协作模式、组织的决策惯例中，而非文档或数据库中
-2. **不可完全转移**: 文字化、系统化只能捕获一部分；剩余部分依赖人际传递（师徒制、轮岗、复盘）
-3. **AI 放大器效应**: AI 系统的有效性取决于训练数据质量，而训练数据质量取决于制度性知识的完整性
+1. **嵌入性**: 知识可存在于经验、协作、决策惯例、文档及数据库；可获取性不等于实际理解
+2. **转移条件**: 文档、流程、示范及练习可能互补；实际保留与接管能力需要测量
+3. **AI使用条件**: 任务所需知识、工具、权限、数据质量与验证机制共同影响效果，不必将组织知识全部纳入训练
 
-## AI 时代的制度性知识困境
+## AI时代的制度性知识治理
 
-> "Mistakenly, we thought that by just introducing artificial intelligence and adjusting the design requirements that we had, that that would produce a high-quality product."
-> — Charles Poon, Ford VP of vehicle hardware engineering
-
-Ford 案例（→ [[20260625-ford-ai-quality-jd-power]]）揭示了一个递归困境：
-- AI 需要制度性知识来训练
-- 制度性知识在专家离职前未完成转移
-- AI 系统因此产生质量缺陷
-- 修复缺陷需要找回已离职的专家
-
-这与软件工程的 "Bus Factor" 问题同构——关键知识集中在少数人手中，人员流失导致系统不可维护。
+Ford案例见 [[20260625-ford-ai-quality-jd-power]]，第十四轮已核：2026 J.D. Power 90天初始质量调查Ford大众品牌排名第一，非当年显著下滑；官方约300资深工程师参与设计评审，媒体350+为招聘、晋升和返聘合计。多项质量措施共同实施，不识别知识未转移→AI缺陷→召回专家的单因果链。旧叙事退役。知识集中、专家接管及数据/流程整合是候选问题，需测量实际可复用性。
 
 ## 关键数据点
 
-- **Ford AI 质量案例** (2026): JD Power 报告显示搭载 AI 辅助设计工具的 Ford 新车在品质排名上显著下滑，直接触发 VP Charles Poon 公开承认"错误地认为引入 AI 即可保证产品质量"
-- **Bus Factor 同构性**: 与软件工程中的 Bus Factor 问题同构——当关键知识仅存于少数人的经验判断中时，任何一人离职都会导致系统性风险
-- **递归困境**: AI 需要制度性知识来训练 → 制度性知识在专家离职前未完成转移 → AI 系统产生质量缺陷 → 修复缺陷需要找回已离职的专家
+- 2026 Ford初始质量案例是组合治理的公司自述及外部结果，不能证明AI导致历史缺陷或知识只在个人脑中。
+- Bus Factor为知识/职责集中度的候选风险指标；应实际测接管、恢复及任务独立完成能力，不以人员数量代替知识流失。
 
 ## 前提与局限性
 
 - **可迁移性假设有限**: 该概念假设部分制度性知识可以通过师徒制、轮岗、复盘等方式转移，但转移效率高度依赖于组织文化和时间投入
-- **AI 并非万能解药**: 引入 AI 本身不能解决制度性知识丢失问题——AI 只是制度性知识的放大器，其输出质量受限于输入数据的完整性
-- **不适用于所有知识类型**: 该概念聚焦隐性、情境化的知识，显性事实性知识（如操作手册、API 文档）不在此列
-- **规模边界**: 小团队中制度性知识可通过面对面交流自然共享；随着组织规模扩大，隐性知识碎片化加速，管理成本呈指数增长
+- **AI 并非万能解药**: 引入AI不自动解决知识流失；也可辅助发现、整理与验证知识，实际效果需检验
+- **范围**：显性文档、程序、数据、协作惯例及隐性经验均可能承载组织知识；分别评价可获取、可解释及可迁移性。
+- **规模边界**: 小团队中制度性知识可通过面对面交流自然共享；随着组织规模扩大，隐性知识碎片化加速，管理成本可能上升，未测指数增长
 
 ## 关联概念
 
 - [[AI-Capability-Gap]] — AI 的能力边界部分取决于制度性知识的完整性；制度性知识缺失会导致 AI 能力 gap 扩大
-- [[Judgment]] — 制度性知识的核心是判断力，难以编码为规则或模型
-- [[Wisdom-Work]] — 制度性知识是 Wisdom Work 的组织层面表现，两者都涉及人类独有的价值判断和情境理解
+- [[Judgment]] — 判断与显性规则、数据、经验均可承载组织知识
+- [[Wisdom-Work]] — 制度性知识与专业判断、协作互补，不是人类独占或Wisdom Work的同义词
 - [[Knowledge-Compilation]] — 将制度性知识编译为 AI 可用格式的挑战，是 bridging institutional knowledge and AI 的关键环节
 - [[AI-Ready-Organization]] — 组织需要为 AI 部署重新设计知识管理流程，主动捕获和管理制度性知识
