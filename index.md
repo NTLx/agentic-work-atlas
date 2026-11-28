@@ -17,7 +17,7 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 429 个 |
+| Entity 页面 | 426 个 |
 | Topic 页面 | 38 个 |
 | Comparison 页面 | 21 个 |
 | Raw 文章 | 345 个 |
@@ -99,8 +99,6 @@ tags:
 | [[Claude-Tag\|Claude Tag]] | Anthropic 出品的 Slack-resident AI agent 产品，持有独立 service account 与跨事故记忆 | Anthropic 2026-08 |
 | [[On-Call-Agent\|On-Call Agent]] | agent 作为事故 first responder 直接承担 production incident 的检测/分诊/响应 | Anthropic CI 2026-08 |
 | [[Lessons-MD-Self-Improvement\|Lessons-MD Self-Improvement]] | 事故 lessons 自动写入 markdown → 新事故先读 → 多次出现的模式 promote 到 investigation skill | Anthropic CI 2026-08 |
-| [[Decoupled-Grader-Architecture\|Decoupled Grader Architecture]] | solver/grader 拆解为不同模型 + strict-binary rubric + 程序化 reduction 的架构 | Google DevRel 2026-08 |
-| [[Five-Diagnostic-Outcomes-Skill-Eval\|Five Diagnostic Outcomes for Skill Eval]] | skill vs baseline 的 5 种诊断结果分类，从 High-Efficiency Capability Lift 到 Context Overload | Google DevRel 2026-08 |
 | [[ALTK-Evolve\|ALTK-Evolve]] | IBM Research 的 agent learning library——从 trajectory 蒸馏 guideline set，推理时注入 | IBM Research 2026-08 |
 | [[Agentic-Memory-Dosage\|Agentic Memory Dosage]] | agentic memory 的最优剂量依赖模型能力——三种模式 (strong-headroom / weak-selective / saturated) | IBM Research 2026-08 |
 | [[Explain-Test-Gold-Standard\|Explain Test Gold Standard]] | AI 生成代码可上线判据——'Could I explain this code to somebody else?' | Simon Willison 2026-08 |

@@ -4,41 +4,44 @@ title: "A Field Guide to Fable: Finding Your Unknowns"
 source_raw:
   - "[[20260703-fable-field-guide-finding-unknowns]]"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-11-28
 tags:
   - source-summary
   - agentic-engineering
   - AI-Agent
   - human-skill
-evidence_level: high
-claim_type: extracted
+evidence_level: medium
+claim_type: mixed
 ---
 
 # A Field Guide to Fable: Finding Your Unknowns
 
-## 编译摘要
+## 编译摘要（2026-11-28 回溯原文）
 
-### 1. 浓缩
-- **核心结论1**: Agentic Coding 的核心技能不是 prompt engineering，而是"发现和管理未知物的能力"。作者将未知物分为四象限——Known Knowns（prompt 中已写明）、Known Unknowns（知道自己不知道）、Unknown Knowns（太显然以至于不会写下来，但看到就认得出）、Unknown Unknowns（完全未考虑的维度）。Fable 5 是第一个让工作质量瓶颈从"模型能力"转移到"用户澄清未知物能力"的模型。
-  - 关键证据: 作者用 Fable 5 完全通过 Claude Code 编辑了 Fable 发布视频，从零学习视频编辑、转录、调色，每一步都通过"发现未知物"推进。
-- **核心结论2**: 未知物管理贯穿实现全周期——实现前（Blind Spot Pass / Brainstorm / Interview / Reference / Implementation Plan）、实现中（Implementation Notes 记录偏差）、实现后（Pitch + Quiz 验证理解）。每种技术都对应特定类型的未知物。过细的指令让 Agent 无法在必要时转向；过粗的指令让 Agent 按行业惯例做不适合的假设。
-  - 关键证据: "Blind Spot Pass"直接问 Claude 找出你的 Unknown Unknowns；"Interview"让 Claude 逐个提问，优先问会改变架构的模糊点。
-- **核心结论3**: 最好的 Agentic Coder 相对未知物很少——他们与代码库和模型行为深度同步。但即使最好的人也有未知物，减少和规划未知物是可以练习的技能。每次 brainstorm、interview、prototype、reference 都是"在修复变贵之前发现你不知道的东西"的低成本手段。
-  - 关键证据: 作者引用 Boris Cherny 和 Jarred Sumner 的 prompt 习惯作为"未知物极少"的标杆。
+Thariq Shihipar（2026-07-03）以个人使用 Fable 5 与 Claude Code 编辑发布视频的经验说明如何识别需求与现实约束之间的缺口。原文是第一人称实践分享，不是模型间对照。作者称这是他首次感到质量受自己澄清未知物的能力限制；不能泛化为 Fable 5 是行业第一个转移瓶颈的模型。
 
-### 2. 质疑
-- **关于"四象限框架"的普适性**: Rumsfeld 的 Known/Unknown 矩阵是认知框架而非工程方法。作者将其映射到 Agentic Coding 是创造性应用，但四象限之间的边界在实践中可能模糊——"Unknown Knowns"和"Unknown Unknowns"的区分依赖自我觉察，而自我觉察本身可能是未知的。
-- **关于"Quiz 验证"的局限**: "只在通过测验后才 merge"假设 Claude 的测验能覆盖关键行为。但对于深层逻辑错误或跨模块副作用，测验可能也无法覆盖。
-- **关于 Fable 5 的特殊性**: 作者称 Fable 5 是"第一个"转移瓶颈的模型，但未对比其他模型。这种判断可能受用户近期体验偏差影响。
+### 1. 未知物框架（Unknowns Framework）
 
-### 3. 对标
-- **跨域关联1**: "Unknown Knowns"（太显然以至于不写下来）直接对应知识管理中的"隐性知识"（Polanyi）。作者的解决方案——brainstorm + prototype + interview——本质上是"将隐性知识显性化"的 Agent 辅助版本。这与知识系统层面的"知识编译"命题形成闭环。
-- **跨域关联2**: "Implementation Notes 记录偏差"与 SGLang 的 Loop Engineering（记录失败尝试 + 重验证）结构同构——都是通过持久化执行历史来控制 Agent 的状态漂移。
-- **跨域关联3**: "Quiz 验证"与 Skill Engineering 中的 Verification 类 Skill 功能重叠——都是在 Agent 产出后强制人类理解并确认。但 Quiz 的独特之处在于它同时是"知识转移"和"质量门禁"。
+| 类型 | 原文含义 | 实践 |
+|---|---|---|
+| Known Knowns | 已表达的要求 | 实现并验收 |
+| Known Unknowns | 自知未解决的决策 | 访谈、计划 |
+| Unknown Knowns | 看到才认出的隐含标准 | 原型、头脑风暴 |
+| Unknown Unknowns | 尚未考虑或不知道的维度 | 盲点扫描、参考材料 |
 
-### 关联概念
-- [[Unknowns-Framework]]
-- [[Agentic-Engineering]]
-- [[Context-Engineering]]
-- [[Captain-Mindset]]
-- [[Skill-Chains]]
+### 2. 全周期方法
+
+- 实现前：blind spot pass、原型、访谈、参考源码、计划；优先澄清会改变数据模型、接口或用户流程的决策。过细指令可能阻碍合理调整，过粗指令可能导致不适合本项目的默认假设。
+- 实现中：记录偏差与保守选择；若偏差触及授权、目标、风险边界，应重新确认而非任意继续。
+- 实现后：用演示、说明与测验辅助理解和评审。作者个人采用通过 quiz 后合并的规则；测验不替代测试、diff、独立验收或权限检查。
+- 原文案例涉及转录、视频原型与调色的探索；作者引用 Boris Cherny、Jarred Sumner 作为熟悉代码库与模型行为的个人观察，未有代表性统计。
+
+### 3. 边界
+
+四象限是实用认知分类，不是完整可测量的需求模型。盲点扫描可帮助发现问题，却不能证明没有剩余未知物；快速原型、访谈与参考的效果须按真实项目验证。减少昂贵返工是候选机制，而非已测定收益。历史独立页的可用方法已合入本摘要，保留 Raw 与 Git 恢复路径，不额外保留单源术语页。
+
+## 关联概念
+
+- [[Agentic-Engineering]]、[[Context-Engineering]] — 需求澄清与真实上下文。
+- [[Captain-Mindset]]、[[Skill-Chains]] — 规划和审查的辅助方法。
+- [[Tacit-Knowledge-Lock-In]] — 隐含标准的表达困难（类比而非同义）。

@@ -125,7 +125,7 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
-| 2026-11-28 | 全库消化与退役 | retired/refined | 撤回 RAG/Token 阶段二元命题及 Shopify 已证明能力再生的判断；CR-005 仍 blocked；历史退役和勘误见 [[2026-11-28]]。 |
+| 2026-11-28 | 全库消化与退役 | retired/refined | 撤回旧二元命题与 Shopify 能力再生过度推论；合并退役 3 个单源 Entity，复核评分实现与诊断分类；CR-003/005/006 仍 blocked；见 [[2026-11-28]]。 |
 | 2026-10-21 | Candidate research audit | merged/retired/refined | CR-004 并入 EX-005、CR-007 retire；CR-001/005 收窄；提出未编号科学 AI 定向探索；压缩 agenda 操作层。 |
 | 2026-10-20T23:53:00+08:00 | CR-005 专业能力再生与独立校准 | refined-reasoning | 从保存无 AI 技能收窄为再生不与主生成路径共模的现实校准能力；无新 Evidence，保持 blocked。 |
 | 2026-09-07T08:33:43+08:00 | EX-005 耐久执行停止与外部效果 | refined | 区分 durable execution 停止、在途 invocation 与已发生副作用；加入 checkpoint/in-flight 窗口。 |
