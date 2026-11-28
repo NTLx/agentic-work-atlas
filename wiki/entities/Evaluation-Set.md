@@ -7,7 +7,7 @@ aliases:
   - AI 评测集
 definition: "把真实业务判断、边界案例和验收规则显式化为可复用测试样本，用来评估、迭代和迁移 AI 系统行为的关键资产"
 created: 2026-05-23
-updated: 2026-11-10
+updated: 2026-11-28
 tags:
   - AI-evaluation
   - AI-deployment
@@ -23,6 +23,7 @@ related_entities:
   - "[[Specialized-Small-Models]]"
   - "[[Transparent-Tool-Handoff]]"
 source_raw:
+  - "[[20261128-latentspace-g2i-gabe-greenberg-training-data-market]]"
   - "[[20261109-latentspace-handshake-frontier-labs-data]]"
   - "[[The Return of the Deployment Company]]"
   - "[[Specialization Beats Scale A Strategic Variable Most AI Procurement Decisions Overlook]]"
@@ -36,6 +37,14 @@ source_raw:
 ---
 
 # Evaluation Set（评测集）
+
+## G2i：任务难度带、采购成本与评测集的专有价值（2026-11）
+
+[[20261128-latentspace-g2i-gabe-greenberg-training-data-market]]（00:00–00:15、06:46–07:55、18:45–24:52）将训练环境拆成 task、seed data、verifier，并强调任务应位于模型当下可学习的能力边缘。非独占货架数据可以分摊固定成本，针对专有能力缺口的任务则可能有独占溢价；AHT（Average Handling Time）用于估价，但复杂任务工时和 rubric 数量不直接证明训练收益。
+
+- **判断（综合）**：以固定模型/Harness/预算的难度扫描、真实 rollout、训练消融与独立 held-out 测试决定任务是否值得采购、制作或训练。分离训练集、开发评测及独立验收集；企业优先自持业务语义、关键评测与授权，而不必自建所有数据供给能力。
+- **证据**：[[20261128-latentspace-g2i-gabe-greenberg-training-data-market]]（06:46–07:55、18:45–24:52）；与 [[20261109-latentspace-handshake-frontier-labs-data]] 的专业任务环境、训练试验及保留评测相互对照。
+- **边界**：两篇均为供应商访谈。难度随模型、工具、预算变化；易题可能仍用于覆盖或课程学习，难题并非天然只能用于评测。没有独立实验证明最优难度阈值、数据独占溢价或训练增益。
 
 ## 前沿实验室购买的并非孤立标签，而是可回放的专业任务世界（2026-11）
 

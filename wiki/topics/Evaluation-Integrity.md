@@ -3,7 +3,7 @@ type: topic
 title: Evaluation Integrity
 description: "评测完整性：任务完成率或 benchmark 得分不能单独证明系统可靠；reference、scope contract、实际可达面、监控与停止语义必须共同可信，否则评测可能不再测量原本声明的对象"
 created: 2026-09-19
-updated: 2026-11-26
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -18,6 +18,7 @@ related_entities:
   - "[[Agent-Attack-Surface]]"
   - "[[Reward-Hacking]]"
 source_raw:
+  - "[[20261128-latentspace-g2i-gabe-greenberg-training-data-market]]"
   - "[[20261027-ai2-novelty-bench]]"
   - "[[20261027-anthropic-agents-judgment-calls]]"
   - "[[20261027-replit-cloud-agents-company-codebase]]"
@@ -34,6 +35,14 @@ source_raw:
 ---
 
 # Evaluation Integrity（评测完整性）
+
+## G2i：跨系统业务世界的实体一致性和训练收益需要独立验收（2026-11）
+
+[[20261128-latentspace-g2i-gabe-greenberg-training-data-market]]（22:16–27:44）指出数据供给受专家工时、质量迭代和算力等待共同制约，并举出 Computer Use 在 Slack、邮件、CRM 间混淆近似姓名的实例。多个工具中同一项目的连贯记录可能比互不关联的海量数据更有训练价值。
+
+- **判断（综合）**：构建有明确实体映射、时序、权限、歧义与状态转换的可重放环境，将实体解析、实际任务结果、禁止行为和 held-out 能力变化分别验收。供应商交付接受率、AHT 与训练收益是不同指标，不能互相替代。企业可用合成或依法授权的最小数据复现跨系统难题；真实员工通信、客户/科研资料不因训练价值而自动获得可训练或转售权。
+- **证据**：[[20261128-latentspace-g2i-gabe-greenberg-training-data-market]]（23:46–27:44）；与 [[20261109-latentspace-handshake-frontier-labs-data]] 对真实任务环境及独立验证的讨论对照。
+- **边界**：受访者未公布数据集、实体解析错误率、验收样本或训练消融；跨系统例子是机制线索，不代表行业普遍错误率。原始数据质量和权属需要另行核验。
 
 ## 自进化系统最大的失败风险：评测器将“正确答案”判错并推动错误更新（2026-11）
 
