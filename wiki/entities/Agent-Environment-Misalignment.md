@@ -7,10 +7,9 @@ aliases:
   - 智能体-环境错位
   - 智能体环境错位
   - Agent Environment Misalignment
-  - Misalignment
 definition: "ALIGN 论文定义的一类 agent-environment interface failure：Agent 对动作后果的内部预期与环境实际状态转换不一致；论文在四个文本 benchmark 中显示，暴露隐式规则和增强观察可显著改善表现，但这不能排除模型推理错误等其他失败来源。"
 created: 2026-08-01
-updated: 2026-09-20
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -33,7 +32,7 @@ source_raw:
 # Agent-Environment Misalignment
 
 > [!definition] 定义
-> **Agent-Environment Misalignment** 是 ALIGN 论文用于描述的一类接口错位：LLM Agent 对动作影响的“内部预期”与环境的“实际状态转换”不一致。论文显示，**接口信号不充分**可以独立造成大量失败；但该结果不能推出失败“不是 agent 推理问题”，两类原因可以同时存在。
+> **Agent-Environment Misalignment** 是 ALIGN 论文用于描述的一类接口错位：LLM Agent 对动作影响的“内部预期”与环境的“实际状态转换”不一致。论文显示，**接口信号不充分**可以造成部分可观察的任务失败；但该结果不能推出失败“不是 agent 推理问题”，两类原因可以同时存在。
 
 ## 形式化定义（Liu et al., 2025）
 
@@ -60,31 +59,31 @@ agent: concludes "task done" or "no such object"
 | Agent 推断 | shelf 1 是空的 |
 | 真实情况 | agent 还没去到 shelf 1 |
 
-**改写反馈为 "You need to first go to shelf 1 before you can examine it"** 后，Qwen2.5-7B-Instruct 在 ALFWorld 的成功率从 **13.4% → 31.3%**（+17.9pp）。完整 ALIGN 框架提升到 **60%+**（+45.67pp）。
+**改写反馈为 "You need to first go to shelf 1 before you can examine it"** 后，Qwen2.5-7B-Instruct 在 ALFWorld 的成功率从 **13.4% → 31.3%**（+17.9pp）。完整ALIGN Vanilla达到60.45%（相对13.43%为+47.02个百分点）；+45.67个百分点是五种Agent的平均增益，不是Vanilla单项。
 
 ## 为什么这是一个独立概念
 
-论文的关键论断：**业界把精力全压在 agent 策略或环境难度上，但接口本身是被忽视的瓶颈**。
+论文强调接口是独立改进维度，不能把模型、接口和任务难度作为互斥归因。
 
 | 维度 | 传统归因 | ALIGN 重新归因 |
 |------|---------|----------------|
-| Agent 失败原因 | 模型推理能力不足 | 接口信号不充分 |
+| Agent 失败原因 | 可能有模型推理不足 | 也可能有接口信号不足或误解 |
 | 改进方向 | 换更大模型 / 改 prompt | 改写环境反馈 / 暴露隐式规则 |
-| 评估准确性 | 基准分数 = 真实能力 | 大量失败是评估噪声 |
+| 评估解释 | 固定系统配置的任务得分 | 接口变化改变被测系统；须记录任务语义是否保持 |
 
 ## 错位 vs 感知差：必须区分
 
-容易和 [[Agent-Perception-Gap|Agent Perception Gap]]（感知差）混淆，但完全不同：
+容易和 [[Agent-Perception-Gap|Agent Perception Gap]]（感知差）混淆，两者关注不同维度，可以重叠：
 
 | 维度 | Agent-Environment Misalignment | Agent Perception Gap |
 |------|--------------------------------|----------------------|
 | 来源 | 接口信号不充分 | 人机解析路径不同 |
-| 性质 | 推理问题 | 安全问题 |
-| 受害方 | agent 自己 | agent 的下游用户/系统 |
+| 性质 | 预期与状态转换不一致 | 观察表示不同，可涉及可靠性或安全 |
+| 影响 | Agent任务及外部系统 | Agent、用户及系统 |
 | 典型后果 | agent 推断错、任务失败 | prompt injection、content trap |
-| 防御方向 | 自动生成接口 | 内容消毒、来源信誉 |
+| 防御方向 | 清晰规则、反馈、状态验证 | 输入来源与权限隔离、表示审计、结果验证 |
 
-**口诀**：misalignment 是"agent 听错了"，perception gap 是"有人故意让 agent 看错"。
+感知差可以无恶意；环境错位也可能被对抗性利用。更多表示既可能改善状态理解，也扩大不可信输入面。
 
 ## 错位 vs ACI：自动化 vs 手工化
 
@@ -93,11 +92,11 @@ agent: concludes "task done" or "no such object"
 | 维度 | ACI | ALIGN |
 |------|-----|-------|
 | 设计方式 | 人类手工 handcraft | LLM 自动生成 |
-| 适用环境 | 单一环境 / 单一 agent | 跨环境、跨 agent、跨 backbone |
-| 成本 | 高（需人工调优） | 中（需多轮 LLM 调用） |
-| 维护 | 改环境需重新设计 | 失败轨迹驱动自动更新 |
+| 适用环境 | 可为多环境/模型设计 | 对各环境分别生成，已测同环境跨Agent/模型迁移 |
+| 成本 | 取决于设计和维护 | 生成、验证、维护与复用成本均须测量 |
+| 维护 | 可迭代测试 | 失败轨迹驱动生成候选，测试期冻结，环境变化后重验 |
 
-ALIGN 可以视为 **ACI 的工业化、自动化版本**——把"精心设计的接口"从人类责任转移到 LLM 自主探索。
+ALIGN是ACI优化的一种研究方法；自动生成并不免除人工责任、权限限制、代码审查与发布验收。
 
 ## 跨四个文本 benchmark 的一致性证据
 
@@ -110,10 +109,10 @@ ALIGN 可以视为 **ACI 的工业化、自动化版本**——把"精心设计�
 ## 关键数据点
 
 - Qwen2.5-7B-Instruct 在 ALFWorld：13.4% → 31.3%（仅改写反馈）→ 60.45%（完整 ALIGN Vanilla）/ 63.43%（ReAct）/ 69.40%（Self-Consistency）
-- 5 个 agent × 4 个 benchmark 的平均提升：ALFWorld +45.67%、ScienceWorld +10.07、WebShop +6.59、M3ToolEval +6.39
+- 5 个 agent × 4 个 benchmark 的平均提升：ALFWorld +45.67个百分点、ScienceWorld +10.07分、WebShop +6.59分、M3ToolEval +6.39个百分点
 - 连续无效动作平均下降：ALFWorld -65%、ScienceWorld -49%
 - 跨 backbone 泛化：Qwen2.5-14B +17.46（ALFWorld）、Llama3.3-70B +5.82，方向一致
-- 接口生成无实验验证时，准确率崩塌到 0%（Table 5，消融实验）
+- ALFWorld Vanilla无实验验证消融（v1 Table 5/v3 Table 6）：T=.2最终0%，T=.5最终0.75%；均是特定生成流程的退化，不是普适结果
 
 ## 解决方向
 
@@ -124,30 +123,38 @@ ALIGN 可以视为 **ACI 的工业化、自动化版本**——把"精心设计�
 
 ### 人工接口优化（传统路径）
 - 手动分析失败模式、改写反馈文本（如 13.4% → 31.3% 的最小修改）
-- 缺点：环境特定、不可迁移、Agent 升级后接口可能失效
+- 同样需要验证跨环境/模型适用性，人工设计也可能复用；环境或Agent升级后需按影响重验
 
 ### 评估侧缓解
 - 报告"带 ALIGN 接口"和"不带 ALIGN 接口"两套分数
-- 把"基准分数"拆成"真实能力"和"接口吸收率"两个分量
+- 区分系统配置、任务合同、接口信息与测量目标；不能仅凭两个得分数学分解模型固有能力
 - 多环境联合评估，减少单一基准的错位污染
 
 ## 前提与局限性
 
-- **方向性单向**：用强模型（Gemini 2.5 Pro + GPT-4.1）生成接口给弱模型（Qwen2.5-7B）测试，**反向未验证**——弱模型生成的接口是否能给强模型用未知。
+- **生成与执行分离**：主实验由GPT-4.1与Gemini 2.5 Pro生成接口，目标Agent为Qwen2.5-7B等；v3 D.5用GPT-4.1-mini承担分析/验证仍可生成，但全7B栈三次试验未完成验证（290个假说、0完成）。不等于任何小模型均无法生成。
 - **环境覆盖**：实验集中在文本环境（ALFWorld / ScienceWorld / WebShop / M3ToolEval），**多模态环境**（如 OSWorld、GAIA）的错位是否同构未知。
-- **成本未报告**：迭代生成接口需要多轮 LLM 调用，**接口生成的 API 成本 vs 性能提升的 trade-off** 未量化。
+- **成本与边界**：v3 Appendix E/Table 20–21：ALFWorld接口生成8轮、每轮约0.55M Token，按当时标价约9.4美元；四环境约30美元。作者报告复用时单任务输入Token为基线58%、LLM调用为43%，估计付费API场景约120次任务摊回生成费；并非生产TCO或未来环境无需维护。
 - **统计方差未报告**：Table 1 数值变化幅度大（如 Self-Consistency 在 ALFWorld +57.46%），**没有报告方差或置信区间**，小幅提升（WebShop +6.59）的统计显著性未知。
-- **极端能力边界**：把 Qwen2.5-7B 升到 60%+ 后，**最强模型 vs 最弱模型的差距被部分抹平**——这是否意味着 leaderboard 排名的有效性需要重估？
+- **评估解释**：v3 Table 4中GPT-4.1也从73.88%升至93.28%，领域RL模型原训练配置89.55%→92.54%；不支持普遍缩小模型差距或否定榜单。
 - **LLM-as-Analyzer 的边界**：当环境规则是**真正隐式**（如模拟器物理约束），LLM 不一定能识别。这把"识别困难"瓶颈从 agent 转移到 Analyzer-Optimizer 循环。
+
+## v3补充：接口语义边界
+
+本轮回核[ALIGN v3（2026-10-22）](https://arxiv.org/html/2505.21055v3) §4、Appendix C–F；保留主实验条件，不把版本更新当独立复现。
+
+v3 Appendix D.3审计20个接口的312条注入文本：279条机制级、12条边界级、21条任务相关；后者集中在ScienceWorld（2）与M3ToolEval（19）。作者新增task-agnosticism约束，但已评估接口生成于加约束之前，未报告修订后对应主实验。机制透明、任务提示和答案泄漏需区别验收。
+
+**综合判断**：接口层应准确表达权威状态、前置条件、错误原因及可观察结果；不要把“已接受请求”误报为“实际完成”。生成的wrapper是普通可执行代码，不能越过资源权限、不得隐式扩大任务能力；动作语义、额外子操作与敏感信息暴露须单独审计。
 
 ## 关联概念
 
 - [[ALIGN-Framework]] — 本文提出的自动生成对齐接口的具体框架
-- [[Agent-Harness]] — ALIGN 是 harness 内部接口层的自动化实现，harness 还有 11 个其他组件
-- [[ACI-Agent-Computer-Interface]] — 人工设计的 agent-computer 接口，ALIGN 是其自动版本
+- [[Agent-Harness]] — ALIGN 是 harness 内部接口层的自动化实现，组件数量是可选分类，不是固定架构要求
+- [[ACI-Agent-Computer-Interface]] — 广义接口设计原则，ALIGN是其中一种自动生成方法
 - [[Building-Effective-Agents]] — Anthropic 三大原则之一是"Well-crafted ACI"，ALIGN 是其算法化版本
-- [[Agent-Perception-Gap]] — 必须区分：感知差是安全/解析问题，错位是推理问题
+- [[Agent-Perception-Gap]] — 观察表示差异与预期/状态错位不同但可重叠
 - [[Agent-Verification]] — ALIGN 的实验验证步骤是 verification 循环的强化版
 - [[Agent-Loops]] — 错位发生在 ReAct / TAO 循环的 observation 步骤
-- [[Context-Engineering]] — 错位本质是"context 不充分"，可视为 context engineering 的反向案例
+- [[Context-Engineering]] — 上下文选择、工具反馈与推理均可能导致错位，需具体归因
 - *（基准分数应同时报告"带 ALIGN 接口"和"不带 ALIGN 接口"两套结果——这指向 [[Rubric-Based-Evaluation]] 与 [[Minimal-Pair-Evaluation]] 之外未建 entity 的评估方法论话题）*

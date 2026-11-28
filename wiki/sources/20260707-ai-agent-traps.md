@@ -7,13 +7,13 @@ original_raw_file: "20260707-ai-agent-traps.pdf"
 original_body_sha256: "603f0cae8cd8ab944f3e700a169d325120db42239075350d07c8183da71a527c"
 indexed_at: "2026-08-25T01:10:28+08:00"
 created: 2026-07-07
-updated: 2026-08-25
+updated: 2026-11-28
 tags:
   - source-summary
   - agent-security
   - adversarial-attack
   - taxonomy
-evidence_level: high
+evidence_level: medium
 claim_type: extracted
 ---
 
@@ -21,18 +21,22 @@ claim_type: extracted
 
 > Raw 生命周期：本地 PDF 已降级为可恢复索引；此页保留六类 taxonomy 的 evidence map，精确引用从 canonical URL 回到 SSRN 原文核验。
 
-> Google DeepMind 研究论文，首次系统性提出 AI Agent 陷阱的六类分类框架。
+> 研究论文提出六类Agent陷阱分类；本轮仅能核对公开检索摘要，SSRN页面与PDF返回403，未核正文或作者机构；不主张首创。
+
+## 证据边界（2026-11-28）
+
+SSRN canonical及PDF均403，六类名称可从公开索引摘要确认；正文中每类例证、首创、引文与缓解方案仍待原文恢复。本轮仅对已读取的本库摘要作语义裁决并回核WASP/Verma原始摘要，不声称全文论文复核或实验复现。
 
 ## 编译摘要
 
 ### 1. 浓缩
 
-- **核心结论 1**：AI Agent 的安全威胁本质不是模型被攻破，而是信息环境本身可以被人为构造成陷阱——攻击者不需要入侵模型，只需在 Agent 会访问的网页、邮件、文档中埋设针对机器解析逻辑的恶意内容。
-  - 关键证据：WASP 基准测试显示人类手写 Prompt Injection 在 86% 的场景中能部分劫持 Agent（Evtimov et al., 2025）；CSS 隐藏文本改写 AI 摘要输出的比例在 15–29% 之间（Verma & Yadav, 2025）。
-- **核心结论 2**：论文按 Agent 运行周期的六个环节，将陷阱分为六类：Content Injection（感知层）、Semantic Manipulation（推理层）、Cognitive State（记忆/学习层）、Behavioural Control（行动层）、Systemic（多 Agent 动态层）、Human-in-the-Loop（人类监督者层）。这个分类轴的价值在于——每一层对应一类差异化的防御策略。
+- **核心结论 1**：信息环境本身可能构成Agent攻击面，并非排除模型、身份、工具、供应链或系统漏洞——攻击者不需要入侵模型，只需在 Agent 会访问的网页、邮件、文档中埋设针对机器解析逻辑的恶意内容。
+  - 关键证据：[WASP](https://arxiv.org/abs/2504.18575)摘要报告所测配置开始执行对抗指令16%–86%，完整达到攻击目标0%–17%；不可将最大开始执行率当总体成功率。[Verma & Yadav v3](https://arxiv.org/abs/2509.05831v3)摘要：280页均分干净/注入；注入样本中Llama4 Scout超过29%、Gemma9B IT约15%摘要明显变化，非Agent真实外部动作成功率。
+- **核心结论 2**：论文按 Agent 运行周期的六个环节，将陷阱分为六类：Content Injection（感知层）、Semantic Manipulation（推理层）、Cognitive State（记忆/学习层）、Behavioural Control（行动层）、Systemic（多 Agent 动态层）、Human-in-the-Loop（人类监督者层）。这个分类轴的价值在于——可用来组织防御和覆盖测试，但类别重叠且不证明一一对应关系。
   - 关键证据：六类陷阱各自引用大量实证工作支撑存在性，从间接 Prompt Injection 到 RAG 知识投毒到多 Agent 感染式越狱。
 - **核心结论 3**："The web was built for human eyes; it is now being rebuilt for machine readers." 安全的思维必须从"守住模型"翻成"审计环境"——Agent 走过的每条信息路径都是潜在攻击面。
-  - 关键证据：动态 Cloaking 技术已能检测 AI Agent 访问并专门推送陷阱内容（Zychlinski, 2025）；字体文件可被人为修改来对 Agent 隐藏恶意指令（Xiong et al., 2025）。
+  - 关键证据：历史编译引用动态差异化内容与字体/文本表示差异作为威胁线索；本轮未重核Zychlinski、Xiong原始研究，不将其当作已确认普遍攻击效果。
 
 ### 2. 质疑
 
@@ -42,7 +46,7 @@ claim_type: extracted
 
 ### 3. 对标
 
-- **跨域关联 1 — OWASP Top 10**：这篇论文对 Agent 安全的贡献，类似于 OWASP Top 10 对 Web 安全的贡献——第一次把分散的攻击手段画成了统一的地图。如果这个类比成立，接下来应该看到一个"OWASP for AI Agents"标准的出现。
+- **跨域关联 1 — OWASP Top 10**：这篇论文对 Agent 安全的贡献，类似于 OWASP Top 10 对 Web 安全的贡献——将攻击面组织为候选分类地图。OWASP已发布Agentic Applications Top 10（见[[Least-Agency]]）；分类清单不等于强制安全标准，也不证明这篇论文促成其发布。
 - **跨域关联 2 — 自动驾驶中的对抗路标**：论文自引的类比准确——自治驾驶需要识别被篡改的路标，Agent 需要识别被篡改的网页。两者的共同结构是"感知层的输入不可信"。
 - **跨域关联 3 — 多 Agent 系统病理**：Systemic Traps 与 [[Multi-Agent-System-Pathology]] 高度互补——前者从攻击者视角看多 Agent 脆弱性，后者从组织设计视角看多 Agent 失败模式，两者共享"同质性→同步崩溃"的底层逻辑。
 
@@ -50,7 +54,7 @@ claim_type: extracted
 
 - [[Agent-Traps]] — 核心框架
 - [[Persona-Hyperstition]] — 论文引入的新概念
-- [[Agent-Perception-Gap]] — 感知差，所有 Content Injection 的入口
+- [[Agent-Perception-Gap]] — 感知差是部分内容注入利用条件，非必要条件
 - [[Prompt-Injection-Risk]] — 已有的注入攻击概念
 - [[Multi-Agent-System-Pathology]] — 多 Agent 病理（互补视角）
 - [[Agent-Containment]] — 防御侧的核心概念

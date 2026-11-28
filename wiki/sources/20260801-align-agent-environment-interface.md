@@ -22,43 +22,52 @@ claim_type: extracted
 
 # Agent-Environment Alignment via Automated Interface Generation（ALIGN 论文）
 
-> Raw 生命周期：论文 PDF 已降级为可恢复索引；保留 2026-07-31 OpenBMB 推文历史剪藏作为作者传播与发现记录，不是第二份独立实验。论文版本须区分：本摘要历史于 2026-08 编译，arXiv 当前 [v3（2026-10-22）](https://arxiv.org/abs/2505.21055v3) 已有 Appendix D/E 补充分析及成本核算；以下旧结果不自动归为 v3。v3 全面差分待正式版本治理，未重跑实验。
+> Raw 生命周期：论文 PDF 已降级为可恢复索引；保留 2026-07-31 OpenBMB 推文历史剪藏作为作者传播与发现记录，不是第二份独立实验。论文版本须区分：本摘要历史于 2026-08 编译，arXiv 当前 [v3（2026-10-22）](https://arxiv.org/abs/2505.21055v3) 已有 Appendix D/E 补充分析及成本核算；以下旧结果不自动归为 v3。本轮回核v1（2025-05-27）与[v3 HTML（2026-10-22）](https://arxiv.org/html/2505.21055v3) 主实验、消融及Appendix C–F；保留原索引与历史传播记录，不改Raw/Registry；未重跑实验或逐行审计代码。
 
-> TsinghuaNLP (THUNLP-MT) / OpenBMB 论文（2025-05-27, arXiv:2505.21055）。首个**自动生成** agent-environment 对齐接口的框架。
+> TsinghuaNLP (THUNLP-MT) / OpenBMB 论文（2025-05-27, arXiv:2505.21055）。提出自动生成agent-environment对齐接口的研究框架，不主张首创。
 >
 > **作者**：Kaiming Liu, Xuanyu Lei, Ziyue Wang, Peng Li*, Yang Liu*（清华计算机系 + AIR 产业研究院）
 > **代码**：https://github.com/THUNLP-MT/ALIGN
+
+## v3 新增证据（2026-11-28回核）
+
+- §3.1及Appendix D.6：新增Action Transducer形式化；87个env.step调用点65原样、17额外只读探查/导航、5表层规范化、0语义重映射。原始代码不变不等于无额外环境动作。
+- Appendix D.3/Table17：20个接口共312条注入字符串，279机制级、12边界级、21任务相关（ScienceWorld2、M3ToolEval19）。新增task-agnosticism限制发生在实验之后，未提供修订接口的对应主实验；不能以训练/测试分离证明没有过度引导。
+- Table4：GPT-4.1-mini 28.36→64.93%，GPT-4.1 73.88→93.28%，GiGPO原训练配置89.55→92.54%。Table7：AutoManual与ALIGN组合在两个模型上得分最高，Qwen3-8B单独ALIGN不及AutoManual；生成器D.5全7B三次290假说、0完成验证，GPT-4.1-mini分析/验证配合Gemini合成可行。无预算匹配在线教师对照。
+- F.1：各环境分别生成；ALFWorld OOD测试134任务，ScienceWorld每类最多前5例，WebShop固定50例，M3ToolEval每类两例训练余下测试；测试期冻结。未测GUI；不同模型动作语法仍可能失配。
+
+**综合判断**：模型无关的可执行接口可能摊薄离线高能力生成费用，但必须以真实状态、任务语义、权限、额外动作、冻结独立评测和维护费用验收。
 
 ## 编译摘要
 
 ### 1. 浓缩
 
-- **核心结论 1**：**Agent-environment misalignment 是普遍存在的失败根源**，不是个别 agent 的推理缺陷。论文显式提出这一概念——agent 对动作影响的"内部预期"与环境的"实际状态转换"不一致，原因是**隐式规则和欠规范观察从未被显式化**。Qwen2.5-7B-Instruct 在 ALFWorld 上仅靠**改写反馈文本**（"Nothing happens" → "You need to first go to receptacle before you can examine it"）就从 **13.4% → 31.3%**。这个 18 个百分点的单干预效应，直接证明大量 baseline 错误来自环境信号不充分，而非模型推理失败。
-  - 关键证据：Table 1 主结果，5 个 agent 方法（Vanilla / ReAct / Self-Consistency / Self-Refine / Planning）× 4 个基准（ALFWorld / ScienceWorld / WebShop / M3ToolEval），所有组合一致提升，ALFWorld 平均 +45.67%，WebShop +6.59，M3ToolEval +6.39%。
+- **核心结论 1**：**接口错位是重要的候选失败根因**，可能与模型推理、状态管理等失败并存。论文显式提出这一概念——agent 对动作影响的"内部预期"与环境的"实际状态转换"不一致，原因是**隐式规则和欠规范观察从未被显式化**。Qwen2.5-7B-Instruct 在 ALFWorld 上仅靠**改写反馈文本**（"Nothing happens" → "You need to first go to receptacle before you can examine it"）就从 **13.4% → 31.3%**。这个 18 个百分点的单干预效应，支持该反馈干预在所测条件下有效，不排除推理错误或其他机制。
+  - 关键证据：Table 1 主结果，5 个 agent 方法（Vanilla / ReAct / Self-Consistency / Self-Refine / Planning）× 4 个基准（ALFWorld / ScienceWorld / WebShop / M3ToolEval），所有组合一致提升，ALFWorld平均+45.67个百分点、ScienceWorld+10.07分、WebShop+6.59分、M3ToolEval+6.39个百分点（绝对增量）。
 - **核心结论 2**：**ALIGN 框架自动生成两个对齐接口模块**——`INFERRULES`（前置暴露静态规则与约束：在 `(task, o0)` → `Ĩ` 映射中注入前置依赖、动作顺序）与 `WRAPSTEP`（动态观察处理器：拦截每个动作，在 `(F, sₜ, aₜ)` → `õₜ` 映射中附加成功/失败条件）。两个模块都实现为 Python 函数，**轻量 wrapper，不改 agent 逻辑或环境代码**。
-  - 关键证据：Algorithm 1 给出 `Φ = {INFERRULES, WRAPSTEP}` 的迭代流程；Table 4 消融显示两个组件都贡献显著，去掉 WRAPSTEP 平均下降 31.79%（ALFWorld），去掉 INFERRULES 下降 6.72%。
-- **核心结论 3**：**接口 plug-and-play 跨 agent 架构和 LLM backbone，无需重新生成**。用 Vanilla agent 生成的接口应用到 ReAct/Self-Consistency/Self-Refine/Planning 上，ALFWorld 仍平均 +41.61%；用 Qwen2.5-7B 生成的接口应用到 Qwen2.5-14B、Llama3.1-8B、Llama3.3-70B 也都正收益。这说明 ALIGN 捕获的是**真实的环境约束**，不是针对特定 agent 的过拟合。
-  - 关键证据：Table 3 (a)(b) 双向泛化结果；Table 2 显示连续无效动作在 ALFWorld 平均 -65%，ScienceWorld -49%。
+  - 关键证据：Algorithm 1 给出 `Φ = {INFERRULES, WRAPSTEP}` 的迭代流程；v1 Table4/v3 Table5在ALFWorld平均去WrapStep−31.79个百分点、去InferRules−6.72个百分点；非统计显著性证明。v3 Table15含ReAct去WrapStep后WebShop+4.67分/M3ToolEval+1.38个百分点反例；v3修正Self-Consistency ALFWorld去WrapStep为−46.27（v1−37.27与均值不符）。
+- **核心结论 3**：**接口 plug-and-play 跨 agent 架构和 LLM backbone，无需重新生成**。用 Vanilla agent 生成的接口应用到 ReAct/Self-Consistency/Self-Refine/Planning 上，ALFWorld 仍平均 +41.61%；用 Qwen2.5-7B 生成的接口应用到 Qwen2.5-14B、Llama3.1-8B、Llama3.3-70B 也都正收益。支持特定环境内的复用；仍需审查是否将训练任务程序性知识带入接口。
+  - 关键证据：Table 3(a)(b)分别为跨Agent方法、跨目标模型迁移，并非双向生成器试验；Table 2 显示连续无效动作在 ALFWorld 平均 -65%，ScienceWorld -49%。
 
 ### 2. 质疑
 
-- **关于"benchmark 提升"的质疑**：所有实验用 Qwen2.5-7B-Instruct 作为 base model，Optimizer 是 Gemini 2.5 Pro，Analyzer/Optimizer 其他步骤用 GPT-4.1。强模型生成接口给弱模型用，但反过来（弱模型生成接口给强模型用）未测试。"Plug-and-play" 的方向性是单向的——不能直接说"任何接口都能迁移"。
-- **关于"misalignment 是失败根源"的质疑**：论文展示"接口改进 → 性能大幅提升"，但**没有反向证据**：如果没有对齐接口，最强模型（Llama3.3-70B）vs 较弱模型（Qwen2.5-7B）之间的差距来源是什么？论文用 ALIGN 让 Qwen2.5-7B 从 13.4% 升到 60% 以上，**接近抹平了模型差距**。这暗示大量已发表的"模型对比"研究可能高估了模型本身的差异。
-- **关于"自动生成"边界的质疑**：实验集中在四个文本环境，没有覆盖视觉/多模态环境（WebShop 是文本 HTML）。OSWorld、GAIA 等多模态环境的接口错位是否同构未知。论文消融显示无实验验证时准确率崩塌到 0%（Table 5）——这是 LLM-as-Optimizer 的真实脆弱性。
-- **关于数据可靠性的质疑**：Table 1 的数值变化幅度大（如 Self-Consistency 在 ALFWorld +57.46%），但**没有报告方差或置信区间**。ALFWorld 任务样本量未明确，5-7 个百分点的小幅提升（如 WebShop）在统计上可能不显著。Self-Refine 整体提升最低（ALFWorld 仅 +36.57%），可能因为 self-critique 本身就是接口错位的另一种形式。
-- **关于"incremental cost"的质疑**：自动生成接口需要 GPT-4.1 + Gemini 2.5 Pro 多轮调用，迭代直到无新失败轨迹。早期摘要的成本缺口需按版本解释：v3 Appendix E 已报告每迭代 token 与部分成本核算，需在正式版本复审时对照原条件；仍不等于真实生产总成本。对于一次性评估场景，生成接口的开销可能不值得。**生产部署成本 vs 离线评估收益**未分析。
+- **关于"benchmark 提升"的质疑**：所有实验用 Qwen2.5-7B-Instruct 作为 base model，Optimizer 是 Gemini 2.5 Pro，Analyzer/Optimizer 其他步骤用 GPT-4.1。生成器与目标执行模型不同。v3 Appendix D.5测试GPT-4.1-mini分析/验证+Gemini 2.5 Pro合成有效；全7B栈三次未完成验证。不能由目标模型迁移推出任意模型均能生成有效接口。
+- **关于"misalignment 是失败根源"的质疑**：论文展示"接口改进 → 性能大幅提升"，但**没有反向证据**：如果没有对齐接口，最强模型（Llama3.3-70B）vs 较弱模型（Qwen2.5-7B）之间的差距来源是什么？论文用 ALIGN 让 Qwen2.5-7B 从 13.4% 升到 60% 以上，说明接口配置影响系统得分；v3 GPT-4.1在同任务也由73.88→93.28%，不证明一般模型差距缩小或此前评测无效。
+- **关于"自动生成"边界的质疑**：实验集中在四个文本环境，没有覆盖视觉/多模态环境（WebShop 是文本 HTML）。OSWorld、GAIA 等多模态环境的接口错位是否同构未知。v1 Table5/v3 Table6无验证消融T=.2最终0%，T=.5最终0.75%；特定ALFWorld Vanilla生成流程退化，不能外推所有优化器。
+- **关于数据可靠性的质疑**：Table 1 的数值变化幅度大（如 Self-Consistency 在 ALFWorld +57.46%），但**没有报告方差或置信区间**。v3 E.1明确ALFWorld测试扫一轮134任务，F.1说明使用OOD测试分区；任务子集、依赖和运行次数仍影响推断，5-7 个百分点的小幅提升（如 WebShop）在统计上可能不显著。Self-Refine 整体提升最低（ALFWorld 仅 +36.57%），可能因为 self-critique 本身就是接口错位的另一种形式。
+- **关于"incremental cost"的质疑**：自动生成接口需要 GPT-4.1 + Gemini 2.5 Pro 多轮调用，迭代直到无新失败轨迹。v3 Appendix E/Table20–21报告ALFWorld每轮约0.55M Token、8轮生成约9.4美元（当时标价），四环境约30美元；复用时输入Token为基线58%、调用43%，付费API估算约120任务摊回生成费。不包括完整生产TCO及维护。对于一次性评估场景，生成接口的开销可能不值得。**生产部署成本 vs 离线评估收益**未分析。
 - **关于"显式规则暴露"的边界**：INFERRULES 把隐式规则"翻译"成文本提示，但有些环境规则是**真正的隐式**（如模拟器物理约束），LLM-as-Analyzer 不一定能识别。论文承认存在 hallucination，需要实验验证对抗——但这本质上是把"识别困难"的瓶颈从 agent 转移到 Analyzer-Optimizer 循环。
 
 ### 3. 对标与旁逸
 
 #### 3a. 跨域对标
 
-- **[[Agent-Harness]]**：ALIGN 本质是**自动生成 harness 中的接口层**。Harness 的 12 组件里"工具层"和"上下文管理"是手动设计的，ALIGN 提供了一个"自动适配器"——把环境约束表面化、对齐到 agent 的预期。Anthropic 的"harness matters as much as the model" 在这里得到验证：**harness 内部的接口设计是另一个独立轴**，可以独立于 agent 架构和 backbone 优化。
-- **[[ACI-Agent-Computer-Interface]]**：SWE-agent 提出的 ACI 偏**人工设计**的 agent-computer 接口（人类为 Agent 设计最佳工具描述、参数 schema、错误反馈）。ALIGN 是 **ACI 的工业化版本**——不再人工 handcraft，而是从失败轨迹自动合成。论文引用了 SWE-agent 但未充分讨论差异（人工 vs 自动、一次性 vs 迭代优化）。
+- **[[Agent-Harness]]**：ALIGN 本质是**自动生成 harness 中的接口层**。Harness的工具及上下文是候选优化维度，不是固定12组件或必然手工设计，ALIGN 提供了一个"自动适配器"——把环境约束表面化、对齐到 agent 的预期。Anthropic 的"harness matters as much as the model" 在这里得到验证：**harness 内部的接口设计是另一个独立轴**，可以独立于 agent 架构和 backbone 优化。
+- **[[ACI-Agent-Computer-Interface]]**：SWE-agent 提出的 ACI 偏**人工设计**的 agent-computer 接口（人类为 Agent 设计最佳工具描述、参数 schema、错误反馈）。ALIGN是ACI自动生成的研究实例，由失败轨迹和实验验证生成候选接口；不代表工业成熟度。论文引用了 SWE-agent 但未充分讨论差异（人工 vs 自动、一次性 vs 迭代优化）。
 - **[[Building-Effective-Agents]]**：Anthropic 三大原则之一是 "Well-crafted ACI"。ALIGN 的实证说明"well-crafted" 不必是人工的——可以由 LLM 自主探索失败模式并迭代修正。**ACI 原则的算法化实现**。
-- **[[Agent-Verification]]**：论文的实验验证步骤（Analyzer 用环境反馈验证候选错位；Optimizer 用环境反馈验证新接口）是一种**LLM-as-Judge 的强化版**——不是评估最终输出，而是评估中间推理步骤。这是 verification 循环的一个新模式。
-- **评估侧方法论冲击**：基准分数可能严重低估/高估真实能力——"13.4% → 31.3%" 表明**大量失败是评估噪声而非能力边界**。这意味着 SWE-bench、TerminalBench 等基准的 leaderboard 排名可能需要重新校准。可对照 [[Rubric-Based-Evaluation]]、[[Minimal-Pair-Evaluation]] 的评估方法思考。
-- **SWE-agent 系列、Agent S、AutoManual**：都是手动或半自动的接口优化工作，ALIGN 是首个**全自动 + 跨环境通用**的接口生成框架。
+- **[[Agent-Verification]]**：论文的实验验证步骤（Analyzer 用环境反馈验证候选错位；Optimizer 用环境反馈验证新接口）使用真实环境交互和任务反馈验证候选，而不只依赖LLM自评；环境oracle与代码审查仍须验证。这是 verification 循环的一个新模式。
+- **评估侧方法论冲击**：基准分数可能严重低估/高估真实能力——"13.4% → 31.3%" 表明接口影响系统级测量；是否属于评估噪声取决于预定测量对象和任务合同，不能直接推翻其他榜单。可对照 [[Rubric-Based-Evaluation]]、[[Minimal-Pair-Evaluation]] 的评估方法思考。
+- **SWE-agent 系列、Agent S、AutoManual**：都是手动或半自动的接口优化工作，ALIGN在四个文本环境分别生成并验证接口；未证明首创或任意环境迁移。
 
 #### 3b. 旁逸（跨域联想）
 
@@ -68,7 +77,7 @@ claim_type: extracted
 
 #### 3c. 约束分析
 
-- **硬约束**：环境接口是 agent 与环境的**唯一通道**，必须有人/有系统填充这个通道——要么人工设计，要么自动生成，要么混部。这是物理层面的，无法绕过。
+- **硬约束**：在论文形式化中接口中介观测和动作；真实系统可能有多条直接/间接通路，必须验证完整中介，非物理唯一通道。
 - **软约束**：当前 agent 依赖"自然语言观察 + 自然语言规则"作为接口语义。未来的多模态 agent（视觉 + 动作）可能需要不同的接口形态——纯文本对齐的收益会衰减。
 - **自设约束**：论文把 Analyzer 和 Optimizer 都假设为可调用的 LLM。如果 LLM 自身不具备"识别环境规则"的能力（如纯文本环境 vs 模拟器内部状态），Analyzer 会失败。这是论文设定的边界条件。
 
@@ -77,7 +86,7 @@ claim_type: extracted
 - [[Agent-Environment-Misalignment]] — 本文核心新概念
 - [[ALIGN-Framework]] — 本文提出的自动接口生成框架
 - [[Agent-Harness]] — ALIGN 是 harness 内部接口层的自动化实现
-- [[ACI-Agent-Computer-Interface]] — ACI 是人工设计的接口，ALIGN 是自动版本
+- [[ACI-Agent-Computer-Interface]] — ACI是广义接口设计，ALIGN为自动优化实例
 - [[Building-Effective-Agents]] — "Well-crafted ACI" 原则的算法化版本
 - [[Agent-Perception-Gap]] — 区分：感知差是关于人类视觉 vs Agent 解析结构；错位是关于 Agent 内部预期 vs 环境状态转换
 - [[Agent-Verification]] — Analyzer/Optimizer 的实验验证是 verification 循环的强化版
@@ -88,16 +97,16 @@ claim_type: extracted
 |------|------|
 | **论文回答的问题** | Agent 失败是因为它笨，还是因为环境没说清楚？接口本身能否自动生成？ |
 | **它反对的常见信念** | "想要更强 agent 就换更大模型" / "benchmark 分数反映真实能力" / "ACI 必须人工设计" |
-| **它提出的新主张** | (1) Agent-environment misalignment 是被忽视的瓶颈；(2) 接口可以自动生成且 plug-and-play；(3) 改写反馈就能让 Qwen2.5-7B 在 ALFWorld 从 13.4% → 60%+ |
+| **它提出的新主张** | (1) Agent-environment misalignment 是被忽视的瓶颈；(2) 接口可以自动生成且 plug-and-play；(3) 单一反馈改写13.4%→31.3%；完整ALIGN Vanilla 13.43%→60.45% |
 | **主张可信度** | 中高：5 agent × 4 benchmark = 20 数据点一致提升；接口跨 agent 和 backbone 泛化；但仅 Qwen2.5-7B 单 base model、文本环境 |
 | **对读者判断的更新** | 评估 LLM Agent 时，**第一反应应该是检查接口**，不是换模型。在 baseline 上堆叠 1 个简单的接口 wrapper 可能比换大模型更有效 |
-| **主张失效的边界** | 多模态环境未测、弱模型生成接口能力未知、生成接口本身的成本未报告、Self-Refine 类 agent 收益最小 |
+| **主张失效的边界** | 多模态环境未测、弱模型生成接口能力未知、生成成本已有条件化估计，生成器能力和维护成本仍需验证；Self-Refine在ALFWorld增益最小，不外推所有任务 |
 | **可执行项** | (1) 在已有 ALFWorld / WebShop / M3ToolEval 上重现 13.4% → 31.3% 的改写反馈实验，验证单一改写的杠杆；(2) 评估自己的 Agent 评估流程：是否过度依赖单一基准分数？(3) 考虑在已有 benchmark 上加 ALIGN 生成的接口，看是否能发现被低估的能力 |
 
 ### 七拍叙事（命题递进）
 
 1. **问题命名**：Agent 失败的根因不只是 agent 笨或环境难——**中间的接口没说清楚**是独立瓶颈。
-2. **现象量化**：单一改写反馈就让 Qwen2.5-7B 在 ALFWorld 从 13.4% → 31.3%（+17.9pp），完整 ALIGN 提升到 60%+（+45.67pp），远超模型升级带来的典型增益。
+2. **现象量化**：单一改写反馈就让 Qwen2.5-7B 在 ALFWorld 从 13.4% → 31.3%（+17.9pp），完整ALIGN Vanilla 60.45%（+47.02pp），五方法平均+45.67pp；未做通用模型升级收益对照。
 3. **机制拆解**：错位 = agent 内部预期 `s^expected_{t+1}` ≠ 环境实际 `s^actual_{t+1}`，源自隐式规则未表面化、欠规范观察。
 4. **方法抽象**：用 `Φ = {INFERRULES, WRAPSTEP}` 两个模块 wrapper 环境，**不改 agent 逻辑或环境代码**，通过 Analyzer + Optimizer 迭代生成 + 实验验证对抗 LLM 幻觉。
 5. **泛化证据**：5 agent × 4 benchmark 全正收益；接口 plug-and-play 跨架构和 backbone；连续无效动作平均 -65%。
