@@ -5,9 +5,9 @@ aliases:
   - PosterBench
   - PosterBench-Main-Track
   - PosterBench-mini
-definition: "AutoDesign 发布的 paper-to-poster 评估基准——100 篇五学科 Main Track + 10 篇 PosterBench-mini 固定子集，七维评估协议（Faithfulness / Coverage / Density / Visual Evidence / Layout / Readability / Aesthetics），同时包含 933 次人类盲评对（Bradley-Terry 估计）的 ground truth。是当前 paper-to-poster 任务最完整的工业级 benchmark"
+definition: "AutoDesign 发布的 paper-to-poster 评估基准——100 篇五学科 Main Track + 10 篇 PosterBench-mini 固定子集，七维评估协议（Faithfulness / Coverage / Density / Visual Evidence / Layout / Readability / Aesthetics），同时包含 933 次人类盲评对（Bradley-Terry 估计）的 ground truth。本页描述作者发布的评估协议，非全行业排名"
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-11-28
 tags:
   - benchmark
   - agent-evaluation
@@ -25,7 +25,7 @@ source_raw:
 # PosterBench
 
 > [!definition] 定义
-> **PosterBench** 是 AutoDesign (Luo et al., 2026) 发布的 paper-to-poster 评估基准，包含 PosterBench Main Track（100 篇五学科论文）+ PosterBench-mini（10 篇固定子集，受控对照用）+ 933 次人类盲评对（Bradley-Terry 估计）+ 七维评估协议（Faithfulness / Coverage / Density / Visual Evidence / Layout / Readability / Aesthetics）。是当前 paper-to-poster 任务最完整的工业级 benchmark。
+> **PosterBench** 是 AutoDesign (Luo et al., 2026) 发布的 paper-to-poster 评估基准，包含 PosterBench Main Track（100 篇五学科论文）+ PosterBench-mini（10 篇固定子集，受控对照用）+ 933 次人类盲评对（Bradley-Terry 估计）+ 七维评估协议（Faithfulness / Coverage / Density / Visual Evidence / Layout / Readability / Aesthetics）。本页描述作者发布的评估协议，非全行业排名。
 
 ## 关键数据点
 
@@ -111,13 +111,11 @@ n=7 配置平均 +12.4%；DeepSeek V4 Pro 提升最大 +19.56；GPT-5.5 提升�
 
 | 维度 | PosterBench | CORE-Bench | ITBench | SWE-Bench |
 |------|------------|-----------|---------|-----------|
-| 任务 | paper-to-poster | 通用 agent | IT 运维 | 代码修复 |
-| 协议 | 七维 rubric | 时间相关任务 | 故障注入 | pass/fail 测试 |
-| 人类 ground truth | 933 pairwise | 无 | 无 | 无 |
-| 多模型对照 | 7 配置 + 4 系统 | 弱 | 弱 | 强 |
-| 工业级 controlled matrix | 6 track | 无 | 无 | 弱 |
+| 任务 | paper-to-poster | 科学计算复现 | IT 运维 | 软件问题解决 |
+| 协议 | 七维 rubric | 指定计算结果复现 | 按具体 ITBench 版本 | 补丁与测试结果 |
+| 参考证据 | 933 pairwise 人类偏好记录 | 论文相关计算结果 | 按具体版本 | issue 与测试；Verified 含工程师复核 |
 
-→ PosterBench 在**多系统对照 + 人类 ground truth + controlled factor 隔离**三维度上明显领先同类基准。
+不同基准衡量不同任务及目标；未采用统一任务集、成本与评分协议，不能据这些维度宣称 PosterBench 整体领先。此处仅修正比较对象与不可比性，不重核 PosterBench 原论文、其余数字或 ITBench 版本。
 
 ## 关联概念
 

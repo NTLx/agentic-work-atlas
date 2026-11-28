@@ -7,7 +7,7 @@ aliases:
   - Text Watermark
 definition: "Anthropic 为 Claude 输出嵌入的 SynthID-Text 变体文本水印——通过将 token 选择的随机性源从通用 PRNG 替换为\"key + 前文\"，使第三方可在事后用 key 验证文本是否由带水印的 Claude 生成；2026-08 由 EU AI Act 合规驱动全球启用"
 created: 2026-08-16
-updated: 2026-10-21
+updated: 2026-11-28
 tags:
   - content-provenance
   - ai-policy
@@ -58,14 +58,14 @@ source_raw:
 
 ### 不可追溯用户
 
-watermark key 不含用户/组织信息；只证明"Claude 参与过"而非"哪个用户生成"——这与 [[Distinct-Principal-Identity]] 区分：watermark 追溯 provider，identity 追溯 user/agent
+watermark key 不含用户/组织信息；只支持有限的 Claude 参与概率判断，不能证明哪个用户生成——这与 [[Distinct-Principal-Identity]] 区分：watermark 追溯 provider，identity 追溯 user/agent
 
 ### 三类信号对比
 
 | 信号 | 适用对象 | 机制 | 检测 |
 |------|---------|------|------|
 | Claude Text Watermark | 文本 | SynthID-Text 变体，统计模式 | 需 key，事后验证 |
-| C2PA Content Credentials | 文件（.png/.jpg/.svg）| Cryptographically signed metadata | 任何 C2PA-aware 工具 |
+| C2PA Content Credentials | 支持的数字资产（该产品当时列举 PNG/JPG/SVG）| 与资产绑定的签名 provenance 声明 | 兼容验证器；核对绑定、签名及信任策略 |
 | Pangram 类 AI 检测 | 文本 | Heuristic 语言模式（"this isn't [X], it's [Y]"，"quietly" 等）| 无 key，启发式概率 |
 
 ## 关键命题
@@ -80,7 +80,7 @@ watermark key 不含用户/组织信息；只证明"Claude 参与过"而非"哪�
 
 ### 命题 3：水印的弱点 = 不在"内容归属"决策点
 
-watermark 只能事后验证 Claude 参与；不能区分"Claude 写了"与"Claude 重度编辑了"；factual / code / proofreading 处水印稀疏；轻编辑可能移除部分水印。这削弱了"用 watermark 验证学生论文 / 新闻原创性"等强主张——watermark 是**概率信号**而非**认证机制**
+watermark 只能提供 Claude 可能参与的统计证据；不能区分"Claude 写了"与"Claude 重度编辑了"；factual / code / proofreading 处水印稀疏；轻编辑可能移除部分水印。这削弱了"用 watermark 验证学生论文 / 新闻原创性"等强主张——watermark 是**概率信号**而非**认证机制**
 
 ### 命题 4：水印与 LLM 责任 = 同构于密码学签名传统
 
@@ -90,8 +90,8 @@ watermark 只能事后验证 Claude 参与；不能区分"Claude 写了"与"Clau
 
 - **factual / code / proofreading 处水印稀疏**——高价值 AI 内容（事实性写作、代码）反而最难检测
 - **轻编辑可能移除部分水印**——完全重写则 100% 移除
-- **无法区分 "Claude 写了" 与 "Claude 重度编辑了"**——watermark 是参与证明，不是 ownership
-- **watermark 检测 API 尚未推出**——实现细节 in process
+- **无法区分 "Claude 写了" 与 "Claude 重度编辑了"**——watermark 是参与概率信号，不是证明或 ownership
+- **检测 API**——2026-08 原文称计划提供，当前上线状态未在本轮核验
 - **Anthropic "无影响输出质量"声明缺乏独立第三方评估**——仅自家对照 + SynthID-Text Nature 论文对照
 - **全球 rollout 与 "最小干预"原则的张力**——非 EU 用户也被强制水印（Anthropic 自承"无法 durable scope by region"）
 - **"watermark 不改变用户权利"是政策姿态而非技术事实**——EU AI Act 要求告知用户 AI 生成，水印是技术手段不是告知机制

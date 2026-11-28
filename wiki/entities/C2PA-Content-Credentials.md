@@ -6,75 +6,57 @@ aliases:
   - C2PA Content Credentials
   - Content Credentials
   - Coalition for Content Provenance and Authenticity
-definition: "由 C2PA 联盟维护的开放行业标准，通过在文件 metadata 中嵌入 cryptographically signed note 来声明文件的来源与处理历史；与 [[Claude-Text-Watermark|文本水印]]机制独立但协同——Anthropic Claude 对 .png/.jpg/.svg 等文件使用 C2PA，对文本使用 SynthID-Text 变体"
+definition: "C2PA 开放标准定义的数字资产来源凭证技术，通过签名、资产绑定与声明记录可验证的 provenance；验证凭证完整性和签名信任不等于验证内容真实、历史完整或用户身份。"
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-11-28
 tags:
   - content-provenance
   - ai-safety
-evidence_level: high
-claim_type: extracted
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[Claude-Text-Watermark]]"
   - "[[SynthID-Text]]"
+  - "[[Text-Watermarking]]"
 source_raw:
   - "[[20260816-anthropic-claude-text-watermark]]"
+  - "[[20261005-openai-eu-text-provenance]]"
 ---
 
 # C2PA Content Credentials
 
 > [!definition] 定义
-> **C2PA Content Credentials** 是 Coalition for Content Provenance and Authenticity 维护的开放行业标准，通过在文件 metadata 中嵌入 cryptographically signed note 来声明文件的来源与处理历史。Anthropic Claude 对 .png/.jpg/.svg 等文件使用 C2PA，对文本使用 [[SynthID-Text]] 变体——两类机制独立但协同。
+> C2PA（Coalition for Content Provenance and Authenticity）维护开放的数字内容 provenance 标准。Content Credential 即 C2PA Manifest，包含关于资产来源、操作等的声明，通过密码学机制绑定至资产，并支持验证完整性和签名者信任。凭证并非事实真实性证明。
 
 ## 关键数据点
 
-### C2PA vs 文本水印的核心差异
+### 机制与边界
 
-| 维度 | C2PA Content Credentials | Claude Text Watermark |
-|------|-------------------------|----------------------|
-| 适用对象 | 文件（.png, .jpg, .svg 等）| 文本 |
-| 信号嵌入位置 | 文件 metadata | token 选择随机性源 |
-| 信号性质 | Cryptographically signed note | 统计模式（人类不可辨）|
-| 检测要求 | 任何 C2PA-aware 工具 | 需 provider 的 key |
-| 用户信息 | 不含 | 不含 |
-| 标准化 | 开放行业标准（同 camera 厂商 + photo-editing 软件）| SynthID-Text 算法族（Aaronson 2022 → DeepMind 2024）|
-
-### C2PA 联盟
-
-- 创始成员包括 Adobe、Microsoft、BBC、Intel、Truepic 等
-- 当前 spec 维护在 c2pa.org
-- camera 厂商与 photo-editing 软件广泛支持
-
-### Anthropic 集成（2026-08）
-
-- Claude 生成的 .png / .jpg / .svg 文件自动附加 C2PA content credential
-- 凭证包含声明"该文件由 Claude 制作或处理"
-- **不含**用户身份信息
-- "nothing in the file changes — it is not embedded or hidden"——区别于传统水印
-
-## 关键命题
-
-### 命题 1：C2PA 与 SynthID-Text 覆盖两个不同威胁面
-
-- **C2PA**：文件型内容（图片、视频、文档）——基于 metadata 完整性
-- **SynthID-Text**：文本内容——基于 token 统计模式
-
-两者一起构成"AI 内容归属"完整基础设施。Anthropic 同时启用两者是工程上的一致选择
-
-### 命题 2：C2PA 是密码学签名传统的延伸
-
-数字文档签名 / 代码签名 / TLS 证书都是"事后可验证"信号；C2PA 把这个传统延伸到媒体文件。同 [[Claude-Text-Watermark|文本水印]] 是 LLM 实例，C2PA 是文件实例
+依据 [C2PA Explainer v2.4](https://spec.c2pa.org/specifications/specifications/2.4/explainer/Explainer.html) §2、§4、§6、§7（本轮定义勘误依据，待正式来源晋升）：
 
 ## 前提与局限性
 
-- **依赖 metadata 完整性**——剥离 metadata 即丢失凭证
-- **camera 厂商与 photo-editing 软件支持度不均**——并非所有设备 / 工具原生支持
-- **不防"完整重做"**——重做文件则 metadata 重写，C2PA 不再指向原文件
-- **Anthropic 自家工具支持**——"we'll be providing our own where you can drop a file and check"
-- **跨厂商兼容性**：不同 C2PA 实现可能不互通
+- 分开验证资产绑定、声明及签名完整性、签名者信任、声明实际真实性。前三者不能证明最后一项。
+- 资产内嵌凭证可能被移除；durable credentials 可借助水印或指纹等 soft binding 发现外部保存的凭证，能否恢复依赖实际实施与服务可用性。缺少凭证不证明造假，存在凭证也不证明真实。
+- 来源链可以不完整；复合资产可能记录 ingredient 凭证，但没有原 ingredient 数据时无法独立重验其 hard binding。
+- 标准允许有关身份的扩展声明；不能普遍宣称所有凭证不含用户身份。具体部署需要单独核查隐私、信任列表及验证器支持。
+
+## 与文本水印区分
+
+| 维度 | C2PA Content Credentials | 文本水印 |
+|---|---|---|
+| 证据对象 | 资产及与其绑定的 provenance 声明 | 特定生成实现留下的统计信号 |
+| 验证 | 兼容验证器、资产绑定、签名和信任策略 | 对应检测器、长度与误差条件 |
+| 能支持 | 有限的声明来源及完整性判断 | 可能存在特定模型参与 |
+| 不能推出 | 内容真实、完整历史、所有权 | 作者身份、人类贡献比例、所有权、内容真实 |
+
+## 已有产品来源
+
+- [[20260816-anthropic-claude-text-watermark]]：2026-08 官方文章称将在支持的文件（例 PNG/JPG/SVG）附加凭证，其实施声明不含用户身份；文中检测工具尚属计划。此为当时产品声明，不证明当前所有模型、文件和地区已覆盖，也不代表标准不支持身份声明。
+- [[20261005-openai-eu-text-provenance]]：OpenAI 描述分层 provenance，凭证、不可见水印、验证与政策等互补。不能将两家不同实现合并为完整行业覆盖或责任机制。
 
 ## 关联概念
 
-- [[Claude-Text-Watermark]] — 文本侧的并行机制
-- [[SynthID-Text]] — 文本水印的具体算法
-- Content Provenance — 内容归属通用问题
+- [[Claude-Text-Watermark]]
+- [[SynthID-Text]]
+- [[Text-Watermarking]]
