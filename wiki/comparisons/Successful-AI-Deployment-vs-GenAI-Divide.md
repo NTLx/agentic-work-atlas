@@ -4,7 +4,7 @@ title: "Successful AI Deployment vs GenAI Divide"
 entity_a: "[[AI-Deployment-Valley-of-Death]]"
 entity_b: "[[The-GenAI-Divide]]"
 created: 2026-06-01
-updated: 2026-10-15
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -33,7 +33,7 @@ source_raw:
 # Successful AI Deployment vs GenAI Divide
 
 > [!summary] 对比概述
-> Stanford 报告研究 51 个成功部署案例，回答“成功样本做对了什么”；MIT/NANDA 报告研究广泛试点和部署断层，回答“多数企业为什么卡住”。两者合起来说明：企业 AI 的关键不是 adoption，而是组织学习、流程嵌入、人类监督和业务指标闭环。
+> Stanford 报告研究 51 个成功部署案例，回答“成功样本做对了什么”；MIT/NANDA 报告研究广泛试点和部署断层，回答“多数企业为什么卡住”。两者均提示采用不等于业务结果。成功选择样本与非代表性初步调研不是同一总体、同一成功定义的互补分组，不能拼成因果对照或总体成功率。
 
 ## 核心对比
 
@@ -76,7 +76,7 @@ source_raw:
 
 如果企业已有清晰流程、知识库、API 化系统和业务 owner，标准产品或 API 可以直接改写工作流。Klarna、Mercado Libre、Lightspeed 这类案例说明这条路存在。
 
-但 MIT/NANDA 和 Stanford 的组合说明，更多企业会卡在另一侧：工具已经试用，pilot 已经启动，却没有形成生产系统、学习回路和 P&L impact。此时需要的不是更热闹的 adoption，而是 FDE 式现场工作、内部 AI Factory、或两者组合，把隐性组织工作显式化。
+但 MIT/NANDA 和 Stanford 的案例提示另一类可能的断层：工具已经试用，pilot 已经启动，却没有形成生产系统、学习回路和 P&L impact。此时需要的不是更热闹的 adoption，而是 FDE 式现场工作、内部 AI Factory、或两者组合，把隐性组织工作显式化。
 
 ### 标准产品成功案例补充
 
@@ -102,7 +102,7 @@ RWJBarnabas 的 EDI 案例是这条判断最干净的脚注：工具本身是 Ep
 4. 是否定义了常规路径、例外路径和人类升级规则。
 5. 是否把部署经验沉淀成可复用资产，而不是一次性项目。
 
-五项缺两项以上，项目很可能还在 adoption 层；五项大多成立，才接近成功部署层。
+五问是诊断提示而非经验证评分表，撤回缺两项即判定采用层的阈值。项目验收应按实际工作流结果、成本、风险及持续性判断。
 
 ## 相关概念
 

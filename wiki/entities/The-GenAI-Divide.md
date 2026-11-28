@@ -7,7 +7,7 @@ aliases:
   - 生成式 AI 鸿沟
 definition: "企业 GenAI 高采用但低业务转化的断裂：个人工具普及很快，核心工作流和 P&L impact 却难以进入生产"
 created: 2026-06-01
-updated: 2026-08-13
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -38,10 +38,10 @@ MIT/NANDA 报告给出的关键区别是：个人生产率工具可以靠低摩�
 
 ## 关键数据点
 
-- 报告称企业 GenAI 投入约 USD30-40 billion，但 95% 的组织没有取得可衡量回报。
+- 2025-07 初步报告自述企业投入约300–400亿美元及95%组织零回报，另报告5%集成pilot提取百万价值、5%到生产；不同分母和终态，非总体失败率。原报告pp.2–3/24方法限定：会议调查153人、52组织访谈、300+公开项目、六个月ROI窗口，存在选择偏差和并行改进混杂。
 - 超过 80% 的组织探索或试点 ChatGPT/Copilot 等工具，近 40% 报告已部署。
 - 60% 的组织评估过 enterprise-grade custom/vendor systems，20% 到达 pilot，只有 5% 到达 production。
-- 报告认为核心障碍不是基础设施、监管或人才，而是 [[Enterprise-AI-Learning-Gap|learning gap]]。
+- 报告提出 [[Enterprise-AI-Learning-Gap|learning gap]] 作为候选解释；没有排除其他约束的因果证据。
 
 ## 组织内机制：度量错位（2026-08，Vas）
 

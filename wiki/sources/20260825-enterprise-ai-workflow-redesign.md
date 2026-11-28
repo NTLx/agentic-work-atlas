@@ -7,7 +7,7 @@ original_raw_file: "20260825-enterprise-ai-workflow-redesign.md"
 original_body_sha256: "52f7cdd6dc8667bf912cfe9407b0e517da3dbca91091ad481c5f00fc225d5f22"
 indexed_at: "2026-08-26T13:40:00+08:00"
 created: 2026-08-25
-updated: 2026-08-26
+updated: 2026-11-28
 tags:
   - source-summary
   - ai-adoption
@@ -22,6 +22,8 @@ claim_type: mixed
 > Institute of AI PM（2026-07-27）：部署与采纳不是同一件事。Deloitte 2026 企业 AI 研究——近半数组织部署 AI 时没有重构工作流，只有 12% 在规模化重构，其余卡在"工具已被授权、预算、技术集成，但人把它当成旧流程的可选附件"。Workflow redesign 是独立于部署的学科：需要映射人-AI 交接、重新定义岗位范围、从期望结果反向重建流程。来源：Institute of AI PM（AI PM 教育培训机构）。证据等级：medium（Deloitte 数据支撑问题诊断，框架为可操作清单）。
 
 ## 编译摘要
+
+2026-11-28 复核 Deloitte [原文](https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/blogs/pulse-check-series-latest-ai-developments/ai-transformation-predictions-2026.html)：近3700专业人士，48%自报引入AI未重构流程或角色，12%自报规模化重构。并非项目失败率或本库成熟度实测。下文85%/95%、A/B/C份额、改写率10–25%与5%/40%均为原作者经验建议，撤回通用门槛身份；需真实错误成本、审核误判、下游质量及任务分布校准。
 
 ### 1. 浓缩
 
@@ -50,7 +52,7 @@ claim_type: mixed
 - **与 [[AI-Deployment-Valley-of-Death]] 的证据互证**: Deloitte 的 48/12 分布正是部署死亡谷的量化证据——技术集成完成但组织改写未发生；本文与 [[20260601-stanford-enterprise-ai-playbook]]（77% 最难挑战来自变革管理/数据质量/流程重设计）同构
 - **与 [[AI-Deployment-Invisible-Costs]] 的对接**: 集成摩擦/技能鸿沟/激励错位/角色模糊四类阻塞 = 隐性成本的具体机制清单；"采用在被整合软件内的 AI，而非单独工具"落在本库 Standard-AI-Product-Adoption 与 Layered-AI-Sourcing 的交界
 - **跨域类比：交接设计 ≈ 接口契约（software）**: 三类 handoff 本质是"人-AI 接口契约"——定义输入、输出、错误语义、边界条件，正如软件模块间的 interface contract；"审查走过场造成错误累积" = 数据流里无校验地的垃圾进垃圾出（跨域联想，综合判断）
-- **指标谱系 ≈ 人机团队的 SLO**: 五指标（周期/错误率/人力/AI 改写率/结果质量）是工作流级 SLO 集合；"改写率 10-25%" 对应人机联合系统的理想信任区间——太低是盲从、太高是拒绝，这是人机团队校准的量化形态（跨域联想）
+- **指标谱系 ≈ 人机团队的 SLO**: 五指标（周期/错误率/人力/AI 改写率/结果质量）是工作流级 SLO 集合；改写率仅是观察变量；不能由低/高改写率识别盲从或拒绝，需与独立质量、漏改、误改及复核成本联测。
 
 ### 关联概念
 

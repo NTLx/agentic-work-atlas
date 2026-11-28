@@ -7,7 +7,7 @@ aliases:
   - 企业 AI 隐性成本
 definition: "AI 成功部署中常被 ROI 低估的变革管理、流程重设计、数据质量、失败试验和组织学习成本"
 created: 2026-06-01
-updated: 2026-08-13
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -40,13 +40,13 @@ source_raw:
 
 ## 关键数据点
 
-- Stanford 报告称 77% 的最难挑战是 change management、data quality、process redesign 等无形成本。
+- Stanford 原报告 p.14 图5：成功选择样本中77%为受访者报告的最难挑战分类，不是隐性成本占总投资77%，也非全体项目失败首因。
 - 61% 的成功项目至少包含一次先前失败，而失败成本通常不会出现在最终 ROI 中。
 - 报告认为技术常常不是最难部分，真正差异来自组织准备度、流程、领导力和愿意改变/试错的能力。
 
 ## 完美 rollout 也存在推广成本（2026-08，Vas）
 
-Vas（Varick Agents CEO）提出了隐性成本的一个反直觉形态：**不需要失败的部署，完美的 rollout 本身就有隐藏账单**——某 exec 签 8 位数 license 后"约 10% 的人烧 90% 的 token"；若其余 90% 按 top decile 用法消费，花费约 10x，`$10M` 承诺变 `$100M`。best case 变 worst case。
+Vas（Varick Agents CEO）提出了隐性成本的一个反直觉形态：**不需要失败的部署，完美的 rollout 本身就有隐藏账单**——某 exec 签 8 位数 license 后"约 10% 的人烧 90% 的 token"；若其余 90% 按 top decile 用法消费，若假设 token 单价和 top decile 人均用量不变，所有人按该用量消费，整体约为原消耗9倍（10%使用90%）；10倍是作者近似情景，非已发生账单，也不等于 license 成本。
 
 机制：采纳的隐藏成本不是"试点失败"，而是"期望所有人都会学，但多数人学不会/永远到不了第二档用法"的学习与推广成本（`[[AI-Adoption-Barbell|采纳杠铃]]`）。预算若只按 power user 爪度的 license/token 建模，会让放大 10 倍的尾部成本静默爆发。
 

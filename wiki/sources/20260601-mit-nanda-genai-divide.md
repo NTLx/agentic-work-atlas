@@ -4,7 +4,7 @@ title: "The GenAI Divide: State of AI in Business 2025"
 source_raw:
   - "[[20260601-mit-nanda-genai-divide]]"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-11-28
 tags:
   - source-summary
   - enterprise-ai
@@ -15,13 +15,15 @@ tags:
 
 ## 编译摘要
 
+2026-11-28 回查2025-07初步报告 [PDF镜像](https://intelligengroup.com/MIT_State_of_AI_2025_Report.pdf) pp.2–3、24：300+公开initiative、52组织访谈、153名会议调查领导者，六个月ROI观察，指标异质。95%组织零回报、5%集成pilot提取百万价值、5%进入生产是报告不同表述，不能共用分母或等同总体项目失败率。外部合作对比来自访谈，非随机build/buy；learning gap为作者解释而非已识别唯一首因。
+
 ### 1. 浓缩
 
 - **核心结论1**: 企业 GenAI 呈现“高采用、低转化”的断裂。
   - 关键证据: 报告称企业投入约 USD30-40 billion，但 95% 的组织没有取得可衡量回报；超过 80% 的组织探索或试点 ChatGPT/Copilot 等工具，近 40% 报告部署，但主要提升个人生产率而非 P&L。
 - **核心结论2**: 企业级自定义或 vendor 系统的漏斗很陡，关键卡点在生产化。
   - 关键证据: 60% 的组织评估过 enterprise-grade custom/vendor systems，20% 到达 pilot，只有 5% 到达 production。
-- **核心结论3**: 核心障碍不是基础设施、监管或人才，而是 learning gap。
+- **核心结论3（作者解释）**: learning gap 是候选障碍，不排除基础设施、监管、人才和项目选择。
   - 关键证据: 报告认为多数 GenAI 系统不能保留反馈、不能适应上下文、不能随时间改进；成功买方要求 process-specific customization、流程集成和基于业务结果的评估。
 
 ### 2. 质疑

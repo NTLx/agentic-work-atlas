@@ -4,7 +4,7 @@ title: "The Enterprise AI Playbook: Lessons from 51 Successful Deployments"
 source_raw:
   - "[[20260601-stanford-enterprise-ai-playbook]]"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-11-28
 tags:
   - source-summary
   - enterprise-ai
@@ -15,6 +15,8 @@ tags:
 # The Enterprise AI Playbook: Lessons from 51 Successful Deployments
 
 ## 编译摘要
+
+2026-11-28 回查[原报告](https://digitaleconomy.stanford.edu/publication/enterprise-ai-playbook/) pp.6–10、13–14、30：51个成功部署，主要访谈自报、正向选择及异质指标；77%是最难挑战类别占比而非预算成本；图6升级/审批/协作的中位收益71/30/30%、平均63/44/43%。监督组非随机分配，不识别改变监督方式的因果效应。80%为分类口径；不同任务的风险及可验证性不可省略。
 
 ### 1. 浓缩
 
@@ -34,7 +36,7 @@ tags:
 
 ### 3. 对标
 
-- **与 [[AI-Ready-Organization]] 对标**: Stanford 报告把“组织能否被 AI 放大”从观点推进到成功样本证据：模型不是瓶颈，组织可读性和执行赞助才是差异来源。
+- **与 [[AI-Ready-Organization]] 对标**: Stanford 报告把“组织能否被 AI 放大”从观点推进到成功样本证据：组织可读性、赞助与模型能力均可能是约束；选择样本不能识别唯一瓶颈或因素贡献。
 - **与 [[Forward-Deployed-AI-Enablement]] 对标**: FDE 式赋能的价值可以被理解为帮助组织穿越 [[AI-Deployment-Valley-of-Death]]，把项目从 demo/部署推进到 ROI。
 - **与 [[Agent-First-Process-Redesign]] 对标**: escalation-based 监督模式提供了一个更细的流程设计原则：Agent 处理常规路径，人类治理例外和边界。
 - **与 [[The-GenAI-Divide]] 对标**: Stanford 研究成功侧，MIT/NANDA 研究失败漏斗侧。两者合起来说明，企业 AI 的关键不是 adoption，而是学习、集成、流程和业务指标闭环。

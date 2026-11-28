@@ -3,7 +3,7 @@ type: topic
 title: Forward Deployed AI Enablement
 description: "FDE 式 AI 赋能：通过嵌入真实组织现场，发现黄金用例、穿越集成之墙，并把一次性部署沉淀为可复用的平台能力和组织能力"
 created: 2026-05-22
-updated: 2026-11-20
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -149,9 +149,9 @@ CHMI 在这条路径中承担了类似前线伙伴的角色：参与验证模型
 
 Stanford 和 MIT/NANDA 两份报告把 FDE 式赋能的必要性放到更硬的证据框架里。
 
-Stanford 的成功样本说明，AI 项目从部署到 ROI 之间存在 [[AI-Deployment-Valley-of-Death|部署死亡谷]]。技术不是最难部分，77% 的最难挑战来自变革管理、数据质量和流程重设计等 [[AI-Deployment-Invisible-Costs|隐性成本]]。这解释了为什么只交付 demo 或 license 不够：真正成本发生在组织改写阶段。
+Stanford 的51个成功部署选择样本（[原报告](https://digitaleconomy.stanford.edu/publication/enterprise-ai-playbook/)，pp.6–10、13–14）中，报告归类的最难挑战有77%涉及变革、数据及流程等 [[AI-Deployment-Invisible-Costs|隐性成本]]。不是总成本占比、失败率或组织因素的因果效应；不能据此证明 FDE 的必要性。这解释了为什么只交付 demo 或 license 不够：真正成本发生在组织改写阶段。
 
-MIT/NANDA 的失败漏斗说明，企业 AI adoption 很高，但许多正式系统卡在 pilot 和 production 之间。核心不是大家不用 AI，而是企业系统缺少记忆、上下文适应和流程学习能力，也就是 [[Enterprise-AI-Learning-Gap|企业 AI 学习鸿沟]]。
+MIT/NANDA 2025初步报告描述采用与生产/价值转化的落差，[[Enterprise-AI-Learning-Gap|企业 AI 学习鸿沟]] 是作者提出的候选解释，不排除基础设施、监管、项目筛选与人才；其六个月窗口、会议调查及自报指标不支持总体95%失败率或外部合作的因果优势。
 
 因此 FDE 式赋能的更精确定义是：进入现场穿越集成之墙，并把现场反馈、例外、评测和流程规则转成可复用学习资产。
 
@@ -232,9 +232,9 @@ Palantir 2024-2026 六篇官方博客（⚠️ 全部 vendor 立场，机制层�
 - **Anthropic**：激进扩张 Applied AI 团队——招 FDE、Technical Deployment Leads、Solutions Architects，交付 MCP servers / sub-agents / agent skills 并提供白手套部署支持；团队据报增长 5x
 
 **产业逻辑（值得提取的机制）**：
-- **AI SaaS = value opportunity 而非 defined product**——任何单点 AI 功能有抛硬币概率在 6 个月内被通用 agent 超越，所以"发现楔形产品→同款卖数万客户→80% 毛利"的 SaaS 公式失效；供应商用"薄 agentic 平台 + 每客户重定制"回应
+- **AI SaaS = value opportunity 而非 defined product**——作者以六个月内被通用 Agent 超越的风险作推测，未提供概率估计或总体数据；不据此判定"发现楔形产品→同款卖数万客户→80% 毛利"的 SaaS 公式失效；供应商用"薄 agentic 平台 + 每客户重定制"回应
 - **客户不知买什么**——传统客户发现在 AI 时代像"iPhone 前问用户最喜欢的 App"；最珍贵用例只能*因为*技术而存在，必须"在房间内"才能发现
-- **FDE 跨 engagement 的模式识别**是内部团队永远得不到的——这是 FDE 规模化的核心经济论据
+- **FDE 跨 engagement 的模式识别**是可能的比较优势，内部跨团队学习及合作网络也可获得——这是 FDE 规模化的核心经济论据
 
 **与库内框架的校准**：该文把 FDE 定位为"咨询式技术骨干"（挖掘+实施+训练），偏向前三要素（嵌入现场/产品发现/构建），**回流层缺位**——它讲清了"为什么现在必须 FDE"，但不讲"如何把一次性部署沉淀为平台能力"。与下述 Palantir 机制群结合才完整：市场宏观层补"为什么"，机制群补"靠什么沉淀"。
 
@@ -285,6 +285,4 @@ FDE 模式真正值得借鉴的，不是岗位 title，而是一条工作原则�
 
 > 不要站在组织外部讲 AI 应该怎么用，要进入真实工作流，用可运行系统找到高价值用例，再把经验沉淀成组织可以自己复用的能力。
 
-如果一次 AI 赋能之后，组织只得到一个项目，它很快会回到原状。
-
-如果它得到一套可复用能力，下一次改变就会更容易发生。
+单次项目也可能获得持久业务收益，复用资产也可能无人维护或不能迁移。应分别核查当前业务结果及后续部署边际成本、退出交接和能力留存。

@@ -7,7 +7,7 @@ aliases:
   - 部署到 ROI 死亡谷
 definition: "AI 项目从试点或部署到可衡量 ROI 之间的断层，常由流程重构、组织阻力、数据质量和治理边界造成"
 created: 2026-06-01
-updated: 2026-10-22
+updated: 2026-11-28
 tags:
   - enterprise-ai
   - ai-deployment
@@ -50,8 +50,8 @@ demo
 ## 关键数据点
 
 - Stanford 报告专门讨论“deployment and ROI”之间的 valley of death，并强调组织条件决定同样 use case 的结果差异。
-- MIT/NANDA 报告显示，60% 的组织评估过企业级系统，20% 到达 pilot，只有 5% 到达 production。
-- Stanford 报告称 77% 的最难挑战是变革管理、数据质量、流程重设计等无形成本。
+- MIT/NANDA 2025初步报告自报60%评估企业级系统、20%到pilot、5%到production；非代表性调研，不能当当前全市场项目漏斗或95%失败率。
+- Stanford 51个成功部署选择样本中，77%最难挑战归类为变革、数据、流程等无形挑战；不是成本份额或失败因果贡献。
 
 ## 降低死亡谷的路径
 

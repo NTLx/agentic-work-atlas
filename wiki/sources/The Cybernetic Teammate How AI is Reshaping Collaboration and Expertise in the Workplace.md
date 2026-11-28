@@ -4,7 +4,7 @@ title: "The Cybernetic Teammate: How AI is Reshaping Collaboration and Expertise
 source_raw:
   - "[[The Cybernetic Teammate How AI is Reshaping Collaboration and Expertise in the Workplace]]"
 created: 2026-05-23
-updated: 2026-05-25
+updated: 2026-11-28
 tags:
   - source-summary
   - AI-collaboration
@@ -15,10 +15,12 @@ tags:
 
 ## 编译摘要
 
+2026-11-28 版本复核：[正式发表版 DOI](https://doi.org/10.1287/orsc.2025.20702) 注8、Table2、Figure8、Table9：791人完成、776完整数据，质量分析550份方案；AI个人与AI团队平均质量差异不显著，不能由点估计证明优劣或正式等效。无AI团队选中自身最佳创意约50%，AI条件约37%，但后者所选创意绝对质量更高。top decile AI团队较无AI个人+9.2pp，较无AI团队差异不显著（p=0.190）。区分生成、选择、实际上市及长期能力；同一研究线版本校准，不是新独立实验。
+
 ### 1. 浓缩
 
 - **核心结论1**：AI 可以复制一部分人类协作收益，让个人接近传统团队的产出质量。
-  - 关键证据：在 P&G 产品概念生成实验中，无 AI 团队比无 AI 个人质量高 0.24 个标准差；AI 个人提升 0.37 个标准差，AI 团队提升 0.39 个标准差。也就是说，AI 个人的表现超过传统无 AI 团队，而 AI 团队相对 AI 个人只多出很小增量。
+  - 关键证据：在 P&G 产品概念生成实验中，无 AI 团队比无 AI 个人质量高 0.24 个标准差；AI 个人提升 0.37 个标准差，AI 团队提升 0.39 个标准差。也就是说，AI 个人的表现超过传统无 AI 团队，而 AI 团队相对 AI 个人的点估计增量很小、未发现显著差异。
 - **核心结论2**：AI 会削弱职能孤岛，让商业和技术专业人员生成更均衡的方案。
   - 关键证据：无 AI 条件下，商业人员更偏向商业可行性，R&D 人员更偏向技术可行性；AI 条件下，输出分布更同质，bimodality coefficient 从 0.564 降至 0.482。这意味着 AI 充当了跨职能知识整合器。
 - **核心结论3**：AI 对低经验员工的帮助尤其明显，因为它能临时补足他们缺少的互补知识。
