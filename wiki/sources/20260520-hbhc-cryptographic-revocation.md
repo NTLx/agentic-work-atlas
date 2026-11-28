@@ -10,7 +10,7 @@ source_locator:
   - "90x OAuth comparison / 0.26 ms auth / 18,000+ verifications per second"
   - "49-agent four-level cascading revocation and zero tested post-revocation tool calls"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - agent-security
@@ -29,7 +29,7 @@ claim_type: mixed
   - 关键证据：HBHC 以 parent heartbeat freshness 约束后代凭据，并给出确定性 zombie-window 上界。
 - **核心结论 2：撤销可以放到模型/应用上下文之外执行。**
   - 关键证据：verifier 只需缓存的公钥与本地时钟即可检查 freshness，不依赖 Agent 是否遵守 prompt。
-- **核心结论 3：层级授权需要层级撤销。**
+- **核心结论 3：层级凭据的级联撤销是一种可测设计。**
   - 关键证据：作者在 49-agent、四层层级中测试级联失效，并报告测试条件下撤销后零工具调用。
 
 ### 2. 质疑
@@ -40,7 +40,7 @@ claim_type: mixed
 
 ### 3. 对标
 
-- 对 EX-005：提供“permission stop”层的强证据，同时反向证明它与 effect reconciliation 不是同一对象。
+- 对 EX-005：提供指定 verifier 与受控层级配置下“permission stop”的机制证据，其结果不测 effect reconciliation，不能推导已经提交的副作用已恢复。
 - 对 EX-006：这是 out-of-band authority carrier 的正例：权限存活依赖独立 heartbeat，而不是 Agent 对上下文规则的记忆。
 - 对 [[Agent-Security]]：撤销链至少要区分 credential invalidation、in-flight stop 与 committed-effect recovery。
 

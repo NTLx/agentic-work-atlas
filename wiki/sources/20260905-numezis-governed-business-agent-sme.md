@@ -10,7 +10,7 @@ source_locator:
   - "client/legal-entity retrieval segregation + tool-specific permissions"
   - "no-retention/no-training model calls + immutable read/proposal/decision audit log"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - privacy
@@ -36,15 +36,15 @@ claim_type: mixed
 
 ### 2. 质疑
 
-- 匿名且由实施顾问方发布，缺独立复核。
+- 本地Raw是有限source locator，原文被记录为实施顾问方从真实项目抽取的匿名代表性案例，而非可独立确认的具名企业部署或独立审计报告。外部审计方参与检查是顾问自报，本轮未取得审计报告或重新访问原文。
 - 没有披露每个任务实际读取多少记录/文件，因此不能证明“只读必要数据”。
 - “模型无保留”不等于整个 agent stack 无持久化；本地日志、检索缓存、memory、DMS 都可能保留数据。
 - 6 个月不足以证明长期 privacy drift 不发生。
 
 ### 3. 对标
 
-- 对 CR-002：直接反驳“任务代理架构必然导致过宽权限/模型保留”的强版本。
-- 对 [[Agent-Data-Minimization]]：证明 permission scope、retrieval segregation、provider retention 可以分别控制。
+- 对 CR-002：提供“任务代理架构可采用更窄权限和模型无保留配置”的候选反例；自报配置及审计设计不等于独立验证实际数据流或长期保留结果。
+- 对 [[Agent-Data-Minimization]]：提供 permission scope、retrieval segregation、provider retention 分别配置的案例线索；无实际读取分母或端到端保留测量。
 - 对 [[Least-Agency]]：它补的是“读什么/保留什么”，不只是“能做什么动作”。
 
 ## 关联概念
