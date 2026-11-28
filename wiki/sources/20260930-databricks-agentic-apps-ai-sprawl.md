@@ -7,7 +7,7 @@ original_raw_file: "20260930-databricks-agentic-apps-ai-sprawl.md"
 body_sha256: "7a65ad52c54f236d6cf554c5eb90b6dbb9d4145ce15dedc49f368507372ef856"
 indexed_at: "2026-10-12T17:18:03+08:00"
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-11-28
 tags:
   - source-summary
   - agent-infra
@@ -48,7 +48,7 @@ AI sprawl
 + fragmented traces / evals / cost controls
 ```
 
-**判断**：企业不应该把“减少 Agent 数量”作为治理目标。真正需要压缩的是每新增一个 Agent 所新增的基础设施副本数。
+**判断**：不应仅以减少Agent数量代替治理效果评估。应减少不必要的重复集成与治理碎片；数量、隔离成本、故障域、组织责任和实际复用效益共同影响取舍。
 
 ### 1.2 稳定层与易变层应该分离：上层保留 choice，下层统一 operating plane
 
@@ -98,7 +98,7 @@ current task envelope
 agent data scope + tool scope + transaction scope
 ```
 
-**判断**：Agent authorization 不应等于“继承调用者全部权限”，而应等于**调用者权限 ∩ 当前任务所需权限 ∩ policy action envelope**。
+**判断**：委派授权应受调用者可委派权限、Agent身份授权、任务范围及资源政策共同约束，通常是交集的子集；独立服务授权与人工审批需另有明确授权来源。该抽象为Wiki综合，不是Databricks正式授权算法。
 
 这把 least privilege 从 static identity 问题推进为 delegation-time capability shaping。
 
@@ -106,7 +106,7 @@ agent data scope + tool scope + transaction scope
 
 一个看似正确的最终答案可能来自错误 retrieval、错误 tool call 或意外 execution path。文章要求能回放：用了什么信息、哪个模型、哪些工具、哪些 policy、哪里偏离预期，并把 traces 与 evaluation 连接到下一轮迭代。
 
-因此生产 Agent 的最低 operational evidence 更接近：
+因此可按风险从下列证据中选择必要字段，兼顾隐私、最小披露、保留期和可访问性：
 
 ```text
 request identity/context
@@ -141,9 +141,11 @@ request identity/context
 
 ## 3. 证据边界
 
+- 2026-11-28核对canonical原文Control has to follow every action、Control also requires visibility into what happened及Build for choice, context, and control。退款案例为架构说明，不是实测授权/撤销机制；完整中介可由资源端执行，不意味着所有部署需要单一中央控制平面。
+
 - 这是 Databricks 产品与架构观点，具体 Agent Bricks / Omnigent / Unity Gateway 能力与效果没有独立 benchmark。
 - “choice/context/control”是有用的设计框架，但不是经比较试验证明唯一正确的企业 Agent 架构。
-- 统一 control plane 自身会形成集中依赖、故障域和 vendor lock-in；来源没有展开这些反向成本。
+- 统一 control plane 可能形成集中依赖、故障域和 vendor lock-in；来源没有展开这些反向成本。
 - 共享 context 只有在语义定义、ownership 和更新责任清楚时才减少碎片化；集中平台并不会自动消除冲突定义。
 - tracing 能增加可解释证据，但不能证明每个 action 都被 policy 完整拦截；observability ≠ enforcement coverage。
 
