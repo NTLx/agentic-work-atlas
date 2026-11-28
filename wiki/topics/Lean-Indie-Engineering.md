@@ -3,7 +3,7 @@ type: topic
 title: Lean-Indie-Engineering
 description: "独立开发者用极低技术成本运营盈利产品的工程哲学与实践，核心是控制分母、反企业思维、约束驱动决策"
 created: 2026-04-15
-updated: 2026-06-16
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -26,9 +26,9 @@ source_raw:
 
 ## 主题定义
 
-**Lean-Indie-Engineering** 是独立开发者用极低成本（`$20/月`）运营多个盈利产品的工程哲学。2026 年由 Steve Hanov 的 Hacker News 帖子 (952 分) 引发广泛讨论。
+**Lean-Indie-Engineering** 是在真实约束下压低不必要技术与运营成本的工程哲学。Steve Hanov 的 2026 年案例自报约 `$20/月` 基础技术栈支出；这不是全成本，也不是所有独立产品的目标。
 
-核心问题：**如何在一个人都能跑月入六位数产品的前提下，把技术月支出压到 `$20`？**
+核心问题：**如何在满足用户价值、可靠性与维护要求的前提下，尽量降低持续经营所需的净现金消耗？**
 
 ---
 
@@ -37,12 +37,11 @@ source_raw:
 ### 1. Runway-Math：分母控制论
 
 ```
-生存时间 = 资金 ÷ 月支出
+现金跑道（月） = 可用现金 ÷ 月净现金消耗（净消耗为正且近似稳定时）
 ```
 
-- 分子不可控（VC 不理你、市场不买账、产品没起来 → 随时归零）
-- 分母 100% 可控（你可以永远选择花多少钱）
-- `$20` 月支出 = 永远不会死，可以一直试
+- 可用现金、收入和必要支出受市场、合同及经营约束影响，不完全可控。
+- 压低可避免的支出可以延长跑道；`$20/月` 仍是正支出，不能推出无限生存。生活、人力、硬件、电力、维护、税费及风险成本不能从完整经营预算中省略。
 
 > "Keeping costs near zero gives you the exact same runway as getting a million dollars in funding."
 
@@ -60,7 +59,7 @@ source_raw:
 
 没有放之四海皆准的"最佳技术栈"。必须先设定约束（预算、人力、时间），再从约束出发选择。
 
-Steve 的约束 = "一个人、`$20/月`、6 个产品" → Go + SQLite + 单机 VPS 是唯一最优解。
+Steve 的约束 = "一个人、低基础设施预算、多个产品" → Go + SQLite + 单机 VPS 是其报告中的可行选择，而非经比较证明的唯一最优解。
 
 ---
 
@@ -73,17 +72,17 @@ Steve 的约束 = "一个人、`$20/月`、6 个产品" → Go + SQLite + 单机
 | 语言 | Go (静态二进制, `scp` 部署) | `$0` |
 | 认证 | 自写 30 行 OAuth2 | `$0` |
 | 部署 | systemd service | `$0` |
-| AI 批量推理 | RTX 3090 (24GB) + VLLM | 一次性 `$900` |
+| AI 批量推理（历史案例） | RTX 3090 (24GB) + VLLM | 作者自报购置约 `$900`；另有运行成本 |
 | AI API 网关 | OpenRouter 统一接口 + 故障回退 | 按量 |
-| AI 开发 | GitHub Copilot per-request | `$13/月` |
+| AI 开发（历史案例） | GitHub Copilot 旧请求制 | 作者自报历史价格，不作当前预算 |
 
-### SQLite + WAL 的 40 倍优势
+### SQLite 与 PostgreSQL：单次微基准的边界
 
 跑 10 万次 `SELECT 1`:
 - PostgreSQL (localhost TCP): 2.77 秒
 - SQLite (内存): 0.07 秒 — **差距 40 倍**
 
-因为 app 和数据库在同一进程，查询走 C 函数调用（纳秒级），不是 TCP 往返（毫秒级）。
+该微基准实际来自 [Hacker News 讨论](https://news.ycombinator.com/item?id=47736555) 中用户 eurleif 的评论（2026-11-28 回溯定位），而不是 Steve Hanov 的文章或生产环境实测。它比较内存 SQLite 与 localhost PostgreSQL 的简单调用，主要反映特定调用路径的开销，不是磁盘持久化、WAL 写入、并发事务或真实业务吞吐比较。按 [SQLite 官方选型指南](https://www.sqlite.org/whentouse.html)（2026-11-28 核验），数据与应用的部署位置、写并发及数据规模会改变选型；不得从此推出 SQLite 普遍快 40 倍。
 
 ### 本地 AI 三层升级路径
 
@@ -100,28 +99,28 @@ Transformer Lab (微调)
 
 | 任务类型 | 用本地 GPU | 用云端 API |
 |---------|-----------|-----------|
-| 批量研究/分类/摘要（数千次） | ✅ 零边际成本 | ❌ `$100+`/次 |
+| 批量研究/分类/摘要（数千次） | ✅ 无逐次云 API 账单，仍有电力、硬件与维护成本 | 云端 API 费用取决于模型和 token 用量 |
 | 用户交互（低延迟对话） | ❌ 模型不够强 | ✅ OpenRouter |
 | Prompt 迭代实验 | ✅ 无压力试错 | ❌ 每次改 prompt 都要重新付费 |
 
 **核心工具**: laconic — Go 写的 agentic researcher，将 LLM 上下文像 OS 虚拟内存一样管理，"swap out" 不相关对话，让 8K 上下文窗口也能做深度研究。
 
-### Copilot per-request 定价漏洞
+### Copilot per-request 定价：历史窗口（非当前建议）
 
-GitHub Copilot 按**请求**计费而非按 **token**——一次请求即使让 agent 跑 30 分钟、修改数百文件，仍然 `$0.04`。策略：
+作者描述当时的请求计费与长任务成本优势；具体单价为历史自报，不是通用计价保证。历史策略：
 
 1. 写极其详细的 prompt + 严格成功标准（本身就是最佳实践）
 2. 告诉 agent "一直继续直到所有错误都修复"
 3. 按回车，去冲杯咖啡，Satya Nadella 补贴你的算力成本
 
-月账单 `$60`（全天用 Opus 4.6）vs Cursor 竞品用户 `$100+`。这个套利窗口迟早被修补——但在那之前，它是已知最便宜的 agentic coding 方案。
+作者自报月账单 `$60` 与其他用户成本的比较不控制工作量或质量。**时效核验（2026-11-28）**：GitHub 自 2026-06-01 改用基于模型与 token 消耗的 AI Credits；部分此前已订阅的 Pro/Pro+ 年付用户可保留旧请求制至到期。原案例不得用于当前普遍预算或最低价结论。[GitHub 官方计费变更](https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/what-changed-with-billing)
 
 ### OpenRouter：API 网关 + 故障回退
 
 不直接对接 Anthropic/Google/OpenAI 的 API。用 OpenRouter 做统一接口：
 - 一次集成 → 所有前沿模型可用
-- Anthropic API 挂了 → 自动回退到 OpenAI 等价模型
-- 用户永远看不到错误页面，不需要写复杂的重试逻辑
+- 可配置模型回退以降低单供应商故障影响；模型并非自动等价。
+- 仍需验证回退后的工具契约、质量、权限、成本、幂等与最终错误处理。
 
 ---
 
@@ -142,7 +141,7 @@ GitHub Copilot 按**请求**计费而非按 **token**——一次请求即使让
 
 ## 时间护城河
 
-- **websequencediagrams**: 2008 年至今，Google "sequence diagram" 第一
+- **websequencediagrams**: 长期运营经验；历史 SEO 排名未经本轮核验
 - **rhymebrain**: 2009 年至今，8 语种押韵数据
 - **每 3-5 年加一个新产品**: 慢做、深做、长做
 
@@ -152,10 +151,10 @@ GitHub Copilot 按**请求**计费而非按 **token**——一次请求即使让
 
 ## 我们能抄什么作业？
 
-1. **数据库迁到 SQLite + WAL** — 体验 50ms → 2ms 的响应
-2. **App 搬到 Hetzner** — `$5` 买 4GB，systemd 一个 service 就起来
-3. **试试 GitHub Copilot per-request** — 省下来的钱买 RTX 3090
-4. **先想清楚你的约束** — 再看别人用了什么，往自己身上套
+1. 先测真实业务的延迟、持久化、写并发、恢复与维护成本，再选择数据库及部署方式。
+2. 以总成本、实际负载和风险约束决定是否简化基础设施，不照搬历史报价。
+3. 比较实际任务的 AI 总成本、结果质量和返工，检查最新计费规则。
+4. 先明确约束、验收标准和不可接受风险，再选择最小充分方案。
 
 ---
 

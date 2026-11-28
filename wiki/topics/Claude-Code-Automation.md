@@ -2,7 +2,7 @@
 type: topic
 title: Claude Code Automation
 created: 2026-04-09
-updated: 2026-09-20
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -60,7 +60,7 @@ source_raw:
 
 这种分工避免把业务记忆和代码细节塞进同一窗口。编排层保持高层策略，Claude Code 保持代码焦点。
 
-### 2. tmux 比一次性 [[Headless-Automation|headless]] 更适合长任务
+### 2. 长任务需要可观察、可恢复和可干预的执行接口
 
 Elvis 早期用过 `claude -p` 和 `codex exec`，后来转向 tmux。理由不是 headless 不能用，而是长任务需要中途重定向：
 
@@ -68,7 +68,7 @@ Elvis 早期用过 `claude -p` 和 `codex exec`，后来转向 tmux。理由不�
 tmux send-keys -t codex-templates "Stop. Focus on the API layer first, not the UI." Enter
 ```
 
-关键不是“驱动 TUI”，而是给每个 agent 一个可恢复、可观察、可干预的运行槽位。
+关键不是“驱动 TUI”，而是给每个 agent 一个可恢复、可观察、可干预的运行槽位。tmux 是该案例的实现选择，不是长任务的必要条件。2026-11-28 核验：[Claude Code 官方非交互文档](https://code.claude.com/docs/en/headless) 已说明结构化输出、流式事件、`--resume`/`--continue` 与 SDK 程序化控制；恢复已结束会话不等于能实时干预仍在运行的任务。应按实际接口选择，并验证恢复、停止、审批和退出状态。
 
 ### 3. 完成定义必须外置
 
@@ -80,7 +80,7 @@ tmux send-keys -t codex-templates "Stop. Focus on the API layer first, not the U
 - Codex、Claude Code、Gemini 等 reviewer 给出结果。
 - UI 改动附截图。
 
-这说明 Claude Code 自动化必须配套确定性的外部检查。没有 CI、review 和截图，自动化只会把未验证代码更快地推到人面前。
+这说明 Claude Code 自动化需要与任务风险匹配的独立外部验收。CI、review 与截图是该案例的门禁，不是所有任务都需要同一组检查；AI reviewer 的判断也不是确定性证明。
 
 ## OpenClaw 闭环
 
@@ -114,8 +114,8 @@ Telegram 通知人类做最后合并判断
 
 | 模式 | 价值 | 风险 |
 |------|------|------|
-| Worktree 隔离 | 多 agent 并发时避免互相污染 | 需要自动清理 |
-| tmux session | 长任务可观察、可恢复、可中途干预 | 需要状态登记 |
+| Worktree 工作区分离 | 减少并发文件修改冲突 | 共享 Git 元数据；不构成权限或安全沙箱，清理前需确认提交及未提交成果 |
+| tmux session | 保持交互进程、观察和输入 | 不保证进程崩溃后任务恢复；仍需状态登记和结果确认 |
 | JSON registry | 让监控脚本低成本检查任务状态 | schema 变动会影响自动化 |
 | CI + reviewer | 把“完成”从 agent 自述改成外部验收 | reviewer 仍可能误报 |
 | 截图要求 | UI 改动可快速人工判断 | 只覆盖视觉层，不覆盖业务正确性 |

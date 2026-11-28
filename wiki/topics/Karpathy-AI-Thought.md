@@ -2,7 +2,7 @@
 type: topic
 title: Karpathy AI 思想体系
 created: 2026-04-13
-updated: 2026-06-16
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -51,8 +51,8 @@ source_raw:
 ```
 Software 2.0 (2017)
     ↓ 神经网络作为程序
-Software 3.0 (2026)
-    ↓ LLM 作为可提示的计算机
+Software 3.0 (2025)
+    ↓ 同年相关实践；不是严格提出时间先后关系
 Vibe Coding (2025)
     ↓ 普及化、原型化实践
 Agentic Engineering (2026)
@@ -85,7 +85,7 @@ Anthropic pre-training team (2026-)
 |-----|---------|---------|-----------------|
 | **[[Software-2.0]]** | 2017 | 程序员写目标，神经网络编程 | 基础范式，定义 AI 编程时代 |
 | **[[Vibe-Coding]]** | 2025 | 忘记代码存在，氛围驱动编程 | Software 3.0 的低门槛、原型化实践 |
-| **[[Software-3.0]]** | 2026 | 上下文窗口是内存，提示词是程序语言，LLM 是解释器 | 将 LLM 从工具提升为新型计算机 |
+| **[[Software-3.0]]** | 2025（至少已在 6 月 YC 演讲公开提出） | 上下文窗口是内存，提示词是程序语言，LLM 是解释器 | 将 LLM 从工具提升为新型计算机 |
 | **[[Agentic-Engineering]]** | 2026 | 在不牺牲专业质量的前提下协调 coding agents | Vibe Coding 的生产级约束形态 |
 | **[[Verifiability]]** | 2026 | 输出能否被自动验证决定 LLM 自动化速度 | 解释模型能力为何不均匀 |
 | **[[Jagged-Intelligence]]** | 2026 | LLM 在不同任务上的能力呈锯齿状分布 | Verifiability 与训练投入共同造成 |
@@ -160,8 +160,8 @@ Software 2.0 定义了：
 | 维度 | RAG | LLM Wiki |
 |-----|-----|----------|
 | 知识处理 | 实时检索 | 预先编译 |
-| 知识累积 | 无 | 持久沉淀 |
-| 维护者 | 人类（易厌倦） | LLM（不知疲倦） |
+| 知识累积 | 取决于外部持久化设计；基础检索本身不编译知识 | 预先编译并持久维护知识 |
+| 维护者 | 人类和/或自动化 | LLM 辅助维护，仍需证据与质量门 |
 
 ### Shortification：为什么剪藏不是学习
 
@@ -259,7 +259,7 @@ Karpathy 明确指出 LLM Wiki 与 Memex 的关系：
 |-----|-----------------|---------------------|
 | **知识处理** | 每次写作时现搜现读 | 预先编译为结构化 Wiki |
 | **答案稳定性** | 同一问题可能不同答案 | 相对稳定、可审查的知识资产 |
-| **知识累积** | 无 | 持久沉淀 |
+| **知识累积** | 基础运行时检索不自动沉淀综合判断；可叠加持久记忆/索引 | 预编译并持久维护 |
 | **维护成本** | 每次重复检索成本 | 首次编译成本高，后续复用成本低 |
 | **典型工具** | NotebookLM、ChatGPT 文件上传 | Obsidian + LLM Agent |
 
@@ -279,7 +279,7 @@ Karpathy 明确指出 LLM Wiki 与 Memex 的关系：
 - **矛盾标记**：不同文章的观点冲突会被显式标注
 - **增量更新**：新资料加入时自动合并到已有概念
 - **跨域洞察**："对标"步骤发现跨领域的类似现象
-- **维护成本**：LLM 可以一次操作修改 15+ 文件，不会有遗漏
+- **维护成本**：作者报告 LLM 可批量修改 15+ 文件；不能保证无遗漏，仍需覆盖、引用和事实复核
 
 ### 饼干哥哥的实践成果
 
@@ -289,7 +289,7 @@ Karpathy 明确指出 LLM Wiki 与 Memex 的关系：
 
 > [!quote] 1945 vs 2026
 > - **Vannevar Bush**：私人知识库 Memex —— 没解决的是"谁来维护？"
-> - **LLM**：80 年后终于解决了维护问题
+> - **LLM**：提供自动维护能力，但正确性、证据校验和长期维护成本仍待验证
 
 ---
 
@@ -321,7 +321,8 @@ graph TD
 ## 外部资源
 
 - [Software 2.0 博客](https://karpathy.medium.com/software-2-0-a6c4ba5203d4)
-- [LLM Wiki Gist](https://gist.githubusercontent.com/karpathy/...)
+- [[20260413-llm-wiki]]（已有原始剪藏；不保留未核实的占位 URL）
+- [YC：Software Is Changing (Again)](https://www.youtube.com/watch?v=LCEmiRjPEtQ)（2025-06-17 演讲，2026-11-28 核对时间与公开主题）
 - [Karpathy 个人网站](https://karpathy.ai/)
 - [Eureka Labs](https://eurekalabs.ai/)
 

@@ -3,9 +3,9 @@ type: entity
 title: Lean-Stack
 aliases:
   - Lean Stack
-definition: "极低成本（`$20/月`）独立运营盈利产品的技术栈，反共识选择 SQLite+Go+单机 VPS"
+definition: "按产品实际约束降低持续技术与运营成本的最小充分技术栈；SQLite+Go+单机 VPS 是个人实践案例，不是固定定义"
 created: 2026-04-15
-updated: 2026-06-16
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -26,9 +26,9 @@ source_raw:
 
 ## 定义
 
-**Lean-Stack** 是一种将月技术开销压到极低水平（`$20/月`或以下）仍能支撑盈利产品的技术架构选择。核心哲学：**成本接近零 = 无限跑道**。
+**Lean-Stack** 是一种在满足功能、可靠性与维护约束下减少不必要持续开销的技术架构选择。低净现金消耗可以延长有限现金跑道；仅基础设施费用低不等于完整经营成本低或无限跑道。
 
-## 标准配置
+## Steve Hanov 的历史案例配置（非标准模板）
 
 | 组件 | Lean-Stack 选择 | 传统选择 |
 |------|---------------|---------|
@@ -38,19 +38,19 @@ source_raw:
 | 认证 | 自写 OAuth2 (30 行) | Auth0/Clerk |
 | AI 批量推理 | RTX 3090 + VLLM (一次性 `$900`) | OpenAI API 按 token 付费 |
 | AI API 网关 | OpenRouter (按量付费 + 自动回退) | 直接对接各厂商 API |
-| AI 开发 | GitHub Copilot per-request (`$13/月`) | Cursor/其他按 token 计费 |
+| AI 开发（历史） | GitHub Copilot 旧请求制 | 需按当前实际计费与任务成本比较 |
 | 部署 | systemd service | Docker + K8s |
 
 ## 关键数据点
 
 ### SQLite vs PostgreSQL 性能对比
 
-跑 10 万次 `SELECT 1` benchmark:
+[Hacker News 讨论](https://news.ycombinator.com/item?id=47736555) 中 eurleif 评论的 10 万次 `SELECT 1` 微基准（非 Steve Hanov 原文，2026-11-28 核验）：
 - PostgreSQL (localhost TCP): 2.77 秒
-- PostgreSQL (Unix socket): 1.93 秒
+- PostgreSQL (Unix socket): 1.93 秒（后续另一轮测试，不能与首轮视为同次测量）
 - SQLite (内存): 0.07 秒 — **差距近 40 倍**
 
-SQLite + WAL 支持多读者、单写者并发，查询走 C 函数调用（纳秒级），而 Postgres 需要经过 TCP 往返（毫秒级）。
+SQLite + WAL 的写入仍需序列化。该微基准是内存 SQLite 与 PostgreSQL 本地 TCP/socket 的简单查询比较，不证明业务读写、持久化或并发吞吐普遍快 40 倍。
 
 ### 内存效率
 
@@ -64,7 +64,7 @@ SQLite + WAL 支持多读者、单写者并发，查询走 C 函数调用（纳�
 |------|------|------|---------|
 | 本地批量 | RTX 3090 (24GB) + VLLM PagedAttention | 一次性 `$900` | 大批量分类/摘要/研究 |
 | API 网关 | OpenRouter 统一接口 + 自动回退 | 按量 | 前沿模型、低延迟用户交互 |
-| 开发辅助 | GitHub Copilot per-request | `$13/月` | 日常编码（一次请求可驱动 agent 30 分钟） |
+| 开发辅助（历史案例） | GitHub Copilot 旧请求制 | 历史自报 | 不作为当前价格或长任务成本保证 |
 
 **本地 AI 升级路径**: Ollama (快速实验) → VLLM (生产并发) → Transformer Lab (微调)
 
@@ -76,11 +76,11 @@ Tomasz Tunguz 的 “minimill” 案例把 Lean-Stack 从低成本软件栈扩�
 
 ## 前提与局限性
 
-- **适用场景**: 独立开发者、小型产品、月活 < 百万级的应用
+- **适用场景**：部署拓扑简单、负载与写并发在实际容量内、恢复与可靠性满足目标的产品；月活人数不是数据库选型阈值。
 - **不适用场景**: 需要多区域部署、PB 级数据、复杂分布式事务
-- **关键前提**: WAL 模式下单写者限制，高并发写入场景需要额外设计
+- **关键前提**: WAL 模式下单写者限制，高并发写入场景需要额外设计；参见 [SQLite 官方选型指南](https://www.sqlite.org/whentouse.html)。
 - **新增前提**: 本地优先的 agent 栈依赖任务分流质量；若 easy / hard 误判过多，性能收益会被回退和升级开销吃掉
-- **认知偏差**: 部分选择依赖 Steve Hanov 个人经验，不同产品可能需要不同方案
+- **认知偏差**: 部分选择依赖 Steve Hanov 个人经验，不同产品可能需要不同方案。旧计费、报价与硬件价格是时点事实；GitHub 已于 2026-06-01 切换 Copilot 计费，部分旧年付计划过渡例外，详见 [[Lean-Indie-Engineering]] 的核验记录。
 
 ## 关联概念
 

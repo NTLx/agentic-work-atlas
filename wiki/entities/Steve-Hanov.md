@@ -3,9 +3,9 @@ type: entity
 title: Steve Hanov
 aliases:
   - Steve Hanov
-definition: "加拿大 Waterloo 独立开发者，一人运营 6 个 `$10K+` MRR 产品，月技术成本仅 `$20`，代表 Lean-Stack 实践者，laconic/llmhub 开源作者"
+definition: "加拿大 Waterloo 独立开发者；个人案例报告运营多个产品、基础技术栈约 `$20/月`，Lean-Stack 实践者，laconic/llmhub 开源作者"
 created: 2026-04-15
-updated: 2026-05-08
+updated: 2026-11-28
 tags:
   - person
   - indie-developer
@@ -20,7 +20,7 @@ validated_at: "2026-04-15"
 
 ## 简介
 
-Steve Hanov 是加拿大 Waterloo 的独立开发者，一人运营 6 个月收入 `$10K+` MRR 的产品，总计月入六位数美元。他以极低的月固定成本（`$20/月`）和反共识的技术选型而闻名，2026 年在 Hacker News 上获得 952 分关注。
+Steve Hanov 是加拿大 Waterloo 的独立开发者。其 2026 年文章自报多个 `$10K` MRR 业务及约 `$20/月` 基础技术栈成本；不将其扩展为每个产品收入均超 `$10K`、总收入六位数或完整经营成本，未取得独立财务验证。
 
 ## 产品组合
 
@@ -40,7 +40,7 @@ Steve Hanov 是加拿大 Waterloo 的独立开发者，一人运营 6 个月收�
 - **语言**: Go (非 Python/Node)
 - **认证**: 自写 30 行 OAuth2
 - **部署**: systemd service 文件
-- **AI 开发**: GitHub Copilot per-request 定价漏洞, `$13/月`
+- **AI 开发（历史案例）**：GitHub Copilot 旧请求制；2026-06-01 后计费已变更（旧年付例外），见 [[Lean-Indie-Engineering]]，不作当前价格建议。
 - **本地 AI**: RTX 3090 + VLLM + Ollama
 
 ## 开源工具

@@ -2,7 +2,7 @@
 type: topic
 title: Git with Coding Agents
 created: 2026-04-09
-updated: 2026-10-24
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -30,7 +30,7 @@ source_raw:
 
 **Git 命令的记忆不再是开发者的负担**
 
-Agent 深度理解 Git 术语和操作，开发者只需知道"什么是可能的"，无需记忆复杂命令语法。
+Agent 可以辅助理解 Git 术语并执行复杂操作，开发者不必记忆全部命令语法，但仍需理解分支、提交图、共享历史和操作后果，验证 Agent 的具体行为。
 
 ---
 
@@ -104,7 +104,7 @@ Use git bisect to find when this bug was introduced:...
 |-----|---------|-----------|
 | 复杂命令 | 查文档、记忆 | 自然语言描述 |
 | 合并冲突 | 手动分析 | Agent 理解意图 |
-| 历史重写 | 高风险、少用 | 低风险、常用 |
+| 历史重写 | 需理解影响范围 | 操作门槛降低；共享历史风险不变 |
 | 提交信息 | 开发者写 | Agent 可写出高质量 |
 | Bug 追踪 | 手动 bisect | Agent 自动化 |
 
@@ -149,10 +149,10 @@ Use git bisect to find when this bug was introduced:...
 | 维度 | 传统开发 | Agentic Engineering |
 |-----|---------|-------------------|
 | Git 命令记忆 | 需开发者记忆 | Agent 处理 |
-| 复杂操作风险 | 高风险、低频使用 | 低风险、高频使用 |
+| 复杂操作 | 需手动掌握命令 | 命令记忆负担降低；操作风险取决于范围、权限与可恢复性 |
 | 提交信息质量 | 开发者撰写 | Agent 可产出高质量 |
 | 调试效率 | 手动追踪 | Git bisect 自动化 |
-| 历史管理 | 尽量保持原样 | 视为可编辑叙事 |
+| 历史管理 | 兼顾演化记录与协作 | 未共享历史可整理，共享历史默认保护 |
 
 ---
 
@@ -179,6 +179,8 @@ Use git bisect to find when this bug was introduced:...
 
 **反例 4：过度依赖 Agent 可能削弱 Git 理解**。如果开发者完全依赖 Agent 处理 Git 操作，他们可能对 Git 的底层机制（DAG 结构、reflog、merge vs rebase 的语义差异）失去理解。当 Agent 出错或遇到边界情况时，开发者可能无法诊断问题。这与 [[Programming-Languages-as-Thinking-Tools|编程语言即思考工具]] 的逻辑一致：工具便利性可能削弱深层理解。
 
+**操作隔离边界**：worktree 分离工作目录与各自 HEAD/index，并不隔离整个仓库或宿主权限。[Git 官方 worktree 文档（REFS / CONFIGURATION FILE，2026-11-28 核验）](https://git-scm.com/docs/git-worktree) 明确多数 refs 与默认配置共享。并发 Agent 仍须约束写入范围、分支与敏感操作；在明确基线、可恢复点和实际 diff 后才决定提交或合并。
+
 ## 跨来源综合：Git 工作流的三个转变
 
 综合 [[Using Git with coding agents - Agentic Engineering Patterns]] 和 [[Agent pull requests are everywhere. Here's how to review them.]] 两个来源，可以构建 Git 工作流在 AI 时代的三个转变：
@@ -186,7 +188,7 @@ Use git bisect to find when this bug was introduced:...
 | 转变 | 传统模式 | AI 时代模式 | 来源 |
 |------|---------|-----------|------|
 | 操作层 | 开发者记忆 Git 命令 | Agent 处理复杂命令 | Using Git with coding agents |
-| 历史层 | 历史是永久记录 | 历史是可编辑叙事 | Using Git with coding agents |
+| 历史层 | 记录与协作基线 | 私有探索历史可整理，共享基线仍需保护 | Using Git with coding agents |
 | 审查层 | 人类逐行审查代码 | 人类聚焦关键路径和系统上下文 | Agent pull requests |
 
 这三个转变的共同逻辑是：AI 让"执行"变便宜，让"判断"变昂贵。开发者不再需要记住 `git rebase -i` 的语法（执行），但需要判断"这个提交是否值得保留、这个 PR 是否隐藏了技术债"（判断）。这与 [[AI-Labor-Bottleneck-Shift|AI 劳动瓶颈迁移]] 的主题一致：瓶颈从"怎么做"迁移到"做什么、为什么做"。

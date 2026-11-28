@@ -3,9 +3,9 @@ type: entity
 title: Software 3.0
 aliases:
   - Software 3.0
-definition: "编程范式第三阶段：上下文窗口是内存，提示词是程序语言，LLM 是解释器，编程从写代码变为设计给 agent 的指令文本"
+definition: "编程范式第三阶段：上下文窗口是内存，提示词是程序语言，LLM 是解释器，将自然语言与上下文作为新的编程接口，与传统代码及训练模型互补"
 created: 2026-05-08
-updated: 2026-05-26
+updated: 2026-11-28
 tags:
   - programming-paradigm
   - AI
@@ -28,13 +28,13 @@ source_raw:
 # Software 3.0
 
 > [!definition] 定义
-> **Software 3.0** 是 Andrej Karpathy 在 Software 2.0（2017）的基础上提出的编程范式第三阶段。Software 1.0 = 人写代码规则；Software 2.0 = 人通过准备数据集和优化目标来训练神经网络；Software 3.0 = 人通过提示词和上下文窗口编程，LLM 成为新的"计算机"——上下文窗口是内存，提示词是程序语言，模型是解释器。
+> **Software 3.0** 是 Andrej Karpathy 在 Software 2.0（2017）的基础上提出的编程范式第三阶段。Software 1.0 = 人写代码规则；Software 2.0 = 人通过准备数据集和优化目标来训练神经网络；Software 3.0 = 人通过提示词和上下文窗口编程，LLM 被比喻为新的"计算机"。这是范式类比，不是确定性 CPU/解释器语义等价；Karpathy 至少已在 2025-06-17 的 [YC 演讲](https://www.youtube.com/watch?v=LCEmiRjPEtQ) 公开阐述该概念。
 
 ## 关键数据点
 
-- **OpenClaw 安装案例**：传统方式需要应对多平台的复杂 shell 脚本（Software 1.0）；Software 3.0 方式是"复制粘贴一段文本给 agent"——agent 自带智能，能感知目标环境、调试循环，远比确定性脚本强大
+- **OpenClaw 安装案例**：传统方式需要应对多平台的复杂 shell 脚本（Software 1.0）；Software 3.0 方式是"复制粘贴一段文本给 agent"——agent 可根据目标环境反馈探索与修正；在可预定义、需可复现的路径中，确定性脚本仍有优势
 - **MenuGen 案例**：Karpathy 用 Software 1.0+2.0 方式写了 OCR+图像生成的完整 app；但 Software 3.0 版本只用 Gemini + NanoBanana 一句话，LLM 直接在像素层渲染结果——"app 不应存在"
-- **与 Software 2.0 的关系**：Software 2.0 是训练专用模型执行特定任务；Software 3.0 是用通用 LLM 通过提示词执行任意信息处理任务
+- **与 Software 2.0 的关系**：Software 2.0 是训练专用模型执行特定任务；Software 3.0 是用通用 LLM 通过提示词尝试处理多类信息任务，能力受模型、上下文和工具约束
 - **CPU 角色翻转**：Karpathy 预测未来神经网络成为"主机进程"，CPU 退化为"协处理器"——翻转为当前虚拟化架构的镜像
 
 ## 前提与局限性
@@ -55,7 +55,7 @@ source_raw:
 | 核心技能 | 编程语言 | 机器学习 | 自然语言 + 系统设计 |
 | 可靠性 | 确定性 | 统计性 | 生成性（不可完全预测） |
 
-Software 1.0 到 2.0 的迁移是"从写规则到训练规则"。Software 2.0 到 3.0 的迁移是"从训练专用模型到使用通用模型"。每次迁移都降低了"让计算机做事"的门槛，但也引入了新的不可控性：Software 1.0 的 bug 可复现，Software 2.0 的泛化失败可度量，Software 3.0 的输出不可完全预测。
+Software 1.0 到 2.0 的迁移是"从写规则到训练规则"。Software 2.0 到 3.0 的迁移是"从训练专用模型到使用通用模型"。每次迁移都降低了"让计算机做事"的门槛，但也引入了新的不可控性：传统软件也可能因并发、外部状态等出现非确定行为；LLM 输出的统计性进一步要求外部契约、测试、权限与终态验收。
 
 ## 工程含义：CLAUDE.md 是 Software 3.0 的"程序"
 

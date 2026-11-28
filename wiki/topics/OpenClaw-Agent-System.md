@@ -2,7 +2,7 @@
 type: topic
 title: OpenClaw Agent System
 created: 2026-04-09
-updated: 2026-09-20
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -26,7 +26,7 @@ source_raw:
 # OpenClaw Agent System
 
 > [!summary] 概要
-> OpenClaw Agent System 是一个完整的多 Agent 协作系统，包含编排层、上下文工程、五层记忆、Agent Swarm 和通信协议等核心组件，实现了从"聊天"到"干活"的工程化转变，让 Agent 能够自主进化、稳定运行、协作不打架。
+> 本页整合两篇 OpenClaw 个人实践报告中的多 Agent 编排、上下文、记忆、编码执行及通信机制。下述角色、数量、运行参数和收益为案例描述，不是 OpenClaw 的官方默认架构，也不证明长期稳定性、自治进化或协作可靠性。
 
 ## 系统架构总览
 
@@ -93,7 +93,7 @@ source_raw:
 通过 ACP 协议按需委派，最大 6 并发，120min TTL：
 - Claude Code / Codex / Gemini / Pi / OpenCode / GPT-5.3-Codex
 
-**设计教训**：不要让分析 Agent 直接编码。分析 Agent 不写代码，编码全部通过 ACP 委派。
+**案例设计选择**：将分析与编码分离，通过 ACP 委派编码。是否需要独立执行者取决于权限、专业能力、任务复杂度及验证成本；并非所有任务都应增加一次 Agent 委派。
 
 ## 核心工程问题与解决方案
 
@@ -101,7 +101,7 @@ source_raw:
 
 参见 [[Context-Engineering]]
 
-**Agent 系统的热力学第二定律**：不加约束，entropy 只增不减。
+**工程类比**：持续运行的系统可能出现上下文膨胀、状态漂移和维护负担；这里的 entropy 是比喻，不是热力学定律或实测不可逆性。
 
 解决方案：
 - **Context Engineering**：设计信息结构（SOUL.md → AGENTS.md → Skills 按需加载）
@@ -111,18 +111,18 @@ source_raw:
 
 参见 [[Multi-Layer-Memory]]
 
-**五层记忆系统**实现跨会话的知识沉淀：
+**五层记忆系统**是该案例的跨会话记录方案；重复出现的经验不自动等于正确、适用或已验证的规则：
 
 ```
 触发事件 → .learnings/ 即时记录 → 每日反思 cron →
-≥3 次 promote 到 MEMORY.md → 下次 Session 加载 → 行为改进
+≥3 次候选 promote 到 MEMORY.md → 下次 Session 加载 → 待独立评估行为是否改进
 ```
 
 ### 问题三：协作是协议问题，不是群聊问题
 
 参见 [[Three-State-Protocol]]
 
-**三态通信协议**防止 ACK storm：
+**三态通信协议**旨在减少 ACK storm；消息去重与持久交付仍需独立检查：
 
 ```
 [request] → [confirmed] → [final → 静默]
@@ -180,7 +180,7 @@ Content 发现 AI 味太重，自行调研"去 AI 味"工具、编写 Skill、�
 
 参见 [[Agent-Swarm]]
 
-Elvis 的实战数据：
+Elvis 的自报活动量（不是质量、业务成效或因果生产率对照）：
 - 94 commits/天（有 3 个 client calls，没打开编辑器）
 - 7 PRs/30 分钟（编码和验证大部分自动化）
 - 从发现到决策到落地，用户只需在关键节点确认
@@ -190,8 +190,8 @@ Elvis 的实战数据：
 | 安全层 | 机制 |
 |-------|------|
 | **执行权限** | exec.security: allowlist（白名单执行） |
-| **配置保护** | SOUL.md / openclaw.json 不允许 Agent 修改 |
-| **密钥隔离** | API keys 在 env 中，不在文件中 |
+| **配置保护** | 案例要求 Agent 不修改 SOUL.md / openclaw.json；是否强制阻断须由实际文件权限或外部策略验证 |
+| **密钥处理** | 案例使用环境变量而非文件；不能证明进程、子进程或日志无法读取密钥 |
 | **代码审查** | ACP 编码走 review 流程 |
 
 ## 半个月后的认知变化
@@ -200,7 +200,7 @@ Elvis 的实战数据：
 
 2. **AI 的"智能"在生产环境中经常是灾难**：Discord 消息被"智能压缩"砍掉数据表格，Agent "智能修复"配置改坏工具名
 
-3. **持续运行的系统必然退化**：建立反退化机制栈（compaction 管 session、maintenance 管记忆、heartbeat-guardian 管配置）
+3. **持续运行存在退化风险**：案例采用 compaction、memory maintenance 与配置 guardian；这些机制是否改善长期可靠性需要独立观测，不是普遍必然退化的证明。
 
 4. **协作是协议问题，不是 prompt 问题**：加上三态协议后产出从十几轮废话变成一份可执行策略文档
 
