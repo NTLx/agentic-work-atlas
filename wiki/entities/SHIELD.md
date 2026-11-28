@@ -3,9 +3,9 @@ type: entity
 title: "SHIELD（Safeguarding Human Expertise and Incidental Learning in Development）"
 aliases:
   - Agents That Teach
-definition: "Accenture Labs 提出的多 agent 系统，通过观察 coding agent 的推理链，在不打断开发流程的前提下，以 out-of-band 渠道（Probe Queue + Microlearning Feed）偿还 Knowledge Debt。"
+definition: "Accenture Labs 的多 Agent 教学研究原型：根据可获取的开发遥测提出微学习任务，旨在缓解知识债务；实际学习与不中断开发的效果未验证。"
 created: 2026-07-09
-updated: 2026-07-09
+updated: 2026-11-28
 source_raw:
   - "[[20260709-agents-that-teach-knowledge-debt]]"
 tags:
@@ -19,7 +19,7 @@ claim_type: extracted
 
 ## 定义
 
-[[SHIELD]] 是 Accenture Labs 提出的多 agent 系统，是 [[Incidental-Learning|附带学习]] 恢复六原则的实例化。它观察 AI coding agent 的推理和行为，识别真正的学习机会，通过 out-of-band 渠道（Probe Queue + Microlearning Feed）在不打断开发流程的前提下向开发者呈现上下文绑定的微学习内容，偿还 [[Knowledge-Debt]]。
+[[SHIELD]] 是 Accenture Labs 提出的多 agent 系统，是 [[Incidental-Learning|附带学习]] 恢复六原则的实例化。它利用可观测的 Agent 解释和行为提出学习机会，异步呈现微学习；真实识别精度、学习增益与工作干扰尚未验证。Agent 自述不等于内部推理机制，见 [[Model-Introspection]]。
 
 ## 核心机制
 
@@ -45,11 +45,11 @@ Knowledge Assessor Agent（再次）
 | 原则 | 实现组件 | 机制 |
 |------|---------|------|
 | Contextual | Microlearning Generator | 内容与具体代码变更绑定 |
-| Grounded | Telemetry Observer | 基于 agent 推理链而非仅代码变更 |
+| Grounded | Telemetry Observer | 利用可获取的遥测及生成解释，仍须检查实际代码与工具证据 |
 | Ambient | Probe Queue + Microlearning Feed | IDE 内异步渠道，开发者选择何时参与 |
 | Selective | Teachability Triage | 只针对通过 teachability signals 检查的概念 |
 | Adaptive | Developer's Evolving Concept Map | 适配开发者知识水平和历史 |
-| Closed-Loop | Knowledge Assessor | 验证学习是否内化，更新 Concept Map |
+| Closed-Loop | Knowledge Assessor | 设计上进行理解检查并更新 Concept Map；内化、保持与迁移须独立验证 |
 
 ### 冷启动处理
 
@@ -58,7 +58,7 @@ Developer's Evolving Concept Map 在冷启动时通过分析开发者自己编�
 ## 关键数据点
 
 - Accenture Labs 提出的多 agent 系统
-- 通过 Probe Queue + Microlearning Feed 在不打断开发流程的前提下偿还 [[Knowledge-Debt]]
+- Probe Queue + Microlearning Feed 是异步教学设计，不是已测量的债务偿还或无干扰保证。原论文 [arXiv:2607.06101](https://arxiv.org/abs/2607.06101) 与 [ASE 2026 NIER](https://conf.researchr.org/details/ase-2026/ase-2026-nier/20/Agents-That-Teach-Towards-Designing-Incidental-Learning-Back-into-AI-Assisted-Softwa) 为同一研究线，收录不等于独立复现。
 
 ## 技术栈
 

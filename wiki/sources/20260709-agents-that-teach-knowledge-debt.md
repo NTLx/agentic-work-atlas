@@ -8,7 +8,7 @@ original_body_sha256: "d07d4ff33138b33f030cce80ecaf0efd4e8a4aad815d14cb6e0258145
 indexed_at: "2026-08-25T15:34:33+08:00"
 source_locator: "arXiv HTML 原文：§2 Related Work、§3 Designing Incidental Learning into Developer-Agent Interactions、§4 SHIELD（§4.1 Architecture、§4.2 Implementation）、§5 Conclusion and Future Work。"
 created: 2026-07-09
-updated: 2026-08-25
+updated: 2026-11-28
 tags:
   - source-summary
   - knowledge-debt
@@ -25,11 +25,11 @@ claim_type: mixed
 
 ### 1. 浓缩
 
-- **核心结论1: Knowledge Debt（知识债务）是 AI coding agent 时代的新风险**：开发者将编码任务委托给 agent 获得短期生产力，但失去了通过"费力解决问题"获得的附带学习（incidental learning），导致开发者能产出代码但越来越不能理解、调试或扩展 agent 的工作。这与 Technical Debt 同构——沉默积累，只在需要独立能力时才暴露偿还成本。
-  - 关键证据：控制实验中，使用 AI 辅助的开发者在后续理解力测试中得分比非 AI 组低 17%；完全委托编码的开发者技能形成下降最快。约 42% 的提交代码已由 AI 生成或辅助，预计 2027 年达 65%。
+- **核心结论1: Knowledge Debt（知识债务）是 AI coding agent 时代的新风险**：作者提出风险假设：委托可能减少附带学习，导致部分独立理解缺口；技术债务是类比，未验证累积速率及偿还成本。
+  - 关键证据：转引 [[20260201-how-ai-impacts-skill-formation]] 52人短期试验；博客约50% vs67%为百分点差口径，论文原始分差4.15/27，互动分组为探索性观察，非纵向退化速率。42%/65%为历史调查/预测，原始分母未核验，不作为实际提交或技能证据。
 - **核心结论2: 附带学习不会自动恢复，必须被有意识地设计回来**。论文提出六项设计原则：Contextual（上下文绑定）、Grounded（基于 agent 推理链）、Ambient（非打断式）、Selective（选择性触发）、Adaptive（适应开发者水平）、Closed-Loop（闭环验证学习是否内化）。
-  - 关键证据：跨领域类比——航空/医学已提出结构性干预（最低无辅助练习、主动参与检查点）来对抗 AI 导致的去技能化；GPS 导致空间记忆退化；拼写检查削弱拼写能力。这些领域的共识是：认知卸载后的能力退化不会自发逆转。
-- **核心结论3: [[SHIELD]] 系统**是原则的实例化——多 agent 架构（Telemetry Observer → Teachability Triage → Probe Generator → Knowledge Assessor → Microlearning Generator），通过 out-of-band 渠道（Probe Queue + Microlearning Feed）在不打断开发流程的前提下偿还 [[Knowledge-Debt]]。
+  - 关键证据：跨领域类比——航空/医学已提出结构性干预（最低无辅助练习、主动参与检查点）来对抗 AI 导致的去技能化；GPS 导致空间记忆退化；拼写检查削弱拼写能力。跨域证据只能提出机制与干预假设，不能证明统一的退化或恢复规律。
+- **核心结论3: [[SHIELD]] 系统**是原则的实例化——多 agent 架构（Telemetry Observer → Teachability Triage → Probe Generator → Knowledge Assessor → Microlearning Generator），通过 out-of-band 渠道（Probe Queue + Microlearning Feed）旨在通过异步微学习缓解 [[Knowledge-Debt]]；未验证学习增益、保持、迁移或开发干扰。
   - 关键证据：VSCode 扩展原型，使用 CrewAI + Neo4j 概念图 + GPT-5.1 + Azure，以 Claude Code 作为被观察的 coding agent。
 
 ### 2. 质疑
@@ -39,13 +39,13 @@ claim_type: mixed
 - **假设前提未验证**：假设开发者"曾经通过费力解决问题来学习"，但这一前提本身未被检验——有多少开发者真的通过这种方式有效学习？还是只有一小部分人？如果这个前提只对少数人成立，Knowledge Debt 的普遍性就存疑。
 - **实施复杂度**：Neo4j 概念图 + GPT-5.1 + CrewAI + Azure 的技术栈过于重型，实际采纳门槛高。这更像研究原型而非可部署系统。
 - **选择性触发的悖论（冷启动问题）**：[[SHIELD]] 需要判断"什么是学习机会"，但这依赖对开发者知识状态的准确建模（Developer's Evolving Concept Map）。冷启动时只能用开发者自己写的代码推断已知概念——这个推断的可靠性未知。
-- **关于数据可靠性的质疑**：42% AI 生成代码的数据来源是 Sonar 调查（[28]），属于行业报告而非严格测量；17% 理解力得分下降来自单一控制实验（[10]），样本量和效应量未详述。
+- **关于数据可靠性的质疑**：42% AI 生成代码的数据来源是 Sonar 调查（[28]），属于行业报告而非严格测量；短期理解力差异来自[10]，本库已核对其52人、d=0.738、p=0.010；不应重复计作独立证据。
 
 ### 3. 对标
 
 - **跨域关联1**：与航空/医学领域的 "deskilling" 讨论同构——GPS 导致空间记忆退化、自动驾驶导致驾驶技能退化、拼写检查削弱拼写能力。论文引用了这些跨领域证据来支撑 AI coding agent 领域的类比推理。
 - **跨域关联2**：与 [[Agent-Harness]] 关联——[[SHIELD]] 本身就是一种 agent harness，它约束和观察 coding agent 的行为来服务于人的长期发展。这扩展了 harness 的定义：不仅服务于代码质量，也服务于人的能力发展。
-- **跨域关联3**：与 [[Context-Advantage]] 对比——[[Knowledge-Debt]] 是 Context Advantage 的反面：当 agent 吸收了 context，人的 context advantage 就在退化。两者描述同一枚硬币的两面。
+- **跨域关联3**：与 [[Context-Advantage]] 对比——两者关注不同对象；Agent 获得上下文不必然导致人的理解或独立能力下降。
 - **旁逸**：论文隐含了一个未展开的论点——"优化代码生成的模型可能不适合做教学 agent"（models optimized for code generation may not be well-suited for teaching）。这指向 agent 角色分化的更深层问题：生成能力和教学能力是否是不同的优化目标？
 
 ### 论文命题分析
