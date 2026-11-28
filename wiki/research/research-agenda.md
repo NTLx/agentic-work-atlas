@@ -126,7 +126,7 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
-| 2026-11-28 | 全库消化与退役 | retired/refined | 主干阶段验收通过，顶层Research全文核销22/22、日志25/26；8-03全部33历史研究段核销，生成验证、凭据与观测校准。剩综合记录固定截至复核、Entity/Source语义覆盖、正式晋升与独立Utility；见 [[2026-11-28]] 第三十二至四十二轮。 |
+| 2026-11-28 | 全库消化与退役 | retired/refined | Research全文语义审查48/48（综合记录固定截至复核）；主干阶段验收通过。现存Entity/Source历史明确路径核销下限118/424、105/498，剩306/393待核销；全库覆盖、正式晋升、联合证据及独立Utility仍待；见 [[2026-11-28]] 第三十二至四十三轮。 |
 | 2026-10-21 | Candidate research audit | merged/retired/refined | CR-004 并入 EX-005、CR-007 retire；CR-001/005 收窄；提出未编号科学 AI 定向探索；压缩 agenda 操作层。 |
 | 2026-10-20T23:53:00+08:00 | CR-005 专业能力再生与独立校准 | refined-reasoning | 从保存无 AI 技能收窄为再生不与主生成路径共模的现实校准能力；无新 Evidence，保持 blocked。 |
 | 2026-09-07T08:33:43+08:00 | EX-005 耐久执行停止与外部效果 | refined | 区分 durable execution 停止、在途 invocation 与已发生副作用；加入 checkpoint/in-flight 窗口。 |
