@@ -3756,8 +3756,8 @@
     "20261024-langchain-company-harness.md": {
       "body_sha256": "8cb83f6987a5415608ae8e34e5ce0178bcdbb5c9ecdd8bfb6239839b2850f444",
       "canonical_url": "https://www.langchain.com/blog/components-building-company-harness",
-      "indexed_at": "2026-11-11T14:18:00.656+08:00",
       "compiled_at": "2026-10-28T10:14:15+08:00",
+      "indexed_at": "2026-11-11T14:18:00.656+08:00",
       "raw_file": "20261024-langchain-company-harness.md",
       "raw_state": "index",
       "retention_note": "LangChain public original article remains recoverable at canonical URL by section headings; prior Raw was only a 2458-byte bounded evidence excerpt, not the copyrighted full article. body_sha256 is the original bounded Raw excerpt hash, not the source webpage full-text hash. Source summary preserves five-component evidence map, identity cases, caveats and source locators.",
@@ -3932,8 +3932,8 @@
     "20261108-latentspace-stanford-ai-native-engineering-mihail-eric.md": {
       "body_sha256": "39473441f59b5074b913b4258dbc4841e048f5883e64ae7355e9392021d6f656",
       "canonical_url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/one_million_ai_engineer_special_how_stanford_teaches_ai-native_engineering_mihail_eric_monaco",
-      "indexed_at": "2026-11-09T13:35:18+08:00",
       "compiled_at": "2026-11-09T13:34:47+08:00",
+      "indexed_at": "2026-11-09T13:35:18+08:00",
       "raw_file": "20261108-latentspace-stanford-ai-native-engineering-mihail-eric.md",
       "raw_state": "index",
       "retention_note": "Public full transcript remains readable at canonical URL and https://latent.space/p/cs146s/ with timestamps; registered Raw was a temporary provenance record removed after compilation. body_sha256 hashes that temporary record, NOT original transcript. Independent normalized transcript-text SHA-256: 63da36c03da72c4f76f44f78bdf427181d7615c3654c0379b3e8224c60615bf5.",
@@ -3953,8 +3953,8 @@
     "20261109-latentspace-handshake-frontier-labs-data.md": {
       "body_sha256": "1dd4575b2735cd63d1ed805f49e020d43876cd10daada5383c7fb63df5af8391",
       "canonical_url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/what_frontier_labs_buy_a_data_deep_dive_with_handshake_ai_garrett_lord_team",
-      "indexed_at": "2026-11-10T08:49:07+08:00",
       "compiled_at": "2026-11-10T08:49:07+08:00",
+      "indexed_at": "2026-11-10T08:49:07+08:00",
       "raw_file": "20261109-latentspace-handshake-frontier-labs-data.md",
       "raw_state": "index",
       "retention_note": "Official full 974-segment timestamped Transcript is available at canonical URL and https://lspace.beehiiv.com/p/handshake ; temporary Raw was a provenance locator deleted after compile. body_sha256 hashes temporary locator NOT transcript. SHA-256 of extracted normalized 182293-byte timestamped transcript: b9b5a808619706836aa4bc72e1a235d59418924db63272b820fadf4435ad3230.",
@@ -3965,14 +3965,25 @@
     "20261110-latentspace-resend-designing-for-agents.md": {
       "body_sha256": "a2a233bf63328bf372a34dad471186fd9927beae158d9dc18f1638ae25c38bcb",
       "canonical_url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/designing_for_agents_zeno_rocha_resend",
-      "indexed_at": "2026-11-11T08:28:19+08:00",
       "compiled_at": "2026-11-11T08:28:19+08:00",
+      "indexed_at": "2026-11-11T08:28:19+08:00",
       "raw_file": "20261110-latentspace-resend-designing-for-agents.md",
       "raw_state": "index",
       "retention_note": "Full original 501-segment timestamped public Transcript recoverable at canonical URL and https://latent.space/p/resend/. Raw file was a temporary provenance locator, not full copyrighted transcript. Registry body_sha256 hashes locator only. Normalized timestamped extracted transcript SHA-256: be78f90023a2194ab4afff8e16760be9f89ae91da8683204ce4a194742e5dbcf (95430 bytes).",
       "status": "compiled",
       "summary_path": "wiki/sources/20261110-latentspace-resend-designing-for-agents.md",
       "updated_at": "2026-11-11T08:28:19+08:00"
+    },
+    "20261110-martinfowler-long-horizon-agents-durable-execution.md": {
+      "body_sha256": "8e2fb5e3e66865858ec9d9e9a277d2ad594ad2c053ce285f5bc41f8cb1fd2fd3",
+      "canonical_url": "https://martinfowler.com/articles/durable-execution-agents.html",
+      "compiled_at": "2026-11-28T16:35:48+08:00",
+      "indexed_at": "2026-11-28T16:35:48+08:00",
+      "raw_file": "20261110-martinfowler-long-horizon-agents-durable-execution.md",
+      "raw_state": "index",
+      "status": "compiled",
+      "summary_path": "wiki/sources/20261110-martinfowler-long-horizon-agents-durable-execution.md",
+      "updated_at": "2026-11-28T16:35:57+08:00"
     },
     "20261113-anthropic-building-always-on-agents.md": {
       "body_sha256": "7333a0811230bddb01b46029f1e8b741221dafedec874486d5ad4503fe13b3ba",
@@ -4685,6 +4696,6 @@
       "updated_at": "2026-07-09T13:16:44+08:00"
     }
   },
-  "updated_at": "2026-11-28T11:22:40+08:00",
+  "updated_at": "2026-11-28T16:35:57+08:00",
   "version": 1
 }

@@ -1,6 +1,10 @@
 ---
 type: source-summary
 title: "Long-horizon agents and durable execution"
+raw_state: index
+original_raw_file: "20261110-martinfowler-long-horizon-agents-durable-execution.md"
+original_body_sha256: "8e2fb5e3e66865858ec9d9e9a277d2ad594ad2c053ce285f5bc41f8cb1fd2fd3"
+indexed_at: "2026-11-28T16:35:48+08:00"
 canonical_url: "https://martinfowler.com/articles/durable-execution-agents.html"
 canonical_key: "article:martinfowler.com/articles/durable-execution-agents"
 promotion_id: "martinfowler-durable-agent-workflows:2026-11-16"
@@ -24,7 +28,7 @@ source_locator:
 
 # Long-horizon agents and durable execution
 
-> Kiran Prakash, Martin Fowler site, 2026-11-10. [Primary article](https://martinfowler.com/articles/durable-execution-agents.html). First-party engineering walkthrough and illustrative stock replenishment example, **not** an independently replicated cross-platform reliability benchmark. Weekly promotion event: `knowledge.promotion.manifest:martinfowler-durable-agent-workflows:2026-11-16`; upstream candidate: `intelligence.candidate.canonicalized:martinfowler:durable-execution-agents:20261111`. The original article remains at its canonical URL; no verbatim article archive is included.
+> Kiran Prakash, Martin Fowler site, 2026-11-10. [Primary article](https://martinfowler.com/articles/durable-execution-agents.html). First-party engineering walkthrough and illustrative stock replenishment example, **not** an independently replicated cross-platform reliability benchmark. Weekly promotion event: `knowledge.promotion.manifest:martinfowler-durable-agent-workflows:2026-11-16`; upstream candidate: `intelligence.candidate.canonicalized:martinfowler:durable-execution-agents:20261111`. The original article remains at its canonical URL; the 2026-11-28 capture repairs the evidence lifecycle under the original approved promotion scope.
 
 ## 编译摘要
 
@@ -56,4 +60,4 @@ source_locator:
 - Evidence basis: author-primary engineering exposition and code example, not independent replication
 - Promotion: `martinfowler-durable-agent-workflows:2026-11-16`; integration: `wiki_compile:martinfowler-durable-agent-workflows:2026-11-16`
 - Source identity: `article:martinfowler.com/articles/durable-execution-agents`
-- **生命周期缺口（2026-11-28 Audit）**：原网页仍可访问，核对作者、日期及 Durable execution / Outcomes the agent doesn't see 等证据定位。当前 Raw/Registry 未发现对应记录，无法核实历史全文正文哈希；不把当前网页或本摘要的哈希冒充历史 Raw 哈希，也不直接标记为 `index`。保留既有 promotion lineage 和独特证据导航；待从原始捕获记录恢复，或按既有 Gate 执行明确标注日期的真实重新捕获与生命周期结算。当前缺口不因 Lint 通过而视为关闭。
+- **生命周期修复（2026-11-28）**：原 2026-11-16 Weekly approval 已从 n8n work_events（event_id 如上，row id 3845）回读确认，accepted scope 不变。2026-11-28 重新获取原网页的正文 Markdown（HTTP 200，50,441 字符，Firecrawl scrape ID `01a2214b-671b-74c8-acd2-e0a6874c0242`），核验作者、日期、主要章节和结束标记；这是当日网页转 Markdown 的捕获，不是 11-16 历史原件、原始 HTML 或交互资产的完整副本。新 Raw 正文哈希由 Registry 实际生成；旧哈希未知，不作历史同一性声明。保留原 promotion lineage，不创建重复来源或新晋升任务。

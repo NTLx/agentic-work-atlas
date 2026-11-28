@@ -4,9 +4,9 @@ title: Context Minimalism
 aliases:
   - 上下文极简主义
   - Context Minimalist
-definition: "给 agent 最小可能的 system prompt 和工具集，让模型自己决定如何拉取上下文；与 context engineering 的演进关系类似 prompt engineering → context engineering → context minimalism"
+definition: "Boris Cherny 提出的按需拉取上下文设计偏好：提供充分任务约束及工具，让模型选择获取补充信息；它是 Context Engineering 的候选策略，不是其必然替代阶段。"
 created: 2026-06-12
-updated: 2026-06-16
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -22,11 +22,11 @@ source_raw:
 ---
 
 > [!definition] 定义
-> Context Minimalism 是一种 agent 设计哲学：只告诉模型它需要知道的最小信息，让模型自己决定如何获取更多上下文。给太多 context 等于微管理。
+> Context Minimalism 是一种 agent 设计哲学：只告诉模型它需要知道的最小信息，让模型自己决定如何获取更多上下文。减少不必要的预填充上下文可能降低干扰，但必须保留关键目标、证据、约束与权限；按需读取也需要可达性和检查。
 
 ## 关键数据点
 
-- 演进路径: Sonnet 3.5 时代需要 prompt engineering → Opus 4 时代需要 context engineering → 今天的模型只需要最小 prompt + 工具
+- 历史访谈中 Boris 按 Sonnet 3.5、Opus 4 和当时模型说明个人工作方式变化；并非跨模型对照或所有任务的最优上下文策略。
 - 核心原则: "tell the model only what it needs to know and let it figure out the rest"
 - 实践: Claude Code 的 harness 越来越 lean，给用户更多空间放自己的 prompt
 - 关键前提: 模型需要有"拉取上下文的方式"（工具、文件系统、API 等）
@@ -41,5 +41,5 @@ source_raw:
 ## 关联概念
 
 - [[Claude-Code-CLI]] — Context minimalism 的实践载体
-- [[Agent-Harness]] — Harness 的 lean 化是 context minimalism 的体现
-- [[Agent-Verification]] — 验证循环需要 agent 自主拉取上下文
+- [[Agent-Harness]] — 精简 Harness 可与按需检索组合，但运行控制与权限检查不应因精简而移除
+- [[Agent-Verification]] — 按需取证可以辅助验证，证据充分性和独立判定仍需另验

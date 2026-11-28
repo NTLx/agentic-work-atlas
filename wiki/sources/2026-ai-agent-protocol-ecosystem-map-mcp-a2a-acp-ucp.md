@@ -4,7 +4,7 @@ title: "AI Agent Protocol Ecosystem Map 2026"
 source_raw:
   - "[[2026-ai-agent-protocol-ecosystem-map-mcp-a2a-acp-ucp]]"
 created: 2026-07-05
-updated: 2026-07-05
+updated: 2026-11-28
 tags:
   - source-summary
   - multi-agent
@@ -32,7 +32,7 @@ claim_type: extracted
 
 ### 3. 对标
 - **跨域关联1**: 协议分层（工具→协调→商业）与 [[Agent-Harness]] 的三层工程（Prompt→Context→Harness）形成不同维度的分层——协议层是"Agent 之间的基础设施"，Harness 层是"单个 Agent 内部的基础设施"
-- **跨域关联2**: Agent 经济协议（ACP/UCP）与 [[Settlement-Mechanism]] 直接相关——结算机制是 Agent 经济协议中的关键组件
+- **跨域关联2**: 商业协议可能涉及支付/订单状态等外部效果；[[Settlement-Mechanism]] 是特定游戏中交易后覆盖价格的设计例，只可用于比较受控状态提交点，不能等同协议结算能力或证明 ACP/UCP 的具体合同。
 
 ### 关联概念
 - [[Model-Context-Protocol-MCP]]

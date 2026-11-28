@@ -6,7 +6,7 @@ aliases:
   - Anthropic Inc
 definition: "由 Dario Amodei、Daniela Amodei 等人于 2021 年创立的前沿 AI 公司，Claude 系列模型开发方；本页汇总其公开技术、产品与政策材料，并区分公司一手事实与本库综合判断。"
 created: 2026-06-06
-updated: 2026-09-20
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -68,7 +68,7 @@ Dianne Penn（Head of Product, AI Research & Labs）披露的组织结构与工�
 
 ## 2026-06 标志性动作：把"AI 改 AI"摆上公共议程
 
-Anthropic 在 2026-06-04 由 [[Anthropic-Institute]] 发布《When AI builds itself》——这是 frontier 实验室第一次用一手数据公开以下曲线：
+Anthropic 在 2026-06-04 由 [[Anthropic-Institute]] 发布《When AI builds itself》，报告以下内部指标；该材料不是领域首次公开的证明，也不是独立复现或递归自我改进已经成立的证明：
 
 - **任务视野（Task Horizon）翻倍**：4 分钟（Opus 3, 2024-03）→ 90 分钟（Sonnet 3.7, 2025-03）→ 12 小时（Opus 4.6, 2026-03），每 4 月 ×2
 - **代码质量 parity 达成**：晚 2025 仍"差于人类"，2026 中"基本对齐"
