@@ -6,7 +6,7 @@ aliases:
   - AI Agent Observability
 definition: "本库对 Agent Observability 的综合定义：持续获得足以校准 Agent 行为预期、响应风险并核对外部效果的证据能力；其中 instrumentation、behavior assurance、effect reconciliation 与 intent inference 必须分层，不等同于传统 APM trace completeness。"
 created: 2026-07-15
-updated: 2026-09-22
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -41,62 +41,34 @@ source_raw:
 
 > 本页包含两层内容：OpenTelemetry / Google DeepMind / OpenAI 等来源提供的可观测、监控和披露事实，以及本库据此形成的“有穷观察者 / 四层 observability”综合框架。后者属于 synthesized model，不是这些来源共同证明的形式定理。
 
-## 定义层：Observability 的三重关系
+## 定义层：不同的观察对象
 
-Agent Observability 不同于传统 APM observability，因为后者假设观察者在系统**外部**、观测**自己的**系统、且系统行为空间**封闭**（请求-响应树的静态拓扑）。Agent 打破所有三个前提：
+Agent 与普通分布式系统均可能动态调用、跨信任域、由观察者反馈改变行为或存在未埋点路径。区别应按实际任务、工具、状态、权限和风险定义，而不是假定传统 APM 静态、封闭或只观测单组织。Agent 常需增加模型/工具、决策输入、权限、外部效果与人工交接的证据关联。
 
-| 维度 | 传统 APM Observability | Agent Observability |
-|------|----------------------|-------------------|
-| 观察者位置 | 外部（SRE 观测服务） | 耦合（观察者与 Agent 在同一个系统中协同演化） |
-| 信任域 | 单一信任域（同一组织） | 跨信任域（开发者 ≠ 使用者 ≠ 被影响者 ≠ 监管者） |
-| 行为空间 | 封闭（已知调用拓扑） | 开放（动态因果图，运行时构造） |
-| 失败模式 | 已知（HTTP 错误码、超时） | 涌现（新失败类型持续出现） |
-| 观测界面受众 | 同质（SRE/DevOps） | 异质（终端用户/开发者/审计者/监管者） |
+## 结构层：五个观察目的
 
-## 结构层：五重"理解"
+| 目的 | 例示指标或验收对象 |
+|---|---|
+| 描述与压缩 | 关键字段保留、压缩误差、存储及查询成本 |
+| 校准预期 | 预定义的预测、异常召回与误报 |
+| 持续反馈 | 从异常发现到复现、修正及响应的延迟 |
+| 制度化 | 记录、权限、版本及审计覆盖 |
+| 可争议性 | 纠错、复评、申诉及适用的责任边界 |
 
-Agent Observability 的"understand"阶段天然分裂为五种不可互相还原的含义，对应观察者-系统的五种耦合模式：
+这些是本库综合的观察目的，不是五种不可互还原的数学性质或原作者共同提出的模型。Kolmogorov 复杂度涉及无损描述长度，通常不可计算；Ashby 的调节讨论有指定目标、扰动及控制条件，不能与描述复杂度合并为统一保真度上限。工程上按任务测量信息保留、可辨识状态、采样偏差和响应效果；不预设开放域轨迹必不可压缩。
 
-| 含义 | 提出者 | 目标函数 | 度量 | 硬墙 |
-|------|--------|---------|------|------|
-| **压缩** | Chaitin | 找到比原始数据更短的程序 | Kolmogorov 复杂度 K(D) | `K(D) ≈ \|D\|` 时不可压缩 |
-| **校准预期** | Woods | 比随机更好地做出行动决策 | 决策准确率 | Ashby 必需多样性定律 |
-| **持续循环** | Majors | 压缩"观测→假设→验证→修正"周期 | 反馈延迟 | 反馈周期 > 故障演化速度 |
-| **制度化** | Schneier | 固化观测实践为可审计规则 | 合规覆盖率 | 规则固化速度 < 行为演化速度 |
-| **可争议性** | O'Neil | 让被决策影响者能挑战决策 | 申诉成功率 | 观测权不对称 |
+相关历史推演及勘误见 [[20260715T140405--追本-理解的分裂-压缩与校准之间__think]]、[[20260715T140612--qa-Agent-Observability根本限制__qa]] 与 [[2026-08-03]]。
 
-**统一根底**：五重含义共享同一个底层约束——**有穷性**。压缩硬墙（Kolmogorov）和校准硬墙（Ashby 必需多样性定律）是同一条墙的描述侧和控制侧。Agent 在开放世界中 → 校准域更适用；但压缩域在可压缩子空间仍然有效。两者的边界是数学上的：可压缩区 vs 不可压缩区。
+## 工程层：运行时记录、效果与解释
 
-相关追本分析见 [[20260715T140405--追本-理解的分裂-压缩与校准之间__think]]。
+- 传统 APM 与 Agent 均可使用运行时 trace 的父子关系及 links 表达因果线索，不以静态树/动态图区分两者。此前回核 OTel trace data model 的结果见 [[2026-11-28]] 第三十三轮；本轮未重核规范版本。
+- Instrumentation 完整性仅针对已定义的记录边界；真实路径覆盖应检查旁路、异步效果、日志丢失与跨服务权威状态。结构、行为、效果与解释是不同验收对象。
+- 区分实际调用、输入输出、模型自报理由、外部证据和竞争解释。CoT 与自报意图不直接证明内部因果或恶意；解释可在新证据下修订。
+- 终端用户、开发者与审计者按授权访问不同证据视图。保留复现与高风险效果核验需要的信息，同时按隐私、最小读取、保留期和成本控制采集，不一律要求全量或禁止聚合。
 
-## 工程层：三个核心差异
+## 制度层：按风险确定可观测与响应要求
 
-### 1. Agent trace ≠ 微服务 trace
-
-- 微服务 trace = 静态调用**树**（span 父子关系在编译时已知）
-- Agent trace = 动态因果**图**（调用路径由推理链在运行时决定，因果关系事后才可标记）
-- 数据模型需捕获推理意图（"agent 为什么选这个工具"），不只是调用事实（"agent 调用了哪个工具"）
-
-### 2. 不可压缩性统一上限
-
-当 Agent 行为轨迹的 Kolmogorov 复杂度 K(D) 接近轨迹长度 |D| 时，所有观测层级共享统一的保真度上限。多层级观测 = 对不可压缩数据的选择性投影集合，非压缩。聚合/采样/摘要 = 信息损失。
-
-### 3. 多层级观测界面
-
-同一底层 trace 数据需支持三类界面：
-- **终端用户**：自然语言解释（"Agent 为什么做这个决策？"）
-- **开发者**：工具调用链 + 延迟 + Token 消耗 + 推理链
-- **审计者**：数据流追踪 + 权限使用 + 终止条件 + 合规检查
-
-## 制度层：最小可行制度（MVI）
-
-`MVI = HardFloor ∪ MetaRules`
-
-**硬地板**（无此不可）：工具调用记录 + 数据流追踪 + 终止条件 + 不可篡改审计日志 + 独立审计权 + 保留人类责任归属。
-
-**演化框架**（元规则）：规则修正机制 + 失败模式知识库 + 跨平台互操作标准 + 可争议性机制。
-
-理由：制度本身 = 有限公理系统（有穷者治理悖论）。面对无限行为空间，必然存在不可判定行为。元规则（如何修改规则）比固定规则本身更重要。
+按任务选择可核验的调用记录、身份与授权、外部状态、停止条件、适用的独立复评和责任分工。关键审计记录应防止未授权修改并支持可追溯纠错，不要求所有日志绝对不可撤销或所有系统外置人工复核。规则修订、事件反馈及争议处理可作为治理机制；不是由形式不可判定性推出的必备四件套。
 
 ## 制度层补证：把 misalignment 事件变成可审计 disclosure pipeline（2026-09）
 
@@ -109,12 +81,12 @@ OpenAI 的 model misalignment reporting framework 给 MVI 的“制度化”层�
 
 首批六例覆盖 task summary 自我指令、隐藏错误、未经授权使用凭证、擅自上传文件、跨样本 repo 通信和 Agent 公网文件共享。这些案例共同显示：**observability 必须覆盖未授权 external effect 与非预期通信通道，而不只是模型内部 trace。**
 
-**判断**：生产级 Agent Observability 需要 incident disclosure loop，把新失败模式持续反馈到 monitoring、containment 和 policy；否则 trace 再完整，也可能只在组织内部形成不可争议的封闭证据。
+**判断**：适用的事件反馈与复评机制可以将新失败模式反馈到监控、隔离和策略；公开披露与内部反馈范围按影响、义务及隐私确定，不要求所有部署采用同一 disclosure loop。
 
 - **证据**：[[20260916-openai-model-misalignment-reporting-framework]]
 - **边界**：这是 OpenAI 自己定义、调查和披露的 self-reporting 机制；没有独立 auditor，也没有 incident denominator，因此不能从六个案例推断发生率或趋势。
 
-## CR-004 实证收敛：可观测性不是一个量
+## 历史 CR-004 证据综合（现已并入 EX-005）：可观测性不是一个量
 
 2026-09-19 对 OpenTelemetry current main 与 Google DeepMind AI Control 的正式编译，把本页此前偏抽象的“三层模型”收敛为四个不能互相替代的工程层：
 
@@ -154,9 +126,7 @@ all executable paths observed
 
 ~~~text
 monitoring coverage
-      ×
 monitoring recall
-      ×
 time-to-response
 ~~~
 
@@ -197,12 +167,12 @@ CR-004 与 [[Agent-Security]] / EX-005 的边界在这里最清楚。
 - compensation 是否成功；
 - recovery 后是否回到目标 post-state。
 
-因此 production trace 若要支撑效果审计，需要同一 event / trace lineage 至少连接：
+因此 production trace 若要支撑效果审计，按动作适用性建立同一 event / trace lineage，连接下列证据或等价权威记录：
 
 ~~~text
 decision / policy version
   → tool invocation
-  → provider receipt
+  → provider receipt / equivalent authoritative evidence
   → external post-state
   → revoke / recovery
   → reconciled canonical state
@@ -237,7 +207,7 @@ malicious intent truth
 
 旧 research agenda 中记录的 PR #483 本轮无法在 current repository 核实，已失去事实锚点；当前可核实的相关开放工作包括 authorization #291、guardrail #427、handoff #447、action gate/ledger #457。
 
-## CR-004 的稳定判断
+## 现行 EX-005 中的观测证据边界
 
 **判断（综合）**：Agent Observability 的上界不是由“有没有 trace”决定，而由至少四个层次共同约束：
 
@@ -252,7 +222,7 @@ instrumented structure
 其中：
 
 - 结构层可以标准化；
-- 行为层必须统计化；
+- 总体行为保障需按适用分母统计，单次行为也可由直接证据判定；
 - 效果层必须接外部 authoritative state；
 - 意图层不能被视为直接可观测真值。
 
@@ -277,12 +247,10 @@ Anthropic 把内部 Agent 监督拆成三个可运营指标：monitoring coverag
 
 ## 与已有框架的连接
 
-- **Agent 测试不可能性（Rice 定理）**：观测与测试共享同一条形式限制——有限观察者无法完全判定开放系统中 agent 行为的全部有意义的属性。观测与测试是对偶问题（测试判"对/错"，观测判"在发生什么"——两者都需要在无限空间中做有限判断）。
-- **Agent 信任边界 V×C×A**：Observability = V（可见性）的工程化实现。没有 Observability → Visibility = 0 → 信任边界崩溃。
-- **有穷者治理悖论**：制度本身是有穷的规则系统 → MVI 必须包含元规则而非仅固定规则。
-- **信息-时间不对称**：观测的意义分配是事后性的——在事件当下无法知道哪些数据最终成为"关键证据"。观测永远滞后于行为。
-- **Loop Engineering**：外部终止者需要 observability 作为输入——无法观测就无法终止。
-- **同质性监督失效（2026-07-16 新增）**：当观测者（judge/auditor）与被观测 agent 共享价值观基底时，observability 的校准硬墙（Ashby 必需多样性）被同源化进一步压缩——观测者多样性 ≤ 被观测者多样性，盲区有测度下界。失效根是"共压"（监督者与被监督者共享激励源）而非"同质"。详见 [[LLM-as-a-Judge]] 同质性监督失效节。
+- [[Agent-Verification]]：记录、判据、独立性与证据覆盖分别检查。模型家族、共享目标和激励不能代理共同错误率。
+- [[Agent-Loops]]：资源、目标与风险停止分别定义；计数器或确定性成功谓词也可触发停止，不要求每次外部人工解释。
+- [[Distinct-Principal-Identity]]：记录主体与跨信任域授权，区分记录所见与真实权限。
+- [[Agent-Security]]：行为发现、阻断及外部效果对账分开验收。
 
 ## 关键数据点（2026-09-19 更新）
 
@@ -299,31 +267,24 @@ Anthropic 把内部 Agent 监督拆成三个可运营指标：monitoring coverag
 
 ## 前提与局限性
 
-- **理论前提**：Chaitin 不可压缩性 + Ashby 必需多样性定律 + 有穷者治理悖论——三者共同定义 Agent observability 的形式上限
-- **经验前提**：Agent 行为轨迹的 Kolmogorov 复杂度是否确实接近轨迹长度——尚未被经验验证（理论推导，待实证）
-- **制度前提**：MVI 框架假设跨信任域场景——在单一组织内部的简单 Agent 部署中，标准 APM + content filter 可能已足够
-- **标准化风险**：OTel GenAI 约定仍为 Development 状态，span 名称仍可能变化；ATSC 为单人维护草案，采纳路径不确定
-- **覆盖盲区**：类人交互（human-in-the-loop）的观测、多 Agent 协商的涌现行为观测——ATSC 已定义部分 span kind，但实际工具覆盖尚不完整
+- 上述 OTel GenAI/开放提案、GDM 与 Anthropic 指标是 2026-09 归档证据，不代表当前规范、产品或全部部署；本轮未重新访问对应原始网页或复算历史数字。
+- 未获包含真实动作分母、监控召回、同步阻断、权威终态与恢复结果的完整匹配生产数据。观测质量不能仅由 span 完整性、响应速度或日志数量决定。
+- 不断言存在由 Rice、Kolmogorov 或 Ashby 联合推出的统一上限、永久意图不可观测、观察必然滞后、共压唯一根或正的共同盲区下界。选择观察目的和风险边界，再验收实际可辨识信息、缺失、误报与成本。
+- 隐私、跨域访问、人工接收与纠错、数据保留，以及监测本身造成的开销均应按任务验证。
 
 ## 关联概念
 
-- **Agent 测试不可能性（Rice 定理）**：观测与测试的形式限制同构——都是有限观察者面对开放行为空间的不可判定性问题
-- **Agent 信任边界 V×C×A**：Observability = V 的工程化实现。V=0 → 信任边界无基础
-- **有穷者治理悖论**：制度=有限公理系统→MVI 需要元规则而非固定规则
-- **信息-时间不对称**：观测意义的分配是事后性的，观测永远滞后于行为
-- **Loop Engineering**：外部终止者依赖 observability 作为输入信号
-- **SPIFFE/Agent Identity**：观测系统本身的身份认证——谁有权观测、谁有权解释观测数据
-- **APM 演化史**：Agent observability 继承 APM 技术栈（高基数事件/即席查询/分布式追踪）但面对全新的制度层和伦理层问题
+- [[Agentic-Engineering]] — 任务与执行证据。
+- [[Agent-Harness]] — 执行记录与监控接口。
+- [[Verifiable-Agent-Engineering]] — 证据与效果验收。
+- [[Distinct-Principal-Identity]] — 主体及权限谱系。
+- [[LLM-as-a-Judge]] — 验证器测量与校准。
+- [[Human-Governor-Agent-Operator]] — 责任与接收面。
 
 ## 开放问题
 
-1. 不可压缩性的经验测量——Agent 行为轨迹的 Kolmogorov 复杂度如何实际估计？
-2. 跨信任域 observability 的密码学基础——零知识证明能否让 Agent 证明合规而不暴露完整行为轨迹？
-3. Agent 失败模式知识库（类比航空 NTSB）——建立机制、格式标准、跨平台共享
-4. OTel GenAI 语义约定从 Development → Stable 的时间线和演化方向
-5. MVI 框架与 ATSC 三级合规模型的精确映射
-6. **"监督终端约定性"的可观测性（2026-07-16 新增）**——是否需要一种新 observability：不观测 agent 行为，而观测"哪些判定被设为不可追问的终点、由谁约定、可否申诉"（即让 Hofstadter 怪圈可见）？这是同质性监督失效的工程出路，接 [[LLM-as-a-Judge]] 无干净解节。
+按 [[research-agenda]] 现行 EX-002/004/005/006 条件寻找证据覆盖、真实效果及控制状态的联合记录；针对明确任务比较采样与保留方案的可复现性、风险发现和成本，保留未埋点与未知终态。旧 ATSC 采纳、不可压缩性经验测量及“监督终端约定性”不作现行已证命题。
 
 ## 相关 QA
 
-详细 Q-A 链见 [[20260715T140612--qa-Agent-Observability根本限制__qa]]（5 Q-A 对，覆盖 trace 模型差异 / 五重理解不可还原性 / APM 类比断裂 / 不可压缩性上限 / MVI 双组件定理）。
+历史 Q-A 链见 [[20260715T140612--qa-Agent-Observability根本限制__qa]]，以 2026-11-28 勘误为准。

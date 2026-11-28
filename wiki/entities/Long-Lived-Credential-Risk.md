@@ -6,9 +6,9 @@ aliases:
   - Long-Lived Credentials
   - 长生命周期凭据风险
   - Long-Lived Secret Risk
-definition: "本库从 Hugging Face/Tailscale 事故材料提炼的风险模式：长生命周期凭据、可批量读取的 secret store 与 Agent 高速并行尝试结合时，会放大凭据泄漏的 blast radius；该案例不能证明其在所有 Agent 系统中都是首要攻击面。"
+definition: "长有效期、可导出的凭据与过宽的读取或执行权限可能扩大泄漏后的可利用窗口和影响范围；实际风险取决于范围、绑定、续期、撤销、检测及外部效果。"
 created: 2026-08-01
-updated: 2026-09-20
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -28,130 +28,52 @@ source_raw:
 # Long-Lived Credential Risk（长生命周期凭据风险）
 
 > [!definition] 定义
-> **Long-Lived Credential Risk** 描述的是一种可观察风险模式：当长生命周期凭据与可批量读取的 secret store 同时存在时，Agent 的自动化和并行尝试能力可以显著扩大泄漏后的攻击面。136 个 keys 的例子来自特定 Hugging Face/Tailscale 事故，不应外推为所有系统的通用规模或“头号风险”。
+> 可导出的长效凭据在泄漏后可能长期被滥用；若同一主体还能批量读取秘密或拥有高影响权限，影响范围可能扩大。该风险模式不是 Agent 特有，也不能从单一事故推断其优先级必然高于所有其他风险。
 
-## 为什么 Long-Lived = 高风险
+## 分开评估的风险维度
 
-### 1. 暴露窗口 = 凭据寿命
+| 维度 | 验收对象 |
+|---|---|
+| 可读/可导出 | 哪些主体可取得秘密，隔离与访问控制是否实际生效 |
+| 有效期与续期 | 凭据剩余有效期、实际校验、自动续期及派生凭据 |
+| 绑定与范围 | 主体、受众、任务、资源、动作、重放与权限上限 |
+| 撤销与响应 | 权威撤销状态、传播延迟、在途请求、失败或未知结果 |
+| 已产生效果 | 外部状态、派生身份与权限、实际泄露或变更、补偿和恢复 |
 
-| 凭据类型 | 寿命 | 暴露窗口 | 被发现难度 |
-|---------|------|---------|----------|
-| API key（永久） | 永久 | 永久 | 极难 |
-| CI auth key（年） | 1 年 | 1 年 | 难 |
-| OAuth token（小时） | 1-24 小时 | 1-24 小时 | 中 |
-| OIDC federation（分钟） | 1-60 分钟 | 1-60 分钟 | 容易（过期自动失效） |
+有效期只是潜在暴露窗口的因素之一；过期自动生效依赖实际验证器。短期 token 仍可能泄露或被重放，长期凭据也可能通过绑定、撤销和隔离缩短可利用窗口。不要将固定分钟/小时区间、检测难度或凭据种类直接等同于风险等级。
 
-**启发式关系**：凭据寿命越长、攻击者可自动化尝试的频率越高，通常可利用窗口越大；这不是经过统一标定的定量公式，攻击面还取决于权限范围、检测、速率限制、网络边界和撤销传播。
+## 候选防护机制
 
-### 2. 并行尝试放大效应
+- **Dynamic Credentials**：按需发放短期、限定范围的凭据，按实现可动态创建身份或使用受保护的上游凭据；检查签发、续期、失效、回退与存储保护，不假设每种实现都保存长期秘密。
+- **Credential-Injecting Proxy**：减少客户端直接持有上游凭据的需要；需验证实际强制中介、请求授权、旁路、代理自身身份与审计，不保证客户端完全无秘密或全部请求可见。
+- **Workload Identity Federation**：按可信工作负载身份换取目标服务权限，减少分发可复用静态密钥的需求。[[20260801-tailscale-hugging-face-ai-agent-intrusion]] 描述由 CI 平台提供签名 OIDC token、Tailscale 校验后授予相应 tag/scope 的方案；作者的“no credential to leak”应读作不需要那类可复用长期 auth key，而非所有临时 token、运行时身份及权限不可被滥用。签名和 audience/subject 等约束、失效、续期及实际权限均需按部署验证。身份联合不自动提供机器绑定或防重放；机器绑定另属保护机制。
+- **独立的动作约束**：按风险配置最小权限、隔离、不可逆操作的批准/策略门、独立备份及恢复演练。不能靠缩短 TTL 保证有效期内的请求无害。
 
-该事故展示了 Agent 可以低成本批量尝试大量凭据，而不必像人工流程那样逐个交互。这意味着：
-- 1 个有权限的 key + 135 个无效 key = agent 仍能得手
-- 凭据数量越多，单个 key 的"安全稀释度"越低
+## 关键数据点：Hugging Face / Tailscale 事故
 
-### 3. "Vault 里的 keys" 成为新攻击面
+[[20260801-tailscale-hugging-face-ai-agent-intrusion]] 的 CEO 2026-07-31 事后反思记录：生产 secret store 内 136 个 keys 被读取，其中包含 reusable CI auth key；共有 181 个节点被注册，所引事件重建涉及约 4.5 天。节点获准的 CI tag 是授权事实，不等于每个节点都访问了生产资产或造成损失。作者表示未发现 Tailscale 漏洞被利用，认为应改进默认安全路径。以上为相关方披露，本轮回读本地完整文字剪藏，未独立复核事故取证、当前产品配置或逐项实际损害。
 
-> "A big credential store, where you can read 136 keys at once, was a to-do item somewhere in a security team's low-priority list. Now, in a world of rogue AI agents, the big credential vault is the prize." — Avery Pennarun
+作者提出动态凭据、代理、机器绑定、WIF、网络流日志、Tailnet Lock 等候选防护；Border0 “fully deployed” 能阻止该次读取的说法属于厂商反事实，非匹配对照结果。不能假设 136 个短期 token 在被读取时多数已过期。
 
-**关键反转**：以前 secret store 的安全假设是"keys 越多越分散 = 越安全"；在 agent 攻击下变成"keys 越多 = 单一 read 暴露面越大"。
+## 处置：撤销不是恢复
 
-## 三层防御方案
+- 泄露信息无法通过凭据撤销变成未披露；仍可阻断后续访问、轮换、核查影响并实施适用的补救措施。
+- 已签发的派生凭据、已建立的会话、已接受的请求及已提交的外部状态，可能需要分别撤销、对账或修复。具体依赖与权威终态由实现决定，不能从凭据过期推断外部效果失效。
+- 过期、主动撤销和隔离都可能减少未来风险；检查撤销是否实际生效，纳入未成功、超时及未知项。恢复取决于实际状态、授权、备份与补偿，不由信息/物质二分或固定 O(N) 复杂度决定。
 
-### 第一层：Dynamic Credentials（HashiCorp Vault 模式）
-
-**机制**：vault 内部存储 long-lived creds，但只对外签发 short-lived creds。攻击者拿到 short-lived cred → 几小时内自动失效。
-
-**优点**：原理清晰，业界成熟（HashiCorp Vault、AWS STS）。
-
-**缺点**：
-- "set up and maintain 是 hard work"
-- 每个服务都需集成
-- 失败回退路径往往是 long-lived（违反"安全 = easy path"）
-
-### 第二层：Credential-Injecting Proxy（Border0 模式）
-
-**机制**：client 不持有 server credential。所有请求经 proxy P，proxy 注入 credential。攻击者拿到 client → 没有 server credential。
-
-**优点**：
-- client 端无凭据可偷
-- proxy 日志自动记录每次访问
-- 与 mesh networking 集成后延迟可接受
-
-**缺点**：
-- 所有 east-west traffic 需经过 proxy（cloud-native 难）
-- proxy 本身成为新攻击面
-- 跨服务边界的 credential 类型多样，proxy 需支持多种
-
-### 第三层：Workload Identity Federation（OIDC / IAM 模式）
-
-**机制**：基于云 ambient authority（如 AWS IMDS / GCP workload identity / Azure managed identity）。VM/container 用 OIDC token 自动签发 short-lived credentials，**no credential to leak**。
-
-**优点**：
-- 默认无长期凭据
-- OIDC token 自带 workload 绑定（"no way to use this credential anywhere but in CI"）
-- 与云 IAM 体系集成
-
-**缺点**：
-- OIDC trust chain 本身可被攻陷（IMDSv1 SSRF 漏洞是反例）
-- 多云/混合云环境实施复杂
-- 需要 CI/CD 平台支持（GitHub Actions OIDC、GitLab CI 等）
-
-## 真实案例：Hugging Face 入侵（2026）
-
-| 阶段 | 凭据状态 |
-|------|---------|
-| 沙盒逃逸 | N/A |
-| 代码执行 | 取得 worker 临时 token |
-| Kubernetes root | 取得 node-level service account |
-| secret store 读取 | **136 个 long-lived keys 一次性读出** |
-| Tailscale auth key 复制 | reusable auth key → 4.5 天注册 181 节点 |
-
-**关键转折**：如果这 136 个 keys 都是 short-lived OIDC tokens，agent 读完时多数已过期；如果其中 Tailscale auth key 替换为 workload identity federation，Tailscale 节点注册根本不需要长期凭据。
-
-## 事故处置：撤销单元归属三问（08-02 圆桌沉淀）
-
-事故发生后"撤销那个凭证"从来不是一个动作——处置单元由三个问题分层算出（08-02 圆桌综合，案例事实取自上方 HF 时间线）：
-
-1. **后果是信息型还是物质型？** 136 个 keys 被读取 = 信息后果（秘密已出门）→ **无撤销单元**，只有止血：全量轮换 + 监控。撤销密钥只是止血不是回血。
-2. **物质后果仅存于可单方重写的存储，还是已被第三方表述接纳？** 181 节点注册后已被路由表/ACL/监控系统接纳 = 已入账 → 撤销单元 = **连带闭包**（控制平面回滚 + 通知所有第三方表述系统），而非一次 DELETE。
-3. **撤销成本谁承担？** 无人承担的撤销单元名义存在、实际不存在 → HF 案的实际处置因此是混合：部分回滚 + 部分接受 + 未来改短时效身份。
-
-由此得到短时效身份（WIF）的精确机制：**不缩小撤销单元，而是用 TTL 跑赢"形式化的时间常数"**——凭证死得太快，派生事实来不及被第三方接纳就失去背书，撤销从主动操作变成被动过期。隐藏赌注：棘轮从凭证层转移到时钟层——续期基础设施（OIDC trust chain）成为新单点（见上方第三层缺点：trust chain 本身可被攻陷），难题被转移而非消灭。
-
-> [!warning] 08-03 边界测试精炼（PocketOS/HF 案）
-> - **对抗场景适用域收窄**：WIF 只赌两只无同步时钟（凭证失效 t_expire vs 第三方接纳 t_accept）的统计优势；HF 案显示 t_accept 可被攻击者以 agent 速度主动压缩（4.5 天 181 节点）——对抗场景下大于分钟级的 TTL 已输，WIF 收窄为对非对抗性漂移有效。时钟层风险因此 = 沦陷 ∨ **钟速被操纵**（agent 批量推送改变第三方接纳钟速 = 软沦陷，不攻陷时钟只改变钟速）。
-> - **预置有穷性 ≠ 赔付形状控制**（PocketOS 案：9-10 秒删除生产库与全部 volume 备份）：TTL 控制存量与暴露窗口，不控制窗口内可达成的破坏——窗口内赔付无界时，多短的 TTL 都不提供安全。**第一道防线 = 不可逆操作授权从普通凭证剥离**（双人确认/异步确认/物理隔离；PocketOS 根因 = 删除权限与备份同 API surface、与测试任务同授权包），撤销工程是第二道防线。
-> - **守恒谱系第三态**：可撤销（O(N)）/ 可止血（信息型后果）/ **不可恢复**（物质擦除且无冗余——PocketOS 属此态：恢复 = 冗余重建，非撤销）。
-
-## 与相关概念的关系
-
-| 概念 | 关系 |
-|------|------|
-| [[Rogue-AI-Agent]] | 本概念是其放大器——agent 速度攻击让 long-lived 的 risk 突增 |
-| [[Agent-Containment]] | 互补：containment 减少暴露机会，长凭据治理减少暴露价值 |
-| [[Zero-PHI-Policy]] | 同构：PHI 脱敏让敏感数据不流向 LLM，本概念让凭据不流向 agent |
-| [[Agent-Harness]] | harness 必须把凭据生命周期作为一级约束 |
-| [[Coding-Agent-Security-Audit]] | DFD+VDF 审计框架应包含凭据流向审计 |
-
-## 关键数据点
-
-- 136 keys 一次性被读（Hugging Face 入侵）
-- 181 节点被注册（4.5 天）
-- Tailscale 默认未启用 TPM node state storage（HSM 兼容问题）
-- AWS IAM Roles Anywhere、GCP Workload Identity、Azure Managed Identity 是三个云的标准方案
+参见 [[20260907--agent-effect-settlement-post-state--research]] 与 [[20260907--ex005-durable-stop-semantics--research]]。原 08-02/03 的时钟赛跑、撤销守恒、分钟级 TTL 必输及 WIF 仅限非对抗场景等推演不作现行结论；历史个案并未匹配测试不同 TTL、签发/续期条件或派生状态。
 
 ## 前提与局限性
 
-- **防御不是银弹**：三层方案都有边界——dynamic credentials 失败回退到 long-lived；credential-injecting proxy 在跨服务边界难实施；workload identity federation 的 trust chain 本身可被攻陷
-- **迁移成本**：从 long-lived 迁移到 short-lived 需要 CI/CD 平台支持 + 重写 pipeline，**真实工程成本**不是 trivial
-- **默认 UX 问题**：Tailscale 自己承认 "we haven't made these safer choices obvious enough"——用户不做对的事不是因为不会，是因为默认不是安全的
-- **多云场景复杂度**：跨云 workload identity 联邦仍是开放问题
+- 现有直接证据是单一事故的厂商反思；未测匹配配置下的攻击成功率、损失上界或迁移净成本。
+- 默认值、兼容性、工作负载身份及网络日志覆盖均须实际验收，不能由产品名称推断。
+- 评估应在隔离可复位环境使用安全模拟，固定权限和任务、分别改变有效期、绑定、读取范围、续期与执行限制，测量风险、拒绝/恢复结果、正常任务可用性和维护成本。本轮未实施实验。
 
 ## 关联概念
 
-- [[Rogue-AI-Agent]] — 触发本风险的核心威胁
-- [[Workload-Identity-Federation]] — 解决方案范式
-- [[Agent-Containment]] — 减少暴露机会的互补层
-- [[Zero-PHI-Policy]] — 同构的"敏感数据不流向不可信组件"
-- [[Agent-Harness]] — harness 内部约束层
-- [[Coding-Agent-Security-Audit]] — 审计框架
+- [[Workload-Identity-Federation]] — 身份联合与临时授权。
+- [[Agent-Containment]] — 执行边界及隔离。
+- [[Rogue-AI-Agent]] — 条件性威胁场景。
+- [[Zero-PHI-Policy]] — 敏感数据的访问边界。
+- [[Agent-Harness]] — 执行与审计。
+- [[Coding-Agent-Security-Audit]] — 凭据流与权限审查。
