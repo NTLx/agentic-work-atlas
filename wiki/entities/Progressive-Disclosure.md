@@ -6,7 +6,7 @@ aliases:
   - Skillify
 definition: "根据任务语境分层加载知识的策略，让 Agent 先读高价值摘要，再按需展开证据和细节"
 created: 2026-05-13
-updated: 2026-10-22
+updated: 2026-11-28
 tags:
   - knowledge-management
   - AI
@@ -44,17 +44,17 @@ source_raw:
 
 ## 关键数据点
 
-- **与传统 Skill 的区别**：传统 Skill 固化为特定 `SKILL.md` 文件或指令集；Skillify 将 Skill 泛化为知识组织形态，任何 Markdown 文件、文档片段或笔记都可以被按需加载。
+- **与 Skill 的关系**：Skillify 是历史来源中的相关方法名（保留为搜索别名，不视为严格同义）；渐进式披露是按需展开策略，Skill 是带任务语义和执行约束的能力资产。普通 Markdown 片段可以按需读取，但不因此成为可执行 Skill。
 - **GBrain 的三层检索流程**：先用低成本 chunk 判断相关性，再加载完整页面，最后按优先级呈现结论、结构和证据。
-- **Token 效率**：分层呈现避免把无关搜索结果全部塞进上下文，减少 token 消耗和注意力噪音。Kun Chen (2026) 的 Skills 实践印证了这一点——将 project memory 中条件性使用的信息（如 e2e testing 指令）提取为 skill，Agent 仅在需要时加载，避免每次请求都消耗 tokens。
+- **Token 效率**：分层呈现可能减少不相关载荷，也可能因为多次查询、摘要遗漏或回退增加总成本；应测量整任务而非首次 prompt。Kun Chen (2026) 的 Skills 实践印证了这一点——将 project memory 中条件性使用的信息（如 e2e testing 指令）提取为 skill，Agent 仅在需要时加载，避免每次请求都消耗 tokens。
 - **认知路径**：先结论、后证据、再细节，能减少模型过早陷入局部材料。
-- **Wiki 结构要求**：页面必须有清晰 metadata、definition、summary、关联链接和 source_raw，否则 Agent 很难判断是否继续展开。
+- **Wiki 结构要求**：有意义的标题、元数据、摘要和证据链接有助于定位；具体字段按页面类型和现行 schema，不为形式添加空结构。
 
 ## 与 Code as Conceptual Infrastructure 的关系
 
 如果代码和 Wiki 都是概念基础设施，那么渐进式披露就是这套基础设施的读取协议。
 
-代码库里，Agent 不应每次读完整仓库，而应先读 AGENTS.md、CLAUDE.md、目录边界和测试，再按任务进入具体文件。Wiki 中，Agent 不应每次回到 raw，而应先读 entity、topic、comparison 和 source summary。
+代码库里，Agent 不应每次读完整仓库，而应先读 AGENTS.md、CLAUDE.md、目录边界和测试，再按任务进入具体文件。Wiki 中按 search-first 找相关稳定页或来源；高风险、时效、冲突与新事实需回溯 raw/权威原文，不规定所有任务固定读取顺序。
 
 这让 [[Context-Engineering]] 从"塞更多上下文"转向"控制知识展开顺序"。好的知识结构不是更多文本，而是让 Agent 知道下一步该读什么、不该读什么。
 
@@ -85,7 +85,7 @@ full instructions + references
 - **质量前提**：高层摘要必须可信。如果摘要错，后续按需展开会沿着错误路径走。
 - **延迟成本**：渐进式披露增加工具调用和文档读取步骤，响应速度可能慢于一次性 RAG。
 - **召回风险**：metadata 和链接质量差时，Agent 可能漏掉关键页面。
-- **生产边界**：高实时场景需要混合架构，例如向量初筛、缓存热点知识、再由模型精读。
+- **生产边界**：根据真实任务比较关键词搜索、向量、缓存、直接读取与分层策略；混合架构不是实时性的必要条件。
 - **过度分层风险**：层级太多会让 Agent 把时间花在找路上，而不是解决问题。
 
 ## 关联概念
@@ -94,6 +94,6 @@ full instructions + references
 - [[GBrain]] — GBrain 的 Layered Feeding 是渐进式披露在检索环节的具体实现
 - [[Obsidian-Wiki]] — Obsidian-Wiki 通过 20+ Skills 实现渐进式披露
 - [[Thin-Harness-Fat-Skills]] — Skillify 理念的架构表达
-- [[Knowledge-Compilation]] — 编译后的结构化知识是渐进式披露的前提
+- [[Knowledge-Compilation]] — 编译结构有助于分层读取；原始文档、工具和动态索引亦可按需展开
 - [[Context-Engineering]] — 渐进式披露是 Context Engineering 在知识管理领域的应用
 - [[Code-as-Conceptual-Infrastructure]] — 渐进式披露是概念基础设施的读取方式

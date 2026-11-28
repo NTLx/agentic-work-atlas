@@ -4,7 +4,7 @@ title: "Context Engineering vs Knowledge Compilation"
 entity_a: "[[Context-Engineering]]"
 entity_b: "[[Knowledge-Compilation]]"
 created: 2026-05-24
-updated: 2026-05-24
+updated: 2026-11-28
 tags:
   - comparison
   - context-engineering
@@ -57,7 +57,7 @@ Knowledge Compilation 把重点放在**知识以后如何复用**。它不是把
 
 Context Engineering 与 RAG 更接近，因为它关注运行时材料选择。但好的 LLM Wiki 也需要 Context Engineering：当用户提问时，系统仍要决定加载哪些 entity、topic、comparison 和 raw source。
 
-Knowledge Compilation 与 LLM Wiki 更接近，因为它关注 raw 到 wiki 的结构转化。没有这一层，系统每次都要重新读原文、重新抽概念、重新判断边界。
+Knowledge Compilation 与 LLM Wiki 更接近，因为它关注 raw 到 wiki 的结构转化。未持久化跨源综合的基础检索实现可能重复这些工作；缓存、预计算摘要、图索引等也能减少重复，并不必然需要 Wiki 形式。
 
 ## 两者如何配合
 
@@ -71,7 +71,7 @@ raw source
   -> 继续编译或修正 wiki
 ```
 
-Knowledge Compilation 降低未来理解成本；Context Engineering 降低当次推理成本。一个负责长期复利，一个负责即时表现。
+Knowledge Compilation 旨在降低未来重复理解成本；Context Engineering 旨在改善当次任务的上下文选择。两者的收益不是必然，需计入维护、读取、错误传播和验证成本。
 
 ## 反模式
 
@@ -81,7 +81,7 @@ Knowledge Compilation 降低未来理解成本；Context Engineering 降低当�
 
 ### 把知识编译写成普通摘要
 
-编译不是摘要。摘要只压缩内容，编译要抽出概念、前提、局限、关系和可复用判断。一个好的 entity 页面应让以后回答问题时不用重读原文。
+编译不是摘要。摘要只压缩内容，编译要抽出概念、前提、局限、关系和可复用判断。好的 entity 页面应帮助定位稳定结论和证据；对高影响、冲突、时效性或边界不明的判断，仍须回查原始证据。
 
 ### 只做 Wiki 不做上下文选择
 
@@ -102,7 +102,7 @@ Wiki 页多了以后，仍然需要选择机制。否则模型会在过多页面
 - 输出中新判断无法回链。
 - raw source 很多，但 entity、topic、comparison 层无法支撑回答。
 
-成熟知识系统需要两层同时存在：编译层负责长期记忆，上下文层负责即时调度。
+反复复用的任务可受益于持久编译与按需上下文选择；一次性任务未必需要单独编译层，具体架构按真实任务验收。
 
 ## 相关概念
 
