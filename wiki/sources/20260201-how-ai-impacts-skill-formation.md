@@ -10,7 +10,7 @@ source_locator:
   - "AI-assisted coding followed by no-AI comprehension test"
   - "-4.15 points; d=0.738; p=0.010"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - labor-economics
@@ -33,7 +33,7 @@ claim_type: mixed
 ### 核心证据
 
 - 主样本 52 人，随机分成每组 26 人。
-- AI 辅助组之后在无 AI 测验中低 4.15 分，d=0.738，p=0.010。
+- Shen 与 Tamkin（arXiv:2601.20245，2026-01-28）主实验 AI 组之后在无 AI 测验中低 4.15 原始分，d=0.738，p=0.010。口径核验（2026-11-28）：[论文 §5.2.2](https://arxiv.org/html/2601.20245v1) 写明满分 27 且报告 17% score difference；[研究方博客 Results](https://www.anthropic.com/research/AI-assistance-coding-skills) 给出约 50% 与 67%。4.15/27 约为 15.4 个百分点，与博客约数差 17 个百分点不完全一致，保留两种原始报告，不将 17% 解释成相对下降率。
 - 任务完成时间组间差异不显著，因此这里提供的是技能形成而不是纯效率的独立结果代理。
 
 ### 不可越过的边界

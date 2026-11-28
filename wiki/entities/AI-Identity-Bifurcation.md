@@ -5,15 +5,15 @@ aliases:
   - AI Identity Bifurcation
   - AI 身份极化
   - Tech Worker Bifurcation
-definition: "2026 年 tech workforce 因 AI 一分为二的现象：约半数从业者感到 amplified（能做更多更好），另一半分裂为 redefined/destabilized/diminished 三种负面立场，且该身份立场对职业感受的解释力远超 manager、公司、级别等传统变量"
+definition: "2026 年自愿参与的技术从业者调查所描述的 AI 职业身份感受分化：部分样本感到增强，其他样本表现出角色重新定义、不确定或损失感；分组与职业感受有关联，不等于总体分布或因果效应"
 created: 2026-07-30
-updated: 2026-09-28
+updated: 2026-11-28
 tags:
   - tech-worker-sentiment
   - diagnostic-snapshot
   - ai-labor
 evidence_level: medium
-claim_type: extracted
+claim_type: mixed
 related_entities:
   - "[[Augmentation-Trap]]"
   - "[[Cross-Disciplinary-Generalist]]"
@@ -31,7 +31,7 @@ source_raw:
 # AI-Identity-Bifurcation（AI 身份极化）
 
 > [!definition] 定义
-> **AI-Identity-Bifurcation** 是 2026 年年度 tech worker sentiment survey（约 6000 人样本，Noam Segal × Lenny Rachitsky）的核心发现：AI 对职业身份的影响把 tech workforce 切成近乎对半的两半，且该切分对 burnout、optimism、layoff worry、职业推荐意愿的解释效应量（Cohen's D）约为 manager 效应与 founder happiness 效应的 **3 倍**——AI 立场是影响 tech 工作感受的异常值级变量，超过角色、公司、规模、级别。
+> **AI-Identity-Bifurcation** 是 2026 年年度 tech worker sentiment survey（约 6000 人样本，Noam Segal × Lenny Rachitsky）的核心发现：受访样本对 AI 职业身份的感受出现分化；访谈报告分组与 burnout、optimism、layoff worry 等变量的标准化差异较大（与 manager/founder happiness 的比较约 3 倍）。Cohen's d 不是因果效应或解释方差，样本也不能代表所有技术从业者。
 
 ## 四原型（2026 H1 快照）
 
@@ -46,7 +46,7 @@ source_raw:
 
 ## 量化基线（2025 → 2026）
 
-- Burnout >moderate：44.7% → 54.7%（+11pt YoY）
+- Burnout >moderate：44.7% → 54.7%（按列示数值 +10.0 个百分点；原访谈转述 +11pt 口径待核）
 - Optimism about role/career：54.8% → 48.7%
 - Career recommendation NPS：**全体为负**——连最幸福的 founders 都不推荐自己的角色；designers/researchers 最负面，sales/PM 相对最好
 - 97.2% 称 AI 让自己 "better at job"，但深挖含义为 "do more faster, **but not better**"
@@ -65,7 +65,7 @@ source_raw:
 - 2026 H1 survey：约 6000 人样本（Noam Segal × Lenny Rachitsky）
 - AI 立场对 burnout / optimism / layoff worry 的解释效应量（Cohen's D）≈ manager + founder happiness 效应的 3 倍
 - 四原型占比：Energized/Amplified 41-50%、Conflicted/Redefined 27-35%、Disoriented/Destabilized 12-14%、Resentful/Diminished 5-12%
-- Burnout >moderate：44.7%（2025）→ 54.7%（2026，+11pt YoY）
+- Burnout >moderate：44.7%（2025）→ 54.7%（2026，列示值相差 10.0 个百分点）
 - Optimism about role/career：54.8% → 48.7%
 - 97.2% 称 AI 让自己 "better at job"，但深挖 = "do more faster, but not better"
 - Career recommendation NPS 全体为负，designers/researchers 最负面
@@ -103,8 +103,8 @@ Adam Ward（Cursor 招聘负责人）用劳动力市场结构给出身份极化�
 
 ## 关联概念
 
-- [[Augmentation-Trap]] — "97.2% getting better 但质量下降 + cognitive rot" 是增强陷阱的首个大样本自报告证据
+- [[Augmentation-Trap]] — 自评改善与认知担忧共存是诊断线索，不是客观质量下降、退化或机制的实证。
 - [[Cross-Disciplinary-Generalist]] — generalist vs craft 命运分化的感受侧数据
 - [[Systems-Thinker-Demand]] — 招聘侧的对照证据（需求转向与焦虑分化指向同一结构）
 - [[AI-Perception-Survey]] — 同类调查实体的先例
-- [[Knowledge-Debt]] — self-efficacy 侵蚀是知识债务的心理账户
+- [[Knowledge-Debt]] — 自我效能是待验证的相关心理维度，不能替代客观能力测量。

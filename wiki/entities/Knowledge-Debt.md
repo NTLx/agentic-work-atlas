@@ -5,18 +5,19 @@ aliases:
   - Epistemic Debt
   - Comprehension Debt
   - 知识债务
-definition: "AI coding agent 时代的新风险：开发者将编码任务委托给 agent 后，沉默积累的知识和能力缺口，与 Technical Debt 同构——短期不影响生产力，只在需要独立能力时才暴露偿还成本。"
+definition: "AI coding agent 时代的新风险：开发者将编码任务委托给 agent 后，沉默积累的知识和能力缺口，与 Technical Debt 同构——短期辅助绩效可能掩盖知识缺口，在需要独立理解、调试或维护时可能暴露偿还成本。"
 created: 2026-07-09
-updated: 2026-07-09
+updated: 2026-11-28
 source_raw:
   - "[[20260709-agents-that-teach-knowledge-debt]]"
+  - "[[20260201-how-ai-impacts-skill-formation]]"
 tags:
   - entity
   - knowledge-debt
   - skill-atrophy
   - agentic-engineering
 evidence_level: medium
-claim_type: extracted
+claim_type: mixed
 ---
 
 # Knowledge Debt（知识债务）
@@ -35,19 +36,19 @@ claim_type: extracted
 ## 核心机制
 
 1. **认知卸载循环**：开发者将问题解决过程委托给 agent → 获得即时解决方案 → 失去通过费力探索获得的 [[Incidental-Learning|附带学习]] → 知识缺口扩大 → 更依赖 agent
-2. **沉默积累**：每一轮委托都增加开发者不理解的知识量，但短期内生产力指标不受影响
-3. **能力退化触发**：当开发者需要独立完成（无 agent 辅助）的任务时，Knowledge Debt 集中暴露——无法调试、无法理解、无法扩展
+2. **沉默积累（风险路径）**：缺少理解、复盘或训练的委托可能积累知识缺口；有认知参与、解释和反馈的委托也可能促进学习。
+3. **独立能力检验**：撤除辅助后检查调试、理解和扩展能力；暴露知识缺口不等于已经失去原有能力，也可能是新知识尚未获得。
 
 ## 关键证据
 
-- 控制实验（IUI '22）：使用 AI 辅助的开发者在后续理解力测试中得分低 17%，完全委托编码的开发者技能形成下降最快
+- [[20260201-how-ai-impacts-skill-formation]]（Judy Hanwen Shen、Alex Tamkin，arXiv:2601.20245，2026-01-28；非 IUI 2022）：52 人随机试验，AI 辅助组的短期独立理解测验均分差 4.15 原始分（d=0.738，p=0.010）；完成时间差不显著。研究方博客给出约 50% 对 67%；论文 §5.2.2 的 27 分满分与 4.15 分差折算约 15.4 个百分点，两种口径不可混用。互动类型分组属探索性观察，不能证明完全委托导致长期技能退化最快。
 - 跨领域类比：GPS → 空间记忆退化、拼写检查 → 拼写能力削弱、自动驾驶 → 驾驶技能退化
 - 行业数据：约 42% 提交代码已由 AI 生成或辅助（2026），预计 2027 年达 65%
 
 ## 关键数据点
 
 - 知识债务类似技术债务：短期节省学习时间，长期侵蚀组织知识基础
-- AI 加速知识债务积累——替代执行的同时替代了附带学习
+- AI 若替代形成理解所需的附带学习，可能加速知识债务积累；不能从任务委托本身推出。
 
 ## 与相关概念的区分
 
@@ -60,7 +61,7 @@ claim_type: extracted
 - **未验证的假设**："开发者曾经通过费力解决问题来有效学习"——这一前提未被经验性验证，可能只对部分开发者成立
 - **概念新颖性存疑**：与 epistemic debt、comprehension debt 的关系不清
 - **缺乏量化度量**：论文计划将 Knowledge Debt 操作化为可测量构念，但尚未实现
-- **单一来源**：目前主要来自 Accenture Labs 的这篇论文，需要更多独立验证
+- **证据范围**：概念来源主要为 Accenture Labs 论文；既有短期编程实验提供相关独立理解结果，但不能验证长期债务积累速率、因果链或偿还成本。
 
 ## 关联概念
 
