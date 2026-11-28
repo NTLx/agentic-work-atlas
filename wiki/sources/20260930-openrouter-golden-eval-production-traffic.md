@@ -6,7 +6,7 @@ source_raw:
   - "[[20260930-openrouter-golden-eval-production-traffic]]"
 raw_state: index
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-11-28
 tags:
   - source-summary
   - evaluation
@@ -64,13 +64,13 @@ coverage target
 + deliberately overweighted high-cost / critical tail
 ```
 
-**判断**：production-derived 不等于“随机抽一批线上请求”。真实分布负责 realism，风险加权负责 safety / business consequence；两者缺一都会产生系统性盲区。
+**判断**：production-derived 不等于“随机抽一批线上请求”。真实分布负责 realism，风险加权负责 safety / business consequence；两者覆盖目标不同；刻意风险过采样后的总体通过率不应直接解释为线上平均成功率，需报告分层结果、部署分布加权估计和关键风险门禁。
 
 Synthetic data 更适合被标记为 augmentation layer：当真实流量暂时没有覆盖某个已知 failure mode 时补洞，而不是静默混进真实样本后失去 provenance。
 
 ### 1.3 第一轮 baseline 不是只测模型，也是在测 oracle
 
-来源要求 domain expert 为 case 写 expected output 或 rubric，并建议对一部分样本做 independent double annotation。两位 reviewer 的分歧不是简单平均掉，而是 rubric ambiguity 的信号。
+来源要求 domain expert 为 case 写 expected output 或 rubric，并建议对一部分样本做 independent double annotation。两位 reviewer 的分歧可能来自rubric歧义、证据不足、任务多解或标注者差异；应核实根因而非自动归咎于rubric。
 
 第一轮跑 eval 后，失败还需要重新分类：
 
@@ -81,7 +81,7 @@ observed failure
   └─ rubric / evaluator defect
 ```
 
-**判断**：Evaluation Set 自身也是待验证的软件资产。没有经过 baseline calibration 的 golden set 可能把标注错误、模糊需求或 judge 偏差包装成“模型回归”。
+**判断**：Evaluation Set 自身也是待验证的软件资产。没有经过 baseline calibration 的 golden set 可能把标注错误、模糊需求或 judge 偏差包装成“模型回归”。但不能为提高baseline分数而删除真实失败；被排除的模糊case应记录原因，必要时保留探索/人工评估队列。
 
 这与 [[Agent-Verification]] 中“验证 harness 自身也是错误来源”的规律完全一致：oracle 不是因为被写进测试文件就天然可信。
 
@@ -163,6 +163,8 @@ production logs
 ```
 
 ## 3. 证据边界
+
+- 2026-11-28回核[原教程](https://openrouter.ai/blog/tutorials/building-a-golden-eval-dataset-from-production-traffic/) Step 1–5；部分case可由reference-free evaluator检查，无需固定golden answer；风险加权、独立标注及版本治理是建议，不能替代隔离holdout、线上监控或隐私授权。上文权重估计、分歧根因与排除记录为Wiki综合改进，不是原文逐句主张。
 
 - 这是 OpenRouter 商业平台教程，不是不同 eval 方法的受控比较研究。
 - 10、20–50、100–1000 等样本规模属于启发式经验，不能作为通用质量阈值。

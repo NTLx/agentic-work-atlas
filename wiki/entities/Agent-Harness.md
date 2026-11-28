@@ -6,7 +6,7 @@ aliases:
   - agent harness
 definition: "包装 LLM 的完整软件基础设施——编排循环、工具、记忆、上下文管理、状态持久化、错误处理和护栏，将无状态 LLM 转变为有状态的 Agent。Addy Osmani (2026) 总结公式：**coding agent = AI model(s) + harness**。"
 created: 2026-05-11
-updated: 2026-11-27
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -205,13 +205,13 @@ Anthropic 的 Justin Young 在 Claude Agent SDK 上实验了跨多个 context wi
 - 显式要求使用浏览器自动化工具（Puppeteer MCP）做端到端测试——Agent 默认倾向于跳过验证
 - Git 作为检查点机制：允许 Agent 回滚坏变更并恢复工作状态
 
-这个方案验证了 [[Thin-Harness-Fat-Skills]] 原则：harness 只需提供环境初始化 + 结构化 artifact + 增量约束，Agent 依靠外部文件系统而非内部状态维持长期进展。
+这个案例提供了与 [[Thin-Harness-Fat-Skills]] 相关的设计实例，不证明薄 Harness 普遍最优。该案例以环境初始化、结构化 artifact 与增量约束维护跨会话进展；具体任务仍可能需要其他状态、授权或验证机制。
 
 ## 2026-09 补充：Harness 也控制证据入口与组织记忆
 
 四篇新材料把 Harness 的边界从“包裹模型的运行时”推进到三个相互连接的层面：
 
-- ByteByteGo 说明 embedding、chunk、metadata、版本和 reranker 决定哪些证据有机会进入上下文；更强的生成模型无法修复未被检索出来的事实。
+- ByteByteGo 说明 embedding、chunk、metadata、版本和 reranker 决定哪些证据有机会进入上下文；更强的生成模型不能保证恢复缺失证据；可通过额外检索或澄清补足。
 - Meta 的 Organizational Second Brain 把组织知识、专家 recipes、依赖图、评估和专家反馈编排成可审计的知识运行时，并通过回归测试让纠正产生持久收益。
 - Google 的 harness 实践把 sandbox、失败日志回送、测试节点和 kill switch 组合成可停止的 repair loop；Challenge 案例则展示了双向 MCP、事件并行、统一验证和分层路由等可组合模式。
 
@@ -412,15 +412,15 @@ OpenAI 的 Habitat 展示了更靠近基础设施的一种 Harness：产品团�
 | **Context Engineering** | 管理模型看到什么、何时看到 |
 | **Harness Engineering** | 以上两者 + 完整应用基础设施 |
 
-Harness 是 prompt 的包装，而是使自主 Agent 行为成为可能的完整系统。
+Harness 不只是 prompt 的包装，而是支持任务执行、状态与反馈的外部机制集合。
 
-## 12 个生产级组件
+## 12 类候选组件（综合分类，非最低配置）
 
 ### 1. 编排循环 (Orchestration Loop)
 
 心跳。实现 Thought-Action-Observation (TAO) 循环，也称 ReAct 循环：组装 prompt → 调用 LLM → 解析输出 → 执行工具调用 → 反馈结果 → 重复。
 
-Anthropic 称其运行时为"dumb loop"——所有智能在模型中，harness 只管理轮次。
+Anthropic 称其运行时为"dumb loop"——这是对某类简化运行时的描述；外部确定性逻辑、检索、规划和验证同样可以承担任务计算。
 
 ### 2. 工具层 (Tools)
 
@@ -436,7 +436,7 @@ Claude Code 三级层次：轻量索引（~150 字符/条目，始终加载）�
 
 ### 4. 上下文管理 (Context Management)
 
-核心问题：**[[Context-Rot|上下文腐烂（Context Rot）]]**——随着上下文窗口填充，模型推理和任务完成能力下降，关键内容落在窗口中间位置时性能下降 30%+。
+核心问题：**[[Context-Rot|上下文腐烂（Context Rot）]]**——上下文长度、位置、任务和模型共同影响表现；特定位置效应不能外推固定30%下降。详见已校准的 [[Context-Rot]]。
 
 生产策略：
 - **压缩 (Compaction)**：接近限制时总结对话历史
@@ -451,11 +451,11 @@ Claude Code 三级层次：轻量索引（~150 字符/条目，始终加载）�
 
 分层组装：系统 prompt → 工具定义 → 记忆文件 → 对话历史 → 当前用户消息。
 
-OpenAI Codex 优先级栈：服务端系统消息（最高）→ 工具定义 → 开发者指令 → 用户指令（级联 [[AGENTS-md|AGENTS.md]]，32 KiB 限制）→ 对话历史。
+Codex 官方文档所述 AGENTS.md 发现/合并是项目指引机制，默认累计32 KiB、可配置；Prompting Guide 说明指引注入为 user-role 消息。不能据此构造通用的工具定义/消息权限优先级栈。详见 [[AGENTS-md]]（2026-11-28核对官方文档）。
 
 ### 6. 输出解析 (Output Parsing)
 
-现代 harness 依赖原生 tool calling，模型返回结构化 tool_calls 对象。检查：有工具调用？执行并循环。无工具调用？那就是最终答案。
+现代 harness 依赖原生 tool calling，模型返回结构化 tool_calls 对象。检查工具调用、输出类型和任务状态；无工具调用不等于任务完成（还可能需要追问、失败恢复、继续或独立验收）。
 
 ### 7. 状态管理 (State Management)
 
@@ -463,7 +463,7 @@ LangGraph：类型化字典流过图节点，super-step 边界检查点。Claude
 
 ### 8. 错误处理 (Error Handling)
 
-10 步流程，每步 99% 成功率 → 端到端仅 ~90.4%。错误快速复合。
+若十步在此前均成功的条件下每步成功概率均为0.99，且全步成功才算完成，则端到端约90.4%；实际任务需估计条件概率、重试与恢复，不能固定套用。
 
 四种错误类型：瞬态（退避重试）、LLM 可恢复（返回错误作为 ToolMessage）、用户可修复（中断等待人工）、意外（上报调试）。Stripe 生产 harness 限制重试不超过两次。
 
@@ -485,13 +485,13 @@ Claude Code 三种执行模型：Fork（父上下文字节级复制）、Teammat
 
 ### 12. 安全执行环境 (Sandboxed Execution)
 
-工具在沙箱环境中执行，读取操作可并发，变更操作串行。
+安全隔离与实际执行权限取决于工具和运行时；读写并发需按一致性、资源冲突和事务边界设计。
 
 ## 7 个架构决策
 
 ### 1. 单 Agent vs 多 Agent
 
-Anthropic 和 OpenAI 都说：先最大化单 Agent。多 Agent 增加开销（额外 LLM 调用、上下文丢失）。仅在工具过载超过 ~10 个重叠工具或明确分离的任务域时才拆分。
+Anthropic 和 OpenAI 都说：先最大化单 Agent。多 Agent 增加开销（额外 LLM 调用、上下文丢失）。优先使用足够简单的架构；是否拆分按任务独立性、上下文、权限隔离、质量和成本测量，而非固定工具数量。
 
 Hao 好聊趋势的 multi-agent 组织病文章补充了第二个理由：多 Agent 不只是增加工程开销，也会引入 [[Multi-Agent-System-Pathology|组织病理]]。harness 可以治理动作、权限和上下文，但如果 Agent 需要彼此讨论、形成共识或接受不可见编排，还会出现从众、责任稀释和 [[Agent-Dissociation|内态解离]] 这类更深问题。
 
@@ -505,13 +505,13 @@ ReAct 每步交织推理和行动（灵活但每步成本高）。Plan-and-Execu
 
 ### 4. 验证循环设计
 
-计算验证（测试/linter）提供确定性 ground truth。推理验证（LLM-as-Judge）捕获语义问题但增加延迟。Martin Fowler 框架：**guides（前馈，行动前引导）vs sensors（反馈，行动后观察）。**
+计算验证提供可复现的判定，但其可靠性依赖测试规格、oracle、输入与覆盖，不能等同完整 ground truth。推理验证（LLM-as-Judge）捕获语义问题但增加延迟。Martin Fowler 框架：**guides（前馈，行动前引导）vs sensors（反馈，行动后观察）。**
 
 生产级 harness 的问题不只是“有没有 sensor”，而是 sensor 是否分布在正确时间尺度、是否会给 Agent 太多噪声，以及反馈文本本身是否足够可执行。
 
 ### 5. 权限与安全架构
 
-宽松（快速但有风险）vs 严格（安全但慢）。取决于部署上下文。
+权限、可用性和延迟应分别测量；最小权限、短期授权与可程序化策略可能同时减少等待和风险，不是必然二选一。
 
 ### 6. 工具作用域策略
 
@@ -527,13 +527,13 @@ IBM Research 的 [[Agent-Logic|agent logic]] 给这个问题增加了企业侧�
 
 ## 脚手架隐喻
 
-建筑脚手架是临时基础设施，使工人能够到达无法触及的楼层。它不做建筑工作，但没有它工人到不了高层。**关键洞察：建筑完成时脚手架被拆除。** 随着模型改进，harness 复杂度应降低。
+建筑脚手架是临时基础设施，使工人能够到达无法触及的楼层。它不做建筑工作，但没有它工人到不了高层。该隐喻仅适用于可替代的认知辅助。随着模型改进应重测并删除无净收益的脚手架；授权、审计、持久状态和验收等外部责任仍需实现。
 
 Manus 在六个月内重建了五次，每次重写都移除了复杂性。复杂工具定义变成通用 shell 执行。"管理 Agent"变成简单的结构化交接。
 
 **共进化原则**：模型现在在训练时将特定 harness 纳入循环。Claude Code 的模型学会了使用它被训练的特定 harness。更改工具实现可能因这种紧密耦合而降低性能。
 
-**面向未来的测试**：如果性能随更强大的模型提升而无需增加 harness 复杂度，设计就是正确的。
+**面向未来的测试**：固定任务、风险、资源预算与评测合同，对不同模型及机制组合比较质量、成本、恢复和安全；不能用性能单指标证明设计正确。
 
 ## Harness 即平台：Cursor Automations 与 SDK
 
@@ -565,26 +565,27 @@ Microsoft Core AI VP Marco Casalaina 描述了生产级 Agent Harness 的五层�
 
 ## 关键数据点
 
+以下除明确标注本轮核对者外，均为既有材料中的历史案例数字；未重核原实验、版本或榜单，不用作当前选型阈值。不同实验的分母、指标、基准与任务不可混用。
+
 - LangChain 仅改变 harness（同一模型、同一权重）就从 Top 30 外跃升至 TerminalBench 2.0 第 5 名
 - 独立研究项目通过让 LLM 自身优化 harness 实现 76.4% 通过率，超越手工设计系统
-- 上下文窗口中间位置内容使模型性能下降 30%+
 - Vercel 移除 80% 工具后效果更好
 - Claude Code 通过懒加载实现 95% 上下文缩减
 - LLMCompiler 比顺序 ReAct 快 3.6x
 - ACON 实现 26-54% token 减少，保持 95%+ 准确率
-- 10 步流程每步 99% 成功率 → 端到端仅 ~90.4%
+- 十步条件成功率均为99%且必须全部成功时，数学示例约90.4%，非实测
 - 验证循环使质量提升 2-3x（Boris Cherny）
 - Claude Code 独立门控 ~40 个离散工具能力
 - Cursor Automations 采用增长迅速，安全审查为首个强自动化用例；SDK runs 展示 harness 向可编程平台的演化（Cursor, 2026 春季）
 - Cursor 持续改进 agent harness 以优化跨模型和提供商的 token 缓存（Cursor, 2026 春季）
-- Anthropic 研究显示：科学 Agent 在无专用工具时检索准确率低至 16.9%，引入确定性检索层 gget-virus 后升至 99.7%（2026）。
+- Anthropic VirBench（120个查询）：无专用工具六个系统平均准确率范围16.9%–91.3%；加工具后均超过90%，GPT-5.5最高99.7%。两端点不是同一系统配对改善；[原文](https://www.anthropic.com/research/agents-in-biology)（2026-11-28核对）。
 - Manus 六个月内重建五次
 
 ## 前提与局限性
 
 - Harness 有效性高度依赖具体模型——更换 harness 可能只是针对特定 benchmark 优化，而非通用能力提升
 - "薄 harness"假设模型能持续内化当前 harness 功能，但新能力可能只是增加新的复杂性维度
-- 共进化原则暗示模型和 harness 的锁定效应——更换 harness 需要重新训练模型
+- 共进化原则暗示模型和 harness 的锁定效应——更换 harness 可能改变性能；是否需要训练应通过实际回归判断
 - 12 组件框架是对多个框架的综合抽象，实际实现中组件边界可能模糊
 - 大部分数据来自框架自述（Anthropic、OpenAI、LangChain），独立验证有限
 
@@ -629,7 +630,7 @@ LangChain（Vivek Trivedy）提出的四层模型是 Agent Harness 的分析框�
 ### 关键洞察
 
 1. **Verification 是必须的，其他层是可选的**：没有验证的 Agent 是危险的——它可能自信地输出错误结果
-2. **验证深度取决于风险等级**：风险等级 = 失败成本 × 检测难度 × 影响范围
+2. **验证深度取决于风险等级**：可用失败后果、检测难度、影响范围及发生概率进行风险分类；未定义量纲与权重时不能视为量化公式
 3. **四层模型是工具箱，不是最优结构**：每层可选，根据场景决定
 4. **企业需要标准化验证策略**：预定义风险等级 + 标准化流程 + 异常处理
 

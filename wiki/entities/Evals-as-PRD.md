@@ -5,9 +5,9 @@ aliases:
   - Evals are the new PRDs
   - Evals as PRD
   - 评测即需求文档
-definition: "以评测集取代传统 PRD 承担需求定义功能的产品开发命题：用户反馈经失败轨迹归因凝结为可运行 evals，产品质量改进变成可度量、可防回归的工程循环"
+definition: "将已明确且可评价的产品行为编译为可运行的评测契约，与意图、产品愿景、风险和跨职能对齐文档互补；评测结果支持迭代但不保证全部需求覆盖"
 created: 2026-07-30
-updated: 2026-10-12
+updated: 2026-11-28
 tags:
   - product-management
   - ai-evaluation
@@ -31,7 +31,7 @@ source_raw:
 # Evals-as-PRD（评测即需求文档）
 
 > [!definition] 定义
-> **Evals-as-PRD** 是 Anthropic 产品团队的内部命题（"evals are the new PRDs"，与 Garry Tan 的公开表述收敛）：在模型-产品系统中，表达用户需求的最佳载体不是文档，而是可运行的评测集。Eval 同时是模型评估工具和产品定义工具——写 eval 就是在定义"产品应该怎样"。
+> **Evals-as-PRD** 是 Anthropic 产品团队的内部命题（"evals are the new PRDs"，与 Garry Tan 的公开表述收敛）：在明确的行为问题上，可运行评测可以充当需求的简写或验收合同；不是对所有需求载体的普遍排序。Eval 同时是模型评估工具和产品定义工具——写 eval 就是在定义"产品应该怎样"。
 
 ## 机制链：从模糊抱怨到可运行需求
 
@@ -40,11 +40,11 @@ Dianne Penn 给出的完整路径（Anthropic 早期 JSON schema 失败案例）
 ```
 用户反馈（"Claude is not good at following instructions"）
   ↓ 追问具体情境、原始段落、确切响应
-失败轨迹归因（80% 实指 JSON schema 输出失败）
+受访者回忆（早期此类抱怨约80%指向JSON输出错误；无抽样分母）
   ↓ 生成 30-40 个失败样例
 Eval set（prompt + response + golden answer）
   ↓ 入库，每版模型运行
-可度量改进（收敛到 99.9%，痛点消除）
+后续评测据受访者回忆约99.9%–100%；无独立统计或用户总体痛点测量
 ```
 
 关键操作原则：
@@ -83,7 +83,7 @@ production logs
 
 ## PRD 的剩余功能
 
-PRD 并未死亡（与 OpenAI Codex 负责人的判断收敛），但功能收窄为两条：
+Penn 在访谈48:01–49:01明确说每个模型仍有PRD，服务于产品、工程、法务和安全等利益相关方。她特别强调两个用途，而非限定为仅两种功能：
 
 1. **多人对齐的 source of truth**：模型发布涉及工程、法务、安全等多方时，PRD 仍是"让大群人朝同一方向划船"的协调载体。
 2. **模糊问题的 product vision**：尚无用户痛点数据的前沿能力（如早期 computer use），需要 vision 文档探索"如何让技术对某群人先可用"。
@@ -97,15 +97,15 @@ PRD 并未死亡（与 OpenAI Codex 负责人的判断收敛），但功能收�
 
 ## 关键数据点
 
-- Dianne Penn 案例：从"Claude is not good at following instructions"的模糊抱怨 → 80% 归因到 JSON schema 输出失败 → 生成 30-40 个失败样例 → 收敛到 99.9% 准确率
+- Dianne Penn 案例（公开转录44:29–46:42）：早期此类反馈约80%指JSON输出问题，建议先构造30–40例，后续该eval约99.9%–100%为口述回忆，非所有JSON任务准确率；[访谈转录](https://pod.wave.co/podcast/lennys-podcast-product-career-growth/anthropics-first-technical-pm-on-token-maxing-the-jagged-edge-and-living-in-the-future-dianne-penn)（2026-11-28定向复核）
 - "you don't need hundreds, just 10 great evals"——质量重于数量
 - Eval 同时承担产品评估工具 + 产品定义工具双重身份
 
 ## 前提与局限性
 
-- **适用域**：命题成立的前提是产品质量可归约为可评测的行为维度。UX 质感、品牌、情感共鸣等不可评测维度仍需 vision 文档——口号的适用域比表述窄。
-- **ground truth 依赖**：evals 的 golden answer 多来自人类历史判断或 PM 判断，只能收敛到判断者的认知边界，不能超越它（参见 [[Evaluator-Miscalibration]]）。
-- **角色门槛**：building evals 要求 PM 具备工程能力（Anthropic 的 TPM 几乎都曾是工程师），该命题隐含"PM 角色工程化"的组织选择，不可与现有 PM 分工直接兼容。
+- **适用域**：命题成立的前提是产品质量可归约为可评测的行为维度。UX质感、品牌、情感共鸣等难以用单一指标完整表达的维度仍需 vision 文档——口号的适用域比表述窄。
+- **ground truth 依赖**：evals 的 golden answer 多来自人类历史判断或 PM 判断，可能继承判断偏差；可通过客观结果、多人标注、反例和独立验收纠正，不能据此推出系统能力上界（参见 [[Evaluator-Miscalibration]]）。
+- **角色门槛**：PM 需要理解任务及验收标准；实现评测所需工程能力可由本人或团队提供。Anthropic 的角色实践不等于所有团队的必要招聘条件。
 
 ## 关联概念
 
