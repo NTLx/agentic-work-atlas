@@ -8,7 +8,7 @@ original_body_sha256: "8058fa61279bdeb19279056a577cbb2ffd863c46f88be62bfb1625828
 indexed_at: "2026-08-25T15:29:10+08:00"
 source_locator: "Anthropic Economic Index 原文：§ Cadences（Figure 1.1–1.4）、§ Artifacts（Figure 2.1–2.6）、§ Perceptions（约 9,700 名受访者；Figure 3.1–3.9）。"
 created: 2026-06-30
-updated: 2026-08-25
+updated: 2026-11-28
 tags:
   - source-summary
   - ai-labor
@@ -21,10 +21,12 @@ claim_type: mixed
 
 ## 编译摘要
 
+2026-11-28 原报告 §Cost tracks the value of work/Figure2.3复核：产物组合解释约44%的工资—Token梯度；不是44%工资，余56%不能归为默会判断。映射职业工资不等于用户工资、产出价值或利润；Token未按模型调整，存在药剂师与统计助理等反例。博客13轮Chat/Cowork与单prompt Claude Code是交互形式差异，不识别判断内化。见 [[Judgment]]。
+
 ### 1. 浓缩
 - **核心结论1**: Claude 使用模式与外部世界节奏同步——工作日以工作相关查询为主，周末个人查询激增；高薪职业在非工作时间使用更多；税务相关查询在报税截止日期前激增。
   - 关键证据: 基于隐私保护遥测数据的每日/每小时分析，显示个人对话比例从工作日的35%升至周末的近50%。
-- **核心结论2**: Claude 对话的产出高度依赖产品类型（Chat/Cowork vs Claude Code），计算成本与工作价值正相关，Claude Code 比 Chat/Cowork 具有更高的 AI 自主性。
+- **核心结论2**: Claude 对话的产出高度依赖产品类型（Chat/Cowork vs Claude Code），工作类Chat/Cowork映射职业工资与Token消耗呈正相关（非实际价值测量），Claude Code 比 Chat/Cowork 具有更高的 AI 自主性。
   - 关键证据: 93%的对话产生具体产物；高薪职业对话消耗更多token；Claude Code 在31种产物中的26种上显示更高自主性。
 - **核心结论3**: 调查显示，用户预期 AI 能力将显著提升，高自动化用户对 AI 影响更乐观，早期职业者更担忧失业，女性使用模式不同，人们希望 AI 增强工作、自动化苦差事、共享经济收益。
   - 关键证据: 约9,700名受访者中，超过35%预期 AI 将在12个月内完成其大部分工作；自动化用户对薪酬和就业能力的预期更积极。

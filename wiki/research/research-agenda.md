@@ -125,7 +125,7 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
-| 2026-11-28 | 全库消化与退役 | retired/refined | D06技能退化/学徒制与专业能力再生Output初审，撤回现实师傅/固定级联强命题；D05六核心初审；CR-005仍blocked；见 [[2026-11-28]]。 |
+| 2026-11-28 | 全库消化与退役 | retired/refined | D06六核心Topic初审，撤回判断残余、永久护城河及设计延迟强命题；校准Claude Code、Ford与选择负担证据；CR-005仍blocked；见 [[2026-11-28]]。 |
 | 2026-10-21 | Candidate research audit | merged/retired/refined | CR-004 并入 EX-005、CR-007 retire；CR-001/005 收窄；提出未编号科学 AI 定向探索；压缩 agenda 操作层。 |
 | 2026-10-20T23:53:00+08:00 | CR-005 专业能力再生与独立校准 | refined-reasoning | 从保存无 AI 技能收窄为再生不与主生成路径共模的现实校准能力；无新 Evidence，保持 blocked。 |
 | 2026-09-07T08:33:43+08:00 | EX-005 耐久执行停止与外部效果 | refined | 区分 durable execution 停止、在途 invocation 与已发生副作用；加入 checkpoint/in-flight 窗口。 |

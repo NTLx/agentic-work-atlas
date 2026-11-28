@@ -4,7 +4,7 @@ title: "Knowledge Work Is Dying—Here’s What Comes Next"
 source_raw:
   - "[[Knowledge Work Is Dying—Here’s What Comes Next]]"
 created: 2026-05-24
-updated: 2026-05-25
+updated: 2026-11-28
 tags:
   - source-summary
 ---
@@ -12,6 +12,8 @@ tags:
 # Knowledge Work Is Dying—Here’s What Comes Next
 
 ## 编译摘要
+
+**2026-11-28 消化校准**：本文为Joe Hudson的教练/组织观点，不能作为知识工作消亡或智慧能力永久不可替代的实证。Search Inside Yourself官方历史确认起源于Google（2007），不将Microsoft/Google市值变化作为情商培训因果效应。果酱实验购买率为停留者分母，后续选择过载元分析结果异质；详见 [[Wisdom-Work-Evolution]]。VIEW与情感练习仅为作者实践候选。
 
 ### 1. 浓缩
 - **核心结论1**: AI 正在把“知道什么、会做什么”的稀缺性削弱，知识工作者的护城河从专业能力转向智慧能力。
@@ -24,10 +26,10 @@ tags:
   - 关键证据: 文章引用 Dan Shipper 的 allocation economy 观点：未来评价标准不是你知道多少，而是你如何分配并管理资源完成工作。
 
 ### 2. 质疑
-- **关于“知识工作消亡”的质疑**: 原文标题强，但实际更像“知识作为稀缺护城河消亡”。知识仍是判断材料，只是不再足以单独构成职业壁垒。
+- **关于“知识工作消亡”的质疑**: 原文标题强，但实际更像“知识作为稀缺护城河消亡”。知识仍是判断材料，其壁垒及与其他能力的互补关系需按职业实证判断。
 - **关于证据归因的质疑**: Microsoft 市值增长、CEO approval、Google mindfulness 项目等案例有多因素原因，不能简单归因于智慧工作训练。
 - **关于可训练性的质疑**: 情绪清晰度、辨别力和连接可以训练，但训练周期长、难以量化，不像工具技能可以快速部署。企业如果只把它包装成培训课程，可能会稀释其深层要求。
-- **关于 AI 不可替代性的质疑**: 文章认为 AI 无法拥有身体经验和互惠连接，这在当前成立；但 AI 可以模拟支持性语言并影响人的感受，边界需要更细地区分“真实互惠”和“有效安抚”。
+- **关于 AI 不可替代性的质疑**: 文章区分身体经验和互惠连接；不能由此确定所有AI能力上限。AI可生成支持性语言并可能影响人的感受，边界需要更细地区分“真实互惠”和“有效安抚”。
 
 ### 3. 对标
 - **对标 Knowledge Work vs Wisdom Work**: 本文是 [[Knowledge-Work-vs-Wisdom-Work]] 的主要来源之一，但应避免把 Wisdom Work 神秘化。它的可操作定义是：在 AI 提供答案后，人如何处理情绪、取舍、关系和责任。

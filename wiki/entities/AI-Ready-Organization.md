@@ -200,5 +200,5 @@ Vas（Varick Agents CEO）主张对"永远学不会的大多数"不要改造工�
 - [[Organizational-Self-Awareness]] — AI 就绪的前提条件
 - [[Machine-Readable-Processes]] — 组织清晰度进入 Agent 払行层的技术表达
 - [[Integration-Wall]] — 组织越不清晰，系统集成和落地阻力越高
-- [[20260625-ford-ai-quality-jd-power]] — Ford 案例：部门孤岛 + 制度性知识未转移进 AI 系统 → 质量缺陷，被迫雇回 350+ 资深工程师
-- [[20260625-ford-ai-quality-jd-power]] — Ford 案例：部门孤岛 + "find-and-fix" 哲学导致 AI 系统产生质量缺陷，COO Galhotra 承认方法过于碎片化
+- [[20260625-ford-ai-quality-jd-power]] — Ford 案例提示知识转移、工程评审与组织整合的重要性；媒体350+为招聘、晋升或返聘合计，非全部返聘；官方约300人用于定期设计评审。多项措施共同实施，不识别单一因果贡献。
+- [[20260625-ford-ai-quality-jd-power]] — Ford 管理层指出流程碎片化及事后修复的问题；此为公司解释，多项措施的独立贡献未识别。

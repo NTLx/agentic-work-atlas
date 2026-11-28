@@ -2,7 +2,7 @@
 type: output
 title: "AI 赋能不是把人移出流程，而是把人移到治理层"
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-11-28
 tags:
   - output
   - organization
@@ -19,6 +19,10 @@ tags:
 这三件事都没错，但都太靠外。工具解决“能不能用”，培训解决“会不会用”，场景解决“哪里能试”。真正决定成败的问题更硬：组织是否已经说清楚自己要什么，什么不能做，谁能拍板，错了怎么停，结果怎么算。
 
 如果这些问题没有答案，AI 只会把旧流程跑快。旧流程里本来靠人情、默契、临场补救和资深员工记忆维持的部分，会被放大成更快的混乱。
+
+## 2026-11-28 消化审查
+
+本文保留治理层分工、权限、验收、现场集成及责任归属的设计价值。撤回所有人必然从Operator迁至Governor、组织Harness充分决定成功、一次性交付必然失效及判断力永久不可外包的暗示。工具、课程、现场实践、组织机制和专业能力可以互补。治理权与任务执行能力不同；应按任务风险、实际质量、总成本、独立接管及能力形成验收，不以角色迁移比例衡量成熟度。参见 [[Organization-as-Agent-Harness]]、[[AI-Era-Designer-Role]]、[[Judgment]]。
 
 ## 生成变便宜以后，管理没有消失
 
@@ -50,7 +54,7 @@ tags:
 
 FDE 的价值正在这里：进入现场，找到 [[Golden-Case|黄金用例]]，穿过 [[Integration-Wall|集成之墙]]，再把一次性经验沉淀成 [[Deployment-Product-Flywheel|部署-产品飞轮]]。
 
-如果只交付一个项目，赋能结束后组织会回到原状。如果留下评测集、流程模板、权限模型、数据接入规范、验收标准和复盘机制，组织才会变厚。
+一次性交付也可能留下持续业务收益；能否复用、维护或接管需要验收。如果留下评测集、流程模板、权限模型、数据接入规范、验收标准和复盘机制，组织才会变厚。
 
 换句话说，好的 AI 赋能不是把 AI 教给人，而是把组织改写成 AI 能持续工作的环境。
 
@@ -58,7 +62,7 @@ FDE 的价值正在这里：进入现场，找到 [[Golden-Case|黄金用例]]�
 
 [[Organization-as-Agent-Harness|组织作为 Agent Harness]] 是这条线的总命题。
 
-企业不是“使用 AI 的人群”，而是 Agent 的运行时。目标层、流程层、权限层、学习层共同决定 Agent 的行为边界。组织越模糊，Agent 越会复制模糊；组织越清楚，Agent 越能扩展清楚。
+企业不是“使用 AI 的人群”，而是 Agent 的运行时。目标层、流程层、权限层、学习层共同决定 Agent 的行为边界。组织模糊可能造成错误，也可能在受控试点中被识别和改善；组织清晰不是成功充分条件。
 
 这也解释了为什么很多企业买同样的模型，结果差距很大。差距不只在 prompt，也不只在 API，而在组织能否回答这些问题：
 
@@ -78,7 +82,7 @@ AI 赋能最后会落到组织设计上。工具只是入口，Harness 才是长
 
 [[Wisdom-Work-Evolution|智慧工作]]在这里变得很具体。它不是抽象地说人类还有情感、连接和智慧，而是指出：当知识和生成都变便宜，真正值钱的是知道什么值得做、什么不该做、什么时候停、谁来承担后果。
 
-这类判断不能完全外包，因为它绑定利害关系。模型可以建议，Agent 可以执行，但责任仍然落在人和组织身上。
+可以委托部分判断，但必须明确实际授权、验证与后果责任，不从责任归属推出能力不可自动化。模型可以建议，Agent 可以执行，但责任仍然落在人和组织身上。
 
 ## 结论
 
@@ -112,4 +116,4 @@ AI 赋能如果只停在工具层，会制造更多会用 AI 的人。
 | AI 赋能的目标是让人从流程节点上移到治理层 | Wiki: [[Agent-First-Process-Redesign]], [[Human-Governor-Agent-Operator]], [[Organization-as-Agent-Harness]] | 保留 |
 | 好的 AI 赋能不是把 AI 教给人，而是把组织改写成 AI 能持续工作的环境 | Wiki: [[Forward-Deployed-AI-Enablement]], [[Organization-as-Agent-Harness]] | 保留 |
 | 判断力在 AI 时代变成系统控制能力 | Wiki: [[AI-Era-Taste-and-Judgment]], [[Wisdom-Work-Evolution]] | 保留，暂不新增 entity |
-| 组织中 operator 到 governor 的迁移可作为 AI 赋能成熟度观察指标 | Wiki: [[Human-Governor-Agent-Operator]], [[AI-Labor-Bottleneck-Shift]]；缺少独立 source | 放入后续 explore/audit 观察，不升级 |
+| 组织中 operator 到 governor 的迁移 | Wiki: [[Human-Governor-Agent-Operator]], [[AI-Labor-Bottleneck-Shift]]；缺少独立 source | 退役为通用成熟度指标；按任务质量、成本、风险与能力形成评价 |
