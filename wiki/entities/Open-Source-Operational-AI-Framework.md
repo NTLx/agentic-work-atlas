@@ -5,9 +5,9 @@ aliases:
   - Open-Source Operational AI Framework
   - 开源运营型 AI 框架
   - 开放式运营 AI 框架
-definition: "把已验证 AI 模型连同训练管线、文档、教程和集成接口开放，使本地机构能用自己的数据与知识改进模型、接入标准工作流并保留运行控制权的部署形态"
+definition: "把已验证 AI 模型连同训练管线、文档、教程和集成接口开放，使本地机构能用自己的数据与知识改进模型、接入标准工作流并有条件地建立运行控制能力的部署形态"
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-11-28
 tags:
   - AI-deployment
   - open-source
@@ -27,7 +27,7 @@ source_raw:
 # Open-Source Operational AI Framework（开源运营型 AI 框架）
 
 > [!definition] 定义
-> **Open-Source Operational AI Framework（开源运营型 AI 框架）** 是一种部署形态：提供的不只是模型代码，而是模型架构、训练管线、文档、教程、许可和集成接口，使本地机构可以使用自己的数据与专业知识改进模型、接入既有标准工作流，并保留数据和运行控制权。
+> **Open-Source Operational AI Framework（开源运营型 AI 框架）** 是一种部署形态：提供的不只是模型代码，而是模型架构、训练管线、文档、教程、许可和集成接口，使本地机构可以使用自己的数据与专业知识改进模型、接入既有标准工作流，并有条件地建立数据和运行控制能力。开放许可提供权利，独立运营还需要实际交付物、依赖、能力和验证。
 
 ## 最小组成
 
@@ -41,7 +41,7 @@ source_raw:
 | 开放许可 | 让机构可以修改、部署和长期维护 |
 | 本地评测与运行责任 | 让能力在真实工作流中持续校验 |
 
-Google Research 的水文框架提供了一个完整案例：Python/PyTorch 模型包、训练管线、Caravan 开放数据集、本地数据扩展、教程、Apache 2.0 许可，以及由 CHMI 开发的 Delft-FEWS 适配器。
+Google Research 的水文框架提供了一个发布方报告的案例（原文已核查，正式 Source/Registry 映射待补，见 [[2026-11-28]]；现有 Lambert Raw 是开放模型经济背景，不是该水文案例的直接出处）：Python/PyTorch 模型包、训练管线、Caravan 开放数据集、本地数据扩展、教程、Apache 2.0 许可，以及由 CHMI 开发的 Delft-FEWS 适配器。
 
 ## 开放的重点是运营权
 
@@ -56,7 +56,7 @@ Google Research 的水文框架提供了一个完整案例：Python/PyTorch 模�
 
 ## 如何穿越集成之墙
 
-开放代码不会自动消除 [[Integration-Wall|集成之墙]]。Google 案例中，真正让模型进入运营的是 CHMI 与 Google 的伙伴验证，以及 CHMI 为 Delft-FEWS 开发的适配器。
+开放代码不会自动消除 [[Integration-Wall|集成之墙]]。Google 案例中，发布方报告 CHMI 参与验证，并开发了 Delft-FEWS 适配器；这说明集成的重要性，但不能单独证明实际长期运营质量。
 
 这说明开放框架需要同时建设两类资产：
 

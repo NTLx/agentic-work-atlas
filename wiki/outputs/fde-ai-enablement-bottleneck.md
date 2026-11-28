@@ -2,7 +2,7 @@
 type: output
 title: "FDE 式 AI 赋能的真正瓶颈"
 created: 2026-05-23
-updated: 2026-05-25
+updated: 2026-11-28
 tags:
   - output
   - FDE
@@ -12,50 +12,42 @@ tags:
 # FDE 式 AI 赋能的真正瓶颈
 
 > [!summary] 核心判断
-> FDE 式 AI 赋能的难点不在“教会组织使用 AI 工具”，而在把 AI 接进真实工作流，并让一次性交付回流成可复用能力。
+> 在集成复杂、需求尚未清晰的工作流中，FDE 的候选价值是现场发现、生产验证和知识回流，而非驻场或工具培训本身。是否是当前瓶颈，需要具体诊断。
 
-## 培训不是赋能
+## 培训、项目与组织能力
 
-很多组织里的 AI 赋能会退化成培训：教 prompt、讲案例、演示工具。培训有价值，但它通常只改变个人尝试，不改变组织工作系统。
+培训可以改变使用方式，项目可以直接产生业务价值，两者都可能帮助组织形成能力。不能因交付不可重复就否定其价值。若目标是持续规模化，应另外验证交付资产是否被复用、内部团队是否能运行和维护。
 
-[[Forward-Deployed-AI-Enablement]] 提供了更硬的判断标准：一次赋能之后，组织到底得到了一个项目，还是得到了一套可复用能力？
+[[Forward-Deployed-AI-Enablement]] 的有用设计视角是区分客户现场解决问题与将可迁移部分沉淀为组织能力。
 
-如果只得到一个项目，组织很快回到原状。如果得到可复用能力，下一次改变会更容易发生。
+## 集成之墙与诊断
 
-## 真正瓶颈是集成之墙
+[[Integration-Wall]] 描述模型进入实际工作流时可能遇到的系统、权限、数据、合规和采纳约束。瓶颈也可能是任务本身价值不足、模型质量、成本、业务需求不清或责任机制失效。不能把所有失败归因于集成。
 
-[[Integration-Wall]] 说明了为什么 AI demo 容易、生产落地困难。
+## 双侧知识回流
 
-真实组织不是干净输入输出。它有遗留系统、权限、SSO、审计、数据边界、合规约束和组织采纳问题。越靠近核心工作流，这些约束越厚。
+[[Deployment-Product-Flywheel]] 可以降低后续同类部署的边际成本，但应按相近任务复杂度、质量、维护及合规成本进行比较。供应商复用与客户能力积累并不必然同步。
 
-所以 FDE 的价值不是“现场写代码”本身，而是把模型能力、组织流程、权限系统和真实用户行为接成可运行系统。
+[[Tacit-Knowledge-Lock-In]] 提醒买方保留必要的业务规则、评测集、配置、权限说明及接管能力。导出资产是手段；以独立运行、评测、修改和迁移验收来检验控制权。可以有意识地选择长期托管服务，但应理解依赖和退出代价。
 
-## 回流比交付更重要
+## 选择部署方式
 
-FDE 和普通咨询的分水岭，是有没有 [[Deployment-Product-Flywheel]]。
+标准产品、本地团队、外部 FDE 与开放框架可以组合。先判断能力缺口和总交付成本，再选择最简单且可验收的方案。标准化产品能达到真实工作流目标时，额外驻场未必创造价值；开放框架也可能需要专业集成和长期支持。
 
-一次交付解决一个问题；回流机制让第 10 次赋能比第 1 次更省力。对组织内部 AI 赋能来说，回流产物可以是模板、评测集、权限模型、数据接入规范、成功案例库和反例库。
-
-没有回流，FDE 会制造依赖。持续需要外部专家才能运转的系统，不是赋能，而是外包。
-
-## 证伪方向
-
-这个判断可能被一种情况推翻：如果未来出现高度标准化、可自助部署、能自动处理权限和流程映射的 SaaS agent，那么 FDE 式高接触赋能的重要性会下降。
-
-下一步应寻找反例 source：有没有企业在没有 FDE、没有咨询、没有长期驻场的情况下，仅靠标准化 AI 产品完成核心工作流改造，并产生可度量 adoption？
+对照指标：真实业务结果、达到质量门的总成本、上线周期、失败/返工、内部接管成本、相近部署的重复劳动及资产复用。没有这些数据，不能声称 FDE 或 SaaS 具有普遍优势。
 
 ## 本文使用的 Wiki 页面
 
 - [[Forward-Deployed-AI-Enablement]]
 - [[Integration-Wall]]
 - [[Deployment-Product-Flywheel]]
-- [[Forward-Deployed-Engineer]]
+- [[Tacit-Knowledge-Lock-In]]
+- [[FDE-vs-Open-Source-Operational-AI]]
 
 ## 回填检查
 
-| 新判断 | 支撑依据 | 处理 |
-|--------|----------|------|
-| AI 赋能的瓶颈不是工具使用，而是真实工作流改写 | Wiki: [[Forward-Deployed-AI-Enablement]]、[[Integration-Wall]] | 保留 |
-| 回流机制比一次性交付更重要 | Wiki: [[Deployment-Product-Flywheel]]、[[Forward-Deployed-AI-Enablement]] | 保留 |
-| FDE 式赋能可能制造外部依赖 | Wiki: [[Forward-Deployed-Engineer]]、[[Forward-Deployed-AI-Enablement]] | 保留 |
-| 标准化 SaaS agent 可能降低 FDE 重要性 | 无 | 放入 research agenda |
+| 判断 | 支撑依据 | 处理 |
+|---|---|---|
+| 现场集成是候选瓶颈而非唯一瓶颈 | Wiki: [[Integration-Wall]]、[[Forward-Deployed-AI-Enablement]] | 保留 |
+| 产品回流与买方接管能力应分别验收 | Wiki: [[Deployment-Product-Flywheel]]、[[Tacit-Knowledge-Lock-In]] | 保留 |
+| 不同部署方式的净效益与长期依赖 | Wiki: [[FDE-vs-Open-Source-Operational-AI]] | 补 source（需要可比部署数据） |
