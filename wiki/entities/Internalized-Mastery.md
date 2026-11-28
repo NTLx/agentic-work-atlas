@@ -5,9 +5,9 @@ aliases:
   - 内部化精通
   - Internalized Mastery
   - 内化专长
-definition: "通过持续认知挣扎与渐进复杂度的真实实践而内化的深层领域知识、认知图式、诊断判断与模式识别——不能靠观察或 AI 辅助表现获得，构成对 AI 输出做实质验证的独立领域基础"
+definition: "通过持续认知挣扎与渐进复杂度的真实实践而内化的深层领域知识、认知图式、诊断判断与模式识别——Lovett 强调持续实践；不能仅凭观察或辅助期表现证明已形成可独立运用的领域能力"
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -29,17 +29,17 @@ source_raw:
 # Internalized Mastery（内部化精通）
 
 > [!definition] 定义
-> **Internalized Mastery（内部化精通）** 是深植于个体心智的领域专长：深度领域知识、认知图式、诊断判断与模式识别，通过持续认知挣扎（cognitive struggle）和渐进复杂度的真实实践形成。它的形成要求"费力机制"——挣扎不是可被工程化掉的摩擦，而是构建图式、诊断判断与元认知控制的机制。
+> **Internalized Mastery（内部化精通）** 是深植于个体心智的领域专长：深度领域知识、认知图式、诊断判断与模式识别，通过持续认知挣扎（cognitive struggle）和渐进复杂度的真实实践形成。作者强调有反馈的认知努力与渐进实践；不是所有摩擦都有学习价值，也不证明 AI 辅助学习不能形成独立能力。
 
 ## 核心要点
 
 - **形成路径**：循序渐进的脚手架式参与（scaffolded engagement with progressively complex problems），实践者在其中与困难缠斗、监控修正自身推理、反复用证据纠正错误假设——即 Ericsson 刻意练习 + Mezirow 转化式学习 + Lave & Wenger 合法边缘参与的集合。
-- **不可替代**：不能通过观察或 AI 辅助表现获得——辅助移除挣扎会"保留绩效但冻结能力发展"（assistance without internalization）。与 [[Internalized-Mastery|Skill-Internalization]]（Agent 技能）不同，本概念指人类专家。
+- **区分表现与学习**：原文 Table 1 限定观察或 AI 辅助表现 alone 不足以建立该能力；原文认知工作重分配段明确允许保留自身尝试、质疑与论证的辅助工作有发展价值。与 [[Skill-Internalization]]（Agent 技能）不同，本概念指人类专家。
 - **作为实质验证的基础**：它是 [[Validation-Tether]] 的锚——识别表层一致输出中实质错误的能力，依赖这种非可言传的语境化认知（连接 Hayek 分散知识、Polanyi 默会维度）。
 
 ## 消耗机制（原文）
 
-两种路径降低连续世代的 Internalized Mastery 形成（Mechanism 1 / 2）：
+作者提出两种可能削弱连续世代能力形成的机制（Mechanism 1 / 2），未证实职业级因果链：
 1. **直接岗位消除**：AI 自主执行入门级任务 → 组织移除发展性岗位（可被劳动力数据测到）。
 2. **无内化的增强（augmentation without internalization）**：入门岗位保留但 junior 用 AI 达到历史需数年经验的产出，跳过认知挣扎——就业数字健康，再生质量静默下降（劳动力数据盲区）。
 
@@ -51,7 +51,7 @@ source_raw:
 
 ## 前提与局限性
 
-- "不能通过观察或 AI 辅助表现获得"是理论断言（Bainbridge/Hollnagel 自动化传统），无直接纵向实验证明代际内化能力下降
+- Table 1 为构念定义，Table 2 建议在无 AI 条件按经验/暴露期测准确率；并非验证量表。补充延迟保持、迁移、错误解释/修正与实际接管（本库综合）；不能把无 AI 一次成绩等同于全部能力。无直接纵向实验证明代际内化能力下降。
 - 概念是框架内部的理想型，与实证可测的"绩效下降"有距离，作者列为研究议程
 
 ## 关联概念

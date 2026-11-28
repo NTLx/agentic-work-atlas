@@ -64,7 +64,7 @@ Legacy provenance 维护线已完成并冻结；详情见 research-logs 与 Git 
 - Evidence: [[Labor-AI-Empirical-Calibration]]；[[Skill-Atrophy-and-Knowledge-Debt]]；[[AI-Apprenticeship-and-Lehrwerkstatt]]；本轮推理见 [[2026-10-20]]。
 - Evidence goal: 同一 firm × person × occupation × period 纵向观测自主练习 → 真实错误反馈 → 异源/独立检查 → delayed retention/transfer → responsibility/promotion，并连接 AI adoption 与效率。
 - Last checked: 2026-11-28 · refined/blocked
-- Next: 已核丹麦WP223方法与版本、Ramp及Stanford口径，仍缺共同职业队列的培训/独立能力/晋升；新研究候选见 [[2026-11-28]]。
+- Next: 已核丹麦WP223方法与版本、Ramp及Stanford口径。Lovett 2026 Table 2 为拟议指标而非验证量表；Vicente & Matute 2023 Experiment 3 是模拟分类任务的偏差继承，非专家再生纵向队列。仍缺共同职业队列的培训/独立能力/晋升；新研究候选见 [[2026-11-28]]。
 - Retry: new-source:skill-reproduction-longitudinal
 
 ### CR-006 · 评测逃逸是系统性机制而非孤立 harness 事故
