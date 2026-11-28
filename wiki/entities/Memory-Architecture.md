@@ -6,9 +6,9 @@ aliases:
   - 记忆架构
   - Memory System
   - 记忆系统
-definition: "LLM 应用中长期记忆的工程架构——解决 staleness（过时）/ correctness（错误）/ scalability（亿级用户 × 多年）三大挑战的子系统设计"
+definition: "管理LLM跨任务记忆的存储、检索、更新、授权与生命周期的工程架构；目标包括时效、正确性、可扩展性与安全。"
 created: 2026-06-06
-updated: 2026-09-16
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -34,74 +34,48 @@ source_raw:
 # Memory Architecture（记忆架构）
 
 > [!definition] 定义
-> **Memory Architecture** 是 LLM 应用中长期记忆的工程架构——解决 staleness（过时）/ correctness（错误）/ scalability（亿级用户 × 多年）三大挑战的子系统设计。代表实现：OpenAI ChatGPT Dreaming V3（2026-06）、三层 Agent 记忆 L1/L2/L3（2026-05）、Obsidian + Claude Code 脑（2026-05）。
+> 管理LLM跨任务状态的存储、检索、更新、授权和生命周期的工程架构。OpenAI 2026-06发布将staleness、correctness、scalability作为设计挑战，不能认为这些问题已被解决。任务效用、隐私与安全恢复亦须独立验收。
 
-## 三大核心挑战
+## 核心设计维度
 
-| 挑战 | 含义 | 典型失败 |
-|------|------|----------|
-| **Staleness** | 记忆内容随时间过时 | "用户 7 月去新加坡"→ 8 月应自动改写为"用户 7 月去了新加坡" |
-| **Correctness** | 记忆内容错误或无中生有 | 虚构用户偏好、把临时决定当长期判断 |
-| **Scalability** | 亿级用户 × 多年时间窗口 | 算力成本爆炸、检索延迟、隐私合规 |
+| 维度 | 问题与验收 |
+|---|---|
+| 信息类型 | 区分事实、偏好、事件、程序、推断和待办；避免把计划日期已过当成事件已发生 |
+| 存储与组织 | 文件、结构化记录、向量索引、图及数据库可组合；按实际规模、成本、权限与查找需求选型 |
+| 召回 | 按需加载、核验相关性、有效时间、来源与覆盖；活动上下文不是全部状态 |
+| 生命周期 | 写入、合成、晋升、冲突处理、撤销、过期与修复；版本和访问权限分别管理 |
+| 评估 | 测量任务正确性、约束遵循、时效、延迟、成本、正常知识保留与实际副作用 |
 
-## 代表实现对比
+## 代表实现与证据
 
-| 架构 | 运营方 | 触发方式 | 评审界面 | 解决重点 |
-|------|--------|----------|----------|----------|
-| Saved memories | OpenAI | 用户显式触发 | 列表 | correctness |
-| Dreaming V3 | OpenAI | 后台持续综合 | Memory summary page | staleness + scalability |
-| Three-Layer Agent Memory | 社区/个人 | 主动分层写入 | 各自文件 | 防止记忆腐化 |
-| Memex-style 个人数据 | 历史范式 | 用户主动管理 | 完全用户控制 | 数据主权 |
+- Saved memories（2024历史形态）：会话内通过显式请求或强信号记录，跨会话使用。
+- Dreaming V3（2026-06）：后台综合并提供记忆摘要；未公开内部索引、时间字段、调度或事务实现。摘要非完整状态，个性化设置也不同于数据训练授权。
+- [[Three-Layer-Agent-Memory]]：个人Vault按画像、程序性经验、历史分层，按需加载；个人报告非普适架构或收益保证。
+- [[Structured-Agent-Memory]]：按任务属性、适用条件及来源组织经验；与信息类型、生命周期及实际存储相互独立。
+- [[Multi-Layer-Memory]]：其他分层视角；不要求与三层或五层一一映射。
 
-## 与系统设计的关系
+## 从“存得下”到“能维护”
 
-- **OS daemon 类比** — 后台进程在用户不在时整理，对用户不可见但持续
-- **数据库类比** — 记忆是用户状态，记忆架构是 schema + index + transaction
-- **缓存类比** — 记忆 = L1/L2/L3 cache，按需加载控制 prompt 成本
-
-## 关键设计模式
-
-| 模式 | 说明 | 应用 |
-|------|------|------|
-| 后台综合 | 用户不在时跑整理进程 | OpenAI Dreaming |
-| 三层分离 | L1 画像 / L2 程序性 / L3 历史 | Three-Layer Agent Memory |
-| 摘要降维 | 巨量记忆通过 summary 暴露给用户 | Memory summary page |
-| 按需加载 | prompt 中只装当前相关记忆 | 所有 LLM 应用 |
-| 时间戳版本化 | 记忆带时间戳 + 自动更新 | Dreaming V3 |
-| 职能分层 | working / episodic / semantic / procedural 分开读写 | CoALA-inspired playbook |
-| 遗忘与冲突治理 | 过期、替代、标记矛盾，而不是无限追加 | memory maintenance |
-
-## 从“存得下”到“能维护”的五层管线
-
-这份 playbook 对现有架构图的增量，不是再增加一个数据库，而是把记忆的行为契约拆开：当前上下文负责工作，episodic 记录经历，semantic 保存可复用事实，procedural 保存经重复验证的方法，forgetting 负责跨层清理和冲突治理。
-
-**判断**：生产记忆系统的关键边界在“写入什么、何时召回、何时晋升、何时失效”，而不在某一种向量库或文件格式。
-
-- **证据**：[[Agent Memory _ The 5-Layer Playbook.pdf]] 第 2–8 页；第 4 页给出技能晋升门槛，第 5–6 页给出 expiration / supersession / contradiction resolution，第 7–8 页把流程串成 agent loop。
-- **边界**：该 PDF 是低证据等级的独立汇编，阈值与效果数字不是通用默认值；高风险领域仍需更长保留、人工复核、权限隔离和可审计 provenance。
-
-## 前提与局限性
-- **持续 compute cost** — 后台进程算力开销大
-- **summary 失真** — summary 本身有信息损失
-- **隐私合规** — 记忆属用户数据，监管严
-- **训练回授** — 用户修改 = 标注员行为
-
-## 关联概念
-| 本库主题 | Memory Architecture 的连接 |
-|---------|------------------------|
-| [[Dreaming]] | OpenAI 的具体实现 |
-| [[Multi-Layer-Memory]] | 平行概念（按 token 加载） |
-| [[Three-Layer-Agent-Memory]] | 三层分层实现 |
-| [[Context-Engineering]] | 持续记忆是 context engineering 核心场景 |
-| [[Agent-Harness]] | 记忆架构是 harness 组件 |
-| [[Memex]] | 历史范式参考 |
-| [[Personal-AI-Assistant]] | 记忆架构是个人 AI 助理的标志能力 |
-| [[Staleness-Problem]] | 三大挑战之一 |
-| [[Memory-Synthesis]] | Dreaming 核心动作 |
-| [[Memory-Summary-Page]] | Dreaming V3 用户界面 |
-
-- [[OpenAI]] — Dreaming V3 开发方
+《[[Agent Memory _ The 5-Layer Playbook.pdf]]》按working/episodic/semantic/procedural/forgetting组织记忆。此前编译定位第2–8页，其中第4页晋升、第5–6页过期/替代/冲突、第7–8页agent loop；遗忘可作为横切生命周期控制，而非独立存储层。本轮仅回看已有Source Summary，未重开原PDF。独立汇编的TTL、晋升次数与效果数字不是通用默认值。高风险任务按风险、法规和保留策略确定验证与删除范围，不一律保留更久。
 
 ## 关键数据点
 
-（关键事实、统计、时间线从原 raw 源沉淀，见 source_raw 字段）
+- [OpenAI 2026-06-04官方发布](https://openai.com/index/chatgpt-memory-dreaming/)评价跨会话相关信息、偏好/约束与时效，报告Free用户dreaming计算需求约降至原先1/5，非整体服务成本或全部套餐收益。未估算图表分数。
+- [[20260729-memsecbench-memory-lifecycle]]：成功污染条件下，修复目标语义86.3%、保留所需正常记忆62.5%、同时满足56.1%（各配置宏平均，Forget独立分支）。受控实验非生产风险率。
+- [[20260610-smsr-runtime-memory-provenance]]：认证来源不等于内容真实或授权；论文采样证书存在待核的聚合条件缺口，见来源页复核。
+- [[20261014-langchain-deep-agents-context-memory]]：外置状态、可回查压缩、按需加载是厂商设计实例，需验收原文可访问性与恢复质量。
+
+## 前提与局限性
+
+以上为跨来源工程综合，不是统一标准或已实施架构。后台综合可能增加成本、产生摘要失真或过期判断；按需检索可能漏召回。不同模型、来源和访问范围影响结果。敏感信息仍可能进入记忆；依据实际权限、用途、删除与保留政策治理。2026-11-28回核OpenAI发布和帮助中心、相关论文关键章节及本地实践材料，未运行系统或独立评估效用。
+
+**本库综合**：LLM WiKi现有Raw/Source Summary/Entity等层次已提供证据与解释分离的基础。应检验写入授权、来源独立性、真实召回、晋升与纠错传播，而不是先增加数据库、模型或层级。
+
+## 关联概念
+
+- [[Dreaming]]、[[Memory-Synthesis]]、[[Memory-Summary-Page]] — 综合与用户可见性。
+- [[Staleness-Problem]] — 时间与实际状态。
+- [[Three-Layer-Agent-Memory]]、[[Multi-Layer-Memory]]、[[Structured-Agent-Memory]] — 不同组织视角。
+- [[Shared-Memory-Contamination]] — 记忆生命周期安全。
+- [[Context-Engineering]]、[[Agent-Harness]] — 上下文与执行合同。
+- [[Memex]]、[[Personal-AI-Assistant]]、[[OpenAI]] — 历史范式、产品场景和发布者。

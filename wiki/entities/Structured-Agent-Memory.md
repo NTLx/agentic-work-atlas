@@ -6,9 +6,9 @@ aliases:
   - 结构化 Agent 记忆
   - Structured Memory
   - Faceted Agent Memory
-definition: "按多属性维度（模块、语言、操作类型等）组织的纠正性记忆，通过属性匹配而非关键词/向量检索来精确召回相关知识。区别于无结构 Markdown 文件 + embedding 检索的范式。"
+definition: "以可检查的属性、适用条件、来源及状态组织Agent记忆，并按实际任务选择相关知识；可与关键词、语义检索和文件存储组合。"
 created: 2026-07-08
-updated: 2026-07-08
+updated: 2026-11-28
 tags:
   - agentic-engineering
   - memory
@@ -29,86 +29,48 @@ source_raw:
 # Structured-Agent-Memory（结构化 Agent 记忆）
 
 > [!definition] 定义
-> **Structured Agent Memory** 是按多属性维度组织的纠正性记忆系统，通过属性匹配（而非关键词或向量检索）精确召回与当前任务相关的知识。每个记忆条目携带结构化标签（如模块名、语言、操作类型、失败模式），以及纠正性指令。
+> 以属性、适用条件、来源、版本及状态组织记忆，通过结构化约束与其他检索方式选出适用知识。Berkeley的Tk-Boost研究是面向NL2SQL纠正性知识的实例，而非所有结构化记忆的唯一定义。
 
-## 核心问题：为什么 "Files Are All You Need" 不够
+## 核心问题
 
-当前 agent 记忆的主流范式是无结构 Markdown 文件 + grep/embedding 检索。Berkeley AI Research 指出三个结构性瓶颈：
+原始轨迹、文档与经验可能包含重复、误判或过时信息；将所有内容放入活动上下文有成本及注意力限制。BAIR 2026-07-07观点文章主张面向任务属性选择记忆。文件可包含frontmatter/结构化索引，知识图谱也可执行结构查询，不能将两者统称为不具结构化搜索能力。数据存储与组织、检索算法和知识内容是不同维度。
 
-1. **Context window 有限**：检索所有相关 MD 片段塞入 context 终将崩溃
-2. **延迟成本**：即使 context 够大，全量检索的延迟不可接受
-3. **不可序列化**：大型数据库、代码库不可能序列化进 context
+## Tk-Boost：适用条件与局部纠正
 
-知识图谱（KG）同样受限——缺乏结构化搜索能力，仍然依赖关键词或 embedding 相似度。
+[Agarwal等，Arming Data Agents with Tribal Knowledge（v2，2026-02-17）](https://arxiv.org/html/2602.13521v2) §3–5：
 
-## 结构化记忆的设计
-
-### 多属性组织
-
-每个记忆条目携带结构化属性，每个属性可设为：
-- `*`：普遍适用
-- 具体值列表：仅在匹配时召回
-
-**示例**（数据 agent 场景）：
-
-| 属性 | 示例值 |
-|------|--------|
-| SQL 关键词 | `JOIN`, `GROUP BY` |
-| 表名 | `orders`, `products` |
-| 列名 | `product_name` |
-| 操作类型 | date-time operations |
-| 纠正性指令 | "when performing date-time operations, use fiscal year not calendar year" |
-
-### 与分层记忆的互补
-
-> [!tip] 两个正交维度
-> - **[[Multi-Layer-Memory|分层记忆]]** 解决 **时间问题**：何时存、何时忘、何时从短期晋升到长期
-> - **结构化记忆** 解决 **空间问题**：什么维度的知识与当前任务相关
-> 
-> 两者可组合：每一层记忆都可采用结构化组织，而非只有顶层才结构化。
-
-### 纠正性 vs 原始轨迹
-
-原始 agent trace（包含错误）不适合作为记忆——它会诱导 agent 重复同样错误。结构化记忆存储的是**纠正性知识**（corrective instructions），而非原始执行日志。
-
-### 应用特定 Schema
-
-一个开放问题是如何定义**应用特定的结构化记忆 schema**（作者称之为 "world models for memory"）。类比：为每个应用定义一个 schema，agent 自身可以帮助定义和迭代这个 schema。
-
-## 规模化时的额外挑战
-
-当数千 agent 共享结构化记忆时，还需要解决：
-
-| 挑战 | 相关技术 |
-|------|---------|
-| 并发编辑 | MVCC、copy-on-write、CRDTs |
-| 大规模回滚 | Exactly-once semantics |
-| Livelock 避免 | 语义级补偿（agent 能推理回滚原因） |
-| 记忆冲突 | 共识机制（agent 间协商 schema 定义） |
-| 过时知识 | 进化框架 + 结构化记忆驱动的自我改进 |
+- 从训练查询的错误中提炼纠正陈述及可复用知识，生成适用条件；测试查询独立。
+- 四类匹配字段为SQL关键词、表、列及数据类型。每维可设通配或值集合，按各维是否有交集筛选候选，再由LLM结合实际SQL过滤相关性；不是纯确定性召回。
+- 初稿形成后提供纠正反馈，可按CTE局部检索与修订；最终SQL需执行并核验正确结果。结构化条件不等于语义正确性或执行授权。
+- 原始轨迹仍是核验与重新学习的证据，不应作为无条件操作指令；纠正知识也需适用范围、来源及回归。
 
 ## 关键数据点
 
-| 指标 | 数据 |
-|------|------|
-| 作者 | Berkeley EPIC Data Lab (Parameswaran et al.) |
-| 论文 | arxiv:2602.13521 |
-| 记忆维度示例 | 列名、表名、操作类型、自然语言纠正指令 |
-| 替代方案 | MD 文件 + grep/embedding、知识图谱 |
-| 核心差异 | 属性匹配 vs 关键词/向量匹配 |
+v2 §6 Table 2–6：各数据集训练/测试分别SQLite 34/101、BigQuery 50/155、Snowflake 29/179、BIRD 72/211；独立经验集，指标取两轮平均。作者概述约25%训练比例，但Snowflake表中为29/208，不能把全部数据集都精确写成25%。
+
+| Spider 2 SQLite / GPT-4.1 | 执行准确率 |
+|---|---:|
+| 无知识 | 27.7% |
+| 全量知识（Table 6a） | 35.6% |
+| NL相似度、生成前应用（Table 5） | 31.7% |
+| SQL特征匹配、全SQL修订（Table 5） | 39.7% |
+| 按CTE检索并修订（Table 5） | 44.6% |
+
+该配置净增16.9个百分点；平均调用12.0→15.9，延迟29.6→37.0秒（Table 3）。论文报告修正及回退的比例，但该段对分母措辞不一致，本轮不将18.1%/1.2%解释为条件成功率。Table 6b经验集大小变化也改变测试集，不作严格同一测试集的剂量因果比较。其他模型/数据集有不同收益，未独立复跑。
+
+## 与其他记忆设计的互补
+
+- [[Multi-Layer-Memory]]、[[Three-Layer-Agent-Memory]]：信息类型、持久性与按需加载可以与属性组织组合，不是严格正交的数学维度。
+- [[20260819-ibm-altk-evolve-memory-dosage]]：前轮已校准的AppWorld厂商实验显示知识剂量随模型和任务而变，不保证选择性总是最好。
+- 共享状态需明确并发写入、版本、幂等、实际事务与恢复；MVCC、CRDT、共识或补偿是候选工具，不自动提供exactly-once或语义正确性。按规模选择最小机制。
 
 ## 前提与局限性
 
-- 多属性匹配需要预定义 schema——在开放域知识工作中可能不可行
-- 作者承认 "application-specific structured memory" 是 open question
-- MD + embedding 的"粗暴"方式之所以流行，恰恰因为它不需要预定义 schema
-- 结构化记忆的 schema 定义成本可能高于其在小规模场景的收益
-- 仅数据 agent 场景有实验验证，通用知识工作场景未测试
+Tk-Boost实证限NL2SQL与其评价协议；适用条件生成、解析、LLM过滤及纠正可能失败。结构化Schema需要维护，开放任务可能需混合检索；多维匹配不保证召回或跨域迁移。2026-11-28回核BAIR本地Raw及论文v2关键章节；不复跑、不新增系统、未完整复核IBM实验。Wiki可使用既有frontmatter、来源定位与适用条件；不因论文结果要求迁移数据库或自动创建新Schema。
 
 ## 关联概念
 
-- [[Multi-Layer-Memory]] — 时间维度的记忆分层，与结构化记忆正交互补
-- [[Three-Layer-Agent-Memory]] — 另一种记忆架构视角
-- [[Memory-Architecture]] — 记忆系统的整体架构设计
-- [[Context-Engineering]] — 结构化记忆是 context engineering 的数据源
-- [[Agent-Harness]] — harness 需要管理结构化记忆的读写和一致性
+- [[Memory-Architecture]] — 生命周期、组织与评估。
+- [[Multi-Layer-Memory]]、[[Three-Layer-Agent-Memory]] — 分层组织。
+- [[Context-Engineering]]、[[Agent-Harness]] — 知识按需应用及任务验收。
+- [[Shared-Memory-Contamination]] — 写入授权、来源及冲突处理。

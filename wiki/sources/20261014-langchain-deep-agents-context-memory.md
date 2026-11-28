@@ -7,7 +7,7 @@ original_raw_file: "20261014-langchain-deep-agents-context-memory.md"
 original_body_sha256: "9929e63b6fc79d7c2ba898cdb051db7a7626f6bf9a5e947a8dcbb6a87bc6d879"
 indexed_at: "2026-10-22T16:52:33+08:00"
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-11-28
 tags:
   - source-summary
   - context-engineering
@@ -42,7 +42,7 @@ source_locator:
 
 这使 [[Context-Engineering]] 的运行时定义更完整：不是只有 retrieval（找什么进来），还包括 **context lifecycle management（进来之后如何卸载、压缩、隔离、恢复）**。
 
-#### 核心结论 2：好的 compaction 不是删除，而是把 active context 变成可恢复索引
+#### 核心结论 2：可恢复compaction将活动上下文中的部分历史替换为摘要，并保留按需访问原文的路径
 
 Deep Agents 的 offloading 与 summarization 都强调 recoverability：
 
@@ -50,7 +50,7 @@ Deep Agents 的 offloading 与 summarization 都强调 recoverability：
 - 超大 human message 写入 `/conversation_history/`；
 - summarization 后旧消息虽然从 active window 移除，但原始内容保存在 `/conversation_history/{session_id}.md`，需要时可重新读取。
 
-**判断**：这里真正稳定的原则不是 20K、50K、85% 这些当前实现阈值，而是 **active window ≠ source of truth**。窗口应只承载当前高价值 working set，原始细节留在可寻址的外部存储。
+**判断**：这里真正稳定的原则不是 20K、50K、85% 这些当前实现阈值，而是 **active window ≠ source of truth**。窗口应只承载当前高价值 working set，在适当权限、保留政策、可用backend和恢复工具条件下，原始细节可保存在可寻址外部存储；并非所有内容都应长期保留。
 
 这与 LLM WiKi 自身 `entity/source-summary → raw evidence` 的渐进读取模式高度同构。
 
@@ -73,11 +73,11 @@ always-visible menu / metadata
 
 文章用 competitive analysis 举例：market researcher subagent 可以读取大量原始数据和搜索结果，但主 Agent 只收到三条结论。这样 noisy intermediate state 不会污染主工作线程。
 
-**判断**：subagent topology 可以被理解为一种 **attention isolation primitive**。是否并行只是调度属性；更基础的价值是让高噪声探索发生在独立 context，主 Agent 接收经过 contract 压缩的结果。
+**判断**：subagent topology可作为注意力隔离机制；独立上下文不等于独立身份、数据权限或进程隔离。是否并行只是调度属性；更基础的价值是让高噪声探索发生在独立 context，主 Agent 接收经过 contract 压缩的结果。
 
 #### 核心结论 5：Memory portability 来自“状态外置 + 用户拥有”，而非模型自身记住
 
-Deep Agents 的 long-term memory 是用户控制存储中的普通 Markdown 文件：run 开始 load，每次 model call inject，学习到值得保留的信息后 update。因为记忆不绑定模型提供商，同一 backend 可以换模型而继续读取同一 memory。
+Deep Agents 的 long-term memory 是用户控制存储中的普通 Markdown 文件：run 开始 load，每次 model call inject，学习到值得保留的信息后 update。因为记忆不绑定模型提供商，同一backend可支持模型/供应商切换后继续读取记忆文件，仍需校验接口兼容、权限、指令解释和结果，非无损迁移保证。
 
 这给长期 Agent 一个清晰的架构边界：**memory belongs to the system, not the model session**。模型可以替换，memory/provenance/store 应尽可能保持可检查、可迁移。
 
@@ -91,10 +91,16 @@ Deep Agents 的 long-term memory 是用户控制存储中的普通 Markdown 文�
 ### 3. 跨来源综合
 
 - 与 [[Context-Engineering]]：把已有的“最小高信号 token 集”进一步实现为 middleware 驱动的 context operating system。
-- 与 [[Progressive-Disclosure]]：LangChain 提供了 Skill 层一手实现证据，证明“先目录、后全文”已经成为主流 harness pattern，而不是仅 Wiki 设计原则。
-- 与 [[Compaction]]：补充 `recoverable compaction` 边界——摘要负责 active working set，原文必须保留外部恢复路径。
+- 与 [[Progressive-Disclosure]]：LangChain 提供了 Skill 层一手实现证据，提供“先目录、后全文”的一手框架设计实例；不能据一篇厂商指南证明市场采用比例或通用性能。
+- 与 [[Compaction]]：补充 `recoverable compaction` 边界——摘要负责 active working set，若任务需要可恢复压缩，应按授权和保留策略保存可回查路径；删除请求及安全限制仍需执行。
 - 与 [[Agent-Harness]]：context management 是 harness responsibility，不应要求模型仅靠 prompt 自律地“记少一点”。
 - 与 [[Retrieval-as-a-Subagent]]：subagent 不只承担 retrieval，还承担 noisy-context containment。
+
+## 回核与验收边界（2026-11-28）
+
+回核[canonical原文](https://www.langchain.com/blog/context-engineering-deep-agents-remember)（2026-10-14）Offloading、Summarization、Skills、Subagents、Long-term memory章节。20K工具结果、50K用户消息和85%占用为文章所述近似或默认触发条件，不等于当前所有SDK版本、模型与backend的默认值；本轮未运行SDK或查验最新实现。按需读取的原文需确实存在、可访问、版本匹配且不会越权。用户可控文件与model portability是架构属性，而非语义正确、自动合规或成本优势证明。
+
+**本库综合**：知识外置与渐进式披露有利于限制工作集，但需用真实查询、证据找回率、摘要失真、正常任务效用和访问控制共同验收。保留既有Wiki分层与索引，不引入Deep Agents依赖。
 
 ## 编译决策
 
