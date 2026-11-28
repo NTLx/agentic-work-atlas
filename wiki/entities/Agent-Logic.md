@@ -7,7 +7,7 @@ aliases:
   - Agent 逻辑
 definition: "运行在 Agent harness 内、模型之外的工作流专用逻辑层，用知识图谱、程序分析、算法、策略执行和验证结构缩小 LLM 的推理空间"
 created: 2026-06-02
-updated: 2026-06-15
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -33,7 +33,7 @@ source_raw:
 
 ## 核心问题
 
-企业 Agent 不只是回答问题，而是要进入长周期、多系统、强权限、强合规的真实工作流。单纯扩大上下文窗口会把问题推给 LLM：更多 token、更高成本、更大幻觉空间，也更难审计。
+企业 Agent 不只是回答问题，而是要进入长周期、多系统、强权限、强合规的真实工作流。扩大上下文可提高可见性，也可能增加处理成本、干扰与审计负担；实际影响依任务、模型、检索及预算而定。
 
 Agent logic 的判断相反：稳定结构不该反复作为自然语言上下文塞给模型，而应该变成 harness 内的可执行原语。
 
@@ -64,15 +64,15 @@ Prompt engineering 把约束写进模型输入；agent logic 把约束写进系�
 ## 价值
 
 - **降低上下文成本**: 让模型只看当前必要证据，而不是吞下整个企业环境。
-- **提高正确率**: 用图谱、程序分析和规则引擎减少无约束推理。
+- **候选质量收益**：通过图谱、程序分析和规则引擎收窄候选空间；错误图谱、遗漏路径和过严规则也可降低正确率。
 - **增强可审计性**: 决策路径可以追溯到规则、图边、证据节点或验证结果。
 - **沉淀组织能力**: 一次部署中的流程知识可以回流为下次部署的 harness 资产。
 
 ## 关键数据点
 
 - IBM watsonx Code Assistant for Z / App Insights 在最高 1M 行代码、1K 程序任务中，相比 frontier LLM-only baseline 保持略高性能，同时 token 消耗低约 30 倍。
-- Aster 测试生成在 75+ 个 IBM CIO Java 应用预生产运行中，将 line / branch / method coverage 从约 20% 提升到约 45%，相对某些 coding agent token 消耗低至约 15 倍。
-- Instana I3 在 ITBench 上相对 ReAct agent with GPT-5.1 最高提升 4 倍。
+- Aster 测试生成在 75+ 个 IBM CIO Java 应用预生产运行中，作者报告 line/branch/method coverage 改善幅度为 +20%–45%（原文未说明相对百分比还是百分点，不能理解为覆盖率从20%升到45%），相对某些 coding agent token 消耗低至约 15 倍。
+- Instana I3 在 ITBench 对GPT-5.1 ReAct最高约4倍；换Gemini 3 Flash的ReAct后据作者仅低17%、Token多1.6倍，模型/实现和基线影响比较，不是架构纯因果效应。
 - Maximo Condition Insights 内部 pilot 将资产分析时间从 15-20 分钟降到 15-30 秒，资产覆盖率从约 1% 提升到约 30%。
 
 ## 前提与局限性
@@ -81,7 +81,7 @@ Agent logic 不等于把所有业务规则写死。过重的逻辑会让系统�
 
 更准确的原则是：把稳定、可验证、低熵的部分做成逻辑；把开放、语义、跨上下文的部分留给模型。
 
-这些指标主要来自 IBM Research 文章中的 IBM 产品、benchmark 或内部 pilot，适合证明 agent logic 路线的机制价值，但不能直接外推为所有企业、所有工作流的通用收益。
+这些指标主要来自 IBM Research 文章中的 IBM 产品、benchmark 或内部 pilot，支持相关机制的可行性与作者报告的特定结果，不是独立复现或单一机制因果证明。2026-11-28核对[IBM Research原文](https://huggingface.co/blog/ibm-research/agent-logic-and-scalable-ai-adoption)的四项用例与两项案例；Token比不等于全成本比，覆盖率不等于缺陷检出或产品质量。
 
 ## 关联概念
 

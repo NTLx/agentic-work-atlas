@@ -94,7 +94,7 @@ Addy Osmani 指出：Harness Engineering 是一种棘轮式的迭代过程。每
 
 ### Harness 是可实验对象，不是胶水堆积
 
-既有材料报告固定模型修改 Harness 后 benchmark 排名改善；本轮未复验榜单快照、运行预算及候选配置，不保留精确排名作为已核实数据。[[20260613-NLAH-natural-language-agent-harnesses]] 进一步把 Harness 表示成可执行自然语言并做消融：文件持久化状态稳定增益，多候选搜索和上下文压缩却可能降低表现。正确做法是用任务级评测选择机制，而不是不断累加脚手架。
+既有材料报告固定模型修改 Harness 后 benchmark 排名改善；本轮未复验榜单快照、运行预算及候选配置，不保留精确排名作为已核实数据。[[20260613-NLAH-natural-language-agent-harnesses]] 进一步把 Harness 表示成可执行自然语言并做消融：论文v2 Table 5逐项添加模块，文件状态在两个基准正增益；多候选搜索方向不同，压缩在该配置均为负。详见 [[NLAH]]，不外推固定组件选择。正确做法是用任务级评测选择机制，而不是不断累加脚手架。
 
 实现形态也在分化：[[20260623-ibm-cuga-agent-harness]] 把治理策略内置进运行时；[[20260702-qwen-agent-harness-practice]] 则强调 Harness 的短期收益很高，但其中一部分会随基础模型进步而淘汰。Harness 因而必须同时具备可验证性和可替换性。
 

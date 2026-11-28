@@ -523,7 +523,7 @@ ReAct 每步交织推理和行动（灵活但每步成本高）。Plan-and-Execu
 
 IBM Research 的 [[Agent-Logic|agent logic]] 给这个问题增加了企业侧边界：在强结构工作流中，harness 不应只做模型调用和工具循环，还应承载知识图谱、程序分析、策略执行、图遍历和验证逻辑。判断标准不是”harness 越厚越好”，而是稳定、可验证、低熵的企业约束应留在模型外，开放、语义、跨上下文的部分才交给 LLM。
 
-[[NLAH|Natural-Language Agent Harnesses (NLAH)]] 提出了另一种可能：把驾驭策略从代码中外置为可执行的自然语言文档。消融实验首次用数据回答了”harness 该保留哪些模块”——文件持久化状态是最稳正贡献，多候选搜索和上下文压缩反而有害。
+[[NLAH|Natural-Language Agent Harnesses (NLAH)]] 提出了另一种可能：把驾驭策略从代码中外置为可执行的自然语言文档。论文v2 Table 5在Basic条件逐项添加模块：文件状态在SWE/OSWorld均有正增益，多候选搜索分别−1.6/+2.8个百分点，压缩−1.0/−8.3；只说明该配置的条件增量，不能推出普遍优劣。详见 [[NLAH]]。
 
 ## 脚手架隐喻
 

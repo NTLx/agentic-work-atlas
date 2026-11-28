@@ -7,7 +7,7 @@ aliases:
   - 自然语言智能体驾驭层
 definition: "将 Agent 驾驭策略从代码中外置为可执行的自然语言文档，由智能驾驭运行时（IHR）解释执行，使驾驭模式可检视、可移植、可消融"
 created: 2026-06-13
-updated: 2026-06-13
+updated: 2026-11-28
 evidence_level: medium
 claim_type: extracted
 tags:
@@ -30,11 +30,11 @@ source_raw:
 
 ## 关键数据点
 
-- **核心论文**: 《Natural-Language Agent Harnesses》，提出 NLAH + IHR 双层架构
-- **性能等效**: 在 SWE-bench Verified、Terminal-Bench 2.0、OSWorld 三类基准上，IHR 执行的 NLAH 取得与代码驾驭层相当的成绩
-- **策略压缩**: Live-SWE 从 6.01 万 token 代码降到 2.9k token 的 NLAH（压缩约 20 倍）；MHTBA 从 1.05 万降到 0.8k
-- **代价**: 当前原型运行时的 token/调用开销更高
-- **消融发现**: 文件持久化状态是最稳正贡献（Δ 约 +2.6/+13.9）；多候选搜索和上下文压缩反而有害；自我进化模块提升性能但 token 消耗大幅上升
+- **核心论文**: Pan et al., [Natural-Language Agent Harnesses, arXiv:2603.25723v2](https://arxiv.org/html/2603.25723v2)（2026-05-18）；本库Raw为6月13日二手解读，本轮直接核对论文§4–5、Tables 1–5。
+- **任务结果（Table 1）**：按原代码/普通Prompt/IHR分别报告 SWE Verified 67.0/77.0/73.0；TB2 36.0/57.3/53.9；OSWorld 47.1/47.9/46.3。结果支持特定实现可行，不是统计等效检验；IHR未超过普通Prompt。
+- **静态表示（Table 2）**：Live-SWE 60.1k→2.9k、MHTBA 10.5k→0.8k、SeeAct 47.5k→1.4k token；统计审计过的代码材料与策略文件，不是整个系统代码量或实际推理token。
+- **代价**：当前原型常有额外调用/Token，但依配置不同；Live-SWE NLAH实际用时6.1分钟、原代码28.9分钟，不能概括为所有成本都增加。
+- **模块干预（Table 5）**：在各自 Basic 条件上逐个添加模块，而非从完整配置逐个删除。SWE/OSWorld百分点变化：文件状态+2.6/+13.9，证据回答+2.8/+2.8，自我进化+5.8/+8.4，多候选−1.6/+2.8，压缩−1.0/−8.3，Markdown记忆−2.8/+5.6。仅支持这两个任务和当前运行条件的增量，未证明模块独立或普遍负收益。
 
 ## 四层架构
 
@@ -47,7 +47,7 @@ source_raw:
 
 ## 三种驾驭方式谱系
 
-从控制强到弱：
+作者Fig.1给出的概念谱系（不是跨系统可测量的全序）：
 1. **代码驾驭层（Code Harness）**: 程序逻辑硬性控制，最强确定性但策略与实现交织
 2. **NLAH + IHR**: 自然语言承载策略 + 运行时解释执行，放弃硬确定性但获得可编辑性和可消融性
 3. **自驾驭（Self-Harnessing）**: 控制器模型直接驾驭其他模型，无外部驾驭层
@@ -55,7 +55,7 @@ source_raw:
 ## 前提与局限性
 
 - **前提**: NLAH 假设驾驭策略可以被自然语言充分精确地表达，且 LLM 能忠实遵循
-- **机制遵循不均**: 契约式、可即时验证的机制遵循度高；跨阶段、跨子 agent 协调的机制遵循度低
+- **机制遵循不均**：Table 4 的IHR artifact contract约1.00/0.96、handoff recall约0.32/0.55（Live-SWE/MHTBA）；Prompt为直接上下文、IHR为父子交接，指标口径需区分。高契约符合率不等于安全或整体正确。
 - **自然语言不精确性**: 语义约束可能被欠定义、被不同模型不同解读
 - **安全风险**: 可移植的驾驭逻辑可能降低传播危险工作流的门槛；驾驭层中介工具使用，可能引入提示注入和供应链污染攻击面
 
@@ -63,5 +63,5 @@ source_raw:
 
 - [[Agent-Harness]] — NLAH 是 Harness 的一种新范式表达
 - [[Harness-Engineering]] — NLAH 使 Harness 工程从代码层上升到策略层
-- [[Context-Rot]] — 消融实验发现上下文压缩反而有害，与 Context Rot 研究方向一致
+- [[Context-Rot]] — 该实验的压缩配置在两个任务上表现下降，不外推所有压缩策略
 - [[Thin-Harness-Fat-Skills]] — NLAH 四层架构的关注点分离与此设计哲学相似

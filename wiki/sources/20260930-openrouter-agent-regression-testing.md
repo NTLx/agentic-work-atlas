@@ -6,7 +6,7 @@ source_raw:
   - "[[20260930-openrouter-agent-regression-testing]]"
 raw_state: index
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-11-28
 tags:
   - source-summary
   - agent-evaluation
@@ -31,7 +31,7 @@ source_locator:
 
 ### 1.1 Agent 的“代码版本”不足以定义被测系统
 
-传统软件里，一个 commit 往往足以定位实现版本；Agent 系统不是这样。来源列出三类会触发行为变化的修改：
+commit只能定位已版本化代码；传统软件及Agent均可能受外部依赖、配置、数据和运行环境变化影响，Agent额外受模型与上下文漂移影响。来源列出三类会触发行为变化的修改：
 
 1. system prompt 的一行文字；
 2. model swap / alias 背后的 checkpoint 更新；
@@ -49,13 +49,13 @@ Behavior
     inference parameters)
 ```
 
-**判断**：旧版本“测试通过”的对象不是单纯 prompt 或代码，而是整个 execution envelope。上述任一变量变化，旧 pass 都需要重新证明。
+**判断**：旧版本“测试通过”的对象不是单纯 prompt 或代码，而是整个 execution envelope。上述变量变化可能使原证据失去适用性；按风险和受影响范围重跑，关键发布门禁不能仅复用历史pass。
 
 尤其 retrieval/context 的回归最隐蔽：输出仍可能非常流畅，但依赖的 policy 段落因为 chunking、history 或 tool response 变化而不再进入模型可见上下文。
 
 ### 1.2 Locked case set 是因果可比性的前提
 
-来源明确要求锁定 case set：如果候选版本测试过程中顺便重写 case，就同时改变了 treatment 与 measurement，历史比较失去意义。
+来源明确要求锁定 case set：如果候选版本测试过程中顺便重写 case，就同时改变了 treatment 与 measurement，修改部分case破坏直接总体比较；可重跑新基线，保留未变case的配对结果用于限定范围比较。
 
 ```text
 baseline system ─┐
@@ -115,7 +115,7 @@ automatically candidate regression
 因此 provenance 至少要记录：
 
 - requested model identifier；
-- actual concrete served model/version；
+- 实际served model/version（仅在provider披露时记录；不能把名称当不可变权重hash）；
 - provider（需要时）；
 - supported/used inference parameters。
 
@@ -168,6 +168,8 @@ Golden Set 需要随 production drift 长期演化；Regression Set 在一次 co
 这使“评测集版本”本身成为实验边界。修改 case 后不应继续把新结果与旧 baseline 当成同一测试条件。
 
 ## 3. 证据边界
+
+- 2026-11-28回核[原教程](https://openrouter.ai/blog/tutorials/ai-agent-regression-testing-after-a-prompt-or-model-change/) locked case set、change triggers与baseline建议。原文每case结构断言及两侧失败即测试坏的说法较强；本库按任务合同及根因验证限定，不把共享失败自动判为测试系统缺陷。
 
 - 这是 OpenRouter/Ori Eval 导向的厂商教程，不是跨框架对照研究。
 - 教程中的具体模型、价格、provider 数量和一次 model-swap 结果是时间敏感示例，不进入稳定知识结论。

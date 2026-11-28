@@ -4,7 +4,7 @@ title: "Beyond LLMs: Why Scalable Enterprise AI Adoption Depends on Agent Logic"
 source_raw:
   - "[[20260602-ibm-agent-logic-scalable-ai-adoption]]"
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-11-28
 tags:
   - source-summary
   - enterprise-ai
@@ -19,12 +19,12 @@ tags:
 
 ### 1. 浓缩
 
-- **核心结论1**: 企业 Agent 的规模化瓶颈不是模型上下文不够长，而是缺少运行在模型外的 workflow-specific logic。
+- **核心结论1**: IBM提出workflow-specific logic可缓解部分上下文、流程与治理问题；不证明它是唯一规模化瓶颈。
   - 关键证据: IBM 将 agent logic 定义为 harness 内的知识图谱、程序分析、算法、策略执行、图遍历和自适应规划，用来缩小上下文空间并引导 LLM 沿企业工作流行动。
 - **核心结论2**: 生产级企业 Agent 需要把确定性结构放回系统，而不是把所有推理都交给 LLM。
-  - 关键证据: IBM 在主机代码理解、测试生成、IT incident investigation、合规自动化、医疗客服和工业资产维护案例中，都用程序分析、图结构、policy-as-code 或 DAG 验证降低 token、幻觉和 unsupported claims。
+  - 关键证据: IBM 在主机代码理解、测试生成、IT incident investigation、合规自动化、医疗客服和工业资产维护案例中，报告不同用例的程序分析、图结构、策略或DAG；指标与基线不同。Aster原文是覆盖率改善+20%–45%（单位未明确），不是覆盖率20%→45%；I3对GPT-5.1 ReAct最高4倍，但Gemini 3 Flash ReAct据作者仅低17%、多1.6倍Token。
 - **核心结论3**: Agent logic 的核心价值是把企业隐性约束变成可执行、可审计、可复用的系统资产。
-  - 关键证据: 医疗 CUGA benchmark 中，policy-as-code 不依赖 prompt 或 fine-tuning，在多个模型族上提高任务正确率，并加入 least-privilege disclosure、人类升级路径和显式合规规则。
+  - 关键证据: 医疗 CUGA benchmark 中，policy-as-code 不依赖 prompt 或 fine-tuning，作者自报列明模型族的准确率改善15%–26%（原文未明确百分比或百分点），运行时执行最小披露、升级及政策；不等于通用合规证明。
 
 ### 2. 质疑
 
@@ -40,7 +40,11 @@ tags:
 - **与 [[Enterprise-AI-Factory]] 对标**: AI factory 解决组织如何规模化生产 AI 能力；agent logic 解释这条生产线内部应如何把领域约束做成可复用软件原语。
 - **与 [[AI-Deployment-Valley-of-Death]] 对标**: agent logic 可能降低从 pilot 到 production 的死亡谷风险，因为它减少上下文成本、幻觉空间和不可审计决策。
 
-### 关联概念
+### 证据边界
+
+2026-11-28核对[IBM原文](https://huggingface.co/blog/ibm-research/agent-logic-and-scalable-ai-adoption)四项用例及两项案例；未复跑底层benchmark或独立验证内部pilot。Token节省不等于总成本节省，覆盖改善不等于缺陷检出率。
+
+## 关联概念
 
 - [[Agent-Logic]]
 - [[Local-Bounded-Reasoning]]

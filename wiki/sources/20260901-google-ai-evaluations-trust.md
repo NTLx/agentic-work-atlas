@@ -6,7 +6,7 @@ source_raw:
 canonical_url: "https://dev.to/googleai/how-to-design-ai-evaluations-you-can-actually-trust-41c3"
 raw_state: full
 created: 2026-09-02
-updated: 2026-09-02
+updated: 2026-11-28
 tags:
   - source-summary
   - evals
@@ -25,9 +25,9 @@ claim_type: mixed
 
 - **核心结论1**：可信评测首先是环境适配问题，而不是把同一套 grader 套到所有任务上。评测者要先明确 sandbox、工具、依赖、真实资源和输出捕获方式，再决定使用确定性检查、mock 资源、隔离凭证，还是只评估计划；初始设计优先采用 one-shot prompt。
   - 关键证据：原文 `Know Your Evaluation Environment` 节要求根据 sandbox 能否确定性访问、资源是否需要隔离以及输出如何被捕获来调整 grader，并建议避免 interactive prompts。
-- **核心结论2**：评测必须让被测工具产生可观测差异，同时只惩罚 prompt 明确要求的结果，并评估最终目的而非一条预设路径。若 baseline 已接近满分，应提高任务难度或重新审视工具范围；若 agent 绕过自定义工具仍得到正确答案，这本身是工具价值的反馈。
+- **核心结论2**：评测必须让被测工具产生可观测差异，同时只惩罚 prompt 明确要求的结果，并以实际任务目标为主，避免把非合同路径误作正确性；已声明的安全政策、权限和过程约束仍须独立检查。若 baseline 已接近满分，应提高任务难度或重新审视工具范围；若 agent 绕过自定义工具仍得到正确答案，这本身是工具价值的反馈。
   - 关键证据：`Avoid the Ceiling Effect`、`The Prompt-Grader Mismatch` 和 `Grade the Destination, Not the Journey` 三节分别要求提高区分度、避免 scope creep、不要把工具调用轨迹当成最终质量。
-- **核心结论3**：评测集的信号质量来自真实且互不重复的能力覆盖，而不是样本数量本身。每个 prompt 应对应独立概念或能力，覆盖真实用户旅程，并合并重复题以降低过拟合、噪声和 token 浪费。
+- **核心结论3**：评测集的信号质量来自真实且互不重复的能力覆盖，而不是样本数量本身。作者建议尽量用差异化任务减少冗余；重复运行同一case可测随机性，刻意重叠可验证关键交互或风险覆盖，不能机械删除。
   - 关键证据：`Curate Your Evaluation Dataset` 节要求使用真实用户旅程、把 prompt 当作传统测试中的 code coverage，并删除重叠题目。
 
 ### 2. 质疑
@@ -45,7 +45,7 @@ claim_type: mixed
 
 ## 证据边界
 
-原文事实来自 Google Developer Relations 的单篇实践文章；“评测是工作流契约”和与另外两篇形成共同结构属于本次编译的综合判断，不是原文的实验结论。文章提到的下一篇 rubric 文章尚未作为本次来源使用。
+2026-11-28回读本地完整Raw（75行）。原文事实来自 Google Developer Relations 的单篇实践文章；初始one-shot、只评分prompt所述事项是针对技能评测的建议，不排除多轮任务与外部已声明的安全合同；“评测是工作流契约”和与另外两篇形成共同结构属于本次编译的综合判断，不是原文的实验结论。文章提到的下一篇 rubric 文章尚未作为本次来源使用。
 
 ### 关联概念
 

@@ -73,14 +73,14 @@ Palantir AIP Evals 文（2024-10）把评测集从"资产"升级为"迭代引擎
 
 1. **构建 Test Bench**：用 ontology 历史数据生成 Object Set-backed Test Cases（如用专家标注的历史召回决策作 ground truth）。
 2. **定义 Evaluators**：内置 no-code 比较器（如 Exact Boolean Match）/ 自定义 Python/TypeScript / LLM-as-judge。
-3. **重复运行**：每个 test case 默认跑 3 次以应对 LLM 非确定性。
+3. **重复运行**：Palantir虚构示例将每个case配置为3次运行；不是默认或统计充分样本数。
 4. **Drill-down 迭代**：aggregate 指标定位失败案例 → 检查 inputs/intermediate outputs/final response → 三种修复路径（改 prompt / 补数据 / 加 tool handoff）→ re-run 防回归。
 
-示范曲线：产品召回系统准确率 41.3% → 修 prompt（补充 expert review 触发条件）→ 93.3% → 剩余失败定位为 LLM 数学错误（1.865 vs 正确 1.864）→ handoff 给 Calculator tool（[[Transparent-Tool-Handoff]]）→ 通过。
+虚构Titan示例：41.3%→修prompt→93.3%；某失败case算出高于1.865的值，人工复核1.864，引入Calculator后该case通过，未报告最终全套通过率。历史召回决定与是否应升级专家审查不是天然同一标签。
 
-Anthropic 产品团队的 "evals are the new PRDs"（[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]）从 PM 工作流侧确认同一趋势：用户反馈 → 读失败轨迹 → 凝结为 eval set → 可度量改进，evals 取代 PRD 承担需求定义功能。两条线索（平台基础设施视角 + PM 工作流视角）互为验证。
+Anthropic 产品团队的 "evals are the new PRDs"（[[20260730-lenny-anthropic-first-technical-pm-dianne-penn]]）从 PM 工作流侧确认同一趋势：用户反馈 → 读失败轨迹 → 凝结为 eval set → 可度量改进，evals可作为明确行为需求的验收合同；Penn明确每个模型仍有PRD。两个案例分别提供产品和评测机制视角，不构成独立效果复验（见[[Evals-as-PRD]]及第47轮校准的源摘要）。
 
-⚠️ 边界：ground truth 来自人类历史决策时，evals 只能收敛到人类历史判断，不能超越它；3x 重复是朴素处理，pass@k 阈值与分布偏差校正才是真正的工程难点（参见 [[Evaluator-Miscalibration]]）。
+⚠️ 边界：ground truth 来自人类历史决策时，历史判断可能有偏差、标签目标可能改变；应以独立证据校准。重复次数、pass@k与单次成功率须明确区分，按风险和方差设计（参见 [[Evaluator-Miscalibration]]）。
 
 ## 评测题目设计的信号质量
 
@@ -88,7 +88,7 @@ Google Developer Relations（2026-09）补充了评测集的题目设计约束�
 
 **判断**：评测集的信号质量首先取决于题目是否能区分工具增量、覆盖独立能力并避免把未声明的要求偷偷交给 grader。
 - **证据**：[[20260901-google-ai-evaluations-trust]]
-- **边界**：这些规则来自实践指南，不是带对照组和置信区间的因果研究；多轮交互、审批顺序或安全停机只有在被明确写入需求时，才应进入路径 rubric。
+- **边界**：这些规则来自实践指南，不是带对照组和置信区间的因果研究；显式业务/安全合同（可来自授权政策或系统要求而非仅用户prompt）规定的交互、审批或停机可进入路径rubric；不得事后增加未声明的偏好。
 
 ## 评测集的业务语义治理
 
@@ -112,9 +112,9 @@ Golden eval contract
 + frozen baseline
 ```
 
-生产流量给出真实用户频率与失败模式，但纯频率采样会让低频、高损失 case 被 head traffic 淹没。因此评测集既要忠实表示 observed distribution，又要主动 overweight critical tail；synthetic case 更适合作为有 provenance 的补洞层，而不是静默混入真实流量。
+生产流量给出真实用户频率与失败模式，但纯频率采样会让低频、高损失 case 被 head traffic 淹没。可分别覆盖observed distribution与critical tail；风险过采样后的总体通过率不等于部署分布平均成功率，应分别报告分层表现与关键门禁；synthetic case 更适合作为有 provenance 的补洞层，而不是静默混入真实流量。
 
-**第一轮 eval 也在验证 oracle 本身。** 来源要求 domain expert 标注 expected behavior，并用 reviewer disagreement 暴露 rubric ambiguity；baseline 失败应继续区分真实系统失败、错误/含糊的 expected answer、以及 evaluator defect。也就是说，评测文件并不会因为被命名为 golden 就自动成为 ground truth。
+**第一轮 eval 也在验证 oracle 本身。** 来源要求 domain expert 标注 expected behavior，并用reviewer disagreement提示可能的rubric歧义、证据不足、多解或标注差异；baseline 失败应继续区分真实系统失败、错误/含糊的 expected answer、以及 evaluator defect。也就是说，评测文件并不会因为被命名为 golden 就自动成为 ground truth。
 
 另一个重要增量是版本治理：
 
@@ -151,7 +151,7 @@ exact eval-set version
   → compare
 ```
 
-**判断**：case-set edit 应视为 experiment/schema boundary，而不是无害的测试维护。只有在新版本明确建立新 baseline 后，才能继续做纵向回归比较。
+**判断**：case-set edit 应视为 experiment/schema boundary，而不是无害的测试维护。新版本需重跑基线；保留未改变的锚定case可作有范围的纵向比较，不必废弃全部历史结果。
 
 这条规则与上一节 Golden Set 的 refresh 要求构成两个时间尺度：
 
@@ -199,6 +199,6 @@ expert-authored project worlds
 - [[Forward-Deployed-Engineer]] — FDE 在现场提取和维护评测集
 - [[Tacit-Knowledge-Lock-In]] — 评测集如果不可导出，会成为新的供应商锁定机制
 - [[Integration-Wall]] — 评测集必须覆盖真实生产约束，而不是只验证沙盒能力
-- [[Hardware-Sovereignty]] — 本地部署让评测集和推理日志保留在企业控制范围内
+- [[Hardware-Sovereignty]] — 本地部署可能支持企业控制评测集与日志；仍依赖实际数据流、权限、供应商遥测与备份治理
 - [[Distributional-Alignment]] — 评测集把训练历史是否贴近部署任务变成可观察证据
 - [[Specialized-Small-Models]] — 小模型是否足以进入生产，取决于评测集上的质量、稳定性和成本表现
