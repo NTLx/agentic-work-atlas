@@ -9,6 +9,8 @@ tags:
 
 # Explore：Agent Attack Surface 的 Topic 边界与层级
 
+> **2026-11-28 生命周期核销**：结构候选已于 2026-09-18 晋升 [[Agent-Attack-Surface]]（见 [[2026-09-18]]），[[20260707-ai-agent-traps]] 与 [[20260824-forge-one-polluted-page-llm-recommenders]] 早已为 index 来源。旧待建 Topic/剪藏请求不再有效；现行 Topic 为准。Måløy 系列仍非跨产品独立复现，FORGE 推荐输出不等于工具副作用；结构整合资格不证明因果链或普遍攻击覆盖。本轮未重新核论文正文。
+
 ## 研究问题
 
 当前是否有足够的结构证据，把 `Agent-Traps`、`Agent-Perception-Gap`、`Context-Collapse`、`Prompt-Injection-Risk` 与 `AI-Worm` 组织成独立的 `Agent-Attack-Surface` Topic，同时不复制 `Agent-Security` 的“检测→判定→授权→执行→撤销/恢复”控制生命周期？本轮只做 promotion candidate 验收，不创建稳定 Topic，也不把结构证据升级为攻击成功率或控制效果。

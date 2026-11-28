@@ -10,18 +10,20 @@ source_locator:
   - "class-dependent miscalibration and aggregate-metric masking"
   - "uncertainty-based deferral can degrade task performance"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - governance
   - verification
-evidence_level: high
+evidence_level: medium
 claim_type: extracted
 ---
 
 # An Empirical Analysis of Calibration and Selective Prediction in Multimodal Clinical Condition Classification
 
 ## 编译摘要
+
+> 2026-11-28 复核：本地 Raw 为 source locator 摘录，已回核 PMLR 官方摘要；PDF 仍未成功读取。下列结论限于摘要所报告的任务特异性误校准，不代表已经验证完整方法、样本、图表或真实专家接管。
 
 ### 1. 浓缩
 
@@ -35,7 +37,7 @@ claim_type: extracted
 ### 2. 质疑
 
 - 这是 ICU 多标签分类，不能直接外推到客服、SRE 或开放式 Agent。
-- 论文没有真实专家队列和人工接管成本。
+- 摘要及本地摘录未提供真实专家队列和人工接管成本；完整论文是否另有相关测量尚未核验。
 - 结果说明 threshold routing 的风险，不证明复杂 facilitator 一定更好。
 
 ### 3. 对标

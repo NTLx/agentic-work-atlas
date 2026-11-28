@@ -11,6 +11,8 @@ tags:
 
 # Explore：Agent 外部效果结算与权威终态
 
+> **2026-11-28 结算复核**：保留原六组候选材料和受控实验定位；精确 URL/ID 检查尚未发现这六组同身份的独立 Source Summary。[[20260919-microsoft-saga-compensation]] 已编译的是 Dataverse/Dynamics 365 Saga 指南，而非本文 Azure Compensating Transaction Pattern；不能将相邻材料当作同一来源结算。既有 [[Agent-Security]] 及 [[research-agenda]] 已承载效果对账边界。不同风险、事务协议与 provider 契约可以有等价验收证据，不要求一律具有独立签名 receipt 或全套字段；尚无新联合实验，不恢复旧 P0/P1 剪藏队列，不把不同论文局部结果拼成同案效果证明。
+
 ## Scope
 
 本轮是对 `EX-005`「动作授权、独立执行点与撤销/恢复是否是独立必要门」的定向深化，不创建新的 Explore。问题从“能否撤销”收窄为：在事前授权、动作身份绑定、签名执行历史和 outbox/dispatch 状态都存在时，什么证据才能证明外部业务效果已经收敛到权威终态。

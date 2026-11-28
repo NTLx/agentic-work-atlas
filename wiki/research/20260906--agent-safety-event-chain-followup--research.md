@@ -10,6 +10,8 @@ tags:
 
 # 结论
 
+> **2026-11-28 结算复核**：Azure SRE Agent 审计文档已编译为 [[20260327-azure-sre-agent-audit-mitigation-metrics]]，不可重复剪藏；当前 [[research-agenda]] 已将 CR-004 并入 EX-005。原文各事故的独立复核状态仅为 2026-09-06 当时已访问材料所见，不是当前状态断言。本轮未重开各事故报告，不以历史计划中的 review 当作已完成，也不因缺独立 Source Summary 直接恢复旧工单。
+
 **Explore verdict：`refined`；对“同一事件身份下完整闭链”的合格增量：`no_delta`。**
 
 本轮找到了新的、未出现在两份基线研究稿中的第一方材料：真实事故报告、生产运维 postmortem，以及带关联键的 Agent 审计/安全日志文档。但在所核读的公开材料中，没有一份同时在同一事件身份下公开并分开记录以下全链条：

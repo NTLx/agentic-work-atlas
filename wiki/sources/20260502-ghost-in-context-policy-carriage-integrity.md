@@ -10,7 +10,7 @@ source_locator:
   - "pressure replay across AutoGen/tau3 and OpenHands/SWE-bench traces"
   - "ControlCapsule guidance and exact replay + preflight baseline; 0/90 behavioral negative boundary"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - agent-security
@@ -27,7 +27,7 @@ claim_type: mixed
 
 - **核心结论 1：策略“曾经在上下文里”不等于策略在动作前仍然有效。**
   - 关键证据：论文把 policy carriage 拆成存在、语义健全、对象绑定，并在压力 replay 中观察到 task-local policy 的 eviction / weakening / over-budget continuation。
-- **核心结论 2：控制状态需要独立预算与 preflight。**
+- **核心结论 2：独立预算与 preflight 是作者建议的控制状态设计，并非已证必要条件。**
   - 关键证据：作者建议 typed provenance、control-budget isolation、active-policy fit check、fail-closed overload 和 action-boundary enforcement。
 - **核心结论 3：state failure 不能直接偷换成 behavioral harm。**
   - 关键证据：固定 assembler 行为校准中 0/90 unsafe-action proposals、0/90 unguarded policy violations。

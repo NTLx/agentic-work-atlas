@@ -10,6 +10,8 @@ tags:
 
 # 结论先行
 
+> **2026-11-28 结算复核**：六个材料均已编译为 [[20260609-human-ai-teaming-calibration]]、[[20260629-selective-prediction-clinical-calibration]]、[[20211213-human-ai-interaction-selective-prediction]]、[[20260514-alibaba-agentic-ai-hitl-field-experiment]]、[[20260919-google-sre-ai-operator-handoff]]、[[20260610-aws-agentic-handoff-contract]]。PMLR 官方页摘要已重新核读，PDF 下载仍因 application/octet-stream 未取得正文；本地 Raw 为有限 locator，不能将已编译等同方法/全文核验。原六项来源摄取结算，原 E2 方法证据缺口仍在；不把临床离线校准当真人接管实测。EX-003 的独立接收者/时序残差未证，现行 [[research-agenda]] 保留同案触发，不恢复泛来源搜索。
+
 **执行状态：部分完成；建议 EX-003 disposition 为 `refined`，独立必要门的效果证据仍为未决。** 六项指定来源均已调查，其中五项取得相关一手正文；PMLR ICU 研究仅核验官方论文页及摘要，PDF 未完成正文核读。本文是 bounded Explore 的研究建议，不代表 agenda 裁决或稳定知识晋升。
 
 现有材料支持把 `trigger/type → route/receiver → packet → human action → outcome` 分开记录，但不能证明“交接包完整性 + 接收面/升级时机”构成独立于 EX-002 的普遍必要门。最接近固定接收面因果检验的是消息实验 E3：固定图片任务、模型与候选图片集，随机改变是否展示转交状态及模型预测，人类准确率随之改变。它证明消息呈现可以改变接收者行为，未证明更完整的证据包必然更好，也未排除这属于 EX-002 的证据解释问题。

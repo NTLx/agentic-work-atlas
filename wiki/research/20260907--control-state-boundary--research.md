@@ -9,6 +9,8 @@ tags:
 
 # EX-006 控制状态抵达执行边界：公开证据复核
 
+> **2026-11-28 结算复核**：八项论文均已有同身份 Source（[[20260502-ghost-in-context-policy-carriage-integrity]]、[[20260621-governance-decay-constraintrot]]、[[20260514-sleeper-memory-poisoning]]、[[20260610-smsr-runtime-memory-provenance]]、[[20260729-memsecbench-memory-lifecycle]]、[[20260321-oap-pre-action-authorization]]、[[20260218-forge-formal-policy-enforcement]]、[[20260321-acrfence-semantic-rollback]]）。Sleeper 的 60–89% 为成功检索后的条件结果，不是全量注入成功率；OAP 0/879 是 restrictive tier 作者 CTF，permissive/restrictive 非随机对照，不能把差异归于签名载体，ESCALATE 仅规范、参考实现未完成。Ghost 的 0/90 行为负结果仍保留，不能由状态丢失推出行为伤害。后续实验应将 carrier（含 exact replay）与 enforcement/preflight 独立定义，避免在 carrier 条件中预装 preflight，再交叉同一因子；冻结 proposal 的重放与允许重新生成的 paired run 分别估计，不强求改变输入后的 trace hash 相同。未执行实验或重跑论文，EX-006 仍等同轨证据，不重新剪藏或新增编号。
+
 ## Mode
 
 Open Explore 后台研究。研究对象为：高影响/不可逆动作是否必须以带来源、稳定绑定、预算隔离且失败关闭的控制状态抵达执行边界？本日志只沉淀 Research 层的证据边界、推理和下一步，不创建稳定 Entity/Topic，也不替代 Schema 或 agenda。
