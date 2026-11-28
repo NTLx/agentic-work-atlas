@@ -2,7 +2,7 @@
 type: research-agenda
 title: "Agentic Work Atlas 研究议程"
 created: 2026-05-22
-updated: 2026-10-21
+updated: 2026-11-28
 tags:
   - agentic-work-atlas
   - llm-wiki
@@ -125,14 +125,15 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
+| 2026-11-28 | 全库消化与退役 | retired/refined | 撤回 RAG/Token 阶段二元命题及 Shopify 已证明能力再生的判断；CR-005 仍 blocked；历史退役和勘误见 [[2026-11-28]]。 |
 | 2026-10-21 | Candidate research audit | merged/retired/refined | CR-004 并入 EX-005、CR-007 retire；CR-001/005 收窄；提出未编号科学 AI 定向探索；压缩 agenda 操作层。 |
 | 2026-10-20T23:53:00+08:00 | CR-005 专业能力再生与独立校准 | refined-reasoning | 从保存无 AI 技能收窄为再生不与主生成路径共模的现实校准能力；无新 Evidence，保持 blocked。 |
 | 2026-09-07T08:33:43+08:00 | EX-005 耐久执行停止与外部效果 | refined | 区分 durable execution 停止、在途 invocation 与已发生副作用；加入 checkpoint/in-flight 窗口。 |
 | 2026-09-07T07:46:00+08:00 | EX-002 证据覆盖与解释 | refined | 区分证据取得、完整性意识与事实整合；保留 evidence-synthesis interference 边界。 |
-| 2026-09-07T06:33:25+08:00 | EX-004 oracle 与成功来源 | refined | 区分 reference、environment-state、execution/post-state oracle；仍缺同轨交叉。 |
 
 ## 思考日志索引
 
+- [[2026-11-28]] — 全库消化、旧命题退役与历史日志迁移（含 2026-08-27 恢复 Git 基线）。
 - [[2026-10-21]] — 全量候选研究主题代谢：CR-004 并入 EX-005、CR-007 retire，并登记科学 AI 未编号候选；无新增 Evidence。
 - [[2026-10-20]] — CR-005 深度思考：从技能退化收窄到现实校准权再生；无新增 Evidence。
 - [[20260907--ex005-durable-stop-semantics--research]] — EX-005 durable stop 与 in-flight 边界。

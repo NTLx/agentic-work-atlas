@@ -2,7 +2,7 @@
 type: output
 title: "为什么 LLM Wiki 不是 RAG，而是知识编译系统"
 created: 2026-05-22
-updated: 2026-05-25
+updated: 2026-11-28
 tags:
   - output
   - llm-wiki
@@ -11,16 +11,18 @@ tags:
 
 # 为什么 LLM Wiki 不是 RAG，而是知识编译系统
 
+> **2026-11-28 勘误（原题保留）**：本文历史标题与“RAG 无积累”叙述不再作为一般性判断。RAG 是检索增强生成机制，Wiki 是持久知识资产及治理过程；两者可组合。GraphRAG 的预生成社区报告和本库 GBrain 混合架构已经构成反例。当前口径见 [[RAG-vs-LLM-Wiki]]。以下将旧二元对立收窄到无预编译的基础检索实现。
+
 > [!summary] 核心判断
 > [[LLM-Wiki|LLM Wiki]] 和 RAG 的区别，不是是否使用 LLM，也不是是否读取文档，而是知识是否被编译成可持续复用的中间层。RAG 在查询时临时理解材料；LLM Wiki 在摄取时把材料转化为结构化知识。
 
-## RAG 的问题不是检索，而是没有积累
+## 基础检索实现的限制：不自动沉淀综合判断
 
 RAG 的基本动作是：用户提问，系统检索相关片段，把片段塞进上下文，然后让模型回答。这个模式适合实时资料、临时查询和动态数据，但它有一个结构性限制：每次查询都要重新理解原始材料。
 
 所以 RAG 的知识生命周期很短。一次回答结束后，检索片段和模型当时形成的综合判断通常不会沉淀下来。下次再问相似问题，系统仍然要从检索开始。
 
-这不是 RAG 做得不好，而是它的范式如此。它处理的是“当下这次问题”，不是“长期知识体”。
+这是未配置综合结果持久化的基础检索实现的限制，不是 RAG 定义的限制。检索索引本身可持久，检索也可以面向预编译知识。
 
 ## LLM Wiki 的关键是持久中间层
 
@@ -79,7 +81,7 @@ LLM Wiki 的代价也很明确：
 
 ## 一句话
 
-RAG 是把资料临时带进上下文；LLM Wiki 是把资料编译成一个会复利的知识中间层。
+RAG 是在查询时获取并引入外部知识的机制；LLM Wiki 是持续编译、校准和退役知识的资产治理方式。复利取决于真实复用和证据质量，两者可共同工作。
 
 ## 本文使用的 Wiki 页面
 
@@ -93,7 +95,7 @@ RAG 是把资料临时带进上下文；LLM Wiki 是把资料编译成一个会�
 
 | 新判断 | 支撑依据 | 处理 |
 |--------|----------|------|
-| LLM Wiki 与 RAG 的核心差异是是否形成持久中间层 | Wiki: [[RAG-vs-LLM-Wiki]]、[[Knowledge-Compilation]] | 保留 |
+| RAG 与 LLM Wiki 是不同维度；旧“RAG 无积累”命题退役 | Wiki: [[RAG-vs-LLM-Wiki]]、[[Knowledge-Compilation]]、[[GraphRAG]] | 保留修正后的判断 |
 | Output 是 Wiki 的压力测试 | Wiki: [[Agent-Knowledge-Management]]；实践判断仍需更多 source | 放入 research agenda |
 | LLM Wiki 不应机械编译所有 raw source | Wiki: [[Knowledge-Compilation]]；Schema 收录规则 | 保留 |
 | 大规模 Wiki 可能需要 GBrain 这类混合检索架构 | Wiki: [[GBrain]] | 保留 |

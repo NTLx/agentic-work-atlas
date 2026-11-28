@@ -4,7 +4,7 @@ title: "Agent Harness vs Agent Workflow Patterns"
 entity_a: "[[Agent-Harness]]"
 entity_b: "[[Agent-Workflow-Patterns]]"
 created: 2026-05-24
-updated: 2026-05-24
+updated: 2026-11-28
 tags:
   - comparison
   - AI-Agent
@@ -46,8 +46,7 @@ Agent Workflow Patterns 是**怎么编排**。它关注任务如何拆成多个�
 
 Agent Harness 是**怎么运行**。它关注 Agent 真正进入系统后需要什么边界：能调用哪些工具、能读写哪些文件、状态如何保存、失败如何恢复、成本如何记录、什么时候必须拒绝或转人工。
 
-如果没有 workflow patterns，Agent 可能只是一轮 prompt。  
-如果没有 harness，workflow patterns 只能停留在 demo。
+编排模式与运行时保障是互补维度，而不是两种互斥产品。简单工作流可以在生产中可靠运行，前提是满足其实际权限、状态和故障边界；无需为了名称而建设重型 Harness。
 
 ## 从模式到运行时
 
@@ -67,11 +66,11 @@ Agent Harness 是**怎么运行**。它关注 Agent 真正进入系统后需要�
 
 | 场景 | 更接近 Workflow Pattern | 更需要 Agent Harness |
 |------|-------------------------|----------------------|
-| 一次性文档改写 | 是 | 否 |
+| 一次性文档改写 | 简单调用即可 | 仍需基本上下文与权限边界 |
 | 简单客服分类 | 是 | 视权限而定 |
-| 自动修改代码并开 PR | 否 | 是 |
-| 多 Agent 长程协作 | 否 | 是 |
-| 读取敏感数据后执行动作 | 否 | 是 |
+| 自动修改代码并开 PR | 可用明确编排模式 | 需要权限、独立验收和恢复 |
+| 多 Agent 长程协作 | 需要按依赖组织工作 | 需要持久状态、协调和验证 |
+| 读取敏感数据后执行动作 | 可用明确流程 | 需要模型外访问与动作控制 |
 | 低风险内容生成流水线 | 是 | 轻量 harness 即可 |
 
 判断标准不是“有没有 Agent”，而是系统是否需要承受权限、状态、验证、恢复和责任链。
