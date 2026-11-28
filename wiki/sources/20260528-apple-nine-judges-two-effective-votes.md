@@ -10,7 +10,7 @@ source_locator:
   - "Kish effective sample size about 2.18"
   - "8–22 pp deficit vs independent-voting ideal; aggregation closes at most 11% of gap"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - verification
@@ -29,9 +29,9 @@ claim_type: mixed
   - 关键证据：9 个 frontier judges 来自 7 个模型家族，但有效样本量只有约 2.18。
 - **核心结论 2：面板增益被共同错误显著压缩。**
   - 关键证据：实际准确率比独立投票理想基线低 8–22 个百分点；最佳单 judge 在测试条件下可匹配或超过完整面板。
-- **核心结论 3：聚合算法不能修复输入判断信号本身的相关性。**
+- **核心结论 3：本研究测试的聚合策略仅部分弥补相对独立投票基线的差距。**
   - 关键证据：多种 aggregation strategy 最多只补回约 11% 的缺口。
-- **核心结论 4：相关性不是一个明显可由 prompt trick 消掉的局部现象。**
+- **核心结论 4：作者报告在所测试提示、温度与推理设置下仍观察到相关误差。**
   - 关键证据：结论对 prompt、temperature、CoT 与 RewardBench 变体保持稳定。
 
 ### 2. 质疑

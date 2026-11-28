@@ -10,7 +10,7 @@ source_locator:
   - "task-conditioned empirical shared-error floor"
   - "generator-family robustness check"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - verification
@@ -29,20 +29,20 @@ claim_type: mixed
   - 关键证据：独立训练模型各自解题，错误答案通常分散，正确答案更容易形成 modal agreement。
 - **核心结论 2：shared-error floor 是任务条件量，不是普遍常数。**
   - 关键证据：AIME 两个数据集的经验 floor 为 0，MATH-500 为 0.004；GPQA 为 0.030，MMLU-Pro 为 0.143。
-- **核心结论 3：任务的错误吸引子结构决定 consensus 上限。**
+- **核心结论 3：在作者的面板与计分条件下，共同错误的分布可能限制 consensus 的收益。**
   - 关键证据：科学/多选任务更容易让不同模型落入同一个 plausible wrong answer；数学错误更分散。
 - **核心结论 4：generator 与 verifier panel 要分开。**
   - 关键证据：换用 DeepSeek-V3.2 生成 candidate 后，跨模型 consensus 的相对优势仍复现。
 
 ### 2. 质疑
 
-- shared-error floor 只约束 agreement-based verifier；外部 theorem checker、执行 oracle、human adjudicator 不受这个 floor 直接约束。
+- 这些经验 floor 是在有限数据集及指定 panel / generator / scorer 下估计的；AIME 样本中为 0 不证明真实错误概率为 0。外部 checker 或人审的误差需另测，不能直接套用该面板的数值。
 - “跨家族”仍不是统计独立的同义词，panel composition 需要实测。
 - GPQA 的 0.030 中包含 grading artifact；因此不能把表面 unanimous-wrong 全部解释成模型共同 misconception。
 
 ### 3. 对标
 
-- 对 CR-003：直接否定“所有 AI 监督都有一个不可消除的正 shared-error floor”的强版本；应改写为某些任务 × panel × evidence 条件下存在可测 shared-error floor。
+- 对 CR-003：不支持“所有 AI 监督都有一个不可消除的正 shared-error floor”的强版本；有限样本零共同错误也不是对所有未来任务的严格数学反证；应改写为某些任务 × panel × evidence 条件下存在可测 shared-error floor。
 - 对 [[LLM-as-a-Judge]]：jury consensus 可以优于单模型 self-scoring，但其 ceiling 由 shared error 决定。
 - 对 [[Verifiable-Agent-Engineering]]：独立性门需要任务条件化，且不能取代外部 truth/provenance 门。
 
