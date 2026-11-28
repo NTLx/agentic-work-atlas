@@ -5,15 +5,15 @@ aliases:
   - ALTK-Evolve
   - ALTK Evolve
   - Agent Toolkit Evolve
-definition: "IBM Research 发布的 agent learning library——通过 extraction、consolidation、retrieval 三阶段让 agent 从自身过去的 trajectory 中蒸馏 reusable guideline set，在推理时注入以提升表现；不更新模型权重，不需要人类标注，可移植到任意模型"
+definition: "IBM Research 发布的 agent learning library——通过 extraction、consolidation、retrieval 三阶段让 agent 从自身过去的 trajectory 中蒸馏 reusable guideline set，在推理时注入以提升表现；不更新模型权重，不需要人类标注，作者报告在所测八个模型上可运行，未证明任意模型兼容"
 created: 2026-08-19
-updated: 2026-08-19
+updated: 2026-11-28
 tags:
   - agentic-engineering
   - agentic-memory
   - ibm-research
   - context-engineering
-evidence_level: high
+evidence_level: medium
 claim_type: extracted
 related_entities:
   - "[[Agentic-Memory-Dosage]]"
@@ -29,7 +29,7 @@ source_raw:
 # ALTK-Evolve
 
 > [!definition] 定义
-> **ALTK-Evolve** 是 IBM Research 2026-08 发布的 agent learning library（[github.com/AgentToolkit/altk-evolve](https://github.com/AgentToolkit/altk-evolve)），通过 extraction → consolidation → retrieval 三阶段流水线让 agent 从自身过去的 trajectory 中蒸馏 reusable guideline set，在推理时注入到 ReAct 每步以提升表现。整个循环不改模型权重、不需要人类标注，可在任意模型上便携运行。
+> **ALTK-Evolve** 是 IBM Research 2026-08 发布的 agent learning library（[github.com/AgentToolkit/altk-evolve](https://github.com/AgentToolkit/altk-evolve)），通过 extraction → consolidation → retrieval 三阶段流水线让 agent 从自身过去的 trajectory 中蒸馏 reusable guideline set，在推理时注入到 ReAct 每步以提升表现。整个循环不改模型权重、不需要人类标注，作者报告可在所测八个模型上运行，不保证其他模型、harness 或任务兼容。
 
 ## 三阶段流水线
 
@@ -43,9 +43,9 @@ source_raw:
 
 ## 与 ACE 的关键差异
 
-IBM Research 之前在姊妹文章中将 ALTK 与 ACE（[arxiv:2510.04618](https://arxiv.org/abs/2510.04618)）对比：差异在**deliver 方式**而非（"少量检索" vs "全量注入"）——前者驱动 accuracy 与 cost 的取舍；ACE 全量注入对照下 ALTK 选择性 retrieval 表现接近但成本更低。
+IBM Research 之前在姊妹文章中将 ALTK 与 ACE（[arxiv:2510.04618](https://arxiv.org/abs/2510.04618)）对比：比较涉及指南的**交付方式**（选择性检索 vs 全量注入）及其质量与成本权衡；该文转述姊妹文章的特定对照；需按同一任务、模型、预算和 guideline 来源比较，不能当作通用优势。
 
-## 在 8 模型上的评测
+## 八模型 sweep 的五个代表模型（AppWorld test_normal）
 
 | 模型 | 类别 | 最佳配置 | Δ TGC | Δ SGC |
 |------|------|---------|-------|-------|
@@ -55,15 +55,15 @@ IBM Research 之前在姊妹文章中将 ALTK 与 ACE（[arxiv:2510.04618](https
 | GPT-5.5 | strong (near-ceiling) | full guideline set | +2.9 | +7.2 |
 | GLM-5 (745B MoE) | saturated | full guideline set | 0.0 | 0.0 |
 
-评测基准：AppWorld（585 multi-step tasks = 168 test_normal + 417 test_challenge, 9 simulated apps）。度量：TGC（Task Goal Completion）+ SGC（Scenario Goal Completion，更严格的 all-or-nothing）。
+评测基准 AppWorld 共585项（168 test_normal + 417 test_challenge，9个模拟应用）；上表是作者明确标注的 test_normal 代表模型，不是585项合并统计。度量：TGC（Task Goal Completion）+ SGC（Scenario Goal Completion，更严格的 all-or-nothing）。
 
 ## 三种剂量模式
 
-参见 [[Agentic-Memory-Dosage]] 详述。三种模式不是简单按参数量划分，而是按 (headroom + context window + architecture + guideline quality + task distribution) 多因子决定。
+参见 [[Agentic-Memory-Dosage]] 详述。三种模式为观察性分类；headroom、context window、architecture、guideline quality 与 task distribution 是待隔离因素，不是已验证的预测公式。
 
 ## 关键数据点
 
-- 训练数据：AppWorld training split only；测试 split 永不入 guideline 挖掘（防泄漏）
+- 训练数据：AppWorld training split only；作者报告 guideline 仅用训练 split 挖掘，不使用测试 split；未独立核查数据、模型预训练污染或复现实验
 - baseline 配置：no memory，agent as shipped
 - full set：每 ReAct step 注入所有 guideline
 - curated retrieval：固定高置信 core + per-task variable portion
@@ -72,7 +72,7 @@ IBM Research 之前在姊妹文章中将 ALTK 与 ACE（[arxiv:2510.04618](https
 
 ## 关键设计决策
 
-- **no weight updates**：所有学习发生在 guidance 层而非模型层；adoption 成本低、可移植
+- **no weight updates**：所有学习发生在 guidance 层而非模型层；无需训练权重，但指南挖掘、检索及模型适配仍有成本
 - **mining 阶段用 training split only**：避免 test split 泄漏污染 guideline
 - **prompt caching 友好**：保持 guideline-set prefix 稳定即可 cache
 - **三种配置策略可比**：报告按 strategy（full vs curated）而非 raw guideline count，因各模型挖掘能力差异使 raw 数不可比

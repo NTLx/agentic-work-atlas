@@ -6,9 +6,9 @@ aliases:
   - Graph RAG
   - Graph-based RAG
   - Knowledge Graph RAG
-definition: "微软研究院提出的 retrieval architecture——把 corpus 转换为 knowledge graph（entity + typed relationship）+ hierarchical Leiden community + 预生成 community reports；query 时通过 local/global/DRIFT 三种 mode 跨越 single-document similarity 检索的局限；解决 global query（跨语料推理）的 vector RAG 根本盲区"
+definition: "微软研究院提出的 retrieval architecture——把 corpus 转换为 knowledge graph（entity + typed relationship）+ hierarchical Leiden community + 预生成 community reports；query 时通过 local/global/DRIFT 三种 mode 跨越 single-document similarity 检索的局限；为跨语料综合提供一种可选的索引与检索架构，效果依赖任务和索引质量"
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-11-28
 tags:
   - retrieval
   - knowledge-graph
@@ -32,7 +32,7 @@ source_raw:
 # GraphRAG（图增强检索）
 
 > [!definition] 定义
-> **GraphRAG** 是微软研究院提出的 retrieval architecture——把 corpus 转换为 **knowledge graph**（entity + typed relationship with descriptions）+ **hierarchical Leiden community** + **预生成 community reports**；query 时通过 **local/global/DRIFT** 三种 mode 跨越 single-document similarity 检索的局限。核心解决 **global query**（跨语料推理）的 vector RAG 根本盲区。
+> **GraphRAG** 是微软研究院提出的 retrieval architecture——把 corpus 转换为 **knowledge graph**（entity + typed relationship with descriptions）+ **hierarchical Leiden community** + **预生成 community reports**；query 时通过 **local/global/DRIFT** 三种 mode 跨越 single-document similarity 检索的局限。可改善部分跨语料综合任务；并不保证完整覆盖、事实准确或所有问题优于向量检索。
 
 ## 核心问题：Vector RAG 的 blind spot
 
@@ -71,7 +71,7 @@ Microsoft 测试：Vector RAG with 8K vs 64K token context——**larger window 
 
 ## 衍生优化
 
-- **LazyGraphRAG**: 用 NLP 替代 LM extraction + 推迟所有 LM 工作到 query time——indexing cost 降至 full GraphRAG 的 **0.1%**，query cost 降 **700×**，global-query quality comparable
+- **LazyGraphRAG**: 用 NLP 替代 LM extraction + 推迟所有 LM 工作到 query time——indexing cost 降至 full GraphRAG 的 **0.1%**，微软特定实验的低预算 LazyGraphRAG（Z100_Lite）相对 GraphRAG Global Search 报告可比 global 质量、查询成本低逾700倍；并非生产固定比率
 - **FastGraphRAG**: 完全用 NLP（noun phrases = entities, co-occurrence = relationships）——更便宜但"considerably more noise"
 - **Microsoft 立场**: 不推荐 every deployment LazyGraphRAG——community reports 有独立价值（人阅读和分享），是副产物
 
@@ -86,18 +86,18 @@ Microsoft 测试：Vector RAG with 8K vs 64K token context——**larger window 
 
 | 维度 | Vector RAG | GraphRAG |
 |------|-----------|----------|
-| Local queries | **强**（similarity assumption 成立） | 弱（over-engineered） |
-| Global queries | 弱（vocabulary 共现 ≠ underlying pattern） | **强**（community reports 预生成） |
+| Local queries | 常作为低成本基线 | 可用 local/DRIFT 等机制，效果需按任务实测 |
+| Global queries | top-k 可能遗漏分布证据 | 社区摘要可提供跨语料线索，仍可能遗漏或误归并 |
 | Faithfulness | comparable | comparable |
 | Comprehensiveness | comparable | **优** |
 | Diversity | comparable | **优** |
 | Supporting source material | comparable | **优** |
-| Indexing cost | 低（embedding pass） | **1000×（full GraphRAG）** |
+| Indexing cost | 以 embedding 为主 | 原报告特定成本估算约1000倍；依语料、模型、实现变化 |
 | Index maintenance | low（re-embed chunks） | 高（re-extract + re-cluster） |
 
 ## 前提与局限性
 
-- **不减少 hallucination**: faithfulness 与 baseline RAG 相当
+- **真实性边界**: 既有二手来源报告特定 faithfulness 对照相当；不能推出所有 GraphRAG 都不减少幻觉，也不能从覆盖/多样性推导事实准确。上述 LazyGraphRAG 报告的三个指标不是独立事实核查。
 - **indexing 成本高**: 75% extraction 是首要优化目标
 - **index perishable**: corpus 变化需 re-extract + re-cluster + re-report——日常运营负担
 - **prompts domain-specific**: 跨 domain robustness 较弱
@@ -121,7 +121,7 @@ Microsoft 测试：Vector RAG with 8K vs 64K token context——**larger window 
 - LinkedIn SIGIR 2024 实证: MRR +77.6% / resolution time -28.6%
 - Microsoft Graph extraction cost 占总 indexing 75%
 - LazyGraphRAG indexing cost = full GraphRAG 0.1%
-- LazyGraphRAG query cost 降 700×
+- 0.1% indexing 与 >700倍 query 成本差来自微软特定报告：5590篇 AP 新闻、100个合成查询（50 local/50 global）、LLM 成对评审 comprehensiveness/diversity/empowerment。Z100_Lite 与 Z500/Z1500 模型及预算不同；Z500 约 C2 成本4%。[原报告](https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/)（本轮纠错核对，未正式晋升新来源）
 - Vector RAG with 64K context 仍输给 GraphRAG on global queries
 - Community detection: hierarchical Leiden algorithm
 

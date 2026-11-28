@@ -4,14 +4,14 @@ title: "How Much Memory Does Your Agent Actually Need?"
 source_raw:
   - "[[20260819-ibm-altk-evolve-memory-dosage]]"
 created: 2026-08-19
-updated: 2026-08-19
+updated: 2026-11-28
 tags:
   - source-summary
   - agentic-memory
   - context-engineering
   - ibm-research
-evidence_level: high
-claim_type: extracted
+evidence_level: medium
+claim_type: mixed
 ---
 
 # How Much Memory Does Your Agent Actually Need?
@@ -21,10 +21,10 @@ claim_type: extracted
 ### 1. 浓缩
 
 - **核心结论1**: Agentic memory 的最优剂量依赖模型能力——把 8 个模型（30B dense 到 frontier proprietary）在 ALTK-Evolve 的两种配置上系统化测试，发现三种 recurring patterns：strong-with-headroom 模型（全 guideline set 注入获益，DeepSeek-V3.2 +9.5pp TGC / +16.1pp SGC）、weak/selective 模型（compact core + per-task retrieval 同时最好且最便宜，gpt-oss-120b +16.1pp TGC at +5% tokens）、saturated 模型（无任何可测增益，GLM-5 0.0/0.0）
-  - 关键证据: 8-model sweep on AppWorld（585 tasks）；DeepSeek-V3.2 baseline TGC 79.8→89.3；gpt-oss-120b baseline TGC 39.9→56.0；Opus 4.6 +4.1 TGC/+7.1 SGC；GLM-5 zero gain
-- **核心结论2**: 强模型仍能从 guideline set 获益直到接近天花板——Opus 4.6（near ceiling 90.5% TGC）和 GPT-5.5（92.3% TGC）仍得 +7.1pp 和 +7.2pp SGC，说明 memory 的"failure"不是"模型够强就用不上"，而是"guideline 没覆盖剩余失败模式"
-  - 关键证据: "Memory keeps paying off as long as a model has a remaining failure mode to target"; SGC metric gains exceed TGC because guidelines help clear all variants of a scenario
-- **核心结论3**: Prompt caching 是 production 经济杠杆——DeepSeek 在 full guideline set 下 tokens/task 从 148K 涨到 263K（+78%），但若保持 guideline-set prefix 稳定可被 cache；同时 curated retrieval 在 weak model 上既最准又最便宜（gpt-oss-120b +16.1pp at +5% tokens）
+  - 关键证据: 作者报告八模型 AppWorld sweep（全测试集585项），下列五个代表模型数字明确来自 test_normal（168项），非全测试集汇总；DeepSeek-V3.2 baseline TGC 79.8→89.3；gpt-oss-120b baseline TGC 39.9→56.0；Opus 4.6 +4.1 TGC/+7.1 SGC；GLM-5 zero gain
+- **核心结论2**: 强模型仍能从 guideline set 获益直到接近天花板——Opus 4.6（near ceiling 90.5% TGC）和 GPT-5.5（92.3% TGC）仍得 +7.1pp 和 +7.2pp SGC，说明所测高基线模型仍可改善；零增益可能来自覆盖、应用或任务天花板，原因未隔离
+  - 关键证据: "Memory keeps paying off as long as a model has a remaining failure mode to target"; SGC 按场景所有任务变体均成功计分；若干模型增幅较大，机制归因为作者解释，不是同任务多次运行一致性的测量
+- **核心结论3**: Prompt caching 是 production 经济杠杆——DeepSeek 在 full guideline set 下 tokens/task 从 148K 涨到 263K（+78%），但若保持 guideline-set prefix 稳定可被 cache；gpt-oss-120b 的 curated 相对 full 更准确且 token 更少，但相比 no-memory 多约5% token；未核总成本或缓存收益（gpt-oss-120b +16.1pp at +5% tokens）
   - 关键证据: tokens/task 表（DeepSeek 148K→263K、gpt-oss-120b 110K→166K full / 110K→116K curated）；ReAct step 数 ≈18-19 与 baseline 持平（不是更长 trajectory）
 
 ### 2. 质疑
@@ -37,11 +37,11 @@ claim_type: extracted
 
 ### 3. 对标与旁逸
 
-- **跨域关联1**: *guideline set mining from past trajectories* 与 Anthropic Claude Tag 的 lessons.md→investigation skill 自蒸馏循环同构——Anthropic 是定性叙述，IBM 是定量 8 模型 sweep。两者合并给出 "agentic memory 不仅是蒸馏，更是剂量调节" 的双向证据
+- **跨域关联1**: *guideline set mining from past trajectories* 与 Anthropic Claude Tag 的 lessons.md→investigation skill 自蒸馏循环同构——Anthropic 是定性叙述，IBM 是定量 8 模型 sweep。两者提供设计类比，只有本文给出剂量 sweep，非独立剂量实验
 - **跨域关联2**: *三种剂量模式* 与 [[Structured-Agent-Memory]] 的属性匹配范式互补——后者讲记忆怎么组织，前者讲该喂多少。可组合：结构化记忆按 dosage 选择 full set vs retrieval
-- **跨域关联3**: *gpt-oss-120b +16.1pp at +5% tokens* 是 [[Context-Engineering]] 的效率标准案例——同时改善 accuracy 和 cost 的策越稀少；提示 retrieval 不是 accuracy 成本 trade-off，而是可以双赢
+- **跨域关联3**: *gpt-oss-120b +16.1pp at +5% tokens* 是 [[Context-Engineering]] 的效率标准案例——相对 full 的准确率与 token 优势不等于相对 baseline 的成本下降；需计挖掘、检索、缓存、维护成本
 - **跨域关联4**: *prompt caching + guideline prefix 稳定* 与 Anthropic 的 cache-aware prompt design 同构——把系统层优化引入 context engineering；这与 [[Compaction]] 的 prompt-cache 张力形成对照
-- **跨域关联5**: *cosine similarity 不完美预测 guideline 效用* 是 retrieval-as-a-subagent [[Retrieval-as-a-Subagent]] 的潜在应用面——outcome signal 训练的 selector 比 embedding ranking 更能匹配效用
+- **跨域关联5**: *cosine similarity 不完美预测 guideline 效用* 是 retrieval-as-a-subagent [[Retrieval-as-a-Subagent]] 的潜在应用面——outcome-trained selector 是作者提出的后续方向，尚非已证明优势
 
 ## 关联概念
 

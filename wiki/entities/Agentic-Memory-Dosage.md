@@ -6,16 +6,16 @@ aliases:
   - Memory Calibration Patterns
   - Memory Dose Calibration
   - 三种剂量模式
-definition: "Agentic memory（self-distilled guideline set）的最优剂量依赖模型能力——按 (headroom + context window + architecture + guideline quality + task distribution) 多因子，将模型划分为 strong-with-headroom / weak-selective / saturated 三种模式，分别对应 full set / curated retrieval / no-memory 的最优策略"
+definition: "针对模型、任务分布与指南质量，在无记忆、全量指南和选择性检索之间评估效果及成本；IBM 的三种模式是特定 AppWorld sweep 的观察分类，不是固定模型分层或通用最优策略。"
 created: 2026-08-19
-updated: 2026-08-19
+updated: 2026-11-28
 tags:
   - agentic-engineering
   - context-engineering
   - memory
   - agentic-memory
-evidence_level: high
-claim_type: extracted
+evidence_level: medium
+claim_type: mixed
 related_entities:
   - "[[ALTK-Evolve]]"
   - "[[Structured-Agent-Memory]]"
@@ -29,19 +29,19 @@ source_raw:
 # Agentic Memory Dosage（Agentic 记忆剂量调节）
 
 > [!definition] 定义
-> **Agentic Memory Dosage** 是 IBM Research 在 8 模型系统化测试后提出的核心洞察：Agentic memory 的最优剂量不是"越多越好"，而是按模型能力分层调节。Strong-with-headroom 模型用 full guideline set 获益最大；weak/selective 模型用 compact core + per-task retrieval 同时最准且最便宜；saturated 模型注入任何 memory 都不产生 improvement。**Agentic memory is not a feature you switch on. It's a dose you calibrate to the model.**
+> **Agentic Memory Dosage** 是 IBM Research 在 8 模型系统化测试后提出的核心洞察：在所报告设置中，不同模型的最佳指南交付配置不同。部分模型全量注入得分较高，gpt-oss-120b 的选择性检索比全量注入得分更高且 token 更少；saturated 标签描述作者在特定设置观察到的无增益，不能外推到所有记忆类型。**Agentic memory is not a feature you switch on. It's a dose you calibrate to the model.**
 
 ## 三种模式
 
-| 模式 | 触发条件（综合判断） | 最优策略 | 代表模型 |
+| 模式 | 触发条件（综合判断） | 所报候选策略 | 代表模型 |
 |------|----------------------|----------|----------|
 | **Strong with headroom** | benchmark 仍有提升空间 + 大 context window + 强 instruction following | full guideline set（含 edge-case lessons） | DeepSeek-V3.2 (671B MoE), Claude Opus 4.6, GPT-5.5 |
 | **Weak / selective** | 弱 instruction following 或 compact context window | curated retrieval（固定高置信 core + per-task variable） | gpt-oss-120b (117B MoE) |
 | **Saturated** | 已接近任务天花板 或 guideline 未覆盖剩余失败模式 | 不注入 memory，节省 quota | GLM-5 (745B MoE) |
 
-> ⚠️ **模式划分不是按参数量一刀切**——headroom、context window、architecture、guideline quality、task distribution 多因子共同决定模式归属。IBM 明示 isolating context window 与 headroom 是 ongoing work。
+> ⚠️ **模式划分不是按参数量一刀切**——headroom、context window、architecture、guideline quality、task distribution 是可能影响观察结果的因素，未隔离其贡献。IBM 明示 isolating context window 与 headroom 是 ongoing work。
 
-## 关键数据（AppWorld TGC）
+## 关键数据（AppWorld test_normal，五个代表模型）
 
 | 模型 | 模式 | baseline TGC | best TGC | Δ TGC |
 |------|------|--------------|-----------|-------|
@@ -51,11 +51,11 @@ source_raw:
 | GPT-5.5 | strong/near-ceiling | 92.3 | 95.2 (full) | +2.9 |
 | GLM-5 (745B MoE) | saturated | 87.5 | 87.5 (full) | **0.0** |
 
-SGC（更严格 all-or-nothing）通常涨幅更大——DeepSeek SGC +16.1pp / TGC +9.5pp；Opus SGC +7.1pp / TGC +4.1pp。
+SGC 按同一场景所有变体均成功计分，不是同一任务重复运行的可靠性；表中若干模型涨幅较大——DeepSeek SGC +16.1pp / TGC +9.5pp；Opus SGC +7.1pp / TGC +4.1pp。
 
 ## Curated retrieval 的双重胜利
 
-弱模型在 curated retrieval 上同时最准且最便宜——gpt-oss-120b +16.1pp TGC at +5% tokens。**Better performance here does not require more inference cost**——accuracy 与 cost 的双赢消除了常见 trade-off 假设。
+gpt-oss-120b 的 curated 在所报配置中 TGC 最好、比 full 更省 token，但相对 no-memory 仍多约5% token；token 数不等于货币成本，也未包含挖掘、存储和检索开销。不存在已证明的普遍双赢。
 
 | 模型 | 配置 | tokens/task | overhead |
 |------|------|-------------|----------|
@@ -65,17 +65,16 @@ SGC（更严格 all-or-nothing）通常涨幅更大——DeepSeek SGC +16.1pp / 
 
 ## Production 经济杠杆：prompt caching
 
-即使全注入策略成本高（DeepSeek +78%），保持 guideline-set prefix 稳定可被 prompt cache 大幅降低——cache-aware prompt design 是 production 必备工程。
+DeepSeek 全量注入的 token 增幅约78%；保持 guideline-set prefix 稳定可能提高缓存命中，从而降低有效输入成本，实际命中率、计费、TTL、缓存写入和隐私约束需按供应商及工作负载验证。
 
-memory 不会让 reasoning loop 更长（DeepSeek ReAct step 数 ≈18-19 与 baseline 持平），成本全来自 input 膨胀；cache 化是消除该膨胀的主要手段。
+作者报告 DeepSeek 的 ReAct 步数约18–19不变，额外 token 主要来自输入；该观察不能推广到其他模型，也不表示缓存消除 token 或总成本。
 
 ## 核心 takeaway
 
 > **Memory should be calibrated, not merely accumulated.** — IBM Research, 2026-08
 
-- 弱模型：compact core + per-task retrieval（同时最好最便宜）
-- 强模型 with headroom：full set + prompt caching
-- 饱和模型：节省 quota，待 failure mode 理解后再说
+- 针对目标任务保留 no-memory 对照；比较 compact core + retrieval 与 full set，而非仅按模型强弱预选。
+- 同时测成功率、重复执行一致性、总 token/成本、维护和错误记忆影响；无增益时优先诊断覆盖与应用失败。
 
 ## 与 Lessons-MD Self-Improvement 的同构
 
@@ -83,12 +82,12 @@ Anthropic Claude Tag 的 [[Lessons-MD-Self-Improvement]] 是 ALTK 的定性版�
 
 ## 关键数据点
 
-- 8 模型 + 1 benchmark（AppWorld 585 tasks）的 sweep 结果
+- 作者报告八模型 AppWorld sweep；本页代表性数值明确对应168项 test_normal，不是全部585项汇总
 - curated retrieval 在 gpt-oss-120b 同时获得 +16.1pp TGC 与 +5% tokens（双赢）
-- DeepSeek ReAct step 数不变（≈18-19），cost 增量全在 input 膨胀
+- DeepSeek ReAct step 数不变（≈18-19），作者将额外 token 归因于 input 膨胀
 - SGC metric 通常涨幅 > TGC metric（因为 guideline 帮助 clear all variants）
 - Opus 4.6 已 near-ceiling（90.5% TGC）仍得 +7.1pp SGC
-- GLM-5（745B MoE）饱和零增益
+- GLM-5 在报告设置无可测增益，不证明已达能力天花板
 - "the right dose of memory depends on the model, and we can calibrate it"
 
 ## 前提与局限性

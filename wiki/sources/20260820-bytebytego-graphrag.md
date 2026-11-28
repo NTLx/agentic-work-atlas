@@ -4,7 +4,7 @@ title: "GraphRAG: How AI Answers Questions Hidden Across Many Documents"
 source_raw:
   - "[[20260820-bytebytego-graphrag.md]]"
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-11-28
 tags:
   - source-summary
   - knowledge-graph
@@ -23,13 +23,13 @@ claim_type: mixed
   - 关键证据: Microsoft 测试，Vector RAG with 8K/64K context 在 global questions 上仍 gap on comprehensiveness, diversity, supporting source material
 - **核心结论2**: GraphRAG 的解决路径是**把 corpus 转换为 knowledge graph + 预生成 community reports**——6 阶段 indexing pipeline（chunking → entity/relation extraction → merge with description compression → optional claim extraction → Leiden community clustering → community report generation）；每个 community 在多个 level 都有 summary，全文-level query 答案在 indexing 时已写就
   - 关键证据: Microsoft documented workflow；graph extraction 占 indexing cost ~75%；每个 entity/relationship/claim 保留 text-unit pointer 支持 citation
-- **核心结论3**: 三种 query modes 服务不同 query 类型——**local search**（5 个并行 expansion：text units/community reports/neighbors/relationships/claims）+ **global search**（map-reduce over community reports）+ **DRIFT search**（混合模式）；Agentic RAG 用 LM 路由 query 类型到合适策略，避免单策略 trade-off
+- **核心结论3**: 三种 query modes 服务不同 query 类型——**local search**（5 个并行 expansion：text units/community reports/neighbors/relationships/claims）+ **global search**（map-reduce over community reports）+ **DRIFT search**（混合模式）；Agentic RAG 可动态选择或组合检索策略，新增元层 trade-off；单次 LM 分类只是实现之一
   - 关键证据: 5 个 parallel streams for local；map/reduce over shuffled batches for global；LlamaIndex two-layer composite retriever + auto-routed mode
 - **核心结论4**: LinkedIn customer service (SIGIR 2024) 是 GraphRAG 实证案例——rebuild retrieval around knowledge graph 提升 MRR **77.6%**、median per-issue resolution time **-28.6%**
   - 关键证据: linkedin.com / SIGIR 2024 published results
-- **核心结论5**: 经济权衡——full GraphRAG indexing 成本是 vector RAG 的 1000×；**LazyGraphRAG** 用 NLP 替代 LM extraction + 推迟所有 LM 工作到 query time，把 indexing 成本降至 0.1% of full GraphRAG；query cost 降 700×
-  - 关键证据: Microsoft LazyGraphRAG paper——indexing cost 0.1%，global-query quality comparable
-- **核心结论6**: GraphRAG 不减少 hallucination——它在 **comprehensiveness / diversity / supporting source material** 上优于 baseline RAG，但在 **faithfulness** 上相当
+- **核心结论5**: 经济权衡——微软原报告估算 full GraphRAG indexing 成本约为 vector RAG 的1000倍（特定条件）；**LazyGraphRAG** 用 NLP 替代 LM extraction + 推迟所有 LM 工作到 query time，把 indexing 成本降至 0.1% of full GraphRAG；微软原报告的特定低预算配置相对 Global Search 查询成本低逾700倍，非所有场景固定系数
+  - 关键证据: [Microsoft 原报告](https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/)：5590篇 AP 新闻、100合成问题、LLM成对评审覆盖/多样性/赋能；Z100_Lite 100次 relevance test 且低成本模型，Z500 为500次及更高成本生成模型。indexing 0.1% 是该报告估算，质量/成本须按条件配对。未正式晋升新来源。
+- **核心结论6**: ByteByteGo 转述的特定评估显示 GraphRAG 在覆盖、多样性与来源支持方面有优势，faithfulness 相近；本轮查阅的 LazyGraphRAG 报告采用不同指标，不能据两者推出普遍事实准确性优势或幻觉率结论
   - 关键证据: Microsoft 自己的评估结论
 
 ### 2. 质疑

@@ -6,9 +6,9 @@ aliases:
   - Agentic Retrieval
   - Query Routing RAG
   - Agent-driven retrieval
-definition: "用 LLM classifier 按 query 类型路由到不同 retrieval strategy（vector / graph / SQL / web）的 retrieval architecture——避免单策略 trade-off；LlamaIndex two-layer (composite retriever + auto-routed mode) 是典型实现；代价是 latency + cost + routing error 风险"
+definition: "由 Agent 或编排器根据查询、已获取证据及任务状态选择、组合或迭代检索策略的架构；单次 LLM 路由是其中一种实现，不是定义所要求的唯一机制。"
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-11-28
 tags:
   - retrieval
   - agentic-engineering
@@ -23,12 +23,13 @@ related_entities:
   - "[[Decision-Centric-Architecture]]"
 source_raw:
   - "[[20260820-bytebytego-graphrag.md]]"
+  - "[[20260902-bytebytego-rag-translator-model]]"
 ---
 
 # Agentic RAG（Agent 驱动检索）
 
 > [!definition] 定义
-> **Agentic RAG** 是用 LLM classifier 按 query 类型路由到不同 retrieval strategy（vector search / graph search / SQL / web）的 retrieval architecture——**避免单策略 trade-off**；典型实现是 LlamaIndex two-layer (composite retriever 选 index + auto-routed mode 选 method)。代价：增加 latency + per-query cost + routing error 风险（"完美 retrieval 跑在错策略上"）。
+> **Agentic RAG** 在此指检索策略可根据任务与证据动态调整的系统；包括单次路由、问题分解、多路并行、证据不足时重试或改路。ByteByteGo 举例为 LLM classifier 与两层路由，其产品实现描述未核当前 LlamaIndex 版本。策略选择引入新的延迟、成本、权限与错误面。
 
 ## 核心动机
 
@@ -39,7 +40,7 @@ source_raw:
 - structured data → SQL query
 - current events → web search
 
-单策略架构无法同时服务多种 query 类型
+同一策略可能服务多种问题，但不同任务的质量与成本曲线不同；是否需要路由由实际评测决定
 ```
 
 ## 架构
@@ -82,8 +83,8 @@ User Query
 
 | 维度 | 影响 |
 |------|------|
-| **Latency** | +（每个 query 增加一次 LM classification call） |
-| **Per-query cost** | +（classification LLM call） |
+| **Latency** | 可能增加（额外决策、重试），也可能因避免昂贵检索下降；可用规则路由 |
+| **Per-query cost** | 比较端到端路径成本，不预设增加或降低 |
 | **Quality (correct routing)** | ↑↑（策略匹配 query 类型） |
 | **Quality (incorrect routing)** | ↓↓（完美 retrieval 跑在错策略上 = 失败） |
 | **Debugging complexity** | ↑↑（需要 trace 路由决策） |
@@ -105,7 +106,7 @@ Agentic RAG routes to:
 ## 前提与局限性
 
 - **Routing error 风险**: poor answer 可能来自"完美 retrieval 跑在错策略"——不易 debug
-- **延迟增加**: classification LLM call 是必要 overhead
+- **延迟与成本**: LLM 分类不是必要条件；比较规则、确定性 metadata 策略、LLM 路由与混合路由
 - **路由逻辑本身需要 LM quality**: 弱 classifier 把所有 query 都路由到 vector → 退化为 plain RAG
 - **prompt injection risk**: 攻击者构造 query 让 classifier 路由到不合适的 strategy
 
@@ -118,7 +119,7 @@ Agentic RAG routes to:
 
 ## 关键数据点
 
-- 提出者/框架: LlamaIndex
+- 既有来源以 LlamaIndex 为实现例，不构成首创归因
 - 文章: ByteByteGo 2026-08-19
 - 与 GraphRAG 配合：Agentic RAG 决定何时用 vector / graph / SQL / web
 - LlamaIndex two-layer: composite retriever + auto-routed mode
@@ -128,10 +129,10 @@ Agentic RAG routes to:
 | 场景 | 推荐 |
 |------|------|
 | 单一 query 类型 | 单策略（vector 或 graph 或 SQL）——避免 Agentic RAG overhead |
-| 多种 query 类型共存 | Agentic RAG |
+| 多种 query 类型共存 | 比较固定、规则路由与 Agentic RAG 的实测收益 |
 | Budget 紧张 | 单策略 |
 | Latency 敏感 | 单策略（避免 classification overhead） |
-| Routing quality 可量化 | Agentic RAG（可评估） |
+| Routing quality 可量化 | 用同一问题集比较证据召回、引用正确性、失败恢复、延迟/成本；不能只测路由标签 |
 
 ## 关联概念
 

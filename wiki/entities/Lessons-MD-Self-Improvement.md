@@ -93,9 +93,8 @@ investigation skill（长期资产）
 
 Lessons-md self-improvement 与 IBM Research 的 [[ALTK-Evolve]] 是同构现象——都是"agent 从自己过去的轨迹中蒸馏可复用知识"。ALTK 在 8 模型评测中发现：
 
-- 强模型 + 有 headroom 时全注入表现更好（DeepSeek-V3.2 +9.5pp TGC）
-- 弱模型 + selective retrieval 同时最好且最便宜（gpt-oss-120b +16.1pp at +5% tokens）
-- 饱和模型零增益（GLM-5）
+- 作者在 AppWorld test_normal 报告 DeepSeek-V3.2 全注入 +9.5pp TGC；gpt-oss-120b selective +16.1pp TGC，相对无记忆 +5% token、相对全注入更少 token。
+- GLM-5 在该设置无可测增益，原因未隔离；三类是观察模式而非固定模型分类。Token 数并非总成本。
 
 这意味着 lessons-md / investigation skill 同样存在剂量问题——如果 promote 太频繁、skill 文件膨胀，agent 表现可能饱和甚至倒退。Anthropic 在 CI 域缺少类似系统性测量，是一个待补的研究缺口。
 
