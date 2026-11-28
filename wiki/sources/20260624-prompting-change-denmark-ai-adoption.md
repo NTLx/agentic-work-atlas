@@ -10,7 +10,7 @@ source_locator:
   - "firm adoption + FTE/hiring/separation + under-30 heterogeneity"
   - "conference slides / descriptive event study"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - labor-economics
@@ -33,15 +33,16 @@ claim_type: mixed
 ### 核心证据
 
 - 这是当前来源集中最接近“企业采用 → 行政用工 → 青年调整”三层连接的一项。
-- 公开材料报告采用者 FTE 相对预趋势约低 8%。
-- 调整集中于 30 岁以下，主要体现为少招而不是简单解释成裁员。
+- 历史6月会议版约−8%及<30岁集中说法保留为旧版本，不作当前估计。
+- 同一研究线后续 [Bonin, Darougheh & Kuchler, Nationalbank WP223, 2026-09-16](https://www.nationalbanken.dk/media/m2rn4owp/ai-adoption-and-firm-size-employment-effects-in-monthly-administrative-data.pdf) 摘要、§4.1–4.2、Figure7、Appendix C Table12–14：2023首批采用者相对自身2021–22趋势、再与同行业月份非采用者偏差比较，约两年−6%、2025年底−11%（FTE相对趋势非绝对减少）。差距来自不足100 FTE的采用企业，主要少招；高暴露职业约低于趋势25% vs其他7%，整体就业迄今无明显变化，工资未检出响应。
+- 年龄并非唯一或已识别主因：Table12单独/联合年龄交互不显著；年龄、学历及职业暴露交织，勿保留旧“集中于30岁以下”的普遍结论。
 
 ### 不可越过的边界
 
 - FTE 不等于人数，“约 -8%”不能写成裁员 8%。
 - 企业采用非随机，结果不应升级为无条件因果效应。
 - <30 岁不能与 22–25 岁、entry-level、first-job 互换。
-- 仍缺正式方法稿、职业 crosswalk、培训完成与技能测评。
+- WP223已给出正式工作论文方法（趋势残差化、三位行业×月及规模固定效应、调查权重）；仍为非随机观察，部分对照后续采用，不能排除企业自身增长计划等混杂。未全读70页附录或重估；会议样本4,468/746,802不可自动套用修订稿。培训及能力链仍缺。
 
 ### 对标
 

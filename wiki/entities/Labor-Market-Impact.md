@@ -5,7 +5,7 @@ aliases:
   - 劳动力市场影响
 definition: "一个跨来源劳动市场证据节点：整理 AI 对就业、招聘、工资、工作结构和技能形成的不同测量，但不把企业采用、职业暴露、个人使用、headcount/FTE、招聘流量、培训与独立能力压成单一因果效应。"
 created: 2026-06-30
-updated: 2026-09-19
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -52,7 +52,7 @@ AI 技术对就业、工资、工作结构和劳动力市场动态的影响。An
 
 ## 影响机制
 
-- **任务自动化**：AI 自动化特定任务，而非整个工作。
+- **任务自动化**：AI可自动化部分任务，有时改变整个岗位需求；从任务暴露不能直接推出岗位净变化。
 - **任务跨界**：OpenAI Work at the Frontier（2026-07）测量到 [[Task-Crossover|任务跨界]]——职业专属 AI 使用中 43.5% 涉及其他职业的历史任务。这是任务再分配的**最上游信号**：先于就业数、工资、岗位发布等滞后指标，在职位描述修改之前就可观测。与 Anthropic Economic Index 的"暴露度"测量互补——一个测机器在执行什么，一个测人在用机器跨界做什么。
 - **技能价值变化**：57%的受访者认为 AI 提高了其技能的市场价值。
 - **工作重新定义**：AI 可能增强而非取代人类工作。
@@ -123,11 +123,15 @@ worker actually used AI
 
 详细字段契约见 [[Labor-AI-Empirical-Calibration]]。
 
-第二批进一步增加了 firm-level spending、posting demand 与 administrative early-career hires 三种连接。[[20260630-ramp-ai-jobs-firm-spending-workforce]] 中 high-intensity adopters 的 total employment 与 entry-level headcount 都上升；[[20260901-dallasfed-ai-automation-job-postings]] 与 [[20260428-census-youre-not-hired-ai-early-career]] 则在高 exposure 的 occupation / industry-state 层看到 posting 与 22–24 岁 hires/employment 走弱。这个组合强化的不是“AI 同时创造和消灭工作”的泛结论，而是一个更具体的测量边界：**firm stock expansion 与 exposed-entry contraction 可以并存，只有共同 firm × occupation × person key 才能判断它们是否发生在同一组织链上。**
+第二批进一步增加了 firm-level spending、posting demand 与 administrative early-career hires 三种连接。[[20260630-ramp-ai-jobs-firm-spending-workforce]] 中high-intensity adopters相对同最终强度较晚采用者的0–24月平均总/初级人数估计为正（非绝对增长或随机因果）；[[20260901-dallasfed-ai-automation-job-postings]] 与 [[20260428-census-youre-not-hired-ai-early-career]] 则在高 exposure 的 occupation / industry-state 层看到 posting 与 22–24 岁 hires/employment 走弱。这个组合强化的不是“AI 同时创造和消灭工作”的泛结论，而是一个更具体的测量边界：**firm stock expansion 与 exposed-entry contraction 可以并存，只有共同 firm × occupation × person key 才能判断它们是否发生在同一组织链上。**
+
+## 版本校准（2026-11-28）
+
+Ramp Table3 的+10.2%/+12%是条件比较估计，前趋势高组有显著点位，初级使用log(1+y)且定义为seniority1–2。丹麦WP223替代历史会议结果的现行解释：约两年−6%、2025末−11%相对趋势FTE，集中<100 FTE，职业暴露比单独年龄交互更明显，非绝对裁员或全民失业率。Stanford 6月累计路径−19%与ADP10月同比（22–25岁高/低暴露−4.2%/−1.3%）不同；教育、预趋势与规格敏感仍需注意。详见 [[Labor-AI-Empirical-Calibration]]。未把共同样本中尚未测量的技能或因果归因补齐。
 
 ## 前提与局限性
 
-- 数据仅基于 Claude 用户，可能不代表整个劳动力市场。
+- Claude遥测只代表平台样本；其余行政、职业档案、企业及个人调查各有选择和测量限制。
 - 调查样本偏向知识工作者，可能不具代表性。
 - AI 影响的长期趋势尚不明确。
 

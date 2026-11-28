@@ -2,7 +2,7 @@
 type: topic
 title: "Pro-Worker AI 与劳动政策"
 created: 2026-07-09
-updated: 2026-09-18
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -23,6 +23,8 @@ source_raw:
 核心论点来自 Acemoglu / Autor / Johnson 在 Hamilton Project 的公开论述。这里应区分两层：其政策工具与历史案例属于来源直接主张；“自动化范式锁定导致 Pro-Worker AI 投资不足”属于三位作者的经济学解释框架，不应被写成无争议事实。政策目标则是把技术激励从单纯替代劳动转向创造提高人类专业价值的新任务。
 
 ## 四维政策工具箱
+
+[Hamilton Project 2026-02-23论文](https://www.hamiltonproject.org/publication/paper/building-pro-worker-ai/) / [NBER w34854](https://www.nber.org/papers/w34854) 是同一研究线，五类技术及九项政策方向为作者理论与建议。只有新任务创建被作者分类为unambiguously pro-worker；不等于其他技术一定损害劳动者，或所有新任务在实际就业、工资、劳动份额、工作质量和安全上必然改善。以下四维是研讨会摘要的选择性归纳，不是政策效果实证。
 
 ### 1. 政府作为引领者和实验者
 
@@ -51,10 +53,10 @@ source_raw:
 
 | 先例 | 政策机制 | 对 Pro-Worker AI 的启示 |
 |------|---------|----------------------|
-| DOD 自动驾驶 Grand Challenge | `$1M` 奖金启动整个行业 | 可设计 Pro-Worker AI Grand Challenge，用定向激励改变研究方向 |
-| 数字广告与社交媒体崛起 | 政府政策（Section 230）刻意创造了注意力经济 | "先上线后修复"策略的失败教训——Pro-Worker AI 需要事前方向引导 |
-| 工业革命纺织工人停滞 | 无政策干预，实际工资 50 年不涨 | 不干预的代价可能极高；铁路到来才终结停滞 |
-| 中国贸易冲击 |  aggregate 效率收益 vs 社区 20 年创痛 | 方向选择影响分配结果，"事后补偿"远不如"事前导向" |
+| DOD 自动驾驶 Grand Challenge | 作者列举的定向研发激励例子；奖金及行业演进不证明单一政策因果 | 可设计 Pro-Worker AI Grand Challenge，用定向激励改变研究方向 |
+| 数字广告与社交媒体崛起 | 作者对制度与商业模式的解释；不把单一法律视为注意力经济已识别原因 | "先上线后修复"策略的失败教训——Pro-Worker AI 需要事前方向引导 |
+| 工业革命纺织工人停滞 | 作者引用的特定历史工资停滞叙述，未独立核验序列及政策反事实 | 技术变迁的分配结果值得研究；不作铁路单因果裁决 |
+| 中国贸易冲击 |  aggregate 效率收益 vs 社区 20 年创痛 | 方向选择影响分配结果，事前导向和事后支持可互补，实际政策比较需证据 |
 
 ## 核心辩论与未解问题
 
@@ -67,8 +69,8 @@ source_raw:
 ## 与 Agent 时代的交汇
 
 - Pro-Worker AI 框架为 "augmentation vs automation" 争论提供了经济学基础：[[Agent-Harness|coding agent]] 是否创造了需要人类判断力的新任务？
-- [[Forward-Deployed-Engineer]] 是 Pro-Worker AI 在 Agent 时代的组织形态：一线部署 + AI 知识增强，而非远程自动化
-- Schneider Electric 案例证明了 Pro-Worker AI 不限于高科技行业——现场技术工人、低薪零工同样受益
+- [[Forward-Deployed-Engineer]] 是可比较的组织形态，不因角色命名即证明劳动者受益：一线部署 + AI 知识增强，而非远程自动化
+- Schneider Electric案例提示适用场景可超出高科技行业；需独立测量工资、任务、工作质量、安全与分配结果，不能由工具存在证明受益
 
 ## 关联概念
 

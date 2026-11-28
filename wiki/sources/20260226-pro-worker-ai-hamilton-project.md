@@ -4,24 +4,26 @@ title: "Building Pro-Worker AI (Hamilton Project)"
 source_raw:
   - "[[20260226-pro-worker-ai-hamilton-project]]"
 created: 2026-07-09
-updated: 2026-07-09
+updated: 2026-11-28
 tags:
   - source-summary
   - pro-worker-ai
   - task-framework
   - labor-economics
 evidence_level: high
-claim_type: extracted
+claim_type: mixed
 ---
 
 # Building Pro-Worker AI (Hamilton Project)
 
 ## 编译摘要
 
+2026-11-28 核查[正式发布页](https://www.hamiltonproject.org/publication/paper/building-pro-worker-ai/)、[NBER w34854摘要](https://www.nber.org/papers/w34854)及[2月25日研讨会](https://www.hamiltonproject.org/event/building-pro-worker-ai/)：2月23日发布论文，2月25日研讨会，五类技术并列（资本增强与自动化不同）；九项政策方向是作者建议，四维为本库摘要归纳。报告/研讨会同一研究线非独立实证；尚未核验全部历史及企业案例的原始数据。
+
 ### 1. 浓缩
 - **核心结论1**: Pro-Worker AI 的定义是"使人类技能和专业知识更有价值而非更不必要"的 AI 方向，其核心机制是[[Task-Framework|新任务创建]]（new task creation）而非自动化或劳动增强。
   - 关键证据：三位 MIT 经济学家（Acemoglu/Autor/Johnson）在 Hamilton Project 研讨会上系统阐述；以航空维修技师为例，同一职业因工具设计方向不同可走向"去技能化"或"技能升级"两条路径。
-- **核心结论2**: 技术变革有五种类型（劳动增强、资本增强/自动化、新任务创建、专业知识拉平、第五类），其中只有新任务创建型技术是真正的 Pro-Worker 方向，因为它"恢复"（reinstate）了劳动而非替代。
+- **核心结论2**: 技术变革有五种类型（劳动增强（labor-augmenting）、资本增强（capital-augmenting）、自动化（automating）、专业知识拉平（expertise-leveling）、新任务创建（new task-creating）），作者框架中仅新任务创建被分类为unambiguously pro-worker；其余不是必然反劳动者，实际就业、工资、质量及分配需测量。
   - 关键证据：工业革命后农业劳动力转移并非自动创造新工作——制造、 clerical 等新岗位需要创业和新技术的主动开发；英国纺织工人实际工资在 1780s–1830s 停滞 50 年，直到铁路到来创造新任务。
 - **核心结论3**: 市场失灵导致 Pro-Worker AI 投资不足——AI 行业被自动化范式锁定（商业模式依赖销售自动化工具、AGI 愿景的 Dartmouth 会议传统、行业高度集中），需要政策干预（政府带头采购、税制改革、Grand Challenge、职业许可改革）来改变技术方向。
   - 关键证据：DOD 自动驾驶 Grand Challenge（`$1M` 奖金）成功启动整个行业；中国贸易冲击对制造业社区造成 20 年创痛但 aggregate 效率收益被归消费者——分配与方向的分离。

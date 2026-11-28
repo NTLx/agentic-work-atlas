@@ -10,7 +10,7 @@ source_locator:
   - "3.5–5.0M monthly worker-firm matches"
   - "22–25 high-exposure employment path about 19% below low-exposure comparison"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - labor-economics
@@ -34,7 +34,8 @@ claim_type: mixed
 
 - 公开修订稿把 employment stock、hire、separation 分开。
 - 22–25 岁高暴露职业的 employment path 相对低暴露比较路径约低 19%。
-- H/S 设计使“少招”与“多离职”可以在同一工资单框架中区分。
+- [作者2026-08-12版本说明](https://digitaleconomy.stanford.edu/news/canariesaug26/)：相同口径2025-07约−15%、2026-06约−19%；主要少招非多离职，工资调整有限。教育控制后差距缩小，部分差异预趋势存在，ADP差距大于全国调查基准，企业内招聘控制结果对规格敏感。作者明确为描述性预警，非因果估计。
+- [ADP 2026-11-18同项目月度更新](https://www.adpresearch.com/research/canaries-dashboard-employment-in-ai-exposed-occupations-shrank)：2026-10同比全龄高/低暴露−0.8%/+0.3%，22–25岁−4.2%/−1.3%，26–30岁−3.4%/+0.7%。这是当月同比，不是−19%累计反事实路径差；同项目非独立验证。
 
 ### 不可越过的边界
 

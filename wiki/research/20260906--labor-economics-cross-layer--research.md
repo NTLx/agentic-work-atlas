@@ -16,6 +16,10 @@ tags:
 
 本轮只交付本日志；不创建 Claim/EX、不更新 agenda/index、不晋升稳定 Wiki。检索与版本截止为 **2026-09-06**。2026 指公开研究版本年份，不要求底层观测全部发生于 2026；旧数据年份另列，不能包装成 2026 年已经发生的变化。
 
+# 2026-11-28 后续版本校准
+
+S3正式方法稿已经取得：[Nationalbank WP223（2026-09-16）](https://www.nationalbanken.dk/media/m2rn4owp/ai-adoption-and-firm-size-employment-effects-in-monthly-administrative-data.pdf)，同研究线，不另计独立证据。§4.1–4.2、Figure7及Appendix C Table12–14将原会议约−8%与青年集中的描述更新为约两年−6%、2025末−11%相对趋势FTE差，主要来自<100 FTE、少招与高暴露职业；单独年龄交互不显著，不能推断仅青年调整。部分对照后续采用，非随机因果。此前P0“正式方法稿缺失”已部分解决；完整职业crosswalk、复算及训练/能力共同队列仍未完成。本页以下原2026-09-06历史结果保留，不与新版本混为同一估计。现行证据见 [[Labor-AI-Empirical-Calibration]]、[[20260624-prompting-change-denmark-ai-adoption]]、[[2026-11-28]]。
+
 # 来源身份与版本门
 
 | 编号 | 原始来源、publication/date/version | 纳入用途与身份边界 |

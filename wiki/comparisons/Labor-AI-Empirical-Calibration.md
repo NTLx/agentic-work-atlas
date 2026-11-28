@@ -2,7 +2,7 @@
 type: comparison
 title: Labor AI Empirical Calibration
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -33,12 +33,12 @@ source_raw:
 |---|---|---|---|---|---|---|
 | [[20260901-nyfed-businesses-ai-transform-work-not-cut-jobs]] | 区域企业 | 行动自报 + 回溯归因 | 企业 AI 使用 | 少招/多招/裁员/再培训行动占比 | 服务业 15%/13%/4%/34% | 净 headcount 或培训完成率 |
 | [[20260324-atlanta-fed-firm-data-on-ai]] | 四国企业高管 | 回溯归因 + 预期 | 企业 AI 采用 | 过去/未来三年就业影响 | 约 0.00% retrospective；-0.68% expected | 行政净就业变化 |
-| [[20260624-prompting-change-denmark-ai-adoption]] | 企业—员工匹配行政记录 | 行政结果 + 非随机 event study | 企业采用调查 | FTE、招聘、离职、年龄异质性 | adopter FTE 相对预趋势约 -8% | 裁员 8% 或青年失业率 |
+| [[20260624-prompting-change-denmark-ai-adoption]] | 企业—员工匹配行政记录 | 行政结果 + 非随机 event study | 企业采用调查 | FTE、招聘、离职、年龄异质性 | 历史会议稿−8%；9月同研究线WP223修订约两年−6%、2025末−11%相对趋势 | 裁员 8% 或青年失业率 |
 | [[20260305-anthropic-labor-market-impacts-ai]] | 任务→职业→CPS 人月 | 暴露估计 + 调查流量 | Claude observed-use occupation exposure | 22–25 岁 new-work flow | 高暴露组相对 2022 约 -14%，边缘显著 | 采用 AI 企业少招 14% |
 | [[20260812-stanford-canaries-coal-mine-ai-employment]] | ADP worker–firm payroll match | 行政存量/流量 | 职业 exposure proxy | employment path、hire、separation | 22–25 岁高暴露 employment path 约 -19% | AI 导致 19% 裁员 |
 | [[20260414-nyfed-genai-training-access]] | 就业者个人 | 使用/培训自报 + stated preference | 工作中 AI 使用 | 培训可得性 | 39% 使用 AI；15.9% 有培训 | 培训完成率或技能提升 |
 | [[20260201-how-ai-impacts-skill-formation]] | 实验受试者 | 随机实验 | AI assistance | 无 AI 独立理解测验 | -4.15 分；d=0.738；p=0.010 | 职业长期能力再生产率 |
-| [[20260630-ramp-ai-jobs-firm-spending-workforce]] | 美国企业 | 观察性 linked data | observed firm AI spending | total / entry-level headcount stock | high-intensity adopters 约 +10% employment；+12% entry-level headcount | entry-level hires、晋升、培训或因果效应 |
+| [[20260630-ramp-ai-jobs-firm-spending-workforce]] | 美国企业 | 观察性 linked data | observed firm AI spending | total / entry-level headcount stock | High相对同强度later adopters的0–24月平均ATT：总人数+10.2%、初级log(1+y)近似+12% | entry-level hires、晋升、培训或因果效应 |
 | [[20260901-dallasfed-ai-automation-job-postings]] | occupation-industry / firm postings | 劳动力需求观测 | automatable-task exposure | online job postings | 10pp exposure 差异：约 -5%（2023末）、-8%（2025Q1）；existing firms 到 2026初约 -8–9% | 实际 hire、employment 或 layoff |
 | [[20260428-census-youre-not-hired-ai-early-career]] | industry-state × employer-employee admin | 行政 hires/employment | industry-state AI exposure | 22–24 岁 hires / employment | most-exposed quintile 10 个季度后 employment 约 -12%，主要由 hires 驱动 | observed firm adoption、培训或技能结果 |
 
@@ -114,10 +114,10 @@ worker actually used AI
 
 当前来源中：
 
-- 丹麦材料使用 <30；
+- 丹麦历史会议材料使用<30；9月WP223附录年龄/学历/暴露联合比较不支持把单独年龄作为已识别主因；
 - Anthropic/CPS 与 Stanford/ADP 使用 22–25；
 - Census 使用 22–24；
-- Ramp 使用其 workforce 数据中的 entry-level 分类；
+- Ramp使用Revelio七级seniority的1–2级；非年龄/首次就业；
 - Skill Formation 实验只是“不熟 Trio”的程序员；
 - none of these automatically equals “entry-level job”。
 
@@ -170,6 +170,10 @@ training offered
 | 估计状态 | administrative / reported / retrospective-attribution / expected / experiment |
 | 审计边界 | denominator / comparison_group / uncertainty / missing_fields / linkage_access |
 
+## 2026-11-28 版本与竞争解释校准
+
+Ramp Table3高组总/初级采用前分别3/11、2/11个点位CI排除0，强度按处理后支出划分；丹麦WP223的2021–22趋势与同行业月份非采用者比较，差距来自<100 FTE，工资及总体就业未检出明显变化。二者采用定义、样本、对照、结果变换和时间窗不同，不做正负净效应。Stanford作者明确ADP是描述性预警、教育控制缩小差距及规格敏感；11月ADP更新为10月同比，不能与6月累计路径−19%相减。详见各Source。
+
 ## 当前稳定判断
 
 前两批共 10 个来源已足以支持四个稳定判断：
@@ -177,7 +181,7 @@ training offered
 1. **“企业总体用工影响有限”不能证伪青年/高暴露职业入口收缩。**
 2. **“青年入口收缩”不能直接证明专业能力再生已经恶化。**
 3. **“提供培训”不能替代“完成培训并在无 AI 条件下形成独立能力”。**
-4. **企业层 entry-level stock 增长与高暴露职业/地区的 early-career hiring 收缩可以同时出现。** Ramp 的 +12% entry-level headcount 与 Census/Dallas 的入口需求下降不处于同一 estimand，不能相减或互相否定。
+4. **企业层 entry-level stock 相对增长与高暴露职业/地区 early-career hiring 收缩在不同样本中可同时观察。** Ramp +12%为0–24月平均log(1+y)模型的近似换算，不是绝对增长；与Census/Dallas不处同一estimand，不能相减、互相否定或证明同企业存在同机制。
 
 真正能闭合“AI 采用 → 劳动力结构 → 专业能力再生”的证据，需要同一企业—职业—个人—时期链上同时看到：
 
