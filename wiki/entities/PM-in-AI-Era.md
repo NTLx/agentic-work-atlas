@@ -4,9 +4,9 @@ title: PM in AI Era
 aliases:
   - PM in AI Era
   - AI 时代的产品经理
-definition: "AI 时代 PM 从路线图对齐者转变为高速公路设计者——系统性消除从想法到用户手中的每一步摩擦"
+definition: "AI 辅助产品开发中，PM 可从部分执行协调转向问题选择、目标与验收、共享上下文和反馈回路设计；需按组织、任务和风险配置职责"
 created: 2026-05-08
-updated: 2026-11-23
+updated: 2026-11-28
 tags:
   - product-management
   - AI-era
@@ -75,7 +75,7 @@ claim_type: mixed
 - **PRD 的退位**：只有"特别模糊的功能"或"基建投入大的项目"才需要 PRD——其他被 metrics readouts + team principles 替代
 - **最重要的是 Taste**：Cat 认为"代码越来越便宜，决定写什么变得更有价值"——产品 taste 取代执行力成为核心能力
 - **最值钱的 PM**：不是能"写出好需求文档"的人，而是"能想办法继续缩短从想法到用户手中时间"的人
-- **Newton 观点**：CPO Mike Newton（Instagram 联合创始人）——AI 时代"不是让 PM 做更多产品工作，而是让工程师做更多产品工作"
+- **归因勘误（2026-11-28）**：旧版 Mike Newton 署名不可靠；Anthropic [2024任命](https://www.anthropic.com/news/mike-krieger-joins-anthropic) 与 [2026-01组织调整](https://www.anthropic.com/news/introducing-anthropic-labs) 明确为 Mike Krieger，后者在当时转入 Labs、Ami Vora 领导 Product。未从本地语音转录可靠定位旧引语，撤下，不将其改署给 Krieger。
 
 ## 前提与局限性
 
@@ -92,13 +92,13 @@ claim_type: mixed
 3. **低摩擦发布**：[[Research-Preview|Research Preview]] 标签让不完美的功能也能 ship，Evergreen Launch Room 让工程师推代码后文档和 PMM 第二天就接手。
 4. **跨职能即时接入**：PM 的角色从"排期协调者"变成"清除每一段路上障碍的人"——确保设计、文档、法务、支持资源随时可接上。
 
-这四个组件的共同目标是：把从想法到用户手中的时间压缩到最短。Cat Wu 和 Boris Cherny 的分工体现了这一点——Boris 设定 3-6 个月后的愿景，Cat 负责"找到从现在到那个愿景之间的路径"。
+这四个组件的共同目标是减少无效等待并提高有效学习速度；仍须兼顾用户结果、风险与可持续交付。Cat Wu 和 Boris Cherny 的分工体现了这一点——Boris 设定 3-6 个月后的愿景，Cat 负责"找到从现在到那个愿景之间的路径"。
 
 ## 角色边界消失的含义
 
 传统 PM 角色的核心假设是"PM 不写代码、工程师不做产品决策"。AI 时代这个假设正在瓦解：PM 在写代码、工程师在做 PM 的活、设计师也能改代码。专业化从"职业身份"变为"能力工具箱"。
 
-这意味着 PM 的核心竞争力不再是"会写 PRD"或"会协调排期"，而是 [[Taste|品味]] 和 [[Judgment|判断力]]——"代码越来越便宜，决定写什么变得更有价值"。这与 [[Cross-Disciplinary-Generalist|跨领域通才]] 的趋势一致：AI 时代最稀缺的不是单一技能的深度，而是跨领域判断的广度。
+这意味着 PM 的核心竞争力不再是"会写 PRD"或"会协调排期"，而是 [[Taste|品味]] 和 [[Judgment|判断力]]——"代码越来越便宜，决定写什么变得更有价值"。这与 [[Cross-Disciplinary-Generalist|跨领域通才]] 的趋势一致：跨领域判断的价值可能上升，但不能据此否定深度专业能力或预先确定普遍稀缺性。
 
 ## Whatnot 样本：PM 即"拥有问题的 IC"（强度最高的组织结构化）
 

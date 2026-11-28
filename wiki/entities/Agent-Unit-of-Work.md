@@ -7,7 +7,7 @@ aliases:
   - Agent 工作单元
 definition: "组织愿意交给 Agent 处理的任务单元——其大小、覆盖范围、交接准备、返回值检查和边界约束构成了 Agent delegation 的核心控制参数。Kief Morris (2026) 发现这是跨团队、跨场景反复出现的同一组选择。"
 created: 2026-07-14
-updated: 2026-07-14
+updated: 2026-11-28
 evidence_level: medium
 claim_type: synthesized
 tags:
@@ -50,13 +50,13 @@ source_raw:
 
 ### 谁可以驾驭 Agent？
 
-"Non-engineers steering agents"的担忧——Sam Ruby 的回应：这不是权限问题，而是 **manage by objective vs manage by method** 的问题。当 manager 使用 LLM 时，不是拿起工具，而是做了一个 hire。
+"Non-engineers steering agents"的担忧——Sam Ruby 的回应：Sam Ruby 以 **manage by objective vs manage by method** 解释管理难题；此观点并不取消真实资源权限、领域资格或责任要求。当 manager 使用 LLM 时，不是拿起工具，而是做了一个 hire。
 
 ## Unstated Objectives
 
-Fowler 指出的关键风险：人类可以外包执行，但**不能外包验收标准**。真正的危险在于重要的 unstated objectives——未被言说，可能因为甚至未被想象到。
+Fowler 指出的关键风险：Fowler 强调人类请求与最终验收判断的责任；标准草拟、测试设计和机械验收可委托，但责任人应核定目标及未言明约束。真正的危险在于重要的 unstated objectives——未被言说，可能因为甚至未被想象到。
 
-Conformance tests（sensors）比 specifications（guides）更有价值——但很难想象所有需要的 conformance tests。
+Fowler 认为 conformance tests（sensors）更有价值，并指出不应发生什么难以穷举；规约定义意图，测试提供观测，两者互补，不能一般化排序。
 
 ## 与 Manage by Objective 的映射
 
@@ -83,4 +83,4 @@ Drucker (1959)：当工作者比管理者更了解具体细节时，管理方式
 ## 关键数据点
 
 - Kief Morris (2026-07): Thoughtworks FOSE retreat 跨多个 session 发现同一组选择被反复做出——工作单元粒度、权限边界、返回值格式
-- Martin Fowler Fragments (2026-07): 可验证、可撤销、人类可在有限时间内审查——构成 Unit of Work 的三条件
+- 本地 Fragments 原文明确列五个控制参数，并未提出上述三项严格准入条件。可验证性、可撤销性、审查成本仍是本 Wiki 的设计考虑，不归为 Fowler 的定理。

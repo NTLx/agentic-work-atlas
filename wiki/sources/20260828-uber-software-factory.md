@@ -6,7 +6,7 @@ source_raw:
 canonical_url: "https://x.com/UberEng/status/2093444169037762840"
 raw_state: full
 created: "2026-08-31"
-updated: "2026-08-31"
+updated: "2026-11-28"
 tags:
   - source-summary
   - software-factory
@@ -25,12 +25,12 @@ claim_type: mixed
 
 ### 1. 浓缩
 
-- **核心结论1：规模化的 Software Factory 不是给每个工程师配一个更强的助手，而是运营一支可测量、可路由、可升级的托管 Agent 车队。** Uber 披露本地或云 Agent 已归因于超过 70% 的 pull requests，工程师构建了 3,600 多个 Agent skills，每日执行超过 30,000 次；2026 年 2 月至 8 月，周活跃用户增长 7 倍、周 Agent 请求增长 9.4 倍，而总 AI 支出自 4 月起相对稳定。文章的战略结论是，把 SDLC 工作负载迁入托管环境，才能集中控制模型路由、执行 harness 和运营支出。
+- **核心结论1：规模化的 Software Factory 不是给每个工程师配一个更强的助手，而是运营一支可测量、可路由、可升级的托管 Agent 车队。** Uber 披露本地或云 Agent 已归因于超过 70% 的 pull requests，工程师构建了 3,600 多个 Agent skills，每日执行超过 30,000 次；2026 年 2 月至 8 月，周活跃用户增长 7 倍、周 Agent 请求增长 9.4 倍，而总 AI 支出自 4 月起相对稳定。文章的战略结论是，作者建议将适合的 SDLC 工作负载迁入托管环境，以提高集中控制能力；不是实现这些目标的唯一方案。
   - 关键证据：[[20260828-uber-software-factory]]（“Introduction”与“Conclusion”）；原文报告的数字没有外部审计。
 - **核心结论2：Agent 成本优化的目标是“完成任务的成本—质量—可靠性”Pareto 前沿，而不是单纯购买更便宜的模型。** Uber 为每个托管 Agent 用真实工作构建 benchmark，在统一 harness 中比较前沿模型和开放权重模型，再持续迁移到 Pareto 最优配置；uReview 以真实 PR 和已知 bug 评估 precision、recall、F1、每次 review 成本、延迟、超时和噪声。固定模型后，Uber 报告每 1,000 次请求成本较峰值下降近 34%，每 session 成本较 6 月峰值下降 52%。
-  - 关键证据：[[20260828-uber-software-factory]]（“Benchmark-Driven Model Selection”与“Figure 2”）；固定模型只能部分隔离优化收益，不能替代对照实验。
-- **核心结论3：在组织规模上，工具表面、上下文和成本可观测性构成 Agent 工厂的控制面。** Uber 把超过 1,000 个 MCP server 收敛到统一 gateway，通过 CLI 动态解析、tool search、code-mode 和按场景设置的 prompt-cache TTL，减少不必要的 schema、轮询和上下文重传；同时用 AI Context Graph 为 Agent 提供跨服务、事故、PR、设计文档和数据集的组织语义。文章还把实时花费、预算层级、session anti-pattern dashboard 和 trace 反馈接入 harness。
-  - 关键证据：[[20260828-uber-software-factory]]（“Executing MCP Tools via the Shell”“Code-Mode”“Context Engineering”与“Session Analysis Dashboard”）；原文称 code-mode 在单次 SQL 测试中减少超过 50% token，批量工作流可超过 90%，这些幅度同样是内部测量。
+  - 关键证据：[[20260828-uber-software-factory]]（“Benchmark-Driven Model Selection”与“Figure 2”）；固定模型只能部分隔离优化收益，不能替代对照实验；每请求和每session成本不等于每成功验收任务成本。
+- **核心结论3：在组织规模上，工具表面、上下文和成本可观测性构成 Agent 工厂的控制面。** 作者称 Uber gateway 覆盖超过1,000个 MCP server，另称1K+内部 MCP tools 投影为CLI；server与tool计数不可混用。其通过 CLI 动态解析、tool search、code-mode 和按场景设置的 prompt-cache TTL，减少不必要的 schema、轮询和上下文重传；同时用 AI Context Graph 为 Agent 提供跨服务、事故、PR、设计文档和数据集的组织语义。文章还把实时花费、预算层级、session anti-pattern dashboard 和 trace 反馈接入 harness。
+  - 关键证据：[[20260828-uber-software-factory]]（“Executing MCP Tools via the Shell”“Code-Mode”“Context Engineering”与“Session Analysis Dashboard”）；原文描述同session内5次相同SQL查询对比两个路径，最初三行显示即使结果集小也可减少超过50% token；批量超过90%是作者报告。图表未独立读取，不能推断货币成本、延迟或正确率改善同幅度。
 
 ### 2. 质疑
 
@@ -47,7 +47,7 @@ claim_type: mixed
 - **与 [[Agent-Harness]]、[[Agent-Optimized-CLI]] 对标（综合判断）**：Uber 用统一 gateway、shell CLI 和 code-mode 把稳定的认证、工具解析、轮询和批处理逻辑移出模型上下文；这说明工具接口与 harness 不是外围实现，而是直接决定 Agent 每轮需要推理多少。
 - **与 [[Context-Engineering]]、[[Graph-Guided-Agent-Investigation]] 对标（综合判断）**：AI Context Graph 把组织内部关系、历史使用和运行记录转成可查询语义层；它不是简单增加文档，而是在 Agent 调查前提供更高信号的检索入口，减少“盲搜—试错—扩张上下文”的路径。
 - **与 [[Evals-as-PRD]]、[[Agent-Verification]] 对标（综合判断）**：uReview 的真实 PR benchmark 和 precision/recall/F1、成本、延迟、噪声联合评分，把“选哪个模型”变成可运行的验收问题；这也限制了“便宜模型一定更好”的叙事。
-- **约束分析**：上下文重复计费、模型能力差异和长链路延迟属于供应商与计算过程带来的硬约束；gateway、默认模型、cache TTL、花费提醒和审批层属于可调整的组织规则；把所有 MCP 统一投影为 CLI、建设 24 million nodes / 80 million edges 的 Context Graph，则是 Uber 为自身代码库、数据规模和权限环境选择的工程路径，不能直接当作普适配置。
+- **约束分析**：上下文计费依供应商协议及实际cache命中，能力差异和长链路延迟需实测；文章中的TTL、400K压缩和Medium推理是该组织配置，不作为当前普适价格或最佳参数；gateway、默认模型、cache TTL、花费提醒和审批层属于可调整的组织规则；把所有 MCP 统一投影为 CLI、建设 24 million nodes / 80 million edges 的 Context Graph，则是 Uber 为自身代码库、数据规模和权限环境选择的工程路径，不能直接当作普适配置。
 
 ## 关联概念
 

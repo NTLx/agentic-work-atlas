@@ -3,9 +3,9 @@ type: entity
 title: Machine-Readable Processes
 aliases:
   - Machine Readable Processes
-definition: "让 Agent 能理解、执行和优化工作流的结构化显式流程定义"
+definition: "结构化表达流程状态、输入输出、决策条件和规则，使受授权的 Agent 或确定性运行时可解释、执行并验证适合委派的工作流"
 created: 2026-04-09
-updated: 2026-05-26
+updated: 2026-11-28
 tags:
   - AI-Agent
   - Process-Design
@@ -24,7 +24,7 @@ source_raw:
 # Machine-Readable Processes
 
 > [!definition] 定义
-> Machine-Readable Processes 是指结构化、显式的流程定义，使 AI Agent 能够理解、执行和自主优化工作流程。这是 Agent-First Enterprise 的技术基础设施。
+> Machine-Readable Processes 是指结构化、显式的流程定义，支持 AI Agent 读取流程并在受控执行层中运行；是否能自主优化取决于权限、效果测量、审批和变更治理。这是 Agent-First Enterprise 的技术基础设施。
 
 ## 核心要点
 
@@ -41,8 +41,8 @@ source_raw:
 | 维度 | 遗留流程 | Machine-Readable 流程 |
 |-----|---------|----------------------|
 | 表达形式 | 文档、手册、隐性知识 | 代码、配置、显式定义 |
-| 执行方式 | 人类理解后执行 | Agent 直接执行 |
-| 优化能力 | 需人工分析改进 | Agent 可动态优化 |
+| 执行方式 | 人工或既有自动化 | Agent/确定性执行器按合同操作 |
+| 优化能力 | 人工分析或既有反馈控制 | 可自动提出优化；变更须受验证与授权 |
 
 ### 为什么 Agent 需要它
 - Legacy processes 不是为自主系统设计的
@@ -51,14 +51,14 @@ source_raw:
 
 ## 关键数据点
 
-- AI 技术预算预计未来两年增长超过 70%，agents 需要结构化流程才能发挥潜力
+- 来源是2026-04-07的 MIT Technology Review Insights 咨询型内容，预算预测未在公开正文给出样本与基线；不作为流程有效性证据。
 - Machine-Readable 流程的三大要素：流程定义（YAML/JSON）、政策约束（金额上限/权限）、结构化数据流（API/Schema）
 - 遗留流程以文档、手册、隐性知识表达；Machine-Readable 流程以代码、配置、显式定义表达
-- Agent 可动态优化流程，而遗留流程需人工分析改进
+- 结构化表达不是执行保证：须有实际状态、前置/终止条件、失败恢复、审计与资源侧权限控制。
 
 ## 前提与局限性
 
-- 仅适用于可被结构化和显式定义的流程——高度创意或探索性工作难以机器可读化
+- 探索任务也可结构化目标、预算、验收和停止条件，不必预先规定所有推理步骤。
 - 需要先有明确的 policy constraints，否则 Agent 缺乏安全运营边界
 - 遗留系统的迁移成本可能很高——不是所有企业都能快速转换
 - 机器可读流程假设数据流标准化，但现实中很多组织的数据流是碎片化的
