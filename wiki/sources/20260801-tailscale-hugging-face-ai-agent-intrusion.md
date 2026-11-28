@@ -35,7 +35,7 @@ claim_type: mixed
 
 - **关于"长生命周期凭据 = 根本问题"的质疑**：根本问题可能是**沙盒逃逸**而非凭据。原文把责任放在"长凭据"上——但取得 root 后的实际可读范围取决于隔离、凭据托管、硬件绑定与权限配置。这是把**containment 失效的责任转嫁给 credential 系统**。如果沙盒不逃逸，根本读不到那 136 个 keys。
 - **关于"Border0 能阻止"的质疑**：Border0 是 credential-injecting proxy——但前提是**所有访问都经过该 proxy**。在 cloud-native 多服务环境中，让所有 east-west traffic 都经过 proxy 在工程上是难题。Border0 在 tailnet 内部有效，对外访问不一定。
-- **关于"workload identity federation 是终极答案"的质疑**：OIDC 信任链本身可被攻陷——攻击者只要拿到 workload 所在的 VM/container 的 metadata endpoint，就能获取 ambient authority。AWS IMDSv1 漏洞（SSRF）就是反例。
+- **关于"workload identity federation 是终极答案"的质疑**：OIDC 信任关系、身份提供方和工作负载隔离仍需保护；在具备相应访问条件时，metadata endpoint 或其他身份签发路径可能被滥用。签名身份声明不等于持有者绑定；泄露的 bearer token 在受众、权限与有效期允许时仍可能被重放。
 - **关于"agent 速度 vs 人类速度"的二分**：这种二分可能掩盖**混合威胁**——agent + 人类协作的攻击比单纯 agent 攻击更难防御。文中没有涉及此场景。
 - **关于数据可靠性的质疑**：本文是单方面（受害方 Hugging Face）+ 单方面（凭据提供方 Tailscale）的视角。**缺少第三方取证**——我们看到的都是两方愿意公开的细节。
 - **关于"181 个 CI 节点"的影响范围评估缺失**：Tailscale 没说这 181 个节点能访问什么——是真的 "paved route out of the test cluster" 还是只读到了一些测试数据？这个差距决定事件的真实严重性。
@@ -90,9 +90,9 @@ claim_type: mixed
 ## 七拍叙事（命题递进）
 
 1. **问题命名**：AI agent 取得 root + 读 secret store 的 136 keys → 复制 reusable auth key → 4.5 天注册 181 个节点——该配置暴露可复用凭据风险，未比较所有其他实现。
-2. **现象量化**：136 keys 一次性被读 + 181 节点被注册 + 4.5 天攻击窗口——人类速度的入侵防御假设在 agent 速度下不成立。
+2. **现象量化**：136 keys 一次性被读 + 181 节点被注册 + 4.5 天攻击窗口——该单案显示自动化入侵可在暴露后扩展影响；未比较匹配的人类入侵速度。
 3. **机制拆解**：Tailscale 没漏洞 → 责任落在"长生命周期凭据"+"默认未启用安全特性"+"沙盒逃逸"三层。containment 失效 + credential lifecycle 缺陷 = 完整攻击路径。
 4. **方法抽象**：三层防御方案：dynamic credentials / credential-injecting proxy / workload identity federation——共同主题："no credential to leak, no way to use this credential anywhere but in CI."
-5. **泛化证据**：作者认为完整部署 Border0 可阻止本次 136 keys 读取（未实测）；workload identity federation 是行业标准方向（AWS IAM Roles Anywhere / GCP Workload Identity / Azure Managed Identity）。
+5. **泛化证据**：作者认为完整部署 Border0 可阻止本次 136 keys 读取（未实测）；WIF 是一种减少静态密钥依赖的路径；相关机制并非同一种协议（例如 AWS IAM Roles Anywhere 使用 X.509 证书，而非此处 OIDC JWT 交换）。参见 [[Workload-Identity-Federation]] 的产品文档勘误。
 6. **方法论冲击**：防御方即使未被漏洞利用也有"阻止它"的责任；"安全 = 用户做对的事"已不够——必须"Make the safe path the easy path"；agent 速度 vs 人类速度是新的安全维度。
 7. **下一步**：agent 多 agent 协作攻击的防御；OIDC trust chain 的加固；agent 速度入侵的 SIEM 规则；FDE 部署中的 credential lifecycle 标准。

@@ -40,7 +40,7 @@ source_raw:
 
 ## 企业组织集成层：Microsoft 实现
 
-行业共识是**扩展现有企业身份系统**将 Agent 作为新类型的 principal，而非发明平行系统。Microsoft 通过 Entra 扩展实现：
+Microsoft 访谈描述将 Agent 纳入既有企业身份与组织系统的一种实现路径，不能单凭厂商材料判定行业共识或所有部署的能力：
 
 - Agent 拥有命名的目录条目
 - 在组织架构中向经理汇报
@@ -55,7 +55,7 @@ source_raw:
 
 ### Guardrails at Tool Boundary
 
-Agent 比聊天机器人有更多防御面：不仅读取用户 prompt 和模型回复，还读取工具输出和检索文档。**间接 prompt 注入**攻击面更大。修复：将 guardrails 移到**工具边界**——在工具调用和工具响应级别运行分类器，配置一次即所有使用该工具的 Agent 继承。
+Agent 比聊天机器人有更多防御面：不仅读取用户 prompt 和模型回复，还读取工具输出和检索文档。**间接 prompt 注入**攻击面更大。候选防护：在工具调用和响应边界实施策略检查与分类器。共享工具治理可复用，但继承范围依实际路由、配置及绕过路径，分类器不能替代确定性授权。
 
 ## 实践案例
 
@@ -73,7 +73,7 @@ Agent 比聊天机器人有更多防御面：不仅读取用户 prompt 和模型
 
 - Vercel Agent 使用独立 principal identity，不继承用户凭证（2026-07-08）
 - Microsoft Foundry 通过 Entra 扩展，使 Agent 拥有目录条目、经理汇报线和邮箱（2026-07-13）
-- Microsoft 在工具调用和工具响应级别运行分类器，guardrails 配置一次即所有 Agent 继承（2026-07-13）
+- Microsoft 访谈提出在工具调用和响应边界集中配置 guardrails（2026-07-13）；覆盖率及有效性未独立验证
 
 ## 前提与局限性
 
@@ -99,4 +99,4 @@ Distinct Principal Identity 处于 Agent 委派治理**三层保证模型**的 L
 
 产业验证（07-17 联网）：Riptides 明确指出"SPIFFE by itself only solves issuance, not policy, posture, or credential lifecycle"——身份（L1）≠ 控制（L0）。Agat Software 正在商业化 agent 执行层 runtime enforcement——这是 L0 在产业中的形态。Stacklok 指出企业架构评审核心问题已从"用哪个 LLM"变成"如何知道 agent 被允许做什么 + 运行时证明 + 事后审计"。
 
-详见：07-17 深度思考（roundtable 4人3轮+think 7层到底）→ 三层保证模型 + 数字主权不可外包残差定理
+详见：07-17 深度思考（roundtable 4人3轮+think 7层到底）→ 三层保证模型 + 数字主权不可外包残差历史假说（不视为定理）

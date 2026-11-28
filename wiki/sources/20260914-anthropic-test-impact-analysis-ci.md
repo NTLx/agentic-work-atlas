@@ -6,7 +6,7 @@ source_raw:
 canonical_url: "https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic"
 raw_state: full
 created: 2026-09-18
-updated: 2026-09-18
+updated: 2026-11-28
 tags:
   - source-summary
   - agentic-engineering
@@ -25,12 +25,12 @@ claim_type: mixed
 
 ### 1. 浓缩
 
-- **核心结论 1：代码生成提速会把瓶颈迁移到 CI、测试选择和结果新鲜度。**
+- **核心结论 1：该组织的代码与 PR 加速伴随 CI 负载增长，使测试选择和结果新鲜度成为容量风险。**
   - 关键证据：文章自报工程师季度代码产量约为 2021–2025 平均水平的 8 倍、Claude 生成其中约 80%；测试数量增长 10 倍，CI job 在六个月内增长 25 倍。
 - **核心结论 2：单进程、单写入者的测试影响分析服务无法承受这种增长。**
   - 关键证据：listener 记录所有测试结果，selector 根据历史和 package relevance 选择 PR 测试；当 listener 落后时，selector 使用陈旧历史，导致重复跑 flaky tests，或新测试/修复不能及时进入选择范围。临时方案分别只支撑了 70 天、29 天和不足一天。
-- **核心结论 3：把状态外置、worker 无状态化和事件日志化，才是可持续的水平扩展路径。**
-  - 关键证据：重构后 listener worker 把结果追加到 in-memory store 的 journal，独立 consumer 定期汇总 per-test history，selector 快速读取；项目由一名工程师用三周完成，作者估计过去可能接近一个季度。
+- **核心结论 3：外置状态、无状态 worker 与 journal 是该案例采用的扩容路径。**
+  - 关键证据：重构后 listener worker 把结果追加到 in-memory store 的 journal，独立 consumer 定期汇总 per-test history，selector 快速读取；项目由一名工程师用三周完成，作者估计过去可能接近一个季度（非对照测量）；原文也明确新分布式架构运行成本更高。监听结果遗漏不等于 CI 未运行或未经测试的代码已发布。
 
 ### 2. 质疑
 
@@ -45,7 +45,7 @@ claim_type: mixed
 - **与 AI-Native SDLC 对标**：[[AI-Native-SDLC]] 把 Test/Deploy/Maintain 视为 Agent 时代的基础设施问题；本来源提供了“测试选择服务自身也要 AI-native scale”的具体案例。
 - **与 Agent Verification 对标**：[[Agent-Verification]] 不只验证代码输出，还要验证验证管线的状态新鲜度和覆盖边界。
 - **与 Software Factory 对标**：[[Software-Factory]] 的产能提升只有在 CI、观测和回滚基础设施同步扩张时才会变成交付能力。
-- **跨域迁移**：当 Agent 平均并发和 PR 粒度持续增长时，v0 架构应预留 10–20x 规模的状态外置、事件回放和水平扩展；这条建议是作者的工程启发式，不是普适定律。
+- **跨域迁移**：当 Agent 平均并发和 PR 粒度持续增长时，作者建议预算允许时考虑 10–20x 的初始设计规模；实际应根据负载、风险、成本与扩容路径选择容量；这条建议是作者的工程启发式，不是普适定律。
 
 ## 前提与局限性
 
