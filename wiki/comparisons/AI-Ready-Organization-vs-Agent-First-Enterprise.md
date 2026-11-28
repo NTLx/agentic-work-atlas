@@ -4,7 +4,7 @@ title: "AI-Ready Organization vs Agent-First Enterprise"
 entity_a: "[[AI-Ready-Organization]]"
 entity_b: "[[Agent-First-Enterprise]]"
 created: 2026-05-24
-updated: 2026-05-24
+updated: 2026-11-28
 tags:
   - comparison
   - organization
@@ -26,7 +26,7 @@ source_raw:
 # AI-Ready Organization vs Agent-First Enterprise
 
 > [!summary] 对比概述
-> AI-Ready Organization 是组织能否被 AI 有效理解和执行的前提状态；Agent-First Enterprise 是围绕 Agent 重新设计流程、人类角色和运营系统的目标形态。前者回答“准备好了没有”，后者回答“准备好之后如何重构”。
+> AI-Ready Organization 是组织准备度的诊断视角；Agent-First Enterprise 是可选的运营形态。前者关注实际任务所需的目标、流程和权限，后者关注重构方式，不要求所有组织最终采用 Agent-first。
 
 ## 核心维度对比
 
@@ -62,7 +62,7 @@ source_raw:
   -> Agent-first operating model
 ```
 
-AI-ready 不是终点，而是 Agent-first 的入口。如果组织没有先完成自我描述，Agent-first 会把模糊流程自动化，把隐性冲突放大。
+图示是候选探索路径，非验证过的固定成熟度阶梯。局部试点也可能帮助澄清流程；成熟组织可长期选择人主导、标准产品或混合方式，不能把全组织自我描述当所有任务的前置门。
 
 ## 对齐税的角色
 

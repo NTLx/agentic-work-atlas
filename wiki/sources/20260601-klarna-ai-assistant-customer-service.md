@@ -4,7 +4,7 @@ title: "Klarna AI assistant handles two-thirds of customer service chats in its 
 source_raw:
   - "[[20260601-klarna-ai-assistant-customer-service]]"
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-11-28
 tags:
   - source-summary
   - enterprise-ai
@@ -15,6 +15,8 @@ tags:
 # Klarna AI assistant handles two-thirds of customer service chats in its first month
 
 ## 编译摘要
+
+**后续披露校准（2026-11-28）**：[Klarna 2025 Form 20-F](https://www.sec.gov/Archives/edgar/data/2003292/000200329226000007/klar-20251231.htm)，2025年度经营结果/客服说明：全年80%客服聊天由AI处理；公司估算相当于超过850名全职客服的工作量、2025年约5900万美元成本节省（2024年约3900万美元）。累计3100万次对话与全年80%不是同一时间口径；等价工作量由人工处理聊天和电话的减少估算，不等于实际裁员数。满意度为内部调查，2分钟vs12分钟为历史2024日志比较，非2025随机对照。年报一处称2024年2月上线，另一处称复联率在2023年12月至2024年1月下降25%，时间存在不一致，不能据此确立因果。公司明确所有客户仍可选择人工客服，采用双轨策略。保留旧首月数字为历史口径，不把成本估算当独立审计或人工服务保留当自动化失败。
 
 ### 1. 浓缩
 
@@ -33,9 +35,9 @@ tags:
 
 ### 3. 对标
 
-- **标准 AI 产品路径**: 这个案例是 [[Standard-AI-Product-Adoption]] 的强样本，说明不一定所有企业 AI 工作流都需要外部 FDE 现场重构；当流程足够结构化，产品化 AI 也能直接进入生产。
+- **标准 AI 产品路径**: 这个案例是 [[Standard-AI-Product-Adoption]] 的企业自报实施样本，说明不一定所有企业 AI 工作流都需要外部 FDE 现场重构；当流程足够结构化，产品化 AI 也能直接进入生产。
 - **GenAI Divide 压力测试**: Klarna 同时具备 adoption、业务指标和人类升级路径，因此比“员工个人使用 ChatGPT 提效”更接近成功部署层。
-- **客服作为可验证工作流**: 客服对话有清晰 ticket、时长、复联率、满意度指标，天然更适合 AI 自动化评测和例外升级。
+- **客服作为可验证工作流**: 客服对话有清晰 ticket、时长、复联率、满意度指标，有助于评测，但指标可能遗漏复杂纠纷、未解决离开、复联、风险及不同任务选择。
 
 ### 关联概念
 
