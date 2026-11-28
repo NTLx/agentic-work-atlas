@@ -7,9 +7,9 @@ aliases:
   - Dreaming V3
   - ChatGPT Dreaming
   - 后台记忆整理
-definition: "OpenAI ChatGPT 2025-04 推出、2026-06 升级为 V3 的后台记忆整理机制——从聊天历史中自动合成用户记忆状态，对应人脑睡眠期的记忆巩固"
+definition: "OpenAI于2025-04引入、2026-06发布V3的ChatGPT后台记忆综合机制；从获授权的历史及其他可用来源提炼记忆，非模型参数学习或完整用户状态。"
 created: 2026-06-06
-updated: 2026-06-16
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -35,65 +35,37 @@ source_raw:
 # Dreaming（ChatGPT 后台记忆整理）
 
 > [!definition] 定义
-> **Dreaming** 是 OpenAI ChatGPT 在 2025-04 推出、2026-06 升级为 V3 的后台记忆整理机制——从聊天历史中自动合成用户记忆状态，对应人脑睡眠期的记忆巩固。V3 是 compute-efficient 的独立可扩展架构，能跑在亿级用户 × 多年时间窗口。
+> OpenAI的ChatGPT记忆综合机制，通过后台处理生成、整理和更新跨会话相关信息。睡眠记忆巩固只是命名类比，不是相同生物机制或神经学习证明。
 
 ## 演化时间表
 
-| 时间 | 阶段 | 特征 |
-|------|------|------|
-| 2024-04 | Saved memories | 用户显式说"记住 X"才存 |
-| 2025-04 | Dreaming V0 | 后台从聊天历史自动整理；补充 saved memories |
-| 2025-06 | Memory improvements | 短期连续性 rollout 到 free users |
-| 2026-06 | Dreaming V3 | 独立可扩展系统，可替代 saved memories |
+| 时间 | 历史阶段 | 证据边界 |
+|---|---|---|
+| 2024-04 | Saved memories | 会话内强信号触发，包括显式请求；非仅手动记录 |
+| 2025-04 | 初版Dreaming | 从聊天历史后台综合，补充saved memories |
+| 2026-06-04 | Dreaming V3 | 更高效的记忆架构，开始向美国Plus/Pro推出，其他地区与Free/Go逐步推出；非所有账号同日切换 |
 
-## 三大设计目标
+## 设计目标与验证
 
-| 目标 | 含义 | V3 解法 |
-|------|------|---------|
-| 携带上下文 | "告诉我一次，未来记得" | 跨会话检索 |
-| 跟随偏好/约束 | "我是素食者"→ 未来回答考虑 | 偏好识别 + 应用 |
-| 保持时新 | "我 7 月去新加坡" → 8 月变成"我 7 月去了" | 时间感知 + 自动更新 |
-
-## 与 saved memories 的关键差异
-
-| 维度 | Saved memories (2024) | Dreaming V3 (2026) |
-|------|------------------------|---------------------|
-| 触发 | 用户显式说"记住" | 后台持续运行 |
-| 范围 | 显式 mention 的事实 | 聊天历史自动综合 |
-| 失效 | 容易 stale | 自动时间感知 + 更新 |
-| 评审 | 难（要主动看） | Memory summary page 暴露 |
-| 算力 | 偶发 | 持续 compute cost |
-
-## 形式化
-
-```
-旧: 记忆 = 标注事件（用户驱动，偶发）
-新: 记忆 = 后台进程（系统驱动，持续）
-dreaming = 后台整理 + 时间感知 + 跨会话综合 + 用户可审可改
-```
-
-## 前提与局限性
-- **持续 compute cost** — 用户不在时也在跑 GPU；商业模式必须覆盖
-- **staleness 难解** — 时间对偏好的改变不是函数式可预测的；只能缓冲
-- **summary 失真** — 当记忆量巨大，summary page 仍要降维
-- **数据归属** — 记忆属用户数据，监管风险陡增
-- **训练回授** — 用户修改 = 标注员行为
-
-## 关联概念
-| 本库主题 | Dreaming 的连接 |
-|---------|---------------|
-| [[Context-Engineering]] | 持续记忆是 context engineering 的核心场景 |
-| [[Multi-Layer-Memory]] | 平行概念：Three-Layer Agent Memory（[[Three-Layer-Agent-Memory]]） |
-| [[Agent-Harness]] | Dreaming 是个人 AI 助理的 harness 组件 |
-| [[Memex]] | 个人数据主权的历史范式 |
-| [[Continual-Learning]] | 持续学习的应用案例 |
-| [[Personal-AI-Assistant]] | 是个人 AI 助理的标志能力 |
-| [[Staleness-Problem]] | Dreaming 试图解决的核心难题 |
-| [[Memory-Architecture]] | Dreaming 是 V3 架构的具体实现 |
-
-- [[OpenAI]] — 开发与运营方
+官方发布将有用上下文的跨会话延续、偏好/约束遵循、时效作为三项评测目标。系统可自动综合不显式要求记录的信息，但仍须区分授权、事实、偏好、计划和实际发生的事件；计划时间过去不证明完成。当前记忆摘要可帮助用户审视和纠正部分状态，非全量来源或内部实现视图。
 
 ## 关键数据点
 
-（关键事实、统计、时间线从原 raw 源沉淀，见 source_raw 字段）
+- [OpenAI 2026-06-04官方发布](https://openai.com/index/chatgpt-memory-dreaming/)报告面向Free用户的dreaming计算需求约降至原先1/5；不等于所有套餐、全部记忆操作或总体服务成本降至1/5。原文未披露完整内部算法、存储、任务调度及评测样本，本轮不从图形估算分数。
+- [Memory in ChatGPT](https://help.openai.com/en/articles/8590148-memory-in-chatgpt)（2026-11-28回核）明确记忆来源可包括历史聊天、其他可用来源；功能随账号、地区、平台和工作区而异。摘要不穷尽来源，纠正或不再提及与删除不同，完整移除需处理相关摘要和原始来源。训练使用取决于数据控制，并非纠正即提供训练标签。
+- [[20260604-openai-dreaming-memory]]已于第53轮校准；当前实体沿用其条件化证据。
 
+## 前提与局限性
+
+后台综合不意味着持续占用GPU或固定频率；成本、错误率、覆盖与更新时间依实际系统。用户画像变化和知识过时需要按证据更新，避免误合并与越权持久化。敏感信息可能进入记忆，应按用途、访问权限、保留与删除策略治理。未运行内部评测或验证具体账号行为。不是模型权重持续学习的证据。
+
+**本库综合**：将后台知识消化理解为状态维护与可验证的编译，而非无限积累；有效性由后续实际使用、来源回查、错误更正和正常知识保留决定。
+
+## 关联概念
+
+- [[Memory-Architecture]]、[[Memory-Synthesis]]、[[Memory-Summary-Page]] — 存储、综合与用户控制。
+- [[Staleness-Problem]]、[[Shared-Memory-Contamination]] — 时效与治理。
+- [[Context-Engineering]]、[[Agent-Harness]] — 任务上下文组织。
+- [[Multi-Layer-Memory]]、[[Three-Layer-Agent-Memory]] — 不同记忆组织方案。
+- [[Continual-Learning]] — 需区分外部状态更新与模型权重学习。
+- [[Memex]]、[[Personal-AI-Assistant]]、[[OpenAI]] — 历史范式、产品场景与发布者。
