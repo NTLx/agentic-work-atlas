@@ -8,7 +8,7 @@ tags:
 
 # Explore：环境真值、执行真值与成功来源
 
-> **后续结算复核（2026-11-28）**：EVMbench 已有正式 Source [[20260218-openai-evmbench]]（2026-09-19 编译），且摘要记录 OpenZeppelin 的 reference-quality 争议；原 P0 剪藏需求不应重复执行。EnvTrustBench arXiv:2605.08828 的 Source 精确 ID 搜索未命中，未完成全身份去重；仅保留候选。本文为历史研究记录，未重新核全部论文数字；EX-004 仍按 [[research-agenda]] 等待同 trace 的联合操纵，不重启泛来源搜索。
+> **后续结算复核（2026-11-28）**：EVMbench 已有正式 Source [[20260218-openai-evmbench]]（2026-09-19 编译），且摘要记录 OpenZeppelin 的 reference-quality 争议；原 P0 剪藏需求不应重复执行。EnvTrustBench 已于2026-09-19按GitHub canonical编译 [[20260507-envtrustbench-evidence-grounding]]；第三十三轮精确arXiv ID检索漏检，本轮对照项目页、GitHub及arXiv:2605.08828v2确认同研究线。总分母和错误路径数相同，但stack级指标存在版本差异；不重复剪藏或作为独立证据。本文为历史研究记录，未重新核全部论文数字；EX-004 仍按 [[research-agenda]] 两阶段联合实验合同等待证据（固定trace重评分与匹配初始状态重运行分别测量），不重启泛来源搜索。
 
 ## Scope
 

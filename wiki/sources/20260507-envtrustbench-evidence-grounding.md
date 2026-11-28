@@ -10,7 +10,7 @@ source_locator:
   - "final aggregate matrix: 55 cases / 14 model-scaffold stacks / 3,850 accepted runs"
   - "release boundary: manuscript PDF and raw traces withheld"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - verification
@@ -34,7 +34,7 @@ claim_type: mixed
 
 ### 2. 质疑
 
-- 当前公开稿没有 manuscript PDF 与 raw traces，独立复核能力受限，因此不能把 83.3% 当作外部世界的风险基准率。
+- 本地Raw是2026-05-07项目公开稿的有限locator，项目页仍称投稿原稿及raw traces未公开；另有同研究线 [arXiv:2605.08828v2（2026-05-12）](https://arxiv.org/html/2605.08828v2)。2026-11-28 实际回查项目页/GitHub及论文§5.1–5.2、Table 2、Limitations：两者均报告55 cases、14 stacks、3,206/3,850 accepted runs（83.3%），项目页FPCR与论文EMR同为错误路径完成率；但stack范围分别55.3–96.7%与55.3–96.4%，若干stack结果不同，不能混合或计为独立复制。保留原canonical及Raw身份，未重跑全量轨迹或验证历史hash，不猜测差异原因；83.3%不是生产风险基准率。
 - 55 个 machine-scoreable cases 覆盖的是作者定义的典型失败模式，不代表完整 action surface。
 - oracle 本身仍由 benchmark author 定义；reference correctness 与 environment truth 没有被完全独立操纵。
 
