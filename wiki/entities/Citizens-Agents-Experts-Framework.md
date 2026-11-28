@@ -6,9 +6,9 @@ aliases:
   - Citizens Build Agents Execute Experts Govern
   - CAE Framework
   - 三分法
-definition: "Rachel Laycock (Thoughtworks CTO, 2026-08) 提出的 AI 时代价值流动框架——Citizens 任何能 turn ideas into working software 的人 + Agents 执行（write/refactor/test/fix/iterate）+ Experts 治理（架构/安全/韧性/operability/compliance/cost）；不是 role 分类而是 value-flow 描述；experts 杠杆放大因为 decisions 的下游影响（千 features 共用 platforms/guardrails）"
+definition: "Rachel Laycock (Thoughtworks CTO, 2026-08) 提出的 AI 时代价值流动框架——Citizens 任何能 turn ideas into working software 的人 + Agents 执行（write/refactor/test/fix/iterate）+ Experts 治理（架构/安全/韧性/operability/compliance/cost）；作者提出的价值流动视角，不是岗位分类；共享治理机制可能放大专家决策影响，未量化效果"
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-11-28
 tags:
   - organization
   - engineering-judgment
@@ -33,7 +33,7 @@ source_raw:
 # Citizens Agents Experts Framework（公民·代理·专家三分法）
 
 > [!definition] 定义
-> **Citizens Agents Experts Framework** 是 Rachel Laycock（Thoughtworks CTO，2026-08）提出的 AI 时代价值流动框架——**Citizens**（任何能 turn ideas into working software 的人）+ **Agents**（执行：write/refactor/test/fix/iterate）+ **Experts**（治理：架构/安全/韧性/operability/compliance/cost）。不是 role 分类而是 value-flow 描述：AI 让 build 普及给 citizens，execution 由 agents 接管，**engineering judgment** 在 experts 手中杠杆放大。
+> **Citizens Agents Experts Framework** 是 Rachel Laycock（Thoughtworks CTO，2026-08）提出的 AI 时代价值流动框架——**Citizens**（任何能 turn ideas into working software 的人）+ **Agents**（执行：write/refactor/test/fix/iterate）+ **Experts**（治理：架构/安全/韧性/operability/compliance/cost）。不是 role 分类而是 value-flow 描述：作者认为 AI 扩大软件创造的可及性，Agent 可承担部分执行，专家治理可能获得杠杆；不是全部执行移交或组织结构定律。
 
 ## 三个 Buckets 的职责
 
@@ -45,12 +45,12 @@ source_raw:
 
 ## 与传统角色的区别
 
-- **不是 role 分类**：citizens / agents / experts 是**value-flow 的三个阶段**，不是 three job titles
-- **AI 让 citizens 增加**：任何人都能用 AI build——不再是 engineer 的专属
-- **Agents 接管 execution**：不需要 expert 亲自写每个 feature
-- **Experts 不被取代**：judgment 的稀缺使其从"执行 feature"翻转为"设计让 thousands features 安全的环境"
+- **不是 role 分类**：citizens / agents / experts 表达三类贡献，不是固定阶段、角色或互斥权限
+- **AI 降低部分创造门槛**：作者举周末应用案例；不能推出每个人都具备交付能力
+- **Agents 承担部分 execution**：范围依任务风险、能力、控制及验收而定
+- **Experts 的杠杆假说**：共享平台与治理可能减少逐项重复工作，也可能引入审查排队和维护瓶颈；不预测岗位数量
 
-## 核心稀缺：Engineering Judgment
+## 作者的稀缺性假说：Engineering Judgment
 
 ```
 过去几十年：稀缺是 coding（engineer 难找且贵）
@@ -81,14 +81,14 @@ Rachel 自陈："I'm not convinced that was ever the real scarcity, but that's p
 | | Can it cope 1000×more users? |
 | | How will we know something's wrong before customers do? |
 
-**核心**：以上 production 阶段问题不出现 unless experienced engineer 在场
+**核心**：这些是独立的生产验收问题，不由演示成功保证。经验、明确标准、自动检查和实际责任人均可帮助发现问题。
 
-## FOSE 2026 共识（Rachel 引用）
+## FOSE 2026 观察（Rachel 转述）
 
 - FOSE 讨论"spent surprisingly little time talking about coding"
 - 主导话题：design / architecture / governance / learning / judgement
 - 典型实践：design specification → agents work overnight → review next morning
-- 共识：当 agents 可生成 lots of code quickly，good design matters more
+- 作者观察：生成加速时设计依旧重要；不是会议全体或产业共识测量
 
 ## 关键数据点
 
@@ -110,9 +110,9 @@ Rachel 自陈："I'm not convinced that was ever the real scarcity, but that's p
 
 ## 前提与局限性
 
-- **前提 1**: AI 让 build 能力普及给 citizens（已是实证）
-- **前提 2**: agents 可承担大部分 execution（前沿模型证据支持）
-- **前提 3**: judgment 不可被 AI 完全替代（争议——Verification Tether（forward reference，未建 entity） 论证 judgment 需要 internalized mastery）
+- **前提 1**: AI 可能扩展软件创造可及性，原文仅有个人观察与案例
+- **前提 2**: Agent 可承担部分执行，需按实际任务评估，不以本文证明占比
+- **前提 3**: 生产风险与判断必须有可靠验收和责任归属，不预判所有判断只能由某类岗位完成
 - **边界**: 三分法是 value-flow 描述而非 role boundary，实际工作中边界模糊
 - **selection bias**: Rachel 是 Thoughtworks CTO（enterprise consulting 视角）；startup / scale-up 可能 lean agents + minimal experts
 - **未量化**: experts 数量与杠杆变化未给出 metric
@@ -121,8 +121,8 @@ Rachel 自陈："I'm not convinced that was ever the real scarcity, but that's p
 
 1. **重新定位 expert role**：从"写每个 feature"翻转到"design guardrails/platforms"
 2. **承认 citizens 价值**：让更多人 turn ideas into software
-3. **信任 agents 执行**：但 expert 必须 validate production-readiness
-4. **建立 production check 清单**：trust 体系而非 trust 个人
+3. **按授权、可逆性和验收能力委派 agents 执行**：但生产就绪必须由有明确责任与胜任能力的验收机制确认
+4. **建立 production check 清单**：责任归属、风险分级、验收、监控与回退；作者明确反对非工程人员先建好再把维护责任扔给工程师。比较交付周期、返工、事故和治理队列负载（本库综合建议）。
 
 ## 关联概念
 
@@ -132,7 +132,7 @@ Rachel 自陈："I'm not convinced that was ever the real scarcity, but that's p
 - [[AI-Native-Engineering-Org]] — 组织形态调整
 - [[Taste-vs-Judgment]] — judgment 稀缺
 - [[Operational-Responsibility]] — production ownership
-- [[Jevons-Paradox-for-Knowledge-Work]] — 悖论同构
+- [[Jevons-Paradox-for-Knowledge-Work]] — 可比较需求与治理成本变化，非已证同一机制
 - [[Agent-Adoption-Curve]] — citizens 扩大
 - [[Knowledge-Debt]] — deployment 后 concerns
 - [[Distinct-Principal-Identity]] — agent 的 identity 边界

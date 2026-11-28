@@ -99,7 +99,7 @@ Tara Seshan 把工作接口的下一步描述为 **persistent coworker**：Agent
 - **Emoji reaction as trigger**: 一个 emoji reaction → list 加入 → agent 自动 pick up task
 - **Shared channel as anchor**: 人 + agent 在同一 channel，三方 triage，human lead prioritization
 - **Agent roles**: 类比 coworker 给 agent 明确 scope（filing tickets / status update），避免 mandate 而 felt value
-- **Public-by-default**: channel 默认 public（除非 sensitive），agent 才能 learn from what they see
+- **Public-by-default**: Slack 访谈建议非敏感工作在组织内共享；实际 Agent 可见性依权限，不要求公开私有资料或扩大授权
 
 ## 与相关 concept 的区别
 
@@ -131,7 +131,7 @@ Tara Seshan 把工作接口的下一步描述为 **persistent coworker**：Agent
 - **前提 2**: handoff latency < task cycle（否则 throughput 受限）
 - **前提 3**: agent 有清晰 scope（避免 mandate 而非 felt value）
 - **不适用**: 完全自治任务（无 human review 必要）
-- **测量困境**: outcome measurement 本质不可量化（Jaime 承认）
+- **测量困境**: 访谈指出活动指标不足以证明业务价值；结果质量、周期、返工和风险仍可针对工作流测量
 - **心理安全门槛**: public 工作需 employee 信任组织
 - **Facilitator 风险**: 主动求助仍依赖 facilitator agent 的判断；如果它漏掉未知的专业知识或把少数视角判为噪声，系统可能把人类引入错误节点。Twilight Factory 目前是设计主张，不是生产验证结果。
 
@@ -140,7 +140,7 @@ Tara Seshan 把工作接口的下一步描述为 **persistent coworker**：Agent
 - **[[Claude-Tag]]** 作为 Slack-resident agent 产品实例
 - **[[On-Call-Agent]]** 作为 multi-player 模式实例
 - **[[Agent-Orchestration]]** 提供 handoff 编排技术底座
-- **[[Conversation-as-Knowledge-Base]]** 解释为什么 channel 是知识层
+- **[[Conversation-as-Knowledge-Base]]** 说明共享会话如何成为待提炼、审核的知识输入
 - **[[Show-and-Tell-Adoption]]** 解释 adoption 推广机制
 - **[[Skills-as-Products]]** 提供 agent scope 治理框架
 

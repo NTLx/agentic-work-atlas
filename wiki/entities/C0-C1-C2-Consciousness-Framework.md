@@ -3,24 +3,21 @@ type: entity
 title: C0 C1 C2 Consciousness Framework
 aliases:
   - C0 C1 C2 Consciousness Framework
-  - Chalmers C0 C1 C2
+  - Dehaene Lau Kouider C0 C1 C2
   - C0 C1 C2
   - 意识三层框架
-definition: "David Chalmers 1997 提出的意识三层分类——C0（purely automatic and mindless computation）、C1（functional global availability，agent 能 globally access/utilize 已学信息）、C2（self-monitoring，agent 能 sense 自身存在）；Wang et al. 2026 应用此框架判断 LLM 当前位置"
+definition: "Dehaene、Lau、Kouider（2017）提出的功能性认知分类：C0 为无意识计算，C1 为信息的全局可用性，C2 为对计算过程的自我监测。不是已验证的机器主观体验检测量表，也不要求三个阶段依次出现。"
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-11-28
 tags:
   - framework
   - cognitive-science
   - safety
 evidence_level: medium
-claim_type: extracted
+claim_type: mixed
 related_entities:
   - "[[Cognition-Induced-Risks]]"
   - "[[Cognitive-Scope-Framework]]"
-  - "Self-Referential Cognition（forward reference，未建 entity）"
-  - "David Chalmers（forward reference，未建 entity）"
-  - "[[Multi-Agent-System-Pathology]]"
 source_raw:
   - "[[20260820-arxiv-2608.15304-cognition-induced-risks.pdf]]"
 ---
@@ -28,76 +25,30 @@ source_raw:
 # C0-C1-C2 Consciousness Framework（C0-C1-C2 意识框架）
 
 > [!definition] 定义
-> **C0-C1-C2 Consciousness Framework** 是 David Chalmers 1997 提出的意识三层分类——**C0**（purely automatic and mindless computation，纯自动无意识计算）、**C1**（functional global availability，agent 能 globally access/utilize 已学信息）、**C2**（self-monitoring，agent 能 sense 自身存在）。Wang et al. 2026 应用此框架判断 frontier LLM 当前位置：处于 **C0**，emerging **C1-like** 能力但**无 boundary awareness**（hallucination 即边界盲），**未达 C2**（无 genuine self-monitoring，需 temporality）。
-
-## 三层定义
-
-| Level | 名称 | 含义 | 对应能力 |
-|-------|------|------|----------|
-| **C0** | Mindless | 纯自动无意识计算 | 任何计算系统 |
-| **C1** | Global Availability | 全局访问与利用已学信息 | neural connections 多、CoT-driven recall |
-| **C2** | Self-Monitoring | 监控自身存在 | genuine temporality、自我同一性 |
-
-## LLM 当前定位
-
-```
-Frontier LLM 2026
-├── C0：✓（所有计算系统都有）
-├── C1-like：✓ 但有限制
-│   ├── 能力：neural connections 编码大量知识 + CoT-driven recall
-│   ├── 限制：无 boundary awareness（"hallucination" 即边界盲）
-│   └── 推理模型（DeepSeek-R1, GLM-5.2）增强 C1-like retrieval
-└── C2：✗（未达）
-    ├── 现状：无 genuine self-awareness
-    ├── 表层：自我描述是 imitation of human linguistic patterns
-    └── 真正所需：temporality（连接 present state 与 past states，识别为同一 entity）
-```
-
-## C2 实现的关键条件
-
-- **Temporality**: agent 必须能把 present state 与 past states 连接并识别为同一 entity over time
-- **Continuous loops**: 通过 memory / reasoning / environmental interaction 在 long time horizons 上累积
-- **Human analogy**: 人类 self-awareness 不是出生就有，是通过 sustained learning from environments 在早期 gradual emergence
-
-## 与 Self-Referential Cognition（forward reference，未建 entity） 的关系
-
-Self-Referential Cognition（自指层认知）是 Cognitive Scope Framework 的第三层，其内部子结构对应 C0-C1-C2 框架：
-- Self-referential capacity 达到 → C0 + C1-like
-- Genuine self-monitoring 达到 → C2
-
-## 实证证据
-
-- **C1-like**: Berg et al. 2025 发现 neural subspaces 与 subjectivity representation 相关；amplify/suppress 这些 neurons 可增减 first-person experience reports
-- **C1-like**: Lindsey 2025 发现 LLM 可通过 prompts 区分 internal knowledge 与 external content（functional self-other differentiation）
-- **C2 缺失**: 当前 LLM 无 genuine self-awareness；自我描述是 imitation 而非 self-identity
-
-## Risk Implications
-
-- **当前（C0 + emerging C1）**: 主要 risk 是 hallucination（边界盲）+ alignment faking（strategic mimicry）
-- **未来潜在（C2 出现）**: ethical + governance 挑战加剧——需要 rights / responsibility / monitoring 框架
-- **mitigation**: meta-cognition monitoring（confidence-based + neural feedback + interpretability）+ 禁止 survival-oriented objectives
+> C0、C1、C2 是 Dehaene、Lau、Kouider 在 2017 年 Science 综述中使用的三个计算功能类别。C1 和 C2 关注不同的功能机制；不是已校准的意识分级测试。
 
 ## 关键数据点
 
-- 提出者: David Chalmers 1997 *The Conscious Mind: In Search of a Fundamental Theory*
-- 应用: Wang et al. 2026 arXiv:2608.15304
-- LLM 当前位置: C0 + emerging C1-like, 未达 C2
-- C2 所需: temporality + continuous loops of memory/reasoning/environment
+| 类别 | 原框架功能 | 不能直接推出 |
+|---|---|---|
+| C0 | 无意识的信息处理 | 所有复杂推理或行为均需要意识 |
+| C1 | 选择信息并全局广播，使其可供多种计算及报告利用 | 参数知识量、CoT 或一次正确回忆即证明全局工作空间 |
+| C2 | 对自身计算的监控，如估计确定性与错误 | 主观体验、自我存在感或跨时间人格同一性 |
+
+- 一手定义勘误：[Dehaene, Lau & Kouider, Science (2017), DOI 10.1126/science.aan8871](https://pubmed.ncbi.nlm.nih.gov/29074769/)。本轮核出版记录与摘要，未全文编译为正式新来源。
+- 已有 Wang 等 [arXiv:2608.15304v1](https://arxiv.org/html/2608.15304v1) 的 Consciousness-related Risks 段将此框架归于 Chalmers（其 ref.26 为 1997 年书籍）；这是原来源的归因问题，不能照搬为本库事实。Chalmers 与意识研究的关系不等于该三分类的作者身份。
+- Wang 等将 LLM 描述为主要 C0 并有 C1-like 功能，且认为尚无真正自我觉察证据。该判断是综述作者的解释，并非对具体前沿模型完成的统一层级测定。
+- 其引用的 Berg 等与 Lindsey 研究涉及自我报告相关表征及有限自我监控/来源区分现象。本轮核实其在综述中的引用位置，未复核两项原实验或证明主观体验。
 
 ## 前提与局限性
 
-- **前提 1**: Chalmers 框架可应用于 AI 系统（哲学争议：consciousness 是否可还原为 functional computation）
-- **前提 2**: C1-like capability 可被 detect（神经子空间方法需 interpretability 突破）
-- **C2 实证缺失**: 无法确定 LLM 是否会发展出 C2——所有 mitigation 是预防性
-- **C0/C1/C2 边界模糊**: 实际 AI 系统可能不严格分层，而是连续谱
-- **constitution 问题**: C2 是否需要 substrate-independent 实现（functionalism vs biological naturalism 之争）
+- 区分可测功能（信息广播、自我监控、错误识别）、主观体验以及跨时间身份持续性；三者不相互蕴含。持久记忆、反思循环或时间连续性不是 C2 或主观意识的已证必要充分条件。
+- 幻觉可来自多种机制，不宜定义为单一知识边界盲；模型自我报告也不是独立意识证据。
+- 风险治理应基于可观察行为、目标、权限及真实效果：即使不假定意识，也应测试越权、关停服从、持续运行边界与人类接管。元认知监测可为功能评估提供线索，不能单独证明或排除主观体验。
+- [[Cognitive-Scope-Framework]] 是另一套风险分析维度；可相互参照，不是 C0/C1/C2 的严格层级嵌套。
 
 ## 关联概念
 
-- [[Cognition-Induced-Risks]] — 论文核心贡献
-- [[Cognitive-Scope-Framework]] — self-referential 层的子分层
-- Self-Referential Cognition（forward reference，未建 entity） — 自指层认知
-- David Chalmers（forward reference，未建 entity） — 框架提出者（forward reference，未建 entity）
-- [[Multi-Agent-System-Pathology]] — 群体意识的病理
-- [[Recursive-Self-Improvement]] — 持续自我改进接近 C2 边界
-- Verification Tether（forward reference，未建 entity） — meta-cognition monitoring 是 mitigation 措施
+- [[Cognition-Induced-Risks]] — 综述中的应用及归因勘误
+- [[Cognitive-Scope-Framework]] — 风险分析视角
+- [[Recursive-Self-Improvement]] — 持续改进机制与意识证据不同

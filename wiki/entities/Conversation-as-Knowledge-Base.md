@@ -6,9 +6,9 @@ aliases:
   - Conversation-as-KB
   - The Work is the Conversation
   - 会话即知识库
-definition: "Slack CPO Jaime DeLanghe 的核心命题——workplace conversation 本身就是 KB；过去 conversation 不能变成 knowledge 是因为人无法消化 exhaust，agent 的出现让会话从 noise 变成 KB，agent 必须能看见 channel 才能学习"
+definition: "Slack 产品负责人提出的实践主张：把有授权的工作会话作为组织知识的候选输入，借助 Agent 重构决策上下文、发现和提炼可复用信息；原始会话不自动等于已验证知识库。"
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-11-28
 tags:
   - knowledge-management
   - organization
@@ -20,94 +20,45 @@ related_entities:
   - "[[Company-Brain]]"
   - "[[Knowledge-Compilation]]"
   - "[[Claude-Tag]]"
-  - "[[Show-and-Tell-Adoption]]"
+  - "[[Distinct-Principal-Identity]]"
 source_raw:
   - "[[20260820-slack-human-agent-teams]]"
 ---
 
-# Conversation as Knowledge Base（会话即知识库）
+# Conversation as Knowledge Base（会话作为知识输入）
 
 > [!definition] 定义
-> **Conversation as Knowledge Base** 是 Slack CPO Jaime DeLanghe 的核心命题：**workplace conversation 本身就是 KB**——过去 conversation 不能自动变成 knowledge 是因为人无法消化 exhaust，agent 的出现让会话从 noise 变成 KB；"The Work is the Conversation" 是 Jaime Medium essay 的同构命题。**前提：channel 默认 public——DMs 和 private threads 对 agent 不可见，因此对组织不可见**。
-
-## 核心论点
-
-```
-传统假设: 会话是 noise → KB 是文档化提炼的产物
-    ↓
-Slack 命题: 会话本身就是 KB → agent 让会话从 noise 变可消费
-    ↓
-推论: 决定 KB 完整性的不是文档系统而是 channel public/private 策略
-```
-
-## 与传统 KB 的对比
-
-| 维度 | 传统 KB | Conversation as KB |
-|------|---------|--------------------|
-| 来源 | 文档化（wiki、Confluence） | 会话（Slack channel、邮件、会议） |
-| 沉淀 | 显式整理 | 自动产生 |
-| 检索 | 关键词 + 标签 | agent 推理 + context |
-| 失效率 | 文档过时 | DM/private thread 不可见 |
-| 维护成本 | 高（人写） | 低（agent 消化） |
-| 隐式知识 | 丢失 | 保留（决策上下文、why） |
-
-## 为什么过去失败
-
-Jaime 自陈：早期 Slack 研究"actually, no, conversation doesn't turn into knowledge"。失败原因不是会话不够，而是：
-- 没人能消化所有 exhaust（人 cognitive limit）
-- 大量内容在 DMs（institutional knowledge 黑洞）
-- 缺乏 agent 整理与推理层（agent era 之前只能靠人 search）
-
-## 为什么现在可行
-
-- **agent 可读全 channel exhaust**（人不可能，agent 可以）
-- **agent 可推理 "why"**：ask agents for reasoning, not just the record
-- **wider surface area**：Slack + Claude stitch meetings + emails + calendars + docs
-
-## 为什么 channel 默认 public 是关键
-
-- **DMs 和 private threads = 组织记忆黑洞**：agent 看不见 → 无法消费 → 组织记忆丢失
-- **psychological safety**：员工敢 open 工作（rough drafts + half-formed questions）的文化前提
-- **Slack 多年坚持**：从最早 days 就推荐 public-by-default
-- **agent 时代翻倍重要**：agent 是 invisible observer，没看见就没上下文
-
-## 跨域对标
-
-- **[[LLM-Wiki]]**: LLM Wiki 是 KB-as-structured-graphs；Conversation as KB 是 KB-as-temporal-stream；两者互补
-- **[[Company-Brain]]**: Capture → Curate → Store → Execute → Experience 循环中 Capture 是 Conversation as KB
-- **[[Knowledge-Compilation]]**: 显式编译是 KB 沉淀，与本文 "implicit KB" 同构但作用面不同
-- **[[Claude-Tag]]**: Claude Tag 在 on-call channel 学习 → 沉淀 lessons.md → investigation skill，正是本文循环的具体化
-- **[[Lessons-MD-Self-Improvement]]**: incident lessons 从会话中蒸馏 → investigation skill，是 conversation → KB 的 microcosm
+> Jaime DeLanghe 在 Anthropic 2026-08-19 的访谈中主张利用 Agent 消化工作沟通记录，并建议非敏感工作在团队共享渠道进行。本文保留“会话即知识库”的历史名称，但将会话定义为知识输入而非自动生效的事实或政策。
 
 ## 关键数据点
 
-- 提出者: Jaime DeLanghe（Slack CPO, 2026-08 Anthropic blog）
-- 关联: Jaime Medium essay "The Work is the Conversation"
-- 与 [[Human-Agent-Teams]] 共构（人-agent 团队需要 KB 层）
+- 访谈称 Slack 早期研究未实现从会话到组织知识的自动积累，员工仍需重复沟通；未给论文标识、样本或完整数据。
+- 作者举例建议重构决策原因、连接会议/邮件/日历/文档、非敏感工作尽量在共享频道开展；是厂商实践建议，未报告相对显式知识库的质量、成本或召回率对照。
+- “公开”在该访谈指组织内部可见的非敏感频道，而非互联网公开。私有频道能否被某 Agent 读取取决于连接器、授权主体、频道及实际权限配置；访谈中的不可见性表述不能当作所有产品的访问控制规范。本轮未核特定 Slack 版本的权限合同。
+
+## 会话到知识的转换（本库综合）
+
+| 层 | 产物 | 必要检查 |
+|---|---|---|
+| 采集 | 授权范围内的消息、决策记录、附件 | 主体身份、来源时间、访问权限 |
+| 提炼 | 待核事实、观点、决策理由与未解决问题 | 区分实际记录与 Agent 推断；保留可追溯位置 |
+| 编译 | 经审核的规范、经验、知识页面 | 权威来源、适用范围、冲突、版本、批准状态 |
+| 复用 | 面向任务的有界检索 | 重新检查权限、时效、失效及撤回条件 |
+
+会话能补充决策过程和例外，但可能缺少线下信息、真实授权与最终结论。Agent 对原因的重构应标注推断，不得冒充参与者真实意图或正式决策。
 
 ## 前提与局限性
 
-- **前提 1**: 组织有公开工作文化（psychological safety）
-- **前提 2**: channel 内容质量足够（noise < signal）
-- **前提 3**: agent 有推理能力（agent era 才有）
-- **不替代显式 KB**: 高合规场景（医疗、金融）需显式 KB；本文补充而非替代
-- **不替代结构化文档**: API 文档、合同、规范需要结构化而非会话化
-- **DM 边界**: sensitive 内容（HR、医疗、个人）需 private，public-by-default 不是 public-always
-
-## 实施建议
-
-1. **Channel 治理**: default public，sensitive 显式 private
-2. **Agent 接入**: 让 agent 进入 channel 但标记机器身份（[[Distinct-Principal-Identity]]）
-3. **Signal > Noise**: 用 [[Show-and-Tell-Adoption]] 推广高质量内容；用 [[Slop-Proxy]] 鉴别淘汰低质量
-4. **KB 沉淀**: agent 定期 distill conversation → structured summary（参考 [[Lessons-MD-Self-Improvement]]）
+- **访问不等于授权**：按用途最小化访问，保护敏感内容及隔离边界；衍生摘要不得扩大原始信息的可见人群。公开频道也可能有个人或商业敏感内容，不应自动纳入所有 Agent 上下文。
+- **记录不等于知识**：消息可能过时、互相冲突、未经批准或包含不可信指令；需要权威文档、确认的决策记录与显式编译。
+- **成本未验证**：更多上下文可能增加索引、检索、审查和权限治理成本；不能据访谈认定自动沉淀成本必然低于显式知识库。
+- **验证建议（综合）**：同一问题集比较仅文档、仅授权会话及混合知识层；测正确性、证据定位、过时判断、越权泄露、实际重复沟通与维护成本。保留无法回答的证据缺口，不以连接数量代表价值。
 
 ## 关联概念
 
-- [[Human-Agent-Teams]] — 应用此 KB 模型的人机协作形态
-- [[LLM-Wiki]] — KB-as-graphs 的互补范式
-- [[Company-Brain]] — Capture 层就是 conversation
-- [[Knowledge-Compilation]] — 显式编译循环
-- [[Claude-Tag]] — Slack-resident KB 学习实例
-- [[Lessons-MD-Self-Improvement]] — incident KB 的 self-improvement loop
-- [[Show-and-Tell-Adoption]] — KB 内容质量保障机制
-- [[Distinct-Principal-Identity]] — agent 在 channel 中的身份
+- [[Human-Agent-Teams]] — 共享环境中的任务交接
+- [[LLM-Wiki]] / [[Knowledge-Compilation]] — 会话来源与稳定知识层的区别
+- [[Company-Brain]] — 采集是多输入之一
+- [[Claude-Tag]] / [[Lessons-MD-Self-Improvement]] — 从事件轨迹沉淀经验的案例
+- [[Distinct-Principal-Identity]] — Agent 身份及授权边界
+- [[Show-and-Tell-Adoption]] — 自愿分享是输入之一，不保证知识质量

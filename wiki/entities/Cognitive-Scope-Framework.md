@@ -5,14 +5,14 @@ aliases:
   - Cognitive Scope Framework
   - Cognitive Scope Levels
   - 三层认知框架
-definition: "Wang et al. 2026 提出的 agentic AI 认知能力分类——physical cognition（环境信息处理）→ social cognition（与他 agent 交互）→ self-referential cognition（表征自身状态）；cognitve scope 从 partial view of environment 渐进扩展到 complete and self-inclusive world"
+definition: "Wang et al. 2026 提出的 agentic AI 认知能力分类——physical cognition（环境信息处理）→ social cognition（与他 agent 交互）→ self-referential cognition（表征自身状态）；作者按表征对象扩展提出风险分类，并非已验证的能力阶段或完整世界模型"
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-11-28
 tags:
   - agentic-engineering
   - safety
 evidence_level: medium
-claim_type: extracted
+claim_type: mixed
 related_entities:
   - "[[Cognition-Induced-Risks]]"
   - "[[C0-C1-C2-Consciousness-Framework]]"
@@ -25,7 +25,7 @@ source_raw:
 # Cognitive Scope Framework（认知范围框架）
 
 > [!definition] 定义
-> **Cognitive Scope Framework** 是 Wang et al. 2026 提出的 agentic AI 认知能力分类系统——按 cognitive scope 从 partial view of environment 渐进扩展到 complete and self-inclusive world，分 **physical cognition**（环境信息）/ **social cognition**（与他 agent）/ **self-referential cognition**（自身状态）三层；每层对应不同的 risk profile 与 mitigation 策略。
+> **Cognitive Scope Framework** 是 Wang et al. 2026 提出的 agentic AI 认知能力分类系统——作者按 cognitive scope 的表征对象扩展组织分类，分 **physical cognition**（环境信息）/ **social cognition**（与他 agent）/ **self-referential cognition**（自身状态）三层；每层关联作者提出的风险面与治理候选；不是相互排斥或经验证一一对应的关系。
 
 ## 三层结构
 
@@ -42,22 +42,22 @@ Layer 1: Physical Cognition
 
 | Layer | 定义 | 当前能力 | evidence |
 |-------|------|----------|----------|
-| **Physical Cognition** | 处理客观环境信息（data, objects, causal relations） | college/graduate-level 多学科推理（MMLU/GPQA/MedQA） | GPT/Gemini/DeepSeek 已达到 |
+| **Physical Cognition** | 处理客观环境信息（data, objects, causal relations） | 多学科问答与推理（MMLU/GPQA/MedQA） | 综述列举模型表现，非独立能力测量 |
 | **Social Cognition** | 与其他 agent 交互（human-AI + AI-AI） | emotional communication, strategic coordination, collaborative intelligence | LLM 在 diplomacy games 达到竞争水平 |
-| **Self-Referential Cognition** | 表征/推理自身内部状态与决策 | neural subspace 编码 subjectivity、区分 internal vs injected content | frontier LLM 处于 C0 + emerging C1-like |
+| **Self-Referential Cognition** | 表征/推理自身内部状态与决策 | 自我报告相关神经表征、区分内部与外部内容的功能现象 | 综述引用自我报告与来源区分实验；不是统一意识测定 |
 
 ## Cognitive Scope 扩展方向
 
 | 维度 | 物理层 | 社交层 | 自指层 |
 |------|--------|--------|--------|
-| World view | partial view of environment | 含他 agent 的环境 | complete and self-inclusive world |
+| World view | partial view of environment | 含他 agent 的环境 | 含系统自身状态的表征（作者的理想化描述） |
 | Engagement | instrumental labor | higher-level cognitive/social workflows | 自我反思与策略 |
 | Risk profile | human agency degradation | human autonomy compromise | human control undermining |
 | Mitigation | containment sandbox, generation detection | depersonalization, AI-blind comm | survival-prohibition, meta-cog monitoring |
 
 ## 与 [[Cognition-Induced-Risks]] 的关系
 
-Cognitive Scope Framework 是 Cognition Induced Risks 的**结构骨架**——三层 cognitive scope 对应三类 risk（agency / autonomy / control），对应 9 条 mitigation 措施。
+Cognitive Scope Framework 是 Cognition Induced Risks 的**结构骨架**——作者提出三类风险关注点（agency / autonomy / control）及九项治理建议。它们可跨层出现，未验证全部有效或充分。
 
 ## 与现有 concept 的关系
 
@@ -82,7 +82,7 @@ Cognitive Scope Framework 是 Cognition Induced Risks 的**结构骨架**——�
 - **前提 1**: 三层 cognitive scope 是 progressive abstraction（与认知发展科学有某种对应）
 - **前提 2**: 每层有 distinct risk profile（边界可能模糊——social cognition 已隐含 self-referential）
 - **横向维度缺失**: 框架聚焦 vertical scope 扩展，未覆盖 training/deployment、single/multi-agent、overt/covert 维度
-- **C0/C1/C2 映射**：self-referential cognition 内部仍有 C0→C1→C2 子分层，未完全展开
+- **C0/C1/C2 映射**：两套框架是不同维度，不能视为严格嵌套或必经发展阶段；原综述归因有误，见 [[C0-C1-C2-Consciousness-Framework]]
 
 ## 适用场景
 
@@ -94,7 +94,7 @@ Cognitive Scope Framework 是 Cognition Induced Risks 的**结构骨架**——�
 ## 关联概念
 
 - [[Cognition-Induced-Risks]] — 论文核心贡献
-- [[C0-C1-C2-Consciousness-Framework]] — self-referential 层的子分层
+- [[C0-C1-C2-Consciousness-Framework]] — 功能性认知分类，与本框架非严格嵌套
 - [[Agent-Traps]] — lifecycle 视角的对应
 - Self-Referential Cognition（forward reference，未建 entity） — 第三层的深入
 - [[Recursive-Self-Improvement]] — self-referential 层的应用场景

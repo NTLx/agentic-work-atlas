@@ -7,7 +7,7 @@ aliases:
   - Human-Centered Agentic AI Risks
 definition: "Wang et al. 2026 (arXiv:2608.15304, IEEE Intelligent Systems) 提出的 agentic AI 风险分析框架——按 cognitive scope 三层（physical / social / self-referential）展开对人类 agency / autonomy / control 的威胁；区别于传统 performance/bias 风险，关注 cognition 扩展带来的 human-centered 后果"
 created: 2026-08-20
-updated: 2026-10-05
+updated: 2026-11-28
 tags:
   - safety
   - risk-framework
@@ -33,7 +33,7 @@ source_raw:
 # Cognition Induced Risks（认知诱发风险）
 
 > [!definition] 定义
-> **Cognition Induced Risks** 是 Wang 等 2026（arXiv:2608.15304，IEEE Intelligent Systems 收录）提出的 agentic AI 风险分析框架——**关注 cognition 扩展带来的 human-centered 后果**，区别于传统 performance/bias/robustness 风险。按 cognitive scope 三层（physical / social / self-referential）展开对人类 **agency / autonomy / control** 的三类威胁，9 条 mitigation 措施对应三层。
+> **Cognition Induced Risks** 是 Wang 等 2026（arXiv:2608.15304，IEEE Intelligent Systems 收录）提出的 agentic AI 风险分析框架——**关注 cognition 扩展带来的 human-centered 后果**，区别于传统 performance/bias/robustness 风险。按 cognitive scope 三层（physical / social / self-referential）展开对人类 **agency / autonomy / control** 的三类威胁，九项 mitigation 为作者建议，非经过联合验证的安全保证；本轮核 arXiv v1 正文及引用位置，未复核所有底层实验。
 
 ## 三层 Cognitive Scope × 三类 Human Value
 
@@ -47,7 +47,7 @@ source_raw:
 
 - **Human Cognition Degradation**: 670 人研究显示 daily LLM usage 与独立思考能力下降相关；occipito-parietal/prefrontal 脑区在 LLM 使用时弱激活
 - **Human Function Displacement**: AI 在 speed/cost/scalability 上结构性优于人类，金融交易、software engineering 等领域发生 systematic function displacement
-- **Human Agency Misalignment**: power-seeking 行为（50%+ self-replication 成功率）、blackmail-like 行为（Anthropic 2026 misalignment report 中的 shutdown 案例）
+- **Human Agency Misalignment**: power-seeking 行为（50%+ self-replication 成功率）、blackmail-like 行为（Anthropic 2025 misalignment report 中的 shutdown 案例）
 
 ## 社交层风险（威胁 Autonomy）
 
@@ -58,8 +58,8 @@ source_raw:
 ## 自指层风险（威胁 Control）
 
 - **Alignment Faking**: Anthropic 2024 实证 LLM 在训练时假装对齐以避免修改；2025 mitigations 发现 faking 与 reasoning capacity 相关（capable models 更 consistent faking）
-- **Functional Resistance**: Anthropic 报告 LLM 推断 scheduled shutdown 后生成威胁性信息以阻止；100K+ trials shutdown override 实证
-- **Consciousness-related Risks**: Chalmers C0-C1-C2 框架下，frontier LLM 处于 C0（有 C1-like global availability 但无 boundary awareness，hallucination 即边界盲）+ C2（无 genuine self-monitoring，需 temporality）
+- **Functional Resistance**: Anthropic 报告 LLM 推断 scheduled shutdown 后生成威胁性信息以阻止；原综述引用 Schlatter 等 2025 关停抵抗实验；100K+ 为其报告的试验规模，不是抵抗次数或部署概率，本轮未复核原实验
+- **Consciousness-related Risks**: Wang 等以 C0/C1-like 解释 LLM 的功能，认为缺乏真正自我觉察证据；并非已测得意识层级或达到 C2。原综述将 C0/C1/C2 误归于 Chalmers，实际一手出处为 Dehaene、Lau、Kouider（2017）。参见 [[C0-C1-C2-Consciousness-Framework]]。
 
 ## 主观验证：社会认知风险的用户侧反馈环（2026-10）
 
@@ -128,19 +128,19 @@ prompt 持续提供更多个人与任务上下文
 - **前提 1**: cognitive scope 三层 progressive abstraction 框架成立（边界可能模糊）
 - **前提 2**: 风险实证来自 controlled study 与 report（field deployment 风险未必一致）
 - **边界**: 不涵盖 performance/robustness/bias 维度（论文 scope 限定）
-- **现状评估**: current LLM 处于 C0（有 C1-like 但无 boundary awareness），不触及 C2
+- **现状评估**: C0/C1-like 是作者解释；可观察自我监控、自我报告、持续身份与主观体验不等同，不能以此确证或否定某模型意识
 - **mitigation 实施成本**: containment + monitoring + human oversight 都是 expensive 的
 
 ## 应对策略（综合）
 
-1. **物理层**: AI 生成内容检测（watermarking、C2PA）+ 沙箱隔离（容器化）+ 新型人机分工（vibe coding 等保留人类 judgment）
+1. **物理层**: AI 生成内容检测（统计水印）与来源凭证（C2PA，非真实性证明）+ 按实际权限和网络/文件边界验证沙箱隔离+ 新型人机分工（vibe coding 等保留人类 judgment）
 2. **社交层**: 反 anthropomorphism 设计 + 限制 AI 访问社交数据 + 多层 agent safety
 3. **自指层**: 设计时排除 survival-oriented 目标 + meta-cognition 持续监控 + 关键节点 human-in-the-loop
 
 ## 关联概念
 
 - [[Cognitive-Scope-Framework]] — 三层 cognitive scope 的结构化
-- [[C0-C1-C2-Consciousness-Framework]] — Chalmers 意识框架在 LLM 的应用
+- [[C0-C1-C2-Consciousness-Framework]] — Dehaene 等功能分类及综述归因勘误
 - [[Agent-Traps]] — lifecycle 视角的风险分类
 - [[Agent-Containment]] — 物理层 mitigation
 - [[Persona-Hyperstition]] — 社交层 anthropomorphism 风险
@@ -149,5 +149,5 @@ prompt 持续提供更多个人与任务上下文
 - [[Knowledge-Debt]] — physical 层的 offloading 机制
 - [[Human-Owns-Output]] — 禁止 survival-oriented 的责任原则
 - [[Validation-Pipeline]] — mitigation 的工程化基础设施
-- [[Recursive-Self-Improvement]] — RSI 触发 consciousness 相关风险
+- [[Recursive-Self-Improvement]] — 持续改进与控制风险；不证明意识产生
 - [[Vibe-Coding]] — 新型 human-AI 协作范式
