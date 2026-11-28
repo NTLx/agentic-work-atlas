@@ -2,7 +2,7 @@
 type: output
 title: "Agent 可靠性的双地图：攻击面与责任闭环"
 created: 2026-09-18
-updated: 2026-09-18
+updated: 2026-11-28
 status: published
 tags:
   - AI-Agent
@@ -26,18 +26,18 @@ related_entities:
 
 另一种团队只画**控制面**：身份、RBAC、policy、审批、审计、kill switch。它能告诉你“系统有哪些门”，却不一定知道攻击到底沿哪些信息路径绕过这些门。
 
-真正可运营的 Agent 系统需要两张图同时存在：
+对于涉及不可信输入与外部动作的 Agent，建议分别建模两个维度：
 
 - [[Agent-Attack-Surface]]：不可信信息如何进入、被解释、写入状态、触发动作并继续传播；
 - [[Agent-Security]]：系统如何检测、判定、授权、执行，以及在失败后撤销和恢复。
 
-再加上 [[Verifiable-Agent-Engineering]] 的验证原则，三者合起来才形成完整的可靠性工程。
+再加上 [[Verifiable-Agent-Engineering]] 的验证原则，三者共同构成候选设计框架，而非覆盖完备或系统安全的证明。
 
 ## 第一张图：攻击从哪里进入
 
 Agent 的输入不只是用户 prompt。
 
-一个生产 Agent 可能同时读取网页、邮件、文档、搜索结果、RAG、长期记忆、工具返回值、其他 Agent 的消息和历史产物。每多一种来源，就多一个信任域转换点。
+一个生产 Agent 可能同时读取网页、邮件、文档、搜索结果、RAG、长期记忆、工具返回值、其他 Agent 的消息和历史产物。应按实际信任域、权限和数据传播路径识别转换点；来源数量不等于信任域数量。
 
 可以把攻击路径压缩成五步：
 
@@ -57,7 +57,7 @@ Agent 的输入不只是用户 prompt。
 
 这里最重要的变化，是**攻击不再等于恶意指令**。
 
-[[Agent-Traps]] 说明攻击可以利用人类与机器解析路径的差异；[[Context-Collapse]] 说明低信任内容进入同一上下文后，数据与指令可能在语义层被压平；FORGE 类证据进一步说明，即使完全没有“忽略上一条指令”这类载荷，普通网页内容本身被污染，也可能改变模型的判断。
+[[Agent-Traps]] 说明攻击可以利用人类与机器解析路径的差异；[[Context-Collapse]] 说明低信任内容进入同一上下文后，数据与指令可能在语义层被压平；[[20260824-forge-one-polluted-page-llm-recommenders]] 报告推荐器基准中的无指令证据污染可影响推荐结果，不代表已验证记忆写入、工具副作用或完整生产攻击链。该研究与 [[20260218-forge-formal-policy-enforcement]]（同名 FORGE 的形式策略执行研究）不同，不能合并为一项实证。
 
 因此，“我们已经做了 prompt injection 检测”远远不等于攻击面已经闭合。
 
@@ -116,7 +116,7 @@ Agent 的输入不只是用户 prompt。
 
 模型可以提出动作，但放行动作的最后一道门应尽可能是模型外的确定性机制：schema、reference monitor、sandbox、network policy、tool gateway 或其他 runtime enforcement。
 
-[[Agent-Containment]] 的目标不是让模型永远不犯错，而是让模型犯错时仍然越不过系统边界。
+[[Agent-Containment]] 的设计目标是在模型犯错时限制影响范围。需要验证实际可达通道、策略插装覆盖、并发及绕过；不能由部署 sandbox 或 policy 直接推出边界不可突破。
 
 ### 撤销与恢复
 
@@ -149,7 +149,7 @@ Agent 的输入不只是用户 prompt。
 
 如果只回答第二个，得到的是治理架构图。
 
-只有两者相交，才是安全工程。
+两者交叉有助于定位控制缺口，但不保证攻击或控制清单完备。
 
 ## 第三层：验证“门真的有效”
 
@@ -209,7 +209,13 @@ Agent 的输入不只是用户 prompt。
 
 这比“让模型更听话”更接近 Agent 可靠性的工程底座。
 
-## 关联知识
+## 证据边界与同轨验收
+
+两个 FORGE 研究支持不同的局部机制：一个关注推荐证据污染，另一个关注具有环境契约及插装前提的动作授权。不能用分别成立的局部试验替代同一真实轨迹中的联合验证。EX-005 等待联合证据的状态不因本文设计框架而改变。
+
+对于高影响动作，建议将主体/任务/策略版本、证据来源、执行前决策、真实动作回执、权威终态、撤销或补偿状态绑定到同一任务记录。来源不全、执行结果未知、恢复未验证时，明确保留未决状态。是否需要人工确认由风险与授权决定；低风险告警可经预定义机械规则闭环。该清单为设计及验收建议，尚未复跑系统实验。
+
+## 本文使用的 Wiki 页面
 
 - [[Agent-Attack-Surface]]：攻击从哪里进入、如何传播
 - [[Agent-Security]]：检测到恢复的责任闭环
@@ -219,4 +225,13 @@ Agent 的输入不只是用户 prompt。
 - [[Agent-Observability]]：构造可追踪行为链
 - [[Policy-as-Code-for-Agent-Governance]]：把治理规则移到模型外
 - [[Distinct-Principal-Identity]]：建立主体、权限与责任边界
-- [[Alert-Closed-Loop]]：让告警最终变成人类行动与结果确认
+- [[Alert-Closed-Loop]]：让告警进入有责任主体的处置与结果确认
+
+## 回填检查
+
+| 判断 | 支撑依据 | 处理 |
+|---|---|---|
+| 攻击路径与控制责任应分别建模 | Wiki: [[Agent-Attack-Surface]]、[[Agent-Security]] | 保留 |
+| 内容污染与形式策略执行不是同一实验 | Wiki: [[20260824-forge-one-polluted-page-llm-recommenders]]、[[20260218-forge-formal-policy-enforcement]] | 保留 |
+| 完整链路有效性须以同轨证据验证 | Wiki: [[Verifiable-Agent-Engineering]] | 补 source（EX-005 联合证据仍待验证） |
+
