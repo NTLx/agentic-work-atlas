@@ -52,8 +52,8 @@ Legacy provenance 维护线已完成并冻结；详情见 research-logs 与 Git 
 - Gap: Boundary
 - Evidence: [[LLM-as-a-Judge]]；[[Verifiable-Agent-Engineering]]。
 - Evidence goal: 同一任务与证据条件下比较静态 panel、可执行 checker、交互环境 verifier、人类裁决或 live Agent supervision。
-- Last checked: 2026-09-19 · refined
-- Next: 等待跨监督形态同任务联合对照。
+- Last checked: 2026-11-28 · refined/blocked
+- Next: Hossain 等静态 panel 新候选已记 [[2026-11-28]]，仍缺跨监督形态同任务联合对照；按 Weekly gate 晋升。
 - Retry: new-source:shared-error-floor-cross-supervision
 
 ### CR-005 · 高采纳组织中的现实校准能力再生
@@ -125,7 +125,7 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
-| 2026-11-28 | 全库消化与退役 | retired/refined | 退役旧二元/因果命题与3个单源 Entity；校正评分、授权与 CLI；CR-003 相关误差新候选待晋升，CR-003/005/006 仍 blocked；见 [[2026-11-28]]。 |
+| 2026-11-28 | 全库消化与退役 | retired/refined | D02 三核心 Topic 初审；撤回对齐倒 U 定律，校正架构、延迟、教育实验；外部候选收敛、Fowler 生命周期缺口；CR-003/005/006 仍 blocked；见 [[2026-11-28]]。 |
 | 2026-10-21 | Candidate research audit | merged/retired/refined | CR-004 并入 EX-005、CR-007 retire；CR-001/005 收窄；提出未编号科学 AI 定向探索；压缩 agenda 操作层。 |
 | 2026-10-20T23:53:00+08:00 | CR-005 专业能力再生与独立校准 | refined-reasoning | 从保存无 AI 技能收窄为再生不与主生成路径共模的现实校准能力；无新 Evidence，保持 blocked。 |
 | 2026-09-07T08:33:43+08:00 | EX-005 耐久执行停止与外部效果 | refined | 区分 durable execution 停止、在途 invocation 与已发生副作用；加入 checkpoint/in-flight 窗口。 |

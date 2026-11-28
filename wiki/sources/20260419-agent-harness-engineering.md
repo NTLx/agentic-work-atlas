@@ -4,7 +4,7 @@ title: "Agent Harness Engineering"
 source_raw:
   - "[[20260419-agent-harness-engineering.md]]"
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-11-28
 tags:
   - source-summary
   - agent-harness
@@ -26,7 +26,7 @@ tags:
 ### 2. 质疑
 - **关于“棘轮效应”的质疑**: 过度增加约束是否会导致系统变得过于僵化，无法适应新的代码风格或非预期的复杂场景？过度依赖 `AGENTS.md` 可能导致 Prompt 长度爆炸，反而加剧上下文腐烂。
 - **关于“模型 vs Harness”的质疑**: 作者倾向于认为 Harness 是核心变量，但这可能是在模型能力处于平台期时的权宜之计。如果 GPT-5 或更高阶模型在原生状态下就能处理长程规划和自省，那么复杂的 Harness 是否会变成沉重的技术债务？
-- **关于 HaaS 模式的质疑**: 随着 OpenAI 和 Anthropic 推出官方 Agent SDK，通用的 Harness 模式是否会扼杀垂直领域（如生物、医药）对高度定制化 Harness 的需求？
+- **关于 HaaS 模式的质疑**: 官方 SDK 与托管 runtime 不同；通用接口能否减少垂直领域定制需求，须比较真实任务、数据边界、部署及验收成本，不能预设取代。参见 [[HaaS-Harness-as-a-Service]] 的交付边界。
 
 ### 3. 对标
 - **跨域关联1**: 类似于**软件工程中的 SRE（站点可靠性工程）**。SRE 不改代码逻辑，但确保代码在生产环境中稳定运行；Harness Engineering 不改模型权重，但确保模型在工作流中产出正确结果。

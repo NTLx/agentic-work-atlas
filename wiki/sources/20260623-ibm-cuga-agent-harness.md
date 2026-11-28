@@ -4,7 +4,7 @@ title: "Build real agentic apps using CUGA: IBM's lightweight agent harness"
 source_raw:
   - "[[20260623-ibm-cuga-agent-harness]]"
 created: 2026-07-05
-updated: 2026-07-05
+updated: 2026-11-28
 tags:
   - source-summary
   - agent-harness
@@ -33,7 +33,7 @@ claim_type: extracted
 
 ### 3. 对标
 - **跨域关联1**: CUGA 的 "governed by construction" 与 [[Constraint-Infrastructure]] 理念完全一致——将约束嵌入运行时而非事后附加
-- **跨域关联2**: CUGA 的轻量 API + 策略系统与 [[HaaS-Harness-as-a-Service]] 的 "从构建 API 到构建 Harness 运行时" 对应——CUGA 是 HaaS 的开源实现
+- **跨域关联2**: CUGA 的轻量 API + 策略系统与 [[HaaS-Harness-as-a-Service]] 的 "从构建 API 到构建 Harness 运行时" 对应——CUGA 的开源 runtime 可由用户部署或包装为服务；不因框架/API 存在就自动成为厂商托管 HaaS
 - **跨域关联3**: Agent Skills 的按需加载模式与 [[Context-Engineering]] 中的 "Just in Time" 检索和 [[Skill-Chains]] 形成呼应
 
 ### 关联概念

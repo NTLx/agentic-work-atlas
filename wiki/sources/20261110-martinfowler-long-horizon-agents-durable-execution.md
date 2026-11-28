@@ -7,7 +7,7 @@ promotion_id: "martinfowler-durable-agent-workflows:2026-11-16"
 work_id: "wiki_compile:martinfowler-durable-agent-workflows:2026-11-16"
 correlation_id: "knowledge-promotion:week-of-2026-11-16"
 created: 2026-11-16
-updated: 2026-11-16
+updated: 2026-11-28
 tags:
   - source-summary
   - durable-execution
@@ -56,3 +56,4 @@ source_locator:
 - Evidence basis: author-primary engineering exposition and code example, not independent replication
 - Promotion: `martinfowler-durable-agent-workflows:2026-11-16`; integration: `wiki_compile:martinfowler-durable-agent-workflows:2026-11-16`
 - Source identity: `article:martinfowler.com/articles/durable-execution-agents`
+- **生命周期缺口（2026-11-28 Audit）**：原网页仍可访问，核对作者、日期及 Durable execution / Outcomes the agent doesn't see 等证据定位。当前 Raw/Registry 未发现对应记录，无法核实历史全文正文哈希；不把当前网页或本摘要的哈希冒充历史 Raw 哈希，也不直接标记为 `index`。保留既有 promotion lineage 和独特证据导航；待从原始捕获记录恢复，或按既有 Gate 执行明确标注日期的真实重新捕获与生命周期结算。当前缺口不因 Lint 通过而视为关闭。

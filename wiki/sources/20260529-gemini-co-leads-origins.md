@@ -4,7 +4,7 @@ title: "Gemini co-leads on project origins and what's next"
 source_raw:
   - "[[20260529-gemini-co-leads-origins]]"
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-11-28
 tags:
   - source-summary
   - Google-DeepMind
@@ -28,10 +28,10 @@ tags:
   - 关键证据: 每一代 Flash 都超越前代 Pro（3.5 Flash > 3.0 Pro），且这个趋势似乎在加速
   - 关键证据: Jeff Dean 确认方法"甚至比最初的蒸馏论文更简单"——一个好老师 + 一个学生，基本沿用原始论文 recipe
   - 关键证据: Oriol 的"挤柠檬"隐喻：把大模型的"汁液"（好的部分）压进小模型
-- **核心结论3**: Agent 暴露了工具生态的延迟瓶颈，这是 IO 2027 前必须解决的全栈问题
+- **核心结论3（访谈预测）**: 随模型提速，部分 Agent 任务可能受外部工具延迟和频率限制；IO 2027 讨论是探索目标，不是强制完成期限。
   - 关键证据: Jeff Dean 预测 "agents 将暴露所有工具都太慢"——如果模型无限快，真实工作加速仍受限于为人类延迟设计的工具
   - 关键证据: 要跑 30 天的自主 Agent 需要 memory + continual learning + 更好的硬件（因为消耗 "a zillion tokens"），且硬件延迟必须低
-  - 关键证据: Noam 指出 "30 天里有 29.5 天是在等待"
+  - 关键证据: Noam 在未来 30 天自主运行的假设讨论中以“29 and a half days”描述等待（Raw L418–428）；无实际运行记录或测量方法，非当前实测比例。
 
 ### 2. 质疑
 
@@ -46,7 +46,7 @@ tags:
 - **关于"Agent 自主运行 30 天"的质疑**:
   - 前提假设: 当前的 Agent 能力足以做有意义的长期研究。但当前 Agent 仍然难以在几小时内稳定工作
   - 边界条件: 30 天 Agent 的价值取决于它能否自主发现问题、修正方向。如果只是执行预定计划，那更像是批处理而非自主研究
-  - Jeff 自己承认"it takes the full stack"——memory + continual learning + better hardware——任何一个缺失都做不到
+  - Jeff 自己承认"it takes the full stack"——memory + continual learning + better hardware——为受访者的技术预判，而非已证明的必要条件。
 
 ### 3. 对标
 

@@ -3,7 +3,7 @@ type: topic
 title: Verifiable Agent Engineering
 description: "可验证 Agent 工程：把 LLM 的非确定性推理关进可观察、可拒绝、可复现的工程系统"
 created: 2026-05-18
-updated: 2026-11-26
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -179,22 +179,22 @@ source_raw:
 
 
 > [!summary] 核心洞察
-> Agent 的能力上限不由“模型愿意做多少事”决定，而由“系统能验证多少事”决定。真正可规模化的 Agent 工程，不是放大自主性，而是扩大可验证边界。
+> Agent 的实际能力取决于模型、工具、任务与环境；可安全委托的范围还受可验证性、授权和失败后果约束。扩大自主性必须与可验收边界匹配。
 
 ## 为什么这是一个独立 Topic
 
 现有 Agent 讨论容易把问题落在“模型更强”“工具更多”“循环更长”上。但 wiki 中多条线索指向同一个底层结构：
 
-- [[Verifiability|可验证性]]解释了为什么代码、数学、测试驱动任务进步最快。
+- [[Verifiability|可验证性]]解释了可执行反馈为何有助于部分代码、数学和测试驱动任务，但不能据此断言这些领域进步最快。
 - [[Dominator-Analysis|支配者分析]]说明非确定性行为也能被提取出必经骨架。
 - [[Accessibility-Agent|无障碍 Agent]]和Social-Model-of-Disability显示，真实生产系统需要知道何时不动手，因为错误自动化可能继续制造访问壁垒。
 - [[MachinaCheck]]说明领域 Agent 不应把确定性工作交给 LLM。
 - [[Corrective-RAG]]和[[Reflexion]]把“生成”变成可拒绝、可重试、可审计的管线。
 - [[Zero-PHI-Policy]]、[[Dual-Tier-LLM-Architecture]]和[[Sequence-Packing]]则说明，高风险 Agent 的可验证性还包括数据边界、模型路由和训练管线。
 
-这些不是零散技巧，而是同一件事：给非确定性智能修一条确定性轨道。
+这些机制可互补：显式约束、独立证据、实际状态验证和失败处理各自解决不同问题，确定性执行不等于规则正确或结果真实。
 
-## 三个生成器
+## 五个设计维度
 
 | 生成器 | 它解决什么 | 典型实体 |
 |--------|------------|----------|
@@ -204,7 +204,7 @@ source_raw:
 | 数据边界 | 什么信息绝不能进入模型上下文 | [[Zero-PHI-Policy]], [[Hardware-Sovereignty]] |
 | 资源路由 | 哪些任务应交给哪一层模型和人工门控 | [[Dual-Tier-LLM-Architecture]], [[Sequence-Packing]] |
 
-缺第一根，Agent 只是在表演努力。缺第二根，系统会把所有复杂性都倒给 LLM。缺第三根，Agent 的“行动偏差”会把边界条件变成事故。
+五个维度是工程审查提示，不是全部任务的必要组件；应按实际风险、工具能力和可验收结果决定最小充分实现。
 
 ## 从“让 Agent 做”到“让 Agent 被验证”
 
@@ -230,7 +230,7 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 
 [[MachinaCheck]] 的价值不在“用了多个 Agent”，而在它只在需要制造推理和报告组织的环节使用 LLM。STEP 文件解析和工具匹配由确定性代码完成，因为这些环节不需要想象力，只需要正确性。
 
-[[Accessibility-Agent|无障碍 Agent]] 的价值也不在“自动改所有问题”，而在识别复杂度、高风险交互和人工介入点。它背后的 Social-Model-of-Disability 进一步提醒：无障碍问题不是用户的问题，而是环境和界面设计制造的访问壁垒。因此一个能拒绝的 Agent，比一个永远动手的 Agent 更接近生产可用。
+[[Accessibility-Agent|无障碍 Agent]] 的价值也不在“自动改所有问题”，而在识别复杂度、高风险交互和人工介入点。它背后的 Social-Model-of-Disability 进一步提醒：无障碍问题不是用户的问题，而是环境和界面设计制造的访问壁垒。因此应比较适当拒绝、错误拒绝和安全完成；会拒绝不等于可靠，需按真实风险和任务损失校准。
 
 ## 可验证性不是测试覆盖率
 
@@ -243,7 +243,7 @@ Agentic 自动化的核心问题变了：能不能把结果、路径或中间状
 | 上下文验证 | 检索材料是否相关且足够回答问题 | [[Corrective-RAG]], [[Sufficient-Context]] |
 | 行为验证 | 系统是否在该停止时停止 | 高风险模式转人工、安全拒绝 |
 
-真正的 Agent harness 是这四层的组合，而不是一个更长的 prompt。
+四层是验证对象的分类，不是强制所有任务采用四套独立验证器；应按需求、风险及实际外部效果确定覆盖。
 
 ### 业务终态 oracle：从验证器复用到训练 reward（ThinkingBox，2026-10）
 
@@ -275,7 +275,7 @@ Anthropic 的代码现代化 field guide（[[20260923-anthropic-ai-code-moderniz
 | Transform | 原系统行为 + production replay / differential / prod-parallel | 跨语言/栈后旧测试常不能直接运行 |
 | Reimagine | 新 behavioral spec + 测试 + adversarial review + 可保留的 differential checks | 目标行为本身改变，reference 更主观 |
 
-**判断**：Agentic engineering 的验证系统应在大规模生成之前明确 **target → reference → certificate → promotion policy**。目标越难被外部 reference 锚定，certificate 越依赖模型判断，自动化自治上限就越低。
+**判断**：Agentic engineering 的验证系统应在大规模生成之前明确 **target → reference → certificate → promotion policy**。当 reference 难以建立时，certificate 的可判别性需要额外论证；可选人类、模型、实验、业务状态等不同证据，不存在由 reference 难度直接推出的统一自治上限。
 
 - **证据**：[[20260923-anthropic-ai-code-modernization-preparation]]；其 certificate 示例同时包含原/新测试、performance bound、fresh-context adversarial review、computer use、old/new differential outputs、state/wire-format round trip、staging telemetry、static/security analysis、build/type checks。
 - **边界**：Claude-authored tests + Claude adversarial reviews 即使使用 fresh context，也不等于真正 verifier independence；共享模型家族、错误 spec 或同一旧系统 reference 仍可能形成 correlated failure，因此生产 replay、静态分析、领域 SME 与其他异质证据不能被“多次 Claude review”替代。
@@ -390,17 +390,17 @@ IBM Research 的 [[Agent-Logic|agent logic]] 把可验证 Agent 工程推进到�
 
 SimilarWeb Data Studio 案例（2026-07-29）把可验证工程延伸到本 Topic 此前未直接回答的问题：**开放式长文输出**（同一问题可有多份合格报告）怎么验证？答案是分层裁判：确定性检查（工具调用合规、结构化输出有效）与 [[LLM-as-a-Judge]] 并行；裁判标准按输出类型分流——有期望答案的常规 chat 用 golden answer 语义比对，Deep Research 长文报告用逐维度 [[Rubric-Based-Evaluation]] 锚点 + faithfulness 检查（每条论断是否由检索数据支持）+ A/B 基线比较（基线是参考点，不是 ground truth）。每个分数携带评语与 trace，使"哪些 case 动了、哪些标准动了、评判者为什么说这个分"可追查。
 
-更有价值的是它的反例：两个 rubric 标准（来源广度 vs 归因质量）互相拉扯，聚合分数掩盖冲突，一次没问题的更新被误判为回归、回滚近一周。[[Evaluator-Miscalibration]] 由此给本 Topic 补上元验证原则：**评估器本身必须被验证**——校准错误的评估比没有评估更糟，因为它递给你虚假的信心。这与"成本可观测性"一节的警告同构：任何单一聚合度量（token 成本、评估总分）都会掩盖维度间的拉扯，可验证边界必须包含对度量工具本身的校准审查。
+更有价值的是它的反例：两个 rubric 标准（来源广度 vs 归因质量）互相拉扯，聚合分数掩盖冲突，一次没问题的更新被误判为回归、回滚近一周。[[Evaluator-Miscalibration]] 由此给本 Topic 补上元验证原则：**评估器本身必须被验证**——失准的评估可能产生虚假信心或错误拒绝，特别是在分数直接驱动自动晋升时。这与"成本可观测性"一节的警告同构：任何单一聚合度量（token 成本、评估总分）都会掩盖维度间的拉扯，可验证边界必须包含对度量工具本身的校准审查。
 
 ## 验证器自身也是验证边界：形式验证镜像
 
 Lean kernel soundness bug #14576 事后分析（[[20260801-lean-kernel-soundness-bug-postmortem]]）把"评估器必须被验证"推进到正确性保证最强的领域：AI 辅助构造的 Collatz "反证"同时骗过了 Lean 官方 kernel 和独立检查器 nanoda——因为两个不相关的实现 bug 恰好对齐。它给本 Topic 三个增量：
 
-- **独立性有效，但以新鲜度为前提**：攻破独立检查需要两个独立实现各有一个不同 bug，机制本身成立；但 nanoda 的 bug 早一周已修复，持有旧版本等于没有独立检查。异构验证必须配套版本跟踪基础设施（comparator.live 每日同步）。
+- **独立性有效，但以新鲜度为前提**：攻破独立检查需要两个独立实现各有一个不同 bug，机制本身成立；但 nanoda 的 bug 早一周已修复，独立检查器在该具体缺陷下失效；持有旧版本不等于在所有其他任务中没有独立检查。应跟踪版本及已知漏洞，验证关键用例。异构验证必须配套版本跟踪基础设施（comparator.live 每日同步）。
 - **信任边界原则**："健全性不能依赖不可信组件拒绝构造坏项；kernel 必须在自己的进程内独立拒绝"——与"containment 不能依赖模型自我克制、护栏必须由 harness 独立执行"是同一条原则（详见 [[Agent-Verification]] 形式验证镜像节）。
 - **攻防两端同时加速**：AI 既生产 exploit，又审计验证器（OpenAI 安全 AI 找出更多 kernel 错误）——可验证边界不是静态建设，而是 [[Cybersecurity-Proof-of-Work|proof-of-work 式]]的持续投入竞争。
 
-## 验证可靠性的三道不可替代门
+## 验证可靠性的三维检查框架
 
 2026-09-19 对 EX-001 / EX-002 / EX-004 的第一批一手证据编译后，可以把“可验证”进一步拆成三个相互耦合、但不能互相替代的门：
 
@@ -683,4 +683,4 @@ Task success
 
 Agent 工程的下一步不是更像人，而是更像实验室：输入可控，状态可观测，失败可复现，边界可拒绝。
 
-当系统能验证一个 Agent，它才真正拥有这个 Agent。
+验收、授权、可恢复性及实际控制权需要分别验证；可验证性并不自动授予权限或所有权。
