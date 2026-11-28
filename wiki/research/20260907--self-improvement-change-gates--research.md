@@ -10,6 +10,8 @@ tags:
 
 # Explore：自我改进 Agent 的变更归因与晋级门
 
+> **2026-11-28 结算复核**：四项 P0 剪藏已完成（[[20260901-harnessevolve-reference-trajectories]]、[[20260809-hsi-hierarchical-self-improvement]]、[[20260528-harness-updating-not-harness-benefit]]、[[20260827-rethinking-harness-evolution-evaluation]]），AAR 已有 [[20260828-automated-researchers-alignment-failures]]；W2S 专题页未找到精确同身份 Source，不把相关 AAR 报告当作专题代码证据。旧记录的远程评分与 commit ID/snapshot 静态观察保留为待验证缺口，非已复现漏洞；未重跑作者代码或数字。实验版本选择不是生产发布；候选分数、可复用收益、部署安全分别验收。变更归因需要匹配搜索和独立 held-out，不要求所有离线实验都有生产 canary/rollback；后两者只在部署及风险适用范围内作为晋级条件。EX-007 等真实变更/复验记录，不重开四项旧剪藏。
+
 ## 研究问题
 
 `EX-007` 关注一个自我改进 Agent 把“分数提升”写回自身系统时的不可自证边界。本轮不再重复 2026-09-06 对 HELIX、Evo-Harness 与 Anthropic Automated Alignment Researcher（AAR）的初次核查；在补查四篇 harness 论文后，又对 AAR/W2S 的官方说明与作者代码做了增量核查：

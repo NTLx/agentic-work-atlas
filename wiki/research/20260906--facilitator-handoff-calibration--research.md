@@ -10,6 +10,8 @@ tags:
 
 # 结论先行
 
+> **2026-11-28 结算与边界复核**：[[20260609-human-ai-teaming-calibration]]、[[20260514-alibaba-agentic-ai-hitl-field-experiment]] 已于 9 月编译；后续 [[20260907--handoff-calibration-evidence-boundary--research]] 已收窄命题。隐藏特征本身不必然产生不可约 excess risk，须使人/模型相对优势跨过选择阈值（在论文假设下）。Alibaba 随机化的是部署，不是升级类型、早晚或人类投入；后者的分组差异不能当作独立因果效应。Take the Wheel 的先答后展示是同题前后设计，未见匹配不展示的随机对照，不能仅据此识别消息暴露的独立效应。FiFAR、Take the Wheel 与四组产品转接文档的 Source 精确标识/主 URL 搜索未命中，不代表全身份去重完成。旧来源需求不重开。实验应分别操纵证据范围与是否展示模型结论，固定接收者/状态后再操纵等待；统计等效须预设实质差异与精度，不以不显著代替。EX-003 仍按 [[research-agenda]] 触发。
+
 本轮结论：**EX-003 refined，尚未解决；不新增 EX，不晋升稳定页。**
 
 现有一手材料支持把三个变量分开记录：

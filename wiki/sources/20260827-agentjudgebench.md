@@ -10,7 +10,7 @@ source_locator:
   - "paired with-ground-truth vs without-ground-truth conditions across five generators and six judges"
   - "difficulty degradation, hard no-GT 77–82% band, over-anchoring cases and rubric mitigation"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - verification
@@ -27,12 +27,14 @@ claim_type: mixed
 
 - **核心结论 1：reference availability 本身是 judge 行为变量，而不是天然“越多越好”。**
   - 关键证据：benchmark 对同一类 judge 做 paired with/without-ground-truth 对照；总体上无 ground truth 时随难度退化更快，但部分 frontier judge 暴露 ground truth 后 alignment 反而下降。
-- **核心结论 2：task difficulty 可以形成与模型规模无关的 judge ceiling。**
-  - 关键证据：hard、无 ground-truth 条件下六个 judge 收敛到约 77–82% alignment，模型规模没有消除该窄带。
+- **核心结论 2：特定 hard/no-GT 条件下观察到 judge alignment 窄带，非规模无关上限。**
+  - 关键证据：作者报告 hard、无 ground-truth 条件下约 77–82% alignment；该比较不能识别模型规模的独立效应。
 - **核心结论 3：judge quality 依赖“拿什么当 reference”。**
   - 关键证据：有 ground truth 时某模型最匹配 programmatic reference，而 human validation 又由另一 judge 最贴近人工判断，说明“最佳 judge”依赖评测锚点。
 
 ### 2. 质疑
+
+- 历史原文与代码核查见 [[20260906--reference-integrity-success-provenance--research]]：C3 操纵 judge 所见 Rj，程序评分 Rs 不变；同一 PDF 表1/2 的同名 GT 分数未对齐，需作者 run manifest；120条人审为单标注且可见程序评分，非盲多标注共识。本轮未重开 PDF，不据旧表计算效应量。
 
 - programmatic reference 本身不是不可错的绝对真值；这正是 EX-004 要继续区分 reference truth 与 judge alignment 的原因。
 - 77–82% band 是特定 DAG/tool-calling 构造中的结果，不应外推为所有 Agent judge 的普遍上限。

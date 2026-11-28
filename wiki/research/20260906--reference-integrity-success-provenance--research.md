@@ -10,6 +10,8 @@ tags:
 
 # EX-004：参考完整性与成功来源的独立性核查
 
+> **2026-11-28 结算复核**：S1–S6 的七份来源均已编译：[[20260827-agentjudgebench]]、[[20260727-acquabench-success-provenance]]、[[20250703-agentic-benchmark-checklist]]、[[20260423-openai-genebench-target-identifiability]]、[[202602-tau3-task-fixes]]、[[20260708-openai-swe-bench-pro-audit]]、[[20260223-openai-swe-bench-verified-audit]]。S7–S9 仓库 URL 精确 Source 搜索未命中，不等于未在别名/Raw/Registry 中存在。保留本稿原先记录的 AgentJudgeBench 表1/2 未对齐、AcquaBench 全量运行未取得等证据缺口；本轮未重新访问论文/代码或执行推理。阶段 A 冻结 trace 做 judge-side reference/evidence/verifier 对照，阶段 B 固定初始状态做 CLEAN/GOLD/SHAM 重运行，再对各已生成 trace 做 A；不能用同一 trace hash 约束 B。此处实验合同优先于旧三门联合笔记中混合 reference 与 provenance 的单因子设计；未完成联合实验，EX-004 不结案。
+
 研究问题：reference integrity 与 success provenance 能否并入 EX-001（verifier independence）或 EX-002（evidence visibility/interpretation），还是具有独立因果门？
 
 **暂定判定〔evidence-supported inference〕：保留 EX-004 为一个问题下的两个诊断对象，收窄“独立必要门”的主张；目前不建议完全合并，也不支持把两个对象宣布为普遍必要门。** 参考依据是否有效、成功是否依赖评测期间提供的目标值，具有不同的干预对象和结果变量；但已访问材料没有完成针对 EX-001／002 的充分交叉控制。保留研究对象不等于证明因果独立，更不等于为所有 Agent 工作流新增强制审批环节。

@@ -10,6 +10,8 @@ tags:
 
 # 2026-09-06：验证器独立性 × 证据 × 参考完整性 × 成功来源
 
+> **2026-11-28 实验合同勘误**：旧文最后的 2×2×2 将 reference/provenance 合并为 correct/sham ledger，并将全部条件限制为同一完整 rollout；仅能测事后审计视图差异，不能识别改变 Agent 信息来源的行为效应。以 [[20260906--reference-integrity-success-provenance--research]] §6 两阶段合同为准：A 固定 task/trace/外部裁决，独立改变 verifier、证据视图、judge-side Rj（必要时另测 Rs 重评分）；B 固定初始状态/配置/评分目标，分别运行 CLEAN/GOLD/SHAM 或真实环境 claim 条件，允许 trace 与 post-state 改变，再对各 trace 做 A；两个估计对象及分母分开。对于交互，不显著不等于不存在，须预定义 contrast、样本精度/等效界限；多模型名不是独立错误来源。原十项近邻材料仍为截至当时的搜索快照，精确 ID/URL 未发现对应独立 Source Summary，不宣称全库或当前文献无联合实验，不恢复泛搜索。EX-001/002/004 保持待证。
+
 ## 研究问题
 
 截至 2026 年，是否已经有公开的 agent 评测或 benchmark，在**同一条可回放 agent trace**上，同时操纵或明确区分：

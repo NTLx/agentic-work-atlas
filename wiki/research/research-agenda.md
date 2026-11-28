@@ -96,7 +96,7 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 | EX-001 | P1 | Boundary | 固定任务、reference 与 evidence 后，verifier 独立性是否降低共同漏报？ | 找同任务跨 verifier family/独立实现的单轴对照。 |
 | EX-002 | P1 | Mechanism | access、inspection、completeness、synthesis 哪一层改变验证错误？ | 找固定模型、任务、oracle 与预算的跨门消融。 |
 | EX-003 | P1 | Boundary | trigger、receiver、packet/message 与 timing 如何影响人类接手结果？ | 找固定 receiver/queue 的 packet×timing 消融或同案联合 trace。 |
-| EX-004 | P1 | Boundary | reference truth、environment/execution truth 与 success provenance 是否独立影响判定？ | 找同 trace 含 reference version、state/receipt、provenance 与跨 verifier 的联合实验。 |
+| EX-004 | P1 | Boundary | reference truth、environment/execution truth 与 success provenance 是否独立影响判定？ | 找两阶段联合实验：固定 trace 重评分；固定初始状态重运行来源/环境干预，再交叉 verifier/evidence/reference。 |
 | EX-005 | P0 | Evidence | Agent 安全控制能否闭合到可核验外部效果？吸收原 CR-004 的 action-surface/coverage/receipt/post-state/recovery 字段。 | 找同一 incident 的 policy/version、action receipt、revoke/recovery、canonical post-state 与独立复核。 |
 | EX-006 | P1 | Boundary | 高影响动作的控制状态完整性是否需要独立 carrier 与执行边界 enforcement？ | 找 carrier×enforcement×provider post-state 同轨对照或 authority-update 反例。 |
 | EX-007 | P1 | Mechanism | Agent 自我改进中变更归因与 feedback/control 不对称是否影响晋级判断？ | 找 production fleet 的 immutable change/evaluator、canary、rollback 与复验联合记录。 |
@@ -108,7 +108,7 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 | P0 | Agent 生产安全效果闭环 | 缺同案 action surface、授权、执行、撤销/恢复、post-state 与 review 联结。 | 获取脱敏生产 trace 后 clip+compile，回填 EX-005。 |
 | P0 | CR-006 加固后反例 | 缺 post-hardening 部署级纵向逃逸率、复发与 stop latency。 | 仅在独立纵向记录出现时恢复。 |
 | P0 | CR-005 劳动×能力再生共同纵向队列 | 缺同一组织/个人/职业/时期的采纳、练习、反馈、能力与晋升链。 | 寻找共同队列或强反例并评估可比性。 |
-| P1 | 验证三门联合实验 | 缺同任务下 verifier、evidence 与 reference/provenance 联合操纵。 | 找固定 trace、oracle 与预算的 factorial/matched study。 |
+| P1 | 验证三门联合实验 | 缺同任务下 verifier、evidence 与 reference/provenance 联合操纵。 | 找固定 trace 的事后 factorial，及匹配初始状态、oracle/预算的来源干预重运行；见 [[20260906--reference-integrity-success-provenance--research]] §6。 |
 | P1 | 科学 AI 闭环定向对照 | 四路线已有机制矩阵，但任务、oracle、成本和终点不同，未识别共同效应。 | 寻找同任务/预算内反馈质量、时延或对照覆盖的受控比较；未见空间迁移需独立新实验。 |
 
 ## 定向探索候选（未编号）
@@ -126,7 +126,7 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
-| 2026-11-28 | 全库消化与退役 | retired/refined | 主干阶段验收通过，Research本阶段全文复核24/48；历史定理及安全、控制状态、交接校准勘误，已编译来源与Topic历史需求核销。其余语义覆盖、正式晋升与独立Utility仍待；见 [[2026-11-28]] 第三十二至三十四轮。 |
+| 2026-11-28 | 全库消化与退役 | retired/refined | 主干阶段验收通过，顶层Research全文核销22/22、日志8/26；纠正历史定理、来源结算及两阶段验证实验合同。其余语义覆盖、正式晋升与独立Utility仍待；见 [[2026-11-28]] 第三十二至三十五轮。 |
 | 2026-10-21 | Candidate research audit | merged/retired/refined | CR-004 并入 EX-005、CR-007 retire；CR-001/005 收窄；提出未编号科学 AI 定向探索；压缩 agenda 操作层。 |
 | 2026-10-20T23:53:00+08:00 | CR-005 专业能力再生与独立校准 | refined-reasoning | 从保存无 AI 技能收窄为再生不与主生成路径共模的现实校准能力；无新 Evidence，保持 blocked。 |
 | 2026-09-07T08:33:43+08:00 | EX-005 耐久执行停止与外部效果 | refined | 区分 durable execution 停止、在途 invocation 与已发生副作用；加入 checkpoint/in-flight 窗口。 |

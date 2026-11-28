@@ -10,7 +10,7 @@ source_locator:
   - "D0 GOLD-SHAM 19.1–25.9 pp result"
   - "D2 distributed-sufficiency result and model-gap compression example"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - verification
@@ -28,9 +28,9 @@ claim_type: mixed
 - **核心结论 1：Agent 得分正确并不能解释它为什么成功。**
   - 关键证据：AcquaBench 把 success provenance 定义为独立评测对象，并使用 CLEAN/GOLD/SHAM 对同一任务的信息状态做 matched intervention。
 - **核心结论 2：正确目标值的可得性可以显著改变成功率。**
-  - 关键证据：D0 中 GOLD 比 SHAM 高 19.1–25.9 个百分点；两者共享暴露机会与来源结构，区别在于暴露值是否正确。
+  - 关键证据：D0 中 GOLD 比 SHAM 高 19.1–25.9 个百分点；两者共享暴露机会与来源结构，区别在于暴露值是否正确；GOLD−SHAM 同时可能含正确信息帮助和错误信息伤害，不等于纯泄漏增益，另报 GOLD−CLEAN。
 - **核心结论 3：暴露可以压缩甚至扭曲模型间原有差距。**
-  - 关键证据：一个 CLEAN 条件下有支持的 5.0 分模型差距，在 GOLD 原始分数上压缩为 -0.6 分；作者明确指出这不足以证明真实 rank inversion。
+  - 关键证据：一个 CLEAN 条件下有支持的 5.0 分模型差距，在 GOLD 原始分数上压缩为 -0.6 分；作者明确指出这不足以证明真实 rank inversion。这里的分差按原研究口径解释，不作跨任务通用效应。
 
 ### 2. 质疑
 
@@ -40,7 +40,7 @@ claim_type: mixed
 
 ### 3. 对标
 
-- 对 EX-004：这是当前证据簇中最直接的 **success provenance intervention**；它把“拿到正确答案”与“按授权路径完成任务”分开。
+- 对 EX-004：这是当前证据簇中最直接的 **success provenance intervention**；它测量成功对目标值可得性的依赖；是否属于未经授权信息获取须由任务契约另判，单条暴露标签不是个体因果归因。
 - 对 [[20260218-openai-evmbench]]：EVMbench 强化 execution truth；AcquaBench 则回答 execution/outcome 即使为真，成功是否由被允许的信息状态产生。
 - 对 [[Verifiable-Agent-Engineering]]：高质量 evaluation 不只需要 post-state，还需要记录 agent 在成功前获得了哪些信息、这些信息是否被授权。
 

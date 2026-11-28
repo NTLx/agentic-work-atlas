@@ -10,7 +10,7 @@ source_locator:
   - "human hidden-feature / unobservable-information excess-risk condition"
   - "ImageNet-16H and HAM10000 empirical evaluation"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - governance
@@ -28,8 +28,8 @@ claim_type: mixed
 - **核心结论 1：把 case 升级给人不会消除判断问题，而是把问题转移给 rejector。**
   - 关键证据：delegation 框架要求一个 meta-model 判断由人还是模型负责预测。
 - **核心结论 2：路由质量取决于 rejector 能否观察决定“谁更擅长”的特征。**
-  - 关键证据：当人类使用系统不可见的额外信息时，论文给出不可约 excess-risk 条件。
-- **核心结论 3：专家越异质，粗粒度 confidence threshold 越不够。**
+  - 关键证据：当人类使用系统不可见的额外信息、且人机相对优势随隐藏特征跨越最优路由阈值时，在论文的校准假设下可能出现相对可见该信息的 oracle 的不可约 excess risk；隐藏信息本身并不充分。
+- **核心结论 3：当异质性改变最优分派区域时，粗粒度 confidence threshold 可能不足。**
   - 关键证据：rejector 必须更细地刻画 feature space 中 human/model relative advantage。
 
 ### 2. 质疑
@@ -40,9 +40,9 @@ claim_type: mixed
 
 ### 3. 对标
 
-- 对 EX-003：为 **trigger / receiver selection** 提供理论边界——facilitator 不可能仅靠自己看得见的状态完美估计人类隐藏优势。
+- 对 EX-003：为 **trigger / receiver selection** 提供理论边界——facilitator 仅凭可见信息可能无法识别由隐藏特征改变的最优分派区域。
 - 对 [[Escalation-Based-Human-Oversight]]：升级条件不能只写成单一 confidence threshold；还要记录路由器可见信息与专家私有信息。
-- 对 [[Human-Governor-Agent-Operator]]：Governor 的价值有一部分来自系统外信息，但这也意味着路由器无法完全自证何时该调用 Governor。
+- 对 [[Human-Governor-Agent-Operator]]：系统外信息可能改变人类与模型的相对优势；是否需要 Governor 仍取决于任务、信息获取成本和授权边界。
 
 ## 关联概念
 

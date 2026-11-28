@@ -18,6 +18,8 @@ tags:
 
 # 2026-11-28 后续版本校准
 
+> **来源生命周期核销（2026-11-28）**：S1–S7 已全部有正式 Source Summary：[[20260901-nyfed-businesses-ai-transform-work-not-cut-jobs]]、[[20260324-atlanta-fed-firm-data-on-ai]]、[[20260624-prompting-change-denmark-ai-adoption]]、[[20260305-anthropic-labor-market-impacts-ai]]、[[20260812-stanford-canaries-coal-mine-ai-employment]]、[[20260414-nyfed-genai-training-access]]、[[20260201-how-ai-impacts-skill-formation]]。仅结算来源身份，不等于重新验证所有数字或公开微数据。丹麦 WP223 的版本校准见下段，旧会议描述不再作现行估计，正式方法稿需求已部分满足。CR-005 仍缺同一职业队列的独立能力保持/迁移与招聘晋升证据；本轮不新增综合指数、效应量或微观联表。
+
 S3正式方法稿已经取得：[Nationalbank WP223（2026-09-16）](https://www.nationalbanken.dk/media/m2rn4owp/ai-adoption-and-firm-size-employment-effects-in-monthly-administrative-data.pdf)，同研究线，不另计独立证据。§4.1–4.2、Figure7及Appendix C Table12–14将原会议约−8%与青年集中的描述更新为约两年−6%、2025末−11%相对趋势FTE差，主要来自<100 FTE、少招与高暴露职业；单独年龄交互不显著，不能推断仅青年调整。部分对照后续采用，非随机因果。此前P0“正式方法稿缺失”已部分解决；完整职业crosswalk、复算及训练/能力共同队列仍未完成。本页以下原2026-09-06历史结果保留，不与新版本混为同一估计。现行证据见 [[Labor-AI-Empirical-Calibration]]、[[20260624-prompting-change-denmark-ai-adoption]]、[[2026-11-28]]。
 
 # 来源身份与版本门

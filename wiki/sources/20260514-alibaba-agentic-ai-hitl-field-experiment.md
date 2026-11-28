@@ -10,7 +10,7 @@ source_locator:
   - "technical vs emotional escalation heterogeneity"
   - "post-escalation effort and early-intervention association"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - governance
@@ -25,8 +25,8 @@ claim_type: mixed
 
 ### 1. 浓缩
 
-- **核心结论 1：human-in-the-loop 的效果依赖“为什么升级”，不是一个统一处理。**
-  - 关键证据：技术能力不匹配型升级中人工介入更能维持服务质量；情绪型升级效果较弱。
+- **核心结论 1：不同升级类型的服务结果存在异质性，但类型本身未随机分配。**
+  - 关键证据：作者在升级子样本中报告技术型接管与较好服务结果、情绪型与较弱结果相关；匹配与回归不自动消除选择偏差。
 - **核心结论 2：handoff timing 与接管后的 human effort 是结果链的一部分。**
   - 关键证据：情绪升级通常发生在挫败积累后，接管后的消息、主动查找和方案提供更少；更早介入与更高后续投入相关。
 - **核心结论 3：自动化会重新分配专家注意力。**
@@ -40,8 +40,8 @@ claim_type: mixed
 
 ### 3. 对标
 
-- 对 EX-003：补出 **trigger type × timing × post-handoff effort** 的现场证据。
-- 对 [[Escalation-Based-Human-Oversight]]：升级规则必须区分 failure type；过晚升级会把“有人接手”变成低质量补救。
+- 对 EX-003：补出 trigger type、timing、post-handoff effort 的现场关联；不是这三因素的随机交互检验。
+- 对 [[Escalation-Based-Human-Oversight]]：按 failure type 检查升级规则；晚接管与较差结果的关联需区分案件难度及挫败积累，再测试 timing 的独立影响。
 - 对 [[Human-Governor-Agent-Operator]]：Governor capacity 不是静态资源，自动化会改变其注意力分配和接管深度。
 
 ## 关联概念

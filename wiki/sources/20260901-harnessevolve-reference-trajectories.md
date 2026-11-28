@@ -10,7 +10,7 @@ source_locator:
   - "reference-trajectory diagnosis plus leakage/bloat quality gate"
   - "recent-batch performance gate plus held-out validation snapshot selection"
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-28
 tags:
   - source-summary
   - verification
@@ -25,11 +25,11 @@ claim_type: mixed
 
 ### 1. 浓缩
 
-- **核心结论 1：自演化首先需要把“执行、评估、修改、接受修改”拆成可归因对象。**
+- **核心结论 1：作者以四模块分离执行、评估、修改和接受修改，作为可归因设计。**
   - 关键证据：HarnessEvolve 用 execution / evaluation / optimization / gating 四模块处理完整 harness，而不是让一个循环既改自己又给自己打分。
 - **核心结论 2：terminal score 不足以进行可靠 credit assignment。**
   - 关键证据：系统用已知 ground-truth answer 生成 reference trajectory，再核验其路径合法性，并定位 failed trajectory 的 first divergence。
-- **核心结论 3：性能晋级至少需要防 shortcut 与防 forgetting 两类 gate。**
+- **核心结论 3：实验中的质量与性能门分别检查 shortcut 风险和近期任务退化，不证明其普遍必要性或充分性。**
   - 关键证据：quality gate 检查 data leakage / prompt bloat；performance gate 要求当前 batch 提升且近期 batch 不明显退化；epoch 结束再从 snapshot pool 用 validation set 选择版本。
 
 ### 2. 质疑
