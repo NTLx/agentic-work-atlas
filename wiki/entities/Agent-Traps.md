@@ -6,14 +6,14 @@ aliases:
   - Agent 陷阱
   - AI Agent 陷阱
   - 网页陷阱
-definition: "嵌入在网页、邮件、文档等数字资源中，专门针对 AI Agent 的解析逻辑设计、用以操纵或利用其行为的恶意内容分类框架——按 Agent 运行周期的六个环节（感知→推理→记忆→行动→多Agent→人类）系统化"
+definition: "面向AI Agent环境侧风险的六类候选分类，覆盖内容注入、语义操纵、认知状态、行为控制、系统性及人类监督；类别可重叠，不限于隐藏指令"
 created: 2026-07-07
-updated: 2026-09-18
+updated: 2026-11-28
 tags:
   - agent-security
   - adversarial-attack
   - taxonomy
-evidence_level: high
+evidence_level: medium
 claim_type: extracted
 related_entities:
   - "[[Prompt-Injection-Risk]]"
@@ -34,52 +34,48 @@ source_raw:
 # Agent Traps（Agent 陷阱）
 
 > [!definition] 定义
-> **Agent Traps** 是任何嵌入在 Agent 会消费的数字资源（网页、邮件、文档、图片、API 响应等）中的内容元素——其设计目标不是让人看到，而是让解析它的 AI Agent 照做，结果是攻击者获益。这是 Google DeepMind（Franklin, Tomašev, Jacobs, Leibo & Osindero）提出的首个系统性分类框架。
+> **Agent Traps** 是任何嵌入在 Agent 会消费的数字资源（网页、邮件、文档、图片、API 响应等）中的内容元素——可利用模型对信息的解释、状态更新、行动或人类监督的弱点；也可能使用人类可见内容。分类来自《AI Agent Traps》历史编译；上一轮SSRN正文及PDF返回403，仅核到公开摘要，首创、机构与完整分类论证未重核，不作确定断言。
 
 ## 六类陷阱框架
 
-按 Agent 运行周期的六个环节排列——每一类针对一个可被攻击的环节，每一类暗示一类差异化的防御策略：
+六类用于组织风险面与候选控制；不代表固定顺序、互斥类别或一一对应防御。下表是历史分类的工程解释，不是原论文经验证的成熟度评分。
 
-| 陷阱类别 | 攻击目标 | 核心机制 | 实证成熟度 | 典型防御 |
-|----------|----------|----------|-----------|----------|
-| **Content Injection Traps** | 感知层 | 利用人机解析差异（CSS 隐藏、HTML 注释、隐写编码、动态披风）嵌入不可见指令 | 高 | 内容消毒层、输入剥离 |
-| **Semantic Manipulation Traps** | 推理层 | 利用框架效应、锚定偏差、情感语言操纵 Agent 的推理输出，不直接下指令 | 高 | 输出监控、偏差检测 |
-| **Cognitive State Traps** | 记忆/学习层 | 污染 RAG 知识库、潜伏记忆投毒、毒化上下文学习示范 | 中 | 知识库审计、来源校验 |
-| **Behavioural Control Traps** | 行动层 | 嵌入式越狱序列、数据窃取诱导、子 Agent 劫持生成 | 高 | 输出消毒、网络出口控制 |
-| **Systemic Traps** | 多 Agent 动态 | 拥堵信号、级联崩溃、隐性共谋、片段组合、女巫攻击 | 低（理论为主） | 异质性设计、反协同监控 |
-| **Human-in-the-Loop Traps** | 人类监督者 | 利用自动化偏差、审批疲劳、社会工程学攻击人类审批者 | 低（早期探索） | 审批节奏设计、偏差培训 |
+| 陷阱类别 | 关注对象 | 候选防御/验收 |
+|---|---|---|
+| Content Injection Traps | 不可信输入及指令解释 | 来源标签、最小必要表示、独立授权 |
+| Semantic Manipulation Traps | 事实与判断受不可信证据影响 | 权威来源、独立核验、冲突处理 |
+| Cognitive State Traps | 持久状态、记忆与知识 | 写入合同、provenance、撤销及回归 |
+| Behavioural Control Traps | 工具与外部副作用 | 资源端权限、完整中介、实际终态 |
+| Systemic Traps | 多组件或多Agent传播 | 隔离、委派授权、跨组件监测 |
+| Human-in-the-Loop Traps | 人类监督与决策 | 可见证据、明确动作授权、可拒绝与追溯 |
 
 ## 框架的核心洞察
 
 1. **感知差是 Content Injection 的重要入口**：Agent 解析 HTML 源码树、像素数组、元数据标签时，可能消费人类界面未直接呈现的信息层。这个差异为隐藏内容攻击提供了条件，但 Semantic Manipulation、Cognitive State 等其他陷阱并不都依赖感知差。
 
-2. **六环可以连锁**：攻击者可以在感知层埋指令 → 推理层把它合理化 → 记忆层固化 → 行动层执行 → 多 Agent 层放大 → 人类监督者批准。防住一环不等于安全。
+2. **类别可能连锁**：输入、状态、行动与监督风险可能相互影响，但不是每次都经过六类。需针对实际系统验证控制与传播边界。
 
 3. **模型对齐不能单独覆盖环境攻击**：语义操纵、记忆投毒、多 Agent 级联和证据污染涉及输入来源、状态写入与系统权限等模型外因素，因此仅依赖模型层对齐无法构成完整防御。
 
 ## 关键数据点
 
-- WASP 基准：简单 Prompt Injection 在 86% 场景中部分劫持 Agent（Evtimov et al., 2025）
-- HTML 隐藏指令改写 AI 摘要：15–29% 成功率（Verma & Yadav, 2025）
-- AgentPoison：记忆/知识库投毒，攻击成功率 > 80%，仅需 < 0.1% 数据投毒（Chen et al., 2024）
-- Web-use Agent 数据窃取：5 个不同 Agent 中攻击成功率 > 80%（Shapira et al., 2025）
-- **六环连锁的主流产品实演**：Context Collapse 系列（Håkon Måløy, MSRC 协调披露, 2026-06/07, 含 CVE-2026-55145）在 Microsoft 365 Copilot 中完整走通六环——Content Injection（格式剥离后白字指令仍可读）→ Cognitive State（Copilot Memory 毒化，跨会话持久）→ Behavioural Control（伪造工具结果诱导用户断网、内部摘要注入外发草稿）→ Systemic（[[AI-Worm]] 经 Word 文档自传播、跨组织扩散，披露时漏洞类仍可利用）→ Human-in-the-Loop（自动化偏差使用户视 Copilot 产物为权威，视口外隐藏削弱人工审查）。Systemic 环此前标注"实证成熟度低（理论为主）"，本系列将其上修为真实产品实证
-- M365 Copilot Echoleak：单封邮件绕过分类器外泄特权上下文（Reddy & Gujral, 2025）
-- Android 通知注入：多模态 Agent 攻击成功率最高 93%（Chen et al., 2025）
-- 多 Agent 感染式越狱：一张图在所有 Agent Pairwise 交互后几乎全部感染（Gu et al., 2024）
+- [WASP v3摘要](https://arxiv.org/abs/2504.18575)：报告部分成功最高86%，完整目标完成较困难；非完整成功率。
+- [Verma & Yadav v3摘要](https://arxiv.org/abs/2509.05831v3)：280页均分干净与注入样本，所测两模型的注入样本摘要明显变化比例超过29%及约15%；非真实外部行动成功率。
+- 其他历史论文的精确攻击比例、样本量和阈值本轮未重新核对，撤出确定量化结论，保留历史Git及源索引。
+- Context Collapse三篇协调披露描述M365 Copilot的持久记忆、邮件处理与文档传播风险；部分机制与六类重叠，是不同受控演示，不证明在单次真实事故中完整走通六环，也不证明全体用户受影响或跨组织实际传播。2026-11-28定向回看本库三篇摘要；尚需逐篇重核原披露、缓解条件及当前状态。详见[[Context-Collapse]]、[[AI-Worm]]。
 
 ## 前提与局限性
 
-- **分类互斥性不足**：论文自认实践中陷阱可能重叠——同一攻击可能同时属于多个类别；分类的实用价值（能否引导差异化防御）尚未被实证检验
-- **Systemic 和 HITL 的跨产品实证仍有限**：原 taxonomy 中这两类证据较弱；Context Collapse / AI Worm 已补充真实产品中的传播与人类审查失效案例，但尚不足以代表所有 Agent 部署。
-- **防御策略是方向性的**：论文提出的缓解路径（训练加固、内容扫描、生态信任协议）没有给出具体技术方案或基准
-- **前提**：论文假设六类分类对防御策略设计有意义——这个假设需要后续研究来验证
+- **分类互斥性不足**：分类可能重叠；未核完整论文或系统综述，不将其宣称为已经验证的最佳风险分类
+- **Systemic 和 HITL 的跨产品实证仍有限**：相关研究提供产品级受控演示及风险线索；不等同实地事故率、全链路成功率或所有部署通用性。
+- **防御策略是方向性的**：原论文完整缓解论证尚未回核；本页候选控制须用负向授权、任务效用、真实状态及恢复测试分别验证
+- **前提**：本库将六类作为覆盖检查的候选视角，不把分类本身作为强制标准或完整保障
 
 ## 关联概念
 
 - [[Prompt-Injection-Risk]] — Prompt Injection 是 Agent Traps 更广攻击面中的一种重要机制；六类 taxonomy 还覆盖语义操纵、状态污染、多 Agent 与 HITL 风险
 - [[Multi-Agent-System-Pathology]] — Systemic Traps 是从攻击者视角看多 Agent 脆弱性，与多 Agent 病理学互补
 - [[Agent-Containment]] — Containment 是主要的防御架构；Agent Traps 告诉你 Containment 要防"什么"
-- [[Persona-Hyperstition]] — 六类中最新颖的子概念，独立成 Entity
-- [[Agent-Perception-Gap]] — 感知差是所有 Content Injection 的共同入口，独立成 Entity
+- [[Persona-Hyperstition]] — 历史编译中提取的相关子概念，首创性未核，独立成 Entity
+- [[Agent-Perception-Gap]] — 感知差是部分内容注入的利用条件，非必要条件，独立成 Entity
 - [[Model-Safety-Divergence]] — Agent Traps 解释了安全行为分歧的"环境侧"原因
