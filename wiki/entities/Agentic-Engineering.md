@@ -7,7 +7,7 @@ aliases:
   - 代理式工程
 definition: "用 coding agents 辅助开发软件的工程实践；Simon Willison 系统化了 code execution、测试和反模式等实践，Karpathy 则将其与 Vibe Coding 区分为保持专业质量上限的严肃工程纪律"
 created: 2026-04-09
-updated: 2026-09-20
+updated: 2026-11-28
 evidence_level: high
 claim_type: mixed
 tags:
@@ -100,7 +100,7 @@ Agent 软件：
 
 | 原则 | 说明 | 实践意义 |
 |-----|------|---------|
-| **Writing code is cheap now** | 代码成本趋近于零 | 可以更雄心勃勃地尝试 |
+| **Writing code is cheap now** | 生成候选代码的边际成本降低，不等于优质软件的交付成本趋零 | 可以低成本探索，但须验证、筛选和维护 |
 | **Hoard things you know how to do** | 囤积可运行代码示例 | 记录可复用的解决方案 |
 | **AI should help produce better code** | AI 应帮助产出更好的代码 | 不是更快，而是更好 |
 | **Anti-patterns** | 不要提交未审查的代码 | 你的工作是交付能工作的代码 |
@@ -145,7 +145,7 @@ Agent 软件：
 
 Claude Code 团队的经验可以概括为四个迁移：
 
-- 写代码、测试和重构不再是主要瓶颈，verification、review、security 和 product taste 变成瓶颈。
+- 在代码生成能力充分、任务与工具匹配的工作中，瓶颈可能从实现迁移到 verification、review、security 和 product taste；不同项目的实际瓶颈仍需测量。
 - 长周期路线图让位给 JIT planning、原型、PR 讨论和内部用户反馈。
 - PM、工程、设计、内容的执行边界变薄，但法律、安全、trust boundary 和产品判断仍需专家负责。
 - PR cycle time 和 AI-assisted commits 只是中间指标，最终仍要看质量、可靠性和产品问题是否被解决。
@@ -218,7 +218,7 @@ Drew Breunig 提出扩展的三阶段 Agentic Coding 模型：
 - Code Execution 是决定性能力：没有直接运行代码的能力，LLM 输出价值有限
 - Vibe Coding 一词由 Andrej Karpathy 在 2025 年 2 月提出（Claude Code 发布前三周）
 - Karpathy 的贡献是把 Vibe Coding 与 Agentic Engineering 区分为"提升底线"与"保持质量上限"两类实践
-- 四项核心原则：代码成本趋近于零、囤积可运行代码示例、AI 应帮助产出更好的代码、不提交未审查的代码
+- 四项核心原则：降低候选代码生成的边际成本、囤积可运行代码示例、AI 应帮助产出更好的代码、不提交未审查的代码。参见 [[20260410-code-is-cheap]]；该原则不是端到端生产率的实测结论。
 - ITBench-AA SRE 基准（2026）：所有前沿模型低于 50%，最佳 Claude Opus 4.7 仅 47%——企业 IT Agent 任务远未解决
 - Coding Agents 在社会科学中采纳率仅 20%（n=1,260），尽管 81% 已尝试 AI——采纳仍处早期
 - **人的注意力带宽是硬上限**：并发 4 个 Agent 产出高了但疲劳感比单线程还严重——"并发没有消灭工作，只是把等待时间换成了调度时间"（泮圣伟, 2026）

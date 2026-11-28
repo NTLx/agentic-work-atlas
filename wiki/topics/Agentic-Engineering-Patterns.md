@@ -3,7 +3,7 @@ type: topic
 title: Agentic Engineering Patterns
 description: "Simon Willison 的 Agentic Engineering 指南系列，定义 AI 编程代理时代的工程范式"
 created: 2026-04-10
-updated: 2026-11-09
+updated: 2026-11-28
 evidence_level: medium
 claim_type: mixed
 tags:
@@ -142,7 +142,7 @@ source_raw:
 | 章节 | 核心观点 |
 |------|---------|
 | **What is agentic engineering** | Code Execution 是决定性能力 |
-| **Writing code is cheap now** | 代码成本从昂贵到几乎免费 |
+| **Writing code is cheap now** | 生成候选代码的边际成本下降；优质软件仍有验证、集成和维护成本 |
 | **Hoard things you know** | 囤积可运行代码示例作为资产 |
 | **AI should help produce better code** | 用助手预防技术债务 |
 | **Anti-patterns** | 不要提交未审查的代码 |
@@ -186,12 +186,12 @@ source_raw:
 
 ```
 传统：生产几百行代码需要一天
-现在：编码代理几乎免费产出代码
+现在：编码代理降低候选代码的生成门槛，但实际成本仍取决于任务、工具、返工与验收
 ```
 
 **影响**：
 - 重估所有权衡决策
-- 对代码异味零容忍
+- 重新评估有证据支持的代码异味修复；避免为低成本生成而引入无必要的重构
 - 异步代理后台重构
 
 ### 知识囤积
