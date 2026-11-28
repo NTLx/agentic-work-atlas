@@ -5,7 +5,7 @@ aliases:
   - AI 感知调查
 definition: "直接询问用户对 AI 能力、工作影响和未来期望的调查方法"
 created: 2026-06-30
-updated: 2026-09-21
+updated: 2026-11-28
 evidence_level: high
 claim_type: extracted
 tags:
@@ -50,4 +50,4 @@ source_raw:
 
 - [[Labor-Market-Impact]]：调查结果为劳动力市场影响提供主观证据。
 - [[AI-Autonomy]]：自动化使用与乐观情绪相关。
-- [[AI-Use-Rhythm]]：使用模式影响感知。
+- [[AI-Use-Rhythm]]：同一报告的时间分布与主观调查；不能由相关观察推出使用模式改变感知。

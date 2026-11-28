@@ -56,6 +56,6 @@ AI 在任务执行中自主决策的程度，使用1-5级量表测量，从“�
 ## 关联概念
 
 - [[AI-Artifact-Classification]]：自主性水平与产物类型相关。
-- [[AI-Use-Rhythm]]：非工作时间的任务可能具有更高自主性。
+- [[AI-Use-Rhythm]]：使用时间与自主性是不同观测维度，当前来源未建立从时间推断自主性的规则。
 - [[Labor-Market-Impact]]：自主性可能影响劳动力市场结构。
 - [[Software-Development-Autonomy-Levels]]：框架互补——本实体测任务类型的自主分布（1-5 量表），后者分 SDLC 阶段的责任转移（三级自治）。

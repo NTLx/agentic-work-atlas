@@ -5,7 +5,7 @@ aliases:
   - AI 使用节奏
 definition: "AI 工具使用模式与外部世界节奏（昼夜、周度、事件驱动）的同步现象"
 created: 2026-06-30
-updated: 2026-09-21
+updated: 2026-11-28
 evidence_level: high
 claim_type: extracted
 tags:
@@ -43,9 +43,9 @@ Anthropic 报告中 Claude 使用模式与外部世界节奏同步的观察。�
 
 ## 关联概念
 
-- [[AI-Artifact-Classification]]：使用节奏影响产物类型分布。
-- [[AI-Autonomy]]：非工作时间的任务可能具有更高自主性。
-- [[AI-Perception-Survey]]：用户对使用节奏的感知。
+- [[AI-Artifact-Classification]]：按时间分层观察产物类型，需独立检验其关联。
+- [[AI-Autonomy]]：自主性与使用时间是不同观测维度，不能由时间推断自主性。
+- [[AI-Perception-Survey]]：同一报告的用户自报调查，未证明使用节奏影响感知。
 
 ## 研究意义
 

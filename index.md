@@ -17,7 +17,7 @@ tags:
 
 | 指标 | 数值 |
 |-----|------|
-| Entity 页面 | 425 个 |
+| Entity 页面 | 424 个 |
 | Topic 页面 | 38 个 |
 | Comparison 页面 | 21 个 |
 | Raw 文章 | 345 个 |
@@ -148,7 +148,6 @@ tags:
 | [[wiki/entities/Distributed-Mastery\|Distributed Mastery（分布式精通）]] | 编排 human-AI 系统产出专业质量的熟练度，可产出结果但不提供实质验证所需的独立领域判断 | Lovett 2026 |
 | [[wiki/entities/Internalized-Mastery\|Internalized Mastery（内部化精通）]] | 通过持续认知挣扎内化的深层领域知识，构成实质验证 AI 输出的独立基础，不能靠观察或 AI 辅助获得 | Lovett 2026 |
 | [[wiki/entities/Validation-Tether\|Validation Tether（验证系绳）]] | 有效 AI 编排对内化精通的根本依赖——实质验证需独立领域知识识别表层一致输出中的实质错误 | Lovett 2026 |
-| [[wiki/entities/Superlinear-Returns\|Superlinear Returns（超线性回报）]] | 表现与回报的超线性关系，归约为指数增长 + 阈值两成因，学习是同时具备两者的最重要案例 | Paul Graham 2023 |
 
 #### 知识与语义
 | Entity | 定义 | 来源 |

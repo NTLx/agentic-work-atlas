@@ -48,6 +48,6 @@ source_raw:
 
 ## 关联概念
 
-- [[AI-Use-Rhythm]]：使用节奏影响产物类型分布。
+- [[AI-Use-Rhythm]]：产物分类可按时间分层观察；分布差异不等于使用节奏造成变化。
 - [[AI-Autonomy]]：高自主性任务产生更复杂的产物。
 - [[Labor-Market-Impact]]：产物类型反映劳动力市场变化。
