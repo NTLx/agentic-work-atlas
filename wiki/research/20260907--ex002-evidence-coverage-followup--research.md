@@ -10,6 +10,8 @@ tags:
 
 # Explore：EX-002 证据覆盖、检查策略与证据解释 follow-up
 
+> **后续结算复核（2026-11-28）**：AJ-Bench、Partial Evidence Bench、Cited but Not Verified 均已于 2026-09-19 编译为 [[20260420-aj-bench-agent-as-judge]]、[[20260506-partial-evidence-bench]]、[[20260507-cited-but-not-verified]]，原三项 clip+compile 请求历史结算，不再作为待办。AJ-Bench 当前摘要是最多13.41个百分点，不能与旧日志的平均约0.13直接等同；本轮未重核论文全部表格。SourceBench 与 AgentOracle receipt spec 精确 ID/URL 未命中，不代表绝对无重复或必需晋升。保留历史局部证据及未验证实验设计；EX-002 仍以 [[research-agenda]] 为唯一当前触发入口。
+
 ## 研究问题
 
 在验证器独立性之外，证据覆盖与证据解释是否构成验证的第二个必要门？本轮只核对 2026 年公开的一手来源，并区分：证据是否可见、验证器是否主动检查、证据是否被正确解释、reference/provenance 是否可独立核验。

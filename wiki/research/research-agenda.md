@@ -78,7 +78,7 @@ Legacy provenance 维护线已完成并冻结；详情见 research-logs 与 Git 
 - Next: 只等待 post-hardening 部署级纵向反例。
 - Retry: new-source:eval-escape-post-hardening-counterexample
 
-CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/evidence closure；CR-007 已 retire，详情见 2026-10-20 研究日志。
+CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/evidence closure；CR-007 已 retire，详情见 [[2026-10-21]] 研究日志。
 
 ## 当前研究焦点
 
@@ -126,7 +126,7 @@ CR-004 已从活跃 Claim 队列移除并入 EX-005 的 production effect/eviden
 
 | 时间 | Claim | Delta | 摘要 |
 |---|---|---|---|
-| 2026-11-28 | 全库消化与退役 | retired/refined | 38 Topic、21 Comparison、12旧Output全文初审；5 Entity与重复源退役、Fowler溯源修复、科学矩阵及1新应用Output。阶段门禁通过，全部Entity/Source/Research语义覆盖、正式晋升与独立Utility仍待；见 [[2026-11-28]] 第三十二轮。 |
+| 2026-11-28 | 全库消化与退役 | retired/refined | 主干阶段验收通过，Research本阶段全文复核16/48；历史定理勘误、位置性与Minsky证据降级、4项已编译来源需求核销。其余语义覆盖、正式晋升与独立Utility仍待；见 [[2026-11-28]] 第三十二至三十三轮。 |
 | 2026-10-21 | Candidate research audit | merged/retired/refined | CR-004 并入 EX-005、CR-007 retire；CR-001/005 收窄；提出未编号科学 AI 定向探索；压缩 agenda 操作层。 |
 | 2026-10-20T23:53:00+08:00 | CR-005 专业能力再生与独立校准 | refined-reasoning | 从保存无 AI 技能收窄为再生不与主生成路径共模的现实校准能力；无新 Evidence，保持 blocked。 |
 | 2026-09-07T08:33:43+08:00 | EX-005 耐久执行停止与外部效果 | refined | 区分 durable execution 停止、在途 invocation 与已发生副作用；加入 checkpoint/in-flight 窗口。 |

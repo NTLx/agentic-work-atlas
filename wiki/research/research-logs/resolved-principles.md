@@ -14,7 +14,21 @@ related_entities:
 
 # 已收敛的操作原则
 
-> 以下洞察已通过多重验证（ljg-think × ljg-roundtable × 外部 source × 交叉验证），已沉淀为 entity/comparison 或 topic。此页从 research-agenda 迁移而来，供 cron Agent 快速参考，避免重复探索。
+> **历史归档，非当前已证实原则（2026-11-28 复核）**。以下表格保留 2026-07-02 的原始收敛记录；多轮模型推演、圆桌和类比不构成独立验证。不得将表格中的“定理”“唯一”“不可替代”或数字作为现行决策证据，亦不得据此重开已休眠的 Claim。以当前稳定页及 [[research-agenda]] 为准。
+
+| 旧条目 | 当前裁决 |
+|---|---|
+| 位置性统一理论 | 收窄为情境、知识迁移与权责的分析视角；见 [[Positionality]]，low/synthesized。 |
+| 四维失败因果链 | 保留诊断分类，撤回固定因果方向与内部阻断必然失败；见 [[Agent-Failure-Causal-Chain]]。 |
+| Governor 承受力定理 | 风险容忍不是安全判断的替代；见 [[Human-Governor-Agent-Operator]]。旧审批率未重新核原始样本，不能作为定理证据。 |
+| Minsky 悖论 | 金融假说的条件性治理类比，非热力学规律；见 [[Minsky-Paradox]]。 |
+| 品味局部客观性 | 依任务、受众与反馈检验判断，不推导永久人类专属能力；见 [[Taste]]。 |
+| 开源验证器成本 | 60–1000x 缺明确当前价格、模型、任务及质量口径；撤销为稳定结论，不新建 Entity。 |
+| FDE 核心价值 | 现场发现、资产回流与服务价值分别验证；见 [[Forward-Deployed-AI-Enablement]]。 |
+| AI 管理同构性 | 有限类比，不证明必需的人类属性或统一管理机制；见 [[AI-Capability-Management-Alignment]]。 |
+| Root Rank | 历史综合视角，所列旧文件未在当前研究清单发现，不能作为独立证据或引用路径。 |
+
+以下为旧表原貌。
 
 | 原则 | 核心结论 | 落点 |
 |------|---------|------|

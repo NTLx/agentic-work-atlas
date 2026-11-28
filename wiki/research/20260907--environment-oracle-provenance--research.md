@@ -8,6 +8,8 @@ tags:
 
 # Explore：环境真值、执行真值与成功来源
 
+> **后续结算复核（2026-11-28）**：EVMbench 已有正式 Source [[20260218-openai-evmbench]]（2026-09-19 编译），且摘要记录 OpenZeppelin 的 reference-quality 争议；原 P0 剪藏需求不应重复执行。EnvTrustBench arXiv:2605.08828 的 Source 精确 ID 搜索未命中，未完成全身份去重；仅保留候选。本文为历史研究记录，未重新核全部论文数字；EX-004 仍按 [[research-agenda]] 等待同 trace 的联合操纵，不重启泛来源搜索。
+
 ## Scope
 
 本轮深化 `EX-004`「reference integrity 与 success provenance 是否构成独立必要门」。问题不是再找一个多模型 judge，而是核对三种容易被混成一个“oracle”的对象：

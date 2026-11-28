@@ -2,6 +2,8 @@
 
 2026-07-15 Wed 14:06
 
+> **历史问答校准（2026-11-28）**：保留原问答供追溯，不作为现行事实或规范。Q1 的微服务静态树/Agent 动态图二分、工具数与步数阈值、必须记录真实推理意图均撤回。[OpenTelemetry Traces Data Model](https://opentelemetry.io/docs/specs/otel/trace/data-model/)（Release Candidate，Operations / Parent-child / Links / Partial traces）明确运行期 span、异步和跨 trace links；记录的因果关系不是完整因果证明，意图自述更非独立证据。现有 [[20260919-otel-genai-agent-observability-main]] 为历史 Development 快照。Q2 五维为分析视角，不是各作者共同认可的不可约理论；APM 同样可能跨信任域，Q3 单域断言撤回。Q4 未测量真实轨迹 Kolmogorov 复杂度或开放度单调关系；Q5 三字段硬地板只是候选最小集，不是充分制度或保证。参见 [[Agent-Observability]]、[[Agent-Security]] 与 [[Evaluation-Integrity]]；EX-005 仍缺同案闭环。
+
 ---
 
 ## Q1：为什么 Agent trace 不能照搬微服务 trace 模型？
